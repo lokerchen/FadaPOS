@@ -216,7 +216,6 @@ namespace SuperPOS.UI.TA
 
         private void txtDiscount_EditValueChanged(object sender, EventArgs e)
         {
-            txtIncrement.Text = @"0.00";
             if (txtDiscount.Text.EndsWith("%"))
             {
                 try
@@ -271,11 +270,12 @@ namespace SuperPOS.UI.TA
                     throw;
                 }
             }
+
+            txtIncrement.Text = @"0.00";
         }
 
         private void txtIncrement_EditValueChanged(object sender, EventArgs e)
         {
-            txtDiscount.Text = @"0.00";
             if (txtIncrement.Text.EndsWith("%"))
             {
                 try
@@ -330,6 +330,8 @@ namespace SuperPOS.UI.TA
                     throw;
                 }
             }
+
+            txtDiscount.Text = @"0.00";
         }
     }
 }
