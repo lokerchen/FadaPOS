@@ -21,6 +21,9 @@ namespace SuperPOS.UI.TA
 
         private SimpleButton[] btnMenuAttr = new SimpleButton[20];
 
+        private string miLargePrice = "";
+        private string miSmallPrice = "";
+
         private string strMenuAttr = "";
 
         public string MenuAttr
@@ -221,6 +224,12 @@ namespace SuperPOS.UI.TA
                 txtEngName.Text = lstMi.FirstOrDefault().MiEngName;
                 txtOtherName.Text = lstMi.FirstOrDefault().MiOtherName;
                 txtOriginalPrice.Text = miOldPrice;
+
+                if (string.IsNullOrEmpty(lstMi.FirstOrDefault().MiLargePrice) ||
+                    Convert.ToDecimal(lstMi.FirstOrDefault().MiLargePrice) <= 0m) miLargePrice = miOldPrice;
+
+                if (string.IsNullOrEmpty(lstMi.FirstOrDefault().MiSmallPrice) ||
+                    Convert.ToDecimal(lstMi.FirstOrDefault().MiSmallPrice) <= 0m) miSmallPrice = miOldPrice;
             }
             else 
                 Hide();
@@ -399,7 +408,17 @@ namespace SuperPOS.UI.TA
 
         private void btnLarge_Click(object sender, EventArgs e)
         {
+            txtNewPrice.Text = miLargePrice;
+        }
 
+        private void btnSmall_Click(object sender, EventArgs e)
+        {
+            txtNewPrice.Text = miSmallPrice;
+        }
+
+        private void btnReg_Click(object sender, EventArgs e)
+        {
+            txtNewPrice.Text = miOldPrice;
         }
     }
 }
