@@ -59,5 +59,13 @@ namespace SuperPOS.Domain.Entities
         //Menu Set ID
         [XmlElement(ElementName = "MiMenuSetID")]
         public virtual int MiMenuSetID { get; set; }
+
+        //Large Price
+        [XmlElement(ElementName = "MiLargePrice")]
+        public virtual string MiLargePrice { get; set; }
+
+        //Small Price
+        [XmlElement(ElementName = "MiSmallPrice")]
+        public virtual string MiSmallPrice { get; set; }
     }
 }

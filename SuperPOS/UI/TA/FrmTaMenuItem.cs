@@ -114,7 +114,9 @@ namespace SuperPOS.UI.TA
                     MiMenuCateID = mi.MiMenuCateID,
                     MiRmk = mi.MiRmk,
                     MiMenuSetID = mi.MiMenuSetID,
-                    MiMenuSet = ms.MSEngName
+                    MiMenuSet = ms.MSEngName,
+                    MiLargePrice = mi.MiLargePrice,
+                    MiSmallPrice = mi.MiSmallPrice
                 };
             
             gvMenuItem.BestFitColumns();
@@ -242,6 +244,8 @@ namespace SuperPOS.UI.TA
             txtEngName.Text = "";
             txtOtherName.Text = "";
             txtRegularPrice.Text = "";
+            txtLargePrice.Text = "";
+            txtSmallPrice.Text = "";
             txtSpecailRegularPrice.Text = "";
             lueSuppleShift.ItemIndex = 0;
             luePrtName.ItemIndex = 0;
@@ -293,6 +297,9 @@ namespace SuperPOS.UI.TA
                 CommonTool.ShowMessage("Specail Regular Price is empty,please enter!");
                 return;
             }
+
+            if (string.IsNullOrEmpty(txtLargePrice.Text)) { txtLargePrice.Text = @"0.00"; }
+            if (string.IsNullOrEmpty(txtSmallPrice.Text)) { txtSmallPrice.Text = @"0.00"; }
             #endregion
             new SystemData().GetTaMenuItem();
 
@@ -302,6 +309,8 @@ namespace SuperPOS.UI.TA
             taMenuItemInfo.MiEngName = txtEngName.Text;
             taMenuItemInfo.MiOtherName = txtOtherName.Text;
             taMenuItemInfo.MiRegularPrice = txtRegularPrice.Text;
+            taMenuItemInfo.MiLargePrice = txtLargePrice.Text;
+            taMenuItemInfo.MiSmallPrice = txtSmallPrice.Text;
             taMenuItemInfo.MiSpecialPrice = txtSpecailRegularPrice.Text;
             taMenuItemInfo.MiMenuSetID = Convert.ToInt32(lueMenuSet.EditValue);
             taMenuItemInfo.MiSuppleShiftID = Convert.ToInt32(lueSuppleShift.EditValue);
@@ -386,6 +395,8 @@ namespace SuperPOS.UI.TA
             chkComboMenuCate.SetEditValue(gvMenuItem.GetRowCellValue(gvMenuItem.FocusedRowHandle, "MiMenuCateID").ToString());
             chkComboOtherSet.EditValue = gvMenuItem.GetRowCellValue(gvMenuItem.FocusedRowHandle, "MiRmk");
             chkComboOtherSet.Text = gvMenuItem.GetRowCellValue(gvMenuItem.FocusedRowHandle, "MiRmk").ToString();
+            txtLargePrice.Text = gvMenuItem.GetRowCellValue(gvMenuItem.FocusedRowHandle, "MiLargePrice").ToString();
+            txtSmallPrice.Text = gvMenuItem.GetRowCellValue(gvMenuItem.FocusedRowHandle, "MiSmallPrice").ToString();
         }
 
         #region Grid单元格双击事件

@@ -80,6 +80,12 @@
             this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
             this.txtDishCode = new DevExpress.XtraEditors.TextEdit();
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
+            this.txtLargePrice = new DevExpress.XtraEditors.TextEdit();
+            this.labelControl5 = new DevExpress.XtraEditors.LabelControl();
+            this.txtSmallPrice = new DevExpress.XtraEditors.TextEdit();
+            this.labelControl6 = new DevExpress.XtraEditors.LabelControl();
+            this.MiLargePrice = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.MiSmallPrice = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
             this.panelControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl3)).BeginInit();
@@ -101,6 +107,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.txtEngName.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtDispPosition.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtDishCode.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtLargePrice.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtSmallPrice.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // panelControl1
@@ -110,7 +118,7 @@
             this.panelControl1.Controls.Add(this.panelControl2);
             this.panelControl1.Location = new System.Drawing.Point(12, 12);
             this.panelControl1.Name = "panelControl1";
-            this.panelControl1.Size = new System.Drawing.Size(634, 598);
+            this.panelControl1.Size = new System.Drawing.Size(634, 635);
             this.panelControl1.TabIndex = 0;
             // 
             // panelControl3
@@ -118,7 +126,7 @@
             this.panelControl3.Controls.Add(this.btnDel);
             this.panelControl3.Controls.Add(this.btnSave);
             this.panelControl3.Controls.Add(this.btnAdd);
-            this.panelControl3.Location = new System.Drawing.Point(5, 257);
+            this.panelControl3.Location = new System.Drawing.Point(5, 296);
             this.panelControl3.Name = "panelControl3";
             this.panelControl3.Size = new System.Drawing.Size(621, 44);
             this.panelControl3.TabIndex = 14;
@@ -152,7 +160,7 @@
             // 
             // gridControlMenuItem
             // 
-            this.gridControlMenuItem.Location = new System.Drawing.Point(5, 307);
+            this.gridControlMenuItem.Location = new System.Drawing.Point(5, 346);
             this.gridControlMenuItem.MainView = this.gvMenuItem;
             this.gridControlMenuItem.Name = "gridControlMenuItem";
             this.gridControlMenuItem.Size = new System.Drawing.Size(621, 282);
@@ -184,7 +192,9 @@
             this.MiMenuSetID,
             this.MiMenuSet,
             this.MiRmk,
-            this.MiMenuCateID});
+            this.MiMenuCateID,
+            this.MiLargePrice,
+            this.MiSmallPrice});
             this.gvMenuItem.GridControl = this.gridControlMenuItem;
             this.gvMenuItem.IndicatorWidth = 50;
             this.gvMenuItem.Name = "gvMenuItem";
@@ -334,6 +344,10 @@
             // 
             // panelControl2
             // 
+            this.panelControl2.Controls.Add(this.txtSmallPrice);
+            this.panelControl2.Controls.Add(this.labelControl6);
+            this.panelControl2.Controls.Add(this.txtLargePrice);
+            this.panelControl2.Controls.Add(this.labelControl5);
             this.panelControl2.Controls.Add(this.labelControl4);
             this.panelControl2.Controls.Add(this.lueMenuSet);
             this.panelControl2.Controls.Add(this.labelControl12);
@@ -362,7 +376,7 @@
             this.panelControl2.Controls.Add(this.labelControl1);
             this.panelControl2.Location = new System.Drawing.Point(5, 5);
             this.panelControl2.Name = "panelControl2";
-            this.panelControl2.Size = new System.Drawing.Size(621, 247);
+            this.panelControl2.Size = new System.Drawing.Size(621, 285);
             this.panelControl2.TabIndex = 0;
             // 
             // labelControl4
@@ -486,7 +500,7 @@
             // 
             // txtSpecailRegularPrice
             // 
-            this.txtSpecailRegularPrice.Location = new System.Drawing.Point(154, 180);
+            this.txtSpecailRegularPrice.Location = new System.Drawing.Point(154, 256);
             this.txtSpecailRegularPrice.Name = "txtSpecailRegularPrice";
             this.txtSpecailRegularPrice.Properties.Mask.EditMask = "f";
             this.txtSpecailRegularPrice.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Numeric;
@@ -506,7 +520,7 @@
             // 
             // labelControl15
             // 
-            this.labelControl15.Location = new System.Drawing.Point(12, 186);
+            this.labelControl15.Location = new System.Drawing.Point(12, 262);
             this.labelControl15.Name = "labelControl15";
             this.labelControl15.Size = new System.Drawing.Size(136, 18);
             this.labelControl15.TabIndex = 10;
@@ -593,11 +607,57 @@
             this.labelControl1.TabIndex = 0;
             this.labelControl1.Text = "Dish Code:";
             // 
+            // txtLargePrice
+            // 
+            this.txtLargePrice.Location = new System.Drawing.Point(154, 180);
+            this.txtLargePrice.Name = "txtLargePrice";
+            this.txtLargePrice.Properties.Mask.EditMask = "f";
+            this.txtLargePrice.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Numeric;
+            this.txtLargePrice.Size = new System.Drawing.Size(147, 24);
+            this.txtLargePrice.TabIndex = 26;
+            // 
+            // labelControl5
+            // 
+            this.labelControl5.Location = new System.Drawing.Point(72, 186);
+            this.labelControl5.Name = "labelControl5";
+            this.labelControl5.Size = new System.Drawing.Size(76, 18);
+            this.labelControl5.TabIndex = 25;
+            this.labelControl5.Text = "Large Price:";
+            // 
+            // txtSmallPrice
+            // 
+            this.txtSmallPrice.Location = new System.Drawing.Point(154, 215);
+            this.txtSmallPrice.Name = "txtSmallPrice";
+            this.txtSmallPrice.Properties.Mask.EditMask = "f";
+            this.txtSmallPrice.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Numeric;
+            this.txtSmallPrice.Size = new System.Drawing.Size(147, 24);
+            this.txtSmallPrice.TabIndex = 28;
+            // 
+            // labelControl6
+            // 
+            this.labelControl6.Location = new System.Drawing.Point(75, 221);
+            this.labelControl6.Name = "labelControl6";
+            this.labelControl6.Size = new System.Drawing.Size(73, 18);
+            this.labelControl6.TabIndex = 27;
+            this.labelControl6.Text = "Small Price:";
+            // 
+            // MiLargePrice
+            // 
+            this.MiLargePrice.Caption = "Large Price";
+            this.MiLargePrice.FieldName = "MiLargePrice";
+            this.MiLargePrice.Name = "MiLargePrice";
+            // 
+            // MiSmallPrice
+            // 
+            this.MiSmallPrice.Caption = "Small Price";
+            this.MiSmallPrice.FieldName = "MiSmallPrice";
+            this.MiSmallPrice.Name = "MiSmallPrice";
+            // 
             // FrmTaMenuItem
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(655, 615);
+            this.ClientSize = new System.Drawing.Size(655, 659);
             this.Controls.Add(this.panelControl1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "FrmTaMenuItem";
@@ -626,6 +686,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.txtEngName.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtDispPosition.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtDishCode.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtLargePrice.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtSmallPrice.Properties)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -684,5 +746,11 @@
         private DevExpress.XtraEditors.LabelControl labelControl4;
         private DevExpress.XtraEditors.LookUpEdit lueMenuSet;
         private DevExpress.XtraGrid.Columns.GridColumn MiMenuCateID;
+        private DevExpress.XtraEditors.TextEdit txtSmallPrice;
+        private DevExpress.XtraEditors.LabelControl labelControl6;
+        private DevExpress.XtraEditors.TextEdit txtLargePrice;
+        private DevExpress.XtraEditors.LabelControl labelControl5;
+        private DevExpress.XtraGrid.Columns.GridColumn MiLargePrice;
+        private DevExpress.XtraGrid.Columns.GridColumn MiSmallPrice;
     }
 }
