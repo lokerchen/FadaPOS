@@ -66,7 +66,8 @@ namespace SuperPOS.Common
             systemData.GetTaSubMenuDetail();
             //获得MenuItem和Menu Category按钮字体大小
             systemData.GetTaSysFont();
-
+            //获得Change Price时修改菜名的后缀
+            systemData.GetTaChangeMenuAttr();
             #region Takeaway
             //Department Code
             systemData.GetTaDeptCode();
