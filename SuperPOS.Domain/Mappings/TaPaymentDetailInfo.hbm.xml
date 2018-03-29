@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2"
+                   assembly="SuperPOS"
+                   namespace="SuperPOS.Domain">
+
+  <class name="SuperPOS.Domain.Entities.TaPaymentDetailInfo, SuperPOS.Domain" table="Ta_Payment_Detail">
+    <id name="ID" column="ID" type="System.Int32" unsaved-value="0">
+      <generator class="native" />
+    </id>
+
+    <property name="CheckOrder" column="CheckOrder" type="System.String" />
+    <property name="PayType" column="PayType" type="System.String" />
+    <property name="PayAmount" column="PayAmount" type="System.String" />
+    <property name="StaffID" column="StaffID" type="System.Int32" />
+    <property name="PayTime" column="PayTime" type="System.String" />
+  </class>
+
+</hibernate-mapping>

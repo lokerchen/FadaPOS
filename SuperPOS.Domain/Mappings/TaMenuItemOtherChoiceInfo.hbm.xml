@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2"
+                   assembly="SuperPOS"
+                   namespace="SuperPOS.Domain">
+
+  <class name="SuperPOS.Domain.Entities.TaMenuItemOtherChoiceInfo, SuperPOS.Domain" table="Ta_OtherChoice">
+    <id name="ID" column="ID" type="System.Int32" unsaved-value="0">
+      <generator class="native" />
+    </id>
+
+    <property name="MiEngName" column="MiEngName" type="System.String" />
+    <property name="MiOtherName" column="MiOtherName" type="System.String" />
+    <property name="MiPrice" column="MiPrice" type="System.String" />
+    <property name="IsAutoAppend" column="IsAutoAppend" type="System.String" />
+    <property name="IsEnableChoice" column="IsEnableChoice" type="System.String" />
+    <property name="MiID" column="MiID" type="System.Int32" />
+    <property name="MiType" column="MiType" type="System.Int32" />
+  </class>
+
+</hibernate-mapping>

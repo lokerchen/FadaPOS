@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2"
+                   assembly="SuperPOS"
+                   namespace="SuperPOS.Domain">
+
+  <class name="SuperPOS.Domain.Entities.TaSubMenuDetailInfo, SuperPOS.Domain" table="Ta_SubMenu_Detail">
+    <id name="ID" column="ID" type="System.Int32" unsaved-value="0">
+      <generator class="native" />
+    </id>
+
+    <property name="smID" column="smID" type="System.Int32" />
+    <property name="EngName" column="EngName" type="System.String" />
+    <property name="OtherName" column="OtherName" type="System.String" />
+    <property name="Price" column="Price" type="System.String" />
+  </class>
+
+</hibernate-mapping>

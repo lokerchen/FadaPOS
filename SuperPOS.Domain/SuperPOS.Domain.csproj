@@ -1,0 +1,170 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{A9C427D6-A943-4E10-A093-C52E3BCC6888}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>SuperPOS.Domain</RootNamespace>
+    <AssemblyName>SuperPOS.Domain</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Entities\CompAddrInfo.cs" />
+    <Compile Include="Entities\DataManagerInfo.cs" />
+    <Compile Include="Entities\GenSetInfo.cs" />
+    <Compile Include="Entities\KeypadInfo.cs" />
+    <Compile Include="Entities\ShopDetailInfo.cs" />
+    <Compile Include="Entities\SysPrtSetInfo.cs" />
+    <Compile Include="Entities\SysValueInfo.cs" />
+    <Compile Include="Entities\TaCashDrawSetInfo.cs" />
+    <Compile Include="Entities\TaCheckOrderInfo.cs" />
+    <Compile Include="Entities\TaCustomerInfo.cs" />
+    <Compile Include="Entities\TaDeliveryNoteInfo.cs" />
+    <Compile Include="Entities\TaDeliverySetDetailInfo.cs" />
+    <Compile Include="Entities\TaDeliverySetInfo.cs" />
+    <Compile Include="Entities\TaDeptCodeInfo.cs" />
+    <Compile Include="Entities\TaDiscountInfo.cs" />
+    <Compile Include="Entities\TaDriverInfo.cs" />
+    <Compile Include="Entities\TaExtraMenuInfo.cs" />
+    <Compile Include="Entities\TaExtraResult.cs" />
+    <Compile Include="Entities\TaFreeFoodInfo.cs" />
+    <Compile Include="Entities\TaMenuCateInfo.cs" />
+    <Compile Include="Entities\TaMenuItemInfo.cs" />
+    <Compile Include="Entities\TaMenuItemOtherChoiceInfo.cs" />
+    <Compile Include="Entities\TaMenuSetInfo.cs" />
+    <Compile Include="Entities\TaPaymentDetailInfo.cs" />
+    <Compile Include="Entities\TaPaymentInfo.cs" />
+    <Compile Include="Entities\TaPaymentTypeInfo.cs" />
+    <Compile Include="Entities\TaPostcodeChargeInfo.cs" />
+    <Compile Include="Entities\TaPostcodeSetInfo.cs" />
+    <Compile Include="Entities\TaPostcodeZoneInfo.cs" />
+    <Compile Include="Entities\TAShiftCodeInfo.cs" />
+    <Compile Include="Entities\TaOrderItemInfo.cs" />
+    <Compile Include="Entities\TaSubMenuDetailInfo.cs" />
+    <Compile Include="Entities\TaSubMenuInfo.cs" />
+    <Compile Include="Entities\TaSysFontInfo.cs" />
+    <Compile Include="Entities\UsrAuthDetailInfo.cs" />
+    <Compile Include="Entities\UsrAuthRuleInfo.cs" />
+    <Compile Include="Entities\UsrAuthAccessInfo.cs" />
+    <Compile Include="Entities\UsrAuthorityInfo.cs" />
+    <Compile Include="Entities\UsrBaseInfo.cs" />
+    <Compile Include="Entities\UsrAuthGroupInfo.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Mappings\TAShiftCodeInfo.hbm.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Mappings\UsrBaseInfo.hbm.xml">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Mappings\UsrAuthDetailInfo.hbm.xml" />
+    <EmbeddedResource Include="Mappings\UsrAuthRuleInfo.hbm.xml" />
+    <EmbeddedResource Include="Mappings\UsrAuthAccessInfo.hbm.xml" />
+    <EmbeddedResource Include="Mappings\UsrAuthGroupInfo.hbm.xml" />
+    <EmbeddedResource Include="Mappings\CompAddrInfo.hbm.xml" />
+    <EmbeddedResource Include="Mappings\ShopDetailInfo.hbm.xml" />
+    <EmbeddedResource Include="Mappings\GenSetInfo.hbm.xml" />
+    <EmbeddedResource Include="Mappings\KeypadInfo.hbm.xml" />
+    <EmbeddedResource Include="Mappings\SysPrtSetInfo.hbm.xml" />
+    <EmbeddedResource Include="Mappings\TaDeptCodeInfo.hbm.xml" />
+    <EmbeddedResource Include="Mappings\TaMenuSetInfo.hbm.xml" />
+    <EmbeddedResource Include="Mappings\TaMenuCateInfo.hbm.xml" />
+    <EmbeddedResource Include="Mappings\TaMenuItemInfo.hbm.xml" />
+    <EmbeddedResource Include="Mappings\TaMenuItemOtherChoiceInfo.hbm.xml" />
+    <EmbeddedResource Include="Mappings\TaCheckOrderInfo.hbm.xml" />
+    <EmbeddedResource Include="Mappings\TaOrderItemInfo.hbm.xml" />
+    <EmbeddedResource Include="Mappings\SysValueInfo.hbm.xml" />
+    <EmbeddedResource Include="Mappings\TaExtraMenuInfo.hbm.xml">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Mappings\TaPaymentTypeInfo.hbm.xml" />
+    <EmbeddedResource Include="Mappings\TaDiscountInfo.hbm.xml" />
+    <EmbeddedResource Include="Mappings\TaDeliveryNoteInfo.hbm.xml" />
+    <EmbeddedResource Include="Mappings\TaDriverInfo.hbm.xml" />
+    <EmbeddedResource Include="Mappings\TaCustomerInfo.hbm.xml" />
+    <EmbeddedResource Include="Mappings\TaPaymentDetailInfo.hbm.xml" />
+    <EmbeddedResource Include="Mappings\TaCashDrawSetInfo.hbm.xml" />
+    <EmbeddedResource Include="Mappings\DataManagerInfo.hbm.xml" />
+    <EmbeddedResource Include="Mappings\TaFreeFoodInfo.hbm.xml" />
+    <EmbeddedResource Include="Mappings\TaDeliverySetDetailInfo.hbm.xml" />
+    <EmbeddedResource Include="Mappings\TaDeliverySetInfo.hbm.xml" />
+    <Content Include="Mappings\TaPaymentInfo.hbm.xml" />
+    <EmbeddedResource Include="Mappings\TaPostcodeChargeInfo.hbm.xml" />
+    <EmbeddedResource Include="Mappings\TaPostcodeZoneInfo.hbm.xml" />
+    <EmbeddedResource Include="Mappings\TaPostcodeSetInfo.hbm.xml" />
+    <EmbeddedResource Include="Mappings\TaSubMenuDetailInfo.hbm.xml" />
+    <EmbeddedResource Include="Mappings\TaSubMenuInfo.hbm.xml" />
+    <EmbeddedResource Include="Mappings\TaSysFontInfo.hbm.xml" />
+    <Content Include="Mappings\UsrAuthorityInfo.hbm.xml" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

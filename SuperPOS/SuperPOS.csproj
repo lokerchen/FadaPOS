@@ -1,0 +1,603 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{3B8CAC6A-54A5-4BF3-B8A7-361A31532E7D}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>SuperPOS</RootNamespace>
+    <AssemblyName>SuperPOS</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="DevExpress.BonusSkins.v15.2" />
+    <Reference Include="DevExpress.Data.v15.2" />
+    <Reference Include="DevExpress.Office.v15.2.Core, Version=15.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Pdf.v15.2.Core, Version=15.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Printing.v15.2.Core, Version=15.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.RichEdit.v15.2.Core, Version=15.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Utils.v15.2" />
+    <Reference Include="DevExpress.Sparkline.v15.2.Core" />
+    <Reference Include="DevExpress.XtraBars.v15.2, Version=15.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraEditors.v15.2" />
+    <Reference Include="DevExpress.XtraGrid.v15.2, Version=15.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraLayout.v15.2, Version=15.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraNavBar.v15.2, Version=15.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraPrinting.v15.2, Version=15.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraRichEdit.v15.2, Version=15.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraTreeList.v15.2, Version=15.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="Iesi.Collections, Version=1.0.1.0, Culture=neutral, PublicKeyToken=aa95f207798dfdb4, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Debug\Iesi.Collections.dll</HintPath>
+    </Reference>
+    <Reference Include="linq2db, Version=1.0.7.1, Culture=neutral, PublicKeyToken=f19f8aed7feff67e, processorArchitecture=MSIL">
+      <HintPath>..\packages\linq2db.1.0.7.1\lib\net45\linq2db.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="log4net, Version=2.0.8.0, Culture=neutral, PublicKeyToken=669e0ddf0bb1aa2a, processorArchitecture=MSIL">
+      <HintPath>..\packages\log4net.2.0.8\lib\net45-full\log4net.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="NHibernate, Version=3.4.0.0, Culture=neutral, PublicKeyToken=aa95f207798dfdb4, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Debug\NHibernate.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.SQLite, Version=1.0.104.0, Culture=neutral, PublicKeyToken=db937bc2d44ff139, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Data.SQLite.Core.1.0.104.0\lib\net451\System.Data.SQLite.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Management" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Common\AutoSizeFormClass.cs" />
+    <Compile Include="Common\CommonDAL.cs" />
+    <Compile Include="Common\CommonData.cs" />
+    <Compile Include="Common\CommonTool.cs" />
+    <Compile Include="Common\EntityControl.cs" />
+    <Compile Include="Common\LogHelper.cs" />
+    <Compile Include="Common\PubComm.cs" />
+    <Compile Include="Common\PrimaryScreen .cs" />
+    <Compile Include="Common\SessionFactory.cs" />
+    <Compile Include="Common\SystemData.cs" />
+    <Compile Include="Print\PrtCommon.cs" />
+    <Compile Include="Print\PrtPrint.cs" />
+    <Compile Include="Print\PrtStatic.cs" />
+    <Compile Include="UI\FrmDesktopArea.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\FrmDesktopArea.Designer.cs">
+      <DependentUpon>FrmDesktopArea.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\FrmInit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\FrmInit.Designer.cs">
+      <DependentUpon>FrmInit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="UI\FrmLogon.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\FrmLogon.Designer.cs">
+      <DependentUpon>FrmLogon.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\FrmShow.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\FrmShow.Designer.cs">
+      <DependentUpon>FrmShow.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\FrmTaAdminMain.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\FrmTaAdminMain.Designer.cs">
+      <DependentUpon>FrmTaAdminMain.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Phone\brichiperr.cs" />
+    <Compile Include="UI\Phone\BriSDKLib.cs" />
+    <Compile Include="UI\Sys\FrmCompAddr.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\Sys\FrmCompAddr.Designer.cs">
+      <DependentUpon>FrmCompAddr.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Sys\FrmDataManager.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\Sys\FrmDataManager.Designer.cs">
+      <DependentUpon>FrmDataManager.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Sys\FrmGenSet.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\Sys\FrmGenSet.Designer.cs">
+      <DependentUpon>FrmGenSet.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Sys\FrmKeyPadSet.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\Sys\FrmKeyPadSet.Designer.cs">
+      <DependentUpon>FrmKeyPadSet.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Sys\FrmPrtSet.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\Sys\FrmPrtSet.Designer.cs">
+      <DependentUpon>FrmPrtSet.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Sys\FrmShiftCode.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\Sys\FrmShiftCode.Designer.cs">
+      <DependentUpon>FrmShiftCode.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Sys\FrmShiftCodeDetail.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\Sys\FrmShiftCodeDetail.Designer.cs">
+      <DependentUpon>FrmShiftCodeDetail.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Sys\FrmShopDetail.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\Sys\FrmShopDetail.Designer.cs">
+      <DependentUpon>FrmShopDetail.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Sys\FrmTaSysFont.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\Sys\FrmTaSysFont.Designer.cs">
+      <DependentUpon>FrmTaSysFont.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Sys\FrmUsrAuthGrp.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\Sys\FrmUsrAuthGrp.Designer.cs">
+      <DependentUpon>FrmUsrAuthGrp.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Sys\FrmUsrAuthRule.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\Sys\FrmUsrAuthRule.Designer.cs">
+      <DependentUpon>FrmUsrAuthRule.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\TA\FrmCaller.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\TA\FrmCaller.Designer.cs">
+      <DependentUpon>FrmCaller.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\TA\FrmTaAppendItem.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\TA\FrmTaAppendItem.Designer.cs">
+      <DependentUpon>FrmTaAppendItem.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\TA\FrmTaCashDrawSet.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\TA\FrmTaCashDrawSet.Designer.cs">
+      <DependentUpon>FrmTaCashDrawSet.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\TA\FrmTaChangeOrderType.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\TA\FrmTaChangeOrderType.Designer.cs">
+      <DependentUpon>FrmTaChangeOrderType.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\TA\FrmTaChangePrice.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\TA\FrmTaChangePrice.Designer.cs">
+      <DependentUpon>FrmTaChangePrice.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\TA\FrmTaCustomerInfo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\TA\FrmTaCustomerInfo.Designer.cs">
+      <DependentUpon>FrmTaCustomerInfo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\TA\FrmTaDeliveryNote.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\TA\FrmTaDeliveryNote.Designer.cs">
+      <DependentUpon>FrmTaDeliveryNote.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\TA\FrmTaDeliverySet.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\TA\FrmTaDeliverySet.Designer.cs">
+      <DependentUpon>FrmTaDeliverySet.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\TA\FrmTaDiscount.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\TA\FrmTaDiscount.Designer.cs">
+      <DependentUpon>FrmTaDiscount.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\TA\FrmTaDriver.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\TA\FrmTaDriver.Designer.cs">
+      <DependentUpon>FrmTaDriver.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\TA\FrmTaExtraMenuEdit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\TA\FrmTaExtraMenuEdit.Designer.cs">
+      <DependentUpon>FrmTaExtraMenuEdit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\TA\FrmTaDeptCode.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\TA\FrmTaDeptCode.Designer.cs">
+      <DependentUpon>FrmTaDeptCode.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Sys\FrmUsrSet.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\Sys\FrmUsrSet.Designer.cs">
+      <DependentUpon>FrmUsrSet.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\TA\FrmTaFreeItem.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\TA\FrmTaFreeItem.Designer.cs">
+      <DependentUpon>FrmTaFreeItem.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\TA\FrmTaIngredMode.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\TA\FrmTaIngredMode.Designer.cs">
+      <DependentUpon>FrmTaIngredMode.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\TA\FrmTaKeyPad.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\TA\FrmTaKeyPad.Designer.cs">
+      <DependentUpon>FrmTaKeyPad.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\TA\FrmTaMain.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\TA\FrmTaMain.Designer.cs">
+      <DependentUpon>FrmTaMain.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\TA\FrmTaMenuCate.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\TA\FrmTaMenuCate.Designer.cs">
+      <DependentUpon>FrmTaMenuCate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\TA\FrmTaMenuItem.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\TA\FrmTaMenuItem.Designer.cs">
+      <DependentUpon>FrmTaMenuItem.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\TA\FrmTaMenuItemDetail.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\TA\FrmTaMenuItemDetail.Designer.cs">
+      <DependentUpon>FrmTaMenuItemDetail.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\TA\FrmTaMenuSelect.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\TA\FrmTaMenuSelect.Designer.cs">
+      <DependentUpon>FrmTaMenuSelect.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\TA\FrmTaMenuSet.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\TA\FrmTaMenuSet.Designer.cs">
+      <DependentUpon>FrmTaMenuSet.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\TA\FrmTAOtherChoice.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\TA\FrmTAOtherChoice.Designer.cs">
+      <DependentUpon>FrmTAOtherChoice.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\TA\FrmTaPayment.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\TA\FrmTaPayment.Designer.cs">
+      <DependentUpon>FrmTaPayment.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\TA\FrmTaPaymentType.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\TA\FrmTaPaymentType.Designer.cs">
+      <DependentUpon>FrmTaPaymentType.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\TA\FrmTaPendOrder.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\TA\FrmTaPendOrder.Designer.cs">
+      <DependentUpon>FrmTaPendOrder.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\TA\FrmTaPostCode.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\TA\FrmTaPostCode.Designer.cs">
+      <DependentUpon>FrmTaPostCode.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\TA\FrmTaPostCodeSet.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\TA\FrmTaPostCodeSet.Designer.cs">
+      <DependentUpon>FrmTaPostCodeSet.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\TA\FrmTaSearchFoodItem.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\TA\FrmTaSearchFoodItem.Designer.cs">
+      <DependentUpon>FrmTaSearchFoodItem.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\TA\FrmTaSubMenu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\TA\FrmTaSubMenu.Designer.cs">
+      <DependentUpon>FrmTaSubMenu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\TA\FrmTaSubMenuDetail.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\TA\FrmTaSubMenuDetail.Designer.cs">
+      <DependentUpon>FrmTaSubMenuDetail.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="Properties\licenses.licx" />
+    <EmbeddedResource Include="UI\FrmDesktopArea.resx">
+      <DependentUpon>FrmDesktopArea.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\FrmInit.resx">
+      <DependentUpon>FrmInit.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="UI\FrmLogon.resx">
+      <DependentUpon>FrmLogon.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\FrmShow.resx">
+      <DependentUpon>FrmShow.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\FrmTaAdminMain.resx">
+      <DependentUpon>FrmTaAdminMain.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Sys\FrmCompAddr.resx">
+      <DependentUpon>FrmCompAddr.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Sys\FrmDataManager.resx">
+      <DependentUpon>FrmDataManager.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Sys\FrmGenSet.resx">
+      <DependentUpon>FrmGenSet.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Sys\FrmKeyPadSet.resx">
+      <DependentUpon>FrmKeyPadSet.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Sys\FrmPrtSet.resx">
+      <DependentUpon>FrmPrtSet.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Sys\FrmShiftCode.resx">
+      <DependentUpon>FrmShiftCode.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Sys\FrmShiftCodeDetail.resx">
+      <DependentUpon>FrmShiftCodeDetail.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Sys\FrmShopDetail.resx">
+      <DependentUpon>FrmShopDetail.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Sys\FrmTaSysFont.resx">
+      <DependentUpon>FrmTaSysFont.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Sys\FrmUsrAuthGrp.resx">
+      <DependentUpon>FrmUsrAuthGrp.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Sys\FrmUsrAuthRule.resx">
+      <DependentUpon>FrmUsrAuthRule.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\TA\FrmCaller.resx">
+      <DependentUpon>FrmCaller.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\TA\FrmTaAppendItem.resx">
+      <DependentUpon>FrmTaAppendItem.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\TA\FrmTaCashDrawSet.resx">
+      <DependentUpon>FrmTaCashDrawSet.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\TA\FrmTaChangeOrderType.resx">
+      <DependentUpon>FrmTaChangeOrderType.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\TA\FrmTaChangePrice.resx">
+      <DependentUpon>FrmTaChangePrice.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\TA\FrmTaCustomerInfo.resx">
+      <DependentUpon>FrmTaCustomerInfo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\TA\FrmTaDeliveryNote.resx">
+      <DependentUpon>FrmTaDeliveryNote.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\TA\FrmTaDeliverySet.resx">
+      <DependentUpon>FrmTaDeliverySet.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\TA\FrmTaDiscount.resx">
+      <DependentUpon>FrmTaDiscount.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\TA\FrmTaDriver.resx">
+      <DependentUpon>FrmTaDriver.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\TA\FrmTaExtraMenuEdit.resx">
+      <DependentUpon>FrmTaExtraMenuEdit.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\TA\FrmTaDeptCode.resx">
+      <DependentUpon>FrmTaDeptCode.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Sys\FrmUsrSet.resx">
+      <DependentUpon>FrmUsrSet.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\TA\FrmTaFreeItem.resx">
+      <DependentUpon>FrmTaFreeItem.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\TA\FrmTaIngredMode.resx">
+      <DependentUpon>FrmTaIngredMode.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\TA\FrmTaKeyPad.resx">
+      <DependentUpon>FrmTaKeyPad.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\TA\FrmTaMain.resx">
+      <DependentUpon>FrmTaMain.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\TA\FrmTaMenuCate.resx">
+      <DependentUpon>FrmTaMenuCate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\TA\FrmTaMenuItem.resx">
+      <DependentUpon>FrmTaMenuItem.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\TA\FrmTaMenuItemDetail.resx">
+      <DependentUpon>FrmTaMenuItemDetail.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\TA\FrmTaMenuSelect.resx">
+      <DependentUpon>FrmTaMenuSelect.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\TA\FrmTaMenuSet.resx">
+      <DependentUpon>FrmTaMenuSet.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\TA\FrmTAOtherChoice.resx">
+      <DependentUpon>FrmTAOtherChoice.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\TA\FrmTaPayment.resx">
+      <DependentUpon>FrmTaPayment.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\TA\FrmTaPaymentType.resx">
+      <DependentUpon>FrmTaPaymentType.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\TA\FrmTaPendOrder.resx">
+      <DependentUpon>FrmTaPendOrder.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\TA\FrmTaPostCode.resx">
+      <DependentUpon>FrmTaPostCode.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\TA\FrmTaPostCodeSet.resx">
+      <DependentUpon>FrmTaPostCodeSet.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\TA\FrmTaSearchFoodItem.resx">
+      <DependentUpon>FrmTaSearchFoodItem.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\TA\FrmTaSubMenu.resx">
+      <DependentUpon>FrmTaSubMenu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\TA\FrmTaSubMenuDetail.resx">
+      <DependentUpon>FrmTaSubMenuDetail.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="LinqToDB.Templates\!ReadMe.LinqToDB.md" />
+    <None Include="LinqToDB.Templates\DataAnnotations.ttinclude" />
+    <None Include="LinqToDB.Templates\DataModel.ttinclude" />
+    <None Include="LinqToDB.Templates\EditableObject.ttinclude" />
+    <None Include="LinqToDB.Templates\LinqToDB.Access.ttinclude" />
+    <None Include="LinqToDB.Templates\LinqToDB.DB2.ttinclude" />
+    <None Include="LinqToDB.Templates\LinqToDB.Firebird.ttinclude" />
+    <None Include="LinqToDB.Templates\LinqToDB.Informix.ttinclude" />
+    <None Include="LinqToDB.Templates\LinqToDB.MySql.ttinclude" />
+    <None Include="LinqToDB.Templates\LinqToDB.Oracle.ttinclude" />
+    <None Include="LinqToDB.Templates\LinqToDB.PostgreSQL.ttinclude" />
+    <None Include="LinqToDB.Templates\LinqToDB.SqlCe.ttinclude" />
+    <None Include="LinqToDB.Templates\LinqToDB.SQLite.Tools.ttinclude" />
+    <None Include="LinqToDB.Templates\LinqToDB.SQLite.ttinclude" />
+    <None Include="LinqToDB.Templates\LinqToDB.SqlServer.ttinclude" />
+    <None Include="LinqToDB.Templates\LinqToDB.Sybase.ttinclude" />
+    <None Include="LinqToDB.Templates\LinqToDB.Tools.ttinclude" />
+    <None Include="LinqToDB.Templates\LinqToDB.ttinclude" />
+    <None Include="LinqToDB.Templates\NotifyPropertyChanged.ttinclude" />
+    <None Include="LinqToDB.Templates\PluralizationService.ttinclude" />
+    <None Include="LinqToDB.Templates\T4Model.ttinclude" />
+    <None Include="LinqToDB.Templates\Validation.ttinclude" />
+    <None Include="log4net.config">
+      <SubType>Designer</SubType>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="hibernate.cfg.xml" />
+    <Content Include="LinqToDB.Templates\CopyMe.SQLite.tt.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="DAL\" />
+    <Folder Include="img\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\SuperPOS.Domain\SuperPOS.Domain.csproj">
+      <Project>{a9c427d6-a943-4e10-a093-c52e3bcc6888}</Project>
+      <Name>SuperPOS.Domain</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Import Project="..\packages\System.Data.SQLite.Core.1.0.104.0\build\net451\System.Data.SQLite.Core.targets" Condition="Exists('..\packages\System.Data.SQLite.Core.1.0.104.0\build\net451\System.Data.SQLite.Core.targets')" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>这台计算机上缺少此项目引用的 NuGet 程序包。使用“NuGet 程序包还原”可下载这些程序包。有关更多信息，请参见 http://go.microsoft.com/fwlink/?LinkID=322105。缺少的文件是 {0}。</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\System.Data.SQLite.Core.1.0.104.0\build\net451\System.Data.SQLite.Core.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\System.Data.SQLite.Core.1.0.104.0\build\net451\System.Data.SQLite.Core.targets'))" />
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

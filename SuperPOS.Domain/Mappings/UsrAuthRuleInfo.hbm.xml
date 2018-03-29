@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2"
+                   assembly="SuperPOS"
+                   namespace="SuperPOS.Domain">
+
+  <class name="SuperPOS.Domain.Entities.UsrAuthRuleInfo, SuperPOS.Domain" table="Usr_AuthRule">
+    <id name="ID" column="ID" type="System.Int32" unsaved-value="0">
+      <generator class="native" />
+    </id>
+
+    <property name="GrpID" column="GrpID" type="System.String" />
+    <property name="AccessDept" column="AccessDept" type="System.String" />
+    <property name="AccessDetail" column="AccessDetail" type="System.String" />
+    <property name="AccessBtnID" column="AccessBtnID" type="System.String" />
+    <property name="IsAccess" column="IsAccess" type="System.String" />
+  </class>
+
+</hibernate-mapping>

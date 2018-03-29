@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2"
+                   assembly="SuperPOS"
+                   namespace="SuperPOS.Domain">
+
+  <class name="SuperPOS.Domain.Entities.TaSysFontInfo, SuperPOS.Domain" table="Ta_Sys_Font">
+    <id name="ID" column="ID" type="System.Int32" unsaved-value="0">
+      <generator class="native" />
+    </id>
+
+    <property name="miFont" column="miFont" type="System.String" />
+    <property name="cateFont" column="cateFont" type="System.String" />
+  </class>
+
+</hibernate-mapping>

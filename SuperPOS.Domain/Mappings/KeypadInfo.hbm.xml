@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2"
+                   assembly="SuperPOS"
+                   namespace="SuperPOS.Domain">
+
+  <class name="SuperPOS.Domain.Entities.KeypadInfo, SuperPOS.Domain" table="Gen_Keypad">
+    <id name="ID" column="ID" type="System.Int32" unsaved-value="0">
+      <generator class="native" />
+    </id>
+
+    <property name="KeyName" column="KeyName" type="System.String" />
+    <property name="KeyCode" column="KeyCode" type="System.String" />
+  </class>
+
+</hibernate-mapping>

@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2"
+                   assembly="SuperPOS"
+                   namespace="SuperPOS.Domain">
+
+  <class name="SuperPOS.Domain.Entities.TaDriverInfo, SuperPOS.Domain" table="Ta_Driver">
+    <id name="ID" column="ID" type="System.Int32" unsaved-value="0">
+      <generator class="native" />
+    </id>
+
+    <property name="DriverName" column="DriverName" type="System.String" />
+    <property name="DriverNumber" column="DriverNumber" type="System.String" />
+    <property name="DriverWorkDay" column="DriverWorkDay" type="System.String" />
+  </class>
+
+</hibernate-mapping>

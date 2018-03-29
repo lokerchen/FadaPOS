@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2"
+                   assembly="SuperPOS"
+                   namespace="SuperPOS.Domain">
+
+  <class name="SuperPOS.Domain.Entities.UsrBaseInfo, SuperPOS.Domain" table="Usr_Base">
+    <id name="ID" column="ID" type="System.Int32" unsaved-value="0">
+      <generator class="native" />
+    </id>
+    
+    <property name="UsrName" column="UsrName" type="System.String" />
+    <property name="UsrPwd" column="UsrPwd" type="System.String" />
+    <property name="CreateBy" column="CreateBy" type="System.String" />
+    <property name="CreateTime" column="CreateTime" type="System.String" />
+    <property name="UsrRmk" column="UsrRmk" type="System.String" />
+  </class>
+
+</hibernate-mapping>
