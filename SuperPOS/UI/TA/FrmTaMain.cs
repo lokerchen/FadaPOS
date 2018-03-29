@@ -1594,9 +1594,12 @@ namespace SuperPOS.UI.TA
 
                     string sNewPrice = dPrice.ToString();
 
+                    string sNewName = "";
+
                     if (frmTaChangePrice.ShowDialog() == DialogResult.OK)
                     {
                         sNewPrice = frmTaChangePrice.NewPrice;
+                        sNewName = frmTaChangePrice.MenuAttr;
 
                         if (!string.IsNullOrEmpty(sNewPrice))
                         {
@@ -1613,6 +1616,11 @@ namespace SuperPOS.UI.TA
                                 treeListOrder.FocusedNode["ItemPrice"] = Convert.ToDecimal(sNewPrice);
                                 treeListOrder.FocusedNode["ItemTotalPrice"] = Convert.ToDecimal(sNewPrice);
                             }
+                        }
+
+                        if (!string.IsNullOrEmpty(sNewName))
+                        {
+                            treeListOrder.FocusedNode["ItemDishName"] += sNewName;
                         }
                     }
                 }

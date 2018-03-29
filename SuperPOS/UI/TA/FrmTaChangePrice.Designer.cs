@@ -82,6 +82,9 @@
             this.btnAttr13 = new DevExpress.XtraEditors.SimpleButton();
             this.btnAttr20 = new DevExpress.XtraEditors.SimpleButton();
             this.btnAttr19 = new DevExpress.XtraEditors.SimpleButton();
+            this.btnLarge = new DevExpress.XtraEditors.SimpleButton();
+            this.btnSmall = new DevExpress.XtraEditors.SimpleButton();
+            this.btnReg = new DevExpress.XtraEditors.SimpleButton();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
             this.panelControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl4)).BeginInit();
@@ -102,6 +105,9 @@
             // 
             // panelControl1
             // 
+            this.panelControl1.Controls.Add(this.btnReg);
+            this.panelControl1.Controls.Add(this.btnSmall);
+            this.panelControl1.Controls.Add(this.btnLarge);
             this.panelControl1.Controls.Add(this.btnSave);
             this.panelControl1.Controls.Add(this.btnExit);
             this.panelControl1.Controls.Add(this.btnFree);
@@ -123,9 +129,9 @@
             this.btnSave.Appearance.Options.UseFont = true;
             this.btnSave.Appearance.Options.UseForeColor = true;
             this.btnSave.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
-            this.btnSave.Location = new System.Drawing.Point(225, 385);
+            this.btnSave.Location = new System.Drawing.Point(461, 385);
             this.btnSave.Name = "btnSave";
-            this.btnSave.Size = new System.Drawing.Size(129, 45);
+            this.btnSave.Size = new System.Drawing.Size(63, 45);
             this.btnSave.TabIndex = 128;
             this.btnSave.Text = "Save";
             this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
@@ -138,9 +144,9 @@
             this.btnExit.Appearance.Options.UseBackColor = true;
             this.btnExit.Appearance.Options.UseFont = true;
             this.btnExit.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
-            this.btnExit.Location = new System.Drawing.Point(422, 385);
+            this.btnExit.Location = new System.Drawing.Point(540, 385);
             this.btnExit.Name = "btnExit";
-            this.btnExit.Size = new System.Drawing.Size(129, 45);
+            this.btnExit.Size = new System.Drawing.Size(63, 45);
             this.btnExit.TabIndex = 127;
             this.btnExit.Text = "Exit";
             this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
@@ -153,7 +159,7 @@
             this.btnFree.Appearance.Options.UseBackColor = true;
             this.btnFree.Appearance.Options.UseFont = true;
             this.btnFree.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
-            this.btnFree.Location = new System.Drawing.Point(27, 385);
+            this.btnFree.Location = new System.Drawing.Point(314, 385);
             this.btnFree.Name = "btnFree";
             this.btnFree.Size = new System.Drawing.Size(129, 45);
             this.btnFree.TabIndex = 126;
@@ -497,23 +503,23 @@
             this.panelControl2.Controls.Add(this.labelControl1);
             this.panelControl2.Location = new System.Drawing.Point(7, 7);
             this.panelControl2.Name = "panelControl2";
-            this.panelControl2.Size = new System.Drawing.Size(370, 104);
+            this.panelControl2.Size = new System.Drawing.Size(596, 93);
             this.panelControl2.TabIndex = 4;
             // 
             // txtOtherName
             // 
             this.txtOtherName.Enabled = false;
-            this.txtOtherName.Location = new System.Drawing.Point(156, 58);
+            this.txtOtherName.Location = new System.Drawing.Point(156, 52);
             this.txtOtherName.Name = "txtOtherName";
             this.txtOtherName.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtOtherName.Properties.Appearance.Options.UseFont = true;
-            this.txtOtherName.Size = new System.Drawing.Size(203, 34);
+            this.txtOtherName.Size = new System.Drawing.Size(430, 34);
             this.txtOtherName.TabIndex = 7;
             // 
             // labelControl2
             // 
             this.labelControl2.Appearance.Font = new System.Drawing.Font("Tahoma", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelControl2.Location = new System.Drawing.Point(20, 61);
+            this.labelControl2.Location = new System.Drawing.Point(20, 55);
             this.labelControl2.Name = "labelControl2";
             this.labelControl2.Size = new System.Drawing.Size(130, 28);
             this.labelControl2.TabIndex = 6;
@@ -526,7 +532,7 @@
             this.txtEngName.Name = "txtEngName";
             this.txtEngName.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtEngName.Properties.Appearance.Options.UseFont = true;
-            this.txtEngName.Size = new System.Drawing.Size(203, 34);
+            this.txtEngName.Size = new System.Drawing.Size(430, 34);
             this.txtEngName.TabIndex = 5;
             // 
             // labelControl1
@@ -865,6 +871,55 @@
             this.btnAttr19.Size = new System.Drawing.Size(160, 39);
             this.btnAttr19.TabIndex = 147;
             // 
+            // btnLarge
+            // 
+            this.btnLarge.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btnLarge.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.btnLarge.Appearance.Font = new System.Drawing.Font("Tahoma", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnLarge.Appearance.ForeColor = System.Drawing.Color.White;
+            this.btnLarge.Appearance.Options.UseBackColor = true;
+            this.btnLarge.Appearance.Options.UseFont = true;
+            this.btnLarge.Appearance.Options.UseForeColor = true;
+            this.btnLarge.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
+            this.btnLarge.Location = new System.Drawing.Point(12, 385);
+            this.btnLarge.Name = "btnLarge";
+            this.btnLarge.Size = new System.Drawing.Size(80, 45);
+            this.btnLarge.TabIndex = 129;
+            this.btnLarge.Text = "Large";
+            this.btnLarge.Click += new System.EventHandler(this.btnLarge_Click);
+            // 
+            // btnSmall
+            // 
+            this.btnSmall.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btnSmall.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.btnSmall.Appearance.Font = new System.Drawing.Font("Tahoma", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSmall.Appearance.ForeColor = System.Drawing.Color.White;
+            this.btnSmall.Appearance.Options.UseBackColor = true;
+            this.btnSmall.Appearance.Options.UseFont = true;
+            this.btnSmall.Appearance.Options.UseForeColor = true;
+            this.btnSmall.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
+            this.btnSmall.Location = new System.Drawing.Point(98, 385);
+            this.btnSmall.Name = "btnSmall";
+            this.btnSmall.Size = new System.Drawing.Size(80, 45);
+            this.btnSmall.TabIndex = 130;
+            this.btnSmall.Text = "Small";
+            // 
+            // btnReg
+            // 
+            this.btnReg.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btnReg.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.btnReg.Appearance.Font = new System.Drawing.Font("Tahoma", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnReg.Appearance.ForeColor = System.Drawing.Color.White;
+            this.btnReg.Appearance.Options.UseBackColor = true;
+            this.btnReg.Appearance.Options.UseFont = true;
+            this.btnReg.Appearance.Options.UseForeColor = true;
+            this.btnReg.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
+            this.btnReg.Location = new System.Drawing.Point(184, 385);
+            this.btnReg.Name = "btnReg";
+            this.btnReg.Size = new System.Drawing.Size(80, 45);
+            this.btnReg.TabIndex = 131;
+            this.btnReg.Text = "Reg";
+            // 
             // FrmTaChangePrice
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 18F);
@@ -955,5 +1010,8 @@
         private DevExpress.XtraEditors.SimpleButton btnAttr3;
         private DevExpress.XtraEditors.SimpleButton btnAttr2;
         private DevExpress.XtraEditors.SimpleButton btnAttr1;
+        private DevExpress.XtraEditors.SimpleButton btnReg;
+        private DevExpress.XtraEditors.SimpleButton btnSmall;
+        private DevExpress.XtraEditors.SimpleButton btnLarge;
     }
 }

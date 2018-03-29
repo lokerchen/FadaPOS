@@ -19,6 +19,16 @@ namespace SuperPOS.UI.TA
 
         private string txtName = "";
 
+        private SimpleButton[] btnMenuAttr = new SimpleButton[20];
+
+        private string strMenuAttr = "";
+
+        public string MenuAttr
+        {
+            get { return strMenuAttr; }
+            set { MenuAttr = value; }
+        }
+
         public string NewPrice
         {
             get { return txtNewPrice.Text; }
@@ -153,6 +163,7 @@ namespace SuperPOS.UI.TA
 
         private void FrmTaChangePrice_Load(object sender, EventArgs e)
         {
+            #region 数字键盘
             btn0.Click += BtnNum_Click;
             btn1.Click += BtnNum_Click;
             btn2.Click += BtnNum_Click;
@@ -163,6 +174,45 @@ namespace SuperPOS.UI.TA
             btn7.Click += BtnNum_Click;
             btn8.Click += BtnNum_Click;
             btn9.Click += BtnNum_Click;
+            #endregion
+
+            #region 菜品修改后缀
+            btnMenuAttr[0] = btnAttr1;
+            btnMenuAttr[1] = btnAttr2;
+            btnMenuAttr[2] = btnAttr3;
+            btnMenuAttr[3] = btnAttr4;
+            btnMenuAttr[4] = btnAttr5;
+            btnMenuAttr[5] = btnAttr6;
+            btnMenuAttr[6] = btnAttr7;
+            btnMenuAttr[7] = btnAttr8;
+            btnMenuAttr[8] = btnAttr9;
+            btnMenuAttr[9] = btnAttr10;
+            btnMenuAttr[10] = btnAttr11;
+            btnMenuAttr[11] = btnAttr12;
+            btnMenuAttr[12] = btnAttr13;
+            btnMenuAttr[13] = btnAttr14;
+            btnMenuAttr[14] = btnAttr15;
+            btnMenuAttr[15] = btnAttr16;
+            btnMenuAttr[16] = btnAttr17;
+            btnMenuAttr[17] = btnAttr18;
+            btnMenuAttr[18] = btnAttr19;
+            btnMenuAttr[19] = btnAttr20;
+
+            new SystemData().GetTaChangeMenuAttr();
+
+            int i = 0;
+            foreach (var taChangeMenuAttrInfo in CommonData.TaChangeMenuAttr)
+            {
+                btnMenuAttr[i].Text = taChangeMenuAttrInfo.MenuAttr;
+                btnMenuAttr[i].Click += BtnAttr_Click;
+                i++;
+            }
+
+            for (int j = i; j < 20; j++)
+            {
+                btnMenuAttr[j].Visible = false;
+            }
+            #endregion
 
             var lstMi = CommonData.TaMenuItem.Where(s => s.MiDishCode.Equals(miID)).ToList();
 
@@ -332,6 +382,24 @@ namespace SuperPOS.UI.TA
             }
 
             txtDiscount.Text = @"0.00";
+        }
+
+        private void BtnAttr_Click(object sender, EventArgs e)
+        {
+
+            if (!string.IsNullOrEmpty(txtEngName.Text))
+            {
+                SimpleButton btn = (SimpleButton)sender;
+
+                strMenuAttr += @" - " + btn.Text;
+
+                txtEngName.Text += @" - " + btn.Text;
+            }
+        }
+
+        private void btnLarge_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
