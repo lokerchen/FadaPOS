@@ -93,6 +93,7 @@
             this.btnMi11 = new DevExpress.XtraEditors.SimpleButton();
             this.panelControl4 = new DevExpress.XtraEditors.PanelControl();
             this.panelControl5 = new DevExpress.XtraEditors.PanelControl();
+            this.btnEatIn = new DevExpress.XtraEditors.SimpleButton();
             this.btnCancel = new DevExpress.XtraEditors.SimpleButton();
             this.btnLanguage = new DevExpress.XtraEditors.SimpleButton();
             this.btnSaveOrder = new DevExpress.XtraEditors.SimpleButton();
@@ -146,7 +147,6 @@
             this.btnSearchMeal = new DevExpress.XtraEditors.SimpleButton();
             this.btnCustInfo = new DevExpress.XtraEditors.SimpleButton();
             this.btnIngredMode = new DevExpress.XtraEditors.SimpleButton();
-            this.btnEatIn = new DevExpress.XtraEditors.SimpleButton();
             ((System.ComponentModel.ISupportInitialize)(this.treeListOrder)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemMemoEdit1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
@@ -409,9 +409,9 @@
             // 
             this.labelControl6.Location = new System.Drawing.Point(5, 120);
             this.labelControl6.Name = "labelControl6";
-            this.labelControl6.Size = new System.Drawing.Size(79, 18);
+            this.labelControl6.Size = new System.Drawing.Size(85, 18);
             this.labelControl6.TabIndex = 5;
-            this.labelControl6.Text = "Dilivery Fee:";
+            this.labelControl6.Text = "Delivery Fee:";
             // 
             // labelControl5
             // 
@@ -1007,6 +1007,23 @@
             this.panelControl5.Name = "panelControl5";
             this.panelControl5.Size = new System.Drawing.Size(123, 433);
             this.panelControl5.TabIndex = 5;
+            // 
+            // btnEatIn
+            // 
+            this.btnEatIn.Appearance.BackColor = System.Drawing.Color.Red;
+            this.btnEatIn.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEatIn.Appearance.ForeColor = System.Drawing.Color.White;
+            this.btnEatIn.Appearance.Options.UseBackColor = true;
+            this.btnEatIn.Appearance.Options.UseFont = true;
+            this.btnEatIn.Appearance.Options.UseForeColor = true;
+            this.btnEatIn.Appearance.Options.UseTextOptions = true;
+            this.btnEatIn.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
+            this.btnEatIn.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
+            this.btnEatIn.Location = new System.Drawing.Point(7, 299);
+            this.btnEatIn.Name = "btnEatIn";
+            this.btnEatIn.Size = new System.Drawing.Size(111, 42);
+            this.btnEatIn.TabIndex = 29;
+            this.btnEatIn.Text = "Eat In";
             // 
             // btnCancel
             // 
@@ -1815,23 +1832,6 @@
             this.btnIngredMode.Text = "Ingred Mode";
             this.btnIngredMode.Visible = false;
             this.btnIngredMode.Click += new System.EventHandler(this.btnIngredMode_Click);
-            // 
-            // btnEatIn
-            // 
-            this.btnEatIn.Appearance.BackColor = System.Drawing.Color.Red;
-            this.btnEatIn.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnEatIn.Appearance.ForeColor = System.Drawing.Color.White;
-            this.btnEatIn.Appearance.Options.UseBackColor = true;
-            this.btnEatIn.Appearance.Options.UseFont = true;
-            this.btnEatIn.Appearance.Options.UseForeColor = true;
-            this.btnEatIn.Appearance.Options.UseTextOptions = true;
-            this.btnEatIn.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
-            this.btnEatIn.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
-            this.btnEatIn.Location = new System.Drawing.Point(7, 299);
-            this.btnEatIn.Name = "btnEatIn";
-            this.btnEatIn.Size = new System.Drawing.Size(111, 42);
-            this.btnEatIn.TabIndex = 29;
-            this.btnEatIn.Text = "Eat In";
             // 
             // FrmTaMain
             // 
