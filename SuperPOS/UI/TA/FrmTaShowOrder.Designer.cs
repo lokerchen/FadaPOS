@@ -29,16 +29,40 @@
         private void InitializeComponent()
         {
             this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
-            this.panelControl2 = new DevExpress.XtraEditors.PanelControl();
-            this.btnAll = new DevExpress.XtraEditors.SimpleButton();
-            this.btnPrtKit = new DevExpress.XtraEditors.SimpleButton();
+            this.panelControl4 = new DevExpress.XtraEditors.PanelControl();
+            this.panelControl5 = new DevExpress.XtraEditors.PanelControl();
+            this.btnAccount = new DevExpress.XtraEditors.SimpleButton();
             this.btnPrtReceipt = new DevExpress.XtraEditors.SimpleButton();
+            this.btnPrtKit = new DevExpress.XtraEditors.SimpleButton();
             this.btnPrtBill = new DevExpress.XtraEditors.SimpleButton();
             this.btnExit = new DevExpress.XtraEditors.SimpleButton();
+            this.panelControl6 = new DevExpress.XtraEditors.PanelControl();
+            this.simpleButton4 = new DevExpress.XtraEditors.SimpleButton();
+            this.simpleButton3 = new DevExpress.XtraEditors.SimpleButton();
+            this.simpleButton2 = new DevExpress.XtraEditors.SimpleButton();
+            this.simpleButton1 = new DevExpress.XtraEditors.SimpleButton();
+            this.btnAll = new DevExpress.XtraEditors.SimpleButton();
             this.btnDelivery = new DevExpress.XtraEditors.SimpleButton();
-            this.btnCollection = new DevExpress.XtraEditors.SimpleButton();
             this.btnShop = new DevExpress.XtraEditors.SimpleButton();
+            this.btnCollection = new DevExpress.XtraEditors.SimpleButton();
+            this.gridControlTaShowOrder = new DevExpress.XtraGrid.GridControl();
+            this.gvTaShowOrder = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.ID = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.CheckCode = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.OrderTime = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.Payment = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.PayOrderType = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.TotalAmount = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.StaffName = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.DriverName = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.CustomerID = new DevExpress.XtraGrid.Columns.GridColumn();
             this.panelControl3 = new DevExpress.XtraEditors.PanelControl();
+            this.lblSurcharge = new DevExpress.XtraEditors.LabelControl();
+            this.labelControl13 = new DevExpress.XtraEditors.LabelControl();
+            this.lblDiscount = new DevExpress.XtraEditors.LabelControl();
+            this.labelControl11 = new DevExpress.XtraEditors.LabelControl();
+            this.lblDeliveryCharge = new DevExpress.XtraEditors.LabelControl();
+            this.labelControl8 = new DevExpress.XtraEditors.LabelControl();
             this.treeListOrder = new DevExpress.XtraTreeList.TreeList();
             this.treeListColumn1 = new DevExpress.XtraTreeList.Columns.TreeListColumn();
             this.ItemID = new DevExpress.XtraTreeList.Columns.TreeListColumn();
@@ -54,6 +78,7 @@
             this.ItemParent = new DevExpress.XtraTreeList.Columns.TreeListColumn();
             this.treeListColumn3 = new DevExpress.XtraTreeList.Columns.TreeListColumn();
             this.OrderStaff = new DevExpress.XtraTreeList.Columns.TreeListColumn();
+            this.panelControl2 = new DevExpress.XtraEditors.PanelControl();
             this.panelControl7 = new DevExpress.XtraEditors.PanelControl();
             this.lblDeliveryFee = new DevExpress.XtraEditors.LabelControl();
             this.lblCusDistance = new DevExpress.XtraEditors.LabelControl();
@@ -67,49 +92,24 @@
             this.labelControl3 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl7 = new DevExpress.XtraEditors.LabelControl();
-            this.panelControl4 = new DevExpress.XtraEditors.PanelControl();
-            this.gridControlTaShowOrder = new DevExpress.XtraGrid.GridControl();
-            this.gvTaShowOrder = new DevExpress.XtraGrid.Views.Grid.GridView();
-            this.ID = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.CheckCode = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.OrderTime = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.PayOrderType = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.CustomerID = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.TotalAmount = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.StaffName = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.DriverName = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.labelControl8 = new DevExpress.XtraEditors.LabelControl();
-            this.lblDeliveryCharge = new DevExpress.XtraEditors.LabelControl();
-            this.lblDiscount = new DevExpress.XtraEditors.LabelControl();
-            this.labelControl11 = new DevExpress.XtraEditors.LabelControl();
-            this.lblSurcharge = new DevExpress.XtraEditors.LabelControl();
-            this.labelControl13 = new DevExpress.XtraEditors.LabelControl();
-            this.Payment = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.panelControl5 = new DevExpress.XtraEditors.PanelControl();
-            this.panelControl6 = new DevExpress.XtraEditors.PanelControl();
-            this.simpleButton1 = new DevExpress.XtraEditors.SimpleButton();
-            this.simpleButton2 = new DevExpress.XtraEditors.SimpleButton();
-            this.simpleButton3 = new DevExpress.XtraEditors.SimpleButton();
-            this.simpleButton4 = new DevExpress.XtraEditors.SimpleButton();
-            this.btnAccount = new DevExpress.XtraEditors.SimpleButton();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
             this.panelControl1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.panelControl2)).BeginInit();
-            this.panelControl2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.panelControl3)).BeginInit();
-            this.panelControl3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.treeListOrder)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemMemoEdit1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.panelControl7)).BeginInit();
-            this.panelControl7.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl4)).BeginInit();
             this.panelControl4.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.gridControlTaShowOrder)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gvTaShowOrder)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl5)).BeginInit();
             this.panelControl5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl6)).BeginInit();
             this.panelControl6.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.gridControlTaShowOrder)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gvTaShowOrder)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.panelControl3)).BeginInit();
+            this.panelControl3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.treeListOrder)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemMemoEdit1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.panelControl2)).BeginInit();
+            this.panelControl2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.panelControl7)).BeginInit();
+            this.panelControl7.SuspendLayout();
             this.SuspendLayout();
             // 
             // panelControl1
@@ -122,49 +122,46 @@
             this.panelControl1.Size = new System.Drawing.Size(1189, 598);
             this.panelControl1.TabIndex = 0;
             // 
-            // panelControl2
+            // panelControl4
             // 
-            this.panelControl2.Controls.Add(this.panelControl7);
-            this.panelControl2.Location = new System.Drawing.Point(5, 5);
-            this.panelControl2.Name = "panelControl2";
-            this.panelControl2.Size = new System.Drawing.Size(370, 153);
-            this.panelControl2.TabIndex = 0;
+            this.panelControl4.Controls.Add(this.panelControl5);
+            this.panelControl4.Controls.Add(this.btnExit);
+            this.panelControl4.Controls.Add(this.panelControl6);
+            this.panelControl4.Controls.Add(this.gridControlTaShowOrder);
+            this.panelControl4.Location = new System.Drawing.Point(381, 5);
+            this.panelControl4.Name = "panelControl4";
+            this.panelControl4.Size = new System.Drawing.Size(801, 585);
+            this.panelControl4.TabIndex = 2;
             // 
-            // btnAll
+            // panelControl5
             // 
-            this.btnAll.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
-            this.btnAll.Appearance.Font = new System.Drawing.Font("Tahoma", 12F);
-            this.btnAll.Appearance.ForeColor = System.Drawing.Color.White;
-            this.btnAll.Appearance.Options.UseBackColor = true;
-            this.btnAll.Appearance.Options.UseFont = true;
-            this.btnAll.Appearance.Options.UseForeColor = true;
-            this.btnAll.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
-            this.btnAll.Location = new System.Drawing.Point(16, 5);
-            this.btnAll.Name = "btnAll";
-            this.btnAll.Size = new System.Drawing.Size(98, 40);
-            this.btnAll.TabIndex = 59;
-            this.btnAll.Text = "Show All";
-            this.btnAll.Visible = false;
+            this.panelControl5.Controls.Add(this.btnAccount);
+            this.panelControl5.Controls.Add(this.btnPrtReceipt);
+            this.panelControl5.Controls.Add(this.btnPrtKit);
+            this.panelControl5.Controls.Add(this.btnPrtBill);
+            this.panelControl5.Location = new System.Drawing.Point(664, 56);
+            this.panelControl5.Name = "panelControl5";
+            this.panelControl5.Size = new System.Drawing.Size(130, 393);
+            this.panelControl5.TabIndex = 64;
             // 
-            // btnPrtKit
+            // btnAccount
             // 
-            this.btnPrtKit.Appearance.BackColor = System.Drawing.Color.RoyalBlue;
-            this.btnPrtKit.Appearance.Font = new System.Drawing.Font("Tahoma", 10F);
-            this.btnPrtKit.Appearance.ForeColor = System.Drawing.Color.White;
-            this.btnPrtKit.Appearance.Options.UseBackColor = true;
-            this.btnPrtKit.Appearance.Options.UseFont = true;
-            this.btnPrtKit.Appearance.Options.UseForeColor = true;
-            this.btnPrtKit.Appearance.Options.UseTextOptions = true;
-            this.btnPrtKit.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.btnPrtKit.Appearance.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
-            this.btnPrtKit.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
-            this.btnPrtKit.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
-            this.btnPrtKit.Location = new System.Drawing.Point(8, 201);
-            this.btnPrtKit.Name = "btnPrtKit";
-            this.btnPrtKit.Size = new System.Drawing.Size(115, 90);
-            this.btnPrtKit.TabIndex = 54;
-            this.btnPrtKit.Text = "Print Kitchen Paper";
-            this.btnPrtKit.Visible = false;
+            this.btnAccount.Appearance.BackColor = System.Drawing.Color.RoyalBlue;
+            this.btnAccount.Appearance.Font = new System.Drawing.Font("Tahoma", 10F);
+            this.btnAccount.Appearance.ForeColor = System.Drawing.Color.White;
+            this.btnAccount.Appearance.Options.UseBackColor = true;
+            this.btnAccount.Appearance.Options.UseFont = true;
+            this.btnAccount.Appearance.Options.UseForeColor = true;
+            this.btnAccount.Appearance.Options.UseTextOptions = true;
+            this.btnAccount.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.btnAccount.Appearance.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
+            this.btnAccount.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
+            this.btnAccount.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
+            this.btnAccount.Location = new System.Drawing.Point(8, 297);
+            this.btnAccount.Name = "btnAccount";
+            this.btnAccount.Size = new System.Drawing.Size(115, 90);
+            this.btnAccount.TabIndex = 55;
+            this.btnAccount.Text = "Print Account Summary";
             // 
             // btnPrtReceipt
             // 
@@ -184,7 +181,25 @@
             this.btnPrtReceipt.Size = new System.Drawing.Size(115, 90);
             this.btnPrtReceipt.TabIndex = 52;
             this.btnPrtReceipt.Text = "Print Receipt";
-            this.btnPrtReceipt.Visible = false;
+            // 
+            // btnPrtKit
+            // 
+            this.btnPrtKit.Appearance.BackColor = System.Drawing.Color.RoyalBlue;
+            this.btnPrtKit.Appearance.Font = new System.Drawing.Font("Tahoma", 10F);
+            this.btnPrtKit.Appearance.ForeColor = System.Drawing.Color.White;
+            this.btnPrtKit.Appearance.Options.UseBackColor = true;
+            this.btnPrtKit.Appearance.Options.UseFont = true;
+            this.btnPrtKit.Appearance.Options.UseForeColor = true;
+            this.btnPrtKit.Appearance.Options.UseTextOptions = true;
+            this.btnPrtKit.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.btnPrtKit.Appearance.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
+            this.btnPrtKit.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
+            this.btnPrtKit.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
+            this.btnPrtKit.Location = new System.Drawing.Point(8, 201);
+            this.btnPrtKit.Name = "btnPrtKit";
+            this.btnPrtKit.Size = new System.Drawing.Size(115, 90);
+            this.btnPrtKit.TabIndex = 54;
+            this.btnPrtKit.Text = "Print Kitchen Paper";
             // 
             // btnPrtBill
             // 
@@ -204,7 +219,6 @@
             this.btnPrtBill.Size = new System.Drawing.Size(115, 90);
             this.btnPrtBill.TabIndex = 53;
             this.btnPrtBill.Text = "Print Bill";
-            this.btnPrtBill.Visible = false;
             // 
             // btnExit
             // 
@@ -220,6 +234,109 @@
             this.btnExit.Size = new System.Drawing.Size(123, 86);
             this.btnExit.TabIndex = 61;
             this.btnExit.Text = "Exit";
+            this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
+            // 
+            // panelControl6
+            // 
+            this.panelControl6.Controls.Add(this.simpleButton4);
+            this.panelControl6.Controls.Add(this.simpleButton3);
+            this.panelControl6.Controls.Add(this.simpleButton2);
+            this.panelControl6.Controls.Add(this.simpleButton1);
+            this.panelControl6.Controls.Add(this.btnAll);
+            this.panelControl6.Controls.Add(this.btnDelivery);
+            this.panelControl6.Controls.Add(this.btnShop);
+            this.panelControl6.Controls.Add(this.btnCollection);
+            this.panelControl6.Location = new System.Drawing.Point(6, 484);
+            this.panelControl6.Name = "panelControl6";
+            this.panelControl6.Size = new System.Drawing.Size(652, 95);
+            this.panelControl6.TabIndex = 66;
+            // 
+            // simpleButton4
+            // 
+            this.simpleButton4.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            this.simpleButton4.Appearance.Font = new System.Drawing.Font("Tahoma", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.simpleButton4.Appearance.ForeColor = System.Drawing.Color.White;
+            this.simpleButton4.Appearance.Options.UseBackColor = true;
+            this.simpleButton4.Appearance.Options.UseFont = true;
+            this.simpleButton4.Appearance.Options.UseForeColor = true;
+            this.simpleButton4.Appearance.Options.UseTextOptions = true;
+            this.simpleButton4.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.simpleButton4.Appearance.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
+            this.simpleButton4.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
+            this.simpleButton4.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
+            this.simpleButton4.Location = new System.Drawing.Point(459, 51);
+            this.simpleButton4.Name = "simpleButton4";
+            this.simpleButton4.Size = new System.Drawing.Size(143, 40);
+            this.simpleButton4.TabIndex = 63;
+            this.simpleButton4.Text = "Show Driver D/C";
+            // 
+            // simpleButton3
+            // 
+            this.simpleButton3.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            this.simpleButton3.Appearance.Font = new System.Drawing.Font("Tahoma", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.simpleButton3.Appearance.ForeColor = System.Drawing.Color.White;
+            this.simpleButton3.Appearance.Options.UseBackColor = true;
+            this.simpleButton3.Appearance.Options.UseFont = true;
+            this.simpleButton3.Appearance.Options.UseForeColor = true;
+            this.simpleButton3.Appearance.Options.UseTextOptions = true;
+            this.simpleButton3.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.simpleButton3.Appearance.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
+            this.simpleButton3.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
+            this.simpleButton3.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
+            this.simpleButton3.Location = new System.Drawing.Point(355, 51);
+            this.simpleButton3.Name = "simpleButton3";
+            this.simpleButton3.Size = new System.Drawing.Size(98, 40);
+            this.simpleButton3.TabIndex = 62;
+            this.simpleButton3.Text = "Edit Order";
+            // 
+            // simpleButton2
+            // 
+            this.simpleButton2.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            this.simpleButton2.Appearance.Font = new System.Drawing.Font("Tahoma", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.simpleButton2.Appearance.ForeColor = System.Drawing.Color.White;
+            this.simpleButton2.Appearance.Options.UseBackColor = true;
+            this.simpleButton2.Appearance.Options.UseFont = true;
+            this.simpleButton2.Appearance.Options.UseForeColor = true;
+            this.simpleButton2.Appearance.Options.UseTextOptions = true;
+            this.simpleButton2.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.simpleButton2.Appearance.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
+            this.simpleButton2.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
+            this.simpleButton2.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
+            this.simpleButton2.Location = new System.Drawing.Point(211, 51);
+            this.simpleButton2.Name = "simpleButton2";
+            this.simpleButton2.Size = new System.Drawing.Size(138, 40);
+            this.simpleButton2.TabIndex = 61;
+            this.simpleButton2.Text = "Change Payment";
+            // 
+            // simpleButton1
+            // 
+            this.simpleButton1.Appearance.BackColor = System.Drawing.Color.RoyalBlue;
+            this.simpleButton1.Appearance.Font = new System.Drawing.Font("Tahoma", 10F);
+            this.simpleButton1.Appearance.ForeColor = System.Drawing.Color.White;
+            this.simpleButton1.Appearance.Options.UseBackColor = true;
+            this.simpleButton1.Appearance.Options.UseFont = true;
+            this.simpleButton1.Appearance.Options.UseForeColor = true;
+            this.simpleButton1.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
+            this.simpleButton1.Location = new System.Drawing.Point(512, 5);
+            this.simpleButton1.Name = "simpleButton1";
+            this.simpleButton1.Size = new System.Drawing.Size(90, 40);
+            this.simpleButton1.TabIndex = 60;
+            this.simpleButton1.Text = "Eat In";
+            // 
+            // btnAll
+            // 
+            this.btnAll.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            this.btnAll.Appearance.Font = new System.Drawing.Font("Tahoma", 12F);
+            this.btnAll.Appearance.ForeColor = System.Drawing.Color.White;
+            this.btnAll.Appearance.Options.UseBackColor = true;
+            this.btnAll.Appearance.Options.UseFont = true;
+            this.btnAll.Appearance.Options.UseForeColor = true;
+            this.btnAll.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
+            this.btnAll.Location = new System.Drawing.Point(16, 5);
+            this.btnAll.Name = "btnAll";
+            this.btnAll.Size = new System.Drawing.Size(98, 40);
+            this.btnAll.TabIndex = 59;
+            this.btnAll.Text = "Show All";
             // 
             // btnDelivery
             // 
@@ -236,21 +353,6 @@
             this.btnDelivery.TabIndex = 56;
             this.btnDelivery.Text = "DELIVERY";
             // 
-            // btnCollection
-            // 
-            this.btnCollection.Appearance.BackColor = System.Drawing.Color.RoyalBlue;
-            this.btnCollection.Appearance.Font = new System.Drawing.Font("Tahoma", 10F);
-            this.btnCollection.Appearance.ForeColor = System.Drawing.Color.White;
-            this.btnCollection.Appearance.Options.UseBackColor = true;
-            this.btnCollection.Appearance.Options.UseFont = true;
-            this.btnCollection.Appearance.Options.UseForeColor = true;
-            this.btnCollection.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
-            this.btnCollection.Location = new System.Drawing.Point(129, 5);
-            this.btnCollection.Name = "btnCollection";
-            this.btnCollection.Size = new System.Drawing.Size(144, 40);
-            this.btnCollection.TabIndex = 57;
-            this.btnCollection.Text = "COLLECTION";
-            // 
             // btnShop
             // 
             this.btnShop.Appearance.BackColor = System.Drawing.Color.RoyalBlue;
@@ -266,6 +368,161 @@
             this.btnShop.TabIndex = 58;
             this.btnShop.Text = "SHOP";
             // 
+            // btnCollection
+            // 
+            this.btnCollection.Appearance.BackColor = System.Drawing.Color.RoyalBlue;
+            this.btnCollection.Appearance.Font = new System.Drawing.Font("Tahoma", 10F);
+            this.btnCollection.Appearance.ForeColor = System.Drawing.Color.White;
+            this.btnCollection.Appearance.Options.UseBackColor = true;
+            this.btnCollection.Appearance.Options.UseFont = true;
+            this.btnCollection.Appearance.Options.UseForeColor = true;
+            this.btnCollection.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
+            this.btnCollection.Location = new System.Drawing.Point(129, 5);
+            this.btnCollection.Name = "btnCollection";
+            this.btnCollection.Size = new System.Drawing.Size(144, 40);
+            this.btnCollection.TabIndex = 57;
+            this.btnCollection.Text = "COLLECTION";
+            // 
+            // gridControlTaShowOrder
+            // 
+            this.gridControlTaShowOrder.Location = new System.Drawing.Point(5, 13);
+            this.gridControlTaShowOrder.MainView = this.gvTaShowOrder;
+            this.gridControlTaShowOrder.Name = "gridControlTaShowOrder";
+            this.gridControlTaShowOrder.Size = new System.Drawing.Size(653, 465);
+            this.gridControlTaShowOrder.TabIndex = 65;
+            this.gridControlTaShowOrder.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
+            this.gvTaShowOrder});
+            // 
+            // gvTaShowOrder
+            // 
+            this.gvTaShowOrder.Appearance.EvenRow.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
+            this.gvTaShowOrder.Appearance.EvenRow.Options.UseBackColor = true;
+            this.gvTaShowOrder.Appearance.HeaderPanel.Options.UseTextOptions = true;
+            this.gvTaShowOrder.Appearance.HeaderPanel.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.gvTaShowOrder.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
+            this.ID,
+            this.CheckCode,
+            this.OrderTime,
+            this.Payment,
+            this.PayOrderType,
+            this.TotalAmount,
+            this.StaffName,
+            this.DriverName,
+            this.CustomerID});
+            this.gvTaShowOrder.GridControl = this.gridControlTaShowOrder;
+            this.gvTaShowOrder.IndicatorWidth = 50;
+            this.gvTaShowOrder.Name = "gvTaShowOrder";
+            this.gvTaShowOrder.OptionsBehavior.Editable = false;
+            this.gvTaShowOrder.OptionsMenu.EnableColumnMenu = false;
+            this.gvTaShowOrder.OptionsSelection.EnableAppearanceFocusedCell = false;
+            this.gvTaShowOrder.OptionsView.EnableAppearanceEvenRow = true;
+            this.gvTaShowOrder.OptionsView.EnableAppearanceOddRow = true;
+            this.gvTaShowOrder.OptionsView.ShowGroupPanel = false;
+            this.gvTaShowOrder.CustomDrawRowIndicator += new DevExpress.XtraGrid.Views.Grid.RowIndicatorCustomDrawEventHandler(this.gvTaShowOrder_CustomDrawRowIndicator);
+            this.gvTaShowOrder.FocusedRowChanged += new DevExpress.XtraGrid.Views.Base.FocusedRowChangedEventHandler(this.gvTaShowOrder_FocusedRowChanged);
+            // 
+            // ID
+            // 
+            this.ID.AppearanceCell.Font = new System.Drawing.Font("Tahoma", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ID.AppearanceCell.Options.UseFont = true;
+            this.ID.Caption = "ID";
+            this.ID.FieldName = "ID";
+            this.ID.Name = "ID";
+            // 
+            // CheckCode
+            // 
+            this.CheckCode.AppearanceCell.Font = new System.Drawing.Font("Tahoma", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.CheckCode.AppearanceCell.Options.UseFont = true;
+            this.CheckCode.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.CheckCode.AppearanceHeader.Options.UseFont = true;
+            this.CheckCode.Caption = "Order No.";
+            this.CheckCode.FieldName = "gridOrderNo";
+            this.CheckCode.Name = "CheckCode";
+            this.CheckCode.Visible = true;
+            this.CheckCode.VisibleIndex = 0;
+            // 
+            // OrderTime
+            // 
+            this.OrderTime.AppearanceCell.Font = new System.Drawing.Font("Tahoma", 10F);
+            this.OrderTime.AppearanceCell.Options.UseFont = true;
+            this.OrderTime.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.OrderTime.AppearanceHeader.Options.UseFont = true;
+            this.OrderTime.Caption = "Time";
+            this.OrderTime.FieldName = "gridOrderTime";
+            this.OrderTime.Name = "OrderTime";
+            this.OrderTime.Visible = true;
+            this.OrderTime.VisibleIndex = 2;
+            // 
+            // Payment
+            // 
+            this.Payment.AppearanceCell.Font = new System.Drawing.Font("Tahoma", 10F);
+            this.Payment.AppearanceCell.Options.UseFont = true;
+            this.Payment.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Payment.AppearanceHeader.Options.UseFont = true;
+            this.Payment.Caption = "Payment";
+            this.Payment.FieldName = "gridPayType";
+            this.Payment.Name = "Payment";
+            this.Payment.Visible = true;
+            this.Payment.VisibleIndex = 3;
+            // 
+            // PayOrderType
+            // 
+            this.PayOrderType.AppearanceCell.Font = new System.Drawing.Font("Tahoma", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.PayOrderType.AppearanceCell.Options.UseFont = true;
+            this.PayOrderType.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.PayOrderType.AppearanceHeader.Options.UseFont = true;
+            this.PayOrderType.Caption = "Type";
+            this.PayOrderType.FieldName = "gridOrderType";
+            this.PayOrderType.Name = "PayOrderType";
+            this.PayOrderType.Visible = true;
+            this.PayOrderType.VisibleIndex = 1;
+            // 
+            // TotalAmount
+            // 
+            this.TotalAmount.AppearanceCell.Font = new System.Drawing.Font("Tahoma", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TotalAmount.AppearanceCell.Options.UseFont = true;
+            this.TotalAmount.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TotalAmount.AppearanceHeader.Options.UseFont = true;
+            this.TotalAmount.Caption = "Total";
+            this.TotalAmount.FieldName = "gridTotal";
+            this.TotalAmount.Name = "TotalAmount";
+            this.TotalAmount.Visible = true;
+            this.TotalAmount.VisibleIndex = 4;
+            // 
+            // StaffName
+            // 
+            this.StaffName.AppearanceCell.Font = new System.Drawing.Font("Tahoma", 10F);
+            this.StaffName.AppearanceCell.Options.UseFont = true;
+            this.StaffName.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.StaffName.AppearanceHeader.Options.UseFont = true;
+            this.StaffName.Caption = "Staff";
+            this.StaffName.FieldName = "StaffName";
+            this.StaffName.Name = "StaffName";
+            this.StaffName.Visible = true;
+            this.StaffName.VisibleIndex = 6;
+            // 
+            // DriverName
+            // 
+            this.DriverName.AppearanceCell.Font = new System.Drawing.Font("Tahoma", 10F);
+            this.DriverName.AppearanceCell.Options.UseFont = true;
+            this.DriverName.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.DriverName.AppearanceHeader.Options.UseFont = true;
+            this.DriverName.Caption = "Driver";
+            this.DriverName.FieldName = "DriverName";
+            this.DriverName.Name = "DriverName";
+            this.DriverName.Visible = true;
+            this.DriverName.VisibleIndex = 5;
+            // 
+            // CustomerID
+            // 
+            this.CustomerID.AppearanceCell.Font = new System.Drawing.Font("Tahoma", 10F);
+            this.CustomerID.AppearanceCell.Options.UseFont = true;
+            this.CustomerID.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.CustomerID.AppearanceHeader.Options.UseFont = true;
+            this.CustomerID.Caption = "CustomerID";
+            this.CustomerID.FieldName = "CustomerID";
+            this.CustomerID.Name = "CustomerID";
+            // 
             // panelControl3
             // 
             this.panelControl3.Controls.Add(this.lblSurcharge);
@@ -279,6 +536,54 @@
             this.panelControl3.Name = "panelControl3";
             this.panelControl3.Size = new System.Drawing.Size(370, 428);
             this.panelControl3.TabIndex = 1;
+            // 
+            // lblSurcharge
+            // 
+            this.lblSurcharge.Location = new System.Drawing.Point(331, 397);
+            this.lblSurcharge.Name = "lblSurcharge";
+            this.lblSurcharge.Size = new System.Drawing.Size(29, 18);
+            this.lblSurcharge.TabIndex = 9;
+            this.lblSurcharge.Text = "0.00";
+            // 
+            // labelControl13
+            // 
+            this.labelControl13.Location = new System.Drawing.Point(203, 397);
+            this.labelControl13.Name = "labelControl13";
+            this.labelControl13.Size = new System.Drawing.Size(70, 18);
+            this.labelControl13.TabIndex = 8;
+            this.labelControl13.Text = "Surcharge:";
+            // 
+            // lblDiscount
+            // 
+            this.lblDiscount.Location = new System.Drawing.Point(331, 373);
+            this.lblDiscount.Name = "lblDiscount";
+            this.lblDiscount.Size = new System.Drawing.Size(29, 18);
+            this.lblDiscount.TabIndex = 7;
+            this.lblDiscount.Text = "0.00";
+            // 
+            // labelControl11
+            // 
+            this.labelControl11.Location = new System.Drawing.Point(213, 373);
+            this.labelControl11.Name = "labelControl11";
+            this.labelControl11.Size = new System.Drawing.Size(60, 18);
+            this.labelControl11.TabIndex = 6;
+            this.labelControl11.Text = "Discount:";
+            // 
+            // lblDeliveryCharge
+            // 
+            this.lblDeliveryCharge.Location = new System.Drawing.Point(331, 349);
+            this.lblDeliveryCharge.Name = "lblDeliveryCharge";
+            this.lblDeliveryCharge.Size = new System.Drawing.Size(29, 18);
+            this.lblDeliveryCharge.TabIndex = 5;
+            this.lblDeliveryCharge.Text = "0.00";
+            // 
+            // labelControl8
+            // 
+            this.labelControl8.Location = new System.Drawing.Point(166, 349);
+            this.labelControl8.Name = "labelControl8";
+            this.labelControl8.Size = new System.Drawing.Size(107, 18);
+            this.labelControl8.TabIndex = 4;
+            this.labelControl8.Text = "Delivery Charge:";
             // 
             // treeListOrder
             // 
@@ -331,7 +636,7 @@
             // 
             // ItemDishName
             // 
-            this.ItemDishName.AppearanceCell.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ItemDishName.AppearanceCell.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ItemDishName.AppearanceCell.Options.UseFont = true;
             this.ItemDishName.Caption = "Dish Name";
             this.ItemDishName.ColumnEdit = this.repositoryItemMemoEdit1;
@@ -341,7 +646,7 @@
             this.ItemDishName.OptionsFilter.AllowAutoFilter = false;
             this.ItemDishName.Visible = true;
             this.ItemDishName.VisibleIndex = 0;
-            this.ItemDishName.Width = 216;
+            this.ItemDishName.Width = 192;
             // 
             // repositoryItemMemoEdit1
             // 
@@ -355,7 +660,7 @@
             // 
             // ItemQty
             // 
-            this.ItemQty.AppearanceCell.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ItemQty.AppearanceCell.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ItemQty.AppearanceCell.Options.UseFont = true;
             this.ItemQty.Caption = "Qty";
             this.ItemQty.FieldName = "ItemQty";
@@ -365,7 +670,7 @@
             this.ItemQty.SummaryFooter = DevExpress.XtraTreeList.SummaryItemType.Sum;
             this.ItemQty.Visible = true;
             this.ItemQty.VisibleIndex = 1;
-            this.ItemQty.Width = 56;
+            this.ItemQty.Width = 52;
             // 
             // ItemPrice
             // 
@@ -376,7 +681,7 @@
             // ItemTotalPrice
             // 
             this.ItemTotalPrice.AllNodesSummary = true;
-            this.ItemTotalPrice.AppearanceCell.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ItemTotalPrice.AppearanceCell.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ItemTotalPrice.AppearanceCell.Options.UseFont = true;
             this.ItemTotalPrice.Caption = "Price";
             this.ItemTotalPrice.FieldName = "ItemTotalPrice";
@@ -387,7 +692,7 @@
             this.ItemTotalPrice.SummaryFooterStrFormat = "{0:f2}";
             this.ItemTotalPrice.Visible = true;
             this.ItemTotalPrice.VisibleIndex = 2;
-            this.ItemTotalPrice.Width = 76;
+            this.ItemTotalPrice.Width = 69;
             // 
             // treeListColumn2
             // 
@@ -418,6 +723,14 @@
             this.OrderStaff.Caption = "OrderStaff";
             this.OrderStaff.FieldName = "OrderStaff";
             this.OrderStaff.Name = "OrderStaff";
+            // 
+            // panelControl2
+            // 
+            this.panelControl2.Controls.Add(this.panelControl7);
+            this.panelControl2.Location = new System.Drawing.Point(5, 5);
+            this.panelControl2.Name = "panelControl2";
+            this.panelControl2.Size = new System.Drawing.Size(370, 153);
+            this.panelControl2.TabIndex = 0;
             // 
             // panelControl7
             // 
@@ -546,324 +859,6 @@
             this.labelControl7.TabIndex = 0;
             this.labelControl7.Text = "Name:";
             // 
-            // panelControl4
-            // 
-            this.panelControl4.Controls.Add(this.panelControl5);
-            this.panelControl4.Controls.Add(this.btnExit);
-            this.panelControl4.Controls.Add(this.panelControl6);
-            this.panelControl4.Controls.Add(this.gridControlTaShowOrder);
-            this.panelControl4.Location = new System.Drawing.Point(381, 5);
-            this.panelControl4.Name = "panelControl4";
-            this.panelControl4.Size = new System.Drawing.Size(801, 585);
-            this.panelControl4.TabIndex = 2;
-            // 
-            // gridControlTaShowOrder
-            // 
-            this.gridControlTaShowOrder.Location = new System.Drawing.Point(5, 13);
-            this.gridControlTaShowOrder.MainView = this.gvTaShowOrder;
-            this.gridControlTaShowOrder.Name = "gridControlTaShowOrder";
-            this.gridControlTaShowOrder.Size = new System.Drawing.Size(653, 465);
-            this.gridControlTaShowOrder.TabIndex = 65;
-            this.gridControlTaShowOrder.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
-            this.gvTaShowOrder});
-            // 
-            // gvTaShowOrder
-            // 
-            this.gvTaShowOrder.Appearance.EvenRow.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
-            this.gvTaShowOrder.Appearance.EvenRow.Options.UseBackColor = true;
-            this.gvTaShowOrder.Appearance.HeaderPanel.Options.UseTextOptions = true;
-            this.gvTaShowOrder.Appearance.HeaderPanel.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.gvTaShowOrder.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
-            this.ID,
-            this.CheckCode,
-            this.OrderTime,
-            this.Payment,
-            this.PayOrderType,
-            this.TotalAmount,
-            this.StaffName,
-            this.DriverName,
-            this.CustomerID});
-            this.gvTaShowOrder.GridControl = this.gridControlTaShowOrder;
-            this.gvTaShowOrder.IndicatorWidth = 50;
-            this.gvTaShowOrder.Name = "gvTaShowOrder";
-            this.gvTaShowOrder.OptionsBehavior.Editable = false;
-            this.gvTaShowOrder.OptionsMenu.EnableColumnMenu = false;
-            this.gvTaShowOrder.OptionsSelection.EnableAppearanceFocusedCell = false;
-            this.gvTaShowOrder.OptionsView.EnableAppearanceEvenRow = true;
-            this.gvTaShowOrder.OptionsView.EnableAppearanceOddRow = true;
-            this.gvTaShowOrder.OptionsView.ShowGroupPanel = false;
-            // 
-            // ID
-            // 
-            this.ID.AppearanceCell.Font = new System.Drawing.Font("Tahoma", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ID.AppearanceCell.Options.UseFont = true;
-            this.ID.Caption = "ID";
-            this.ID.FieldName = "ID";
-            this.ID.Name = "ID";
-            // 
-            // CheckCode
-            // 
-            this.CheckCode.AppearanceCell.Font = new System.Drawing.Font("Tahoma", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.CheckCode.AppearanceCell.Options.UseFont = true;
-            this.CheckCode.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.CheckCode.AppearanceHeader.Options.UseFont = true;
-            this.CheckCode.Caption = "Order No.";
-            this.CheckCode.FieldName = "CheckCode";
-            this.CheckCode.Name = "CheckCode";
-            this.CheckCode.Visible = true;
-            this.CheckCode.VisibleIndex = 0;
-            // 
-            // OrderTime
-            // 
-            this.OrderTime.AppearanceCell.Font = new System.Drawing.Font("Tahoma", 10F);
-            this.OrderTime.AppearanceCell.Options.UseFont = true;
-            this.OrderTime.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.OrderTime.AppearanceHeader.Options.UseFont = true;
-            this.OrderTime.Caption = "Time";
-            this.OrderTime.FieldName = "OrderTime";
-            this.OrderTime.Name = "OrderTime";
-            this.OrderTime.Visible = true;
-            this.OrderTime.VisibleIndex = 2;
-            // 
-            // PayOrderType
-            // 
-            this.PayOrderType.AppearanceCell.Font = new System.Drawing.Font("Tahoma", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.PayOrderType.AppearanceCell.Options.UseFont = true;
-            this.PayOrderType.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.PayOrderType.AppearanceHeader.Options.UseFont = true;
-            this.PayOrderType.Caption = "Type";
-            this.PayOrderType.FieldName = "PayOrderType";
-            this.PayOrderType.Name = "PayOrderType";
-            this.PayOrderType.Visible = true;
-            this.PayOrderType.VisibleIndex = 1;
-            // 
-            // CustomerID
-            // 
-            this.CustomerID.AppearanceCell.Font = new System.Drawing.Font("Tahoma", 10F);
-            this.CustomerID.AppearanceCell.Options.UseFont = true;
-            this.CustomerID.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.CustomerID.AppearanceHeader.Options.UseFont = true;
-            this.CustomerID.Caption = "CustomerID";
-            this.CustomerID.FieldName = "CustomerID";
-            this.CustomerID.Name = "CustomerID";
-            // 
-            // TotalAmount
-            // 
-            this.TotalAmount.AppearanceCell.Font = new System.Drawing.Font("Tahoma", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TotalAmount.AppearanceCell.Options.UseFont = true;
-            this.TotalAmount.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TotalAmount.AppearanceHeader.Options.UseFont = true;
-            this.TotalAmount.Caption = "Total";
-            this.TotalAmount.FieldName = "TotalAmount";
-            this.TotalAmount.Name = "TotalAmount";
-            this.TotalAmount.Visible = true;
-            this.TotalAmount.VisibleIndex = 4;
-            // 
-            // StaffName
-            // 
-            this.StaffName.AppearanceCell.Font = new System.Drawing.Font("Tahoma", 10F);
-            this.StaffName.AppearanceCell.Options.UseFont = true;
-            this.StaffName.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.StaffName.AppearanceHeader.Options.UseFont = true;
-            this.StaffName.Caption = "Staff";
-            this.StaffName.FieldName = "StaffName";
-            this.StaffName.Name = "StaffName";
-            this.StaffName.Visible = true;
-            this.StaffName.VisibleIndex = 6;
-            // 
-            // DriverName
-            // 
-            this.DriverName.AppearanceCell.Font = new System.Drawing.Font("Tahoma", 10F);
-            this.DriverName.AppearanceCell.Options.UseFont = true;
-            this.DriverName.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.DriverName.AppearanceHeader.Options.UseFont = true;
-            this.DriverName.Caption = "Driver";
-            this.DriverName.FieldName = "DriverName";
-            this.DriverName.Name = "DriverName";
-            this.DriverName.Visible = true;
-            this.DriverName.VisibleIndex = 5;
-            // 
-            // labelControl8
-            // 
-            this.labelControl8.Location = new System.Drawing.Point(166, 349);
-            this.labelControl8.Name = "labelControl8";
-            this.labelControl8.Size = new System.Drawing.Size(107, 18);
-            this.labelControl8.TabIndex = 4;
-            this.labelControl8.Text = "Delivery Charge:";
-            // 
-            // lblDeliveryCharge
-            // 
-            this.lblDeliveryCharge.Location = new System.Drawing.Point(331, 349);
-            this.lblDeliveryCharge.Name = "lblDeliveryCharge";
-            this.lblDeliveryCharge.Size = new System.Drawing.Size(29, 18);
-            this.lblDeliveryCharge.TabIndex = 5;
-            this.lblDeliveryCharge.Text = "0.00";
-            // 
-            // lblDiscount
-            // 
-            this.lblDiscount.Location = new System.Drawing.Point(331, 373);
-            this.lblDiscount.Name = "lblDiscount";
-            this.lblDiscount.Size = new System.Drawing.Size(29, 18);
-            this.lblDiscount.TabIndex = 7;
-            this.lblDiscount.Text = "0.00";
-            // 
-            // labelControl11
-            // 
-            this.labelControl11.Location = new System.Drawing.Point(213, 373);
-            this.labelControl11.Name = "labelControl11";
-            this.labelControl11.Size = new System.Drawing.Size(60, 18);
-            this.labelControl11.TabIndex = 6;
-            this.labelControl11.Text = "Discount:";
-            // 
-            // lblSurcharge
-            // 
-            this.lblSurcharge.Location = new System.Drawing.Point(331, 397);
-            this.lblSurcharge.Name = "lblSurcharge";
-            this.lblSurcharge.Size = new System.Drawing.Size(29, 18);
-            this.lblSurcharge.TabIndex = 9;
-            this.lblSurcharge.Text = "0.00";
-            // 
-            // labelControl13
-            // 
-            this.labelControl13.Location = new System.Drawing.Point(203, 397);
-            this.labelControl13.Name = "labelControl13";
-            this.labelControl13.Size = new System.Drawing.Size(70, 18);
-            this.labelControl13.TabIndex = 8;
-            this.labelControl13.Text = "Surcharge:";
-            // 
-            // Payment
-            // 
-            this.Payment.AppearanceCell.Font = new System.Drawing.Font("Tahoma", 10F);
-            this.Payment.AppearanceCell.Options.UseFont = true;
-            this.Payment.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Payment.AppearanceHeader.Options.UseFont = true;
-            this.Payment.Caption = "Payment";
-            this.Payment.FieldName = "Payment";
-            this.Payment.Name = "Payment";
-            this.Payment.Visible = true;
-            this.Payment.VisibleIndex = 3;
-            // 
-            // panelControl5
-            // 
-            this.panelControl5.Controls.Add(this.btnAccount);
-            this.panelControl5.Controls.Add(this.btnPrtReceipt);
-            this.panelControl5.Controls.Add(this.btnPrtKit);
-            this.panelControl5.Controls.Add(this.btnPrtBill);
-            this.panelControl5.Location = new System.Drawing.Point(664, 56);
-            this.panelControl5.Name = "panelControl5";
-            this.panelControl5.Size = new System.Drawing.Size(130, 393);
-            this.panelControl5.TabIndex = 64;
-            // 
-            // panelControl6
-            // 
-            this.panelControl6.Controls.Add(this.simpleButton4);
-            this.panelControl6.Controls.Add(this.simpleButton3);
-            this.panelControl6.Controls.Add(this.simpleButton2);
-            this.panelControl6.Controls.Add(this.simpleButton1);
-            this.panelControl6.Controls.Add(this.btnAll);
-            this.panelControl6.Controls.Add(this.btnDelivery);
-            this.panelControl6.Controls.Add(this.btnShop);
-            this.panelControl6.Controls.Add(this.btnCollection);
-            this.panelControl6.Location = new System.Drawing.Point(6, 484);
-            this.panelControl6.Name = "panelControl6";
-            this.panelControl6.Size = new System.Drawing.Size(652, 95);
-            this.panelControl6.TabIndex = 66;
-            // 
-            // simpleButton1
-            // 
-            this.simpleButton1.Appearance.BackColor = System.Drawing.Color.RoyalBlue;
-            this.simpleButton1.Appearance.Font = new System.Drawing.Font("Tahoma", 10F);
-            this.simpleButton1.Appearance.ForeColor = System.Drawing.Color.White;
-            this.simpleButton1.Appearance.Options.UseBackColor = true;
-            this.simpleButton1.Appearance.Options.UseFont = true;
-            this.simpleButton1.Appearance.Options.UseForeColor = true;
-            this.simpleButton1.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
-            this.simpleButton1.Location = new System.Drawing.Point(512, 5);
-            this.simpleButton1.Name = "simpleButton1";
-            this.simpleButton1.Size = new System.Drawing.Size(90, 40);
-            this.simpleButton1.TabIndex = 60;
-            this.simpleButton1.Text = "Eat In";
-            // 
-            // simpleButton2
-            // 
-            this.simpleButton2.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
-            this.simpleButton2.Appearance.Font = new System.Drawing.Font("Tahoma", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.simpleButton2.Appearance.ForeColor = System.Drawing.Color.White;
-            this.simpleButton2.Appearance.Options.UseBackColor = true;
-            this.simpleButton2.Appearance.Options.UseFont = true;
-            this.simpleButton2.Appearance.Options.UseForeColor = true;
-            this.simpleButton2.Appearance.Options.UseTextOptions = true;
-            this.simpleButton2.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.simpleButton2.Appearance.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
-            this.simpleButton2.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
-            this.simpleButton2.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
-            this.simpleButton2.Location = new System.Drawing.Point(211, 51);
-            this.simpleButton2.Name = "simpleButton2";
-            this.simpleButton2.Size = new System.Drawing.Size(138, 40);
-            this.simpleButton2.TabIndex = 61;
-            this.simpleButton2.Text = "Change Payment";
-            this.simpleButton2.Visible = false;
-            // 
-            // simpleButton3
-            // 
-            this.simpleButton3.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
-            this.simpleButton3.Appearance.Font = new System.Drawing.Font("Tahoma", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.simpleButton3.Appearance.ForeColor = System.Drawing.Color.White;
-            this.simpleButton3.Appearance.Options.UseBackColor = true;
-            this.simpleButton3.Appearance.Options.UseFont = true;
-            this.simpleButton3.Appearance.Options.UseForeColor = true;
-            this.simpleButton3.Appearance.Options.UseTextOptions = true;
-            this.simpleButton3.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.simpleButton3.Appearance.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
-            this.simpleButton3.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
-            this.simpleButton3.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
-            this.simpleButton3.Location = new System.Drawing.Point(355, 51);
-            this.simpleButton3.Name = "simpleButton3";
-            this.simpleButton3.Size = new System.Drawing.Size(98, 40);
-            this.simpleButton3.TabIndex = 62;
-            this.simpleButton3.Text = "Edit Order";
-            this.simpleButton3.Visible = false;
-            // 
-            // simpleButton4
-            // 
-            this.simpleButton4.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
-            this.simpleButton4.Appearance.Font = new System.Drawing.Font("Tahoma", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.simpleButton4.Appearance.ForeColor = System.Drawing.Color.White;
-            this.simpleButton4.Appearance.Options.UseBackColor = true;
-            this.simpleButton4.Appearance.Options.UseFont = true;
-            this.simpleButton4.Appearance.Options.UseForeColor = true;
-            this.simpleButton4.Appearance.Options.UseTextOptions = true;
-            this.simpleButton4.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.simpleButton4.Appearance.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
-            this.simpleButton4.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
-            this.simpleButton4.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
-            this.simpleButton4.Location = new System.Drawing.Point(459, 48);
-            this.simpleButton4.Name = "simpleButton4";
-            this.simpleButton4.Size = new System.Drawing.Size(143, 40);
-            this.simpleButton4.TabIndex = 63;
-            this.simpleButton4.Text = "Show Driver D/C";
-            this.simpleButton4.Visible = false;
-            // 
-            // btnAccount
-            // 
-            this.btnAccount.Appearance.BackColor = System.Drawing.Color.RoyalBlue;
-            this.btnAccount.Appearance.Font = new System.Drawing.Font("Tahoma", 10F);
-            this.btnAccount.Appearance.ForeColor = System.Drawing.Color.White;
-            this.btnAccount.Appearance.Options.UseBackColor = true;
-            this.btnAccount.Appearance.Options.UseFont = true;
-            this.btnAccount.Appearance.Options.UseForeColor = true;
-            this.btnAccount.Appearance.Options.UseTextOptions = true;
-            this.btnAccount.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.btnAccount.Appearance.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
-            this.btnAccount.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
-            this.btnAccount.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
-            this.btnAccount.Location = new System.Drawing.Point(8, 297);
-            this.btnAccount.Name = "btnAccount";
-            this.btnAccount.Size = new System.Drawing.Size(115, 90);
-            this.btnAccount.TabIndex = 55;
-            this.btnAccount.Text = "Print Account Summary";
-            this.btnAccount.Visible = false;
-            // 
             // FrmTaShowOrder
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 18F);
@@ -874,27 +869,29 @@
             this.Name = "FrmTaShowOrder";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FrmTaShowOrder";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.FrmTaShowOrder_Load);
+            this.SizeChanged += new System.EventHandler(this.FrmTaShowOrder_SizeChanged);
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).EndInit();
             this.panelControl1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.panelControl2)).EndInit();
-            this.panelControl2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.panelControl4)).EndInit();
+            this.panelControl4.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.panelControl5)).EndInit();
+            this.panelControl5.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.panelControl6)).EndInit();
+            this.panelControl6.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.gridControlTaShowOrder)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gvTaShowOrder)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl3)).EndInit();
             this.panelControl3.ResumeLayout(false);
             this.panelControl3.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.treeListOrder)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemMemoEdit1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.panelControl2)).EndInit();
+            this.panelControl2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.panelControl7)).EndInit();
             this.panelControl7.ResumeLayout(false);
             this.panelControl7.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.panelControl4)).EndInit();
-            this.panelControl4.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.gridControlTaShowOrder)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gvTaShowOrder)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.panelControl5)).EndInit();
-            this.panelControl5.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.panelControl6)).EndInit();
-            this.panelControl6.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }

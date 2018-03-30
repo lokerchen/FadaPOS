@@ -76,7 +76,8 @@ namespace SuperPOS.UI
 
         private void btnShowOrder_Click(object sender, EventArgs e)
         {
-            
+            FrmTaShowOrder frmTaShowOrder = new FrmTaShowOrder(usrID);
+            frmTaShowOrder.ShowDialog();
         }
 
         private void btnOrderScreen_Click(object sender, EventArgs e)
