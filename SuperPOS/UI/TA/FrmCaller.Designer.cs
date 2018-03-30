@@ -77,14 +77,16 @@
             this.checkEdit3 = new DevExpress.XtraEditors.CheckEdit();
             this.checkEdit2 = new DevExpress.XtraEditors.CheckEdit();
             this.checkEdit1 = new DevExpress.XtraEditors.CheckEdit();
-            this.simpleButton2 = new DevExpress.XtraEditors.SimpleButton();
-            this.simpleButton1 = new DevExpress.XtraEditors.SimpleButton();
+            this.btnTblBooking = new DevExpress.XtraEditors.SimpleButton();
+            this.btnEdit = new DevExpress.XtraEditors.SimpleButton();
             this.labelControl14 = new DevExpress.XtraEditors.LabelControl();
             this.txtTelNum = new DevExpress.XtraEditors.TextEdit();
             this.panelControl2 = new DevExpress.XtraEditors.PanelControl();
             this.lblCallInfo = new DevExpress.XtraEditors.LabelControl();
             this.labelControl13 = new DevExpress.XtraEditors.LabelControl();
             this.btnExit = new DevExpress.XtraEditors.SimpleButton();
+            this.btnDelivery = new DevExpress.XtraEditors.SimpleButton();
+            this.btnCollection = new DevExpress.XtraEditors.SimpleButton();
             ((System.ComponentModel.ISupportInitialize)(this.panelMember)).BeginInit();
             this.panelMember.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.chkBlackList.Properties)).BeginInit();
@@ -430,6 +432,8 @@
             // 
             // panelControl3
             // 
+            this.panelControl3.Controls.Add(this.btnCollection);
+            this.panelControl3.Controls.Add(this.btnDelivery);
             this.panelControl3.Controls.Add(this.simpleButton4);
             this.panelControl3.Controls.Add(this.labelControl15);
             this.panelControl3.Controls.Add(this.simpleButton3);
@@ -444,8 +448,8 @@
             this.panelControl3.Controls.Add(this.checkEdit3);
             this.panelControl3.Controls.Add(this.checkEdit2);
             this.panelControl3.Controls.Add(this.checkEdit1);
-            this.panelControl3.Controls.Add(this.simpleButton2);
-            this.panelControl3.Controls.Add(this.simpleButton1);
+            this.panelControl3.Controls.Add(this.btnTblBooking);
+            this.panelControl3.Controls.Add(this.btnEdit);
             this.panelControl3.Controls.Add(this.labelControl14);
             this.panelControl3.Controls.Add(this.txtTelNum);
             this.panelControl3.Location = new System.Drawing.Point(6, 100);
@@ -584,51 +588,53 @@
             // 
             // checkEdit2
             // 
-            this.checkEdit2.Location = new System.Drawing.Point(154, 123);
+            this.checkEdit2.Location = new System.Drawing.Point(159, 183);
             this.checkEdit2.Name = "checkEdit2";
             this.checkEdit2.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.checkEdit2.Properties.Appearance.Options.UseFont = true;
             this.checkEdit2.Properties.Caption = "Collection";
             this.checkEdit2.Size = new System.Drawing.Size(121, 32);
             this.checkEdit2.TabIndex = 6;
+            this.checkEdit2.Visible = false;
             // 
             // checkEdit1
             // 
-            this.checkEdit1.Location = new System.Drawing.Point(23, 121);
+            this.checkEdit1.Location = new System.Drawing.Point(28, 181);
             this.checkEdit1.Name = "checkEdit1";
             this.checkEdit1.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.checkEdit1.Properties.Appearance.Options.UseFont = true;
             this.checkEdit1.Properties.Caption = "Delivery";
             this.checkEdit1.Size = new System.Drawing.Size(109, 32);
             this.checkEdit1.TabIndex = 5;
+            this.checkEdit1.Visible = false;
             // 
-            // simpleButton2
+            // btnTblBooking
             // 
-            this.simpleButton2.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
-            this.simpleButton2.Appearance.ForeColor = System.Drawing.Color.White;
-            this.simpleButton2.Appearance.Options.UseBackColor = true;
-            this.simpleButton2.Appearance.Options.UseForeColor = true;
-            this.simpleButton2.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
-            this.simpleButton2.Location = new System.Drawing.Point(217, 51);
-            this.simpleButton2.Name = "simpleButton2";
-            this.simpleButton2.Size = new System.Drawing.Size(109, 37);
-            this.simpleButton2.TabIndex = 4;
-            this.simpleButton2.Text = "Table Booking";
+            this.btnTblBooking.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
+            this.btnTblBooking.Appearance.ForeColor = System.Drawing.Color.White;
+            this.btnTblBooking.Appearance.Options.UseBackColor = true;
+            this.btnTblBooking.Appearance.Options.UseForeColor = true;
+            this.btnTblBooking.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
+            this.btnTblBooking.Location = new System.Drawing.Point(217, 51);
+            this.btnTblBooking.Name = "btnTblBooking";
+            this.btnTblBooking.Size = new System.Drawing.Size(109, 37);
+            this.btnTblBooking.TabIndex = 4;
+            this.btnTblBooking.Text = "Table Booking";
             // 
-            // simpleButton1
+            // btnEdit
             // 
-            this.simpleButton1.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.simpleButton1.Appearance.Font = new System.Drawing.Font("Tahoma", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.simpleButton1.Appearance.ForeColor = System.Drawing.Color.White;
-            this.simpleButton1.Appearance.Options.UseBackColor = true;
-            this.simpleButton1.Appearance.Options.UseFont = true;
-            this.simpleButton1.Appearance.Options.UseForeColor = true;
-            this.simpleButton1.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
-            this.simpleButton1.Location = new System.Drawing.Point(217, 5);
-            this.simpleButton1.Name = "simpleButton1";
-            this.simpleButton1.Size = new System.Drawing.Size(109, 40);
-            this.simpleButton1.TabIndex = 3;
-            this.simpleButton1.Text = "Edit";
+            this.btnEdit.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.btnEdit.Appearance.Font = new System.Drawing.Font("Tahoma", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEdit.Appearance.ForeColor = System.Drawing.Color.White;
+            this.btnEdit.Appearance.Options.UseBackColor = true;
+            this.btnEdit.Appearance.Options.UseFont = true;
+            this.btnEdit.Appearance.Options.UseForeColor = true;
+            this.btnEdit.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
+            this.btnEdit.Location = new System.Drawing.Point(217, 5);
+            this.btnEdit.Name = "btnEdit";
+            this.btnEdit.Size = new System.Drawing.Size(109, 40);
+            this.btnEdit.TabIndex = 3;
+            this.btnEdit.Text = "Edit";
             // 
             // labelControl14
             // 
@@ -694,6 +700,36 @@
             this.btnExit.Text = "Exit";
             this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
             // 
+            // btnDelivery
+            // 
+            this.btnDelivery.Appearance.BackColor = System.Drawing.Color.Olive;
+            this.btnDelivery.Appearance.Font = new System.Drawing.Font("Tahoma", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDelivery.Appearance.ForeColor = System.Drawing.Color.White;
+            this.btnDelivery.Appearance.Options.UseBackColor = true;
+            this.btnDelivery.Appearance.Options.UseFont = true;
+            this.btnDelivery.Appearance.Options.UseForeColor = true;
+            this.btnDelivery.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
+            this.btnDelivery.Location = new System.Drawing.Point(5, 94);
+            this.btnDelivery.Name = "btnDelivery";
+            this.btnDelivery.Size = new System.Drawing.Size(132, 55);
+            this.btnDelivery.TabIndex = 4;
+            this.btnDelivery.Text = "Delivery";
+            // 
+            // btnCollection
+            // 
+            this.btnCollection.Appearance.BackColor = System.Drawing.Color.Olive;
+            this.btnCollection.Appearance.Font = new System.Drawing.Font("Tahoma", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCollection.Appearance.ForeColor = System.Drawing.Color.White;
+            this.btnCollection.Appearance.Options.UseBackColor = true;
+            this.btnCollection.Appearance.Options.UseFont = true;
+            this.btnCollection.Appearance.Options.UseForeColor = true;
+            this.btnCollection.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
+            this.btnCollection.Location = new System.Drawing.Point(143, 94);
+            this.btnCollection.Name = "btnCollection";
+            this.btnCollection.Size = new System.Drawing.Size(132, 55);
+            this.btnCollection.TabIndex = 19;
+            this.btnCollection.Text = "Conllection";
+            // 
             // FrmCaller
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 18F);
@@ -705,6 +741,8 @@
             this.Name = "FrmCaller";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "FrmCaller";
+            this.Load += new System.EventHandler(this.FrmCaller_Load);
+            this.SizeChanged += new System.EventHandler(this.FrmCaller_SizeChanged);
             ((System.ComponentModel.ISupportInitialize)(this.panelMember)).EndInit();
             this.panelMember.ResumeLayout(false);
             this.panelMember.PerformLayout();
@@ -799,8 +837,8 @@
         private DevExpress.XtraEditors.CheckEdit checkEdit3;
         private DevExpress.XtraEditors.CheckEdit checkEdit2;
         private DevExpress.XtraEditors.CheckEdit checkEdit1;
-        private DevExpress.XtraEditors.SimpleButton simpleButton2;
-        private DevExpress.XtraEditors.SimpleButton simpleButton1;
+        private DevExpress.XtraEditors.SimpleButton btnTblBooking;
+        private DevExpress.XtraEditors.SimpleButton btnEdit;
         private DevExpress.XtraEditors.LabelControl labelControl14;
         private DevExpress.XtraEditors.TextEdit txtTelNum;
         private DevExpress.XtraEditors.PanelControl panelControl2;
@@ -813,5 +851,7 @@
         private DevExpress.XtraEditors.LabelControl labelControl17;
         private DevExpress.XtraEditors.LabelControl labelControl16;
         private DevExpress.XtraEditors.SimpleButton btnExit;
+        private DevExpress.XtraEditors.SimpleButton btnCollection;
+        private DevExpress.XtraEditors.SimpleButton btnDelivery;
     }
 }
