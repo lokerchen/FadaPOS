@@ -874,6 +874,7 @@
             this.Name = "FrmTaShowOrder";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FrmTaShowOrder";
+            this.Load += new System.EventHandler(this.FrmTaShowOrder_Load);
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).EndInit();
             this.panelControl1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.panelControl2)).EndInit();

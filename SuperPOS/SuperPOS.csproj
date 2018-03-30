@@ -129,10 +129,10 @@
     <Compile Include="UI\FrmTaAdminMain.Designer.cs">
       <DependentUpon>FrmTaAdminMain.cs</DependentUpon>
     </Compile>
-    <Compile Include="UI\FrmTaShowOrder.cs">
+    <Compile Include="UI\TA\FrmTaShowOrder.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="UI\FrmTaShowOrder.Designer.cs">
+    <Compile Include="UI\TA\FrmTaShowOrder.Designer.cs">
       <DependentUpon>FrmTaShowOrder.cs</DependentUpon>
     </Compile>
     <Compile Include="UI\Phone\brichiperr.cs" />
@@ -414,7 +414,7 @@
     <EmbeddedResource Include="UI\FrmTaAdminMain.resx">
       <DependentUpon>FrmTaAdminMain.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UI\FrmTaShowOrder.resx">
+    <EmbeddedResource Include="UI\TA\FrmTaShowOrder.resx">
       <DependentUpon>FrmTaShowOrder.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UI\Sys\FrmCompAddr.resx">

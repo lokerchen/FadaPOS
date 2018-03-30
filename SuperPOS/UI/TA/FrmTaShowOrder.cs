@@ -8,6 +8,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using DevExpress.XtraEditors;
+using SuperPOS.Common;
 
 namespace SuperPOS.UI
 {
@@ -16,6 +17,11 @@ namespace SuperPOS.UI
         public FrmTaShowOrder()
         {
             InitializeComponent();
+        }
+
+        private void FrmTaShowOrder_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }
