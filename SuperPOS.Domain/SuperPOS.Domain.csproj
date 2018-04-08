@@ -52,6 +52,7 @@
     <Compile Include="Entities\KeypadInfo.cs" />
     <Compile Include="Entities\ShopDetailInfo.cs" />
     <Compile Include="Entities\SysPrtSetInfo.cs" />
+    <Compile Include="Entities\SysUsrMaintenanceInfo.cs" />
     <Compile Include="Entities\SysValueInfo.cs" />
     <Compile Include="Entities\TaCashDrawSetInfo.cs" />
     <Compile Include="Entities\TaChangeMenuAttrInfo.cs" />
@@ -152,6 +153,7 @@
     <EmbeddedResource Include="Mappings\TaDeliverySetDetailInfo.hbm.xml" />
     <EmbeddedResource Include="Mappings\TaDeliverySetInfo.hbm.xml" />
     <EmbeddedResource Include="Mappings\TaChangeMenuAttr.hbm.xml" />
+    <EmbeddedResource Include="Mappings\SysUsrMaintenanceInfo.hbm.xml" />
     <Content Include="Mappings\TaPaymentInfo.hbm.xml" />
     <EmbeddedResource Include="Mappings\TaPostcodeChargeInfo.hbm.xml" />
     <EmbeddedResource Include="Mappings\TaPostcodeZoneInfo.hbm.xml" />

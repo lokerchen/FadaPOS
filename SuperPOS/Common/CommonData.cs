@@ -83,5 +83,7 @@ namespace SuperPOS.Common
         public static IList<TaSysFontInfo> TaSysFont { get; set; } 
 
         public static IList<TaChangeMenuAttrInfo> TaChangeMenuAttr { get; set; } 
+
+        public static IList<SysUsrMaintenanceInfo> SysUsrMaintenance { get; set; } 
     }
 }

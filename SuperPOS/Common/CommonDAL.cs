@@ -100,7 +100,8 @@ namespace SuperPOS.Common
             //付款信息
             systemData.GetTaPaymentDetail();
             #endregion
-        }
+            //System Setting
+            systemData.GetSysUsrMaintenance();}
         #endregion
 
         #region 获取Session
