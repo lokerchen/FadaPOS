@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using DevExpress.XtraEditors;
 using SuperPOS.Common;
+using SuperPOS.UI.TaAdmin;
 
 namespace SuperPOS.UI
 {
@@ -37,7 +38,8 @@ namespace SuperPOS.UI
         #region System Setting
         private void btnSysSetSysConf_Click(object sender, EventArgs e)
         {
-
+            FrmTaAdminSysConf frmTaAdmin = new FrmTaAdminSysConf();
+            frmTaAdmin.ShowDialog();
         }
 
         private void btnSysSetUsrMaint_Click(object sender, EventArgs e)
