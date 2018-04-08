@@ -13,9 +13,21 @@ namespace SuperPOS.UI
 {
     public partial class FrmTaAdmin : DevExpress.XtraEditors.XtraForm
     {
+        //用户ID
+        public int usrID = 0;
+        //用户姓名
+        public string usrName = "";
+
         public FrmTaAdmin()
         {
             InitializeComponent();
+        }
+
+        public FrmTaAdmin(int uID, string sName)
+        {
+            InitializeComponent();
+            usrID = uID;
+            usrName = sName;
         }
 
 

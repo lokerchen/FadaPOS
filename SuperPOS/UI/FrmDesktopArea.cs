@@ -36,7 +36,7 @@ namespace SuperPOS.UI
 
         private void btnCtlPanel_Click(object sender, EventArgs e)
         {
-            FrmTaAdminMain frmTaAdminMain = new FrmTaAdminMain(usrID, usrName);
+            FrmTaAdmin frmTaAdminMain = new FrmTaAdmin(usrID, usrName);
             frmTaAdminMain.ShowDialog();
         }
 
