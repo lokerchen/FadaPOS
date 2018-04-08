@@ -123,6 +123,12 @@
     <Compile Include="UI\FrmShow.Designer.cs">
       <DependentUpon>FrmShow.cs</DependentUpon>
     </Compile>
+    <Compile Include="UI\FrmTaAdmin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\FrmTaAdmin.Designer.cs">
+      <DependentUpon>FrmTaAdmin.cs</DependentUpon>
+    </Compile>
     <Compile Include="UI\FrmTaAdminMain.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -410,6 +416,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UI\FrmShow.resx">
       <DependentUpon>FrmShow.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\FrmTaAdmin.resx">
+      <DependentUpon>FrmTaAdmin.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UI\FrmTaAdminMain.resx">
       <DependentUpon>FrmTaAdminMain.cs</DependentUpon>
