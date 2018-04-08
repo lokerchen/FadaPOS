@@ -8,6 +8,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using DevExpress.XtraEditors;
+using SuperPOS.Common;
 
 namespace SuperPOS.UI
 {
@@ -17,6 +18,8 @@ namespace SuperPOS.UI
         public int usrID = 0;
         //用户姓名
         public string usrName = "";
+
+        private AutoSizeFormClass asfc = new AutoSizeFormClass();
 
         public FrmTaAdmin()
         {
@@ -180,5 +183,15 @@ namespace SuperPOS.UI
         #region Method
 
         #endregion
+
+        private void FrmTaAdmin_Load(object sender, EventArgs e)
+        {
+            asfc.controllInitializeSize(this);
+        }
+
+        private void FrmTaAdmin_SizeChanged(object sender, EventArgs e)
+        {
+            asfc.controlAutoSize(this);
+        }
     }
 }

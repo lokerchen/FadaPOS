@@ -84,10 +84,9 @@
             // 
             this.panelControl3.Controls.Add(this.labelControl1);
             this.panelControl3.Controls.Add(this.panelControl1);
-            this.panelControl3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelControl3.Location = new System.Drawing.Point(0, 0);
+            this.panelControl3.Location = new System.Drawing.Point(6, 9);
             this.panelControl3.Name = "panelControl3";
-            this.panelControl3.Size = new System.Drawing.Size(935, 579);
+            this.panelControl3.Size = new System.Drawing.Size(937, 582);
             this.panelControl3.TabIndex = 2;
             // 
             // labelControl1
@@ -113,7 +112,7 @@
             this.panelControl1.Controls.Add(this.labelControl2);
             this.panelControl1.Location = new System.Drawing.Point(7, 51);
             this.panelControl1.Name = "panelControl1";
-            this.panelControl1.Size = new System.Drawing.Size(919, 523);
+            this.panelControl1.Size = new System.Drawing.Size(919, 525);
             this.panelControl1.TabIndex = 2;
             // 
             // panelControl2
@@ -695,12 +694,15 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(935, 579);
+            this.ClientSize = new System.Drawing.Size(951, 597);
             this.Controls.Add(this.panelControl3);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "FrmTaAdmin";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FrmTaAdmin";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.Load += new System.EventHandler(this.FrmTaAdmin_Load);
+            this.SizeChanged += new System.EventHandler(this.FrmTaAdmin_SizeChanged);
             ((System.ComponentModel.ISupportInitialize)(this.panelControl3)).EndInit();
             this.panelControl3.ResumeLayout(false);
             this.panelControl3.PerformLayout();
