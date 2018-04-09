@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using DevExpress.XtraEditors;
 using SuperPOS.Common;
 using SuperPOS.Domain.Entities;
+using SuperPOS.UI.Sys;
 
 namespace SuperPOS.UI.TaAdmin
 {
@@ -98,7 +99,10 @@ namespace SuperPOS.UI.TaAdmin
 
         private void btnAddUpdateUser_Click(object sender, EventArgs e)
         {
+            FrmUsrSet frmUsrSet = new FrmUsrSet(usrID, usrName);
+            frmUsrSet.ShowDialog();
 
+            BindLueUsrData();
         }
 
         private string ChangeBoolToYesOrNo(bool isChecked)

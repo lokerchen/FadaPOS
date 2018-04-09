@@ -51,6 +51,7 @@
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
             this.txtUsrPwd = new DevExpress.XtraEditors.TextEdit();
             this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
+            this.btnExit = new DevExpress.XtraEditors.SimpleButton();
             ((System.ComponentModel.ISupportInitialize)(this.gcUsr)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gvUsrSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.xtraTabControl1)).BeginInit();
@@ -184,6 +185,7 @@
             // 
             // panelControl1
             // 
+            this.panelControl1.Controls.Add(this.btnExit);
             this.panelControl1.Controls.Add(this.panelControl2);
             this.panelControl1.Controls.Add(this.lueUsrAuthGrp);
             this.panelControl1.Controls.Add(this.txtUsrName);
@@ -243,6 +245,7 @@
             this.lueUsrAuthGrp.Properties.SearchMode = DevExpress.XtraEditors.Controls.SearchMode.OnlyInPopup;
             this.lueUsrAuthGrp.Size = new System.Drawing.Size(171, 24);
             this.lueUsrAuthGrp.TabIndex = 6;
+            this.lueUsrAuthGrp.Visible = false;
             // 
             // txtUsrName
             // 
@@ -258,6 +261,7 @@
             this.labelControl3.Size = new System.Drawing.Size(142, 18);
             this.labelControl3.TabIndex = 5;
             this.labelControl3.Text = "User Authority Group:";
+            this.labelControl3.Visible = false;
             // 
             // labelControl1
             // 
@@ -282,6 +286,22 @@
             this.labelControl2.TabIndex = 3;
             this.labelControl2.Text = "User Password:";
             // 
+            // btnExit
+            // 
+            this.btnExit.Appearance.BackColor = System.Drawing.Color.Olive;
+            this.btnExit.Appearance.Font = new System.Drawing.Font("Tahoma", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnExit.Appearance.ForeColor = System.Drawing.Color.White;
+            this.btnExit.Appearance.Options.UseBackColor = true;
+            this.btnExit.Appearance.Options.UseFont = true;
+            this.btnExit.Appearance.Options.UseForeColor = true;
+            this.btnExit.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
+            this.btnExit.Location = new System.Drawing.Point(536, 34);
+            this.btnExit.Name = "btnExit";
+            this.btnExit.Size = new System.Drawing.Size(78, 55);
+            this.btnExit.TabIndex = 7;
+            this.btnExit.Text = "Exit";
+            this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
+            // 
             // FrmUsrSet
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 18F);
@@ -294,7 +314,9 @@
             this.Name = "FrmUsrSet";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "User Setting";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.FrmUsrSet_Load);
+            this.SizeChanged += new System.EventHandler(this.FrmUsrSet_SizeChanged);
             ((System.ComponentModel.ISupportInitialize)(this.gcUsr)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gvUsrSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.xtraTabControl1)).EndInit();
@@ -337,5 +359,6 @@
         private DevExpress.XtraEditors.PanelControl panelControl1;
         private DevExpress.XtraGrid.Columns.GridColumn UsrAuthGrp;
         private DevExpress.XtraGrid.Columns.GridColumn UsrAccID;
+        private DevExpress.XtraEditors.SimpleButton btnExit;
     }
 }

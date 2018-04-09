@@ -27,6 +27,8 @@ namespace SuperPOS.UI.Sys
 
         private readonly EntityControl _control = new EntityControl();
 
+        private AutoSizeFormClass asfc = new AutoSizeFormClass();
+
         public FrmUsrSet()
         {
             InitializeComponent();
@@ -80,6 +82,8 @@ namespace SuperPOS.UI.Sys
             BindComboData();
 
             BindData();
+
+            asfc.controllInitializeSize(this);
         }
 
         private void gvUsrSet_CustomDrawRowIndicator(object sender, DevExpress.XtraGrid.Views.Grid.RowIndicatorCustomDrawEventArgs e)
@@ -216,6 +220,16 @@ namespace SuperPOS.UI.Sys
                 catch (Exception ex) { LogHelper.Error(this.Name, ex); }
                 
             }
+        }
+
+        private void btnExit_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void FrmUsrSet_SizeChanged(object sender, EventArgs e)
+        {
+            asfc.controlAutoSize(this);
         }
     }
 }
