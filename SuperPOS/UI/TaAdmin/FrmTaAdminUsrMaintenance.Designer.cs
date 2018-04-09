@@ -30,7 +30,7 @@
         {
             this.groupControl1 = new DevExpress.XtraEditors.GroupControl();
             this.xtpUsrAccess = new DevExpress.XtraTab.XtraTabControl();
-            this.xtraTabPage1 = new DevExpress.XtraTab.XtraTabPage();
+            this.xtpTa = new DevExpress.XtraTab.XtraTabPage();
             this.panelControl2 = new DevExpress.XtraEditors.PanelControl();
             this.chkTaShowOrderExprotData = new DevExpress.XtraEditors.CheckEdit();
             this.chkTaShowOrderPrtReceipt = new DevExpress.XtraEditors.CheckEdit();
@@ -40,7 +40,7 @@
             this.chkTaPriceOff = new DevExpress.XtraEditors.CheckEdit();
             this.chkTaChangePrice = new DevExpress.XtraEditors.CheckEdit();
             this.chkTaControlPanel = new DevExpress.XtraEditors.CheckEdit();
-            this.xtraTabPage2 = new DevExpress.XtraTab.XtraTabPage();
+            this.xtpEi = new DevExpress.XtraTab.XtraTabPage();
             this.panelControl3 = new DevExpress.XtraEditors.PanelControl();
             this.chkEiPrintBillDiscount = new DevExpress.XtraEditors.CheckEdit();
             this.chkEiShowOrderPrintReceipt = new DevExpress.XtraEditors.CheckEdit();
@@ -54,7 +54,7 @@
             this.chkEiPriceOff = new DevExpress.XtraEditors.CheckEdit();
             this.chkEiChangePrice = new DevExpress.XtraEditors.CheckEdit();
             this.chkEiControlPanel = new DevExpress.XtraEditors.CheckEdit();
-            this.xtraTabPage3 = new DevExpress.XtraTab.XtraTabPage();
+            this.xtpGa = new DevExpress.XtraTab.XtraTabPage();
             this.panelControl4 = new DevExpress.XtraEditors.PanelControl();
             this.chkGaOpenCashDrawer = new DevExpress.XtraEditors.CheckEdit();
             this.chkGaAccountSumPrintSaleRpt = new DevExpress.XtraEditors.CheckEdit();
@@ -83,7 +83,7 @@
             this.groupControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.xtpUsrAccess)).BeginInit();
             this.xtpUsrAccess.SuspendLayout();
-            this.xtraTabPage1.SuspendLayout();
+            this.xtpTa.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl2)).BeginInit();
             this.panelControl2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.chkTaShowOrderExprotData.Properties)).BeginInit();
@@ -94,7 +94,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.chkTaPriceOff.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.chkTaChangePrice.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.chkTaControlPanel.Properties)).BeginInit();
-            this.xtraTabPage2.SuspendLayout();
+            this.xtpEi.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl3)).BeginInit();
             this.panelControl3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.chkEiPrintBillDiscount.Properties)).BeginInit();
@@ -109,7 +109,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.chkEiPriceOff.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.chkEiChangePrice.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.chkEiControlPanel.Properties)).BeginInit();
-            this.xtraTabPage3.SuspendLayout();
+            this.xtpGa.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl4)).BeginInit();
             this.panelControl4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.chkGaOpenCashDrawer.Properties)).BeginInit();
@@ -149,20 +149,21 @@
             this.xtpUsrAccess.Location = new System.Drawing.Point(7, 117);
             this.xtpUsrAccess.Name = "xtpUsrAccess";
             this.xtpUsrAccess.PageImagePosition = DevExpress.XtraTab.TabPageImagePosition.Center;
-            this.xtpUsrAccess.SelectedTabPage = this.xtraTabPage1;
+            this.xtpUsrAccess.SelectedTabPage = this.xtpTa;
             this.xtpUsrAccess.Size = new System.Drawing.Size(572, 389);
             this.xtpUsrAccess.TabIndex = 1;
             this.xtpUsrAccess.TabPages.AddRange(new DevExpress.XtraTab.XtraTabPage[] {
-            this.xtraTabPage1,
-            this.xtraTabPage2,
-            this.xtraTabPage3});
+            this.xtpTa,
+            this.xtpEi,
+            this.xtpGa});
+            this.xtpUsrAccess.Selected += new DevExpress.XtraTab.TabPageEventHandler(this.xtpUsrAccess_Selected);
             // 
-            // xtraTabPage1
+            // xtpTa
             // 
-            this.xtraTabPage1.Controls.Add(this.panelControl2);
-            this.xtraTabPage1.Name = "xtraTabPage1";
-            this.xtraTabPage1.Size = new System.Drawing.Size(565, 353);
-            this.xtraTabPage1.Text = "Takeaway Access";
+            this.xtpTa.Controls.Add(this.panelControl2);
+            this.xtpTa.Name = "xtpTa";
+            this.xtpTa.Size = new System.Drawing.Size(565, 353);
+            this.xtpTa.Text = "Takeaway Access";
             // 
             // panelControl2
             // 
@@ -243,12 +244,12 @@
             this.chkTaControlPanel.Size = new System.Drawing.Size(119, 22);
             this.chkTaControlPanel.TabIndex = 0;
             // 
-            // xtraTabPage2
+            // xtpEi
             // 
-            this.xtraTabPage2.Controls.Add(this.panelControl3);
-            this.xtraTabPage2.Name = "xtraTabPage2";
-            this.xtraTabPage2.Size = new System.Drawing.Size(565, 353);
-            this.xtraTabPage2.Text = "Eat In Access";
+            this.xtpEi.Controls.Add(this.panelControl3);
+            this.xtpEi.Name = "xtpEi";
+            this.xtpEi.Size = new System.Drawing.Size(565, 353);
+            this.xtpEi.Text = "Eat In Access";
             // 
             // panelControl3
             // 
@@ -365,12 +366,12 @@
             this.chkEiControlPanel.Size = new System.Drawing.Size(119, 22);
             this.chkEiControlPanel.TabIndex = 0;
             // 
-            // xtraTabPage3
+            // xtpGa
             // 
-            this.xtraTabPage3.Controls.Add(this.panelControl4);
-            this.xtraTabPage3.Name = "xtraTabPage3";
-            this.xtraTabPage3.Size = new System.Drawing.Size(565, 353);
-            this.xtraTabPage3.Text = "General Access";
+            this.xtpGa.Controls.Add(this.panelControl4);
+            this.xtpGa.Name = "xtpGa";
+            this.xtpGa.Size = new System.Drawing.Size(565, 353);
+            this.xtpGa.Text = "General Access";
             // 
             // panelControl4
             // 
@@ -560,6 +561,7 @@
             this.btnAddUpdateUser.Size = new System.Drawing.Size(115, 55);
             this.btnAddUpdateUser.TabIndex = 6;
             this.btnAddUpdateUser.Text = "Add/Update User";
+            this.btnAddUpdateUser.Click += new System.EventHandler(this.btnAddUpdateUser_Click);
             // 
             // btnSave
             // 
@@ -575,6 +577,7 @@
             this.btnSave.Size = new System.Drawing.Size(78, 55);
             this.btnSave.TabIndex = 5;
             this.btnSave.Text = "Save";
+            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
             // btnExit
             // 
@@ -611,6 +614,7 @@
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.lueUsrName.Size = new System.Drawing.Size(149, 30);
             this.lueUsrName.TabIndex = 0;
+            this.lueUsrName.EditValueChanged += new System.EventHandler(this.lueUsrName_EditValueChanged);
             // 
             // FrmTaAdminUsrMaintenance
             // 
@@ -629,7 +633,7 @@
             this.groupControl1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.xtpUsrAccess)).EndInit();
             this.xtpUsrAccess.ResumeLayout(false);
-            this.xtraTabPage1.ResumeLayout(false);
+            this.xtpTa.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.panelControl2)).EndInit();
             this.panelControl2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.chkTaShowOrderExprotData.Properties)).EndInit();
@@ -640,7 +644,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.chkTaPriceOff.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.chkTaChangePrice.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.chkTaControlPanel.Properties)).EndInit();
-            this.xtraTabPage2.ResumeLayout(false);
+            this.xtpEi.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.panelControl3)).EndInit();
             this.panelControl3.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.chkEiPrintBillDiscount.Properties)).EndInit();
@@ -655,7 +659,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.chkEiPriceOff.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.chkEiChangePrice.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.chkEiControlPanel.Properties)).EndInit();
-            this.xtraTabPage3.ResumeLayout(false);
+            this.xtpGa.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.panelControl4)).EndInit();
             this.panelControl4.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.chkGaOpenCashDrawer.Properties)).EndInit();
@@ -688,9 +692,9 @@
         private DevExpress.XtraEditors.GroupControl groupControl1;
         private DevExpress.XtraEditors.PanelControl panelControl1;
         private DevExpress.XtraTab.XtraTabControl xtpUsrAccess;
-        private DevExpress.XtraTab.XtraTabPage xtraTabPage1;
-        private DevExpress.XtraTab.XtraTabPage xtraTabPage2;
-        private DevExpress.XtraTab.XtraTabPage xtraTabPage3;
+        private DevExpress.XtraTab.XtraTabPage xtpTa;
+        private DevExpress.XtraTab.XtraTabPage xtpEi;
+        private DevExpress.XtraTab.XtraTabPage xtpGa;
         private DevExpress.XtraEditors.PanelControl panelControl2;
         private DevExpress.XtraEditors.CheckEdit chkTaShowOrderExprotData;
         private DevExpress.XtraEditors.CheckEdit chkTaShowOrderPrtReceipt;
