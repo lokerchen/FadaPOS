@@ -32,7 +32,7 @@
             this.xtpUsrAccess = new DevExpress.XtraTab.XtraTabControl();
             this.xtpTa = new DevExpress.XtraTab.XtraTabPage();
             this.panelControl2 = new DevExpress.XtraEditors.PanelControl();
-            this.chkTaShowOrderExprotData = new DevExpress.XtraEditors.CheckEdit();
+            this.chkTaShowOrderExportData = new DevExpress.XtraEditors.CheckEdit();
             this.chkTaShowOrderPrtReceipt = new DevExpress.XtraEditors.CheckEdit();
             this.chkTaShowOrderEditOrder = new DevExpress.XtraEditors.CheckEdit();
             this.chkTaShowOrderChangePaym = new DevExpress.XtraEditors.CheckEdit();
@@ -86,7 +86,7 @@
             this.xtpTa.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl2)).BeginInit();
             this.panelControl2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.chkTaShowOrderExprotData.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.chkTaShowOrderExportData.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.chkTaShowOrderPrtReceipt.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.chkTaShowOrderEditOrder.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.chkTaShowOrderChangePaym.Properties)).BeginInit();
@@ -167,7 +167,7 @@
             // 
             // panelControl2
             // 
-            this.panelControl2.Controls.Add(this.chkTaShowOrderExprotData);
+            this.panelControl2.Controls.Add(this.chkTaShowOrderExportData);
             this.panelControl2.Controls.Add(this.chkTaShowOrderPrtReceipt);
             this.panelControl2.Controls.Add(this.chkTaShowOrderEditOrder);
             this.panelControl2.Controls.Add(this.chkTaShowOrderChangePaym);
@@ -180,13 +180,13 @@
             this.panelControl2.Size = new System.Drawing.Size(559, 347);
             this.panelControl2.TabIndex = 1;
             // 
-            // chkTaShowOrderExprotData
+            // chkTaShowOrderExportData
             // 
-            this.chkTaShowOrderExprotData.Location = new System.Drawing.Point(15, 216);
-            this.chkTaShowOrderExprotData.Name = "chkTaShowOrderExprotData";
-            this.chkTaShowOrderExprotData.Properties.Caption = "Show Order / Export Data";
-            this.chkTaShowOrderExprotData.Size = new System.Drawing.Size(200, 22);
-            this.chkTaShowOrderExprotData.TabIndex = 7;
+            this.chkTaShowOrderExportData.Location = new System.Drawing.Point(15, 216);
+            this.chkTaShowOrderExportData.Name = "chkTaShowOrderExportData";
+            this.chkTaShowOrderExportData.Properties.Caption = "Show Order / Export Data";
+            this.chkTaShowOrderExportData.Size = new System.Drawing.Size(200, 22);
+            this.chkTaShowOrderExportData.TabIndex = 7;
             // 
             // chkTaShowOrderPrtReceipt
             // 
@@ -636,7 +636,7 @@
             this.xtpTa.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.panelControl2)).EndInit();
             this.panelControl2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.chkTaShowOrderExprotData.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.chkTaShowOrderExportData.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.chkTaShowOrderPrtReceipt.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.chkTaShowOrderEditOrder.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.chkTaShowOrderChangePaym.Properties)).EndInit();
@@ -696,7 +696,7 @@
         private DevExpress.XtraTab.XtraTabPage xtpEi;
         private DevExpress.XtraTab.XtraTabPage xtpGa;
         private DevExpress.XtraEditors.PanelControl panelControl2;
-        private DevExpress.XtraEditors.CheckEdit chkTaShowOrderExprotData;
+        private DevExpress.XtraEditors.CheckEdit chkTaShowOrderExportData;
         private DevExpress.XtraEditors.CheckEdit chkTaShowOrderPrtReceipt;
         private DevExpress.XtraEditors.CheckEdit chkTaShowOrderEditOrder;
         private DevExpress.XtraEditors.CheckEdit chkTaShowOrderChangePaym;

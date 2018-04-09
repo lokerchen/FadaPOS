@@ -45,8 +45,7 @@ namespace SuperPOS.UI.TaAdmin
         {
             BindLueUsrData();
 
-            new SystemData().GetSysUsrMaintenance();
-            lstUsrMain = CommonData.SysUsrMaintenance.ToList();
+            lueUsrName.ItemIndex = 0;
 
             this.xtpUsrAccess.SelectedTabPageIndex = 0;
 
@@ -73,30 +72,21 @@ namespace SuperPOS.UI.TaAdmin
                                    ScName = usr.UsrName
                                };
             lueUsrName.Properties.DataSource = lstShiftCode.ToList();
-            lueUsrName.Properties.DisplayMember = "usrName";
-            lueUsrName.Properties.ValueMember = "usrID";
+            lueUsrName.Properties.DisplayMember = "ScName";
+            lueUsrName.Properties.ValueMember = "ScID";
         }
         #endregion
 
         private void lueUsrName_EditValueChanged(object sender, EventArgs e)
         {
             this.xtpUsrAccess.SelectedTabPageIndex = 0;
+
+            SetData(xtpUsrAccess.SelectedTabPage.Name);
         }
 
         private void xtpUsrAccess_Selected(object sender, DevExpress.XtraTab.TabPageEventArgs e)
         {
-            if (e.Page.Name.Equals("xtpTa"))
-            {
-                
-            }
-            else if (e.Page.Name.Equals("xtpEi"))
-            {
-                
-            }
-            else if (e.Page.Name.Equals("xtpGa"))
-            {
-                
-            }
+            SetData(e.Page.Name);
         }
 
         private void btnSave_Click(object sender, EventArgs e)
@@ -117,6 +107,62 @@ namespace SuperPOS.UI.TaAdmin
         private bool YesOrNoToBool(string isYesOrNo)
         {
             return isYesOrNo.Equals("Y") ? true : false;
+        }
+
+        private void SetData(string sPayName)
+        {
+            new SystemData().GetSysUsrMaintenance();
+            var lstMaint = CommonData.SysUsrMaintenance.Where(s => s.UsrID == Convert.ToInt32(lueUsrName.EditValue));
+
+            if (!lstMaint.Any()) return;
+
+            SysUsrMaintenanceInfo usrMaintenance = new SysUsrMaintenanceInfo();
+
+            if (sPayName.Equals("xtpTa"))
+            {
+                chkTaControlPanel.Checked = YesOrNoToBool(usrMaintenance.TaControlPanel);
+                chkTaChangePrice.Checked = YesOrNoToBool(usrMaintenance.TaChangePrice);
+                chkTaPriceOff.Checked = YesOrNoToBool(usrMaintenance.TaPriceOff);
+                chkTaShowOrderPrintAcctSum.Checked = YesOrNoToBool(usrMaintenance.TaShowOrderPrtAcctSummary);
+                chkTaShowOrderChangePaym.Checked = YesOrNoToBool(usrMaintenance.TaShowOrderChangePayment);
+                chkTaShowOrderEditOrder.Checked = YesOrNoToBool(usrMaintenance.TaShowOrderEditOrder);
+                chkTaShowOrderPrtReceipt.Checked = YesOrNoToBool(usrMaintenance.TaShowOrderPrtReceipt);
+                chkTaShowOrderExportData.Checked = YesOrNoToBool(usrMaintenance.TaShowOrderExportData);
+            }
+            else if (sPayName.Equals("xtpEi"))
+            {
+                chkEiControlPanel.Checked = YesOrNoToBool(usrMaintenance.EiControlPanel);
+                chkEiChangePrice.Checked = YesOrNoToBool(usrMaintenance.EiChangePrice);
+                chkEiPriceOff.Checked = YesOrNoToBool(usrMaintenance.EiPriceOff);
+                chkEiPay.Checked = YesOrNoToBool(usrMaintenance.EiPay);
+                chkEiPrintBill.Checked = YesOrNoToBool(usrMaintenance.EiPrtBill);
+                chkEiRemoveItemAfterPrint.Checked = YesOrNoToBool(usrMaintenance.EiRemoveItemAfterPrt);
+                chkEiTblBooking.Checked = YesOrNoToBool(usrMaintenance.EiTableBooking);
+                chkEiShowOrderPrintAcctSum.Checked = YesOrNoToBool(usrMaintenance.EiShowOrderPrtAcctSummary);
+                chkEiShowOrderChangePaym.Checked = YesOrNoToBool(usrMaintenance.EiShowOrderChangePayment);
+                chkEiShowOrderEditOrder.Checked = YesOrNoToBool(usrMaintenance.EiShowOrderEditOrder);
+                chkEiShowOrderPrintReceipt.Checked = YesOrNoToBool(usrMaintenance.EiShowOrderPrtReceipt);
+            }
+            else if (sPayName.Equals("xtpGa"))
+            {
+                chkGaSysConf.Checked = YesOrNoToBool(usrMaintenance.GaSysConf);
+                chkGaSysUsrMaint.Checked = YesOrNoToBool(usrMaintenance.GaSysUsrMaint);
+                chkGaSysDataManager.Checked = YesOrNoToBool(usrMaintenance.GaSysDataManager);
+                chkGaSysCompactDb.Checked = YesOrNoToBool(usrMaintenance.GaSysCompactDb);
+                chkGaRptReport.Checked = YesOrNoToBool(usrMaintenance.GaRptReport);
+                chkGaRptAccountSum.Checked = YesOrNoToBool(usrMaintenance.GaRptAccountSummary);
+                chkGaAccountSumView.Checked = YesOrNoToBool(usrMaintenance.GaAsSumView);
+                chkGaLogExitPos.Checked = YesOrNoToBool(usrMaintenance.GaLogonExit);
+                chkGaWriteAndEnableInventory.Checked = YesOrNoToBool(usrMaintenance.GaWriteAndEnableInv);
+                chkGaSysComputerAdd.Checked = YesOrNoToBool(usrMaintenance.GaSysComputerAdd);
+                chkGaSysShiftCode.Checked = YesOrNoToBool(usrMaintenance.GaSysShiftCode);
+                chkGaTaConf.Checked = YesOrNoToBool(usrMaintenance.GaTaConf);
+                chkGaEiConf.Checked = YesOrNoToBool(usrMaintenance.GaEiConf);
+                chkGaTaPrintSetup.Checked = YesOrNoToBool(usrMaintenance.GaTaPrtSetup);
+                chkGaEiPrintSetup.Checked = YesOrNoToBool(usrMaintenance.GaEiPrtSetup);
+                chkGaAccountSumPrintSaleRpt.Checked = YesOrNoToBool(usrMaintenance.GaAsPrtSaleRpt);
+                chkGaOpenCashDrawer.Checked = YesOrNoToBool(usrMaintenance.GaOpenCashDrawer);
+            }
         }
     }
 }
