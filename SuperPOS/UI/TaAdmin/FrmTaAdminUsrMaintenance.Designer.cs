@@ -42,6 +42,10 @@
             this.chkTaControlPanel = new DevExpress.XtraEditors.CheckEdit();
             this.xtraTabPage2 = new DevExpress.XtraTab.XtraTabPage();
             this.panelControl3 = new DevExpress.XtraEditors.PanelControl();
+            this.chkEiPrintBillDiscount = new DevExpress.XtraEditors.CheckEdit();
+            this.chkEiShowOrderPrintReceipt = new DevExpress.XtraEditors.CheckEdit();
+            this.chkEiShowOrderEditOrder = new DevExpress.XtraEditors.CheckEdit();
+            this.chkEiShowOrderChangePaym = new DevExpress.XtraEditors.CheckEdit();
             this.chkEiShowOrderPrintAcctSum = new DevExpress.XtraEditors.CheckEdit();
             this.chkEiTblBooking = new DevExpress.XtraEditors.CheckEdit();
             this.chkEiRemoveItemAfterPrint = new DevExpress.XtraEditors.CheckEdit();
@@ -51,12 +55,15 @@
             this.chkEiChangePrice = new DevExpress.XtraEditors.CheckEdit();
             this.chkEiControlPanel = new DevExpress.XtraEditors.CheckEdit();
             this.xtraTabPage3 = new DevExpress.XtraTab.XtraTabPage();
-            this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
-            this.chkEiShowOrderPrintReceipt = new DevExpress.XtraEditors.CheckEdit();
-            this.chkEiShowOrderEditOrder = new DevExpress.XtraEditors.CheckEdit();
-            this.chkEiShowOrderChangePaym = new DevExpress.XtraEditors.CheckEdit();
-            this.chkEiPrintBillDiscount = new DevExpress.XtraEditors.CheckEdit();
             this.panelControl4 = new DevExpress.XtraEditors.PanelControl();
+            this.chkGaOpenCashDrawer = new DevExpress.XtraEditors.CheckEdit();
+            this.chkGaAccountSumPrintSaleRpt = new DevExpress.XtraEditors.CheckEdit();
+            this.chkGaEiPrintSetup = new DevExpress.XtraEditors.CheckEdit();
+            this.chkGaTaPrintSetup = new DevExpress.XtraEditors.CheckEdit();
+            this.chkGaEiConf = new DevExpress.XtraEditors.CheckEdit();
+            this.chkGaTaConf = new DevExpress.XtraEditors.CheckEdit();
+            this.chkGaSysShiftCode = new DevExpress.XtraEditors.CheckEdit();
+            this.chkGaSysComputerAdd = new DevExpress.XtraEditors.CheckEdit();
             this.chkGaWriteAndEnableInventory = new DevExpress.XtraEditors.CheckEdit();
             this.chkGaLogExitPos = new DevExpress.XtraEditors.CheckEdit();
             this.chkGaAccountSumView = new DevExpress.XtraEditors.CheckEdit();
@@ -66,19 +73,12 @@
             this.chkGaSysDataManager = new DevExpress.XtraEditors.CheckEdit();
             this.chkGaSysUsrMaint = new DevExpress.XtraEditors.CheckEdit();
             this.chkGaSysConf = new DevExpress.XtraEditors.CheckEdit();
-            this.chkGaOpenCashDrawer = new DevExpress.XtraEditors.CheckEdit();
-            this.chkGaAccountSumPrintSaleRpt = new DevExpress.XtraEditors.CheckEdit();
-            this.chkGaEiPrintSetup = new DevExpress.XtraEditors.CheckEdit();
-            this.chkGaTaPrintSetup = new DevExpress.XtraEditors.CheckEdit();
-            this.chkGaEiConf = new DevExpress.XtraEditors.CheckEdit();
-            this.chkGaTaConf = new DevExpress.XtraEditors.CheckEdit();
-            this.chkGaSysShiftCode = new DevExpress.XtraEditors.CheckEdit();
-            this.chkGaSysComputerAdd = new DevExpress.XtraEditors.CheckEdit();
-            this.lueUsrName = new DevExpress.XtraEditors.LookUpEdit();
-            this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
-            this.btnExit = new DevExpress.XtraEditors.SimpleButton();
-            this.btnSave = new DevExpress.XtraEditors.SimpleButton();
+            this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
             this.btnAddUpdateUser = new DevExpress.XtraEditors.SimpleButton();
+            this.btnSave = new DevExpress.XtraEditors.SimpleButton();
+            this.btnExit = new DevExpress.XtraEditors.SimpleButton();
+            this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
+            this.lueUsrName = new DevExpress.XtraEditors.LookUpEdit();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).BeginInit();
             this.groupControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.xtpUsrAccess)).BeginInit();
@@ -97,6 +97,10 @@
             this.xtraTabPage2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl3)).BeginInit();
             this.panelControl3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.chkEiPrintBillDiscount.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.chkEiShowOrderPrintReceipt.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.chkEiShowOrderEditOrder.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.chkEiShowOrderChangePaym.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.chkEiShowOrderPrintAcctSum.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.chkEiTblBooking.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.chkEiRemoveItemAfterPrint.Properties)).BeginInit();
@@ -106,14 +110,16 @@
             ((System.ComponentModel.ISupportInitialize)(this.chkEiChangePrice.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.chkEiControlPanel.Properties)).BeginInit();
             this.xtraTabPage3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
-            this.panelControl1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.chkEiShowOrderPrintReceipt.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.chkEiShowOrderEditOrder.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.chkEiShowOrderChangePaym.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.chkEiPrintBillDiscount.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl4)).BeginInit();
             this.panelControl4.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.chkGaOpenCashDrawer.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.chkGaAccountSumPrintSaleRpt.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.chkGaEiPrintSetup.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.chkGaTaPrintSetup.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.chkGaEiConf.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.chkGaTaConf.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.chkGaSysShiftCode.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.chkGaSysComputerAdd.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.chkGaWriteAndEnableInventory.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.chkGaLogExitPos.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.chkGaAccountSumView.Properties)).BeginInit();
@@ -123,14 +129,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.chkGaSysDataManager.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.chkGaSysUsrMaint.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.chkGaSysConf.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.chkGaOpenCashDrawer.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.chkGaAccountSumPrintSaleRpt.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.chkGaEiPrintSetup.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.chkGaTaPrintSetup.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.chkGaEiConf.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.chkGaTaConf.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.chkGaSysShiftCode.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.chkGaSysComputerAdd.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
+            this.panelControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.lueUsrName.Properties)).BeginInit();
             this.SuspendLayout();
             // 
@@ -269,6 +269,38 @@
             this.panelControl3.Size = new System.Drawing.Size(559, 347);
             this.panelControl3.TabIndex = 2;
             // 
+            // chkEiPrintBillDiscount
+            // 
+            this.chkEiPrintBillDiscount.Location = new System.Drawing.Point(307, 306);
+            this.chkEiPrintBillDiscount.Name = "chkEiPrintBillDiscount";
+            this.chkEiPrintBillDiscount.Properties.Caption = "Print Bill / Discount";
+            this.chkEiPrintBillDiscount.Size = new System.Drawing.Size(215, 22);
+            this.chkEiPrintBillDiscount.TabIndex = 11;
+            // 
+            // chkEiShowOrderPrintReceipt
+            // 
+            this.chkEiShowOrderPrintReceipt.Location = new System.Drawing.Point(15, 306);
+            this.chkEiShowOrderPrintReceipt.Name = "chkEiShowOrderPrintReceipt";
+            this.chkEiShowOrderPrintReceipt.Properties.Caption = "Show Order / Print Receipt";
+            this.chkEiShowOrderPrintReceipt.Size = new System.Drawing.Size(215, 22);
+            this.chkEiShowOrderPrintReceipt.TabIndex = 10;
+            // 
+            // chkEiShowOrderEditOrder
+            // 
+            this.chkEiShowOrderEditOrder.Location = new System.Drawing.Point(15, 276);
+            this.chkEiShowOrderEditOrder.Name = "chkEiShowOrderEditOrder";
+            this.chkEiShowOrderEditOrder.Properties.Caption = "Show Order / Edit Order";
+            this.chkEiShowOrderEditOrder.Size = new System.Drawing.Size(240, 22);
+            this.chkEiShowOrderEditOrder.TabIndex = 9;
+            // 
+            // chkEiShowOrderChangePaym
+            // 
+            this.chkEiShowOrderChangePaym.Location = new System.Drawing.Point(15, 246);
+            this.chkEiShowOrderChangePaym.Name = "chkEiShowOrderChangePaym";
+            this.chkEiShowOrderChangePaym.Properties.Caption = "Show Order / Change Payment";
+            this.chkEiShowOrderChangePaym.Size = new System.Drawing.Size(240, 22);
+            this.chkEiShowOrderChangePaym.TabIndex = 8;
+            // 
             // chkEiShowOrderPrintAcctSum
             // 
             this.chkEiShowOrderPrintAcctSum.Location = new System.Drawing.Point(15, 216);
@@ -340,50 +372,6 @@
             this.xtraTabPage3.Size = new System.Drawing.Size(565, 353);
             this.xtraTabPage3.Text = "General Access";
             // 
-            // panelControl1
-            // 
-            this.panelControl1.Controls.Add(this.btnAddUpdateUser);
-            this.panelControl1.Controls.Add(this.btnSave);
-            this.panelControl1.Controls.Add(this.btnExit);
-            this.panelControl1.Controls.Add(this.labelControl1);
-            this.panelControl1.Controls.Add(this.lueUsrName);
-            this.panelControl1.Location = new System.Drawing.Point(6, 41);
-            this.panelControl1.Name = "panelControl1";
-            this.panelControl1.Size = new System.Drawing.Size(572, 70);
-            this.panelControl1.TabIndex = 0;
-            // 
-            // chkEiShowOrderPrintReceipt
-            // 
-            this.chkEiShowOrderPrintReceipt.Location = new System.Drawing.Point(15, 306);
-            this.chkEiShowOrderPrintReceipt.Name = "chkEiShowOrderPrintReceipt";
-            this.chkEiShowOrderPrintReceipt.Properties.Caption = "Show Order / Print Receipt";
-            this.chkEiShowOrderPrintReceipt.Size = new System.Drawing.Size(215, 22);
-            this.chkEiShowOrderPrintReceipt.TabIndex = 10;
-            // 
-            // chkEiShowOrderEditOrder
-            // 
-            this.chkEiShowOrderEditOrder.Location = new System.Drawing.Point(15, 276);
-            this.chkEiShowOrderEditOrder.Name = "chkEiShowOrderEditOrder";
-            this.chkEiShowOrderEditOrder.Properties.Caption = "Show Order / Edit Order";
-            this.chkEiShowOrderEditOrder.Size = new System.Drawing.Size(240, 22);
-            this.chkEiShowOrderEditOrder.TabIndex = 9;
-            // 
-            // chkEiShowOrderChangePaym
-            // 
-            this.chkEiShowOrderChangePaym.Location = new System.Drawing.Point(15, 246);
-            this.chkEiShowOrderChangePaym.Name = "chkEiShowOrderChangePaym";
-            this.chkEiShowOrderChangePaym.Properties.Caption = "Show Order / Change Payment";
-            this.chkEiShowOrderChangePaym.Size = new System.Drawing.Size(240, 22);
-            this.chkEiShowOrderChangePaym.TabIndex = 8;
-            // 
-            // chkEiPrintBillDiscount
-            // 
-            this.chkEiPrintBillDiscount.Location = new System.Drawing.Point(307, 306);
-            this.chkEiPrintBillDiscount.Name = "chkEiPrintBillDiscount";
-            this.chkEiPrintBillDiscount.Properties.Caption = "Print Bill / Discount";
-            this.chkEiPrintBillDiscount.Size = new System.Drawing.Size(215, 22);
-            this.chkEiPrintBillDiscount.TabIndex = 11;
-            // 
             // panelControl4
             // 
             this.panelControl4.Controls.Add(this.chkGaOpenCashDrawer);
@@ -407,6 +395,70 @@
             this.panelControl4.Name = "panelControl4";
             this.panelControl4.Size = new System.Drawing.Size(559, 347);
             this.panelControl4.TabIndex = 3;
+            // 
+            // chkGaOpenCashDrawer
+            // 
+            this.chkGaOpenCashDrawer.Location = new System.Drawing.Point(278, 216);
+            this.chkGaOpenCashDrawer.Name = "chkGaOpenCashDrawer";
+            this.chkGaOpenCashDrawer.Properties.Caption = "Open Cash Drawer";
+            this.chkGaOpenCashDrawer.Size = new System.Drawing.Size(274, 22);
+            this.chkGaOpenCashDrawer.TabIndex = 16;
+            // 
+            // chkGaAccountSumPrintSaleRpt
+            // 
+            this.chkGaAccountSumPrintSaleRpt.Location = new System.Drawing.Point(278, 186);
+            this.chkGaAccountSumPrintSaleRpt.Name = "chkGaAccountSumPrintSaleRpt";
+            this.chkGaAccountSumPrintSaleRpt.Properties.Caption = "Account Summary / Print Sales Rpt";
+            this.chkGaAccountSumPrintSaleRpt.Size = new System.Drawing.Size(276, 22);
+            this.chkGaAccountSumPrintSaleRpt.TabIndex = 15;
+            // 
+            // chkGaEiPrintSetup
+            // 
+            this.chkGaEiPrintSetup.Location = new System.Drawing.Point(278, 156);
+            this.chkGaEiPrintSetup.Name = "chkGaEiPrintSetup";
+            this.chkGaEiPrintSetup.Properties.Caption = "Eat-In / Print Setup";
+            this.chkGaEiPrintSetup.Size = new System.Drawing.Size(240, 22);
+            this.chkGaEiPrintSetup.TabIndex = 14;
+            // 
+            // chkGaTaPrintSetup
+            // 
+            this.chkGaTaPrintSetup.Location = new System.Drawing.Point(278, 126);
+            this.chkGaTaPrintSetup.Name = "chkGaTaPrintSetup";
+            this.chkGaTaPrintSetup.Properties.Caption = "Takeaway / Print Setup";
+            this.chkGaTaPrintSetup.Size = new System.Drawing.Size(240, 22);
+            this.chkGaTaPrintSetup.TabIndex = 13;
+            // 
+            // chkGaEiConf
+            // 
+            this.chkGaEiConf.Location = new System.Drawing.Point(278, 96);
+            this.chkGaEiConf.Name = "chkGaEiConf";
+            this.chkGaEiConf.Properties.Caption = "Eat-In Configuration";
+            this.chkGaEiConf.Size = new System.Drawing.Size(274, 22);
+            this.chkGaEiConf.TabIndex = 12;
+            // 
+            // chkGaTaConf
+            // 
+            this.chkGaTaConf.Location = new System.Drawing.Point(278, 66);
+            this.chkGaTaConf.Name = "chkGaTaConf";
+            this.chkGaTaConf.Properties.Caption = "Takeaway Configuration";
+            this.chkGaTaConf.Size = new System.Drawing.Size(253, 22);
+            this.chkGaTaConf.TabIndex = 11;
+            // 
+            // chkGaSysShiftCode
+            // 
+            this.chkGaSysShiftCode.Location = new System.Drawing.Point(278, 36);
+            this.chkGaSysShiftCode.Name = "chkGaSysShiftCode";
+            this.chkGaSysShiftCode.Properties.Caption = "System Setting / Shift Code";
+            this.chkGaSysShiftCode.Size = new System.Drawing.Size(253, 22);
+            this.chkGaSysShiftCode.TabIndex = 10;
+            // 
+            // chkGaSysComputerAdd
+            // 
+            this.chkGaSysComputerAdd.Location = new System.Drawing.Point(278, 6);
+            this.chkGaSysComputerAdd.Name = "chkGaSysComputerAdd";
+            this.chkGaSysComputerAdd.Properties.Caption = "System Setting / Computer Add.";
+            this.chkGaSysComputerAdd.Size = new System.Drawing.Size(281, 22);
+            this.chkGaSysComputerAdd.TabIndex = 9;
             // 
             // chkGaWriteAndEnableInventory
             // 
@@ -480,120 +532,17 @@
             this.chkGaSysConf.Size = new System.Drawing.Size(281, 22);
             this.chkGaSysConf.TabIndex = 0;
             // 
-            // chkGaOpenCashDrawer
+            // panelControl1
             // 
-            this.chkGaOpenCashDrawer.Location = new System.Drawing.Point(278, 216);
-            this.chkGaOpenCashDrawer.Name = "chkGaOpenCashDrawer";
-            this.chkGaOpenCashDrawer.Properties.Caption = "Open Cash Drawer";
-            this.chkGaOpenCashDrawer.Size = new System.Drawing.Size(274, 22);
-            this.chkGaOpenCashDrawer.TabIndex = 16;
-            // 
-            // chkGaAccountSumPrintSaleRpt
-            // 
-            this.chkGaAccountSumPrintSaleRpt.Location = new System.Drawing.Point(278, 186);
-            this.chkGaAccountSumPrintSaleRpt.Name = "chkGaAccountSumPrintSaleRpt";
-            this.chkGaAccountSumPrintSaleRpt.Properties.Caption = "Account Summary / Print Sales Rpt";
-            this.chkGaAccountSumPrintSaleRpt.Size = new System.Drawing.Size(276, 22);
-            this.chkGaAccountSumPrintSaleRpt.TabIndex = 15;
-            // 
-            // chkGaEiPrintSetup
-            // 
-            this.chkGaEiPrintSetup.Location = new System.Drawing.Point(278, 156);
-            this.chkGaEiPrintSetup.Name = "chkGaEiPrintSetup";
-            this.chkGaEiPrintSetup.Properties.Caption = "Eat-In / Print Setup";
-            this.chkGaEiPrintSetup.Size = new System.Drawing.Size(240, 22);
-            this.chkGaEiPrintSetup.TabIndex = 14;
-            // 
-            // chkGaTaPrintSetup
-            // 
-            this.chkGaTaPrintSetup.Location = new System.Drawing.Point(278, 126);
-            this.chkGaTaPrintSetup.Name = "chkGaTaPrintSetup";
-            this.chkGaTaPrintSetup.Properties.Caption = "Takeaway / Print Setup";
-            this.chkGaTaPrintSetup.Size = new System.Drawing.Size(240, 22);
-            this.chkGaTaPrintSetup.TabIndex = 13;
-            // 
-            // chkGaEiConf
-            // 
-            this.chkGaEiConf.Location = new System.Drawing.Point(278, 96);
-            this.chkGaEiConf.Name = "chkGaEiConf";
-            this.chkGaEiConf.Properties.Caption = "Eat-In Configuration";
-            this.chkGaEiConf.Size = new System.Drawing.Size(274, 22);
-            this.chkGaEiConf.TabIndex = 12;
-            // 
-            // chkGaTaConf
-            // 
-            this.chkGaTaConf.Location = new System.Drawing.Point(278, 66);
-            this.chkGaTaConf.Name = "chkGaTaConf";
-            this.chkGaTaConf.Properties.Caption = "Takeaway Configuration";
-            this.chkGaTaConf.Size = new System.Drawing.Size(253, 22);
-            this.chkGaTaConf.TabIndex = 11;
-            // 
-            // chkGaSysShiftCode
-            // 
-            this.chkGaSysShiftCode.Location = new System.Drawing.Point(278, 36);
-            this.chkGaSysShiftCode.Name = "chkGaSysShiftCode";
-            this.chkGaSysShiftCode.Properties.Caption = "System Setting / Shift Code";
-            this.chkGaSysShiftCode.Size = new System.Drawing.Size(253, 22);
-            this.chkGaSysShiftCode.TabIndex = 10;
-            // 
-            // chkGaSysComputerAdd
-            // 
-            this.chkGaSysComputerAdd.Location = new System.Drawing.Point(278, 6);
-            this.chkGaSysComputerAdd.Name = "chkGaSysComputerAdd";
-            this.chkGaSysComputerAdd.Properties.Caption = "System Setting / Computer Add.";
-            this.chkGaSysComputerAdd.Size = new System.Drawing.Size(281, 22);
-            this.chkGaSysComputerAdd.TabIndex = 9;
-            // 
-            // lueUsrName
-            // 
-            this.lueUsrName.Location = new System.Drawing.Point(113, 25);
-            this.lueUsrName.Name = "lueUsrName";
-            this.lueUsrName.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 12F);
-            this.lueUsrName.Properties.Appearance.Options.UseFont = true;
-            this.lueUsrName.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.lueUsrName.Size = new System.Drawing.Size(149, 30);
-            this.lueUsrName.TabIndex = 0;
-            // 
-            // labelControl1
-            // 
-            this.labelControl1.Appearance.Font = new System.Drawing.Font("Tahoma", 12F);
-            this.labelControl1.Location = new System.Drawing.Point(8, 28);
-            this.labelControl1.Name = "labelControl1";
-            this.labelControl1.Size = new System.Drawing.Size(98, 24);
-            this.labelControl1.TabIndex = 1;
-            this.labelControl1.Text = "User Name";
-            // 
-            // btnExit
-            // 
-            this.btnExit.Appearance.BackColor = System.Drawing.Color.Olive;
-            this.btnExit.Appearance.Font = new System.Drawing.Font("Tahoma", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnExit.Appearance.ForeColor = System.Drawing.Color.White;
-            this.btnExit.Appearance.Options.UseBackColor = true;
-            this.btnExit.Appearance.Options.UseFont = true;
-            this.btnExit.Appearance.Options.UseForeColor = true;
-            this.btnExit.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
-            this.btnExit.Location = new System.Drawing.Point(488, 5);
-            this.btnExit.Name = "btnExit";
-            this.btnExit.Size = new System.Drawing.Size(78, 55);
-            this.btnExit.TabIndex = 4;
-            this.btnExit.Text = "Exit";
-            this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
-            // 
-            // btnSave
-            // 
-            this.btnSave.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
-            this.btnSave.Appearance.Font = new System.Drawing.Font("Tahoma", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSave.Appearance.ForeColor = System.Drawing.Color.White;
-            this.btnSave.Appearance.Options.UseBackColor = true;
-            this.btnSave.Appearance.Options.UseFont = true;
-            this.btnSave.Appearance.Options.UseForeColor = true;
-            this.btnSave.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
-            this.btnSave.Location = new System.Drawing.Point(389, 5);
-            this.btnSave.Name = "btnSave";
-            this.btnSave.Size = new System.Drawing.Size(78, 55);
-            this.btnSave.TabIndex = 5;
-            this.btnSave.Text = "Save";
+            this.panelControl1.Controls.Add(this.btnAddUpdateUser);
+            this.panelControl1.Controls.Add(this.btnSave);
+            this.panelControl1.Controls.Add(this.btnExit);
+            this.panelControl1.Controls.Add(this.labelControl1);
+            this.panelControl1.Controls.Add(this.lueUsrName);
+            this.panelControl1.Location = new System.Drawing.Point(6, 41);
+            this.panelControl1.Name = "panelControl1";
+            this.panelControl1.Size = new System.Drawing.Size(572, 70);
+            this.panelControl1.TabIndex = 0;
             // 
             // btnAddUpdateUser
             // 
@@ -612,6 +561,57 @@
             this.btnAddUpdateUser.TabIndex = 6;
             this.btnAddUpdateUser.Text = "Add/Update User";
             // 
+            // btnSave
+            // 
+            this.btnSave.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
+            this.btnSave.Appearance.Font = new System.Drawing.Font("Tahoma", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSave.Appearance.ForeColor = System.Drawing.Color.White;
+            this.btnSave.Appearance.Options.UseBackColor = true;
+            this.btnSave.Appearance.Options.UseFont = true;
+            this.btnSave.Appearance.Options.UseForeColor = true;
+            this.btnSave.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
+            this.btnSave.Location = new System.Drawing.Point(389, 5);
+            this.btnSave.Name = "btnSave";
+            this.btnSave.Size = new System.Drawing.Size(78, 55);
+            this.btnSave.TabIndex = 5;
+            this.btnSave.Text = "Save";
+            // 
+            // btnExit
+            // 
+            this.btnExit.Appearance.BackColor = System.Drawing.Color.Olive;
+            this.btnExit.Appearance.Font = new System.Drawing.Font("Tahoma", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnExit.Appearance.ForeColor = System.Drawing.Color.White;
+            this.btnExit.Appearance.Options.UseBackColor = true;
+            this.btnExit.Appearance.Options.UseFont = true;
+            this.btnExit.Appearance.Options.UseForeColor = true;
+            this.btnExit.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
+            this.btnExit.Location = new System.Drawing.Point(488, 5);
+            this.btnExit.Name = "btnExit";
+            this.btnExit.Size = new System.Drawing.Size(78, 55);
+            this.btnExit.TabIndex = 4;
+            this.btnExit.Text = "Exit";
+            this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
+            // 
+            // labelControl1
+            // 
+            this.labelControl1.Appearance.Font = new System.Drawing.Font("Tahoma", 12F);
+            this.labelControl1.Location = new System.Drawing.Point(8, 28);
+            this.labelControl1.Name = "labelControl1";
+            this.labelControl1.Size = new System.Drawing.Size(98, 24);
+            this.labelControl1.TabIndex = 1;
+            this.labelControl1.Text = "User Name";
+            // 
+            // lueUsrName
+            // 
+            this.lueUsrName.Location = new System.Drawing.Point(113, 25);
+            this.lueUsrName.Name = "lueUsrName";
+            this.lueUsrName.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 12F);
+            this.lueUsrName.Properties.Appearance.Options.UseFont = true;
+            this.lueUsrName.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.lueUsrName.Size = new System.Drawing.Size(149, 30);
+            this.lueUsrName.TabIndex = 0;
+            // 
             // FrmTaAdminUsrMaintenance
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 18F);
@@ -622,6 +622,7 @@
             this.Name = "FrmTaAdminUsrMaintenance";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "FrmTaAdminUsrMaintenance";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.FrmTaAdminUsrMaintenance_Load);
             this.SizeChanged += new System.EventHandler(this.FrmTaAdminUsrMaintenance_SizeChanged);
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).EndInit();
@@ -642,6 +643,10 @@
             this.xtraTabPage2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.panelControl3)).EndInit();
             this.panelControl3.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.chkEiPrintBillDiscount.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.chkEiShowOrderPrintReceipt.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.chkEiShowOrderEditOrder.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.chkEiShowOrderChangePaym.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.chkEiShowOrderPrintAcctSum.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.chkEiTblBooking.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.chkEiRemoveItemAfterPrint.Properties)).EndInit();
@@ -651,15 +656,16 @@
             ((System.ComponentModel.ISupportInitialize)(this.chkEiChangePrice.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.chkEiControlPanel.Properties)).EndInit();
             this.xtraTabPage3.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).EndInit();
-            this.panelControl1.ResumeLayout(false);
-            this.panelControl1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.chkEiShowOrderPrintReceipt.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.chkEiShowOrderEditOrder.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.chkEiShowOrderChangePaym.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.chkEiPrintBillDiscount.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl4)).EndInit();
             this.panelControl4.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.chkGaOpenCashDrawer.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.chkGaAccountSumPrintSaleRpt.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.chkGaEiPrintSetup.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.chkGaTaPrintSetup.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.chkGaEiConf.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.chkGaTaConf.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.chkGaSysShiftCode.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.chkGaSysComputerAdd.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.chkGaWriteAndEnableInventory.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.chkGaLogExitPos.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.chkGaAccountSumView.Properties)).EndInit();
@@ -669,14 +675,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.chkGaSysDataManager.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.chkGaSysUsrMaint.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.chkGaSysConf.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.chkGaOpenCashDrawer.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.chkGaAccountSumPrintSaleRpt.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.chkGaEiPrintSetup.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.chkGaTaPrintSetup.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.chkGaEiConf.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.chkGaTaConf.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.chkGaSysShiftCode.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.chkGaSysComputerAdd.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).EndInit();
+            this.panelControl1.ResumeLayout(false);
+            this.panelControl1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.lueUsrName.Properties)).EndInit();
             this.ResumeLayout(false);
 
