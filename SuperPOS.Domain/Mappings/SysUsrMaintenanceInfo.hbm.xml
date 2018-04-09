@@ -3,15 +3,49 @@
                    assembly="SuperPOS"
                    namespace="SuperPOS.Domain">
 
-  <class name="SuperPOS.Domain.Entities.SysUsrMaintenanceInfo, SuperPOS.Domain" table="Sys_Usr_Maintenance">
+  <class name="SuperPOS.Domain.Entities.SysUsrMaintenanceInfo, SuperPOS.Domain" table="Sys_Usr_Maintenance_Detail">
     <id name="ID" column="ID" type="System.Int32" unsaved-value="0">
       <generator class="native" />
     </id>
 
-    <property name="UsrId" column="UsrId" type="System.String" />
-    <property name="DeptName" column="DeptName" type="System.String" />
-    <property name="UsrMaintenance" column="UsrMaintenance" type="System.String" />
-    <property name="IsMaint" column="IsMaint" type="System.String" />
+    <property name="UsrID" column="UsrID" type="System.Int32" />
+    <property name="TaControlPanel" column="TaControlPanel" type="System.String" />
+    <property name="TaChangePrice" column="TaChangePrice" type="System.String" />
+    <property name="TaPriceOff" column="TaPriceOff" type="System.String" />
+    <property name="TaShowOrderPrtAcctSummary" column="TaShowOrderPrtAcctSummary" type="System.String" />
+    <property name="TaShowOrderChangePayment" column="TaShowOrderChangePayment" type="System.String" />
+    <property name="TaShowOrderEditOrder" column="TaShowOrderEditOrder" type="System.String" />
+    <property name="TaShowOrderPrtReceipt" column="TaShowOrderPrtReceipt" type="System.String" />
+    <property name="TaShowOrderExportData" column="TaShowOrderExportData" type="System.String" />
+    <property name="EiControlPanel" column="EiControlPanel" type="System.String" />
+    <property name="EiChangePrice" column="EiChangePrice" type="System.String" />
+    <property name="EiPriceOff" column="EiPriceOff" type="System.String" />
+    <property name="EiPay" column="EiPay" type="System.String" />
+    <property name="EiPrtBill" column="EiPrtBill" type="System.String" />
+    <property name="EiRemoveItemAfterPrt" column="EiRemoveItemAfterPrt" type="System.String" />
+    <property name="EiTableBooking" column="EiTableBooking" type="System.String" />
+    <property name="EiShowOrderPrtAcctSummary" column="EiShowOrderPrtAcctSummary" type="System.String" />
+    <property name="EiShowOrderChangePayment" column="EiShowOrderChangePayment" type="System.String" />
+    <property name="EiShowOrderEditOrder" column="EiShowOrderEditOrder" type="System.String" />
+    <property name="EiShowOrderPrtReceipt" column="EiShowOrderPrtReceipt" type="System.String" />
+    <property name="EiPrtBillDiscount" column="EiPrtBillDiscount" type="System.String" />
+    <property name="GaSysConf" column="GaSysConf" type="System.String" />
+    <property name="GaSysComputerAdd" column="GaSysComputerAdd" type="System.String" />
+    <property name="GaSysUsrMaint" column="GaSysUsrMaint" type="System.String" />
+    <property name="GaSysShiftCode" column="GaSysShiftCode" type="System.String" />
+    <property name="GaSysDataManager" column="GaSysDataManager" type="System.String" />
+    <property name="GaTaConf" column="GaTaConf" type="System.String" />
+    <property name="GaSysCompactDb" column="GaSysCompactDb" type="System.String" />
+    <property name="GaEiConf" column="GaEiConf" type="System.String" />
+    <property name="GaRptReport" column="GaRptReport" type="System.String" />
+    <property name="GaTaPrtSetup" column="GaTaPrtSetup" type="System.String" />
+    <property name="GaRptAccountSummary" column="GaRptAccountSummary" type="System.String" />
+    <property name="GaEiPrtSetup" column="GaEiPrtSetup" type="System.String" />
+    <property name="GaAsSumView" column="GaAsSumView" type="System.String" />
+    <property name="GaAsPrtSaleRpt" column="GaAsPrtSaleRpt" type="System.String" />
+    <property name="GaLogonExit" column="GaLogonExit" type="System.String" />
+    <property name="GaOpenCashDrawer" column="GaOpenCashDrawer" type="System.String" />
+    <property name="GaWriteAndEnableInv" column="GaWriteAndEnableInv" type="System.String" />
   </class>
 
 </hibernate-mapping>
