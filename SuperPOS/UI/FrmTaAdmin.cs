@@ -62,7 +62,8 @@ namespace SuperPOS.UI
 
         private void btnSysSetComputerAddr_Click(object sender, EventArgs e)
         {
-
+            FrmCompAddr frmCompAddr = new FrmCompAddr(usrID, usrName);
+            frmCompAddr.ShowDialog();
         }
 
         private void btnSysSetShiftCode_Click(object sender, EventArgs e)

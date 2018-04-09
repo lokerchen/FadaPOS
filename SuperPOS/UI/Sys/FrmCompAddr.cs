@@ -24,6 +24,8 @@ namespace SuperPOS.UI.Sys
 
         private readonly EntityControl _control = new EntityControl();
 
+        private AutoSizeFormClass asfc = new AutoSizeFormClass();
+
         public FrmCompAddr()
         {
             InitializeComponent();
@@ -40,6 +42,8 @@ namespace SuperPOS.UI.Sys
         {
             gvCompAddr.BestFitColumns();
             BindData();
+
+            asfc.controllInitializeSize(this);
         }
 
         private void gvCompAddr_CustomDrawRowIndicator(object sender, DevExpress.XtraGrid.Views.Grid.RowIndicatorCustomDrawEventArgs e)
@@ -119,6 +123,16 @@ namespace SuperPOS.UI.Sys
         {
             txtAddrCode.Text = gvCompAddr.GetRowCellValue(gvCompAddr.FocusedRowHandle, "AddrCode").ToString();
             txtCompName.Text = gvCompAddr.GetRowCellValue(gvCompAddr.FocusedRowHandle, "CompName").ToString();
+        }
+
+        private void btnExit_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void FrmCompAddr_SizeChanged(object sender, EventArgs e)
+        {
+            asfc.controlAutoSize(this);
         }
     }
 }
