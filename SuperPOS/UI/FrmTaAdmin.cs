@@ -38,7 +38,7 @@ namespace SuperPOS.UI
         #region System Setting
         private void btnSysSetSysConf_Click(object sender, EventArgs e)
         {
-            FrmTaAdminSysConf frmTaAdmin = new FrmTaAdminSysConf();
+            FrmTaAdminSysConf frmTaAdmin = new FrmTaAdminSysConf(usrID, usrName);
             frmTaAdmin.ShowDialog();
         }
 

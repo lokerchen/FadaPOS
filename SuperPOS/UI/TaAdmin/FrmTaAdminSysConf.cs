@@ -16,6 +16,11 @@ namespace SuperPOS.UI.TaAdmin
 {
     public partial class FrmTaAdminSysConf : DevExpress.XtraEditors.XtraForm
     {
+        //用户ID
+        public int usrID = 0;
+        //用户姓名
+        public string usrName = "";
+
         private AutoSizeFormClass asfc = new AutoSizeFormClass();
 
         private readonly EntityControl _control = new EntityControl();
@@ -26,6 +31,13 @@ namespace SuperPOS.UI.TaAdmin
         public FrmTaAdminSysConf()
         {
             InitializeComponent();
+        }
+
+        public FrmTaAdminSysConf(int uID, string sName)
+        {
+            InitializeComponent();
+            usrID = uID;
+            usrName = sName;
         }
 
         private void FrmTaAdminSysConf_Load(object sender, EventArgs e)
