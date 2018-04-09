@@ -34,6 +34,7 @@
             this.txtRestore = new DevExpress.XtraEditors.TextEdit();
             this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
             this.btnRestore = new DevExpress.XtraEditors.SimpleButton();
+            this.btnExit = new DevExpress.XtraEditors.SimpleButton();
             ((System.ComponentModel.ISupportInitialize)(this.txtBackup.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtRestore.Properties)).BeginInit();
             this.SuspendLayout();
@@ -64,14 +65,14 @@
             // 
             // txtRestore
             // 
-            this.txtRestore.Location = new System.Drawing.Point(14, 119);
+            this.txtRestore.Location = new System.Drawing.Point(14, 141);
             this.txtRestore.Name = "txtRestore";
             this.txtRestore.Size = new System.Drawing.Size(437, 24);
             this.txtRestore.TabIndex = 5;
             // 
             // labelControl2
             // 
-            this.labelControl2.Location = new System.Drawing.Point(14, 95);
+            this.labelControl2.Location = new System.Drawing.Point(14, 117);
             this.labelControl2.Name = "labelControl2";
             this.labelControl2.Size = new System.Drawing.Size(174, 18);
             this.labelControl2.TabIndex = 4;
@@ -79,18 +80,28 @@
             // 
             // btnRestore
             // 
-            this.btnRestore.Location = new System.Drawing.Point(481, 95);
+            this.btnRestore.Location = new System.Drawing.Point(481, 74);
             this.btnRestore.Name = "btnRestore";
             this.btnRestore.Size = new System.Drawing.Size(148, 47);
             this.btnRestore.TabIndex = 3;
             this.btnRestore.Text = "Restore Data";
             this.btnRestore.Click += new System.EventHandler(this.btnRestore_Click);
             // 
+            // btnExit
+            // 
+            this.btnExit.Location = new System.Drawing.Point(481, 129);
+            this.btnExit.Name = "btnExit";
+            this.btnExit.Size = new System.Drawing.Size(148, 47);
+            this.btnExit.TabIndex = 6;
+            this.btnExit.Text = "Exit";
+            this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
+            // 
             // FrmDataManager
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(649, 160);
+            this.ClientSize = new System.Drawing.Size(649, 191);
+            this.Controls.Add(this.btnExit);
             this.Controls.Add(this.txtRestore);
             this.Controls.Add(this.labelControl2);
             this.Controls.Add(this.btnRestore);
@@ -101,7 +112,9 @@
             this.Name = "FrmDataManager";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "FrmDataManager";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.FrmDataManager_Load);
+            this.SizeChanged += new System.EventHandler(this.FrmDataManager_SizeChanged);
             ((System.ComponentModel.ISupportInitialize)(this.txtBackup.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtRestore.Properties)).EndInit();
             this.ResumeLayout(false);
@@ -117,5 +130,6 @@
         private DevExpress.XtraEditors.TextEdit txtRestore;
         private DevExpress.XtraEditors.LabelControl labelControl2;
         private DevExpress.XtraEditors.SimpleButton btnRestore;
+        private DevExpress.XtraEditors.SimpleButton btnExit;
     }
 }

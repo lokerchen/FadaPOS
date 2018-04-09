@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using DevExpress.XtraEditors;
 using SuperPOS.Common;
+using SuperPOS.UI.Sys;
 using SuperPOS.UI.TaAdmin;
 
 namespace SuperPOS.UI
@@ -50,7 +51,8 @@ namespace SuperPOS.UI
 
         private void btnSysDataManager_Click(object sender, EventArgs e)
         {
-
+            FrmDataManager frmDataManager = new FrmDataManager(usrID, usrName);
+            frmDataManager.ShowDialog();
         }
 
         private void btnSysSetCompactDb_Click(object sender, EventArgs e)

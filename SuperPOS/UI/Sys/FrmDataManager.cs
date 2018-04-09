@@ -18,6 +18,8 @@ namespace SuperPOS.UI.Sys
     {
         private string fileName = "";
 
+        private AutoSizeFormClass asfc = new AutoSizeFormClass();
+
         //登录用户ID
         private int usrID = 0;
         //登录用户名字
@@ -53,6 +55,8 @@ namespace SuperPOS.UI.Sys
                 txtBackup.Text = "";
                 txtRestore.Text = "";
             }
+
+            asfc.controllInitializeSize(this);
         }
 
         private void btnBackup_Click(object sender, EventArgs e)
@@ -150,6 +154,16 @@ namespace SuperPOS.UI.Sys
                 dataManagerInfo.LocRestore = txtRestore.Text;
                 _control.AddEntity(dataManagerInfo);
             }
+        }
+
+        private void FrmDataManager_SizeChanged(object sender, EventArgs e)
+        {
+            asfc.controlAutoSize(this);
+        }
+
+        private void btnExit_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }
