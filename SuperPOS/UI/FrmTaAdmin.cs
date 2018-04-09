@@ -44,7 +44,8 @@ namespace SuperPOS.UI
 
         private void btnSysSetUsrMaint_Click(object sender, EventArgs e)
         {
-
+            FrmTaAdminUsrMaintenance frmTaAdminUsrMaintenance = new FrmTaAdminUsrMaintenance(usrID, usrName);
+            frmTaAdminUsrMaintenance.ShowDialog();
         }
 
         private void btnSysDataManager_Click(object sender, EventArgs e)
