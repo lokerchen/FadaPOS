@@ -22,6 +22,8 @@ namespace SuperPOS.UI.Sys
 
         private readonly EntityControl _control = new EntityControl();
 
+        private AutoSizeFormClass asfc = new AutoSizeFormClass();
+
         public FrmShiftCodeDetail()
         {
             InitializeComponent();
@@ -73,6 +75,8 @@ namespace SuperPOS.UI.Sys
                     #endregion
                 }
             }
+
+            asfc.controllInitializeSize(this);
         }
         #endregion
 
@@ -310,5 +314,10 @@ namespace SuperPOS.UI.Sys
         }
 
         #endregion
+
+        private void FrmShiftCodeDetail_SizeChanged(object sender, EventArgs e)
+        {
+            asfc.controlAutoSize(this);
+        }
     }
 }

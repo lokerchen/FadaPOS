@@ -20,6 +20,8 @@ namespace SuperPOS.UI.Sys
         //用户姓名
         public string usrName = "";
 
+        private AutoSizeFormClass asfc = new AutoSizeFormClass();
+
         public FrmShiftCode()
         {
             InitializeComponent();
@@ -35,6 +37,8 @@ namespace SuperPOS.UI.Sys
         private void FrmShiftCode_Load(object sender, EventArgs e)
         {
             BindData();
+
+            asfc.controllInitializeSize(this);
         }
 
         #region 单元格双击事件
@@ -78,5 +82,15 @@ namespace SuperPOS.UI.Sys
             }
         }
         #endregion
+
+        private void FrmShiftCode_SizeChanged(object sender, EventArgs e)
+        {
+            asfc.controlAutoSize(this);
+        }
+
+        private void btnExit_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

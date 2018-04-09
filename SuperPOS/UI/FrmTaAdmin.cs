@@ -68,7 +68,8 @@ namespace SuperPOS.UI
 
         private void btnSysSetShiftCode_Click(object sender, EventArgs e)
         {
-
+            FrmShiftCode frmShiftCode = new FrmShiftCode(usrID, usrName);
+            frmShiftCode.ShowDialog();
         }
         #endregion
 

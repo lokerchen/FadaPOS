@@ -36,6 +36,8 @@
             this.btnSave = new DevExpress.XtraEditors.SimpleButton();
             this.btnDelete = new DevExpress.XtraEditors.SimpleButton();
             this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
+            this.dtpEnd = new System.Windows.Forms.DateTimePicker();
+            this.dtpFrom = new System.Windows.Forms.DateTimePicker();
             this.chkSun = new DevExpress.XtraEditors.CheckEdit();
             this.chkSat = new DevExpress.XtraEditors.CheckEdit();
             this.chkFri = new DevExpress.XtraEditors.CheckEdit();
@@ -52,8 +54,6 @@
             this.txtShiftCode = new DevExpress.XtraEditors.TextEdit();
             this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
-            this.dtpFrom = new System.Windows.Forms.DateTimePicker();
-            this.dtpEnd = new System.Windows.Forms.DateTimePicker();
             ((System.ComponentModel.ISupportInitialize)(this.xtraTabControl1)).BeginInit();
             this.xtraTabControl1.SuspendLayout();
             this.xtraTabPage2.SuspendLayout();
@@ -76,7 +76,6 @@
             // 
             // xtraTabControl1
             // 
-            this.xtraTabControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.xtraTabControl1.Location = new System.Drawing.Point(0, 0);
             this.xtraTabControl1.Name = "xtraTabControl1";
             this.xtraTabControl1.SelectedTabPage = this.xtraTabPage2;
@@ -110,7 +109,7 @@
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(75, 23);
             this.btnCancel.TabIndex = 4;
-            this.btnCancel.Text = "Cancel";
+            this.btnCancel.Text = "Exit";
             this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
             // 
             // btnAdd
@@ -164,6 +163,26 @@
             this.panelControl1.Name = "panelControl1";
             this.panelControl1.Size = new System.Drawing.Size(361, 300);
             this.panelControl1.TabIndex = 0;
+            // 
+            // dtpEnd
+            // 
+            this.dtpEnd.CustomFormat = "HH:mm";
+            this.dtpEnd.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dtpEnd.Location = new System.Drawing.Point(112, 199);
+            this.dtpEnd.Name = "dtpEnd";
+            this.dtpEnd.ShowUpDown = true;
+            this.dtpEnd.Size = new System.Drawing.Size(129, 26);
+            this.dtpEnd.TabIndex = 17;
+            // 
+            // dtpFrom
+            // 
+            this.dtpFrom.CustomFormat = "HH:mm";
+            this.dtpFrom.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dtpFrom.Location = new System.Drawing.Point(112, 151);
+            this.dtpFrom.Name = "dtpFrom";
+            this.dtpFrom.ShowUpDown = true;
+            this.dtpFrom.Size = new System.Drawing.Size(129, 26);
+            this.dtpFrom.TabIndex = 16;
             // 
             // chkSun
             // 
@@ -291,38 +310,21 @@
             this.labelControl1.TabIndex = 0;
             this.labelControl1.Text = "Shift Code:";
             // 
-            // dtpFrom
-            // 
-            this.dtpFrom.CustomFormat = "HH:mm";
-            this.dtpFrom.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dtpFrom.Location = new System.Drawing.Point(112, 151);
-            this.dtpFrom.Name = "dtpFrom";
-            this.dtpFrom.ShowUpDown = true;
-            this.dtpFrom.Size = new System.Drawing.Size(129, 26);
-            this.dtpFrom.TabIndex = 16;
-            // 
-            // dtpEnd
-            // 
-            this.dtpEnd.CustomFormat = "HH:mm";
-            this.dtpEnd.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dtpEnd.Location = new System.Drawing.Point(112, 199);
-            this.dtpEnd.Name = "dtpEnd";
-            this.dtpEnd.ShowUpDown = true;
-            this.dtpEnd.Size = new System.Drawing.Size(129, 26);
-            this.dtpEnd.TabIndex = 17;
-            // 
             // FrmShiftCodeDetail
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(380, 392);
+            this.ClientSize = new System.Drawing.Size(379, 393);
             this.Controls.Add(this.xtraTabControl1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "FrmShiftCodeDetail";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Shift Code Details";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.FrmShiftCodeDetail_Load);
+            this.SizeChanged += new System.EventHandler(this.FrmShiftCodeDetail_SizeChanged);
             ((System.ComponentModel.ISupportInitialize)(this.xtraTabControl1)).EndInit();
             this.xtraTabControl1.ResumeLayout(false);
             this.xtraTabPage2.ResumeLayout(false);

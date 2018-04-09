@@ -38,6 +38,7 @@
             this.IsSpecial = new DevExpress.XtraGrid.Columns.GridColumn();
             this.SpecialContent = new DevExpress.XtraGrid.Columns.GridColumn();
             this.ID = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.btnExit = new DevExpress.XtraEditors.SimpleButton();
             ((System.ComponentModel.ISupportInitialize)(this.gcShiftCode)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gvShiftCode)).BeginInit();
             this.SuspendLayout();
@@ -139,17 +140,38 @@
             this.ID.FieldName = "ID";
             this.ID.Name = "ID";
             // 
+            // btnExit
+            // 
+            this.btnExit.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
+            this.btnExit.Appearance.Font = new System.Drawing.Font("Tahoma", 10F);
+            this.btnExit.Appearance.ForeColor = System.Drawing.Color.White;
+            this.btnExit.Appearance.Options.UseBackColor = true;
+            this.btnExit.Appearance.Options.UseFont = true;
+            this.btnExit.Appearance.Options.UseForeColor = true;
+            this.btnExit.Appearance.Options.UseTextOptions = true;
+            this.btnExit.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
+            this.btnExit.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
+            this.btnExit.Location = new System.Drawing.Point(962, 555);
+            this.btnExit.Name = "btnExit";
+            this.btnExit.Size = new System.Drawing.Size(99, 50);
+            this.btnExit.TabIndex = 9;
+            this.btnExit.Text = "Exit";
+            this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
+            // 
             // FrmShiftCode
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(968, 617);
+            this.ClientSize = new System.Drawing.Size(1068, 617);
+            this.Controls.Add(this.btnExit);
             this.Controls.Add(this.gcShiftCode);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "FrmShiftCode";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FrmShiftCode";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.FrmShiftCode_Load);
+            this.SizeChanged += new System.EventHandler(this.FrmShiftCode_SizeChanged);
             ((System.ComponentModel.ISupportInitialize)(this.gcShiftCode)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gvShiftCode)).EndInit();
             this.ResumeLayout(false);
@@ -168,5 +190,6 @@
         private DevExpress.XtraGrid.Columns.GridColumn IsSpecial;
         private DevExpress.XtraGrid.Columns.GridColumn SpecialContent;
         private DevExpress.XtraGrid.Columns.GridColumn ID;
+        private DevExpress.XtraEditors.SimpleButton btnExit;
     }
 }
