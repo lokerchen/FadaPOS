@@ -63,6 +63,8 @@
             this.labelControl17 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl16 = new DevExpress.XtraEditors.LabelControl();
             this.panelControl3 = new DevExpress.XtraEditors.PanelControl();
+            this.btnCollection = new DevExpress.XtraEditors.SimpleButton();
+            this.btnDelivery = new DevExpress.XtraEditors.SimpleButton();
             this.simpleButton4 = new DevExpress.XtraEditors.SimpleButton();
             this.labelControl15 = new DevExpress.XtraEditors.LabelControl();
             this.simpleButton3 = new DevExpress.XtraEditors.SimpleButton();
@@ -85,8 +87,6 @@
             this.lblCallInfo = new DevExpress.XtraEditors.LabelControl();
             this.labelControl13 = new DevExpress.XtraEditors.LabelControl();
             this.btnExit = new DevExpress.XtraEditors.SimpleButton();
-            this.btnDelivery = new DevExpress.XtraEditors.SimpleButton();
-            this.btnCollection = new DevExpress.XtraEditors.SimpleButton();
             ((System.ComponentModel.ISupportInitialize)(this.panelMember)).BeginInit();
             this.panelMember.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.chkBlackList.Properties)).BeginInit();
@@ -457,6 +457,36 @@
             this.panelControl3.Size = new System.Drawing.Size(331, 355);
             this.panelControl3.TabIndex = 3;
             // 
+            // btnCollection
+            // 
+            this.btnCollection.Appearance.BackColor = System.Drawing.Color.Olive;
+            this.btnCollection.Appearance.Font = new System.Drawing.Font("Tahoma", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCollection.Appearance.ForeColor = System.Drawing.Color.White;
+            this.btnCollection.Appearance.Options.UseBackColor = true;
+            this.btnCollection.Appearance.Options.UseFont = true;
+            this.btnCollection.Appearance.Options.UseForeColor = true;
+            this.btnCollection.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
+            this.btnCollection.Location = new System.Drawing.Point(143, 94);
+            this.btnCollection.Name = "btnCollection";
+            this.btnCollection.Size = new System.Drawing.Size(132, 55);
+            this.btnCollection.TabIndex = 19;
+            this.btnCollection.Text = "Conllection";
+            // 
+            // btnDelivery
+            // 
+            this.btnDelivery.Appearance.BackColor = System.Drawing.Color.Olive;
+            this.btnDelivery.Appearance.Font = new System.Drawing.Font("Tahoma", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDelivery.Appearance.ForeColor = System.Drawing.Color.White;
+            this.btnDelivery.Appearance.Options.UseBackColor = true;
+            this.btnDelivery.Appearance.Options.UseFont = true;
+            this.btnDelivery.Appearance.Options.UseForeColor = true;
+            this.btnDelivery.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
+            this.btnDelivery.Location = new System.Drawing.Point(5, 94);
+            this.btnDelivery.Name = "btnDelivery";
+            this.btnDelivery.Size = new System.Drawing.Size(132, 55);
+            this.btnDelivery.TabIndex = 4;
+            this.btnDelivery.Text = "Delivery";
+            // 
             // simpleButton4
             // 
             this.simpleButton4.Appearance.BackColor = System.Drawing.Color.Red;
@@ -700,36 +730,6 @@
             this.btnExit.Text = "Exit";
             this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
             // 
-            // btnDelivery
-            // 
-            this.btnDelivery.Appearance.BackColor = System.Drawing.Color.Olive;
-            this.btnDelivery.Appearance.Font = new System.Drawing.Font("Tahoma", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnDelivery.Appearance.ForeColor = System.Drawing.Color.White;
-            this.btnDelivery.Appearance.Options.UseBackColor = true;
-            this.btnDelivery.Appearance.Options.UseFont = true;
-            this.btnDelivery.Appearance.Options.UseForeColor = true;
-            this.btnDelivery.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
-            this.btnDelivery.Location = new System.Drawing.Point(5, 94);
-            this.btnDelivery.Name = "btnDelivery";
-            this.btnDelivery.Size = new System.Drawing.Size(132, 55);
-            this.btnDelivery.TabIndex = 4;
-            this.btnDelivery.Text = "Delivery";
-            // 
-            // btnCollection
-            // 
-            this.btnCollection.Appearance.BackColor = System.Drawing.Color.Olive;
-            this.btnCollection.Appearance.Font = new System.Drawing.Font("Tahoma", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCollection.Appearance.ForeColor = System.Drawing.Color.White;
-            this.btnCollection.Appearance.Options.UseBackColor = true;
-            this.btnCollection.Appearance.Options.UseFont = true;
-            this.btnCollection.Appearance.Options.UseForeColor = true;
-            this.btnCollection.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
-            this.btnCollection.Location = new System.Drawing.Point(143, 94);
-            this.btnCollection.Name = "btnCollection";
-            this.btnCollection.Size = new System.Drawing.Size(132, 55);
-            this.btnCollection.TabIndex = 19;
-            this.btnCollection.Text = "Conllection";
-            // 
             // FrmCaller
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 18F);
@@ -741,6 +741,7 @@
             this.Name = "FrmCaller";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "FrmCaller";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.FrmCaller_Load);
             this.SizeChanged += new System.EventHandler(this.FrmCaller_SizeChanged);
             ((System.ComponentModel.ISupportInitialize)(this.panelMember)).EndInit();
