@@ -76,7 +76,8 @@ namespace SuperPOS.UI
         #region Takeaway & Quick Dining Setting
         private void btnTaTaConf_Click(object sender, EventArgs e)
         {
-
+            FrmTaConf frmTaConf = new FrmTaConf(usrID, usrName);
+            frmTaConf.ShowDialog();
         }
 
         private void btnTaMenuCategory_Click(object sender, EventArgs e)
