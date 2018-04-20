@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2"
+                   assembly="SuperPOS"
+                   namespace="SuperPOS.Domain">
+
+  <class name="SuperPOS.Domain.Entities.TaConfMenuDisplayFontInfo, SuperPOS.Domain" table="Sys_Ta_Conf_MenuDisplayFont">
+    <id name="ID" column="ID" type="System.Int32" unsaved-value="0">
+      <generator class="native" />
+    </id>
+
+    <property name="MenuDisplayBtnFontSize" column="MenuDisplayBtnFontSize" type="System.String" />
+    <property name="IsMenuDishCodeFontBold" column="IsMenuDishCodeFontBold" type="System.String" />
+    <property name="CategBtnFontSize" column="CategBtnFontSize" type="System.String" />
+    <property name="IsCategFontBold" column="IsCategFontBold" type="System.String" />
+  </class>
+
+</hibernate-mapping>

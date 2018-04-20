@@ -87,5 +87,7 @@ namespace SuperPOS.Common
         public void GetTaChangeMenuAttr() { CommonData.TaChangeMenuAttr = _control.SelectAll<TaChangeMenuAttrInfo>(); }
 
         public void GetSysUsrMaintenance() { CommonData.SysUsrMaintenance = _control.SelectAll<SysUsrMaintenanceInfo>(); }
+
+        public void GetTaConfMenuDisplayFont() { CommonData.TaConfMenuDisplayFont = _control.SelectAll<TaConfMenuDisplayFontInfo>(); }
     }
 }

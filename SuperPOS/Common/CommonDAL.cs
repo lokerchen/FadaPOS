@@ -101,7 +101,10 @@ namespace SuperPOS.Common
             systemData.GetTaPaymentDetail();
             #endregion
             //System Setting
-            systemData.GetSysUsrMaintenance();}
+            systemData.GetSysUsrMaintenance();
+            //Takeaway Configuration
+            systemData.GetTaConfMenuDisplayFont();
+        }
         #endregion
 
         #region 获取Session

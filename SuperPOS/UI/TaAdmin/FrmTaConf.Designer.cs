@@ -29,11 +29,8 @@
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.btnSave = new DevExpress.XtraEditors.SimpleButton();
-            this.btnExit = new DevExpress.XtraEditors.SimpleButton();
             this.xtpTaConfig = new DevExpress.XtraTab.XtraTabControl();
             this.xtpGs = new DevExpress.XtraTab.XtraTabPage();
-            this.xtpDs = new DevExpress.XtraTab.XtraTabPage();
             this.groupBox6 = new System.Windows.Forms.GroupBox();
             this.txtTotalAmountThreshold = new DevExpress.XtraEditors.TextEdit();
             this.panel1 = new System.Windows.Forms.Panel();
@@ -74,40 +71,42 @@
             this.txtPayType2 = new DevExpress.XtraEditors.TextEdit();
             this.txtPayType1 = new DevExpress.XtraEditors.TextEdit();
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
-            this.groupBox7 = new System.Windows.Forms.GroupBox();
-            this.groupBox8 = new System.Windows.Forms.GroupBox();
+            this.xtpDs = new DevExpress.XtraTab.XtraTabPage();
             this.groupBox9 = new System.Windows.Forms.GroupBox();
+            this.txtSurchargeAmount = new DevExpress.XtraEditors.TextEdit();
+            this.labelControl4 = new DevExpress.XtraEditors.LabelControl();
+            this.txtOrderThreshold = new DevExpress.XtraEditors.TextEdit();
+            this.labelControl3 = new DevExpress.XtraEditors.LabelControl();
+            this.groupBox8 = new System.Windows.Forms.GroupBox();
             this.labelControl5 = new DevExpress.XtraEditors.LabelControl();
             this.chkIgnoreDelivery = new DevExpress.XtraEditors.CheckEdit();
             this.chkDeliveryChge = new DevExpress.XtraEditors.CheckEdit();
             this.txtMile = new DevExpress.XtraEditors.TextEdit();
             this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
-            this.txtSurchargeAmount = new DevExpress.XtraEditors.TextEdit();
-            this.labelControl4 = new DevExpress.XtraEditors.LabelControl();
-            this.txtOrderThreshold = new DevExpress.XtraEditors.TextEdit();
-            this.labelControl3 = new DevExpress.XtraEditors.LabelControl();
-            this.label11 = new System.Windows.Forms.Label();
-            this.label13 = new System.Windows.Forms.Label();
-            this.txtDsDistanceFrom1 = new DevExpress.XtraEditors.TextEdit();
-            this.label14 = new System.Windows.Forms.Label();
-            this.txtDsDistanceTo1 = new DevExpress.XtraEditors.TextEdit();
-            this.txtDsAmountToPay1 = new DevExpress.XtraEditors.TextEdit();
-            this.txtDsDistanceFrom2 = new DevExpress.XtraEditors.TextEdit();
-            this.txtDsDistanceFrom3 = new DevExpress.XtraEditors.TextEdit();
-            this.txtDsDistanceFrom4 = new DevExpress.XtraEditors.TextEdit();
-            this.txtDsDistanceTo2 = new DevExpress.XtraEditors.TextEdit();
-            this.txtDsDistanceTo3 = new DevExpress.XtraEditors.TextEdit();
-            this.txtDsDistanceTo4 = new DevExpress.XtraEditors.TextEdit();
-            this.txtDsAmountToPay2 = new DevExpress.XtraEditors.TextEdit();
-            this.txtDsAmountToPay3 = new DevExpress.XtraEditors.TextEdit();
-            this.txtDsAmountToPay4 = new DevExpress.XtraEditors.TextEdit();
+            this.groupBox7 = new System.Windows.Forms.GroupBox();
             this.txtPerMile = new DevExpress.XtraEditors.TextEdit();
             this.labelControl6 = new DevExpress.XtraEditors.LabelControl();
+            this.txtDsAmountToPay4 = new DevExpress.XtraEditors.TextEdit();
+            this.txtDsAmountToPay3 = new DevExpress.XtraEditors.TextEdit();
+            this.txtDsAmountToPay2 = new DevExpress.XtraEditors.TextEdit();
+            this.txtDsDistanceTo4 = new DevExpress.XtraEditors.TextEdit();
+            this.txtDsDistanceTo3 = new DevExpress.XtraEditors.TextEdit();
+            this.txtDsDistanceTo2 = new DevExpress.XtraEditors.TextEdit();
+            this.txtDsDistanceFrom4 = new DevExpress.XtraEditors.TextEdit();
+            this.txtDsDistanceFrom3 = new DevExpress.XtraEditors.TextEdit();
+            this.txtDsDistanceFrom2 = new DevExpress.XtraEditors.TextEdit();
+            this.txtDsAmountToPay1 = new DevExpress.XtraEditors.TextEdit();
+            this.txtDsDistanceTo1 = new DevExpress.XtraEditors.TextEdit();
+            this.label14 = new System.Windows.Forms.Label();
+            this.txtDsDistanceFrom1 = new DevExpress.XtraEditors.TextEdit();
+            this.label13 = new System.Windows.Forms.Label();
+            this.label11 = new System.Windows.Forms.Label();
+            this.btnExit = new DevExpress.XtraEditors.SimpleButton();
+            this.btnSave = new DevExpress.XtraEditors.SimpleButton();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.xtpTaConfig)).BeginInit();
             this.xtpTaConfig.SuspendLayout();
             this.xtpGs.SuspendLayout();
-            this.xtpDs.SuspendLayout();
             this.groupBox6.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.txtTotalAmountThreshold.Properties)).BeginInit();
             this.panel1.SuspendLayout();
@@ -134,27 +133,28 @@
             ((System.ComponentModel.ISupportInitialize)(this.txtPayType3.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtPayType2.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtPayType1.Properties)).BeginInit();
-            this.groupBox7.SuspendLayout();
-            this.groupBox8.SuspendLayout();
+            this.xtpDs.SuspendLayout();
             this.groupBox9.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.txtSurchargeAmount.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtOrderThreshold.Properties)).BeginInit();
+            this.groupBox8.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.chkIgnoreDelivery.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.chkDeliveryChge.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtMile.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtSurchargeAmount.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtOrderThreshold.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtDsDistanceFrom1.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtDsDistanceTo1.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtDsAmountToPay1.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtDsDistanceFrom2.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtDsDistanceFrom3.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtDsDistanceFrom4.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtDsDistanceTo2.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtDsDistanceTo3.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtDsDistanceTo4.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtDsAmountToPay2.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtDsAmountToPay3.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtDsAmountToPay4.Properties)).BeginInit();
+            this.groupBox7.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.txtPerMile.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtDsAmountToPay4.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtDsAmountToPay3.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtDsAmountToPay2.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtDsDistanceTo4.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtDsDistanceTo3.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtDsDistanceTo2.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtDsDistanceFrom4.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtDsDistanceFrom3.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtDsDistanceFrom2.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtDsAmountToPay1.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtDsDistanceTo1.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtDsDistanceFrom1.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox1
@@ -169,40 +169,6 @@
             this.groupBox1.TabIndex = 1;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Takeaway Configuration";
-            // 
-            // btnSave
-            // 
-            this.btnSave.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
-            this.btnSave.Appearance.Font = new System.Drawing.Font("Tahoma", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSave.Appearance.ForeColor = System.Drawing.Color.White;
-            this.btnSave.Appearance.Options.UseBackColor = true;
-            this.btnSave.Appearance.Options.UseFont = true;
-            this.btnSave.Appearance.Options.UseForeColor = true;
-            this.btnSave.Appearance.Options.UseTextOptions = true;
-            this.btnSave.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
-            this.btnSave.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
-            this.btnSave.Location = new System.Drawing.Point(499, 639);
-            this.btnSave.Name = "btnSave";
-            this.btnSave.Size = new System.Drawing.Size(96, 55);
-            this.btnSave.TabIndex = 8;
-            this.btnSave.Text = "Save";
-            // 
-            // btnExit
-            // 
-            this.btnExit.Appearance.BackColor = System.Drawing.Color.Olive;
-            this.btnExit.Appearance.Font = new System.Drawing.Font("Tahoma", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnExit.Appearance.ForeColor = System.Drawing.Color.White;
-            this.btnExit.Appearance.Options.UseBackColor = true;
-            this.btnExit.Appearance.Options.UseFont = true;
-            this.btnExit.Appearance.Options.UseForeColor = true;
-            this.btnExit.Appearance.Options.UseTextOptions = true;
-            this.btnExit.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
-            this.btnExit.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
-            this.btnExit.Location = new System.Drawing.Point(624, 639);
-            this.btnExit.Name = "btnExit";
-            this.btnExit.Size = new System.Drawing.Size(88, 55);
-            this.btnExit.TabIndex = 9;
-            this.btnExit.Text = "Exit";
             // 
             // xtpTaConfig
             // 
@@ -228,17 +194,6 @@
             this.xtpGs.Name = "xtpGs";
             this.xtpGs.Size = new System.Drawing.Size(695, 558);
             this.xtpGs.Text = "General Setting";
-            // 
-            // xtpDs
-            // 
-            this.xtpDs.Appearance.Header.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.xtpDs.Appearance.Header.Options.UseFont = true;
-            this.xtpDs.Controls.Add(this.groupBox9);
-            this.xtpDs.Controls.Add(this.groupBox8);
-            this.xtpDs.Controls.Add(this.groupBox7);
-            this.xtpDs.Name = "xtpDs";
-            this.xtpDs.Size = new System.Drawing.Size(695, 558);
-            this.xtpDs.Text = "Delivery Setting";
             // 
             // groupBox6
             // 
@@ -376,6 +331,8 @@
             this.txtCategoryBtnFontSize.Name = "txtCategoryBtnFontSize";
             this.txtCategoryBtnFontSize.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 12F);
             this.txtCategoryBtnFontSize.Properties.Appearance.Options.UseFont = true;
+            this.txtCategoryBtnFontSize.Properties.Mask.EditMask = "f0";
+            this.txtCategoryBtnFontSize.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Numeric;
             this.txtCategoryBtnFontSize.Size = new System.Drawing.Size(83, 30);
             this.txtCategoryBtnFontSize.TabIndex = 12;
             // 
@@ -395,6 +352,8 @@
             this.txtMenuDishBtnFontSize.Name = "txtMenuDishBtnFontSize";
             this.txtMenuDishBtnFontSize.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 12F);
             this.txtMenuDishBtnFontSize.Properties.Appearance.Options.UseFont = true;
+            this.txtMenuDishBtnFontSize.Properties.Mask.EditMask = "f0";
+            this.txtMenuDishBtnFontSize.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Numeric;
             this.txtMenuDishBtnFontSize.Size = new System.Drawing.Size(83, 30);
             this.txtMenuDishBtnFontSize.TabIndex = 8;
             // 
@@ -671,32 +630,70 @@
             this.labelControl1.TabIndex = 0;
             this.labelControl1.Text = "Payment Type";
             // 
-            // groupBox7
+            // xtpDs
             // 
-            this.groupBox7.Controls.Add(this.txtPerMile);
-            this.groupBox7.Controls.Add(this.labelControl6);
-            this.groupBox7.Controls.Add(this.txtDsAmountToPay4);
-            this.groupBox7.Controls.Add(this.txtDsAmountToPay3);
-            this.groupBox7.Controls.Add(this.txtDsAmountToPay2);
-            this.groupBox7.Controls.Add(this.txtDsDistanceTo4);
-            this.groupBox7.Controls.Add(this.txtDsDistanceTo3);
-            this.groupBox7.Controls.Add(this.txtDsDistanceTo2);
-            this.groupBox7.Controls.Add(this.txtDsDistanceFrom4);
-            this.groupBox7.Controls.Add(this.txtDsDistanceFrom3);
-            this.groupBox7.Controls.Add(this.txtDsDistanceFrom2);
-            this.groupBox7.Controls.Add(this.txtDsAmountToPay1);
-            this.groupBox7.Controls.Add(this.txtDsDistanceTo1);
-            this.groupBox7.Controls.Add(this.label14);
-            this.groupBox7.Controls.Add(this.txtDsDistanceFrom1);
-            this.groupBox7.Controls.Add(this.label13);
-            this.groupBox7.Controls.Add(this.label11);
-            this.groupBox7.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox7.Location = new System.Drawing.Point(29, 4);
-            this.groupBox7.Name = "groupBox7";
-            this.groupBox7.Size = new System.Drawing.Size(632, 281);
-            this.groupBox7.TabIndex = 0;
-            this.groupBox7.TabStop = false;
-            this.groupBox7.Text = "Delivery Distance Charge";
+            this.xtpDs.Appearance.Header.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.xtpDs.Appearance.Header.Options.UseFont = true;
+            this.xtpDs.Controls.Add(this.groupBox9);
+            this.xtpDs.Controls.Add(this.groupBox8);
+            this.xtpDs.Controls.Add(this.groupBox7);
+            this.xtpDs.Name = "xtpDs";
+            this.xtpDs.Size = new System.Drawing.Size(695, 558);
+            this.xtpDs.Text = "Delivery Setting";
+            // 
+            // groupBox9
+            // 
+            this.groupBox9.Controls.Add(this.txtSurchargeAmount);
+            this.groupBox9.Controls.Add(this.labelControl4);
+            this.groupBox9.Controls.Add(this.txtOrderThreshold);
+            this.groupBox9.Controls.Add(this.labelControl3);
+            this.groupBox9.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox9.Location = new System.Drawing.Point(29, 441);
+            this.groupBox9.Name = "groupBox9";
+            this.groupBox9.Size = new System.Drawing.Size(632, 115);
+            this.groupBox9.TabIndex = 2;
+            this.groupBox9.TabStop = false;
+            this.groupBox9.Text = "Delivery SurCharge";
+            // 
+            // txtSurchargeAmount
+            // 
+            this.txtSurchargeAmount.Location = new System.Drawing.Point(511, 46);
+            this.txtSurchargeAmount.Name = "txtSurchargeAmount";
+            this.txtSurchargeAmount.Properties.Appearance.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtSurchargeAmount.Properties.Appearance.Options.UseFont = true;
+            this.txtSurchargeAmount.Properties.Mask.EditMask = "n2";
+            this.txtSurchargeAmount.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Numeric;
+            this.txtSurchargeAmount.Size = new System.Drawing.Size(100, 34);
+            this.txtSurchargeAmount.TabIndex = 13;
+            // 
+            // labelControl4
+            // 
+            this.labelControl4.Appearance.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelControl4.Location = new System.Drawing.Point(325, 53);
+            this.labelControl4.Name = "labelControl4";
+            this.labelControl4.Size = new System.Drawing.Size(180, 27);
+            this.labelControl4.TabIndex = 12;
+            this.labelControl4.Text = "Surcharge Amount";
+            // 
+            // txtOrderThreshold
+            // 
+            this.txtOrderThreshold.Location = new System.Drawing.Point(175, 46);
+            this.txtOrderThreshold.Name = "txtOrderThreshold";
+            this.txtOrderThreshold.Properties.Appearance.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtOrderThreshold.Properties.Appearance.Options.UseFont = true;
+            this.txtOrderThreshold.Properties.Mask.EditMask = "n2";
+            this.txtOrderThreshold.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Numeric;
+            this.txtOrderThreshold.Size = new System.Drawing.Size(100, 34);
+            this.txtOrderThreshold.TabIndex = 11;
+            // 
+            // labelControl3
+            // 
+            this.labelControl3.Appearance.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelControl3.Location = new System.Drawing.Point(13, 53);
+            this.labelControl3.Name = "labelControl3";
+            this.labelControl3.Size = new System.Drawing.Size(156, 27);
+            this.labelControl3.TabIndex = 10;
+            this.labelControl3.Text = "Order Threshold";
             // 
             // groupBox8
             // 
@@ -712,20 +709,6 @@
             this.groupBox8.TabIndex = 1;
             this.groupBox8.TabStop = false;
             this.groupBox8.Text = "Charge Options";
-            // 
-            // groupBox9
-            // 
-            this.groupBox9.Controls.Add(this.txtSurchargeAmount);
-            this.groupBox9.Controls.Add(this.labelControl4);
-            this.groupBox9.Controls.Add(this.txtOrderThreshold);
-            this.groupBox9.Controls.Add(this.labelControl3);
-            this.groupBox9.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox9.Location = new System.Drawing.Point(29, 441);
-            this.groupBox9.Name = "groupBox9";
-            this.groupBox9.Size = new System.Drawing.Size(632, 115);
-            this.groupBox9.TabIndex = 2;
-            this.groupBox9.TabStop = false;
-            this.groupBox9.Text = "Delivery SurCharge";
             // 
             // labelControl5
             // 
@@ -776,204 +759,32 @@
             this.labelControl2.TabIndex = 11;
             this.labelControl2.Text = "Ignore Delivery Surcharge When Distance Exceeds";
             // 
-            // txtSurchargeAmount
+            // groupBox7
             // 
-            this.txtSurchargeAmount.Location = new System.Drawing.Point(511, 46);
-            this.txtSurchargeAmount.Name = "txtSurchargeAmount";
-            this.txtSurchargeAmount.Properties.Appearance.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtSurchargeAmount.Properties.Appearance.Options.UseFont = true;
-            this.txtSurchargeAmount.Properties.Mask.EditMask = "n2";
-            this.txtSurchargeAmount.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Numeric;
-            this.txtSurchargeAmount.Size = new System.Drawing.Size(100, 34);
-            this.txtSurchargeAmount.TabIndex = 13;
-            // 
-            // labelControl4
-            // 
-            this.labelControl4.Appearance.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelControl4.Location = new System.Drawing.Point(325, 53);
-            this.labelControl4.Name = "labelControl4";
-            this.labelControl4.Size = new System.Drawing.Size(180, 27);
-            this.labelControl4.TabIndex = 12;
-            this.labelControl4.Text = "Surcharge Amount";
-            // 
-            // txtOrderThreshold
-            // 
-            this.txtOrderThreshold.Location = new System.Drawing.Point(175, 46);
-            this.txtOrderThreshold.Name = "txtOrderThreshold";
-            this.txtOrderThreshold.Properties.Appearance.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtOrderThreshold.Properties.Appearance.Options.UseFont = true;
-            this.txtOrderThreshold.Properties.Mask.EditMask = "n2";
-            this.txtOrderThreshold.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Numeric;
-            this.txtOrderThreshold.Size = new System.Drawing.Size(100, 34);
-            this.txtOrderThreshold.TabIndex = 11;
-            // 
-            // labelControl3
-            // 
-            this.labelControl3.Appearance.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelControl3.Location = new System.Drawing.Point(13, 53);
-            this.labelControl3.Name = "labelControl3";
-            this.labelControl3.Size = new System.Drawing.Size(156, 27);
-            this.labelControl3.TabIndex = 10;
-            this.labelControl3.Text = "Order Threshold";
-            // 
-            // label11
-            // 
-            this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(34, 38);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(149, 27);
-            this.label11.TabIndex = 0;
-            this.label11.Text = "Distance From";
-            // 
-            // label13
-            // 
-            this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(255, 38);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(122, 27);
-            this.label13.TabIndex = 1;
-            this.label13.Text = "Distance To";
-            // 
-            // txtDsDistanceFrom1
-            // 
-            this.txtDsDistanceFrom1.Location = new System.Drawing.Point(39, 68);
-            this.txtDsDistanceFrom1.Name = "txtDsDistanceFrom1";
-            this.txtDsDistanceFrom1.Properties.Appearance.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtDsDistanceFrom1.Properties.Appearance.Options.UseFont = true;
-            this.txtDsDistanceFrom1.Properties.Mask.EditMask = "f2";
-            this.txtDsDistanceFrom1.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Numeric;
-            this.txtDsDistanceFrom1.Size = new System.Drawing.Size(144, 34);
-            this.txtDsDistanceFrom1.TabIndex = 2;
-            // 
-            // label14
-            // 
-            this.label14.AutoSize = true;
-            this.label14.Location = new System.Drawing.Point(438, 38);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(159, 27);
-            this.label14.TabIndex = 3;
-            this.label14.Text = "Amount To Pay";
-            // 
-            // txtDsDistanceTo1
-            // 
-            this.txtDsDistanceTo1.Location = new System.Drawing.Point(260, 68);
-            this.txtDsDistanceTo1.Name = "txtDsDistanceTo1";
-            this.txtDsDistanceTo1.Properties.Appearance.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtDsDistanceTo1.Properties.Appearance.Options.UseFont = true;
-            this.txtDsDistanceTo1.Properties.Mask.EditMask = "f2";
-            this.txtDsDistanceTo1.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Numeric;
-            this.txtDsDistanceTo1.Size = new System.Drawing.Size(117, 34);
-            this.txtDsDistanceTo1.TabIndex = 4;
-            // 
-            // txtDsAmountToPay1
-            // 
-            this.txtDsAmountToPay1.Location = new System.Drawing.Point(443, 68);
-            this.txtDsAmountToPay1.Name = "txtDsAmountToPay1";
-            this.txtDsAmountToPay1.Properties.Appearance.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtDsAmountToPay1.Properties.Appearance.Options.UseFont = true;
-            this.txtDsAmountToPay1.Properties.Mask.EditMask = "f2";
-            this.txtDsAmountToPay1.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Numeric;
-            this.txtDsAmountToPay1.Size = new System.Drawing.Size(154, 34);
-            this.txtDsAmountToPay1.TabIndex = 5;
-            // 
-            // txtDsDistanceFrom2
-            // 
-            this.txtDsDistanceFrom2.Location = new System.Drawing.Point(39, 108);
-            this.txtDsDistanceFrom2.Name = "txtDsDistanceFrom2";
-            this.txtDsDistanceFrom2.Properties.Appearance.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtDsDistanceFrom2.Properties.Appearance.Options.UseFont = true;
-            this.txtDsDistanceFrom2.Properties.Mask.EditMask = "f2";
-            this.txtDsDistanceFrom2.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Numeric;
-            this.txtDsDistanceFrom2.Size = new System.Drawing.Size(144, 34);
-            this.txtDsDistanceFrom2.TabIndex = 6;
-            // 
-            // txtDsDistanceFrom3
-            // 
-            this.txtDsDistanceFrom3.Location = new System.Drawing.Point(39, 148);
-            this.txtDsDistanceFrom3.Name = "txtDsDistanceFrom3";
-            this.txtDsDistanceFrom3.Properties.Appearance.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtDsDistanceFrom3.Properties.Appearance.Options.UseFont = true;
-            this.txtDsDistanceFrom3.Properties.Mask.EditMask = "f2";
-            this.txtDsDistanceFrom3.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Numeric;
-            this.txtDsDistanceFrom3.Size = new System.Drawing.Size(144, 34);
-            this.txtDsDistanceFrom3.TabIndex = 7;
-            // 
-            // txtDsDistanceFrom4
-            // 
-            this.txtDsDistanceFrom4.Location = new System.Drawing.Point(39, 188);
-            this.txtDsDistanceFrom4.Name = "txtDsDistanceFrom4";
-            this.txtDsDistanceFrom4.Properties.Appearance.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtDsDistanceFrom4.Properties.Appearance.Options.UseFont = true;
-            this.txtDsDistanceFrom4.Properties.Mask.EditMask = "f2";
-            this.txtDsDistanceFrom4.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Numeric;
-            this.txtDsDistanceFrom4.Size = new System.Drawing.Size(144, 34);
-            this.txtDsDistanceFrom4.TabIndex = 8;
-            // 
-            // txtDsDistanceTo2
-            // 
-            this.txtDsDistanceTo2.Location = new System.Drawing.Point(260, 108);
-            this.txtDsDistanceTo2.Name = "txtDsDistanceTo2";
-            this.txtDsDistanceTo2.Properties.Appearance.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtDsDistanceTo2.Properties.Appearance.Options.UseFont = true;
-            this.txtDsDistanceTo2.Properties.Mask.EditMask = "f2";
-            this.txtDsDistanceTo2.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Numeric;
-            this.txtDsDistanceTo2.Size = new System.Drawing.Size(117, 34);
-            this.txtDsDistanceTo2.TabIndex = 9;
-            // 
-            // txtDsDistanceTo3
-            // 
-            this.txtDsDistanceTo3.Location = new System.Drawing.Point(260, 148);
-            this.txtDsDistanceTo3.Name = "txtDsDistanceTo3";
-            this.txtDsDistanceTo3.Properties.Appearance.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtDsDistanceTo3.Properties.Appearance.Options.UseFont = true;
-            this.txtDsDistanceTo3.Properties.Mask.EditMask = "f2";
-            this.txtDsDistanceTo3.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Numeric;
-            this.txtDsDistanceTo3.Size = new System.Drawing.Size(117, 34);
-            this.txtDsDistanceTo3.TabIndex = 10;
-            // 
-            // txtDsDistanceTo4
-            // 
-            this.txtDsDistanceTo4.Location = new System.Drawing.Point(260, 188);
-            this.txtDsDistanceTo4.Name = "txtDsDistanceTo4";
-            this.txtDsDistanceTo4.Properties.Appearance.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtDsDistanceTo4.Properties.Appearance.Options.UseFont = true;
-            this.txtDsDistanceTo4.Properties.Mask.EditMask = "f2";
-            this.txtDsDistanceTo4.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Numeric;
-            this.txtDsDistanceTo4.Size = new System.Drawing.Size(117, 34);
-            this.txtDsDistanceTo4.TabIndex = 11;
-            // 
-            // txtDsAmountToPay2
-            // 
-            this.txtDsAmountToPay2.Location = new System.Drawing.Point(443, 108);
-            this.txtDsAmountToPay2.Name = "txtDsAmountToPay2";
-            this.txtDsAmountToPay2.Properties.Appearance.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtDsAmountToPay2.Properties.Appearance.Options.UseFont = true;
-            this.txtDsAmountToPay2.Properties.Mask.EditMask = "f2";
-            this.txtDsAmountToPay2.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Numeric;
-            this.txtDsAmountToPay2.Size = new System.Drawing.Size(154, 34);
-            this.txtDsAmountToPay2.TabIndex = 12;
-            // 
-            // txtDsAmountToPay3
-            // 
-            this.txtDsAmountToPay3.Location = new System.Drawing.Point(443, 148);
-            this.txtDsAmountToPay3.Name = "txtDsAmountToPay3";
-            this.txtDsAmountToPay3.Properties.Appearance.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtDsAmountToPay3.Properties.Appearance.Options.UseFont = true;
-            this.txtDsAmountToPay3.Properties.Mask.EditMask = "f2";
-            this.txtDsAmountToPay3.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Numeric;
-            this.txtDsAmountToPay3.Size = new System.Drawing.Size(154, 34);
-            this.txtDsAmountToPay3.TabIndex = 13;
-            // 
-            // txtDsAmountToPay4
-            // 
-            this.txtDsAmountToPay4.Location = new System.Drawing.Point(443, 188);
-            this.txtDsAmountToPay4.Name = "txtDsAmountToPay4";
-            this.txtDsAmountToPay4.Properties.Appearance.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtDsAmountToPay4.Properties.Appearance.Options.UseFont = true;
-            this.txtDsAmountToPay4.Properties.Mask.EditMask = "f2";
-            this.txtDsAmountToPay4.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Numeric;
-            this.txtDsAmountToPay4.Size = new System.Drawing.Size(154, 34);
-            this.txtDsAmountToPay4.TabIndex = 14;
+            this.groupBox7.Controls.Add(this.txtPerMile);
+            this.groupBox7.Controls.Add(this.labelControl6);
+            this.groupBox7.Controls.Add(this.txtDsAmountToPay4);
+            this.groupBox7.Controls.Add(this.txtDsAmountToPay3);
+            this.groupBox7.Controls.Add(this.txtDsAmountToPay2);
+            this.groupBox7.Controls.Add(this.txtDsDistanceTo4);
+            this.groupBox7.Controls.Add(this.txtDsDistanceTo3);
+            this.groupBox7.Controls.Add(this.txtDsDistanceTo2);
+            this.groupBox7.Controls.Add(this.txtDsDistanceFrom4);
+            this.groupBox7.Controls.Add(this.txtDsDistanceFrom3);
+            this.groupBox7.Controls.Add(this.txtDsDistanceFrom2);
+            this.groupBox7.Controls.Add(this.txtDsAmountToPay1);
+            this.groupBox7.Controls.Add(this.txtDsDistanceTo1);
+            this.groupBox7.Controls.Add(this.label14);
+            this.groupBox7.Controls.Add(this.txtDsDistanceFrom1);
+            this.groupBox7.Controls.Add(this.label13);
+            this.groupBox7.Controls.Add(this.label11);
+            this.groupBox7.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox7.Location = new System.Drawing.Point(29, 4);
+            this.groupBox7.Name = "groupBox7";
+            this.groupBox7.Size = new System.Drawing.Size(632, 281);
+            this.groupBox7.TabIndex = 0;
+            this.groupBox7.TabStop = false;
+            this.groupBox7.Text = "Delivery Distance Charge";
             // 
             // txtPerMile
             // 
@@ -995,6 +806,199 @@
             this.labelControl6.TabIndex = 15;
             this.labelControl6.Text = "Per Mile Thereafter";
             // 
+            // txtDsAmountToPay4
+            // 
+            this.txtDsAmountToPay4.Location = new System.Drawing.Point(443, 188);
+            this.txtDsAmountToPay4.Name = "txtDsAmountToPay4";
+            this.txtDsAmountToPay4.Properties.Appearance.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtDsAmountToPay4.Properties.Appearance.Options.UseFont = true;
+            this.txtDsAmountToPay4.Properties.Mask.EditMask = "f2";
+            this.txtDsAmountToPay4.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Numeric;
+            this.txtDsAmountToPay4.Size = new System.Drawing.Size(154, 34);
+            this.txtDsAmountToPay4.TabIndex = 14;
+            // 
+            // txtDsAmountToPay3
+            // 
+            this.txtDsAmountToPay3.Location = new System.Drawing.Point(443, 148);
+            this.txtDsAmountToPay3.Name = "txtDsAmountToPay3";
+            this.txtDsAmountToPay3.Properties.Appearance.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtDsAmountToPay3.Properties.Appearance.Options.UseFont = true;
+            this.txtDsAmountToPay3.Properties.Mask.EditMask = "f2";
+            this.txtDsAmountToPay3.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Numeric;
+            this.txtDsAmountToPay3.Size = new System.Drawing.Size(154, 34);
+            this.txtDsAmountToPay3.TabIndex = 13;
+            // 
+            // txtDsAmountToPay2
+            // 
+            this.txtDsAmountToPay2.Location = new System.Drawing.Point(443, 108);
+            this.txtDsAmountToPay2.Name = "txtDsAmountToPay2";
+            this.txtDsAmountToPay2.Properties.Appearance.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtDsAmountToPay2.Properties.Appearance.Options.UseFont = true;
+            this.txtDsAmountToPay2.Properties.Mask.EditMask = "f2";
+            this.txtDsAmountToPay2.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Numeric;
+            this.txtDsAmountToPay2.Size = new System.Drawing.Size(154, 34);
+            this.txtDsAmountToPay2.TabIndex = 12;
+            // 
+            // txtDsDistanceTo4
+            // 
+            this.txtDsDistanceTo4.Location = new System.Drawing.Point(260, 188);
+            this.txtDsDistanceTo4.Name = "txtDsDistanceTo4";
+            this.txtDsDistanceTo4.Properties.Appearance.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtDsDistanceTo4.Properties.Appearance.Options.UseFont = true;
+            this.txtDsDistanceTo4.Properties.Mask.EditMask = "f2";
+            this.txtDsDistanceTo4.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Numeric;
+            this.txtDsDistanceTo4.Size = new System.Drawing.Size(117, 34);
+            this.txtDsDistanceTo4.TabIndex = 11;
+            // 
+            // txtDsDistanceTo3
+            // 
+            this.txtDsDistanceTo3.Location = new System.Drawing.Point(260, 148);
+            this.txtDsDistanceTo3.Name = "txtDsDistanceTo3";
+            this.txtDsDistanceTo3.Properties.Appearance.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtDsDistanceTo3.Properties.Appearance.Options.UseFont = true;
+            this.txtDsDistanceTo3.Properties.Mask.EditMask = "f2";
+            this.txtDsDistanceTo3.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Numeric;
+            this.txtDsDistanceTo3.Size = new System.Drawing.Size(117, 34);
+            this.txtDsDistanceTo3.TabIndex = 10;
+            // 
+            // txtDsDistanceTo2
+            // 
+            this.txtDsDistanceTo2.Location = new System.Drawing.Point(260, 108);
+            this.txtDsDistanceTo2.Name = "txtDsDistanceTo2";
+            this.txtDsDistanceTo2.Properties.Appearance.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtDsDistanceTo2.Properties.Appearance.Options.UseFont = true;
+            this.txtDsDistanceTo2.Properties.Mask.EditMask = "f2";
+            this.txtDsDistanceTo2.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Numeric;
+            this.txtDsDistanceTo2.Size = new System.Drawing.Size(117, 34);
+            this.txtDsDistanceTo2.TabIndex = 9;
+            // 
+            // txtDsDistanceFrom4
+            // 
+            this.txtDsDistanceFrom4.Location = new System.Drawing.Point(39, 188);
+            this.txtDsDistanceFrom4.Name = "txtDsDistanceFrom4";
+            this.txtDsDistanceFrom4.Properties.Appearance.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtDsDistanceFrom4.Properties.Appearance.Options.UseFont = true;
+            this.txtDsDistanceFrom4.Properties.Mask.EditMask = "f2";
+            this.txtDsDistanceFrom4.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Numeric;
+            this.txtDsDistanceFrom4.Size = new System.Drawing.Size(144, 34);
+            this.txtDsDistanceFrom4.TabIndex = 8;
+            // 
+            // txtDsDistanceFrom3
+            // 
+            this.txtDsDistanceFrom3.Location = new System.Drawing.Point(39, 148);
+            this.txtDsDistanceFrom3.Name = "txtDsDistanceFrom3";
+            this.txtDsDistanceFrom3.Properties.Appearance.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtDsDistanceFrom3.Properties.Appearance.Options.UseFont = true;
+            this.txtDsDistanceFrom3.Properties.Mask.EditMask = "f2";
+            this.txtDsDistanceFrom3.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Numeric;
+            this.txtDsDistanceFrom3.Size = new System.Drawing.Size(144, 34);
+            this.txtDsDistanceFrom3.TabIndex = 7;
+            // 
+            // txtDsDistanceFrom2
+            // 
+            this.txtDsDistanceFrom2.Location = new System.Drawing.Point(39, 108);
+            this.txtDsDistanceFrom2.Name = "txtDsDistanceFrom2";
+            this.txtDsDistanceFrom2.Properties.Appearance.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtDsDistanceFrom2.Properties.Appearance.Options.UseFont = true;
+            this.txtDsDistanceFrom2.Properties.Mask.EditMask = "f2";
+            this.txtDsDistanceFrom2.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Numeric;
+            this.txtDsDistanceFrom2.Size = new System.Drawing.Size(144, 34);
+            this.txtDsDistanceFrom2.TabIndex = 6;
+            // 
+            // txtDsAmountToPay1
+            // 
+            this.txtDsAmountToPay1.Location = new System.Drawing.Point(443, 68);
+            this.txtDsAmountToPay1.Name = "txtDsAmountToPay1";
+            this.txtDsAmountToPay1.Properties.Appearance.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtDsAmountToPay1.Properties.Appearance.Options.UseFont = true;
+            this.txtDsAmountToPay1.Properties.Mask.EditMask = "f2";
+            this.txtDsAmountToPay1.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Numeric;
+            this.txtDsAmountToPay1.Size = new System.Drawing.Size(154, 34);
+            this.txtDsAmountToPay1.TabIndex = 5;
+            // 
+            // txtDsDistanceTo1
+            // 
+            this.txtDsDistanceTo1.Location = new System.Drawing.Point(260, 68);
+            this.txtDsDistanceTo1.Name = "txtDsDistanceTo1";
+            this.txtDsDistanceTo1.Properties.Appearance.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtDsDistanceTo1.Properties.Appearance.Options.UseFont = true;
+            this.txtDsDistanceTo1.Properties.Mask.EditMask = "f2";
+            this.txtDsDistanceTo1.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Numeric;
+            this.txtDsDistanceTo1.Size = new System.Drawing.Size(117, 34);
+            this.txtDsDistanceTo1.TabIndex = 4;
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Location = new System.Drawing.Point(438, 38);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(159, 27);
+            this.label14.TabIndex = 3;
+            this.label14.Text = "Amount To Pay";
+            // 
+            // txtDsDistanceFrom1
+            // 
+            this.txtDsDistanceFrom1.Location = new System.Drawing.Point(39, 68);
+            this.txtDsDistanceFrom1.Name = "txtDsDistanceFrom1";
+            this.txtDsDistanceFrom1.Properties.Appearance.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtDsDistanceFrom1.Properties.Appearance.Options.UseFont = true;
+            this.txtDsDistanceFrom1.Properties.Mask.EditMask = "f2";
+            this.txtDsDistanceFrom1.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Numeric;
+            this.txtDsDistanceFrom1.Size = new System.Drawing.Size(144, 34);
+            this.txtDsDistanceFrom1.TabIndex = 2;
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Location = new System.Drawing.Point(255, 38);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(122, 27);
+            this.label13.TabIndex = 1;
+            this.label13.Text = "Distance To";
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Location = new System.Drawing.Point(34, 38);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(149, 27);
+            this.label11.TabIndex = 0;
+            this.label11.Text = "Distance From";
+            // 
+            // btnExit
+            // 
+            this.btnExit.Appearance.BackColor = System.Drawing.Color.Olive;
+            this.btnExit.Appearance.Font = new System.Drawing.Font("Tahoma", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnExit.Appearance.ForeColor = System.Drawing.Color.White;
+            this.btnExit.Appearance.Options.UseBackColor = true;
+            this.btnExit.Appearance.Options.UseFont = true;
+            this.btnExit.Appearance.Options.UseForeColor = true;
+            this.btnExit.Appearance.Options.UseTextOptions = true;
+            this.btnExit.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
+            this.btnExit.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
+            this.btnExit.Location = new System.Drawing.Point(624, 639);
+            this.btnExit.Name = "btnExit";
+            this.btnExit.Size = new System.Drawing.Size(88, 55);
+            this.btnExit.TabIndex = 9;
+            this.btnExit.Text = "Exit";
+            // 
+            // btnSave
+            // 
+            this.btnSave.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
+            this.btnSave.Appearance.Font = new System.Drawing.Font("Tahoma", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSave.Appearance.ForeColor = System.Drawing.Color.White;
+            this.btnSave.Appearance.Options.UseBackColor = true;
+            this.btnSave.Appearance.Options.UseFont = true;
+            this.btnSave.Appearance.Options.UseForeColor = true;
+            this.btnSave.Appearance.Options.UseTextOptions = true;
+            this.btnSave.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
+            this.btnSave.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
+            this.btnSave.Location = new System.Drawing.Point(499, 639);
+            this.btnSave.Name = "btnSave";
+            this.btnSave.Size = new System.Drawing.Size(96, 55);
+            this.btnSave.TabIndex = 8;
+            this.btnSave.Text = "Save";
+            // 
             // FrmTaConf
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 18F);
@@ -1012,7 +1016,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.xtpTaConfig)).EndInit();
             this.xtpTaConfig.ResumeLayout(false);
             this.xtpGs.ResumeLayout(false);
-            this.xtpDs.ResumeLayout(false);
             this.groupBox6.ResumeLayout(false);
             this.groupBox6.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.txtTotalAmountThreshold.Properties)).EndInit();
@@ -1043,30 +1046,31 @@
             ((System.ComponentModel.ISupportInitialize)(this.txtPayType3.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtPayType2.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtPayType1.Properties)).EndInit();
-            this.groupBox7.ResumeLayout(false);
-            this.groupBox7.PerformLayout();
-            this.groupBox8.ResumeLayout(false);
-            this.groupBox8.PerformLayout();
+            this.xtpDs.ResumeLayout(false);
             this.groupBox9.ResumeLayout(false);
             this.groupBox9.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.txtSurchargeAmount.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtOrderThreshold.Properties)).EndInit();
+            this.groupBox8.ResumeLayout(false);
+            this.groupBox8.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.chkIgnoreDelivery.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.chkDeliveryChge.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtMile.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtSurchargeAmount.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtOrderThreshold.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtDsDistanceFrom1.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtDsDistanceTo1.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtDsAmountToPay1.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtDsDistanceFrom2.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtDsDistanceFrom3.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtDsDistanceFrom4.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtDsDistanceTo2.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtDsDistanceTo3.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtDsDistanceTo4.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtDsAmountToPay2.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtDsAmountToPay3.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtDsAmountToPay4.Properties)).EndInit();
+            this.groupBox7.ResumeLayout(false);
+            this.groupBox7.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.txtPerMile.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtDsAmountToPay4.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtDsAmountToPay3.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtDsAmountToPay2.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtDsDistanceTo4.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtDsDistanceTo3.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtDsDistanceTo2.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtDsDistanceFrom4.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtDsDistanceFrom3.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtDsDistanceFrom2.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtDsAmountToPay1.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtDsDistanceTo1.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtDsDistanceFrom1.Properties)).EndInit();
             this.ResumeLayout(false);
 
         }
