@@ -23,6 +23,14 @@ namespace SuperPOS.UI.TaAdmin
 
         private readonly EntityControl _control = new EntityControl();
 
+        private TextEdit[] txtGsPayType = new TextEdit[4];
+        private TextEdit[] txtGsFreeFoodItem = new TextEdit[4];
+        private TextEdit[] txtDsDistanceFrom = new TextEdit[4];
+        private TextEdit[] txtDsDistanceTo = new TextEdit[4];
+        private TextEdit[] txtDsAmountToPay = new TextEdit[4];
+
+
+
         public FrmTaConf()
         {
             InitializeComponent();
@@ -37,6 +45,35 @@ namespace SuperPOS.UI.TaAdmin
 
         private void FrmTaConf_Load(object sender, EventArgs e)
         {
+            this.xtpTaConfig.SelectedTabPageIndex = 0;
+
+            #region Text加载
+            txtGsPayType[0] = txtPayType1;
+            txtGsPayType[1] = txtPayType2;
+            txtGsPayType[2] = txtPayType3;
+            txtGsPayType[3] = txtPayType4;
+
+            txtGsFreeFoodItem[0] = txtFreeFoodItem1;
+            txtGsFreeFoodItem[1] = txtFreeFoodItem2;
+            txtGsFreeFoodItem[2] = txtFreeFoodItem3;
+            txtGsFreeFoodItem[3] = txtFreeFoodItem4;
+
+            txtDsDistanceFrom[0] = txtDsDistanceFrom1;
+            txtDsDistanceFrom[1] = txtDsDistanceFrom2;
+            txtDsDistanceFrom[2] = txtDsDistanceFrom3;
+            txtDsDistanceFrom[3] = txtDsDistanceFrom4;
+
+            txtDsDistanceTo[0] = txtDsDistanceTo1;
+            txtDsDistanceTo[1] = txtDsDistanceTo2;
+            txtDsDistanceTo[2] = txtDsDistanceTo3;
+            txtDsDistanceTo[3] = txtDsDistanceTo4;
+
+            txtDsAmountToPay[0] = txtDsAmountToPay1;
+            txtDsAmountToPay[1] = txtDsAmountToPay2;
+            txtDsAmountToPay[2] = txtDsAmountToPay3;
+            txtDsAmountToPay[3] = txtDsAmountToPay4;
+            #endregion
+
             asfc.controllInitializeSize(this);
         }
 
