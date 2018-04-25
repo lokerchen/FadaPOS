@@ -181,6 +181,7 @@
             this.xtpTaConfig.TabPages.AddRange(new DevExpress.XtraTab.XtraTabPage[] {
             this.xtpGs,
             this.xtpDs});
+            this.xtpTaConfig.Selected += new DevExpress.XtraTab.TabPageEventHandler(this.xtpTaConfig_Selected);
             // 
             // xtpGs
             // 
@@ -981,6 +982,7 @@
             this.btnExit.Size = new System.Drawing.Size(88, 55);
             this.btnExit.TabIndex = 9;
             this.btnExit.Text = "Exit";
+            this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
             // 
             // btnSave
             // 
@@ -998,6 +1000,7 @@
             this.btnSave.Size = new System.Drawing.Size(96, 55);
             this.btnSave.TabIndex = 8;
             this.btnSave.Text = "Save";
+            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
             // FrmTaConf
             // 
