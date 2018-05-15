@@ -53,7 +53,13 @@
             this.MiMenuSet = new DevExpress.XtraGrid.Columns.GridColumn();
             this.MiRmk = new DevExpress.XtraGrid.Columns.GridColumn();
             this.MiMenuCateID = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.MiLargePrice = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.MiSmallPrice = new DevExpress.XtraGrid.Columns.GridColumn();
             this.panelControl2 = new DevExpress.XtraEditors.PanelControl();
+            this.txtSmallPrice = new DevExpress.XtraEditors.TextEdit();
+            this.labelControl6 = new DevExpress.XtraEditors.LabelControl();
+            this.txtLargePrice = new DevExpress.XtraEditors.TextEdit();
+            this.labelControl5 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl4 = new DevExpress.XtraEditors.LabelControl();
             this.lueMenuSet = new DevExpress.XtraEditors.LookUpEdit();
             this.labelControl12 = new DevExpress.XtraEditors.LabelControl();
@@ -80,12 +86,7 @@
             this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
             this.txtDishCode = new DevExpress.XtraEditors.TextEdit();
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
-            this.txtLargePrice = new DevExpress.XtraEditors.TextEdit();
-            this.labelControl5 = new DevExpress.XtraEditors.LabelControl();
-            this.txtSmallPrice = new DevExpress.XtraEditors.TextEdit();
-            this.labelControl6 = new DevExpress.XtraEditors.LabelControl();
-            this.MiLargePrice = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.MiSmallPrice = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.btnExit = new DevExpress.XtraEditors.SimpleButton();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
             this.panelControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl3)).BeginInit();
@@ -94,6 +95,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.gvMenuItem)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl2)).BeginInit();
             this.panelControl2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.txtSmallPrice.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtLargePrice.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.lueMenuSet.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.chkComboOtherSet.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.chkComboWorkDay.Properties)).BeginInit();
@@ -107,8 +110,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.txtEngName.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtDispPosition.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtDishCode.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtLargePrice.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtSmallPrice.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // panelControl1
@@ -123,6 +124,7 @@
             // 
             // panelControl3
             // 
+            this.panelControl3.Controls.Add(this.btnExit);
             this.panelControl3.Controls.Add(this.btnDel);
             this.panelControl3.Controls.Add(this.btnSave);
             this.panelControl3.Controls.Add(this.btnAdd);
@@ -133,7 +135,7 @@
             // 
             // btnDel
             // 
-            this.btnDel.Location = new System.Drawing.Point(438, 9);
+            this.btnDel.Location = new System.Drawing.Point(337, 9);
             this.btnDel.Name = "btnDel";
             this.btnDel.Size = new System.Drawing.Size(95, 25);
             this.btnDel.TabIndex = 2;
@@ -142,7 +144,7 @@
             // 
             // btnSave
             // 
-            this.btnSave.Location = new System.Drawing.Point(253, 9);
+            this.btnSave.Location = new System.Drawing.Point(187, 9);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(95, 25);
             this.btnSave.TabIndex = 1;
@@ -151,7 +153,7 @@
             // 
             // btnAdd
             // 
-            this.btnAdd.Location = new System.Drawing.Point(62, 9);
+            this.btnAdd.Location = new System.Drawing.Point(37, 9);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Size = new System.Drawing.Size(95, 25);
             this.btnAdd.TabIndex = 0;
@@ -342,6 +344,18 @@
             this.MiMenuCateID.FieldName = "MiMenuCateID";
             this.MiMenuCateID.Name = "MiMenuCateID";
             // 
+            // MiLargePrice
+            // 
+            this.MiLargePrice.Caption = "Large Price";
+            this.MiLargePrice.FieldName = "MiLargePrice";
+            this.MiLargePrice.Name = "MiLargePrice";
+            // 
+            // MiSmallPrice
+            // 
+            this.MiSmallPrice.Caption = "Small Price";
+            this.MiSmallPrice.FieldName = "MiSmallPrice";
+            this.MiSmallPrice.Name = "MiSmallPrice";
+            // 
             // panelControl2
             // 
             this.panelControl2.Controls.Add(this.txtSmallPrice);
@@ -378,6 +392,40 @@
             this.panelControl2.Name = "panelControl2";
             this.panelControl2.Size = new System.Drawing.Size(621, 285);
             this.panelControl2.TabIndex = 0;
+            // 
+            // txtSmallPrice
+            // 
+            this.txtSmallPrice.Location = new System.Drawing.Point(154, 215);
+            this.txtSmallPrice.Name = "txtSmallPrice";
+            this.txtSmallPrice.Properties.Mask.EditMask = "f";
+            this.txtSmallPrice.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Numeric;
+            this.txtSmallPrice.Size = new System.Drawing.Size(147, 24);
+            this.txtSmallPrice.TabIndex = 28;
+            // 
+            // labelControl6
+            // 
+            this.labelControl6.Location = new System.Drawing.Point(75, 221);
+            this.labelControl6.Name = "labelControl6";
+            this.labelControl6.Size = new System.Drawing.Size(73, 18);
+            this.labelControl6.TabIndex = 27;
+            this.labelControl6.Text = "Small Price:";
+            // 
+            // txtLargePrice
+            // 
+            this.txtLargePrice.Location = new System.Drawing.Point(154, 180);
+            this.txtLargePrice.Name = "txtLargePrice";
+            this.txtLargePrice.Properties.Mask.EditMask = "f";
+            this.txtLargePrice.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Numeric;
+            this.txtLargePrice.Size = new System.Drawing.Size(147, 24);
+            this.txtLargePrice.TabIndex = 26;
+            // 
+            // labelControl5
+            // 
+            this.labelControl5.Location = new System.Drawing.Point(72, 186);
+            this.labelControl5.Name = "labelControl5";
+            this.labelControl5.Size = new System.Drawing.Size(76, 18);
+            this.labelControl5.TabIndex = 25;
+            this.labelControl5.Text = "Large Price:";
             // 
             // labelControl4
             // 
@@ -607,51 +655,14 @@
             this.labelControl1.TabIndex = 0;
             this.labelControl1.Text = "Dish Code:";
             // 
-            // txtLargePrice
+            // btnExit
             // 
-            this.txtLargePrice.Location = new System.Drawing.Point(154, 180);
-            this.txtLargePrice.Name = "txtLargePrice";
-            this.txtLargePrice.Properties.Mask.EditMask = "f";
-            this.txtLargePrice.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Numeric;
-            this.txtLargePrice.Size = new System.Drawing.Size(147, 24);
-            this.txtLargePrice.TabIndex = 26;
-            // 
-            // labelControl5
-            // 
-            this.labelControl5.Location = new System.Drawing.Point(72, 186);
-            this.labelControl5.Name = "labelControl5";
-            this.labelControl5.Size = new System.Drawing.Size(76, 18);
-            this.labelControl5.TabIndex = 25;
-            this.labelControl5.Text = "Large Price:";
-            // 
-            // txtSmallPrice
-            // 
-            this.txtSmallPrice.Location = new System.Drawing.Point(154, 215);
-            this.txtSmallPrice.Name = "txtSmallPrice";
-            this.txtSmallPrice.Properties.Mask.EditMask = "f";
-            this.txtSmallPrice.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Numeric;
-            this.txtSmallPrice.Size = new System.Drawing.Size(147, 24);
-            this.txtSmallPrice.TabIndex = 28;
-            // 
-            // labelControl6
-            // 
-            this.labelControl6.Location = new System.Drawing.Point(75, 221);
-            this.labelControl6.Name = "labelControl6";
-            this.labelControl6.Size = new System.Drawing.Size(73, 18);
-            this.labelControl6.TabIndex = 27;
-            this.labelControl6.Text = "Small Price:";
-            // 
-            // MiLargePrice
-            // 
-            this.MiLargePrice.Caption = "Large Price";
-            this.MiLargePrice.FieldName = "MiLargePrice";
-            this.MiLargePrice.Name = "MiLargePrice";
-            // 
-            // MiSmallPrice
-            // 
-            this.MiSmallPrice.Caption = "Small Price";
-            this.MiSmallPrice.FieldName = "MiSmallPrice";
-            this.MiSmallPrice.Name = "MiSmallPrice";
+            this.btnExit.Location = new System.Drawing.Point(487, 9);
+            this.btnExit.Name = "btnExit";
+            this.btnExit.Size = new System.Drawing.Size(95, 25);
+            this.btnExit.TabIndex = 3;
+            this.btnExit.Text = "Exit";
+            this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
             // 
             // FrmTaMenuItem
             // 
@@ -663,7 +674,9 @@
             this.Name = "FrmTaMenuItem";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "FrmTaMenuItem";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.FrmTaMenuItem_Load);
+            this.SizeChanged += new System.EventHandler(this.FrmTaMenuItem_SizeChanged);
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).EndInit();
             this.panelControl1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.panelControl3)).EndInit();
@@ -673,6 +686,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.panelControl2)).EndInit();
             this.panelControl2.ResumeLayout(false);
             this.panelControl2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.txtSmallPrice.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtLargePrice.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.lueMenuSet.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.chkComboOtherSet.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.chkComboWorkDay.Properties)).EndInit();
@@ -686,8 +701,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.txtEngName.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtDispPosition.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtDishCode.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtLargePrice.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtSmallPrice.Properties)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -752,5 +765,6 @@
         private DevExpress.XtraEditors.LabelControl labelControl5;
         private DevExpress.XtraGrid.Columns.GridColumn MiLargePrice;
         private DevExpress.XtraGrid.Columns.GridColumn MiSmallPrice;
+        private DevExpress.XtraEditors.SimpleButton btnExit;
     }
 }

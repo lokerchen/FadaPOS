@@ -27,6 +27,8 @@ namespace SuperPOS.UI.TA
 
         private readonly EntityControl _control = new EntityControl();
 
+        private AutoSizeFormClass asfc = new AutoSizeFormClass();
+
         private string[] arrayMenuCate;
 
         public FrmTaMenuItem()
@@ -44,6 +46,8 @@ namespace SuperPOS.UI.TA
         private void FrmTaMenuItem_Load(object sender, EventArgs e)
         {
             BindData();
+
+            asfc.controllInitializeSize(this);
         }
 
         #region 绑定chkWorkDay
@@ -421,5 +425,15 @@ namespace SuperPOS.UI.TA
             }
         }
         #endregion
+
+        private void FrmTaMenuItem_SizeChanged(object sender, EventArgs e)
+        {
+            asfc.controlAutoSize(this);
+        }
+
+        private void btnExit_Click(object sender, EventArgs e)
+        {
+            Close();
+        }
     }
 }

@@ -23,6 +23,8 @@ namespace SuperPOS.UI.TA
 
         private readonly EntityControl _control = new EntityControl();
 
+        private AutoSizeFormClass asfc = new AutoSizeFormClass();
+
         //MenuItem Type,默认为xtraTabPageSecond，即：2
         private int miType = 2;
 
@@ -49,6 +51,8 @@ namespace SuperPOS.UI.TA
             miType = SelectPage(xtcOtherChoice.SelectedTabPage.Name);
 
             BindData(miType);
+
+            asfc.controllInitializeSize(this);
         }
 
         #region 根据Tab Page判断MenuItem类型
@@ -196,6 +200,11 @@ namespace SuperPOS.UI.TA
         private void btnExit_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void FrmTaMenuItemDetail_SizeChanged(object sender, EventArgs e)
+        {
+            asfc.controlAutoSize(this);
         }
     }
 }
