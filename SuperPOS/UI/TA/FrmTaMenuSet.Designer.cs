@@ -33,8 +33,8 @@
             this.ID = new DevExpress.XtraGrid.Columns.GridColumn();
             this.MSEngName = new DevExpress.XtraGrid.Columns.GridColumn();
             this.MSOtherName = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
             this.panelControl3 = new DevExpress.XtraEditors.PanelControl();
+            this.btnExit = new DevExpress.XtraEditors.SimpleButton();
             this.btnDel = new DevExpress.XtraEditors.SimpleButton();
             this.btnSave = new DevExpress.XtraEditors.SimpleButton();
             this.btnAdd = new DevExpress.XtraEditors.SimpleButton();
@@ -45,8 +45,6 @@
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
             ((System.ComponentModel.ISupportInitialize)(this.gridControlTaMenuSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gvTaMenuSet)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
-            this.panelControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl3)).BeginInit();
             this.panelControl3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl2)).BeginInit();
@@ -57,11 +55,11 @@
             // 
             // gridControlTaMenuSet
             // 
-            this.gridControlTaMenuSet.Location = new System.Drawing.Point(5, 121);
+            this.gridControlTaMenuSet.Location = new System.Drawing.Point(7, 123);
             this.gridControlTaMenuSet.MainView = this.gvTaMenuSet;
             this.gridControlTaMenuSet.Name = "gridControlTaMenuSet";
             this.gridControlTaMenuSet.Size = new System.Drawing.Size(436, 252);
-            this.gridControlTaMenuSet.TabIndex = 2;
+            this.gridControlTaMenuSet.TabIndex = 5;
             this.gridControlTaMenuSet.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gvTaMenuSet});
             // 
@@ -109,30 +107,29 @@
             this.MSOtherName.Visible = true;
             this.MSOtherName.VisibleIndex = 1;
             // 
-            // panelControl1
-            // 
-            this.panelControl1.Controls.Add(this.gridControlTaMenuSet);
-            this.panelControl1.Controls.Add(this.panelControl3);
-            this.panelControl1.Controls.Add(this.panelControl2);
-            this.panelControl1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelControl1.Location = new System.Drawing.Point(0, 0);
-            this.panelControl1.Name = "panelControl1";
-            this.panelControl1.Size = new System.Drawing.Size(449, 378);
-            this.panelControl1.TabIndex = 3;
-            // 
             // panelControl3
             // 
+            this.panelControl3.Controls.Add(this.btnExit);
             this.panelControl3.Controls.Add(this.btnDel);
             this.panelControl3.Controls.Add(this.btnSave);
             this.panelControl3.Controls.Add(this.btnAdd);
-            this.panelControl3.Location = new System.Drawing.Point(5, 67);
+            this.panelControl3.Location = new System.Drawing.Point(7, 69);
             this.panelControl3.Name = "panelControl3";
             this.panelControl3.Size = new System.Drawing.Size(436, 48);
-            this.panelControl3.TabIndex = 1;
+            this.panelControl3.TabIndex = 4;
+            // 
+            // btnExit
+            // 
+            this.btnExit.Location = new System.Drawing.Point(336, 14);
+            this.btnExit.Name = "btnExit";
+            this.btnExit.Size = new System.Drawing.Size(95, 25);
+            this.btnExit.TabIndex = 3;
+            this.btnExit.Text = "Exit";
+            this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
             // 
             // btnDel
             // 
-            this.btnDel.Location = new System.Drawing.Point(311, 14);
+            this.btnDel.Location = new System.Drawing.Point(226, 14);
             this.btnDel.Name = "btnDel";
             this.btnDel.Size = new System.Drawing.Size(95, 25);
             this.btnDel.TabIndex = 2;
@@ -141,7 +138,7 @@
             // 
             // btnSave
             // 
-            this.btnSave.Location = new System.Drawing.Point(171, 14);
+            this.btnSave.Location = new System.Drawing.Point(116, 14);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(95, 25);
             this.btnSave.TabIndex = 1;
@@ -150,7 +147,7 @@
             // 
             // btnAdd
             // 
-            this.btnAdd.Location = new System.Drawing.Point(31, 14);
+            this.btnAdd.Location = new System.Drawing.Point(6, 14);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Size = new System.Drawing.Size(95, 25);
             this.btnAdd.TabIndex = 0;
@@ -163,10 +160,10 @@
             this.panelControl2.Controls.Add(this.labelControl2);
             this.panelControl2.Controls.Add(this.txtEngName);
             this.panelControl2.Controls.Add(this.labelControl1);
-            this.panelControl2.Location = new System.Drawing.Point(5, 5);
+            this.panelControl2.Location = new System.Drawing.Point(7, 7);
             this.panelControl2.Name = "panelControl2";
             this.panelControl2.Size = new System.Drawing.Size(436, 56);
-            this.panelControl2.TabIndex = 0;
+            this.panelControl2.TabIndex = 3;
             // 
             // txtOtherName
             // 
@@ -202,17 +199,19 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(449, 378);
-            this.Controls.Add(this.panelControl1);
+            this.ClientSize = new System.Drawing.Size(447, 379);
+            this.Controls.Add(this.gridControlTaMenuSet);
+            this.Controls.Add(this.panelControl3);
+            this.Controls.Add(this.panelControl2);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "FrmTaMenuSet";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "MenuSet";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.FrmTaMenuSet_Load);
+            this.SizeChanged += new System.EventHandler(this.FrmTaMenuSet_SizeChanged);
             ((System.ComponentModel.ISupportInitialize)(this.gridControlTaMenuSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gvTaMenuSet)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).EndInit();
-            this.panelControl1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.panelControl3)).EndInit();
             this.panelControl3.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.panelControl2)).EndInit();
@@ -231,8 +230,8 @@
         private DevExpress.XtraGrid.Columns.GridColumn ID;
         private DevExpress.XtraGrid.Columns.GridColumn MSEngName;
         private DevExpress.XtraGrid.Columns.GridColumn MSOtherName;
-        private DevExpress.XtraEditors.PanelControl panelControl1;
         private DevExpress.XtraEditors.PanelControl panelControl3;
+        private DevExpress.XtraEditors.SimpleButton btnExit;
         private DevExpress.XtraEditors.SimpleButton btnDel;
         private DevExpress.XtraEditors.SimpleButton btnSave;
         private DevExpress.XtraEditors.SimpleButton btnAdd;
