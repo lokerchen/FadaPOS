@@ -1678,5 +1678,26 @@ namespace SuperPOS.UI.TA
                 }
             }
         }
+
+        private void panelMember_Click(object sender, EventArgs e)
+        {
+            if (CustID <= 0)
+            {
+                FrmTaCustomerInfo frmTaCustomerInfo = new FrmTaCustomerInfo();
+
+                if (frmTaCustomerInfo.ShowDialog() == DialogResult.OK)
+                {
+                    TaCustomerInfo taCustomerInfo = new TaCustomerInfo();
+                    taCustomerInfo = frmTaCustomerInfo.CustomerInfo;
+
+                    lblName.Text = taCustomerInfo.cusName;
+                    lblPhone.Text = taCustomerInfo.cusPhone;
+                    lblAddress.Text = taCustomerInfo.cusAddr;
+                    lblPostcode.Text = taCustomerInfo.cusPostcode;
+                    lblDistance.Text = taCustomerInfo.cusDistance;
+                    lblDiliveryFee.Text = taCustomerInfo.cusDelCharge;
+                }
+            }
+        }
     }
 }

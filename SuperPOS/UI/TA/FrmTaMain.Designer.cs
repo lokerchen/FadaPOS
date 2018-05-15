@@ -44,7 +44,7 @@
             this.OrderTime = new DevExpress.XtraTreeList.Columns.TreeListColumn();
             this.OrderStaff = new DevExpress.XtraTreeList.Columns.TreeListColumn();
             this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
-            this.panelControl7 = new DevExpress.XtraEditors.PanelControl();
+            this.panelMember = new DevExpress.XtraEditors.PanelControl();
             this.lblDiliveryFee = new DevExpress.XtraEditors.LabelControl();
             this.lblDistance = new DevExpress.XtraEditors.LabelControl();
             this.lblPostcode = new DevExpress.XtraEditors.LabelControl();
@@ -151,8 +151,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemMemoEdit1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
             this.panelControl1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.panelControl7)).BeginInit();
-            this.panelControl7.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.panelMember)).BeginInit();
+            this.panelMember.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl6)).BeginInit();
             this.panelControl6.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl2)).BeginInit();
@@ -309,7 +309,7 @@
             // 
             // panelControl1
             // 
-            this.panelControl1.Controls.Add(this.panelControl7);
+            this.panelControl1.Controls.Add(this.panelMember);
             this.panelControl1.Controls.Add(this.btnChange);
             this.panelControl1.Controls.Add(this.btnPay);
             this.panelControl1.Controls.Add(this.btnKeypad);
@@ -326,24 +326,25 @@
             this.panelControl1.Size = new System.Drawing.Size(400, 770);
             this.panelControl1.TabIndex = 1;
             // 
-            // panelControl7
+            // panelMember
             // 
-            this.panelControl7.Controls.Add(this.lblDiliveryFee);
-            this.panelControl7.Controls.Add(this.lblDistance);
-            this.panelControl7.Controls.Add(this.lblPostcode);
-            this.panelControl7.Controls.Add(this.lblAddress);
-            this.panelControl7.Controls.Add(this.lblPhone);
-            this.panelControl7.Controls.Add(this.lblName);
-            this.panelControl7.Controls.Add(this.labelControl6);
-            this.panelControl7.Controls.Add(this.labelControl5);
-            this.panelControl7.Controls.Add(this.labelControl4);
-            this.panelControl7.Controls.Add(this.labelControl3);
-            this.panelControl7.Controls.Add(this.labelControl2);
-            this.panelControl7.Controls.Add(this.labelControl1);
-            this.panelControl7.Location = new System.Drawing.Point(5, 9);
-            this.panelControl7.Name = "panelControl7";
-            this.panelControl7.Size = new System.Drawing.Size(390, 146);
-            this.panelControl7.TabIndex = 32;
+            this.panelMember.Controls.Add(this.lblDiliveryFee);
+            this.panelMember.Controls.Add(this.lblDistance);
+            this.panelMember.Controls.Add(this.lblPostcode);
+            this.panelMember.Controls.Add(this.lblAddress);
+            this.panelMember.Controls.Add(this.lblPhone);
+            this.panelMember.Controls.Add(this.lblName);
+            this.panelMember.Controls.Add(this.labelControl6);
+            this.panelMember.Controls.Add(this.labelControl5);
+            this.panelMember.Controls.Add(this.labelControl4);
+            this.panelMember.Controls.Add(this.labelControl3);
+            this.panelMember.Controls.Add(this.labelControl2);
+            this.panelMember.Controls.Add(this.labelControl1);
+            this.panelMember.Location = new System.Drawing.Point(5, 9);
+            this.panelMember.Name = "panelMember";
+            this.panelMember.Size = new System.Drawing.Size(390, 146);
+            this.panelMember.TabIndex = 32;
+            this.panelMember.Click += new System.EventHandler(this.panelMember_Click);
             // 
             // lblDiliveryFee
             // 
@@ -1850,9 +1851,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemMemoEdit1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).EndInit();
             this.panelControl1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.panelControl7)).EndInit();
-            this.panelControl7.ResumeLayout(false);
-            this.panelControl7.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.panelMember)).EndInit();
+            this.panelMember.ResumeLayout(false);
+            this.panelMember.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl6)).EndInit();
             this.panelControl6.ResumeLayout(false);
             this.panelControl6.PerformLayout();
@@ -1976,7 +1977,7 @@
         private DevExpress.XtraEditors.SimpleButton btnIngredMode;
         private DevExpress.XtraEditors.SimpleButton btnChange;
         private DevExpress.XtraEditors.PanelControl panelControl6;
-        private DevExpress.XtraEditors.PanelControl panelControl7;
+        private DevExpress.XtraEditors.PanelControl panelMember;
         private DevExpress.XtraEditors.LabelControl lblDiliveryFee;
         private DevExpress.XtraEditors.LabelControl lblDistance;
         private DevExpress.XtraEditors.LabelControl lblPostcode;
