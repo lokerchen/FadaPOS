@@ -22,6 +22,8 @@ namespace SuperPOS.UI.TA
 
         private readonly EntityControl _control = new EntityControl();
 
+        private AutoSizeFormClass asfc = new AutoSizeFormClass();
+
         //是否为Add
         private bool isAdd = false;
 
@@ -42,6 +44,8 @@ namespace SuperPOS.UI.TA
             BindChkWorkDay(false);
 
             BindData();
+
+            asfc.controllInitializeSize(this);
         }
 
         #region 绑定chkWorkDay
@@ -151,6 +155,16 @@ namespace SuperPOS.UI.TA
             txtPhoneNum.Text = gvTaDriver.GetRowCellValue(gvTaDriver.FocusedRowHandle, "DriverNumber").ToString();
             chkWorkDay.EditValue = gvTaDriver.GetRowCellValue(gvTaDriver.FocusedRowHandle, "DriverWorkDay");
             chkWorkDay.Text = gvTaDriver.GetRowCellValue(gvTaDriver.FocusedRowHandle, "DriverWorkDay").ToString();
+        }
+
+        private void btnExit_Click(object sender, EventArgs e)
+        {
+            Close();
+        }
+
+        private void FrmTaDriver_SizeChanged(object sender, EventArgs e)
+        {
+            asfc.controlAutoSize(this);
         }
     }
 }

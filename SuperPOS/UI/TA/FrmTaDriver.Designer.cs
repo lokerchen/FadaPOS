@@ -46,6 +46,7 @@
             this.txtPhoneNum = new DevExpress.XtraEditors.TextEdit();
             this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
             this.txtDriverName = new DevExpress.XtraEditors.TextEdit();
+            this.btnExit = new DevExpress.XtraEditors.SimpleButton();
             ((System.ComponentModel.ISupportInitialize)(this.gridControlTaDriver)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gvTaDriver)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
@@ -142,6 +143,7 @@
             // 
             // panelControl3
             // 
+            this.panelControl3.Controls.Add(this.btnExit);
             this.panelControl3.Controls.Add(this.btnDel);
             this.panelControl3.Controls.Add(this.btnSave);
             this.panelControl3.Controls.Add(this.btnAdd);
@@ -152,7 +154,7 @@
             // 
             // btnDel
             // 
-            this.btnDel.Location = new System.Drawing.Point(9, 98);
+            this.btnDel.Location = new System.Drawing.Point(9, 72);
             this.btnDel.Name = "btnDel";
             this.btnDel.Size = new System.Drawing.Size(95, 25);
             this.btnDel.TabIndex = 2;
@@ -161,7 +163,7 @@
             // 
             // btnSave
             // 
-            this.btnSave.Location = new System.Drawing.Point(9, 56);
+            this.btnSave.Location = new System.Drawing.Point(9, 41);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(95, 25);
             this.btnSave.TabIndex = 1;
@@ -170,7 +172,7 @@
             // 
             // btnAdd
             // 
-            this.btnAdd.Location = new System.Drawing.Point(9, 14);
+            this.btnAdd.Location = new System.Drawing.Point(9, 10);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Size = new System.Drawing.Size(95, 25);
             this.btnAdd.TabIndex = 0;
@@ -232,6 +234,15 @@
             this.txtDriverName.Size = new System.Drawing.Size(146, 24);
             this.txtDriverName.TabIndex = 1;
             // 
+            // btnExit
+            // 
+            this.btnExit.Location = new System.Drawing.Point(9, 103);
+            this.btnExit.Name = "btnExit";
+            this.btnExit.Size = new System.Drawing.Size(95, 25);
+            this.btnExit.TabIndex = 3;
+            this.btnExit.Text = "Exit";
+            this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
+            // 
             // FrmTaDriver
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 18F);
@@ -242,7 +253,9 @@
             this.Name = "FrmTaDriver";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "FrmTaDriver";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.FrmTaDriver_Load);
+            this.SizeChanged += new System.EventHandler(this.FrmTaDriver_SizeChanged);
             ((System.ComponentModel.ISupportInitialize)(this.gridControlTaDriver)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gvTaDriver)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).EndInit();
@@ -279,5 +292,6 @@
         private DevExpress.XtraEditors.LabelControl labelControl11;
         private DevExpress.XtraEditors.CheckedComboBoxEdit chkWorkDay;
         private DevExpress.XtraGrid.Columns.GridColumn DriverWorkDay;
+        private DevExpress.XtraEditors.SimpleButton btnExit;
     }
 }

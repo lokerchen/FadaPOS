@@ -112,7 +112,8 @@ namespace SuperPOS.UI
 
         private void btnTaDriverSetup_Click(object sender, EventArgs e)
         {
-
+            FrmTaDriver frmTaDriver = new FrmTaDriver(usrID, usrName);
+            frmTaDriver.ShowDialog();
         }
         #endregion
 
