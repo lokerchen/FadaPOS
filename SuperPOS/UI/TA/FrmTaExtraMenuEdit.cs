@@ -25,6 +25,8 @@ namespace SuperPOS.UI.TA
 
         private readonly EntityControl _control = new EntityControl();
 
+        private AutoSizeFormClass asfc = new AutoSizeFormClass();
+
         public FrmTaExtraMenuEdit()
         {
             InitializeComponent();
@@ -186,17 +188,29 @@ namespace SuperPOS.UI.TA
 
         private void FrmTaExtraMenuEdit_Load(object sender, EventArgs e)
         {
+            asfc.controllInitializeSize(this);
+
+            if (gvExtraMenu.RowCount <= 0)
+            {
+                isAdd = true;
+                BindChkComboType(false);
+                BindChkComboBtnType(false);
+            }
+
+            BindChkComboType(false);
+            BindChkComboBtnType(false);
+
             BindGridData();
+        }
 
-            //if (gvExtraMenu.RowCount <= 0)
-            //{
-            //    isAdd = true;
-            //    BindChkComboType(false);
-            //    BindChkComboBtnType(false);
-            //}
+        private void FrmTaExtraMenuEdit_SizeChanged(object sender, EventArgs e)
+        {
+            asfc.controlAutoSize(this);
+        }
 
-            //BindChkComboType(false);
-            //BindChkComboBtnType(false);
+        private void btnExit_Click(object sender, EventArgs e)
+        {
+            Close();
         }
     }
 }

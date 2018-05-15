@@ -55,6 +55,7 @@
             this.labelControl3 = new DevExpress.XtraEditors.LabelControl();
             this.txtDispPosition = new DevExpress.XtraEditors.TextEdit();
             this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
+            this.btnExit = new DevExpress.XtraEditors.SimpleButton();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
             this.panelControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridControlExtraMenu)).BeginInit();
@@ -179,6 +180,7 @@
             // 
             // panelControl3
             // 
+            this.panelControl3.Controls.Add(this.btnExit);
             this.panelControl3.Controls.Add(this.btnDel);
             this.panelControl3.Controls.Add(this.btnSave);
             this.panelControl3.Controls.Add(this.btnAdd);
@@ -189,7 +191,7 @@
             // 
             // btnDel
             // 
-            this.btnDel.Location = new System.Drawing.Point(391, 17);
+            this.btnDel.Location = new System.Drawing.Point(275, 17);
             this.btnDel.Name = "btnDel";
             this.btnDel.Size = new System.Drawing.Size(95, 25);
             this.btnDel.TabIndex = 17;
@@ -198,7 +200,7 @@
             // 
             // btnSave
             // 
-            this.btnSave.Location = new System.Drawing.Point(206, 17);
+            this.btnSave.Location = new System.Drawing.Point(145, 17);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(95, 25);
             this.btnSave.TabIndex = 16;
@@ -332,6 +334,15 @@
             this.labelControl2.TabIndex = 10;
             this.labelControl2.Text = "Display Position:";
             // 
+            // btnExit
+            // 
+            this.btnExit.Location = new System.Drawing.Point(405, 17);
+            this.btnExit.Name = "btnExit";
+            this.btnExit.Size = new System.Drawing.Size(95, 25);
+            this.btnExit.TabIndex = 18;
+            this.btnExit.Text = "Exit";
+            this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
+            // 
             // FrmTaExtraMenuEdit
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 18F);
@@ -342,7 +353,9 @@
             this.Name = "FrmTaExtraMenuEdit";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "FrmTaExtraMenuEdit";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.FrmTaExtraMenuEdit_Load);
+            this.SizeChanged += new System.EventHandler(this.FrmTaExtraMenuEdit_SizeChanged);
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).EndInit();
             this.panelControl1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.gridControlExtraMenu)).EndInit();
@@ -391,5 +404,6 @@
         private DevExpress.XtraEditors.SimpleButton btnDel;
         private DevExpress.XtraEditors.SimpleButton btnSave;
         private DevExpress.XtraEditors.SimpleButton btnAdd;
+        private DevExpress.XtraEditors.SimpleButton btnExit;
     }
 }

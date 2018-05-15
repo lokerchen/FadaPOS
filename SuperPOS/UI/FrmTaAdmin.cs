@@ -101,7 +101,8 @@ namespace SuperPOS.UI
 
         private void btnTaExtraMenuEdit_Click(object sender, EventArgs e)
         {
-
+            FrmTaExtraMenuEdit frmTaExtraMenuEdit = new FrmTaExtraMenuEdit(usrID, usrName);
+            frmTaExtraMenuEdit.ShowDialog();
         }
 
         private void btnTaPrtSetup_Click(object sender, EventArgs e)
