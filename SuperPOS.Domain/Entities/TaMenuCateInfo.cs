@@ -26,5 +26,11 @@ namespace SuperPOS.Domain.Entities
         //Menu Set ID
         [XmlElement(ElementName = "MenuSetID")]
         public virtual int MenuSetID { get; set; }
+
+        [XmlElement(ElementName = "IsHotKey")]
+        public virtual string IsHotKey { get; set; }
+
+        [XmlElement(ElementName = "HotKeyDishCode")]
+        public virtual string HotKeyDishCode { get; set; }
     }
 }

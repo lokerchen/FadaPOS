@@ -24,6 +24,8 @@ namespace SuperPOS.UI.TA
 
         private readonly EntityControl _control = new EntityControl();
 
+        private AutoSizeFormClass asfc = new AutoSizeFormClass();
+
         public FrmTaMenuCate()
         {
             InitializeComponent();
@@ -41,6 +43,8 @@ namespace SuperPOS.UI.TA
             BindGridData();
             BindLueMenuSet();
             BindLueDeptCode();
+
+            asfc.controllInitializeSize(this);
         }
 
         private void gvMenuCate_CustomDrawRowIndicator(object sender, DevExpress.XtraGrid.Views.Grid.RowIndicatorCustomDrawEventArgs e)
@@ -70,6 +74,8 @@ namespace SuperPOS.UI.TA
                     CatePosition = mc.CatePosition,
                     DeptCodeID = mc.DeptCodeID,
                     MenuSetID = mc.MenuSetID,
+                    IsHotKey = mc.IsHotKey,
+                    HotKeyDishCode = mc.HotKeyDishCode,
                     DeptCode = dc.DeptEngName,
                     MenuSet = ms.MSEngName
                 };
@@ -118,6 +124,8 @@ namespace SuperPOS.UI.TA
             lueDeptCode.Text = gvMenuCate.GetRowCellValue(gvMenuCate.FocusedRowHandle, "DeptCode").ToString();
             lueMenuSet.EditValue = Convert.ToInt32(gvMenuCate.GetRowCellValue(gvMenuCate.FocusedRowHandle, "MenuSetID"));
             lueMenuSet.Text = gvMenuCate.GetRowCellValue(gvMenuCate.FocusedRowHandle, "MenuSet").ToString();
+            chkHotKey.Checked = txtHotKeyDishCode.Enabled = gvMenuCate.GetRowCellValue(gvMenuCate.FocusedRowHandle, "IsHotKey").ToString().Equals("Y");
+            txtHotKeyDishCode.Text = gvMenuCate.GetRowCellValue(gvMenuCate.FocusedRowHandle, "HotKeyDishCode") == null ? "" : gvMenuCate.GetRowCellValue(gvMenuCate.FocusedRowHandle, "HotKeyDishCode").ToString();
         }
 
         private void btnAdd_Click(object sender, EventArgs e)
@@ -130,6 +138,9 @@ namespace SuperPOS.UI.TA
 
             lueDeptCode.ItemIndex = 0;
             lueMenuSet.ItemIndex = 0;
+
+            chkHotKey.Checked = false;
+            txtHotKeyDishCode.Enabled = false;
         }
 
         private void btnSave_Click(object sender, EventArgs e)
@@ -176,6 +187,9 @@ namespace SuperPOS.UI.TA
             taMenuCateInfo.DeptCodeID = Convert.ToInt32(lueDeptCode.EditValue);
             taMenuCateInfo.MenuSetID = Convert.ToInt32(lueMenuSet.EditValue);
 
+            taMenuCateInfo.IsHotKey = chkHotKey.Checked ? "Y" : "N";
+            taMenuCateInfo.HotKeyDishCode = txtHotKeyDishCode.Text;
+
             try
             {
                 if (isAdd)
@@ -219,4 +233,25 @@ namespace SuperPOS.UI.TA
                 }
             }
         }
-    }}
+
+        private void FrmTaMenuCate_SizeChanged(object sender, EventArgs e)
+        {
+            asfc.controlAutoSize(this);
+        }
+
+        private void btnExit_Click(object sender, EventArgs e)
+        {
+            Close();
+        }
+
+        private void chkHotKey_CheckedChanged(object sender, EventArgs e)
+        {
+            txtHotKeyDishCode.Enabled = chkHotKey.Checked;
+
+            if (chkHotKey.Checked == false)
+            {
+                txtHotKeyDishCode.Text = "";
+            }
+        }
+    }
+}

@@ -11,6 +11,7 @@ using DevExpress.XtraEditors;
 using SuperPOS.Common;
 using SuperPOS.UI.Sys;
 using SuperPOS.UI.TaAdmin;
+using SuperPOS.UI.TA;
 
 namespace SuperPOS.UI
 {
@@ -82,7 +83,8 @@ namespace SuperPOS.UI
 
         private void btnTaMenuCategory_Click(object sender, EventArgs e)
         {
-
+            FrmTaMenuCate frmTaMenuCate = new FrmTaMenuCate(usrID, usrName);
+            frmTaMenuCate.ShowDialog();
         }
 
         private void btnTaMenuItem_Click(object sender, EventArgs e)

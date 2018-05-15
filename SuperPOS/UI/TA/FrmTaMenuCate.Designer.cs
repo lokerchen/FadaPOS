@@ -54,6 +54,12 @@
             this.panelControl3 = new DevExpress.XtraEditors.PanelControl();
             this.btnDel = new DevExpress.XtraEditors.SimpleButton();
             this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
+            this.chkHotKey = new DevExpress.XtraEditors.CheckEdit();
+            this.txtHotKeyDishCode = new DevExpress.XtraEditors.TextEdit();
+            this.labelControl6 = new DevExpress.XtraEditors.LabelControl();
+            this.IsHotKey = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.HotKeyDishCode = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.btnExit = new DevExpress.XtraEditors.SimpleButton();
             ((System.ComponentModel.ISupportInitialize)(this.lueMenuSet.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtPosition.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.lueDeptCode.Properties)).BeginInit();
@@ -67,6 +73,8 @@
             this.panelControl3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
             this.panelControl1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.chkHotKey.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtHotKeyDishCode.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // MenuSetID
@@ -193,6 +201,8 @@
             this.CatePosition,
             this.DeptCode,
             this.MenuSet,
+            this.IsHotKey,
+            this.HotKeyDishCode,
             this.DeptCodeID,
             this.MenuSetID});
             this.gvMenuCate.GridControl = this.gridControlMenuCate;
@@ -215,10 +225,10 @@
             // 
             // gridControlMenuCate
             // 
-            this.gridControlMenuCate.Location = new System.Drawing.Point(5, 176);
+            this.gridControlMenuCate.Location = new System.Drawing.Point(5, 207);
             this.gridControlMenuCate.MainView = this.gvMenuCate;
             this.gridControlMenuCate.Name = "gridControlMenuCate";
-            this.gridControlMenuCate.Size = new System.Drawing.Size(617, 403);
+            this.gridControlMenuCate.Size = new System.Drawing.Size(617, 372);
             this.gridControlMenuCate.TabIndex = 8;
             this.gridControlMenuCate.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gvMenuCate});
@@ -248,6 +258,9 @@
             // 
             // panelControl2
             // 
+            this.panelControl2.Controls.Add(this.txtHotKeyDishCode);
+            this.panelControl2.Controls.Add(this.labelControl6);
+            this.panelControl2.Controls.Add(this.chkHotKey);
             this.panelControl2.Controls.Add(this.lueMenuSet);
             this.panelControl2.Controls.Add(this.labelControl5);
             this.panelControl2.Controls.Add(this.txtPosition);
@@ -260,7 +273,7 @@
             this.panelControl2.Controls.Add(this.labelControl2);
             this.panelControl2.Location = new System.Drawing.Point(5, 5);
             this.panelControl2.Name = "panelControl2";
-            this.panelControl2.Size = new System.Drawing.Size(617, 111);
+            this.panelControl2.Size = new System.Drawing.Size(617, 143);
             this.panelControl2.TabIndex = 9;
             // 
             // labelControl2
@@ -273,7 +286,7 @@
             // 
             // btnSave
             // 
-            this.btnSave.Location = new System.Drawing.Point(259, 14);
+            this.btnSave.Location = new System.Drawing.Point(190, 14);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(95, 25);
             this.btnSave.TabIndex = 1;
@@ -282,7 +295,7 @@
             // 
             // btnAdd
             // 
-            this.btnAdd.Location = new System.Drawing.Point(59, 14);
+            this.btnAdd.Location = new System.Drawing.Point(40, 14);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Size = new System.Drawing.Size(95, 25);
             this.btnAdd.TabIndex = 0;
@@ -291,17 +304,18 @@
             // 
             // panelControl3
             // 
+            this.panelControl3.Controls.Add(this.btnExit);
             this.panelControl3.Controls.Add(this.btnDel);
             this.panelControl3.Controls.Add(this.btnSave);
             this.panelControl3.Controls.Add(this.btnAdd);
-            this.panelControl3.Location = new System.Drawing.Point(5, 122);
+            this.panelControl3.Location = new System.Drawing.Point(5, 154);
             this.panelControl3.Name = "panelControl3";
             this.panelControl3.Size = new System.Drawing.Size(617, 48);
             this.panelControl3.TabIndex = 10;
             // 
             // btnDel
             // 
-            this.btnDel.Location = new System.Drawing.Point(459, 14);
+            this.btnDel.Location = new System.Drawing.Point(340, 14);
             this.btnDel.Name = "btnDel";
             this.btnDel.Size = new System.Drawing.Size(95, 25);
             this.btnDel.TabIndex = 2;
@@ -318,6 +332,51 @@
             this.panelControl1.Size = new System.Drawing.Size(627, 584);
             this.panelControl1.TabIndex = 1;
             // 
+            // chkHotKey
+            // 
+            this.chkHotKey.Location = new System.Drawing.Point(523, 84);
+            this.chkHotKey.Name = "chkHotKey";
+            this.chkHotKey.Properties.Caption = "Hot Key";
+            this.chkHotKey.Size = new System.Drawing.Size(75, 22);
+            this.chkHotKey.TabIndex = 11;
+            this.chkHotKey.CheckedChanged += new System.EventHandler(this.chkHotKey_CheckedChanged);
+            // 
+            // txtHotKeyDishCode
+            // 
+            this.txtHotKeyDishCode.Location = new System.Drawing.Point(427, 112);
+            this.txtHotKeyDishCode.Name = "txtHotKeyDishCode";
+            this.txtHotKeyDishCode.Properties.Mask.EditMask = "f0";
+            this.txtHotKeyDishCode.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Numeric;
+            this.txtHotKeyDishCode.Size = new System.Drawing.Size(171, 24);
+            this.txtHotKeyDishCode.TabIndex = 13;
+            // 
+            // labelControl6
+            // 
+            this.labelControl6.Location = new System.Drawing.Point(351, 118);
+            this.labelControl6.Name = "labelControl6";
+            this.labelControl6.Size = new System.Drawing.Size(70, 18);
+            this.labelControl6.TabIndex = 12;
+            this.labelControl6.Text = "Dish Code:";
+            // 
+            // IsHotKey
+            // 
+            this.IsHotKey.Caption = "HotKey";
+            this.IsHotKey.Name = "IsHotKey";
+            // 
+            // HotKeyDishCode
+            // 
+            this.HotKeyDishCode.Caption = "HotKeyDishCode";
+            this.HotKeyDishCode.Name = "HotKeyDishCode";
+            // 
+            // btnExit
+            // 
+            this.btnExit.Location = new System.Drawing.Point(490, 14);
+            this.btnExit.Name = "btnExit";
+            this.btnExit.Size = new System.Drawing.Size(95, 25);
+            this.btnExit.TabIndex = 3;
+            this.btnExit.Text = "Exit";
+            this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
+            // 
             // FrmTaMenuCate
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 18F);
@@ -328,7 +387,9 @@
             this.Name = "FrmTaMenuCate";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "FrmTaMenuCategory";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.FrmTaMenuCategory_Load);
+            this.SizeChanged += new System.EventHandler(this.FrmTaMenuCate_SizeChanged);
             ((System.ComponentModel.ISupportInitialize)(this.lueMenuSet.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtPosition.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.lueDeptCode.Properties)).EndInit();
@@ -343,6 +404,8 @@
             this.panelControl3.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).EndInit();
             this.panelControl1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.chkHotKey.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtHotKeyDishCode.Properties)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -375,5 +438,11 @@
         private DevExpress.XtraEditors.PanelControl panelControl3;
         private DevExpress.XtraEditors.SimpleButton btnDel;
         private DevExpress.XtraEditors.PanelControl panelControl1;
+        private DevExpress.XtraEditors.TextEdit txtHotKeyDishCode;
+        private DevExpress.XtraEditors.LabelControl labelControl6;
+        private DevExpress.XtraEditors.CheckEdit chkHotKey;
+        private DevExpress.XtraGrid.Columns.GridColumn IsHotKey;
+        private DevExpress.XtraGrid.Columns.GridColumn HotKeyDishCode;
+        private DevExpress.XtraEditors.SimpleButton btnExit;
     }
 }
