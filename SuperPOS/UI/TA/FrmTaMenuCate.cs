@@ -26,6 +26,10 @@ namespace SuperPOS.UI.TA
 
         private AutoSizeFormClass asfc = new AutoSizeFormClass();
 
+        private int[] MenuSetKey = new int[4];
+
+        private int iMenuSetKey = 1;
+
         public FrmTaMenuCate()
         {
             InitializeComponent();
@@ -40,9 +44,49 @@ namespace SuperPOS.UI.TA
 
         private void FrmTaMenuCategory_Load(object sender, EventArgs e)
         {
-            BindGridData();
             BindLueMenuSet();
             BindLueDeptCode();
+
+            #region btnMenuSet赋值
+            Button[] btnMenuSet = new Button[4];
+            btnMenuSet[0] = btnMenuSet1;
+            btnMenuSet[1] = btnMenuSet2;
+            btnMenuSet[2] = btnMenuSet3;
+            btnMenuSet[3] = btnMenuSet4;
+
+            btnMenuSet1.Click += BtnMenuSet_Click;
+            btnMenuSet2.Click += BtnMenuSet_Click;
+            btnMenuSet3.Click += BtnMenuSet_Click;
+            btnMenuSet4.Click += BtnMenuSet_Click;
+
+            new SystemData().GetTaMenuSet();
+            int i = 0;
+            foreach (var taMenuSet in CommonData.TaMenuSet)
+            {
+                if (i >= 4) break;
+
+                btnMenuSet[i].Text = taMenuSet.MSEngName;
+                MenuSetKey[i] = taMenuSet.ID;
+
+                if (i == 0) iMenuSetKey = MenuSetKey[i];
+                i++;
+            }
+
+            iMenuSetKey = i >= 0 ? MenuSetKey[0] : 1;
+
+            for (int j = i; j < 4; j++)
+            {
+                btnMenuSet[j].Visible = false;
+            }
+            #endregion
+
+            BindGridData(iMenuSetKey);
+
+            btnMenuSet1.BackColor = Color.CornflowerBlue;
+            btnMenuSet1.Select();
+            btnMenuSet2.BackColor = Color.Gray;
+            btnMenuSet3.BackColor = Color.Gray;
+            btnMenuSet4.BackColor = Color.Gray;
 
             asfc.controllInitializeSize(this);
         }
@@ -55,7 +99,7 @@ namespace SuperPOS.UI.TA
             }
         }
 
-        private void BindGridData()
+        private void BindGridData(int msId)
         {
             new SystemData().GetTaMenuCate();
             new SystemData().GetTaMenuSet();
@@ -81,7 +125,8 @@ namespace SuperPOS.UI.TA
                 };
 
             gvMenuCate.BestFitColumns();
-            gridControlMenuCate.DataSource = lstMenuCate.ToList();
+
+            gridControlMenuCate.DataSource = msId <= 0 ? lstMenuCate.ToList() : lstMenuCate.Where(s => s.MenuSetID == msId).ToList();
             gvMenuCate.FocusedRowHandle = gvMenuCate.RowCount - 1;
         }
 
@@ -184,7 +229,8 @@ namespace SuperPOS.UI.TA
             taMenuCateInfo.CateOtherName = txtOtherName.Text;
             taMenuCateInfo.CatePosition = txtPosition.Text;
 
-            taMenuCateInfo.DeptCodeID = Convert.ToInt32(lueDeptCode.EditValue);
+            //taMenuCateInfo.DeptCodeID = Convert.ToInt32(lueDeptCode.EditValue);
+            taMenuCateInfo.DeptCodeID = 1;
             taMenuCateInfo.MenuSetID = Convert.ToInt32(lueMenuSet.EditValue);
 
             taMenuCateInfo.IsHotKey = chkHotKey.Checked ? "Y" : "N";
@@ -205,7 +251,7 @@ namespace SuperPOS.UI.TA
                     _control.UpdateEntity(taMenuCateInfo);
                 }
 
-                BindGridData();
+                BindGridData(1);
             }
             catch (Exception ex)
             {
@@ -252,6 +298,52 @@ namespace SuperPOS.UI.TA
             {
                 txtHotKeyDishCode.Text = "";
             }
+        }
+
+        private void BtnMenuSet_Click(object sender, EventArgs e)
+        {
+            Button btn = (Button)sender;
+            switch (btn.Name)
+            {
+                case "btnMenuSet1":
+                    iMenuSetKey = MenuSetKey[0];
+                    btn.BackColor = Color.CornflowerBlue;
+                    btnMenuSet2.BackColor = Color.Gray;
+                    btnMenuSet3.BackColor = Color.Gray;
+                    btnMenuSet4.BackColor = Color.Gray;
+                    break;
+                case "btnMenuSet2":
+                    iMenuSetKey = MenuSetKey[1];
+                    btnMenuSet1.BackColor = Color.Gray;
+                    btn.BackColor = Color.CornflowerBlue;
+                    btnMenuSet3.BackColor = Color.Gray;
+                    btnMenuSet4.BackColor = Color.Gray;
+                    break;
+                case "btnMenuSet3":
+                    iMenuSetKey = MenuSetKey[2];
+                    btnMenuSet1.BackColor = Color.Gray;
+                    btnMenuSet2.BackColor = Color.Gray;
+                    btn.BackColor = Color.CornflowerBlue;
+                    btnMenuSet4.BackColor = Color.Gray;
+                    break;
+                case "btnMenuSet4":
+                    iMenuSetKey = MenuSetKey[3];
+                    btnMenuSet1.BackColor = Color.Gray;
+                    btnMenuSet2.BackColor = Color.Gray;
+                    btnMenuSet3.BackColor = Color.Gray;
+                    btn.BackColor = Color.CornflowerBlue;
+                    break;
+                default:
+                    iMenuSetKey = MenuSetKey[0];
+                    btnMenuSet1.BackColor = Color.CornflowerBlue;
+                    btnMenuSet1.Select();
+                    btnMenuSet2.BackColor = Color.Gray;
+                    btnMenuSet3.BackColor = Color.Gray;
+                    btnMenuSet4.BackColor = Color.Gray;
+                    break;
+            }
+
+            BindGridData(iMenuSetKey);
         }
     }
 }
