@@ -15,6 +15,7 @@
     <property name="IsEnableChoice" column="IsEnableChoice" type="System.String" />
     <property name="MiID" column="MiID" type="System.Int32" />
     <property name="MiType" column="MiType" type="System.Int32" />
+    <property name="OptionNum" column="OptionNum" type="System.String" />
   </class>
 
 </hibernate-mapping>

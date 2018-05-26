@@ -34,5 +34,8 @@ namespace SuperPOS.Domain.Entities
         //类型
         [XmlElement(ElementName = "MiType")]
         public virtual int MiType { get; set; }
+
+        [XmlElement(ElementName = "OptionNum")]
+        public virtual string OptionNum { get; set; }
     }
 }

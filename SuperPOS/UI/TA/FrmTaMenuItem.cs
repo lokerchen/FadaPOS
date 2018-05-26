@@ -13,6 +13,7 @@ using DevExpress.XtraGrid.Views.Grid.ViewInfo;
 using SuperPOS.Common;
 using SuperPOS.Domain.Entities;
 using SuperPOS.UI.Sys;
+using SuperPOS.UI.TaAdmin;
 
 namespace SuperPOS.UI.TA
 {
@@ -31,6 +32,16 @@ namespace SuperPOS.UI.TA
 
         private string[] arrayMenuCate;
 
+        private CheckEdit[] chk = new CheckEdit[3];
+
+        private int[] MenuSetKey = new int[4];
+
+        private int iMenuSetKey = 1;
+
+        private int miID = 1;
+
+        private int miType = 2;
+
         public FrmTaMenuItem()
         {
             InitializeComponent();
@@ -45,7 +56,46 @@ namespace SuperPOS.UI.TA
 
         private void FrmTaMenuItem_Load(object sender, EventArgs e)
         {
+            #region btnMenuSet赋值
+            Button[] btnMenuSet = new Button[4];
+            btnMenuSet[0] = btnMenuSet1;
+            btnMenuSet[1] = btnMenuSet2;
+            btnMenuSet[2] = btnMenuSet3;
+            btnMenuSet[3] = btnMenuSet4;
+
+            btnMenuSet1.Click += BtnMenuSet_Click;
+            btnMenuSet2.Click += BtnMenuSet_Click;
+            btnMenuSet3.Click += BtnMenuSet_Click;
+            btnMenuSet4.Click += BtnMenuSet_Click;
+
+            new SystemData().GetTaMenuSet();
+            int i = 0;
+            foreach (var taMenuSet in CommonData.TaMenuSet)
+            {
+                if (i >= 4) break;
+
+                btnMenuSet[i].Text = taMenuSet.MSEngName;
+                MenuSetKey[i] = taMenuSet.ID;
+
+                if (i == 0) iMenuSetKey = MenuSetKey[i];
+                i++;
+            }
+
+            iMenuSetKey = i >= 0 ? MenuSetKey[0] : 1;
+
+            for (int j = i; j < 4; j++)
+            {
+                btnMenuSet[j].Visible = false;
+            }
+            #endregion
+
             BindData();
+
+            btnMenuSet1.BackColor = Color.CornflowerBlue;
+            btnMenuSet1.Select();
+            btnMenuSet2.BackColor = Color.Gray;
+            btnMenuSet3.BackColor = Color.Gray;
+            btnMenuSet4.BackColor = Color.Gray;
 
             asfc.controllInitializeSize(this);
         }
@@ -90,15 +140,15 @@ namespace SuperPOS.UI.TA
         /// <summary>
         /// 绑定Grid
         /// </summary>
-        private void BindGridData()
+        private void BindGridData(int menuSetID, string strDishCode)
         {
             new SystemData().GetTaMenuItem();
 
             var lstMenuItem = from mi in CommonData.TaMenuItem
-                join sc in CommonData.TaShiftCodeList on mi.MiSuppleShiftID equals sc.ID
+                //join sc in CommonData.TaShiftCodeList on mi.MiSuppleShiftID equals sc.ID
                 join prt in CommonData.SysPrt on mi.MiPrintID equals prt.ID
                 join ms in CommonData.TaMenuSet on mi.MiMenuSetID equals ms.ID
-                join dc in CommonData.TaDeptCode on mi.MiDeptCodeID equals dc.ID
+                //join dc in CommonData.TaDeptCode on mi.MiDeptCodeID equals dc.ID
                 select new
                 {
                     ID = mi.ID,
@@ -109,11 +159,11 @@ namespace SuperPOS.UI.TA
                     MiRegularPrice = mi.MiRegularPrice,
                     MiSpecialPrice = mi.MiSpecialPrice,
                     MiSuppleShiftID = mi.MiSuppleShiftID,
-                    MiSuppleShift = sc.ShiftName,
+                    //MiSuppleShift = sc.ShiftName,
                     MiPrintID = mi.MiPrintID,
                     MiPrint = prt.PrtName,
                     MiDeptCodeID = mi.MiDeptCodeID,
-                    MiDeptCode = dc.DeptEngName,
+                    //MiDeptCode = dc.DeptEngName,
                     MiWorkDay = mi.MiWorkDay,
                     MiMenuCateID = mi.MiMenuCateID,
                     MiRmk = mi.MiRmk,
@@ -124,7 +174,20 @@ namespace SuperPOS.UI.TA
                 };
             
             gvMenuItem.BestFitColumns();
-            gridControlMenuItem.DataSource = lstMenuItem.ToList();
+
+            if (string.IsNullOrEmpty(strDishCode))
+            {
+                gridControlMenuItem.DataSource = menuSetID >= 0
+                    ? lstMenuItem.Where(s => s.MiMenuSetID == menuSetID).ToList()
+                    : lstMenuItem.ToList();
+            }
+            else
+            {
+                gridControlMenuItem.DataSource = menuSetID >= 0
+                    ? lstMenuItem.Where(s => s.MiMenuSetID == menuSetID && s.MiDishCode.ToString().Contains(strDishCode)).ToList()
+                    : lstMenuItem.ToList();
+            }
+
             gvMenuItem.FocusedRowHandle = gvMenuItem.RowCount - 1;
         }
         #endregion
@@ -214,15 +277,15 @@ namespace SuperPOS.UI.TA
         private void BindData()
         {
             BindChkMenuCate(false);
-            BindChkWorkDay(false);
-            BindChkComboOtherSet(false);
+            //BindChkWorkDay(false);
+            //BindChkComboOtherSet(false);
 
             BindLuePrtName();
-            BindLuePrtOrder();
-            BindLueSupplyShift();
-            BinLueMenuSet();
+            //BindLuePrtOrder();
+            //BindLueSupplyShift();
+            //BinLueMenuSet();
 
-            BindGridData();
+            BindGridData(iMenuSetKey, "");
         }
         #endregion
 
@@ -257,8 +320,8 @@ namespace SuperPOS.UI.TA
             lueMenuSet.ItemIndex = 0;
 
             BindChkMenuCate(true);
-            BindChkWorkDay(true);
-            BindChkComboOtherSet(true);
+            //BindChkWorkDay(true);
+            //BindChkComboOtherSet(true);
         }
         #endregion
 
@@ -296,11 +359,11 @@ namespace SuperPOS.UI.TA
                 return;
             }
 
-            if (string.IsNullOrEmpty(txtSpecailRegularPrice.Text))
-            {
-                CommonTool.ShowMessage("Specail Regular Price is empty,please enter!");
-                return;
-            }
+            //if (string.IsNullOrEmpty(txtSpecailRegularPrice.Text))
+            //{
+            //    CommonTool.ShowMessage("Specail Regular Price is empty,please enter!");
+            //    return;
+            //}
 
             if (string.IsNullOrEmpty(txtLargePrice.Text)) { txtLargePrice.Text = @"0.00"; }
             if (string.IsNullOrEmpty(txtSmallPrice.Text)) { txtSmallPrice.Text = @"0.00"; }
@@ -316,13 +379,17 @@ namespace SuperPOS.UI.TA
             taMenuItemInfo.MiLargePrice = txtLargePrice.Text;
             taMenuItemInfo.MiSmallPrice = txtSmallPrice.Text;
             taMenuItemInfo.MiSpecialPrice = txtSpecailRegularPrice.Text;
-            taMenuItemInfo.MiMenuSetID = Convert.ToInt32(lueMenuSet.EditValue);
-            taMenuItemInfo.MiSuppleShiftID = Convert.ToInt32(lueSuppleShift.EditValue);
+            taMenuItemInfo.MiMenuSetID = iMenuSetKey;
+            //taMenuItemInfo.MiSuppleShiftID = Convert.ToInt32(lueSuppleShift.EditValue);
             taMenuItemInfo.MiPrintID = Convert.ToInt32(luePrtName.EditValue);
-            taMenuItemInfo.MiDeptCodeID = Convert.ToInt32(luePrtOrder.EditValue);
-            taMenuItemInfo.MiWorkDay = chkComboWorkDay.EditValue.ToString();
+            //taMenuItemInfo.MiDeptCodeID = Convert.ToInt32(luePrtOrder.EditValue);
+            //taMenuItemInfo.MiWorkDay = chkComboWorkDay.EditValue.ToString();
             taMenuItemInfo.MiMenuCateID = chkComboMenuCate.EditValue.ToString();
-            taMenuItemInfo.MiRmk = chkComboOtherSet.EditValue.ToString();
+            string strTmp = "";
+            if (chk1.Checked) strTmp += ",Without VAT";
+            if (chk2.Checked) strTmp += ",Set Meal";
+            if (chk3.Checked) strTmp += ",Discountable";
+            taMenuItemInfo.MiRmk = strTmp;
 
             try
             {
@@ -338,7 +405,7 @@ namespace SuperPOS.UI.TA
                 }
 
                 //BindData();
-                BindGridData();
+                BindGridData(iMenuSetKey, "");
             }
             catch (Exception ex)
             {
@@ -379,28 +446,36 @@ namespace SuperPOS.UI.TA
 
         private void gvMenuItem_FocusedRowChanged(object sender, DevExpress.XtraGrid.Views.Base.FocusedRowChangedEventArgs e)
         {
-            txtDishCode.Text = gvMenuItem.GetRowCellValue(gvMenuItem.FocusedRowHandle, "MiDishCode").ToString();
-            txtDispPosition.Text = gvMenuItem.GetRowCellValue(gvMenuItem.FocusedRowHandle, "MiPosition").ToString();
-            txtEngName.Text = gvMenuItem.GetRowCellValue(gvMenuItem.FocusedRowHandle, "MiEngName").ToString();
-            txtOtherName.Text = gvMenuItem.GetRowCellValue(gvMenuItem.FocusedRowHandle, "MiOtherName").ToString();
+            if (gvMenuItem.GetRowCellValue(gvMenuItem.FocusedRowHandle, "MiDishCode") != null) miID = Convert.ToInt32(gvMenuItem.GetRowCellValue(gvMenuItem.FocusedRowHandle, "ID"));
+            txtDishCode.Text = gvMenuItem.GetRowCellValue(gvMenuItem.FocusedRowHandle, "MiDishCode") == null ? "" : gvMenuItem.GetRowCellValue(gvMenuItem.FocusedRowHandle, "MiDishCode").ToString();
+            txtDispPosition.Text = gvMenuItem.GetRowCellValue(gvMenuItem.FocusedRowHandle, "MiPosition") == null ? "" : gvMenuItem.GetRowCellValue(gvMenuItem.FocusedRowHandle, "MiPosition").ToString();
+            txtEngName.Text = gvMenuItem.GetRowCellValue(gvMenuItem.FocusedRowHandle, "MiEngName") == null ? "" : gvMenuItem.GetRowCellValue(gvMenuItem.FocusedRowHandle, "MiEngName").ToString();
+            txtOtherName.Text = gvMenuItem.GetRowCellValue(gvMenuItem.FocusedRowHandle, "MiOtherName") == null ? "" : gvMenuItem.GetRowCellValue(gvMenuItem.FocusedRowHandle, "MiOtherName").ToString();
             txtRegularPrice.Text = gvMenuItem.GetRowCellValue(gvMenuItem.FocusedRowHandle, "MiRegularPrice").ToString();
-            txtSpecailRegularPrice.Text = gvMenuItem.GetRowCellValue(gvMenuItem.FocusedRowHandle, "MiSpecialPrice").ToString();
-            lueMenuSet.EditValue = Convert.ToInt32(gvMenuItem.GetRowCellValue(gvMenuItem.FocusedRowHandle, "MiMenuSetID"));
-            lueMenuSet.Text = gvMenuItem.GetRowCellValue(gvMenuItem.FocusedRowHandle, "MiMenuSet").ToString();
-            lueSuppleShift.EditValue = Convert.ToInt32(gvMenuItem.GetRowCellValue(gvMenuItem.FocusedRowHandle, "MiSuppleShiftID"));
-            lueSuppleShift.Text = gvMenuItem.GetRowCellValue(gvMenuItem.FocusedRowHandle, "MiSuppleShift").ToString();
+            //txtSpecailRegularPrice.Text = gvMenuItem.GetRowCellValue(gvMenuItem.FocusedRowHandle, "MiSpecialPrice").ToString();
+            //lueMenuSet.EditValue = Convert.ToInt32(gvMenuItem.GetRowCellValue(gvMenuItem.FocusedRowHandle, "MiMenuSetID"));
+            //lueMenuSet.Text = gvMenuItem.GetRowCellValue(gvMenuItem.FocusedRowHandle, "MiMenuSet").ToString();
+            //lueSuppleShift.EditValue = Convert.ToInt32(gvMenuItem.GetRowCellValue(gvMenuItem.FocusedRowHandle, "MiSuppleShiftID"));
+            //lueSuppleShift.Text = gvMenuItem.GetRowCellValue(gvMenuItem.FocusedRowHandle, "MiSuppleShift").ToString();
             luePrtName.EditValue = Convert.ToInt32(gvMenuItem.GetRowCellValue(gvMenuItem.FocusedRowHandle, "MiPrintID"));
-            luePrtName.Text = gvMenuItem.GetRowCellValue(gvMenuItem.FocusedRowHandle, "MiPrint").ToString();
-            luePrtOrder.EditValue = Convert.ToInt32(gvMenuItem.GetRowCellValue(gvMenuItem.FocusedRowHandle, "MiDeptCodeID"));
-            luePrtOrder.Text = gvMenuItem.GetRowCellValue(gvMenuItem.FocusedRowHandle, "MiDeptCode").ToString();
-            chkComboWorkDay.EditValue = gvMenuItem.GetRowCellValue(gvMenuItem.FocusedRowHandle, "MiWorkDay");
-            chkComboWorkDay.Text = gvMenuItem.GetRowCellValue(gvMenuItem.FocusedRowHandle, "MiWorkDay").ToString();
-            chkComboMenuCate.EditValue = gvMenuItem.GetRowCellValue(gvMenuItem.FocusedRowHandle, "MiMenuCateID").ToString();
-            chkComboMenuCate.SetEditValue(gvMenuItem.GetRowCellValue(gvMenuItem.FocusedRowHandle, "MiMenuCateID").ToString());
-            chkComboOtherSet.EditValue = gvMenuItem.GetRowCellValue(gvMenuItem.FocusedRowHandle, "MiRmk");
-            chkComboOtherSet.Text = gvMenuItem.GetRowCellValue(gvMenuItem.FocusedRowHandle, "MiRmk").ToString();
-            txtLargePrice.Text = gvMenuItem.GetRowCellValue(gvMenuItem.FocusedRowHandle, "MiLargePrice").ToString();
-            txtSmallPrice.Text = gvMenuItem.GetRowCellValue(gvMenuItem.FocusedRowHandle, "MiSmallPrice").ToString();
+            luePrtName.Text = gvMenuItem.GetRowCellValue(gvMenuItem.FocusedRowHandle, "MiPrint") == null ? "" : gvMenuItem.GetRowCellValue(gvMenuItem.FocusedRowHandle, "MiPrint").ToString();
+            //luePrtOrder.EditValue = Convert.ToInt32(gvMenuItem.GetRowCellValue(gvMenuItem.FocusedRowHandle, "MiDeptCodeID"));
+            //luePrtOrder.Text = gvMenuItem.GetRowCellValue(gvMenuItem.FocusedRowHandle, "MiDeptCode").ToString();
+            //chkComboWorkDay.EditValue = gvMenuItem.GetRowCellValue(gvMenuItem.FocusedRowHandle, "MiWorkDay");
+            //chkComboWorkDay.Text = gvMenuItem.GetRowCellValue(gvMenuItem.FocusedRowHandle, "MiWorkDay").ToString();
+            chkComboMenuCate.EditValue = gvMenuItem.GetRowCellValue(gvMenuItem.FocusedRowHandle, "MiMenuCateID") == null ? "" : gvMenuItem.GetRowCellValue(gvMenuItem.FocusedRowHandle, "MiMenuCateID").ToString();
+            chkComboMenuCate.SetEditValue(gvMenuItem.GetRowCellValue(gvMenuItem.FocusedRowHandle, "MiMenuCateID") == null ? "" : gvMenuItem.GetRowCellValue(gvMenuItem.FocusedRowHandle, "MiMenuCateID").ToString());
+            //chkComboOtherSet.EditValue = gvMenuItem.GetRowCellValue(gvMenuItem.FocusedRowHandle, "MiRmk");
+            string strRmk = gvMenuItem.GetRowCellValue(gvMenuItem.FocusedRowHandle, "MiRmk") == null ? "" : gvMenuItem.GetRowCellValue(gvMenuItem.FocusedRowHandle, "MiRmk").ToString();
+            chk1.Checked = false;
+            chk2.Checked = false;
+            chk3.Checked = false;
+            if (strRmk.Contains("Without VAT")) chk1.Checked = true;
+            if (strRmk.Contains("Set Meal")) chk1.Checked = true;
+            if (strRmk.Contains("Discountable")) chk3.Checked = true;
+            
+            txtLargePrice.Text = gvMenuItem.GetRowCellValue(gvMenuItem.FocusedRowHandle, "MiLargePrice") == null ? "" : gvMenuItem.GetRowCellValue(gvMenuItem.FocusedRowHandle, "MiLargePrice").ToString();
+            txtSmallPrice.Text = gvMenuItem.GetRowCellValue(gvMenuItem.FocusedRowHandle, "MiSmallPrice") == null ? "" : gvMenuItem.GetRowCellValue(gvMenuItem.FocusedRowHandle, "MiSmallPrice").ToString();
         }
 
         #region Grid单元格双击事件
@@ -421,7 +496,7 @@ namespace SuperPOS.UI.TA
                 FrmTaMenuItemDetail frmTaMenuItemDetail = new FrmTaMenuItemDetail(Convert.ToInt32(gvMenuItem.GetRowCellValue(gvMenuItem.FocusedRowHandle, "ID")));
                 frmTaMenuItemDetail.ShowDialog();
 
-                BindGridData();
+                BindGridData(iMenuSetKey, "");
             }
         }
         #endregion
@@ -434,6 +509,294 @@ namespace SuperPOS.UI.TA
         private void btnExit_Click(object sender, EventArgs e)
         {
             Close();
+        }
+
+        private void BtnMenuSet_Click(object sender, EventArgs e)
+        {
+            Button btn = (Button)sender;
+            switch (btn.Name)
+            {
+                case "btnMenuSet1":
+                    iMenuSetKey = MenuSetKey[0];
+                    btn.BackColor = Color.CornflowerBlue;
+                    btnMenuSet2.BackColor = Color.Gray;
+                    btnMenuSet3.BackColor = Color.Gray;
+                    btnMenuSet4.BackColor = Color.Gray;
+                    break;
+                case "btnMenuSet2":
+                    iMenuSetKey = MenuSetKey[1];
+                    btnMenuSet1.BackColor = Color.Gray;
+                    btn.BackColor = Color.CornflowerBlue;
+                    btnMenuSet3.BackColor = Color.Gray;
+                    btnMenuSet4.BackColor = Color.Gray;
+                    break;
+                case "btnMenuSet3":
+                    iMenuSetKey = MenuSetKey[2];
+                    btnMenuSet1.BackColor = Color.Gray;
+                    btnMenuSet2.BackColor = Color.Gray;
+                    btn.BackColor = Color.CornflowerBlue;
+                    btnMenuSet4.BackColor = Color.Gray;
+                    break;
+                case "btnMenuSet4":
+                    iMenuSetKey = MenuSetKey[3];
+                    btnMenuSet1.BackColor = Color.Gray;
+                    btnMenuSet2.BackColor = Color.Gray;
+                    btnMenuSet3.BackColor = Color.Gray;
+                    btn.BackColor = Color.CornflowerBlue;
+                    break;
+                default:
+                    iMenuSetKey = MenuSetKey[0];
+                    btnMenuSet1.BackColor = Color.CornflowerBlue;
+                    btnMenuSet1.Select();
+                    btnMenuSet2.BackColor = Color.Gray;
+                    btnMenuSet3.BackColor = Color.Gray;
+                    btnMenuSet4.BackColor = Color.Gray;
+                    break;
+            }
+
+            BindGridData(iMenuSetKey, "");
+        }
+
+        private void btnSearch_Click(object sender, EventArgs e)
+        {
+            BindGridData(iMenuSetKey, txtSearchDishCode.Text);
+        }
+
+        private void BindOtherChoice(int iType, int miID)
+        {
+            new SystemData().GetTaMenuItemOtherChoice();
+
+            var lstOtherChoice = CommonData.TaMenuItemOtherChoice.Where(s => s.MiType == iType && s.MiID == miID);
+
+            gridControlSecondChoice.DataSource = lstOtherChoice.ToList();
+            gvSecondChoice.FocusedRowHandle = gvSecondChoice.RowCount - 1;
+            gridControlThirdChoice.DataSource = lstOtherChoice.ToList();
+            gvThirdChoice.FocusedRowHandle = gvThirdChoice.RowCount - 1;
+        }
+
+        private void xtpUsrAccess_Selected(object sender, DevExpress.XtraTab.TabPageEventArgs e)
+        {
+            miType = SelectPage(e.Page.Name);
+
+            BindOtherChoice(miType, miID);
+        }
+
+        #region 根据Tab Page判断MenuItem类型
+        /// <summary>
+        /// 根据Tab Page判断MenuItem类型
+        /// </summary>
+        /// <param name="pageName"></param>
+        /// <returns></returns>
+        private int SelectPage(string pageName)
+        {
+            if (pageName.Equals("xtpSc")) return 2;
+            else if (pageName.Equals("xtpTc")) return 3;
+            else return 2;
+        }
+        #endregion
+
+        private void btnScExit_Click(object sender, EventArgs e)
+        {
+            Close();
+        }
+
+        private void btnScAdd_Click(object sender, EventArgs e)
+        {
+            isAdd = true;
+
+            txtScEngName.Text = "";
+            txtScOtherName.Text = "";
+            txtScAddPrice.Text = "";
+            chkScAutoAppend.Checked = false;
+            chkScEnableChoice.Checked = false;
+            txtScNumOption.Text = "1";
+        }
+
+        private void gvSecondChoice_FocusedRowChanged(object sender, DevExpress.XtraGrid.Views.Base.FocusedRowChangedEventArgs e)
+        {
+            if (gvSecondChoice.RowCount > 0)
+            {
+                txtScEngName.Text = gvSecondChoice.GetRowCellValue(gvSecondChoice.FocusedRowHandle, "MiEngName").ToString();
+                txtScOtherName.Text = gvSecondChoice.GetRowCellValue(gvSecondChoice.FocusedRowHandle, "MiOtherName").ToString();
+                txtScAddPrice.Text = gvSecondChoice.GetRowCellValue(gvSecondChoice.FocusedRowHandle, "MiPrice").ToString();
+                chkScAutoAppend.Checked = gvSecondChoice.GetRowCellValue(gvSecondChoice.FocusedRowHandle, "IsAutoAppend").ToString().Equals("Y");
+                chkScEnableChoice.Checked = gvSecondChoice.GetRowCellValue(gvSecondChoice.FocusedRowHandle, "IsEnableChoice").ToString().Equals("Y");
+                txtScNumOption.Text = gvSecondChoice.GetRowCellValue(gvSecondChoice.FocusedRowHandle, "OptionNum") == null ? "" : gvSecondChoice.GetRowCellValue(gvSecondChoice.FocusedRowHandle, "OptionNum").ToString();
+            }
+            else
+            {
+                txtScEngName.Text = "";
+                txtScOtherName.Text = "";
+                txtScAddPrice.Text = "";
+                chkScAutoAppend.Checked = false;
+                chkScEnableChoice.Checked = false;
+                txtScNumOption.Text = "";
+            }
+        }
+
+        private void btnScSave_Click(object sender, EventArgs e)
+        {
+            if (string.IsNullOrEmpty(txtScEngName.Text))
+            {
+                CommonTool.ShowMessage("English Name can not NULL!");
+                return;
+            }
+
+            if (string.IsNullOrEmpty(txtScOtherName.Text))
+            {
+                CommonTool.ShowMessage("Other Name can not NULL!");
+                return;
+            }
+
+            TaMenuItemOtherChoiceInfo taMenuItemOtherChoiceInfo = new TaMenuItemOtherChoiceInfo();
+
+            taMenuItemOtherChoiceInfo.MiEngName = txtScEngName.Text;
+            taMenuItemOtherChoiceInfo.MiOtherName = txtScOtherName.Text;
+            taMenuItemOtherChoiceInfo.MiPrice = string.IsNullOrEmpty(txtScAddPrice.Text) ? "0.00" : txtScAddPrice.Text;
+            taMenuItemOtherChoiceInfo.IsAutoAppend = chkScAutoAppend.Checked ? "Y" : "N";
+            taMenuItemOtherChoiceInfo.IsEnableChoice = chkScEnableChoice.Checked ? "Y" : "N";
+            taMenuItemOtherChoiceInfo.MiID = miID;
+            taMenuItemOtherChoiceInfo.MiType = miType;
+            taMenuItemOtherChoiceInfo.OptionNum = txtScNumOption.Text;
+
+            try
+            {
+                if (isAdd)
+                {
+                    _control.AddEntity(taMenuItemOtherChoiceInfo);
+                    isAdd = false;
+                }
+                else
+                {
+                    taMenuItemOtherChoiceInfo.ID = Convert.ToInt32(gvSecondChoice.GetRowCellValue(gvSecondChoice.FocusedRowHandle, "ID"));
+                    _control.UpdateEntity(taMenuItemOtherChoiceInfo);
+                }
+
+                BindOtherChoice(miType, miID);
+            }
+            catch (Exception ex) { LogHelper.Error(this.Name, ex); }
+
+            CommonTool.ShowMessage("Save successful!");
+        }
+
+        private void btnScDel_Click(object sender, EventArgs e)
+        {
+            new SystemData().GetTaMenuItemOtherChoice();
+
+            if (CommonTool.ConfirmDelete() == DialogResult.Cancel) return;
+            else
+            {
+                try
+                {
+                    _control.DeleteEntity(CommonData.TaMenuItemOtherChoice.FirstOrDefault(s => s.ID == Convert.ToInt32(gvSecondChoice.GetRowCellValue(gvSecondChoice.FocusedRowHandle, "ID"))));
+                    CommonTool.ShowMessage("Delete successful!");
+                    BindOtherChoice(miType, miID);
+                    isAdd = false;
+                }
+                catch (Exception ex) { LogHelper.Error(this.Name, ex); }
+            }
+        }
+
+        private void btnTcAdd_Click(object sender, EventArgs e)
+        {
+            isAdd = true;
+
+            txtTcEngName.Text = "";
+            txtTcOtherName.Text = "";
+            txtTcAddPrice.Text = "";
+            chkTcAutoAppend.Checked = false;
+            chkTcEnableChoice.Checked = false;
+            txtTcNumOption.Text = "1";
+        }
+
+        private void btnTcSave_Click(object sender, EventArgs e)
+        {
+            if (string.IsNullOrEmpty(txtTcEngName.Text))
+            {
+                CommonTool.ShowMessage("English Name can not NULL!");
+                return;
+            }
+
+            if (string.IsNullOrEmpty(txtTcOtherName.Text))
+            {
+                CommonTool.ShowMessage("Other Name can not NULL!");
+                return;
+            }
+
+            TaMenuItemOtherChoiceInfo taMenuItemOtherChoiceInfo = new TaMenuItemOtherChoiceInfo();
+
+            taMenuItemOtherChoiceInfo.MiEngName = txtTcEngName.Text;
+            taMenuItemOtherChoiceInfo.MiOtherName = txtTcOtherName.Text;
+            taMenuItemOtherChoiceInfo.MiPrice = string.IsNullOrEmpty(txtTcAddPrice.Text) ? "0.00" : txtTcAddPrice.Text;
+            taMenuItemOtherChoiceInfo.IsAutoAppend = chkTcAutoAppend.Checked ? "Y" : "N";
+            taMenuItemOtherChoiceInfo.IsEnableChoice = chkTcEnableChoice.Checked ? "Y" : "N";
+            taMenuItemOtherChoiceInfo.MiID = miID;
+            taMenuItemOtherChoiceInfo.MiType = miType;
+            taMenuItemOtherChoiceInfo.OptionNum = txtTcNumOption.Text;
+
+            try
+            {
+                if (isAdd)
+                {
+                    _control.AddEntity(taMenuItemOtherChoiceInfo);
+                    isAdd = false;
+                }
+                else
+                {
+                    taMenuItemOtherChoiceInfo.ID = Convert.ToInt32(gvThirdChoice.GetRowCellValue(gvThirdChoice.FocusedRowHandle, "ID"));
+                    _control.UpdateEntity(taMenuItemOtherChoiceInfo);
+                }
+
+                BindOtherChoice(miType, miID);
+            }
+            catch (Exception ex) { LogHelper.Error(this.Name, ex); }
+
+            CommonTool.ShowMessage("Save successful!");
+        }
+
+        private void btnTcDel_Click(object sender, EventArgs e)
+        {
+            new SystemData().GetTaMenuItemOtherChoice();
+
+            if (CommonTool.ConfirmDelete() == DialogResult.Cancel) return;
+            else
+            {
+                try
+                {
+                    _control.DeleteEntity(CommonData.TaMenuItemOtherChoice.FirstOrDefault(s => s.ID == Convert.ToInt32(gvThirdChoice.GetRowCellValue(gvThirdChoice.FocusedRowHandle, "ID"))));
+                    CommonTool.ShowMessage("Delete successful!");
+                    BindOtherChoice(miType, miID);
+                    isAdd = false;
+                }
+                catch (Exception ex) { LogHelper.Error(this.Name, ex); }
+            }
+        }
+
+        private void btnTcExit_Click(object sender, EventArgs e)
+        {
+            Close();
+        }
+
+        private void gvThirdChoice_FocusedRowChanged(object sender, DevExpress.XtraGrid.Views.Base.FocusedRowChangedEventArgs e)
+        {
+            if (gvThirdChoice.RowCount > 0)
+            {
+                txtTcEngName.Text = gvThirdChoice.GetRowCellValue(gvThirdChoice.FocusedRowHandle, "MiEngName").ToString();
+                txtTcOtherName.Text = gvThirdChoice.GetRowCellValue(gvThirdChoice.FocusedRowHandle, "MiOtherName").ToString();
+                txtTcAddPrice.Text = gvThirdChoice.GetRowCellValue(gvThirdChoice.FocusedRowHandle, "MiPrice").ToString();
+                chkTcAutoAppend.Checked = gvThirdChoice.GetRowCellValue(gvThirdChoice.FocusedRowHandle, "IsAutoAppend").ToString().Equals("Y");
+                chkTcEnableChoice.Checked = gvThirdChoice.GetRowCellValue(gvThirdChoice.FocusedRowHandle, "IsEnableChoice").ToString().Equals("Y");
+                txtTcNumOption.Text = gvThirdChoice.GetRowCellValue(gvThirdChoice.FocusedRowHandle, "OptionNum") == null ? "" : gvSecondChoice.GetRowCellValue(gvSecondChoice.FocusedRowHandle, "OptionNum").ToString();
+            }
+            else
+            {
+                txtTcEngName.Text = "";
+                txtTcOtherName.Text = "";
+                txtTcAddPrice.Text = "";
+                chkTcAutoAppend.Checked = false;
+                chkTcEnableChoice.Checked = false;
+                txtTcNumOption.Text = "";
+            }
         }
     }
 }
