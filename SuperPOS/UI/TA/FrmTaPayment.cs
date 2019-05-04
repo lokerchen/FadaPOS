@@ -542,7 +542,8 @@ namespace SuperPOS.UI.TA
             {
                 chkPayType[i].Text = taPaymentTypeInfo.PaymentType;
                 i++;
-            }
+
+                if (i > 3) break;}
 
             for (int j = i; j < 4; j++)
             {
