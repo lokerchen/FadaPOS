@@ -350,5 +350,23 @@ namespace SuperPOS.UI.TA
 
             BindGridData(iMenuSetKey);
         }
+
+        private void btnDown_Click(object sender, EventArgs e)
+        {
+            gvMenuCate.FocusedRowHandle = gvMenuCate.FocusedRowHandle >= gvMenuCate.RowCount
+                ? gvMenuCate.RowCount - 1
+                : gvMenuCate.FocusedRowHandle + 1;
+
+            gvMenuCate.SelectRow(gvMenuCate.FocusedRowHandle);
+        }
+
+        private void btnUp_Click(object sender, EventArgs e)
+        {
+            gvMenuCate.FocusedRowHandle = gvMenuCate.FocusedRowHandle - 1 <= 0
+                ? 0
+                : gvMenuCate.FocusedRowHandle - 1;
+
+            gvMenuCate.SelectRow(gvMenuCate.FocusedRowHandle);
+        }
     }
 }

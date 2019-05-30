@@ -68,6 +68,8 @@
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.colorEditBtn = new DevExpress.XtraEditors.ColorEdit();
             this.BtnColor = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.btnDown = new System.Windows.Forms.Button();
+            this.btnUp = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.txtPosition.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtEngName.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gvMenuCate)).BeginInit();
@@ -501,11 +503,43 @@
             this.BtnColor.FieldName = "BtnColor";
             this.BtnColor.Name = "BtnColor";
             // 
+            // btnDown
+            // 
+            this.btnDown.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
+            this.btnDown.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnDown.Font = new System.Drawing.Font("Tahoma", 22.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDown.ForeColor = System.Drawing.Color.White;
+            this.btnDown.Location = new System.Drawing.Point(91, 478);
+            this.btnDown.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btnDown.Name = "btnDown";
+            this.btnDown.Size = new System.Drawing.Size(82, 57);
+            this.btnDown.TabIndex = 8;
+            this.btnDown.Text = "↓";
+            this.btnDown.UseVisualStyleBackColor = false;
+            this.btnDown.Click += new System.EventHandler(this.btnDown_Click);
+            // 
+            // btnUp
+            // 
+            this.btnUp.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
+            this.btnUp.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnUp.Font = new System.Drawing.Font("Tahoma", 22.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnUp.ForeColor = System.Drawing.Color.White;
+            this.btnUp.Location = new System.Drawing.Point(220, 478);
+            this.btnUp.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btnUp.Name = "btnUp";
+            this.btnUp.Size = new System.Drawing.Size(82, 57);
+            this.btnUp.TabIndex = 47;
+            this.btnUp.Text = "↑";
+            this.btnUp.UseVisualStyleBackColor = false;
+            this.btnUp.Click += new System.EventHandler(this.btnUp_Click);
+            // 
             // FrmTaMenuCate
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(880, 584);
+            this.Controls.Add(this.btnUp);
+            this.Controls.Add(this.btnDown);
             this.Controls.Add(this.lueMenuSet);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.labelControl5);
@@ -588,5 +622,7 @@
         private System.Windows.Forms.Button btnAdd;
         private DevExpress.XtraEditors.ColorEdit colorEditBtn;
         private DevExpress.XtraGrid.Columns.GridColumn BtnColor;
+        private System.Windows.Forms.Button btnDown;
+        private System.Windows.Forms.Button btnUp;
     }
 }
