@@ -46,26 +46,28 @@
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
             this.txtOtherName = new DevExpress.XtraEditors.TextEdit();
             this.panelControl2 = new DevExpress.XtraEditors.PanelControl();
+            this.lueMenuSet = new DevExpress.XtraEditors.LookUpEdit();
+            this.labelControl5 = new DevExpress.XtraEditors.LabelControl();
+            this.lueDeptCode = new DevExpress.XtraEditors.LookUpEdit();
+            this.labelControl3 = new DevExpress.XtraEditors.LabelControl();
+            this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
             this.txtHotKeyDishCode = new DevExpress.XtraEditors.TextEdit();
             this.labelControl6 = new DevExpress.XtraEditors.LabelControl();
             this.chkHotKey = new DevExpress.XtraEditors.CheckEdit();
-            this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
             this.panelControl3 = new DevExpress.XtraEditors.PanelControl();
+            this.btnExit = new System.Windows.Forms.Button();
+            this.btnDel = new System.Windows.Forms.Button();
+            this.btnSave = new System.Windows.Forms.Button();
+            this.btnAdd = new System.Windows.Forms.Button();
             this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
             this.groupBox5 = new System.Windows.Forms.GroupBox();
             this.btnMenuSet4 = new System.Windows.Forms.Button();
             this.btnMenuSet3 = new System.Windows.Forms.Button();
             this.btnMenuSet2 = new System.Windows.Forms.Button();
             this.btnMenuSet1 = new System.Windows.Forms.Button();
-            this.labelControl3 = new DevExpress.XtraEditors.LabelControl();
-            this.lueDeptCode = new DevExpress.XtraEditors.LookUpEdit();
-            this.labelControl5 = new DevExpress.XtraEditors.LabelControl();
-            this.lueMenuSet = new DevExpress.XtraEditors.LookUpEdit();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.btnExit = new System.Windows.Forms.Button();
-            this.btnDel = new System.Windows.Forms.Button();
-            this.btnSave = new System.Windows.Forms.Button();
-            this.btnAdd = new System.Windows.Forms.Button();
+            this.colorEditBtn = new DevExpress.XtraEditors.ColorEdit();
+            this.BtnColor = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.txtPosition.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtEngName.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gvMenuCate)).BeginInit();
@@ -73,6 +75,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.txtOtherName.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl2)).BeginInit();
             this.panelControl2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.lueMenuSet.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.lueDeptCode.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtHotKeyDishCode.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.chkHotKey.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl3)).BeginInit();
@@ -80,9 +84,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
             this.panelControl1.SuspendLayout();
             this.groupBox5.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.lueDeptCode.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.lueMenuSet.Properties)).BeginInit();
             this.groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.colorEditBtn.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // MenuSetID
@@ -178,7 +181,8 @@
             this.IsHotKey,
             this.HotKeyDishCode,
             this.DeptCodeID,
-            this.MenuSetID});
+            this.MenuSetID,
+            this.BtnColor});
             this.gvMenuCate.GridControl = this.gridControlMenuCate;
             this.gvMenuCate.IndicatorWidth = 50;
             this.gvMenuCate.Name = "gvMenuCate";
@@ -234,20 +238,67 @@
             // 
             // panelControl2
             // 
-            this.panelControl2.Controls.Add(this.lueMenuSet);
-            this.panelControl2.Controls.Add(this.labelControl5);
+            this.panelControl2.Controls.Add(this.colorEditBtn);
             this.panelControl2.Controls.Add(this.txtPosition);
             this.panelControl2.Controls.Add(this.labelControl4);
-            this.panelControl2.Controls.Add(this.lueDeptCode);
             this.panelControl2.Controls.Add(this.txtEngName);
-            this.panelControl2.Controls.Add(this.labelControl3);
             this.panelControl2.Controls.Add(this.labelControl1);
             this.panelControl2.Controls.Add(this.txtOtherName);
             this.panelControl2.Controls.Add(this.labelControl2);
             this.panelControl2.Location = new System.Drawing.Point(388, 12);
             this.panelControl2.Name = "panelControl2";
-            this.panelControl2.Size = new System.Drawing.Size(348, 112);
+            this.panelControl2.Size = new System.Drawing.Size(454, 143);
             this.panelControl2.TabIndex = 9;
+            // 
+            // lueMenuSet
+            // 
+            this.lueMenuSet.Location = new System.Drawing.Point(569, 305);
+            this.lueMenuSet.Name = "lueMenuSet";
+            this.lueMenuSet.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.lueMenuSet.Properties.NullText = "[Please select...]";
+            this.lueMenuSet.Properties.SearchMode = DevExpress.XtraEditors.Controls.SearchMode.OnlyInPopup;
+            this.lueMenuSet.Size = new System.Drawing.Size(153, 24);
+            this.lueMenuSet.TabIndex = 10;
+            this.lueMenuSet.Visible = false;
+            // 
+            // labelControl5
+            // 
+            this.labelControl5.Location = new System.Drawing.Point(496, 307);
+            this.labelControl5.Name = "labelControl5";
+            this.labelControl5.Size = new System.Drawing.Size(67, 18);
+            this.labelControl5.TabIndex = 9;
+            this.labelControl5.Text = "Menu Set:";
+            this.labelControl5.Visible = false;
+            // 
+            // lueDeptCode
+            // 
+            this.lueDeptCode.Location = new System.Drawing.Point(569, 268);
+            this.lueDeptCode.Name = "lueDeptCode";
+            this.lueDeptCode.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.lueDeptCode.Properties.NullText = "[Please select...]";
+            this.lueDeptCode.Properties.SearchMode = DevExpress.XtraEditors.Controls.SearchMode.OnlyInPopup;
+            this.lueDeptCode.Size = new System.Drawing.Size(153, 24);
+            this.lueDeptCode.TabIndex = 6;
+            this.lueDeptCode.Visible = false;
+            // 
+            // labelControl3
+            // 
+            this.labelControl3.Location = new System.Drawing.Point(442, 271);
+            this.labelControl3.Name = "labelControl3";
+            this.labelControl3.Size = new System.Drawing.Size(121, 18);
+            this.labelControl3.TabIndex = 5;
+            this.labelControl3.Text = "Department Code:";
+            this.labelControl3.Visible = false;
+            // 
+            // labelControl2
+            // 
+            this.labelControl2.Location = new System.Drawing.Point(23, 48);
+            this.labelControl2.Name = "labelControl2";
+            this.labelControl2.Size = new System.Drawing.Size(86, 18);
+            this.labelControl2.TabIndex = 3;
+            this.labelControl2.Text = "Other Name:";
             // 
             // txtHotKeyDishCode
             // 
@@ -275,14 +326,6 @@
             this.chkHotKey.TabIndex = 11;
             this.chkHotKey.CheckedChanged += new System.EventHandler(this.chkHotKey_CheckedChanged);
             // 
-            // labelControl2
-            // 
-            this.labelControl2.Location = new System.Drawing.Point(23, 48);
-            this.labelControl2.Name = "labelControl2";
-            this.labelControl2.Size = new System.Drawing.Size(86, 18);
-            this.labelControl2.TabIndex = 3;
-            this.labelControl2.Text = "Other Name:";
-            // 
             // panelControl3
             // 
             this.panelControl3.Controls.Add(this.btnExit);
@@ -293,6 +336,62 @@
             this.panelControl3.Name = "panelControl3";
             this.panelControl3.Size = new System.Drawing.Size(355, 71);
             this.panelControl3.TabIndex = 10;
+            // 
+            // btnExit
+            // 
+            this.btnExit.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
+            this.btnExit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnExit.ForeColor = System.Drawing.Color.White;
+            this.btnExit.Location = new System.Drawing.Point(270, 8);
+            this.btnExit.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btnExit.Name = "btnExit";
+            this.btnExit.Size = new System.Drawing.Size(82, 57);
+            this.btnExit.TabIndex = 7;
+            this.btnExit.Text = "Exit";
+            this.btnExit.UseVisualStyleBackColor = false;
+            this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
+            // 
+            // btnDel
+            // 
+            this.btnDel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
+            this.btnDel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnDel.ForeColor = System.Drawing.Color.White;
+            this.btnDel.Location = new System.Drawing.Point(181, 8);
+            this.btnDel.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btnDel.Name = "btnDel";
+            this.btnDel.Size = new System.Drawing.Size(82, 57);
+            this.btnDel.TabIndex = 6;
+            this.btnDel.Text = "Delete";
+            this.btnDel.UseVisualStyleBackColor = false;
+            this.btnDel.Click += new System.EventHandler(this.btnDel_Click);
+            // 
+            // btnSave
+            // 
+            this.btnSave.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
+            this.btnSave.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSave.ForeColor = System.Drawing.Color.White;
+            this.btnSave.Location = new System.Drawing.Point(93, 8);
+            this.btnSave.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btnSave.Name = "btnSave";
+            this.btnSave.Size = new System.Drawing.Size(82, 57);
+            this.btnSave.TabIndex = 5;
+            this.btnSave.Text = "Save";
+            this.btnSave.UseVisualStyleBackColor = false;
+            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
+            // 
+            // btnAdd
+            // 
+            this.btnAdd.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
+            this.btnAdd.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAdd.ForeColor = System.Drawing.Color.White;
+            this.btnAdd.Location = new System.Drawing.Point(4, 8);
+            this.btnAdd.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btnAdd.Name = "btnAdd";
+            this.btnAdd.Size = new System.Drawing.Size(82, 57);
+            this.btnAdd.TabIndex = 4;
+            this.btnAdd.Text = "Add";
+            this.btnAdd.UseVisualStyleBackColor = false;
+            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
             // panelControl1
             // 
@@ -370,48 +469,6 @@
             this.btnMenuSet1.Text = "button6";
             this.btnMenuSet1.UseVisualStyleBackColor = false;
             // 
-            // labelControl3
-            // 
-            this.labelControl3.Location = new System.Drawing.Point(318, 8);
-            this.labelControl3.Name = "labelControl3";
-            this.labelControl3.Size = new System.Drawing.Size(121, 18);
-            this.labelControl3.TabIndex = 5;
-            this.labelControl3.Text = "Department Code:";
-            this.labelControl3.Visible = false;
-            // 
-            // lueDeptCode
-            // 
-            this.lueDeptCode.Location = new System.Drawing.Point(445, 5);
-            this.lueDeptCode.Name = "lueDeptCode";
-            this.lueDeptCode.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.lueDeptCode.Properties.NullText = "[Please select...]";
-            this.lueDeptCode.Properties.SearchMode = DevExpress.XtraEditors.Controls.SearchMode.OnlyInPopup;
-            this.lueDeptCode.Size = new System.Drawing.Size(153, 24);
-            this.lueDeptCode.TabIndex = 6;
-            this.lueDeptCode.Visible = false;
-            // 
-            // labelControl5
-            // 
-            this.labelControl5.Location = new System.Drawing.Point(372, 44);
-            this.labelControl5.Name = "labelControl5";
-            this.labelControl5.Size = new System.Drawing.Size(67, 18);
-            this.labelControl5.TabIndex = 9;
-            this.labelControl5.Text = "Menu Set:";
-            this.labelControl5.Visible = false;
-            // 
-            // lueMenuSet
-            // 
-            this.lueMenuSet.Location = new System.Drawing.Point(445, 42);
-            this.lueMenuSet.Name = "lueMenuSet";
-            this.lueMenuSet.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.lueMenuSet.Properties.NullText = "[Please select...]";
-            this.lueMenuSet.Properties.SearchMode = DevExpress.XtraEditors.Controls.SearchMode.OnlyInPopup;
-            this.lueMenuSet.Size = new System.Drawing.Size(153, 24);
-            this.lueMenuSet.TabIndex = 10;
-            this.lueMenuSet.Visible = false;
-            // 
             // groupBox1
             // 
             this.groupBox1.Controls.Add(this.chkHotKey);
@@ -426,71 +483,37 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Hot Key Set Up";
             // 
-            // btnExit
+            // colorEditBtn
             // 
-            this.btnExit.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
-            this.btnExit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnExit.ForeColor = System.Drawing.Color.White;
-            this.btnExit.Location = new System.Drawing.Point(270, 8);
-            this.btnExit.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.btnExit.Name = "btnExit";
-            this.btnExit.Size = new System.Drawing.Size(82, 57);
-            this.btnExit.TabIndex = 7;
-            this.btnExit.Text = "Exit";
-            this.btnExit.UseVisualStyleBackColor = false;
-            this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
+            this.colorEditBtn.EditValue = System.Drawing.Color.Empty;
+            this.colorEditBtn.Location = new System.Drawing.Point(302, 8);
+            this.colorEditBtn.Name = "colorEditBtn";
+            this.colorEditBtn.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.colorEditBtn.Properties.ShowCustomColors = false;
+            this.colorEditBtn.Properties.ShowSystemColors = false;
+            this.colorEditBtn.Size = new System.Drawing.Size(100, 24);
+            this.colorEditBtn.TabIndex = 9;
             // 
-            // btnDel
+            // BtnColor
             // 
-            this.btnDel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
-            this.btnDel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnDel.ForeColor = System.Drawing.Color.White;
-            this.btnDel.Location = new System.Drawing.Point(181, 8);
-            this.btnDel.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.btnDel.Name = "btnDel";
-            this.btnDel.Size = new System.Drawing.Size(82, 57);
-            this.btnDel.TabIndex = 6;
-            this.btnDel.Text = "Delete";
-            this.btnDel.UseVisualStyleBackColor = false;
-            this.btnDel.Click += new System.EventHandler(this.btnDel_Click);
-            // 
-            // btnSave
-            // 
-            this.btnSave.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
-            this.btnSave.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSave.ForeColor = System.Drawing.Color.White;
-            this.btnSave.Location = new System.Drawing.Point(93, 8);
-            this.btnSave.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.btnSave.Name = "btnSave";
-            this.btnSave.Size = new System.Drawing.Size(82, 57);
-            this.btnSave.TabIndex = 5;
-            this.btnSave.Text = "Save";
-            this.btnSave.UseVisualStyleBackColor = false;
-            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
-            // 
-            // btnAdd
-            // 
-            this.btnAdd.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
-            this.btnAdd.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAdd.ForeColor = System.Drawing.Color.White;
-            this.btnAdd.Location = new System.Drawing.Point(4, 8);
-            this.btnAdd.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.btnAdd.Name = "btnAdd";
-            this.btnAdd.Size = new System.Drawing.Size(82, 57);
-            this.btnAdd.TabIndex = 4;
-            this.btnAdd.Text = "Add";
-            this.btnAdd.UseVisualStyleBackColor = false;
-            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
+            this.BtnColor.Caption = "BtnColor";
+            this.BtnColor.FieldName = "BtnColor";
+            this.BtnColor.Name = "BtnColor";
             // 
             // FrmTaMenuCate
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(750, 461);
+            this.ClientSize = new System.Drawing.Size(880, 584);
+            this.Controls.Add(this.lueMenuSet);
             this.Controls.Add(this.groupBox1);
+            this.Controls.Add(this.labelControl5);
             this.Controls.Add(this.panelControl3);
             this.Controls.Add(this.panelControl2);
             this.Controls.Add(this.panelControl1);
+            this.Controls.Add(this.lueDeptCode);
+            this.Controls.Add(this.labelControl3);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "FrmTaMenuCate";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
@@ -506,6 +529,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.panelControl2)).EndInit();
             this.panelControl2.ResumeLayout(false);
             this.panelControl2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.lueMenuSet.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.lueDeptCode.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtHotKeyDishCode.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.chkHotKey.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl3)).EndInit();
@@ -513,11 +538,11 @@
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).EndInit();
             this.panelControl1.ResumeLayout(false);
             this.groupBox5.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.lueDeptCode.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.lueMenuSet.Properties)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.colorEditBtn.Properties)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -561,5 +586,7 @@
         private System.Windows.Forms.Button btnDel;
         private System.Windows.Forms.Button btnSave;
         private System.Windows.Forms.Button btnAdd;
+        private DevExpress.XtraEditors.ColorEdit colorEditBtn;
+        private DevExpress.XtraGrid.Columns.GridColumn BtnColor;
     }
 }

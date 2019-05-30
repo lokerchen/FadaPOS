@@ -32,5 +32,8 @@ namespace SuperPOS.Domain.Entities
 
         [XmlElement(ElementName = "HotKeyDishCode")]
         public virtual string HotKeyDishCode { get; set; }
+
+        [XmlElement(ElementName = "BtnColor")]
+        public virtual string BtnColor { get; set; }
     }
 }

@@ -121,7 +121,8 @@ namespace SuperPOS.UI.TA
                     IsHotKey = mc.IsHotKey,
                     HotKeyDishCode = mc.HotKeyDishCode,
                     DeptCode = dc.DeptEngName,
-                    MenuSet = ms.MSEngName
+                    MenuSet = ms.MSEngName,
+                    BtnColor = mc.BtnColor
                 };
 
             gvMenuCate.BestFitColumns();
@@ -171,6 +172,7 @@ namespace SuperPOS.UI.TA
             lueMenuSet.Text = gvMenuCate.GetRowCellValue(gvMenuCate.FocusedRowHandle, "MenuSet").ToString();
             chkHotKey.Checked = txtHotKeyDishCode.Enabled = gvMenuCate.GetRowCellValue(gvMenuCate.FocusedRowHandle, "IsHotKey").ToString().Equals("Y");
             txtHotKeyDishCode.Text = gvMenuCate.GetRowCellValue(gvMenuCate.FocusedRowHandle, "HotKeyDishCode") == null ? "" : gvMenuCate.GetRowCellValue(gvMenuCate.FocusedRowHandle, "HotKeyDishCode").ToString();
+            colorEditBtn.Text = gvMenuCate.GetRowCellValue(gvMenuCate.FocusedRowHandle, "BtnColor").ToString();
         }
 
         private void btnAdd_Click(object sender, EventArgs e)
@@ -186,6 +188,8 @@ namespace SuperPOS.UI.TA
 
             chkHotKey.Checked = false;
             txtHotKeyDishCode.Enabled = false;
+
+            colorEditBtn.Text = @"255,255,255";
         }
 
         private void btnSave_Click(object sender, EventArgs e)
@@ -235,6 +239,7 @@ namespace SuperPOS.UI.TA
 
             taMenuCateInfo.IsHotKey = chkHotKey.Checked ? "Y" : "N";
             taMenuCateInfo.HotKeyDishCode = txtHotKeyDishCode.Text;
+            taMenuCateInfo.BtnColor = colorEditBtn.Text;
 
             try
             {

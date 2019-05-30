@@ -776,12 +776,14 @@ namespace SuperPOS.UI.TA
                 btnMenuCate[i].Text = iLangStatusId == PubComm.MENU_LANG_DEFAULT
                     ? taMenuCateInfo.CateEngName
                     : taMenuCateInfo.CateOtherName;
+                btnMenuCate[i].Appearance.BackColor = Color.FromName(taMenuCateInfo.BtnColor);
                 i++;
             }
 
             for (int j = i; j < 42; j++)
             {
                 btnMenuCate[j].Text = "";
+                btnMenuCate[j].Appearance.BackColor = Color.FromName(@"RoyalBlue");
             }
         }
         #endregion

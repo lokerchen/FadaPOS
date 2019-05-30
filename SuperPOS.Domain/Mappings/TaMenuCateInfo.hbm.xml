@@ -15,6 +15,7 @@
     <property name="MenuSetID" column="MenuSetID" type="System.Int32" />
     <property name="IsHotKey" column="IsHotKey" type="System.String" />
     <property name="HotKeyDishCode" column="HotKeyDishCode" type="System.String" />
+    <property name="BtnColor" column="BtnColor" type="System.String" />
   </class>
 
 </hibernate-mapping>
