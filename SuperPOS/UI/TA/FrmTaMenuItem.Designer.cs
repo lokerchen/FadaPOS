@@ -135,6 +135,7 @@
             this.OptionNum = new DevExpress.XtraGrid.Columns.GridColumn();
             this.xtpTc = new DevExpress.XtraTab.XtraTabPage();
             this.panelControl7 = new DevExpress.XtraEditors.PanelControl();
+            this.txtTcNumOption = new DevExpress.XtraEditors.TextEdit();
             this.labelControl23 = new DevExpress.XtraEditors.LabelControl();
             this.chkTcEnableChoice = new DevExpress.XtraEditors.CheckEdit();
             this.chkTcAutoAppend = new DevExpress.XtraEditors.CheckEdit();
@@ -159,9 +160,12 @@
             this.TcIsEnableChoice = new DevExpress.XtraGrid.Columns.GridColumn();
             this.TcMenuItemID = new DevExpress.XtraGrid.Columns.GridColumn();
             this.TcMenuItemType = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.xtpSm = new DevExpress.XtraTab.XtraTabPage();
-            this.txtTcNumOption = new DevExpress.XtraEditors.TextEdit();
             this.TcOptionNum = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.xtpSm = new DevExpress.XtraTab.XtraTabPage();
+            this.btnCopy = new System.Windows.Forms.Button();
+            this.colorEditBtn = new DevExpress.XtraEditors.ColorEdit();
+            this.labelControl27 = new DevExpress.XtraEditors.LabelControl();
+            this.MiBtnColor = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.xtpUsrAccess)).BeginInit();
             this.xtpUsrAccess.SuspendLayout();
             this.xtpDa.SuspendLayout();
@@ -214,6 +218,7 @@
             this.xtpTc.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl7)).BeginInit();
             this.panelControl7.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.txtTcNumOption.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.chkTcEnableChoice.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.chkTcAutoAppend.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtTcAddPrice.Properties)).BeginInit();
@@ -223,7 +228,7 @@
             this.panelControl9.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridControlThirdChoice)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gvThirdChoice)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtTcNumOption.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.colorEditBtn.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // xtpUsrAccess
@@ -270,6 +275,7 @@
             // 
             // panelControl5
             // 
+            this.panelControl5.Controls.Add(this.btnCopy);
             this.panelControl5.Controls.Add(this.btnExit);
             this.panelControl5.Controls.Add(this.btnDel);
             this.panelControl5.Controls.Add(this.btnSave);
@@ -284,7 +290,7 @@
             this.btnExit.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
             this.btnExit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnExit.ForeColor = System.Drawing.Color.White;
-            this.btnExit.Location = new System.Drawing.Point(270, 8);
+            this.btnExit.Location = new System.Drawing.Point(357, 8);
             this.btnExit.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnExit.Name = "btnExit";
             this.btnExit.Size = new System.Drawing.Size(82, 57);
@@ -298,7 +304,7 @@
             this.btnDel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
             this.btnDel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnDel.ForeColor = System.Drawing.Color.White;
-            this.btnDel.Location = new System.Drawing.Point(181, 8);
+            this.btnDel.Location = new System.Drawing.Point(268, 8);
             this.btnDel.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnDel.Name = "btnDel";
             this.btnDel.Size = new System.Drawing.Size(82, 57);
@@ -312,7 +318,7 @@
             this.btnSave.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
             this.btnSave.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSave.ForeColor = System.Drawing.Color.White;
-            this.btnSave.Location = new System.Drawing.Point(93, 8);
+            this.btnSave.Location = new System.Drawing.Point(180, 8);
             this.btnSave.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(82, 57);
@@ -507,7 +513,8 @@
             this.MiRmk,
             this.MiMenuCateID,
             this.MiLargePrice,
-            this.MiSmallPrice});
+            this.MiSmallPrice,
+            this.MiBtnColor});
             this.gvMenuItem.GridControl = this.gridControlMenuItem;
             this.gvMenuItem.IndicatorWidth = 50;
             this.gvMenuItem.Name = "gvMenuItem";
@@ -660,6 +667,8 @@
             // 
             // panelControl2
             // 
+            this.panelControl2.Controls.Add(this.labelControl27);
+            this.panelControl2.Controls.Add(this.colorEditBtn);
             this.panelControl2.Controls.Add(this.chk3);
             this.panelControl2.Controls.Add(this.chk2);
             this.panelControl2.Controls.Add(this.chk1);
@@ -1276,6 +1285,15 @@
             this.panelControl7.Size = new System.Drawing.Size(738, 573);
             this.panelControl7.TabIndex = 3;
             // 
+            // txtTcNumOption
+            // 
+            this.txtTcNumOption.Location = new System.Drawing.Point(230, 31);
+            this.txtTcNumOption.Name = "txtTcNumOption";
+            this.txtTcNumOption.Properties.Mask.EditMask = "f0";
+            this.txtTcNumOption.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Numeric;
+            this.txtTcNumOption.Size = new System.Drawing.Size(190, 24);
+            this.txtTcNumOption.TabIndex = 31;
+            // 
             // labelControl23
             // 
             this.labelControl23.Location = new System.Drawing.Point(114, 37);
@@ -1489,26 +1507,57 @@
             this.TcMenuItemType.FieldName = "MenuItemType";
             this.TcMenuItemType.Name = "TcMenuItemType";
             // 
+            // TcOptionNum
+            // 
+            this.TcOptionNum.Caption = "Tc OptionNum";
+            this.TcOptionNum.FieldName = "OptionNum";
+            this.TcOptionNum.Name = "TcOptionNum";
+            // 
             // xtpSm
             // 
             this.xtpSm.Name = "xtpSm";
             this.xtpSm.Size = new System.Drawing.Size(741, 579);
             this.xtpSm.Text = "Sub Menu";
             // 
-            // txtTcNumOption
+            // btnCopy
             // 
-            this.txtTcNumOption.Location = new System.Drawing.Point(230, 31);
-            this.txtTcNumOption.Name = "txtTcNumOption";
-            this.txtTcNumOption.Properties.Mask.EditMask = "f0";
-            this.txtTcNumOption.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Numeric;
-            this.txtTcNumOption.Size = new System.Drawing.Size(190, 24);
-            this.txtTcNumOption.TabIndex = 31;
+            this.btnCopy.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
+            this.btnCopy.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCopy.ForeColor = System.Drawing.Color.White;
+            this.btnCopy.Location = new System.Drawing.Point(92, 8);
+            this.btnCopy.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btnCopy.Name = "btnCopy";
+            this.btnCopy.Size = new System.Drawing.Size(82, 57);
+            this.btnCopy.TabIndex = 8;
+            this.btnCopy.Text = "Copy";
+            this.btnCopy.UseVisualStyleBackColor = false;
+            this.btnCopy.Click += new System.EventHandler(this.btnCopy_Click);
             // 
-            // TcOptionNum
+            // colorEditBtn
             // 
-            this.TcOptionNum.Caption = "Tc OptionNum";
-            this.TcOptionNum.FieldName = "OptionNum";
-            this.TcOptionNum.Name = "TcOptionNum";
+            this.colorEditBtn.EditValue = System.Drawing.Color.Empty;
+            this.colorEditBtn.Location = new System.Drawing.Point(118, 414);
+            this.colorEditBtn.Name = "colorEditBtn";
+            this.colorEditBtn.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.colorEditBtn.Properties.ShowCustomColors = false;
+            this.colorEditBtn.Properties.ShowSystemColors = false;
+            this.colorEditBtn.Size = new System.Drawing.Size(147, 24);
+            this.colorEditBtn.TabIndex = 50;
+            // 
+            // labelControl27
+            // 
+            this.labelControl27.Location = new System.Drawing.Point(35, 414);
+            this.labelControl27.Name = "labelControl27";
+            this.labelControl27.Size = new System.Drawing.Size(77, 18);
+            this.labelControl27.TabIndex = 51;
+            this.labelControl27.Text = "Print Name:";
+            // 
+            // MiBtnColor
+            // 
+            this.MiBtnColor.Caption = "MiBtnColor";
+            this.MiBtnColor.FieldName = "MiBtnColor";
+            this.MiBtnColor.Name = "MiBtnColor";
             // 
             // FrmTaMenuItem
             // 
@@ -1579,6 +1628,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.panelControl7)).EndInit();
             this.panelControl7.ResumeLayout(false);
             this.panelControl7.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.txtTcNumOption.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.chkTcEnableChoice.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.chkTcAutoAppend.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtTcAddPrice.Properties)).EndInit();
@@ -1588,7 +1638,7 @@
             this.panelControl9.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.gridControlThirdChoice)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gvThirdChoice)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtTcNumOption.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.colorEditBtn.Properties)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -1729,5 +1779,9 @@
         private DevExpress.XtraEditors.TextEdit txtScNumOption;
         private DevExpress.XtraEditors.TextEdit txtTcNumOption;
         private DevExpress.XtraGrid.Columns.GridColumn TcOptionNum;
+        private System.Windows.Forms.Button btnCopy;
+        private DevExpress.XtraEditors.LabelControl labelControl27;
+        private DevExpress.XtraEditors.ColorEdit colorEditBtn;
+        private DevExpress.XtraGrid.Columns.GridColumn MiBtnColor;
     }
 }

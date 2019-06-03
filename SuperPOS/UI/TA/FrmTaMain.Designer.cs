@@ -717,7 +717,7 @@
             // 
             // btnMi14
             // 
-            this.btnMi14.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
+            this.btnMi14.Appearance.BackColor = System.Drawing.Color.Gold;
             this.btnMi14.Appearance.Options.UseBackColor = true;
             this.btnMi14.Appearance.Options.UseTextOptions = true;
             this.btnMi14.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
@@ -731,7 +731,7 @@
             // 
             // btnMi12
             // 
-            this.btnMi12.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
+            this.btnMi12.Appearance.BackColor = System.Drawing.Color.Gold;
             this.btnMi12.Appearance.Options.UseBackColor = true;
             this.btnMi12.Appearance.Options.UseTextOptions = true;
             this.btnMi12.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
@@ -745,7 +745,7 @@
             // 
             // btnMi13
             // 
-            this.btnMi13.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
+            this.btnMi13.Appearance.BackColor = System.Drawing.Color.Gold;
             this.btnMi13.Appearance.Options.UseBackColor = true;
             this.btnMi13.Appearance.Options.UseTextOptions = true;
             this.btnMi13.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
@@ -759,7 +759,7 @@
             // 
             // btnMi15
             // 
-            this.btnMi15.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
+            this.btnMi15.Appearance.BackColor = System.Drawing.Color.Gold;
             this.btnMi15.Appearance.Options.UseBackColor = true;
             this.btnMi15.Appearance.Options.UseTextOptions = true;
             this.btnMi15.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
@@ -773,7 +773,7 @@
             // 
             // btnMi7
             // 
-            this.btnMi7.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
+            this.btnMi7.Appearance.BackColor = System.Drawing.Color.Gold;
             this.btnMi7.Appearance.Options.UseBackColor = true;
             this.btnMi7.Appearance.Options.UseTextOptions = true;
             this.btnMi7.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
@@ -787,7 +787,7 @@
             // 
             // btnMi3
             // 
-            this.btnMi3.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
+            this.btnMi3.Appearance.BackColor = System.Drawing.Color.Gold;
             this.btnMi3.Appearance.Options.UseBackColor = true;
             this.btnMi3.Appearance.Options.UseTextOptions = true;
             this.btnMi3.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
@@ -801,7 +801,7 @@
             // 
             // btnMi6
             // 
-            this.btnMi6.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
+            this.btnMi6.Appearance.BackColor = System.Drawing.Color.Gold;
             this.btnMi6.Appearance.Options.UseBackColor = true;
             this.btnMi6.Appearance.Options.UseTextOptions = true;
             this.btnMi6.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
@@ -833,7 +833,7 @@
             // 
             // btnMi5
             // 
-            this.btnMi5.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
+            this.btnMi5.Appearance.BackColor = System.Drawing.Color.Gold;
             this.btnMi5.Appearance.Options.UseBackColor = true;
             this.btnMi5.Appearance.Options.UseTextOptions = true;
             this.btnMi5.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
@@ -847,7 +847,7 @@
             // 
             // btnMi4
             // 
-            this.btnMi4.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
+            this.btnMi4.Appearance.BackColor = System.Drawing.Color.Gold;
             this.btnMi4.Appearance.Options.UseBackColor = true;
             this.btnMi4.Appearance.Options.UseTextOptions = true;
             this.btnMi4.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
@@ -861,7 +861,7 @@
             // 
             // btnMi2
             // 
-            this.btnMi2.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
+            this.btnMi2.Appearance.BackColor = System.Drawing.Color.Gold;
             this.btnMi2.Appearance.Options.UseBackColor = true;
             this.btnMi2.Appearance.Options.UseTextOptions = true;
             this.btnMi2.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
@@ -893,7 +893,7 @@
             // 
             // btnMi1
             // 
-            this.btnMi1.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
+            this.btnMi1.Appearance.BackColor = System.Drawing.Color.Gold;
             this.btnMi1.Appearance.Options.UseBackColor = true;
             this.btnMi1.Appearance.Options.UseTextOptions = true;
             this.btnMi1.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
@@ -907,7 +907,7 @@
             // 
             // btnMi0
             // 
-            this.btnMi0.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
+            this.btnMi0.Appearance.BackColor = System.Drawing.Color.Gold;
             this.btnMi0.Appearance.Options.UseBackColor = true;
             this.btnMi0.Appearance.Options.UseTextOptions = true;
             this.btnMi0.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
@@ -921,7 +921,7 @@
             // 
             // btnMi10
             // 
-            this.btnMi10.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
+            this.btnMi10.Appearance.BackColor = System.Drawing.Color.Gold;
             this.btnMi10.Appearance.Options.UseBackColor = true;
             this.btnMi10.Appearance.Options.UseTextOptions = true;
             this.btnMi10.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
@@ -935,7 +935,7 @@
             // 
             // btnMi8
             // 
-            this.btnMi8.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
+            this.btnMi8.Appearance.BackColor = System.Drawing.Color.Gold;
             this.btnMi8.Appearance.Options.UseBackColor = true;
             this.btnMi8.Appearance.Options.UseTextOptions = true;
             this.btnMi8.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
@@ -949,7 +949,7 @@
             // 
             // btnMi9
             // 
-            this.btnMi9.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
+            this.btnMi9.Appearance.BackColor = System.Drawing.Color.Gold;
             this.btnMi9.Appearance.Options.UseBackColor = true;
             this.btnMi9.Appearance.Options.UseTextOptions = true;
             this.btnMi9.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
@@ -963,7 +963,7 @@
             // 
             // btnMi11
             // 
-            this.btnMi11.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
+            this.btnMi11.Appearance.BackColor = System.Drawing.Color.Gold;
             this.btnMi11.Appearance.Options.UseBackColor = true;
             this.btnMi11.Appearance.Options.UseTextOptions = true;
             this.btnMi11.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;

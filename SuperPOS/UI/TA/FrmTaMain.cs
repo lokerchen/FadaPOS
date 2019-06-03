@@ -751,12 +751,18 @@ namespace SuperPOS.UI.TA
                     : (iLangStatusId == PubComm.MENU_LANG_DEFAULT
                         ? taMenuItemInfo.MiEngName
                         : taMenuItemInfo.MiOtherName);
+
+                
+                btnMenuItem[i].Appearance.BackColor = string.IsNullOrEmpty(taMenuItemInfo.MiBtnColor) 
+                                                        ? Color.FromName(@"Gold")
+                                                        : Color.FromName(taMenuItemInfo.MiBtnColor);
                 i++;
             }
 
             for (int j = i; j < 16; j++)
             {
                 btnMenuItem[j].Text = "";
+                btnMenuItem[j].Appearance.BackColor = Color.FromName(@"Gold");
             }
         }
         #endregion
@@ -776,7 +782,9 @@ namespace SuperPOS.UI.TA
                 btnMenuCate[i].Text = iLangStatusId == PubComm.MENU_LANG_DEFAULT
                     ? taMenuCateInfo.CateEngName
                     : taMenuCateInfo.CateOtherName;
-                btnMenuCate[i].Appearance.BackColor = Color.FromName(taMenuCateInfo.BtnColor);
+                btnMenuCate[i].Appearance.BackColor = string.IsNullOrEmpty(taMenuCateInfo.BtnColor)
+                                                        ? Color.FromName(@"RoyalBlue")
+                                                        : Color.FromName(taMenuCateInfo.BtnColor);
                 i++;
             }
 

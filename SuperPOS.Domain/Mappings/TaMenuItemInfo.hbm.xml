@@ -23,6 +23,7 @@
     <property name="MiMenuSetID" column="MiMenuSetID" type="System.Int32" />
     <property name="MiLargePrice" column="MiLargePrice" type="System.String" />
     <property name="MiSmallPrice" column="MiSmallPrice" type="System.String" />
+    <property name="MiBtnColor" column="MiBtnColor" type="System.String" />
   </class>
 
 </hibernate-mapping>

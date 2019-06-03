@@ -170,7 +170,8 @@ namespace SuperPOS.UI.TA
                     MiMenuSetID = mi.MiMenuSetID,
                     MiMenuSet = ms.MSEngName,
                     MiLargePrice = mi.MiLargePrice,
-                    MiSmallPrice = mi.MiSmallPrice
+                    MiSmallPrice = mi.MiSmallPrice,
+                    MiBtnColor = mi.MiBtnColor
                 };
             
             gvMenuItem.BestFitColumns();
@@ -391,6 +392,8 @@ namespace SuperPOS.UI.TA
             if (chk3.Checked) strTmp += ",Discountable";
             taMenuItemInfo.MiRmk = strTmp;
 
+            taMenuItemInfo.MiBtnColor = colorEditBtn.Text;
+
             try
             {
                 if (isAdd)
@@ -476,6 +479,8 @@ namespace SuperPOS.UI.TA
             
             txtLargePrice.Text = gvMenuItem.GetRowCellValue(gvMenuItem.FocusedRowHandle, "MiLargePrice") == null ? "" : gvMenuItem.GetRowCellValue(gvMenuItem.FocusedRowHandle, "MiLargePrice").ToString();
             txtSmallPrice.Text = gvMenuItem.GetRowCellValue(gvMenuItem.FocusedRowHandle, "MiSmallPrice") == null ? "" : gvMenuItem.GetRowCellValue(gvMenuItem.FocusedRowHandle, "MiSmallPrice").ToString();
+
+            colorEditBtn.Text = gvMenuItem.GetRowCellValue(gvMenuItem.FocusedRowHandle, "MiBtnColor") == null ? @"Gold" : gvMenuItem.GetRowCellValue(gvMenuItem.FocusedRowHandle, "MiBtnColor").ToString();
         }
 
         #region Grid单元格双击事件
@@ -797,6 +802,14 @@ namespace SuperPOS.UI.TA
                 chkTcEnableChoice.Checked = false;
                 txtTcNumOption.Text = "";
             }
+        }
+
+        private void btnCopy_Click(object sender, EventArgs e)
+        {
+            isAdd = true;
+
+            txtDishCode.Text = "";
+            BindChkMenuCate(false);
         }
     }
 }

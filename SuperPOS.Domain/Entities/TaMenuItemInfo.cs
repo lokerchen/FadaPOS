@@ -67,5 +67,9 @@ namespace SuperPOS.Domain.Entities
         //Small Price
         [XmlElement(ElementName = "MiSmallPrice")]
         public virtual string MiSmallPrice { get; set; }
+
+        //Button Color
+        [XmlElement(ElementName = "MiBtnColor")]
+        public virtual string MiBtnColor { get; set; }
     }
 }
