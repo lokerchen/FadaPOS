@@ -811,5 +811,23 @@ namespace SuperPOS.UI.TA
             txtDishCode.Text = "";
             BindChkMenuCate(false);
         }
+
+        private void btnDown_Click(object sender, EventArgs e)
+        {
+            gvMenuItem.FocusedRowHandle = gvMenuItem.FocusedRowHandle >= gvMenuItem.RowCount
+                ? gvMenuItem.RowCount - 1
+                : gvMenuItem.FocusedRowHandle + 1;
+
+            gvMenuItem.SelectRow(gvMenuItem.FocusedRowHandle);
+        }
+
+        private void btnUp_Click(object sender, EventArgs e)
+        {
+            gvMenuItem.FocusedRowHandle = gvMenuItem.FocusedRowHandle - 1 <= 0
+                ? 0
+                : gvMenuItem.FocusedRowHandle - 1;
+
+            gvMenuItem.SelectRow(gvMenuItem.FocusedRowHandle);
+        }
     }
 }

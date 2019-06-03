@@ -166,6 +166,8 @@
             this.colorEditBtn = new DevExpress.XtraEditors.ColorEdit();
             this.labelControl27 = new DevExpress.XtraEditors.LabelControl();
             this.MiBtnColor = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.btnUp = new System.Windows.Forms.Button();
+            this.btnDown = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.xtpUsrAccess)).BeginInit();
             this.xtpUsrAccess.SuspendLayout();
             this.xtpDa.SuspendLayout();
@@ -263,6 +265,8 @@
             // 
             // panelControl1
             // 
+            this.panelControl1.Controls.Add(this.btnUp);
+            this.panelControl1.Controls.Add(this.btnDown);
             this.panelControl1.Controls.Add(this.panelControl5);
             this.panelControl1.Controls.Add(this.panelControl4);
             this.panelControl1.Controls.Add(this.groupBox5);
@@ -482,7 +486,7 @@
             this.gridControlMenuItem.Location = new System.Drawing.Point(5, 179);
             this.gridControlMenuItem.MainView = this.gvMenuItem;
             this.gridControlMenuItem.Name = "gridControlMenuItem";
-            this.gridControlMenuItem.Size = new System.Drawing.Size(437, 303);
+            this.gridControlMenuItem.Size = new System.Drawing.Size(437, 229);
             this.gridControlMenuItem.TabIndex = 13;
             this.gridControlMenuItem.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gvMenuItem});
@@ -1559,6 +1563,36 @@
             this.MiBtnColor.FieldName = "MiBtnColor";
             this.MiBtnColor.Name = "MiBtnColor";
             // 
+            // btnUp
+            // 
+            this.btnUp.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
+            this.btnUp.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnUp.Font = new System.Drawing.Font("Tahoma", 22.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnUp.ForeColor = System.Drawing.Color.White;
+            this.btnUp.Location = new System.Drawing.Point(235, 415);
+            this.btnUp.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btnUp.Name = "btnUp";
+            this.btnUp.Size = new System.Drawing.Size(82, 57);
+            this.btnUp.TabIndex = 49;
+            this.btnUp.Text = "↑";
+            this.btnUp.UseVisualStyleBackColor = false;
+            this.btnUp.Click += new System.EventHandler(this.btnUp_Click);
+            // 
+            // btnDown
+            // 
+            this.btnDown.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
+            this.btnDown.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnDown.Font = new System.Drawing.Font("Tahoma", 22.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDown.ForeColor = System.Drawing.Color.White;
+            this.btnDown.Location = new System.Drawing.Point(106, 415);
+            this.btnDown.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btnDown.Name = "btnDown";
+            this.btnDown.Size = new System.Drawing.Size(82, 57);
+            this.btnDown.TabIndex = 48;
+            this.btnDown.Text = "↓";
+            this.btnDown.UseVisualStyleBackColor = false;
+            this.btnDown.Click += new System.EventHandler(this.btnDown_Click);
+            // 
             // FrmTaMenuItem
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 18F);
@@ -1783,5 +1817,7 @@
         private DevExpress.XtraEditors.LabelControl labelControl27;
         private DevExpress.XtraEditors.ColorEdit colorEditBtn;
         private DevExpress.XtraGrid.Columns.GridColumn MiBtnColor;
+        private System.Windows.Forms.Button btnUp;
+        private System.Windows.Forms.Button btnDown;
     }
 }
