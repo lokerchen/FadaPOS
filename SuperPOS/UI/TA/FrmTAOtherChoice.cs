@@ -28,6 +28,9 @@ namespace SuperPOS.UI.TA
 
         public List<TaMenuItemOtherChoiceInfo> lstReturnChoice = new List<TaMenuItemOtherChoiceInfo>();
 
+        //No of Options
+        public int NoOfOption = 0;
+
         public FrmTAOtherChoice()
         {
             InitializeComponent();
@@ -39,6 +42,11 @@ namespace SuperPOS.UI.TA
             miType = mType;
             miId = mID;
             lstOtherChoice = lstList;
+
+            if (lstList.Any())
+            {
+                NoOfOption = Convert.ToInt32(lstList.FirstOrDefault(s => s.MiID == mID && s.MiType == mType).OptionNum);
+            }
         }
 
         private void FrmTAOtherChoice_Load(object sender, EventArgs e)
@@ -118,17 +126,38 @@ namespace SuperPOS.UI.TA
 
         private void btnOK_Click(object sender, EventArgs e)
         {
-            foreach (var ce in chkOtherChoice.Where(s => s.Checked == true))
+            if (NoOfOption > 0)
             {
-                if (lstOtherChoice.Any(s => s.MiEngName.Equals(ce.Text)))
+                if (chkOtherChoice.Count(s => s.Checked == true) >= NoOfOption)
                 {
-                    lstReturnChoice.Add(lstOtherChoice.FirstOrDefault(s => s.MiEngName.Equals(ce.Text)));
+                    foreach (var ce in chkOtherChoice.Where(s => s.Checked == true))
+                    {
+                        if (lstOtherChoice.Any(s => s.MiEngName.Equals(ce.Text)))
+                        {
+                            lstReturnChoice.Add(lstOtherChoice.FirstOrDefault(s => s.MiEngName.Equals(ce.Text)));
+                        }
+                    }
+
+                    this.DialogResult = DialogResult.OK;
+
+                    Hide();
                 }
             }
+            else
+            {
+                foreach (var ce in chkOtherChoice.Where(s => s.Checked == true))
+                {
+                    if (lstOtherChoice.Any(s => s.MiEngName.Equals(ce.Text)))
+                    {
+                        lstReturnChoice.Add(lstOtherChoice.FirstOrDefault(s => s.MiEngName.Equals(ce.Text)));
+                    }
+                }
 
-            this.DialogResult = DialogResult.OK;
+                this.DialogResult = DialogResult.OK;
 
-            Hide();
+                Hide();
+            }
+            
         }
     }
 }

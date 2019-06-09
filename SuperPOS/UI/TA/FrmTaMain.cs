@@ -1006,20 +1006,16 @@ namespace SuperPOS.UI.TA
                     FrmTAOtherChoice frmTaOtherChoice1 = new FrmTAOtherChoice(2, mId, lstOther.Where(s => s.MiType == 2).ToList());
                     if (frmTaOtherChoice1.ShowDialog() == DialogResult.OK)
                     {
-                        lstResult = frmTaOtherChoice1.lstReturnChoice;
+                        lstResult = frmTaOtherChoice1.lstReturnChoice;}
+                }
 
-                        if (lstResult.Any())
-                        {
-                            if (lstOther.Any(s => s.MiType == 3))
-                            {
-                                //弹出窗口选择
-                                FrmTAOtherChoice frmTaOtherChoice2 = new FrmTAOtherChoice(3, mId, lstOther.Where(s => s.MiType == 3).ToList());
-                                if (frmTaOtherChoice2.ShowDialog() == DialogResult.OK)
-                                {
-                                    if (frmTaOtherChoice2.lstReturnChoice.Any()) lstResult.AddRange(frmTaOtherChoice2.lstReturnChoice);
-                                }
-                            }
-                        }
+                if (lstOther.Any(s => s.MiType == 3))
+                {
+                    //弹出窗口选择
+                    FrmTAOtherChoice frmTaOtherChoice2 = new FrmTAOtherChoice(3, mId, lstOther.Where(s => s.MiType == 3).ToList());
+                    if (frmTaOtherChoice2.ShowDialog() == DialogResult.OK)
+                    {
+                        if (frmTaOtherChoice2.lstReturnChoice.Any()) lstResult.AddRange(frmTaOtherChoice2.lstReturnChoice);
                     }
                 }
             }
@@ -1056,7 +1052,7 @@ namespace SuperPOS.UI.TA
         private void SetAllOtherChoice(int miId, string miQty, string miCheckCode, string itemId, TreeListNode node)
         {
             //Second/Third Choices自动增加
-            GetAppendOtherChoice(miId, miQty, miCheckCode, itemId, node);
+            //GetAppendOtherChoice(miId, miQty, miCheckCode, itemId, node);
             //Second/Third Choices用户选择增加
             GetNotAppendOtherChoice(miId, miQty, miCheckCode, itemId, node);
         }
@@ -1493,11 +1489,17 @@ namespace SuperPOS.UI.TA
                 TaOrderItemInfo taOrderItemInfo = new TaOrderItemInfo();
                 taOrderItemInfo.ItemID = Guid.NewGuid().ToString();
                 taOrderItemInfo.ItemCode = taMenuItemInfo.MiDishCode;
-                taOrderItemInfo.ItemDishName = taMenuItemInfo.MiEngName;
-                taOrderItemInfo.ItemDishOtherName = taMenuItemInfo.MiOtherName;
+                //taOrderItemInfo.ItemDishName = taMenuItemInfo.MiEngName;
+                //taOrderItemInfo.ItemDishOtherName = taMenuItemInfo.MiOtherName;
+                string sEngName = "";
+                string sOtherName = "";
+                decimal sPrice = 0.00m;
+                GetOtherChoices(taMenuItemInfo.ID, out sEngName, out sOtherName, out sPrice);
+                taOrderItemInfo.ItemDishName = taMenuItemInfo.MiEngName + sEngName;
+                taOrderItemInfo.ItemDishOtherName = taMenuItemInfo.MiOtherName + sOtherName;
                 taOrderItemInfo.ItemQty = iQty.ToString();
-                taOrderItemInfo.ItemPrice = taMenuItemInfo.MiRegularPrice;
-                taOrderItemInfo.ItemTotalPrice = (iQty * Convert.ToDecimal(taMenuItemInfo.MiRegularPrice)).ToString();
+                taOrderItemInfo.ItemPrice = (Convert.ToDecimal(taMenuItemInfo.MiRegularPrice) + sPrice).ToString("0.00");
+                taOrderItemInfo.ItemTotalPrice = (iQty * Convert.ToDecimal(taOrderItemInfo.ItemPrice)).ToString();
                 taOrderItemInfo.CheckCode = checkID;
                 taOrderItemInfo.ItemType = PubComm.MENU_ITEM_MAIN;
                 taOrderItemInfo.ItemParent = "0";
@@ -1709,5 +1711,26 @@ namespace SuperPOS.UI.TA
                 }
             }
         }
+
+        #region 返回Other Choices的AutoAppend
+        private void GetOtherChoices(int miId, out string miEngName, out string miOtherName, out decimal miPrice)
+        {
+            miEngName = "";
+            miOtherName = "";
+            miPrice = 0.00m;
+
+            new SystemData().GetTaMenuItemOtherChoice();
+
+            var lstOther = CommonData.TaMenuItemOtherChoice.Where(s => s.MiID == miId && s.IsAutoAppend.Equals("Y") && s.IsEnableChoice.Equals("Y"));
+
+            foreach (var taMenuItemOtherChoiceInfo in lstOther)
+            {
+                miEngName += " " + taMenuItemOtherChoiceInfo.MiEngName;
+                miOtherName += " " + taMenuItemOtherChoiceInfo.MiOtherName;
+                miPrice += Convert.ToDecimal(taMenuItemOtherChoiceInfo.MiPrice);
+            }
+        }
+        #endregion
+
     }
 }

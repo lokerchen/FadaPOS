@@ -42,6 +42,28 @@ namespace SuperPOS.UI.TA
 
         private int miType = 2;
 
+        #region Second Choice 
+        //English Name文本框组
+        private TextEdit[] txtScEngName = new TextEdit[20];
+        //Other Name 文本框
+        private TextEdit[] txtScOtherName = new TextEdit[20];
+        //Add Price
+        private TextEdit[] txtScAddPrice = new TextEdit[20];
+        //Auto Append
+        private CheckEdit[] chkScAutoAppend = new CheckEdit[20];
+        #endregion
+
+        #region Third Choice 
+        //English Name文本框组
+        private TextEdit[] txtTcEngName = new TextEdit[20];
+        //Other Name 文本框
+        private TextEdit[] txtTcOtherName = new TextEdit[20];
+        //Add Price
+        private TextEdit[] txtTcAddPrice = new TextEdit[20];
+        //Auto Append
+        private CheckEdit[] chkTcAutoAppend = new CheckEdit[20];
+        #endregion
+
         public FrmTaMenuItem()
         {
             InitializeComponent();
@@ -56,6 +78,8 @@ namespace SuperPOS.UI.TA
 
         private void FrmTaMenuItem_Load(object sender, EventArgs e)
         {
+            SetTxt();
+
             #region btnMenuSet赋值
             Button[] btnMenuSet = new Button[4];
             btnMenuSet[0] = btnMenuSet1;
@@ -573,10 +597,80 @@ namespace SuperPOS.UI.TA
 
             var lstOtherChoice = CommonData.TaMenuItemOtherChoice.Where(s => s.MiType == iType && s.MiID == miID);
 
-            gridControlSecondChoice.DataSource = lstOtherChoice.ToList();
-            gvSecondChoice.FocusedRowHandle = gvSecondChoice.RowCount - 1;
-            gridControlThirdChoice.DataSource = lstOtherChoice.ToList();
-            gvThirdChoice.FocusedRowHandle = gvThirdChoice.RowCount - 1;
+            //Second Choice
+            if (iType == 2)
+            {
+                int i = 0;
+
+                if (lstOtherChoice.Any())
+                {
+                    txtScNumOption.Text = lstOtherChoice.FirstOrDefault().OptionNum;
+                    chkScEnableChoice.Checked = lstOtherChoice.FirstOrDefault().IsEnableChoice.Equals("Y")
+                        ? true
+                        : false;
+                }
+                else
+                {
+                    txtScNumOption.Text = "";
+                    chkScEnableChoice.Checked = false;
+                }
+
+                foreach (var taMenuItemOtherChoiceInfo in lstOtherChoice)
+                {
+                    txtScEngName[i].Text = taMenuItemOtherChoiceInfo.MiEngName;
+                    txtScOtherName[i].Text = taMenuItemOtherChoiceInfo.MiOtherName;
+                    txtScAddPrice[i].Text = taMenuItemOtherChoiceInfo.MiPrice;
+                    chkScEnableChoice.Checked = taMenuItemOtherChoiceInfo.IsEnableChoice.Equals("Y") ? true : false;
+                    chkScAutoAppend[i].Checked = taMenuItemOtherChoiceInfo.IsAutoAppend.Equals("Y") ? true : false;
+                    i++;
+                }
+
+                for (int j = i; j < 20; j++)
+                {
+                    txtScEngName[j].Text = "";
+                    txtScOtherName[j].Text = "";
+                    txtScAddPrice[j].Text = "";
+                    chkScAutoAppend[j].Checked = false;
+                }
+            }
+
+            //Third Choice
+            if (iType == 3)
+            {
+                int i = 0;
+
+                if (lstOtherChoice.Any())
+                {
+                    txtTcNumOption.Text = lstOtherChoice.FirstOrDefault().OptionNum;
+                    chkTcEnableChoice.Checked = lstOtherChoice.FirstOrDefault().IsEnableChoice.Equals("Y")
+                        ? true
+                        : false;
+                }
+                else
+                {
+                    txtTcNumOption.Text = "";
+                    chkTcEnableChoice.Checked = false;
+                }
+
+                foreach (var taMenuItemOtherChoiceInfo in lstOtherChoice)
+                {
+                    txtTcEngName[i].Text = taMenuItemOtherChoiceInfo.MiEngName;
+                    txtTcOtherName[i].Text = taMenuItemOtherChoiceInfo.MiOtherName;
+                    txtTcAddPrice[i].Text = taMenuItemOtherChoiceInfo.MiPrice;
+                    chkTcEnableChoice.Checked = taMenuItemOtherChoiceInfo.IsEnableChoice.Equals("Y") ? true : false;
+                    chkTcAutoAppend[i].Checked = taMenuItemOtherChoiceInfo.IsAutoAppend.Equals("Y") ? true : false;
+                    i++;
+                }
+
+                for (int j = i; j < 20; j++)
+                {
+                    txtTcEngName[j].Text = "";
+                    txtTcOtherName[j].Text = "";
+                    txtTcAddPrice[j].Text = "";
+                    chkTcAutoAppend[j].Checked = false;
+                }
+            }
+            
         }
 
         private void xtpUsrAccess_Selected(object sender, DevExpress.XtraTab.TabPageEventArgs e)
@@ -605,203 +699,86 @@ namespace SuperPOS.UI.TA
             Close();
         }
 
-        private void btnScAdd_Click(object sender, EventArgs e)
-        {
-            isAdd = true;
-
-            txtScEngName.Text = "";
-            txtScOtherName.Text = "";
-            txtScAddPrice.Text = "";
-            chkScAutoAppend.Checked = false;
-            chkScEnableChoice.Checked = false;
-            txtScNumOption.Text = "1";
-        }
-
-        private void gvSecondChoice_FocusedRowChanged(object sender, DevExpress.XtraGrid.Views.Base.FocusedRowChangedEventArgs e)
-        {
-            if (gvSecondChoice.RowCount > 0)
-            {
-                txtScEngName.Text = gvSecondChoice.GetRowCellValue(gvSecondChoice.FocusedRowHandle, "MiEngName").ToString();
-                txtScOtherName.Text = gvSecondChoice.GetRowCellValue(gvSecondChoice.FocusedRowHandle, "MiOtherName").ToString();
-                txtScAddPrice.Text = gvSecondChoice.GetRowCellValue(gvSecondChoice.FocusedRowHandle, "MiPrice").ToString();
-                chkScAutoAppend.Checked = gvSecondChoice.GetRowCellValue(gvSecondChoice.FocusedRowHandle, "IsAutoAppend").ToString().Equals("Y");
-                chkScEnableChoice.Checked = gvSecondChoice.GetRowCellValue(gvSecondChoice.FocusedRowHandle, "IsEnableChoice").ToString().Equals("Y");
-                txtScNumOption.Text = gvSecondChoice.GetRowCellValue(gvSecondChoice.FocusedRowHandle, "OptionNum") == null ? "" : gvSecondChoice.GetRowCellValue(gvSecondChoice.FocusedRowHandle, "OptionNum").ToString();
-            }
-            else
-            {
-                txtScEngName.Text = "";
-                txtScOtherName.Text = "";
-                txtScAddPrice.Text = "";
-                chkScAutoAppend.Checked = false;
-                chkScEnableChoice.Checked = false;
-                txtScNumOption.Text = "";
-            }
-        }
-
         private void btnScSave_Click(object sender, EventArgs e)
-        {
-            if (string.IsNullOrEmpty(txtScEngName.Text))
-            {
-                CommonTool.ShowMessage("English Name can not NULL!");
-                return;
-            }
-
-            if (string.IsNullOrEmpty(txtScOtherName.Text))
-            {
-                CommonTool.ShowMessage("Other Name can not NULL!");
-                return;
-            }
-
-            TaMenuItemOtherChoiceInfo taMenuItemOtherChoiceInfo = new TaMenuItemOtherChoiceInfo();
-
-            taMenuItemOtherChoiceInfo.MiEngName = txtScEngName.Text;
-            taMenuItemOtherChoiceInfo.MiOtherName = txtScOtherName.Text;
-            taMenuItemOtherChoiceInfo.MiPrice = string.IsNullOrEmpty(txtScAddPrice.Text) ? "0.00" : txtScAddPrice.Text;
-            taMenuItemOtherChoiceInfo.IsAutoAppend = chkScAutoAppend.Checked ? "Y" : "N";
-            taMenuItemOtherChoiceInfo.IsEnableChoice = chkScEnableChoice.Checked ? "Y" : "N";
-            taMenuItemOtherChoiceInfo.MiID = miID;
-            taMenuItemOtherChoiceInfo.MiType = miType;
-            taMenuItemOtherChoiceInfo.OptionNum = txtScNumOption.Text;
-
-            try
-            {
-                if (isAdd)
-                {
-                    _control.AddEntity(taMenuItemOtherChoiceInfo);
-                    isAdd = false;
-                }
-                else
-                {
-                    taMenuItemOtherChoiceInfo.ID = Convert.ToInt32(gvSecondChoice.GetRowCellValue(gvSecondChoice.FocusedRowHandle, "ID"));
-                    _control.UpdateEntity(taMenuItemOtherChoiceInfo);
-                }
-
-                BindOtherChoice(miType, miID);
-            }
-            catch (Exception ex) { LogHelper.Error(this.Name, ex); }
-
-            CommonTool.ShowMessage("Save successful!");
-        }
-
-        private void btnScDel_Click(object sender, EventArgs e)
         {
             new SystemData().GetTaMenuItemOtherChoice();
 
-            if (CommonTool.ConfirmDelete() == DialogResult.Cancel) return;
-            else
+            var lstOc = CommonData.TaMenuItemOtherChoice.Where(s => s.MiType == miType && s.MiID == miID);
+
+            foreach (var choiceInfo in lstOc)
             {
+                _control.DeleteEntity(choiceInfo);
+            }
+
+            for (int i = 0; i < 20; i++)
+            {
+                //增加判断是否为一条正常记录：English Name + Other Name + Add Price
+                if (string.IsNullOrEmpty(txtScEngName[i].Text) && string.IsNullOrEmpty(txtScOtherName[i].Text)) continue;
+
                 try
                 {
-                    _control.DeleteEntity(CommonData.TaMenuItemOtherChoice.FirstOrDefault(s => s.ID == Convert.ToInt32(gvSecondChoice.GetRowCellValue(gvSecondChoice.FocusedRowHandle, "ID"))));
-                    CommonTool.ShowMessage("Delete successful!");
-                    BindOtherChoice(miType, miID);
-                    isAdd = false;
+                    TaMenuItemOtherChoiceInfo taMenuItemOtherChoiceInfo = new TaMenuItemOtherChoiceInfo();
+
+                    taMenuItemOtherChoiceInfo.MiEngName = txtScEngName[i].Text;
+                    taMenuItemOtherChoiceInfo.MiOtherName = txtScOtherName[i].Text;
+                    taMenuItemOtherChoiceInfo.MiPrice = string.IsNullOrEmpty(txtScAddPrice[i].Text) ? "0.00" : txtScAddPrice[i].Text;
+                    taMenuItemOtherChoiceInfo.IsAutoAppend = chkScAutoAppend[i].Checked ? "Y" : "N";
+                    taMenuItemOtherChoiceInfo.IsEnableChoice = chkScEnableChoice.Checked ? "Y" : "N";
+                    taMenuItemOtherChoiceInfo.MiID = miID;
+                    taMenuItemOtherChoiceInfo.MiType = miType;
+                    taMenuItemOtherChoiceInfo.OptionNum = string.IsNullOrEmpty(txtScNumOption.Text) ? "0" : txtScNumOption.Text;
+
+                    _control.AddEntity(taMenuItemOtherChoiceInfo);
                 }
                 catch (Exception ex) { LogHelper.Error(this.Name, ex); }
             }
-        }
 
-        private void btnTcAdd_Click(object sender, EventArgs e)
-        {
-            isAdd = true;
-
-            txtTcEngName.Text = "";
-            txtTcOtherName.Text = "";
-            txtTcAddPrice.Text = "";
-            chkTcAutoAppend.Checked = false;
-            chkTcEnableChoice.Checked = false;
-            txtTcNumOption.Text = "1";
+            BindOtherChoice(miType, miID);
+            CommonTool.ShowMessage("Save successful!");
         }
 
         private void btnTcSave_Click(object sender, EventArgs e)
         {
-            if (string.IsNullOrEmpty(txtTcEngName.Text))
-            {
-                CommonTool.ShowMessage("English Name can not NULL!");
-                return;
-            }
-
-            if (string.IsNullOrEmpty(txtTcOtherName.Text))
-            {
-                CommonTool.ShowMessage("Other Name can not NULL!");
-                return;
-            }
-
-            TaMenuItemOtherChoiceInfo taMenuItemOtherChoiceInfo = new TaMenuItemOtherChoiceInfo();
-
-            taMenuItemOtherChoiceInfo.MiEngName = txtTcEngName.Text;
-            taMenuItemOtherChoiceInfo.MiOtherName = txtTcOtherName.Text;
-            taMenuItemOtherChoiceInfo.MiPrice = string.IsNullOrEmpty(txtTcAddPrice.Text) ? "0.00" : txtTcAddPrice.Text;
-            taMenuItemOtherChoiceInfo.IsAutoAppend = chkTcAutoAppend.Checked ? "Y" : "N";
-            taMenuItemOtherChoiceInfo.IsEnableChoice = chkTcEnableChoice.Checked ? "Y" : "N";
-            taMenuItemOtherChoiceInfo.MiID = miID;
-            taMenuItemOtherChoiceInfo.MiType = miType;
-            taMenuItemOtherChoiceInfo.OptionNum = txtTcNumOption.Text;
-
-            try
-            {
-                if (isAdd)
-                {
-                    _control.AddEntity(taMenuItemOtherChoiceInfo);
-                    isAdd = false;
-                }
-                else
-                {
-                    taMenuItemOtherChoiceInfo.ID = Convert.ToInt32(gvThirdChoice.GetRowCellValue(gvThirdChoice.FocusedRowHandle, "ID"));
-                    _control.UpdateEntity(taMenuItemOtherChoiceInfo);
-                }
-
-                BindOtherChoice(miType, miID);
-            }
-            catch (Exception ex) { LogHelper.Error(this.Name, ex); }
-
-            CommonTool.ShowMessage("Save successful!");
-        }
-
-        private void btnTcDel_Click(object sender, EventArgs e)
-        {
             new SystemData().GetTaMenuItemOtherChoice();
 
-            if (CommonTool.ConfirmDelete() == DialogResult.Cancel) return;
-            else
+            var lstOc = CommonData.TaMenuItemOtherChoice.Where(s => s.MiType == miType && s.MiID == miID);
+
+            foreach (var choiceInfo in lstOc)
             {
+                _control.DeleteEntity(choiceInfo);
+            }
+
+            for (int i = 0; i < 20; i++)
+            {
+                //增加判断是否为一条正常记录：English Name + Other Name + Add Price
+                if (string.IsNullOrEmpty(txtTcEngName[i].Text) && string.IsNullOrEmpty(txtTcOtherName[i].Text)) continue;
+
                 try
                 {
-                    _control.DeleteEntity(CommonData.TaMenuItemOtherChoice.FirstOrDefault(s => s.ID == Convert.ToInt32(gvThirdChoice.GetRowCellValue(gvThirdChoice.FocusedRowHandle, "ID"))));
-                    CommonTool.ShowMessage("Delete successful!");
-                    BindOtherChoice(miType, miID);
-                    isAdd = false;
+                    TaMenuItemOtherChoiceInfo taMenuItemOtherChoiceInfo = new TaMenuItemOtherChoiceInfo();
+
+                    taMenuItemOtherChoiceInfo.MiEngName = txtTcEngName[i].Text;
+                    taMenuItemOtherChoiceInfo.MiOtherName = txtTcOtherName[i].Text;
+                    taMenuItemOtherChoiceInfo.MiPrice = string.IsNullOrEmpty(txtTcAddPrice[i].Text) ? "0.00" : txtTcAddPrice[i].Text;
+                    taMenuItemOtherChoiceInfo.IsAutoAppend = chkTcAutoAppend[i].Checked ? "Y" : "N";
+                    taMenuItemOtherChoiceInfo.IsEnableChoice = chkTcEnableChoice.Checked ? "Y" : "N";
+                    taMenuItemOtherChoiceInfo.MiID = miID;
+                    taMenuItemOtherChoiceInfo.MiType = miType;
+                    taMenuItemOtherChoiceInfo.OptionNum = string.IsNullOrEmpty(txtTcNumOption.Text) ? "0" : txtTcNumOption.Text;
+
+                    _control.AddEntity(taMenuItemOtherChoiceInfo);
                 }
                 catch (Exception ex) { LogHelper.Error(this.Name, ex); }
             }
+
+            BindOtherChoice(miType, miID);
+
+            CommonTool.ShowMessage("Save successful!");
         }
 
         private void btnTcExit_Click(object sender, EventArgs e)
         {
             Close();
-        }
-
-        private void gvThirdChoice_FocusedRowChanged(object sender, DevExpress.XtraGrid.Views.Base.FocusedRowChangedEventArgs e)
-        {
-            if (gvThirdChoice.RowCount > 0)
-            {
-                txtTcEngName.Text = gvThirdChoice.GetRowCellValue(gvThirdChoice.FocusedRowHandle, "MiEngName").ToString();
-                txtTcOtherName.Text = gvThirdChoice.GetRowCellValue(gvThirdChoice.FocusedRowHandle, "MiOtherName").ToString();
-                txtTcAddPrice.Text = gvThirdChoice.GetRowCellValue(gvThirdChoice.FocusedRowHandle, "MiPrice").ToString();
-                chkTcAutoAppend.Checked = gvThirdChoice.GetRowCellValue(gvThirdChoice.FocusedRowHandle, "IsAutoAppend").ToString().Equals("Y");
-                chkTcEnableChoice.Checked = gvThirdChoice.GetRowCellValue(gvThirdChoice.FocusedRowHandle, "IsEnableChoice").ToString().Equals("Y");
-                txtTcNumOption.Text = gvThirdChoice.GetRowCellValue(gvThirdChoice.FocusedRowHandle, "OptionNum") == null ? "" : gvSecondChoice.GetRowCellValue(gvSecondChoice.FocusedRowHandle, "OptionNum").ToString();
-            }
-            else
-            {
-                txtTcEngName.Text = "";
-                txtTcOtherName.Text = "";
-                txtTcAddPrice.Text = "";
-                chkTcAutoAppend.Checked = false;
-                chkTcEnableChoice.Checked = false;
-                txtTcNumOption.Text = "";
-            }
         }
 
         private void btnCopy_Click(object sender, EventArgs e)
@@ -828,6 +805,202 @@ namespace SuperPOS.UI.TA
                 : gvMenuItem.FocusedRowHandle - 1;
 
             gvMenuItem.SelectRow(gvMenuItem.FocusedRowHandle);
+        }
+
+        private void SetTxt()
+        {
+            #region Second Choice
+            #region EnglishName
+            txtScEngName[0] = txtScEngName1;
+            txtScEngName[1] = txtScEngName2;
+            txtScEngName[2] = txtScEngName3;
+            txtScEngName[3] = txtScEngName4;
+            txtScEngName[4] = txtScEngName5;
+            txtScEngName[5] = txtScEngName6;
+            txtScEngName[6] = txtScEngName7;
+            txtScEngName[7] = txtScEngName8;
+            txtScEngName[8] = txtScEngName9;
+            txtScEngName[9] = txtScEngName10;
+            txtScEngName[10] = txtScEngName11;
+            txtScEngName[11] = txtScEngName12;
+            txtScEngName[12] = txtScEngName13;
+            txtScEngName[13] = txtScEngName14;
+            txtScEngName[14] = txtScEngName15;
+            txtScEngName[15] = txtScEngName16;
+            txtScEngName[16] = txtScEngName17;
+            txtScEngName[17] = txtScEngName18;
+            txtScEngName[18] = txtScEngName19;
+            txtScEngName[19] = txtScEngName20;
+            #endregion
+
+            #region OtherName
+            txtScOtherName[0] = txtScOtherName1;
+            txtScOtherName[1] = txtScOtherName2;
+            txtScOtherName[2] = txtScOtherName3;
+            txtScOtherName[3] = txtScOtherName4;
+            txtScOtherName[4] = txtScOtherName5;
+            txtScOtherName[5] = txtScOtherName6;
+            txtScOtherName[6] = txtScOtherName7;
+            txtScOtherName[7] = txtScOtherName8;
+            txtScOtherName[8] = txtScOtherName9;
+            txtScOtherName[9] = txtScOtherName10;
+            txtScOtherName[10] = txtScOtherName11;
+            txtScOtherName[11] = txtScOtherName12;
+            txtScOtherName[12] = txtScOtherName13;
+            txtScOtherName[13] = txtScOtherName14;
+            txtScOtherName[14] = txtScOtherName15;
+            txtScOtherName[15] = txtScOtherName16;
+            txtScOtherName[16] = txtScOtherName17;
+            txtScOtherName[17] = txtScOtherName18;
+            txtScOtherName[18] = txtScOtherName19;
+            txtScOtherName[19] = txtScOtherName20;
+            #endregion
+
+            #region Add Price
+            txtScAddPrice[0] = txtScAddPrice1;
+            txtScAddPrice[1] = txtScAddPrice2;
+            txtScAddPrice[2] = txtScAddPrice3;
+            txtScAddPrice[3] = txtScAddPrice4;
+            txtScAddPrice[4] = txtScAddPrice5;
+            txtScAddPrice[5] = txtScAddPrice6;
+            txtScAddPrice[6] = txtScAddPrice7;
+            txtScAddPrice[7] = txtScAddPrice8;
+            txtScAddPrice[8] = txtScAddPrice9;
+            txtScAddPrice[9] = txtScAddPrice10;
+            txtScAddPrice[10] = txtScAddPrice11;
+            txtScAddPrice[11] = txtScAddPrice12;
+            txtScAddPrice[12] = txtScAddPrice13;
+            txtScAddPrice[13] = txtScAddPrice14;
+            txtScAddPrice[14] = txtScAddPrice15;
+            txtScAddPrice[15] = txtScAddPrice16;
+            txtScAddPrice[16] = txtScAddPrice17;
+            txtScAddPrice[17] = txtScAddPrice18;
+            txtScAddPrice[18] = txtScAddPrice19;
+            txtScAddPrice[19] = txtScAddPrice20;
+            #endregion
+
+            #region chkScAutoAppend
+            chkScAutoAppend[0] = chkScAutoAppend1;
+            chkScAutoAppend[1] = chkScAutoAppend2;
+            chkScAutoAppend[2] = chkScAutoAppend3;
+            chkScAutoAppend[3] = chkScAutoAppend4;
+            chkScAutoAppend[4] = chkScAutoAppend5;
+            chkScAutoAppend[5] = chkScAutoAppend6;
+            chkScAutoAppend[6] = chkScAutoAppend7;
+            chkScAutoAppend[7] = chkScAutoAppend8;
+            chkScAutoAppend[8] = chkScAutoAppend9;
+            chkScAutoAppend[9] = chkScAutoAppend10;
+            chkScAutoAppend[10] = chkScAutoAppend11;
+            chkScAutoAppend[11] = chkScAutoAppend12;
+            chkScAutoAppend[12] = chkScAutoAppend13;
+            chkScAutoAppend[13] = chkScAutoAppend14;
+            chkScAutoAppend[14] = chkScAutoAppend15;
+            chkScAutoAppend[15] = chkScAutoAppend16;
+            chkScAutoAppend[16] = chkScAutoAppend17;
+            chkScAutoAppend[17] = chkScAutoAppend18;
+            chkScAutoAppend[18] = chkScAutoAppend19;
+            chkScAutoAppend[19] = chkScAutoAppend20;
+            #endregion
+            #endregion
+
+            #region Third Choice
+            #region EnglishName
+            txtTcEngName[0] = txtTcEngName1;
+            txtTcEngName[1] = txtTcEngName2;
+            txtTcEngName[2] = txtTcEngName3;
+            txtTcEngName[3] = txtTcEngName4;
+            txtTcEngName[4] = txtTcEngName5;
+            txtTcEngName[5] = txtTcEngName6;
+            txtTcEngName[6] = txtTcEngName7;
+            txtTcEngName[7] = txtTcEngName8;
+            txtTcEngName[8] = txtTcEngName9;
+            txtTcEngName[9] = txtTcEngName10;
+            txtTcEngName[10] = txtTcEngName11;
+            txtTcEngName[11] = txtTcEngName12;
+            txtTcEngName[12] = txtTcEngName13;
+            txtTcEngName[13] = txtTcEngName14;
+            txtTcEngName[14] = txtTcEngName15;
+            txtTcEngName[15] = txtTcEngName16;
+            txtTcEngName[16] = txtTcEngName17;
+            txtTcEngName[17] = txtTcEngName18;
+            txtTcEngName[18] = txtTcEngName19;
+            txtTcEngName[19] = txtTcEngName20;
+            #endregion
+
+            #region OtherName
+            txtTcOtherName[0] = txtTcOtherName1;
+            txtTcOtherName[1] = txtTcOtherName2;
+            txtTcOtherName[2] = txtTcOtherName3;
+            txtTcOtherName[3] = txtTcOtherName4;
+            txtTcOtherName[4] = txtTcOtherName5;
+            txtTcOtherName[5] = txtTcOtherName6;
+            txtTcOtherName[6] = txtTcOtherName7;
+            txtTcOtherName[7] = txtTcOtherName8;
+            txtTcOtherName[8] = txtTcOtherName9;
+            txtTcOtherName[9] = txtTcOtherName10;
+            txtTcOtherName[10] = txtTcOtherName11;
+            txtTcOtherName[11] = txtTcOtherName12;
+            txtTcOtherName[12] = txtTcOtherName13;
+            txtTcOtherName[13] = txtTcOtherName14;
+            txtTcOtherName[14] = txtTcOtherName15;
+            txtTcOtherName[15] = txtTcOtherName16;
+            txtTcOtherName[16] = txtTcOtherName17;
+            txtTcOtherName[17] = txtTcOtherName18;
+            txtTcOtherName[18] = txtTcOtherName19;
+            txtTcOtherName[19] = txtTcOtherName20;
+            #endregion
+
+            #region Add Price
+            txtTcAddPrice[0] = txtTcAddPrice1;
+            txtTcAddPrice[1] = txtTcAddPrice2;
+            txtTcAddPrice[2] = txtTcAddPrice3;
+            txtTcAddPrice[3] = txtTcAddPrice4;
+            txtTcAddPrice[4] = txtTcAddPrice5;
+            txtTcAddPrice[5] = txtTcAddPrice6;
+            txtTcAddPrice[6] = txtTcAddPrice7;
+            txtTcAddPrice[7] = txtTcAddPrice8;
+            txtTcAddPrice[8] = txtTcAddPrice9;
+            txtTcAddPrice[9] = txtTcAddPrice10;
+            txtTcAddPrice[10] = txtTcAddPrice11;
+            txtTcAddPrice[11] = txtTcAddPrice12;
+            txtTcAddPrice[12] = txtTcAddPrice13;
+            txtTcAddPrice[13] = txtTcAddPrice14;
+            txtTcAddPrice[14] = txtTcAddPrice15;
+            txtTcAddPrice[15] = txtTcAddPrice16;
+            txtTcAddPrice[16] = txtTcAddPrice17;
+            txtTcAddPrice[17] = txtTcAddPrice18;
+            txtTcAddPrice[18] = txtScAddPrice19;
+            txtTcAddPrice[19] = txtTcAddPrice20;
+            #endregion
+
+            #region chkTcAutoAppend
+            chkTcAutoAppend[0] = chkTcAutoAppend1;
+            chkTcAutoAppend[1] = chkTcAutoAppend2;
+            chkTcAutoAppend[2] = chkTcAutoAppend3;
+            chkTcAutoAppend[3] = chkTcAutoAppend4;
+            chkTcAutoAppend[4] = chkTcAutoAppend5;
+            chkTcAutoAppend[5] = chkTcAutoAppend6;
+            chkTcAutoAppend[6] = chkTcAutoAppend7;
+            chkTcAutoAppend[7] = chkTcAutoAppend8;
+            chkTcAutoAppend[8] = chkTcAutoAppend9;
+            chkTcAutoAppend[9] = chkTcAutoAppend10;
+            chkTcAutoAppend[10] = chkTcAutoAppend11;
+            chkTcAutoAppend[11] = chkTcAutoAppend12;
+            chkTcAutoAppend[12] = chkTcAutoAppend13;
+            chkTcAutoAppend[13] = chkTcAutoAppend14;
+            chkTcAutoAppend[14] = chkTcAutoAppend15;
+            chkTcAutoAppend[15] = chkTcAutoAppend16;
+            chkTcAutoAppend[16] = chkTcAutoAppend17;
+            chkTcAutoAppend[17] = chkTcAutoAppend18;
+            chkTcAutoAppend[18] = chkTcAutoAppend19;
+            chkTcAutoAppend[19] = chkTcAutoAppend20;
+            #endregion
+            #endregion
+        }
+
+        private void SetTxtValue(TextEdit txtName, string txtValue)
+        {
+            
         }
     }
 }
