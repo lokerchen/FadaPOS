@@ -822,11 +822,11 @@ namespace SuperPOS.UI.TA
             TreeListNode node = treeListOrder.AppendNode(new object[]
             {
                 taOrderItemInfo.ID,
-                taOrderItemInfo.ItemID,
-                taOrderItemInfo.ItemCode,
-                taOrderItemInfo.ItemDishName,
-                taOrderItemInfo.ItemDishOtherName,
                 taOrderItemInfo.ItemQty,
+                taOrderItemInfo.ItemID,
+                taOrderItemInfo.ItemDishName,
+                taOrderItemInfo.ItemCode,
+                taOrderItemInfo.ItemDishOtherName,
                 taOrderItemInfo.ItemPrice,
                 taOrderItemInfo.ItemTotalPrice,
                 taOrderItemInfo.CheckCode,
@@ -870,11 +870,11 @@ namespace SuperPOS.UI.TA
             TreeListNode node1 = treeListOrder.AppendNode(new object[]
             {
                 taOrderItemInfo.ID,
-                taOrderItemInfo.ItemID,
-                taOrderItemInfo.ItemCode,
-                taOrderItemInfo.ItemDishName,
-                taOrderItemInfo.ItemDishOtherName,
                 taOrderItemInfo.ItemQty,
+                taOrderItemInfo.ItemID,
+                taOrderItemInfo.ItemDishName,
+                taOrderItemInfo.ItemCode,    
+                taOrderItemInfo.ItemDishOtherName,
                 taOrderItemInfo.ItemPrice,
                 taOrderItemInfo.ItemTotalPrice,
                 taOrderItemInfo.CheckCode,
