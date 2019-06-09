@@ -354,14 +354,17 @@ namespace SuperPOS.UI.TA
 
                 if (dQty > 1)
                 {
-                    treeListOrder.FocusedNode["ItemQty"] = (dQty + 1).ToString();
-                    treeListOrder.FocusedNode["ItemTotalPrice"] = ((dPrice / dQty) * (dQty + 1)).ToString();
+                    treeListOrder.FocusedNode["ItemQty"] = (dQty + 1).ToString("0.00");
+                    treeListOrder.FocusedNode["ItemTotalPrice"] = ((dPrice / dQty) * (dQty + 1)).ToString("0.00");
                 }
                 else
                 {
-                    treeListOrder.FocusedNode["ItemQty"] = (dQty + 1).ToString();
-                    treeListOrder.FocusedNode["ItemTotalPrice"] = (dPrice * 2.0m).ToString();
+                    treeListOrder.FocusedNode["ItemQty"] = (dQty + 1).ToString("0.00");
+                    treeListOrder.FocusedNode["ItemTotalPrice"] = (dPrice * 2.0m).ToString("0.00");
                 }
+
+                GetChildNodes(treeListOrder.FocusedNode, Convert.ToDecimal(treeListOrder.FocusedNode["ItemQty"]));
+
                 treeListOrder.EndUpdate();
 
                 treeListOrder.ExpandAll();
@@ -380,8 +383,10 @@ namespace SuperPOS.UI.TA
 
                 if (dQty > 1.0m)
                 {
-                    treeListOrder.FocusedNode["ItemQty"] = (dQty - 1).ToString();
-                    treeListOrder.FocusedNode["ItemTotalPrice"] = ((dPrice/dQty)*(dQty - 1)).ToString();
+                    treeListOrder.FocusedNode["ItemQty"] = (dQty - 1).ToString("0.00");
+                    treeListOrder.FocusedNode["ItemTotalPrice"] = ((dPrice/dQty)*(dQty - 1)).ToString("0.00");
+
+                    GetChildNodes(treeListOrder.FocusedNode, Convert.ToDecimal(treeListOrder.FocusedNode["ItemQty"]));
                 }
                 else
                 {
@@ -1732,5 +1737,32 @@ namespace SuperPOS.UI.TA
         }
         #endregion
 
+        #region 获得子目录,并修改对应子节点的Qty及ItemTotalPrice
+        /// <summary>
+        /// 获得子目录,并修改对应子节点的Qty及ItemTotalPrice
+        /// </summary>
+        /// <param name="parentNode">父节点</param>
+        /// <param name="dQty">父节点数量</param>
+        private void GetChildNodes(TreeListNode parentNode, decimal dQty)
+        {
+            if (parentNode.Nodes.Count > 0)
+            {
+                foreach (TreeListNode node in parentNode.Nodes)
+                {
+                    if (node.Nodes.Count == 0)
+                    {
+                        //Console.WriteLine(node.GetValue("ItemQty"));
+                        node.SetValue("ItemQty", dQty.ToString("0.00"));
+                        node.SetValue("ItemTotalPrice", (dQty * Convert.ToDecimal(node.GetValue("ItemQty"))).ToString("0.00"));
+                        
+                    }
+                    if (node.Nodes.Count > 0)
+                    {
+                        GetChildNodes(node,dQty);
+                    }
+                }
+            }
+        }
+        #endregion
     }
 }
