@@ -40,6 +40,9 @@ namespace SuperPOS.UI.TA
 
         private int miID = 1;
 
+        //Menu Item名字
+        private string miEngName = "";
+
         private int miType = 2;
 
         #region Second Choice 
@@ -478,9 +481,12 @@ namespace SuperPOS.UI.TA
 
         private void gvMenuItem_FocusedRowChanged(object sender, DevExpress.XtraGrid.Views.Base.FocusedRowChangedEventArgs e)
         {
-            if (gvMenuItem.GetRowCellValue(gvMenuItem.FocusedRowHandle, "MiDishCode") != null) miID = Convert.ToInt32(gvMenuItem.GetRowCellValue(gvMenuItem.FocusedRowHandle, "ID"));
+            if (gvMenuItem.GetRowCellValue(gvMenuItem.FocusedRowHandle, "MiDishCode") != null)
+                miID = Convert.ToInt32(gvMenuItem.GetRowCellValue(gvMenuItem.FocusedRowHandle, "ID"));
             txtDishCode.Text = gvMenuItem.GetRowCellValue(gvMenuItem.FocusedRowHandle, "MiDishCode") == null ? "" : gvMenuItem.GetRowCellValue(gvMenuItem.FocusedRowHandle, "MiDishCode").ToString();
             txtDispPosition.Text = gvMenuItem.GetRowCellValue(gvMenuItem.FocusedRowHandle, "MiPosition") == null ? "" : gvMenuItem.GetRowCellValue(gvMenuItem.FocusedRowHandle, "MiPosition").ToString();
+            if (gvMenuItem.GetRowCellValue(gvMenuItem.FocusedRowHandle, "MiEngName") != null)
+                miEngName = gvMenuItem.GetRowCellValue(gvMenuItem.FocusedRowHandle, "MiEngName").ToString();
             txtEngName.Text = gvMenuItem.GetRowCellValue(gvMenuItem.FocusedRowHandle, "MiEngName") == null ? "" : gvMenuItem.GetRowCellValue(gvMenuItem.FocusedRowHandle, "MiEngName").ToString();
             txtOtherName.Text = gvMenuItem.GetRowCellValue(gvMenuItem.FocusedRowHandle, "MiOtherName") == null ? "" : gvMenuItem.GetRowCellValue(gvMenuItem.FocusedRowHandle, "MiOtherName").ToString();
             txtRegularPrice.Text = gvMenuItem.GetRowCellValue(gvMenuItem.FocusedRowHandle, "MiRegularPrice").ToString();
@@ -503,7 +509,7 @@ namespace SuperPOS.UI.TA
             chk2.Checked = false;
             chk3.Checked = false;
             if (strRmk.Contains("Without VAT")) chk1.Checked = true;
-            if (strRmk.Contains("Set Meal")) chk1.Checked = true;
+            if (strRmk.Contains("Set Meal")) chk2.Checked = true;
             if (strRmk.Contains("Discountable")) chk3.Checked = true;
             
             txtLargePrice.Text = gvMenuItem.GetRowCellValue(gvMenuItem.FocusedRowHandle, "MiLargePrice") == null ? "" : gvMenuItem.GetRowCellValue(gvMenuItem.FocusedRowHandle, "MiLargePrice").ToString();
@@ -682,7 +688,8 @@ namespace SuperPOS.UI.TA
         {
             miType = SelectPage(e.Page.Name);
 
-            BindOtherChoice(miType, miID);
+            if (miType != 4) BindOtherChoice(miType, miID);
+            else BindSubMenu(miID);
         }
 
         #region 根据Tab Page判断MenuItem类型
@@ -695,6 +702,7 @@ namespace SuperPOS.UI.TA
         {
             if (pageName.Equals("xtpSc")) return 2;
             else if (pageName.Equals("xtpTc")) return 3;
+            else if (pageName.Equals("xtpSm")) return 4;
             else return 2;
         }
         #endregion
@@ -1039,6 +1047,82 @@ namespace SuperPOS.UI.TA
             txtSmOtherName[14] = txtSmOtherName15;
             #endregion
             #endregion
+        }
+
+        private void BindSubMenu(int miID)
+        {
+            new SystemData().GetTaMenuItemSubMenu();
+
+            var lstSm = CommonData.TaMenuItemSubMenu.Where(s => s.SmMiID == miID);
+
+            if (!string.IsNullOrEmpty(miEngName)) lblSubMenuName.Text = miEngName;
+            int i = 0;
+
+            if (lstSm.Any())
+            {
+                chkSmAutoExpand.Checked = lstSm.FirstOrDefault().IsAutoExpand.Equals("Y");
+                chkSmShowContentOnPrtOut.Checked = lstSm.FirstOrDefault().IsShowContentOnPrtOut.Equals("Y")
+                    ? true
+                    : false;
+            }
+            else
+            {
+                chkSmAutoExpand.Checked = false;
+                chkSmShowContentOnPrtOut.Checked = false;
+            }
+
+            foreach (var taMenuItemSubMenuInfo in lstSm)
+            {
+                txtSmEngName[i].Text = taMenuItemSubMenuInfo.SmEngName;
+                txtSmOtherName[i].Text = taMenuItemSubMenuInfo.SmOtherName;
+                i++;
+            }
+
+            for (int j = i; j < 15; j++)
+            {
+                txtSmEngName[j].Text = "";
+                txtSmOtherName[j].Text = "";
+            }
+        }
+
+        private void btnSmExit_Click(object sender, EventArgs e)
+        {
+            Close();
+        }
+
+        private void btnSmSave_Click(object sender, EventArgs e)
+        {
+            new SystemData().GetTaMenuItemSubMenu();
+
+            var lstSm = CommonData.TaMenuItemSubMenu.Where(s => s.SmMiID == miID);
+
+            foreach (var taMenuItemSubMenuInfo in lstSm)
+            {
+                _control.DeleteEntity(taMenuItemSubMenuInfo);
+            }
+
+            for (int i = 0; i < 15; i++)
+            {
+                //增加判断是否为一条正常记录：English Name + Other Name + Add Price
+                if (string.IsNullOrEmpty(txtSmEngName[i].Text) && string.IsNullOrEmpty(txtSmEngName[i].Text)) continue;
+
+                try
+                {
+                    TaMenuItemSubMenuInfo taMenuItemSubMenuInfo = new TaMenuItemSubMenuInfo();
+
+                    taMenuItemSubMenuInfo.SmEngName = txtSmEngName[i].Text;
+                    taMenuItemSubMenuInfo.SmOtherName = txtSmOtherName[i].Text;
+                    taMenuItemSubMenuInfo.IsAutoExpand = chkSmAutoExpand.Checked ? "Y" : "N";
+                    taMenuItemSubMenuInfo.IsShowContentOnPrtOut = chkSmShowContentOnPrtOut.Checked ? "Y" : "N";
+                    taMenuItemSubMenuInfo.SmMiID = miID;
+
+                    _control.AddEntity(taMenuItemSubMenuInfo);
+                }
+                catch (Exception ex) { LogHelper.Error(this.Name, ex); }
+            }
+
+            BindSubMenu(miID);
+            CommonTool.ShowMessage("Save successful!");
         }
     }
 }

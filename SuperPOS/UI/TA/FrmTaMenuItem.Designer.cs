@@ -3421,6 +3421,7 @@
             this.btnSmExit.Size = new System.Drawing.Size(95, 94);
             this.btnSmExit.TabIndex = 3;
             this.btnSmExit.Text = "Exit";
+            this.btnSmExit.Click += new System.EventHandler(this.btnSmExit_Click);
             // 
             // btnSmSave
             // 
@@ -3436,6 +3437,7 @@
             this.btnSmSave.Size = new System.Drawing.Size(95, 94);
             this.btnSmSave.TabIndex = 1;
             this.btnSmSave.Text = "Save";
+            this.btnSmSave.Click += new System.EventHandler(this.btnSmSave_Click);
             // 
             // chkSmAutoExpand
             // 

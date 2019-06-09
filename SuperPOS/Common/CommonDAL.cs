@@ -79,7 +79,8 @@ namespace SuperPOS.Common
             systemData.GetTaMenuItem();
             //Menu Item Other Choice
             systemData.GetTaMenuItemOtherChoice();
-            //Order Item
+            //Menu Item Sub Menu
+            systemData.GetTaMenuItemSubMenu();//Order Item
             systemData.GetTaOrderItem();
             //Check Order
             systemData.GetTaCheckOrder();
