@@ -31,6 +31,7 @@
             this.xtpUsrAccess = new DevExpress.XtraTab.XtraTabControl();
             this.xtpDa = new DevExpress.XtraTab.XtraTabPage();
             this.panelControl3 = new DevExpress.XtraEditors.PanelControl();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
             this.btnUp = new System.Windows.Forms.Button();
             this.btnDown = new System.Windows.Forms.Button();
@@ -298,12 +299,53 @@
             this.btnTcExit = new DevExpress.XtraEditors.SimpleButton();
             this.btnTcSave = new DevExpress.XtraEditors.SimpleButton();
             this.xtpSm = new DevExpress.XtraTab.XtraTabPage();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.panelControl10 = new DevExpress.XtraEditors.PanelControl();
+            this.txtSmOtherName15 = new DevExpress.XtraEditors.TextEdit();
+            this.txtSmEngName15 = new DevExpress.XtraEditors.TextEdit();
+            this.txtSmOtherName14 = new DevExpress.XtraEditors.TextEdit();
+            this.txtSmEngName14 = new DevExpress.XtraEditors.TextEdit();
+            this.txtSmOtherName13 = new DevExpress.XtraEditors.TextEdit();
+            this.txtSmEngName13 = new DevExpress.XtraEditors.TextEdit();
+            this.txtSmOtherName12 = new DevExpress.XtraEditors.TextEdit();
+            this.txtSmEngName12 = new DevExpress.XtraEditors.TextEdit();
+            this.txtSmOtherName11 = new DevExpress.XtraEditors.TextEdit();
+            this.txtSmEngName11 = new DevExpress.XtraEditors.TextEdit();
+            this.txtSmOtherName10 = new DevExpress.XtraEditors.TextEdit();
+            this.txtSmEngName10 = new DevExpress.XtraEditors.TextEdit();
+            this.txtSmOtherName9 = new DevExpress.XtraEditors.TextEdit();
+            this.txtSmEngName9 = new DevExpress.XtraEditors.TextEdit();
+            this.txtSmOtherName8 = new DevExpress.XtraEditors.TextEdit();
+            this.txtSmEngName8 = new DevExpress.XtraEditors.TextEdit();
+            this.txtSmOtherName7 = new DevExpress.XtraEditors.TextEdit();
+            this.txtSmEngName7 = new DevExpress.XtraEditors.TextEdit();
+            this.txtSmOtherName6 = new DevExpress.XtraEditors.TextEdit();
+            this.txtSmEngName6 = new DevExpress.XtraEditors.TextEdit();
+            this.txtSmOtherName5 = new DevExpress.XtraEditors.TextEdit();
+            this.txtSmEngName5 = new DevExpress.XtraEditors.TextEdit();
+            this.txtSmOtherName4 = new DevExpress.XtraEditors.TextEdit();
+            this.txtSmEngName4 = new DevExpress.XtraEditors.TextEdit();
+            this.txtSmOtherName3 = new DevExpress.XtraEditors.TextEdit();
+            this.txtSmEngName3 = new DevExpress.XtraEditors.TextEdit();
+            this.txtSmOtherName2 = new DevExpress.XtraEditors.TextEdit();
+            this.txtSmEngName2 = new DevExpress.XtraEditors.TextEdit();
+            this.txtSmOtherName1 = new DevExpress.XtraEditors.TextEdit();
+            this.labelControl33 = new DevExpress.XtraEditors.LabelControl();
+            this.txtSmEngName1 = new DevExpress.XtraEditors.TextEdit();
+            this.labelControl34 = new DevExpress.XtraEditors.LabelControl();
+            this.panelControl11 = new DevExpress.XtraEditors.PanelControl();
+            this.btnSmExit = new DevExpress.XtraEditors.SimpleButton();
+            this.btnSmSave = new DevExpress.XtraEditors.SimpleButton();
+            this.chkSmAutoExpand = new DevExpress.XtraEditors.CheckEdit();
+            this.chkSmShowContentOnPrtOut = new DevExpress.XtraEditors.CheckEdit();
+            this.labelControl30 = new DevExpress.XtraEditors.LabelControl();
+            this.labelControl31 = new DevExpress.XtraEditors.LabelControl();
+            this.lblSubMenuName = new DevExpress.XtraEditors.LabelControl();
             ((System.ComponentModel.ISupportInitialize)(this.xtpUsrAccess)).BeginInit();
             this.xtpUsrAccess.SuspendLayout();
             this.xtpDa.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl3)).BeginInit();
             this.panelControl3.SuspendLayout();
+            this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
             this.panelControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl5)).BeginInit();
@@ -510,7 +552,43 @@
             ((System.ComponentModel.ISupportInitialize)(this.txtTcEngName1.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl9)).BeginInit();
             this.panelControl9.SuspendLayout();
-            this.groupBox1.SuspendLayout();
+            this.xtpSm.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.panelControl10)).BeginInit();
+            this.panelControl10.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.txtSmOtherName15.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtSmEngName15.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtSmOtherName14.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtSmEngName14.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtSmOtherName13.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtSmEngName13.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtSmOtherName12.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtSmEngName12.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtSmOtherName11.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtSmEngName11.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtSmOtherName10.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtSmEngName10.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtSmOtherName9.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtSmEngName9.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtSmOtherName8.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtSmEngName8.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtSmOtherName7.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtSmEngName7.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtSmOtherName6.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtSmEngName6.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtSmOtherName5.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtSmEngName5.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtSmOtherName4.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtSmEngName4.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtSmOtherName3.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtSmEngName3.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtSmOtherName2.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtSmEngName2.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtSmOtherName1.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtSmEngName1.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.panelControl11)).BeginInit();
+            this.panelControl11.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.chkSmAutoExpand.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.chkSmShowContentOnPrtOut.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // xtpUsrAccess
@@ -542,6 +620,19 @@
             this.panelControl3.Name = "panelControl3";
             this.panelControl3.Size = new System.Drawing.Size(843, 659);
             this.panelControl3.TabIndex = 1;
+            // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.panelControl1);
+            this.groupBox1.Font = new System.Drawing.Font("Tahoma", 13F);
+            this.groupBox1.Location = new System.Drawing.Point(5, 6);
+            this.groupBox1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Padding = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.groupBox1.Size = new System.Drawing.Size(828, 647);
+            this.groupBox1.TabIndex = 47;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Menu Item";
             // 
             // panelControl1
             // 
@@ -3031,22 +3122,361 @@
             // 
             // xtpSm
             // 
+            this.xtpSm.Controls.Add(this.panelControl10);
             this.xtpSm.Name = "xtpSm";
             this.xtpSm.Size = new System.Drawing.Size(1011, 707);
             this.xtpSm.Text = "Sub Menu";
             // 
-            // groupBox1
+            // panelControl10
             // 
-            this.groupBox1.Controls.Add(this.panelControl1);
-            this.groupBox1.Font = new System.Drawing.Font("Tahoma", 13F);
-            this.groupBox1.Location = new System.Drawing.Point(5, 6);
-            this.groupBox1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Padding = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.groupBox1.Size = new System.Drawing.Size(828, 647);
-            this.groupBox1.TabIndex = 47;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Menu Item";
+            this.panelControl10.Controls.Add(this.lblSubMenuName);
+            this.panelControl10.Controls.Add(this.labelControl31);
+            this.panelControl10.Controls.Add(this.labelControl30);
+            this.panelControl10.Controls.Add(this.chkSmShowContentOnPrtOut);
+            this.panelControl10.Controls.Add(this.chkSmAutoExpand);
+            this.panelControl10.Controls.Add(this.txtSmOtherName15);
+            this.panelControl10.Controls.Add(this.txtSmEngName15);
+            this.panelControl10.Controls.Add(this.txtSmOtherName14);
+            this.panelControl10.Controls.Add(this.txtSmEngName14);
+            this.panelControl10.Controls.Add(this.txtSmOtherName13);
+            this.panelControl10.Controls.Add(this.txtSmEngName13);
+            this.panelControl10.Controls.Add(this.txtSmOtherName12);
+            this.panelControl10.Controls.Add(this.txtSmEngName12);
+            this.panelControl10.Controls.Add(this.txtSmOtherName11);
+            this.panelControl10.Controls.Add(this.txtSmEngName11);
+            this.panelControl10.Controls.Add(this.txtSmOtherName10);
+            this.panelControl10.Controls.Add(this.txtSmEngName10);
+            this.panelControl10.Controls.Add(this.txtSmOtherName9);
+            this.panelControl10.Controls.Add(this.txtSmEngName9);
+            this.panelControl10.Controls.Add(this.txtSmOtherName8);
+            this.panelControl10.Controls.Add(this.txtSmEngName8);
+            this.panelControl10.Controls.Add(this.txtSmOtherName7);
+            this.panelControl10.Controls.Add(this.txtSmEngName7);
+            this.panelControl10.Controls.Add(this.txtSmOtherName6);
+            this.panelControl10.Controls.Add(this.txtSmEngName6);
+            this.panelControl10.Controls.Add(this.txtSmOtherName5);
+            this.panelControl10.Controls.Add(this.txtSmEngName5);
+            this.panelControl10.Controls.Add(this.txtSmOtherName4);
+            this.panelControl10.Controls.Add(this.txtSmEngName4);
+            this.panelControl10.Controls.Add(this.txtSmOtherName3);
+            this.panelControl10.Controls.Add(this.txtSmEngName3);
+            this.panelControl10.Controls.Add(this.txtSmOtherName2);
+            this.panelControl10.Controls.Add(this.txtSmEngName2);
+            this.panelControl10.Controls.Add(this.txtSmOtherName1);
+            this.panelControl10.Controls.Add(this.labelControl33);
+            this.panelControl10.Controls.Add(this.txtSmEngName1);
+            this.panelControl10.Controls.Add(this.labelControl34);
+            this.panelControl10.Controls.Add(this.panelControl11);
+            this.panelControl10.Location = new System.Drawing.Point(1, 1);
+            this.panelControl10.Name = "panelControl10";
+            this.panelControl10.Size = new System.Drawing.Size(1008, 704);
+            this.panelControl10.TabIndex = 3;
+            // 
+            // txtSmOtherName15
+            // 
+            this.txtSmOtherName15.Location = new System.Drawing.Point(521, 501);
+            this.txtSmOtherName15.Name = "txtSmOtherName15";
+            this.txtSmOtherName15.Size = new System.Drawing.Size(127, 24);
+            this.txtSmOtherName15.TabIndex = 75;
+            // 
+            // txtSmEngName15
+            // 
+            this.txtSmEngName15.Location = new System.Drawing.Point(376, 501);
+            this.txtSmEngName15.Name = "txtSmEngName15";
+            this.txtSmEngName15.Size = new System.Drawing.Size(127, 24);
+            this.txtSmEngName15.TabIndex = 74;
+            // 
+            // txtSmOtherName14
+            // 
+            this.txtSmOtherName14.Location = new System.Drawing.Point(521, 471);
+            this.txtSmOtherName14.Name = "txtSmOtherName14";
+            this.txtSmOtherName14.Size = new System.Drawing.Size(127, 24);
+            this.txtSmOtherName14.TabIndex = 71;
+            // 
+            // txtSmEngName14
+            // 
+            this.txtSmEngName14.Location = new System.Drawing.Point(376, 471);
+            this.txtSmEngName14.Name = "txtSmEngName14";
+            this.txtSmEngName14.Size = new System.Drawing.Size(127, 24);
+            this.txtSmEngName14.TabIndex = 70;
+            // 
+            // txtSmOtherName13
+            // 
+            this.txtSmOtherName13.Location = new System.Drawing.Point(521, 441);
+            this.txtSmOtherName13.Name = "txtSmOtherName13";
+            this.txtSmOtherName13.Size = new System.Drawing.Size(127, 24);
+            this.txtSmOtherName13.TabIndex = 67;
+            // 
+            // txtSmEngName13
+            // 
+            this.txtSmEngName13.Location = new System.Drawing.Point(376, 441);
+            this.txtSmEngName13.Name = "txtSmEngName13";
+            this.txtSmEngName13.Size = new System.Drawing.Size(127, 24);
+            this.txtSmEngName13.TabIndex = 66;
+            // 
+            // txtSmOtherName12
+            // 
+            this.txtSmOtherName12.Location = new System.Drawing.Point(521, 411);
+            this.txtSmOtherName12.Name = "txtSmOtherName12";
+            this.txtSmOtherName12.Size = new System.Drawing.Size(127, 24);
+            this.txtSmOtherName12.TabIndex = 63;
+            // 
+            // txtSmEngName12
+            // 
+            this.txtSmEngName12.Location = new System.Drawing.Point(376, 411);
+            this.txtSmEngName12.Name = "txtSmEngName12";
+            this.txtSmEngName12.Size = new System.Drawing.Size(127, 24);
+            this.txtSmEngName12.TabIndex = 62;
+            // 
+            // txtSmOtherName11
+            // 
+            this.txtSmOtherName11.Location = new System.Drawing.Point(521, 381);
+            this.txtSmOtherName11.Name = "txtSmOtherName11";
+            this.txtSmOtherName11.Size = new System.Drawing.Size(127, 24);
+            this.txtSmOtherName11.TabIndex = 59;
+            // 
+            // txtSmEngName11
+            // 
+            this.txtSmEngName11.Location = new System.Drawing.Point(376, 381);
+            this.txtSmEngName11.Name = "txtSmEngName11";
+            this.txtSmEngName11.Size = new System.Drawing.Size(127, 24);
+            this.txtSmEngName11.TabIndex = 58;
+            // 
+            // txtSmOtherName10
+            // 
+            this.txtSmOtherName10.Location = new System.Drawing.Point(521, 351);
+            this.txtSmOtherName10.Name = "txtSmOtherName10";
+            this.txtSmOtherName10.Size = new System.Drawing.Size(127, 24);
+            this.txtSmOtherName10.TabIndex = 55;
+            // 
+            // txtSmEngName10
+            // 
+            this.txtSmEngName10.Location = new System.Drawing.Point(376, 351);
+            this.txtSmEngName10.Name = "txtSmEngName10";
+            this.txtSmEngName10.Size = new System.Drawing.Size(127, 24);
+            this.txtSmEngName10.TabIndex = 54;
+            // 
+            // txtSmOtherName9
+            // 
+            this.txtSmOtherName9.Location = new System.Drawing.Point(521, 321);
+            this.txtSmOtherName9.Name = "txtSmOtherName9";
+            this.txtSmOtherName9.Size = new System.Drawing.Size(127, 24);
+            this.txtSmOtherName9.TabIndex = 51;
+            // 
+            // txtSmEngName9
+            // 
+            this.txtSmEngName9.Location = new System.Drawing.Point(376, 321);
+            this.txtSmEngName9.Name = "txtSmEngName9";
+            this.txtSmEngName9.Size = new System.Drawing.Size(127, 24);
+            this.txtSmEngName9.TabIndex = 50;
+            // 
+            // txtSmOtherName8
+            // 
+            this.txtSmOtherName8.Location = new System.Drawing.Point(521, 291);
+            this.txtSmOtherName8.Name = "txtSmOtherName8";
+            this.txtSmOtherName8.Size = new System.Drawing.Size(127, 24);
+            this.txtSmOtherName8.TabIndex = 47;
+            // 
+            // txtSmEngName8
+            // 
+            this.txtSmEngName8.Location = new System.Drawing.Point(376, 291);
+            this.txtSmEngName8.Name = "txtSmEngName8";
+            this.txtSmEngName8.Size = new System.Drawing.Size(127, 24);
+            this.txtSmEngName8.TabIndex = 46;
+            // 
+            // txtSmOtherName7
+            // 
+            this.txtSmOtherName7.Location = new System.Drawing.Point(521, 261);
+            this.txtSmOtherName7.Name = "txtSmOtherName7";
+            this.txtSmOtherName7.Size = new System.Drawing.Size(127, 24);
+            this.txtSmOtherName7.TabIndex = 43;
+            // 
+            // txtSmEngName7
+            // 
+            this.txtSmEngName7.Location = new System.Drawing.Point(376, 261);
+            this.txtSmEngName7.Name = "txtSmEngName7";
+            this.txtSmEngName7.Size = new System.Drawing.Size(127, 24);
+            this.txtSmEngName7.TabIndex = 42;
+            // 
+            // txtSmOtherName6
+            // 
+            this.txtSmOtherName6.Location = new System.Drawing.Point(521, 231);
+            this.txtSmOtherName6.Name = "txtSmOtherName6";
+            this.txtSmOtherName6.Size = new System.Drawing.Size(127, 24);
+            this.txtSmOtherName6.TabIndex = 39;
+            // 
+            // txtSmEngName6
+            // 
+            this.txtSmEngName6.Location = new System.Drawing.Point(376, 231);
+            this.txtSmEngName6.Name = "txtSmEngName6";
+            this.txtSmEngName6.Size = new System.Drawing.Size(127, 24);
+            this.txtSmEngName6.TabIndex = 38;
+            // 
+            // txtSmOtherName5
+            // 
+            this.txtSmOtherName5.Location = new System.Drawing.Point(521, 201);
+            this.txtSmOtherName5.Name = "txtSmOtherName5";
+            this.txtSmOtherName5.Size = new System.Drawing.Size(127, 24);
+            this.txtSmOtherName5.TabIndex = 35;
+            // 
+            // txtSmEngName5
+            // 
+            this.txtSmEngName5.Location = new System.Drawing.Point(376, 201);
+            this.txtSmEngName5.Name = "txtSmEngName5";
+            this.txtSmEngName5.Size = new System.Drawing.Size(127, 24);
+            this.txtSmEngName5.TabIndex = 34;
+            // 
+            // txtSmOtherName4
+            // 
+            this.txtSmOtherName4.Location = new System.Drawing.Point(521, 171);
+            this.txtSmOtherName4.Name = "txtSmOtherName4";
+            this.txtSmOtherName4.Size = new System.Drawing.Size(127, 24);
+            this.txtSmOtherName4.TabIndex = 31;
+            // 
+            // txtSmEngName4
+            // 
+            this.txtSmEngName4.Location = new System.Drawing.Point(376, 171);
+            this.txtSmEngName4.Name = "txtSmEngName4";
+            this.txtSmEngName4.Size = new System.Drawing.Size(127, 24);
+            this.txtSmEngName4.TabIndex = 30;
+            // 
+            // txtSmOtherName3
+            // 
+            this.txtSmOtherName3.Location = new System.Drawing.Point(521, 141);
+            this.txtSmOtherName3.Name = "txtSmOtherName3";
+            this.txtSmOtherName3.Size = new System.Drawing.Size(127, 24);
+            this.txtSmOtherName3.TabIndex = 27;
+            // 
+            // txtSmEngName3
+            // 
+            this.txtSmEngName3.Location = new System.Drawing.Point(376, 141);
+            this.txtSmEngName3.Name = "txtSmEngName3";
+            this.txtSmEngName3.Size = new System.Drawing.Size(127, 24);
+            this.txtSmEngName3.TabIndex = 26;
+            // 
+            // txtSmOtherName2
+            // 
+            this.txtSmOtherName2.Location = new System.Drawing.Point(521, 111);
+            this.txtSmOtherName2.Name = "txtSmOtherName2";
+            this.txtSmOtherName2.Size = new System.Drawing.Size(127, 24);
+            this.txtSmOtherName2.TabIndex = 23;
+            // 
+            // txtSmEngName2
+            // 
+            this.txtSmEngName2.Location = new System.Drawing.Point(376, 111);
+            this.txtSmEngName2.Name = "txtSmEngName2";
+            this.txtSmEngName2.Size = new System.Drawing.Size(127, 24);
+            this.txtSmEngName2.TabIndex = 22;
+            // 
+            // txtSmOtherName1
+            // 
+            this.txtSmOtherName1.Location = new System.Drawing.Point(521, 81);
+            this.txtSmOtherName1.Name = "txtSmOtherName1";
+            this.txtSmOtherName1.Size = new System.Drawing.Size(127, 24);
+            this.txtSmOtherName1.TabIndex = 14;
+            // 
+            // labelControl33
+            // 
+            this.labelControl33.Location = new System.Drawing.Point(521, 57);
+            this.labelControl33.Name = "labelControl33";
+            this.labelControl33.Size = new System.Drawing.Size(81, 18);
+            this.labelControl33.TabIndex = 13;
+            this.labelControl33.Text = "Other Name";
+            // 
+            // txtSmEngName1
+            // 
+            this.txtSmEngName1.Location = new System.Drawing.Point(376, 81);
+            this.txtSmEngName1.Name = "txtSmEngName1";
+            this.txtSmEngName1.Size = new System.Drawing.Size(127, 24);
+            this.txtSmEngName1.TabIndex = 11;
+            // 
+            // labelControl34
+            // 
+            this.labelControl34.Location = new System.Drawing.Point(376, 57);
+            this.labelControl34.Name = "labelControl34";
+            this.labelControl34.Size = new System.Drawing.Size(87, 18);
+            this.labelControl34.TabIndex = 9;
+            this.labelControl34.Text = "English Name";
+            // 
+            // panelControl11
+            // 
+            this.panelControl11.Controls.Add(this.btnSmExit);
+            this.panelControl11.Controls.Add(this.btnSmSave);
+            this.panelControl11.Location = new System.Drawing.Point(658, 523);
+            this.panelControl11.Name = "panelControl11";
+            this.panelControl11.Size = new System.Drawing.Size(274, 122);
+            this.panelControl11.TabIndex = 15;
+            // 
+            // btnSmExit
+            // 
+            this.btnSmExit.Appearance.BackColor = System.Drawing.Color.Green;
+            this.btnSmExit.Appearance.Font = new System.Drawing.Font("Tahoma", 12F);
+            this.btnSmExit.Appearance.ForeColor = System.Drawing.Color.White;
+            this.btnSmExit.Appearance.Options.UseBackColor = true;
+            this.btnSmExit.Appearance.Options.UseFont = true;
+            this.btnSmExit.Appearance.Options.UseForeColor = true;
+            this.btnSmExit.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
+            this.btnSmExit.Location = new System.Drawing.Point(141, 12);
+            this.btnSmExit.Name = "btnSmExit";
+            this.btnSmExit.Size = new System.Drawing.Size(95, 94);
+            this.btnSmExit.TabIndex = 3;
+            this.btnSmExit.Text = "Exit";
+            // 
+            // btnSmSave
+            // 
+            this.btnSmSave.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
+            this.btnSmSave.Appearance.Font = new System.Drawing.Font("Tahoma", 12F);
+            this.btnSmSave.Appearance.ForeColor = System.Drawing.Color.White;
+            this.btnSmSave.Appearance.Options.UseBackColor = true;
+            this.btnSmSave.Appearance.Options.UseFont = true;
+            this.btnSmSave.Appearance.Options.UseForeColor = true;
+            this.btnSmSave.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
+            this.btnSmSave.Location = new System.Drawing.Point(23, 12);
+            this.btnSmSave.Name = "btnSmSave";
+            this.btnSmSave.Size = new System.Drawing.Size(95, 94);
+            this.btnSmSave.TabIndex = 1;
+            this.btnSmSave.Text = "Save";
+            // 
+            // chkSmAutoExpand
+            // 
+            this.chkSmAutoExpand.Location = new System.Drawing.Point(30, 358);
+            this.chkSmAutoExpand.Name = "chkSmAutoExpand";
+            this.chkSmAutoExpand.Properties.Caption = "Auto Expand";
+            this.chkSmAutoExpand.Size = new System.Drawing.Size(172, 22);
+            this.chkSmAutoExpand.TabIndex = 76;
+            // 
+            // chkSmShowContentOnPrtOut
+            // 
+            this.chkSmShowContentOnPrtOut.Location = new System.Drawing.Point(30, 401);
+            this.chkSmShowContentOnPrtOut.Name = "chkSmShowContentOnPrtOut";
+            this.chkSmShowContentOnPrtOut.Properties.Caption = "Show content on print out";
+            this.chkSmShowContentOnPrtOut.Size = new System.Drawing.Size(205, 22);
+            this.chkSmShowContentOnPrtOut.TabIndex = 77;
+            // 
+            // labelControl30
+            // 
+            this.labelControl30.Location = new System.Drawing.Point(30, 430);
+            this.labelControl30.Name = "labelControl30";
+            this.labelControl30.Size = new System.Drawing.Size(279, 18);
+            this.labelControl30.TabIndex = 78;
+            this.labelControl30.Text = "Only show the sub item contens on screen";
+            // 
+            // labelControl31
+            // 
+            this.labelControl31.Location = new System.Drawing.Point(30, 453);
+            this.labelControl31.Name = "labelControl31";
+            this.labelControl31.Size = new System.Drawing.Size(127, 18);
+            this.labelControl31.TabIndex = 79;
+            this.labelControl31.Text = "but not on print out";
+            // 
+            // lblSubMenuName
+            // 
+            this.lblSubMenuName.Appearance.Font = new System.Drawing.Font("Tahoma", 15F);
+            this.lblSubMenuName.Location = new System.Drawing.Point(376, 20);
+            this.lblSubMenuName.Name = "lblSubMenuName";
+            this.lblSubMenuName.Size = new System.Drawing.Size(172, 30);
+            this.lblSubMenuName.TabIndex = 80;
+            this.lblSubMenuName.Text = "Only show time";
             // 
             // FrmTaMenuItem
             // 
@@ -3066,6 +3496,7 @@
             this.xtpDa.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.panelControl3)).EndInit();
             this.panelControl3.ResumeLayout(false);
+            this.groupBox1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).EndInit();
             this.panelControl1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.panelControl5)).EndInit();
@@ -3276,7 +3707,44 @@
             ((System.ComponentModel.ISupportInitialize)(this.txtTcEngName1.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl9)).EndInit();
             this.panelControl9.ResumeLayout(false);
-            this.groupBox1.ResumeLayout(false);
+            this.xtpSm.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.panelControl10)).EndInit();
+            this.panelControl10.ResumeLayout(false);
+            this.panelControl10.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.txtSmOtherName15.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtSmEngName15.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtSmOtherName14.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtSmEngName14.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtSmOtherName13.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtSmEngName13.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtSmOtherName12.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtSmEngName12.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtSmOtherName11.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtSmEngName11.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtSmOtherName10.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtSmEngName10.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtSmOtherName9.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtSmEngName9.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtSmOtherName8.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtSmEngName8.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtSmOtherName7.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtSmEngName7.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtSmOtherName6.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtSmEngName6.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtSmOtherName5.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtSmEngName5.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtSmOtherName4.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtSmEngName4.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtSmOtherName3.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtSmEngName3.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtSmOtherName2.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtSmEngName2.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtSmOtherName1.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtSmEngName1.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.panelControl11)).EndInit();
+            this.panelControl11.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.chkSmAutoExpand.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.chkSmShowContentOnPrtOut.Properties)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -3554,5 +4022,46 @@
         private DevExpress.XtraEditors.SimpleButton btnTcExit;
         private DevExpress.XtraEditors.SimpleButton btnTcSave;
         private System.Windows.Forms.GroupBox groupBox1;
+        private DevExpress.XtraEditors.PanelControl panelControl10;
+        private DevExpress.XtraEditors.LabelControl labelControl31;
+        private DevExpress.XtraEditors.LabelControl labelControl30;
+        private DevExpress.XtraEditors.CheckEdit chkSmShowContentOnPrtOut;
+        private DevExpress.XtraEditors.CheckEdit chkSmAutoExpand;
+        private DevExpress.XtraEditors.TextEdit txtSmOtherName15;
+        private DevExpress.XtraEditors.TextEdit txtSmEngName15;
+        private DevExpress.XtraEditors.TextEdit txtSmOtherName14;
+        private DevExpress.XtraEditors.TextEdit txtSmEngName14;
+        private DevExpress.XtraEditors.TextEdit txtSmOtherName13;
+        private DevExpress.XtraEditors.TextEdit txtSmEngName13;
+        private DevExpress.XtraEditors.TextEdit txtSmOtherName12;
+        private DevExpress.XtraEditors.TextEdit txtSmEngName12;
+        private DevExpress.XtraEditors.TextEdit txtSmOtherName11;
+        private DevExpress.XtraEditors.TextEdit txtSmEngName11;
+        private DevExpress.XtraEditors.TextEdit txtSmOtherName10;
+        private DevExpress.XtraEditors.TextEdit txtSmEngName10;
+        private DevExpress.XtraEditors.TextEdit txtSmOtherName9;
+        private DevExpress.XtraEditors.TextEdit txtSmEngName9;
+        private DevExpress.XtraEditors.TextEdit txtSmOtherName8;
+        private DevExpress.XtraEditors.TextEdit txtSmEngName8;
+        private DevExpress.XtraEditors.TextEdit txtSmOtherName7;
+        private DevExpress.XtraEditors.TextEdit txtSmEngName7;
+        private DevExpress.XtraEditors.TextEdit txtSmOtherName6;
+        private DevExpress.XtraEditors.TextEdit txtSmEngName6;
+        private DevExpress.XtraEditors.TextEdit txtSmOtherName5;
+        private DevExpress.XtraEditors.TextEdit txtSmEngName5;
+        private DevExpress.XtraEditors.TextEdit txtSmOtherName4;
+        private DevExpress.XtraEditors.TextEdit txtSmEngName4;
+        private DevExpress.XtraEditors.TextEdit txtSmOtherName3;
+        private DevExpress.XtraEditors.TextEdit txtSmEngName3;
+        private DevExpress.XtraEditors.TextEdit txtSmOtherName2;
+        private DevExpress.XtraEditors.TextEdit txtSmEngName2;
+        private DevExpress.XtraEditors.TextEdit txtSmOtherName1;
+        private DevExpress.XtraEditors.LabelControl labelControl33;
+        private DevExpress.XtraEditors.TextEdit txtSmEngName1;
+        private DevExpress.XtraEditors.LabelControl labelControl34;
+        private DevExpress.XtraEditors.PanelControl panelControl11;
+        private DevExpress.XtraEditors.SimpleButton btnSmExit;
+        private DevExpress.XtraEditors.SimpleButton btnSmSave;
+        private DevExpress.XtraEditors.LabelControl lblSubMenuName;
     }
 }

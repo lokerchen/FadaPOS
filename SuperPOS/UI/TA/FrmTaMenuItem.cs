@@ -64,6 +64,11 @@ namespace SuperPOS.UI.TA
         private CheckEdit[] chkTcAutoAppend = new CheckEdit[20];
         #endregion
 
+        #region Sub Menu
+        private TextEdit[] txtSmEngName = new TextEdit[15];
+        private TextEdit[] txtSmOtherName = new TextEdit[15];
+        #endregion
+
         public FrmTaMenuItem()
         {
             InitializeComponent();
@@ -996,11 +1001,44 @@ namespace SuperPOS.UI.TA
             chkTcAutoAppend[19] = chkTcAutoAppend20;
             #endregion
             #endregion
-        }
 
-        private void SetTxtValue(TextEdit txtName, string txtValue)
-        {
-            
+            #region Sub Menu
+            #region EnglishName
+            txtSmEngName[0] = txtSmEngName1;
+            txtSmEngName[1] = txtSmEngName2;
+            txtSmEngName[2] = txtSmEngName3;
+            txtSmEngName[3] = txtSmEngName4;
+            txtSmEngName[4] = txtSmEngName5;
+            txtSmEngName[5] = txtSmEngName6;
+            txtSmEngName[6] = txtSmEngName7;
+            txtSmEngName[7] = txtSmEngName8;
+            txtSmEngName[8] = txtSmEngName9;
+            txtSmEngName[9] = txtSmEngName10;
+            txtSmEngName[10] = txtSmEngName11;
+            txtSmEngName[11] = txtSmEngName12;
+            txtSmEngName[12] = txtSmEngName13;
+            txtSmEngName[13] = txtSmEngName14;
+            txtSmEngName[14] = txtSmEngName15;
+            #endregion
+
+            #region OtherName
+            txtSmOtherName[0] = txtSmOtherName1;
+            txtSmOtherName[1] = txtSmOtherName2;
+            txtSmOtherName[2] = txtSmOtherName3;
+            txtSmOtherName[3] = txtSmOtherName4;
+            txtSmOtherName[4] = txtSmOtherName5;
+            txtSmOtherName[5] = txtSmOtherName6;
+            txtSmOtherName[6] = txtSmOtherName7;
+            txtSmOtherName[7] = txtSmOtherName8;
+            txtSmOtherName[8] = txtSmOtherName9;
+            txtSmOtherName[9] = txtSmOtherName10;
+            txtSmOtherName[10] = txtSmOtherName11;
+            txtSmOtherName[11] = txtSmOtherName12;
+            txtSmOtherName[12] = txtSmOtherName13;
+            txtSmOtherName[13] = txtSmOtherName14;
+            txtSmOtherName[14] = txtSmOtherName15;
+            #endregion
+            #endregion
         }
     }
 }
