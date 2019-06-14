@@ -47,6 +47,7 @@
             this.labelControl17 = new DevExpress.XtraEditors.LabelControl();
             this.txtSearchDishCode = new DevExpress.XtraEditors.TextEdit();
             this.labelControl16 = new DevExpress.XtraEditors.LabelControl();
+            this.lueDishCateSearch = new DevExpress.XtraEditors.LookUpEdit();
             this.groupBox5 = new System.Windows.Forms.GroupBox();
             this.btnMenuSet4 = new System.Windows.Forms.Button();
             this.btnMenuSet3 = new System.Windows.Forms.Button();
@@ -339,7 +340,6 @@
             this.panelControl11 = new DevExpress.XtraEditors.PanelControl();
             this.btnSmExit = new DevExpress.XtraEditors.SimpleButton();
             this.btnSmSave = new DevExpress.XtraEditors.SimpleButton();
-            this.lueDishCateSearch = new DevExpress.XtraEditors.LookUpEdit();
             ((System.ComponentModel.ISupportInitialize)(this.xtpUsrAccess)).BeginInit();
             this.xtpUsrAccess.SuspendLayout();
             this.xtpDa.SuspendLayout();
@@ -353,6 +353,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.panelControl4)).BeginInit();
             this.panelControl4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.txtSearchDishCode.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.lueDishCateSearch.Properties)).BeginInit();
             this.groupBox5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridControlMenuItem)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gvMenuItem)).BeginInit();
@@ -588,7 +589,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.txtSmEngName1.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl11)).BeginInit();
             this.panelControl11.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.lueDishCateSearch.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // xtpUsrAccess
@@ -819,6 +819,17 @@
             this.labelControl16.Size = new System.Drawing.Size(70, 18);
             this.labelControl16.TabIndex = 2;
             this.labelControl16.Text = "Dish Code:";
+            // 
+            // lueDishCateSearch
+            // 
+            this.lueDishCateSearch.Location = new System.Drawing.Point(283, 32);
+            this.lueDishCateSearch.Name = "lueDishCateSearch";
+            this.lueDishCateSearch.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.lueDishCateSearch.Properties.NullText = "";
+            this.lueDishCateSearch.Size = new System.Drawing.Size(139, 24);
+            this.lueDishCateSearch.TabIndex = 52;
+            this.lueDishCateSearch.EditValueChanged += new System.EventHandler(this.chkComboDishSearch_EditValueChanged);
             // 
             // groupBox5
             // 
@@ -1558,6 +1569,7 @@
             this.btnScCopyChoices.TabIndex = 97;
             this.btnScCopyChoices.Text = "Copy Choices";
             this.btnScCopyChoices.UseVisualStyleBackColor = false;
+            this.btnScCopyChoices.Click += new System.EventHandler(this.btnScCopyChoices_Click);
             // 
             // chkScAutoAppend20
             // 
@@ -2392,6 +2404,7 @@
             this.btnTcCopyChoices.TabIndex = 186;
             this.btnTcCopyChoices.Text = "Copy Choices";
             this.btnTcCopyChoices.UseVisualStyleBackColor = false;
+            this.btnTcCopyChoices.Click += new System.EventHandler(this.btnTcCopyChoices_Click);
             // 
             // chkTcAutoAppend20
             // 
@@ -3471,17 +3484,6 @@
             this.btnSmSave.Text = "Save";
             this.btnSmSave.Click += new System.EventHandler(this.btnSmSave_Click);
             // 
-            // lueDishCateSearch
-            // 
-            this.lueDishCateSearch.Location = new System.Drawing.Point(283, 32);
-            this.lueDishCateSearch.Name = "lueDishCateSearch";
-            this.lueDishCateSearch.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.lueDishCateSearch.Properties.NullText = "";
-            this.lueDishCateSearch.Size = new System.Drawing.Size(139, 24);
-            this.lueDishCateSearch.TabIndex = 52;
-            this.lueDishCateSearch.EditValueChanged += new System.EventHandler(this.chkComboDishSearch_EditValueChanged);
-            // 
             // FrmTaMenuItem
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 18F);
@@ -3509,6 +3511,7 @@
             this.panelControl4.ResumeLayout(false);
             this.panelControl4.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.txtSearchDishCode.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.lueDishCateSearch.Properties)).EndInit();
             this.groupBox5.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.gridControlMenuItem)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gvMenuItem)).EndInit();
@@ -3748,7 +3751,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.txtSmEngName1.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl11)).EndInit();
             this.panelControl11.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.lueDishCateSearch.Properties)).EndInit();
             this.ResumeLayout(false);
 
         }

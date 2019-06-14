@@ -1170,5 +1170,25 @@ namespace SuperPOS.UI.TA
             lueDishCateSearch.RefreshEditValue();
         }
         #endregion
+
+        private void btnScCopyChoices_Click(object sender, EventArgs e)
+        {
+            FrmTaMenuItemCopyChoices frmTaMenuItemCopyChoices = new FrmTaMenuItemCopyChoices(iMenuSetKey, miID, 2);
+
+            if (frmTaMenuItemCopyChoices.ShowDialog() == DialogResult.OK)
+            {
+                frmTaMenuItemCopyChoices.Close();
+            }
+        }
+
+        private void btnTcCopyChoices_Click(object sender, EventArgs e)
+        {
+            FrmTaMenuItemCopyChoices frmTaMenuItemCopyChoices = new FrmTaMenuItemCopyChoices(iMenuSetKey, miID, 3);
+
+            if (frmTaMenuItemCopyChoices.ShowDialog() == DialogResult.OK)
+            {
+                frmTaMenuItemCopyChoices.Close();
+            }
+        }
     }
 }
