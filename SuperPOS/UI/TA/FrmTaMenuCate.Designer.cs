@@ -127,6 +127,7 @@
             this.btnUp.TabIndex = 57;
             this.btnUp.Text = "↑";
             this.btnUp.UseVisualStyleBackColor = false;
+            this.btnUp.Click += new System.EventHandler(this.btnUp_Click);
             // 
             // btnDown
             // 
@@ -141,6 +142,7 @@
             this.btnDown.TabIndex = 51;
             this.btnDown.Text = "↓";
             this.btnDown.UseVisualStyleBackColor = false;
+            this.btnDown.Click += new System.EventHandler(this.btnDown_Click);
             // 
             // lueMenuSet
             // 
@@ -175,6 +177,7 @@
             this.chkHotKey.Properties.Caption = "Hot Key";
             this.chkHotKey.Size = new System.Drawing.Size(75, 22);
             this.chkHotKey.TabIndex = 11;
+            this.chkHotKey.CheckedChanged += new System.EventHandler(this.chkHotKey_CheckedChanged);
             // 
             // txtHotKeyDishCode
             // 
@@ -225,6 +228,7 @@
             this.btnExit.TabIndex = 7;
             this.btnExit.Text = "Exit";
             this.btnExit.UseVisualStyleBackColor = false;
+            this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
             // 
             // btnDel
             // 
@@ -238,6 +242,7 @@
             this.btnDel.TabIndex = 6;
             this.btnDel.Text = "Delete";
             this.btnDel.UseVisualStyleBackColor = false;
+            this.btnDel.Click += new System.EventHandler(this.btnDel_Click);
             // 
             // btnSave
             // 
@@ -251,6 +256,7 @@
             this.btnSave.TabIndex = 5;
             this.btnSave.Text = "Save";
             this.btnSave.UseVisualStyleBackColor = false;
+            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
             // btnAdd
             // 
@@ -264,6 +270,7 @@
             this.btnAdd.TabIndex = 4;
             this.btnAdd.Text = "Add";
             this.btnAdd.UseVisualStyleBackColor = false;
+            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
             // panelControl2
             // 
@@ -451,6 +458,8 @@
             this.gvMenuCate.OptionsView.EnableAppearanceEvenRow = true;
             this.gvMenuCate.OptionsView.EnableAppearanceOddRow = true;
             this.gvMenuCate.OptionsView.ShowGroupPanel = false;
+            this.gvMenuCate.CustomDrawRowIndicator += new DevExpress.XtraGrid.Views.Grid.RowIndicatorCustomDrawEventHandler(this.gvMenuCate_CustomDrawRowIndicator);
+            this.gvMenuCate.FocusedRowChanged += new DevExpress.XtraGrid.Views.Base.FocusedRowChangedEventHandler(this.gvMenuCate_FocusedRowChanged);
             // 
             // ID
             // 
