@@ -1851,29 +1851,32 @@ namespace SuperPOS.UI.TA
 
             List<TaOrderItemInfo> lstMi = new List<TaOrderItemInfo>();
 
-            foreach (var taMenuItemSubMenuInfo in lstResult)
+            if (lstResult.Any(s => s.IsAutoExpand.Equals("Y")))
             {
-                TaOrderItemInfo taOrderItemInfo = new TaOrderItemInfo();
+                foreach (var taMenuItemSubMenuInfo in lstResult)
+                {
+                    TaOrderItemInfo taOrderItemInfo = new TaOrderItemInfo();
 
-                taOrderItemInfo.ItemID = "0";
-                taOrderItemInfo.ItemCode = taMenuItemSubMenuInfo.ID.ToString();
-                taOrderItemInfo.ItemDishName = taMenuItemSubMenuInfo.SmEngName;
-                taOrderItemInfo.ItemDishOtherName = taMenuItemSubMenuInfo.SmOtherName;
-                taOrderItemInfo.ItemQty = miQty;
-                taOrderItemInfo.ItemPrice = "0.00";
-                taOrderItemInfo.ItemTotalPrice = "0.00";
-                taOrderItemInfo.CheckCode = miCheckCode;
-                taOrderItemInfo.ItemType = PubComm.MENU_ITEM_CHILD;
-                taOrderItemInfo.ItemParent = itemId;
-                taOrderItemInfo.OrderTime = DateTime.Now.ToString();
-                taOrderItemInfo.OrderStaff = usrID;
+                    taOrderItemInfo.ItemID = "0";
+                    taOrderItemInfo.ItemCode = taMenuItemSubMenuInfo.ID.ToString();
+                    taOrderItemInfo.ItemDishName = taMenuItemSubMenuInfo.SmEngName;
+                    taOrderItemInfo.ItemDishOtherName = taMenuItemSubMenuInfo.SmOtherName;
+                    taOrderItemInfo.ItemQty = miQty;
+                    taOrderItemInfo.ItemPrice = "0.00";
+                    taOrderItemInfo.ItemTotalPrice = "0.00";
+                    taOrderItemInfo.CheckCode = miCheckCode;
+                    taOrderItemInfo.ItemType = PubComm.MENU_ITEM_CHILD;
+                    taOrderItemInfo.ItemParent = itemId;
+                    taOrderItemInfo.OrderTime = DateTime.Now.ToString();
+                    taOrderItemInfo.OrderStaff = usrID;
 
-                lstMi.Add(taOrderItemInfo);
-            }
+                    lstMi.Add(taOrderItemInfo);
+                }
 
-            if (lstMi.Any())
-            {
-                foreach (var orderItemInfo in lstMi) { AddTreeListChild(orderItemInfo, node); }
+                if (lstMi.Any())
+                {
+                    foreach (var orderItemInfo in lstMi) { AddTreeListChild(orderItemInfo, node); }
+                }
             }
         }
         #endregion
