@@ -44,7 +44,6 @@
             this.panelControl4 = new DevExpress.XtraEditors.PanelControl();
             this.btnSearch = new System.Windows.Forms.Button();
             this.labelControl18 = new DevExpress.XtraEditors.LabelControl();
-            this.comboBoxEdit1 = new DevExpress.XtraEditors.ComboBoxEdit();
             this.labelControl17 = new DevExpress.XtraEditors.LabelControl();
             this.txtSearchDishCode = new DevExpress.XtraEditors.TextEdit();
             this.labelControl16 = new DevExpress.XtraEditors.LabelControl();
@@ -300,6 +299,11 @@
             this.btnTcSave = new DevExpress.XtraEditors.SimpleButton();
             this.xtpSm = new DevExpress.XtraTab.XtraTabPage();
             this.panelControl10 = new DevExpress.XtraEditors.PanelControl();
+            this.lblSubMenuName = new DevExpress.XtraEditors.LabelControl();
+            this.labelControl31 = new DevExpress.XtraEditors.LabelControl();
+            this.labelControl30 = new DevExpress.XtraEditors.LabelControl();
+            this.chkSmShowContentOnPrtOut = new DevExpress.XtraEditors.CheckEdit();
+            this.chkSmAutoExpand = new DevExpress.XtraEditors.CheckEdit();
             this.txtSmOtherName15 = new DevExpress.XtraEditors.TextEdit();
             this.txtSmEngName15 = new DevExpress.XtraEditors.TextEdit();
             this.txtSmOtherName14 = new DevExpress.XtraEditors.TextEdit();
@@ -335,11 +339,7 @@
             this.panelControl11 = new DevExpress.XtraEditors.PanelControl();
             this.btnSmExit = new DevExpress.XtraEditors.SimpleButton();
             this.btnSmSave = new DevExpress.XtraEditors.SimpleButton();
-            this.chkSmAutoExpand = new DevExpress.XtraEditors.CheckEdit();
-            this.chkSmShowContentOnPrtOut = new DevExpress.XtraEditors.CheckEdit();
-            this.labelControl30 = new DevExpress.XtraEditors.LabelControl();
-            this.labelControl31 = new DevExpress.XtraEditors.LabelControl();
-            this.lblSubMenuName = new DevExpress.XtraEditors.LabelControl();
+            this.lueDishCateSearch = new DevExpress.XtraEditors.LookUpEdit();
             ((System.ComponentModel.ISupportInitialize)(this.xtpUsrAccess)).BeginInit();
             this.xtpUsrAccess.SuspendLayout();
             this.xtpDa.SuspendLayout();
@@ -352,7 +352,6 @@
             this.panelControl5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl4)).BeginInit();
             this.panelControl4.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.comboBoxEdit1.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtSearchDishCode.Properties)).BeginInit();
             this.groupBox5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridControlMenuItem)).BeginInit();
@@ -555,6 +554,8 @@
             this.xtpSm.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl10)).BeginInit();
             this.panelControl10.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.chkSmShowContentOnPrtOut.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.chkSmAutoExpand.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtSmOtherName15.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtSmEngName15.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtSmOtherName14.Properties)).BeginInit();
@@ -587,8 +588,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.txtSmEngName1.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl11)).BeginInit();
             this.panelControl11.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.chkSmAutoExpand.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.chkSmShowContentOnPrtOut.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.lueDishCateSearch.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // xtpUsrAccess
@@ -756,7 +756,7 @@
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Size = new System.Drawing.Size(82, 57);
             this.btnAdd.TabIndex = 4;
-            this.btnAdd.Text = "Add";
+            this.btnAdd.Text = "Add New";
             this.btnAdd.UseVisualStyleBackColor = false;
             this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
@@ -764,10 +764,10 @@
             // 
             this.panelControl4.Controls.Add(this.btnSearch);
             this.panelControl4.Controls.Add(this.labelControl18);
-            this.panelControl4.Controls.Add(this.comboBoxEdit1);
             this.panelControl4.Controls.Add(this.labelControl17);
             this.panelControl4.Controls.Add(this.txtSearchDishCode);
             this.panelControl4.Controls.Add(this.labelControl16);
+            this.panelControl4.Controls.Add(this.lueDishCateSearch);
             this.panelControl4.Location = new System.Drawing.Point(5, 104);
             this.panelControl4.Name = "panelControl4";
             this.panelControl4.Size = new System.Drawing.Size(437, 69);
@@ -794,15 +794,6 @@
             this.labelControl18.Size = new System.Drawing.Size(137, 18);
             this.labelControl18.TabIndex = 6;
             this.labelControl18.Text = "Dish category search";
-            // 
-            // comboBoxEdit1
-            // 
-            this.comboBoxEdit1.Location = new System.Drawing.Point(283, 29);
-            this.comboBoxEdit1.Name = "comboBoxEdit1";
-            this.comboBoxEdit1.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.comboBoxEdit1.Size = new System.Drawing.Size(137, 24);
-            this.comboBoxEdit1.TabIndex = 5;
             // 
             // labelControl17
             // 
@@ -1136,11 +1127,11 @@
             // 
             // labelControl27
             // 
-            this.labelControl27.Location = new System.Drawing.Point(35, 414);
+            this.labelControl27.Location = new System.Drawing.Point(27, 417);
             this.labelControl27.Name = "labelControl27";
-            this.labelControl27.Size = new System.Drawing.Size(77, 18);
+            this.labelControl27.Size = new System.Drawing.Size(85, 18);
             this.labelControl27.TabIndex = 51;
-            this.labelControl27.Text = "Print Name:";
+            this.labelControl27.Text = "Button Color:";
             // 
             // colorEditBtn
             // 
@@ -1295,11 +1286,11 @@
             // 
             // labelControl8
             // 
-            this.labelControl8.Location = new System.Drawing.Point(35, 258);
+            this.labelControl8.Location = new System.Drawing.Point(22, 258);
             this.labelControl8.Name = "labelControl8";
-            this.labelControl8.Size = new System.Drawing.Size(77, 18);
+            this.labelControl8.Size = new System.Drawing.Size(90, 18);
             this.labelControl8.TabIndex = 13;
-            this.labelControl8.Text = "Print Name:";
+            this.labelControl8.Text = "Printer Name:";
             // 
             // labelControl10
             // 
@@ -3172,6 +3163,47 @@
             this.panelControl10.Size = new System.Drawing.Size(1008, 704);
             this.panelControl10.TabIndex = 3;
             // 
+            // lblSubMenuName
+            // 
+            this.lblSubMenuName.Appearance.Font = new System.Drawing.Font("Tahoma", 15F);
+            this.lblSubMenuName.Location = new System.Drawing.Point(376, 20);
+            this.lblSubMenuName.Name = "lblSubMenuName";
+            this.lblSubMenuName.Size = new System.Drawing.Size(172, 30);
+            this.lblSubMenuName.TabIndex = 80;
+            this.lblSubMenuName.Text = "Only show time";
+            // 
+            // labelControl31
+            // 
+            this.labelControl31.Location = new System.Drawing.Point(30, 453);
+            this.labelControl31.Name = "labelControl31";
+            this.labelControl31.Size = new System.Drawing.Size(127, 18);
+            this.labelControl31.TabIndex = 79;
+            this.labelControl31.Text = "but not on print out";
+            // 
+            // labelControl30
+            // 
+            this.labelControl30.Location = new System.Drawing.Point(30, 430);
+            this.labelControl30.Name = "labelControl30";
+            this.labelControl30.Size = new System.Drawing.Size(279, 18);
+            this.labelControl30.TabIndex = 78;
+            this.labelControl30.Text = "Only show the sub item contens on screen";
+            // 
+            // chkSmShowContentOnPrtOut
+            // 
+            this.chkSmShowContentOnPrtOut.Location = new System.Drawing.Point(30, 401);
+            this.chkSmShowContentOnPrtOut.Name = "chkSmShowContentOnPrtOut";
+            this.chkSmShowContentOnPrtOut.Properties.Caption = "Show content on print out";
+            this.chkSmShowContentOnPrtOut.Size = new System.Drawing.Size(205, 22);
+            this.chkSmShowContentOnPrtOut.TabIndex = 77;
+            // 
+            // chkSmAutoExpand
+            // 
+            this.chkSmAutoExpand.Location = new System.Drawing.Point(30, 358);
+            this.chkSmAutoExpand.Name = "chkSmAutoExpand";
+            this.chkSmAutoExpand.Properties.Caption = "Auto Expand";
+            this.chkSmAutoExpand.Size = new System.Drawing.Size(172, 22);
+            this.chkSmAutoExpand.TabIndex = 76;
+            // 
             // txtSmOtherName15
             // 
             this.txtSmOtherName15.Location = new System.Drawing.Point(521, 501);
@@ -3439,46 +3471,16 @@
             this.btnSmSave.Text = "Save";
             this.btnSmSave.Click += new System.EventHandler(this.btnSmSave_Click);
             // 
-            // chkSmAutoExpand
+            // lueDishCateSearch
             // 
-            this.chkSmAutoExpand.Location = new System.Drawing.Point(30, 358);
-            this.chkSmAutoExpand.Name = "chkSmAutoExpand";
-            this.chkSmAutoExpand.Properties.Caption = "Auto Expand";
-            this.chkSmAutoExpand.Size = new System.Drawing.Size(172, 22);
-            this.chkSmAutoExpand.TabIndex = 76;
-            // 
-            // chkSmShowContentOnPrtOut
-            // 
-            this.chkSmShowContentOnPrtOut.Location = new System.Drawing.Point(30, 401);
-            this.chkSmShowContentOnPrtOut.Name = "chkSmShowContentOnPrtOut";
-            this.chkSmShowContentOnPrtOut.Properties.Caption = "Show content on print out";
-            this.chkSmShowContentOnPrtOut.Size = new System.Drawing.Size(205, 22);
-            this.chkSmShowContentOnPrtOut.TabIndex = 77;
-            // 
-            // labelControl30
-            // 
-            this.labelControl30.Location = new System.Drawing.Point(30, 430);
-            this.labelControl30.Name = "labelControl30";
-            this.labelControl30.Size = new System.Drawing.Size(279, 18);
-            this.labelControl30.TabIndex = 78;
-            this.labelControl30.Text = "Only show the sub item contens on screen";
-            // 
-            // labelControl31
-            // 
-            this.labelControl31.Location = new System.Drawing.Point(30, 453);
-            this.labelControl31.Name = "labelControl31";
-            this.labelControl31.Size = new System.Drawing.Size(127, 18);
-            this.labelControl31.TabIndex = 79;
-            this.labelControl31.Text = "but not on print out";
-            // 
-            // lblSubMenuName
-            // 
-            this.lblSubMenuName.Appearance.Font = new System.Drawing.Font("Tahoma", 15F);
-            this.lblSubMenuName.Location = new System.Drawing.Point(376, 20);
-            this.lblSubMenuName.Name = "lblSubMenuName";
-            this.lblSubMenuName.Size = new System.Drawing.Size(172, 30);
-            this.lblSubMenuName.TabIndex = 80;
-            this.lblSubMenuName.Text = "Only show time";
+            this.lueDishCateSearch.Location = new System.Drawing.Point(283, 32);
+            this.lueDishCateSearch.Name = "lueDishCateSearch";
+            this.lueDishCateSearch.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.lueDishCateSearch.Properties.NullText = "";
+            this.lueDishCateSearch.Size = new System.Drawing.Size(139, 24);
+            this.lueDishCateSearch.TabIndex = 52;
+            this.lueDishCateSearch.EditValueChanged += new System.EventHandler(this.chkComboDishSearch_EditValueChanged);
             // 
             // FrmTaMenuItem
             // 
@@ -3506,7 +3508,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.panelControl4)).EndInit();
             this.panelControl4.ResumeLayout(false);
             this.panelControl4.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.comboBoxEdit1.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtSearchDishCode.Properties)).EndInit();
             this.groupBox5.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.gridControlMenuItem)).EndInit();
@@ -3713,6 +3714,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.panelControl10)).EndInit();
             this.panelControl10.ResumeLayout(false);
             this.panelControl10.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.chkSmShowContentOnPrtOut.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.chkSmAutoExpand.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtSmOtherName15.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtSmEngName15.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtSmOtherName14.Properties)).EndInit();
@@ -3745,8 +3748,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.txtSmEngName1.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl11)).EndInit();
             this.panelControl11.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.chkSmAutoExpand.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.chkSmShowContentOnPrtOut.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.lueDishCateSearch.Properties)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -3765,7 +3767,6 @@
         private DevExpress.XtraEditors.PanelControl panelControl4;
         private System.Windows.Forms.Button btnSearch;
         private DevExpress.XtraEditors.LabelControl labelControl18;
-        private DevExpress.XtraEditors.ComboBoxEdit comboBoxEdit1;
         private DevExpress.XtraEditors.LabelControl labelControl17;
         private DevExpress.XtraEditors.TextEdit txtSearchDishCode;
         private DevExpress.XtraEditors.LabelControl labelControl16;
@@ -4065,5 +4066,6 @@
         private DevExpress.XtraEditors.SimpleButton btnSmExit;
         private DevExpress.XtraEditors.SimpleButton btnSmSave;
         private DevExpress.XtraEditors.LabelControl lblSubMenuName;
+        private DevExpress.XtraEditors.LookUpEdit lueDishCateSearch;
     }
 }

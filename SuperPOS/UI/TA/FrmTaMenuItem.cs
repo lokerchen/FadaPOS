@@ -172,7 +172,7 @@ namespace SuperPOS.UI.TA
         /// <summary>
         /// 绑定Grid
         /// </summary>
-        private void BindGridData(int menuSetID, string strDishCode)
+        private void BindGridData(int menuSetID, string strDishCode, string strDishCate)
         {
             new SystemData().GetTaMenuItem();
 
@@ -210,9 +210,21 @@ namespace SuperPOS.UI.TA
 
             if (string.IsNullOrEmpty(strDishCode))
             {
-                gridControlMenuItem.DataSource = menuSetID >= 0
-                    ? lstMenuItem.Where(s => s.MiMenuSetID == menuSetID).ToList()
+                //gridControlMenuItem.DataSource = menuSetID >= 0
+                //    ? lstMenuItem.Where(s => s.MiMenuSetID == menuSetID).ToList()
+                //    : lstMenuItem.ToList();
+                if (string.IsNullOrEmpty(strDishCate))
+                {
+                    gridControlMenuItem.DataSource = menuSetID >= 0
+                        ? lstMenuItem.Where(s => s.MiMenuSetID == menuSetID).ToList()
+                        : lstMenuItem.ToList();
+                }
+                else
+                {
+                    gridControlMenuItem.DataSource = menuSetID >= 0
+                    ? lstMenuItem.Where(s => s.MiMenuSetID == menuSetID && s.MiDishCode.ToString().Contains(strDishCate)).ToList()
                     : lstMenuItem.ToList();
+                }
             }
             else
             {
@@ -313,12 +325,14 @@ namespace SuperPOS.UI.TA
             //BindChkWorkDay(false);
             //BindChkComboOtherSet(false);
 
+            BindChkComboDishSearch();
+
             BindLuePrtName();
             //BindLuePrtOrder();
             //BindLueSupplyShift();
             //BinLueMenuSet();
 
-            BindGridData(iMenuSetKey, "");
+            BindGridData(iMenuSetKey, "", "");
         }
         #endregion
 
@@ -355,6 +369,7 @@ namespace SuperPOS.UI.TA
             BindChkMenuCate(true);
             //BindChkWorkDay(true);
             //BindChkComboOtherSet(true);
+            BindChkComboDishSearch();
         }
         #endregion
 
@@ -440,7 +455,7 @@ namespace SuperPOS.UI.TA
                 }
 
                 //BindData();
-                BindGridData(iMenuSetKey, "");
+                BindGridData(iMenuSetKey, "", "");
             }
             catch (Exception ex)
             {
@@ -536,7 +551,7 @@ namespace SuperPOS.UI.TA
                 FrmTaMenuItemDetail frmTaMenuItemDetail = new FrmTaMenuItemDetail(Convert.ToInt32(gvMenuItem.GetRowCellValue(gvMenuItem.FocusedRowHandle, "ID")));
                 frmTaMenuItemDetail.ShowDialog();
 
-                BindGridData(iMenuSetKey, "");
+                BindGridData(iMenuSetKey, "", "");
             }
         }
         #endregion
@@ -594,12 +609,12 @@ namespace SuperPOS.UI.TA
                     break;
             }
 
-            BindGridData(iMenuSetKey, "");
+            BindGridData(iMenuSetKey, "", "");
         }
 
         private void btnSearch_Click(object sender, EventArgs e)
         {
-            BindGridData(iMenuSetKey, txtSearchDishCode.Text);
+            BindGridData(iMenuSetKey, txtSearchDishCode.Text, "");
         }
 
         private void BindOtherChoice(int iType, int miID)
@@ -800,6 +815,8 @@ namespace SuperPOS.UI.TA
 
             txtDishCode.Text = "";
             BindChkMenuCate(false);
+
+            BindChkComboDishSearch();
         }
 
         private void btnDown_Click(object sender, EventArgs e)
@@ -1124,5 +1141,34 @@ namespace SuperPOS.UI.TA
             BindSubMenu(miID);
             CommonTool.ShowMessage("Save successful!");
         }
+
+        private void chkComboDishSearch_EditValueChanged(object sender, EventArgs e)
+        {
+            //BindChkComboDishSearch();
+            BindGridData(iMenuSetKey, "", lueDishCateSearch.EditValue.ToString());
+        }
+
+        #region chkComboDishSearch
+        /// <summary>
+        /// 绑定chkMenuCate
+        /// </summary>
+        private void BindChkComboDishSearch()
+        {
+            new SystemData().GetTaMenuCate();
+
+            var lstMenuCate = from mc in CommonData.TaMenuCate
+                              select new
+                              {
+                                  McID = mc.ID,
+                                  McName = mc.CateEngName
+                              };
+
+            lueDishCateSearch.Properties.DataSource = lstMenuCate.ToList();
+            lueDishCateSearch.Properties.ValueMember = "McID";
+            lueDishCateSearch.Properties.DisplayMember = "McName";
+
+            lueDishCateSearch.RefreshEditValue();
+        }
+        #endregion
     }
 }
