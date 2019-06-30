@@ -97,6 +97,8 @@
     <Compile Include="Print\PrtCommon.cs" />
     <Compile Include="Print\PrtPrint.cs" />
     <Compile Include="Print\PrtStatic.cs" />
+    <Compile Include="Print\PrtTemplataTa.cs" />
+    <Compile Include="Print\PrtTemplate.cs" />
     <Compile Include="UI\FrmDesktopArea.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -158,6 +160,12 @@
     </Compile>
     <Compile Include="UI\TA\FrmTaMenuItemCopyChoices.Designer.cs">
       <DependentUpon>FrmTaMenuItemCopyChoices.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\TA\FrmTaPrtSetup.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\TA\FrmTaPrtSetup.Designer.cs">
+      <DependentUpon>FrmTaPrtSetup.cs</DependentUpon>
     </Compile>
     <Compile Include="UI\TA\FrmTaShowOrder.cs">
       <SubType>Form</SubType>
@@ -458,6 +466,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UI\TA\FrmTaMenuItemCopyChoices.resx">
       <DependentUpon>FrmTaMenuItemCopyChoices.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\TA\FrmTaPrtSetup.resx">
+      <DependentUpon>FrmTaPrtSetup.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UI\TA\FrmTaShowOrder.resx">
       <DependentUpon>FrmTaShowOrder.cs</DependentUpon>

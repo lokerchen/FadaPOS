@@ -91,5 +91,9 @@ namespace SuperPOS.Common
         public void GetTaConfMenuDisplayFont() { CommonData.TaConfMenuDisplayFont = _control.SelectAll<TaConfMenuDisplayFontInfo>(); }
 
         public void GetTaMenuItemSubMenu() { CommonData.TaMenuItemSubMenu = _control.SelectAll<TaMenuItemSubMenuInfo>(); }
+
+        public void GetTaPrtSetupGeneral() { CommonData.TaPrtSetupGeneral = _control.SelectAll<TaPrtSetupGeneralInfo>(); }
+
+        public void GetTaPrtSetupGetSet1() { CommonData.TaPrtSetupGeneralSet1 = _control.SelectAll<TaPrtSetupGeneralSet1Info>(); }
     }
 }

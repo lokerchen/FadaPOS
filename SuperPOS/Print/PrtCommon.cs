@@ -91,7 +91,8 @@ namespace SuperPOS.Print
         {
             new SystemData().GetShopDetail();
             var firstOrDefault = CommonData.ShopDetail.FirstOrDefault();
-            return firstOrDefault != null ? "Tel:" + firstOrDefault.ShopTelNo : "";
+            //return firstOrDefault != null ? "Tel:" + firstOrDefault.ShopTelNo : "";
+            return firstOrDefault != null ? firstOrDefault.ShopTelNo : "";
         }
 
         #endregion
@@ -106,7 +107,8 @@ namespace SuperPOS.Print
         {
             new SystemData().GetShopDetail();
             var firstOrDefault = CommonData.ShopDetail.FirstOrDefault();
-            return firstOrDefault != null ? "VAT No:" + firstOrDefault.ShopVATNo : "";
+            //return firstOrDefault != null ? "VAT No:" + firstOrDefault.ShopVATNo : "";
+            return firstOrDefault != null ? firstOrDefault.ShopVATNo : "";
         }
 
         #endregion
@@ -119,9 +121,10 @@ namespace SuperPOS.Print
         /// <returns></returns>
         public static string GetPrtDateTime()
         {
-            string s1 = "Date:" + DateTime.Now.ToShortDateString();
-            string s2 = "Time:" + DateTime.Now.ToShortTimeString();
-            return s1 + GetSpace(PrtStatic.PRT_LINE_SIZE - s1.Length - s2.Length) + s2;
+            //string s1 = "Date:" + DateTime.Now.ToShortDateString();
+            //string s2 = "Time:" + DateTime.Now.ToShortTimeString();
+            //return s1 + GetSpace(PrtStatic.PRT_LINE_SIZE - s1.Length - s2.Length) + s2;
+            return DateTime.Now.ToShortDateString();
         }
 
         #endregion

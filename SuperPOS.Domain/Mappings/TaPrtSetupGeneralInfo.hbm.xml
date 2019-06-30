@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2"
+                   assembly="SuperPOS"
+                   namespace="SuperPOS.Domain">
+
+  <class name="SuperPOS.Domain.Entities.TaPrtSetupGeneralInfo, SuperPOS.Domain" table="Ta_PrtSetup_General">
+    <id name="ID" column="ID" type="System.Int32" unsaved-value="0">
+      <generator class="native" />
+    </id>
+
+    <property name="TelNo" column="TelNo" type="System.String" />
+    <property name="VATNo" column="VATNo" type="System.String" />
+    <property name="Msg1" column="Msg1" type="System.String" />
+    <property name="Msg2" column="Msg2" type="System.String" />
+    <property name="Msg3" column="Msg3" type="System.String" />
+    <property name="Msg4" column="Msg4" type="System.String" />
+    <property name="Msg5" column="Msg5" type="System.String" />
+  </class>
+
+</hibernate-mapping>

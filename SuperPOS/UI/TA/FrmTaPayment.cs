@@ -317,22 +317,56 @@ namespace SuperPOS.UI.TA
 
             if (returnPaid)
             {
-                htDetail["Tendered"] = txtPaid.Text;
-                htDetail["Change"] = (Math.Abs(dToPay)).ToString();
-
-                htDetail["OrderNo"] = checkID;
-                htDetail["ChkNum"] = checkID;
-                htDetail["PayType"] = payType;
-                htDetail["SubTotal"] = txtTotal.Text;
-                htDetail["Total"] = txtTotal.Text;
-
-                new SystemData().GetTaOrderItem();
-
                 var lstOI = CommonData.TaOrderItem.Where(s => s.CheckCode.Equals(checkID)).ToList();
 
-                PrtPrint.PrtBillBilingual(lstOI, htDetail);
+                #region 更换打印方式
+                //htDetail["Tendered"] = txtPaid.Text;
+                //htDetail["Change"] = (Math.Abs(dToPay)).ToString();
 
-                PrtPrint.PrtKitchen(lstOI, htDetail);
+                //htDetail["OrderNo"] = checkID;
+                //htDetail["ChkNum"] = checkID;
+                //htDetail["PayType"] = payType;
+                //htDetail["SubTotal"] = txtTotal.Text;
+                //htDetail["Total"] = txtTotal.Text;
+
+                //new SystemData().GetTaOrderItem();
+                //PrtPrint.PrtBillBilingual(lstOI, htDetail);
+
+                //PrtPrint.PrtKitchen(lstOI, htDetail);
+
+                //    htDetail["Staff"] = CommonData.UsrBase.Any(s => s.ID == usrID) ? CommonData.UsrBase.FirstOrDefault(s => s.ID == usrID).UsrName : "";
+
+                //htDetail["ItemQty"] = treeListOrder.Nodes.Count;
+                //htDetail["SubTotal"] = lstOi.Sum(s => Convert.ToDecimal(s.ItemTotalPrice)).ToString();
+                //htDetail["Total"] = lstOi.Sum(s => Convert.ToDecimal(s.ItemTotalPrice)).ToString();
+
+                //content = content.Replace("{Msg1}", prtTemplataTa.Msg1);
+                //content = content.Replace("{Msg2}", prtTemplataTa.Msg2);
+                //content = content.Replace("{Msg3}", prtTemplataTa.Msg3);
+                //content = content.Replace("{Msg4}", prtTemplataTa.Msg4);
+
+                //content = content.Replace("{MsgAtBotton}", prtTemplataTa.MsgAtBotton);
+                //content = content.Replace("{ItemCount}", prtTemplataTa.ItemCount);
+                #endregion
+
+                PrtTemplataTa prtTemplataTa = new PrtTemplataTa();
+                prtTemplataTa.RestaurantName = PrtCommon.GetRestName();
+                prtTemplataTa.Addr = PrtCommon.GetRestAddr();
+                prtTemplataTa.Telephone = PrtCommon.GetRestTel();
+                prtTemplataTa.VatNo = PrtCommon.GetRestVATNo();
+                prtTemplataTa.OrderTime = PrtCommon.GetPrtTime();
+                prtTemplataTa.OrderDate = PrtCommon.GetPrtDateTime();
+                prtTemplataTa.OrderNo = checkID;
+                prtTemplataTa.PayType = payType;
+                //prtTemplataTa.TotalAmount = txtTotal.Text;
+                prtTemplataTa.TotalAmount = htDetail["SubTotal"].ToString();
+                //prtTemplataTa.TotalAmount = txtTotal.Text;
+                prtTemplataTa.SubTotal = htDetail["Total"].ToString();
+                //prtTemplataTa.SubTotal = txtTotal.Text;
+                prtTemplataTa.StaffName = htDetail["Staff"].ToString();
+                prtTemplataTa.ItemCount = htDetail["ItemQty"].ToString();
+
+                PrtTemplate.PrtTaBill(prtTemplataTa, lstOI);
             }
         }
         #endregion

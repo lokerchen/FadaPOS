@@ -100,6 +100,10 @@ namespace SuperPOS.Common
             systemData.GetTaPayment();
             //付款信息
             systemData.GetTaPaymentDetail();
+            //Print Setup
+            systemData.GetTaPrtSetupGeneral();
+            //Print Set General Setting 1
+            systemData.GetTaPrtSetupGetSet1();
             #endregion
             //System Setting
             systemData.GetSysUsrMaintenance();

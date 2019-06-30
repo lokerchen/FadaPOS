@@ -944,11 +944,32 @@ namespace SuperPOS.Print
                 sb.Append(sName.Substring(0, 20));
                 sb.Append(PrtCommon.GetSpace(1) + sPrice);
                 sb.Append(Environment.NewLine);
-                sb.Append(PrtCommon.GetSpace(11) + sName.Substring(20, sName.Length - 21));
+                sb.Append(PrtCommon.GetSpace(11) + sName.Substring(20, sName.Length - 20));
                 sb.Append(Environment.NewLine);
 
                 //字符超过21，有换行，所以+1
                 PRT_BILL_SHUANGYU_ROW_COUNT += 1;
+            }
+            else
+            {
+                sb.Append(sName + PrtCommon.GetSpace(21 - sName.Length));
+                sb.Append(sPrice);
+            }
+
+            return sb;
+        }
+
+        public static StringBuilder GetTab(string sCode, string sQty, string sName, string sPrice, bool isNew)
+        {
+            StringBuilder sb = new StringBuilder();
+
+            sb.Append(sCode + PrtCommon.GetSpace(6 - sCode.Length) + sQty + PrtCommon.GetSpace(5 - sQty.Length));
+            if (sName.Length > 21)
+            {
+                sb.Append(sName.Substring(0, 20));
+                sb.Append(PrtCommon.GetSpace(1) + sPrice);
+                sb.Append("\n");
+                sb.Append(PrtCommon.GetSpace(11) + sName.Substring(20, sName.Length - 20));
             }
             else
             {

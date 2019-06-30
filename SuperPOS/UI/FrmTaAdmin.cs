@@ -107,8 +107,8 @@ namespace SuperPOS.UI
 
         private void btnTaPrtSetup_Click(object sender, EventArgs e)
         {
-
-        }
+            FrmTaPrtSetup frmTaPrtSetup = new FrmTaPrtSetup(usrID, usrName);
+            frmTaPrtSetup.ShowDialog();}
 
         private void btnTaDriverSetup_Click(object sender, EventArgs e)
         {

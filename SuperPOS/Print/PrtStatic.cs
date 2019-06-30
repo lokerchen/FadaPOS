@@ -37,5 +37,25 @@
 
         //每一行OrderItem的高度
         public static int PRT_PAPER_ROWHIGHT = 20;
+
+        //打印模板文件夹所在位置
+        public static string PRT_TEMPLATE_FILE_PATH = System.Environment.CurrentDirectory + @"/PrintTemplate/";
+
+        //TA打印模板
+        public static string PRT_TEMPLATE_TA = @"ta.txt";
+
+        //General Setting 1 Print Lanuage
+        public static string PRT_GEN_SET1_LAN_ENG = @"English";
+        public static string PRT_GEN_SET1_LAN_Other = @"Other";
+        public static string PRT_GEN_SET1_LAN_Both = @"Both";
+
+        //General Setting 1 FontSize
+        public static string PRT_GEN_SET1_FONT_SIZE_8 = @"8";
+        public static string PRT_GEN_SET1_FONT_SIZE_10 = @"10";
+        public static string PRT_GEN_SET1_FONT_SIZE_12 = @"12";
+        public static string PRT_GEN_SET1_FONT_SIZE_14 = @"14";
+        public static string PRT_GEN_SET1_FONT_SIZE_16 = @"16";
+        public static string PRT_GEN_SET1_FONT_SIZE_18 = @"18";
+        public static string PRT_GEN_SET1_FONT_SIZE_20 = @"20";
     }
 }
