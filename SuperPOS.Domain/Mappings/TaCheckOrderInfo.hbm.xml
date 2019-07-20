@@ -12,6 +12,7 @@
     <property name="PayOrderType" column="PayOrderType" type="System.String" />
     <property name="PayDelivery" column="PayDelivery" type="System.String" />
     <property name="PayDiscount" column="PayDiscount" type="System.String" />
+    <property name="PaySurcharge" column="PaySurcharge" type="System.String" />
     <property name="MenuAmount" column="MenuAmount" type="System.String" />
     <property name="TotalAmount" column="TotalAmount" type="System.String" />
     <property name="Paid" column="Paid" type="System.String" />
@@ -21,6 +22,16 @@
     <property name="DriverID" column="DriverID" type="System.Int32" />
     <property name="StaffID" column="StaffID" type="System.Int32" />
     <property name="PayTime" column="PayTime" type="System.String" />
+    <property name="PayType1" column="PayType1" type="System.String" />
+    <property name="PayTypePay1" column="PayTypePay1" type="System.String" />
+    <property name="PayType2" column="PayType2" type="System.String" />
+    <property name="PayTypePay2" column="PayTypePay2" type="System.String" />
+    <property name="PayType3" column="PayType3" type="System.String" />
+    <property name="PayTypePay3" column="PayTypePay3" type="System.String" />
+    <property name="PayType4" column="PayType4" type="System.String" />
+    <property name="PayTypePay4" column="PayTypePay4" type="System.String" />
+    <property name="PayPerDiscount" column="PayPerDiscount" type="System.String" />
+    <property name="PayPerSurcharge" column="PayPerSurcharge" type="System.String" />
   </class>
 
 </hibernate-mapping>

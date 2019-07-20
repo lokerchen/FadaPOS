@@ -23,6 +23,10 @@ namespace SuperPOS.Domain.Entities
         [XmlElement(ElementName = "PayDiscount")]
         public virtual string PayDiscount { get; set; }
 
+        //Surcharge
+        [XmlElement(ElementName = "PaySurcharge")]
+        public virtual string PaySurcharge { get; set; }
+
         //菜品总额
         [XmlElement(ElementName = "MenuAmount")]
         public virtual string MenuAmount { get; set; }
@@ -58,5 +62,45 @@ namespace SuperPOS.Domain.Entities
         //付款时间
         [XmlElement(ElementName = "PayTime")]
         public virtual string PayTime { get; set; }
+
+        //PayType1
+        [XmlElement(ElementName = "PayType1")]
+        public virtual string PayType1 { get; set; }
+
+        //PayType1 付款金额
+        [XmlElement(ElementName = "PayTypePay1")]
+        public virtual string PayTypePay1 { get; set; }
+
+        //PayType2
+        [XmlElement(ElementName = "PayType2")]
+        public virtual string PayType2 { get; set; }
+
+        //PayType2 付款金额
+        [XmlElement(ElementName = "PayTypePay2")]
+        public virtual string PayTypePay2 { get; set; }
+
+        //PayType3
+        [XmlElement(ElementName = "PayType3")]
+        public virtual string PayType3 { get; set; }
+
+        //PayType3 付款金额
+        [XmlElement(ElementName = "PayTypePay3")]
+        public virtual string PayTypePay3 { get; set; }
+
+        //PayType4
+        [XmlElement(ElementName = "PayType4")]
+        public virtual string PayType4 { get; set; }
+
+        //PayType4 付款金额
+        [XmlElement(ElementName = "PayTypePay4")]
+        public virtual string PayTypePay4 { get; set; }
+
+        //PayType4 付款金额
+        [XmlElement(ElementName = "PayPerDiscount")]
+        public virtual string PayPerDiscount { get; set; }
+
+        //PayType4 付款金额
+        [XmlElement(ElementName = "PayPerSurcharge")]
+        public virtual string PayPerSurcharge { get; set; }
     }
 }

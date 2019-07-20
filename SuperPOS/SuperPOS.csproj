@@ -161,6 +161,12 @@
     <Compile Include="UI\TA\FrmTaMenuItemCopyChoices.Designer.cs">
       <DependentUpon>FrmTaMenuItemCopyChoices.cs</DependentUpon>
     </Compile>
+    <Compile Include="UI\TA\FrmTaPaymentShop.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\TA\FrmTaPaymentShop.Designer.cs">
+      <DependentUpon>FrmTaPaymentShop.cs</DependentUpon>
+    </Compile>
     <Compile Include="UI\TA\FrmTaPrtSetup.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -467,6 +473,9 @@
     <EmbeddedResource Include="UI\TA\FrmTaMenuItemCopyChoices.resx">
       <DependentUpon>FrmTaMenuItemCopyChoices.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="UI\TA\FrmTaPaymentShop.resx">
+      <DependentUpon>FrmTaPaymentShop.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="UI\TA\FrmTaPrtSetup.resx">
       <DependentUpon>FrmTaPrtSetup.cs</DependentUpon>
     </EmbeddedResource>
@@ -625,7 +634,9 @@
       <SubType>Designer</SubType>
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Include="packages.config" />
+    <None Include="packages.config">
+      <SubType>Designer</SubType>
+    </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

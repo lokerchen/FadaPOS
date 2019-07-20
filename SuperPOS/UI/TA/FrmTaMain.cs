@@ -544,14 +544,30 @@ namespace SuperPOS.UI.TA
             SaveCheckOrder(lstTaOI);
             #endregion
 
-            FrmTaPayment frmTaPayment = new FrmTaPayment(usrID, checkID, ORDER_TYPE, CallerID, SetPrtInfo(lstTaOI));
-
-            if (frmTaPayment.ShowDialog() == DialogResult.OK)
+            //ORDER_TYPE_SHOP
+            if (ORDER_TYPE.Equals(PubComm.ORDER_TYPE_SHOP))
             {
-                if (frmTaPayment.returnPaid) treeListOrder.Nodes.Clear();
+                FrmTaPaymentShop frmTaPaymentShop = new FrmTaPaymentShop(usrID, checkID, ORDER_TYPE, CallerID, SetPrtInfo(lstTaOI));
 
-                checkID = CommonDAL.GetCheckCode(true);
-                lblCheck.Text = checkID;
+                if (frmTaPaymentShop.ShowDialog() == DialogResult.OK)
+                {
+                    if (frmTaPaymentShop.returnPaid) treeListOrder.Nodes.Clear();
+
+                    checkID = CommonDAL.GetCheckCode(true);
+                    lblCheck.Text = checkID;
+                }
+            }
+            else
+            {
+                FrmTaPayment frmTaPayment = new FrmTaPayment(usrID, checkID, ORDER_TYPE, CallerID, SetPrtInfo(lstTaOI));
+
+                if (frmTaPayment.ShowDialog() == DialogResult.OK)
+                {
+                    if (frmTaPayment.returnPaid) treeListOrder.Nodes.Clear();
+
+                    checkID = CommonDAL.GetCheckCode(true);
+                    lblCheck.Text = checkID;
+                }
             }
         }
         #endregion
@@ -1317,8 +1333,8 @@ namespace SuperPOS.UI.TA
                 taCheckOrderInfo = lstChk.FirstOrDefault();
                 taCheckOrderInfo.PayOrderType = ORDER_TYPE;
                 taCheckOrderInfo.MenuAmount = lstTaOI.Sum(s => Convert.ToDecimal(s.ItemTotalPrice)).ToString();
-                taCheckOrderInfo.PayDiscount = CommonDAL.GetTaDiscount(ORDER_TYPE, Convert.ToDecimal(taCheckOrderInfo.MenuAmount)).ToString();
-                taCheckOrderInfo.TotalAmount = CommonDAL.GetTotalAmount(Convert.ToDecimal(taCheckOrderInfo.MenuAmount), Convert.ToDecimal(taCheckOrderInfo.PayDiscount)).ToString();
+                //taCheckOrderInfo.PayDiscount = CommonDAL.GetTaDiscount(ORDER_TYPE, Convert.ToDecimal(taCheckOrderInfo.MenuAmount)).ToString();
+                taCheckOrderInfo.TotalAmount = CommonDAL.GetTotalAmount(Convert.ToDecimal(taCheckOrderInfo.MenuAmount), Convert.ToDecimal(CommonDAL.GetTaDiscount(ORDER_TYPE, Convert.ToDecimal(taCheckOrderInfo.MenuAmount)))).ToString();
                 taCheckOrderInfo.StaffID = usrID;
                 taCheckOrderInfo.PayTime = DateTime.Now.ToString();
                 _control.UpdateEntity(taCheckOrderInfo);
@@ -1329,14 +1345,38 @@ namespace SuperPOS.UI.TA
                 taCheckOrderInfo.PayOrderType = ORDER_TYPE;
                 taCheckOrderInfo.PayDelivery = "0.00";
                 taCheckOrderInfo.MenuAmount = lstTaOI.Sum(s => Convert.ToDecimal(s.ItemTotalPrice)).ToString();
-                taCheckOrderInfo.PayDiscount = CommonDAL.GetTaDiscount(ORDER_TYPE, Convert.ToDecimal(taCheckOrderInfo.MenuAmount)).ToString();
-                taCheckOrderInfo.TotalAmount = CommonDAL.GetTotalAmount(Convert.ToDecimal(taCheckOrderInfo.MenuAmount), Convert.ToDecimal(taCheckOrderInfo.PayDiscount)).ToString();
+                //taCheckOrderInfo.PayDiscount = CommonDAL.GetTaDiscount(ORDER_TYPE, Convert.ToDecimal(taCheckOrderInfo.MenuAmount)).ToString();
+
+                new SystemData().GetTaDiscount();
+                var lstDiscount = CommonData.TaDiscount.Where(s => s.TaType.Equals(ORDER_TYPE));
+                if (lstDiscount.Any())
+                {
+                    taCheckOrderInfo.PayPerDiscount = @"%";
+                    taCheckOrderInfo.PayDiscount = lstDiscount.FirstOrDefault().TaDiscount;
+                }
+                else 
+                    taCheckOrderInfo.PayDiscount = @"0.00";
+
+                taCheckOrderInfo.TotalAmount = CommonDAL.GetTotalAmount(Convert.ToDecimal(taCheckOrderInfo.MenuAmount), CommonDAL.GetTaDiscount(ORDER_TYPE, Convert.ToDecimal(taCheckOrderInfo.MenuAmount))).ToString();
                 taCheckOrderInfo.Paid = "0.00";
                 taCheckOrderInfo.IsPaid = "N";
                 taCheckOrderInfo.CustomerID = string.IsNullOrEmpty(CallerID) ? "1" : CallerID;
                 taCheckOrderInfo.CustomerNote = "";
                 taCheckOrderInfo.StaffID = usrID;
                 taCheckOrderInfo.PayTime = DateTime.Now.ToString();
+
+                //taCheckOrderInfo.PayPerDiscount = "";
+                //taCheckOrderInfo.PayDiscount = @"0.00";
+                taCheckOrderInfo.PayPerSurcharge = "";
+                taCheckOrderInfo.PaySurcharge = @"0.00";
+                taCheckOrderInfo.PayType1 = "";
+                taCheckOrderInfo.PayTypePay1 = @"0.00";
+                taCheckOrderInfo.PayType2 = "";
+                taCheckOrderInfo.PayTypePay2 = @"0.00";
+                taCheckOrderInfo.PayType3 = "";
+                taCheckOrderInfo.PayTypePay3 = @"0.00";
+                taCheckOrderInfo.PayType4 = "";
+                taCheckOrderInfo.PayTypePay4 = @"0.00";
 
                 _control.AddEntity(taCheckOrderInfo);
             }
