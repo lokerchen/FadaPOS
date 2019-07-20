@@ -475,6 +475,7 @@
             this.lblPayType4.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
             this.lblPayType4.Appearance.Font = new System.Drawing.Font("Tahoma", 18F);
             this.lblPayType4.Appearance.ForeColor = System.Drawing.Color.Black;
+            this.lblPayType4.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
             this.lblPayType4.Location = new System.Drawing.Point(145, 178);
             this.lblPayType4.Name = "lblPayType4";
             this.lblPayType4.Size = new System.Drawing.Size(123, 36);
@@ -487,6 +488,7 @@
             this.lblPayType3.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
             this.lblPayType3.Appearance.Font = new System.Drawing.Font("Tahoma", 18F);
             this.lblPayType3.Appearance.ForeColor = System.Drawing.Color.Black;
+            this.lblPayType3.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
             this.lblPayType3.Location = new System.Drawing.Point(145, 127);
             this.lblPayType3.Name = "lblPayType3";
             this.lblPayType3.Size = new System.Drawing.Size(123, 36);
@@ -499,6 +501,7 @@
             this.lblPayType2.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
             this.lblPayType2.Appearance.Font = new System.Drawing.Font("Tahoma", 18F);
             this.lblPayType2.Appearance.ForeColor = System.Drawing.Color.Black;
+            this.lblPayType2.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
             this.lblPayType2.Location = new System.Drawing.Point(145, 77);
             this.lblPayType2.Name = "lblPayType2";
             this.lblPayType2.Size = new System.Drawing.Size(123, 36);
@@ -775,7 +778,6 @@
             this.groupBox5.ResumeLayout(false);
             this.groupBox4.ResumeLayout(false);
             this.groupBox3.ResumeLayout(false);
-            this.groupBox3.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.txtPayTypePay4.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtPayTypePay3.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtPayTypePay2.Properties)).EndInit();
