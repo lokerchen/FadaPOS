@@ -635,42 +635,44 @@ namespace SuperPOS.UI.TA
 
         private void SaveOrder()
         {
+
+            new SystemData().GetTaCheckOrder();
+            var lstChk = CommonData.TaCheckOrder.Where(s => s.CheckCode.Equals(checkID));
+
+            if (lstChk.Any())
+            {
+                TaCheckOrderInfo taCheckOrder = lstChk.FirstOrDefault();
+
+                taCheckOrder.PayTime = DateTime.Now.ToString();
+                taCheckOrder.PayPerDiscount = txtPercentDiscount.Text;
+                taCheckOrder.PayDiscount = txtDiscount.Text;
+                taCheckOrder.PayPerSurcharge = txtPercentSurcharge.Text;
+                taCheckOrder.PaySurcharge = txtSurcharge.Text;
+                taCheckOrder.PayType1 = lblPayType1.Text;
+                taCheckOrder.PayTypePay1 = txtPayTypePay1.Text;
+                taCheckOrder.PayType2 = lblPayType2.Text;
+                taCheckOrder.PayTypePay2 = txtPayTypePay2.Text;
+                taCheckOrder.PayType3 = lblPayType3.Text;
+                taCheckOrder.PayTypePay3 = txtPayTypePay3.Text;
+                taCheckOrder.PayType4 = lblPayType4.Text;
+                taCheckOrder.PayTypePay4 = txtPayTypePay4.Text;
+                taCheckOrder.TotalAmount = txtToPay.Text;
+                taCheckOrder.Paid = txtTendered.Text;
+                taCheckOrder.IsPaid = IsPaid ? @"Y" : @"N";
+
+                _control.UpdateEntity(taCheckOrder);
+            }
+
             if (IsPaid)
             {
-                new SystemData().GetTaCheckOrder();
-                var lstChk = CommonData.TaCheckOrder.Where(s => s.CheckCode.Equals(checkID));
+                returnPaid = true;
 
-                if (lstChk.Any())
-                {
-                    TaCheckOrderInfo taCheckOrder = lstChk.FirstOrDefault();
+                this.DialogResult = DialogResult.OK;
 
-                    taCheckOrder.PayTime = DateTime.Now.ToString();
-                    taCheckOrder.PayPerDiscount = txtPercentDiscount.Text;
-                    taCheckOrder.PayDiscount = txtDiscount.Text;
-                    taCheckOrder.PayPerSurcharge = txtPercentSurcharge.Text;
-                    taCheckOrder.PaySurcharge = txtSurcharge.Text;
-                    taCheckOrder.PayType1 = lblPayType1.Text;
-                    taCheckOrder.PayTypePay1 = txtPayTypePay1.Text;
-                    taCheckOrder.PayType2 = lblPayType2.Text;
-                    taCheckOrder.PayTypePay2 = txtPayTypePay2.Text;
-                    taCheckOrder.PayType3 = lblPayType3.Text;
-                    taCheckOrder.PayTypePay3 = txtPayTypePay3.Text;
-                    taCheckOrder.PayType4 = lblPayType4.Text;
-                    taCheckOrder.PayTypePay4 = txtPayTypePay4.Text;
-                    taCheckOrder.TotalAmount = txtToPay.Text;
-                    taCheckOrder.Paid = txtTendered.Text;
-                    taCheckOrder.IsPaid = IsPaid ? @"Y" : @"N";
-
-                    _control.UpdateEntity(taCheckOrder);
-
-                    returnPaid = true;
-
-                    this.DialogResult = DialogResult.OK;
-
-                    Hide();
-                }
+                Hide();
             }
         }
+
         #endregion
 
         private void btnPercent_Click(object sender, EventArgs e)
