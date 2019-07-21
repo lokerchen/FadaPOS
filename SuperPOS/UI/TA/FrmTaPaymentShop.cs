@@ -5,6 +5,7 @@ using System.Windows.Forms;
 using DevExpress.XtraEditors;
 using SuperPOS.Common;
 using SuperPOS.Domain.Entities;
+using SuperPOS.Print;
 
 namespace SuperPOS.UI.TA
 {
@@ -70,6 +71,10 @@ namespace SuperPOS.UI.TA
             //订单类型
             lblTypeName.Text = PubComm.ORDER_TYPE_SHOP;
 
+            SetPayType();
+
+            SetClick();
+
             #region 查询账单
             new SystemData().GetTaCheckOrder();
 
@@ -101,10 +106,6 @@ namespace SuperPOS.UI.TA
             //默认为PayType1
             objTxt = txtPayTypePay1;
             objName = @"txtPayTypePay1";
-
-            SetPayType();
-
-            SetClick();
 
             asfc.controllInitializeSize(this);
         }
@@ -645,19 +646,19 @@ namespace SuperPOS.UI.TA
 
                 taCheckOrder.PayTime = DateTime.Now.ToString();
                 taCheckOrder.PayPerDiscount = txtPercentDiscount.Text;
-                taCheckOrder.PayDiscount = txtDiscount.Text;
+                taCheckOrder.PayDiscount = Math.Round(Convert.ToDecimal(txtDiscount.Text), 2).ToString(@"0.00");
                 taCheckOrder.PayPerSurcharge = txtPercentSurcharge.Text;
-                taCheckOrder.PaySurcharge = txtSurcharge.Text;
+                taCheckOrder.PaySurcharge = Math.Round(Convert.ToDecimal(txtSurcharge.Text), 2).ToString(@"0.00");
                 taCheckOrder.PayType1 = lblPayType1.Text;
-                taCheckOrder.PayTypePay1 = txtPayTypePay1.Text;
+                taCheckOrder.PayTypePay1 = Math.Round(Convert.ToDecimal(txtPayTypePay1.Text), 2).ToString(@"0.00");
                 taCheckOrder.PayType2 = lblPayType2.Text;
-                taCheckOrder.PayTypePay2 = txtPayTypePay2.Text;
+                taCheckOrder.PayTypePay2 = Math.Round(Convert.ToDecimal(txtPayTypePay2.Text), 2).ToString(@"0.00");
                 taCheckOrder.PayType3 = lblPayType3.Text;
-                taCheckOrder.PayTypePay3 = txtPayTypePay3.Text;
+                taCheckOrder.PayTypePay3 = Math.Round(Convert.ToDecimal(txtPayTypePay3.Text), 2).ToString(@"0.00");
                 taCheckOrder.PayType4 = lblPayType4.Text;
-                taCheckOrder.PayTypePay4 = txtPayTypePay4.Text;
-                taCheckOrder.TotalAmount = txtToPay.Text;
-                taCheckOrder.Paid = txtTendered.Text;
+                taCheckOrder.PayTypePay4 = Math.Round(Convert.ToDecimal(txtPayTypePay4.Text), 2).ToString(@"0.00");
+                taCheckOrder.TotalAmount = Math.Round(Convert.ToDecimal(txtToPay.Text), 2).ToString(@"0.00");
+                taCheckOrder.Paid = Math.Round(Convert.ToDecimal(txtTendered.Text), 2).ToString(@"0.00");
                 taCheckOrder.IsPaid = IsPaid ? @"Y" : @"N";
 
                 _control.UpdateEntity(taCheckOrder);
@@ -684,6 +685,70 @@ namespace SuperPOS.UI.TA
         private void FrmTaPaymentShop_SizeChanged(object sender, EventArgs e)
         {
             asfc.controlAutoSize(this);
+        }
+
+        private void btnPrtAll_Click(object sender, EventArgs e)
+        {
+            //保存账单信息
+            SaveOrder();
+
+            //未完成付款
+            if (!IsPaid) return;
+            
+            new SystemData().GetTaOrderItem();
+            var lstOI = CommonData.TaOrderItem.Where(s => s.CheckCode.Equals(checkID)).ToList();
+
+            PrtTemplataTa prtTemplataTa = new PrtTemplataTa();
+            prtTemplataTa.RestaurantName = PrtCommon.GetRestName();
+            prtTemplataTa.Addr = PrtCommon.GetRestAddr();
+            prtTemplataTa.Telephone = PrtCommon.GetRestTel();
+            prtTemplataTa.VatNo = PrtCommon.GetRestVATNo();
+            prtTemplataTa.OrderTime = PrtCommon.GetPrtTime();
+            prtTemplataTa.OrderDate = PrtCommon.GetPrtDateTime();
+            prtTemplataTa.OrderNo = checkID;
+            prtTemplataTa.PayType = GetPayType();
+            prtTemplataTa.TotalAmount = txtToPay.Text; 
+            prtTemplataTa.SubTotal = htDetail["SubTotal"].ToString();
+            prtTemplataTa.StaffName = htDetail["Staff"].ToString();
+            prtTemplataTa.ItemCount = htDetail["ItemQty"].ToString();
+            prtTemplataTa.Discount = txtDiscount.Text + txtPercentDiscount.Text;
+
+            PrtTemplate.PrtTaBill(prtTemplataTa, lstOI);
+        }
+
+        private string GetPayType()
+        {
+            new SystemData().GetTaCheckOrder();
+            var lstChk = CommonData.TaCheckOrder.Where(s => s.CheckCode.Equals(checkID));
+
+            string strPt = "";
+
+            if (lstChk.Any())
+            {
+                TaCheckOrderInfo taCheckOrder = lstChk.FirstOrDefault();
+
+                if (Convert.ToDecimal(taCheckOrder.PayTypePay1) > 0)
+                {
+                    strPt += taCheckOrder.PayType1 + " ";
+                }
+
+                if (Convert.ToDecimal(taCheckOrder.PayTypePay2) > 0)
+                {
+                    strPt += taCheckOrder.PayType2 + " ";
+                }
+
+                if (Convert.ToDecimal(taCheckOrder.PayTypePay3) > 0)
+                {
+                    strPt += taCheckOrder.PayType3 + " ";
+                }
+
+                if (Convert.ToDecimal(taCheckOrder.PayTypePay4) > 0)
+                {
+                    strPt += taCheckOrder.PayType4 + " ";
+                }
+            }
+
+            return strPt;
         }
     }
 }

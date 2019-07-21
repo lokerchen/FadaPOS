@@ -36,6 +36,7 @@
             this.btnPrtAllReceipt = new DevExpress.XtraEditors.SimpleButton();
             this.btnPrtBillOnly = new DevExpress.XtraEditors.SimpleButton();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
+            this.btnPercent = new DevExpress.XtraEditors.SimpleButton();
             this.btnClear = new DevExpress.XtraEditors.SimpleButton();
             this.btnDel = new DevExpress.XtraEditors.SimpleButton();
             this.btnPoint = new DevExpress.XtraEditors.SimpleButton();
@@ -73,7 +74,6 @@
             this.labelControl10 = new DevExpress.XtraEditors.LabelControl();
             this.lblTypeName = new DevExpress.XtraEditors.LabelControl();
             this.btnExit = new DevExpress.XtraEditors.SimpleButton();
-            this.btnPercent = new DevExpress.XtraEditors.SimpleButton();
             this.groupBox1.SuspendLayout();
             this.groupBox5.SuspendLayout();
             this.groupBox4.SuspendLayout();
@@ -146,6 +146,7 @@
             this.btnPrtAll.Size = new System.Drawing.Size(165, 48);
             this.btnPrtAll.TabIndex = 47;
             this.btnPrtAll.Text = "Print All";
+            this.btnPrtAll.Click += new System.EventHandler(this.btnPrtAll_Click);
             // 
             // btnPrtKitOnly
             // 
@@ -207,6 +208,21 @@
             this.groupBox4.Size = new System.Drawing.Size(215, 296);
             this.groupBox4.TabIndex = 91;
             this.groupBox4.TabStop = false;
+            // 
+            // btnPercent
+            // 
+            this.btnPercent.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btnPercent.Appearance.BackColor = System.Drawing.Color.OrangeRed;
+            this.btnPercent.Appearance.Font = new System.Drawing.Font("Tahoma", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnPercent.Appearance.Options.UseBackColor = true;
+            this.btnPercent.Appearance.Options.UseFont = true;
+            this.btnPercent.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
+            this.btnPercent.Location = new System.Drawing.Point(8, 241);
+            this.btnPercent.Name = "btnPercent";
+            this.btnPercent.Size = new System.Drawing.Size(60, 45);
+            this.btnPercent.TabIndex = 103;
+            this.btnPercent.Text = "%";
+            this.btnPercent.Click += new System.EventHandler(this.btnPercent_Click);
             // 
             // btnClear
             // 
@@ -743,21 +759,6 @@
             this.btnExit.TabIndex = 45;
             this.btnExit.Text = "Exit";
             this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
-            // 
-            // btnPercent
-            // 
-            this.btnPercent.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.btnPercent.Appearance.BackColor = System.Drawing.Color.OrangeRed;
-            this.btnPercent.Appearance.Font = new System.Drawing.Font("Tahoma", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnPercent.Appearance.Options.UseBackColor = true;
-            this.btnPercent.Appearance.Options.UseFont = true;
-            this.btnPercent.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
-            this.btnPercent.Location = new System.Drawing.Point(8, 241);
-            this.btnPercent.Name = "btnPercent";
-            this.btnPercent.Size = new System.Drawing.Size(60, 45);
-            this.btnPercent.TabIndex = 103;
-            this.btnPercent.Text = "%";
-            this.btnPercent.Click += new System.EventHandler(this.btnPercent_Click);
             // 
             // FrmTaPaymentShop
             // 

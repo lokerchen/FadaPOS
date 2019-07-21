@@ -519,7 +519,17 @@ namespace SuperPOS.UI.TA
         #region Pay按钮
         private void btnPay_Click(object sender, EventArgs e)
         {
+            if (treeListOrder.AllNodesCount <= 0) return;
+
             #region 保存TreeList
+            new SystemData().GetTaOrderItem();
+            var lstDelOi = CommonData.TaOrderItem.Where(s => s.CheckCode.Equals(checkID));
+
+            foreach (var taOrderItemInfo in lstDelOi)
+            {
+                _control.DeleteEntity(taOrderItemInfo);
+            }
+
             List<TaOrderItemInfo> lstTaOI = new List<TaOrderItemInfo>();
 
             lstTaOI = TreeListToOrderItem(isNew);
@@ -1326,6 +1336,7 @@ namespace SuperPOS.UI.TA
 
         private void SaveCheckOrder(List<TaOrderItemInfo> lstTaOI)
         {
+            new SystemData().GetTaCheckOrder();
             TaCheckOrderInfo taCheckOrderInfo = new TaCheckOrderInfo();
             var lstChk = CommonData.TaCheckOrder.Where(s => s.CheckCode.Equals(checkID) && s.IsPaid.Equals("N"));
             if (lstChk.Any())

@@ -137,7 +137,7 @@ namespace SuperPOS.Print
         /// <returns></returns>
         public static string GetPrtTime()
         {
-            return @"[" + DateTime.Now.ToShortTimeString() + @"]";
+            return DateTime.Now.ToShortTimeString();
         }
 
         #endregion

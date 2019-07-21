@@ -77,7 +77,7 @@ namespace SuperPOS.Print
                         content = content.Replace("{ItemCount}", prtTemplataTa.ItemCount);
                         content = content.Replace("{SubTotal}", prtTemplataTa.SubTotal);
                         content = content.Replace("{TotalAmount}", prtTemplataTa.TotalAmount);
-                        content = content.Replace("{PayType}", prtTemplataTa.PayType);
+                        content = content.Replace("{PayType}", prtTemplataTa.PayType.Trim());
                         content = content.Replace("{Tendred}", prtTemplataTa.Tendred);
                         content = content.Replace("{Rete1}", prtTemplataTa.Rete1);
                         content = content.Replace("{Change}", prtTemplataTa.Change);
@@ -89,6 +89,7 @@ namespace SuperPOS.Print
                         content = content.Replace("{VatB}", prtTemplataTa.VatB);
                         content = content.Replace("{Gross2}", prtTemplataTa.Gross2);
                         content = content.Replace("{ChkNum}", prtTemplataTa.ChkNum);
+                        content = content.Replace("{Discount}", prtTemplataTa.Discount);
 
                         string strTitle = "";
                         string strContent = "";

@@ -78,5 +78,7 @@ namespace SuperPOS.Print
         public string Gross2 { get; set; }
 
         public string ChkNum { get; set; }
+
+        public string Discount { get; set; }
     }
 }
