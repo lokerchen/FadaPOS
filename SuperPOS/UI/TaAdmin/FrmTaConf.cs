@@ -226,14 +226,14 @@ namespace SuperPOS.UI.TaAdmin
                 #region General Setting
 
                 #region Pay Type
-                foreach (var taPaymentTypeInfo in CommonData.TaPaymentType)
-                {
-                    taPaymentTypeInfo.PaymentType = txtGsPayType[i].Text;
+                //foreach (var taPaymentTypeInfo in CommonData.TaPaymentType)
+                //{
+                //    taPaymentTypeInfo.PaymentType = txtGsPayType[i].Text;
 
-                    _control.UpdateEntity(taPaymentTypeInfo);
+                //    _control.UpdateEntity(taPaymentTypeInfo);
 
-                    i++;
-                }
+                //    i++;
+                //}
                 #endregion
 
                 CommonDAL.GetSysValue(PubComm.SYS_VALUE_FREE_FOOD_ITEM_AMOUNT, PubComm.SYS_DESC_FREE_FOOD_ITEM_AMOUNT, txtTotalAmountThreshold.Text);

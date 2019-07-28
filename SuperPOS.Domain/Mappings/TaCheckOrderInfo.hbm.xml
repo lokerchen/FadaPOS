@@ -30,6 +30,8 @@
     <property name="PayTypePay3" column="PayTypePay3" type="System.String" />
     <property name="PayType4" column="PayType4" type="System.String" />
     <property name="PayTypePay4" column="PayTypePay4" type="System.String" />
+    <property name="PayType5" column="PayType5" type="System.String" />
+    <property name="PayTypePay5" column="PayTypePay5" type="System.String" />
     <property name="PayPerDiscount" column="PayPerDiscount" type="System.String" />
     <property name="PayPerSurcharge" column="PayPerSurcharge" type="System.String" />
   </class>

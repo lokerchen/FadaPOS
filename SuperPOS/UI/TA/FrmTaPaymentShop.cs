@@ -20,7 +20,7 @@ namespace SuperPOS.UI.TA
         private Hashtable htDetail = new Hashtable();
 
         //付款方式数组
-        private readonly LabelControl[] lblPayType = new LabelControl[4];
+        private readonly LabelControl[] lblPayType = new LabelControl[5];
 
         //点击按钮名字
         private string objName = "txtPayTypePay1";
@@ -29,15 +29,16 @@ namespace SuperPOS.UI.TA
         //操作类型
         private string orderType = "";
         //付款方式对应金额
-        private TextEdit[] txtPayTypePay = new TextEdit[4];
+        private TextEdit[] txtPayTypePay = new TextEdit[5];
         //用户ID
         private int usrID;
 
-        //四种不同付款方式
+        //五种不同付款方式
         private decimal ptPay1 = 0.00m;
         private decimal ptPay2 = 0.00m;
         private decimal ptPay3 = 0.00m;
         private decimal ptPay4 = 0.00m;
+        private decimal ptPay5 = 0.00m;
 
         //所有菜单总价格
         private decimal menuAmout = 0.00m;
@@ -87,6 +88,7 @@ namespace SuperPOS.UI.TA
                 txtPayTypePay2.Text = taCheckOrder.PayTypePay2;
                 txtPayTypePay3.Text = taCheckOrder.PayTypePay3;
                 txtPayTypePay4.Text = taCheckOrder.PayTypePay4;
+                txtPayTypePay5.Text = taCheckOrder.PayTypePay5;
 
                 txtPercentDiscount.Text = taCheckOrder.PayPerDiscount;
                 txtDiscount.Text = taCheckOrder.PayDiscount;
@@ -121,11 +123,13 @@ namespace SuperPOS.UI.TA
             lblPayType[1] = lblPayType2;
             lblPayType[2] = lblPayType3;
             lblPayType[3] = lblPayType4;
+            lblPayType[4] = lblPayType5;
 
             txtPayTypePay[0] = txtPayTypePay1;
             txtPayTypePay[1] = txtPayTypePay2;
             txtPayTypePay[2] = txtPayTypePay3;
             txtPayTypePay[3] = txtPayTypePay4;
+            txtPayTypePay[4] = txtPayTypePay5;
 
             var i = 0;
             foreach (var taPaymentTypeInfo in CommonData.TaPaymentType)
@@ -134,10 +138,10 @@ namespace SuperPOS.UI.TA
                 txtPayTypePay[i].Text = @"0.00";
                 i++;
 
-                if (i > 3) break;
+                if (i > 4) break;
             }
 
-            for (var j = i; j < 4; j++)
+            for (var j = i; j < 5; j++)
             {
                 lblPayType[j].Visible = false;
                 txtPayTypePay[j].Visible = false;
@@ -171,10 +175,9 @@ namespace SuperPOS.UI.TA
         #endregion
 
         #region 数字按钮输入事件
-
         private void btn_Click(object sender, EventArgs e)
         {
-            var btn = (SimpleButton) sender;
+            var btn = (SimpleButton)sender;
 
             if (btn.Name.Equals("btnClear"))
             {
@@ -212,7 +215,6 @@ namespace SuperPOS.UI.TA
                 }
             }
         }
-
         #endregion
 
         #region 获得账单信息
@@ -274,6 +276,11 @@ namespace SuperPOS.UI.TA
             if (lblPayType4.Visible)
             {
                 ptPay4 = TxtToDecimal(txtPayTypePay4);
+            }
+
+            if (lblPayType5.Visible)
+            {
+                ptPay5 = TxtToDecimal(txtPayTypePay5);
             }
         }
 
@@ -386,6 +393,11 @@ namespace SuperPOS.UI.TA
             RefreshAmount();
         }
 
+        private void txtPayTypePay5_EditValueChanged(object sender, EventArgs e)
+        {
+            RefreshAmount();
+        }
+
         private void txtPercentDiscount_EditValueChanged(object sender, EventArgs e)
         {
             RefreshAmount();
@@ -434,7 +446,7 @@ namespace SuperPOS.UI.TA
                 txtToPay.Text = (menuAmout - discount + surcharge).ToString("0.00");
 
                 //已付款金额
-                txtTendered.Text = (ptPay1 + ptPay2 + ptPay3 + ptPay4).ToString("0.00");
+                txtTendered.Text = (ptPay1 + ptPay2 + ptPay3 + ptPay4 + ptPay5).ToString("0.00");
 
                 //找零
                 decimal change = Convert.ToDecimal(txtTendered.Text) - Convert.ToDecimal(txtToPay.Text);
@@ -541,7 +553,7 @@ namespace SuperPOS.UI.TA
         {
             GetPayTypePayment();
 
-            txtTendered.Text = (ptPay1 + ptPay2 + ptPay3 + ptPay4).ToString("0.00");
+            txtTendered.Text = (ptPay1 + ptPay2 + ptPay3 + ptPay4 + ptPay5).ToString("0.00");
 
             GetAllAmount();
         }
@@ -580,6 +592,12 @@ namespace SuperPOS.UI.TA
             //if (!txtPayTypePay4.Text.Equals(txtToPay.Text)) txtPayTypePay4.Text = txtToPay.Text;
             RefreshAmount();
         }
+
+        private void lblPayType5_Click(object sender, EventArgs e)
+        {
+            txtPayTypePay5.Text = txtToPay.Text;
+            RefreshAmount();
+        }
         #endregion
 
         #region 鼠标按下事件
@@ -605,6 +623,12 @@ namespace SuperPOS.UI.TA
         {
             objName = "txtPayTypePay4";
             objTxt = txtPayTypePay4;
+        }
+
+        private void txtPayTypePay5_MouseDown(object sender, MouseEventArgs e)
+        {
+            objName = "txtPayTypePay5";
+            objTxt = txtPayTypePay5;
         }
 
         private void txtPercentDiscount_MouseDown(object sender, MouseEventArgs e)
@@ -657,6 +681,8 @@ namespace SuperPOS.UI.TA
                 taCheckOrder.PayTypePay3 = Math.Round(Convert.ToDecimal(txtPayTypePay3.Text), 2).ToString(@"0.00");
                 taCheckOrder.PayType4 = lblPayType4.Text;
                 taCheckOrder.PayTypePay4 = Math.Round(Convert.ToDecimal(txtPayTypePay4.Text), 2).ToString(@"0.00");
+                taCheckOrder.PayType5 = lblPayType5.Text;
+                taCheckOrder.PayTypePay5 = Math.Round(Convert.ToDecimal(txtPayTypePay5.Text), 2).ToString(@"0.00");
                 taCheckOrder.TotalAmount = Math.Round(Convert.ToDecimal(txtToPay.Text), 2).ToString(@"0.00");
                 taCheckOrder.Paid = Math.Round(Convert.ToDecimal(txtTendered.Text), 2).ToString(@"0.00");
                 taCheckOrder.IsPaid = IsPaid ? @"Y" : @"N";
@@ -745,6 +771,11 @@ namespace SuperPOS.UI.TA
                 if (Convert.ToDecimal(taCheckOrder.PayTypePay4) > 0)
                 {
                     strPt += taCheckOrder.PayType4 + " ";
+                }
+
+                if (Convert.ToDecimal(taCheckOrder.PayTypePay5) > 0)
+                {
+                    strPt += taCheckOrder.PayType5 + " ";
                 }
             }
 
@@ -885,6 +916,6 @@ namespace SuperPOS.UI.TA
             prtTemplataTa.Discount = txtDiscount.Text + txtPercentDiscount.Text;
 
             PrtTemplate.PrtTa(prtTemplataTa, lstOI, PrtStatic.PRT_TEMPLATE_TA_KITCHEN_TYPE);
-        }
+        } 
     }
 }

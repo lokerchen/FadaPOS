@@ -1388,6 +1388,8 @@ namespace SuperPOS.UI.TA
                 taCheckOrderInfo.PayTypePay3 = @"0.00";
                 taCheckOrderInfo.PayType4 = "";
                 taCheckOrderInfo.PayTypePay4 = @"0.00";
+                taCheckOrderInfo.PayType5 = "";
+                taCheckOrderInfo.PayTypePay5 = @"0.00";
 
                 _control.AddEntity(taCheckOrderInfo);
             }

@@ -74,6 +74,8 @@
             this.labelControl10 = new DevExpress.XtraEditors.LabelControl();
             this.lblTypeName = new DevExpress.XtraEditors.LabelControl();
             this.btnExit = new DevExpress.XtraEditors.SimpleButton();
+            this.txtPayTypePay5 = new DevExpress.XtraEditors.TextEdit();
+            this.lblPayType5 = new DevExpress.XtraEditors.LabelControl();
             this.groupBox1.SuspendLayout();
             this.groupBox5.SuspendLayout();
             this.groupBox4.SuspendLayout();
@@ -90,6 +92,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.txtTendered.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtSurcharge.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtDiscount.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtPayTypePay5.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox1
@@ -206,7 +209,7 @@
             this.groupBox4.Controls.Add(this.btn9);
             this.groupBox4.Controls.Add(this.btn8);
             this.groupBox4.Controls.Add(this.btn7);
-            this.groupBox4.Location = new System.Drawing.Point(399, 262);
+            this.groupBox4.Location = new System.Drawing.Point(399, 281);
             this.groupBox4.Name = "groupBox4";
             this.groupBox4.Size = new System.Drawing.Size(215, 296);
             this.groupBox4.TabIndex = 91;
@@ -411,6 +414,8 @@
             // 
             // groupBox3
             // 
+            this.groupBox3.Controls.Add(this.txtPayTypePay5);
+            this.groupBox3.Controls.Add(this.lblPayType5);
             this.groupBox3.Controls.Add(this.txtPayTypePay4);
             this.groupBox3.Controls.Add(this.txtPayTypePay3);
             this.groupBox3.Controls.Add(this.txtPayTypePay2);
@@ -419,16 +424,16 @@
             this.groupBox3.Controls.Add(this.lblPayType3);
             this.groupBox3.Controls.Add(this.lblPayType2);
             this.groupBox3.Controls.Add(this.lblPayType1);
-            this.groupBox3.Location = new System.Drawing.Point(293, 24);
+            this.groupBox3.Location = new System.Drawing.Point(203, 22);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(305, 228);
+            this.groupBox3.Size = new System.Drawing.Size(305, 264);
             this.groupBox3.TabIndex = 90;
             this.groupBox3.TabStop = false;
             // 
             // txtPayTypePay4
             // 
             this.txtPayTypePay4.EditValue = "0.00";
-            this.txtPayTypePay4.Location = new System.Drawing.Point(9, 178);
+            this.txtPayTypePay4.Location = new System.Drawing.Point(9, 176);
             this.txtPayTypePay4.Name = "txtPayTypePay4";
             this.txtPayTypePay4.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 16F);
             this.txtPayTypePay4.Properties.Appearance.Options.UseFont = true;
@@ -444,7 +449,7 @@
             // txtPayTypePay3
             // 
             this.txtPayTypePay3.EditValue = "0.00";
-            this.txtPayTypePay3.Location = new System.Drawing.Point(9, 127);
+            this.txtPayTypePay3.Location = new System.Drawing.Point(9, 125);
             this.txtPayTypePay3.Name = "txtPayTypePay3";
             this.txtPayTypePay3.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 16F);
             this.txtPayTypePay3.Properties.Appearance.Options.UseFont = true;
@@ -460,7 +465,7 @@
             // txtPayTypePay2
             // 
             this.txtPayTypePay2.EditValue = "0.00";
-            this.txtPayTypePay2.Location = new System.Drawing.Point(9, 77);
+            this.txtPayTypePay2.Location = new System.Drawing.Point(9, 75);
             this.txtPayTypePay2.Name = "txtPayTypePay2";
             this.txtPayTypePay2.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 16F);
             this.txtPayTypePay2.Properties.Appearance.Options.UseFont = true;
@@ -476,7 +481,7 @@
             // txtPayTypePay1
             // 
             this.txtPayTypePay1.EditValue = "0.00";
-            this.txtPayTypePay1.Location = new System.Drawing.Point(9, 25);
+            this.txtPayTypePay1.Location = new System.Drawing.Point(9, 23);
             this.txtPayTypePay1.Name = "txtPayTypePay1";
             this.txtPayTypePay1.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 16F);
             this.txtPayTypePay1.Properties.Appearance.Options.UseFont = true;
@@ -495,7 +500,7 @@
             this.lblPayType4.Appearance.Font = new System.Drawing.Font("Tahoma", 18F);
             this.lblPayType4.Appearance.ForeColor = System.Drawing.Color.Black;
             this.lblPayType4.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
-            this.lblPayType4.Location = new System.Drawing.Point(145, 178);
+            this.lblPayType4.Location = new System.Drawing.Point(145, 176);
             this.lblPayType4.Name = "lblPayType4";
             this.lblPayType4.Size = new System.Drawing.Size(123, 36);
             this.lblPayType4.TabIndex = 61;
@@ -508,7 +513,7 @@
             this.lblPayType3.Appearance.Font = new System.Drawing.Font("Tahoma", 18F);
             this.lblPayType3.Appearance.ForeColor = System.Drawing.Color.Black;
             this.lblPayType3.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
-            this.lblPayType3.Location = new System.Drawing.Point(145, 127);
+            this.lblPayType3.Location = new System.Drawing.Point(145, 125);
             this.lblPayType3.Name = "lblPayType3";
             this.lblPayType3.Size = new System.Drawing.Size(123, 36);
             this.lblPayType3.TabIndex = 59;
@@ -521,7 +526,7 @@
             this.lblPayType2.Appearance.Font = new System.Drawing.Font("Tahoma", 18F);
             this.lblPayType2.Appearance.ForeColor = System.Drawing.Color.Black;
             this.lblPayType2.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
-            this.lblPayType2.Location = new System.Drawing.Point(145, 77);
+            this.lblPayType2.Location = new System.Drawing.Point(145, 75);
             this.lblPayType2.Name = "lblPayType2";
             this.lblPayType2.Size = new System.Drawing.Size(123, 36);
             this.lblPayType2.TabIndex = 57;
@@ -534,7 +539,7 @@
             this.lblPayType1.Appearance.Font = new System.Drawing.Font("Tahoma", 18F);
             this.lblPayType1.Appearance.ForeColor = System.Drawing.Color.Black;
             this.lblPayType1.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
-            this.lblPayType1.Location = new System.Drawing.Point(145, 25);
+            this.lblPayType1.Location = new System.Drawing.Point(145, 23);
             this.lblPayType1.Name = "lblPayType1";
             this.lblPayType1.Size = new System.Drawing.Size(123, 36);
             this.lblPayType1.TabIndex = 55;
@@ -555,7 +560,7 @@
             this.groupBox2.Controls.Add(this.labelControl5);
             this.groupBox2.Controls.Add(this.labelControl11);
             this.groupBox2.Controls.Add(this.labelControl10);
-            this.groupBox2.Location = new System.Drawing.Point(6, 258);
+            this.groupBox2.Location = new System.Drawing.Point(6, 281);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(387, 276);
             this.groupBox2.TabIndex = 89;
@@ -756,18 +761,47 @@
             this.btnExit.Appearance.Options.UseBackColor = true;
             this.btnExit.Appearance.Options.UseFont = true;
             this.btnExit.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
-            this.btnExit.Location = new System.Drawing.Point(492, 583);
+            this.btnExit.Location = new System.Drawing.Point(492, 589);
             this.btnExit.Name = "btnExit";
             this.btnExit.Size = new System.Drawing.Size(151, 48);
             this.btnExit.TabIndex = 45;
             this.btnExit.Text = "Exit";
             this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
             // 
+            // txtPayTypePay5
+            // 
+            this.txtPayTypePay5.EditValue = "0.00";
+            this.txtPayTypePay5.Location = new System.Drawing.Point(9, 222);
+            this.txtPayTypePay5.Name = "txtPayTypePay5";
+            this.txtPayTypePay5.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 16F);
+            this.txtPayTypePay5.Properties.Appearance.Options.UseFont = true;
+            this.txtPayTypePay5.Properties.Appearance.Options.UseTextOptions = true;
+            this.txtPayTypePay5.Properties.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
+            this.txtPayTypePay5.Properties.Mask.EditMask = "f2";
+            this.txtPayTypePay5.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Numeric;
+            this.txtPayTypePay5.Size = new System.Drawing.Size(130, 40);
+            this.txtPayTypePay5.TabIndex = 98;
+            this.txtPayTypePay5.EditValueChanged += new System.EventHandler(this.txtPayTypePay5_EditValueChanged);
+            this.txtPayTypePay5.MouseDown += new System.Windows.Forms.MouseEventHandler(this.txtPayTypePay5_MouseDown);
+            // 
+            // lblPayType5
+            // 
+            this.lblPayType5.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
+            this.lblPayType5.Appearance.Font = new System.Drawing.Font("Tahoma", 18F);
+            this.lblPayType5.Appearance.ForeColor = System.Drawing.Color.Black;
+            this.lblPayType5.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
+            this.lblPayType5.Location = new System.Drawing.Point(145, 222);
+            this.lblPayType5.Name = "lblPayType5";
+            this.lblPayType5.Size = new System.Drawing.Size(123, 36);
+            this.lblPayType5.TabIndex = 97;
+            this.lblPayType5.Text = "Pay Type";
+            this.lblPayType5.Click += new System.EventHandler(this.lblPayType5_Click);
+            // 
             // FrmTaPaymentShop
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(835, 641);
+            this.ClientSize = new System.Drawing.Size(835, 659);
             this.Controls.Add(this.btnExit);
             this.Controls.Add(this.groupBox1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -794,6 +828,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.txtTendered.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtSurcharge.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtDiscount.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtPayTypePay5.Properties)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -846,5 +881,7 @@
         private DevExpress.XtraEditors.TextEdit txtPercentSurcharge;
         private DevExpress.XtraEditors.TextEdit txtPercentDiscount;
         private DevExpress.XtraEditors.SimpleButton btnPercent;
+        private DevExpress.XtraEditors.TextEdit txtPayTypePay5;
+        private DevExpress.XtraEditors.LabelControl lblPayType5;
     }
 }

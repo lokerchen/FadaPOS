@@ -571,6 +571,7 @@
             this.groupBox2.TabIndex = 6;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "PaymentType";
+            this.groupBox2.Visible = false;
             // 
             // txtPayType5
             // 

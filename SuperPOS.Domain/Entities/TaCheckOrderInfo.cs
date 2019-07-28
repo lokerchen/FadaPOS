@@ -95,6 +95,14 @@ namespace SuperPOS.Domain.Entities
         [XmlElement(ElementName = "PayTypePay4")]
         public virtual string PayTypePay4 { get; set; }
 
+        //PayType5
+        [XmlElement(ElementName = "PayType5")]
+        public virtual string PayType5 { get; set; }
+
+        //PayType5 付款金额
+        [XmlElement(ElementName = "PayTypePay5")]
+        public virtual string PayTypePay5 { get; set; }
+
         //PayType4 付款金额
         [XmlElement(ElementName = "PayPerDiscount")]
         public virtual string PayPerDiscount { get; set; }

@@ -25,6 +25,8 @@ namespace SuperPOS.UI.TaAdmin
 
         private readonly EntityControl _control = new EntityControl();
 
+        private TextEdit[] txtGsPayType = new TextEdit[5];
+
         //Keypad 控件数组
         private TextEdit[] txtKey = new TextEdit[10];
 
@@ -71,6 +73,28 @@ namespace SuperPOS.UI.TaAdmin
 
             //获得Keypad Setting
             GetKeypadSet();
+
+            #region Payment Type
+            txtGsPayType[0] = txtPayType1;
+            txtGsPayType[1] = txtPayType2;
+            txtGsPayType[2] = txtPayType3;
+            txtGsPayType[3] = txtPayType4;
+            txtGsPayType[4] = txtPayType5;
+
+            SystemData systemData = new SystemData();
+            systemData.GetTaPaymentType();
+            int i = 0;
+            foreach (var taPaymentTypeInfo in CommonData.TaPaymentType)
+            {
+                txtGsPayType[i].Text = taPaymentTypeInfo.PaymentType;
+                i++;
+            }
+
+            for (int j = i; j < 5; j++)
+            {
+                txtGsPayType[j].Text = "";
+            }
+            #endregion
 
             asfc.controllInitializeSize(this);
         }
@@ -410,6 +434,19 @@ namespace SuperPOS.UI.TaAdmin
                 //保存时不允许多次Save点击和Exit
                 btnSave.Enabled = false;
                 btnExit.Enabled = false;
+
+                #region Pay Type
+
+                int i = 0;
+                foreach (var taPaymentTypeInfo in CommonData.TaPaymentType)
+                {
+                    taPaymentTypeInfo.PaymentType = txtGsPayType[i].Text;
+
+                    _control.UpdateEntity(taPaymentTypeInfo);
+
+                    i++;
+                }
+                #endregion
 
                 SaveShopDetail();
 
