@@ -414,14 +414,15 @@
             // panelControl4
             // 
             this.panelControl4.Controls.Add(this.btnTaDriverSetup);
+            this.panelControl4.Controls.Add(this.btnTaPrtSetup);
             this.panelControl4.Controls.Add(this.btnTaExtraMenuEdit);
             this.panelControl4.Controls.Add(this.btnTaManageMenuSet);
             this.panelControl4.Controls.Add(this.btnTaMenuItem);
             this.panelControl4.Controls.Add(this.btnTaMenuCategory);
             this.panelControl4.Controls.Add(this.btnTaConf);
-            this.panelControl4.Location = new System.Drawing.Point(5, 197);
+            this.panelControl4.Location = new System.Drawing.Point(5, 142);
             this.panelControl4.Name = "panelControl4";
-            this.panelControl4.Size = new System.Drawing.Size(905, 61);
+            this.panelControl4.Size = new System.Drawing.Size(905, 117);
             this.panelControl4.TabIndex = 3;
             // 
             // btnTaDriverSetup
@@ -553,7 +554,7 @@
             // labelControl3
             // 
             this.labelControl3.Appearance.Font = new System.Drawing.Font("Tahoma", 14F, System.Drawing.FontStyle.Bold);
-            this.labelControl3.Location = new System.Drawing.Point(5, 164);
+            this.labelControl3.Location = new System.Drawing.Point(5, 109);
             this.labelControl3.Name = "labelControl3";
             this.labelControl3.Size = new System.Drawing.Size(371, 28);
             this.labelControl3.TabIndex = 2;
@@ -562,7 +563,6 @@
             // panelControl2
             // 
             this.panelControl2.Controls.Add(this.btnSysSetShiftCode);
-            this.panelControl2.Controls.Add(this.btnTaPrtSetup);
             this.panelControl2.Controls.Add(this.btnSysSetComputerAddr);
             this.panelControl2.Controls.Add(this.btnSysSetCompactDb);
             this.panelControl2.Controls.Add(this.btnSysDataManager);
@@ -570,7 +570,7 @@
             this.panelControl2.Controls.Add(this.btnSysSetSysConf);
             this.panelControl2.Location = new System.Drawing.Point(5, 38);
             this.panelControl2.Name = "panelControl2";
-            this.panelControl2.Size = new System.Drawing.Size(905, 120);
+            this.panelControl2.Size = new System.Drawing.Size(905, 63);
             this.panelControl2.TabIndex = 1;
             // 
             // btnSysSetShiftCode
