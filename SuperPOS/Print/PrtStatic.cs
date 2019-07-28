@@ -41,8 +41,23 @@
         //打印模板文件夹所在位置
         public static string PRT_TEMPLATE_FILE_PATH = System.Environment.CurrentDirectory + @"/PrintTemplate/";
 
+        //TA厨房单
+        public static string PRT_TEMPLATE_TA_KITCHEN = @"taKitchen.txt";
+        public static int PRT_TEMPLATE_TA_KITCHEN_TYPE = 1;
+
+        //TA收据
+        public static string PRT_TEMPLATE_TA_RECEIPT = @"taReceipt.txt";
+        public static int PRT_TEMPLATE_TA_RECEIPT_TYPE = 2;
+        //TA 账单
+        public static string PRT_TEMPLATE_TA_BILL = @"taBill.txt";
+        public static int PRT_TEMPLATE_TA_BILL_TYPE = 3;
+        //TA 所有打印单
         //TA打印模板
-        public static string PRT_TEMPLATE_TA = @"ta.txt";
+        public static string PRT_TEMPLATE_ALL = @"ta.txt";
+        public static int PRT_TEMPLATE_TA_ALL_TYPE = 4;
+        public static string PRT_TEMPLATE_ALL_AND_RECEIPT = @"ta.txt";
+        public static int PRT_TEMPLATE_TA_ALL_AND_RECEIPT_TYPE = 5;
+
 
         //General Setting 1 Print Lanuage
         public static string PRT_GEN_SET1_LAN_ENG = @"English";

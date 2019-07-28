@@ -160,6 +160,7 @@
             this.btnPrtKitOnly.Size = new System.Drawing.Size(165, 48);
             this.btnPrtKitOnly.TabIndex = 50;
             this.btnPrtKitOnly.Text = "Print Kitchen Only";
+            this.btnPrtKitOnly.Click += new System.EventHandler(this.btnPrtKitOnly_Click);
             // 
             // btnPrtAllReceipt
             // 
@@ -173,6 +174,7 @@
             this.btnPrtAllReceipt.Size = new System.Drawing.Size(165, 48);
             this.btnPrtAllReceipt.TabIndex = 48;
             this.btnPrtAllReceipt.Text = "Print All And Receipt";
+            this.btnPrtAllReceipt.Click += new System.EventHandler(this.btnPrtAllReceipt_Click);
             // 
             // btnPrtBillOnly
             // 
@@ -186,6 +188,7 @@
             this.btnPrtBillOnly.Size = new System.Drawing.Size(165, 48);
             this.btnPrtBillOnly.TabIndex = 49;
             this.btnPrtBillOnly.Text = "Print Bill Only";
+            this.btnPrtBillOnly.Click += new System.EventHandler(this.btnPrtBillOnly_Click);
             // 
             // groupBox4
             // 

@@ -80,5 +80,7 @@ namespace SuperPOS.Print
         public string ChkNum { get; set; }
 
         public string Discount { get; set; }
+
+        public string VatInfo { get; set; }
     }
 }

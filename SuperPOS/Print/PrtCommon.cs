@@ -39,7 +39,7 @@ namespace SuperPOS.Print
             StringBuilder sb = new StringBuilder();
             for (int j = 0; j < i; j++)
             {
-                sb.Append(' ');
+                sb.Append(" ");
             }
             return sb;
         }
@@ -195,6 +195,26 @@ namespace SuperPOS.Print
             StringBuilder sb = new StringBuilder();
             int s = (20 - GetHanNumFromString(sName)) / 2;
             sb.Append(GetSpace(11) + sName);
+            return sb;
+        }
+
+        public static StringBuilder GetHanZiTab(string sName, string strFont)
+        {
+            //int ipNameLeng = PrtPrint.GetPrtNameLeng(strFont);
+            StringBuilder sb = new StringBuilder();
+            //int s = (ipNameLeng - 1 - GetHanNumFromString(sName)) / 2;
+            // 10-18
+            sb.Append(GetSpace(11) + sName);
+            return sb;
+        }
+
+        public static StringBuilder GetHanZiTab(string sName, string strFont, int prtType)
+        {
+            StringBuilder sb = new StringBuilder();
+            if (prtType == 1)
+                sb.Append(GetSpace(6) + sName);
+            else
+                sb.Append(GetSpace(11) + sName);
             return sb;
         }
 

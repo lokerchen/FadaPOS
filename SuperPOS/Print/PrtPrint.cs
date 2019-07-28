@@ -18,6 +18,10 @@ namespace SuperPOS.Print
         //BILL双语中的行数
         private static int PRT_BILL_SHUANGYU_ROW_COUNT;
 
+        private static int ipCode = 6;
+        private static int ipQty = 5;
+        private static int ipName = 21;
+
         #region 根据内容进行分行
         /// <summary>
         /// 根据内容进行分行
@@ -980,6 +984,92 @@ namespace SuperPOS.Print
             return sb;
         }
 
+        public static StringBuilder GetTab(string sCode, string sQty, string sName, string sPrice, string strFont)
+        {
+            StringBuilder sb = new StringBuilder();
+
+            int ipNameLeng = GetPrtNameLeng(strFont);
+
+            sb.Append(sCode + PrtCommon.GetSpace(ipCode - sCode.Length) + sQty + PrtCommon.GetSpace(ipQty - sQty.Length));
+            if (sName.Length > ipNameLeng)
+            {
+                sb.Append(sName.Substring(0, ipNameLeng));
+                sb.Append(PrtCommon.GetSpace(1) + sPrice);
+                sb.Append("\n");
+                sb.Append(PrtCommon.GetSpace(ipCode + ipQty) + sName.Substring(ipNameLeng, sName.Length - ipNameLeng));
+            }
+            else if (sName.Length == ipNameLeng)
+            {
+                sb.Append(sName.Substring(0, ipNameLeng));
+                sb.Append(PrtCommon.GetSpace(1) + sPrice);
+                //sb.Append("\n");
+                //sb.Append(PrtCommon.GetSpace(ipCode + ipQty) + sName.Substring(ipNameLeng, sName.Length - ipNameLeng));
+            }
+            else
+            {
+                sb.Append(sName + PrtCommon.GetSpace(ipNameLeng - sName.Length));
+                sb.Append(sPrice);
+            }
+
+            return sb;
+        }
+
+        public static StringBuilder GetTab(string sCode, string sQty, string sName, string sPrice, string strFont, int prtType)
+        {
+            StringBuilder sb = new StringBuilder();
+
+            int ipNameLeng = GetPrtNameLeng(strFont);
+
+            if (prtType == 1)
+            {
+                sb.Append(sQty + PrtCommon.GetSpace(ipQty - sQty.Length));
+                if (sName.Length > ipNameLeng + ipCode)
+                {
+                    sb.Append(sName.Substring(0, ipNameLeng + ipCode));
+                    sb.Append(PrtCommon.GetSpace(1) + sPrice);
+                    sb.Append("\n");
+                    sb.Append(PrtCommon.GetSpace(ipQty) + sName.Substring(ipNameLeng + ipCode, sName.Length - ipNameLeng - ipCode));
+                }
+                else if (sName.Length == ipNameLeng + ipCode)
+                {
+                    sb.Append(sName.Substring(0, ipNameLeng + ipCode));
+                    sb.Append(PrtCommon.GetSpace(1) + sPrice);
+                    //sb.Append("\n");
+                    //sb.Append(PrtCommon.GetSpace(ipCode + ipQty) + sName.Substring(ipNameLeng, sName.Length - ipNameLeng));
+                }
+                else
+                {
+                    sb.Append(sName + PrtCommon.GetSpace(ipNameLeng + ipCode - sName.Length));
+                    sb.Append(sPrice);
+                }
+            }
+            else
+            {
+                sb.Append(sCode + PrtCommon.GetSpace(ipCode - sCode.Length) + sQty + PrtCommon.GetSpace(ipQty - sQty.Length));
+                if (sName.Length > ipNameLeng)
+                {
+                    sb.Append(sName.Substring(0, ipNameLeng));
+                    sb.Append(PrtCommon.GetSpace(1) + sPrice);
+                    sb.Append("\n");
+                    sb.Append(PrtCommon.GetSpace(ipCode + ipQty) + sName.Substring(ipNameLeng, sName.Length - ipNameLeng));
+                }
+                else if (sName.Length == ipNameLeng)
+                {
+                    sb.Append(sName.Substring(0, ipNameLeng));
+                    sb.Append(PrtCommon.GetSpace(1) + sPrice);
+                    //sb.Append("\n");
+                    //sb.Append(PrtCommon.GetSpace(ipCode + ipQty) + sName.Substring(ipNameLeng, sName.Length - ipNameLeng));
+                }
+                else
+                {
+                    sb.Append(sName + PrtCommon.GetSpace(ipNameLeng - sName.Length));
+                    sb.Append(sPrice);
+                }
+            }
+            
+            return sb;
+        }
+
         public static StringBuilder GetTab(string sCode, string sQty, string sName)
         {
             StringBuilder sb = new StringBuilder();
@@ -1190,6 +1280,47 @@ namespace SuperPOS.Print
             {
                 MessageBox.Show("打印失败." + ex.Message);
             }
+        }
+        #endregion
+
+        #region 获得打印Name字符长度
+        /// <summary>
+        /// 获得打印Name字符长度
+        /// </summary>
+        /// <param name="strFont">后台设置的字体大小</param>
+        /// <returns></returns>
+        public static int GetPrtNameLeng(string strFont)
+        {
+            if (strFont.Equals(PrtStatic.PRT_GEN_SET1_FONT_SIZE_8))
+            {
+                ipName = 29;
+            }
+            else if (strFont.Equals(PrtStatic.PRT_GEN_SET1_FONT_SIZE_10))
+            {
+                ipName = 21;
+            }
+            else if (strFont.Equals(PrtStatic.PRT_GEN_SET1_FONT_SIZE_12))
+            {
+                ipName = 14;
+            }
+            else if (strFont.Equals(PrtStatic.PRT_GEN_SET1_FONT_SIZE_14))
+            {
+                ipName = 10;
+            }
+            else if (strFont.Equals(PrtStatic.PRT_GEN_SET1_FONT_SIZE_16))
+            {
+                ipName = 7;
+            }
+            //else if (strFont.Equals(PrtStatic.PRT_GEN_SET1_FONT_SIZE_18))
+            //{
+            //    ipName = 10;
+            //}
+            //else if (strFont.Equals(PrtStatic.PRT_GEN_SET1_FONT_SIZE_20))
+            //{
+            //    ipName = 9;
+            //}
+
+            return ipName;
         }
         #endregion
     }

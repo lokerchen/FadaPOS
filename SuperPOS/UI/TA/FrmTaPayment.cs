@@ -366,7 +366,7 @@ namespace SuperPOS.UI.TA
                 prtTemplataTa.StaffName = htDetail["Staff"].ToString();
                 prtTemplataTa.ItemCount = htDetail["ItemQty"].ToString();
 
-                PrtTemplate.PrtTaBill(prtTemplataTa, lstOI);
+                PrtTemplate.PrtTa(prtTemplataTa, lstOI, PrtStatic.PRT_TEMPLATE_TA_ALL_TYPE);
             }
         }
         #endregion

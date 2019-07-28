@@ -62,8 +62,8 @@ namespace SuperPOS.UI.TA
             lstFontSize.Add(PrtStatic.PRT_GEN_SET1_FONT_SIZE_12);
             lstFontSize.Add(PrtStatic.PRT_GEN_SET1_FONT_SIZE_14);
             lstFontSize.Add(PrtStatic.PRT_GEN_SET1_FONT_SIZE_16);
-            lstFontSize.Add(PrtStatic.PRT_GEN_SET1_FONT_SIZE_18);
-            lstFontSize.Add(PrtStatic.PRT_GEN_SET1_FONT_SIZE_20);
+            //lstFontSize.Add(PrtStatic.PRT_GEN_SET1_FONT_SIZE_18);
+            //lstFontSize.Add(PrtStatic.PRT_GEN_SET1_FONT_SIZE_20);
 
             lueGs1FontSize.Properties.DataSource = lstFontSize.ToList();
         }
