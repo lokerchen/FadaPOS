@@ -212,7 +212,7 @@ namespace SuperPOS.Print
         {
             StringBuilder sb = new StringBuilder();
             if (prtType == 1)
-                sb.Append(GetSpace(6) + sName);
+                sb.Append(GetSpace(5) + sName);
             else
                 sb.Append(GetSpace(11) + sName);
             return sb;

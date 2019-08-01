@@ -20,7 +20,7 @@ namespace SuperPOS.Print
 
         private static int ipCode = 6;
         private static int ipQty = 5;
-        private static int ipName = 21;
+        private static int ipName = 24;
 
         #region 根据内容进行分行
         /// <summary>
@@ -996,7 +996,7 @@ namespace SuperPOS.Print
                 sb.Append(sName.Substring(0, ipNameLeng));
                 sb.Append(PrtCommon.GetSpace(1) + sPrice);
                 sb.Append("\n");
-                sb.Append(PrtCommon.GetSpace(ipCode + ipQty) + sName.Substring(ipNameLeng, sName.Length - ipNameLeng));
+                sb.Append(PrtCommon.GetSpace(ipCode + ipQty - 1) + sName.Substring(ipNameLeng, sName.Length - ipNameLeng));
             }
             else if (sName.Length == ipNameLeng)
             {
@@ -1007,7 +1007,7 @@ namespace SuperPOS.Print
             }
             else
             {
-                sb.Append(sName + PrtCommon.GetSpace(ipNameLeng - sName.Length));
+                sb.Append(sName + PrtCommon.GetSpace(ipNameLeng - sName.Length + 1));
                 sb.Append(sPrice);
             }
 
@@ -1039,7 +1039,7 @@ namespace SuperPOS.Print
                 }
                 else
                 {
-                    sb.Append(sName + PrtCommon.GetSpace(ipNameLeng + ipCode - sName.Length));
+                    sb.Append(sName + PrtCommon.GetSpace(ipNameLeng - sName.Length + 6 + 1));
                     sb.Append(sPrice);
                 }
             }
@@ -1293,24 +1293,24 @@ namespace SuperPOS.Print
         {
             if (strFont.Equals(PrtStatic.PRT_GEN_SET1_FONT_SIZE_8))
             {
-                ipName = 29;
+                ipName = 23;
             }
             else if (strFont.Equals(PrtStatic.PRT_GEN_SET1_FONT_SIZE_10))
             {
-                ipName = 21;
+                ipName = 15;
             }
             else if (strFont.Equals(PrtStatic.PRT_GEN_SET1_FONT_SIZE_12))
             {
-                ipName = 14;
+                ipName = 11;
             }
-            else if (strFont.Equals(PrtStatic.PRT_GEN_SET1_FONT_SIZE_14))
-            {
-                ipName = 10;
-            }
-            else if (strFont.Equals(PrtStatic.PRT_GEN_SET1_FONT_SIZE_16))
-            {
-                ipName = 7;
-            }
+            //else if (strFont.Equals(PrtStatic.PRT_GEN_SET1_FONT_SIZE_14))
+            //{
+            //    ipName = 5;
+            //}
+            //else if (strFont.Equals(PrtStatic.PRT_GEN_SET1_FONT_SIZE_16))
+            //{
+            //    ipName = 2;
+            //}
             //else if (strFont.Equals(PrtStatic.PRT_GEN_SET1_FONT_SIZE_18))
             //{
             //    ipName = 10;

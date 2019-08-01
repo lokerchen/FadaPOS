@@ -354,12 +354,12 @@ namespace SuperPOS.UI.TA
 
                 if (dQty > 1)
                 {
-                    treeListOrder.FocusedNode["ItemQty"] = (dQty + 1).ToString("0.00");
+                    treeListOrder.FocusedNode["ItemQty"] = (dQty + 1).ToString();
                     treeListOrder.FocusedNode["ItemTotalPrice"] = ((dPrice / dQty) * (dQty + 1)).ToString("0.00");
                 }
                 else
                 {
-                    treeListOrder.FocusedNode["ItemQty"] = (dQty + 1).ToString("0.00");
+                    treeListOrder.FocusedNode["ItemQty"] = (dQty + 1).ToString();
                     treeListOrder.FocusedNode["ItemTotalPrice"] = (dPrice * 2.0m).ToString("0.00");
                 }
 

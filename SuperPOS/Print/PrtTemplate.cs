@@ -106,11 +106,12 @@ namespace SuperPOS.Print
                 foreach (var item in lstStr)
                 {
                     //e.Graphics.DrawString(item, new Font(SystemFonts.DefaultFont.Name, fontSize), Brushes.Black, new Point(0, fontheight));
-                    e.Graphics.DrawString(item, new Font(@"SimSun", fontSize), Brushes.Black, new Point(0, fontheight));
+                    //e.Graphics.DrawString(item, new Font(@"SimSun", fontSize), Brushes.Black, new Point(0, fontheight));
                     //e.Graphics.DrawString(item, new Font(@"Consolas", fontSize), Brushes.Black, new Point(0, fontheight));
                     //e.Graphics.DrawString(item, new Font(@"Calibri", fontSize), Brushes.Black, new Point(0, fontheight));
                     //e.Graphics.DrawString(item, new Font(@"Tahoma", fontSize), Brushes.Black, new Point(0, fontheight));
-                    fontheight += new Font(@"SimSun", fontSize).Height;
+                    e.Graphics.DrawString(item, new Font(@"Courier New", fontSize), Brushes.Black, new Point(0, fontheight));
+                    fontheight += new Font(@"Courier New", fontSize).Height;
                 }
             };
             printDocument.Print();
@@ -194,7 +195,7 @@ namespace SuperPOS.Print
                     if (prtType == PrtStatic.PRT_TEMPLATE_TA_KITCHEN_TYPE) //PRT_TEMPLATE_TA_KITCHEN
                     {
                         strTitle = "Qty" + PrtCommon.GetSpace(2)
-                                    + "Name" + PrtCommon.GetSpace(PrtPrint.GetPrtNameLeng(fFontSize.ToString()) - 4 + 6)
+                                    + "Name" + PrtCommon.GetSpace(PrtPrint.GetPrtNameLeng(fFontSize.ToString()) + 6 - 4 + 1)
                                     + "Price" + PrtCommon.GetSpace(2) + "\n";
 
                         foreach (var taOrderItemInfo in lsTaOrderItemInfos)
@@ -214,7 +215,7 @@ namespace SuperPOS.Print
                     {
                         strTitle = "Code" + PrtCommon.GetSpace(2)
                                     + "Qty" + PrtCommon.GetSpace(2)
-                                    + "Name" + PrtCommon.GetSpace(PrtPrint.GetPrtNameLeng(fFontSize.ToString()) - 4)
+                                    + "Name" + PrtCommon.GetSpace(PrtPrint.GetPrtNameLeng(fFontSize.ToString()) - 4 + 1)
                                     + "Price" + PrtCommon.GetSpace(2) + "\n";
 
                         foreach (var taOrderItemInfo in lsTaOrderItemInfos)
@@ -230,6 +231,9 @@ namespace SuperPOS.Print
                             }
                         }
                     }
+
+                    //删除最后一个多余换行
+                    strContent = strContent.Remove(strContent.LastIndexOf("\n"));
 
                     content = content.Replace("{OrderItem}", strTitle + strContent);
 
