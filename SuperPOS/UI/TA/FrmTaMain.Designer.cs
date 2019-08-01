@@ -30,12 +30,12 @@
         {
             this.treeListOrder = new DevExpress.XtraTreeList.TreeList();
             this.ID = new DevExpress.XtraTreeList.Columns.TreeListColumn();
+            this.ItemQty = new DevExpress.XtraTreeList.Columns.TreeListColumn();
             this.ItemID = new DevExpress.XtraTreeList.Columns.TreeListColumn();
-            this.ItemCode = new DevExpress.XtraTreeList.Columns.TreeListColumn();
             this.ItemDishName = new DevExpress.XtraTreeList.Columns.TreeListColumn();
             this.repositoryItemMemoEdit1 = new DevExpress.XtraEditors.Repository.RepositoryItemMemoEdit();
+            this.ItemCode = new DevExpress.XtraTreeList.Columns.TreeListColumn();
             this.ItemDishOtherName = new DevExpress.XtraTreeList.Columns.TreeListColumn();
-            this.ItemQty = new DevExpress.XtraTreeList.Columns.TreeListColumn();
             this.ItemPrice = new DevExpress.XtraTreeList.Columns.TreeListColumn();
             this.ItemTotalPrice = new DevExpress.XtraTreeList.Columns.TreeListColumn();
             this.CheckCode = new DevExpress.XtraTreeList.Columns.TreeListColumn();
@@ -93,6 +93,7 @@
             this.btnMi11 = new DevExpress.XtraEditors.SimpleButton();
             this.panelControl4 = new DevExpress.XtraEditors.PanelControl();
             this.panelControl5 = new DevExpress.XtraEditors.PanelControl();
+            this.btnMenu = new DevExpress.XtraEditors.SimpleButton();
             this.btnEatIn = new DevExpress.XtraEditors.SimpleButton();
             this.btnCancel = new DevExpress.XtraEditors.SimpleButton();
             this.btnLanguage = new DevExpress.XtraEditors.SimpleButton();
@@ -146,7 +147,6 @@
             this.btnSearchMeal = new DevExpress.XtraEditors.SimpleButton();
             this.btnCustInfo = new DevExpress.XtraEditors.SimpleButton();
             this.btnIngredMode = new DevExpress.XtraEditors.SimpleButton();
-            this.btnMenu = new DevExpress.XtraEditors.SimpleButton();
             ((System.ComponentModel.ISupportInitialize)(this.treeListOrder)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemMemoEdit1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
@@ -205,20 +205,25 @@
             this.ID.FieldName = "ID";
             this.ID.Name = "ID";
             // 
+            // ItemQty
+            // 
+            this.ItemQty.AppearanceCell.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ItemQty.AppearanceCell.Options.UseFont = true;
+            this.ItemQty.Caption = "Qty";
+            this.ItemQty.FieldName = "ItemQty";
+            this.ItemQty.Name = "ItemQty";
+            this.ItemQty.OptionsFilter.AllowAutoFilter = false;
+            this.ItemQty.OptionsFilter.AllowFilter = false;
+            this.ItemQty.SummaryFooter = DevExpress.XtraTreeList.SummaryItemType.Sum;
+            this.ItemQty.Visible = true;
+            this.ItemQty.VisibleIndex = 0;
+            this.ItemQty.Width = 49;
+            // 
             // ItemID
             // 
             this.ItemID.Caption = "ItemID";
             this.ItemID.FieldName = "ItemID";
             this.ItemID.Name = "ItemID";
-            // 
-            // ItemCode
-            // 
-            this.ItemCode.Caption = "Code";
-            this.ItemCode.FieldName = "ItemCode";
-            this.ItemCode.Name = "ItemCode";
-            this.ItemCode.Visible = true;
-            this.ItemCode.VisibleIndex = 3;
-            this.ItemCode.Width = 50;
             // 
             // ItemDishName
             // 
@@ -238,25 +243,20 @@
             // 
             this.repositoryItemMemoEdit1.Name = "repositoryItemMemoEdit1";
             // 
+            // ItemCode
+            // 
+            this.ItemCode.Caption = "Code";
+            this.ItemCode.FieldName = "ItemCode";
+            this.ItemCode.Name = "ItemCode";
+            this.ItemCode.Visible = true;
+            this.ItemCode.VisibleIndex = 3;
+            this.ItemCode.Width = 50;
+            // 
             // ItemDishOtherName
             // 
             this.ItemDishOtherName.Caption = "ItemDishOtherName";
             this.ItemDishOtherName.FieldName = "ItemDishOtherName";
             this.ItemDishOtherName.Name = "ItemDishOtherName";
-            // 
-            // ItemQty
-            // 
-            this.ItemQty.AppearanceCell.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ItemQty.AppearanceCell.Options.UseFont = true;
-            this.ItemQty.Caption = "Qty";
-            this.ItemQty.FieldName = "ItemQty";
-            this.ItemQty.Name = "ItemQty";
-            this.ItemQty.OptionsFilter.AllowAutoFilter = false;
-            this.ItemQty.OptionsFilter.AllowFilter = false;
-            this.ItemQty.SummaryFooter = DevExpress.XtraTreeList.SummaryItemType.Sum;
-            this.ItemQty.Visible = true;
-            this.ItemQty.VisibleIndex = 0;
-            this.ItemQty.Width = 49;
             // 
             // ItemPrice
             // 
@@ -1011,6 +1011,24 @@
             this.panelControl5.Name = "panelControl5";
             this.panelControl5.Size = new System.Drawing.Size(123, 433);
             this.panelControl5.TabIndex = 5;
+            // 
+            // btnMenu
+            // 
+            this.btnMenu.Appearance.BackColor = System.Drawing.Color.Blue;
+            this.btnMenu.Appearance.Font = new System.Drawing.Font("Tahoma", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnMenu.Appearance.ForeColor = System.Drawing.Color.White;
+            this.btnMenu.Appearance.Options.UseBackColor = true;
+            this.btnMenu.Appearance.Options.UseFont = true;
+            this.btnMenu.Appearance.Options.UseForeColor = true;
+            this.btnMenu.Appearance.Options.UseTextOptions = true;
+            this.btnMenu.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
+            this.btnMenu.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
+            this.btnMenu.Location = new System.Drawing.Point(7, 8);
+            this.btnMenu.Name = "btnMenu";
+            this.btnMenu.Size = new System.Drawing.Size(111, 42);
+            this.btnMenu.TabIndex = 30;
+            this.btnMenu.Text = "Menu";
+            this.btnMenu.Click += new System.EventHandler(this.btnMenu_Click);
             // 
             // btnEatIn
             // 
@@ -1818,23 +1836,6 @@
             this.btnIngredMode.Text = "Ingred Mode";
             this.btnIngredMode.Visible = false;
             this.btnIngredMode.Click += new System.EventHandler(this.btnIngredMode_Click);
-            // 
-            // btnMenu
-            // 
-            this.btnMenu.Appearance.BackColor = System.Drawing.Color.Blue;
-            this.btnMenu.Appearance.Font = new System.Drawing.Font("Tahoma", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnMenu.Appearance.ForeColor = System.Drawing.Color.White;
-            this.btnMenu.Appearance.Options.UseBackColor = true;
-            this.btnMenu.Appearance.Options.UseFont = true;
-            this.btnMenu.Appearance.Options.UseForeColor = true;
-            this.btnMenu.Appearance.Options.UseTextOptions = true;
-            this.btnMenu.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
-            this.btnMenu.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
-            this.btnMenu.Location = new System.Drawing.Point(7, 8);
-            this.btnMenu.Name = "btnMenu";
-            this.btnMenu.Size = new System.Drawing.Size(111, 42);
-            this.btnMenu.TabIndex = 30;
-            this.btnMenu.Text = "Menu";
             // 
             // FrmTaMain
             // 
