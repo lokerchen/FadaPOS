@@ -72,32 +72,59 @@ namespace SuperPOS.UI.TA
         private void GetBindData(string orderType, int iDriver)
         {
             var lstDb = from check in CommonData.TaCheckOrder
-                join cust in CommonData.TaCustomer
-                    on check.CustomerID equals cust.ID.ToString()
-                join user in CommonData.UsrBase
-                    on check.StaffID equals user.ID
-                join driver in CommonData.TaDriver
-                    on check.DriverID equals driver.ID
-                where !check.IsPaid.Equals("Y") 
-                select new
-                {
-                    ID = check.ID,
-                    CheckCode = check.CheckCode,
-                    OrderTime = check.PayTime,
-                    PostCode = cust.cusPostcode,
-                    PostCodeZone = cust.cusPcZone,
-                    Addr = cust.cusAddr,
-                    PayOrderType = check.PayOrderType,
-                    CustomerName = cust.cusName,
-                    CustomerPhone = cust.cusPhone,
-                    IsPaid = check.IsPaid,
-                    TotalAmount = check.TotalAmount,
-                    StaffName = user.UsrName,
-                    Paid = check.Paid,
-                    CustID = cust.ID,
-                    DriverID = check.DriverID,
-                    DriverName = driver.DriverName,
-                };
+                        join user in CommonData.UsrBase
+                            on check.StaffID equals user.ID
+                        where !check.IsPaid.Equals("Y")
+                        select new
+                        {
+                            ID = check.ID,
+                            CheckCode = check.CheckCode,
+                            OrderTime = check.PayTime,
+                            PostCode = "",
+                            PostCodeZone = "",
+                            Addr = "",
+                            PayOrderType = check.PayOrderType,
+                            CustomerName = "",
+                            CustomerPhone = "",
+                            IsPaid = check.IsPaid,
+                            TotalAmount = check.TotalAmount,
+                            StaffName = user.UsrName,
+                            Paid = check.Paid,
+                            CustID = Convert.ToInt32(check.CustomerID),
+                            DriverID = 0,
+                            DriverName = "",
+                        };
+
+            if (iDriver != 0)
+            {
+                lstDb = from check in CommonData.TaCheckOrder
+                        join cust in CommonData.TaCustomer
+                            on check.CustomerID equals cust.ID.ToString()
+                        join user in CommonData.UsrBase
+                            on check.StaffID equals user.ID
+                        join driver in CommonData.TaDriver
+                            on check.DriverID equals driver.ID
+                        where !check.IsPaid.Equals("Y")
+                        select new
+                        {
+                            ID = check.ID,
+                            CheckCode = check.CheckCode,
+                            OrderTime = check.PayTime,
+                            PostCode = cust.cusPostcode,
+                            PostCodeZone = cust.cusPcZone,
+                            Addr = cust.cusAddr,
+                            PayOrderType = check.PayOrderType,
+                            CustomerName = cust.cusName,
+                            CustomerPhone = cust.cusPhone,
+                            IsPaid = check.IsPaid,
+                            TotalAmount = check.TotalAmount,
+                            StaffName = user.UsrName,
+                            Paid = check.Paid,
+                            CustID = cust.ID,
+                            DriverID = check.DriverID,
+                            DriverName = driver.DriverName,
+                        };
+            }
 
             var lstTmp = lstDb;
 
@@ -184,11 +211,23 @@ namespace SuperPOS.UI.TA
 
         private void btnPay_Click(object sender, EventArgs e)
         {
-            FrmTaPayment frmTaPayment = new FrmTaPayment(usrID, checkCode, checkOrderType, checkCustID.ToString(), SetPrtInfo());
-
-            if (frmTaPayment.ShowDialog() == DialogResult.OK)
+            if (checkOrderType.Equals(PubComm.ORDER_TYPE_SHOP))
             {
-                if (frmTaPayment.returnPaid) GetBindData("", 0);
+                FrmTaPaymentShop frmTaPaymentShop = new FrmTaPaymentShop(usrID, checkCode, checkOrderType, checkCustID.ToString(), SetPrtInfo());
+
+                if (frmTaPaymentShop.ShowDialog() == DialogResult.OK)
+                {
+                    if (frmTaPaymentShop.returnPaid) GetBindData("", 0);
+                }
+            }
+            else
+            {
+                FrmTaPayment frmTaPayment = new FrmTaPayment(usrID, checkCode, checkOrderType, checkCustID.ToString(), SetPrtInfo());
+
+                if (frmTaPayment.ShowDialog() == DialogResult.OK)
+                {
+                    if (frmTaPayment.returnPaid) GetBindData("", 0);
+                }
             }
         }
 

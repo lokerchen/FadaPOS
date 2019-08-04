@@ -1822,6 +1822,15 @@ namespace SuperPOS.UI.TA
                     lblDistance.Text = taCustomerInfo.cusDistance;
                     lblDiliveryFee.Text = taCustomerInfo.cusDelCharge;
                 }
+                else
+                {
+                    lblName.Text = "";
+                    lblPhone.Text = "";
+                    lblAddress.Text = "";
+                    lblPostcode.Text = "";
+                    lblDistance.Text = "";
+                    lblDiliveryFee.Text = "";
+                }
             }
         }
 
