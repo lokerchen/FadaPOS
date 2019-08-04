@@ -121,7 +121,12 @@ namespace SuperPOS.UI.TA
 
         private void btnExit_Click(object sender, EventArgs e)
         {
-            Hide();
+            if (NoOfOption <= 0)
+            {
+                this.DialogResult = DialogResult.OK;
+
+                Hide();
+            }
         }
 
         private void btnOK_Click(object sender, EventArgs e)
