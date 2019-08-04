@@ -167,6 +167,8 @@
             // 
             // treeListOrder
             // 
+            this.treeListOrder.Appearance.FocusedRow.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
+            this.treeListOrder.Appearance.FocusedRow.Options.UseBackColor = true;
             this.treeListOrder.Columns.AddRange(new DevExpress.XtraTreeList.Columns.TreeListColumn[] {
             this.ID,
             this.ItemQty,
@@ -189,6 +191,7 @@
             this.treeListOrder.OptionsBehavior.PopulateServiceColumns = true;
             this.treeListOrder.OptionsClipboard.AllowCopy = DevExpress.Utils.DefaultBoolean.True;
             this.treeListOrder.OptionsClipboard.CopyNodeHierarchy = DevExpress.Utils.DefaultBoolean.True;
+            this.treeListOrder.OptionsView.FocusRectStyle = DevExpress.XtraTreeList.DrawFocusRectStyle.RowFullFocus;
             this.treeListOrder.OptionsView.ShowSummaryFooter = true;
             this.treeListOrder.ParentFieldName = "ItemParent";
             this.treeListOrder.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
