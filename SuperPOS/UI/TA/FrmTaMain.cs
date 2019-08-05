@@ -156,7 +156,7 @@ namespace SuperPOS.UI.TA
                 }
             }
 
-            Close();
+            //Close();
         }
         #endregion
 
