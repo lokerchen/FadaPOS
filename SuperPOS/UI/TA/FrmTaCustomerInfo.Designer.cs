@@ -74,6 +74,7 @@
             this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
             this.txtPhone = new DevExpress.XtraEditors.TextEdit();
             this.txtAddress = new DevExpress.XtraEditors.MemoEdit();
+            this.btnKeyBoard = new DevExpress.XtraEditors.SimpleButton();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
             this.panelControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.chkBlackListed.Properties)).BeginInit();
@@ -104,6 +105,7 @@
             // 
             // panelControl1
             // 
+            this.panelControl1.Controls.Add(this.btnKeyBoard);
             this.panelControl1.Controls.Add(this.btnExit);
             this.panelControl1.Controls.Add(this.chkBlackListed);
             this.panelControl1.Controls.Add(this.btnExport);
@@ -147,7 +149,7 @@
             this.btnExit.Appearance.Options.UseBackColor = true;
             this.btnExit.Appearance.Options.UseFont = true;
             this.btnExit.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
-            this.btnExit.Location = new System.Drawing.Point(963, 495);
+            this.btnExit.Location = new System.Drawing.Point(962, 273);
             this.btnExit.Name = "btnExit";
             this.btnExit.Size = new System.Drawing.Size(110, 50);
             this.btnExit.TabIndex = 32;
@@ -171,7 +173,7 @@
             this.btnExport.Appearance.Options.UseBackColor = true;
             this.btnExport.Appearance.Options.UseFont = true;
             this.btnExport.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
-            this.btnExport.Location = new System.Drawing.Point(843, 495);
+            this.btnExport.Location = new System.Drawing.Point(842, 273);
             this.btnExport.Name = "btnExport";
             this.btnExport.Size = new System.Drawing.Size(110, 50);
             this.btnExport.TabIndex = 30;
@@ -185,7 +187,7 @@
             this.btnImport.Appearance.Options.UseBackColor = true;
             this.btnImport.Appearance.Options.UseFont = true;
             this.btnImport.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
-            this.btnImport.Location = new System.Drawing.Point(723, 495);
+            this.btnImport.Location = new System.Drawing.Point(722, 273);
             this.btnImport.Name = "btnImport";
             this.btnImport.Size = new System.Drawing.Size(110, 50);
             this.btnImport.TabIndex = 29;
@@ -199,7 +201,7 @@
             this.btnDelete.Appearance.Options.UseBackColor = true;
             this.btnDelete.Appearance.Options.UseFont = true;
             this.btnDelete.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
-            this.btnDelete.Location = new System.Drawing.Point(483, 495);
+            this.btnDelete.Location = new System.Drawing.Point(482, 273);
             this.btnDelete.Name = "btnDelete";
             this.btnDelete.Size = new System.Drawing.Size(110, 50);
             this.btnDelete.TabIndex = 28;
@@ -213,7 +215,7 @@
             this.btnSave.Appearance.Options.UseBackColor = true;
             this.btnSave.Appearance.Options.UseFont = true;
             this.btnSave.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
-            this.btnSave.Location = new System.Drawing.Point(363, 495);
+            this.btnSave.Location = new System.Drawing.Point(362, 273);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(110, 50);
             this.btnSave.TabIndex = 27;
@@ -227,7 +229,7 @@
             this.btnNew.Appearance.Options.UseBackColor = true;
             this.btnNew.Appearance.Options.UseFont = true;
             this.btnNew.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
-            this.btnNew.Location = new System.Drawing.Point(243, 495);
+            this.btnNew.Location = new System.Drawing.Point(242, 273);
             this.btnNew.Name = "btnNew";
             this.btnNew.Size = new System.Drawing.Size(110, 50);
             this.btnNew.TabIndex = 26;
@@ -241,7 +243,7 @@
             this.btnClear.Appearance.Options.UseBackColor = true;
             this.btnClear.Appearance.Options.UseFont = true;
             this.btnClear.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
-            this.btnClear.Location = new System.Drawing.Point(603, 495);
+            this.btnClear.Location = new System.Drawing.Point(602, 273);
             this.btnClear.Name = "btnClear";
             this.btnClear.Size = new System.Drawing.Size(110, 50);
             this.btnClear.TabIndex = 25;
@@ -268,7 +270,7 @@
             this.gridControlCustomer.Location = new System.Drawing.Point(243, 5);
             this.gridControlCustomer.MainView = this.gvCompCustomer;
             this.gridControlCustomer.Name = "gridControlCustomer";
-            this.gridControlCustomer.Size = new System.Drawing.Size(830, 484);
+            this.gridControlCustomer.Size = new System.Drawing.Size(830, 262);
             this.gridControlCustomer.TabIndex = 22;
             this.gridControlCustomer.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gvCompCustomer});
@@ -540,6 +542,20 @@
             this.txtAddress.Size = new System.Drawing.Size(125, 86);
             this.txtAddress.TabIndex = 5;
             // 
+            // btnKeyBoard
+            // 
+            this.btnKeyBoard.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
+            this.btnKeyBoard.Appearance.Font = new System.Drawing.Font("Tahoma", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnKeyBoard.Appearance.Options.UseBackColor = true;
+            this.btnKeyBoard.Appearance.Options.UseFont = true;
+            this.btnKeyBoard.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
+            this.btnKeyBoard.Location = new System.Drawing.Point(243, 329);
+            this.btnKeyBoard.Name = "btnKeyBoard";
+            this.btnKeyBoard.Size = new System.Drawing.Size(828, 50);
+            this.btnKeyBoard.TabIndex = 33;
+            this.btnKeyBoard.Text = "KeyBoard";
+            this.btnKeyBoard.Click += new System.EventHandler(this.btnKeyBoard_Click);
+            // 
             // FrmTaCustomerInfo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 18F);
@@ -622,5 +638,6 @@
         private DevExpress.XtraGrid.Columns.GridColumn cusIntNotes;
         private DevExpress.XtraGrid.Columns.GridColumn cusNotesOnBill;
         private DevExpress.XtraEditors.SimpleButton btnExit;
+        private DevExpress.XtraEditors.SimpleButton btnKeyBoard;
     }
 }
