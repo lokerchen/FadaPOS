@@ -45,6 +45,8 @@ namespace SuperPOS.UI.TA
 
         private System.Diagnostics.Process softKey;
 
+        private bool isChanged = false;
+
         public FrmTaCustomerInfo()
         {
             InitializeComponent();
@@ -64,6 +66,7 @@ namespace SuperPOS.UI.TA
 
         private void FrmTaCustomerInfo_Load(object sender, EventArgs e)
         {
+            BindLuePostCode();
             BindData(cusNum);
             gvCompCustomer.BestFitColumns();
             asfc.controllInitializeSize(this);
@@ -76,7 +79,8 @@ namespace SuperPOS.UI.TA
             txtName.Text = gvCompCustomer.GetRowCellValue(gvCompCustomer.FocusedRowHandle, "cusName") == null ? "" : gvCompCustomer.GetRowCellValue(gvCompCustomer.FocusedRowHandle, "cusName").ToString();
             txtHouseNo.Text = gvCompCustomer.GetRowCellValue(gvCompCustomer.FocusedRowHandle, "cusHouseNo") == null ? "" : gvCompCustomer.GetRowCellValue(gvCompCustomer.FocusedRowHandle, "cusHouseNo").ToString();
             txtAddress.Text = gvCompCustomer.GetRowCellValue(gvCompCustomer.FocusedRowHandle, "cusAddr") == null ? "" : gvCompCustomer.GetRowCellValue(gvCompCustomer.FocusedRowHandle, "cusAddr").ToString();
-            txtPostcode.Text = gvCompCustomer.GetRowCellValue(gvCompCustomer.FocusedRowHandle, "cusPostcode") == null ? "" : gvCompCustomer.GetRowCellValue(gvCompCustomer.FocusedRowHandle, "cusPostcode").ToString();
+            luePostcode.Properties.NullText = null;
+            luePostcode.Properties.NullText = gvCompCustomer.GetRowCellValue(gvCompCustomer.FocusedRowHandle, "cusPostcode") == null ? "" : gvCompCustomer.GetRowCellValue(gvCompCustomer.FocusedRowHandle, "cusPostcode").ToString();
             txtDistance.Text = gvCompCustomer.GetRowCellValue(gvCompCustomer.FocusedRowHandle, "cusDistance") == null ? "" : gvCompCustomer.GetRowCellValue(gvCompCustomer.FocusedRowHandle, "cusDistance").ToString();
             txtPcZone.Text = gvCompCustomer.GetRowCellValue(gvCompCustomer.FocusedRowHandle, "cusPcZone") == null ? "" : gvCompCustomer.GetRowCellValue(gvCompCustomer.FocusedRowHandle, "cusPcZone").ToString();
             txtDelCharge.Text = gvCompCustomer.GetRowCellValue(gvCompCustomer.FocusedRowHandle, "cusDelCharge") == null ? "" : gvCompCustomer.GetRowCellValue(gvCompCustomer.FocusedRowHandle, "cusDelCharge").ToString();
@@ -102,9 +106,9 @@ namespace SuperPOS.UI.TA
             txtName.Text = "";
             txtHouseNo.Text = "";
             txtAddress.Text = "";
-            txtPostcode.Text = "";
-            txtDistance.Text = "";
             txtPcZone.Text = "";
+            txtDistance.Text = "";
+            luePostcode.Text = "";
             txtDelCharge.Text = "";
             txtReadyTime.Text = "";
             txtIntNotes.Text = "";
@@ -139,7 +143,7 @@ namespace SuperPOS.UI.TA
                 return;
             }
 
-            if (string.IsNullOrEmpty(txtPostcode.Text))
+            if (string.IsNullOrEmpty(luePostcode.Text))
             {
                 CommonTool.ShowMessage("Postcode can not empty!");
                 return;
@@ -187,14 +191,14 @@ namespace SuperPOS.UI.TA
             taCustomerInfo.cusName = txtName.Text;
             taCustomerInfo.cusHouseNo = txtHouseNo.Text;
             taCustomerInfo.cusAddr = txtAddress.Text;
-            taCustomerInfo.cusPostcode = txtPostcode.Text;
+            taCustomerInfo.cusPostcode = luePostcode.Text;
             taCustomerInfo.cusDistance = txtDistance.Text;
             taCustomerInfo.cusPcZone = txtPcZone.Text;
             taCustomerInfo.cusDelCharge = txtDelCharge.Text;
             taCustomerInfo.cusReadyTime = txtReadyTime.Text;
             taCustomerInfo.cusIntNotes = txtIntNotes.Text;
             taCustomerInfo.cusNotesOnBill = txtNotesOnBill.Text;
-            taCustomerInfo.cusPhone = chkBlackListed.Checked ? "Y" : "N";
+            taCustomerInfo.cusIsBlack = chkBlackListed.Checked ? "Y" : "N";
 
             try
             {
@@ -299,9 +303,11 @@ namespace SuperPOS.UI.TA
                 while (IntPtr.Zero == intptr)
                 {
                     System.Threading.Thread.Sleep(100);
-                    intptr = FindWindow(null, "Screen Keyboard");
-                }
+                    //intptr = FindWindow(null, "屏幕键盘");
+                    string Ci = System.Threading.Thread.CurrentThread.CurrentCulture.Name;
 
+                    intptr = FindWindow(null, Ci.Equals("zh-CN") ? "屏幕键盘" : "On-Screen Keyboard");
+                }
 
                 // 获取屏幕尺寸
                 int iActulaWidth = Screen.PrimaryScreen.Bounds.Width;
@@ -322,6 +328,47 @@ namespace SuperPOS.UI.TA
             {
                 //MessageBox.Show(ex.Message);
                 LogHelper.Error(ex.Message, ex);
+            }
+        }
+
+        #region 绑定Post Code
+        /// <summary>
+        /// 绑定Print Name
+        /// </summary>
+        private void BindLuePostCode()
+        {
+            new SystemData().GetTaPostcodeSet();
+
+            var lstPcs = from pcs in CommonData.TaPostcodeSet
+                         select new
+                         {
+                             ID = pcs.ID,
+                             PostCode = pcs.PostCode,
+                             Address = pcs.PCAddr,
+                             Zone = pcs.PCZone,
+                             Distance = pcs.PCDist
+                         };
+            luePostcode.Properties.DataSource = lstPcs.ToList();
+            luePostcode.Properties.DisplayMember = "PostCode";
+            luePostcode.Properties.ValueMember = "ID";
+        }
+        #endregion
+
+        private void luePostcode_EditValueChanged(object sender, EventArgs e)
+        {
+            if (!string.IsNullOrEmpty(luePostcode.Text))
+            {
+                new SystemData().GetTaPostcodeSet();
+
+                var lstPcs = CommonData.TaPostcodeSet.Where(s => s.ID == Convert.ToInt64(luePostcode.EditValue));
+
+                if (lstPcs.Any())
+                {
+                    TaPostcodeSetInfo taPostcodeSetInfo = lstPcs.FirstOrDefault();
+                    txtPcZone.Text = taPostcodeSetInfo.PCZone;
+                    txtDistance.Text = taPostcodeSetInfo.PCDist;
+                    txtAddress.Text = taPostcodeSetInfo.PCAddr;
+                }
             }
         }
     }

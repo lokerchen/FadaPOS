@@ -30,6 +30,7 @@
         {
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
             this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
+            this.btnKeyBoard = new DevExpress.XtraEditors.SimpleButton();
             this.btnExit = new DevExpress.XtraEditors.SimpleButton();
             this.chkBlackListed = new DevExpress.XtraEditors.CheckEdit();
             this.btnExport = new DevExpress.XtraEditors.SimpleButton();
@@ -74,7 +75,8 @@
             this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
             this.txtPhone = new DevExpress.XtraEditors.TextEdit();
             this.txtAddress = new DevExpress.XtraEditors.MemoEdit();
-            this.btnKeyBoard = new DevExpress.XtraEditors.SimpleButton();
+            this.luePostcode = new DevExpress.XtraEditors.SearchLookUpEdit();
+            this.searchLookUpEdit1View = new DevExpress.XtraGrid.Views.Grid.GridView();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
             this.panelControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.chkBlackListed.Properties)).BeginInit();
@@ -91,6 +93,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.txtName.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtPhone.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtAddress.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.luePostcode.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.searchLookUpEdit1View)).BeginInit();
             this.SuspendLayout();
             // 
             // labelControl1
@@ -137,10 +141,25 @@
             this.panelControl1.Controls.Add(this.txtPhone);
             this.panelControl1.Controls.Add(this.labelControl1);
             this.panelControl1.Controls.Add(this.txtAddress);
+            this.panelControl1.Controls.Add(this.luePostcode);
             this.panelControl1.Location = new System.Drawing.Point(6, 6);
             this.panelControl1.Name = "panelControl1";
             this.panelControl1.Size = new System.Drawing.Size(1077, 553);
             this.panelControl1.TabIndex = 1;
+            // 
+            // btnKeyBoard
+            // 
+            this.btnKeyBoard.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
+            this.btnKeyBoard.Appearance.Font = new System.Drawing.Font("Tahoma", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnKeyBoard.Appearance.Options.UseBackColor = true;
+            this.btnKeyBoard.Appearance.Options.UseFont = true;
+            this.btnKeyBoard.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
+            this.btnKeyBoard.Location = new System.Drawing.Point(243, 329);
+            this.btnKeyBoard.Name = "btnKeyBoard";
+            this.btnKeyBoard.Size = new System.Drawing.Size(828, 50);
+            this.btnKeyBoard.TabIndex = 33;
+            this.btnKeyBoard.Text = "KeyBoard";
+            this.btnKeyBoard.Click += new System.EventHandler(this.btnKeyBoard_Click);
             // 
             // btnExit
             // 
@@ -490,10 +509,11 @@
             // 
             // txtPostcode
             // 
-            this.txtPostcode.Location = new System.Drawing.Point(112, 233);
+            this.txtPostcode.Location = new System.Drawing.Point(259, 385);
             this.txtPostcode.Name = "txtPostcode";
             this.txtPostcode.Size = new System.Drawing.Size(125, 24);
             this.txtPostcode.TabIndex = 7;
+            this.txtPostcode.Visible = false;
             // 
             // labelControl3
             // 
@@ -542,19 +562,25 @@
             this.txtAddress.Size = new System.Drawing.Size(125, 86);
             this.txtAddress.TabIndex = 5;
             // 
-            // btnKeyBoard
+            // luePostcode
             // 
-            this.btnKeyBoard.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
-            this.btnKeyBoard.Appearance.Font = new System.Drawing.Font("Tahoma", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnKeyBoard.Appearance.Options.UseBackColor = true;
-            this.btnKeyBoard.Appearance.Options.UseFont = true;
-            this.btnKeyBoard.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
-            this.btnKeyBoard.Location = new System.Drawing.Point(243, 329);
-            this.btnKeyBoard.Name = "btnKeyBoard";
-            this.btnKeyBoard.Size = new System.Drawing.Size(828, 50);
-            this.btnKeyBoard.TabIndex = 33;
-            this.btnKeyBoard.Text = "KeyBoard";
-            this.btnKeyBoard.Click += new System.EventHandler(this.btnKeyBoard_Click);
+            this.luePostcode.Location = new System.Drawing.Point(112, 233);
+            this.luePostcode.Name = "luePostcode";
+            this.luePostcode.Properties.BestFitMode = DevExpress.XtraEditors.Controls.BestFitMode.BestFit;
+            this.luePostcode.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.luePostcode.Properties.NullText = "[Please select...]";
+            this.luePostcode.Properties.View = this.searchLookUpEdit1View;
+            this.luePostcode.Size = new System.Drawing.Size(125, 24);
+            this.luePostcode.TabIndex = 34;
+            this.luePostcode.EditValueChanged += new System.EventHandler(this.luePostcode_EditValueChanged);
+            // 
+            // searchLookUpEdit1View
+            // 
+            this.searchLookUpEdit1View.FocusRectStyle = DevExpress.XtraGrid.Views.Grid.DrawFocusRectStyle.RowFocus;
+            this.searchLookUpEdit1View.Name = "searchLookUpEdit1View";
+            this.searchLookUpEdit1View.OptionsSelection.EnableAppearanceFocusedCell = false;
+            this.searchLookUpEdit1View.OptionsView.ShowGroupPanel = false;
             // 
             // FrmTaCustomerInfo
             // 
@@ -586,6 +612,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.txtName.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtPhone.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtAddress.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.luePostcode.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.searchLookUpEdit1View)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -639,5 +667,7 @@
         private DevExpress.XtraGrid.Columns.GridColumn cusNotesOnBill;
         private DevExpress.XtraEditors.SimpleButton btnExit;
         private DevExpress.XtraEditors.SimpleButton btnKeyBoard;
+        private DevExpress.XtraEditors.SearchLookUpEdit luePostcode;
+        private DevExpress.XtraGrid.Views.Grid.GridView searchLookUpEdit1View;
     }
 }
