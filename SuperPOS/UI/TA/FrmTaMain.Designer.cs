@@ -1119,7 +1119,7 @@
             this.btnMcLeft.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
             this.btnMcLeft.Location = new System.Drawing.Point(7, 351);
             this.btnMcLeft.Name = "btnMcLeft";
-            this.btnMcLeft.Size = new System.Drawing.Size(111, 35);
+            this.btnMcLeft.Size = new System.Drawing.Size(56, 35);
             this.btnMcLeft.TabIndex = 17;
             this.btnMcLeft.Text = "<<";
             this.btnMcLeft.Click += new System.EventHandler(this.btnMcLeft_Click);
@@ -1135,9 +1135,9 @@
             this.btnMcRight.Appearance.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
             this.btnMcRight.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
             this.btnMcRight.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
-            this.btnMcRight.Location = new System.Drawing.Point(7, 392);
+            this.btnMcRight.Location = new System.Drawing.Point(63, 351);
             this.btnMcRight.Name = "btnMcRight";
-            this.btnMcRight.Size = new System.Drawing.Size(111, 35);
+            this.btnMcRight.Size = new System.Drawing.Size(55, 35);
             this.btnMcRight.TabIndex = 18;
             this.btnMcRight.Text = ">>";
             this.btnMcRight.Click += new System.EventHandler(this.btnMcRight_Click);
