@@ -1119,7 +1119,7 @@
             this.btnMcLeft.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
             this.btnMcLeft.Location = new System.Drawing.Point(7, 351);
             this.btnMcLeft.Name = "btnMcLeft";
-            this.btnMcLeft.Size = new System.Drawing.Size(56, 35);
+            this.btnMcLeft.Size = new System.Drawing.Size(55, 35);
             this.btnMcLeft.TabIndex = 17;
             this.btnMcLeft.Text = "<<";
             this.btnMcLeft.Click += new System.EventHandler(this.btnMcLeft_Click);
