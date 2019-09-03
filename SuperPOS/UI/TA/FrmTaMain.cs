@@ -256,6 +256,18 @@ namespace SuperPOS.UI.TA
                         }
                     }
                 }
+
+                btnHome.Text = @"HOME";
+                btnKeypad.Text = @"Key";
+                btnChange.Text = @"Change";
+                btnPay.Text = @"Accept";
+                btnMenu.Text = @"Menu";
+                btnCid.Text = @"CID";
+                btnLanguage.Text = @"LANGUAGE";
+                btnPendOrder.Text = @"Pending Orders";
+                btnSaveOrder.Text = @"Save Order";
+                btnCancel.Text = @"CANCEL ORDER";
+                btnEatIn.Text = @"Eat In";
             }
             else
             {
@@ -275,6 +287,18 @@ namespace SuperPOS.UI.TA
                         }
                     }
                 }
+
+                btnHome.Text = @"主界面";
+                btnKeypad.Text = @"快捷按钮";
+                btnChange.Text = @"改码";
+                btnPay.Text = @"付款";
+                btnMenu.Text = @"菜谱";
+                btnCid.Text = @"来电";
+                btnLanguage.Text = @"语言";
+                btnPendOrder.Text = @"挂单";
+                btnSaveOrder.Text = @"保存";
+                btnCancel.Text = @"取消订单";
+                btnEatIn.Text = @"堂食";
             }
             
         }
