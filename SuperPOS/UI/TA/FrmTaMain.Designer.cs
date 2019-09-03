@@ -192,6 +192,8 @@
             this.treeListOrder.OptionsClipboard.AllowCopy = DevExpress.Utils.DefaultBoolean.True;
             this.treeListOrder.OptionsClipboard.CopyNodeHierarchy = DevExpress.Utils.DefaultBoolean.True;
             this.treeListOrder.OptionsView.FocusRectStyle = DevExpress.XtraTreeList.DrawFocusRectStyle.RowFullFocus;
+            this.treeListOrder.OptionsView.ShowButtons = false;
+            this.treeListOrder.OptionsView.ShowIndicator = false;
             this.treeListOrder.OptionsView.ShowSummaryFooter = true;
             this.treeListOrder.ParentFieldName = "ItemParent";
             this.treeListOrder.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
@@ -210,7 +212,7 @@
             // 
             // ItemQty
             // 
-            this.ItemQty.AppearanceCell.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ItemQty.AppearanceCell.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ItemQty.AppearanceCell.Options.UseFont = true;
             this.ItemQty.Caption = "Qty";
             this.ItemQty.FieldName = "ItemQty";
@@ -220,7 +222,7 @@
             this.ItemQty.SummaryFooter = DevExpress.XtraTreeList.SummaryItemType.Sum;
             this.ItemQty.Visible = true;
             this.ItemQty.VisibleIndex = 0;
-            this.ItemQty.Width = 49;
+            this.ItemQty.Width = 59;
             // 
             // ItemID
             // 
@@ -230,7 +232,7 @@
             // 
             // ItemDishName
             // 
-            this.ItemDishName.AppearanceCell.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ItemDishName.AppearanceCell.Font = new System.Drawing.Font("Tahoma", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ItemDishName.AppearanceCell.Options.UseFont = true;
             this.ItemDishName.Caption = "Dish Name";
             this.ItemDishName.ColumnEdit = this.repositoryItemMemoEdit1;
@@ -240,7 +242,7 @@
             this.ItemDishName.OptionsFilter.AllowAutoFilter = false;
             this.ItemDishName.Visible = true;
             this.ItemDishName.VisibleIndex = 1;
-            this.ItemDishName.Width = 191;
+            this.ItemDishName.Width = 181;
             // 
             // repositoryItemMemoEdit1
             // 
@@ -253,7 +255,7 @@
             this.ItemCode.Name = "ItemCode";
             this.ItemCode.Visible = true;
             this.ItemCode.VisibleIndex = 3;
-            this.ItemCode.Width = 50;
+            this.ItemCode.Width = 70;
             // 
             // ItemDishOtherName
             // 
@@ -270,7 +272,7 @@
             // ItemTotalPrice
             // 
             this.ItemTotalPrice.AllNodesSummary = true;
-            this.ItemTotalPrice.AppearanceCell.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ItemTotalPrice.AppearanceCell.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ItemTotalPrice.AppearanceCell.Options.UseFont = true;
             this.ItemTotalPrice.Caption = "Price";
             this.ItemTotalPrice.FieldName = "ItemTotalPrice";
@@ -281,7 +283,7 @@
             this.ItemTotalPrice.SummaryFooterStrFormat = "{0:f2}";
             this.ItemTotalPrice.Visible = true;
             this.ItemTotalPrice.VisibleIndex = 2;
-            this.ItemTotalPrice.Width = 58;
+            this.ItemTotalPrice.Width = 78;
             // 
             // CheckCode
             // 
