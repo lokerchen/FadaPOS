@@ -31,49 +31,29 @@
             this.btnOK = new DevExpress.XtraEditors.SimpleButton();
             this.btnExit = new DevExpress.XtraEditors.SimpleButton();
             this.lblctlTxt = new DevExpress.XtraEditors.LabelControl();
-            this.chkOc0 = new DevExpress.XtraEditors.CheckEdit();
             this.panelControl2 = new DevExpress.XtraEditors.PanelControl();
-            this.chkOc19 = new DevExpress.XtraEditors.CheckEdit();
-            this.chkOc18 = new DevExpress.XtraEditors.CheckEdit();
-            this.chkOc17 = new DevExpress.XtraEditors.CheckEdit();
-            this.chkOc16 = new DevExpress.XtraEditors.CheckEdit();
-            this.chkOc15 = new DevExpress.XtraEditors.CheckEdit();
-            this.chkOc14 = new DevExpress.XtraEditors.CheckEdit();
-            this.chkOc13 = new DevExpress.XtraEditors.CheckEdit();
-            this.chkOc12 = new DevExpress.XtraEditors.CheckEdit();
-            this.chkOc11 = new DevExpress.XtraEditors.CheckEdit();
-            this.chkOc10 = new DevExpress.XtraEditors.CheckEdit();
-            this.chkOc9 = new DevExpress.XtraEditors.CheckEdit();
-            this.chkOc8 = new DevExpress.XtraEditors.CheckEdit();
-            this.chkOc7 = new DevExpress.XtraEditors.CheckEdit();
-            this.chkOc6 = new DevExpress.XtraEditors.CheckEdit();
-            this.chkOc5 = new DevExpress.XtraEditors.CheckEdit();
-            this.chkOc4 = new DevExpress.XtraEditors.CheckEdit();
-            this.chkOc3 = new DevExpress.XtraEditors.CheckEdit();
-            this.chkOc2 = new DevExpress.XtraEditors.CheckEdit();
-            this.chkOc1 = new DevExpress.XtraEditors.CheckEdit();
-            ((System.ComponentModel.ISupportInitialize)(this.chkOc0.Properties)).BeginInit();
+            this.btn1 = new DevExpress.XtraEditors.SimpleButton();
+            this.btn2 = new DevExpress.XtraEditors.SimpleButton();
+            this.btn3 = new DevExpress.XtraEditors.SimpleButton();
+            this.btn4 = new DevExpress.XtraEditors.SimpleButton();
+            this.btn8 = new DevExpress.XtraEditors.SimpleButton();
+            this.btn7 = new DevExpress.XtraEditors.SimpleButton();
+            this.btn6 = new DevExpress.XtraEditors.SimpleButton();
+            this.btn5 = new DevExpress.XtraEditors.SimpleButton();
+            this.btn12 = new DevExpress.XtraEditors.SimpleButton();
+            this.btn11 = new DevExpress.XtraEditors.SimpleButton();
+            this.btn10 = new DevExpress.XtraEditors.SimpleButton();
+            this.btn9 = new DevExpress.XtraEditors.SimpleButton();
+            this.btn16 = new DevExpress.XtraEditors.SimpleButton();
+            this.btn15 = new DevExpress.XtraEditors.SimpleButton();
+            this.btn14 = new DevExpress.XtraEditors.SimpleButton();
+            this.btn13 = new DevExpress.XtraEditors.SimpleButton();
+            this.btn20 = new DevExpress.XtraEditors.SimpleButton();
+            this.btn19 = new DevExpress.XtraEditors.SimpleButton();
+            this.btn18 = new DevExpress.XtraEditors.SimpleButton();
+            this.btn17 = new DevExpress.XtraEditors.SimpleButton();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl2)).BeginInit();
             this.panelControl2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.chkOc19.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.chkOc18.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.chkOc17.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.chkOc16.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.chkOc15.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.chkOc14.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.chkOc13.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.chkOc12.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.chkOc11.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.chkOc10.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.chkOc9.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.chkOc8.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.chkOc7.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.chkOc6.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.chkOc5.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.chkOc4.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.chkOc3.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.chkOc2.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.chkOc1.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // btnOK
@@ -85,7 +65,7 @@
             this.btnOK.Appearance.Options.UseFont = true;
             this.btnOK.Appearance.Options.UseForeColor = true;
             this.btnOK.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
-            this.btnOK.Location = new System.Drawing.Point(268, 280);
+            this.btnOK.Location = new System.Drawing.Point(218, 300);
             this.btnOK.Name = "btnOK";
             this.btnOK.Size = new System.Drawing.Size(137, 54);
             this.btnOK.TabIndex = 1;
@@ -101,7 +81,7 @@
             this.btnExit.Appearance.Options.UseFont = true;
             this.btnExit.Appearance.Options.UseForeColor = true;
             this.btnExit.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
-            this.btnExit.Location = new System.Drawing.Point(561, 280);
+            this.btnExit.Location = new System.Drawing.Point(431, 300);
             this.btnExit.Name = "btnExit";
             this.btnExit.Size = new System.Drawing.Size(137, 54);
             this.btnExit.TabIndex = 2;
@@ -117,238 +97,298 @@
             this.lblctlTxt.TabIndex = 3;
             this.lblctlTxt.Text = "Second Choice";
             // 
-            // chkOc0
-            // 
-            this.chkOc0.Location = new System.Drawing.Point(5, 5);
-            this.chkOc0.Name = "chkOc0";
-            this.chkOc0.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.chkOc0.Properties.Appearance.Options.UseFont = true;
-            this.chkOc0.Properties.Caption = "checkEdit1";
-            this.chkOc0.Size = new System.Drawing.Size(146, 32);
-            this.chkOc0.TabIndex = 4;
-            // 
             // panelControl2
             // 
-            this.panelControl2.Controls.Add(this.chkOc19);
-            this.panelControl2.Controls.Add(this.chkOc18);
-            this.panelControl2.Controls.Add(this.chkOc17);
-            this.panelControl2.Controls.Add(this.chkOc16);
-            this.panelControl2.Controls.Add(this.chkOc15);
-            this.panelControl2.Controls.Add(this.chkOc14);
-            this.panelControl2.Controls.Add(this.chkOc13);
-            this.panelControl2.Controls.Add(this.chkOc12);
-            this.panelControl2.Controls.Add(this.chkOc11);
-            this.panelControl2.Controls.Add(this.chkOc10);
-            this.panelControl2.Controls.Add(this.chkOc9);
-            this.panelControl2.Controls.Add(this.chkOc8);
-            this.panelControl2.Controls.Add(this.chkOc7);
-            this.panelControl2.Controls.Add(this.chkOc6);
-            this.panelControl2.Controls.Add(this.chkOc5);
-            this.panelControl2.Controls.Add(this.chkOc4);
-            this.panelControl2.Controls.Add(this.chkOc3);
-            this.panelControl2.Controls.Add(this.chkOc2);
-            this.panelControl2.Controls.Add(this.chkOc1);
-            this.panelControl2.Controls.Add(this.chkOc0);
+            this.panelControl2.Controls.Add(this.btn20);
+            this.panelControl2.Controls.Add(this.btn19);
+            this.panelControl2.Controls.Add(this.btn18);
+            this.panelControl2.Controls.Add(this.btn17);
+            this.panelControl2.Controls.Add(this.btn16);
+            this.panelControl2.Controls.Add(this.btn15);
+            this.panelControl2.Controls.Add(this.btn14);
+            this.panelControl2.Controls.Add(this.btn13);
+            this.panelControl2.Controls.Add(this.btn12);
+            this.panelControl2.Controls.Add(this.btn11);
+            this.panelControl2.Controls.Add(this.btn10);
+            this.panelControl2.Controls.Add(this.btn9);
+            this.panelControl2.Controls.Add(this.btn8);
+            this.panelControl2.Controls.Add(this.btn7);
+            this.panelControl2.Controls.Add(this.btn6);
+            this.panelControl2.Controls.Add(this.btn5);
+            this.panelControl2.Controls.Add(this.btn4);
+            this.panelControl2.Controls.Add(this.btn3);
+            this.panelControl2.Controls.Add(this.btn2);
+            this.panelControl2.Controls.Add(this.btn1);
             this.panelControl2.Location = new System.Drawing.Point(13, 52);
             this.panelControl2.Name = "panelControl2";
-            this.panelControl2.Size = new System.Drawing.Size(980, 211);
+            this.panelControl2.Size = new System.Drawing.Size(762, 236);
             this.panelControl2.TabIndex = 5;
             // 
-            // chkOc19
+            // btn1
             // 
-            this.chkOc19.Location = new System.Drawing.Point(755, 157);
-            this.chkOc19.Name = "chkOc19";
-            this.chkOc19.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.chkOc19.Properties.Appearance.Options.UseFont = true;
-            this.chkOc19.Properties.Caption = "checkEdit17";
-            this.chkOc19.Size = new System.Drawing.Size(146, 32);
-            this.chkOc19.TabIndex = 23;
+            this.btn1.Appearance.BackColor = System.Drawing.Color.Orange;
+            this.btn1.Appearance.ForeColor = System.Drawing.Color.Black;
+            this.btn1.Appearance.Options.UseBackColor = true;
+            this.btn1.Appearance.Options.UseForeColor = true;
+            this.btn1.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
+            this.btn1.Location = new System.Drawing.Point(5, 5);
+            this.btn1.Name = "btn1";
+            this.btn1.Size = new System.Drawing.Size(150, 40);
+            this.btn1.TabIndex = 6;
+            this.btn1.Text = "abc";
             // 
-            // chkOc18
+            // btn2
             // 
-            this.chkOc18.Location = new System.Drawing.Point(505, 157);
-            this.chkOc18.Name = "chkOc18";
-            this.chkOc18.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.chkOc18.Properties.Appearance.Options.UseFont = true;
-            this.chkOc18.Properties.Caption = "checkEdit18";
-            this.chkOc18.Size = new System.Drawing.Size(146, 32);
-            this.chkOc18.TabIndex = 22;
+            this.btn2.Appearance.BackColor = System.Drawing.Color.Orange;
+            this.btn2.Appearance.ForeColor = System.Drawing.Color.Black;
+            this.btn2.Appearance.Options.UseBackColor = true;
+            this.btn2.Appearance.Options.UseForeColor = true;
+            this.btn2.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
+            this.btn2.Location = new System.Drawing.Point(205, 5);
+            this.btn2.Name = "btn2";
+            this.btn2.Size = new System.Drawing.Size(150, 40);
+            this.btn2.TabIndex = 7;
+            this.btn2.Text = "abc";
             // 
-            // chkOc17
+            // btn3
             // 
-            this.chkOc17.Location = new System.Drawing.Point(255, 157);
-            this.chkOc17.Name = "chkOc17";
-            this.chkOc17.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.chkOc17.Properties.Appearance.Options.UseFont = true;
-            this.chkOc17.Properties.Caption = "checkEdit19";
-            this.chkOc17.Size = new System.Drawing.Size(146, 32);
-            this.chkOc17.TabIndex = 21;
+            this.btn3.Appearance.BackColor = System.Drawing.Color.Orange;
+            this.btn3.Appearance.ForeColor = System.Drawing.Color.Black;
+            this.btn3.Appearance.Options.UseBackColor = true;
+            this.btn3.Appearance.Options.UseForeColor = true;
+            this.btn3.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
+            this.btn3.Location = new System.Drawing.Point(405, 5);
+            this.btn3.Name = "btn3";
+            this.btn3.Size = new System.Drawing.Size(150, 40);
+            this.btn3.TabIndex = 8;
+            this.btn3.Text = "abc";
             // 
-            // chkOc16
+            // btn4
             // 
-            this.chkOc16.Location = new System.Drawing.Point(5, 157);
-            this.chkOc16.Name = "chkOc16";
-            this.chkOc16.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.chkOc16.Properties.Appearance.Options.UseFont = true;
-            this.chkOc16.Properties.Caption = "checkEdit20";
-            this.chkOc16.Size = new System.Drawing.Size(146, 32);
-            this.chkOc16.TabIndex = 20;
+            this.btn4.Appearance.BackColor = System.Drawing.Color.Orange;
+            this.btn4.Appearance.ForeColor = System.Drawing.Color.Black;
+            this.btn4.Appearance.Options.UseBackColor = true;
+            this.btn4.Appearance.Options.UseForeColor = true;
+            this.btn4.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
+            this.btn4.Location = new System.Drawing.Point(605, 5);
+            this.btn4.Name = "btn4";
+            this.btn4.Size = new System.Drawing.Size(150, 40);
+            this.btn4.TabIndex = 9;
+            this.btn4.Text = "abc";
             // 
-            // chkOc15
+            // btn8
             // 
-            this.chkOc15.Location = new System.Drawing.Point(755, 119);
-            this.chkOc15.Name = "chkOc15";
-            this.chkOc15.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.chkOc15.Properties.Appearance.Options.UseFont = true;
-            this.chkOc15.Properties.Caption = "checkEdit13";
-            this.chkOc15.Size = new System.Drawing.Size(146, 32);
-            this.chkOc15.TabIndex = 19;
+            this.btn8.Appearance.BackColor = System.Drawing.Color.Orange;
+            this.btn8.Appearance.ForeColor = System.Drawing.Color.Black;
+            this.btn8.Appearance.Options.UseBackColor = true;
+            this.btn8.Appearance.Options.UseForeColor = true;
+            this.btn8.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
+            this.btn8.Location = new System.Drawing.Point(605, 51);
+            this.btn8.Name = "btn8";
+            this.btn8.Size = new System.Drawing.Size(150, 40);
+            this.btn8.TabIndex = 13;
+            this.btn8.Text = "abc";
             // 
-            // chkOc14
+            // btn7
             // 
-            this.chkOc14.Location = new System.Drawing.Point(505, 119);
-            this.chkOc14.Name = "chkOc14";
-            this.chkOc14.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.chkOc14.Properties.Appearance.Options.UseFont = true;
-            this.chkOc14.Properties.Caption = "checkEdit14";
-            this.chkOc14.Size = new System.Drawing.Size(146, 32);
-            this.chkOc14.TabIndex = 18;
+            this.btn7.Appearance.BackColor = System.Drawing.Color.Orange;
+            this.btn7.Appearance.ForeColor = System.Drawing.Color.Black;
+            this.btn7.Appearance.Options.UseBackColor = true;
+            this.btn7.Appearance.Options.UseForeColor = true;
+            this.btn7.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
+            this.btn7.Location = new System.Drawing.Point(405, 51);
+            this.btn7.Name = "btn7";
+            this.btn7.Size = new System.Drawing.Size(150, 40);
+            this.btn7.TabIndex = 12;
+            this.btn7.Text = "abc";
             // 
-            // chkOc13
+            // btn6
             // 
-            this.chkOc13.Location = new System.Drawing.Point(255, 119);
-            this.chkOc13.Name = "chkOc13";
-            this.chkOc13.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.chkOc13.Properties.Appearance.Options.UseFont = true;
-            this.chkOc13.Properties.Caption = "checkEdit15";
-            this.chkOc13.Size = new System.Drawing.Size(146, 32);
-            this.chkOc13.TabIndex = 17;
+            this.btn6.Appearance.BackColor = System.Drawing.Color.Orange;
+            this.btn6.Appearance.ForeColor = System.Drawing.Color.Black;
+            this.btn6.Appearance.Options.UseBackColor = true;
+            this.btn6.Appearance.Options.UseForeColor = true;
+            this.btn6.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
+            this.btn6.Location = new System.Drawing.Point(205, 51);
+            this.btn6.Name = "btn6";
+            this.btn6.Size = new System.Drawing.Size(150, 40);
+            this.btn6.TabIndex = 11;
+            this.btn6.Text = "abc";
             // 
-            // chkOc12
+            // btn5
             // 
-            this.chkOc12.Location = new System.Drawing.Point(5, 119);
-            this.chkOc12.Name = "chkOc12";
-            this.chkOc12.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.chkOc12.Properties.Appearance.Options.UseFont = true;
-            this.chkOc12.Properties.Caption = "checkEdit16";
-            this.chkOc12.Size = new System.Drawing.Size(146, 32);
-            this.chkOc12.TabIndex = 16;
+            this.btn5.Appearance.BackColor = System.Drawing.Color.Orange;
+            this.btn5.Appearance.ForeColor = System.Drawing.Color.Black;
+            this.btn5.Appearance.Options.UseBackColor = true;
+            this.btn5.Appearance.Options.UseForeColor = true;
+            this.btn5.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
+            this.btn5.Location = new System.Drawing.Point(5, 51);
+            this.btn5.Name = "btn5";
+            this.btn5.Size = new System.Drawing.Size(150, 40);
+            this.btn5.TabIndex = 10;
+            this.btn5.Text = "abc";
             // 
-            // chkOc11
+            // btn12
             // 
-            this.chkOc11.Location = new System.Drawing.Point(755, 81);
-            this.chkOc11.Name = "chkOc11";
-            this.chkOc11.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.chkOc11.Properties.Appearance.Options.UseFont = true;
-            this.chkOc11.Properties.Caption = "checkEdit9";
-            this.chkOc11.Size = new System.Drawing.Size(146, 32);
-            this.chkOc11.TabIndex = 15;
+            this.btn12.Appearance.BackColor = System.Drawing.Color.Orange;
+            this.btn12.Appearance.ForeColor = System.Drawing.Color.Black;
+            this.btn12.Appearance.Options.UseBackColor = true;
+            this.btn12.Appearance.Options.UseForeColor = true;
+            this.btn12.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
+            this.btn12.Location = new System.Drawing.Point(605, 97);
+            this.btn12.Name = "btn12";
+            this.btn12.Size = new System.Drawing.Size(150, 40);
+            this.btn12.TabIndex = 17;
+            this.btn12.Text = "abc";
             // 
-            // chkOc10
+            // btn11
             // 
-            this.chkOc10.Location = new System.Drawing.Point(505, 81);
-            this.chkOc10.Name = "chkOc10";
-            this.chkOc10.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.chkOc10.Properties.Appearance.Options.UseFont = true;
-            this.chkOc10.Properties.Caption = "checkEdit10";
-            this.chkOc10.Size = new System.Drawing.Size(146, 32);
-            this.chkOc10.TabIndex = 14;
+            this.btn11.Appearance.BackColor = System.Drawing.Color.Orange;
+            this.btn11.Appearance.ForeColor = System.Drawing.Color.Black;
+            this.btn11.Appearance.Options.UseBackColor = true;
+            this.btn11.Appearance.Options.UseForeColor = true;
+            this.btn11.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
+            this.btn11.Location = new System.Drawing.Point(405, 97);
+            this.btn11.Name = "btn11";
+            this.btn11.Size = new System.Drawing.Size(150, 40);
+            this.btn11.TabIndex = 16;
+            this.btn11.Text = "abc";
             // 
-            // chkOc9
+            // btn10
             // 
-            this.chkOc9.Location = new System.Drawing.Point(255, 81);
-            this.chkOc9.Name = "chkOc9";
-            this.chkOc9.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.chkOc9.Properties.Appearance.Options.UseFont = true;
-            this.chkOc9.Properties.Caption = "checkEdit11";
-            this.chkOc9.Size = new System.Drawing.Size(146, 32);
-            this.chkOc9.TabIndex = 13;
+            this.btn10.Appearance.BackColor = System.Drawing.Color.Orange;
+            this.btn10.Appearance.ForeColor = System.Drawing.Color.Black;
+            this.btn10.Appearance.Options.UseBackColor = true;
+            this.btn10.Appearance.Options.UseForeColor = true;
+            this.btn10.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
+            this.btn10.Location = new System.Drawing.Point(205, 97);
+            this.btn10.Name = "btn10";
+            this.btn10.Size = new System.Drawing.Size(150, 40);
+            this.btn10.TabIndex = 15;
+            this.btn10.Text = "abc";
             // 
-            // chkOc8
+            // btn9
             // 
-            this.chkOc8.Location = new System.Drawing.Point(5, 81);
-            this.chkOc8.Name = "chkOc8";
-            this.chkOc8.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.chkOc8.Properties.Appearance.Options.UseFont = true;
-            this.chkOc8.Properties.Caption = "checkEdit12";
-            this.chkOc8.Size = new System.Drawing.Size(146, 32);
-            this.chkOc8.TabIndex = 12;
+            this.btn9.Appearance.BackColor = System.Drawing.Color.Orange;
+            this.btn9.Appearance.ForeColor = System.Drawing.Color.Black;
+            this.btn9.Appearance.Options.UseBackColor = true;
+            this.btn9.Appearance.Options.UseForeColor = true;
+            this.btn9.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
+            this.btn9.Location = new System.Drawing.Point(5, 97);
+            this.btn9.Name = "btn9";
+            this.btn9.Size = new System.Drawing.Size(150, 40);
+            this.btn9.TabIndex = 14;
+            this.btn9.Text = "abc";
             // 
-            // chkOc7
+            // btn16
             // 
-            this.chkOc7.Location = new System.Drawing.Point(755, 43);
-            this.chkOc7.Name = "chkOc7";
-            this.chkOc7.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.chkOc7.Properties.Appearance.Options.UseFont = true;
-            this.chkOc7.Properties.Caption = "checkEdit5";
-            this.chkOc7.Size = new System.Drawing.Size(146, 32);
-            this.chkOc7.TabIndex = 11;
+            this.btn16.Appearance.BackColor = System.Drawing.Color.Orange;
+            this.btn16.Appearance.ForeColor = System.Drawing.Color.Black;
+            this.btn16.Appearance.Options.UseBackColor = true;
+            this.btn16.Appearance.Options.UseForeColor = true;
+            this.btn16.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
+            this.btn16.Location = new System.Drawing.Point(605, 143);
+            this.btn16.Name = "btn16";
+            this.btn16.Size = new System.Drawing.Size(150, 40);
+            this.btn16.TabIndex = 21;
+            this.btn16.Text = "abc";
             // 
-            // chkOc6
+            // btn15
             // 
-            this.chkOc6.Location = new System.Drawing.Point(505, 43);
-            this.chkOc6.Name = "chkOc6";
-            this.chkOc6.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.chkOc6.Properties.Appearance.Options.UseFont = true;
-            this.chkOc6.Properties.Caption = "checkEdit6";
-            this.chkOc6.Size = new System.Drawing.Size(146, 32);
-            this.chkOc6.TabIndex = 10;
+            this.btn15.Appearance.BackColor = System.Drawing.Color.Orange;
+            this.btn15.Appearance.ForeColor = System.Drawing.Color.Black;
+            this.btn15.Appearance.Options.UseBackColor = true;
+            this.btn15.Appearance.Options.UseForeColor = true;
+            this.btn15.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
+            this.btn15.Location = new System.Drawing.Point(405, 143);
+            this.btn15.Name = "btn15";
+            this.btn15.Size = new System.Drawing.Size(150, 40);
+            this.btn15.TabIndex = 20;
+            this.btn15.Text = "abc";
             // 
-            // chkOc5
+            // btn14
             // 
-            this.chkOc5.Location = new System.Drawing.Point(255, 43);
-            this.chkOc5.Name = "chkOc5";
-            this.chkOc5.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.chkOc5.Properties.Appearance.Options.UseFont = true;
-            this.chkOc5.Properties.Caption = "checkEdit7";
-            this.chkOc5.Size = new System.Drawing.Size(146, 32);
-            this.chkOc5.TabIndex = 9;
+            this.btn14.Appearance.BackColor = System.Drawing.Color.Orange;
+            this.btn14.Appearance.ForeColor = System.Drawing.Color.Black;
+            this.btn14.Appearance.Options.UseBackColor = true;
+            this.btn14.Appearance.Options.UseForeColor = true;
+            this.btn14.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
+            this.btn14.Location = new System.Drawing.Point(205, 143);
+            this.btn14.Name = "btn14";
+            this.btn14.Size = new System.Drawing.Size(150, 40);
+            this.btn14.TabIndex = 19;
+            this.btn14.Text = "abc";
             // 
-            // chkOc4
+            // btn13
             // 
-            this.chkOc4.Location = new System.Drawing.Point(5, 43);
-            this.chkOc4.Name = "chkOc4";
-            this.chkOc4.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.chkOc4.Properties.Appearance.Options.UseFont = true;
-            this.chkOc4.Properties.Caption = "checkEdit8";
-            this.chkOc4.Size = new System.Drawing.Size(146, 32);
-            this.chkOc4.TabIndex = 8;
+            this.btn13.Appearance.BackColor = System.Drawing.Color.Orange;
+            this.btn13.Appearance.ForeColor = System.Drawing.Color.Black;
+            this.btn13.Appearance.Options.UseBackColor = true;
+            this.btn13.Appearance.Options.UseForeColor = true;
+            this.btn13.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
+            this.btn13.Location = new System.Drawing.Point(5, 143);
+            this.btn13.Name = "btn13";
+            this.btn13.Size = new System.Drawing.Size(150, 40);
+            this.btn13.TabIndex = 18;
+            this.btn13.Text = "abc";
             // 
-            // chkOc3
+            // btn20
             // 
-            this.chkOc3.Location = new System.Drawing.Point(755, 5);
-            this.chkOc3.Name = "chkOc3";
-            this.chkOc3.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.chkOc3.Properties.Appearance.Options.UseFont = true;
-            this.chkOc3.Properties.Caption = "checkEdit4";
-            this.chkOc3.Size = new System.Drawing.Size(146, 32);
-            this.chkOc3.TabIndex = 7;
+            this.btn20.Appearance.BackColor = System.Drawing.Color.Orange;
+            this.btn20.Appearance.ForeColor = System.Drawing.Color.Black;
+            this.btn20.Appearance.Options.UseBackColor = true;
+            this.btn20.Appearance.Options.UseForeColor = true;
+            this.btn20.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
+            this.btn20.Location = new System.Drawing.Point(605, 189);
+            this.btn20.Name = "btn20";
+            this.btn20.Size = new System.Drawing.Size(150, 40);
+            this.btn20.TabIndex = 25;
+            this.btn20.Text = "abc";
             // 
-            // chkOc2
+            // btn19
             // 
-            this.chkOc2.Location = new System.Drawing.Point(505, 5);
-            this.chkOc2.Name = "chkOc2";
-            this.chkOc2.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.chkOc2.Properties.Appearance.Options.UseFont = true;
-            this.chkOc2.Properties.Caption = "checkEdit3";
-            this.chkOc2.Size = new System.Drawing.Size(146, 32);
-            this.chkOc2.TabIndex = 6;
+            this.btn19.Appearance.BackColor = System.Drawing.Color.Orange;
+            this.btn19.Appearance.ForeColor = System.Drawing.Color.Black;
+            this.btn19.Appearance.Options.UseBackColor = true;
+            this.btn19.Appearance.Options.UseForeColor = true;
+            this.btn19.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
+            this.btn19.Location = new System.Drawing.Point(405, 189);
+            this.btn19.Name = "btn19";
+            this.btn19.Size = new System.Drawing.Size(150, 40);
+            this.btn19.TabIndex = 24;
+            this.btn19.Text = "abc";
             // 
-            // chkOc1
+            // btn18
             // 
-            this.chkOc1.Location = new System.Drawing.Point(255, 5);
-            this.chkOc1.Name = "chkOc1";
-            this.chkOc1.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.chkOc1.Properties.Appearance.Options.UseFont = true;
-            this.chkOc1.Properties.Caption = "checkEdit2";
-            this.chkOc1.Size = new System.Drawing.Size(146, 32);
-            this.chkOc1.TabIndex = 5;
+            this.btn18.Appearance.BackColor = System.Drawing.Color.Orange;
+            this.btn18.Appearance.ForeColor = System.Drawing.Color.Black;
+            this.btn18.Appearance.Options.UseBackColor = true;
+            this.btn18.Appearance.Options.UseForeColor = true;
+            this.btn18.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
+            this.btn18.Location = new System.Drawing.Point(205, 189);
+            this.btn18.Name = "btn18";
+            this.btn18.Size = new System.Drawing.Size(150, 40);
+            this.btn18.TabIndex = 23;
+            this.btn18.Text = "abc";
+            // 
+            // btn17
+            // 
+            this.btn17.Appearance.BackColor = System.Drawing.Color.Orange;
+            this.btn17.Appearance.ForeColor = System.Drawing.Color.Black;
+            this.btn17.Appearance.Options.UseBackColor = true;
+            this.btn17.Appearance.Options.UseForeColor = true;
+            this.btn17.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
+            this.btn17.Location = new System.Drawing.Point(5, 189);
+            this.btn17.Name = "btn17";
+            this.btn17.Size = new System.Drawing.Size(150, 40);
+            this.btn17.TabIndex = 22;
+            this.btn17.Text = "abc";
             // 
             // FrmTAOtherChoice
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1007, 366);
+            this.ClientSize = new System.Drawing.Size(783, 366);
             this.Controls.Add(this.panelControl2);
             this.Controls.Add(this.lblctlTxt);
             this.Controls.Add(this.btnExit);
@@ -358,28 +398,8 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "FrmTAOtherChoice";
             this.Load += new System.EventHandler(this.FrmTAOtherChoice_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.chkOc0.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl2)).EndInit();
             this.panelControl2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.chkOc19.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.chkOc18.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.chkOc17.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.chkOc16.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.chkOc15.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.chkOc14.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.chkOc13.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.chkOc12.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.chkOc11.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.chkOc10.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.chkOc9.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.chkOc8.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.chkOc7.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.chkOc6.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.chkOc5.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.chkOc4.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.chkOc3.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.chkOc2.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.chkOc1.Properties)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -389,26 +409,26 @@
         private DevExpress.XtraEditors.SimpleButton btnOK;
         private DevExpress.XtraEditors.SimpleButton btnExit;
         private DevExpress.XtraEditors.LabelControl lblctlTxt;
-        private DevExpress.XtraEditors.CheckEdit chkOc0;
         private DevExpress.XtraEditors.PanelControl panelControl2;
-        private DevExpress.XtraEditors.CheckEdit chkOc19;
-        private DevExpress.XtraEditors.CheckEdit chkOc18;
-        private DevExpress.XtraEditors.CheckEdit chkOc17;
-        private DevExpress.XtraEditors.CheckEdit chkOc16;
-        private DevExpress.XtraEditors.CheckEdit chkOc15;
-        private DevExpress.XtraEditors.CheckEdit chkOc14;
-        private DevExpress.XtraEditors.CheckEdit chkOc13;
-        private DevExpress.XtraEditors.CheckEdit chkOc12;
-        private DevExpress.XtraEditors.CheckEdit chkOc11;
-        private DevExpress.XtraEditors.CheckEdit chkOc10;
-        private DevExpress.XtraEditors.CheckEdit chkOc9;
-        private DevExpress.XtraEditors.CheckEdit chkOc8;
-        private DevExpress.XtraEditors.CheckEdit chkOc7;
-        private DevExpress.XtraEditors.CheckEdit chkOc6;
-        private DevExpress.XtraEditors.CheckEdit chkOc5;
-        private DevExpress.XtraEditors.CheckEdit chkOc4;
-        private DevExpress.XtraEditors.CheckEdit chkOc3;
-        private DevExpress.XtraEditors.CheckEdit chkOc2;
-        private DevExpress.XtraEditors.CheckEdit chkOc1;
+        private DevExpress.XtraEditors.SimpleButton btn1;
+        private DevExpress.XtraEditors.SimpleButton btn20;
+        private DevExpress.XtraEditors.SimpleButton btn19;
+        private DevExpress.XtraEditors.SimpleButton btn18;
+        private DevExpress.XtraEditors.SimpleButton btn17;
+        private DevExpress.XtraEditors.SimpleButton btn16;
+        private DevExpress.XtraEditors.SimpleButton btn15;
+        private DevExpress.XtraEditors.SimpleButton btn14;
+        private DevExpress.XtraEditors.SimpleButton btn13;
+        private DevExpress.XtraEditors.SimpleButton btn12;
+        private DevExpress.XtraEditors.SimpleButton btn11;
+        private DevExpress.XtraEditors.SimpleButton btn10;
+        private DevExpress.XtraEditors.SimpleButton btn9;
+        private DevExpress.XtraEditors.SimpleButton btn8;
+        private DevExpress.XtraEditors.SimpleButton btn7;
+        private DevExpress.XtraEditors.SimpleButton btn6;
+        private DevExpress.XtraEditors.SimpleButton btn5;
+        private DevExpress.XtraEditors.SimpleButton btn4;
+        private DevExpress.XtraEditors.SimpleButton btn3;
+        private DevExpress.XtraEditors.SimpleButton btn2;
     }
 }
