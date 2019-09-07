@@ -51,6 +51,8 @@
             this.btn8 = new DevExpress.XtraEditors.SimpleButton();
             this.btn7 = new DevExpress.XtraEditors.SimpleButton();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.txtPayTypePay5 = new DevExpress.XtraEditors.TextEdit();
+            this.lblPayType5 = new DevExpress.XtraEditors.LabelControl();
             this.txtPayTypePay4 = new DevExpress.XtraEditors.TextEdit();
             this.txtPayTypePay3 = new DevExpress.XtraEditors.TextEdit();
             this.txtPayTypePay2 = new DevExpress.XtraEditors.TextEdit();
@@ -74,12 +76,12 @@
             this.labelControl10 = new DevExpress.XtraEditors.LabelControl();
             this.lblTypeName = new DevExpress.XtraEditors.LabelControl();
             this.btnExit = new DevExpress.XtraEditors.SimpleButton();
-            this.txtPayTypePay5 = new DevExpress.XtraEditors.TextEdit();
-            this.lblPayType5 = new DevExpress.XtraEditors.LabelControl();
+            this.btnNotPaid = new DevExpress.XtraEditors.SimpleButton();
             this.groupBox1.SuspendLayout();
             this.groupBox5.SuspendLayout();
             this.groupBox4.SuspendLayout();
             this.groupBox3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.txtPayTypePay5.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtPayTypePay4.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtPayTypePay3.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtPayTypePay2.Properties)).BeginInit();
@@ -92,11 +94,11 @@
             ((System.ComponentModel.ISupportInitialize)(this.txtTendered.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtSurcharge.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtDiscount.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtPayTypePay5.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.btnNotPaid);
             this.groupBox1.Controls.Add(this.groupBox5);
             this.groupBox1.Controls.Add(this.groupBox4);
             this.groupBox1.Controls.Add(this.groupBox3);
@@ -429,6 +431,35 @@
             this.groupBox3.Size = new System.Drawing.Size(305, 264);
             this.groupBox3.TabIndex = 90;
             this.groupBox3.TabStop = false;
+            // 
+            // txtPayTypePay5
+            // 
+            this.txtPayTypePay5.EditValue = "0.00";
+            this.txtPayTypePay5.Location = new System.Drawing.Point(9, 222);
+            this.txtPayTypePay5.Name = "txtPayTypePay5";
+            this.txtPayTypePay5.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 16F);
+            this.txtPayTypePay5.Properties.Appearance.Options.UseFont = true;
+            this.txtPayTypePay5.Properties.Appearance.Options.UseTextOptions = true;
+            this.txtPayTypePay5.Properties.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
+            this.txtPayTypePay5.Properties.Mask.EditMask = "f2";
+            this.txtPayTypePay5.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Numeric;
+            this.txtPayTypePay5.Size = new System.Drawing.Size(130, 40);
+            this.txtPayTypePay5.TabIndex = 98;
+            this.txtPayTypePay5.EditValueChanged += new System.EventHandler(this.txtPayTypePay5_EditValueChanged);
+            this.txtPayTypePay5.MouseDown += new System.Windows.Forms.MouseEventHandler(this.txtPayTypePay5_MouseDown);
+            // 
+            // lblPayType5
+            // 
+            this.lblPayType5.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
+            this.lblPayType5.Appearance.Font = new System.Drawing.Font("Tahoma", 18F);
+            this.lblPayType5.Appearance.ForeColor = System.Drawing.Color.Black;
+            this.lblPayType5.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
+            this.lblPayType5.Location = new System.Drawing.Point(145, 222);
+            this.lblPayType5.Name = "lblPayType5";
+            this.lblPayType5.Size = new System.Drawing.Size(123, 36);
+            this.lblPayType5.TabIndex = 97;
+            this.lblPayType5.Text = "Pay Type";
+            this.lblPayType5.Click += new System.EventHandler(this.lblPayType5_Click);
             // 
             // txtPayTypePay4
             // 
@@ -768,34 +799,19 @@
             this.btnExit.Text = "Exit";
             this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
             // 
-            // txtPayTypePay5
+            // btnNotPaid
             // 
-            this.txtPayTypePay5.EditValue = "0.00";
-            this.txtPayTypePay5.Location = new System.Drawing.Point(9, 222);
-            this.txtPayTypePay5.Name = "txtPayTypePay5";
-            this.txtPayTypePay5.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 16F);
-            this.txtPayTypePay5.Properties.Appearance.Options.UseFont = true;
-            this.txtPayTypePay5.Properties.Appearance.Options.UseTextOptions = true;
-            this.txtPayTypePay5.Properties.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
-            this.txtPayTypePay5.Properties.Mask.EditMask = "f2";
-            this.txtPayTypePay5.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Numeric;
-            this.txtPayTypePay5.Size = new System.Drawing.Size(130, 40);
-            this.txtPayTypePay5.TabIndex = 98;
-            this.txtPayTypePay5.EditValueChanged += new System.EventHandler(this.txtPayTypePay5_EditValueChanged);
-            this.txtPayTypePay5.MouseDown += new System.Windows.Forms.MouseEventHandler(this.txtPayTypePay5_MouseDown);
-            // 
-            // lblPayType5
-            // 
-            this.lblPayType5.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
-            this.lblPayType5.Appearance.Font = new System.Drawing.Font("Tahoma", 18F);
-            this.lblPayType5.Appearance.ForeColor = System.Drawing.Color.Black;
-            this.lblPayType5.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
-            this.lblPayType5.Location = new System.Drawing.Point(145, 222);
-            this.lblPayType5.Name = "lblPayType5";
-            this.lblPayType5.Size = new System.Drawing.Size(123, 36);
-            this.lblPayType5.TabIndex = 97;
-            this.lblPayType5.Text = "Pay Type";
-            this.lblPayType5.Click += new System.EventHandler(this.lblPayType5_Click);
+            this.btnNotPaid.Appearance.BackColor = System.Drawing.Color.Red;
+            this.btnNotPaid.Appearance.Font = new System.Drawing.Font("Tahoma", 14F);
+            this.btnNotPaid.Appearance.Options.UseBackColor = true;
+            this.btnNotPaid.Appearance.Options.UseFont = true;
+            this.btnNotPaid.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
+            this.btnNotPaid.Location = new System.Drawing.Point(12, 236);
+            this.btnNotPaid.Name = "btnNotPaid";
+            this.btnNotPaid.Size = new System.Drawing.Size(165, 48);
+            this.btnNotPaid.TabIndex = 52;
+            this.btnNotPaid.Text = "NOT PAID";
+            this.btnNotPaid.Click += new System.EventHandler(this.btnNotPaid_Click);
             // 
             // FrmTaPaymentShop
             // 
@@ -816,6 +832,7 @@
             this.groupBox5.ResumeLayout(false);
             this.groupBox4.ResumeLayout(false);
             this.groupBox3.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.txtPayTypePay5.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtPayTypePay4.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtPayTypePay3.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtPayTypePay2.Properties)).EndInit();
@@ -828,7 +845,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.txtTendered.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtSurcharge.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtDiscount.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtPayTypePay5.Properties)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -883,5 +899,6 @@
         private DevExpress.XtraEditors.SimpleButton btnPercent;
         private DevExpress.XtraEditors.TextEdit txtPayTypePay5;
         private DevExpress.XtraEditors.LabelControl lblPayType5;
+        private DevExpress.XtraEditors.SimpleButton btnNotPaid;
     }
 }

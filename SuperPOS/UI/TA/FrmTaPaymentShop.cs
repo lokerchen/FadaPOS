@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections;
+using System.Drawing;
 using System.Linq;
 using System.Windows.Forms;
 using DevExpress.XtraEditors;
@@ -50,6 +51,8 @@ namespace SuperPOS.UI.TA
         public bool returnPaid = false;
 
         private AutoSizeFormClass asfc = new AutoSizeFormClass();
+
+        private bool IsNotPaid = false;
 
         public FrmTaPaymentShop()
         {
@@ -453,15 +456,7 @@ namespace SuperPOS.UI.TA
                 txtChange.Text = change < 0 ? "0.00" : change.ToString("0.00");
             }
 
-            if (Convert.ToDecimal(txtTendered.Text) >= Convert.ToDecimal(txtToPay.Text))
-            {
-                IsPaid = true;
-                //taPaymentInfo.IsPaid = "Y";
-                //_control.UpdateEntity(taPaymentInfo);
-                //this.DialogResult = DialogResult.OK;
-                //Hide();
-            }
-            else IsPaid = false;
+            IsPaid = Convert.ToDecimal(txtTendered.Text) >= Convert.ToDecimal(txtToPay.Text);
         }
         #endregion
 
@@ -565,6 +560,9 @@ namespace SuperPOS.UI.TA
         {
             txtPayTypePay1.Text = txtToPay.Text;
 
+            IsNotPaid = false;
+            btnNotPaid.Appearance.BackColor = Color.Red;
+
             //if (!txtPayTypePay1.Text.Equals(txtToPay.Text)) txtPayTypePay1.Text = txtToPay.Text;
             RefreshAmount();
         }
@@ -572,6 +570,9 @@ namespace SuperPOS.UI.TA
         private void lblPayType2_Click(object sender, EventArgs e)
         {
             txtPayTypePay2.Text = txtToPay.Text;
+
+            IsNotPaid = false;
+            btnNotPaid.Appearance.BackColor = Color.Red;
 
             //if (!txtPayTypePay2.Text.Equals(txtToPay.Text)) txtPayTypePay2.Text = txtToPay.Text;
             RefreshAmount();
@@ -581,6 +582,8 @@ namespace SuperPOS.UI.TA
         {
             txtPayTypePay3.Text = txtToPay.Text;
 
+            IsNotPaid = false;
+            btnNotPaid.Appearance.BackColor = Color.Red;
             //if (!txtPayTypePay3.Text.Equals(txtToPay.Text)) txtPayTypePay3.Text = txtToPay.Text;
             RefreshAmount();
         }
@@ -589,12 +592,16 @@ namespace SuperPOS.UI.TA
         {
             txtPayTypePay4.Text = txtToPay.Text;
 
+            IsNotPaid = false;
+            btnNotPaid.Appearance.BackColor = Color.Red;
             //if (!txtPayTypePay4.Text.Equals(txtToPay.Text)) txtPayTypePay4.Text = txtToPay.Text;
             RefreshAmount();
         }
 
         private void lblPayType5_Click(object sender, EventArgs e)
         {
+            IsNotPaid = false;
+            btnNotPaid.Appearance.BackColor = Color.Red;
             txtPayTypePay5.Text = txtToPay.Text;
             RefreshAmount();
         }
@@ -605,54 +612,72 @@ namespace SuperPOS.UI.TA
         {
             objName = "txtPayTypePay1";
             objTxt = txtPayTypePay1;
+            IsNotPaid = false;
+            btnNotPaid.Appearance.BackColor = Color.Red;
         }
 
         private void txtPayTypePay2_MouseDown(object sender, MouseEventArgs e)
         {
             objName = "txtPayTypePay2";
             objTxt = txtPayTypePay2;
+            IsNotPaid = false;
+            btnNotPaid.Appearance.BackColor = Color.Red;
         }
 
         private void txtPayTypePay3_MouseDown(object sender, MouseEventArgs e)
         {
             objName = "txtPayTypePay3";
             objTxt = txtPayTypePay3;
+            IsNotPaid = false;
+            btnNotPaid.Appearance.BackColor = Color.Red;
         }
 
         private void txtPayTypePay4_MouseDown(object sender, MouseEventArgs e)
         {
             objName = "txtPayTypePay4";
             objTxt = txtPayTypePay4;
+            IsNotPaid = false;
+            btnNotPaid.Appearance.BackColor = Color.Red;
         }
 
         private void txtPayTypePay5_MouseDown(object sender, MouseEventArgs e)
         {
             objName = "txtPayTypePay5";
             objTxt = txtPayTypePay5;
+            IsNotPaid = false;
+            btnNotPaid.Appearance.BackColor = Color.Red;
         }
 
         private void txtPercentDiscount_MouseDown(object sender, MouseEventArgs e)
         {
             objName = "txtPercentDiscount";
             objTxt = txtPercentDiscount;
+            IsNotPaid = false;
+            btnNotPaid.Appearance.BackColor = Color.Red;
         }
 
         private void txtDiscount_MouseDown(object sender, MouseEventArgs e)
         {
             objName = "txtDiscount";
             objTxt = txtDiscount;
+            IsNotPaid = false;
+            btnNotPaid.Appearance.BackColor = Color.Red;
         }
 
         private void txtPercentSurcharge_MouseDown(object sender, MouseEventArgs e)
         {
             objName = "txtPercentSurcharge";
             objTxt = txtPercentSurcharge;
+            IsNotPaid = false;
+            btnNotPaid.Appearance.BackColor = Color.Red;
         }
 
         private void txtSurcharge_MouseDown(object sender, MouseEventArgs e)
         {
             objName = "txtSurcharge";
             objTxt = txtSurcharge;
+            IsNotPaid = false;
+            btnNotPaid.Appearance.BackColor = Color.Red;
         }
         #endregion
 
@@ -702,6 +727,47 @@ namespace SuperPOS.UI.TA
 
         #endregion
 
+        #region Not Paid时
+        private void SaveOrder(bool isPaid)
+        {
+
+            new SystemData().GetTaCheckOrder();
+            var lstChk = CommonData.TaCheckOrder.Where(s => s.CheckCode.Equals(checkID));
+
+            if (lstChk.Any())
+            {
+                TaCheckOrderInfo taCheckOrder = lstChk.FirstOrDefault();
+
+                taCheckOrder.PayTime = DateTime.Now.ToString();
+                taCheckOrder.PayPerDiscount = txtPercentDiscount.Text;
+                taCheckOrder.PayDiscount = Math.Round(Convert.ToDecimal(txtDiscount.Text), 2).ToString(@"0.00");
+                taCheckOrder.PayPerSurcharge = txtPercentSurcharge.Text;
+                taCheckOrder.PaySurcharge = Math.Round(Convert.ToDecimal(txtSurcharge.Text), 2).ToString(@"0.00");
+                taCheckOrder.PayType1 = lblPayType1.Text;
+                taCheckOrder.PayTypePay1 = Math.Round(Convert.ToDecimal(txtPayTypePay1.Text), 2).ToString(@"0.00");
+                taCheckOrder.PayType2 = lblPayType2.Text;
+                taCheckOrder.PayTypePay2 = Math.Round(Convert.ToDecimal(txtPayTypePay2.Text), 2).ToString(@"0.00");
+                taCheckOrder.PayType3 = lblPayType3.Text;
+                taCheckOrder.PayTypePay3 = Math.Round(Convert.ToDecimal(txtPayTypePay3.Text), 2).ToString(@"0.00");
+                taCheckOrder.PayType4 = lblPayType4.Text;
+                taCheckOrder.PayTypePay4 = Math.Round(Convert.ToDecimal(txtPayTypePay4.Text), 2).ToString(@"0.00");
+                taCheckOrder.PayType5 = lblPayType5.Text;
+                taCheckOrder.PayTypePay5 = Math.Round(Convert.ToDecimal(txtPayTypePay5.Text), 2).ToString(@"0.00");
+                taCheckOrder.TotalAmount = Math.Round(Convert.ToDecimal(txtToPay.Text), 2).ToString(@"0.00");
+                taCheckOrder.Paid = Math.Round(Convert.ToDecimal(txtTendered.Text), 2).ToString(@"0.00");
+                taCheckOrder.IsPaid = isPaid ? @"Y" : @"N";
+
+                _control.UpdateEntity(taCheckOrder);
+            }
+
+            returnPaid = true;
+
+            //this.DialogResult = DialogResult.OK;
+
+            //Hide();
+        }
+        #endregion
+
         private void btnPercent_Click(object sender, EventArgs e)
         {
             if (objTxt.Name.Equals("txtPercentDiscount") || objTxt.Name.Equals("txtPercentSurcharge"))
@@ -732,7 +798,7 @@ namespace SuperPOS.UI.TA
             prtTemplataTa.OrderTime = PrtCommon.GetPrtTime();
             prtTemplataTa.OrderDate = PrtCommon.GetPrtDateTime();
             prtTemplataTa.OrderNo = checkID;
-            prtTemplataTa.PayType = GetPayType();
+            prtTemplataTa.PayType = IsNotPaid ? @"[NOT PAID]" : GetPayType();
             prtTemplataTa.TotalAmount = txtToPay.Text; 
             prtTemplataTa.SubTotal = htDetail["SubTotal"].ToString();
             prtTemplataTa.StaffName = htDetail["Staff"].ToString();
@@ -747,7 +813,7 @@ namespace SuperPOS.UI.TA
             new SystemData().GetTaCheckOrder();
             var lstChk = CommonData.TaCheckOrder.Where(s => s.CheckCode.Equals(checkID));
 
-            string strPt = "";
+            string strPt = "Paid By ";
 
             if (lstChk.Any())
             {
@@ -801,7 +867,7 @@ namespace SuperPOS.UI.TA
             prtTemplataTa.OrderTime = PrtCommon.GetPrtTime();
             prtTemplataTa.OrderDate = PrtCommon.GetPrtDateTime();
             prtTemplataTa.OrderNo = checkID;
-            prtTemplataTa.PayType = GetPayType();
+            prtTemplataTa.PayType = IsNotPaid ? @"[NOT PAID]" : GetPayType();
             prtTemplataTa.TotalAmount = txtToPay.Text;
             prtTemplataTa.SubTotal = htDetail["SubTotal"].ToString();
             prtTemplataTa.StaffName = htDetail["Staff"].ToString();
@@ -879,7 +945,7 @@ namespace SuperPOS.UI.TA
             prtTemplataTa.OrderTime = PrtCommon.GetPrtTime();
             prtTemplataTa.OrderDate = PrtCommon.GetPrtDateTime();
             prtTemplataTa.OrderNo = checkID;
-            prtTemplataTa.PayType = GetPayType();
+            prtTemplataTa.PayType = IsNotPaid ? @"[NOT PAID]" : GetPayType();
             prtTemplataTa.TotalAmount = txtToPay.Text;
             prtTemplataTa.SubTotal = htDetail["SubTotal"].ToString();
             prtTemplataTa.StaffName = htDetail["Staff"].ToString();
@@ -908,7 +974,7 @@ namespace SuperPOS.UI.TA
             prtTemplataTa.OrderTime = PrtCommon.GetPrtTime();
             prtTemplataTa.OrderDate = PrtCommon.GetPrtDateTime();
             prtTemplataTa.OrderNo = checkID;
-            prtTemplataTa.PayType = GetPayType();
+            prtTemplataTa.PayType = IsNotPaid ? @"[NOT PAID]" : GetPayType();
             prtTemplataTa.TotalAmount = txtToPay.Text;
             prtTemplataTa.SubTotal = htDetail["SubTotal"].ToString();
             prtTemplataTa.StaffName = htDetail["Staff"].ToString();
@@ -916,6 +982,16 @@ namespace SuperPOS.UI.TA
             prtTemplataTa.Discount = txtDiscount.Text + txtPercentDiscount.Text;
 
             PrtTemplate.PrtTa(prtTemplataTa, lstOI, PrtStatic.PRT_TEMPLATE_TA_KITCHEN_TYPE);
-        } 
+        }
+
+        private void btnNotPaid_Click(object sender, EventArgs e)
+        {
+            SaveOrder(false);
+
+            btnNotPaid.Appearance.BackColor = Color.ForestGreen;
+
+            IsNotPaid = true;
+            IsPaid = true;
+        }
     }
 }
