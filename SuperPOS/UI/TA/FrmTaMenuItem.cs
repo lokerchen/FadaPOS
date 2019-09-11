@@ -496,6 +496,8 @@ namespace SuperPOS.UI.TA
 
         private void gvMenuItem_FocusedRowChanged(object sender, DevExpress.XtraGrid.Views.Base.FocusedRowChangedEventArgs e)
         {
+            if (gvMenuItem.RowCount < 1 ) return;
+
             if (gvMenuItem.GetRowCellValue(gvMenuItem.FocusedRowHandle, "MiDishCode") != null)
                 miID = Convert.ToInt32(gvMenuItem.GetRowCellValue(gvMenuItem.FocusedRowHandle, "ID"));
             txtDishCode.Text = gvMenuItem.GetRowCellValue(gvMenuItem.FocusedRowHandle, "MiDishCode") == null ? "" : gvMenuItem.GetRowCellValue(gvMenuItem.FocusedRowHandle, "MiDishCode").ToString();
