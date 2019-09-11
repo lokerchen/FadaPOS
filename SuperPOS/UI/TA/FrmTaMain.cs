@@ -514,7 +514,7 @@ namespace SuperPOS.UI.TA
         #region Menu Set选择
         private void btnMenu_Click(object sender, EventArgs e)
         {
-            FrmTaMenuSelect frmTaMenuSelect = new FrmTaMenuSelect();
+            FrmTaMenuSelect frmTaMenuSelect = new FrmTaMenuSelect(iMenuSetId);
 
             if (frmTaMenuSelect.ShowDialog() == DialogResult.OK)
             {

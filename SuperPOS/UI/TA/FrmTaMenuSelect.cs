@@ -19,6 +19,8 @@ namespace SuperPOS.UI.TA
 
         public int msId = 0;
 
+        private int menuSetId = 0;
+
         public int MenuSetId
         {
             get { return msId; }
@@ -28,6 +30,12 @@ namespace SuperPOS.UI.TA
         public FrmTaMenuSelect()
         {
             InitializeComponent();
+        }
+
+        public FrmTaMenuSelect(int msMainId)
+        {
+            InitializeComponent();
+            menuSetId = msMainId;
         }
 
         #region 改码类型按钮
@@ -51,6 +59,7 @@ namespace SuperPOS.UI.TA
             int j = 1;
             foreach (var ms in CommonData.TaMenuSet)
             {
+                if (ms.ID == menuSetId) btnMenuSet[j].Appearance.BackColor = Color.RoyalBlue;
                 btnMenuSet[j].Text = ms.MSEngName;
                 j++;
             }

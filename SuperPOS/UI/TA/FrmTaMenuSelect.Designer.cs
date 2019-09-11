@@ -54,7 +54,7 @@
             // 
             // btnMs4
             // 
-            this.btnMs4.Appearance.BackColor = System.Drawing.Color.RoyalBlue;
+            this.btnMs4.Appearance.BackColor = System.Drawing.Color.CornflowerBlue;
             this.btnMs4.Appearance.Font = new System.Drawing.Font("Tahoma", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnMs4.Appearance.Options.UseBackColor = true;
             this.btnMs4.Appearance.Options.UseFont = true;
@@ -81,7 +81,7 @@
             // 
             // btnMs3
             // 
-            this.btnMs3.Appearance.BackColor = System.Drawing.Color.RoyalBlue;
+            this.btnMs3.Appearance.BackColor = System.Drawing.Color.CornflowerBlue;
             this.btnMs3.Appearance.Font = new System.Drawing.Font("Tahoma", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnMs3.Appearance.Options.UseBackColor = true;
             this.btnMs3.Appearance.Options.UseFont = true;
@@ -94,7 +94,7 @@
             // 
             // btnMs2
             // 
-            this.btnMs2.Appearance.BackColor = System.Drawing.Color.RoyalBlue;
+            this.btnMs2.Appearance.BackColor = System.Drawing.Color.CornflowerBlue;
             this.btnMs2.Appearance.Font = new System.Drawing.Font("Tahoma", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnMs2.Appearance.Options.UseBackColor = true;
             this.btnMs2.Appearance.Options.UseFont = true;
@@ -107,7 +107,7 @@
             // 
             // btnMs1
             // 
-            this.btnMs1.Appearance.BackColor = System.Drawing.Color.RoyalBlue;
+            this.btnMs1.Appearance.BackColor = System.Drawing.Color.CornflowerBlue;
             this.btnMs1.Appearance.Font = new System.Drawing.Font("Tahoma", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnMs1.Appearance.Options.UseBackColor = true;
             this.btnMs1.Appearance.Options.UseFont = true;
@@ -120,7 +120,7 @@
             // 
             // btnMs0
             // 
-            this.btnMs0.Appearance.BackColor = System.Drawing.Color.RoyalBlue;
+            this.btnMs0.Appearance.BackColor = System.Drawing.Color.CornflowerBlue;
             this.btnMs0.Appearance.Font = new System.Drawing.Font("Tahoma", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnMs0.Appearance.Options.UseBackColor = true;
             this.btnMs0.Appearance.Options.UseFont = true;
