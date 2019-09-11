@@ -1869,12 +1869,25 @@ namespace SuperPOS.UI.TA
                     TaCustomerInfo taCustomerInfo = new TaCustomerInfo();
                     taCustomerInfo = frmTaCustomerInfo.CustomerInfo;
 
-                    lblName.Text = taCustomerInfo.cusName;
-                    lblPhone.Text = taCustomerInfo.cusPhone;
-                    lblAddress.Text = taCustomerInfo.cusAddr;
-                    lblPostcode.Text = taCustomerInfo.cusPostcode;
-                    lblDistance.Text = taCustomerInfo.cusDistance;
-                    lblDiliveryFee.Text = taCustomerInfo.cusDelCharge;
+                    if (taCustomerInfo == null)
+                    {
+                        lblName.Text = "";
+                        lblPhone.Text = "";
+                        lblAddress.Text = "";
+                        lblPostcode.Text = "";
+                        lblDistance.Text = "";
+                        lblDiliveryFee.Text = "";
+                    }
+                    else
+                    {
+                        lblName.Text = taCustomerInfo.cusName;
+                        lblPhone.Text = taCustomerInfo.cusPhone;
+                        lblAddress.Text = taCustomerInfo.cusAddr;
+                        lblPostcode.Text = taCustomerInfo.cusPostcode;
+                        lblDistance.Text = taCustomerInfo.cusDistance;
+                        lblDiliveryFee.Text = taCustomerInfo.cusDelCharge;
+                    }
+                    
                 }
             }
         }

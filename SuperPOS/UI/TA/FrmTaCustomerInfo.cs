@@ -228,6 +228,22 @@ namespace SuperPOS.UI.TA
 
                 _control.DeleteEntity(CommonData.TaCustomer.FirstOrDefault(s => s.ID == Convert.ToInt32(gvCompCustomer.GetRowCellValue(gvCompCustomer.FocusedRowHandle, "ID"))));
                 BindData("");
+
+                if (gvCompCustomer.RowCount < 1)
+                {
+                    txtPhone.Text = "";
+                    txtName.Text = "";
+                    txtHouseNo.Text = "";
+                    txtAddress.Text = "";
+                    txtPcZone.Text = "";
+                    txtDistance.Text = "";
+                    luePostcode.Text = "";
+                    txtDelCharge.Text = "";
+                    txtReadyTime.Text = "";
+                    txtIntNotes.Text = "";
+                    txtNotesOnBill.Text = "";
+                    chkBlackListed.Checked = false;
+                }
             }
         }
 
@@ -244,6 +260,22 @@ namespace SuperPOS.UI.TA
                     _control.DeleteEntity(taCustomerInfo);
                 }
                 BindData("");
+
+                if (gvCompCustomer.RowCount < 1)
+                {
+                    txtPhone.Text = "";
+                    txtName.Text = "";
+                    txtHouseNo.Text = "";
+                    txtAddress.Text = "";
+                    txtPcZone.Text = "";
+                    txtDistance.Text = "";
+                    luePostcode.Text = "";
+                    txtDelCharge.Text = "";
+                    txtReadyTime.Text = "";
+                    txtIntNotes.Text = "";
+                    txtNotesOnBill.Text = "";
+                    chkBlackListed.Checked = false;
+                }
             }
         }
 
