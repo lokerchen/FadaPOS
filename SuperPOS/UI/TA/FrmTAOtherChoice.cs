@@ -134,6 +134,8 @@ namespace SuperPOS.UI.TA
             SimpleButton btn = (SimpleButton)sender;
 
             btn.Appearance.BackColor = btn.Appearance.BackColor == Color.Orange ? Color.LightGreen : Color.Orange;
+
+            btnOK_Click(sender, e);
         }
 
         #endregion
@@ -167,7 +169,7 @@ namespace SuperPOS.UI.TA
         {
             if (NoOfOption > 0)
             {
-                if (btnChoice.Count(btn => btn.Appearance.BackColor == Color.LightGreen) >= NoOfOption)
+                if (btnChoice.Count(btn => btn.Appearance.BackColor == Color.LightGreen) == NoOfOption)
                 {
                     foreach (var btn in btnChoice.Where(btn => btn.Appearance.BackColor == Color.LightGreen))
                     {
