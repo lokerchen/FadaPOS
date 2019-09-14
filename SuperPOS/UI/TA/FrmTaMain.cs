@@ -166,6 +166,13 @@ namespace SuperPOS.UI.TA
             //展开所有TreeList
             treeListOrder.ExpandAll();
 
+            new SystemData().GetTaMenuCate();
+
+            if (CommonData.TaMenuCate.Any())
+            {
+                iMenuSetId = CommonData.TaMenuCate.OrderBy(s => s.ID).FirstOrDefault().MenuSetID;
+            }
+
             SetMenuItemBtn();
             SetMenuCateBtn();
 

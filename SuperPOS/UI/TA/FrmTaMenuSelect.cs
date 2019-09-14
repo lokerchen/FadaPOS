@@ -15,7 +15,7 @@ namespace SuperPOS.UI.TA
 {
     public partial class FrmTaMenuSelect : DevExpress.XtraEditors.XtraForm
     {
-        SimpleButton[] btnMenuSet = new SimpleButton[5];
+        SimpleButton[] btnMenuSet = new SimpleButton[4];
 
         public int msId = 0;
 
@@ -45,18 +45,18 @@ namespace SuperPOS.UI.TA
             btnMenuSet[1] = btnMs1;
             btnMenuSet[2] = btnMs2;
             btnMenuSet[3] = btnMs3;
-            btnMenuSet[4] = btnMs4;
+            //btnMenuSet[4] = btnMs4;
 
-            for (int i = 0; i < 5; i++)
+            for (int i = 0; i < 4; i++)
             {
                 btnMenuSet[i].Click += btnMs_Click;
             }
 
             new SystemData().GetTaMenuSet();
 
-            btnMenuSet[0].Text = "ALL";
+            //btnMenuSet[0].Text = "ALL";
 
-            int j = 1;
+            int j = 0;
             foreach (var ms in CommonData.TaMenuSet)
             {
                 if (ms.ID == menuSetId) btnMenuSet[j].Appearance.BackColor = Color.RoyalBlue;
@@ -64,7 +64,7 @@ namespace SuperPOS.UI.TA
                 j++;
             }
 
-            for (int i = j; i < 5; i++)
+            for (int i = j; i < 4; i++)
             {
                 btnMenuSet[i].Visible = false;
             }
@@ -74,16 +74,11 @@ namespace SuperPOS.UI.TA
         {
             SimpleButton btn = sender as SimpleButton;
 
-            if (btn.Text.Equals("ALL"))
-                msId = 0;
-            else
-            {
-                var lstMs = CommonData.TaMenuSet.Where(s => s.MSEngName.Equals(btn.Text));
+            var lstMs = CommonData.TaMenuSet.Where(s => s.MSEngName.Equals(btn.Text));
 
-                if (lstMs.Any())
-                {
-                    msId = lstMs.FirstOrDefault().ID;
-                }
+            if (lstMs.Any())
+            {
+                msId = lstMs.FirstOrDefault().ID;
             }
 
             this.DialogResult = DialogResult.OK;
@@ -95,11 +90,6 @@ namespace SuperPOS.UI.TA
         private void FrmTaMenuSelect_Load(object sender, EventArgs e)
         {
             SetMsBtn();
-        }
-
-        private void btnExit_Click(object sender, EventArgs e)
-        {
-            Hide();
         }
     }
 }
