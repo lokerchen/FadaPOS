@@ -27,6 +27,12 @@ namespace SuperPOS.UI.TA
 
         private AutoSizeFormClass asfc = new AutoSizeFormClass();
 
+        private SimpleButton[] btnType = new SimpleButton[10];
+
+        private string menuBtnName = "Taste Item";
+
+        private string menuType = "";
+
         public FrmTaExtraMenuEdit()
         {
             InitializeComponent();
@@ -39,40 +45,22 @@ namespace SuperPOS.UI.TA
             usrName = name;
         }
 
-        #region 绑定chkComboType
-        /// <summary>
-        /// 绑定chkComboType
-        /// </summary>
-        private void BindChkComboType(bool isClear)
-        {
-            if (isClear) chkComboType.Properties.Items.Clear();
-
-            chkComboType.Properties.Items.AddRange(PubComm.EXTRA_MENU_EDIT_TYPE);
-        }
-        #endregion
-
-        #region 绑定chkComboBtnType
-        /// <summary>
-        /// 绑定chkComboBtnType
-        /// </summary>
-        private void BindChkComboBtnType(bool isClear)
-        {
-            if (isClear) chkComboBtnType.Properties.Items.Clear();
-
-            chkComboBtnType.Properties.Items.AddRange(PubComm.EXTRA_MENU_BTN_TYPE);
-        }
-        #endregion
-
         #region 绑定Grid数据
 
-        public void BindGridData()
+        public void BindGridData(string sMenuBtnName, string sMenuType)
         {
             new SystemData().GetTaExtraMenu();
 
-            gridControlExtraMenu.DataSource = CommonData.TaExtraMenu.ToList();
+            var lstExtraMenu = CommonData.TaExtraMenu;
+
+            gridControlExtraMenu.DataSource = string.IsNullOrEmpty(sMenuBtnName) 
+                                                ? lstExtraMenu.Where(s => s.eMenuBtnName.Equals(sMenuType)).ToList() 
+                                                : lstExtraMenu.Where(s => s.eMenuType.Equals(sMenuType) && s.eMenuBtnName.Equals(sMenuBtnName)).ToList();
 
             gvExtraMenu.BestFitColumns();
+            gvExtraMenu.RefreshData();
             gvExtraMenu.FocusedRowHandle = gvExtraMenu.RowCount - 1;
+            gvExtraMenu_FocusedRowChanged(gvExtraMenu, null);
         }
         #endregion
 
@@ -86,14 +74,20 @@ namespace SuperPOS.UI.TA
 
         private void gvExtraMenu_FocusedRowChanged(object sender, DevExpress.XtraGrid.Views.Base.FocusedRowChangedEventArgs e)
         {
+            if (gvExtraMenu.RowCount < 1)
+            {
+                txtEngName.Text = "";
+                txtOtherName.Text = "";
+                txtPrice.Text = "";
+                txtDispPosition.Text = "";
+                return;
+            }
             txtEngName.Text = gvExtraMenu.GetRowCellValue(gvExtraMenu.FocusedRowHandle, "eMenuEngName").ToString();
             txtOtherName.Text = gvExtraMenu.GetRowCellValue(gvExtraMenu.FocusedRowHandle, "eMenuOtherName").ToString();
             txtPrice.Text = gvExtraMenu.GetRowCellValue(gvExtraMenu.FocusedRowHandle, "eMenuPrice").ToString();
             txtDispPosition.Text = gvExtraMenu.GetRowCellValue(gvExtraMenu.FocusedRowHandle, "eMenuPosition").ToString();
-            chkComboType.EditValue = gvExtraMenu.GetRowCellValue(gvExtraMenu.FocusedRowHandle, "eMenuType");
-            chkComboType.Text = gvExtraMenu.GetRowCellValue(gvExtraMenu.FocusedRowHandle, "eMenuType").ToString();
-            chkComboBtnType.EditValue = gvExtraMenu.GetRowCellValue(gvExtraMenu.FocusedRowHandle, "eMenuBtnName");
-            chkComboBtnType.Text = gvExtraMenu.GetRowCellValue(gvExtraMenu.FocusedRowHandle, "eMenuBtnName").ToString();
+            txtMenuType.Text = menuType = gvExtraMenu.GetRowCellValue(gvExtraMenu.FocusedRowHandle, "eMenuType").ToString();
+            menuBtnName = gvExtraMenu.GetRowCellValue(gvExtraMenu.FocusedRowHandle, "eMenuBtnName").ToString();
         }
 
         private void btnAdd_Click(object sender, EventArgs e)
@@ -105,8 +99,7 @@ namespace SuperPOS.UI.TA
             txtPrice.Text = "";
             txtDispPosition.Text = "";
 
-            BindChkComboType(true);
-            BindChkComboBtnType(true);
+            SetDefaultBtn(true);
         }
 
         private void btnSave_Click(object sender, EventArgs e)
@@ -129,12 +122,6 @@ namespace SuperPOS.UI.TA
                 CommonTool.ShowMessage("Display Position can not NULL!");
                 return;
             }
-
-            if (string.IsNullOrEmpty(txtPrice.Text))
-            {
-                CommonTool.ShowMessage("Price can not NULL!");
-                return;
-            }
             #endregion
 
             new SystemData().GetTaExtraMenu();
@@ -142,10 +129,10 @@ namespace SuperPOS.UI.TA
             TaExtraMenuInfo taExtraMenuInfo = new TaExtraMenuInfo();
             taExtraMenuInfo.eMenuEngName = txtEngName.Text;
             taExtraMenuInfo.eMenuOtherName = txtOtherName.Text;
-            taExtraMenuInfo.eMenuPrice = txtPrice.Text;
+            taExtraMenuInfo.eMenuPrice = string.IsNullOrEmpty(txtPrice.Text) ? "0.00" : txtPrice.Text;
             taExtraMenuInfo.eMenuPosition = txtDispPosition.Text;
-            taExtraMenuInfo.eMenuBtnName = chkComboBtnType.EditValue.ToString();
-            taExtraMenuInfo.eMenuType = chkComboType.EditValue.ToString();
+            taExtraMenuInfo.eMenuBtnName = menuBtnName;
+            taExtraMenuInfo.eMenuType = menuType;
 
             try
             {
@@ -160,7 +147,7 @@ namespace SuperPOS.UI.TA
                     _control.UpdateEntity(taExtraMenuInfo);
                 }
 
-                BindGridData();
+                BindGridData(menuBtnName, menuType);
             }
             catch (Exception ex) { LogHelper.Error(this.Name, ex); }
 
@@ -179,10 +166,12 @@ namespace SuperPOS.UI.TA
                 {
                     _control.DeleteEntity(CommonData.TaExtraMenu.FirstOrDefault(s => s.ID == Convert.ToInt32(gvExtraMenu.GetRowCellValue(gvExtraMenu.FocusedRowHandle, "ID"))));
                     CommonTool.ShowMessage("Delete successful!");
-                    BindGridData();
+                    BindGridData(menuBtnName, menuType);
                     isAdd = false;
                 }
                 catch (Exception ex) { LogHelper.Error(this.Name, ex); }
+
+                SetDefaultBtn(true);
             }
         }
 
@@ -190,17 +179,58 @@ namespace SuperPOS.UI.TA
         {
             asfc.controllInitializeSize(this);
 
-            if (gvExtraMenu.RowCount <= 0)
+            #region 按钮赋值
+            btnType[0] = btnTi0;
+            btnType[1] = btnTi1;
+            btnType[2] = btnTi2;
+            btnType[3] = btnTi3;
+            btnType[4] = btnTi4;
+            btnType[5] = btnTi5;
+            btnType[6] = btnTi6;
+            btnType[7] = btnTi7;
+            btnType[8] = btnTi8;
+            btnType[9] = btnTi9;
+
+            btnTi0.Click += btnType_Click;
+            btnTi1.Click += btnType_Click;
+            btnTi2.Click += btnType_Click;
+            btnTi3.Click += btnType_Click;
+            btnTi4.Click += btnType_Click;
+            btnTi5.Click += btnType_Click;
+            btnTi6.Click += btnType_Click;
+            btnTi7.Click += btnType_Click;
+            btnTi8.Click += btnType_Click;
+            btnTi9.Click += btnType_Click;
+
+            //按钮赋值
+            for (int i = 0; i < 10; i++)
             {
-                isAdd = true;
-                BindChkComboType(false);
-                BindChkComboBtnType(false);
+                btnType[i].Text = PubComm.EXTRA_MENU_EDIT_TYPE[i];
+            }
+            #endregion
+
+            btnTi0.Appearance.BackColor = Color.Red;
+
+            menuType = btnTi0.Text;
+            txtMenuType.Text = btnTi0.Text;
+
+            BindGridData(menuType, btnTi0.Text);
+        }
+
+        private void btnType_Click(object sender, EventArgs e)
+        {
+            SimpleButton btn = sender as SimpleButton;
+
+            btn.Appearance.BackColor = Color.Red;
+
+            foreach (var bt in btnType)
+            {
+                if (!bt.Text.Equals(btn.Text)) bt.Appearance.BackColor = Color.ForestGreen;
             }
 
-            BindChkComboType(false);
-            BindChkComboBtnType(false);
+            txtMenuType.Text = btn.Text;
 
-            BindGridData();
+            if (!isAdd) BindGridData(menuBtnName, btn.Text);
         }
 
         private void FrmTaExtraMenuEdit_SizeChanged(object sender, EventArgs e)
@@ -211,6 +241,48 @@ namespace SuperPOS.UI.TA
         private void btnExit_Click(object sender, EventArgs e)
         {
             Close();
+        }
+
+        private void btnTasteItem_Click(object sender, EventArgs e)
+        {
+            SetDefaultBtn(true);
+
+            if (!isAdd) BindGridData(menuBtnName, menuType);
+        }
+
+        private void btnDrinkItem_Click(object sender, EventArgs e)
+        {
+            SetDefaultBtn(false);
+
+            if (!isAdd) BindGridData(menuBtnName, menuType);
+        }
+
+        private void SetDefaultBtn(bool isTastItem)
+        {
+            if (isTastItem)
+            {
+                menuBtnName = btnTasteItem.Text;
+                btnTasteItem.Appearance.BackColor = Color.RoyalBlue;
+                btnDrinkItem.Appearance.BackColor = Color.LightSteelBlue;
+            }
+            else
+            {
+                menuBtnName = btnDrinkItem.Text;
+                btnTasteItem.Appearance.BackColor = Color.LightSteelBlue;
+                btnDrinkItem.Appearance.BackColor = Color.RoyalBlue;
+            }
+
+            btnTi0.Appearance.BackColor = Color.Red;
+            foreach (var bt in btnType)
+            {
+                if (!bt.Text.Equals(btnTi0.Text)) bt.Appearance.BackColor = Color.ForestGreen;
+            }
+            menuType = btnTi0.Text;
+        }
+
+        private void btnKeyBoard_Click(object sender, EventArgs e)
+        {
+            CommonDAL.OpenSysKeyBoard();
         }
     }
 }
