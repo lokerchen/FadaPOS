@@ -152,7 +152,17 @@ namespace SuperPOS.UI.TA
             {
                 if (CommonTool.ConfirmMessage("Are you sure you want to cancel the order?") == DialogResult.OK)
                 {
-                    treeListOrder.Nodes.Clear();
+                    var lstChk = CommonData.TaCheckOrder.Where(s => s.CheckCode.Equals(checkID) && s.IsPaid.Equals("N"));
+                    if (lstChk.Any())
+                    {
+                        TaCheckOrderInfo taCheck = lstChk.FirstOrDefault();
+                        taCheck.IsCancel = "Y";
+                        _control.UpdateEntity(taCheck);
+                        treeListOrder.Nodes.Clear();
+
+                        checkID = CommonDAL.GetCheckCode(true);
+                        lblCheck.Text = checkID;
+                    }
                 }
             }
 
@@ -1422,6 +1432,8 @@ namespace SuperPOS.UI.TA
                 taCheckOrderInfo.PayType5 = "";
                 taCheckOrderInfo.PayTypePay5 = @"0.00";
 
+                taCheckOrderInfo.IsCancel = "N";
+
                 _control.AddEntity(taCheckOrderInfo);
             }
         }
@@ -1475,7 +1487,14 @@ namespace SuperPOS.UI.TA
             {
                 if (CommonTool.ConfirmMessage("Are you sure you want to cancel the order?") == DialogResult.OK)
                 {
-                    treeListOrder.Nodes.Clear();
+                    var lstChk = CommonData.TaCheckOrder.Where(s => s.CheckCode.Equals(checkID) && s.IsPaid.Equals("N"));
+                    if (lstChk.Any())
+                    {
+                        TaCheckOrderInfo taCheck = lstChk.FirstOrDefault();
+                        taCheck.IsCancel = "Y";
+                        _control.UpdateEntity(taCheck);
+                        treeListOrder.Nodes.Clear();
+                    }
                 }
             }
 

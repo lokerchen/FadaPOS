@@ -110,5 +110,9 @@ namespace SuperPOS.Domain.Entities
         //PayType4 付款金额
         [XmlElement(ElementName = "PayPerSurcharge")]
         public virtual string PayPerSurcharge { get; set; }
+
+        //是否取消账单
+        [XmlElement(ElementName = "IsCancel")]
+        public virtual string IsCancel { get; set; }
     }
 }

@@ -74,7 +74,8 @@ namespace SuperPOS.UI.TA
             var lstDb = from check in CommonData.TaCheckOrder
                         join user in CommonData.UsrBase
                             on check.StaffID equals user.ID
-                        where !check.IsPaid.Equals("Y")
+                        where !check.IsPaid.Equals("Y") 
+                              && !check.IsCancel.Equals("Y")
                         select new
                         {
                             ID = check.ID,
@@ -105,6 +106,7 @@ namespace SuperPOS.UI.TA
                         join driver in CommonData.TaDriver
                             on check.DriverID equals driver.ID
                         where !check.IsPaid.Equals("Y")
+                              && !check.IsCancel.Equals("Y")
                         select new
                         {
                             ID = check.ID,
