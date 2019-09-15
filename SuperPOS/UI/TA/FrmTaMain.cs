@@ -109,6 +109,12 @@ namespace SuperPOS.UI.TA
         #region Save Order
         private void btnSaveOrder_Click(object sender, EventArgs e)
         {
+            //列表为空时不保存
+            if (treeListOrder.AllNodesCount <= 0)
+            {
+                return;
+            }
+
             try
             {
                 #region 保存TreeList
