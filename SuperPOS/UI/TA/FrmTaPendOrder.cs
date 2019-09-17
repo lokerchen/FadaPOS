@@ -147,7 +147,7 @@ namespace SuperPOS.UI.TA
                                                 ? lstTmp.Where(s => s.PayOrderType.Equals(orderType) && string.IsNullOrEmpty(s.DriverName)).ToList() 
                                                 : lstTmp.ToList();
             gvTaPendOrder.FocusedRowHandle = gvTaPendOrder.RowCount - 1;
-
+            
             txtTotal.Text = lstTmp.Sum(s => Convert.ToDecimal(s.TotalAmount)).ToString();
         }
 
@@ -176,7 +176,7 @@ namespace SuperPOS.UI.TA
 
         private void gvTaPendOrder_FocusedRowChanged(object sender, DevExpress.XtraGrid.Views.Base.FocusedRowChangedEventArgs e)
         {
-            if (gvTaPendOrder.FocusedRowHandle <= 0) return;
+            if (gvTaPendOrder.RowCount <= 0) return;
             //账单ID
             checkID = Convert.ToInt32(gvTaPendOrder.GetRowCellValue(gvTaPendOrder.FocusedRowHandle, "ID").ToString());
             //账单号
