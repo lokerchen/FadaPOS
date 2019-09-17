@@ -68,7 +68,7 @@ namespace SuperPOS.UI.TA
         {
             BindLuePostCode();
             BindData(cusNum);
-            gvCompCustomer.BestFitColumns();
+            //gvCompCustomer.BestFitColumns();
             asfc.controllInitializeSize(this);
         }
 
@@ -369,7 +369,7 @@ namespace SuperPOS.UI.TA
         /// </summary>
         private void BindLuePostCode()
         {
-            new SystemData().GetTaPostcodeSet();
+            //new SystemData().GetTaPostcodeSet();
 
             var lstPcs = from pcs in CommonData.TaPostcodeSet
                          select new
