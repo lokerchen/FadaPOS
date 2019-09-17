@@ -723,6 +723,17 @@ namespace SuperPOS.UI.TA
 
                 Hide();
             }
+            else
+            {
+                if (IsNotPaid)
+                {
+                    returnPaid = true;
+
+                    this.DialogResult = DialogResult.OK;
+
+                    Hide();
+                }
+            }
         }
 
         #endregion
@@ -991,7 +1002,7 @@ namespace SuperPOS.UI.TA
             btnNotPaid.Appearance.BackColor = Color.ForestGreen;
 
             IsNotPaid = true;
-            IsPaid = true;
+            IsPaid = false;
         }
     }
 }
