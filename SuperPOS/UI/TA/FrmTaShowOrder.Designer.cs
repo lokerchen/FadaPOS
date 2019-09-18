@@ -40,7 +40,7 @@
             this.simpleButton4 = new DevExpress.XtraEditors.SimpleButton();
             this.simpleButton3 = new DevExpress.XtraEditors.SimpleButton();
             this.simpleButton2 = new DevExpress.XtraEditors.SimpleButton();
-            this.simpleButton1 = new DevExpress.XtraEditors.SimpleButton();
+            this.btnEatIn = new DevExpress.XtraEditors.SimpleButton();
             this.btnAll = new DevExpress.XtraEditors.SimpleButton();
             this.btnDelivery = new DevExpress.XtraEditors.SimpleButton();
             this.btnShop = new DevExpress.XtraEditors.SimpleButton();
@@ -92,6 +92,9 @@
             this.labelControl3 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl7 = new DevExpress.XtraEditors.LabelControl();
+            this.DiscountPer = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.Discount = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.SubToal = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
             this.panelControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl4)).BeginInit();
@@ -162,6 +165,7 @@
             this.btnAccount.Size = new System.Drawing.Size(115, 90);
             this.btnAccount.TabIndex = 55;
             this.btnAccount.Text = "Print Account Summary";
+            this.btnAccount.Click += new System.EventHandler(this.btnAccount_Click);
             // 
             // btnPrtReceipt
             // 
@@ -181,6 +185,7 @@
             this.btnPrtReceipt.Size = new System.Drawing.Size(115, 90);
             this.btnPrtReceipt.TabIndex = 52;
             this.btnPrtReceipt.Text = "Print Receipt";
+            this.btnPrtReceipt.Click += new System.EventHandler(this.btnPrtReceipt_Click);
             // 
             // btnPrtKit
             // 
@@ -200,6 +205,7 @@
             this.btnPrtKit.Size = new System.Drawing.Size(115, 90);
             this.btnPrtKit.TabIndex = 54;
             this.btnPrtKit.Text = "Print Kitchen Paper";
+            this.btnPrtKit.Click += new System.EventHandler(this.btnPrtKit_Click);
             // 
             // btnPrtBill
             // 
@@ -219,6 +225,7 @@
             this.btnPrtBill.Size = new System.Drawing.Size(115, 90);
             this.btnPrtBill.TabIndex = 53;
             this.btnPrtBill.Text = "Print Bill";
+            this.btnPrtBill.Click += new System.EventHandler(this.btnPrtBill_Click);
             // 
             // btnExit
             // 
@@ -241,7 +248,7 @@
             this.panelControl6.Controls.Add(this.simpleButton4);
             this.panelControl6.Controls.Add(this.simpleButton3);
             this.panelControl6.Controls.Add(this.simpleButton2);
-            this.panelControl6.Controls.Add(this.simpleButton1);
+            this.panelControl6.Controls.Add(this.btnEatIn);
             this.panelControl6.Controls.Add(this.btnAll);
             this.panelControl6.Controls.Add(this.btnDelivery);
             this.panelControl6.Controls.Add(this.btnShop);
@@ -308,20 +315,21 @@
             this.simpleButton2.TabIndex = 61;
             this.simpleButton2.Text = "Change Payment";
             // 
-            // simpleButton1
+            // btnEatIn
             // 
-            this.simpleButton1.Appearance.BackColor = System.Drawing.Color.RoyalBlue;
-            this.simpleButton1.Appearance.Font = new System.Drawing.Font("Tahoma", 10F);
-            this.simpleButton1.Appearance.ForeColor = System.Drawing.Color.White;
-            this.simpleButton1.Appearance.Options.UseBackColor = true;
-            this.simpleButton1.Appearance.Options.UseFont = true;
-            this.simpleButton1.Appearance.Options.UseForeColor = true;
-            this.simpleButton1.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
-            this.simpleButton1.Location = new System.Drawing.Point(512, 5);
-            this.simpleButton1.Name = "simpleButton1";
-            this.simpleButton1.Size = new System.Drawing.Size(90, 40);
-            this.simpleButton1.TabIndex = 60;
-            this.simpleButton1.Text = "Eat In";
+            this.btnEatIn.Appearance.BackColor = System.Drawing.Color.RoyalBlue;
+            this.btnEatIn.Appearance.Font = new System.Drawing.Font("Tahoma", 10F);
+            this.btnEatIn.Appearance.ForeColor = System.Drawing.Color.White;
+            this.btnEatIn.Appearance.Options.UseBackColor = true;
+            this.btnEatIn.Appearance.Options.UseFont = true;
+            this.btnEatIn.Appearance.Options.UseForeColor = true;
+            this.btnEatIn.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
+            this.btnEatIn.Location = new System.Drawing.Point(512, 5);
+            this.btnEatIn.Name = "btnEatIn";
+            this.btnEatIn.Size = new System.Drawing.Size(90, 40);
+            this.btnEatIn.TabIndex = 60;
+            this.btnEatIn.Text = "Eat In";
+            this.btnEatIn.Click += new System.EventHandler(this.btnEatIn_Click);
             // 
             // btnAll
             // 
@@ -337,6 +345,7 @@
             this.btnAll.Size = new System.Drawing.Size(98, 40);
             this.btnAll.TabIndex = 59;
             this.btnAll.Text = "Show All";
+            this.btnAll.Click += new System.EventHandler(this.btnAll_Click);
             // 
             // btnDelivery
             // 
@@ -352,6 +361,7 @@
             this.btnDelivery.Size = new System.Drawing.Size(131, 40);
             this.btnDelivery.TabIndex = 56;
             this.btnDelivery.Text = "DELIVERY";
+            this.btnDelivery.Click += new System.EventHandler(this.btnDelivery_Click);
             // 
             // btnShop
             // 
@@ -367,6 +377,7 @@
             this.btnShop.Size = new System.Drawing.Size(90, 40);
             this.btnShop.TabIndex = 58;
             this.btnShop.Text = "SHOP";
+            this.btnShop.Click += new System.EventHandler(this.btnShop_Click);
             // 
             // btnCollection
             // 
@@ -382,6 +393,7 @@
             this.btnCollection.Size = new System.Drawing.Size(144, 40);
             this.btnCollection.TabIndex = 57;
             this.btnCollection.Text = "COLLECTION";
+            this.btnCollection.Click += new System.EventHandler(this.btnCollection_Click);
             // 
             // gridControlTaShowOrder
             // 
@@ -408,7 +420,10 @@
             this.TotalAmount,
             this.StaffName,
             this.DriverName,
-            this.CustomerID});
+            this.CustomerID,
+            this.DiscountPer,
+            this.Discount,
+            this.SubToal});
             this.gvTaShowOrder.GridControl = this.gridControlTaShowOrder;
             this.gvTaShowOrder.IndicatorWidth = 50;
             this.gvTaShowOrder.Name = "gvTaShowOrder";
@@ -859,6 +874,24 @@
             this.labelControl7.TabIndex = 0;
             this.labelControl7.Text = "Name:";
             // 
+            // DiscountPer
+            // 
+            this.DiscountPer.Caption = "Discount Per";
+            this.DiscountPer.FieldName = "gridDiscountPer";
+            this.DiscountPer.Name = "DiscountPer";
+            // 
+            // Discount
+            // 
+            this.Discount.Caption = "Discount";
+            this.Discount.FieldName = "gridDiscount";
+            this.Discount.Name = "Discount";
+            // 
+            // SubToal
+            // 
+            this.SubToal.Caption = "SubTotal";
+            this.SubToal.FieldName = "gridSubTotal";
+            this.SubToal.Name = "SubToal";
+            // 
             // FrmTaShowOrder
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 18F);
@@ -957,10 +990,13 @@
         private DevExpress.XtraGrid.Columns.GridColumn Payment;
         private DevExpress.XtraEditors.PanelControl panelControl6;
         private DevExpress.XtraEditors.SimpleButton simpleButton2;
-        private DevExpress.XtraEditors.SimpleButton simpleButton1;
+        private DevExpress.XtraEditors.SimpleButton btnEatIn;
         private DevExpress.XtraEditors.PanelControl panelControl5;
         private DevExpress.XtraEditors.SimpleButton btnAccount;
         private DevExpress.XtraEditors.SimpleButton simpleButton4;
         private DevExpress.XtraEditors.SimpleButton simpleButton3;
+        private DevExpress.XtraGrid.Columns.GridColumn DiscountPer;
+        private DevExpress.XtraGrid.Columns.GridColumn Discount;
+        private DevExpress.XtraGrid.Columns.GridColumn SubToal;
     }
 }

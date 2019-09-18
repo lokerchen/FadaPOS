@@ -72,6 +72,12 @@ namespace SuperPOS.Print
                     lst = ReplacePrtKeys(prtTemplataTa, lsTaOrderItemInfos, fFontSize, strPrtLang, PrtStatic.PRT_TEMPLATE_TA_RECEIPT_TYPE);
                     Print(lst, fFontSize, strPrinterName);
                 }
+                else if (prtType == PrtStatic.PRT_TEMPLATE_TA_RECEIPT_TYPE) //增加Recipt打印
+                {
+                    List<string> lst = new List<string>();
+                    lst = ReplacePrtKeys(prtTemplataTa, lsTaOrderItemInfos, fFontSize, strPrtLang, PrtStatic.PRT_TEMPLATE_TA_RECEIPT_TYPE);
+                    Print(lst, fFontSize, strPrinterName);
+                }
                 else
                 {
                     List<string> lst = new List<string>();
