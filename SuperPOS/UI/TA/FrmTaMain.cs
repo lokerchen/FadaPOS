@@ -144,6 +144,17 @@ namespace SuperPOS.UI.TA
 
                 treeListOrder.Nodes.Clear();
 
+                #region 清空会员信息
+                lblName.Text = "";
+                lblPhone.Text = "";
+                lblAddress.Text = "";
+                lblPostcode.Text = "";
+                lblDistance.Text = "";
+                lblDiliveryFee.Text = "";
+
+                ORDER_TYPE = PubComm.ORDER_TYPE_SHOP;
+                #endregion
+
                 checkID = CommonDAL.GetCheckCode(true);
                 lblCheck.Text = checkID;
             }
@@ -1918,6 +1929,9 @@ namespace SuperPOS.UI.TA
                         lblPostcode.Text = taCustomerInfo.cusPostcode;
                         lblDistance.Text = taCustomerInfo.cusDistance;
                         lblDiliveryFee.Text = taCustomerInfo.cusDelCharge;
+
+                        //存在客户信息时，变更订单类型
+                        ORDER_TYPE = PubComm.ORDER_TYPE_DELIVERY;
                     }
                     
                 }
