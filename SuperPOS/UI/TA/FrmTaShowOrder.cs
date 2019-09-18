@@ -142,6 +142,15 @@ namespace SuperPOS.UI
                     lblCusDistance.Text = taCustomerInfo.cusDistance;
                     lblDeliveryFee.Text = taCustomerInfo.cusDelCharge;
                 }
+                else
+                {
+                    lblCusName.Text = "";
+                    lblCusPhone.Text = "";
+                    lblCusAddr.Text = "";
+                    lblCusPostcode.Text = "";
+                    lblCusDistance.Text = "";
+                    lblDeliveryFee.Text = "";
+                }
             }
         }
 
