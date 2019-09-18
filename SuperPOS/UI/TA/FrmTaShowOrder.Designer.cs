@@ -496,7 +496,7 @@
             this.StaffName.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.StaffName.AppearanceHeader.Options.UseFont = true;
             this.StaffName.Caption = "Staff";
-            this.StaffName.FieldName = "StaffName";
+            this.StaffName.FieldName = "gridStaff";
             this.StaffName.Name = "StaffName";
             this.StaffName.Visible = true;
             this.StaffName.VisibleIndex = 6;
@@ -508,7 +508,7 @@
             this.DriverName.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.DriverName.AppearanceHeader.Options.UseFont = true;
             this.DriverName.Caption = "Driver";
-            this.DriverName.FieldName = "DriverName";
+            this.DriverName.FieldName = "gridDriver";
             this.DriverName.Name = "DriverName";
             this.DriverName.Visible = true;
             this.DriverName.VisibleIndex = 5;
@@ -520,7 +520,7 @@
             this.CustomerID.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.CustomerID.AppearanceHeader.Options.UseFont = true;
             this.CustomerID.Caption = "CustomerID";
-            this.CustomerID.FieldName = "CustomerID";
+            this.CustomerID.FieldName = "gridCustID";
             this.CustomerID.Name = "CustomerID";
             // 
             // panelControl3

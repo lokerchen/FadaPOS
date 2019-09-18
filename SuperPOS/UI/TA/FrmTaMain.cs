@@ -1449,6 +1449,9 @@ namespace SuperPOS.UI.TA
                 taCheckOrderInfo.PayType5 = "";
                 taCheckOrderInfo.PayTypePay5 = @"0.00";
 
+                //默认DriverID为1
+                taCheckOrderInfo.DriverID = 1;
+
                 taCheckOrderInfo.IsCancel = "N";
 
                 _control.AddEntity(taCheckOrderInfo);

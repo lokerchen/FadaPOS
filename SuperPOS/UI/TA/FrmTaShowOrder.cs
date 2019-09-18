@@ -66,26 +66,22 @@ namespace SuperPOS.UI
         private void GetBindData(string orderType)
         {
             var lstDb = from check in CommonData.TaCheckOrder
-                        join cust in CommonData.TaCustomer
-                            on check.CustomerID equals cust.ID.ToString()
                         join user in CommonData.UsrBase
                             on check.StaffID equals user.ID
                         join driver in CommonData.TaDriver
                             on check.DriverID equals driver.ID
-                        join paydetail in CommonData.TaPaymentDetail
-                            on check.CheckCode equals paydetail.CheckOrder
                         where check.IsPaid.Equals("Y")
                         select new
                         {
                             ID = check.ID,
                             gridOrderNo = check.CheckCode,
-                            gridPayType = paydetail.PayType,
+                            gridPayType = check.PayOrderType,
                             gridOrderType = check.PayOrderType,
                             gridOrderTime = check.PayTime,
                             gridTotal = check.TotalAmount,
                             gridDriver = driver.DriverName,
                             gridStaff = user.UsrName,
-                            gridCustID = cust.ID                        
+                            gridCustID = check.CustomerID                       
                         };
 
             gridControlTaShowOrder.DataSource = !string.IsNullOrEmpty(orderType)
