@@ -232,6 +232,8 @@ namespace SuperPOS.UI.TA
                     ORDER_TYPE = lblType.Text = CommonData.TaCheckOrder.FirstOrDefault(s => s.CheckCode.Equals(checkID)).PayOrderType;
                 //BindData(checkID);
                 
+                ChangeOrderBtnColor(ORDER_TYPE);
+
                 InitGrid(CommonData.TaOrderItem.Where(s => s.CheckCode.Equals(checkID)).ToList());
 
                 treeListOrder.ExpandAll();
@@ -570,6 +572,7 @@ namespace SuperPOS.UI.TA
             if (frmTaChangeOrderType.ShowDialog() == DialogResult.OK)
             {
                 ORDER_TYPE = lblType.Text = frmTaChangeOrderType.OrderType;
+                ChangeOrderBtnColor(ORDER_TYPE);
             }
         }
         #endregion
@@ -1935,6 +1938,7 @@ namespace SuperPOS.UI.TA
 
                         //存在客户信息时，变更订单类型
                         ORDER_TYPE = PubComm.ORDER_TYPE_DELIVERY;
+                        ChangeOrderBtnColor(ORDER_TYPE);
                     }
                     
                 }
@@ -2025,6 +2029,36 @@ namespace SuperPOS.UI.TA
                 {
                     foreach (var orderItemInfo in lstMi) { AddTreeListChild(orderItemInfo, node); }
                 }
+            }
+        }
+        #endregion
+
+        #region 获得OrderType并变更按钮颜色
+        /// <summary>
+        /// 订单按钮颜色变更
+        /// </summary>
+        /// <param name="sOrderType">订单类型</param>
+        private void ChangeOrderBtnColor(string sOrderType)
+        {
+            if (sOrderType.Equals(PubComm.ORDER_TYPE_DELIVERY))
+            {
+                btnType.Appearance.BackColor = Color.ForestGreen;
+                btnType.Text = PubComm.ORDER_TYPE_DELIVERY;
+            }
+            else if (sOrderType.Equals(PubComm.ORDER_TYPE_SHOP))
+            {
+                btnType.Appearance.BackColor = Color.HotPink;
+                btnType.Text = PubComm.ORDER_TYPE_SHOP;
+            }
+            else if (sOrderType.Equals(PubComm.ORDER_TYPE_COLLECTION))
+            {
+                btnType.Appearance.BackColor = Color.Turquoise;
+                btnType.Text = PubComm.ORDER_TYPE_COLLECTION;
+            }
+            else
+            {
+                btnType.Appearance.BackColor = Color.HotPink;
+                btnType.Text = PubComm.ORDER_TYPE_SHOP;
             }
         }
         #endregion

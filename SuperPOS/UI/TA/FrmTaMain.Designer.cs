@@ -147,6 +147,7 @@
             this.btnSearchMeal = new DevExpress.XtraEditors.SimpleButton();
             this.btnCustInfo = new DevExpress.XtraEditors.SimpleButton();
             this.btnIngredMode = new DevExpress.XtraEditors.SimpleButton();
+            this.btnType = new DevExpress.XtraEditors.SimpleButton();
             ((System.ComponentModel.ISupportInitialize)(this.treeListOrder)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemMemoEdit1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
@@ -185,7 +186,7 @@
             this.OrderStaff});
             this.treeListOrder.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.treeListOrder.IndicatorWidth = 40;
-            this.treeListOrder.Location = new System.Drawing.Point(5, 161);
+            this.treeListOrder.Location = new System.Drawing.Point(5, 182);
             this.treeListOrder.Name = "treeListOrder";
             this.treeListOrder.OptionsBehavior.Editable = false;
             this.treeListOrder.OptionsBehavior.PopulateServiceColumns = true;
@@ -199,7 +200,7 @@
             this.treeListOrder.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
             this.repositoryItemMemoEdit1});
             this.treeListOrder.RowHeight = 30;
-            this.treeListOrder.Size = new System.Drawing.Size(390, 451);
+            this.treeListOrder.Size = new System.Drawing.Size(390, 430);
             this.treeListOrder.TabIndex = 0;
             this.treeListOrder.CustomDrawNodeIndicator += new DevExpress.XtraTreeList.CustomDrawNodeIndicatorEventHandler(this.treeListOrder_CustomDrawNodeIndicator);
             this.treeListOrder.DoubleClick += new System.EventHandler(this.treeListOrder_DoubleClick);
@@ -317,6 +318,7 @@
             // 
             // panelControl1
             // 
+            this.panelControl1.Controls.Add(this.btnType);
             this.panelControl1.Controls.Add(this.panelMember);
             this.panelControl1.Controls.Add(this.btnChange);
             this.panelControl1.Controls.Add(this.btnPay);
@@ -350,73 +352,67 @@
             this.panelMember.Controls.Add(this.labelControl1);
             this.panelMember.Location = new System.Drawing.Point(5, 9);
             this.panelMember.Name = "panelMember";
-            this.panelMember.Size = new System.Drawing.Size(390, 146);
+            this.panelMember.Size = new System.Drawing.Size(390, 126);
             this.panelMember.TabIndex = 32;
             this.panelMember.Click += new System.EventHandler(this.panelMember_Click);
             // 
             // lblDiliveryFee
             // 
-            this.lblDiliveryFee.Appearance.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold);
             this.lblDiliveryFee.Appearance.ForeColor = System.Drawing.Color.Red;
-            this.lblDiliveryFee.Location = new System.Drawing.Point(93, 120);
+            this.lblDiliveryFee.Location = new System.Drawing.Point(93, 101);
             this.lblDiliveryFee.Name = "lblDiliveryFee";
-            this.lblDiliveryFee.Size = new System.Drawing.Size(35, 18);
+            this.lblDiliveryFee.Size = new System.Drawing.Size(29, 18);
             this.lblDiliveryFee.TabIndex = 11;
             this.lblDiliveryFee.Text = "1.50";
             // 
             // lblDistance
             // 
-            this.lblDistance.Appearance.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold);
             this.lblDistance.Appearance.ForeColor = System.Drawing.Color.Red;
-            this.lblDistance.Location = new System.Drawing.Point(93, 97);
+            this.lblDistance.Location = new System.Drawing.Point(93, 82);
             this.lblDistance.Name = "lblDistance";
-            this.lblDistance.Size = new System.Drawing.Size(35, 18);
+            this.lblDistance.Size = new System.Drawing.Size(29, 18);
             this.lblDistance.TabIndex = 10;
             this.lblDistance.Text = "3.85";
             // 
             // lblPostcode
             // 
-            this.lblPostcode.Appearance.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold);
             this.lblPostcode.Appearance.ForeColor = System.Drawing.Color.Red;
-            this.lblPostcode.Location = new System.Drawing.Point(93, 74);
+            this.lblPostcode.Location = new System.Drawing.Point(93, 62);
             this.lblPostcode.Name = "lblPostcode";
-            this.lblPostcode.Size = new System.Drawing.Size(78, 18);
+            this.lblPostcode.Size = new System.Drawing.Size(70, 18);
             this.lblPostcode.TabIndex = 9;
             this.lblPostcode.Text = "BS 168 AA";
             // 
             // lblAddress
             // 
-            this.lblAddress.Appearance.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold);
             this.lblAddress.Appearance.ForeColor = System.Drawing.Color.Red;
-            this.lblAddress.Location = new System.Drawing.Point(93, 51);
+            this.lblAddress.Location = new System.Drawing.Point(93, 43);
             this.lblAddress.Name = "lblAddress";
-            this.lblAddress.Size = new System.Drawing.Size(159, 18);
+            this.lblAddress.Size = new System.Drawing.Size(141, 18);
             this.lblAddress.TabIndex = 8;
             this.lblAddress.Text = "123 GuangZhou Road";
             // 
             // lblPhone
             // 
-            this.lblPhone.Appearance.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold);
             this.lblPhone.Appearance.ForeColor = System.Drawing.Color.Red;
-            this.lblPhone.Location = new System.Drawing.Point(93, 28);
+            this.lblPhone.Location = new System.Drawing.Point(93, 24);
             this.lblPhone.Name = "lblPhone";
-            this.lblPhone.Size = new System.Drawing.Size(110, 18);
+            this.lblPhone.Size = new System.Drawing.Size(88, 18);
             this.lblPhone.TabIndex = 7;
             this.lblPhone.Text = "08888888888";
             // 
             // lblName
             // 
-            this.lblName.Appearance.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold);
             this.lblName.Appearance.ForeColor = System.Drawing.Color.Red;
             this.lblName.Location = new System.Drawing.Point(93, 5);
             this.lblName.Name = "lblName";
-            this.lblName.Size = new System.Drawing.Size(63, 18);
+            this.lblName.Size = new System.Drawing.Size(55, 18);
             this.lblName.TabIndex = 6;
             this.lblName.Text = "FadaPos";
             // 
             // labelControl6
             // 
-            this.labelControl6.Location = new System.Drawing.Point(5, 120);
+            this.labelControl6.Location = new System.Drawing.Point(5, 101);
             this.labelControl6.Name = "labelControl6";
             this.labelControl6.Size = new System.Drawing.Size(85, 18);
             this.labelControl6.TabIndex = 5;
@@ -424,7 +420,7 @@
             // 
             // labelControl5
             // 
-            this.labelControl5.Location = new System.Drawing.Point(5, 97);
+            this.labelControl5.Location = new System.Drawing.Point(5, 81);
             this.labelControl5.Name = "labelControl5";
             this.labelControl5.Size = new System.Drawing.Size(60, 18);
             this.labelControl5.TabIndex = 4;
@@ -432,7 +428,7 @@
             // 
             // labelControl4
             // 
-            this.labelControl4.Location = new System.Drawing.Point(5, 74);
+            this.labelControl4.Location = new System.Drawing.Point(5, 62);
             this.labelControl4.Name = "labelControl4";
             this.labelControl4.Size = new System.Drawing.Size(64, 18);
             this.labelControl4.TabIndex = 3;
@@ -440,7 +436,7 @@
             // 
             // labelControl3
             // 
-            this.labelControl3.Location = new System.Drawing.Point(5, 51);
+            this.labelControl3.Location = new System.Drawing.Point(5, 43);
             this.labelControl3.Name = "labelControl3";
             this.labelControl3.Size = new System.Drawing.Size(57, 18);
             this.labelControl3.TabIndex = 2;
@@ -448,7 +444,7 @@
             // 
             // labelControl2
             // 
-            this.labelControl2.Location = new System.Drawing.Point(5, 28);
+            this.labelControl2.Location = new System.Drawing.Point(5, 24);
             this.labelControl2.Name = "labelControl2";
             this.labelControl2.Size = new System.Drawing.Size(45, 18);
             this.labelControl2.TabIndex = 1;
@@ -1842,6 +1838,23 @@
             this.btnIngredMode.Visible = false;
             this.btnIngredMode.Click += new System.EventHandler(this.btnIngredMode_Click);
             // 
+            // btnType
+            // 
+            this.btnType.Appearance.BackColor = System.Drawing.Color.HotPink;
+            this.btnType.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnType.Appearance.ForeColor = System.Drawing.Color.White;
+            this.btnType.Appearance.Options.UseBackColor = true;
+            this.btnType.Appearance.Options.UseFont = true;
+            this.btnType.Appearance.Options.UseForeColor = true;
+            this.btnType.Appearance.Options.UseTextOptions = true;
+            this.btnType.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
+            this.btnType.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
+            this.btnType.Location = new System.Drawing.Point(5, 136);
+            this.btnType.Name = "btnType";
+            this.btnType.Size = new System.Drawing.Size(390, 45);
+            this.btnType.TabIndex = 33;
+            this.btnType.Text = "SHOP";
+            // 
             // FrmTaMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 18F);
@@ -1999,5 +2012,6 @@
         private DevExpress.XtraEditors.LabelControl labelControl1;
         private DevExpress.XtraEditors.SimpleButton btnEatIn;
         private DevExpress.XtraEditors.SimpleButton btnMenu;
+        private DevExpress.XtraEditors.SimpleButton btnType;
     }
 }
