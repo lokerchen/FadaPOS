@@ -58,6 +58,9 @@
         public static string PRT_TEMPLATE_ALL_AND_RECEIPT = @"ta.txt";
         public static int PRT_TEMPLATE_TA_ALL_AND_RECEIPT_TYPE = 5;
 
+        //Show Order模板
+        public static string PRT_TEMPLATE_SHOWORDER = @"showorder.txt";
+        public static int PRT_TEMPLATE_TA_SHOWORDER = 6;
 
         //General Setting 1 Print Lanuage
         public static string PRT_GEN_SET1_LAN_ENG = @"English";

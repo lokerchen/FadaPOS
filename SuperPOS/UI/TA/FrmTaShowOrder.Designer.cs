@@ -56,6 +56,9 @@
             this.StaffName = new DevExpress.XtraGrid.Columns.GridColumn();
             this.DriverName = new DevExpress.XtraGrid.Columns.GridColumn();
             this.CustomerID = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.DiscountPer = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.Discount = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.SubToal = new DevExpress.XtraGrid.Columns.GridColumn();
             this.panelControl3 = new DevExpress.XtraEditors.PanelControl();
             this.lblSurcharge = new DevExpress.XtraEditors.LabelControl();
             this.labelControl13 = new DevExpress.XtraEditors.LabelControl();
@@ -92,9 +95,7 @@
             this.labelControl3 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl7 = new DevExpress.XtraEditors.LabelControl();
-            this.DiscountPer = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.Discount = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.SubToal = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.richEditCtlPreview = new DevExpress.XtraRichEdit.RichEditControl();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
             this.panelControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl4)).BeginInit();
@@ -117,12 +118,11 @@
             // 
             // panelControl1
             // 
+            this.panelControl1.Controls.Add(this.richEditCtlPreview);
             this.panelControl1.Controls.Add(this.panelControl4);
-            this.panelControl1.Controls.Add(this.panelControl3);
-            this.panelControl1.Controls.Add(this.panelControl2);
             this.panelControl1.Location = new System.Drawing.Point(6, 5);
             this.panelControl1.Name = "panelControl1";
-            this.panelControl1.Size = new System.Drawing.Size(1189, 598);
+            this.panelControl1.Size = new System.Drawing.Size(1189, 638);
             this.panelControl1.TabIndex = 0;
             // 
             // panelControl4
@@ -133,7 +133,7 @@
             this.panelControl4.Controls.Add(this.gridControlTaShowOrder);
             this.panelControl4.Location = new System.Drawing.Point(381, 5);
             this.panelControl4.Name = "panelControl4";
-            this.panelControl4.Size = new System.Drawing.Size(801, 585);
+            this.panelControl4.Size = new System.Drawing.Size(801, 627);
             this.panelControl4.TabIndex = 2;
             // 
             // panelControl5
@@ -236,7 +236,7 @@
             this.btnExit.Appearance.Options.UseFont = true;
             this.btnExit.Appearance.Options.UseForeColor = true;
             this.btnExit.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
-            this.btnExit.Location = new System.Drawing.Point(664, 489);
+            this.btnExit.Location = new System.Drawing.Point(671, 530);
             this.btnExit.Name = "btnExit";
             this.btnExit.Size = new System.Drawing.Size(123, 86);
             this.btnExit.TabIndex = 61;
@@ -253,7 +253,7 @@
             this.panelControl6.Controls.Add(this.btnDelivery);
             this.panelControl6.Controls.Add(this.btnShop);
             this.panelControl6.Controls.Add(this.btnCollection);
-            this.panelControl6.Location = new System.Drawing.Point(6, 484);
+            this.panelControl6.Location = new System.Drawing.Point(5, 525);
             this.panelControl6.Name = "panelControl6";
             this.panelControl6.Size = new System.Drawing.Size(652, 95);
             this.panelControl6.TabIndex = 66;
@@ -400,7 +400,7 @@
             this.gridControlTaShowOrder.Location = new System.Drawing.Point(5, 13);
             this.gridControlTaShowOrder.MainView = this.gvTaShowOrder;
             this.gridControlTaShowOrder.Name = "gridControlTaShowOrder";
-            this.gridControlTaShowOrder.Size = new System.Drawing.Size(653, 465);
+            this.gridControlTaShowOrder.Size = new System.Drawing.Size(653, 506);
             this.gridControlTaShowOrder.TabIndex = 65;
             this.gridControlTaShowOrder.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gvTaShowOrder});
@@ -538,6 +538,24 @@
             this.CustomerID.FieldName = "gridCustID";
             this.CustomerID.Name = "CustomerID";
             // 
+            // DiscountPer
+            // 
+            this.DiscountPer.Caption = "Discount Per";
+            this.DiscountPer.FieldName = "gridDiscountPer";
+            this.DiscountPer.Name = "DiscountPer";
+            // 
+            // Discount
+            // 
+            this.Discount.Caption = "Discount";
+            this.Discount.FieldName = "gridDiscount";
+            this.Discount.Name = "Discount";
+            // 
+            // SubToal
+            // 
+            this.SubToal.Caption = "SubTotal";
+            this.SubToal.FieldName = "gridSubTotal";
+            this.SubToal.Name = "SubToal";
+            // 
             // panelControl3
             // 
             this.panelControl3.Controls.Add(this.lblSurcharge);
@@ -547,10 +565,11 @@
             this.panelControl3.Controls.Add(this.lblDeliveryCharge);
             this.panelControl3.Controls.Add(this.labelControl8);
             this.panelControl3.Controls.Add(this.treeListOrder);
-            this.panelControl3.Location = new System.Drawing.Point(5, 162);
+            this.panelControl3.Location = new System.Drawing.Point(1201, 162);
             this.panelControl3.Name = "panelControl3";
             this.panelControl3.Size = new System.Drawing.Size(370, 428);
             this.panelControl3.TabIndex = 1;
+            this.panelControl3.Visible = false;
             // 
             // lblSurcharge
             // 
@@ -742,10 +761,11 @@
             // panelControl2
             // 
             this.panelControl2.Controls.Add(this.panelControl7);
-            this.panelControl2.Location = new System.Drawing.Point(5, 5);
+            this.panelControl2.Location = new System.Drawing.Point(1201, 5);
             this.panelControl2.Name = "panelControl2";
             this.panelControl2.Size = new System.Drawing.Size(370, 153);
             this.panelControl2.TabIndex = 0;
+            this.panelControl2.Visible = false;
             // 
             // panelControl7
             // 
@@ -874,30 +894,31 @@
             this.labelControl7.TabIndex = 0;
             this.labelControl7.Text = "Name:";
             // 
-            // DiscountPer
+            // richEditCtlPreview
             // 
-            this.DiscountPer.Caption = "Discount Per";
-            this.DiscountPer.FieldName = "gridDiscountPer";
-            this.DiscountPer.Name = "DiscountPer";
-            // 
-            // Discount
-            // 
-            this.Discount.Caption = "Discount";
-            this.Discount.FieldName = "gridDiscount";
-            this.Discount.Name = "Discount";
-            // 
-            // SubToal
-            // 
-            this.SubToal.Caption = "SubTotal";
-            this.SubToal.FieldName = "gridSubTotal";
-            this.SubToal.Name = "SubToal";
+            this.richEditCtlPreview.EnableToolTips = true;
+            this.richEditCtlPreview.Location = new System.Drawing.Point(7, 5);
+            this.richEditCtlPreview.Margin = new System.Windows.Forms.Padding(0);
+            this.richEditCtlPreview.Name = "richEditCtlPreview";
+            this.richEditCtlPreview.Options.Export.PlainText.ExportFinalParagraphMark = DevExpress.XtraRichEdit.Export.PlainText.ExportFinalParagraphMark.Never;
+            this.richEditCtlPreview.Options.Fields.UpdateFieldsInTextBoxes = false;
+            this.richEditCtlPreview.Options.HorizontalRuler.ShowTabs = false;
+            this.richEditCtlPreview.Options.HorizontalRuler.Visibility = DevExpress.XtraRichEdit.RichEditRulerVisibility.Hidden;
+            this.richEditCtlPreview.Options.HorizontalScrollbar.Visibility = DevExpress.XtraRichEdit.RichEditScrollbarVisibility.Hidden;
+            this.richEditCtlPreview.Options.VerticalRuler.Visibility = DevExpress.XtraRichEdit.RichEditRulerVisibility.Hidden;
+            this.richEditCtlPreview.Options.VerticalScrollbar.Visibility = DevExpress.XtraRichEdit.RichEditScrollbarVisibility.Hidden;
+            this.richEditCtlPreview.Size = new System.Drawing.Size(368, 628);
+            this.richEditCtlPreview.TabIndex = 3;
+            this.richEditCtlPreview.Text = "rich";
             // 
             // FrmTaShowOrder
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1199, 607);
+            this.ClientSize = new System.Drawing.Size(1201, 649);
             this.Controls.Add(this.panelControl1);
+            this.Controls.Add(this.panelControl3);
+            this.Controls.Add(this.panelControl2);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "FrmTaShowOrder";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -998,5 +1019,6 @@
         private DevExpress.XtraGrid.Columns.GridColumn DiscountPer;
         private DevExpress.XtraGrid.Columns.GridColumn Discount;
         private DevExpress.XtraGrid.Columns.GridColumn SubToal;
+        private DevExpress.XtraRichEdit.RichEditControl richEditCtlPreview;
     }
 }
