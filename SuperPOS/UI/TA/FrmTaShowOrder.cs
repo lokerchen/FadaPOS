@@ -47,6 +47,11 @@ namespace SuperPOS.UI
         private string ptl_VatNo = "";
         private string ptl_OrderTime = "";
         private string ptl_OrderDate = "";
+        private string PrtLang = "";
+
+        private string PreviewContent = "";
+
+        private int sItemCount = 0;
 
         private AutoSizeFormClass asfc = new AutoSizeFormClass();
 
@@ -67,26 +72,35 @@ namespace SuperPOS.UI
             SystemData sysData = new SystemData();
 
             sysData.GetTaCheckOrder();
-            sysData.GetTaCustomer();
+            //sysData.GetTaCustomer();
             sysData.GetUsrBase();
             sysData.GetTaOrderItem();
-            sysData.GetTaPaymentDetail();
+            //sysData.GetTaPaymentDetail();
+            sysData.GetTaPreview();
 
             GetBindData("");
-
-            //加载会员信息
-            GetCustInfo(intCusID);
-
+            
             //richEditCtlPreview.Font = new Font(@"Courier New", PrtStatic.PRT_GEN_SET1_FONT_SIZE_10);
             richEditCtlPreview.Font = new Font(@"Courier New", 10f);
 
             //richEditCtlPreview.Margin.Left = 0;
 
-            SetPrtTmpInfo();
+            //SetPrtTmpInfo();
 
-            //预览信息
-            richEditCtlPreview.Text = SetPreviewInfo();
-            
+            if (CommonData.TaPreview.Any())
+            {
+                PreviewContent = CommonData.TaPreview.FirstOrDefault().PreviewContent;
+            }
+
+            richEditCtlPreview.Text = SetPreviewInfo(PreviewContent);
+
+            var lstGsSet1 = CommonData.TaPrtSetupGeneralSet1;
+            if (lstGsSet1.Any())
+            {
+                TaPrtSetupGeneralSet1Info taPrtSetupGeneralSet1Info = lstGsSet1.FirstOrDefault();
+                PrtLang = taPrtSetupGeneralSet1Info.PrtLang;
+            }
+
             asfc.controllInitializeSize(this);
         }
 
@@ -146,138 +160,19 @@ namespace SuperPOS.UI
             sDiscountPer = gvTaShowOrder.GetRowCellValue(gvTaShowOrder.FocusedRowHandle, "gridDiscountPer").ToString();
             sDiscount = gvTaShowOrder.GetRowCellValue(gvTaShowOrder.FocusedRowHandle, "gridDisount").ToString();
             sSubTotal = gvTaShowOrder.GetRowCellValue(gvTaShowOrder.FocusedRowHandle, "gridSubTotal").ToString();
-            
-            //加载OrderItem信息
-            InitGrid(CommonData.TaOrderItem.Where(s => s.CheckCode.Equals(strChkOrder)).ToList());
 
-            //加载会员信息
-            GetCustInfo(intCusID);
+            sItemCount = GetItemCount(strChkOrder);
+
 
             richEditCtlPreview.Font = new Font(@"Courier New", 10f);
-            //预览信息
-            richEditCtlPreview.Text = SetPreviewInfo();
+            ////预览信息
+            ////richEditCtlPreview.Text = SetPreviewInfo();
+            //if (CommonData.TaPreview.Any())
+            //{
+            //    richEditCtlPreview.Text = SetPreviewInfo(CommonData.TaPreview.FirstOrDefault().PreviewContent);
+            //}
+            richEditCtlPreview.Text = SetPreviewInfo(PreviewContent);
         }
-
-        private void GetCustInfo(int cID)
-        {
-            if (cID <= 0)
-            {
-                lblCusName.Text = "";
-                lblCusPhone.Text = "";
-                lblCusAddr.Text = "";
-                lblCusPostcode.Text = "";
-                lblCusDistance.Text = "";
-                lblDeliveryFee.Text = "";
-            }
-            else
-            {
-                new SystemData().GetTaCustomer();
-
-                var lstCust = CommonData.TaCustomer.Where(s => s.ID == cID);
-
-                if (lstCust.Any())
-                {
-                    TaCustomerInfo taCustomerInfo = lstCust.FirstOrDefault();
-
-                    lblCusName.Text = taCustomerInfo.cusName;
-                    lblCusPhone.Text = taCustomerInfo.cusPhone;
-                    lblCusAddr.Text = taCustomerInfo.cusAddr;
-                    lblCusPostcode.Text = taCustomerInfo.cusPostcode;
-                    lblCusDistance.Text = taCustomerInfo.cusDistance;
-                    lblDeliveryFee.Text = taCustomerInfo.cusDelCharge;
-                }
-                else
-                {
-                    lblCusName.Text = "";
-                    lblCusPhone.Text = "";
-                    lblCusAddr.Text = "";
-                    lblCusPostcode.Text = "";
-                    lblCusDistance.Text = "";
-                    lblDeliveryFee.Text = "";
-                }
-            }
-        }
-
-        private void InitGrid(List<TaOrderItemInfo> lst)
-        {
-            TreeListNode node = null;
-
-            //清除TreeList
-            treeListOrder.ClearNodes();
-
-            foreach (var taOrderItemInfo in lst)
-            {
-                if (taOrderItemInfo.ItemType == 1)
-                    node = AddTreeListNode(taOrderItemInfo);
-                else
-                    AddTreeListChild(taOrderItemInfo, node);
-            }
-        }
-
-        #region 增加TreeList子节点
-        /// <summary>
-        /// 增加TreeList子节点
-        /// </summary>
-        /// <param name="taOrderItemInfo">OrderItem信息</param>
-        /// <param name="node">父节点</param>
-        private void AddTreeListChild(TaOrderItemInfo taOrderItemInfo, TreeListNode node)
-        {
-            treeListOrder.BeginUnboundLoad();
-
-            TreeListNode node1 = treeListOrder.AppendNode(new object[]
-            {
-                taOrderItemInfo.ID,
-                taOrderItemInfo.ItemID,
-                taOrderItemInfo.ItemCode,
-                taOrderItemInfo.ItemDishName,
-                taOrderItemInfo.ItemDishOtherName,
-                taOrderItemInfo.ItemQty,
-                taOrderItemInfo.ItemPrice,
-                taOrderItemInfo.ItemTotalPrice,
-                taOrderItemInfo.CheckCode,
-                taOrderItemInfo.ItemType,
-                taOrderItemInfo.ItemParent,
-                taOrderItemInfo.OrderTime,
-                taOrderItemInfo.OrderStaff
-            }, node);
-
-            Console.WriteLine(node1["ItemParent"].ToString());
-
-            treeListOrder.EndUnboundLoad();
-
-            treeListOrder.ExpandAll();
-        }
-        #endregion
-
-        #region 增加TreeList节点
-        private TreeListNode AddTreeListNode(TaOrderItemInfo taOrderItemInfo)
-        {
-            treeListOrder.BeginUnboundLoad();
-
-            TreeListNode node = treeListOrder.AppendNode(new object[]
-            {
-                taOrderItemInfo.ID,
-                taOrderItemInfo.ItemID,
-                taOrderItemInfo.ItemCode,
-                taOrderItemInfo.ItemDishName,
-                taOrderItemInfo.ItemDishOtherName,
-                taOrderItemInfo.ItemQty,
-                taOrderItemInfo.ItemPrice,
-                taOrderItemInfo.ItemTotalPrice,
-                taOrderItemInfo.CheckCode,
-                taOrderItemInfo.ItemType,
-                taOrderItemInfo.ItemParent,
-                taOrderItemInfo.OrderTime,
-                taOrderItemInfo.OrderStaff
-            }, -1);
-
-            treeListOrder.EndUnboundLoad();
-
-            treeListOrder.ExpandAll();
-
-            return node;
-        }
-        #endregion
 
         private void btnExit_Click(object sender, EventArgs e)
         {
@@ -307,7 +202,7 @@ namespace SuperPOS.UI
             prtTemplataTa.TotalAmount = sTotalAmount;
             prtTemplataTa.SubTotal = sSubTotal;
             prtTemplataTa.StaffName = sStaff;
-            prtTemplataTa.ItemCount = treeListOrder.Nodes.Count >= 1 ? treeListOrder.Nodes.Count.ToString() : "0";
+            prtTemplataTa.ItemCount = sItemCount >= 1 ? sItemCount.ToString() : "0";
             prtTemplataTa.Discount = sDiscount + sDiscountPer;
 
             #region VAT计算
@@ -379,7 +274,7 @@ namespace SuperPOS.UI
             prtTemplataTa.TotalAmount = sTotalAmount;
             prtTemplataTa.SubTotal = sSubTotal;
             prtTemplataTa.StaffName = sStaff;
-            prtTemplataTa.ItemCount = treeListOrder.Nodes.Count >= 1 ? treeListOrder.Nodes.Count.ToString() : "0";
+            prtTemplataTa.ItemCount = sItemCount >= 1 ? sItemCount.ToString() : "0";
             prtTemplataTa.Discount = sDiscount + sDiscountPer;
 
             PrtTemplate.PrtTa(prtTemplataTa, lstOI, PrtStatic.PRT_TEMPLATE_TA_BILL_TYPE);
@@ -402,7 +297,7 @@ namespace SuperPOS.UI
             prtTemplataTa.TotalAmount = sTotalAmount;
             prtTemplataTa.SubTotal = sSubTotal;
             prtTemplataTa.StaffName = sStaff;
-            prtTemplataTa.ItemCount = treeListOrder.Nodes.Count >= 1 ? treeListOrder.Nodes.Count.ToString() : "0";
+            prtTemplataTa.ItemCount = sItemCount >= 1 ? sItemCount.ToString() : "0";
             prtTemplataTa.Discount = sDiscount + sDiscountPer;
 
             PrtTemplate.PrtTa(prtTemplataTa, lstOI, PrtStatic.PRT_TEMPLATE_TA_KITCHEN_TYPE);
@@ -418,37 +313,21 @@ namespace SuperPOS.UI
         private void btnAll_Click(object sender, EventArgs e)
         {
             GetBindData("");
-            //加载会员信息
-            GetCustInfo(intCusID);
-
-            if (gvTaShowOrder.RowCount < 1) treeListOrder.Nodes.Clear();
         }
 
         private void btnCollection_Click(object sender, EventArgs e)
         {
             GetBindData(PubComm.ORDER_TYPE_COLLECTION);
-            //加载会员信息
-            GetCustInfo(intCusID);
-
-            if (gvTaShowOrder.RowCount < 1) treeListOrder.Nodes.Clear();
         }
 
         private void btnDelivery_Click(object sender, EventArgs e)
         {
             GetBindData(PubComm.ORDER_TYPE_DELIVERY);
-            //加载会员信息
-            GetCustInfo(intCusID);
-
-            if (gvTaShowOrder.RowCount < 1) treeListOrder.Nodes.Clear();
         }
 
         private void btnShop_Click(object sender, EventArgs e)
         {
             GetBindData(PubComm.ORDER_TYPE_SHOP);
-            //加载会员信息
-            GetCustInfo(intCusID);
-
-            if (gvTaShowOrder.RowCount < 1) treeListOrder.Nodes.Clear();
         }
 
         private void btnEatIn_Click(object sender, EventArgs e)
@@ -497,6 +376,73 @@ namespace SuperPOS.UI
             return strPt;
         }
 
+        private string SetPreviewInfo(string content)
+        {
+            new SystemData().GetTaOrderItem();
+            var lstOI = CommonData.TaOrderItem.Where(s => s.CheckCode.Equals(strChkOrder)).ToList();
+
+            PrtTemplataTa prtTemplataTa = new PrtTemplataTa();
+            //prtTemplataTa = ptl;
+            prtTemplataTa.OrderNo = strChkOrder;
+            prtTemplataTa.PayType = GetPayType(strChkOrder);
+            prtTemplataTa.TotalAmount = sTotalAmount;
+            prtTemplataTa.SubTotal = sSubTotal;
+            prtTemplataTa.StaffName = sStaff;
+            prtTemplataTa.ItemCount = sItemCount >= 1 ? sItemCount.ToString() : "0";
+            prtTemplataTa.Discount = sDiscount + sDiscountPer;
+
+            #region VAT计算
+            if (CommonData.GenSet.Any())
+            {
+                prtTemplataTa.Rete1 = CommonData.GenSet.FirstOrDefault().VATPer + @"%";
+
+                var lstVAT = from oi in CommonData.TaOrderItem.Where(s => s.CheckCode.Equals(strChkOrder))
+                             join mi in CommonData.TaMenuItem on oi.ItemCode equals mi.MiDishCode
+                             where !string.IsNullOrEmpty(mi.MiRmk) && mi.MiRmk.Contains(@"Without VAT")
+                             select new
+                             {
+                                 itemTotalPrice = oi.ItemTotalPrice
+                             };
+
+                decimal dTotal = 0;
+                decimal dVatTmp = 0;
+                decimal dVat = 0;
+
+                if (lstVAT.Any())
+                {
+                    dTotal = lstVAT.ToList().Sum(vat => Convert.ToDecimal(vat.itemTotalPrice));
+                    //交税
+                    dVatTmp = (Convert.ToDecimal(CommonData.GenSet.FirstOrDefault().VATPer) / 100) * dTotal;
+
+                    dVat = Math.Round(dVatTmp, 2, MidpointRounding.AwayFromZero);
+                }
+
+                prtTemplataTa.VatA = dVat.ToString();
+                //税前
+                prtTemplataTa.Net1 = dTotal.ToString();
+                //总价
+                prtTemplataTa.Gross1 = (dTotal - dVat).ToString();
+                prtTemplataTa.Rate2 = "0.00%";
+                prtTemplataTa.Net2 = (Convert.ToDecimal(sSubTotal) - dTotal).ToString();
+                prtTemplataTa.VatB = "0.00";
+                prtTemplataTa.Gross2 = (Convert.ToDecimal(sSubTotal) - dTotal).ToString();
+            }
+            else
+            {
+                prtTemplataTa.Rete1 = "0.00%";
+                prtTemplataTa.Net1 = "0.00";
+                prtTemplataTa.VatA = "0.00";
+                prtTemplataTa.Gross1 = "0.00";
+                prtTemplataTa.Rate2 = "0.00%";
+                prtTemplataTa.Net2 = "0.00";
+                prtTemplataTa.VatB = "0.00";
+                prtTemplataTa.Gross2 = "0.00";
+            }
+            #endregion
+
+            return PrtTemplate.ReplacePrtKeysPreviewContent(content, prtTemplataTa, lstOI, PrtLang);
+        }
+
         private string SetPreviewInfo()
         {
             new SystemData().GetTaOrderItem();
@@ -509,7 +455,7 @@ namespace SuperPOS.UI
             prtTemplataTa.TotalAmount = sTotalAmount;
             prtTemplataTa.SubTotal = sSubTotal;
             prtTemplataTa.StaffName = sStaff;
-            prtTemplataTa.ItemCount = treeListOrder.Nodes.Count >= 1 ? treeListOrder.Nodes.Count.ToString() : "0";
+            prtTemplataTa.ItemCount = sItemCount >= 1 ? sItemCount.ToString() : "0";
             prtTemplataTa.Discount = sDiscount + sDiscountPer;
 
             #region VAT计算
@@ -587,7 +533,7 @@ namespace SuperPOS.UI
             //打印机名称
             string strPrinterName = "";
             //单/双语
-            string strPrtLang = PrtStatic.PRT_GEN_SET1_LAN_Both;
+            PrtLang = PrtStatic.PRT_GEN_SET1_LAN_Both;
 
             if (lstGsSet1.Any())
             {
@@ -597,7 +543,7 @@ namespace SuperPOS.UI
                 //strPrinterName
                 //TO-DO Something
                 //单/双语
-                strPrtLang = taPrtSetupGeneralSet1Info.PrtLang;
+                PrtLang = taPrtSetupGeneralSet1Info.PrtLang;
                 //Message At Bottom
                 ptl.MsgAtBotton = taPrtSetupGeneralSet1Info.PrtMsgAtBottom;
             }
@@ -608,6 +554,11 @@ namespace SuperPOS.UI
             ptl.VatNo = PrtCommon.GetRestVATNo();
             ptl.OrderTime = PrtCommon.GetPrtTime();
             ptl.OrderDate = PrtCommon.GetPrtDateTime();
+        }
+
+        private int GetItemCount(string chkCode)
+        {
+            return CommonData.TaOrderItem.Count(s => s.CheckCode.Equals(chkCode) && s.ItemType == 1);
         }
 
     }

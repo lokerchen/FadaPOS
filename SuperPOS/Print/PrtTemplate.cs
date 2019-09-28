@@ -234,6 +234,165 @@ namespace SuperPOS.Print
         }
         #endregion
 
+        #region 预览-替换打印模板关键字
+        public static string ReplacePrtKeysPreviewContent(string content, PrtTemplataTa prtTemplataTa, List<TaOrderItemInfo> lsTaOrderItemInfos, string strPrtLang)
+        {
+            try
+            {
+                if (!string.IsNullOrEmpty(content))
+                {
+                    //content = content.Replace("{RestaurantName}", prtTemplataTa.RestaurantName);
+                    //content = content.Replace("{StaffName}", prtTemplataTa.StaffName);
+                    //content = content.Replace("{Telephone}", prtTemplataTa.Telephone);
+                    //content = content.Replace("{Addr}", prtTemplataTa.Addr);
+                    //content = content.Replace("{VatNo}", prtTemplataTa.VatNo);
+                    //content = content.Replace("{Msg1}", prtTemplataTa.Msg1);
+                    //content = content.Replace("{Msg2}", prtTemplataTa.Msg2);
+                    //content = content.Replace("{Msg3}", prtTemplataTa.Msg3);
+                    //content = content.Replace("{Msg4}", prtTemplataTa.Msg4);
+                    //content = content.Replace("{Msg5}", prtTemplataTa.Msg5);
+                    content = content.Replace("{OrderDate}", prtTemplataTa.OrderDate);
+                    content = content.Replace("{OrderTime}", prtTemplataTa.OrderTime);
+                    content = content.Replace("{OrderNo}", prtTemplataTa.OrderNo);
+                    content = content.Replace("{MsgAtBotton}", prtTemplataTa.MsgAtBotton);
+                    content = content.Replace("{ItemCount}", prtTemplataTa.ItemCount);
+                    content = content.Replace("{SubTotal}", prtTemplataTa.SubTotal);
+                    content = content.Replace("{TotalAmount}", prtTemplataTa.TotalAmount);
+                    content = content.Replace("{PayType}", prtTemplataTa.PayType.Trim());
+                    content = content.Replace("{Tendred}", prtTemplataTa.Tendred);
+                    content = content.Replace("{Change}", prtTemplataTa.Change);
+                    content = content.Replace("{Rete1}", prtTemplataTa.Rete1);
+                    content = content.Replace("{VatA}", prtTemplataTa.VatA);
+                    content = content.Replace("{Net1}", prtTemplataTa.Net1);
+                    content = content.Replace("{Gross1}", prtTemplataTa.Gross1);
+                    content = content.Replace("{Rate2}", prtTemplataTa.Rate2);
+                    content = content.Replace("{Net2}", prtTemplataTa.Net2);
+                    content = content.Replace("{VatB}", prtTemplataTa.VatB);
+                    content = content.Replace("{Gross2}", prtTemplataTa.Gross2);
+                    content = content.Replace("{ChkNum}", prtTemplataTa.ChkNum);
+                    content = content.Replace("{Discount}", prtTemplataTa.Discount);
+
+                    string strTitle = "";
+                    string strContent = "";
+
+
+                    strTitle = "Code" + PrtCommon.GetSpace(2)
+                                + "Qty" + PrtCommon.GetSpace(2)
+                                + "Name" + PrtCommon.GetSpace(PrtPrint.GetPrtNameLeng(PrtStatic.PRT_GEN_SET1_FONT_SIZE_10.ToString()) - 4 + 1)
+                                + "Price" + PrtCommon.GetSpace(2) + "\n";
+
+                    foreach (var taOrderItemInfo in lsTaOrderItemInfos)
+                    {
+                        strContent += PrtPrint.GetTab(taOrderItemInfo.ItemCode, taOrderItemInfo.ItemQty,
+                            taOrderItemInfo.ItemDishName, taOrderItemInfo.ItemTotalPrice, PrtStatic.PRT_GEN_SET1_FONT_SIZE_10.ToString());
+                        strContent += "\n";
+
+                        if (strPrtLang.Equals(PrtStatic.PRT_GEN_SET1_LAN_Both))
+                        {
+                            strContent += PrtCommon.GetHanZiTab(taOrderItemInfo.ItemDishOtherName, PrtStatic.PRT_GEN_SET1_FONT_SIZE_10.ToString());
+                            strContent += "\n";
+                        }
+                    }
+
+                    //删除最后一个多余换行
+                    strContent = strContent.Remove(strContent.LastIndexOf("\n"));
+
+                    content = content.Replace("{OrderItem}", strTitle + strContent);
+
+                    strContent = "";
+
+                    strContent = "Rate" + PrtCommon.GetSpace(7) + "Net" + PrtCommon.GetSpace(7) + "VAT-A" +
+                                PrtCommon.GetSpace(7) + "Gross" + "\n";
+                    strContent += prtTemplataTa.Rete1 + PrtCommon.GetSpace(11 - prtTemplataTa.Rete1.Length)
+                                    + prtTemplataTa.Net1 + PrtCommon.GetSpace(10 - prtTemplataTa.Net1.Length)
+                                    + prtTemplataTa.VatA + PrtCommon.GetSpace(12 - prtTemplataTa.VatA.Length)
+                                    + prtTemplataTa.Gross1 + PrtCommon.GetSpace(10 - prtTemplataTa.Gross1.Length) + "\n";
+
+                    strContent += "Rate" + PrtCommon.GetSpace(7) + "Net" + PrtCommon.GetSpace(7) + "VAT-B" +
+                                PrtCommon.GetSpace(7) + "Gross" + "\n";
+                    strContent += prtTemplataTa.Rate2 + PrtCommon.GetSpace(11 - prtTemplataTa.Rate2.Length)
+                                    + prtTemplataTa.Net2 + PrtCommon.GetSpace(10 - prtTemplataTa.Net2.Length)
+                                    + prtTemplataTa.VatB + PrtCommon.GetSpace(12 - prtTemplataTa.VatB.Length)
+                                    + prtTemplataTa.Gross2 + PrtCommon.GetSpace(10 - prtTemplataTa.Gross2.Length) + "\n";
+
+                    content = content.Replace("{VatInfo}", strContent);
+
+                    return content;
+                }
+                else return @"";
+            }
+            catch (Exception ex)
+            {
+                LogHelper.Error(ex.Message, ex);
+                return @"";
+            }
+        }
+        #endregion
+
+        #region 预览-替换打印模板部分常驻关键字
+
+        public static string ReplacePrtKeysPreviewDefaultContent(string content)
+        {
+            int iFontSize = 2;
+            //int iLang = 2;
+
+            PrtTemplataTa prtTemplataTa = new PrtTemplataTa();
+
+            new SystemData().GetTaPrtSetupGeneral();
+            if (CommonData.TaPrtSetupGeneral.Any())
+            {
+                TaPrtSetupGeneralInfo taPrtSetupGeneralInfo = CommonData.TaPrtSetupGeneral.FirstOrDefault();
+                prtTemplataTa.Msg1 = taPrtSetupGeneralInfo.Msg1;
+                prtTemplataTa.Msg2 = taPrtSetupGeneralInfo.Msg2;
+                prtTemplataTa.Msg3 = taPrtSetupGeneralInfo.Msg3;
+                prtTemplataTa.Msg4 = taPrtSetupGeneralInfo.Msg4;
+                prtTemplataTa.Msg5 = taPrtSetupGeneralInfo.Msg5;
+            }
+
+            new SystemData().GetTaPrtSetupGetSet1();
+            var lstGsSet1 = CommonData.TaPrtSetupGeneralSet1;
+            //打印字体
+            float fFontSize = 10.5F;
+            //打印机名称
+            string strPrinterName = "";
+            
+            if (lstGsSet1.Any())
+            {
+                TaPrtSetupGeneralSet1Info taPrtSetupGeneralSet1Info = lstGsSet1.FirstOrDefault();
+                //Message At Bottom
+                prtTemplataTa.MsgAtBotton = taPrtSetupGeneralSet1Info.PrtMsgAtBottom;
+            }
+
+            prtTemplataTa.RestaurantName = PrtCommon.GetRestName();
+            prtTemplataTa.Addr = PrtCommon.GetRestAddr();
+            prtTemplataTa.Telephone = PrtCommon.GetRestTel();
+            prtTemplataTa.VatNo = PrtCommon.GetRestVATNo();
+            prtTemplataTa.OrderTime = PrtCommon.GetPrtTime();
+            prtTemplataTa.OrderDate = PrtCommon.GetPrtDateTime();
+
+            if (!string.IsNullOrEmpty(content))
+            {
+                content = content.Replace("{RestaurantName}", prtTemplataTa.RestaurantName);
+                content = content.Replace("{StaffName}", prtTemplataTa.StaffName);
+                content = content.Replace("{Telephone}", prtTemplataTa.Telephone);
+                content = content.Replace("{Addr}", prtTemplataTa.Addr);
+                content = content.Replace("{VatNo}", prtTemplataTa.VatNo);
+                content = content.Replace("{Msg1}", prtTemplataTa.Msg1);
+                content = content.Replace("{Msg2}", prtTemplataTa.Msg2);
+                content = content.Replace("{Msg3}", prtTemplataTa.Msg3);
+                content = content.Replace("{Msg4}", prtTemplataTa.Msg4);
+                content = content.Replace("{Msg5}", prtTemplataTa.Msg5);
+            }
+            else
+            {
+                content = @"";
+            }
+
+            return content;
+        }
+
+        #endregion
+
         #region 打印主体方法
         /// <summary>
         /// 打印主体方法

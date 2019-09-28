@@ -55,6 +55,7 @@
             this.btnPay = new DevExpress.XtraEditors.SimpleButton();
             this.btnExit = new DevExpress.XtraEditors.SimpleButton();
             this.panelControl3 = new DevExpress.XtraEditors.PanelControl();
+            this.btnPreview = new DevExpress.XtraEditors.SimpleButton();
             this.lueDriver = new DevExpress.XtraEditors.LookUpEdit();
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
             this.panelControl4 = new DevExpress.XtraEditors.PanelControl();
@@ -64,6 +65,9 @@
             this.btnShowAll = new DevExpress.XtraEditors.SimpleButton();
             this.btnShowAssigned = new DevExpress.XtraEditors.SimpleButton();
             this.btnShowUnAssigned = new DevExpress.XtraEditors.SimpleButton();
+            this.menuAmount = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.Discount = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.DiscountPer = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
             this.panelControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridControlTaPendOrder)).BeginInit();
@@ -113,7 +117,10 @@
             this.TotalAmount,
             this.StaffName,
             this.DriverName,
-            this.IsPaid});
+            this.IsPaid,
+            this.menuAmount,
+            this.Discount,
+            this.DiscountPer});
             this.gvTaPendOrder.GridControl = this.gridControlTaPendOrder;
             this.gvTaPendOrder.IndicatorWidth = 50;
             this.gvTaPendOrder.Name = "gvTaPendOrder";
@@ -390,6 +397,7 @@
             // 
             // panelControl3
             // 
+            this.panelControl3.Controls.Add(this.btnPreview);
             this.panelControl3.Controls.Add(this.btnOpen);
             this.panelControl3.Controls.Add(this.btnPay);
             this.panelControl3.Controls.Add(this.btnExit);
@@ -397,6 +405,22 @@
             this.panelControl3.Name = "panelControl3";
             this.panelControl3.Size = new System.Drawing.Size(201, 626);
             this.panelControl3.TabIndex = 49;
+            // 
+            // btnPreview
+            // 
+            this.btnPreview.Appearance.BackColor = System.Drawing.Color.Blue;
+            this.btnPreview.Appearance.Font = new System.Drawing.Font("Tahoma", 12F);
+            this.btnPreview.Appearance.ForeColor = System.Drawing.Color.White;
+            this.btnPreview.Appearance.Options.UseBackColor = true;
+            this.btnPreview.Appearance.Options.UseFont = true;
+            this.btnPreview.Appearance.Options.UseForeColor = true;
+            this.btnPreview.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
+            this.btnPreview.Location = new System.Drawing.Point(5, 95);
+            this.btnPreview.Name = "btnPreview";
+            this.btnPreview.Size = new System.Drawing.Size(189, 48);
+            this.btnPreview.TabIndex = 51;
+            this.btnPreview.Text = "Preview";
+            this.btnPreview.Click += new System.EventHandler(this.btnPreview_Click);
             // 
             // lueDriver
             // 
@@ -510,6 +534,24 @@
             this.btnShowUnAssigned.Text = "Show Unassigned";
             this.btnShowUnAssigned.Click += new System.EventHandler(this.btnShowUnAssigned_Click);
             // 
+            // menuAmount
+            // 
+            this.menuAmount.Caption = "Menu Amount";
+            this.menuAmount.FieldName = "MenuAmount";
+            this.menuAmount.Name = "menuAmount";
+            // 
+            // Discount
+            // 
+            this.Discount.Caption = "Discount";
+            this.Discount.FieldName = "Discount";
+            this.Discount.Name = "Discount";
+            // 
+            // DiscountPer
+            // 
+            this.DiscountPer.Caption = "DiscountPer";
+            this.DiscountPer.FieldName = "DiscountPer";
+            this.DiscountPer.Name = "DiscountPer";
+            // 
             // FrmTaPendOrder
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 18F);
@@ -589,5 +631,9 @@
         private DevExpress.XtraEditors.SimpleButton btnShowAll;
         private DevExpress.XtraEditors.SimpleButton btnShowAssigned;
         private DevExpress.XtraEditors.SimpleButton btnShowUnAssigned;
+        private DevExpress.XtraEditors.SimpleButton btnPreview;
+        private DevExpress.XtraGrid.Columns.GridColumn menuAmount;
+        private DevExpress.XtraGrid.Columns.GridColumn Discount;
+        private DevExpress.XtraGrid.Columns.GridColumn DiscountPer;
     }
 }

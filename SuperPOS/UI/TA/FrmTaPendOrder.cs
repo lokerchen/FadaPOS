@@ -53,6 +53,12 @@ namespace SuperPOS.UI.TA
         private string checkCustomerPhone;
         //DriverName
         private string checkDriverName;
+        //Menu Total
+        private string checkMenuTotal;
+        //Discount
+        private string checkDiscount;
+        //Discount Per
+        private string checkDiscountPer;
 
         private readonly EntityControl _control = new EntityControl();
 
@@ -94,6 +100,9 @@ namespace SuperPOS.UI.TA
                             CustID = Convert.ToInt32(check.CustomerID),
                             DriverID = 0,
                             DriverName = "",
+                            MenuAmount = check.MenuAmount,
+                            Discount = check.PayDiscount,
+                            DiscountPer = check.PayPerDiscount
                         };
 
             if (iDriver != 0)
@@ -125,6 +134,9 @@ namespace SuperPOS.UI.TA
                             CustID = cust.ID,
                             DriverID = check.DriverID,
                             DriverName = driver.DriverName,
+                            MenuAmount = check.MenuAmount,
+                            Discount = check.PayDiscount,
+                            DiscountPer = check.PayPerDiscount
                         };
             }
 
@@ -209,6 +221,13 @@ namespace SuperPOS.UI.TA
             checkCustID = Convert.ToInt32(gvTaPendOrder.GetRowCellValue(gvTaPendOrder.FocusedRowHandle, "CustID").ToString());
             //司机ID
             checkDriverID = Convert.ToInt32(gvTaPendOrder.GetRowCellValue(gvTaPendOrder.FocusedRowHandle, "DriverID").ToString());
+            //菜单总价
+            checkMenuTotal = gvTaPendOrder.GetRowCellValue(gvTaPendOrder.FocusedRowHandle, "MenuAmount").ToString();
+            //Discount 
+            checkDiscount = gvTaPendOrder.GetRowCellValue(gvTaPendOrder.FocusedRowHandle, "Discount").ToString();
+            //DiscountPer
+            checkDiscountPer = gvTaPendOrder.GetRowCellValue(gvTaPendOrder.FocusedRowHandle, "DiscountPer").ToString();
+
         }
 
         private void btnPay_Click(object sender, EventArgs e)
@@ -438,6 +457,12 @@ namespace SuperPOS.UI.TA
             Hide();
             FrmTaMain frmTaMain = new FrmTaMain(checkCode, usrID, checkCustID);
             frmTaMain.ShowDialog();
+        }
+
+        private void btnPreview_Click(object sender, EventArgs e)
+        {
+            FrmTaPendOrderPreview frmTaPendOrderPreview = new FrmTaPendOrderPreview(checkCode, checkTotalAmount, checkMenuTotal, checkUsrName, checkDiscount, checkDiscountPer);
+            frmTaPendOrderPreview.ShowDialog();
         }
     }
 }

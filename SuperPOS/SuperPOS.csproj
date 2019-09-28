@@ -89,6 +89,7 @@
     <Compile Include="Common\CommonDAL.cs" />
     <Compile Include="Common\CommonData.cs" />
     <Compile Include="Common\CommonTool.cs" />
+    <Compile Include="Common\DelegatePrt.cs" />
     <Compile Include="Common\EntityControl.cs" />
     <Compile Include="Common\LogHelper.cs" />
     <Compile Include="Common\PubComm.cs" />
@@ -155,6 +156,12 @@
     </Compile>
     <Compile Include="UI\TaAdmin\FrmTaConf.Designer.cs">
       <DependentUpon>FrmTaConf.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\TA\FrmTaPendOrderPreview.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\TA\FrmTaPendOrderPreview.Designer.cs">
+      <DependentUpon>FrmTaPendOrderPreview.cs</DependentUpon>
     </Compile>
     <Compile Include="UI\TA\FrmTaMenuItemCopyChoices.cs">
       <SubType>Form</SubType>
@@ -470,6 +477,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UI\TaAdmin\FrmTaConf.resx">
       <DependentUpon>FrmTaConf.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\TA\FrmTaPendOrderPreview.resx">
+      <DependentUpon>FrmTaPendOrderPreview.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UI\TA\FrmTaMenuItemCopyChoices.resx">
       <DependentUpon>FrmTaMenuItemCopyChoices.cs</DependentUpon>

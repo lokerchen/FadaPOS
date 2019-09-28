@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
+            this.richEditCtlPreview = new DevExpress.XtraRichEdit.RichEditControl();
             this.panelControl4 = new DevExpress.XtraEditors.PanelControl();
             this.panelControl5 = new DevExpress.XtraEditors.PanelControl();
             this.btnAccount = new DevExpress.XtraEditors.SimpleButton();
@@ -59,43 +60,6 @@
             this.DiscountPer = new DevExpress.XtraGrid.Columns.GridColumn();
             this.Discount = new DevExpress.XtraGrid.Columns.GridColumn();
             this.SubToal = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.panelControl3 = new DevExpress.XtraEditors.PanelControl();
-            this.lblSurcharge = new DevExpress.XtraEditors.LabelControl();
-            this.labelControl13 = new DevExpress.XtraEditors.LabelControl();
-            this.lblDiscount = new DevExpress.XtraEditors.LabelControl();
-            this.labelControl11 = new DevExpress.XtraEditors.LabelControl();
-            this.lblDeliveryCharge = new DevExpress.XtraEditors.LabelControl();
-            this.labelControl8 = new DevExpress.XtraEditors.LabelControl();
-            this.treeListOrder = new DevExpress.XtraTreeList.TreeList();
-            this.treeListColumn1 = new DevExpress.XtraTreeList.Columns.TreeListColumn();
-            this.ItemID = new DevExpress.XtraTreeList.Columns.TreeListColumn();
-            this.ItemCode = new DevExpress.XtraTreeList.Columns.TreeListColumn();
-            this.ItemDishName = new DevExpress.XtraTreeList.Columns.TreeListColumn();
-            this.repositoryItemMemoEdit1 = new DevExpress.XtraEditors.Repository.RepositoryItemMemoEdit();
-            this.ItemDishOtherName = new DevExpress.XtraTreeList.Columns.TreeListColumn();
-            this.ItemQty = new DevExpress.XtraTreeList.Columns.TreeListColumn();
-            this.ItemPrice = new DevExpress.XtraTreeList.Columns.TreeListColumn();
-            this.ItemTotalPrice = new DevExpress.XtraTreeList.Columns.TreeListColumn();
-            this.treeListColumn2 = new DevExpress.XtraTreeList.Columns.TreeListColumn();
-            this.ItemType = new DevExpress.XtraTreeList.Columns.TreeListColumn();
-            this.ItemParent = new DevExpress.XtraTreeList.Columns.TreeListColumn();
-            this.treeListColumn3 = new DevExpress.XtraTreeList.Columns.TreeListColumn();
-            this.OrderStaff = new DevExpress.XtraTreeList.Columns.TreeListColumn();
-            this.panelControl2 = new DevExpress.XtraEditors.PanelControl();
-            this.panelControl7 = new DevExpress.XtraEditors.PanelControl();
-            this.lblDeliveryFee = new DevExpress.XtraEditors.LabelControl();
-            this.lblCusDistance = new DevExpress.XtraEditors.LabelControl();
-            this.lblCusPostcode = new DevExpress.XtraEditors.LabelControl();
-            this.lblCusAddr = new DevExpress.XtraEditors.LabelControl();
-            this.lblCusPhone = new DevExpress.XtraEditors.LabelControl();
-            this.lblCusName = new DevExpress.XtraEditors.LabelControl();
-            this.labelControl6 = new DevExpress.XtraEditors.LabelControl();
-            this.labelControl5 = new DevExpress.XtraEditors.LabelControl();
-            this.labelControl4 = new DevExpress.XtraEditors.LabelControl();
-            this.labelControl3 = new DevExpress.XtraEditors.LabelControl();
-            this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
-            this.labelControl7 = new DevExpress.XtraEditors.LabelControl();
-            this.richEditCtlPreview = new DevExpress.XtraRichEdit.RichEditControl();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
             this.panelControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl4)).BeginInit();
@@ -106,14 +70,6 @@
             this.panelControl6.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridControlTaShowOrder)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gvTaShowOrder)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.panelControl3)).BeginInit();
-            this.panelControl3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.treeListOrder)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemMemoEdit1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.panelControl2)).BeginInit();
-            this.panelControl2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.panelControl7)).BeginInit();
-            this.panelControl7.SuspendLayout();
             this.SuspendLayout();
             // 
             // panelControl1
@@ -124,6 +80,23 @@
             this.panelControl1.Name = "panelControl1";
             this.panelControl1.Size = new System.Drawing.Size(1189, 638);
             this.panelControl1.TabIndex = 0;
+            // 
+            // richEditCtlPreview
+            // 
+            this.richEditCtlPreview.EnableToolTips = true;
+            this.richEditCtlPreview.Location = new System.Drawing.Point(7, 5);
+            this.richEditCtlPreview.Margin = new System.Windows.Forms.Padding(0);
+            this.richEditCtlPreview.Name = "richEditCtlPreview";
+            this.richEditCtlPreview.Options.Export.PlainText.ExportFinalParagraphMark = DevExpress.XtraRichEdit.Export.PlainText.ExportFinalParagraphMark.Never;
+            this.richEditCtlPreview.Options.Fields.UpdateFieldsInTextBoxes = false;
+            this.richEditCtlPreview.Options.HorizontalRuler.ShowTabs = false;
+            this.richEditCtlPreview.Options.HorizontalRuler.Visibility = DevExpress.XtraRichEdit.RichEditRulerVisibility.Hidden;
+            this.richEditCtlPreview.Options.HorizontalScrollbar.Visibility = DevExpress.XtraRichEdit.RichEditScrollbarVisibility.Hidden;
+            this.richEditCtlPreview.Options.VerticalRuler.Visibility = DevExpress.XtraRichEdit.RichEditRulerVisibility.Hidden;
+            this.richEditCtlPreview.Options.VerticalScrollbar.Visibility = DevExpress.XtraRichEdit.RichEditScrollbarVisibility.Hidden;
+            this.richEditCtlPreview.Size = new System.Drawing.Size(368, 628);
+            this.richEditCtlPreview.TabIndex = 3;
+            this.richEditCtlPreview.Text = "rich";
             // 
             // panelControl4
             // 
@@ -556,369 +529,12 @@
             this.SubToal.FieldName = "gridSubTotal";
             this.SubToal.Name = "SubToal";
             // 
-            // panelControl3
-            // 
-            this.panelControl3.Controls.Add(this.lblSurcharge);
-            this.panelControl3.Controls.Add(this.labelControl13);
-            this.panelControl3.Controls.Add(this.lblDiscount);
-            this.panelControl3.Controls.Add(this.labelControl11);
-            this.panelControl3.Controls.Add(this.lblDeliveryCharge);
-            this.panelControl3.Controls.Add(this.labelControl8);
-            this.panelControl3.Controls.Add(this.treeListOrder);
-            this.panelControl3.Location = new System.Drawing.Point(1201, 162);
-            this.panelControl3.Name = "panelControl3";
-            this.panelControl3.Size = new System.Drawing.Size(370, 428);
-            this.panelControl3.TabIndex = 1;
-            this.panelControl3.Visible = false;
-            // 
-            // lblSurcharge
-            // 
-            this.lblSurcharge.Location = new System.Drawing.Point(331, 397);
-            this.lblSurcharge.Name = "lblSurcharge";
-            this.lblSurcharge.Size = new System.Drawing.Size(29, 18);
-            this.lblSurcharge.TabIndex = 9;
-            this.lblSurcharge.Text = "0.00";
-            // 
-            // labelControl13
-            // 
-            this.labelControl13.Location = new System.Drawing.Point(203, 397);
-            this.labelControl13.Name = "labelControl13";
-            this.labelControl13.Size = new System.Drawing.Size(70, 18);
-            this.labelControl13.TabIndex = 8;
-            this.labelControl13.Text = "Surcharge:";
-            // 
-            // lblDiscount
-            // 
-            this.lblDiscount.Location = new System.Drawing.Point(331, 373);
-            this.lblDiscount.Name = "lblDiscount";
-            this.lblDiscount.Size = new System.Drawing.Size(29, 18);
-            this.lblDiscount.TabIndex = 7;
-            this.lblDiscount.Text = "0.00";
-            // 
-            // labelControl11
-            // 
-            this.labelControl11.Location = new System.Drawing.Point(213, 373);
-            this.labelControl11.Name = "labelControl11";
-            this.labelControl11.Size = new System.Drawing.Size(60, 18);
-            this.labelControl11.TabIndex = 6;
-            this.labelControl11.Text = "Discount:";
-            // 
-            // lblDeliveryCharge
-            // 
-            this.lblDeliveryCharge.Location = new System.Drawing.Point(331, 349);
-            this.lblDeliveryCharge.Name = "lblDeliveryCharge";
-            this.lblDeliveryCharge.Size = new System.Drawing.Size(29, 18);
-            this.lblDeliveryCharge.TabIndex = 5;
-            this.lblDeliveryCharge.Text = "0.00";
-            // 
-            // labelControl8
-            // 
-            this.labelControl8.Location = new System.Drawing.Point(166, 349);
-            this.labelControl8.Name = "labelControl8";
-            this.labelControl8.Size = new System.Drawing.Size(107, 18);
-            this.labelControl8.TabIndex = 4;
-            this.labelControl8.Text = "Delivery Charge:";
-            // 
-            // treeListOrder
-            // 
-            this.treeListOrder.Columns.AddRange(new DevExpress.XtraTreeList.Columns.TreeListColumn[] {
-            this.treeListColumn1,
-            this.ItemID,
-            this.ItemCode,
-            this.ItemDishName,
-            this.ItemDishOtherName,
-            this.ItemQty,
-            this.ItemPrice,
-            this.ItemTotalPrice,
-            this.treeListColumn2,
-            this.ItemType,
-            this.ItemParent,
-            this.treeListColumn3,
-            this.OrderStaff});
-            this.treeListOrder.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.treeListOrder.IndicatorWidth = 40;
-            this.treeListOrder.Location = new System.Drawing.Point(7, 5);
-            this.treeListOrder.Name = "treeListOrder";
-            this.treeListOrder.OptionsBehavior.Editable = false;
-            this.treeListOrder.OptionsBehavior.PopulateServiceColumns = true;
-            this.treeListOrder.OptionsClipboard.AllowCopy = DevExpress.Utils.DefaultBoolean.True;
-            this.treeListOrder.OptionsClipboard.CopyNodeHierarchy = DevExpress.Utils.DefaultBoolean.True;
-            this.treeListOrder.ParentFieldName = "ItemParent";
-            this.treeListOrder.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
-            this.repositoryItemMemoEdit1});
-            this.treeListOrder.RowHeight = 30;
-            this.treeListOrder.Size = new System.Drawing.Size(355, 339);
-            this.treeListOrder.TabIndex = 3;
-            // 
-            // treeListColumn1
-            // 
-            this.treeListColumn1.Caption = "ID";
-            this.treeListColumn1.FieldName = "ID";
-            this.treeListColumn1.Name = "treeListColumn1";
-            // 
-            // ItemID
-            // 
-            this.ItemID.Caption = "ItemID";
-            this.ItemID.FieldName = "ItemID";
-            this.ItemID.Name = "ItemID";
-            // 
-            // ItemCode
-            // 
-            this.ItemCode.Caption = "ItemCode";
-            this.ItemCode.FieldName = "ItemCode";
-            this.ItemCode.Name = "ItemCode";
-            // 
-            // ItemDishName
-            // 
-            this.ItemDishName.AppearanceCell.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ItemDishName.AppearanceCell.Options.UseFont = true;
-            this.ItemDishName.Caption = "Dish Name";
-            this.ItemDishName.ColumnEdit = this.repositoryItemMemoEdit1;
-            this.ItemDishName.FieldName = "ItemDishName";
-            this.ItemDishName.MinWidth = 52;
-            this.ItemDishName.Name = "ItemDishName";
-            this.ItemDishName.OptionsFilter.AllowAutoFilter = false;
-            this.ItemDishName.Visible = true;
-            this.ItemDishName.VisibleIndex = 0;
-            this.ItemDishName.Width = 192;
-            // 
-            // repositoryItemMemoEdit1
-            // 
-            this.repositoryItemMemoEdit1.Name = "repositoryItemMemoEdit1";
-            // 
-            // ItemDishOtherName
-            // 
-            this.ItemDishOtherName.Caption = "ItemDishOtherName";
-            this.ItemDishOtherName.FieldName = "ItemDishOtherName";
-            this.ItemDishOtherName.Name = "ItemDishOtherName";
-            // 
-            // ItemQty
-            // 
-            this.ItemQty.AppearanceCell.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ItemQty.AppearanceCell.Options.UseFont = true;
-            this.ItemQty.Caption = "Qty";
-            this.ItemQty.FieldName = "ItemQty";
-            this.ItemQty.Name = "ItemQty";
-            this.ItemQty.OptionsFilter.AllowAutoFilter = false;
-            this.ItemQty.OptionsFilter.AllowFilter = false;
-            this.ItemQty.SummaryFooter = DevExpress.XtraTreeList.SummaryItemType.Sum;
-            this.ItemQty.Visible = true;
-            this.ItemQty.VisibleIndex = 1;
-            this.ItemQty.Width = 52;
-            // 
-            // ItemPrice
-            // 
-            this.ItemPrice.Caption = "ItemPrice";
-            this.ItemPrice.FieldName = "ItemPrice";
-            this.ItemPrice.Name = "ItemPrice";
-            // 
-            // ItemTotalPrice
-            // 
-            this.ItemTotalPrice.AllNodesSummary = true;
-            this.ItemTotalPrice.AppearanceCell.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ItemTotalPrice.AppearanceCell.Options.UseFont = true;
-            this.ItemTotalPrice.Caption = "Price";
-            this.ItemTotalPrice.FieldName = "ItemTotalPrice";
-            this.ItemTotalPrice.Name = "ItemTotalPrice";
-            this.ItemTotalPrice.OptionsFilter.AllowAutoFilter = false;
-            this.ItemTotalPrice.OptionsFilter.AllowFilter = false;
-            this.ItemTotalPrice.SummaryFooter = DevExpress.XtraTreeList.SummaryItemType.Sum;
-            this.ItemTotalPrice.SummaryFooterStrFormat = "{0:f2}";
-            this.ItemTotalPrice.Visible = true;
-            this.ItemTotalPrice.VisibleIndex = 2;
-            this.ItemTotalPrice.Width = 69;
-            // 
-            // treeListColumn2
-            // 
-            this.treeListColumn2.Caption = "CheckCode";
-            this.treeListColumn2.FieldName = "CheckCode";
-            this.treeListColumn2.Name = "treeListColumn2";
-            // 
-            // ItemType
-            // 
-            this.ItemType.Caption = "ItemType";
-            this.ItemType.FieldName = "ItemType";
-            this.ItemType.Name = "ItemType";
-            // 
-            // ItemParent
-            // 
-            this.ItemParent.Caption = "ItemParent";
-            this.ItemParent.FieldName = "ItemParent";
-            this.ItemParent.Name = "ItemParent";
-            // 
-            // treeListColumn3
-            // 
-            this.treeListColumn3.Caption = "OrderTime";
-            this.treeListColumn3.FieldName = "OrderTime";
-            this.treeListColumn3.Name = "treeListColumn3";
-            // 
-            // OrderStaff
-            // 
-            this.OrderStaff.Caption = "OrderStaff";
-            this.OrderStaff.FieldName = "OrderStaff";
-            this.OrderStaff.Name = "OrderStaff";
-            // 
-            // panelControl2
-            // 
-            this.panelControl2.Controls.Add(this.panelControl7);
-            this.panelControl2.Location = new System.Drawing.Point(1201, 5);
-            this.panelControl2.Name = "panelControl2";
-            this.panelControl2.Size = new System.Drawing.Size(370, 153);
-            this.panelControl2.TabIndex = 0;
-            this.panelControl2.Visible = false;
-            // 
-            // panelControl7
-            // 
-            this.panelControl7.Controls.Add(this.lblDeliveryFee);
-            this.panelControl7.Controls.Add(this.lblCusDistance);
-            this.panelControl7.Controls.Add(this.lblCusPostcode);
-            this.panelControl7.Controls.Add(this.lblCusAddr);
-            this.panelControl7.Controls.Add(this.lblCusPhone);
-            this.panelControl7.Controls.Add(this.lblCusName);
-            this.panelControl7.Controls.Add(this.labelControl6);
-            this.panelControl7.Controls.Add(this.labelControl5);
-            this.panelControl7.Controls.Add(this.labelControl4);
-            this.panelControl7.Controls.Add(this.labelControl3);
-            this.panelControl7.Controls.Add(this.labelControl1);
-            this.panelControl7.Controls.Add(this.labelControl7);
-            this.panelControl7.Location = new System.Drawing.Point(5, 5);
-            this.panelControl7.Name = "panelControl7";
-            this.panelControl7.Size = new System.Drawing.Size(355, 146);
-            this.panelControl7.TabIndex = 33;
-            // 
-            // lblDeliveryFee
-            // 
-            this.lblDeliveryFee.Appearance.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold);
-            this.lblDeliveryFee.Appearance.ForeColor = System.Drawing.Color.Red;
-            this.lblDeliveryFee.Location = new System.Drawing.Point(93, 120);
-            this.lblDeliveryFee.Name = "lblDeliveryFee";
-            this.lblDeliveryFee.Size = new System.Drawing.Size(35, 18);
-            this.lblDeliveryFee.TabIndex = 11;
-            this.lblDeliveryFee.Text = "1.50";
-            // 
-            // lblCusDistance
-            // 
-            this.lblCusDistance.Appearance.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold);
-            this.lblCusDistance.Appearance.ForeColor = System.Drawing.Color.Red;
-            this.lblCusDistance.Location = new System.Drawing.Point(93, 97);
-            this.lblCusDistance.Name = "lblCusDistance";
-            this.lblCusDistance.Size = new System.Drawing.Size(35, 18);
-            this.lblCusDistance.TabIndex = 10;
-            this.lblCusDistance.Text = "3.85";
-            // 
-            // lblCusPostcode
-            // 
-            this.lblCusPostcode.Appearance.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold);
-            this.lblCusPostcode.Appearance.ForeColor = System.Drawing.Color.Red;
-            this.lblCusPostcode.Location = new System.Drawing.Point(93, 74);
-            this.lblCusPostcode.Name = "lblCusPostcode";
-            this.lblCusPostcode.Size = new System.Drawing.Size(78, 18);
-            this.lblCusPostcode.TabIndex = 9;
-            this.lblCusPostcode.Text = "BS 168 AA";
-            // 
-            // lblCusAddr
-            // 
-            this.lblCusAddr.Appearance.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold);
-            this.lblCusAddr.Appearance.ForeColor = System.Drawing.Color.Red;
-            this.lblCusAddr.Location = new System.Drawing.Point(93, 51);
-            this.lblCusAddr.Name = "lblCusAddr";
-            this.lblCusAddr.Size = new System.Drawing.Size(159, 18);
-            this.lblCusAddr.TabIndex = 8;
-            this.lblCusAddr.Text = "123 GuangZhou Road";
-            // 
-            // lblCusPhone
-            // 
-            this.lblCusPhone.Appearance.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold);
-            this.lblCusPhone.Appearance.ForeColor = System.Drawing.Color.Red;
-            this.lblCusPhone.Location = new System.Drawing.Point(93, 28);
-            this.lblCusPhone.Name = "lblCusPhone";
-            this.lblCusPhone.Size = new System.Drawing.Size(110, 18);
-            this.lblCusPhone.TabIndex = 7;
-            this.lblCusPhone.Text = "08888888888";
-            // 
-            // lblCusName
-            // 
-            this.lblCusName.Appearance.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold);
-            this.lblCusName.Appearance.ForeColor = System.Drawing.Color.Red;
-            this.lblCusName.Location = new System.Drawing.Point(93, 5);
-            this.lblCusName.Name = "lblCusName";
-            this.lblCusName.Size = new System.Drawing.Size(63, 18);
-            this.lblCusName.TabIndex = 6;
-            this.lblCusName.Text = "FadaPos";
-            // 
-            // labelControl6
-            // 
-            this.labelControl6.Location = new System.Drawing.Point(5, 120);
-            this.labelControl6.Name = "labelControl6";
-            this.labelControl6.Size = new System.Drawing.Size(85, 18);
-            this.labelControl6.TabIndex = 5;
-            this.labelControl6.Text = "Delivery Fee:";
-            // 
-            // labelControl5
-            // 
-            this.labelControl5.Location = new System.Drawing.Point(5, 97);
-            this.labelControl5.Name = "labelControl5";
-            this.labelControl5.Size = new System.Drawing.Size(60, 18);
-            this.labelControl5.TabIndex = 4;
-            this.labelControl5.Text = "Distance:";
-            // 
-            // labelControl4
-            // 
-            this.labelControl4.Location = new System.Drawing.Point(5, 74);
-            this.labelControl4.Name = "labelControl4";
-            this.labelControl4.Size = new System.Drawing.Size(64, 18);
-            this.labelControl4.TabIndex = 3;
-            this.labelControl4.Text = "Postcode:";
-            // 
-            // labelControl3
-            // 
-            this.labelControl3.Location = new System.Drawing.Point(5, 51);
-            this.labelControl3.Name = "labelControl3";
-            this.labelControl3.Size = new System.Drawing.Size(57, 18);
-            this.labelControl3.TabIndex = 2;
-            this.labelControl3.Text = "Address:";
-            // 
-            // labelControl1
-            // 
-            this.labelControl1.Location = new System.Drawing.Point(5, 28);
-            this.labelControl1.Name = "labelControl1";
-            this.labelControl1.Size = new System.Drawing.Size(45, 18);
-            this.labelControl1.TabIndex = 1;
-            this.labelControl1.Text = "Phone:";
-            // 
-            // labelControl7
-            // 
-            this.labelControl7.Location = new System.Drawing.Point(5, 5);
-            this.labelControl7.Name = "labelControl7";
-            this.labelControl7.Size = new System.Drawing.Size(44, 18);
-            this.labelControl7.TabIndex = 0;
-            this.labelControl7.Text = "Name:";
-            // 
-            // richEditCtlPreview
-            // 
-            this.richEditCtlPreview.EnableToolTips = true;
-            this.richEditCtlPreview.Location = new System.Drawing.Point(7, 5);
-            this.richEditCtlPreview.Margin = new System.Windows.Forms.Padding(0);
-            this.richEditCtlPreview.Name = "richEditCtlPreview";
-            this.richEditCtlPreview.Options.Export.PlainText.ExportFinalParagraphMark = DevExpress.XtraRichEdit.Export.PlainText.ExportFinalParagraphMark.Never;
-            this.richEditCtlPreview.Options.Fields.UpdateFieldsInTextBoxes = false;
-            this.richEditCtlPreview.Options.HorizontalRuler.ShowTabs = false;
-            this.richEditCtlPreview.Options.HorizontalRuler.Visibility = DevExpress.XtraRichEdit.RichEditRulerVisibility.Hidden;
-            this.richEditCtlPreview.Options.HorizontalScrollbar.Visibility = DevExpress.XtraRichEdit.RichEditScrollbarVisibility.Hidden;
-            this.richEditCtlPreview.Options.VerticalRuler.Visibility = DevExpress.XtraRichEdit.RichEditRulerVisibility.Hidden;
-            this.richEditCtlPreview.Options.VerticalScrollbar.Visibility = DevExpress.XtraRichEdit.RichEditScrollbarVisibility.Hidden;
-            this.richEditCtlPreview.Size = new System.Drawing.Size(368, 628);
-            this.richEditCtlPreview.TabIndex = 3;
-            this.richEditCtlPreview.Text = "rich";
-            // 
             // FrmTaShowOrder
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1201, 649);
+            this.ClientSize = new System.Drawing.Size(1199, 646);
             this.Controls.Add(this.panelControl1);
-            this.Controls.Add(this.panelControl3);
-            this.Controls.Add(this.panelControl2);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "FrmTaShowOrder";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -936,16 +552,6 @@
             this.panelControl6.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.gridControlTaShowOrder)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gvTaShowOrder)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.panelControl3)).EndInit();
-            this.panelControl3.ResumeLayout(false);
-            this.panelControl3.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.treeListOrder)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemMemoEdit1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.panelControl2)).EndInit();
-            this.panelControl2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.panelControl7)).EndInit();
-            this.panelControl7.ResumeLayout(false);
-            this.panelControl7.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -953,8 +559,6 @@
         #endregion
 
         private DevExpress.XtraEditors.PanelControl panelControl1;
-        private DevExpress.XtraEditors.PanelControl panelControl2;
-        private DevExpress.XtraEditors.PanelControl panelControl3;
         private DevExpress.XtraEditors.SimpleButton btnAll;
         private DevExpress.XtraEditors.SimpleButton btnPrtKit;
         private DevExpress.XtraEditors.SimpleButton btnPrtReceipt;
@@ -963,21 +567,6 @@
         private DevExpress.XtraEditors.SimpleButton btnDelivery;
         private DevExpress.XtraEditors.SimpleButton btnCollection;
         private DevExpress.XtraEditors.SimpleButton btnShop;
-        private DevExpress.XtraTreeList.TreeList treeListOrder;
-        private DevExpress.XtraTreeList.Columns.TreeListColumn treeListColumn1;
-        private DevExpress.XtraTreeList.Columns.TreeListColumn ItemID;
-        private DevExpress.XtraTreeList.Columns.TreeListColumn ItemCode;
-        private DevExpress.XtraTreeList.Columns.TreeListColumn ItemDishName;
-        private DevExpress.XtraEditors.Repository.RepositoryItemMemoEdit repositoryItemMemoEdit1;
-        private DevExpress.XtraTreeList.Columns.TreeListColumn ItemDishOtherName;
-        private DevExpress.XtraTreeList.Columns.TreeListColumn ItemQty;
-        private DevExpress.XtraTreeList.Columns.TreeListColumn ItemPrice;
-        private DevExpress.XtraTreeList.Columns.TreeListColumn ItemTotalPrice;
-        private DevExpress.XtraTreeList.Columns.TreeListColumn treeListColumn2;
-        private DevExpress.XtraTreeList.Columns.TreeListColumn ItemType;
-        private DevExpress.XtraTreeList.Columns.TreeListColumn ItemParent;
-        private DevExpress.XtraTreeList.Columns.TreeListColumn treeListColumn3;
-        private DevExpress.XtraTreeList.Columns.TreeListColumn OrderStaff;
         private DevExpress.XtraEditors.PanelControl panelControl4;
         private DevExpress.XtraGrid.GridControl gridControlTaShowOrder;
         private DevExpress.XtraGrid.Views.Grid.GridView gvTaShowOrder;
@@ -989,25 +578,6 @@
         private DevExpress.XtraGrid.Columns.GridColumn TotalAmount;
         private DevExpress.XtraGrid.Columns.GridColumn StaffName;
         private DevExpress.XtraGrid.Columns.GridColumn DriverName;
-        private DevExpress.XtraEditors.PanelControl panelControl7;
-        private DevExpress.XtraEditors.LabelControl lblDeliveryFee;
-        private DevExpress.XtraEditors.LabelControl lblCusDistance;
-        private DevExpress.XtraEditors.LabelControl lblCusPostcode;
-        private DevExpress.XtraEditors.LabelControl lblCusAddr;
-        private DevExpress.XtraEditors.LabelControl lblCusPhone;
-        private DevExpress.XtraEditors.LabelControl lblCusName;
-        private DevExpress.XtraEditors.LabelControl labelControl6;
-        private DevExpress.XtraEditors.LabelControl labelControl5;
-        private DevExpress.XtraEditors.LabelControl labelControl4;
-        private DevExpress.XtraEditors.LabelControl labelControl3;
-        private DevExpress.XtraEditors.LabelControl labelControl1;
-        private DevExpress.XtraEditors.LabelControl labelControl7;
-        private DevExpress.XtraEditors.LabelControl lblSurcharge;
-        private DevExpress.XtraEditors.LabelControl labelControl13;
-        private DevExpress.XtraEditors.LabelControl lblDiscount;
-        private DevExpress.XtraEditors.LabelControl labelControl11;
-        private DevExpress.XtraEditors.LabelControl lblDeliveryCharge;
-        private DevExpress.XtraEditors.LabelControl labelControl8;
         private DevExpress.XtraGrid.Columns.GridColumn Payment;
         private DevExpress.XtraEditors.PanelControl panelControl6;
         private DevExpress.XtraEditors.SimpleButton simpleButton2;
