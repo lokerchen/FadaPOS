@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -13,6 +14,7 @@ using DevExpress.XtraTreeList.Nodes;
 using SuperPOS.Common;
 using SuperPOS.Domain.Entities;
 using SuperPOS.Print;
+using SuperPOS.UI.TA;
 
 namespace SuperPOS.UI
 {
@@ -52,6 +54,7 @@ namespace SuperPOS.UI
         private string PreviewContent = "";
 
         private int sItemCount = 0;
+        private string sOrderType = "";
 
         private AutoSizeFormClass asfc = new AutoSizeFormClass();
 
@@ -160,6 +163,7 @@ namespace SuperPOS.UI
             sDiscountPer = gvTaShowOrder.GetRowCellValue(gvTaShowOrder.FocusedRowHandle, "gridDiscountPer").ToString();
             sDiscount = gvTaShowOrder.GetRowCellValue(gvTaShowOrder.FocusedRowHandle, "gridDisount").ToString();
             sSubTotal = gvTaShowOrder.GetRowCellValue(gvTaShowOrder.FocusedRowHandle, "gridSubTotal").ToString();
+            sOrderType = gvTaShowOrder.GetRowCellValue(gvTaShowOrder.FocusedRowHandle, "gridOrderType").ToString();
 
             sItemCount = GetItemCount(strChkOrder);
 
@@ -561,5 +565,29 @@ namespace SuperPOS.UI
             return CommonData.TaOrderItem.Count(s => s.CheckCode.Equals(chkCode) && s.ItemType == 1);
         }
 
+        #region 设置打印相关信息
+
+        private Hashtable SetPrtInfo(List<TaOrderItemInfo> lstOi)
+        {
+            Hashtable htDetail = new Hashtable();
+
+            new SystemData().GetUsrBase();
+
+            htDetail["Staff"] = CommonData.UsrBase.Any(s => s.ID == usrID) ? CommonData.UsrBase.FirstOrDefault(s => s.ID == usrID).UsrName : "";
+
+            htDetail["ItemQty"] = GetItemCount(strChkOrder);
+            htDetail["SubTotal"] = lstOi.Sum(s => Convert.ToDecimal(s.ItemTotalPrice)).ToString();
+            htDetail["Total"] = lstOi.Sum(s => Convert.ToDecimal(s.ItemTotalPrice)).ToString();
+
+            return htDetail;
+        }
+        #endregion
+
+        private void btnChangePayment_Click(object sender, EventArgs e)
+        {
+            FrmTaPaymentShop frmTaPaymentShop = new FrmTaPaymentShop(usrID, strChkOrder, sOrderType, SetPrtInfo(CommonData.TaOrderItem.Where(s => s.CheckCode.Equals(strChkOrder)).ToList()));
+
+            frmTaPaymentShop.Show();
+        }
     }
 }

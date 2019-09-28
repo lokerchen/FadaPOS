@@ -70,6 +70,16 @@ namespace SuperPOS.UI.TA
             htDetail = ht;
         }
 
+        public FrmTaPaymentShop(int id, string chkId, string type, Hashtable ht)
+        {
+            InitializeComponent();
+
+            usrID = id;
+            checkID = chkId;
+            orderType = type;
+            htDetail = ht;
+        }
+
         private void FrmTaPaymentShop_Load(object sender, EventArgs e)
         {
             //订单类型
@@ -82,29 +92,59 @@ namespace SuperPOS.UI.TA
             #region 查询账单
             new SystemData().GetTaCheckOrder();
 
-            if (CommonData.TaCheckOrder.Any(s => s.CheckCode.Equals(checkID) && s.IsPaid.Equals("N")))
+            var lstTco = CommonData.TaCheckOrder.Where(s => s.CheckCode.Equals(checkID));
+
+            if (lstTco.Any())
             {
-                TaCheckOrderInfo taCheckOrder =
+                if (lstTco.Any(s => s.IsPaid.Equals("N")))
+                {
+                    TaCheckOrderInfo taCheckOrder =
                     CommonData.TaCheckOrder.FirstOrDefault(s => s.CheckCode.Equals(checkID) && s.IsPaid.Equals("N"));
 
-                txtPayTypePay1.Text = taCheckOrder.PayTypePay1;
-                txtPayTypePay2.Text = taCheckOrder.PayTypePay2;
-                txtPayTypePay3.Text = taCheckOrder.PayTypePay3;
-                txtPayTypePay4.Text = taCheckOrder.PayTypePay4;
-                txtPayTypePay5.Text = taCheckOrder.PayTypePay5;
+                    txtPayTypePay1.Text = taCheckOrder.PayTypePay1;
+                    txtPayTypePay2.Text = taCheckOrder.PayTypePay2;
+                    txtPayTypePay3.Text = taCheckOrder.PayTypePay3;
+                    txtPayTypePay4.Text = taCheckOrder.PayTypePay4;
+                    txtPayTypePay5.Text = taCheckOrder.PayTypePay5;
 
-                txtPercentDiscount.Text = taCheckOrder.PayPerDiscount;
-                txtDiscount.Text = taCheckOrder.PayDiscount;
+                    txtPercentDiscount.Text = taCheckOrder.PayPerDiscount;
+                    txtDiscount.Text = taCheckOrder.PayDiscount;
 
-                txtPercentSurcharge.Text = taCheckOrder.PayPerSurcharge;
-                txtSurcharge.Text = taCheckOrder.PaySurcharge;
+                    txtPercentSurcharge.Text = taCheckOrder.PayPerSurcharge;
+                    txtSurcharge.Text = taCheckOrder.PaySurcharge;
 
-                txtTendered.Text = "0.00";
-                txtToPay.Text = taCheckOrder.TotalAmount;
-                menuAmout = Convert.ToDecimal(taCheckOrder.MenuAmount);
-                txtChange.Text = "0.00";
+                    txtTendered.Text = "0.00";
+                    txtToPay.Text = taCheckOrder.TotalAmount;
+                    menuAmout = Convert.ToDecimal(taCheckOrder.MenuAmount);
+                    txtChange.Text = "0.00";
 
-                GetAllAmount();
+                    GetAllAmount();
+                }
+                else if (lstTco.Any(s => s.IsPaid.Equals("Y")))
+                {
+                    TaCheckOrderInfo taCheckOrder =
+                    CommonData.TaCheckOrder.FirstOrDefault(s => s.CheckCode.Equals(checkID) && s.IsPaid.Equals("Y"));
+
+                    txtPayTypePay1.Text = taCheckOrder.PayTypePay1;
+                    txtPayTypePay2.Text = taCheckOrder.PayTypePay2;
+                    txtPayTypePay3.Text = taCheckOrder.PayTypePay3;
+                    txtPayTypePay4.Text = taCheckOrder.PayTypePay4;
+                    txtPayTypePay5.Text = taCheckOrder.PayTypePay5;
+
+                    txtPercentDiscount.Text = taCheckOrder.PayPerDiscount;
+                    txtDiscount.Text = taCheckOrder.PayDiscount;
+
+                    txtPercentSurcharge.Text = taCheckOrder.PayPerSurcharge;
+                    txtSurcharge.Text = taCheckOrder.PaySurcharge;
+
+                    txtTendered.Text = "0.00";
+                    txtToPay.Text = taCheckOrder.TotalAmount;
+                    menuAmout = Convert.ToDecimal(taCheckOrder.MenuAmount);
+                    txtChange.Text = "0.00";
+
+                    GetAllAmount();
+                }
+                
             }
             #endregion
 

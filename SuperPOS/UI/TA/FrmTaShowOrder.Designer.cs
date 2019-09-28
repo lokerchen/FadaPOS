@@ -40,7 +40,7 @@
             this.panelControl6 = new DevExpress.XtraEditors.PanelControl();
             this.simpleButton4 = new DevExpress.XtraEditors.SimpleButton();
             this.simpleButton3 = new DevExpress.XtraEditors.SimpleButton();
-            this.simpleButton2 = new DevExpress.XtraEditors.SimpleButton();
+            this.btnChangePayment = new DevExpress.XtraEditors.SimpleButton();
             this.btnEatIn = new DevExpress.XtraEditors.SimpleButton();
             this.btnAll = new DevExpress.XtraEditors.SimpleButton();
             this.btnDelivery = new DevExpress.XtraEditors.SimpleButton();
@@ -220,7 +220,7 @@
             // 
             this.panelControl6.Controls.Add(this.simpleButton4);
             this.panelControl6.Controls.Add(this.simpleButton3);
-            this.panelControl6.Controls.Add(this.simpleButton2);
+            this.panelControl6.Controls.Add(this.btnChangePayment);
             this.panelControl6.Controls.Add(this.btnEatIn);
             this.panelControl6.Controls.Add(this.btnAll);
             this.panelControl6.Controls.Add(this.btnDelivery);
@@ -269,24 +269,25 @@
             this.simpleButton3.TabIndex = 62;
             this.simpleButton3.Text = "Edit Order";
             // 
-            // simpleButton2
+            // btnChangePayment
             // 
-            this.simpleButton2.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
-            this.simpleButton2.Appearance.Font = new System.Drawing.Font("Tahoma", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.simpleButton2.Appearance.ForeColor = System.Drawing.Color.White;
-            this.simpleButton2.Appearance.Options.UseBackColor = true;
-            this.simpleButton2.Appearance.Options.UseFont = true;
-            this.simpleButton2.Appearance.Options.UseForeColor = true;
-            this.simpleButton2.Appearance.Options.UseTextOptions = true;
-            this.simpleButton2.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.simpleButton2.Appearance.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
-            this.simpleButton2.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
-            this.simpleButton2.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
-            this.simpleButton2.Location = new System.Drawing.Point(211, 51);
-            this.simpleButton2.Name = "simpleButton2";
-            this.simpleButton2.Size = new System.Drawing.Size(138, 40);
-            this.simpleButton2.TabIndex = 61;
-            this.simpleButton2.Text = "Change Payment";
+            this.btnChangePayment.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            this.btnChangePayment.Appearance.Font = new System.Drawing.Font("Tahoma", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnChangePayment.Appearance.ForeColor = System.Drawing.Color.White;
+            this.btnChangePayment.Appearance.Options.UseBackColor = true;
+            this.btnChangePayment.Appearance.Options.UseFont = true;
+            this.btnChangePayment.Appearance.Options.UseForeColor = true;
+            this.btnChangePayment.Appearance.Options.UseTextOptions = true;
+            this.btnChangePayment.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.btnChangePayment.Appearance.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
+            this.btnChangePayment.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
+            this.btnChangePayment.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
+            this.btnChangePayment.Location = new System.Drawing.Point(211, 51);
+            this.btnChangePayment.Name = "btnChangePayment";
+            this.btnChangePayment.Size = new System.Drawing.Size(138, 40);
+            this.btnChangePayment.TabIndex = 61;
+            this.btnChangePayment.Text = "Change Payment";
+            this.btnChangePayment.Click += new System.EventHandler(this.btnChangePayment_Click);
             // 
             // btnEatIn
             // 
@@ -580,7 +581,7 @@
         private DevExpress.XtraGrid.Columns.GridColumn DriverName;
         private DevExpress.XtraGrid.Columns.GridColumn Payment;
         private DevExpress.XtraEditors.PanelControl panelControl6;
-        private DevExpress.XtraEditors.SimpleButton simpleButton2;
+        private DevExpress.XtraEditors.SimpleButton btnChangePayment;
         private DevExpress.XtraEditors.SimpleButton btnEatIn;
         private DevExpress.XtraEditors.PanelControl panelControl5;
         private DevExpress.XtraEditors.SimpleButton btnAccount;
