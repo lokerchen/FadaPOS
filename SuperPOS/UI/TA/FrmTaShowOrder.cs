@@ -576,8 +576,8 @@ namespace SuperPOS.UI
             htDetail["Staff"] = CommonData.UsrBase.Any(s => s.ID == usrID) ? CommonData.UsrBase.FirstOrDefault(s => s.ID == usrID).UsrName : "";
 
             htDetail["ItemQty"] = GetItemCount(strChkOrder);
-            htDetail["SubTotal"] = lstOi.Sum(s => Convert.ToDecimal(s.ItemTotalPrice)).ToString();
-            htDetail["Total"] = lstOi.Sum(s => Convert.ToDecimal(s.ItemTotalPrice)).ToString();
+            htDetail["SubTotal"] = sTotalAmount;
+            htDetail["Total"] = sTotalAmount;
 
             return htDetail;
         }
