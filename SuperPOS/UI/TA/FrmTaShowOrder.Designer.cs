@@ -38,8 +38,8 @@
             this.btnPrtBill = new DevExpress.XtraEditors.SimpleButton();
             this.btnExit = new DevExpress.XtraEditors.SimpleButton();
             this.panelControl6 = new DevExpress.XtraEditors.PanelControl();
-            this.simpleButton4 = new DevExpress.XtraEditors.SimpleButton();
-            this.simpleButton3 = new DevExpress.XtraEditors.SimpleButton();
+            this.btnShowDriver = new DevExpress.XtraEditors.SimpleButton();
+            this.btnEditOrder = new DevExpress.XtraEditors.SimpleButton();
             this.btnChangePayment = new DevExpress.XtraEditors.SimpleButton();
             this.btnEatIn = new DevExpress.XtraEditors.SimpleButton();
             this.btnAll = new DevExpress.XtraEditors.SimpleButton();
@@ -218,8 +218,8 @@
             // 
             // panelControl6
             // 
-            this.panelControl6.Controls.Add(this.simpleButton4);
-            this.panelControl6.Controls.Add(this.simpleButton3);
+            this.panelControl6.Controls.Add(this.btnShowDriver);
+            this.panelControl6.Controls.Add(this.btnEditOrder);
             this.panelControl6.Controls.Add(this.btnChangePayment);
             this.panelControl6.Controls.Add(this.btnEatIn);
             this.panelControl6.Controls.Add(this.btnAll);
@@ -231,43 +231,44 @@
             this.panelControl6.Size = new System.Drawing.Size(652, 95);
             this.panelControl6.TabIndex = 66;
             // 
-            // simpleButton4
+            // btnShowDriver
             // 
-            this.simpleButton4.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
-            this.simpleButton4.Appearance.Font = new System.Drawing.Font("Tahoma", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.simpleButton4.Appearance.ForeColor = System.Drawing.Color.White;
-            this.simpleButton4.Appearance.Options.UseBackColor = true;
-            this.simpleButton4.Appearance.Options.UseFont = true;
-            this.simpleButton4.Appearance.Options.UseForeColor = true;
-            this.simpleButton4.Appearance.Options.UseTextOptions = true;
-            this.simpleButton4.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.simpleButton4.Appearance.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
-            this.simpleButton4.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
-            this.simpleButton4.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
-            this.simpleButton4.Location = new System.Drawing.Point(459, 51);
-            this.simpleButton4.Name = "simpleButton4";
-            this.simpleButton4.Size = new System.Drawing.Size(143, 40);
-            this.simpleButton4.TabIndex = 63;
-            this.simpleButton4.Text = "Show Driver D/C";
+            this.btnShowDriver.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            this.btnShowDriver.Appearance.Font = new System.Drawing.Font("Tahoma", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnShowDriver.Appearance.ForeColor = System.Drawing.Color.White;
+            this.btnShowDriver.Appearance.Options.UseBackColor = true;
+            this.btnShowDriver.Appearance.Options.UseFont = true;
+            this.btnShowDriver.Appearance.Options.UseForeColor = true;
+            this.btnShowDriver.Appearance.Options.UseTextOptions = true;
+            this.btnShowDriver.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.btnShowDriver.Appearance.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
+            this.btnShowDriver.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
+            this.btnShowDriver.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
+            this.btnShowDriver.Location = new System.Drawing.Point(459, 51);
+            this.btnShowDriver.Name = "btnShowDriver";
+            this.btnShowDriver.Size = new System.Drawing.Size(143, 40);
+            this.btnShowDriver.TabIndex = 63;
+            this.btnShowDriver.Text = "Show Driver D/C";
             // 
-            // simpleButton3
+            // btnEditOrder
             // 
-            this.simpleButton3.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
-            this.simpleButton3.Appearance.Font = new System.Drawing.Font("Tahoma", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.simpleButton3.Appearance.ForeColor = System.Drawing.Color.White;
-            this.simpleButton3.Appearance.Options.UseBackColor = true;
-            this.simpleButton3.Appearance.Options.UseFont = true;
-            this.simpleButton3.Appearance.Options.UseForeColor = true;
-            this.simpleButton3.Appearance.Options.UseTextOptions = true;
-            this.simpleButton3.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.simpleButton3.Appearance.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
-            this.simpleButton3.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
-            this.simpleButton3.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
-            this.simpleButton3.Location = new System.Drawing.Point(355, 51);
-            this.simpleButton3.Name = "simpleButton3";
-            this.simpleButton3.Size = new System.Drawing.Size(98, 40);
-            this.simpleButton3.TabIndex = 62;
-            this.simpleButton3.Text = "Edit Order";
+            this.btnEditOrder.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            this.btnEditOrder.Appearance.Font = new System.Drawing.Font("Tahoma", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEditOrder.Appearance.ForeColor = System.Drawing.Color.White;
+            this.btnEditOrder.Appearance.Options.UseBackColor = true;
+            this.btnEditOrder.Appearance.Options.UseFont = true;
+            this.btnEditOrder.Appearance.Options.UseForeColor = true;
+            this.btnEditOrder.Appearance.Options.UseTextOptions = true;
+            this.btnEditOrder.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.btnEditOrder.Appearance.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
+            this.btnEditOrder.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
+            this.btnEditOrder.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
+            this.btnEditOrder.Location = new System.Drawing.Point(355, 51);
+            this.btnEditOrder.Name = "btnEditOrder";
+            this.btnEditOrder.Size = new System.Drawing.Size(98, 40);
+            this.btnEditOrder.TabIndex = 62;
+            this.btnEditOrder.Text = "Edit Order";
+            this.btnEditOrder.Click += new System.EventHandler(this.btnEditOrder_Click);
             // 
             // btnChangePayment
             // 
@@ -585,8 +586,8 @@
         private DevExpress.XtraEditors.SimpleButton btnEatIn;
         private DevExpress.XtraEditors.PanelControl panelControl5;
         private DevExpress.XtraEditors.SimpleButton btnAccount;
-        private DevExpress.XtraEditors.SimpleButton simpleButton4;
-        private DevExpress.XtraEditors.SimpleButton simpleButton3;
+        private DevExpress.XtraEditors.SimpleButton btnShowDriver;
+        private DevExpress.XtraEditors.SimpleButton btnEditOrder;
         private DevExpress.XtraGrid.Columns.GridColumn DiscountPer;
         private DevExpress.XtraGrid.Columns.GridColumn Discount;
         private DevExpress.XtraGrid.Columns.GridColumn SubToal;

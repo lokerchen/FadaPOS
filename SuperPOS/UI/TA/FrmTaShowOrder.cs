@@ -589,5 +589,12 @@ namespace SuperPOS.UI
 
             frmTaPaymentShop.Show();
         }
+
+        private void btnEditOrder_Click(object sender, EventArgs e)
+        {
+            Hide();
+            FrmTaMain frmTaMain = new FrmTaMain(strChkOrder, usrID, intCusID);
+            frmTaMain.ShowDialog();
+        }
     }
 }

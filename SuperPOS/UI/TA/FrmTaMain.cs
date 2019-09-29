@@ -1399,7 +1399,7 @@ namespace SuperPOS.UI.TA
         {
             new SystemData().GetTaCheckOrder();
             TaCheckOrderInfo taCheckOrderInfo = new TaCheckOrderInfo();
-            var lstChk = CommonData.TaCheckOrder.Where(s => s.CheckCode.Equals(checkID) && s.IsPaid.Equals("N"));
+            var lstChk = CommonData.TaCheckOrder.Where(s => s.CheckCode.Equals(checkID));
             if (lstChk.Any())
             {
                 taCheckOrderInfo = lstChk.FirstOrDefault();
