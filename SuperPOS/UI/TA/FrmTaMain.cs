@@ -1091,7 +1091,7 @@ namespace SuperPOS.UI.TA
         {
             new SystemData().GetTaMenuItemOtherChoice();
 
-            var lstOther = CommonData.TaMenuItemOtherChoice.Where(s => s.MiID == mId && s.IsAutoAppend.Equals("N") && s.IsEnableChoice.Equals("Y"));
+            var lstOther = CommonData.TaMenuItemOtherChoice.Where(s => s.MiID == mId && s.IsEnableChoice.Equals("Y"));
 
             List<TaOrderItemInfo> lstMi = new List<TaOrderItemInfo>();
 
@@ -1123,7 +1123,7 @@ namespace SuperPOS.UI.TA
 
             if (isSubMenu)
             {
-                lstResult.AddRange(CommonData.TaMenuItemOtherChoice.Where(s => s.MiID == mId && s.IsAutoAppend.Equals("Y") && s.IsEnableChoice.Equals("Y")));
+                lstResult.AddRange(CommonData.TaMenuItemOtherChoice.Where(s => s.MiID == mId && s.IsEnableChoice.Equals("Y")));
             }
 
             foreach (var taMenuItemOtherChoiceInfo in lstResult)
@@ -1131,18 +1131,40 @@ namespace SuperPOS.UI.TA
                 TaOrderItemInfo taOrderItemInfo = new TaOrderItemInfo();
                 taOrderItemInfo.ItemID = "0";
                 taOrderItemInfo.ItemCode = taMenuItemOtherChoiceInfo.ID.ToString();
-                taOrderItemInfo.ItemDishName = taMenuItemOtherChoiceInfo.MiEngName;
-                taOrderItemInfo.ItemDishOtherName = taMenuItemOtherChoiceInfo.MiOtherName;
                 taOrderItemInfo.ItemQty = mQty;
-                taOrderItemInfo.ItemPrice = taMenuItemOtherChoiceInfo.MiPrice;
                 taOrderItemInfo.ItemTotalPrice = (Convert.ToInt32(mQty) * Convert.ToDecimal(taMenuItemOtherChoiceInfo.MiPrice)).ToString();
-                taOrderItemInfo.CheckCode = mCheckCode;
-                taOrderItemInfo.ItemType = PubComm.MENU_ITEM_CHILD;
-                taOrderItemInfo.ItemParent = itemId;
-                taOrderItemInfo.OrderTime = DateTime.Now.ToString();
-                taOrderItemInfo.OrderStaff = usrID;
+                if (taMenuItemOtherChoiceInfo.IsAutoAppend.Equals("Y"))
+                {
+                    treeListOrder.FocusedNode["ItemDishName"] = treeListOrder.FocusedNode["ItemDishName"] + @" " + taMenuItemOtherChoiceInfo.MiEngName;
+                    treeListOrder.FocusedNode["ItemDishOtherName"] = treeListOrder.FocusedNode["ItemDishOtherName"] + @" " + taMenuItemOtherChoiceInfo.MiOtherName;
 
-                lstMi.Add(taOrderItemInfo);
+                    treeListOrder.BeginUpdate();
+                    decimal dQty = Convert.ToDecimal(treeListOrder.FocusedNode["ItemQty"]);
+                    decimal dPrice = Convert.ToDecimal(treeListOrder.FocusedNode["ItemTotalPrice"]);
+
+                    if (dQty > 1.0m)
+                    {
+                        treeListOrder.FocusedNode["ItemTotalPrice"] = ((dPrice + Convert.ToDecimal(taMenuItemOtherChoiceInfo.MiPrice)) * dQty).ToString("0.00");
+                    }
+                    treeListOrder.EndUpdate();
+
+                    treeListOrder.ExpandAll();
+                }
+                else
+                {
+                    taOrderItemInfo.ItemDishName = taMenuItemOtherChoiceInfo.MiEngName;
+                    taOrderItemInfo.ItemDishOtherName = taMenuItemOtherChoiceInfo.MiOtherName;
+                    taOrderItemInfo.ItemPrice = taMenuItemOtherChoiceInfo.MiPrice;
+
+                    taOrderItemInfo.CheckCode = mCheckCode;
+                    taOrderItemInfo.ItemType = PubComm.MENU_ITEM_CHILD;
+                    taOrderItemInfo.ItemParent = itemId;
+                    taOrderItemInfo.OrderTime = DateTime.Now.ToString();
+                    taOrderItemInfo.OrderStaff = usrID;
+
+                    lstMi.Add(taOrderItemInfo);
+                }
+                
             }
 
             if (lstMi.Any())
@@ -1643,14 +1665,10 @@ namespace SuperPOS.UI.TA
                     taOrderItemInfo.ItemCode = taMenuItemInfo.MiDishCode;
                     //taOrderItemInfo.ItemDishName = taMenuItemInfo.MiEngName;
                     //taOrderItemInfo.ItemDishOtherName = taMenuItemInfo.MiOtherName;
-                    string sEngName = "";
-                    string sOtherName = "";
-                    decimal sPrice = 0.00m;
-                    GetOtherChoices(taMenuItemInfo.ID, out sEngName, out sOtherName, out sPrice);
                     taOrderItemInfo.ItemDishName = taMenuItemInfo.MiEngName;
                     taOrderItemInfo.ItemDishOtherName = taMenuItemInfo.MiOtherName;
+                    taOrderItemInfo.ItemPrice = (Convert.ToDecimal(taMenuItemInfo.MiRegularPrice)).ToString("0.00");
                     taOrderItemInfo.ItemQty = iQty.ToString();
-                    taOrderItemInfo.ItemPrice = (Convert.ToDecimal(taMenuItemInfo.MiRegularPrice) + sPrice).ToString("0.00");
                     taOrderItemInfo.ItemTotalPrice = (iQty * Convert.ToDecimal(taOrderItemInfo.ItemPrice)).ToString("0.00");
                     taOrderItemInfo.CheckCode = checkID;
                     taOrderItemInfo.ItemType = PubComm.MENU_ITEM_MAIN;
@@ -1705,14 +1723,10 @@ namespace SuperPOS.UI.TA
                     taOrderItemInfo.ItemCode = taMenuItemInfo.MiDishCode;
                     //taOrderItemInfo.ItemDishName = taMenuItemInfo.MiEngName;
                     //taOrderItemInfo.ItemDishOtherName = taMenuItemInfo.MiOtherName;
-                    string sEngName = "";
-                    string sOtherName = "";
-                    decimal sPrice = 0.00m;
-                    GetOtherChoices(taMenuItemInfo.ID, out sEngName, out sOtherName, out sPrice);
-                    taOrderItemInfo.ItemDishName = taMenuItemInfo.MiEngName + sEngName;
-                    taOrderItemInfo.ItemDishOtherName = taMenuItemInfo.MiOtherName + sOtherName;
+                    taOrderItemInfo.ItemDishName = taMenuItemInfo.MiEngName;
+                    taOrderItemInfo.ItemDishOtherName = taMenuItemInfo.MiOtherName;
+                    taOrderItemInfo.ItemPrice = (Convert.ToDecimal(taMenuItemInfo.MiRegularPrice)).ToString("0.00");
                     taOrderItemInfo.ItemQty = iQty.ToString();
-                    taOrderItemInfo.ItemPrice = (Convert.ToDecimal(taMenuItemInfo.MiRegularPrice) + sPrice).ToString("0.00");
                     taOrderItemInfo.ItemTotalPrice = (iQty * Convert.ToDecimal(taOrderItemInfo.ItemPrice)).ToString();
                     taOrderItemInfo.CheckCode = checkID;
                     taOrderItemInfo.ItemType = PubComm.MENU_ITEM_MAIN;
@@ -1962,7 +1976,7 @@ namespace SuperPOS.UI.TA
 
             new SystemData().GetTaMenuItemOtherChoice();
 
-            var lstOther = CommonData.TaMenuItemOtherChoice.Where(s => s.MiID == miId && s.IsAutoAppend.Equals("Y") && s.IsEnableChoice.Equals("Y"));
+            var lstOther = CommonData.TaMenuItemOtherChoice.Where(s => s.MiID == miId && s.IsEnableChoice.Equals("Y"));
 
             foreach (var taMenuItemOtherChoiceInfo in lstOther)
             {
@@ -2071,6 +2085,12 @@ namespace SuperPOS.UI.TA
         }
         #endregion
 
+        #region 订单类型变换按钮事件
+        /// <summary>
+        /// 订单类型变换按钮事件
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnType_Click(object sender, EventArgs e)
         {
             if (btnType.Text.Equals(PubComm.ORDER_TYPE_SHOP))
@@ -2092,5 +2112,6 @@ namespace SuperPOS.UI.TA
                 btnType.Text = PubComm.ORDER_TYPE_SHOP;
             }
         }
+        #endregion
     }
 }
