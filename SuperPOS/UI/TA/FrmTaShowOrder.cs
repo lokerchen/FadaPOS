@@ -124,7 +124,11 @@ namespace SuperPOS.UI
                         {
                             ID = check.ID,
                             gridOrderNo = check.CheckCode,
-                            gridPayType = check.PayOrderType,
+                            gridPayType = (GetAllPayType(check.PayTypePay1, check.PayType1) + @" "
+                                            + GetAllPayType(check.PayTypePay2, check.PayType2) + @" "
+                                            + GetAllPayType(check.PayTypePay3, check.PayType3) + @" "
+                                            + GetAllPayType(check.PayTypePay4, check.PayType4) + @" "
+                                            + GetAllPayType(check.PayTypePay5, check.PayType5)).Trim(),
                             gridOrderType = check.PayOrderType,
                             gridOrderTime = check.PayTime,
                             gridTotal = check.TotalAmount,
@@ -142,6 +146,11 @@ namespace SuperPOS.UI
             gvTaShowOrder.FocusedRowHandle = gvTaShowOrder.RowCount - 1;
         }
         #endregion
+
+        private string GetAllPayType(string s1, string s2)
+        {
+            return Convert.ToDecimal(s1) > 0.00m ? s2 : "";
+        }
 
         private void gvTaShowOrder_CustomDrawRowIndicator(object sender, DevExpress.XtraGrid.Views.Grid.RowIndicatorCustomDrawEventArgs e)
         {
