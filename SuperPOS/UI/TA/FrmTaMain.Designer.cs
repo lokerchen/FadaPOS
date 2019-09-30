@@ -44,6 +44,7 @@
             this.OrderTime = new DevExpress.XtraTreeList.Columns.TreeListColumn();
             this.OrderStaff = new DevExpress.XtraTreeList.Columns.TreeListColumn();
             this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
+            this.btnType = new DevExpress.XtraEditors.SimpleButton();
             this.panelMember = new DevExpress.XtraEditors.PanelControl();
             this.lblDiliveryFee = new DevExpress.XtraEditors.LabelControl();
             this.lblDistance = new DevExpress.XtraEditors.LabelControl();
@@ -147,7 +148,6 @@
             this.btnSearchMeal = new DevExpress.XtraEditors.SimpleButton();
             this.btnCustInfo = new DevExpress.XtraEditors.SimpleButton();
             this.btnIngredMode = new DevExpress.XtraEditors.SimpleButton();
-            this.btnType = new DevExpress.XtraEditors.SimpleButton();
             ((System.ComponentModel.ISupportInitialize)(this.treeListOrder)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemMemoEdit1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
@@ -335,6 +335,24 @@
             this.panelControl1.Name = "panelControl1";
             this.panelControl1.Size = new System.Drawing.Size(400, 770);
             this.panelControl1.TabIndex = 1;
+            // 
+            // btnType
+            // 
+            this.btnType.Appearance.BackColor = System.Drawing.Color.HotPink;
+            this.btnType.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnType.Appearance.ForeColor = System.Drawing.Color.White;
+            this.btnType.Appearance.Options.UseBackColor = true;
+            this.btnType.Appearance.Options.UseFont = true;
+            this.btnType.Appearance.Options.UseForeColor = true;
+            this.btnType.Appearance.Options.UseTextOptions = true;
+            this.btnType.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
+            this.btnType.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
+            this.btnType.Location = new System.Drawing.Point(5, 136);
+            this.btnType.Name = "btnType";
+            this.btnType.Size = new System.Drawing.Size(390, 45);
+            this.btnType.TabIndex = 33;
+            this.btnType.Text = "SHOP";
+            this.btnType.Click += new System.EventHandler(this.btnType_Click);
             // 
             // panelMember
             // 
@@ -1837,23 +1855,6 @@
             this.btnIngredMode.Text = "Ingred Mode";
             this.btnIngredMode.Visible = false;
             this.btnIngredMode.Click += new System.EventHandler(this.btnIngredMode_Click);
-            // 
-            // btnType
-            // 
-            this.btnType.Appearance.BackColor = System.Drawing.Color.HotPink;
-            this.btnType.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnType.Appearance.ForeColor = System.Drawing.Color.White;
-            this.btnType.Appearance.Options.UseBackColor = true;
-            this.btnType.Appearance.Options.UseFont = true;
-            this.btnType.Appearance.Options.UseForeColor = true;
-            this.btnType.Appearance.Options.UseTextOptions = true;
-            this.btnType.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
-            this.btnType.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
-            this.btnType.Location = new System.Drawing.Point(5, 136);
-            this.btnType.Name = "btnType";
-            this.btnType.Size = new System.Drawing.Size(390, 45);
-            this.btnType.TabIndex = 33;
-            this.btnType.Text = "SHOP";
             // 
             // FrmTaMain
             // 

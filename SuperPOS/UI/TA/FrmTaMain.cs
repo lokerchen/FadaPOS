@@ -2070,5 +2070,27 @@ namespace SuperPOS.UI.TA
             }
         }
         #endregion
+
+        private void btnType_Click(object sender, EventArgs e)
+        {
+            if (btnType.Text.Equals(PubComm.ORDER_TYPE_SHOP))
+            {
+                ORDER_TYPE = PubComm.ORDER_TYPE_DELIVERY;
+                btnType.Appearance.BackColor = Color.ForestGreen;
+                btnType.Text = PubComm.ORDER_TYPE_DELIVERY;
+            }
+            else if (btnType.Text.Equals(PubComm.ORDER_TYPE_DELIVERY))
+            {
+                ORDER_TYPE = PubComm.ORDER_TYPE_COLLECTION;
+                btnType.Appearance.BackColor = Color.Turquoise;
+                btnType.Text = PubComm.ORDER_TYPE_COLLECTION;
+            }
+            else if (btnType.Text.Equals(PubComm.ORDER_TYPE_COLLECTION))
+            {
+                ORDER_TYPE = PubComm.ORDER_TYPE_SHOP;
+                btnType.Appearance.BackColor = Color.HotPink;
+                btnType.Text = PubComm.ORDER_TYPE_SHOP;
+            }
+        }
     }
 }
