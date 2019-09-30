@@ -117,6 +117,9 @@ namespace SuperPOS.UI.TA
 
         private void btnSave_Click(object sender, EventArgs e)
         {
+            //清空模式下直接返回，不允许保存
+            if (isClear) return;
+
             #region 空判断
             if (string.IsNullOrEmpty(txtPhone.Text))
             {
@@ -250,6 +253,19 @@ namespace SuperPOS.UI.TA
         private void btnClear_Click(object sender, EventArgs e)
         {
             if (gvCompCustomer.FocusedRowHandle >= 0) isClear = true;
+
+            txtPhone.Text = "";
+            txtName.Text = "";
+            txtHouseNo.Text = "";
+            txtAddress.Text = "";
+            txtPcZone.Text = "";
+            txtDistance.Text = "";
+            luePostcode.Text = "";
+            txtDelCharge.Text = "";
+            txtReadyTime.Text = "";
+            txtIntNotes.Text = "";
+            txtNotesOnBill.Text = "";
+            chkBlackListed.Checked = false;
         }
 
         private void btnImport_Click(object sender, EventArgs e)
