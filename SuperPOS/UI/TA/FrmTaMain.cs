@@ -169,7 +169,7 @@ namespace SuperPOS.UI.TA
             {
                 if (CommonTool.ConfirmMessage("Are you sure you want to cancel the order?") == DialogResult.OK)
                 {
-                    var lstChk = CommonData.TaCheckOrder.Where(s => s.CheckCode.Equals(checkID) && s.IsPaid.Equals("N"));
+                    var lstChk = CommonData.TaCheckOrder.Where(s => s.CheckCode.Equals(checkID));
                     if (lstChk.Any())
                     {
                         TaCheckOrderInfo taCheck = lstChk.FirstOrDefault();
@@ -179,6 +179,10 @@ namespace SuperPOS.UI.TA
 
                         checkID = CommonDAL.GetCheckCode(true);
                         lblCheck.Text = checkID;
+                    }
+                    else //未存储的已点菜品列表
+                    {
+                        treeListOrder.Nodes.Clear();
                     }
                 }
             }
