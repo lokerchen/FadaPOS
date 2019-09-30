@@ -242,6 +242,8 @@ namespace SuperPOS.UI.TA
 
                 treeListOrder.ExpandAll();
 
+                treeListOrder.SetFocusedNode(treeListOrder.Nodes[treeListOrder.Nodes.Count - 1]);
+
                 isNew = false;
             }
             //加载TreeList
@@ -738,6 +740,8 @@ namespace SuperPOS.UI.TA
                 {
                     SetListNode(taMenuItemInfo, 1);
                 }
+
+                treeListOrder.SetFocusedNode(treeListOrder.Nodes[treeListOrder.Nodes.Count - 1]);
             }
         }
         #endregion
