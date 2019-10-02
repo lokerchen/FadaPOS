@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using DevExpress.XtraEditors;
 using SuperPOS.Common;
+using SuperPOS.Domain.Entities;
 
 namespace SuperPOS.UI.TA
 {
@@ -221,15 +222,20 @@ namespace SuperPOS.UI.TA
 
             if (lstMi.Any())
             {
-                txtEngName.Text = lstMi.FirstOrDefault().MiEngName;
-                txtOtherName.Text = lstMi.FirstOrDefault().MiOtherName;
+                TaMenuItemInfo taMenuItemInfo = lstMi.FirstOrDefault();
+                txtEngName.Text = taMenuItemInfo.MiEngName;
+                txtOtherName.Text = taMenuItemInfo.MiOtherName;
                 txtOriginalPrice.Text = miOldPrice;
 
-                if (string.IsNullOrEmpty(lstMi.FirstOrDefault().MiLargePrice) ||
-                    Convert.ToDecimal(lstMi.FirstOrDefault().MiLargePrice) <= 0m) miLargePrice = miOldPrice;
+                miLargePrice = string.IsNullOrEmpty(taMenuItemInfo.MiLargePrice) ||
+                               Convert.ToDecimal(taMenuItemInfo.MiLargePrice) <= 0m
+                    ? miOldPrice
+                    : taMenuItemInfo.MiLargePrice;
 
-                if (string.IsNullOrEmpty(lstMi.FirstOrDefault().MiSmallPrice) ||
-                    Convert.ToDecimal(lstMi.FirstOrDefault().MiSmallPrice) <= 0m) miSmallPrice = miOldPrice;
+                miSmallPrice = string.IsNullOrEmpty(taMenuItemInfo.MiSmallPrice) ||
+                               Convert.ToDecimal(taMenuItemInfo.MiSmallPrice) <= 0m
+                    ? miOldPrice
+                    : taMenuItemInfo.MiSmallPrice;
             }
             else 
                 Hide();
