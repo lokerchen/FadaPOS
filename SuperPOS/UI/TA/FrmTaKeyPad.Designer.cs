@@ -63,6 +63,9 @@
             this.txtDishCode = new System.Windows.Forms.TextBox();
             this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
             this.txtQty = new System.Windows.Forms.TextBox();
+            this.labelControl3 = new DevExpress.XtraEditors.LabelControl();
+            this.txtDishName = new System.Windows.Forms.TextBox();
+            this.btnExit = new DevExpress.XtraEditors.SimpleButton();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
             this.panelControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl2)).BeginInit();
@@ -71,6 +74,8 @@
             // 
             // panelControl1
             // 
+            this.panelControl1.Controls.Add(this.labelControl3);
+            this.panelControl1.Controls.Add(this.txtDishName);
             this.panelControl1.Controls.Add(this.panelControl2);
             this.panelControl1.Controls.Add(this.labelControl1);
             this.panelControl1.Controls.Add(this.txtDishCode);
@@ -78,7 +83,7 @@
             this.panelControl1.Controls.Add(this.txtQty);
             this.panelControl1.Location = new System.Drawing.Point(6, 6);
             this.panelControl1.Name = "panelControl1";
-            this.panelControl1.Size = new System.Drawing.Size(429, 405);
+            this.panelControl1.Size = new System.Drawing.Size(429, 400);
             this.panelControl1.TabIndex = 0;
             // 
             // panelControl2
@@ -112,7 +117,7 @@
             this.panelControl2.Controls.Add(this.btnQty2);
             this.panelControl2.Controls.Add(this.btn8);
             this.panelControl2.Controls.Add(this.btn7);
-            this.panelControl2.Location = new System.Drawing.Point(6, 133);
+            this.panelControl2.Location = new System.Drawing.Point(5, 130);
             this.panelControl2.Name = "panelControl2";
             this.panelControl2.Size = new System.Drawing.Size(418, 264);
             this.panelControl2.TabIndex = 55;
@@ -529,7 +534,7 @@
             // labelControl1
             // 
             this.labelControl1.Appearance.Font = new System.Drawing.Font("Tahoma", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelControl1.Location = new System.Drawing.Point(42, 28);
+            this.labelControl1.Location = new System.Drawing.Point(42, 54);
             this.labelControl1.Name = "labelControl1";
             this.labelControl1.Size = new System.Drawing.Size(110, 28);
             this.labelControl1.TabIndex = 51;
@@ -538,15 +543,16 @@
             // txtDishCode
             // 
             this.txtDishCode.Font = new System.Drawing.Font("Tahoma", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtDishCode.Location = new System.Drawing.Point(158, 21);
+            this.txtDishCode.Location = new System.Drawing.Point(158, 47);
             this.txtDishCode.Name = "txtDishCode";
             this.txtDishCode.Size = new System.Drawing.Size(212, 35);
             this.txtDishCode.TabIndex = 52;
+            this.txtDishCode.TextChanged += new System.EventHandler(this.txtDishCode_TextChanged);
             // 
             // labelControl2
             // 
             this.labelControl2.Appearance.Font = new System.Drawing.Font("Tahoma", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelControl2.Location = new System.Drawing.Point(109, 87);
+            this.labelControl2.Location = new System.Drawing.Point(109, 96);
             this.labelControl2.Name = "labelControl2";
             this.labelControl2.Size = new System.Drawing.Size(43, 28);
             this.labelControl2.TabIndex = 53;
@@ -555,17 +561,50 @@
             // txtQty
             // 
             this.txtQty.Font = new System.Drawing.Font("Tahoma", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtQty.Location = new System.Drawing.Point(158, 80);
+            this.txtQty.Location = new System.Drawing.Point(158, 89);
             this.txtQty.Name = "txtQty";
             this.txtQty.Size = new System.Drawing.Size(212, 35);
             this.txtQty.TabIndex = 54;
             this.txtQty.Text = "1";
             // 
+            // labelControl3
+            // 
+            this.labelControl3.Appearance.Font = new System.Drawing.Font("Tahoma", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelControl3.Location = new System.Drawing.Point(42, 11);
+            this.labelControl3.Name = "labelControl3";
+            this.labelControl3.Size = new System.Drawing.Size(117, 28);
+            this.labelControl3.TabIndex = 56;
+            this.labelControl3.Text = "Dish Name:";
+            // 
+            // txtDishName
+            // 
+            this.txtDishName.Font = new System.Drawing.Font("Tahoma", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtDishName.Location = new System.Drawing.Point(158, 4);
+            this.txtDishName.Name = "txtDishName";
+            this.txtDishName.Size = new System.Drawing.Size(212, 35);
+            this.txtDishName.TabIndex = 57;
+            // 
+            // btnExit
+            // 
+            this.btnExit.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btnExit.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
+            this.btnExit.Appearance.Font = new System.Drawing.Font("Tahoma", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnExit.Appearance.Options.UseBackColor = true;
+            this.btnExit.Appearance.Options.UseFont = true;
+            this.btnExit.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
+            this.btnExit.Location = new System.Drawing.Point(6, 412);
+            this.btnExit.Name = "btnExit";
+            this.btnExit.Size = new System.Drawing.Size(429, 45);
+            this.btnExit.TabIndex = 115;
+            this.btnExit.Text = "Exit";
+            this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
+            // 
             // FrmTaKeyPad
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(441, 415);
+            this.ClientSize = new System.Drawing.Size(441, 468);
+            this.Controls.Add(this.btnExit);
             this.Controls.Add(this.panelControl1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "FrmTaKeyPad";
@@ -618,5 +657,8 @@
         private System.Windows.Forms.TextBox txtDishCode;
         private DevExpress.XtraEditors.LabelControl labelControl2;
         private System.Windows.Forms.TextBox txtQty;
+        private DevExpress.XtraEditors.LabelControl labelControl3;
+        private System.Windows.Forms.TextBox txtDishName;
+        private DevExpress.XtraEditors.SimpleButton btnExit;
     }
 }

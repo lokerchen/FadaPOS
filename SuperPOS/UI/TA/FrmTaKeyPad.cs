@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using DevExpress.XtraEditors;
 using SuperPOS.Common;
+using SuperPOS.Domain.Entities;
 
 namespace SuperPOS.UI.TA
 {
@@ -16,6 +17,9 @@ namespace SuperPOS.UI.TA
     {
         //Key按钮
         private SimpleButton[] btnKey = new SimpleButton[10];
+
+        //FrmTaMain窗口
+        private FrmTaMain fTaMain = new FrmTaMain();
 
         public string DisCode
         {
@@ -31,6 +35,12 @@ namespace SuperPOS.UI.TA
 
         public FrmTaKeyPad()
         {
+            InitializeComponent();
+        }
+
+        public FrmTaKeyPad(FrmTaMain frmTaMain)
+        {
+            fTaMain = frmTaMain;
             InitializeComponent();
         }
 
@@ -124,8 +134,49 @@ namespace SuperPOS.UI.TA
 
         private void btnOK_Click(object sender, EventArgs e)
         {
+            //this.DialogResult = DialogResult.OK;
+            //Hide();
+
+            //DisCode = txtDishCode.Text;
+            //Qty = txtQty.Text;
+            if (!string.IsNullOrEmpty(txtDishCode.Text))
+            {
+                if (CommonData.TaMenuItem.Any(s => s.MiDishCode.Equals(txtDishCode.Text)))
+                {
+                    string sWord = fTaMain.iLangStatusId == PubComm.MENU_LANG_DEFAULT
+                        ? CommonData.TaMenuItem.FirstOrDefault(s => s.MiDishCode.Equals(txtDishCode.Text)).MiEngName
+                        : CommonData.TaMenuItem.FirstOrDefault(s => s.MiDishCode.Equals(txtDishCode.Text)).MiOtherName;
+                    TaMenuItemInfo taMenuItemInfo = fTaMain.GetMenuItemInfo(sWord, fTaMain.iMenuCateId,
+                        fTaMain.iMenuSetId);
+
+                    if (taMenuItemInfo != null) fTaMain.SetListNode(taMenuItemInfo, Convert.ToInt32(txtQty.Text));
+
+                    txtDishCode.Text = "";
+                    txtQty.Text = "1";
+                }
+            }
+            else
+            {
+                Hide();
+            }
+        }
+
+        private void btnExit_Click(object sender, EventArgs e)
+        {
             this.DialogResult = DialogResult.OK;
             Hide();
+        }
+
+        private void txtDishCode_TextChanged(object sender, EventArgs e)
+        {
+            var lstMenuItem = CommonData.TaMenuItem.Where(s => s.MiDishCode.Equals(txtDishCode.Text)).Take(1);
+
+            if (lstMenuItem.Any())
+            {
+                txtDishName.Text = fTaMain.iLangStatusId == PubComm.MENU_LANG_DEFAULT ? lstMenuItem.FirstOrDefault().MiEngName : lstMenuItem.FirstOrDefault().MiOtherName;
+            }
+            else
+                txtDishName.Text = "";
         }
     }
 }

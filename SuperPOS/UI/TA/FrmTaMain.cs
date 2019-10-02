@@ -31,11 +31,11 @@ namespace SuperPOS.UI.TA
         //账单号
         private string checkID = "";
         //默认语言标识状态位
-        private int iLangStatusId = PubComm.MENU_LANG_DEFAULT;
+        public int iLangStatusId = PubComm.MENU_LANG_DEFAULT;
         //菜谱ID
-        private int iMenuSetId = 0;
+        public int iMenuSetId = 0;
         //MenuCate ID
-        private int iMenuCateId = 0;
+        public int iMenuCateId = 0;
         //默认菜谱页码 iPageNum = 1;
         private int iPageNum = 1;
         //默认MenuCate iCatePageNum = 1;
@@ -1000,7 +1000,7 @@ namespace SuperPOS.UI.TA
         /// <param name="mcId">MenuCate ID</param>
         /// <param name="msId">MenuSet ID</param>
         /// <returns></returns>
-        private TaMenuItemInfo GetMenuItemInfo(string name, int mcId, int msId)
+        public TaMenuItemInfo GetMenuItemInfo(string name, int mcId, int msId)
         {
             var lstMc = CommonData.TaMenuItem;
 
@@ -1621,7 +1621,7 @@ namespace SuperPOS.UI.TA
         }
         #endregion
 
-        private void SetListNode(TaMenuItemInfo taMenuItemInfo, int iQ)
+        public void SetListNode(TaMenuItemInfo taMenuItemInfo, int iQ)
         {
             //套餐
             if (taMenuItemInfo.MiRmk.Contains("Set Meal"))
@@ -1794,24 +1794,9 @@ namespace SuperPOS.UI.TA
 
         private void btnKeypad_Click(object sender, EventArgs e)
         {
-            FrmTaKeyPad frmTaKeyPad = new FrmTaKeyPad();
+            FrmTaKeyPad frmTaKeyPad = new FrmTaKeyPad(this);
 
-            if (frmTaKeyPad.ShowDialog() == DialogResult.OK)
-            {
-                string sDishCode = frmTaKeyPad.DisCode;
-                string sQty = frmTaKeyPad.Qty;
-
-                if (!string.IsNullOrEmpty(sDishCode))
-                {
-                    if (CommonData.TaMenuItem.Any(s => s.MiDishCode.Equals(sDishCode)))
-                    {
-                        string sWord = CommonData.TaMenuItem.FirstOrDefault(s => s.MiDishCode.Equals(sDishCode)).MiEngName;
-                        TaMenuItemInfo taMenuItemInfo = GetMenuItemInfo(sWord, iMenuCateId, iMenuSetId);
-
-                        SetListNode(taMenuItemInfo, Convert.ToInt32(sQty));
-                    }
-                }
-            }
+            frmTaKeyPad.ShowDialog();
         }
 
         private void treeListOrder_DoubleClick(object sender, EventArgs e)
