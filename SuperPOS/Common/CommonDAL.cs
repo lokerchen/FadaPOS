@@ -341,8 +341,26 @@ namespace SuperPOS.Common
             {
                 sysValueInfo = lstValue.FirstOrDefault();
                 string sc = sysValueInfo.ValueResult;
-                if (isUpdate) sysValueInfo.ValueResult = (Convert.ToInt32(sysValueInfo.ValueResult) + 1).ToString();
-                else sysValueInfo.ValueResult = (Convert.ToInt32(sysValueInfo.ValueResult) - 1).ToString();
+                if (isUpdate)
+                {
+                    //sysValueInfo.ValueResult = (Convert.ToInt32(sysValueInfo.ValueResult) + 1).ToString();
+                    new SystemData().GetTaCheckOrder();
+                    var lstCheck = CommonData.TaCheckOrder.OrderByDescending(s => s.CheckCode)
+                                                          .Take(5);
+
+                    if (lstCheck.Any())
+                    {
+                        sc = (Convert.ToInt64(lstCheck.FirstOrDefault().CheckCode) + 1).ToString();
+                    }
+                    else
+                    {
+                        sc = sysValueInfo.ValueResult = (Convert.ToInt32(sysValueInfo.ValueResult) + 1).ToString();
+                    }
+                }
+                else
+                {
+                    sysValueInfo.ValueResult = (Convert.ToInt32(sysValueInfo.ValueResult) - 1).ToString();
+                }
                 _control.UpdateEntity(sysValueInfo);
                 return sc;
             }
