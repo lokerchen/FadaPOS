@@ -1816,7 +1816,7 @@ namespace SuperPOS.UI.TA
                     else
                         dPrice = Convert.ToDecimal(treeListOrder.FocusedNode["ItemTotalPrice"].ToString());
 
-                    FrmTaChangePrice frmTaChangePrice = new FrmTaChangePrice(treeListOrder.FocusedNode["ItemCode"].ToString(), dPrice.ToString());
+                    FrmTaChangePrice frmTaChangePrice = new FrmTaChangePrice(treeListOrder.FocusedNode["ItemCode"].ToString(), dPrice.ToString(), iLangStatusId);
 
                     string sNewPrice = dPrice.ToString();
 

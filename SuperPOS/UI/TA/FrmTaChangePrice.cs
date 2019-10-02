@@ -20,6 +20,8 @@ namespace SuperPOS.UI.TA
 
         private string txtName = "";
 
+        private int iLange = PubComm.MENU_LANG_DEFAULT;
+
         private SimpleButton[] btnMenuAttr = new SimpleButton[20];
 
         private string miLargePrice = "";
@@ -44,11 +46,12 @@ namespace SuperPOS.UI.TA
             InitializeComponent();
         }
 
-        public FrmTaChangePrice(string sId, string sPrice)
+        public FrmTaChangePrice(string sId, string sPrice, int language)
         {
             InitializeComponent();
             miID = sId;
             miOldPrice = sPrice;
+            iLange = language;
         }
 
         private void btnFree_Click(object sender, EventArgs e)
@@ -406,9 +409,9 @@ namespace SuperPOS.UI.TA
             {
                 SimpleButton btn = (SimpleButton)sender;
 
-                strMenuAttr += @" - " + btn.Text;
+                strMenuAttr += btn.Text;
 
-                txtEngName.Text += @" - " + btn.Text;
+                txtEngName.Text += btn.Text;
             }
         }
 
