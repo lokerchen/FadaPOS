@@ -596,7 +596,9 @@ namespace SuperPOS.UI
         {
             FrmTaPaymentShop frmTaPaymentShop = new FrmTaPaymentShop(usrID, strChkOrder, sOrderType, SetPrtInfo(CommonData.TaOrderItem.Where(s => s.CheckCode.Equals(strChkOrder)).ToList()));
 
-            frmTaPaymentShop.Show();
+            frmTaPaymentShop.ShowDialog();
+
+            GetBindData("");
         }
 
         private void btnEditOrder_Click(object sender, EventArgs e)
