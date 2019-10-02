@@ -1135,16 +1135,16 @@ namespace SuperPOS.UI.TA
                 taOrderItemInfo.ItemTotalPrice = (Convert.ToInt32(mQty) * Convert.ToDecimal(taMenuItemOtherChoiceInfo.MiPrice)).ToString();
                 if (taMenuItemOtherChoiceInfo.IsAutoAppend.Equals("Y"))
                 {
-                    treeListOrder.FocusedNode["ItemDishName"] = treeListOrder.FocusedNode["ItemDishName"] + @" " + taMenuItemOtherChoiceInfo.MiEngName;
-                    treeListOrder.FocusedNode["ItemDishOtherName"] = treeListOrder.FocusedNode["ItemDishOtherName"] + @" " + taMenuItemOtherChoiceInfo.MiOtherName;
+                    mNode["ItemDishName"] = mNode["ItemDishName"] + @" " + taMenuItemOtherChoiceInfo.MiEngName;
+                    mNode["ItemDishOtherName"] = mNode["ItemDishOtherName"] + @" " + taMenuItemOtherChoiceInfo.MiOtherName;
 
                     treeListOrder.BeginUpdate();
-                    decimal dQty = Convert.ToDecimal(treeListOrder.FocusedNode["ItemQty"]);
-                    decimal dPrice = Convert.ToDecimal(treeListOrder.FocusedNode["ItemTotalPrice"]);
+                    decimal dQty = Convert.ToDecimal(mNode["ItemQty"]);
+                    decimal dPrice = Convert.ToDecimal(mNode["ItemTotalPrice"]);
 
                     if (dQty > 1.0m)
                     {
-                        treeListOrder.FocusedNode["ItemTotalPrice"] = ((dPrice + Convert.ToDecimal(taMenuItemOtherChoiceInfo.MiPrice)) * dQty).ToString("0.00");
+                        mNode["ItemTotalPrice"] = ((dPrice + Convert.ToDecimal(taMenuItemOtherChoiceInfo.MiPrice)) * dQty).ToString("0.00");
                     }
                     treeListOrder.EndUpdate();
 
