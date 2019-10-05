@@ -68,6 +68,23 @@ namespace SuperPOS.UI.TA
             BindLuePostCode();
             BindData(cusNum);
             //gvCompCustomer.BestFitColumns();
+
+            if (string.IsNullOrEmpty(cusNum))
+            {
+                txtPhone.Text = "";
+                txtName.Text = "";
+                txtHouseNo.Text = "";
+                txtAddress.Text = "";
+                txtPcZone.Text = "";
+                txtDistance.Text = "";
+                luePostcode.Text = "";
+                txtDelCharge.Text = "";
+                txtReadyTime.Text = "";
+                txtIntNotes.Text = "";
+                txtNotesOnBill.Text = "";
+                chkBlackListed.Checked = false;
+            }
+
             asfc.controllInitializeSize(this);
         }
 
@@ -94,7 +111,7 @@ namespace SuperPOS.UI.TA
             new SystemData().GetTaCustomer();
 
             gridControlCustomer.DataSource = string.IsNullOrEmpty(sPhone) ? CommonData.TaCustomer.ToList() : CommonData.TaCustomer.Where(s => s.cusPhone.Equals(sPhone)).ToList();
-            gvCompCustomer.FocusedRowHandle = gvCompCustomer.RowCount - 1;
+            if (!string.IsNullOrEmpty(cusNum)) gvCompCustomer.FocusedRowHandle = gvCompCustomer.RowCount - 1;
         }
 
         private void btnNew_Click(object sender, EventArgs e)
@@ -291,17 +308,21 @@ namespace SuperPOS.UI.TA
                 if (isClear) taCustomerInfo = null;
                 else
                 {
-                    taCustomerInfo.cusPhone = gvCompCustomer.GetRowCellValue(gvCompCustomer.FocusedRowHandle, "cusPhone") == null ? "" : gvCompCustomer.GetRowCellValue(gvCompCustomer.FocusedRowHandle, "cusPhone").ToString();
-                    taCustomerInfo.cusName = gvCompCustomer.GetRowCellValue(gvCompCustomer.FocusedRowHandle, "cusName") == null ? "" : gvCompCustomer.GetRowCellValue(gvCompCustomer.FocusedRowHandle, "cusName").ToString();
-                    taCustomerInfo.cusHouseNo = gvCompCustomer.GetRowCellValue(gvCompCustomer.FocusedRowHandle, "cusHouseNo") == null ? "" : gvCompCustomer.GetRowCellValue(gvCompCustomer.FocusedRowHandle, "cusHouseNo").ToString();
-                    taCustomerInfo.cusAddr = gvCompCustomer.GetRowCellValue(gvCompCustomer.FocusedRowHandle, "cusAddr") == null ? "" : gvCompCustomer.GetRowCellValue(gvCompCustomer.FocusedRowHandle, "cusAddr").ToString();
-                    taCustomerInfo.cusPostcode = gvCompCustomer.GetRowCellValue(gvCompCustomer.FocusedRowHandle, "cusPostcode") == null ? "" : gvCompCustomer.GetRowCellValue(gvCompCustomer.FocusedRowHandle, "cusPostcode").ToString();
-                    taCustomerInfo.cusDistance = gvCompCustomer.GetRowCellValue(gvCompCustomer.FocusedRowHandle, "cusDistance") == null ? "" : gvCompCustomer.GetRowCellValue(gvCompCustomer.FocusedRowHandle, "cusDistance").ToString();
-                    taCustomerInfo.cusPcZone = gvCompCustomer.GetRowCellValue(gvCompCustomer.FocusedRowHandle, "cusPcZone") == null ? "" : gvCompCustomer.GetRowCellValue(gvCompCustomer.FocusedRowHandle, "cusPcZone").ToString();
-                    taCustomerInfo.cusDelCharge = gvCompCustomer.GetRowCellValue(gvCompCustomer.FocusedRowHandle, "cusDelCharge") == null ? "" : gvCompCustomer.GetRowCellValue(gvCompCustomer.FocusedRowHandle, "cusDelCharge").ToString();
-                    taCustomerInfo.cusReadyTime = gvCompCustomer.GetRowCellValue(gvCompCustomer.FocusedRowHandle, "cusReadyTime") == null ? "" : gvCompCustomer.GetRowCellValue(gvCompCustomer.FocusedRowHandle, "cusReadyTime").ToString();
-                    taCustomerInfo.cusIntNotes = gvCompCustomer.GetRowCellValue(gvCompCustomer.FocusedRowHandle, "cusIntNotes") == null ? "" : gvCompCustomer.GetRowCellValue(gvCompCustomer.FocusedRowHandle, "cusIntNotes").ToString();
-                    taCustomerInfo.cusNotesOnBill = gvCompCustomer.GetRowCellValue(gvCompCustomer.FocusedRowHandle, "cusNotesOnBill") == null ? "" : gvCompCustomer.GetRowCellValue(gvCompCustomer.FocusedRowHandle, "cusNotesOnBill").ToString();
+                    if (string.IsNullOrEmpty(cusNum)) taCustomerInfo = null;
+                    else
+                    {
+                        taCustomerInfo.cusPhone = gvCompCustomer.GetRowCellValue(gvCompCustomer.FocusedRowHandle, "cusPhone") == null ? "" : gvCompCustomer.GetRowCellValue(gvCompCustomer.FocusedRowHandle, "cusPhone").ToString();
+                        taCustomerInfo.cusName = gvCompCustomer.GetRowCellValue(gvCompCustomer.FocusedRowHandle, "cusName") == null ? "" : gvCompCustomer.GetRowCellValue(gvCompCustomer.FocusedRowHandle, "cusName").ToString();
+                        taCustomerInfo.cusHouseNo = gvCompCustomer.GetRowCellValue(gvCompCustomer.FocusedRowHandle, "cusHouseNo") == null ? "" : gvCompCustomer.GetRowCellValue(gvCompCustomer.FocusedRowHandle, "cusHouseNo").ToString();
+                        taCustomerInfo.cusAddr = gvCompCustomer.GetRowCellValue(gvCompCustomer.FocusedRowHandle, "cusAddr") == null ? "" : gvCompCustomer.GetRowCellValue(gvCompCustomer.FocusedRowHandle, "cusAddr").ToString();
+                        taCustomerInfo.cusPostcode = gvCompCustomer.GetRowCellValue(gvCompCustomer.FocusedRowHandle, "cusPostcode") == null ? "" : gvCompCustomer.GetRowCellValue(gvCompCustomer.FocusedRowHandle, "cusPostcode").ToString();
+                        taCustomerInfo.cusDistance = gvCompCustomer.GetRowCellValue(gvCompCustomer.FocusedRowHandle, "cusDistance") == null ? "" : gvCompCustomer.GetRowCellValue(gvCompCustomer.FocusedRowHandle, "cusDistance").ToString();
+                        taCustomerInfo.cusPcZone = gvCompCustomer.GetRowCellValue(gvCompCustomer.FocusedRowHandle, "cusPcZone") == null ? "" : gvCompCustomer.GetRowCellValue(gvCompCustomer.FocusedRowHandle, "cusPcZone").ToString();
+                        taCustomerInfo.cusDelCharge = gvCompCustomer.GetRowCellValue(gvCompCustomer.FocusedRowHandle, "cusDelCharge") == null ? "" : gvCompCustomer.GetRowCellValue(gvCompCustomer.FocusedRowHandle, "cusDelCharge").ToString();
+                        taCustomerInfo.cusReadyTime = gvCompCustomer.GetRowCellValue(gvCompCustomer.FocusedRowHandle, "cusReadyTime") == null ? "" : gvCompCustomer.GetRowCellValue(gvCompCustomer.FocusedRowHandle, "cusReadyTime").ToString();
+                        taCustomerInfo.cusIntNotes = gvCompCustomer.GetRowCellValue(gvCompCustomer.FocusedRowHandle, "cusIntNotes") == null ? "" : gvCompCustomer.GetRowCellValue(gvCompCustomer.FocusedRowHandle, "cusIntNotes").ToString();
+                        taCustomerInfo.cusNotesOnBill = gvCompCustomer.GetRowCellValue(gvCompCustomer.FocusedRowHandle, "cusNotesOnBill") == null ? "" : gvCompCustomer.GetRowCellValue(gvCompCustomer.FocusedRowHandle, "cusNotesOnBill").ToString();
+                    }
                 }
             }
             
@@ -395,6 +416,25 @@ namespace SuperPOS.UI.TA
                     txtAddress.Text = taPostcodeSetInfo.PCAddr;
                 }
             }
+        }
+
+        private void gvCompCustomer_RowClick(object sender, DevExpress.XtraGrid.Views.Grid.RowClickEventArgs e)
+        {
+            if (gvCompCustomer.RowCount < 1) return;
+            else gvCompCustomer.FocusedRowHandle = gvCompCustomer.GetSelectedRows()[0];
+            txtPhone.Text = gvCompCustomer.GetRowCellValue(gvCompCustomer.FocusedRowHandle, "cusPhone") == null ? "" : gvCompCustomer.GetRowCellValue(gvCompCustomer.FocusedRowHandle, "cusPhone").ToString();
+            txtName.Text = gvCompCustomer.GetRowCellValue(gvCompCustomer.FocusedRowHandle, "cusName") == null ? "" : gvCompCustomer.GetRowCellValue(gvCompCustomer.FocusedRowHandle, "cusName").ToString();
+            txtHouseNo.Text = gvCompCustomer.GetRowCellValue(gvCompCustomer.FocusedRowHandle, "cusHouseNo") == null ? "" : gvCompCustomer.GetRowCellValue(gvCompCustomer.FocusedRowHandle, "cusHouseNo").ToString();
+            txtAddress.Text = gvCompCustomer.GetRowCellValue(gvCompCustomer.FocusedRowHandle, "cusAddr") == null ? "" : gvCompCustomer.GetRowCellValue(gvCompCustomer.FocusedRowHandle, "cusAddr").ToString();
+            luePostcode.Properties.NullText = null;
+            luePostcode.Properties.NullText = gvCompCustomer.GetRowCellValue(gvCompCustomer.FocusedRowHandle, "cusPostcode") == null ? "" : gvCompCustomer.GetRowCellValue(gvCompCustomer.FocusedRowHandle, "cusPostcode").ToString();
+            txtDistance.Text = gvCompCustomer.GetRowCellValue(gvCompCustomer.FocusedRowHandle, "cusDistance") == null ? "" : gvCompCustomer.GetRowCellValue(gvCompCustomer.FocusedRowHandle, "cusDistance").ToString();
+            txtPcZone.Text = gvCompCustomer.GetRowCellValue(gvCompCustomer.FocusedRowHandle, "cusPcZone") == null ? "" : gvCompCustomer.GetRowCellValue(gvCompCustomer.FocusedRowHandle, "cusPcZone").ToString();
+            txtDelCharge.Text = gvCompCustomer.GetRowCellValue(gvCompCustomer.FocusedRowHandle, "cusDelCharge") == null ? "" : gvCompCustomer.GetRowCellValue(gvCompCustomer.FocusedRowHandle, "cusDelCharge").ToString();
+            txtReadyTime.Text = gvCompCustomer.GetRowCellValue(gvCompCustomer.FocusedRowHandle, "cusReadyTime") == null ? "" : gvCompCustomer.GetRowCellValue(gvCompCustomer.FocusedRowHandle, "cusReadyTime").ToString();
+            txtIntNotes.Text = gvCompCustomer.GetRowCellValue(gvCompCustomer.FocusedRowHandle, "cusIntNotes") == null ? "" : gvCompCustomer.GetRowCellValue(gvCompCustomer.FocusedRowHandle, "cusIntNotes").ToString();
+            txtNotesOnBill.Text = gvCompCustomer.GetRowCellValue(gvCompCustomer.FocusedRowHandle, "cusNotesOnBill") == null ? "" : gvCompCustomer.GetRowCellValue(gvCompCustomer.FocusedRowHandle, "cusNotesOnBill").ToString();
+            chkBlackListed.Checked = gvCompCustomer.GetRowCellValue(gvCompCustomer.FocusedRowHandle, "cusIsBlack").ToString().Equals("Y") ? true : false;
         }
     }
 }

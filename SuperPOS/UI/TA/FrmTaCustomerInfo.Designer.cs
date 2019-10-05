@@ -323,6 +323,7 @@
             this.gvCompCustomer.OptionsView.EnableAppearanceEvenRow = true;
             this.gvCompCustomer.OptionsView.EnableAppearanceOddRow = true;
             this.gvCompCustomer.OptionsView.ShowGroupPanel = false;
+            this.gvCompCustomer.RowClick += new DevExpress.XtraGrid.Views.Grid.RowClickEventHandler(this.gvCompCustomer_RowClick);
             this.gvCompCustomer.FocusedRowChanged += new DevExpress.XtraGrid.Views.Base.FocusedRowChangedEventHandler(this.gvCompCustomer_FocusedRowChanged);
             // 
             // ID
