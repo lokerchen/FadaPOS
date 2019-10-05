@@ -103,6 +103,35 @@
             this.label11 = new System.Windows.Forms.Label();
             this.btnExit = new DevExpress.XtraEditors.SimpleButton();
             this.btnSave = new DevExpress.XtraEditors.SimpleButton();
+            this.xtpChangeSet = new DevExpress.XtraTab.XtraTabPage();
+            this.groupBox10 = new System.Windows.Forms.GroupBox();
+            this.txtEngName = new DevExpress.XtraEditors.TextEdit();
+            this.label15 = new System.Windows.Forms.Label();
+            this.txtOtherName = new DevExpress.XtraEditors.TextEdit();
+            this.label16 = new System.Windows.Forms.Label();
+            this.txtIncrement = new DevExpress.XtraEditors.TextEdit();
+            this.label17 = new System.Windows.Forms.Label();
+            this.panelControl5 = new DevExpress.XtraEditors.PanelControl();
+            this.btnAttr20 = new DevExpress.XtraEditors.SimpleButton();
+            this.btnAttr19 = new DevExpress.XtraEditors.SimpleButton();
+            this.btnAttr18 = new DevExpress.XtraEditors.SimpleButton();
+            this.btnAttr17 = new DevExpress.XtraEditors.SimpleButton();
+            this.btnAttr16 = new DevExpress.XtraEditors.SimpleButton();
+            this.btnAttr15 = new DevExpress.XtraEditors.SimpleButton();
+            this.btnAttr14 = new DevExpress.XtraEditors.SimpleButton();
+            this.btnAttr13 = new DevExpress.XtraEditors.SimpleButton();
+            this.btnAttr12 = new DevExpress.XtraEditors.SimpleButton();
+            this.btnAttr11 = new DevExpress.XtraEditors.SimpleButton();
+            this.btnAttr10 = new DevExpress.XtraEditors.SimpleButton();
+            this.btnAttr9 = new DevExpress.XtraEditors.SimpleButton();
+            this.btnAttr8 = new DevExpress.XtraEditors.SimpleButton();
+            this.btnAttr7 = new DevExpress.XtraEditors.SimpleButton();
+            this.btnAttr6 = new DevExpress.XtraEditors.SimpleButton();
+            this.btnAttr5 = new DevExpress.XtraEditors.SimpleButton();
+            this.btnAttr4 = new DevExpress.XtraEditors.SimpleButton();
+            this.btnAttr3 = new DevExpress.XtraEditors.SimpleButton();
+            this.btnAttr2 = new DevExpress.XtraEditors.SimpleButton();
+            this.btnAttr1 = new DevExpress.XtraEditors.SimpleButton();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.xtpTaConfig)).BeginInit();
             this.xtpTaConfig.SuspendLayout();
@@ -155,6 +184,13 @@
             ((System.ComponentModel.ISupportInitialize)(this.txtDsAmountToPay1.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtDsDistanceTo1.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtDsDistanceFrom1.Properties)).BeginInit();
+            this.xtpChangeSet.SuspendLayout();
+            this.groupBox10.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.txtEngName.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtOtherName.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtIncrement.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.panelControl5)).BeginInit();
+            this.panelControl5.SuspendLayout();
             this.SuspendLayout();
             // 
             // groupBox1
@@ -180,7 +216,8 @@
             this.xtpTaConfig.TabIndex = 2;
             this.xtpTaConfig.TabPages.AddRange(new DevExpress.XtraTab.XtraTabPage[] {
             this.xtpGs,
-            this.xtpDs});
+            this.xtpDs,
+            this.xtpChangeSet});
             this.xtpTaConfig.Selected += new DevExpress.XtraTab.TabPageEventHandler(this.xtpTaConfig_Selected);
             // 
             // xtpGs
@@ -1003,6 +1040,419 @@
             this.btnSave.Text = "Save";
             this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
+            // xtpChangeSet
+            // 
+            this.xtpChangeSet.Appearance.Header.Font = new System.Drawing.Font("Tahoma", 12F);
+            this.xtpChangeSet.Appearance.Header.Options.UseFont = true;
+            this.xtpChangeSet.Controls.Add(this.groupBox10);
+            this.xtpChangeSet.Name = "xtpChangeSet";
+            this.xtpChangeSet.Size = new System.Drawing.Size(695, 558);
+            this.xtpChangeSet.Text = "Change Settings";
+            // 
+            // groupBox10
+            // 
+            this.groupBox10.Controls.Add(this.panelControl5);
+            this.groupBox10.Controls.Add(this.txtIncrement);
+            this.groupBox10.Controls.Add(this.label17);
+            this.groupBox10.Controls.Add(this.txtOtherName);
+            this.groupBox10.Controls.Add(this.label16);
+            this.groupBox10.Controls.Add(this.txtEngName);
+            this.groupBox10.Controls.Add(this.label15);
+            this.groupBox10.Location = new System.Drawing.Point(3, 3);
+            this.groupBox10.Name = "groupBox10";
+            this.groupBox10.Size = new System.Drawing.Size(689, 552);
+            this.groupBox10.TabIndex = 11;
+            this.groupBox10.TabStop = false;
+            this.groupBox10.Text = "Change Settings";
+            // 
+            // txtEngName
+            // 
+            this.txtEngName.EditValue = "";
+            this.txtEngName.Location = new System.Drawing.Point(139, 51);
+            this.txtEngName.Name = "txtEngName";
+            this.txtEngName.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 12F);
+            this.txtEngName.Properties.Appearance.Options.UseFont = true;
+            this.txtEngName.Properties.Mask.EditMask = "f0";
+            this.txtEngName.Size = new System.Drawing.Size(171, 30);
+            this.txtEngName.TabIndex = 12;
+            // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.Location = new System.Drawing.Point(38, 63);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(95, 18);
+            this.label15.TabIndex = 11;
+            this.label15.Text = "English Name";
+            // 
+            // txtOtherName
+            // 
+            this.txtOtherName.EditValue = "";
+            this.txtOtherName.Location = new System.Drawing.Point(139, 97);
+            this.txtOtherName.Name = "txtOtherName";
+            this.txtOtherName.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 12F);
+            this.txtOtherName.Properties.Appearance.Options.UseFont = true;
+            this.txtOtherName.Properties.Mask.EditMask = "f0";
+            this.txtOtherName.Size = new System.Drawing.Size(171, 30);
+            this.txtOtherName.TabIndex = 14;
+            // 
+            // label16
+            // 
+            this.label16.AutoSize = true;
+            this.label16.Location = new System.Drawing.Point(44, 109);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(89, 18);
+            this.label16.TabIndex = 13;
+            this.label16.Text = "Ohter Name";
+            // 
+            // txtIncrement
+            // 
+            this.txtIncrement.EditValue = "";
+            this.txtIncrement.Location = new System.Drawing.Point(139, 148);
+            this.txtIncrement.Name = "txtIncrement";
+            this.txtIncrement.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 12F);
+            this.txtIncrement.Properties.Appearance.Options.UseFont = true;
+            this.txtIncrement.Properties.Mask.EditMask = "f2";
+            this.txtIncrement.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Numeric;
+            this.txtIncrement.Size = new System.Drawing.Size(171, 30);
+            this.txtIncrement.TabIndex = 16;
+            // 
+            // label17
+            // 
+            this.label17.AutoSize = true;
+            this.label17.Location = new System.Drawing.Point(22, 156);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(111, 18);
+            this.label17.TabIndex = 15;
+            this.label17.Text = "Increment Price";
+            // 
+            // panelControl5
+            // 
+            this.panelControl5.Controls.Add(this.btnAttr20);
+            this.panelControl5.Controls.Add(this.btnAttr19);
+            this.panelControl5.Controls.Add(this.btnAttr18);
+            this.panelControl5.Controls.Add(this.btnAttr17);
+            this.panelControl5.Controls.Add(this.btnAttr16);
+            this.panelControl5.Controls.Add(this.btnAttr15);
+            this.panelControl5.Controls.Add(this.btnAttr14);
+            this.panelControl5.Controls.Add(this.btnAttr13);
+            this.panelControl5.Controls.Add(this.btnAttr12);
+            this.panelControl5.Controls.Add(this.btnAttr11);
+            this.panelControl5.Controls.Add(this.btnAttr10);
+            this.panelControl5.Controls.Add(this.btnAttr9);
+            this.panelControl5.Controls.Add(this.btnAttr8);
+            this.panelControl5.Controls.Add(this.btnAttr7);
+            this.panelControl5.Controls.Add(this.btnAttr6);
+            this.panelControl5.Controls.Add(this.btnAttr5);
+            this.panelControl5.Controls.Add(this.btnAttr4);
+            this.panelControl5.Controls.Add(this.btnAttr3);
+            this.panelControl5.Controls.Add(this.btnAttr2);
+            this.panelControl5.Controls.Add(this.btnAttr1);
+            this.panelControl5.Location = new System.Drawing.Point(332, 16);
+            this.panelControl5.Name = "panelControl5";
+            this.panelControl5.Size = new System.Drawing.Size(351, 469);
+            this.panelControl5.TabIndex = 17;
+            // 
+            // btnAttr20
+            // 
+            this.btnAttr20.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btnAttr20.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.btnAttr20.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAttr20.Appearance.ForeColor = System.Drawing.Color.White;
+            this.btnAttr20.Appearance.Options.UseBackColor = true;
+            this.btnAttr20.Appearance.Options.UseFont = true;
+            this.btnAttr20.Appearance.Options.UseForeColor = true;
+            this.btnAttr20.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
+            this.btnAttr20.Location = new System.Drawing.Point(178, 413);
+            this.btnAttr20.Name = "btnAttr20";
+            this.btnAttr20.Size = new System.Drawing.Size(160, 39);
+            this.btnAttr20.TabIndex = 148;
+            // 
+            // btnAttr19
+            // 
+            this.btnAttr19.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btnAttr19.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.btnAttr19.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAttr19.Appearance.ForeColor = System.Drawing.Color.White;
+            this.btnAttr19.Appearance.Options.UseBackColor = true;
+            this.btnAttr19.Appearance.Options.UseFont = true;
+            this.btnAttr19.Appearance.Options.UseForeColor = true;
+            this.btnAttr19.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
+            this.btnAttr19.Location = new System.Drawing.Point(12, 413);
+            this.btnAttr19.Name = "btnAttr19";
+            this.btnAttr19.Size = new System.Drawing.Size(160, 39);
+            this.btnAttr19.TabIndex = 147;
+            // 
+            // btnAttr18
+            // 
+            this.btnAttr18.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btnAttr18.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.btnAttr18.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAttr18.Appearance.ForeColor = System.Drawing.Color.White;
+            this.btnAttr18.Appearance.Options.UseBackColor = true;
+            this.btnAttr18.Appearance.Options.UseFont = true;
+            this.btnAttr18.Appearance.Options.UseForeColor = true;
+            this.btnAttr18.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
+            this.btnAttr18.Location = new System.Drawing.Point(178, 369);
+            this.btnAttr18.Name = "btnAttr18";
+            this.btnAttr18.Size = new System.Drawing.Size(160, 39);
+            this.btnAttr18.TabIndex = 146;
+            // 
+            // btnAttr17
+            // 
+            this.btnAttr17.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btnAttr17.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.btnAttr17.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAttr17.Appearance.ForeColor = System.Drawing.Color.White;
+            this.btnAttr17.Appearance.Options.UseBackColor = true;
+            this.btnAttr17.Appearance.Options.UseFont = true;
+            this.btnAttr17.Appearance.Options.UseForeColor = true;
+            this.btnAttr17.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
+            this.btnAttr17.Location = new System.Drawing.Point(12, 369);
+            this.btnAttr17.Name = "btnAttr17";
+            this.btnAttr17.Size = new System.Drawing.Size(160, 39);
+            this.btnAttr17.TabIndex = 145;
+            // 
+            // btnAttr16
+            // 
+            this.btnAttr16.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btnAttr16.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.btnAttr16.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAttr16.Appearance.ForeColor = System.Drawing.Color.White;
+            this.btnAttr16.Appearance.Options.UseBackColor = true;
+            this.btnAttr16.Appearance.Options.UseFont = true;
+            this.btnAttr16.Appearance.Options.UseForeColor = true;
+            this.btnAttr16.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
+            this.btnAttr16.Location = new System.Drawing.Point(178, 324);
+            this.btnAttr16.Name = "btnAttr16";
+            this.btnAttr16.Size = new System.Drawing.Size(160, 39);
+            this.btnAttr16.TabIndex = 144;
+            // 
+            // btnAttr15
+            // 
+            this.btnAttr15.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btnAttr15.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.btnAttr15.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAttr15.Appearance.ForeColor = System.Drawing.Color.White;
+            this.btnAttr15.Appearance.Options.UseBackColor = true;
+            this.btnAttr15.Appearance.Options.UseFont = true;
+            this.btnAttr15.Appearance.Options.UseForeColor = true;
+            this.btnAttr15.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
+            this.btnAttr15.Location = new System.Drawing.Point(12, 324);
+            this.btnAttr15.Name = "btnAttr15";
+            this.btnAttr15.Size = new System.Drawing.Size(160, 39);
+            this.btnAttr15.TabIndex = 143;
+            // 
+            // btnAttr14
+            // 
+            this.btnAttr14.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btnAttr14.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.btnAttr14.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAttr14.Appearance.ForeColor = System.Drawing.Color.White;
+            this.btnAttr14.Appearance.Options.UseBackColor = true;
+            this.btnAttr14.Appearance.Options.UseFont = true;
+            this.btnAttr14.Appearance.Options.UseForeColor = true;
+            this.btnAttr14.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
+            this.btnAttr14.Location = new System.Drawing.Point(178, 279);
+            this.btnAttr14.Name = "btnAttr14";
+            this.btnAttr14.Size = new System.Drawing.Size(160, 39);
+            this.btnAttr14.TabIndex = 142;
+            // 
+            // btnAttr13
+            // 
+            this.btnAttr13.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btnAttr13.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.btnAttr13.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAttr13.Appearance.ForeColor = System.Drawing.Color.White;
+            this.btnAttr13.Appearance.Options.UseBackColor = true;
+            this.btnAttr13.Appearance.Options.UseFont = true;
+            this.btnAttr13.Appearance.Options.UseForeColor = true;
+            this.btnAttr13.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
+            this.btnAttr13.Location = new System.Drawing.Point(12, 279);
+            this.btnAttr13.Name = "btnAttr13";
+            this.btnAttr13.Size = new System.Drawing.Size(160, 39);
+            this.btnAttr13.TabIndex = 141;
+            // 
+            // btnAttr12
+            // 
+            this.btnAttr12.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btnAttr12.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.btnAttr12.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAttr12.Appearance.ForeColor = System.Drawing.Color.White;
+            this.btnAttr12.Appearance.Options.UseBackColor = true;
+            this.btnAttr12.Appearance.Options.UseFont = true;
+            this.btnAttr12.Appearance.Options.UseForeColor = true;
+            this.btnAttr12.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
+            this.btnAttr12.Location = new System.Drawing.Point(178, 237);
+            this.btnAttr12.Name = "btnAttr12";
+            this.btnAttr12.Size = new System.Drawing.Size(160, 39);
+            this.btnAttr12.TabIndex = 140;
+            // 
+            // btnAttr11
+            // 
+            this.btnAttr11.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btnAttr11.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.btnAttr11.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAttr11.Appearance.ForeColor = System.Drawing.Color.White;
+            this.btnAttr11.Appearance.Options.UseBackColor = true;
+            this.btnAttr11.Appearance.Options.UseFont = true;
+            this.btnAttr11.Appearance.Options.UseForeColor = true;
+            this.btnAttr11.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
+            this.btnAttr11.Location = new System.Drawing.Point(12, 237);
+            this.btnAttr11.Name = "btnAttr11";
+            this.btnAttr11.Size = new System.Drawing.Size(160, 39);
+            this.btnAttr11.TabIndex = 139;
+            // 
+            // btnAttr10
+            // 
+            this.btnAttr10.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btnAttr10.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.btnAttr10.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAttr10.Appearance.ForeColor = System.Drawing.Color.White;
+            this.btnAttr10.Appearance.Options.UseBackColor = true;
+            this.btnAttr10.Appearance.Options.UseFont = true;
+            this.btnAttr10.Appearance.Options.UseForeColor = true;
+            this.btnAttr10.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
+            this.btnAttr10.Location = new System.Drawing.Point(178, 192);
+            this.btnAttr10.Name = "btnAttr10";
+            this.btnAttr10.Size = new System.Drawing.Size(160, 39);
+            this.btnAttr10.TabIndex = 138;
+            // 
+            // btnAttr9
+            // 
+            this.btnAttr9.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btnAttr9.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.btnAttr9.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAttr9.Appearance.ForeColor = System.Drawing.Color.White;
+            this.btnAttr9.Appearance.Options.UseBackColor = true;
+            this.btnAttr9.Appearance.Options.UseFont = true;
+            this.btnAttr9.Appearance.Options.UseForeColor = true;
+            this.btnAttr9.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
+            this.btnAttr9.Location = new System.Drawing.Point(12, 192);
+            this.btnAttr9.Name = "btnAttr9";
+            this.btnAttr9.Size = new System.Drawing.Size(160, 39);
+            this.btnAttr9.TabIndex = 137;
+            // 
+            // btnAttr8
+            // 
+            this.btnAttr8.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btnAttr8.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.btnAttr8.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAttr8.Appearance.ForeColor = System.Drawing.Color.White;
+            this.btnAttr8.Appearance.Options.UseBackColor = true;
+            this.btnAttr8.Appearance.Options.UseFont = true;
+            this.btnAttr8.Appearance.Options.UseForeColor = true;
+            this.btnAttr8.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
+            this.btnAttr8.Location = new System.Drawing.Point(178, 147);
+            this.btnAttr8.Name = "btnAttr8";
+            this.btnAttr8.Size = new System.Drawing.Size(160, 39);
+            this.btnAttr8.TabIndex = 136;
+            // 
+            // btnAttr7
+            // 
+            this.btnAttr7.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btnAttr7.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.btnAttr7.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAttr7.Appearance.ForeColor = System.Drawing.Color.White;
+            this.btnAttr7.Appearance.Options.UseBackColor = true;
+            this.btnAttr7.Appearance.Options.UseFont = true;
+            this.btnAttr7.Appearance.Options.UseForeColor = true;
+            this.btnAttr7.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
+            this.btnAttr7.Location = new System.Drawing.Point(12, 147);
+            this.btnAttr7.Name = "btnAttr7";
+            this.btnAttr7.Size = new System.Drawing.Size(160, 39);
+            this.btnAttr7.TabIndex = 135;
+            // 
+            // btnAttr6
+            // 
+            this.btnAttr6.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btnAttr6.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.btnAttr6.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAttr6.Appearance.ForeColor = System.Drawing.Color.White;
+            this.btnAttr6.Appearance.Options.UseBackColor = true;
+            this.btnAttr6.Appearance.Options.UseFont = true;
+            this.btnAttr6.Appearance.Options.UseForeColor = true;
+            this.btnAttr6.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
+            this.btnAttr6.Location = new System.Drawing.Point(178, 105);
+            this.btnAttr6.Name = "btnAttr6";
+            this.btnAttr6.Size = new System.Drawing.Size(160, 39);
+            this.btnAttr6.TabIndex = 134;
+            // 
+            // btnAttr5
+            // 
+            this.btnAttr5.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btnAttr5.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.btnAttr5.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAttr5.Appearance.ForeColor = System.Drawing.Color.White;
+            this.btnAttr5.Appearance.Options.UseBackColor = true;
+            this.btnAttr5.Appearance.Options.UseFont = true;
+            this.btnAttr5.Appearance.Options.UseForeColor = true;
+            this.btnAttr5.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
+            this.btnAttr5.Location = new System.Drawing.Point(12, 105);
+            this.btnAttr5.Name = "btnAttr5";
+            this.btnAttr5.Size = new System.Drawing.Size(160, 39);
+            this.btnAttr5.TabIndex = 133;
+            // 
+            // btnAttr4
+            // 
+            this.btnAttr4.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btnAttr4.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.btnAttr4.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAttr4.Appearance.ForeColor = System.Drawing.Color.White;
+            this.btnAttr4.Appearance.Options.UseBackColor = true;
+            this.btnAttr4.Appearance.Options.UseFont = true;
+            this.btnAttr4.Appearance.Options.UseForeColor = true;
+            this.btnAttr4.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
+            this.btnAttr4.Location = new System.Drawing.Point(178, 60);
+            this.btnAttr4.Name = "btnAttr4";
+            this.btnAttr4.Size = new System.Drawing.Size(160, 39);
+            this.btnAttr4.TabIndex = 132;
+            // 
+            // btnAttr3
+            // 
+            this.btnAttr3.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btnAttr3.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.btnAttr3.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAttr3.Appearance.ForeColor = System.Drawing.Color.White;
+            this.btnAttr3.Appearance.Options.UseBackColor = true;
+            this.btnAttr3.Appearance.Options.UseFont = true;
+            this.btnAttr3.Appearance.Options.UseForeColor = true;
+            this.btnAttr3.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
+            this.btnAttr3.Location = new System.Drawing.Point(12, 60);
+            this.btnAttr3.Name = "btnAttr3";
+            this.btnAttr3.Size = new System.Drawing.Size(160, 39);
+            this.btnAttr3.TabIndex = 131;
+            // 
+            // btnAttr2
+            // 
+            this.btnAttr2.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btnAttr2.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.btnAttr2.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAttr2.Appearance.ForeColor = System.Drawing.Color.White;
+            this.btnAttr2.Appearance.Options.UseBackColor = true;
+            this.btnAttr2.Appearance.Options.UseFont = true;
+            this.btnAttr2.Appearance.Options.UseForeColor = true;
+            this.btnAttr2.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
+            this.btnAttr2.Location = new System.Drawing.Point(178, 15);
+            this.btnAttr2.Name = "btnAttr2";
+            this.btnAttr2.Size = new System.Drawing.Size(160, 39);
+            this.btnAttr2.TabIndex = 130;
+            // 
+            // btnAttr1
+            // 
+            this.btnAttr1.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btnAttr1.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.btnAttr1.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAttr1.Appearance.ForeColor = System.Drawing.Color.White;
+            this.btnAttr1.Appearance.Options.UseBackColor = true;
+            this.btnAttr1.Appearance.Options.UseFont = true;
+            this.btnAttr1.Appearance.Options.UseForeColor = true;
+            this.btnAttr1.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
+            this.btnAttr1.Location = new System.Drawing.Point(12, 15);
+            this.btnAttr1.Name = "btnAttr1";
+            this.btnAttr1.Size = new System.Drawing.Size(160, 39);
+            this.btnAttr1.TabIndex = 129;
+            // 
             // FrmTaConf
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 18F);
@@ -1075,6 +1525,14 @@
             ((System.ComponentModel.ISupportInitialize)(this.txtDsAmountToPay1.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtDsDistanceTo1.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtDsDistanceFrom1.Properties)).EndInit();
+            this.xtpChangeSet.ResumeLayout(false);
+            this.groupBox10.ResumeLayout(false);
+            this.groupBox10.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.txtEngName.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtOtherName.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtIncrement.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.panelControl5)).EndInit();
+            this.panelControl5.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -1156,5 +1614,34 @@
         private DevExpress.XtraEditors.TextEdit txtDsDistanceFrom2;
         private DevExpress.XtraEditors.TextEdit txtPerMile;
         private DevExpress.XtraEditors.LabelControl labelControl6;
+        private DevExpress.XtraTab.XtraTabPage xtpChangeSet;
+        private System.Windows.Forms.GroupBox groupBox10;
+        private DevExpress.XtraEditors.TextEdit txtIncrement;
+        private System.Windows.Forms.Label label17;
+        private DevExpress.XtraEditors.TextEdit txtOtherName;
+        private System.Windows.Forms.Label label16;
+        private DevExpress.XtraEditors.TextEdit txtEngName;
+        private System.Windows.Forms.Label label15;
+        private DevExpress.XtraEditors.PanelControl panelControl5;
+        private DevExpress.XtraEditors.SimpleButton btnAttr20;
+        private DevExpress.XtraEditors.SimpleButton btnAttr19;
+        private DevExpress.XtraEditors.SimpleButton btnAttr18;
+        private DevExpress.XtraEditors.SimpleButton btnAttr17;
+        private DevExpress.XtraEditors.SimpleButton btnAttr16;
+        private DevExpress.XtraEditors.SimpleButton btnAttr15;
+        private DevExpress.XtraEditors.SimpleButton btnAttr14;
+        private DevExpress.XtraEditors.SimpleButton btnAttr13;
+        private DevExpress.XtraEditors.SimpleButton btnAttr12;
+        private DevExpress.XtraEditors.SimpleButton btnAttr11;
+        private DevExpress.XtraEditors.SimpleButton btnAttr10;
+        private DevExpress.XtraEditors.SimpleButton btnAttr9;
+        private DevExpress.XtraEditors.SimpleButton btnAttr8;
+        private DevExpress.XtraEditors.SimpleButton btnAttr7;
+        private DevExpress.XtraEditors.SimpleButton btnAttr6;
+        private DevExpress.XtraEditors.SimpleButton btnAttr5;
+        private DevExpress.XtraEditors.SimpleButton btnAttr4;
+        private DevExpress.XtraEditors.SimpleButton btnAttr3;
+        private DevExpress.XtraEditors.SimpleButton btnAttr2;
+        private DevExpress.XtraEditors.SimpleButton btnAttr1;
     }
 }

@@ -210,7 +210,9 @@ namespace SuperPOS.UI.TA
             int i = 0;
             foreach (var taChangeMenuAttrInfo in CommonData.TaChangeMenuAttr)
             {
-                btnMenuAttr[i].Text = taChangeMenuAttrInfo.MenuAttr;
+                btnMenuAttr[i].Text = iLange == PubComm.MENU_LANG_DEFAULT 
+                                        ? taChangeMenuAttrInfo.MenuAttrEnglishName
+                                        : taChangeMenuAttrInfo.MenuAttrOtherName;
                 btnMenuAttr[i].Click += BtnAttr_Click;
                 i++;
             }
@@ -229,6 +231,8 @@ namespace SuperPOS.UI.TA
                 txtEngName.Text = taMenuItemInfo.MiEngName;
                 txtOtherName.Text = taMenuItemInfo.MiOtherName;
                 txtOriginalPrice.Text = miOldPrice;
+                //默认价格
+                txtNewPrice.Text = miOldPrice;
 
                 miLargePrice = string.IsNullOrEmpty(taMenuItemInfo.MiLargePrice) ||
                                Convert.ToDecimal(taMenuItemInfo.MiLargePrice) <= 0m
@@ -304,7 +308,7 @@ namespace SuperPOS.UI.TA
                         sDiscount = "0";
                     }
 
-                    decimal d = Convert.ToDecimal(txtOriginalPrice.Text) * (100 - Convert.ToDecimal(sDiscount)) / 100;
+                    decimal d = Convert.ToDecimal(txtNewPrice.Text) * (100 - Convert.ToDecimal(sDiscount)) / 100;
 
                     txtNewPrice.Text = d <= 0 ? "0.00" : d.ToString();
                 }
@@ -329,7 +333,7 @@ namespace SuperPOS.UI.TA
                     else
                         sDiscount = txtDiscount.Text;
 
-                    decimal d = Convert.ToDecimal(txtOriginalPrice.Text) - Convert.ToDecimal(sDiscount);
+                    decimal d = Convert.ToDecimal(txtNewPrice.Text) - Convert.ToDecimal(sDiscount);
                     txtNewPrice.Text = d <= 0 ? "0.00" : d.ToString();
                 }
                 catch (Exception ex)
@@ -339,7 +343,7 @@ namespace SuperPOS.UI.TA
                 }
             }
 
-            txtIncrement.Text = @"0.00";
+            //txtIncrement.Text = @"0.00";
         }
 
         private void txtIncrement_EditValueChanged(object sender, EventArgs e)
@@ -364,7 +368,7 @@ namespace SuperPOS.UI.TA
                         sDiscount = "0";
                     }
 
-                    decimal d = Convert.ToDecimal(txtOriginalPrice.Text) * (100 + Convert.ToDecimal(sDiscount)) / 100;
+                    decimal d = Convert.ToDecimal(txtNewPrice.Text) * (100 + Convert.ToDecimal(sDiscount)) / 100;
 
                     txtNewPrice.Text = d <= 0 ? "0.00" : d.ToString();
                 }
@@ -389,7 +393,7 @@ namespace SuperPOS.UI.TA
                     else
                         sDiscount = txtIncrement.Text;
 
-                    decimal d = Convert.ToDecimal(txtOriginalPrice.Text) + Convert.ToDecimal(sDiscount);
+                    decimal d = Convert.ToDecimal(txtNewPrice.Text) + Convert.ToDecimal(sDiscount);
                     txtNewPrice.Text = d <= 0 ? "0.00" : d.ToString();
                 }
                 catch (Exception ex)
@@ -399,7 +403,7 @@ namespace SuperPOS.UI.TA
                 }
             }
 
-            txtDiscount.Text = @"0.00";
+            //txtDiscount.Text = @"0.00";
         }
 
         private void BtnAttr_Click(object sender, EventArgs e)
@@ -409,25 +413,115 @@ namespace SuperPOS.UI.TA
             {
                 SimpleButton btn = (SimpleButton)sender;
 
-                strMenuAttr += btn.Text;
+                strMenuAttr += @" " + btn.Text;
 
                 txtEngName.Text += btn.Text;
+
+                txtIncrement.Text = GetIncrementPrice(btn.Text, iLange);
+
+                if (string.IsNullOrEmpty(txtIncrement.Text))
+                {
+                    txtIncrement.Text = @"0.00";
+                }
+
+                //txtNewPrice.Text = (Convert.ToDecimal(txtNewPrice.Text) + Convert.ToDecimal(txtIncrement.Text)).ToString();
             }
         }
 
         private void btnLarge_Click(object sender, EventArgs e)
         {
-            txtNewPrice.Text = miLargePrice;
+            txtOriginalPrice.Text = miLargePrice;
+            //txtNewPrice.Text = (Convert.ToDecimal(miLargePrice) + Convert.ToDecimal(txtIncrement.Text)).ToString();
         }
 
         private void btnSmall_Click(object sender, EventArgs e)
         {
-            txtNewPrice.Text = miSmallPrice;
+            txtOriginalPrice.Text = miSmallPrice;
+            //txtNewPrice.Text = (Convert.ToDecimal(miSmallPrice) + Convert.ToDecimal(txtIncrement.Text)).ToString(); ;
         }
 
         private void btnReg_Click(object sender, EventArgs e)
         {
             txtNewPrice.Text = miOldPrice;
+        }
+
+        private string GetIncrementPrice(string name, int iLang)
+        {
+            var lstIp = iLang == PubComm.MENU_LANG_DEFAULT
+                ? CommonData.TaChangeMenuAttr.Where(s => s.MenuAttrEnglishName.Equals(name))
+                : CommonData.TaChangeMenuAttr.Where(s => s.MenuAttrOtherName.Equals(name));
+
+            if (lstIp.Any())
+            {
+                return lstIp.FirstOrDefault().IncrementPrice;
+            }
+            else
+                return @"";
+        }
+
+        private void txtOriginalPrice_EditValueChanged(object sender, EventArgs e)
+        {
+            decimal origPrice = 0.0m;
+            decimal discount = 0.0m;
+            decimal incrementPrice = 0.0m;
+
+            if (string.IsNullOrEmpty(txtOriginalPrice.Text)) return;
+
+            origPrice = Convert.ToDecimal(txtOriginalPrice.Text);
+
+            if (txtDiscount.Text.EndsWith("%"))
+            {
+                try
+                {
+                    string sDiscount = "";
+                    if (txtDiscount.Text.Length > 2)
+                    {
+                        sDiscount = txtDiscount.Text.Substring(0, txtDiscount.Text.Length - 1).EndsWith(".")
+                            ? txtDiscount.Text.Substring(0, txtDiscount.Text.Length - 2) + "0"
+                            : txtDiscount.Text.Substring(0, txtDiscount.Text.Length - 1);
+                    }
+                    else if (txtDiscount.Text.Length == 2)
+                    {
+                        sDiscount = txtDiscount.Text.Substring(0, txtDiscount.Text.Length - 1).EndsWith(".") ? "0" : txtDiscount.Text.Substring(0, txtDiscount.Text.Length - 1);
+                    }
+                    else
+                    {
+                        sDiscount = "0";
+                    }
+
+                    discount = Convert.ToDecimal(txtNewPrice.Text) * (100 - Convert.ToDecimal(sDiscount)) / 100;
+                }
+                catch (Exception ex)
+                {
+                    LogHelper.Error(ex.Message, ex);
+                }
+            }
+            else
+            {
+                try
+                {
+                    string sDiscount = "0";
+                    if (txtDiscount.Text.Length >= 2)
+                    {
+                        if (txtDiscount.Text.Substring(0, txtDiscount.Text.Length - 2).EndsWith("."))
+                            sDiscount = txtDiscount.Text.Substring(0, txtDiscount.Text.Length - 1) + "0";
+                        else
+                            sDiscount = txtDiscount.Text;
+                    }
+                    else
+                        sDiscount = txtDiscount.Text;
+
+                    discount = Convert.ToDecimal(sDiscount);
+                }
+                catch (Exception ex)
+                {
+                    LogHelper.Error(ex.Message, ex);
+                }
+            }
+
+            incrementPrice = Convert.ToDecimal(txtIncrement.Text);
+
+            txtNewPrice.Text = (origPrice - discount + incrementPrice).ToString("0.00");
         }
     }
 }

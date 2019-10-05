@@ -12,8 +12,16 @@ namespace SuperPOS.Domain.Entities
         [XmlElement(ElementName = "ID")]
         public virtual int ID { get; set; }
 
-        //修改菜品名时后面的内容
-        [XmlElement(ElementName = "MenuAttr")]
-        public virtual string MenuAttr { get; set; }
+        //修改菜品名时后面的英文名
+        [XmlElement(ElementName = "MenuAttrEnglishName")]
+        public virtual string MenuAttrEnglishName { get; set; }
+
+        //修改菜品名时后面的其他名
+        [XmlElement(ElementName = "MenuAttrOtherName")]
+        public virtual string MenuAttrOtherName { get; set; }
+
+        //修改菜品名时的价格
+        [XmlElement(ElementName = "IncrementPrice")]
+        public virtual string IncrementPrice { get; set; }
     }
 }

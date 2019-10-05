@@ -30,7 +30,7 @@ namespace SuperPOS.UI.TaAdmin
         private TextEdit[] txtDsDistanceTo = new TextEdit[4];
         private TextEdit[] txtDsAmountToPay = new TextEdit[4];
 
-
+        private SimpleButton[] btnMenuAttr = new SimpleButton[20];
 
         public FrmTaConf()
         {
@@ -47,6 +47,7 @@ namespace SuperPOS.UI.TaAdmin
         private void FrmTaConf_Load(object sender, EventArgs e)
         {
             this.xtpTaConfig.SelectedTabPageIndex = 0;
+
             #region Text加载
             txtGsPayType[0] = txtPayType1;
             txtGsPayType[1] = txtPayType2;
@@ -156,6 +157,60 @@ namespace SuperPOS.UI.TaAdmin
                     chkGsMenuDishCodeFontBold.Checked = taConfMenuDisplayFontInfo.IsMenuDishCodeFontBold.Equals("Y");
                     txtCategoryBtnFontSize.Text = taConfMenuDisplayFontInfo.CategBtnFontSize;
                     chkGsCategBtnFontBold.Checked = taConfMenuDisplayFontInfo.IsCategFontBold.Equals("Y");
+                }
+                #endregion
+            }
+            else if (sPagName.Equals("xtpChangeSet"))
+            {
+                #region 菜品修改后缀
+                btnMenuAttr[0] = btnAttr1;
+                btnMenuAttr[1] = btnAttr2;
+                btnMenuAttr[2] = btnAttr3;
+                btnMenuAttr[3] = btnAttr4;
+                btnMenuAttr[4] = btnAttr5;
+                btnMenuAttr[5] = btnAttr6;
+                btnMenuAttr[6] = btnAttr7;
+                btnMenuAttr[7] = btnAttr8;
+                btnMenuAttr[8] = btnAttr9;
+                btnMenuAttr[9] = btnAttr10;
+                btnMenuAttr[10] = btnAttr11;
+                btnMenuAttr[11] = btnAttr12;
+                btnMenuAttr[12] = btnAttr13;
+                btnMenuAttr[13] = btnAttr14;
+                btnMenuAttr[14] = btnAttr15;
+                btnMenuAttr[15] = btnAttr16;
+                btnMenuAttr[16] = btnAttr17;
+                btnMenuAttr[17] = btnAttr18;
+                btnMenuAttr[18] = btnAttr19;
+                btnMenuAttr[19] = btnAttr20;
+
+                new SystemData().GetTaChangeMenuAttr();
+
+                int i = 0;
+                foreach (var taChangeMenuAttrInfo in CommonData.TaChangeMenuAttr.Where(s => !string.IsNullOrEmpty(s.MenuAttrEnglishName)))
+                {
+                    btnMenuAttr[i].Text = taChangeMenuAttrInfo.MenuAttrEnglishName;
+                    btnMenuAttr[i].Click += BtnAttr_Click;
+                    i++;
+                }
+
+                if (i > 0)
+                {
+                    var lstCma = CommonData.TaChangeMenuAttr.Where(s => s.MenuAttrEnglishName.Equals(btnMenuAttr[0].Text));
+
+                    if (lstCma.Any())
+                    {
+                        TaChangeMenuAttrInfo taChangeMenuAttrInfo = lstCma.FirstOrDefault();
+
+                        txtEngName.Text = taChangeMenuAttrInfo.MenuAttrEnglishName;
+                        txtOtherName.Text = taChangeMenuAttrInfo.MenuAttrOtherName;
+                        txtIncrement.Text = taChangeMenuAttrInfo.IncrementPrice;
+                    }
+                }
+
+                for (int j = i; j < 20; j++)
+                {
+                    btnMenuAttr[j].Visible = false;
                 }
                 #endregion
             }
@@ -378,6 +433,21 @@ namespace SuperPOS.UI.TaAdmin
                 #endregion
 
                 #endregion
+
+                #region Change Settings
+                var lstIp = CommonData.TaChangeMenuAttr.Where(s => s.MenuAttrEnglishName.Equals(txtEngName.Text));
+
+                if (lstIp.Any())
+                {
+                    TaChangeMenuAttrInfo taChangeMenuAttrInfo = lstIp.FirstOrDefault();
+
+                    taChangeMenuAttrInfo.MenuAttrEnglishName = txtEngName.Text;
+                    taChangeMenuAttrInfo.MenuAttrOtherName = txtOtherName.Text;
+                    taChangeMenuAttrInfo.IncrementPrice = txtIncrement.Text;
+
+                    _control.UpdateEntity(taChangeMenuAttrInfo);
+                }
+                #endregion
             }
             catch (Exception ex) { LogHelper.Error(this.Name, ex); }
 
@@ -388,6 +458,26 @@ namespace SuperPOS.UI.TaAdmin
         private void xtpTaConfig_Selected(object sender, DevExpress.XtraTab.TabPageEventArgs e)
         {
             SetData(e.Page.Name);
+        }
+
+        private void BtnAttr_Click(object sender, EventArgs e)
+        {
+            SimpleButton btn = (SimpleButton)sender;
+            
+            if (!string.IsNullOrEmpty(btn.Text))
+            {
+                txtEngName.Text += btn.Text;
+
+                var lstIp = CommonData.TaChangeMenuAttr.Where(s => s.MenuAttrEnglishName.Equals(btn.Text));
+
+                if (lstIp.Any())
+                {
+                    TaChangeMenuAttrInfo taChangeMenuAttrInfo = lstIp.FirstOrDefault();
+                    txtEngName.Text = taChangeMenuAttrInfo.MenuAttrEnglishName;
+                    txtOtherName.Text = taChangeMenuAttrInfo.MenuAttrOtherName;
+                    txtIncrement.Text = taChangeMenuAttrInfo.IncrementPrice;
+                }
+            }
         }
     }
 }

@@ -8,7 +8,9 @@
       <generator class="native" />
     </id>
 
-    <property name="MenuAttr" column="MenuAttr" type="System.String" />
+    <property name="MenuAttrEnglishName" column="MenuAttrEnglishName" type="System.String" />
+    <property name="MenuAttrOtherName" column="MenuAttrOtherName" type="System.String" />
+    <property name="IncrementPrice" column="IncrementPrice" type="System.String" />
   </class>
 
 </hibernate-mapping>

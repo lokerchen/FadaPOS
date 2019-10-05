@@ -486,7 +486,9 @@
             this.txtIncrement.Name = "txtIncrement";
             this.txtIncrement.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtIncrement.Properties.Appearance.Options.UseFont = true;
-            this.txtIncrement.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.txtIncrement.Properties.Appearance.Options.UseTextOptions = true;
+            this.txtIncrement.Properties.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
+            this.txtIncrement.Properties.Mask.EditMask = "f2";
             this.txtIncrement.Size = new System.Drawing.Size(203, 34);
             this.txtIncrement.TabIndex = 21;
             this.txtIncrement.EditValueChanged += new System.EventHandler(this.txtIncrement_EditValueChanged);
@@ -545,6 +547,7 @@
             this.txtOriginalPrice.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.txtOriginalPrice.Size = new System.Drawing.Size(203, 34);
             this.txtOriginalPrice.TabIndex = 17;
+            this.txtOriginalPrice.EditValueChanged += new System.EventHandler(this.txtOriginalPrice_EditValueChanged);
             // 
             // panelControl2
             // 

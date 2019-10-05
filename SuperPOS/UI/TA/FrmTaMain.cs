@@ -1846,7 +1846,7 @@ namespace SuperPOS.UI.TA
 
                         if (!string.IsNullOrEmpty(sNewName))
                         {
-                            treeListOrder.FocusedNode["ItemDishName"] += sNewName;
+                            treeListOrder.FocusedNode["ItemDishName"] += " " + sNewName;
                         }
                     }
                 }
