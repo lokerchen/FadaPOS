@@ -26,6 +26,7 @@ namespace SuperPOS.UI.TA
 
         private string miLargePrice = "";
         private string miSmallPrice = "";
+        private string miRegPrice = "";
 
         private string strMenuAttr = "";
 
@@ -243,6 +244,11 @@ namespace SuperPOS.UI.TA
                                Convert.ToDecimal(taMenuItemInfo.MiSmallPrice) <= 0m
                     ? miOldPrice
                     : taMenuItemInfo.MiSmallPrice;
+
+                miRegPrice = string.IsNullOrEmpty(taMenuItemInfo.MiRegularPrice) ||
+                             Convert.ToDecimal(taMenuItemInfo.MiRegularPrice) <= 0m
+                    ? miOldPrice
+                    : taMenuItemInfo.MiRegularPrice;
             }
             else 
                 Hide();
@@ -442,7 +448,7 @@ namespace SuperPOS.UI.TA
 
         private void btnReg_Click(object sender, EventArgs e)
         {
-            txtNewPrice.Text = miOldPrice;
+            txtOriginalPrice.Text = miRegPrice;
         }
 
         private string GetIncrementPrice(string name, int iLang)
