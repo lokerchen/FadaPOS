@@ -28,12 +28,19 @@ namespace SuperPOS.UI.TA
         private string miSmallPrice = "";
         private string miRegPrice = "";
 
-        private string strMenuAttr = "";
+        private string strMenuAttrEng = "";
+        private string strMenuAttrOther = "";
 
-        public string MenuAttr
+        public string MenuAttrEng
         {
-            get { return strMenuAttr; }
-            set { MenuAttr = value; }
+            get { return strMenuAttrEng; }
+            set { MenuAttrEng = value; }
+        }
+
+        public string MenuAttrOther
+        {
+            get { return strMenuAttrOther; }
+            set { strMenuAttrOther = value; }
         }
 
         public string NewPrice
@@ -230,7 +237,6 @@ namespace SuperPOS.UI.TA
             {
                 TaMenuItemInfo taMenuItemInfo = lstMi.FirstOrDefault();
                 txtEngName.Text = taMenuItemInfo.MiEngName;
-                txtOtherName.Text = taMenuItemInfo.MiOtherName;
                 txtOriginalPrice.Text = miOldPrice;
                 //默认价格
                 txtNewPrice.Text = miOldPrice;
@@ -419,8 +425,8 @@ namespace SuperPOS.UI.TA
             {
                 SimpleButton btn = (SimpleButton)sender;
 
-                strMenuAttr += @" " + btn.Text;
-
+                strMenuAttrEng += @" " + btn.Text;
+                
                 txtEngName.Text += btn.Text;
 
                 txtIncrement.Text = GetIncrementPrice(btn.Text, iLange);
@@ -459,10 +465,12 @@ namespace SuperPOS.UI.TA
 
             if (lstIp.Any())
             {
-                return lstIp.FirstOrDefault().IncrementPrice;
+                TaChangeMenuAttrInfo taChangeMenuAttrInfo = lstIp.FirstOrDefault();
+                strMenuAttrOther = taChangeMenuAttrInfo.MenuAttrOtherName;
+                return taChangeMenuAttrInfo.IncrementPrice;
             }
             else
-                return @"";
+                return @"0.00";
         }
 
         private void txtOriginalPrice_EditValueChanged(object sender, EventArgs e)

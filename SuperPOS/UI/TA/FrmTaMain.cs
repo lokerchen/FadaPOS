@@ -59,6 +59,11 @@ namespace SuperPOS.UI.TA
 
         private AutoSizeFormClass asfc = new AutoSizeFormClass();
 
+        //存储Change Price中的中英文
+        private Dictionary<string, string> dChangePrice = new Dictionary<string, string>();
+        //存储Other Choices中的中英文
+        private Dictionary<string, string> dOtherChoice = new Dictionary<string, string>();
+
         #region 来电显示相关
         [StructLayout(LayoutKind.Sequential)]
         public struct tag_pstn_Data
@@ -289,8 +294,12 @@ namespace SuperPOS.UI.TA
                     {
                         if (CommonData.TaMenuItem.Any(s => s.MiDishCode.Equals(treeListNode["ItemCode"])))
                         {
-                            treeListNode["ItemDishName"] = CommonData.TaMenuItem.FirstOrDefault(s => s.MiDishCode.Equals(treeListNode["ItemCode"]))?.MiEngName;
+                            treeListNode["ItemDishName"] = treeListNode["ItemDishName"].ToString()
+                                                           .Replace(CommonData.TaMenuItem.FirstOrDefault(s => s.MiDishCode.Equals(treeListNode["ItemCode"]))?.MiOtherName, 
+                                                                    CommonData.TaMenuItem.FirstOrDefault(s => s.MiDishCode.Equals(treeListNode["ItemCode"]))?.MiEngName);
                         }
+
+                        treeListNode["ItemDishName"] = ModifItemOtherName(treeListNode["ItemDishName"].ToString(), iLangStatusId);
 
                         if (treeListNode.HasChildren)
                         {
@@ -320,8 +329,12 @@ namespace SuperPOS.UI.TA
                     {
                         if (CommonData.TaMenuItem.Any(s => s.MiDishCode.Equals(treeListNode["ItemCode"])))
                         {
-                            treeListNode["ItemDishName"] = CommonData.TaMenuItem.FirstOrDefault(s => s.MiDishCode.Equals(treeListNode["ItemCode"]))?.MiOtherName;
+                            treeListNode["ItemDishName"] = treeListNode["ItemDishName"].ToString()
+                                .Replace(CommonData.TaMenuItem.FirstOrDefault(s => s.MiDishCode.Equals(treeListNode["ItemCode"]))?.MiEngName,
+                                    CommonData.TaMenuItem.FirstOrDefault(s => s.MiDishCode.Equals(treeListNode["ItemCode"]))?.MiOtherName);
                         }
+
+                        treeListNode["ItemDishName"] = ModifItemOtherName(treeListNode["ItemDishName"].ToString(), iLangStatusId);
 
                         if (treeListNode.HasChildren)
                         {
@@ -1135,6 +1148,9 @@ namespace SuperPOS.UI.TA
                 taOrderItemInfo.ItemTotalPrice = (Convert.ToInt32(mQty) * Convert.ToDecimal(taMenuItemOtherChoiceInfo.MiPrice)).ToString();
                 if (taMenuItemOtherChoiceInfo.IsAutoAppend.Equals("Y"))
                 {
+                    //为语言转换做数据存储
+                    dOtherChoice.Add(taMenuItemOtherChoiceInfo.MiEngName, taMenuItemOtherChoiceInfo.MiOtherName);
+
                     mNode["ItemDishName"] = mNode["ItemDishName"] + @" " + taMenuItemOtherChoiceInfo.MiEngName;
                     mNode["ItemDishOtherName"] = mNode["ItemDishOtherName"] + @" " + taMenuItemOtherChoiceInfo.MiOtherName;
 
@@ -1820,12 +1836,14 @@ namespace SuperPOS.UI.TA
 
                     string sNewPrice = dPrice.ToString();
 
-                    string sNewName = "";
+                    string sNewEngName = "";
+                    string sNewOtherName = "";
 
                     if (frmTaChangePrice.ShowDialog() == DialogResult.OK)
                     {
                         sNewPrice = frmTaChangePrice.NewPrice;
-                        sNewName = frmTaChangePrice.MenuAttr;
+                        sNewEngName = frmTaChangePrice.MenuAttrEng;
+                        sNewOtherName = frmTaChangePrice.MenuAttrOther;
 
                         if (!string.IsNullOrEmpty(sNewPrice))
                         {
@@ -1844,9 +1862,10 @@ namespace SuperPOS.UI.TA
                             }
                         }
 
-                        if (!string.IsNullOrEmpty(sNewName))
+                        if (!string.IsNullOrEmpty(sNewEngName))
                         {
-                            treeListOrder.FocusedNode["ItemDishName"] += " " + sNewName;
+                            dChangePrice.Add(sNewEngName, sNewOtherName);
+                            treeListOrder.FocusedNode["ItemDishName"] += " " + sNewEngName;
                         }
                     }
                 }
@@ -2096,6 +2115,35 @@ namespace SuperPOS.UI.TA
                 btnType.Appearance.BackColor = Color.HotPink;
                 btnType.Text = PubComm.ORDER_TYPE_SHOP;
             }
+        }
+        #endregion
+
+        #region 替换菜品名称中的部分附加值
+        /// <summary>
+        /// 替换菜品名称中的部分附加值
+        /// </summary>
+        /// <param name="itemname">原菜品名</param>
+        /// <param name="iLang">语言标识</param>
+        /// <returns></returns>
+        private string ModifItemOtherName(string itemname, int iLang)
+        {
+            string modItemName = itemname;
+
+            foreach (KeyValuePair<string, string> keyValuePair in dChangePrice)
+            {
+                modItemName = iLang == PubComm.MENU_LANG_DEFAULT
+                                ? modItemName.Replace(keyValuePair.Value, keyValuePair.Key)
+                                : modItemName.Replace(keyValuePair.Key, keyValuePair.Value);
+            }
+
+            foreach (KeyValuePair<string, string> keyValuePair in dOtherChoice)
+            {
+                modItemName = iLang == PubComm.MENU_LANG_DEFAULT
+                                ? modItemName.Replace(keyValuePair.Value, keyValuePair.Key)
+                                : modItemName.Replace(keyValuePair.Key, keyValuePair.Value);
+            }
+
+            return modItemName;
         }
         #endregion
     }
