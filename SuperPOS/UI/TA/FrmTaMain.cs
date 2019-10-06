@@ -1142,7 +1142,7 @@ namespace SuperPOS.UI.TA
                     decimal dQty = Convert.ToDecimal(mNode["ItemQty"]);
                     decimal dPrice = Convert.ToDecimal(mNode["ItemTotalPrice"]);
 
-                    if (dQty > 1.0m)
+                    if (dQty >= 1.0m)
                     {
                         mNode["ItemTotalPrice"] = ((dPrice + Convert.ToDecimal(taMenuItemOtherChoiceInfo.MiPrice)) * dQty).ToString("0.00");
                     }
