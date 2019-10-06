@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.btnNotPaid = new DevExpress.XtraEditors.SimpleButton();
             this.groupBox5 = new System.Windows.Forms.GroupBox();
             this.btnSave = new DevExpress.XtraEditors.SimpleButton();
             this.btnPrtAll = new DevExpress.XtraEditors.SimpleButton();
@@ -76,7 +77,8 @@
             this.labelControl10 = new DevExpress.XtraEditors.LabelControl();
             this.lblTypeName = new DevExpress.XtraEditors.LabelControl();
             this.btnExit = new DevExpress.XtraEditors.SimpleButton();
-            this.btnNotPaid = new DevExpress.XtraEditors.SimpleButton();
+            this.lblCtlDiscount = new DevExpress.XtraEditors.LabelControl();
+            this.lblCtlSurcharge = new DevExpress.XtraEditors.LabelControl();
             this.groupBox1.SuspendLayout();
             this.groupBox5.SuspendLayout();
             this.groupBox4.SuspendLayout();
@@ -111,6 +113,20 @@
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Payment";
+            // 
+            // btnNotPaid
+            // 
+            this.btnNotPaid.Appearance.BackColor = System.Drawing.Color.Red;
+            this.btnNotPaid.Appearance.Font = new System.Drawing.Font("Tahoma", 14F);
+            this.btnNotPaid.Appearance.Options.UseBackColor = true;
+            this.btnNotPaid.Appearance.Options.UseFont = true;
+            this.btnNotPaid.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
+            this.btnNotPaid.Location = new System.Drawing.Point(12, 236);
+            this.btnNotPaid.Name = "btnNotPaid";
+            this.btnNotPaid.Size = new System.Drawing.Size(165, 48);
+            this.btnNotPaid.TabIndex = 52;
+            this.btnNotPaid.Text = "NOT PAID";
+            this.btnNotPaid.Click += new System.EventHandler(this.btnNotPaid_Click);
             // 
             // groupBox5
             // 
@@ -579,6 +595,8 @@
             // 
             // groupBox2
             // 
+            this.groupBox2.Controls.Add(this.lblCtlSurcharge);
+            this.groupBox2.Controls.Add(this.lblCtlDiscount);
             this.groupBox2.Controls.Add(this.txtPercentSurcharge);
             this.groupBox2.Controls.Add(this.txtPercentDiscount);
             this.groupBox2.Controls.Add(this.txtChange);
@@ -607,7 +625,7 @@
             this.txtPercentSurcharge.Properties.Appearance.Options.UseTextOptions = true;
             this.txtPercentSurcharge.Properties.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
             this.txtPercentSurcharge.Properties.Mask.EditMask = "f2";
-            this.txtPercentSurcharge.Size = new System.Drawing.Size(93, 40);
+            this.txtPercentSurcharge.Size = new System.Drawing.Size(41, 40);
             this.txtPercentSurcharge.TabIndex = 104;
             this.txtPercentSurcharge.EditValueChanged += new System.EventHandler(this.txtPercentSurcharge_EditValueChanged);
             this.txtPercentSurcharge.MouseDown += new System.Windows.Forms.MouseEventHandler(this.txtPercentSurcharge_MouseDown);
@@ -622,7 +640,7 @@
             this.txtPercentDiscount.Properties.Appearance.Options.UseTextOptions = true;
             this.txtPercentDiscount.Properties.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
             this.txtPercentDiscount.Properties.Mask.EditMask = "(\\d?\\d?\\d?) \\d\\d\\d-\\d\\d\\d\\d";
-            this.txtPercentDiscount.Size = new System.Drawing.Size(93, 40);
+            this.txtPercentDiscount.Size = new System.Drawing.Size(41, 40);
             this.txtPercentDiscount.TabIndex = 103;
             this.txtPercentDiscount.EditValueChanged += new System.EventHandler(this.txtPercentDiscount_EditValueChanged);
             this.txtPercentDiscount.MouseDown += new System.Windows.Forms.MouseEventHandler(this.txtPercentDiscount_MouseDown);
@@ -681,7 +699,7 @@
             // txtSurcharge
             // 
             this.txtSurcharge.EditValue = "0.00";
-            this.txtSurcharge.Location = new System.Drawing.Point(247, 68);
+            this.txtSurcharge.Location = new System.Drawing.Point(195, 67);
             this.txtSurcharge.Name = "txtSurcharge";
             this.txtSurcharge.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 16F);
             this.txtSurcharge.Properties.Appearance.Options.UseFont = true;
@@ -689,7 +707,7 @@
             this.txtSurcharge.Properties.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
             this.txtSurcharge.Properties.Mask.EditMask = "f2";
             this.txtSurcharge.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Numeric;
-            this.txtSurcharge.Size = new System.Drawing.Size(130, 40);
+            this.txtSurcharge.Size = new System.Drawing.Size(93, 40);
             this.txtSurcharge.TabIndex = 99;
             this.txtSurcharge.EditValueChanged += new System.EventHandler(this.txtSurcharge_EditValueChanged);
             this.txtSurcharge.MouseDown += new System.Windows.Forms.MouseEventHandler(this.txtSurcharge_MouseDown);
@@ -697,7 +715,7 @@
             // txtDiscount
             // 
             this.txtDiscount.EditValue = "0.00";
-            this.txtDiscount.Location = new System.Drawing.Point(247, 24);
+            this.txtDiscount.Location = new System.Drawing.Point(195, 24);
             this.txtDiscount.Name = "txtDiscount";
             this.txtDiscount.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 16F);
             this.txtDiscount.Properties.Appearance.Options.UseFont = true;
@@ -705,7 +723,7 @@
             this.txtDiscount.Properties.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
             this.txtDiscount.Properties.Mask.EditMask = "f2";
             this.txtDiscount.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Numeric;
-            this.txtDiscount.Size = new System.Drawing.Size(130, 40);
+            this.txtDiscount.Size = new System.Drawing.Size(93, 40);
             this.txtDiscount.TabIndex = 98;
             this.txtDiscount.EditValueChanged += new System.EventHandler(this.txtDiscount_EditValueChanged);
             this.txtDiscount.MouseDown += new System.Windows.Forms.MouseEventHandler(this.txtDiscount_MouseDown);
@@ -799,19 +817,23 @@
             this.btnExit.Text = "Exit";
             this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
             // 
-            // btnNotPaid
+            // lblCtlDiscount
             // 
-            this.btnNotPaid.Appearance.BackColor = System.Drawing.Color.Red;
-            this.btnNotPaid.Appearance.Font = new System.Drawing.Font("Tahoma", 14F);
-            this.btnNotPaid.Appearance.Options.UseBackColor = true;
-            this.btnNotPaid.Appearance.Options.UseFont = true;
-            this.btnNotPaid.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
-            this.btnNotPaid.Location = new System.Drawing.Point(12, 236);
-            this.btnNotPaid.Name = "btnNotPaid";
-            this.btnNotPaid.Size = new System.Drawing.Size(165, 48);
-            this.btnNotPaid.TabIndex = 52;
-            this.btnNotPaid.Text = "NOT PAID";
-            this.btnNotPaid.Click += new System.EventHandler(this.btnNotPaid_Click);
+            this.lblCtlDiscount.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
+            this.lblCtlDiscount.Location = new System.Drawing.Point(294, 38);
+            this.lblCtlDiscount.Name = "lblCtlDiscount";
+            this.lblCtlDiscount.Size = new System.Drawing.Size(63, 21);
+            this.lblCtlDiscount.TabIndex = 93;
+            this.lblCtlDiscount.Text = "0.00";
+            // 
+            // lblCtlSurcharge
+            // 
+            this.lblCtlSurcharge.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
+            this.lblCtlSurcharge.Location = new System.Drawing.Point(294, 82);
+            this.lblCtlSurcharge.Name = "lblCtlSurcharge";
+            this.lblCtlSurcharge.Size = new System.Drawing.Size(63, 18);
+            this.lblCtlSurcharge.TabIndex = 105;
+            this.lblCtlSurcharge.Text = "0.00";
             // 
             // FrmTaPaymentShop
             // 
@@ -900,5 +922,7 @@
         private DevExpress.XtraEditors.TextEdit txtPayTypePay5;
         private DevExpress.XtraEditors.LabelControl lblPayType5;
         private DevExpress.XtraEditors.SimpleButton btnNotPaid;
+        private DevExpress.XtraEditors.LabelControl lblCtlSurcharge;
+        private DevExpress.XtraEditors.LabelControl lblCtlDiscount;
     }
 }

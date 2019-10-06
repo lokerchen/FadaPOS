@@ -482,6 +482,8 @@ namespace SuperPOS.UI.TA
                 txtToPay.Text = @"0.00";
                 txtTendered.Text = @"0.00";
                 txtChange.Text = @"0.00";
+
+                lblCtlDiscount.Text = menuAmout.ToString("0.00");
             }
             else
             {
@@ -494,7 +496,11 @@ namespace SuperPOS.UI.TA
                 //找零
                 decimal change = Convert.ToDecimal(txtTendered.Text) - Convert.ToDecimal(txtToPay.Text);
                 txtChange.Text = change < 0 ? "0.00" : change.ToString("0.00");
+
+                lblCtlDiscount.Text = discount.ToString("0.00");
             }
+
+            lblCtlSurcharge.Text = surcharge.ToString("0.00");
 
             IsPaid = Convert.ToDecimal(txtTendered.Text) >= Convert.ToDecimal(txtToPay.Text);
         }
