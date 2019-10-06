@@ -598,68 +598,76 @@ namespace SuperPOS.UI.TA
         #region PayType Click事件
         private void lblPayType1_Click(object sender, EventArgs e)
         {
-            txtPayTypePay1.Text = txtToPay.Text;
+            txtPayTypePay1.Text = Convert.ToDecimal(txtToPay.Text) > Convert.ToDecimal(txtTendered.Text)
+                ? (Convert.ToDecimal(txtToPay.Text) - Convert.ToDecimal(txtTendered.Text)).ToString("0.00")
+                : "0.00";
 
             IsNotPaid = false;
             btnNotPaid.Appearance.BackColor = Color.Red;
 
             //if (!txtPayTypePay1.Text.Equals(txtToPay.Text)) txtPayTypePay1.Text = txtToPay.Text;
             
-            txtPayTypePay2.Text = @"0.00";
-            txtPayTypePay3.Text = @"0.00";
-            txtPayTypePay4.Text = @"0.00";
-            txtPayTypePay5.Text = @"0.00";
+            //txtPayTypePay2.Text = @"0.00";
+            //txtPayTypePay3.Text = @"0.00";
+            //txtPayTypePay4.Text = @"0.00";
+            //txtPayTypePay5.Text = @"0.00";
             RefreshAmount();
         }
 
         private void lblPayType2_Click(object sender, EventArgs e)
         {
-            txtPayTypePay2.Text = txtToPay.Text;
+            txtPayTypePay2.Text = Convert.ToDecimal(txtToPay.Text) > Convert.ToDecimal(txtTendered.Text)
+                ? (Convert.ToDecimal(txtToPay.Text) - Convert.ToDecimal(txtTendered.Text)).ToString("0.00")
+                : "0.00";
 
             IsNotPaid = false;
             btnNotPaid.Appearance.BackColor = Color.Red;
 
             //if (!txtPayTypePay2.Text.Equals(txtToPay.Text)) txtPayTypePay2.Text = txtToPay.Text;
 
-            txtPayTypePay1.Text = @"0.00";
+            //txtPayTypePay1.Text = @"0.00";
             
-            txtPayTypePay3.Text = @"0.00";
-            txtPayTypePay4.Text = @"0.00";
-            txtPayTypePay5.Text = @"0.00";
+            //txtPayTypePay3.Text = @"0.00";
+            //txtPayTypePay4.Text = @"0.00";
+            //txtPayTypePay5.Text = @"0.00";
 
             RefreshAmount();
         }
 
         private void lblPayType3_Click(object sender, EventArgs e)
         {
-            txtPayTypePay3.Text = txtToPay.Text;
+            txtPayTypePay3.Text = Convert.ToDecimal(txtToPay.Text) > Convert.ToDecimal(txtTendered.Text)
+                ? (Convert.ToDecimal(txtToPay.Text) - Convert.ToDecimal(txtTendered.Text)).ToString("0.00")
+                : "0.00";
 
             IsNotPaid = false;
             btnNotPaid.Appearance.BackColor = Color.Red;
             //if (!txtPayTypePay3.Text.Equals(txtToPay.Text)) txtPayTypePay3.Text = txtToPay.Text;
 
-            txtPayTypePay1.Text = @"0.00";
-            txtPayTypePay2.Text = @"0.00";
+            //txtPayTypePay1.Text = @"0.00";
+            //txtPayTypePay2.Text = @"0.00";
             
-            txtPayTypePay4.Text = @"0.00";
-            txtPayTypePay5.Text = @"0.00";
+            //txtPayTypePay4.Text = @"0.00";
+            //txtPayTypePay5.Text = @"0.00";
 
             RefreshAmount();
         }
 
         private void lblPayType4_Click(object sender, EventArgs e)
         {
-            txtPayTypePay4.Text = txtToPay.Text;
+            txtPayTypePay4.Text = Convert.ToDecimal(txtToPay.Text) > Convert.ToDecimal(txtTendered.Text)
+                ? (Convert.ToDecimal(txtToPay.Text) - Convert.ToDecimal(txtTendered.Text)).ToString("0.00")
+                : "0.00";
 
             IsNotPaid = false;
             btnNotPaid.Appearance.BackColor = Color.Red;
             //if (!txtPayTypePay4.Text.Equals(txtToPay.Text)) txtPayTypePay4.Text = txtToPay.Text;
 
-            txtPayTypePay1.Text = @"0.00";
-            txtPayTypePay2.Text = @"0.00";
-            txtPayTypePay3.Text = @"0.00";
+            //txtPayTypePay1.Text = @"0.00";
+            //txtPayTypePay2.Text = @"0.00";
+            //txtPayTypePay3.Text = @"0.00";
             
-            txtPayTypePay5.Text = @"0.00";
+            //txtPayTypePay5.Text = @"0.00";
 
             RefreshAmount();
         }
@@ -668,12 +676,14 @@ namespace SuperPOS.UI.TA
         {
             IsNotPaid = false;
             btnNotPaid.Appearance.BackColor = Color.Red;
-            txtPayTypePay5.Text = txtToPay.Text;
+            txtPayTypePay5.Text = Convert.ToDecimal(txtToPay.Text) > Convert.ToDecimal(txtTendered.Text)
+                ? (Convert.ToDecimal(txtToPay.Text) - Convert.ToDecimal(txtTendered.Text)).ToString("0.00")
+                : "0.00";
 
-            txtPayTypePay1.Text = @"0.00";
-            txtPayTypePay2.Text = @"0.00";
-            txtPayTypePay3.Text = @"0.00";
-            txtPayTypePay4.Text = @"0.00";
+            //txtPayTypePay1.Text = @"0.00";
+            //txtPayTypePay2.Text = @"0.00";
+            //txtPayTypePay3.Text = @"0.00";
+            //txtPayTypePay4.Text = @"0.00";
 
             RefreshAmount();
         }
