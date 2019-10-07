@@ -98,8 +98,8 @@ namespace SuperPOS.UI.TA
             {
                 if (lstTco.Any(s => s.IsPaid.Equals("N")))
                 {
-                    TaCheckOrderInfo taCheckOrder =
-                    CommonData.TaCheckOrder.FirstOrDefault(s => s.CheckCode.Equals(checkID) && s.IsPaid.Equals("N"));
+
+                    TaCheckOrderInfo taCheckOrder = lstTco.FirstOrDefault(s => s.IsPaid.Equals("N"));
 
                     txtPayTypePay1.Text = taCheckOrder.PayTypePay1;
                     txtPayTypePay2.Text = taCheckOrder.PayTypePay2;
@@ -122,8 +122,7 @@ namespace SuperPOS.UI.TA
                 }
                 else if (lstTco.Any(s => s.IsPaid.Equals("Y")))
                 {
-                    TaCheckOrderInfo taCheckOrder =
-                    CommonData.TaCheckOrder.FirstOrDefault(s => s.CheckCode.Equals(checkID) && s.IsPaid.Equals("Y"));
+                    TaCheckOrderInfo taCheckOrder = lstTco.FirstOrDefault(s => s.IsPaid.Equals("Y"));
 
                     txtPayTypePay1.Text = taCheckOrder.PayTypePay1;
                     txtPayTypePay2.Text = taCheckOrder.PayTypePay2;
@@ -259,22 +258,7 @@ namespace SuperPOS.UI.TA
             }
         }
         #endregion
-
-        #region 获得账单信息
-
-        /// <summary>
-        ///     获得账单信息
-        /// </summary>
-        /// <param name="chkId">账单编号</param>
-        private void GetChk(string chkId)
-        {
-            new SystemData().GetTaCheckOrder();
-
-            var lstChk = CommonData.TaCheckOrder.Where(s => s.CheckCode.Equals(chkId));
-        }
-
-        #endregion
-
+        
         #region 获得账单明细
 
         /// <summary>
@@ -289,7 +273,7 @@ namespace SuperPOS.UI.TA
             var lstDetail = CommonData.TaPaymentDetail.Where(s => s.CheckOrder.Equals(chkId));
 
             return lstDetail.Any()
-                ? lstDetail.Where(s => s.CheckOrder.Equals(chkId)).Sum(s => Convert.ToDecimal(s.PayAmount))
+                ? lstDetail.Sum(s => Convert.ToDecimal(s.PayAmount))
                 : 0.00m;
         }
 
