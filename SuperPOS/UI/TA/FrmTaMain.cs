@@ -64,6 +64,9 @@ namespace SuperPOS.UI.TA
         //存储Other Choices中的中英文
         private Dictionary<string, string> dOtherChoice = new Dictionary<string, string>();
 
+        //保存菜品中英文
+        private Dictionary<string, string> dItemName = new Dictionary<string, string>();
+
         #region 来电显示相关
         [StructLayout(LayoutKind.Sequential)]
         public struct tag_pstn_Data
@@ -518,7 +521,7 @@ namespace SuperPOS.UI.TA
                                 taOrderItemInfo.ItemID = "0";
                                 taOrderItemInfo.ItemCode = taExtraResult.rID.ToString();
                                 taOrderItemInfo.ItemDishName = taExtraResult.rType + " " + taExtraResult.rItemName;
-                                taOrderItemInfo.ItemDishOtherName = taExtraResult.rItemName;
+                                taOrderItemInfo.ItemDishOtherName = taExtraResult.rType + " " + taExtraResult.rItemName;
                                 taOrderItemInfo.ItemQty = sQty;
                                 taOrderItemInfo.ItemPrice = taExtraResult.rPrice;
                                 taOrderItemInfo.ItemTotalPrice = (Convert.ToDecimal(sQty) * Convert.ToDecimal(taExtraResult.rPrice)).ToString();
@@ -1832,7 +1835,19 @@ namespace SuperPOS.UI.TA
                     else
                         dPrice = Convert.ToDecimal(treeListOrder.FocusedNode["ItemTotalPrice"].ToString());
 
-                    FrmTaChangePrice frmTaChangePrice = new FrmTaChangePrice(treeListOrder.FocusedNode["ItemCode"].ToString(), dPrice.ToString(), iLangStatusId);
+                    FrmTaChangePrice frmTaChangePrice = null;
+                    if (iLangStatusId == PubComm.MENU_LANG_DEFAULT)
+                        frmTaChangePrice = new FrmTaChangePrice(treeListOrder.FocusedNode["ItemCode"].ToString(),
+                                                                             treeListOrder.FocusedNode["ItemDishName"].ToString(),
+                                                                             treeListOrder.FocusedNode["ItemDishOtherName"].ToString(),
+                                                                             dPrice.ToString(),
+                                                                             iLangStatusId);
+                    else
+                        frmTaChangePrice = new FrmTaChangePrice(treeListOrder.FocusedNode["ItemCode"].ToString(),
+                                                                             treeListOrder.FocusedNode["ItemDishOtherName"].ToString(),
+                                                                             treeListOrder.FocusedNode["ItemDishName"].ToString(),
+                                                                             dPrice.ToString(),
+                                                                             iLangStatusId);
 
                     string sNewPrice = dPrice.ToString();
 

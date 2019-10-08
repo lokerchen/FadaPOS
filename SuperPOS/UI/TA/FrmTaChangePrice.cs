@@ -20,6 +20,9 @@ namespace SuperPOS.UI.TA
 
         private string txtName = "";
 
+        private string sItemEngName = "";
+        private string sItemOtherName = "";
+
         private int iLange = PubComm.MENU_LANG_DEFAULT;
 
         private SimpleButton[] btnMenuAttr = new SimpleButton[20];
@@ -60,6 +63,16 @@ namespace SuperPOS.UI.TA
             miID = sId;
             miOldPrice = sPrice;
             iLange = language;
+        }
+
+        public FrmTaChangePrice(string sId, string itemEngName, string itemOtherName, string sPrice, int language)
+        {
+            InitializeComponent();
+            miID = sId;
+            miOldPrice = sPrice;
+            iLange = language;
+            sItemEngName = itemEngName;
+            sItemOtherName = itemOtherName;
         }
 
         private void btnFree_Click(object sender, EventArgs e)
@@ -236,7 +249,9 @@ namespace SuperPOS.UI.TA
             if (lstMi.Any())
             {
                 TaMenuItemInfo taMenuItemInfo = lstMi.FirstOrDefault();
-                txtEngName.Text = taMenuItemInfo.MiEngName;
+                txtEngName.Text = sItemEngName;
+                txtOtherName.Text = sItemOtherName;
+
                 txtOriginalPrice.Text = miOldPrice;
                 //默认价格
                 txtNewPrice.Text = miOldPrice;
