@@ -457,19 +457,20 @@ namespace SuperPOS.UI.TA
 
         private void btnLarge_Click(object sender, EventArgs e)
         {
-            txtOriginalPrice.Text = miLargePrice;
-            //txtNewPrice.Text = (Convert.ToDecimal(miLargePrice) + Convert.ToDecimal(txtIncrement.Text)).ToString();
+            //txtOriginalPrice.Text = miLargePrice;
+            txtNewPrice.Text = (Convert.ToDecimal(miLargePrice) + Convert.ToDecimal(txtIncrement.Text)).ToString();
         }
 
         private void btnSmall_Click(object sender, EventArgs e)
         {
-            txtOriginalPrice.Text = miSmallPrice;
-            //txtNewPrice.Text = (Convert.ToDecimal(miSmallPrice) + Convert.ToDecimal(txtIncrement.Text)).ToString(); ;
+            //txtOriginalPrice.Text = miSmallPrice;
+            txtNewPrice.Text = (Convert.ToDecimal(miSmallPrice) + Convert.ToDecimal(txtIncrement.Text)).ToString(); ;
         }
 
         private void btnReg_Click(object sender, EventArgs e)
         {
-            txtOriginalPrice.Text = miRegPrice;
+            //txtOriginalPrice.Text = miRegPrice;
+            txtNewPrice.Text = (Convert.ToDecimal(miRegPrice) + Convert.ToDecimal(txtIncrement.Text)).ToString(); ;
         }
 
         private string GetIncrementPrice(string name, int iLang)

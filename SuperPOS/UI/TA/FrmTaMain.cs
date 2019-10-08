@@ -1879,7 +1879,7 @@ namespace SuperPOS.UI.TA
 
                         if (!string.IsNullOrEmpty(sNewEngName))
                         {
-                            dChangePrice.Add(sNewEngName, sNewOtherName);
+                            if (!dChangePrice.ContainsKey(sNewEngName)) dChangePrice.Add(sNewEngName, sNewOtherName);
                             treeListOrder.FocusedNode["ItemDishName"] += " " + sNewEngName;
                         }
                     }
