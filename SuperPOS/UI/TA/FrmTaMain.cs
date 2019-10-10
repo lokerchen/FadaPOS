@@ -147,7 +147,7 @@ namespace SuperPOS.UI.TA
 
                 #region 保存账单
                 //Console.WriteLine(treeListOrder.Columns["ItemTotalPrice"].SummaryFooter.ToString());
-                SaveCheckOrder(lstTaOI);
+                SaveCheckOrder(lstTaOI, true);
                 #endregion
 
                 treeListOrder.Nodes.Clear();
@@ -634,7 +634,7 @@ namespace SuperPOS.UI.TA
 
             #region 保存账单
             //Console.WriteLine(treeListOrder.Columns["ItemTotalPrice"].SummaryFooter.ToString());
-            SaveCheckOrder(lstTaOI);
+            SaveCheckOrder(lstTaOI, false);
             #endregion
 
             //ORDER_TYPE_SHOP
@@ -1444,7 +1444,7 @@ namespace SuperPOS.UI.TA
 
         #region 保存账单
 
-        private void SaveCheckOrder(List<TaOrderItemInfo> lstTaOI)
+        private void SaveCheckOrder(List<TaOrderItemInfo> lstTaOI, bool isSave)
         {
             new SystemData().GetTaCheckOrder();
             TaCheckOrderInfo taCheckOrderInfo = new TaCheckOrderInfo();
@@ -1458,6 +1458,7 @@ namespace SuperPOS.UI.TA
                 taCheckOrderInfo.TotalAmount = CommonDAL.GetTotalAmount(Convert.ToDecimal(taCheckOrderInfo.MenuAmount), Convert.ToDecimal(CommonDAL.GetTaDiscount(ORDER_TYPE, Convert.ToDecimal(taCheckOrderInfo.MenuAmount)))).ToString();
                 taCheckOrderInfo.StaffID = usrID;
                 taCheckOrderInfo.PayTime = DateTime.Now.ToString();
+                taCheckOrderInfo.IsSave = isSave ? "Y" : "N";
                 _control.UpdateEntity(taCheckOrderInfo);
             }
             else
@@ -1505,6 +1506,8 @@ namespace SuperPOS.UI.TA
                 taCheckOrderInfo.DriverID = 1;
 
                 taCheckOrderInfo.IsCancel = "N";
+
+                taCheckOrderInfo.IsSave = isSave ? "Y" : "N";
 
                 _control.AddEntity(taCheckOrderInfo);
             }

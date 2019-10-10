@@ -59,6 +59,8 @@ namespace SuperPOS.UI.TA
         private string checkDiscount;
         //Discount Per
         private string checkDiscountPer;
+        //Is Save Order
+        private string checkIsSave;
 
         private readonly EntityControl _control = new EntityControl();
 
@@ -75,7 +77,7 @@ namespace SuperPOS.UI.TA
             usrID = uID;
         }
 
-        private void GetBindData(string orderType, int iDriver)
+        private void GetBindData(string orderType, int iDriver, bool isSaveOrder)
         {
             var lstDb = from check in CommonData.TaCheckOrder
                         join user in CommonData.UsrBase
@@ -102,41 +104,42 @@ namespace SuperPOS.UI.TA
                             DriverName = "",
                             MenuAmount = check.MenuAmount,
                             Discount = check.PayDiscount,
-                            DiscountPer = check.PayPerDiscount
+                            DiscountPer = check.PayPerDiscount,
+                            IsSave = check.IsSave
                         };
+
+            if (isSaveOrder)
+                lstDb = lstDb.Where(s => s.IsSave.Equals("Y"));
 
             if (iDriver != 0)
             {
-                lstDb = from check in CommonData.TaCheckOrder
+                lstDb = from db in lstDb
                         join cust in CommonData.TaCustomer
-                            on check.CustomerID equals cust.ID.ToString()
-                        join user in CommonData.UsrBase
-                            on check.StaffID equals user.ID
+                            on db.CustID equals cust.ID
                         join driver in CommonData.TaDriver
-                            on check.DriverID equals driver.ID
-                        where !check.IsPaid.Equals("Y")
-                              && !check.IsCancel.Equals("Y")
+                            on db.DriverID equals driver.ID
                         select new
                         {
-                            ID = check.ID,
-                            CheckCode = check.CheckCode,
-                            OrderTime = check.PayTime,
+                            ID = db.ID,
+                            CheckCode = db.CheckCode,
+                            OrderTime = db.OrderTime,
                             PostCode = cust.cusPostcode,
                             PostCodeZone = cust.cusPcZone,
                             Addr = cust.cusAddr,
-                            PayOrderType = check.PayOrderType,
+                            PayOrderType = db.PayOrderType,
                             CustomerName = cust.cusName,
                             CustomerPhone = cust.cusPhone,
-                            IsPaid = check.IsPaid,
-                            TotalAmount = check.TotalAmount,
-                            StaffName = user.UsrName,
-                            Paid = check.Paid,
+                            IsPaid = db.IsPaid,
+                            TotalAmount = db.TotalAmount,
+                            StaffName = db.StaffName,
+                            Paid = db.Paid,
                             CustID = cust.ID,
-                            DriverID = check.DriverID,
+                            DriverID = db.DriverID,
                             DriverName = driver.DriverName,
-                            MenuAmount = check.MenuAmount,
-                            Discount = check.PayDiscount,
-                            DiscountPer = check.PayPerDiscount
+                            MenuAmount = db.MenuAmount,
+                            Discount = db.Discount,
+                            DiscountPer = db.DiscountPer,
+                            IsSave = db.IsSave
                         };
             }
 
@@ -171,7 +174,7 @@ namespace SuperPOS.UI.TA
             systemData.GetUsrBase();
             systemData.GetTaOrderItem();
 
-            GetBindData("", 0);
+            GetBindData("", 0, false);
 
             BinLueDriver();
 
@@ -227,7 +230,8 @@ namespace SuperPOS.UI.TA
             checkDiscount = gvTaPendOrder.GetRowCellValue(gvTaPendOrder.FocusedRowHandle, "Discount").ToString();
             //DiscountPer
             checkDiscountPer = gvTaPendOrder.GetRowCellValue(gvTaPendOrder.FocusedRowHandle, "DiscountPer").ToString();
-
+            //Is Save
+            checkIsSave = gvTaPendOrder.GetRowCellValue(gvTaPendOrder.FocusedRowHandle, "IsSave").ToString();
         }
 
         private void btnPay_Click(object sender, EventArgs e)
@@ -238,7 +242,7 @@ namespace SuperPOS.UI.TA
 
                 if (frmTaPaymentShop.ShowDialog() == DialogResult.OK)
                 {
-                    if (frmTaPaymentShop.returnPaid) GetBindData("", 0);
+                    if (frmTaPaymentShop.returnPaid) GetBindData("", 0, false);
                 }
             }
             else
@@ -247,29 +251,29 @@ namespace SuperPOS.UI.TA
 
                 if (frmTaPayment.ShowDialog() == DialogResult.OK)
                 {
-                    if (frmTaPayment.returnPaid) GetBindData("", 0);
+                    if (frmTaPayment.returnPaid) GetBindData("", 0, false);
                 }
             }
         }
 
         private void btnDelivery_Click(object sender, EventArgs e)
         {
-            GetBindData(PubComm.ORDER_TYPE_DELIVERY, 0);
+            GetBindData(PubComm.ORDER_TYPE_DELIVERY, 0, false);
         }
 
         private void btnCollection_Click(object sender, EventArgs e)
         {
-            GetBindData(PubComm.ORDER_TYPE_COLLECTION, 0);
+            GetBindData(PubComm.ORDER_TYPE_COLLECTION, 0, false);
         }
 
         private void btnShop_Click(object sender, EventArgs e)
         {
-            GetBindData(PubComm.ORDER_TYPE_SHOP, 0);
+            GetBindData(PubComm.ORDER_TYPE_SHOP, 0, false);
         }
 
         private void btnAll_Click(object sender, EventArgs e)
         {
-            GetBindData("", 0);
+            GetBindData("", 0, false);
         }
 
         #region 设置打印相关信息
@@ -401,17 +405,17 @@ namespace SuperPOS.UI.TA
 
         private void btnShowAll_Click(object sender, EventArgs e)
         {
-            GetBindData("", 0);
+            GetBindData("", 0, false);
         }
 
         private void btnShowAssigned_Click(object sender, EventArgs e)
         {
-            GetBindData("", 1);
+            GetBindData("", 1, false);
         }
 
         private void btnShowUnAssigned_Click(object sender, EventArgs e)
         {
-            GetBindData("", 2);
+            GetBindData("", 2, false);
         }
 
         private void btnAssignDriver_Click(object sender, EventArgs e)
@@ -430,8 +434,9 @@ namespace SuperPOS.UI.TA
                 _control.UpdateEntity(taCheckOrderInfo);
             }
 
-            GetBindData("", 0);
+            GetBindData("", 0, false);
         }
+
         #region 绑定Driver
 
         private void BinLueDriver()
@@ -463,6 +468,16 @@ namespace SuperPOS.UI.TA
         {
             FrmTaPendOrderPreview frmTaPendOrderPreview = new FrmTaPendOrderPreview(checkCode, checkTotalAmount, checkMenuTotal, checkUsrName, checkDiscount, checkDiscountPer);
             frmTaPendOrderPreview.ShowDialog();
+        }
+
+        private void btnSaveOrder_Click(object sender, EventArgs e)
+        {
+            GetBindData("", 0, true);
+        }
+
+        private void btnNotPaid_Click(object sender, EventArgs e)
+        {
+            GetBindData("", 0, false);
         }
     }
 }

@@ -114,5 +114,9 @@ namespace SuperPOS.Domain.Entities
         //是否取消账单
         [XmlElement(ElementName = "IsCancel")]
         public virtual string IsCancel { get; set; }
+
+        //是否临时保存账单
+        [XmlElement(ElementName = "IsSave")]
+        public virtual string IsSave { get; set; }
     }
 }

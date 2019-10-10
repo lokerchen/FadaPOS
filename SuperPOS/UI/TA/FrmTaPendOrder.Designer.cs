@@ -44,6 +44,9 @@
             this.StaffName = new DevExpress.XtraGrid.Columns.GridColumn();
             this.DriverName = new DevExpress.XtraGrid.Columns.GridColumn();
             this.IsPaid = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.menuAmount = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.Discount = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.DiscountPer = new DevExpress.XtraGrid.Columns.GridColumn();
             this.btnPrtKit = new DevExpress.XtraEditors.SimpleButton();
             this.btnPrtBill = new DevExpress.XtraEditors.SimpleButton();
             this.btnPrtReceipt = new DevExpress.XtraEditors.SimpleButton();
@@ -65,9 +68,9 @@
             this.btnShowAll = new DevExpress.XtraEditors.SimpleButton();
             this.btnShowAssigned = new DevExpress.XtraEditors.SimpleButton();
             this.btnShowUnAssigned = new DevExpress.XtraEditors.SimpleButton();
-            this.menuAmount = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.Discount = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.DiscountPer = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.btnSaveOrder = new DevExpress.XtraEditors.SimpleButton();
+            this.btnNotPaid = new DevExpress.XtraEditors.SimpleButton();
+            this.IsSave = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
             this.panelControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridControlTaPendOrder)).BeginInit();
@@ -120,7 +123,8 @@
             this.IsPaid,
             this.menuAmount,
             this.Discount,
-            this.DiscountPer});
+            this.DiscountPer,
+            this.IsSave});
             this.gvTaPendOrder.GridControl = this.gridControlTaPendOrder;
             this.gvTaPendOrder.IndicatorWidth = 50;
             this.gvTaPendOrder.Name = "gvTaPendOrder";
@@ -246,6 +250,24 @@
             this.IsPaid.Visible = true;
             this.IsPaid.VisibleIndex = 9;
             // 
+            // menuAmount
+            // 
+            this.menuAmount.Caption = "Menu Amount";
+            this.menuAmount.FieldName = "MenuAmount";
+            this.menuAmount.Name = "menuAmount";
+            // 
+            // Discount
+            // 
+            this.Discount.Caption = "Discount";
+            this.Discount.FieldName = "Discount";
+            this.Discount.Name = "Discount";
+            // 
+            // DiscountPer
+            // 
+            this.DiscountPer.Caption = "DiscountPer";
+            this.DiscountPer.FieldName = "DiscountPer";
+            this.DiscountPer.Name = "DiscountPer";
+            // 
             // btnPrtKit
             // 
             this.btnPrtKit.Appearance.Font = new System.Drawing.Font("Tahoma", 12F);
@@ -301,15 +323,15 @@
             // btnDelivery
             // 
             this.btnDelivery.Appearance.BackColor = System.Drawing.Color.Red;
-            this.btnDelivery.Appearance.Font = new System.Drawing.Font("Tahoma", 14F);
+            this.btnDelivery.Appearance.Font = new System.Drawing.Font("Tahoma", 10F);
             this.btnDelivery.Appearance.ForeColor = System.Drawing.Color.White;
             this.btnDelivery.Appearance.Options.UseBackColor = true;
             this.btnDelivery.Appearance.Options.UseFont = true;
             this.btnDelivery.Appearance.Options.UseForeColor = true;
             this.btnDelivery.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
-            this.btnDelivery.Location = new System.Drawing.Point(370, 0);
+            this.btnDelivery.Location = new System.Drawing.Point(202, 9);
             this.btnDelivery.Name = "btnDelivery";
-            this.btnDelivery.Size = new System.Drawing.Size(131, 48);
+            this.btnDelivery.Size = new System.Drawing.Size(99, 40);
             this.btnDelivery.TabIndex = 44;
             this.btnDelivery.Text = "DELIVERY";
             this.btnDelivery.Click += new System.EventHandler(this.btnDelivery_Click);
@@ -317,15 +339,15 @@
             // btnCollection
             // 
             this.btnCollection.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
-            this.btnCollection.Appearance.Font = new System.Drawing.Font("Tahoma", 14F);
+            this.btnCollection.Appearance.Font = new System.Drawing.Font("Tahoma", 10F);
             this.btnCollection.Appearance.ForeColor = System.Drawing.Color.White;
             this.btnCollection.Appearance.Options.UseBackColor = true;
             this.btnCollection.Appearance.Options.UseFont = true;
             this.btnCollection.Appearance.Options.UseForeColor = true;
             this.btnCollection.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
-            this.btnCollection.Location = new System.Drawing.Point(507, 0);
+            this.btnCollection.Location = new System.Drawing.Point(307, 9);
             this.btnCollection.Name = "btnCollection";
-            this.btnCollection.Size = new System.Drawing.Size(144, 48);
+            this.btnCollection.Size = new System.Drawing.Size(115, 40);
             this.btnCollection.TabIndex = 45;
             this.btnCollection.Text = "COLLECTION";
             this.btnCollection.Click += new System.EventHandler(this.btnCollection_Click);
@@ -333,15 +355,15 @@
             // btnShop
             // 
             this.btnShop.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
-            this.btnShop.Appearance.Font = new System.Drawing.Font("Tahoma", 14F);
+            this.btnShop.Appearance.Font = new System.Drawing.Font("Tahoma", 10F);
             this.btnShop.Appearance.ForeColor = System.Drawing.Color.White;
             this.btnShop.Appearance.Options.UseBackColor = true;
             this.btnShop.Appearance.Options.UseFont = true;
             this.btnShop.Appearance.Options.UseForeColor = true;
             this.btnShop.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
-            this.btnShop.Location = new System.Drawing.Point(657, 0);
+            this.btnShop.Location = new System.Drawing.Point(428, 9);
             this.btnShop.Name = "btnShop";
-            this.btnShop.Size = new System.Drawing.Size(90, 48);
+            this.btnShop.Size = new System.Drawing.Size(80, 40);
             this.btnShop.TabIndex = 46;
             this.btnShop.Text = "SHOP";
             this.btnShop.Click += new System.EventHandler(this.btnShop_Click);
@@ -446,6 +468,8 @@
             // 
             // panelControl4
             // 
+            this.panelControl4.Controls.Add(this.btnNotPaid);
+            this.panelControl4.Controls.Add(this.btnSaveOrder);
             this.panelControl4.Controls.Add(this.txtTotal);
             this.panelControl4.Controls.Add(this.labelControl2);
             this.panelControl4.Controls.Add(this.btnDelivery);
@@ -460,7 +484,7 @@
             // 
             this.txtTotal.EditValue = "0.00";
             this.txtTotal.Enabled = false;
-            this.txtTotal.Location = new System.Drawing.Point(129, 14);
+            this.txtTotal.Location = new System.Drawing.Point(79, 13);
             this.txtTotal.Name = "txtTotal";
             this.txtTotal.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 14F);
             this.txtTotal.Properties.Appearance.Options.UseFont = true;
@@ -472,7 +496,7 @@
             // labelControl2
             // 
             this.labelControl2.Appearance.Font = new System.Drawing.Font("Tahoma", 14F, System.Drawing.FontStyle.Bold);
-            this.labelControl2.Location = new System.Drawing.Point(30, 17);
+            this.labelControl2.Location = new System.Drawing.Point(5, 16);
             this.labelControl2.Name = "labelControl2";
             this.labelControl2.Size = new System.Drawing.Size(67, 28);
             this.labelControl2.TabIndex = 47;
@@ -534,23 +558,43 @@
             this.btnShowUnAssigned.Text = "Show Unassigned";
             this.btnShowUnAssigned.Click += new System.EventHandler(this.btnShowUnAssigned_Click);
             // 
-            // menuAmount
+            // btnSaveOrder
             // 
-            this.menuAmount.Caption = "Menu Amount";
-            this.menuAmount.FieldName = "MenuAmount";
-            this.menuAmount.Name = "menuAmount";
+            this.btnSaveOrder.Appearance.BackColor = System.Drawing.Color.Orange;
+            this.btnSaveOrder.Appearance.Font = new System.Drawing.Font("Tahoma", 10F);
+            this.btnSaveOrder.Appearance.ForeColor = System.Drawing.Color.White;
+            this.btnSaveOrder.Appearance.Options.UseBackColor = true;
+            this.btnSaveOrder.Appearance.Options.UseFont = true;
+            this.btnSaveOrder.Appearance.Options.UseForeColor = true;
+            this.btnSaveOrder.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
+            this.btnSaveOrder.Location = new System.Drawing.Point(514, 9);
+            this.btnSaveOrder.Name = "btnSaveOrder";
+            this.btnSaveOrder.Size = new System.Drawing.Size(109, 40);
+            this.btnSaveOrder.TabIndex = 49;
+            this.btnSaveOrder.Text = "Save Orders";
+            this.btnSaveOrder.Click += new System.EventHandler(this.btnSaveOrder_Click);
             // 
-            // Discount
+            // btnNotPaid
             // 
-            this.Discount.Caption = "Discount";
-            this.Discount.FieldName = "Discount";
-            this.Discount.Name = "Discount";
+            this.btnNotPaid.Appearance.BackColor = System.Drawing.Color.Red;
+            this.btnNotPaid.Appearance.Font = new System.Drawing.Font("Tahoma", 10F);
+            this.btnNotPaid.Appearance.ForeColor = System.Drawing.Color.White;
+            this.btnNotPaid.Appearance.Options.UseBackColor = true;
+            this.btnNotPaid.Appearance.Options.UseFont = true;
+            this.btnNotPaid.Appearance.Options.UseForeColor = true;
+            this.btnNotPaid.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
+            this.btnNotPaid.Location = new System.Drawing.Point(631, 9);
+            this.btnNotPaid.Name = "btnNotPaid";
+            this.btnNotPaid.Size = new System.Drawing.Size(115, 40);
+            this.btnNotPaid.TabIndex = 50;
+            this.btnNotPaid.Text = "Not Paid";
+            this.btnNotPaid.Click += new System.EventHandler(this.btnNotPaid_Click);
             // 
-            // DiscountPer
+            // IsSave
             // 
-            this.DiscountPer.Caption = "DiscountPer";
-            this.DiscountPer.FieldName = "DiscountPer";
-            this.DiscountPer.Name = "DiscountPer";
+            this.IsSave.Caption = "Is Save";
+            this.IsSave.FieldName = "IsSave";
+            this.IsSave.Name = "IsSave";
             // 
             // FrmTaPendOrder
             // 
@@ -635,5 +679,8 @@
         private DevExpress.XtraGrid.Columns.GridColumn menuAmount;
         private DevExpress.XtraGrid.Columns.GridColumn Discount;
         private DevExpress.XtraGrid.Columns.GridColumn DiscountPer;
+        private DevExpress.XtraEditors.SimpleButton btnNotPaid;
+        private DevExpress.XtraEditors.SimpleButton btnSaveOrder;
+        private DevExpress.XtraGrid.Columns.GridColumn IsSave;
     }
 }
