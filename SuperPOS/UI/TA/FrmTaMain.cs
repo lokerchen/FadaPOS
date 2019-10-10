@@ -1152,7 +1152,7 @@ namespace SuperPOS.UI.TA
                 if (taMenuItemOtherChoiceInfo.IsAutoAppend.Equals("Y"))
                 {
                     //为语言转换做数据存储
-                    dOtherChoice.Add(taMenuItemOtherChoiceInfo.MiEngName, taMenuItemOtherChoiceInfo.MiOtherName);
+                    if (!dOtherChoice.ContainsKey(taMenuItemOtherChoiceInfo.MiEngName)) dOtherChoice.Add(taMenuItemOtherChoiceInfo.MiEngName, taMenuItemOtherChoiceInfo.MiOtherName);
 
                     mNode["ItemDishName"] = mNode["ItemDishName"] + @" " + taMenuItemOtherChoiceInfo.MiEngName;
                     mNode["ItemDishOtherName"] = mNode["ItemDishOtherName"] + @" " + taMenuItemOtherChoiceInfo.MiOtherName;
@@ -1647,7 +1647,8 @@ namespace SuperPOS.UI.TA
             {
                 //判断是否存在相同菜品
                 //若存在，则合并，并对数量+1
-                if (treeListOrder.Nodes.Any(s => s["ItemCode"].Equals(taMenuItemInfo.MiDishCode) && s["ItemType"].ToString().Equals("1")))
+                if (treeListOrder.Nodes.Any(s => s["ItemCode"].Equals(taMenuItemInfo.MiDishCode) && s["ItemType"].ToString().Equals("1"))
+                    && !treeListOrder.Nodes.FirstOrDefault(s => s["ItemCode"].Equals(taMenuItemInfo.MiDishCode) && s["ItemType"].ToString().Equals("1")).HasChildren)
                 {
                     foreach (TreeListNode treeListNode in treeListOrder.Nodes.Where(s => s["ItemCode"].Equals(taMenuItemInfo.MiDishCode) && s["ItemType"].ToString().Equals("1")))
                     {
@@ -1709,7 +1710,8 @@ namespace SuperPOS.UI.TA
             {
                 //判断是否存在相同菜品
                 //若存在，则合并，并对数量+1
-                if (treeListOrder.Nodes.Any(s => s["ItemCode"].Equals(taMenuItemInfo.MiDishCode) && s["ItemType"].ToString().Equals("1")))
+                if (treeListOrder.Nodes.Any(s => s["ItemCode"].Equals(taMenuItemInfo.MiDishCode) && s["ItemType"].ToString().Equals("1"))
+                    && !treeListOrder.Nodes.FirstOrDefault(s => s["ItemCode"].Equals(taMenuItemInfo.MiDishCode) && s["ItemType"].ToString().Equals("1")).HasChildren)
                 {
                     foreach (TreeListNode treeListNode in treeListOrder.Nodes.Where(s => s["ItemCode"].Equals(taMenuItemInfo.MiDishCode) && s["ItemType"].ToString().Equals("1")))
                     {
