@@ -18,7 +18,8 @@ namespace SuperPOS.UI.TA
         private string miID = "";
         private string miOldPrice = "";
 
-        private string txtName = "";
+        //默认文本框为New Price
+        private string txtName = "txtNewPrice";
 
         private string sItemEngName = "";
         private string sItemOtherName = "";
@@ -552,6 +553,11 @@ namespace SuperPOS.UI.TA
             incrementPrice = Convert.ToDecimal(txtIncrement.Text);
 
             txtNewPrice.Text = (origPrice - discount + incrementPrice).ToString("0.00");
+        }
+
+        private void FrmTaChangePrice_Activated(object sender, EventArgs e)
+        {
+            txtNewPrice.Focus();
         }
     }
 }

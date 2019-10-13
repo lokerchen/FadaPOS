@@ -936,6 +936,7 @@
             this.Name = "FrmTaChangePrice";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "FrmTaChangePrice";
+            this.Activated += new System.EventHandler(this.FrmTaChangePrice_Activated);
             this.Load += new System.EventHandler(this.FrmTaChangePrice_Load);
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).EndInit();
             this.panelControl1.ResumeLayout(false);
