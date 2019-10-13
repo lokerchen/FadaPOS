@@ -482,8 +482,8 @@ namespace SuperPOS.UI.TA
             if (lstIp.Any())
             {
                 TaChangeMenuAttrInfo taChangeMenuAttrInfo = lstIp.FirstOrDefault();
-                strMenuAttrOther = taChangeMenuAttrInfo.MenuAttrOtherName;
-                return taChangeMenuAttrInfo.IncrementPrice;
+                strMenuAttrOther = string.IsNullOrWhiteSpace(taChangeMenuAttrInfo.MenuAttrOtherName) ? "" : taChangeMenuAttrInfo.MenuAttrOtherName;
+                return string.IsNullOrEmpty(taChangeMenuAttrInfo.IncrementPrice) ? "0.00" : taChangeMenuAttrInfo.IncrementPrice;
             }
             else
                 return @"0.00";
