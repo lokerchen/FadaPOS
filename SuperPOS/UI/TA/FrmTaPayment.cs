@@ -810,6 +810,8 @@ namespace SuperPOS.UI.TA
                         taCheckOrderInfo.DriverID = lstDri.Any() ? lstDri.FirstOrDefault().ID : 0;
                     }
 
+                    taCheckOrderInfo.BusDate = CommonDAL.GetBusDate();
+
                     _control.UpdateEntity(taCheckOrderInfo);
 
                     returnPaid = true;
@@ -838,6 +840,8 @@ namespace SuperPOS.UI.TA
                     taCheckOrderInfo.Paid = GetPayDetail(checkID).ToString();
                     taCheckOrderInfo.TotalAmount = txtTotal.Text;
                     taCheckOrderInfo.IsPaid = @"N";
+
+                    taCheckOrderInfo.BusDate = CommonDAL.GetBusDate();
 
                     if (dri > 0)
                     {

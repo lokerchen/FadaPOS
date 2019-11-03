@@ -1509,6 +1509,8 @@ namespace SuperPOS.UI.TA
 
                 taCheckOrderInfo.IsSave = isSave ? "Y" : "N";
 
+                taCheckOrderInfo.BusDate = CommonDAL.GetBusDate();
+
                 _control.AddEntity(taCheckOrderInfo);
             }
         }

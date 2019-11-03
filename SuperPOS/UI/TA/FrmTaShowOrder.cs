@@ -120,6 +120,7 @@ namespace SuperPOS.UI
                         join driver in CommonData.TaDriver
                             on check.DriverID equals driver.ID
                         where check.IsPaid.Equals("Y")
+                              && check.BusDate.Equals(CommonDAL.GetBusDate())
                         select new
                         {
                             ID = check.ID,
@@ -137,12 +138,14 @@ namespace SuperPOS.UI
                             gridCustID = check.CustomerID,
                             gridDiscountPer = check.PayPerDiscount,
                             gridDisount = check.PayDiscount,
-                            gridSubTotal = check.MenuAmount
+                            gridSubTotal = check.MenuAmount,
+                            gridBusDate = check.BusDate
                         };
 
             gridControlTaShowOrder.DataSource = !string.IsNullOrEmpty(orderType)
                                                 ? lstDb.Where(s => s.gridOrderType.Equals(orderType)).ToList()
                                                 : lstDb.ToList();
+            gvTaShowOrder.Columns["gridOrderTime"].BestFit();
             gvTaShowOrder.FocusedRowHandle = gvTaShowOrder.RowCount - 1;
         }
         #endregion

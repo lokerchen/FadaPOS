@@ -162,6 +162,7 @@ namespace SuperPOS.UI.TA
                                                 ? lstTmp.Where(s => s.PayOrderType.Equals(orderType) && string.IsNullOrEmpty(s.DriverName)).ToList() 
                                                 : lstTmp.ToList();
             gvTaPendOrder.FocusedRowHandle = gvTaPendOrder.RowCount - 1;
+            gvTaPendOrder.Columns["OrderTime"].BestFit();
             
             txtTotal.Text = lstTmp.Sum(s => Convert.ToDecimal(s.TotalAmount)).ToString();
         }

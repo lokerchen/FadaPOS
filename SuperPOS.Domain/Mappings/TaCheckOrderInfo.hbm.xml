@@ -36,6 +36,7 @@
     <property name="PayPerSurcharge" column="PayPerSurcharge" type="System.String" />
     <property name="IsCancel" column="IsCancel" type="System.String" />
     <property name="IsSave" column="IsSave" type="System.String" />
+    <property name="BusDate" column="BusDate" type="System.String" />
   </class>
 
 </hibernate-mapping>

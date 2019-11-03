@@ -47,6 +47,7 @@
             this.menuAmount = new DevExpress.XtraGrid.Columns.GridColumn();
             this.Discount = new DevExpress.XtraGrid.Columns.GridColumn();
             this.DiscountPer = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.IsSave = new DevExpress.XtraGrid.Columns.GridColumn();
             this.btnPrtKit = new DevExpress.XtraEditors.SimpleButton();
             this.btnPrtBill = new DevExpress.XtraEditors.SimpleButton();
             this.btnPrtReceipt = new DevExpress.XtraEditors.SimpleButton();
@@ -62,15 +63,14 @@
             this.lueDriver = new DevExpress.XtraEditors.LookUpEdit();
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
             this.panelControl4 = new DevExpress.XtraEditors.PanelControl();
+            this.btnNotPaid = new DevExpress.XtraEditors.SimpleButton();
+            this.btnSaveOrder = new DevExpress.XtraEditors.SimpleButton();
             this.txtTotal = new DevExpress.XtraEditors.TextEdit();
             this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
             this.btnAssignDriver = new DevExpress.XtraEditors.SimpleButton();
             this.btnShowAll = new DevExpress.XtraEditors.SimpleButton();
             this.btnShowAssigned = new DevExpress.XtraEditors.SimpleButton();
             this.btnShowUnAssigned = new DevExpress.XtraEditors.SimpleButton();
-            this.btnSaveOrder = new DevExpress.XtraEditors.SimpleButton();
-            this.btnNotPaid = new DevExpress.XtraEditors.SimpleButton();
-            this.IsSave = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
             this.panelControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridControlTaPendOrder)).BeginInit();
@@ -140,7 +140,7 @@
             // 
             // ID
             // 
-            this.ID.AppearanceCell.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ID.AppearanceCell.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ID.AppearanceCell.Options.UseFont = true;
             this.ID.Caption = "ID";
             this.ID.FieldName = "ID";
@@ -148,7 +148,7 @@
             // 
             // CheckCode
             // 
-            this.CheckCode.AppearanceCell.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.CheckCode.AppearanceCell.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.CheckCode.AppearanceCell.Options.UseFont = true;
             this.CheckCode.Caption = "Order No.";
             this.CheckCode.FieldName = "CheckCode";
@@ -158,11 +158,12 @@
             // 
             // OrderTime
             // 
-            this.OrderTime.Caption = "Time";
+            this.OrderTime.Caption = "Order Time";
             this.OrderTime.FieldName = "OrderTime";
             this.OrderTime.Name = "OrderTime";
             this.OrderTime.Visible = true;
             this.OrderTime.VisibleIndex = 2;
+            this.OrderTime.Width = 86;
             // 
             // PostCode
             // 
@@ -190,7 +191,7 @@
             // 
             // PayOrderType
             // 
-            this.PayOrderType.AppearanceCell.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.PayOrderType.AppearanceCell.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.PayOrderType.AppearanceCell.Options.UseFont = true;
             this.PayOrderType.Caption = "Order Type";
             this.PayOrderType.FieldName = "PayOrderType";
@@ -216,7 +217,7 @@
             // 
             // TotalAmount
             // 
-            this.TotalAmount.AppearanceCell.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TotalAmount.AppearanceCell.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.TotalAmount.AppearanceCell.Options.UseFont = true;
             this.TotalAmount.Caption = "Total Amount";
             this.TotalAmount.FieldName = "TotalAmount";
@@ -242,7 +243,7 @@
             // 
             // IsPaid
             // 
-            this.IsPaid.AppearanceCell.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.IsPaid.AppearanceCell.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.IsPaid.AppearanceCell.Options.UseFont = true;
             this.IsPaid.Caption = "Is Paid";
             this.IsPaid.FieldName = "IsPaid";
@@ -267,6 +268,12 @@
             this.DiscountPer.Caption = "DiscountPer";
             this.DiscountPer.FieldName = "DiscountPer";
             this.DiscountPer.Name = "DiscountPer";
+            // 
+            // IsSave
+            // 
+            this.IsSave.Caption = "Is Save";
+            this.IsSave.FieldName = "IsSave";
+            this.IsSave.Name = "IsSave";
             // 
             // btnPrtKit
             // 
@@ -480,6 +487,38 @@
             this.panelControl4.Size = new System.Drawing.Size(752, 60);
             this.panelControl4.TabIndex = 50;
             // 
+            // btnNotPaid
+            // 
+            this.btnNotPaid.Appearance.BackColor = System.Drawing.Color.Red;
+            this.btnNotPaid.Appearance.Font = new System.Drawing.Font("Tahoma", 10F);
+            this.btnNotPaid.Appearance.ForeColor = System.Drawing.Color.White;
+            this.btnNotPaid.Appearance.Options.UseBackColor = true;
+            this.btnNotPaid.Appearance.Options.UseFont = true;
+            this.btnNotPaid.Appearance.Options.UseForeColor = true;
+            this.btnNotPaid.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
+            this.btnNotPaid.Location = new System.Drawing.Point(631, 9);
+            this.btnNotPaid.Name = "btnNotPaid";
+            this.btnNotPaid.Size = new System.Drawing.Size(115, 40);
+            this.btnNotPaid.TabIndex = 50;
+            this.btnNotPaid.Text = "Not Paid";
+            this.btnNotPaid.Click += new System.EventHandler(this.btnNotPaid_Click);
+            // 
+            // btnSaveOrder
+            // 
+            this.btnSaveOrder.Appearance.BackColor = System.Drawing.Color.Orange;
+            this.btnSaveOrder.Appearance.Font = new System.Drawing.Font("Tahoma", 10F);
+            this.btnSaveOrder.Appearance.ForeColor = System.Drawing.Color.White;
+            this.btnSaveOrder.Appearance.Options.UseBackColor = true;
+            this.btnSaveOrder.Appearance.Options.UseFont = true;
+            this.btnSaveOrder.Appearance.Options.UseForeColor = true;
+            this.btnSaveOrder.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
+            this.btnSaveOrder.Location = new System.Drawing.Point(514, 9);
+            this.btnSaveOrder.Name = "btnSaveOrder";
+            this.btnSaveOrder.Size = new System.Drawing.Size(109, 40);
+            this.btnSaveOrder.TabIndex = 49;
+            this.btnSaveOrder.Text = "Save Orders";
+            this.btnSaveOrder.Click += new System.EventHandler(this.btnSaveOrder_Click);
+            // 
             // txtTotal
             // 
             this.txtTotal.EditValue = "0.00";
@@ -557,44 +596,6 @@
             this.btnShowUnAssigned.TabIndex = 55;
             this.btnShowUnAssigned.Text = "Show Unassigned";
             this.btnShowUnAssigned.Click += new System.EventHandler(this.btnShowUnAssigned_Click);
-            // 
-            // btnSaveOrder
-            // 
-            this.btnSaveOrder.Appearance.BackColor = System.Drawing.Color.Orange;
-            this.btnSaveOrder.Appearance.Font = new System.Drawing.Font("Tahoma", 10F);
-            this.btnSaveOrder.Appearance.ForeColor = System.Drawing.Color.White;
-            this.btnSaveOrder.Appearance.Options.UseBackColor = true;
-            this.btnSaveOrder.Appearance.Options.UseFont = true;
-            this.btnSaveOrder.Appearance.Options.UseForeColor = true;
-            this.btnSaveOrder.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
-            this.btnSaveOrder.Location = new System.Drawing.Point(514, 9);
-            this.btnSaveOrder.Name = "btnSaveOrder";
-            this.btnSaveOrder.Size = new System.Drawing.Size(109, 40);
-            this.btnSaveOrder.TabIndex = 49;
-            this.btnSaveOrder.Text = "Save Orders";
-            this.btnSaveOrder.Click += new System.EventHandler(this.btnSaveOrder_Click);
-            // 
-            // btnNotPaid
-            // 
-            this.btnNotPaid.Appearance.BackColor = System.Drawing.Color.Red;
-            this.btnNotPaid.Appearance.Font = new System.Drawing.Font("Tahoma", 10F);
-            this.btnNotPaid.Appearance.ForeColor = System.Drawing.Color.White;
-            this.btnNotPaid.Appearance.Options.UseBackColor = true;
-            this.btnNotPaid.Appearance.Options.UseFont = true;
-            this.btnNotPaid.Appearance.Options.UseForeColor = true;
-            this.btnNotPaid.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
-            this.btnNotPaid.Location = new System.Drawing.Point(631, 9);
-            this.btnNotPaid.Name = "btnNotPaid";
-            this.btnNotPaid.Size = new System.Drawing.Size(115, 40);
-            this.btnNotPaid.TabIndex = 50;
-            this.btnNotPaid.Text = "Not Paid";
-            this.btnNotPaid.Click += new System.EventHandler(this.btnNotPaid_Click);
-            // 
-            // IsSave
-            // 
-            this.IsSave.Caption = "Is Save";
-            this.IsSave.FieldName = "IsSave";
-            this.IsSave.Name = "IsSave";
             // 
             // FrmTaPendOrder
             // 

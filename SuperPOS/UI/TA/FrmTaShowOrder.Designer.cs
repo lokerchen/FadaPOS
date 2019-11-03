@@ -60,6 +60,7 @@
             this.DiscountPer = new DevExpress.XtraGrid.Columns.GridColumn();
             this.Discount = new DevExpress.XtraGrid.Columns.GridColumn();
             this.SubToal = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.BusDate = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
             this.panelControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl4)).BeginInit();
@@ -398,7 +399,8 @@
             this.CustomerID,
             this.DiscountPer,
             this.Discount,
-            this.SubToal});
+            this.SubToal,
+            this.BusDate});
             this.gvTaShowOrder.GridControl = this.gridControlTaShowOrder;
             this.gvTaShowOrder.IndicatorWidth = 50;
             this.gvTaShowOrder.Name = "gvTaShowOrder";
@@ -437,7 +439,7 @@
             this.OrderTime.AppearanceCell.Options.UseFont = true;
             this.OrderTime.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.OrderTime.AppearanceHeader.Options.UseFont = true;
-            this.OrderTime.Caption = "Time";
+            this.OrderTime.Caption = "Order Time";
             this.OrderTime.FieldName = "gridOrderTime";
             this.OrderTime.Name = "OrderTime";
             this.OrderTime.Visible = true;
@@ -531,6 +533,12 @@
             this.SubToal.FieldName = "gridSubTotal";
             this.SubToal.Name = "SubToal";
             // 
+            // BusDate
+            // 
+            this.BusDate.Caption = "BusDate";
+            this.BusDate.FieldName = "gridBusDate";
+            this.BusDate.Name = "BusDate";
+            // 
             // FrmTaShowOrder
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 18F);
@@ -592,5 +600,6 @@
         private DevExpress.XtraGrid.Columns.GridColumn Discount;
         private DevExpress.XtraGrid.Columns.GridColumn SubToal;
         private DevExpress.XtraRichEdit.RichEditControl richEditCtlPreview;
+        private DevExpress.XtraGrid.Columns.GridColumn BusDate;
     }
 }

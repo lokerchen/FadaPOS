@@ -592,5 +592,21 @@ namespace SuperPOS.Common
             catch (Exception ex) { LogHelper.Error(@"CommonDAL", ex); }
         }
         #endregion
+
+        #region 获得Business Date
+        /// <summary>
+        /// 获得Business Date
+        /// </summary>
+        /// <returns>返回Business Date</returns>
+        public static string GetBusDate()
+        {
+            new SystemData().GetSysValue();
+
+            string sBusDate = CommonData.SysValue.FirstOrDefault(s => s.ValueID.Equals(PubComm.SYS_VALUE_BUS_DATE)).ValueResult;
+
+            //Now大于SysValue中设置的值，则属于当天，否则减一天
+            return DateTime.Compare(DateTime.Now, Convert.ToDateTime(sBusDate)) > 0 ? DateTime.Now.ToShortDateString() : DateTime.Now.AddDays(-1).ToShortDateString();
+        }
+        #endregion
     }
 }

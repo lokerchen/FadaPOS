@@ -784,6 +784,8 @@ namespace SuperPOS.UI.TA
                 taCheckOrder.Paid = Math.Round(Convert.ToDecimal(txtTendered.Text), 2).ToString(@"0.00");
                 taCheckOrder.IsPaid = IsPaid ? @"Y" : @"N";
 
+                taCheckOrder.BusDate = CommonDAL.GetBusDate();
+
                 _control.UpdateEntity(taCheckOrder);
             }
 
@@ -839,6 +841,8 @@ namespace SuperPOS.UI.TA
                 taCheckOrder.TotalAmount = Math.Round(Convert.ToDecimal(txtToPay.Text), 2).ToString(@"0.00");
                 taCheckOrder.Paid = Math.Round(Convert.ToDecimal(txtTendered.Text), 2).ToString(@"0.00");
                 taCheckOrder.IsPaid = isPaid ? @"Y" : @"N";
+
+                taCheckOrder.BusDate = CommonDAL.GetBusDate();
 
                 _control.UpdateEntity(taCheckOrder);
             }
