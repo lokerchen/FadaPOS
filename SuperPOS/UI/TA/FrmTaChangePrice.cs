@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -8,6 +9,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using DevExpress.XtraEditors;
+using LinqToDB;
 using SuperPOS.Common;
 using SuperPOS.Domain.Entities;
 
@@ -34,6 +36,8 @@ namespace SuperPOS.UI.TA
 
         private string strMenuAttrEng = "";
         private string strMenuAttrOther = "";
+
+        private Hashtable hsMenuName = new Hashtable();
 
         public string MenuAttrEng
         {
@@ -232,6 +236,8 @@ namespace SuperPOS.UI.TA
             int i = 0;
             foreach (var taChangeMenuAttrInfo in CommonData.TaChangeMenuAttr)
             {
+                hsMenuName.Add(taChangeMenuAttrInfo.MenuAttrEnglishName, taChangeMenuAttrInfo.MenuAttrOtherName);
+
                 btnMenuAttr[i].Text = iLange == PubComm.MENU_LANG_DEFAULT 
                                         ? taChangeMenuAttrInfo.MenuAttrEnglishName
                                         : taChangeMenuAttrInfo.MenuAttrOtherName;
@@ -441,9 +447,38 @@ namespace SuperPOS.UI.TA
             {
                 SimpleButton btn = (SimpleButton)sender;
 
-                strMenuAttrEng += @" " + btn.Text;
+                string eName = "";
+                string oName = "";
+
+                if (iLange == PubComm.MENU_LANG_DEFAULT)
+                {
+                    if (hsMenuName.ContainsKey(btn.Text))
+                    {
+                        eName = btn.Text;
+                        oName = hsMenuName[btn.Text].ToString();
+                    }
+                    strMenuAttrEng += @" " + eName;
+                }
+                else
+                {
+                    if (hsMenuName.ContainsValue(btn.Text))
+                    {
+                        foreach (DictionaryEntry kv in hsMenuName)
+                        {
+                            if (kv.Value.Equals(btn.Text))
+                            {
+                                eName = kv.Key.ToString();
+                                oName = btn.Text;
+                                break;
+                            }
+                        }
+
+                        strMenuAttrEng += @" " + oName;
+                    }
+                }
                 
-                txtEngName.Text += btn.Text;
+                txtEngName.Text += @" " + eName;
+                txtOtherName.Text += @" " + oName;
 
                 txtIncrement.Text = GetIncrementPrice(btn.Text, iLange);
 
