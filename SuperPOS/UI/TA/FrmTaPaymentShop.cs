@@ -107,10 +107,14 @@ namespace SuperPOS.UI.TA
                     txtPayTypePay4.Text = taCheckOrder.PayTypePay4;
                     txtPayTypePay5.Text = taCheckOrder.PayTypePay5;
 
-                    txtPercentDiscount.Text = taCheckOrder.PayPerDiscount;
+                    txtPercentDiscount.Text = string.IsNullOrEmpty(taCheckOrder.PayPerDiscount) 
+                                              ? taCheckOrder.PayPerDiscount 
+                                              : taCheckOrder.PayPerDiscount.Substring(0, taCheckOrder.PayPerDiscount.Length - 1);
                     txtDiscount.Text = taCheckOrder.PayDiscount;
 
-                    txtPercentSurcharge.Text = taCheckOrder.PayPerSurcharge;
+                    txtPercentSurcharge.Text = string.IsNullOrEmpty(taCheckOrder.PayPerSurcharge) 
+                                               ? taCheckOrder.PayPerSurcharge
+                                               : taCheckOrder.PayPerSurcharge.Substring(0, taCheckOrder.PayPerSurcharge.Length - 1);
                     txtSurcharge.Text = taCheckOrder.PaySurcharge;
 
                     txtTendered.Text = "0.00";
@@ -130,10 +134,14 @@ namespace SuperPOS.UI.TA
                     txtPayTypePay4.Text = taCheckOrder.PayTypePay4;
                     txtPayTypePay5.Text = taCheckOrder.PayTypePay5;
 
-                    txtPercentDiscount.Text = taCheckOrder.PayPerDiscount;
+                    txtPercentDiscount.Text = string.IsNullOrEmpty(taCheckOrder.PayPerDiscount)
+                                              ? taCheckOrder.PayPerDiscount
+                                              : taCheckOrder.PayPerDiscount.Substring(0, taCheckOrder.PayPerDiscount.Length - 1);
                     txtDiscount.Text = taCheckOrder.PayDiscount;
 
-                    txtPercentSurcharge.Text = taCheckOrder.PayPerSurcharge;
+                    txtPercentSurcharge.Text = string.IsNullOrEmpty(taCheckOrder.PayPerSurcharge)
+                                               ? taCheckOrder.PayPerSurcharge
+                                               : taCheckOrder.PayPerSurcharge.Substring(0, taCheckOrder.PayPerSurcharge.Length - 1);
                     txtSurcharge.Text = taCheckOrder.PaySurcharge;
 
                     txtTendered.Text = "0.00";
@@ -243,18 +251,10 @@ namespace SuperPOS.UI.TA
             }
             else
             {
-                //不为%
-                if (!objTxt.Name.Equals("txtPercentDiscount") || !objTxt.Name.Equals("txtPercentSurcharge"))
-                {
-                    if (objTxt.Text.Equals("0.00") || objTxt.Text.Equals("0.0") || objTxt.Text.Equals("0") || string.IsNullOrEmpty(objTxt.Text))
-                        objTxt.Text = btn.Text;
-                    else
-                        objTxt.Text += btn.Text;
-                }
+                if (objTxt.Text.Equals("0.00") || objTxt.Text.Equals("0.0") || objTxt.Text.Equals("0") || string.IsNullOrEmpty(objTxt.Text))
+                    objTxt.Text = btn.Text;
                 else
-                {
-                    if (!objTxt.Text.Contains(@"%")) objTxt.Text = btn.Text;
-                }
+                    objTxt.Text += btn.Text;
             }
         }
         #endregion
@@ -499,33 +499,37 @@ namespace SuperPOS.UI.TA
         private decimal GetDiscount(decimal dTotal)
         {
             //百分比折扣
-            if (txtPercentDiscount.Text.EndsWith(@"%"))
+            try
             {
-                try
+                if (!string.IsNullOrEmpty(txtPercentDiscount.Text))
                 {
-                    return Convert.ToDecimal(txtDiscount.Text) >= 100
-                        ? dTotal
-                        : (string.IsNullOrEmpty(txtDiscount.Text) || Convert.ToDecimal(txtDiscount.Text) <= 0 
-                            ? 0.00m
-                            : dTotal*(Convert.ToDecimal(txtDiscount.Text)/100));
+                    if (Convert.ToDecimal(txtPercentDiscount.Text) >= 100)
+                    {
+                        return dTotal;
+                    }
+                    else
+                    {
+                        if (Convert.ToDecimal(txtPercentDiscount.Text) <= 0)
+                        {
+                            return 0.0m;
+                        }
+                        else
+                        {
+                            decimal tmpDiscount = dTotal*(Convert.ToDecimal(txtPercentDiscount.Text)/100);
+                            txtDiscount.Text = tmpDiscount.ToString("F");
+                            return tmpDiscount;
+                        }
+                    }
                 }
-                catch (Exception ex)
-                {
-                    LogHelper.Error(ex.Message, ex);
-                    return 0.0m;
-                }
-            }
-            else
-            {
-                try
+                else
                 {
                     return Convert.ToDecimal(txtDiscount.Text);
                 }
-                catch (Exception ex)
-                {
-                    LogHelper.Error(ex.Message, ex);
-                    return 0.0m;
-                }
+            }
+            catch (Exception ex)
+            {
+                LogHelper.Error(ex.Message, ex);
+                return 0.0m;
             }
         }
 
@@ -540,33 +544,38 @@ namespace SuperPOS.UI.TA
         private decimal GetSurcharge(decimal dTotal)
         {
             //百分比折扣
-            if (txtPercentSurcharge.Text.EndsWith(@"%"))
+            try
             {
-                try
+                if (!string.IsNullOrEmpty(txtPercentSurcharge.Text))
                 {
-                    return Convert.ToDecimal(txtSurcharge.Text) >= 100
-                        ? dTotal
-                        : (string.IsNullOrEmpty(txtSurcharge.Text) || Convert.ToDecimal(txtSurcharge.Text) <= 0
-                            ? 0.00m
-                            : dTotal * (Convert.ToDecimal(txtSurcharge.Text) / 100));
+                    if (Convert.ToDecimal(txtPercentSurcharge.Text) >= 100)
+                    {
+                        return dTotal;
+                    }
+                    else
+                    {
+                        if (Convert.ToDecimal(txtPercentSurcharge.Text) <= 0)
+                        {
+                            return 0.0m;
+                        }
+                        else
+                        {
+                            decimal tmpDiscount = dTotal*(Convert.ToDecimal(txtPercentSurcharge.Text)/100);
+                            txtSurcharge.Text = tmpDiscount.ToString("F");
+                            return tmpDiscount;
+                        }
+                    }
                 }
-                catch (Exception ex)
-                {
-                    LogHelper.Error(ex.Message, ex);
-                    return 0.0m;
-                }
-            }
-            else
-            {
-                try
+                else
                 {
                     return Convert.ToDecimal(txtSurcharge.Text);
                 }
-                catch (Exception ex)
-                {
-                    LogHelper.Error(ex.Message, ex);
-                    return 0.0m;
-                }
+                    
+            }
+            catch (Exception ex)
+            {
+                LogHelper.Error(ex.Message, ex);
+                return 0.0m;
             }
         }
 

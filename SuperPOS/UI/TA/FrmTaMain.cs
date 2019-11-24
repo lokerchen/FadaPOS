@@ -1469,17 +1469,24 @@ namespace SuperPOS.UI.TA
                 taCheckOrderInfo.MenuAmount = lstTaOI.Sum(s => Convert.ToDecimal(s.ItemTotalPrice)).ToString();
                 //taCheckOrderInfo.PayDiscount = CommonDAL.GetTaDiscount(ORDER_TYPE, Convert.ToDecimal(taCheckOrderInfo.MenuAmount)).ToString();
 
+                taCheckOrderInfo.TotalAmount = CommonDAL.GetTotalAmount(Convert.ToDecimal(taCheckOrderInfo.MenuAmount), CommonDAL.GetTaDiscount(ORDER_TYPE, Convert.ToDecimal(taCheckOrderInfo.MenuAmount))).ToString();
+
                 new SystemData().GetTaDiscount();
                 var lstDiscount = CommonData.TaDiscount.Where(s => s.TaType.Equals(ORDER_TYPE));
                 if (lstDiscount.Any())
                 {
-                    taCheckOrderInfo.PayPerDiscount = @"%";
-                    taCheckOrderInfo.PayDiscount = lstDiscount.FirstOrDefault().TaDiscount;
+                    taCheckOrderInfo.PayPerDiscount = lstDiscount.FirstOrDefault().TaDiscount + @"%";
+                    taCheckOrderInfo.PayDiscount = (Convert.ToDecimal(taCheckOrderInfo.TotalAmount) 
+                                                   * Convert.ToDecimal(lstDiscount.FirstOrDefault().TaDiscount) / 100).ToString("0.00");
                 }
-                else 
+                else
                     taCheckOrderInfo.PayDiscount = @"0.00";
 
-                taCheckOrderInfo.TotalAmount = CommonDAL.GetTotalAmount(Convert.ToDecimal(taCheckOrderInfo.MenuAmount), CommonDAL.GetTaDiscount(ORDER_TYPE, Convert.ToDecimal(taCheckOrderInfo.MenuAmount))).ToString();
+                if (Convert.ToDecimal(taCheckOrderInfo.PayDiscount) > 0)
+                {
+                    taCheckOrderInfo.TotalAmount = (Convert.ToDecimal(taCheckOrderInfo.TotalAmount) - Convert.ToDecimal(taCheckOrderInfo.PayDiscount)).ToString();
+                }
+
                 taCheckOrderInfo.Paid = "0.00";
                 taCheckOrderInfo.IsPaid = "N";
                 taCheckOrderInfo.CustomerID = string.IsNullOrEmpty(CallerID) ? "1" : CallerID;
