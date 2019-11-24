@@ -413,6 +413,7 @@
             this.btnSummaryView.Size = new System.Drawing.Size(290, 42);
             this.btnSummaryView.TabIndex = 56;
             this.btnSummaryView.Text = "Summary View";
+            this.btnSummaryView.Click += new System.EventHandler(this.btnSummaryView_Click);
             // 
             // btnExit
             // 

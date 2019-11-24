@@ -588,5 +588,11 @@ namespace SuperPOS.UI.TA
             deDay.Text = (Convert.ToDateTime(deDay.Text)).AddDays(-1).ToShortDateString();
             GetBindData(deDay.Text);
         }
+
+        private void btnSummaryView_Click(object sender, EventArgs e)
+        {
+            FrmTaSummaryView frmTaSummaryView = new FrmTaSummaryView();
+            frmTaSummaryView.ShowDialog();
+        }
     }
 }
