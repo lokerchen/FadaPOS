@@ -165,7 +165,11 @@ namespace SuperPOS.UI
 
         private void gvTaShowOrder_FocusedRowChanged(object sender, DevExpress.XtraGrid.Views.Base.FocusedRowChangedEventArgs e)
         {
-            if (gvTaShowOrder.RowCount <= 0) return;
+            if (gvTaShowOrder.RowCount <= 0)
+            {
+                richEditCtlPreview.Text = "";
+                return;
+            }
 
             intChkID = Convert.ToInt32(gvTaShowOrder.GetRowCellValue(gvTaShowOrder.FocusedRowHandle, "ID").ToString());
             strChkOrder = gvTaShowOrder.GetRowCellValue(gvTaShowOrder.FocusedRowHandle, "gridOrderNo").ToString();

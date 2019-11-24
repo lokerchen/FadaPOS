@@ -157,6 +157,12 @@
     <Compile Include="UI\TaAdmin\FrmTaConf.Designer.cs">
       <DependentUpon>FrmTaConf.cs</DependentUpon>
     </Compile>
+    <Compile Include="UI\TA\FrmAccountSummary.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\TA\FrmAccountSummary.Designer.cs">
+      <DependentUpon>FrmAccountSummary.cs</DependentUpon>
+    </Compile>
     <Compile Include="UI\TA\FrmTaPendOrderPreview.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -483,6 +489,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UI\TaAdmin\FrmTaConf.resx">
       <DependentUpon>FrmTaConf.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\TA\FrmAccountSummary.resx">
+      <DependentUpon>FrmAccountSummary.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UI\TA\FrmTaPendOrderPreview.resx">
       <DependentUpon>FrmTaPendOrderPreview.cs</DependentUpon>

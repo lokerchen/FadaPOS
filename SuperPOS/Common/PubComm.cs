@@ -46,6 +46,8 @@ namespace SuperPOS.Common
         public static string ORDER_TYPE_SHOP = "SHOP";
         public static string ORDER_TYPE_COLLECTION = "COLLECTION";
         public static string ORDER_TYPE_DELIVERY = "DELIVERY";
+        public static string ORDER_TYPE_FAST_FOOD = "FAST FOOD";
+        public static string ORDER_TYPE_EAT_IN = "EAT IN";
 
         //查询所有磁盘
         public static string SELECT_WIN32_LOGICALDISK = @"SELECT * FROM WIN32_LOGICALDISK";

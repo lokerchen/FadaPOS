@@ -172,7 +172,8 @@ namespace SuperPOS.UI
         #region Reporting
         private void btnRepAccountSum_Click(object sender, EventArgs e)
         {
-
+            FrmAccountSummary frmAccountSummary = new FrmAccountSummary(usrID, usrName);
+            frmAccountSummary.ShowDialog();
         }
 
         private void btnRepReport_Click(object sender, EventArgs e)
