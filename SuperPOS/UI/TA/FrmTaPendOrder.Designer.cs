@@ -153,8 +153,6 @@
             this.CheckCode.Caption = "Order No.";
             this.CheckCode.FieldName = "CheckCode";
             this.CheckCode.Name = "CheckCode";
-            this.CheckCode.Visible = true;
-            this.CheckCode.VisibleIndex = 0;
             // 
             // OrderTime
             // 
@@ -162,7 +160,7 @@
             this.OrderTime.FieldName = "OrderTime";
             this.OrderTime.Name = "OrderTime";
             this.OrderTime.Visible = true;
-            this.OrderTime.VisibleIndex = 2;
+            this.OrderTime.VisibleIndex = 1;
             this.OrderTime.Width = 86;
             // 
             // PostCode
@@ -171,7 +169,7 @@
             this.PostCode.FieldName = "PostCode";
             this.PostCode.Name = "PostCode";
             this.PostCode.Visible = true;
-            this.PostCode.VisibleIndex = 3;
+            this.PostCode.VisibleIndex = 2;
             // 
             // PostCodeZone
             // 
@@ -179,7 +177,7 @@
             this.PostCodeZone.FieldName = "PostCodeZone";
             this.PostCodeZone.Name = "PostCodeZone";
             this.PostCodeZone.Visible = true;
-            this.PostCodeZone.VisibleIndex = 4;
+            this.PostCodeZone.VisibleIndex = 3;
             // 
             // Addr
             // 
@@ -187,7 +185,7 @@
             this.Addr.FieldName = "Addr";
             this.Addr.Name = "Addr";
             this.Addr.Visible = true;
-            this.Addr.VisibleIndex = 5;
+            this.Addr.VisibleIndex = 4;
             // 
             // PayOrderType
             // 
@@ -197,7 +195,7 @@
             this.PayOrderType.FieldName = "PayOrderType";
             this.PayOrderType.Name = "PayOrderType";
             this.PayOrderType.Visible = true;
-            this.PayOrderType.VisibleIndex = 1;
+            this.PayOrderType.VisibleIndex = 0;
             // 
             // CustomerName
             // 
@@ -205,7 +203,7 @@
             this.CustomerName.FieldName = "CustomerName";
             this.CustomerName.Name = "CustomerName";
             this.CustomerName.Visible = true;
-            this.CustomerName.VisibleIndex = 6;
+            this.CustomerName.VisibleIndex = 5;
             // 
             // CustomerPhone
             // 
@@ -213,7 +211,7 @@
             this.CustomerPhone.FieldName = "CustomerPhone";
             this.CustomerPhone.Name = "CustomerPhone";
             this.CustomerPhone.Visible = true;
-            this.CustomerPhone.VisibleIndex = 7;
+            this.CustomerPhone.VisibleIndex = 6;
             // 
             // TotalAmount
             // 
@@ -223,7 +221,7 @@
             this.TotalAmount.FieldName = "TotalAmount";
             this.TotalAmount.Name = "TotalAmount";
             this.TotalAmount.Visible = true;
-            this.TotalAmount.VisibleIndex = 8;
+            this.TotalAmount.VisibleIndex = 7;
             // 
             // StaffName
             // 
@@ -231,7 +229,7 @@
             this.StaffName.FieldName = "StaffName";
             this.StaffName.Name = "StaffName";
             this.StaffName.Visible = true;
-            this.StaffName.VisibleIndex = 11;
+            this.StaffName.VisibleIndex = 10;
             // 
             // DriverName
             // 
@@ -239,7 +237,7 @@
             this.DriverName.FieldName = "DriverName";
             this.DriverName.Name = "DriverName";
             this.DriverName.Visible = true;
-            this.DriverName.VisibleIndex = 10;
+            this.DriverName.VisibleIndex = 9;
             // 
             // IsPaid
             // 
@@ -249,7 +247,7 @@
             this.IsPaid.FieldName = "IsPaid";
             this.IsPaid.Name = "IsPaid";
             this.IsPaid.Visible = true;
-            this.IsPaid.VisibleIndex = 9;
+            this.IsPaid.VisibleIndex = 8;
             // 
             // menuAmount
             // 
