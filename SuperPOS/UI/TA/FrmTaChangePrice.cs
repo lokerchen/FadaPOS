@@ -236,7 +236,7 @@ namespace SuperPOS.UI.TA
             int i = 0;
             foreach (var taChangeMenuAttrInfo in CommonData.TaChangeMenuAttr)
             {
-                hsMenuName.Add(taChangeMenuAttrInfo.MenuAttrEnglishName, taChangeMenuAttrInfo.MenuAttrOtherName);
+                hsMenuName.Add(taChangeMenuAttrInfo.MenuAttrEnglishName, string.IsNullOrEmpty(taChangeMenuAttrInfo.MenuAttrOtherName) ? "" : taChangeMenuAttrInfo.MenuAttrOtherName);
 
                 btnMenuAttr[i].Text = iLange == PubComm.MENU_LANG_DEFAULT 
                                         ? taChangeMenuAttrInfo.MenuAttrEnglishName
