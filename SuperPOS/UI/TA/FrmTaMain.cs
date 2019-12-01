@@ -1137,10 +1137,10 @@ namespace SuperPOS.UI.TA
                 }
             }
 
-            if (isSubMenu)
-            {
-                lstResult.AddRange(CommonData.TaMenuItemOtherChoice.Where(s => s.MiID == mId && s.IsEnableChoice.Equals("Y")));
-            }
+            //if (isSubMenu)
+            //{
+            //    lstResult.AddRange(CommonData.TaMenuItemOtherChoice.Where(s => s.MiID == mId && s.IsEnableChoice.Equals("Y")));
+            //}
 
             foreach (var taMenuItemOtherChoiceInfo in lstResult)
             {
