@@ -71,6 +71,7 @@
             this.btnShowAll = new DevExpress.XtraEditors.SimpleButton();
             this.btnShowAssigned = new DevExpress.XtraEditors.SimpleButton();
             this.btnShowUnAssigned = new DevExpress.XtraEditors.SimpleButton();
+            this.OrderNo = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
             this.panelControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridControlTaPendOrder)).BeginInit();
@@ -109,6 +110,7 @@
             this.gvTaPendOrder.Appearance.HeaderPanel.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.gvTaPendOrder.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
             this.ID,
+            this.OrderNo,
             this.CheckCode,
             this.OrderTime,
             this.PostCode,
@@ -160,7 +162,7 @@
             this.OrderTime.FieldName = "OrderTime";
             this.OrderTime.Name = "OrderTime";
             this.OrderTime.Visible = true;
-            this.OrderTime.VisibleIndex = 1;
+            this.OrderTime.VisibleIndex = 2;
             this.OrderTime.Width = 86;
             // 
             // PostCode
@@ -169,7 +171,7 @@
             this.PostCode.FieldName = "PostCode";
             this.PostCode.Name = "PostCode";
             this.PostCode.Visible = true;
-            this.PostCode.VisibleIndex = 2;
+            this.PostCode.VisibleIndex = 3;
             // 
             // PostCodeZone
             // 
@@ -177,7 +179,7 @@
             this.PostCodeZone.FieldName = "PostCodeZone";
             this.PostCodeZone.Name = "PostCodeZone";
             this.PostCodeZone.Visible = true;
-            this.PostCodeZone.VisibleIndex = 3;
+            this.PostCodeZone.VisibleIndex = 4;
             // 
             // Addr
             // 
@@ -185,7 +187,7 @@
             this.Addr.FieldName = "Addr";
             this.Addr.Name = "Addr";
             this.Addr.Visible = true;
-            this.Addr.VisibleIndex = 4;
+            this.Addr.VisibleIndex = 5;
             // 
             // PayOrderType
             // 
@@ -195,7 +197,7 @@
             this.PayOrderType.FieldName = "PayOrderType";
             this.PayOrderType.Name = "PayOrderType";
             this.PayOrderType.Visible = true;
-            this.PayOrderType.VisibleIndex = 0;
+            this.PayOrderType.VisibleIndex = 1;
             // 
             // CustomerName
             // 
@@ -203,7 +205,7 @@
             this.CustomerName.FieldName = "CustomerName";
             this.CustomerName.Name = "CustomerName";
             this.CustomerName.Visible = true;
-            this.CustomerName.VisibleIndex = 5;
+            this.CustomerName.VisibleIndex = 6;
             // 
             // CustomerPhone
             // 
@@ -211,7 +213,7 @@
             this.CustomerPhone.FieldName = "CustomerPhone";
             this.CustomerPhone.Name = "CustomerPhone";
             this.CustomerPhone.Visible = true;
-            this.CustomerPhone.VisibleIndex = 6;
+            this.CustomerPhone.VisibleIndex = 7;
             // 
             // TotalAmount
             // 
@@ -221,7 +223,7 @@
             this.TotalAmount.FieldName = "TotalAmount";
             this.TotalAmount.Name = "TotalAmount";
             this.TotalAmount.Visible = true;
-            this.TotalAmount.VisibleIndex = 7;
+            this.TotalAmount.VisibleIndex = 8;
             // 
             // StaffName
             // 
@@ -229,7 +231,7 @@
             this.StaffName.FieldName = "StaffName";
             this.StaffName.Name = "StaffName";
             this.StaffName.Visible = true;
-            this.StaffName.VisibleIndex = 10;
+            this.StaffName.VisibleIndex = 11;
             // 
             // DriverName
             // 
@@ -237,7 +239,7 @@
             this.DriverName.FieldName = "DriverName";
             this.DriverName.Name = "DriverName";
             this.DriverName.Visible = true;
-            this.DriverName.VisibleIndex = 9;
+            this.DriverName.VisibleIndex = 10;
             // 
             // IsPaid
             // 
@@ -247,7 +249,7 @@
             this.IsPaid.FieldName = "IsPaid";
             this.IsPaid.Name = "IsPaid";
             this.IsPaid.Visible = true;
-            this.IsPaid.VisibleIndex = 8;
+            this.IsPaid.VisibleIndex = 9;
             // 
             // menuAmount
             // 
@@ -595,6 +597,13 @@
             this.btnShowUnAssigned.Text = "Show Unassigned";
             this.btnShowUnAssigned.Click += new System.EventHandler(this.btnShowUnAssigned_Click);
             // 
+            // OrderNo
+            // 
+            this.OrderNo.Caption = "Order No";
+            this.OrderNo.Name = "OrderNo";
+            this.OrderNo.Visible = true;
+            this.OrderNo.VisibleIndex = 0;
+            // 
             // FrmTaPendOrder
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 18F);
@@ -681,5 +690,6 @@
         private DevExpress.XtraEditors.SimpleButton btnNotPaid;
         private DevExpress.XtraEditors.SimpleButton btnSaveOrder;
         private DevExpress.XtraGrid.Columns.GridColumn IsSave;
+        private DevExpress.XtraGrid.Columns.GridColumn OrderNo;
     }
 }
