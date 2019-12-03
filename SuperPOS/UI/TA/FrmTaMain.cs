@@ -1865,14 +1865,12 @@ namespace SuperPOS.UI.TA
 
                     string sNewPrice = dPrice.ToString();
 
-                    string sNewEngName = "";
-                    string sNewOtherName = "";
+                    List<TaChangeMenuAttrInfo> lstTaChangeMenuAttrInfos = new List<TaChangeMenuAttrInfo>();
 
                     if (frmTaChangePrice.ShowDialog() == DialogResult.OK)
                     {
                         sNewPrice = frmTaChangePrice.NewPrice;
-                        sNewEngName = frmTaChangePrice.MenuAttrEng;
-                        sNewOtherName = frmTaChangePrice.MenuAttrOther;
+                        lstTaChangeMenuAttrInfos = frmTaChangePrice.MenuAttrEng;
 
                         if (!string.IsNullOrEmpty(sNewPrice))
                         {
@@ -1891,10 +1889,15 @@ namespace SuperPOS.UI.TA
                             }
                         }
 
-                        if (!string.IsNullOrEmpty(sNewEngName))
+                        foreach (var taChangeMenuAttrInfo in lstTaChangeMenuAttrInfos)
                         {
-                            if (!dChangePrice.ContainsKey(sNewEngName)) dChangePrice.Add(sNewEngName, sNewOtherName);
-                            treeListOrder.FocusedNode["ItemDishName"] += " " + sNewEngName;
+                            if (!dChangePrice.ContainsKey(taChangeMenuAttrInfo.MenuAttrEnglishName))
+                                dChangePrice.Add(taChangeMenuAttrInfo.MenuAttrEnglishName, taChangeMenuAttrInfo.MenuAttrOtherName);
+
+                            if (iLangStatusId == PubComm.MENU_LANG_DEFAULT)
+                                treeListOrder.FocusedNode["ItemDishName"] += " " + taChangeMenuAttrInfo.MenuAttrEnglishName;
+                            else
+                                treeListOrder.FocusedNode["ItemDishName"] += " " + taChangeMenuAttrInfo.MenuAttrOtherName;
                         }
                     }
                 }

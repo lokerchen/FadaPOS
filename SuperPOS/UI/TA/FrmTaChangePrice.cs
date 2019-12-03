@@ -34,21 +34,14 @@ namespace SuperPOS.UI.TA
         private string miSmallPrice = "";
         private string miRegPrice = "";
 
-        private string strMenuAttrEng = "";
-        private string strMenuAttrOther = "";
+        private List<TaChangeMenuAttrInfo> lstMenuAttr = new List<TaChangeMenuAttrInfo>();
 
         private Hashtable hsMenuName = new Hashtable();
 
-        public string MenuAttrEng
+        public List<TaChangeMenuAttrInfo> MenuAttrEng
         {
-            get { return strMenuAttrEng; }
+            get { return lstMenuAttr; }
             set { MenuAttrEng = value; }
-        }
-
-        public string MenuAttrOther
-        {
-            get { return strMenuAttrOther; }
-            set { strMenuAttrOther = value; }
         }
 
         public string NewPrice
@@ -457,7 +450,11 @@ namespace SuperPOS.UI.TA
                         eName = btn.Text;
                         oName = hsMenuName[btn.Text].ToString();
                     }
-                    strMenuAttrEng += @" " + eName;
+
+                    TaChangeMenuAttrInfo taMenuItemInfo = new TaChangeMenuAttrInfo();
+                    taMenuItemInfo.MenuAttrEnglishName = eName;
+                    taMenuItemInfo.MenuAttrOtherName = oName;
+                    lstMenuAttr.Add(taMenuItemInfo);
                 }
                 else
                 {
@@ -473,7 +470,10 @@ namespace SuperPOS.UI.TA
                             }
                         }
 
-                        strMenuAttrEng += @" " + oName;
+                        TaChangeMenuAttrInfo taMenuItemInfo = new TaChangeMenuAttrInfo();
+                        taMenuItemInfo.MenuAttrEnglishName = eName;
+                        taMenuItemInfo.MenuAttrOtherName = oName;
+                        lstMenuAttr.Add(taMenuItemInfo);
                     }
                 }
                 
@@ -518,7 +518,7 @@ namespace SuperPOS.UI.TA
             if (lstIp.Any())
             {
                 TaChangeMenuAttrInfo taChangeMenuAttrInfo = lstIp.FirstOrDefault();
-                strMenuAttrOther = string.IsNullOrWhiteSpace(taChangeMenuAttrInfo.MenuAttrOtherName) ? "" : taChangeMenuAttrInfo.MenuAttrOtherName;
+                lstMenuAttr.Add(taChangeMenuAttrInfo);
                 return string.IsNullOrEmpty(taChangeMenuAttrInfo.IncrementPrice) ? "0.00" : taChangeMenuAttrInfo.IncrementPrice;
             }
             else
