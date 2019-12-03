@@ -32,6 +32,7 @@
             this.gridControlTaPendOrder = new DevExpress.XtraGrid.GridControl();
             this.gvTaPendOrder = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.ID = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.OrderNo = new DevExpress.XtraGrid.Columns.GridColumn();
             this.CheckCode = new DevExpress.XtraGrid.Columns.GridColumn();
             this.OrderTime = new DevExpress.XtraGrid.Columns.GridColumn();
             this.PostCode = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -71,7 +72,6 @@
             this.btnShowAll = new DevExpress.XtraEditors.SimpleButton();
             this.btnShowAssigned = new DevExpress.XtraEditors.SimpleButton();
             this.btnShowUnAssigned = new DevExpress.XtraEditors.SimpleButton();
-            this.OrderNo = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
             this.panelControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridControlTaPendOrder)).BeginInit();
@@ -147,6 +147,14 @@
             this.ID.Caption = "ID";
             this.ID.FieldName = "ID";
             this.ID.Name = "ID";
+            // 
+            // OrderNo
+            // 
+            this.OrderNo.Caption = "Order No";
+            this.OrderNo.FieldName = "OtherCheckCode";
+            this.OrderNo.Name = "OrderNo";
+            this.OrderNo.Visible = true;
+            this.OrderNo.VisibleIndex = 0;
             // 
             // CheckCode
             // 
@@ -596,13 +604,6 @@
             this.btnShowUnAssigned.TabIndex = 55;
             this.btnShowUnAssigned.Text = "Show Unassigned";
             this.btnShowUnAssigned.Click += new System.EventHandler(this.btnShowUnAssigned_Click);
-            // 
-            // OrderNo
-            // 
-            this.OrderNo.Caption = "Order No";
-            this.OrderNo.Name = "OrderNo";
-            this.OrderNo.Visible = true;
-            this.OrderNo.VisibleIndex = 0;
             // 
             // FrmTaPendOrder
             // 

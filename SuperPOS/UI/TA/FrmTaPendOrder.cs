@@ -105,7 +105,8 @@ namespace SuperPOS.UI.TA
                             MenuAmount = check.MenuAmount,
                             Discount = check.PayDiscount,
                             DiscountPer = check.PayPerDiscount,
-                            IsSave = check.IsSave
+                            IsSave = check.IsSave,
+                            OtherCheckCode = !check.IsSave.Equals("N") ? " ": check.CheckCode
                         };
 
             if (isSaveOrder)
@@ -139,7 +140,8 @@ namespace SuperPOS.UI.TA
                             MenuAmount = db.MenuAmount,
                             Discount = db.Discount,
                             DiscountPer = db.DiscountPer,
-                            IsSave = db.IsSave
+                            IsSave = db.IsSave,
+                            OtherCheckCode = !db.IsSave.Equals("N") ? " " : db.CheckCode
                         };
             }
 
