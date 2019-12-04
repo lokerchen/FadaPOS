@@ -48,10 +48,17 @@ namespace SuperPOS.UI.TA
             ChangeLang(iLangStatusId);
         }
 
+        #region 按钮语言切换显示
+        /// <summary>
+        /// 按钮语言切换显示
+        /// </summary>
+        /// <param name="iLan">语言状态位</param>
         private void ChangeLang(int iLan)
         {
             if (iLan == PubComm.MENU_LANG_DEFAULT)
             {
+                #region 英文
+
                 lblTsTotalTA.Text = @"Total T/A";
                 lblTsCollection.Text = @"Collection";
                 lblTsDelivery.Text = @"Delivery";
@@ -99,9 +106,12 @@ namespace SuperPOS.UI.TA
 
                 btnLanguage.Text = @"LANGUAGE";
                 btnExit.Text = @"Exit";
+
+                #endregion
             }
             else
             {
+                #region 汉语
                 lblTsTotalTA.Text = @"外卖总数";
                 lblTsCollection.Text = @"拿餐";
                 lblTsDelivery.Text = @"送餐";
@@ -149,7 +159,11 @@ namespace SuperPOS.UI.TA
 
                 btnLanguage.Text = @"语言";
                 btnExit.Text = @"退出";
+
+                #endregion
             }
+
         }
+        #endregion
     }
 }
