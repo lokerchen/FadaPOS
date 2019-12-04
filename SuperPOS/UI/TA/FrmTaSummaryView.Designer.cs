@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.btnLanguage = new DevExpress.XtraEditors.SimpleButton();
             this.btnExit = new DevExpress.XtraEditors.SimpleButton();
@@ -89,8 +90,8 @@
             this.txtEsSc = new DevExpress.XtraEditors.TextEdit();
             this.lblEsSc = new DevExpress.XtraEditors.LabelControl();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.txtTsDcCard = new DevExpress.XtraEditors.TextEdit();
-            this.lblTsDcCard = new DevExpress.XtraEditors.LabelControl();
+            this.txtTsDcOther = new DevExpress.XtraEditors.TextEdit();
+            this.lblTsDcOther = new DevExpress.XtraEditors.LabelControl();
             this.txtTsDcCash = new DevExpress.XtraEditors.TextEdit();
             this.lblTsDcCash = new DevExpress.XtraEditors.LabelControl();
             this.txtTsTotalDc = new DevExpress.XtraEditors.TextEdit();
@@ -115,6 +116,7 @@
             this.lblTsCollection = new DevExpress.XtraEditors.LabelControl();
             this.txtTsTotalTA = new DevExpress.XtraEditors.TextEdit();
             this.lblTsTotalTA = new DevExpress.XtraEditors.LabelControl();
+            this.tTimer = new System.Windows.Forms.Timer(this.components);
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
             this.panelControl1.SuspendLayout();
@@ -148,7 +150,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.txtEsTotalEatIn.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtEsSc.Properties)).BeginInit();
             this.groupBox2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.txtTsDcCard.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtTsDcOther.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtTsDcCash.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtTsTotalDc.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtTsTotalFF.Properties)).BeginInit();
@@ -234,6 +236,7 @@
             this.btnLeft.Size = new System.Drawing.Size(78, 30);
             this.btnLeft.TabIndex = 93;
             this.btnLeft.Text = "<";
+            this.btnLeft.Click += new System.EventHandler(this.btnLeft_Click);
             // 
             // panelControl1
             // 
@@ -655,6 +658,7 @@
             this.btnRight.Size = new System.Drawing.Size(78, 30);
             this.btnRight.TabIndex = 92;
             this.btnRight.Text = ">";
+            this.btnRight.Click += new System.EventHandler(this.btnRight_Click);
             // 
             // gbCurrentDate
             // 
@@ -863,8 +867,8 @@
             // 
             // groupBox2
             // 
-            this.groupBox2.Controls.Add(this.txtTsDcCard);
-            this.groupBox2.Controls.Add(this.lblTsDcCard);
+            this.groupBox2.Controls.Add(this.txtTsDcOther);
+            this.groupBox2.Controls.Add(this.lblTsDcOther);
             this.groupBox2.Controls.Add(this.txtTsDcCash);
             this.groupBox2.Controls.Add(this.lblTsDcCash);
             this.groupBox2.Controls.Add(this.txtTsTotalDc);
@@ -897,25 +901,25 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Takeaway Summary";
             // 
-            // txtTsDcCard
+            // txtTsDcOther
             // 
-            this.txtTsDcCard.Location = new System.Drawing.Point(321, 196);
-            this.txtTsDcCard.Name = "txtTsDcCard";
-            this.txtTsDcCard.Size = new System.Drawing.Size(96, 24);
-            this.txtTsDcCard.TabIndex = 105;
+            this.txtTsDcOther.Location = new System.Drawing.Point(321, 196);
+            this.txtTsDcOther.Name = "txtTsDcOther";
+            this.txtTsDcOther.Size = new System.Drawing.Size(96, 24);
+            this.txtTsDcOther.TabIndex = 105;
             // 
-            // lblTsDcCard
+            // lblTsDcOther
             // 
-            this.lblTsDcCard.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
-            this.lblTsDcCard.Appearance.Font = new System.Drawing.Font("Tahoma", 10F);
-            this.lblTsDcCard.Appearance.ForeColor = System.Drawing.Color.Black;
-            this.lblTsDcCard.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.lblTsDcCard.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
-            this.lblTsDcCard.Location = new System.Drawing.Point(321, 164);
-            this.lblTsDcCard.Name = "lblTsDcCard";
-            this.lblTsDcCard.Size = new System.Drawing.Size(96, 26);
-            this.lblTsDcCard.TabIndex = 104;
-            this.lblTsDcCard.Text = "D/C(Card)";
+            this.lblTsDcOther.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
+            this.lblTsDcOther.Appearance.Font = new System.Drawing.Font("Tahoma", 10F);
+            this.lblTsDcOther.Appearance.ForeColor = System.Drawing.Color.Black;
+            this.lblTsDcOther.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.lblTsDcOther.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
+            this.lblTsDcOther.Location = new System.Drawing.Point(321, 164);
+            this.lblTsDcOther.Name = "lblTsDcOther";
+            this.lblTsDcOther.Size = new System.Drawing.Size(96, 26);
+            this.lblTsDcOther.TabIndex = 104;
+            this.lblTsDcOther.Text = "D/C(Card)";
             // 
             // txtTsDcCash
             // 
@@ -1157,6 +1161,12 @@
             this.lblTsTotalTA.TabIndex = 80;
             this.lblTsTotalTA.Text = "Total T/A";
             // 
+            // tTimer
+            // 
+            this.tTimer.Enabled = true;
+            this.tTimer.Interval = 1000;
+            this.tTimer.Tick += new System.EventHandler(this.tTimer_Tick);
+            // 
             // FrmTaSummaryView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 18F);
@@ -1203,7 +1213,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.txtEsTotalEatIn.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtEsSc.Properties)).EndInit();
             this.groupBox2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.txtTsDcCard.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtTsDcOther.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtTsDcCash.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtTsTotalDc.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtTsTotalFF.Properties)).EndInit();
@@ -1255,8 +1265,8 @@
         private DevExpress.XtraEditors.TextEdit txtEsTotalEatIn;
         private DevExpress.XtraEditors.TextEdit txtEsSc;
         private DevExpress.XtraEditors.LabelControl lblEsSc;
-        private DevExpress.XtraEditors.TextEdit txtTsDcCard;
-        private DevExpress.XtraEditors.LabelControl lblTsDcCard;
+        private DevExpress.XtraEditors.TextEdit txtTsDcOther;
+        private DevExpress.XtraEditors.LabelControl lblTsDcOther;
         private DevExpress.XtraEditors.TextEdit txtTsDcCash;
         private DevExpress.XtraEditors.LabelControl lblTsDcCash;
         private DevExpress.XtraEditors.TextEdit txtTsTotalDc;
@@ -1309,5 +1319,6 @@
         private DevExpress.XtraEditors.TextEdit txtCurrentTime;
         private DevExpress.XtraEditors.SimpleButton btnExit;
         private DevExpress.XtraEditors.SimpleButton btnLanguage;
+        private System.Windows.Forms.Timer tTimer;
     }
 }
