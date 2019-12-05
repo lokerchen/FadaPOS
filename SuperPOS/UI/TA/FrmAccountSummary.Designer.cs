@@ -167,6 +167,7 @@
             this.btnAmendOrder.Size = new System.Drawing.Size(79, 54);
             this.btnAmendOrder.TabIndex = 56;
             this.btnAmendOrder.Text = "Amend Order";
+            this.btnAmendOrder.Click += new System.EventHandler(this.btnAmendOrder_Click);
             // 
             // btnLanguage
             // 

@@ -622,5 +622,12 @@ namespace SuperPOS.UI.TA
             return htDetail;
         }
         #endregion
+
+        private void btnAmendOrder_Click(object sender, EventArgs e)
+        {
+            //Hide();
+            FrmTaMain frmTaMain = new FrmTaMain(strChkOrder, usrID, intCusID);
+            frmTaMain.ShowDialog();
+        }
     }
 }
