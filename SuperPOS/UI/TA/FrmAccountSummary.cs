@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -594,5 +595,32 @@ namespace SuperPOS.UI.TA
             FrmTaSummaryView frmTaSummaryView = new FrmTaSummaryView();
             frmTaSummaryView.ShowDialog();
         }
+
+        private void btnChangePayment_Click(object sender, EventArgs e)
+        {
+            FrmTaPaymentShop frmTaPaymentShop = new FrmTaPaymentShop(usrID, strChkOrder, sOrderType, SetPrtInfo(CommonData.TaOrderItem.Where(s => s.CheckCode.Equals(strChkOrder)).ToList()));
+
+            frmTaPaymentShop.ShowDialog();
+
+            GetBindData(CommonDAL.GetBusDate());
+        }
+
+        #region 设置打印相关信息
+
+        private Hashtable SetPrtInfo(List<TaOrderItemInfo> lstOi)
+        {
+            Hashtable htDetail = new Hashtable();
+
+            new SystemData().GetUsrBase();
+
+            htDetail["Staff"] = CommonData.UsrBase.Any(s => s.ID == usrID) ? CommonData.UsrBase.FirstOrDefault(s => s.ID == usrID).UsrName : "";
+
+            htDetail["ItemQty"] = GetItemCount(strChkOrder);
+            htDetail["SubTotal"] = sTotalAmount;
+            htDetail["Total"] = sTotalAmount;
+
+            return htDetail;
+        }
+        #endregion
     }
 }

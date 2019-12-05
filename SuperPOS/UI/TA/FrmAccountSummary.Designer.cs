@@ -128,6 +128,7 @@
             this.btnChangePayment.Size = new System.Drawing.Size(92, 54);
             this.btnChangePayment.TabIndex = 70;
             this.btnChangePayment.Text = "Change Payment";
+            this.btnChangePayment.Click += new System.EventHandler(this.btnChangePayment_Click);
             // 
             // btnVoidOrder
             // 
