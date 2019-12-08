@@ -294,6 +294,7 @@ namespace SuperPOS.Print
                         }
                     }
 
+                    if (string.IsNullOrEmpty(strContent)) return @"";
                     //删除最后一个多余换行
                     strContent = strContent.Remove(strContent.LastIndexOf("\n"));
 
