@@ -72,6 +72,7 @@
             this.btnShowAll = new DevExpress.XtraEditors.SimpleButton();
             this.btnShowAssigned = new DevExpress.XtraEditors.SimpleButton();
             this.btnShowUnAssigned = new DevExpress.XtraEditors.SimpleButton();
+            this.BusDate = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
             this.panelControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridControlTaPendOrder)).BeginInit();
@@ -126,7 +127,8 @@
             this.menuAmount,
             this.Discount,
             this.DiscountPer,
-            this.IsSave});
+            this.IsSave,
+            this.BusDate});
             this.gvTaPendOrder.GridControl = this.gridControlTaPendOrder;
             this.gvTaPendOrder.IndicatorWidth = 50;
             this.gvTaPendOrder.Name = "gvTaPendOrder";
@@ -605,6 +607,14 @@
             this.btnShowUnAssigned.Text = "Show Unassigned";
             this.btnShowUnAssigned.Click += new System.EventHandler(this.btnShowUnAssigned_Click);
             // 
+            // BusDate
+            // 
+            this.BusDate.Caption = "BusDate";
+            this.BusDate.FieldName = "gridBusDate";
+            this.BusDate.Name = "BusDate";
+            this.BusDate.Visible = true;
+            this.BusDate.VisibleIndex = 12;
+            // 
             // FrmTaPendOrder
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 18F);
@@ -692,5 +702,6 @@
         private DevExpress.XtraEditors.SimpleButton btnSaveOrder;
         private DevExpress.XtraGrid.Columns.GridColumn IsSave;
         private DevExpress.XtraGrid.Columns.GridColumn OrderNo;
+        private DevExpress.XtraGrid.Columns.GridColumn BusDate;
     }
 }

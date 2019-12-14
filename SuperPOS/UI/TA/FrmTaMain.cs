@@ -67,6 +67,9 @@ namespace SuperPOS.UI.TA
         //保存菜品中英文
         private Dictionary<string, string> dItemName = new Dictionary<string, string>();
 
+        //营业日期
+        private string strBusDate = "";
+
         #region 来电显示相关
         [StructLayout(LayoutKind.Sequential)]
         public struct tag_pstn_Data
@@ -96,6 +99,15 @@ namespace SuperPOS.UI.TA
             checkID = cId;
             usrID = id;
             CustID = cusId;
+        }
+
+        public FrmTaMain(string cId, int id, int cusId, string sBusDate)
+        {
+            InitializeComponent();
+            checkID = cId;
+            usrID = id;
+            CustID = cusId;
+            strBusDate = string.IsNullOrEmpty(sBusDate) ? CommonDAL.GetBusDate() : sBusDate;
         }
 
         #region 事件
@@ -134,7 +146,7 @@ namespace SuperPOS.UI.TA
                 {
                     new SystemData().GetTaOrderItem();
 
-                    if (CommonData.TaOrderItem.Any(s => s.ID == taOrderItemInfo.ID))
+                    if (CommonData.TaOrderItem.Any(s => s.ID == taOrderItemInfo.ID && s.BusDate.Equals(strBusDate)))
                     {
                         _control.UpdateEntity(taOrderItemInfo);
                     }
@@ -177,7 +189,7 @@ namespace SuperPOS.UI.TA
             {
                 if (CommonTool.ConfirmMessage("Are you sure you want to cancel the order?") == DialogResult.OK)
                 {
-                    var lstChk = CommonData.TaCheckOrder.Where(s => s.CheckCode.Equals(checkID));
+                    var lstChk = CommonData.TaCheckOrder.Where(s => s.CheckCode.Equals(checkID) && s.BusDate.Equals(strBusDate));
                     if (lstChk.Any())
                     {
                         TaCheckOrderInfo taCheck = lstChk.FirstOrDefault();
@@ -204,6 +216,8 @@ namespace SuperPOS.UI.TA
         {
             //展开所有TreeList
             treeListOrder.ExpandAll();
+
+            if (string.IsNullOrEmpty(strBusDate)) strBusDate = CommonDAL.GetBusDate();
 
             new SystemData().GetTaMenuCate();
 
@@ -240,17 +254,17 @@ namespace SuperPOS.UI.TA
                 //TO DO something
                 lblCheck.Text = checkID;
 
-                if (CommonData.TaCheckOrder.Any(s => s.CheckCode.Equals(checkID)))
-                    ORDER_TYPE = lblType.Text = CommonData.TaCheckOrder.FirstOrDefault(s => s.CheckCode.Equals(checkID)).PayOrderType;
+                if (CommonData.TaCheckOrder.Any(s => s.CheckCode.Equals(checkID) && s.BusDate.Equals(strBusDate)))
+                    ORDER_TYPE = lblType.Text = CommonData.TaCheckOrder.FirstOrDefault(s => s.CheckCode.Equals(checkID) && s.BusDate.Equals(strBusDate)).PayOrderType;
                 //BindData(checkID);
                 
                 ChangeOrderBtnColor(ORDER_TYPE);
 
-                InitGrid(CommonData.TaOrderItem.Where(s => s.CheckCode.Equals(checkID)).ToList());
+                InitGrid(CommonData.TaOrderItem.Where(s => s.CheckCode.Equals(checkID) && s.BusDate.Equals(strBusDate)).ToList());
 
                 treeListOrder.ExpandAll();
 
-                treeListOrder.SetFocusedNode(treeListOrder.Nodes[treeListOrder.Nodes.Count - 1]);
+                if (treeListOrder.Nodes.Count > 0) treeListOrder.SetFocusedNode(treeListOrder.Nodes[treeListOrder.Nodes.Count - 1]);
 
                 isNew = false;
             }
@@ -532,6 +546,8 @@ namespace SuperPOS.UI.TA
                                 taOrderItemInfo.OrderTime = DateTime.Now.ToString();
                                 taOrderItemInfo.OrderStaff = usrID;
 
+                                taOrderItemInfo.BusDate = strBusDate;
+
                                 lstMi.Add(taOrderItemInfo);
                             }
                         }
@@ -606,7 +622,7 @@ namespace SuperPOS.UI.TA
 
             #region 保存TreeList
             new SystemData().GetTaOrderItem();
-            var lstDelOi = CommonData.TaOrderItem.Where(s => s.CheckCode.Equals(checkID));
+            var lstDelOi = CommonData.TaOrderItem.Where(s => s.CheckCode.Equals(checkID) && s.BusDate.Equals(strBusDate));
 
             foreach (var taOrderItemInfo in lstDelOi)
             {
@@ -640,7 +656,7 @@ namespace SuperPOS.UI.TA
             //ORDER_TYPE_SHOP
             if (ORDER_TYPE.Equals(PubComm.ORDER_TYPE_SHOP))
             {
-                FrmTaPaymentShop frmTaPaymentShop = new FrmTaPaymentShop(usrID, checkID, ORDER_TYPE, CallerID, SetPrtInfo(lstTaOI));
+                FrmTaPaymentShop frmTaPaymentShop = new FrmTaPaymentShop(usrID, checkID, ORDER_TYPE, CallerID, SetPrtInfo(lstTaOI), strBusDate);
 
                 if (frmTaPaymentShop.ShowDialog() == DialogResult.OK)
                 {
@@ -652,7 +668,7 @@ namespace SuperPOS.UI.TA
             }
             else
             {
-                FrmTaPayment frmTaPayment = new FrmTaPayment(usrID, checkID, ORDER_TYPE, CallerID, SetPrtInfo(lstTaOI));
+                FrmTaPayment frmTaPayment = new FrmTaPayment(usrID, checkID, ORDER_TYPE, CallerID, SetPrtInfo(lstTaOI), strBusDate);
 
                 if (frmTaPayment.ShowDialog() == DialogResult.OK)
                 {
@@ -747,6 +763,7 @@ namespace SuperPOS.UI.TA
                             //taOrderItemInfo.ItemParent = Convert.ToInt32(taMenuItemInfo.ID);
                             taOrderItemInfo.OrderTime = DateTime.Now.ToString();
                             taOrderItemInfo.OrderStaff = usrID;
+                            taOrderItemInfo.BusDate = strBusDate;
 
                             AddTreeListChild(taOrderItemInfo, treeListOrder.FocusedNode);
                         }
@@ -918,7 +935,7 @@ namespace SuperPOS.UI.TA
         {
             new SystemData().GetTaOrderItem();
 
-            treeListOrder.DataSource = CommonData.TaOrderItem.Where(s => s.CheckCode.Equals(checkCode)).ToList();
+            treeListOrder.DataSource = CommonData.TaOrderItem.Where(s => s.CheckCode.Equals(checkCode) && s.BusDate.Equals(strBusDate)).ToList();
 
             treeListOrder.KeyFieldName = "ID";
             treeListOrder.ParentFieldName = "ItemParent";
@@ -949,7 +966,8 @@ namespace SuperPOS.UI.TA
                 taOrderItemInfo.ItemType,
                 taOrderItemInfo.ItemParent,
                 taOrderItemInfo.OrderTime,
-                taOrderItemInfo.OrderStaff
+                taOrderItemInfo.OrderStaff,
+                taOrderItemInfo.BusDate
             }, -1);
 
             treeListOrder.EndUnboundLoad();
@@ -997,10 +1015,11 @@ namespace SuperPOS.UI.TA
                 taOrderItemInfo.ItemType,
                 taOrderItemInfo.ItemParent,
                 taOrderItemInfo.OrderTime,
-                taOrderItemInfo.OrderStaff
+                taOrderItemInfo.OrderStaff,
+                taOrderItemInfo.BusDate
             }, node);
 
-            Console.WriteLine(node1["ItemParent"].ToString());
+            //Console.WriteLine(node1["ItemParent"].ToString());
 
             treeListOrder.EndUnboundLoad();
 
@@ -1149,6 +1168,7 @@ namespace SuperPOS.UI.TA
                 taOrderItemInfo.ItemCode = taMenuItemOtherChoiceInfo.ID.ToString();
                 taOrderItemInfo.ItemQty = mQty;
                 taOrderItemInfo.ItemTotalPrice = (Convert.ToInt32(mQty) * Convert.ToDecimal(taMenuItemOtherChoiceInfo.MiPrice)).ToString();
+                taOrderItemInfo.BusDate = strBusDate;
                 if (taMenuItemOtherChoiceInfo.IsAutoAppend.Equals("Y"))
                 {
                     //为语言转换做数据存储
@@ -1231,6 +1251,7 @@ namespace SuperPOS.UI.TA
                     taOrderItemInfo.ItemParent = "0";
                     taOrderItemInfo.OrderTime = DateTime.Now.ToString();
                     taOrderItemInfo.OrderStaff = usrID;
+                    taOrderItemInfo.BusDate = strBusDate;
 
                     lstTaOI.Add(taOrderItemInfo);
 
@@ -1278,6 +1299,7 @@ namespace SuperPOS.UI.TA
                     taOrderItemInfo.ItemParent = parentID;
                     taOrderItemInfo.OrderTime = DateTime.Now.ToString();
                     taOrderItemInfo.OrderStaff = usrID;
+                    taOrderItemInfo.BusDate = strBusDate;
 
                     lstTaOI.Add(taOrderItemInfo);
                 }
@@ -1448,7 +1470,7 @@ namespace SuperPOS.UI.TA
         {
             new SystemData().GetTaCheckOrder();
             TaCheckOrderInfo taCheckOrderInfo = new TaCheckOrderInfo();
-            var lstChk = CommonData.TaCheckOrder.Where(s => s.CheckCode.Equals(checkID));
+            var lstChk = CommonData.TaCheckOrder.Where(s => s.CheckCode.Equals(checkID) && s.BusDate.Equals(strBusDate));
             if (lstChk.Any())
             {
                 taCheckOrderInfo = lstChk.FirstOrDefault();
@@ -1571,7 +1593,7 @@ namespace SuperPOS.UI.TA
             {
                 if (CommonTool.ConfirmMessage("Are you sure you want to cancel the order?") == DialogResult.OK)
                 {
-                    var lstChk = CommonData.TaCheckOrder.Where(s => s.CheckCode.Equals(checkID) && s.IsPaid.Equals("N"));
+                    var lstChk = CommonData.TaCheckOrder.Where(s => s.CheckCode.Equals(checkID) && s.IsPaid.Equals("N") && s.BusDate.Equals(strBusDate));
                     if (lstChk.Any())
                     {
                         TaCheckOrderInfo taCheck = lstChk.FirstOrDefault();
@@ -1708,6 +1730,7 @@ namespace SuperPOS.UI.TA
                     //taOrderItemInfo.ItemParent = Convert.ToInt32(taMenuItemInfo.ID);
                     taOrderItemInfo.OrderTime = DateTime.Now.ToString();
                     taOrderItemInfo.OrderStaff = usrID;
+                    taOrderItemInfo.BusDate = strBusDate;
 
                     TreeListNode node = AddTreeListNode(taOrderItemInfo);
 
@@ -1767,6 +1790,7 @@ namespace SuperPOS.UI.TA
                     //taOrderItemInfo.ItemParent = Convert.ToInt32(taMenuItemInfo.ID);
                     taOrderItemInfo.OrderTime = DateTime.Now.ToString();
                     taOrderItemInfo.OrderStaff = usrID;
+                    taOrderItemInfo.BusDate = strBusDate;
 
                     TreeListNode node = AddTreeListNode(taOrderItemInfo);
 
@@ -2079,7 +2103,7 @@ namespace SuperPOS.UI.TA
                     taOrderItemInfo.ItemParent = itemId;
                     taOrderItemInfo.OrderTime = DateTime.Now.ToString();
                     taOrderItemInfo.OrderStaff = usrID;
-
+                    taOrderItemInfo.BusDate = strBusDate;
                     lstMi.Add(taOrderItemInfo);
                 }
 

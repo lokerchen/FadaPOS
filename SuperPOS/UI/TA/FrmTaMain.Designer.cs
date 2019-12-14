@@ -148,6 +148,7 @@
             this.btnSearchMeal = new DevExpress.XtraEditors.SimpleButton();
             this.btnCustInfo = new DevExpress.XtraEditors.SimpleButton();
             this.btnIngredMode = new DevExpress.XtraEditors.SimpleButton();
+            this.BusDate = new DevExpress.XtraTreeList.Columns.TreeListColumn();
             ((System.ComponentModel.ISupportInitialize)(this.treeListOrder)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemMemoEdit1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
@@ -183,7 +184,8 @@
             this.ItemType,
             this.ItemParent,
             this.OrderTime,
-            this.OrderStaff});
+            this.OrderStaff,
+            this.BusDate});
             this.treeListOrder.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.treeListOrder.IndicatorWidth = 40;
             this.treeListOrder.Location = new System.Drawing.Point(5, 182);
@@ -1856,6 +1858,12 @@
             this.btnIngredMode.Visible = false;
             this.btnIngredMode.Click += new System.EventHandler(this.btnIngredMode_Click);
             // 
+            // BusDate
+            // 
+            this.BusDate.Caption = "BusDate";
+            this.BusDate.FieldName = "BusDate";
+            this.BusDate.Name = "BusDate";
+            // 
             // FrmTaMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 18F);
@@ -2014,5 +2022,6 @@
         private DevExpress.XtraEditors.SimpleButton btnEatIn;
         private DevExpress.XtraEditors.SimpleButton btnMenu;
         private DevExpress.XtraEditors.SimpleButton btnType;
+        private DevExpress.XtraTreeList.Columns.TreeListColumn BusDate;
     }
 }

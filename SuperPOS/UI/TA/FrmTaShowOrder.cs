@@ -58,6 +58,8 @@ namespace SuperPOS.UI
 
         private AutoSizeFormClass asfc = new AutoSizeFormClass();
 
+        private string checkBusDate = @"";
+
         public FrmTaShowOrder()
         {
             InitializeComponent();
@@ -180,6 +182,7 @@ namespace SuperPOS.UI
             sDiscount = gvTaShowOrder.GetRowCellValue(gvTaShowOrder.FocusedRowHandle, "gridDisount").ToString();
             sSubTotal = gvTaShowOrder.GetRowCellValue(gvTaShowOrder.FocusedRowHandle, "gridSubTotal").ToString();
             sOrderType = gvTaShowOrder.GetRowCellValue(gvTaShowOrder.FocusedRowHandle, "gridOrderType").ToString();
+            checkBusDate = gvTaShowOrder.GetRowCellValue(gvTaShowOrder.FocusedRowHandle, "gridBusDate").ToString();
 
             sItemCount = GetItemCount(strChkOrder);
 
@@ -208,7 +211,7 @@ namespace SuperPOS.UI
         private void btnPrtReceipt_Click(object sender, EventArgs e)
         {
             new SystemData().GetTaOrderItem();
-            var lstOI = CommonData.TaOrderItem.Where(s => s.CheckCode.Equals(strChkOrder)).ToList();
+            var lstOI = CommonData.TaOrderItem.Where(s => s.CheckCode.Equals(strChkOrder) && s.BusDate.Equals(checkBusDate)).ToList();
 
             PrtTemplataTa prtTemplataTa = new PrtTemplataTa();
             prtTemplataTa.RestaurantName = PrtCommon.GetRestName();
@@ -230,7 +233,7 @@ namespace SuperPOS.UI
             {
                 prtTemplataTa.Rete1 = CommonData.GenSet.FirstOrDefault().VATPer + @"%";
 
-                var lstVAT = from oi in CommonData.TaOrderItem.Where(s => s.CheckCode.Equals(strChkOrder))
+                var lstVAT = from oi in CommonData.TaOrderItem.Where(s => s.CheckCode.Equals(strChkOrder) && s.BusDate.Equals(checkBusDate))
                              join mi in CommonData.TaMenuItem on oi.ItemCode equals mi.MiDishCode
                              where !string.IsNullOrEmpty(mi.MiRmk) && mi.MiRmk.Contains(@"Without VAT")
                              select new
@@ -280,7 +283,7 @@ namespace SuperPOS.UI
         private void btnPrtBill_Click(object sender, EventArgs e)
         {
             new SystemData().GetTaOrderItem();
-            var lstOI = CommonData.TaOrderItem.Where(s => s.CheckCode.Equals(strChkOrder)).ToList();
+            var lstOI = CommonData.TaOrderItem.Where(s => s.CheckCode.Equals(strChkOrder) && s.BusDate.Equals(checkBusDate)).ToList();
 
             PrtTemplataTa prtTemplataTa = new PrtTemplataTa();
             prtTemplataTa.RestaurantName = PrtCommon.GetRestName();
@@ -303,7 +306,7 @@ namespace SuperPOS.UI
         private void btnPrtKit_Click(object sender, EventArgs e)
         {
             new SystemData().GetTaOrderItem();
-            var lstOI = CommonData.TaOrderItem.Where(s => s.CheckCode.Equals(strChkOrder)).ToList();
+            var lstOI = CommonData.TaOrderItem.Where(s => s.CheckCode.Equals(strChkOrder) && s.BusDate.Equals(checkBusDate)).ToList();
 
             PrtTemplataTa prtTemplataTa = new PrtTemplataTa();
             prtTemplataTa.RestaurantName = PrtCommon.GetRestName();
@@ -359,7 +362,7 @@ namespace SuperPOS.UI
         private string GetPayType(string sChkId)
         {
             new SystemData().GetTaCheckOrder();
-            var lstChk = CommonData.TaCheckOrder.Where(s => s.CheckCode.Equals(sChkId));
+            var lstChk = CommonData.TaCheckOrder.Where(s => s.CheckCode.Equals(sChkId) && s.BusDate.Equals(checkBusDate));
 
             string strPt = "Paid By ";
 
@@ -399,7 +402,7 @@ namespace SuperPOS.UI
         private string SetPreviewInfo(string content)
         {
             new SystemData().GetTaOrderItem();
-            var lstOI = CommonData.TaOrderItem.Where(s => s.CheckCode.Equals(strChkOrder)).ToList();
+            var lstOI = CommonData.TaOrderItem.Where(s => s.CheckCode.Equals(strChkOrder) && s.BusDate.Equals(checkBusDate)).ToList();
 
             PrtTemplataTa prtTemplataTa = new PrtTemplataTa();
             //prtTemplataTa = ptl;
@@ -416,7 +419,7 @@ namespace SuperPOS.UI
             {
                 prtTemplataTa.Rete1 = CommonData.GenSet.FirstOrDefault().VATPer + @"%";
 
-                var lstVAT = from oi in CommonData.TaOrderItem.Where(s => s.CheckCode.Equals(strChkOrder))
+                var lstVAT = from oi in CommonData.TaOrderItem.Where(s => s.CheckCode.Equals(strChkOrder) && s.BusDate.Equals(checkBusDate))
                              join mi in CommonData.TaMenuItem on oi.ItemCode equals mi.MiDishCode
                              where !string.IsNullOrEmpty(mi.MiRmk) && mi.MiRmk.Contains(@"Without VAT")
                              select new
@@ -466,7 +469,7 @@ namespace SuperPOS.UI
         private string SetPreviewInfo()
         {
             new SystemData().GetTaOrderItem();
-            var lstOI = CommonData.TaOrderItem.Where(s => s.CheckCode.Equals(strChkOrder)).ToList();
+            var lstOI = CommonData.TaOrderItem.Where(s => s.CheckCode.Equals(strChkOrder) && s.BusDate.Equals(checkBusDate)).ToList();
 
             PrtTemplataTa prtTemplataTa = new PrtTemplataTa();
             prtTemplataTa = ptl;
@@ -483,7 +486,7 @@ namespace SuperPOS.UI
             {
                 prtTemplataTa.Rete1 = CommonData.GenSet.FirstOrDefault().VATPer + @"%";
 
-                var lstVAT = from oi in CommonData.TaOrderItem.Where(s => s.CheckCode.Equals(strChkOrder))
+                var lstVAT = from oi in CommonData.TaOrderItem.Where(s => s.CheckCode.Equals(strChkOrder) && s.BusDate.Equals(checkBusDate))
                              join mi in CommonData.TaMenuItem on oi.ItemCode equals mi.MiDishCode
                              where !string.IsNullOrEmpty(mi.MiRmk) && mi.MiRmk.Contains(@"Without VAT")
                              select new
@@ -578,7 +581,7 @@ namespace SuperPOS.UI
 
         private int GetItemCount(string chkCode)
         {
-            return CommonData.TaOrderItem.Count(s => s.CheckCode.Equals(chkCode) && s.ItemType == 1);
+            return CommonData.TaOrderItem.Count(s => s.CheckCode.Equals(chkCode) && s.ItemType == 1 && s.BusDate.Equals(checkBusDate));
         }
 
         #region 设置打印相关信息
@@ -601,7 +604,11 @@ namespace SuperPOS.UI
 
         private void btnChangePayment_Click(object sender, EventArgs e)
         {
-            FrmTaPaymentShop frmTaPaymentShop = new FrmTaPaymentShop(usrID, strChkOrder, sOrderType, SetPrtInfo(CommonData.TaOrderItem.Where(s => s.CheckCode.Equals(strChkOrder)).ToList()));
+            FrmTaPaymentShop frmTaPaymentShop = new FrmTaPaymentShop(usrID, 
+                                                                     strChkOrder, 
+                                                                     sOrderType, 
+                                                                     SetPrtInfo(CommonData.TaOrderItem.Where(s => s.CheckCode.Equals(strChkOrder) && s.BusDate.Equals(checkBusDate)).ToList()),
+                                                                     checkBusDate);
 
             frmTaPaymentShop.ShowDialog();
 
@@ -611,7 +618,7 @@ namespace SuperPOS.UI
         private void btnEditOrder_Click(object sender, EventArgs e)
         {
             Hide();
-            FrmTaMain frmTaMain = new FrmTaMain(strChkOrder, usrID, intCusID);
+            FrmTaMain frmTaMain = new FrmTaMain(strChkOrder, usrID, intCusID, checkBusDate);
             frmTaMain.ShowDialog();
         }
     }

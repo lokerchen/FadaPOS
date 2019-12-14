@@ -61,6 +61,8 @@ namespace SuperPOS.UI.TA
         private string checkDiscountPer;
         //Is Save Order
         private string checkIsSave;
+        //营业日
+        private string checkBusDate;
 
         private readonly EntityControl _control = new EntityControl();
 
@@ -106,7 +108,8 @@ namespace SuperPOS.UI.TA
                             Discount = check.PayDiscount,
                             DiscountPer = check.PayPerDiscount,
                             IsSave = check.IsSave,
-                            OtherCheckCode = !check.IsSave.Equals("N") ? " ": check.CheckCode
+                            OtherCheckCode = !check.IsSave.Equals("N") ? " ": check.CheckCode,
+                            gridBusDate = check.BusDate
                         };
 
             if (isSaveOrder)
@@ -141,7 +144,8 @@ namespace SuperPOS.UI.TA
                             Discount = db.Discount,
                             DiscountPer = db.DiscountPer,
                             IsSave = db.IsSave,
-                            OtherCheckCode = !db.IsSave.Equals("N") ? " " : db.CheckCode
+                            OtherCheckCode = !db.IsSave.Equals("N") ? " " : db.CheckCode,
+                            gridBusDate = db.gridBusDate
                         };
             }
 
@@ -235,13 +239,16 @@ namespace SuperPOS.UI.TA
             checkDiscountPer = gvTaPendOrder.GetRowCellValue(gvTaPendOrder.FocusedRowHandle, "DiscountPer").ToString();
             //Is Save
             checkIsSave = gvTaPendOrder.GetRowCellValue(gvTaPendOrder.FocusedRowHandle, "IsSave").ToString();
-        }
+            //营业日
+            checkBusDate = gvTaPendOrder.GetRowCellValue(gvTaPendOrder.FocusedRowHandle, "gridBusDate").ToString();
 
-        private void btnPay_Click(object sender, EventArgs e)
+    }
+
+    private void btnPay_Click(object sender, EventArgs e)
         {
             if (checkOrderType.Equals(PubComm.ORDER_TYPE_SHOP))
             {
-                FrmTaPaymentShop frmTaPaymentShop = new FrmTaPaymentShop(usrID, checkCode, checkOrderType, checkCustID.ToString(), SetPrtInfo());
+                FrmTaPaymentShop frmTaPaymentShop = new FrmTaPaymentShop(usrID, checkCode, checkOrderType, checkCustID.ToString(), SetPrtInfo(), checkBusDate);
 
                 if (frmTaPaymentShop.ShowDialog() == DialogResult.OK)
                 {
@@ -250,7 +257,7 @@ namespace SuperPOS.UI.TA
             }
             else
             {
-                FrmTaPayment frmTaPayment = new FrmTaPayment(usrID, checkCode, checkOrderType, checkCustID.ToString(), SetPrtInfo());
+                FrmTaPayment frmTaPayment = new FrmTaPayment(usrID, checkCode, checkOrderType, checkCustID.ToString(), SetPrtInfo(), checkBusDate);
 
                 if (frmTaPayment.ShowDialog() == DialogResult.OK)
                 {
@@ -289,7 +296,7 @@ namespace SuperPOS.UI.TA
 
             htDetail["Staff"] = CommonData.UsrBase.Any(s => s.ID == usrID) ? CommonData.UsrBase.FirstOrDefault(s => s.ID == usrID).UsrName : "";
 
-            var lstOi = CommonData.TaOrderItem.Where(s => s.CheckCode.Equals(checkCode));
+            var lstOi = CommonData.TaOrderItem.Where(s => s.CheckCode.Equals(checkCode) && s.BusDate.Equals(checkBusDate));
 
             htDetail["ItemQty"] = lstOi.Count(s => s.ItemType == 1);
             htDetail["SubTotal"] = checkTotalAmount;
@@ -309,14 +316,14 @@ namespace SuperPOS.UI.TA
             ht["Change"] = "0.00";
 
             new SystemData().GetTaOrderItem();
-            var lstOi = CommonData.TaOrderItem.Where(s => s.CheckCode.Equals(checkCode)).ToList();
+            var lstOi = CommonData.TaOrderItem.Where(s => s.CheckCode.Equals(checkCode) && s.BusDate.Equals(checkBusDate)).ToList();
 
             #region VAT计算
             if (CommonData.GenSet.Any())
             {
                 ht["Rate1"] = CommonData.GenSet.FirstOrDefault().VATPer + @"%";
 
-                var lstVAT = from oi in CommonData.TaOrderItem.Where(s => s.CheckCode.Equals(checkID))
+                var lstVAT = from oi in CommonData.TaOrderItem.Where(s => s.CheckCode.Equals(checkID) && s.BusDate.Equals(checkBusDate))
                              join mi in CommonData.TaMenuItem on oi.ItemCode equals mi.MiDishCode
                              where !string.IsNullOrEmpty(mi.MiRmk) && mi.MiRmk.Contains(@"Without VAT")
                              select new
@@ -371,7 +378,7 @@ namespace SuperPOS.UI.TA
             ht["Change"] = "0.00";
 
             new SystemData().GetTaOrderItem();
-            var lstOi = CommonData.TaOrderItem.Where(s => s.CheckCode.Equals(checkCode)).ToList();
+            var lstOi = CommonData.TaOrderItem.Where(s => s.CheckCode.Equals(checkCode) && s.BusDate.Equals(checkBusDate)).ToList();
 
             PrtPrint.PrtBillBilingual(lstOi, ht);
         }
@@ -382,7 +389,7 @@ namespace SuperPOS.UI.TA
             ht["ChkNum"] = checkCode;
 
             new SystemData().GetTaOrderItem();
-            var lstOi = CommonData.TaOrderItem.Where(s => s.CheckCode.Equals(checkCode)).ToList();
+            var lstOi = CommonData.TaOrderItem.Where(s => s.CheckCode.Equals(checkCode) && s.BusDate.Equals(checkBusDate)).ToList();
 
             PrtPrint.PrtKitchen(lstOi, ht);
         }
@@ -397,7 +404,7 @@ namespace SuperPOS.UI.TA
         private void gvTaPendOrder_DoubleClick(object sender, EventArgs e)
         {
             Hide();
-            FrmTaMain frmTaMain = new FrmTaMain(checkCode, usrID, checkCustID);
+            FrmTaMain frmTaMain = new FrmTaMain(checkCode, usrID, checkCustID, checkBusDate);
             frmTaMain.ShowDialog();
         }
 
@@ -426,7 +433,7 @@ namespace SuperPOS.UI.TA
             if (gvTaPendOrder.FocusedRowHandle <= 0) return;
 
             new SystemData().GetTaCheckOrder();
-            var lstRec = CommonData.TaCheckOrder.Where(s => s.ID == Convert.ToInt32(gvTaPendOrder.GetRowCellValue(gvTaPendOrder.FocusedRowHandle, "ID").ToString()));
+            var lstRec = CommonData.TaCheckOrder.Where(s => s.ID == Convert.ToInt32(gvTaPendOrder.GetRowCellValue(gvTaPendOrder.FocusedRowHandle, "ID").ToString()) && s.BusDate.Equals(checkBusDate));
 
             if (lstRec.Any())
             {
@@ -463,13 +470,13 @@ namespace SuperPOS.UI.TA
         private void btnOpen_Click(object sender, EventArgs e)
         {
             Hide();
-            FrmTaMain frmTaMain = new FrmTaMain(checkCode, usrID, checkCustID);
+            FrmTaMain frmTaMain = new FrmTaMain(checkCode, usrID, checkCustID, checkBusDate);
             frmTaMain.ShowDialog();
         }
 
         private void btnPreview_Click(object sender, EventArgs e)
         {
-            FrmTaPendOrderPreview frmTaPendOrderPreview = new FrmTaPendOrderPreview(checkCode, checkTotalAmount, checkMenuTotal, checkUsrName, checkDiscount, checkDiscountPer);
+            FrmTaPendOrderPreview frmTaPendOrderPreview = new FrmTaPendOrderPreview(checkCode, checkTotalAmount, checkMenuTotal, checkUsrName, checkDiscount, checkDiscountPer, checkBusDate);
             frmTaPendOrderPreview.ShowDialog();
         }
 

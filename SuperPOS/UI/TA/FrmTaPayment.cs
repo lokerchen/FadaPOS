@@ -47,6 +47,8 @@ namespace SuperPOS.UI.TA
         //初始账单总额
         private string sTotal = "0.00";
 
+        private string strBusDate = @"";
+
         #region 构造函数
         public FrmTaPayment()
         {
@@ -62,6 +64,17 @@ namespace SuperPOS.UI.TA
             callerID = caller;
             htDetail = ht;
         }
+
+        public FrmTaPayment(int id, string chkId, string type, string caller, Hashtable ht, string sBusDate)
+        {
+            InitializeComponent();
+            usrID = id;
+            checkID = chkId;
+            orderType = type;
+            callerID = caller;
+            htDetail = ht;
+            strBusDate = sBusDate;
+        }
         #endregion
 
         #region 事件
@@ -71,7 +84,7 @@ namespace SuperPOS.UI.TA
         {
             //模块显示
             GetOrderTypeShowPanel(orderType);
-
+            
             SetClick();
 
             //会员信息
@@ -317,7 +330,7 @@ namespace SuperPOS.UI.TA
 
             if (returnPaid)
             {
-                var lstOI = CommonData.TaOrderItem.Where(s => s.CheckCode.Equals(checkID)).ToList();
+                var lstOI = CommonData.TaOrderItem.Where(s => s.CheckCode.Equals(checkID) && s.BusDate.Equals(strBusDate)).ToList();
 
                 #region 更换打印方式
                 //htDetail["Tendered"] = txtPaid.Text;
@@ -392,7 +405,7 @@ namespace SuperPOS.UI.TA
                 {
                     htDetail["Rate1"] = CommonData.GenSet.FirstOrDefault().VATPer + @"%";
 
-                    var lstVAT = from oi in CommonData.TaOrderItem.Where(s => s.CheckCode.Equals(checkID))
+                    var lstVAT = from oi in CommonData.TaOrderItem.Where(s => s.CheckCode.Equals(checkID) && s.BusDate.Equals(strBusDate))
                                  join mi in CommonData.TaMenuItem on oi.ItemCode equals mi.MiDishCode
                                  where !string.IsNullOrEmpty(mi.MiRmk) && mi.MiRmk.Contains(@"Without VAT")
                                  select new
@@ -437,7 +450,7 @@ namespace SuperPOS.UI.TA
                 #endregion
 
                 new SystemData().GetTaOrderItem();
-                var lstOI = CommonData.TaOrderItem.Where(s => s.CheckCode.Equals(checkID)).ToList();
+                var lstOI = CommonData.TaOrderItem.Where(s => s.CheckCode.Equals(checkID) && s.BusDate.Equals(strBusDate)).ToList();
 
                 PrtPrint.PrtBillBilingual(lstOI, htDetail);
 
@@ -462,7 +475,7 @@ namespace SuperPOS.UI.TA
                 htDetail["Total"] = txtTotal.Text;
 
                 new SystemData().GetTaOrderItem();
-                var lstOI = CommonData.TaOrderItem.Where(s => s.CheckCode.Equals(checkID)).ToList();
+                var lstOI = CommonData.TaOrderItem.Where(s => s.CheckCode.Equals(checkID) && s.BusDate.Equals(strBusDate)).ToList();
 
                 PrtPrint.PrtBillBilingual(lstOI, htDetail);
             }
@@ -477,7 +490,7 @@ namespace SuperPOS.UI.TA
             if (returnPaid)
             {
                 new SystemData().GetTaOrderItem();
-                var lstOI = CommonData.TaOrderItem.Where(s => s.CheckCode.Equals(checkID)).ToList();
+                var lstOI = CommonData.TaOrderItem.Where(s => s.CheckCode.Equals(checkID) && s.BusDate.Equals(strBusDate)).ToList();
 
                 //打印厨房单
                 htDetail["ChkNum"] = checkID;
@@ -697,7 +710,7 @@ namespace SuperPOS.UI.TA
         {
             new SystemData().GetTaCheckOrder();
 
-            var lstChk = CommonData.TaCheckOrder.Where(s => s.CheckCode.Equals(chkId));
+            var lstChk = CommonData.TaCheckOrder.Where(s => s.CheckCode.Equals(chkId) && s.BusDate.Equals(strBusDate));
 
             if (lstChk.Any())
             {
@@ -792,7 +805,7 @@ namespace SuperPOS.UI.TA
                 txtToPay.Text = @"0.00";
                 //超过，付款完成
                 new SystemData().GetTaCheckOrder();
-                var lstChk = CommonData.TaCheckOrder.Where(s => s.CheckCode.Equals(checkID));
+                var lstChk = CommonData.TaCheckOrder.Where(s => s.CheckCode.Equals(checkID) && s.BusDate.Equals(strBusDate));
 
                 //更新账单信息
                 if (lstChk.Any())
@@ -829,7 +842,7 @@ namespace SuperPOS.UI.TA
 
                 //超过，付款完成
                 new SystemData().GetTaCheckOrder();
-                var lstChk = CommonData.TaCheckOrder.Where(s => s.CheckCode.Equals(checkID));
+                var lstChk = CommonData.TaCheckOrder.Where(s => s.CheckCode.Equals(checkID) && s.BusDate.Equals(strBusDate));
 
                 //更新账单信息
                 if (lstChk.Any())

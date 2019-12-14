@@ -54,6 +54,8 @@ namespace SuperPOS.UI.TA
 
         private bool IsNotPaid = false;
 
+        private string strBusDate = @"";
+
         public FrmTaPaymentShop()
         {
             InitializeComponent();
@@ -70,6 +72,18 @@ namespace SuperPOS.UI.TA
             htDetail = ht;
         }
 
+        public FrmTaPaymentShop(int id, string chkId, string type, string caller, Hashtable ht, string sBusDate)
+        {
+            InitializeComponent();
+
+            usrID = id;
+            checkID = chkId;
+            orderType = type;
+            callerID = caller;
+            htDetail = ht;
+            strBusDate = sBusDate;
+        }
+
         public FrmTaPaymentShop(int id, string chkId, string type, Hashtable ht)
         {
             InitializeComponent();
@@ -78,6 +92,17 @@ namespace SuperPOS.UI.TA
             checkID = chkId;
             orderType = type;
             htDetail = ht;
+        }
+
+        public FrmTaPaymentShop(int id, string chkId, string type, Hashtable ht, string sBusDate)
+        {
+            InitializeComponent();
+
+            usrID = id;
+            checkID = chkId;
+            orderType = type;
+            htDetail = ht;
+            strBusDate = sBusDate;
         }
 
         private void FrmTaPaymentShop_Load(object sender, EventArgs e)
@@ -92,7 +117,7 @@ namespace SuperPOS.UI.TA
             #region 查询账单
             new SystemData().GetTaCheckOrder();
 
-            var lstTco = CommonData.TaCheckOrder.Where(s => s.CheckCode.Equals(checkID));
+            var lstTco = CommonData.TaCheckOrder.Where(s => s.CheckCode.Equals(checkID) && s.BusDate.Equals(strBusDate));
 
             if (lstTco.Any())
             {
@@ -768,7 +793,7 @@ namespace SuperPOS.UI.TA
         {
 
             new SystemData().GetTaCheckOrder();
-            var lstChk = CommonData.TaCheckOrder.Where(s => s.CheckCode.Equals(checkID));
+            var lstChk = CommonData.TaCheckOrder.Where(s => s.CheckCode.Equals(checkID) && s.BusDate.Equals(strBusDate));
 
             if (lstChk.Any())
             {
@@ -826,7 +851,7 @@ namespace SuperPOS.UI.TA
         {
 
             new SystemData().GetTaCheckOrder();
-            var lstChk = CommonData.TaCheckOrder.Where(s => s.CheckCode.Equals(checkID));
+            var lstChk = CommonData.TaCheckOrder.Where(s => s.CheckCode.Equals(checkID) && s.BusDate.Equals(strBusDate));
 
             if (lstChk.Any())
             {
@@ -884,7 +909,7 @@ namespace SuperPOS.UI.TA
             if (!IsPaid) return;
             
             new SystemData().GetTaOrderItem();
-            var lstOI = CommonData.TaOrderItem.Where(s => s.CheckCode.Equals(checkID)).ToList();
+            var lstOI = CommonData.TaOrderItem.Where(s => s.CheckCode.Equals(checkID) && s.BusDate.Equals(strBusDate)).ToList();
 
             PrtTemplataTa prtTemplataTa = new PrtTemplataTa();
             prtTemplataTa.RestaurantName = PrtCommon.GetRestName();
@@ -907,7 +932,7 @@ namespace SuperPOS.UI.TA
         private string GetPayType()
         {
             new SystemData().GetTaCheckOrder();
-            var lstChk = CommonData.TaCheckOrder.Where(s => s.CheckCode.Equals(checkID));
+            var lstChk = CommonData.TaCheckOrder.Where(s => s.CheckCode.Equals(checkID) && s.BusDate.Equals(strBusDate));
 
             string strPt = "Paid By ";
 
@@ -953,7 +978,7 @@ namespace SuperPOS.UI.TA
             if (!IsPaid) return;
 
             new SystemData().GetTaOrderItem();
-            var lstOI = CommonData.TaOrderItem.Where(s => s.CheckCode.Equals(checkID)).ToList();
+            var lstOI = CommonData.TaOrderItem.Where(s => s.CheckCode.Equals(checkID) && s.BusDate.Equals(strBusDate)).ToList();
 
             PrtTemplataTa prtTemplataTa = new PrtTemplataTa();
             prtTemplataTa.RestaurantName = PrtCommon.GetRestName();
@@ -975,7 +1000,7 @@ namespace SuperPOS.UI.TA
             {
                 prtTemplataTa.Rete1 = CommonData.GenSet.FirstOrDefault().VATPer + @"%";
 
-                var lstVAT = from oi in CommonData.TaOrderItem.Where(s => s.CheckCode.Equals(checkID))
+                var lstVAT = from oi in CommonData.TaOrderItem.Where(s => s.CheckCode.Equals(checkID) && s.BusDate.Equals(strBusDate))
                                 join mi in CommonData.TaMenuItem on oi.ItemCode equals mi.MiDishCode
                                 where !string.IsNullOrEmpty(mi.MiRmk) && mi.MiRmk.Contains(@"Without VAT")
                                 select new
@@ -1031,7 +1056,7 @@ namespace SuperPOS.UI.TA
             if (!IsPaid) return;
 
             new SystemData().GetTaOrderItem();
-            var lstOI = CommonData.TaOrderItem.Where(s => s.CheckCode.Equals(checkID)).ToList();
+            var lstOI = CommonData.TaOrderItem.Where(s => s.CheckCode.Equals(checkID) && s.BusDate.Equals(strBusDate)).ToList();
 
             PrtTemplataTa prtTemplataTa = new PrtTemplataTa();
             prtTemplataTa.RestaurantName = PrtCommon.GetRestName();
@@ -1060,7 +1085,7 @@ namespace SuperPOS.UI.TA
             if (!IsPaid) return;
 
             new SystemData().GetTaOrderItem();
-            var lstOI = CommonData.TaOrderItem.Where(s => s.CheckCode.Equals(checkID)).ToList();
+            var lstOI = CommonData.TaOrderItem.Where(s => s.CheckCode.Equals(checkID) && s.BusDate.Equals(strBusDate)).ToList();
 
             PrtTemplataTa prtTemplataTa = new PrtTemplataTa();
             prtTemplataTa.RestaurantName = PrtCommon.GetRestName();

@@ -20,6 +20,7 @@
     <property name="ItemParent" column="ItemParent" type="System.String" />
     <property name="OrderTime" column="OrderTime" type="System.String" />
     <property name="OrderStaff" column="OrderStaff" type="System.Int32" />
+    <property name="BusDate" column="BusDate" type="System.String" />
   </class>
 
 </hibernate-mapping>

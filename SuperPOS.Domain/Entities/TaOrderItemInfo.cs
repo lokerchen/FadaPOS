@@ -54,5 +54,9 @@ namespace SuperPOS.Domain.Entities
         //菜品下单员工
         [XmlElement(ElementName = "OrderStaff")]
         public virtual int OrderStaff { get; set; }
+
+        //菜品下单营业日期
+        [XmlElement(ElementName = "BusDate")]
+        public virtual string BusDate { get; set; }
     }
 }
