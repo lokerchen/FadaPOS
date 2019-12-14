@@ -374,6 +374,32 @@ namespace SuperPOS.Common
         }
         #endregion
 
+        #region 获得账单号
+
+        /// <summary>
+        /// 获得账单号
+        /// </summary>
+        /// <returns></returns>
+        public static string GetCheckCode()
+        {
+            new SystemData().GetSysValue();
+            new SystemData().GetTaCheckOrder();
+            //当前营业日期内是否存在订单
+            var lstCheck = CommonData.TaCheckOrder.Where(s => s.BusDate.Equals(GetBusDate())).OrderByDescending(s => s.CheckCode).Take(1);
+
+            if (lstCheck.Any()) //若当前营业日期存在订单，则从订单列表中取最大订单号+1
+            {
+                return (Convert.ToUInt64(lstCheck.FirstOrDefault().CheckCode) + 1).ToString();
+            }
+            else    //若当前营业日期不存在订单，则订单号取SYS_VALUE_CHECK_CODE+1
+            {
+                var lstValue = CommonData.SysValue.Where(s => s.ValueID.Equals(PubComm.SYS_VALUE_CHECK_CODE));
+
+                return lstValue.Any() ? (Convert.ToInt32(lstValue.FirstOrDefault().ValueResult)).ToString() : "1";
+            }
+        }
+        #endregion
+
         #region 获得Free Food Item Amount
         public static string GetSysValue(string sValueID, string sValueDesc, string dResult)
         {

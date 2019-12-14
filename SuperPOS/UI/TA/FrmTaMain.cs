@@ -163,7 +163,7 @@ namespace SuperPOS.UI.TA
                 ORDER_TYPE = PubComm.ORDER_TYPE_SHOP;
                 #endregion
 
-                checkID = CommonDAL.GetCheckCode(true);
+                checkID = CommonDAL.GetCheckCode();
                 lblCheck.Text = checkID;
             }
             catch (Exception ex) { LogHelper.Error(this.Name, ex); }
@@ -185,7 +185,7 @@ namespace SuperPOS.UI.TA
                         _control.UpdateEntity(taCheck);
                         treeListOrder.Nodes.Clear();
 
-                        checkID = CommonDAL.GetCheckCode(true);
+                        checkID = CommonDAL.GetCheckCode();
                         lblCheck.Text = checkID;
                     }
                     else //未存储的已点菜品列表
@@ -229,7 +229,7 @@ namespace SuperPOS.UI.TA
             if (string.IsNullOrEmpty(checkID))
             {
                 //获得账单号
-                checkID = CommonDAL.GetCheckCode(true);
+                checkID = CommonDAL.GetCheckCode();
 
                 lblCheck.Text = checkID;
             }
@@ -646,7 +646,7 @@ namespace SuperPOS.UI.TA
                 {
                     if (frmTaPaymentShop.returnPaid) treeListOrder.Nodes.Clear();
 
-                    checkID = CommonDAL.GetCheckCode(true);
+                    checkID = CommonDAL.GetCheckCode();
                     lblCheck.Text = checkID;
                 }
             }
@@ -658,7 +658,7 @@ namespace SuperPOS.UI.TA
                 {
                     if (frmTaPayment.returnPaid) treeListOrder.Nodes.Clear();
 
-                    checkID = CommonDAL.GetCheckCode(true);
+                    checkID = CommonDAL.GetCheckCode();
                     lblCheck.Text = checkID;
                 }
             }
