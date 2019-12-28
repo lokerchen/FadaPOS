@@ -169,7 +169,7 @@
             this.btnNotPaid.Appearance.Options.UseBackColor = true;
             this.btnNotPaid.Appearance.Options.UseFont = true;
             this.btnNotPaid.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
-            this.btnNotPaid.Location = new System.Drawing.Point(12, 236);
+            this.btnNotPaid.Location = new System.Drawing.Point(626, 425);
             this.btnNotPaid.Name = "btnNotPaid";
             this.btnNotPaid.Size = new System.Drawing.Size(165, 48);
             this.btnNotPaid.TabIndex = 52;
@@ -193,9 +193,9 @@
             this.groupBox5.Controls.Add(this.btnPrtKitOnly);
             this.groupBox5.Controls.Add(this.btnPrtAllReceipt);
             this.groupBox5.Controls.Add(this.btnPrtBillOnly);
-            this.groupBox5.Location = new System.Drawing.Point(620, 99);
+            this.groupBox5.Location = new System.Drawing.Point(620, 63);
             this.groupBox5.Name = "groupBox5";
-            this.groupBox5.Size = new System.Drawing.Size(179, 364);
+            this.groupBox5.Size = new System.Drawing.Size(179, 354);
             this.groupBox5.TabIndex = 92;
             this.groupBox5.TabStop = false;
             // 
@@ -859,7 +859,7 @@
             // 
             this.lblTypeName.Appearance.Font = new System.Drawing.Font("Tahoma", 16F, System.Drawing.FontStyle.Bold);
             this.lblTypeName.Appearance.ForeColor = System.Drawing.Color.Red;
-            this.lblTypeName.Location = new System.Drawing.Point(620, 60);
+            this.lblTypeName.Location = new System.Drawing.Point(620, 24);
             this.lblTypeName.Name = "lblTypeName";
             this.lblTypeName.Size = new System.Drawing.Size(112, 33);
             this.lblTypeName.TabIndex = 55;
@@ -1049,9 +1049,9 @@
             this.btnCollection.Appearance.Options.UseBackColor = true;
             this.btnCollection.Appearance.Options.UseFont = true;
             this.btnCollection.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
-            this.btnCollection.Location = new System.Drawing.Point(626, 484);
+            this.btnCollection.Location = new System.Drawing.Point(626, 501);
             this.btnCollection.Name = "btnCollection";
-            this.btnCollection.Size = new System.Drawing.Size(165, 73);
+            this.btnCollection.Size = new System.Drawing.Size(165, 56);
             this.btnCollection.TabIndex = 52;
             this.btnCollection.Text = "Collection";
             // 
