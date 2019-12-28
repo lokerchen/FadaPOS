@@ -666,6 +666,18 @@ namespace SuperPOS.UI.TA
                     lblCheck.Text = checkID;
                 }
             }
+            else if (ORDER_TYPE.Equals(PubComm.ORDER_TYPE_DELIVERY))
+            {
+                FrmTaPaymentDelivery frmTaPaymentDelivery = new FrmTaPaymentDelivery(usrID, checkID, ORDER_TYPE, CallerID, SetPrtInfo(lstTaOI), strBusDate);
+
+                if (frmTaPaymentDelivery.ShowDialog() == DialogResult.OK)
+                {
+                    if (frmTaPaymentDelivery.returnPaid) treeListOrder.Nodes.Clear();
+
+                    checkID = CommonDAL.GetCheckCode();
+                    lblCheck.Text = checkID;
+                }
+            }
             else
             {
                 FrmTaPayment frmTaPayment = new FrmTaPayment(usrID, checkID, ORDER_TYPE, CallerID, SetPrtInfo(lstTaOI), strBusDate);
