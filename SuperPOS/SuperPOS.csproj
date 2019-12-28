@@ -163,6 +163,12 @@
     <Compile Include="UI\TA\FrmAccountSummary.Designer.cs">
       <DependentUpon>FrmAccountSummary.cs</DependentUpon>
     </Compile>
+    <Compile Include="UI\TA\FrmTaPaymentCollection.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\TA\FrmTaPaymentCollection.Designer.cs">
+      <DependentUpon>FrmTaPaymentCollection.cs</DependentUpon>
+    </Compile>
     <Compile Include="UI\TA\FrmTaPaymentDelivery.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -504,6 +510,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UI\TA\FrmAccountSummary.resx">
       <DependentUpon>FrmAccountSummary.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\TA\FrmTaPaymentCollection.resx">
+      <DependentUpon>FrmTaPaymentCollection.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UI\TA\FrmTaPaymentDelivery.resx">
       <DependentUpon>FrmTaPaymentDelivery.cs</DependentUpon>

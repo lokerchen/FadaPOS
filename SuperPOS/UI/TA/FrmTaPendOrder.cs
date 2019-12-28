@@ -264,6 +264,15 @@ namespace SuperPOS.UI.TA
                     if (frmTaPaymentDelivery.returnPaid) GetBindData("", 0, false);
                 }
             }
+            else if (checkOrderType.Equals(PubComm.ORDER_TYPE_COLLECTION))
+            {
+                FrmTaPaymentCollection frmTaPaymentCollection = new FrmTaPaymentCollection(usrID, checkCode, checkOrderType, checkCustID.ToString(), SetPrtInfo(), checkBusDate);
+
+                if (frmTaPaymentCollection.ShowDialog() == DialogResult.OK)
+                {
+                    if (frmTaPaymentCollection.returnPaid) GetBindData("", 0, false);
+                }
+            }
             else
             {
                 FrmTaPayment frmTaPayment = new FrmTaPayment(usrID, checkCode, checkOrderType, checkCustID.ToString(), SetPrtInfo(), checkBusDate);

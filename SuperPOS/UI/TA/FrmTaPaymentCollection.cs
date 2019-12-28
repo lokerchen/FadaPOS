@@ -11,7 +11,7 @@ using SuperPOS.Print;
 
 namespace SuperPOS.UI.TA
 {
-    public partial class FrmTaPaymentDelivery : XtraForm
+    public partial class FrmTaPaymentCollection : XtraForm
     {
         private readonly EntityControl _control = new EntityControl();
         //呼入电话ID
@@ -64,12 +64,12 @@ namespace SuperPOS.UI.TA
 
         private string strDeliveryNote = "";
 
-        public FrmTaPaymentDelivery()
+        public FrmTaPaymentCollection()
         {
             InitializeComponent();
         }
 
-        public FrmTaPaymentDelivery(int id, string chkId, string type, string caller, Hashtable ht)
+        public FrmTaPaymentCollection(int id, string chkId, string type, string caller, Hashtable ht)
         {
             InitializeComponent();
 
@@ -80,7 +80,7 @@ namespace SuperPOS.UI.TA
             htDetail = ht;
         }
 
-        public FrmTaPaymentDelivery(int id, string chkId, string type, string caller, Hashtable ht, string sBusDate)
+        public FrmTaPaymentCollection(int id, string chkId, string type, string caller, Hashtable ht, string sBusDate)
         {
             InitializeComponent();
 
@@ -92,7 +92,7 @@ namespace SuperPOS.UI.TA
             strBusDate = sBusDate;
         }
 
-        public FrmTaPaymentDelivery(int id, string chkId, string type, Hashtable ht)
+        public FrmTaPaymentCollection(int id, string chkId, string type, Hashtable ht)
         {
             InitializeComponent();
 
@@ -102,7 +102,7 @@ namespace SuperPOS.UI.TA
             htDetail = ht;
         }
 
-        public FrmTaPaymentDelivery(int id, string chkId, string type, Hashtable ht, string sBusDate)
+        public FrmTaPaymentCollection(int id, string chkId, string type, Hashtable ht, string sBusDate)
         {
             InitializeComponent();
 
@@ -113,15 +113,13 @@ namespace SuperPOS.UI.TA
             strBusDate = sBusDate;
         }
 
-        private void FrmTaPaymentDelivery_Load(object sender, EventArgs e)
+        private void FrmTaPaymentCollection_Load(object sender, EventArgs e)
         {
             //订单类型
-            lblTypeName.Text = PubComm.ORDER_TYPE_DELIVERY;
+            lblTypeName.Text = PubComm.ORDER_TYPE_COLLECTION;
 
             //获得付款类型列表
             SetPayType();
-            //获得司机列表
-            SetDriver();
 
             SetClick();
 
@@ -198,63 +196,6 @@ namespace SuperPOS.UI.TA
             objName = @"txtPayTypePay1";
 
             asfc.controllInitializeSize(this);
-        }
-
-        #region 获得司机列表
-        /// <summary>
-        /// 获得司机列表
-        /// </summary>
-        private void SetDriver()
-        {
-            btnDriver[0] = btnDriver1;
-            btnDriver[1] = btnDriver2;
-            btnDriver[2] = btnDriver3;
-            btnDriver[3] = btnDriver4;
-            btnDriver[4] = btnDriver5;
-            btnDriver[5] = btnDriver6;
-            btnDriver[6] = btnDriver7;
-            btnDriver[7] = btnDriver8;
-            btnDriver[8] = btnDriver9;
-            btnDriver[9] = btnDriver10;
-
-            btnDriver[0].Click += btnDriver_Click;
-            btnDriver[1].Click += btnDriver_Click;
-            btnDriver[2].Click += btnDriver_Click;
-            btnDriver[3].Click += btnDriver_Click;
-            btnDriver[4].Click += btnDriver_Click;
-            btnDriver[5].Click += btnDriver_Click;
-            btnDriver[6].Click += btnDriver_Click;
-            btnDriver[7].Click += btnDriver_Click;
-            btnDriver[8].Click += btnDriver_Click;
-            btnDriver[9].Click += btnDriver_Click;
-
-            int i = 0;
-
-            foreach (var taDriverInfo in CommonData.TaDriver.Where(s => s.DriverWorkDay.Contains(DateTime.Now.DayOfWeek.ToString())))
-            {
-                btnDriver[i].Text = taDriverInfo.DriverName;
-
-                i++;
-
-                if (i > 10) break;
-            }
-
-            for (var j = i; j < 10; j++)
-            {
-                btnDriver[j].Visible = false;
-                btnDriver[j].Text = @"";
-            }
-        }
-        #endregion
-
-        private void btnDriver_Click(object sender, EventArgs e)
-        {
-            var btn = (SimpleButton)sender;
-
-            for (int i = 0; i < CommonData.TaDriver.Count(s => s.DriverWorkDay.Contains(DateTime.Now.DayOfWeek.ToString())); i++)
-            {
-                btnDriver[i].Appearance.BackColor = btnDriver[i].Text.Equals(btn.Text) ? Color.LightGreen : Color.NavajoWhite;
-            }
         }
 
         #region chkComboDishSearch
