@@ -3301,10 +3301,10 @@ namespace SuperPOS.UI.TA
                                                : taCheckOrder.PayPerSurcharge.Substring(0, taCheckOrder.PayPerSurcharge.Length - 1);
                     txtSurcharge.Text = taCheckOrder.PaySurcharge;
 
-                    txtTendered.Text = "0.00";
+                    txtTendered.Text = @"0.00";
                     txtToPay.Text = taCheckOrder.TotalAmount;
                     menuAmout = Convert.ToDecimal(taCheckOrder.MenuAmount);
-                    txtChange.Text = "0.00";
+                    txtChange.Text = @"0.00";
 
                     GetAllAmount();
                 }

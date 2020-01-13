@@ -92,64 +92,6 @@
             this.btnMi9 = new DevExpress.XtraEditors.SimpleButton();
             this.btnMi11 = new DevExpress.XtraEditors.SimpleButton();
             this.panelControl4 = new DevExpress.XtraEditors.PanelControl();
-            this.btnOrderType = new DevExpress.XtraEditors.SimpleButton();
-            this.btnSearchMeal = new DevExpress.XtraEditors.SimpleButton();
-            this.btnCustInfo = new DevExpress.XtraEditors.SimpleButton();
-            this.btnIngredMode = new DevExpress.XtraEditors.SimpleButton();
-            this.pcMain = new DevExpress.XtraEditors.PanelControl();
-            this.panelControl5 = new DevExpress.XtraEditors.PanelControl();
-            this.btnMenu = new DevExpress.XtraEditors.SimpleButton();
-            this.btnEatIn = new DevExpress.XtraEditors.SimpleButton();
-            this.btnCancel = new DevExpress.XtraEditors.SimpleButton();
-            this.btnLanguage = new DevExpress.XtraEditors.SimpleButton();
-            this.btnSaveOrder = new DevExpress.XtraEditors.SimpleButton();
-            this.btnMcLeft = new DevExpress.XtraEditors.SimpleButton();
-            this.btnMcRight = new DevExpress.XtraEditors.SimpleButton();
-            this.btnCid = new DevExpress.XtraEditors.SimpleButton();
-            this.btnPendOrder = new DevExpress.XtraEditors.SimpleButton();
-            this.panelControl3 = new DevExpress.XtraEditors.PanelControl();
-            this.btnMc41 = new DevExpress.XtraEditors.SimpleButton();
-            this.btnMc40 = new DevExpress.XtraEditors.SimpleButton();
-            this.btnMc39 = new DevExpress.XtraEditors.SimpleButton();
-            this.btnMc38 = new DevExpress.XtraEditors.SimpleButton();
-            this.btnMc37 = new DevExpress.XtraEditors.SimpleButton();
-            this.btnMc36 = new DevExpress.XtraEditors.SimpleButton();
-            this.btnMc35 = new DevExpress.XtraEditors.SimpleButton();
-            this.btnMc34 = new DevExpress.XtraEditors.SimpleButton();
-            this.btnMc33 = new DevExpress.XtraEditors.SimpleButton();
-            this.btnMc32 = new DevExpress.XtraEditors.SimpleButton();
-            this.btnMc31 = new DevExpress.XtraEditors.SimpleButton();
-            this.btnMc30 = new DevExpress.XtraEditors.SimpleButton();
-            this.btnMc29 = new DevExpress.XtraEditors.SimpleButton();
-            this.btnMc28 = new DevExpress.XtraEditors.SimpleButton();
-            this.btnMc27 = new DevExpress.XtraEditors.SimpleButton();
-            this.btnMc26 = new DevExpress.XtraEditors.SimpleButton();
-            this.btnMc25 = new DevExpress.XtraEditors.SimpleButton();
-            this.btnMc24 = new DevExpress.XtraEditors.SimpleButton();
-            this.btnMc23 = new DevExpress.XtraEditors.SimpleButton();
-            this.btnMc22 = new DevExpress.XtraEditors.SimpleButton();
-            this.btnMc21 = new DevExpress.XtraEditors.SimpleButton();
-            this.btnMc20 = new DevExpress.XtraEditors.SimpleButton();
-            this.btnMc19 = new DevExpress.XtraEditors.SimpleButton();
-            this.btnMc18 = new DevExpress.XtraEditors.SimpleButton();
-            this.btnMc17 = new DevExpress.XtraEditors.SimpleButton();
-            this.btnMc16 = new DevExpress.XtraEditors.SimpleButton();
-            this.btnMc15 = new DevExpress.XtraEditors.SimpleButton();
-            this.btnMc14 = new DevExpress.XtraEditors.SimpleButton();
-            this.btnMc13 = new DevExpress.XtraEditors.SimpleButton();
-            this.btnMc12 = new DevExpress.XtraEditors.SimpleButton();
-            this.btnMc11 = new DevExpress.XtraEditors.SimpleButton();
-            this.btnMc10 = new DevExpress.XtraEditors.SimpleButton();
-            this.btnMc9 = new DevExpress.XtraEditors.SimpleButton();
-            this.btnMc8 = new DevExpress.XtraEditors.SimpleButton();
-            this.btnMc7 = new DevExpress.XtraEditors.SimpleButton();
-            this.btnMc6 = new DevExpress.XtraEditors.SimpleButton();
-            this.btnMc5 = new DevExpress.XtraEditors.SimpleButton();
-            this.btnMc4 = new DevExpress.XtraEditors.SimpleButton();
-            this.btnMc3 = new DevExpress.XtraEditors.SimpleButton();
-            this.btnMc2 = new DevExpress.XtraEditors.SimpleButton();
-            this.btnMc1 = new DevExpress.XtraEditors.SimpleButton();
-            this.btnMc0 = new DevExpress.XtraEditors.SimpleButton();
             this.gbPayment = new System.Windows.Forms.GroupBox();
             this.btnExit = new DevExpress.XtraEditors.SimpleButton();
             this.lueNote = new DevExpress.XtraEditors.LookUpEdit();
@@ -217,6 +159,64 @@
             this.labelControl12 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl13 = new DevExpress.XtraEditors.LabelControl();
             this.lblTypeName = new DevExpress.XtraEditors.LabelControl();
+            this.pcMain = new DevExpress.XtraEditors.PanelControl();
+            this.panelControl5 = new DevExpress.XtraEditors.PanelControl();
+            this.btnMenu = new DevExpress.XtraEditors.SimpleButton();
+            this.btnEatIn = new DevExpress.XtraEditors.SimpleButton();
+            this.btnCancel = new DevExpress.XtraEditors.SimpleButton();
+            this.btnLanguage = new DevExpress.XtraEditors.SimpleButton();
+            this.btnSaveOrder = new DevExpress.XtraEditors.SimpleButton();
+            this.btnMcLeft = new DevExpress.XtraEditors.SimpleButton();
+            this.btnMcRight = new DevExpress.XtraEditors.SimpleButton();
+            this.btnCid = new DevExpress.XtraEditors.SimpleButton();
+            this.btnPendOrder = new DevExpress.XtraEditors.SimpleButton();
+            this.panelControl3 = new DevExpress.XtraEditors.PanelControl();
+            this.btnMc41 = new DevExpress.XtraEditors.SimpleButton();
+            this.btnMc40 = new DevExpress.XtraEditors.SimpleButton();
+            this.btnMc39 = new DevExpress.XtraEditors.SimpleButton();
+            this.btnMc38 = new DevExpress.XtraEditors.SimpleButton();
+            this.btnMc37 = new DevExpress.XtraEditors.SimpleButton();
+            this.btnMc36 = new DevExpress.XtraEditors.SimpleButton();
+            this.btnMc35 = new DevExpress.XtraEditors.SimpleButton();
+            this.btnMc34 = new DevExpress.XtraEditors.SimpleButton();
+            this.btnMc33 = new DevExpress.XtraEditors.SimpleButton();
+            this.btnMc32 = new DevExpress.XtraEditors.SimpleButton();
+            this.btnMc31 = new DevExpress.XtraEditors.SimpleButton();
+            this.btnMc30 = new DevExpress.XtraEditors.SimpleButton();
+            this.btnMc29 = new DevExpress.XtraEditors.SimpleButton();
+            this.btnMc28 = new DevExpress.XtraEditors.SimpleButton();
+            this.btnMc27 = new DevExpress.XtraEditors.SimpleButton();
+            this.btnMc26 = new DevExpress.XtraEditors.SimpleButton();
+            this.btnMc25 = new DevExpress.XtraEditors.SimpleButton();
+            this.btnMc24 = new DevExpress.XtraEditors.SimpleButton();
+            this.btnMc23 = new DevExpress.XtraEditors.SimpleButton();
+            this.btnMc22 = new DevExpress.XtraEditors.SimpleButton();
+            this.btnMc21 = new DevExpress.XtraEditors.SimpleButton();
+            this.btnMc20 = new DevExpress.XtraEditors.SimpleButton();
+            this.btnMc19 = new DevExpress.XtraEditors.SimpleButton();
+            this.btnMc18 = new DevExpress.XtraEditors.SimpleButton();
+            this.btnMc17 = new DevExpress.XtraEditors.SimpleButton();
+            this.btnMc16 = new DevExpress.XtraEditors.SimpleButton();
+            this.btnMc15 = new DevExpress.XtraEditors.SimpleButton();
+            this.btnMc14 = new DevExpress.XtraEditors.SimpleButton();
+            this.btnMc13 = new DevExpress.XtraEditors.SimpleButton();
+            this.btnMc12 = new DevExpress.XtraEditors.SimpleButton();
+            this.btnMc11 = new DevExpress.XtraEditors.SimpleButton();
+            this.btnMc10 = new DevExpress.XtraEditors.SimpleButton();
+            this.btnMc9 = new DevExpress.XtraEditors.SimpleButton();
+            this.btnMc8 = new DevExpress.XtraEditors.SimpleButton();
+            this.btnMc7 = new DevExpress.XtraEditors.SimpleButton();
+            this.btnMc6 = new DevExpress.XtraEditors.SimpleButton();
+            this.btnMc5 = new DevExpress.XtraEditors.SimpleButton();
+            this.btnMc4 = new DevExpress.XtraEditors.SimpleButton();
+            this.btnMc3 = new DevExpress.XtraEditors.SimpleButton();
+            this.btnMc2 = new DevExpress.XtraEditors.SimpleButton();
+            this.btnMc1 = new DevExpress.XtraEditors.SimpleButton();
+            this.btnMc0 = new DevExpress.XtraEditors.SimpleButton();
+            this.btnOrderType = new DevExpress.XtraEditors.SimpleButton();
+            this.btnCustInfo = new DevExpress.XtraEditors.SimpleButton();
+            this.btnSearchMeal = new DevExpress.XtraEditors.SimpleButton();
+            this.btnIngredMode = new DevExpress.XtraEditors.SimpleButton();
             ((System.ComponentModel.ISupportInitialize)(this.treeListOrder)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemMemoEdit1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
@@ -229,12 +229,6 @@
             this.panelControl2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl4)).BeginInit();
             this.panelControl4.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pcMain)).BeginInit();
-            this.pcMain.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.panelControl5)).BeginInit();
-            this.panelControl5.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.panelControl3)).BeginInit();
-            this.panelControl3.SuspendLayout();
             this.gbPayment.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.lueNote.Properties)).BeginInit();
             this.gbDriver.SuspendLayout();
@@ -254,6 +248,12 @@
             ((System.ComponentModel.ISupportInitialize)(this.txtTendered.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtSurcharge.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtDiscount.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pcMain)).BeginInit();
+            this.pcMain.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.panelControl5)).BeginInit();
+            this.panelControl5.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.panelControl3)).BeginInit();
+            this.panelControl3.SuspendLayout();
             this.SuspendLayout();
             // 
             // treeListOrder
@@ -1069,888 +1069,6 @@
             this.panelControl4.Name = "panelControl4";
             this.panelControl4.Size = new System.Drawing.Size(1415, 780);
             this.panelControl4.TabIndex = 5;
-            // 
-            // btnOrderType
-            // 
-            this.btnOrderType.Appearance.BackColor = System.Drawing.Color.Gray;
-            this.btnOrderType.Appearance.Font = new System.Drawing.Font("Tahoma", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnOrderType.Appearance.ForeColor = System.Drawing.Color.White;
-            this.btnOrderType.Appearance.Options.UseBackColor = true;
-            this.btnOrderType.Appearance.Options.UseFont = true;
-            this.btnOrderType.Appearance.Options.UseForeColor = true;
-            this.btnOrderType.Appearance.Options.UseTextOptions = true;
-            this.btnOrderType.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
-            this.btnOrderType.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
-            this.btnOrderType.Location = new System.Drawing.Point(435, 271);
-            this.btnOrderType.Name = "btnOrderType";
-            this.btnOrderType.Size = new System.Drawing.Size(111, 42);
-            this.btnOrderType.TabIndex = 26;
-            this.btnOrderType.Text = "Order Type";
-            this.btnOrderType.Visible = false;
-            this.btnOrderType.Click += new System.EventHandler(this.btnOrderType_Click);
-            // 
-            // btnSearchMeal
-            // 
-            this.btnSearchMeal.Appearance.Font = new System.Drawing.Font("Tahoma", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSearchMeal.Appearance.Options.UseFont = true;
-            this.btnSearchMeal.Appearance.Options.UseTextOptions = true;
-            this.btnSearchMeal.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
-            this.btnSearchMeal.Location = new System.Drawing.Point(762, 168);
-            this.btnSearchMeal.Name = "btnSearchMeal";
-            this.btnSearchMeal.Size = new System.Drawing.Size(80, 60);
-            this.btnSearchMeal.TabIndex = 24;
-            this.btnSearchMeal.Text = "Search Meal";
-            this.btnSearchMeal.Visible = false;
-            this.btnSearchMeal.Click += new System.EventHandler(this.btnSearchMeal_Click);
-            // 
-            // btnCustInfo
-            // 
-            this.btnCustInfo.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCustInfo.Appearance.ForeColor = System.Drawing.Color.Black;
-            this.btnCustInfo.Appearance.Options.UseFont = true;
-            this.btnCustInfo.Appearance.Options.UseForeColor = true;
-            this.btnCustInfo.Appearance.Options.UseTextOptions = true;
-            this.btnCustInfo.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
-            this.btnCustInfo.Location = new System.Drawing.Point(762, 36);
-            this.btnCustInfo.Name = "btnCustInfo";
-            this.btnCustInfo.Size = new System.Drawing.Size(80, 60);
-            this.btnCustInfo.TabIndex = 17;
-            this.btnCustInfo.Text = "Cust Info";
-            this.btnCustInfo.Visible = false;
-            this.btnCustInfo.Click += new System.EventHandler(this.btnCustInfo_Click);
-            // 
-            // btnIngredMode
-            // 
-            this.btnIngredMode.Appearance.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.btnIngredMode.Appearance.Options.UseFont = true;
-            this.btnIngredMode.Appearance.Options.UseTextOptions = true;
-            this.btnIngredMode.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
-            this.btnIngredMode.Location = new System.Drawing.Point(762, 102);
-            this.btnIngredMode.Name = "btnIngredMode";
-            this.btnIngredMode.Size = new System.Drawing.Size(80, 60);
-            this.btnIngredMode.TabIndex = 21;
-            this.btnIngredMode.Text = "Ingred Mode";
-            this.btnIngredMode.Visible = false;
-            this.btnIngredMode.Click += new System.EventHandler(this.btnIngredMode_Click);
-            // 
-            // pcMain
-            // 
-            this.pcMain.Controls.Add(this.panelControl5);
-            this.pcMain.Controls.Add(this.panelControl3);
-            this.pcMain.Controls.Add(this.panelControl2);
-            this.pcMain.Controls.Add(this.btnOrderType);
-            this.pcMain.Controls.Add(this.panelControl6);
-            this.pcMain.Controls.Add(this.btnCustInfo);
-            this.pcMain.Controls.Add(this.btnSearchMeal);
-            this.pcMain.Controls.Add(this.btnIngredMode);
-            this.pcMain.Location = new System.Drawing.Point(411, 5);
-            this.pcMain.Name = "pcMain";
-            this.pcMain.Size = new System.Drawing.Size(764, 770);
-            this.pcMain.TabIndex = 32;
-            // 
-            // panelControl5
-            // 
-            this.panelControl5.Controls.Add(this.btnMenu);
-            this.panelControl5.Controls.Add(this.btnEatIn);
-            this.panelControl5.Controls.Add(this.btnCancel);
-            this.panelControl5.Controls.Add(this.btnLanguage);
-            this.panelControl5.Controls.Add(this.btnSaveOrder);
-            this.panelControl5.Controls.Add(this.btnMcLeft);
-            this.panelControl5.Controls.Add(this.btnMcRight);
-            this.panelControl5.Controls.Add(this.btnCid);
-            this.panelControl5.Controls.Add(this.btnPendOrder);
-            this.panelControl5.Location = new System.Drawing.Point(5, 330);
-            this.panelControl5.Name = "panelControl5";
-            this.panelControl5.Size = new System.Drawing.Size(123, 433);
-            this.panelControl5.TabIndex = 33;
-            // 
-            // btnMenu
-            // 
-            this.btnMenu.Appearance.BackColor = System.Drawing.Color.Blue;
-            this.btnMenu.Appearance.Font = new System.Drawing.Font("Tahoma", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnMenu.Appearance.ForeColor = System.Drawing.Color.White;
-            this.btnMenu.Appearance.Options.UseBackColor = true;
-            this.btnMenu.Appearance.Options.UseFont = true;
-            this.btnMenu.Appearance.Options.UseForeColor = true;
-            this.btnMenu.Appearance.Options.UseTextOptions = true;
-            this.btnMenu.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
-            this.btnMenu.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
-            this.btnMenu.Location = new System.Drawing.Point(7, 8);
-            this.btnMenu.Name = "btnMenu";
-            this.btnMenu.Size = new System.Drawing.Size(111, 42);
-            this.btnMenu.TabIndex = 30;
-            this.btnMenu.Text = "Menu";
-            // 
-            // btnEatIn
-            // 
-            this.btnEatIn.Appearance.BackColor = System.Drawing.Color.Red;
-            this.btnEatIn.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnEatIn.Appearance.ForeColor = System.Drawing.Color.White;
-            this.btnEatIn.Appearance.Options.UseBackColor = true;
-            this.btnEatIn.Appearance.Options.UseFont = true;
-            this.btnEatIn.Appearance.Options.UseForeColor = true;
-            this.btnEatIn.Appearance.Options.UseTextOptions = true;
-            this.btnEatIn.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
-            this.btnEatIn.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
-            this.btnEatIn.Location = new System.Drawing.Point(7, 299);
-            this.btnEatIn.Name = "btnEatIn";
-            this.btnEatIn.Size = new System.Drawing.Size(111, 42);
-            this.btnEatIn.TabIndex = 29;
-            this.btnEatIn.Text = "Eat In";
-            // 
-            // btnCancel
-            // 
-            this.btnCancel.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
-            this.btnCancel.Appearance.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCancel.Appearance.ForeColor = System.Drawing.Color.White;
-            this.btnCancel.Appearance.Options.UseBackColor = true;
-            this.btnCancel.Appearance.Options.UseFont = true;
-            this.btnCancel.Appearance.Options.UseForeColor = true;
-            this.btnCancel.Appearance.Options.UseTextOptions = true;
-            this.btnCancel.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
-            this.btnCancel.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
-            this.btnCancel.Location = new System.Drawing.Point(7, 251);
-            this.btnCancel.Name = "btnCancel";
-            this.btnCancel.Size = new System.Drawing.Size(111, 42);
-            this.btnCancel.TabIndex = 28;
-            this.btnCancel.Text = "CANCEL ORDER";
-            // 
-            // btnLanguage
-            // 
-            this.btnLanguage.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
-            this.btnLanguage.Appearance.Font = new System.Drawing.Font("Tahoma", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnLanguage.Appearance.ForeColor = System.Drawing.Color.White;
-            this.btnLanguage.Appearance.Options.UseBackColor = true;
-            this.btnLanguage.Appearance.Options.UseFont = true;
-            this.btnLanguage.Appearance.Options.UseForeColor = true;
-            this.btnLanguage.Appearance.Options.UseTextOptions = true;
-            this.btnLanguage.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
-            this.btnLanguage.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
-            this.btnLanguage.Location = new System.Drawing.Point(7, 105);
-            this.btnLanguage.Name = "btnLanguage";
-            this.btnLanguage.Size = new System.Drawing.Size(111, 42);
-            this.btnLanguage.TabIndex = 25;
-            this.btnLanguage.Text = "LANGUAGE";
-            // 
-            // btnSaveOrder
-            // 
-            this.btnSaveOrder.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
-            this.btnSaveOrder.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSaveOrder.Appearance.ForeColor = System.Drawing.Color.White;
-            this.btnSaveOrder.Appearance.Options.UseBackColor = true;
-            this.btnSaveOrder.Appearance.Options.UseFont = true;
-            this.btnSaveOrder.Appearance.Options.UseForeColor = true;
-            this.btnSaveOrder.Appearance.Options.UseTextOptions = true;
-            this.btnSaveOrder.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
-            this.btnSaveOrder.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
-            this.btnSaveOrder.Location = new System.Drawing.Point(7, 202);
-            this.btnSaveOrder.Name = "btnSaveOrder";
-            this.btnSaveOrder.Size = new System.Drawing.Size(111, 42);
-            this.btnSaveOrder.TabIndex = 16;
-            this.btnSaveOrder.Text = "Save Order";
-            // 
-            // btnMcLeft
-            // 
-            this.btnMcLeft.Appearance.BackColor = System.Drawing.Color.Gray;
-            this.btnMcLeft.Appearance.ForeColor = System.Drawing.Color.White;
-            this.btnMcLeft.Appearance.Options.UseBackColor = true;
-            this.btnMcLeft.Appearance.Options.UseForeColor = true;
-            this.btnMcLeft.Appearance.Options.UseTextOptions = true;
-            this.btnMcLeft.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.btnMcLeft.Appearance.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
-            this.btnMcLeft.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
-            this.btnMcLeft.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
-            this.btnMcLeft.Location = new System.Drawing.Point(7, 351);
-            this.btnMcLeft.Name = "btnMcLeft";
-            this.btnMcLeft.Size = new System.Drawing.Size(55, 35);
-            this.btnMcLeft.TabIndex = 17;
-            this.btnMcLeft.Text = "<<";
-            // 
-            // btnMcRight
-            // 
-            this.btnMcRight.Appearance.BackColor = System.Drawing.Color.Gray;
-            this.btnMcRight.Appearance.ForeColor = System.Drawing.Color.White;
-            this.btnMcRight.Appearance.Options.UseBackColor = true;
-            this.btnMcRight.Appearance.Options.UseForeColor = true;
-            this.btnMcRight.Appearance.Options.UseTextOptions = true;
-            this.btnMcRight.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.btnMcRight.Appearance.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
-            this.btnMcRight.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
-            this.btnMcRight.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
-            this.btnMcRight.Location = new System.Drawing.Point(63, 351);
-            this.btnMcRight.Name = "btnMcRight";
-            this.btnMcRight.Size = new System.Drawing.Size(55, 35);
-            this.btnMcRight.TabIndex = 18;
-            this.btnMcRight.Text = ">>";
-            // 
-            // btnCid
-            // 
-            this.btnCid.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
-            this.btnCid.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCid.Appearance.ForeColor = System.Drawing.Color.White;
-            this.btnCid.Appearance.Options.UseBackColor = true;
-            this.btnCid.Appearance.Options.UseFont = true;
-            this.btnCid.Appearance.Options.UseForeColor = true;
-            this.btnCid.Appearance.Options.UseTextOptions = true;
-            this.btnCid.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
-            this.btnCid.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
-            this.btnCid.Location = new System.Drawing.Point(7, 56);
-            this.btnCid.Name = "btnCid";
-            this.btnCid.Size = new System.Drawing.Size(111, 42);
-            this.btnCid.TabIndex = 18;
-            this.btnCid.Text = "CID";
-            // 
-            // btnPendOrder
-            // 
-            this.btnPendOrder.Appearance.BackColor = System.Drawing.Color.Orange;
-            this.btnPendOrder.Appearance.ForeColor = System.Drawing.Color.White;
-            this.btnPendOrder.Appearance.Options.UseBackColor = true;
-            this.btnPendOrder.Appearance.Options.UseForeColor = true;
-            this.btnPendOrder.Appearance.Options.UseTextOptions = true;
-            this.btnPendOrder.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
-            this.btnPendOrder.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
-            this.btnPendOrder.Location = new System.Drawing.Point(7, 154);
-            this.btnPendOrder.Name = "btnPendOrder";
-            this.btnPendOrder.Size = new System.Drawing.Size(111, 42);
-            this.btnPendOrder.TabIndex = 22;
-            this.btnPendOrder.Text = "Pending Orders";
-            // 
-            // panelControl3
-            // 
-            this.panelControl3.Controls.Add(this.btnMc41);
-            this.panelControl3.Controls.Add(this.btnMc40);
-            this.panelControl3.Controls.Add(this.btnMc39);
-            this.panelControl3.Controls.Add(this.btnMc38);
-            this.panelControl3.Controls.Add(this.btnMc37);
-            this.panelControl3.Controls.Add(this.btnMc36);
-            this.panelControl3.Controls.Add(this.btnMc35);
-            this.panelControl3.Controls.Add(this.btnMc34);
-            this.panelControl3.Controls.Add(this.btnMc33);
-            this.panelControl3.Controls.Add(this.btnMc32);
-            this.panelControl3.Controls.Add(this.btnMc31);
-            this.panelControl3.Controls.Add(this.btnMc30);
-            this.panelControl3.Controls.Add(this.btnMc29);
-            this.panelControl3.Controls.Add(this.btnMc28);
-            this.panelControl3.Controls.Add(this.btnMc27);
-            this.panelControl3.Controls.Add(this.btnMc26);
-            this.panelControl3.Controls.Add(this.btnMc25);
-            this.panelControl3.Controls.Add(this.btnMc24);
-            this.panelControl3.Controls.Add(this.btnMc23);
-            this.panelControl3.Controls.Add(this.btnMc22);
-            this.panelControl3.Controls.Add(this.btnMc21);
-            this.panelControl3.Controls.Add(this.btnMc20);
-            this.panelControl3.Controls.Add(this.btnMc19);
-            this.panelControl3.Controls.Add(this.btnMc18);
-            this.panelControl3.Controls.Add(this.btnMc17);
-            this.panelControl3.Controls.Add(this.btnMc16);
-            this.panelControl3.Controls.Add(this.btnMc15);
-            this.panelControl3.Controls.Add(this.btnMc14);
-            this.panelControl3.Controls.Add(this.btnMc13);
-            this.panelControl3.Controls.Add(this.btnMc12);
-            this.panelControl3.Controls.Add(this.btnMc11);
-            this.panelControl3.Controls.Add(this.btnMc10);
-            this.panelControl3.Controls.Add(this.btnMc9);
-            this.panelControl3.Controls.Add(this.btnMc8);
-            this.panelControl3.Controls.Add(this.btnMc7);
-            this.panelControl3.Controls.Add(this.btnMc6);
-            this.panelControl3.Controls.Add(this.btnMc5);
-            this.panelControl3.Controls.Add(this.btnMc4);
-            this.panelControl3.Controls.Add(this.btnMc3);
-            this.panelControl3.Controls.Add(this.btnMc2);
-            this.panelControl3.Controls.Add(this.btnMc1);
-            this.panelControl3.Controls.Add(this.btnMc0);
-            this.panelControl3.Location = new System.Drawing.Point(134, 330);
-            this.panelControl3.Name = "panelControl3";
-            this.panelControl3.Size = new System.Drawing.Size(622, 433);
-            this.panelControl3.TabIndex = 32;
-            // 
-            // btnMc41
-            // 
-            this.btnMc41.Appearance.BackColor = System.Drawing.Color.RoyalBlue;
-            this.btnMc41.Appearance.ForeColor = System.Drawing.Color.White;
-            this.btnMc41.Appearance.Options.UseBackColor = true;
-            this.btnMc41.Appearance.Options.UseForeColor = true;
-            this.btnMc41.Appearance.Options.UseTextOptions = true;
-            this.btnMc41.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
-            this.btnMc41.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
-            this.btnMc41.Location = new System.Drawing.Point(514, 372);
-            this.btnMc41.Name = "btnMc41";
-            this.btnMc41.Size = new System.Drawing.Size(100, 57);
-            this.btnMc41.TabIndex = 57;
-            // 
-            // btnMc40
-            // 
-            this.btnMc40.Appearance.BackColor = System.Drawing.Color.RoyalBlue;
-            this.btnMc40.Appearance.ForeColor = System.Drawing.Color.White;
-            this.btnMc40.Appearance.Options.UseBackColor = true;
-            this.btnMc40.Appearance.Options.UseForeColor = true;
-            this.btnMc40.Appearance.Options.UseTextOptions = true;
-            this.btnMc40.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
-            this.btnMc40.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
-            this.btnMc40.Location = new System.Drawing.Point(412, 372);
-            this.btnMc40.Name = "btnMc40";
-            this.btnMc40.Size = new System.Drawing.Size(100, 57);
-            this.btnMc40.TabIndex = 56;
-            // 
-            // btnMc39
-            // 
-            this.btnMc39.Appearance.BackColor = System.Drawing.Color.RoyalBlue;
-            this.btnMc39.Appearance.ForeColor = System.Drawing.Color.White;
-            this.btnMc39.Appearance.Options.UseBackColor = true;
-            this.btnMc39.Appearance.Options.UseForeColor = true;
-            this.btnMc39.Appearance.Options.UseTextOptions = true;
-            this.btnMc39.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
-            this.btnMc39.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
-            this.btnMc39.Location = new System.Drawing.Point(310, 372);
-            this.btnMc39.Name = "btnMc39";
-            this.btnMc39.Size = new System.Drawing.Size(100, 57);
-            this.btnMc39.TabIndex = 55;
-            // 
-            // btnMc38
-            // 
-            this.btnMc38.Appearance.BackColor = System.Drawing.Color.RoyalBlue;
-            this.btnMc38.Appearance.ForeColor = System.Drawing.Color.White;
-            this.btnMc38.Appearance.Options.UseBackColor = true;
-            this.btnMc38.Appearance.Options.UseForeColor = true;
-            this.btnMc38.Appearance.Options.UseTextOptions = true;
-            this.btnMc38.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
-            this.btnMc38.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
-            this.btnMc38.Location = new System.Drawing.Point(208, 372);
-            this.btnMc38.Name = "btnMc38";
-            this.btnMc38.Size = new System.Drawing.Size(100, 57);
-            this.btnMc38.TabIndex = 54;
-            // 
-            // btnMc37
-            // 
-            this.btnMc37.Appearance.BackColor = System.Drawing.Color.RoyalBlue;
-            this.btnMc37.Appearance.ForeColor = System.Drawing.Color.White;
-            this.btnMc37.Appearance.Options.UseBackColor = true;
-            this.btnMc37.Appearance.Options.UseForeColor = true;
-            this.btnMc37.Appearance.Options.UseTextOptions = true;
-            this.btnMc37.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
-            this.btnMc37.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
-            this.btnMc37.Location = new System.Drawing.Point(106, 372);
-            this.btnMc37.Name = "btnMc37";
-            this.btnMc37.Size = new System.Drawing.Size(100, 57);
-            this.btnMc37.TabIndex = 53;
-            // 
-            // btnMc36
-            // 
-            this.btnMc36.Appearance.BackColor = System.Drawing.Color.RoyalBlue;
-            this.btnMc36.Appearance.ForeColor = System.Drawing.Color.White;
-            this.btnMc36.Appearance.Options.UseBackColor = true;
-            this.btnMc36.Appearance.Options.UseForeColor = true;
-            this.btnMc36.Appearance.Options.UseTextOptions = true;
-            this.btnMc36.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
-            this.btnMc36.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
-            this.btnMc36.Location = new System.Drawing.Point(4, 372);
-            this.btnMc36.Name = "btnMc36";
-            this.btnMc36.Size = new System.Drawing.Size(100, 57);
-            this.btnMc36.TabIndex = 52;
-            // 
-            // btnMc35
-            // 
-            this.btnMc35.Appearance.BackColor = System.Drawing.Color.RoyalBlue;
-            this.btnMc35.Appearance.ForeColor = System.Drawing.Color.White;
-            this.btnMc35.Appearance.Options.UseBackColor = true;
-            this.btnMc35.Appearance.Options.UseForeColor = true;
-            this.btnMc35.Appearance.Options.UseTextOptions = true;
-            this.btnMc35.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
-            this.btnMc35.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
-            this.btnMc35.Location = new System.Drawing.Point(514, 311);
-            this.btnMc35.Name = "btnMc35";
-            this.btnMc35.Size = new System.Drawing.Size(100, 57);
-            this.btnMc35.TabIndex = 51;
-            // 
-            // btnMc34
-            // 
-            this.btnMc34.Appearance.BackColor = System.Drawing.Color.RoyalBlue;
-            this.btnMc34.Appearance.ForeColor = System.Drawing.Color.White;
-            this.btnMc34.Appearance.Options.UseBackColor = true;
-            this.btnMc34.Appearance.Options.UseForeColor = true;
-            this.btnMc34.Appearance.Options.UseTextOptions = true;
-            this.btnMc34.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
-            this.btnMc34.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
-            this.btnMc34.Location = new System.Drawing.Point(412, 311);
-            this.btnMc34.Name = "btnMc34";
-            this.btnMc34.Size = new System.Drawing.Size(100, 57);
-            this.btnMc34.TabIndex = 50;
-            // 
-            // btnMc33
-            // 
-            this.btnMc33.Appearance.BackColor = System.Drawing.Color.RoyalBlue;
-            this.btnMc33.Appearance.ForeColor = System.Drawing.Color.White;
-            this.btnMc33.Appearance.Options.UseBackColor = true;
-            this.btnMc33.Appearance.Options.UseForeColor = true;
-            this.btnMc33.Appearance.Options.UseTextOptions = true;
-            this.btnMc33.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
-            this.btnMc33.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
-            this.btnMc33.Location = new System.Drawing.Point(310, 311);
-            this.btnMc33.Name = "btnMc33";
-            this.btnMc33.Size = new System.Drawing.Size(100, 57);
-            this.btnMc33.TabIndex = 49;
-            // 
-            // btnMc32
-            // 
-            this.btnMc32.Appearance.BackColor = System.Drawing.Color.RoyalBlue;
-            this.btnMc32.Appearance.ForeColor = System.Drawing.Color.White;
-            this.btnMc32.Appearance.Options.UseBackColor = true;
-            this.btnMc32.Appearance.Options.UseForeColor = true;
-            this.btnMc32.Appearance.Options.UseTextOptions = true;
-            this.btnMc32.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
-            this.btnMc32.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
-            this.btnMc32.Location = new System.Drawing.Point(208, 311);
-            this.btnMc32.Name = "btnMc32";
-            this.btnMc32.Size = new System.Drawing.Size(100, 57);
-            this.btnMc32.TabIndex = 48;
-            // 
-            // btnMc31
-            // 
-            this.btnMc31.Appearance.BackColor = System.Drawing.Color.RoyalBlue;
-            this.btnMc31.Appearance.ForeColor = System.Drawing.Color.White;
-            this.btnMc31.Appearance.Options.UseBackColor = true;
-            this.btnMc31.Appearance.Options.UseForeColor = true;
-            this.btnMc31.Appearance.Options.UseTextOptions = true;
-            this.btnMc31.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
-            this.btnMc31.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
-            this.btnMc31.Location = new System.Drawing.Point(106, 311);
-            this.btnMc31.Name = "btnMc31";
-            this.btnMc31.Size = new System.Drawing.Size(100, 57);
-            this.btnMc31.TabIndex = 47;
-            // 
-            // btnMc30
-            // 
-            this.btnMc30.Appearance.BackColor = System.Drawing.Color.RoyalBlue;
-            this.btnMc30.Appearance.ForeColor = System.Drawing.Color.White;
-            this.btnMc30.Appearance.Options.UseBackColor = true;
-            this.btnMc30.Appearance.Options.UseForeColor = true;
-            this.btnMc30.Appearance.Options.UseTextOptions = true;
-            this.btnMc30.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
-            this.btnMc30.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
-            this.btnMc30.Location = new System.Drawing.Point(4, 311);
-            this.btnMc30.Name = "btnMc30";
-            this.btnMc30.Size = new System.Drawing.Size(100, 57);
-            this.btnMc30.TabIndex = 46;
-            // 
-            // btnMc29
-            // 
-            this.btnMc29.Appearance.BackColor = System.Drawing.Color.RoyalBlue;
-            this.btnMc29.Appearance.ForeColor = System.Drawing.Color.White;
-            this.btnMc29.Appearance.Options.UseBackColor = true;
-            this.btnMc29.Appearance.Options.UseForeColor = true;
-            this.btnMc29.Appearance.Options.UseTextOptions = true;
-            this.btnMc29.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
-            this.btnMc29.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
-            this.btnMc29.Location = new System.Drawing.Point(514, 250);
-            this.btnMc29.Name = "btnMc29";
-            this.btnMc29.Size = new System.Drawing.Size(100, 57);
-            this.btnMc29.TabIndex = 45;
-            // 
-            // btnMc28
-            // 
-            this.btnMc28.Appearance.BackColor = System.Drawing.Color.RoyalBlue;
-            this.btnMc28.Appearance.ForeColor = System.Drawing.Color.White;
-            this.btnMc28.Appearance.Options.UseBackColor = true;
-            this.btnMc28.Appearance.Options.UseForeColor = true;
-            this.btnMc28.Appearance.Options.UseTextOptions = true;
-            this.btnMc28.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
-            this.btnMc28.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
-            this.btnMc28.Location = new System.Drawing.Point(412, 250);
-            this.btnMc28.Name = "btnMc28";
-            this.btnMc28.Size = new System.Drawing.Size(100, 57);
-            this.btnMc28.TabIndex = 44;
-            // 
-            // btnMc27
-            // 
-            this.btnMc27.Appearance.BackColor = System.Drawing.Color.RoyalBlue;
-            this.btnMc27.Appearance.ForeColor = System.Drawing.Color.White;
-            this.btnMc27.Appearance.Options.UseBackColor = true;
-            this.btnMc27.Appearance.Options.UseForeColor = true;
-            this.btnMc27.Appearance.Options.UseTextOptions = true;
-            this.btnMc27.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
-            this.btnMc27.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
-            this.btnMc27.Location = new System.Drawing.Point(310, 250);
-            this.btnMc27.Name = "btnMc27";
-            this.btnMc27.Size = new System.Drawing.Size(100, 57);
-            this.btnMc27.TabIndex = 43;
-            // 
-            // btnMc26
-            // 
-            this.btnMc26.Appearance.BackColor = System.Drawing.Color.RoyalBlue;
-            this.btnMc26.Appearance.ForeColor = System.Drawing.Color.White;
-            this.btnMc26.Appearance.Options.UseBackColor = true;
-            this.btnMc26.Appearance.Options.UseForeColor = true;
-            this.btnMc26.Appearance.Options.UseTextOptions = true;
-            this.btnMc26.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
-            this.btnMc26.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
-            this.btnMc26.Location = new System.Drawing.Point(208, 250);
-            this.btnMc26.Name = "btnMc26";
-            this.btnMc26.Size = new System.Drawing.Size(100, 57);
-            this.btnMc26.TabIndex = 42;
-            // 
-            // btnMc25
-            // 
-            this.btnMc25.Appearance.BackColor = System.Drawing.Color.RoyalBlue;
-            this.btnMc25.Appearance.ForeColor = System.Drawing.Color.White;
-            this.btnMc25.Appearance.Options.UseBackColor = true;
-            this.btnMc25.Appearance.Options.UseForeColor = true;
-            this.btnMc25.Appearance.Options.UseTextOptions = true;
-            this.btnMc25.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
-            this.btnMc25.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
-            this.btnMc25.Location = new System.Drawing.Point(106, 250);
-            this.btnMc25.Name = "btnMc25";
-            this.btnMc25.Size = new System.Drawing.Size(100, 57);
-            this.btnMc25.TabIndex = 41;
-            // 
-            // btnMc24
-            // 
-            this.btnMc24.Appearance.BackColor = System.Drawing.Color.RoyalBlue;
-            this.btnMc24.Appearance.ForeColor = System.Drawing.Color.White;
-            this.btnMc24.Appearance.Options.UseBackColor = true;
-            this.btnMc24.Appearance.Options.UseForeColor = true;
-            this.btnMc24.Appearance.Options.UseTextOptions = true;
-            this.btnMc24.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
-            this.btnMc24.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
-            this.btnMc24.Location = new System.Drawing.Point(4, 250);
-            this.btnMc24.Name = "btnMc24";
-            this.btnMc24.Size = new System.Drawing.Size(100, 57);
-            this.btnMc24.TabIndex = 40;
-            // 
-            // btnMc23
-            // 
-            this.btnMc23.Appearance.BackColor = System.Drawing.Color.RoyalBlue;
-            this.btnMc23.Appearance.ForeColor = System.Drawing.Color.White;
-            this.btnMc23.Appearance.Options.UseBackColor = true;
-            this.btnMc23.Appearance.Options.UseForeColor = true;
-            this.btnMc23.Appearance.Options.UseTextOptions = true;
-            this.btnMc23.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
-            this.btnMc23.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
-            this.btnMc23.Location = new System.Drawing.Point(514, 189);
-            this.btnMc23.Name = "btnMc23";
-            this.btnMc23.Size = new System.Drawing.Size(100, 57);
-            this.btnMc23.TabIndex = 39;
-            // 
-            // btnMc22
-            // 
-            this.btnMc22.Appearance.BackColor = System.Drawing.Color.RoyalBlue;
-            this.btnMc22.Appearance.ForeColor = System.Drawing.Color.White;
-            this.btnMc22.Appearance.Options.UseBackColor = true;
-            this.btnMc22.Appearance.Options.UseForeColor = true;
-            this.btnMc22.Appearance.Options.UseTextOptions = true;
-            this.btnMc22.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
-            this.btnMc22.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
-            this.btnMc22.Location = new System.Drawing.Point(412, 189);
-            this.btnMc22.Name = "btnMc22";
-            this.btnMc22.Size = new System.Drawing.Size(100, 57);
-            this.btnMc22.TabIndex = 38;
-            // 
-            // btnMc21
-            // 
-            this.btnMc21.Appearance.BackColor = System.Drawing.Color.RoyalBlue;
-            this.btnMc21.Appearance.ForeColor = System.Drawing.Color.White;
-            this.btnMc21.Appearance.Options.UseBackColor = true;
-            this.btnMc21.Appearance.Options.UseForeColor = true;
-            this.btnMc21.Appearance.Options.UseTextOptions = true;
-            this.btnMc21.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
-            this.btnMc21.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
-            this.btnMc21.Location = new System.Drawing.Point(310, 189);
-            this.btnMc21.Name = "btnMc21";
-            this.btnMc21.Size = new System.Drawing.Size(100, 57);
-            this.btnMc21.TabIndex = 37;
-            // 
-            // btnMc20
-            // 
-            this.btnMc20.Appearance.BackColor = System.Drawing.Color.RoyalBlue;
-            this.btnMc20.Appearance.ForeColor = System.Drawing.Color.White;
-            this.btnMc20.Appearance.Options.UseBackColor = true;
-            this.btnMc20.Appearance.Options.UseForeColor = true;
-            this.btnMc20.Appearance.Options.UseTextOptions = true;
-            this.btnMc20.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
-            this.btnMc20.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
-            this.btnMc20.Location = new System.Drawing.Point(208, 189);
-            this.btnMc20.Name = "btnMc20";
-            this.btnMc20.Size = new System.Drawing.Size(100, 57);
-            this.btnMc20.TabIndex = 36;
-            // 
-            // btnMc19
-            // 
-            this.btnMc19.Appearance.BackColor = System.Drawing.Color.RoyalBlue;
-            this.btnMc19.Appearance.ForeColor = System.Drawing.Color.White;
-            this.btnMc19.Appearance.Options.UseBackColor = true;
-            this.btnMc19.Appearance.Options.UseForeColor = true;
-            this.btnMc19.Appearance.Options.UseTextOptions = true;
-            this.btnMc19.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
-            this.btnMc19.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
-            this.btnMc19.Location = new System.Drawing.Point(106, 189);
-            this.btnMc19.Name = "btnMc19";
-            this.btnMc19.Size = new System.Drawing.Size(100, 57);
-            this.btnMc19.TabIndex = 35;
-            // 
-            // btnMc18
-            // 
-            this.btnMc18.Appearance.BackColor = System.Drawing.Color.RoyalBlue;
-            this.btnMc18.Appearance.ForeColor = System.Drawing.Color.White;
-            this.btnMc18.Appearance.Options.UseBackColor = true;
-            this.btnMc18.Appearance.Options.UseForeColor = true;
-            this.btnMc18.Appearance.Options.UseTextOptions = true;
-            this.btnMc18.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
-            this.btnMc18.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
-            this.btnMc18.Location = new System.Drawing.Point(4, 189);
-            this.btnMc18.Name = "btnMc18";
-            this.btnMc18.Size = new System.Drawing.Size(100, 57);
-            this.btnMc18.TabIndex = 34;
-            // 
-            // btnMc17
-            // 
-            this.btnMc17.Appearance.BackColor = System.Drawing.Color.RoyalBlue;
-            this.btnMc17.Appearance.ForeColor = System.Drawing.Color.White;
-            this.btnMc17.Appearance.Options.UseBackColor = true;
-            this.btnMc17.Appearance.Options.UseForeColor = true;
-            this.btnMc17.Appearance.Options.UseTextOptions = true;
-            this.btnMc17.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
-            this.btnMc17.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
-            this.btnMc17.Location = new System.Drawing.Point(514, 128);
-            this.btnMc17.Name = "btnMc17";
-            this.btnMc17.Size = new System.Drawing.Size(100, 57);
-            this.btnMc17.TabIndex = 33;
-            // 
-            // btnMc16
-            // 
-            this.btnMc16.Appearance.BackColor = System.Drawing.Color.RoyalBlue;
-            this.btnMc16.Appearance.ForeColor = System.Drawing.Color.White;
-            this.btnMc16.Appearance.Options.UseBackColor = true;
-            this.btnMc16.Appearance.Options.UseForeColor = true;
-            this.btnMc16.Appearance.Options.UseTextOptions = true;
-            this.btnMc16.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
-            this.btnMc16.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
-            this.btnMc16.Location = new System.Drawing.Point(412, 128);
-            this.btnMc16.Name = "btnMc16";
-            this.btnMc16.Size = new System.Drawing.Size(100, 57);
-            this.btnMc16.TabIndex = 32;
-            // 
-            // btnMc15
-            // 
-            this.btnMc15.Appearance.BackColor = System.Drawing.Color.RoyalBlue;
-            this.btnMc15.Appearance.ForeColor = System.Drawing.Color.White;
-            this.btnMc15.Appearance.Options.UseBackColor = true;
-            this.btnMc15.Appearance.Options.UseForeColor = true;
-            this.btnMc15.Appearance.Options.UseTextOptions = true;
-            this.btnMc15.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
-            this.btnMc15.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
-            this.btnMc15.Location = new System.Drawing.Point(310, 128);
-            this.btnMc15.Name = "btnMc15";
-            this.btnMc15.Size = new System.Drawing.Size(100, 57);
-            this.btnMc15.TabIndex = 31;
-            // 
-            // btnMc14
-            // 
-            this.btnMc14.Appearance.BackColor = System.Drawing.Color.RoyalBlue;
-            this.btnMc14.Appearance.ForeColor = System.Drawing.Color.White;
-            this.btnMc14.Appearance.Options.UseBackColor = true;
-            this.btnMc14.Appearance.Options.UseForeColor = true;
-            this.btnMc14.Appearance.Options.UseTextOptions = true;
-            this.btnMc14.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
-            this.btnMc14.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
-            this.btnMc14.Location = new System.Drawing.Point(208, 128);
-            this.btnMc14.Name = "btnMc14";
-            this.btnMc14.Size = new System.Drawing.Size(100, 57);
-            this.btnMc14.TabIndex = 30;
-            // 
-            // btnMc13
-            // 
-            this.btnMc13.Appearance.BackColor = System.Drawing.Color.RoyalBlue;
-            this.btnMc13.Appearance.ForeColor = System.Drawing.Color.White;
-            this.btnMc13.Appearance.Options.UseBackColor = true;
-            this.btnMc13.Appearance.Options.UseForeColor = true;
-            this.btnMc13.Appearance.Options.UseTextOptions = true;
-            this.btnMc13.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
-            this.btnMc13.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
-            this.btnMc13.Location = new System.Drawing.Point(106, 128);
-            this.btnMc13.Name = "btnMc13";
-            this.btnMc13.Size = new System.Drawing.Size(100, 57);
-            this.btnMc13.TabIndex = 29;
-            // 
-            // btnMc12
-            // 
-            this.btnMc12.Appearance.BackColor = System.Drawing.Color.RoyalBlue;
-            this.btnMc12.Appearance.ForeColor = System.Drawing.Color.White;
-            this.btnMc12.Appearance.Options.UseBackColor = true;
-            this.btnMc12.Appearance.Options.UseForeColor = true;
-            this.btnMc12.Appearance.Options.UseTextOptions = true;
-            this.btnMc12.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
-            this.btnMc12.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
-            this.btnMc12.Location = new System.Drawing.Point(4, 128);
-            this.btnMc12.Name = "btnMc12";
-            this.btnMc12.Size = new System.Drawing.Size(100, 57);
-            this.btnMc12.TabIndex = 28;
-            // 
-            // btnMc11
-            // 
-            this.btnMc11.Appearance.BackColor = System.Drawing.Color.RoyalBlue;
-            this.btnMc11.Appearance.ForeColor = System.Drawing.Color.White;
-            this.btnMc11.Appearance.Options.UseBackColor = true;
-            this.btnMc11.Appearance.Options.UseForeColor = true;
-            this.btnMc11.Appearance.Options.UseTextOptions = true;
-            this.btnMc11.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
-            this.btnMc11.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
-            this.btnMc11.Location = new System.Drawing.Point(514, 67);
-            this.btnMc11.Name = "btnMc11";
-            this.btnMc11.Size = new System.Drawing.Size(100, 57);
-            this.btnMc11.TabIndex = 27;
-            // 
-            // btnMc10
-            // 
-            this.btnMc10.Appearance.BackColor = System.Drawing.Color.RoyalBlue;
-            this.btnMc10.Appearance.ForeColor = System.Drawing.Color.White;
-            this.btnMc10.Appearance.Options.UseBackColor = true;
-            this.btnMc10.Appearance.Options.UseForeColor = true;
-            this.btnMc10.Appearance.Options.UseTextOptions = true;
-            this.btnMc10.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
-            this.btnMc10.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
-            this.btnMc10.Location = new System.Drawing.Point(412, 67);
-            this.btnMc10.Name = "btnMc10";
-            this.btnMc10.Size = new System.Drawing.Size(100, 57);
-            this.btnMc10.TabIndex = 26;
-            // 
-            // btnMc9
-            // 
-            this.btnMc9.Appearance.BackColor = System.Drawing.Color.RoyalBlue;
-            this.btnMc9.Appearance.ForeColor = System.Drawing.Color.White;
-            this.btnMc9.Appearance.Options.UseBackColor = true;
-            this.btnMc9.Appearance.Options.UseForeColor = true;
-            this.btnMc9.Appearance.Options.UseTextOptions = true;
-            this.btnMc9.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
-            this.btnMc9.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
-            this.btnMc9.Location = new System.Drawing.Point(310, 67);
-            this.btnMc9.Name = "btnMc9";
-            this.btnMc9.Size = new System.Drawing.Size(100, 57);
-            this.btnMc9.TabIndex = 25;
-            // 
-            // btnMc8
-            // 
-            this.btnMc8.Appearance.BackColor = System.Drawing.Color.RoyalBlue;
-            this.btnMc8.Appearance.ForeColor = System.Drawing.Color.White;
-            this.btnMc8.Appearance.Options.UseBackColor = true;
-            this.btnMc8.Appearance.Options.UseForeColor = true;
-            this.btnMc8.Appearance.Options.UseTextOptions = true;
-            this.btnMc8.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
-            this.btnMc8.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
-            this.btnMc8.Location = new System.Drawing.Point(208, 67);
-            this.btnMc8.Name = "btnMc8";
-            this.btnMc8.Size = new System.Drawing.Size(100, 57);
-            this.btnMc8.TabIndex = 24;
-            // 
-            // btnMc7
-            // 
-            this.btnMc7.Appearance.BackColor = System.Drawing.Color.RoyalBlue;
-            this.btnMc7.Appearance.ForeColor = System.Drawing.Color.White;
-            this.btnMc7.Appearance.Options.UseBackColor = true;
-            this.btnMc7.Appearance.Options.UseForeColor = true;
-            this.btnMc7.Appearance.Options.UseTextOptions = true;
-            this.btnMc7.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
-            this.btnMc7.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
-            this.btnMc7.Location = new System.Drawing.Point(106, 67);
-            this.btnMc7.Name = "btnMc7";
-            this.btnMc7.Size = new System.Drawing.Size(100, 57);
-            this.btnMc7.TabIndex = 23;
-            // 
-            // btnMc6
-            // 
-            this.btnMc6.Appearance.BackColor = System.Drawing.Color.RoyalBlue;
-            this.btnMc6.Appearance.ForeColor = System.Drawing.Color.White;
-            this.btnMc6.Appearance.Options.UseBackColor = true;
-            this.btnMc6.Appearance.Options.UseForeColor = true;
-            this.btnMc6.Appearance.Options.UseTextOptions = true;
-            this.btnMc6.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
-            this.btnMc6.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
-            this.btnMc6.Location = new System.Drawing.Point(4, 67);
-            this.btnMc6.Name = "btnMc6";
-            this.btnMc6.Size = new System.Drawing.Size(100, 57);
-            this.btnMc6.TabIndex = 22;
-            // 
-            // btnMc5
-            // 
-            this.btnMc5.Appearance.BackColor = System.Drawing.Color.RoyalBlue;
-            this.btnMc5.Appearance.ForeColor = System.Drawing.Color.White;
-            this.btnMc5.Appearance.Options.UseBackColor = true;
-            this.btnMc5.Appearance.Options.UseForeColor = true;
-            this.btnMc5.Appearance.Options.UseTextOptions = true;
-            this.btnMc5.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
-            this.btnMc5.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
-            this.btnMc5.Location = new System.Drawing.Point(514, 6);
-            this.btnMc5.Name = "btnMc5";
-            this.btnMc5.Size = new System.Drawing.Size(100, 57);
-            this.btnMc5.TabIndex = 21;
-            // 
-            // btnMc4
-            // 
-            this.btnMc4.Appearance.BackColor = System.Drawing.Color.RoyalBlue;
-            this.btnMc4.Appearance.ForeColor = System.Drawing.Color.White;
-            this.btnMc4.Appearance.Options.UseBackColor = true;
-            this.btnMc4.Appearance.Options.UseForeColor = true;
-            this.btnMc4.Appearance.Options.UseTextOptions = true;
-            this.btnMc4.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
-            this.btnMc4.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
-            this.btnMc4.Location = new System.Drawing.Point(412, 6);
-            this.btnMc4.Name = "btnMc4";
-            this.btnMc4.Size = new System.Drawing.Size(100, 57);
-            this.btnMc4.TabIndex = 20;
-            // 
-            // btnMc3
-            // 
-            this.btnMc3.Appearance.BackColor = System.Drawing.Color.RoyalBlue;
-            this.btnMc3.Appearance.ForeColor = System.Drawing.Color.White;
-            this.btnMc3.Appearance.Options.UseBackColor = true;
-            this.btnMc3.Appearance.Options.UseForeColor = true;
-            this.btnMc3.Appearance.Options.UseTextOptions = true;
-            this.btnMc3.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
-            this.btnMc3.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
-            this.btnMc3.Location = new System.Drawing.Point(310, 6);
-            this.btnMc3.Name = "btnMc3";
-            this.btnMc3.Size = new System.Drawing.Size(100, 57);
-            this.btnMc3.TabIndex = 19;
-            // 
-            // btnMc2
-            // 
-            this.btnMc2.Appearance.BackColor = System.Drawing.Color.RoyalBlue;
-            this.btnMc2.Appearance.ForeColor = System.Drawing.Color.White;
-            this.btnMc2.Appearance.Options.UseBackColor = true;
-            this.btnMc2.Appearance.Options.UseForeColor = true;
-            this.btnMc2.Appearance.Options.UseTextOptions = true;
-            this.btnMc2.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
-            this.btnMc2.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
-            this.btnMc2.Location = new System.Drawing.Point(208, 6);
-            this.btnMc2.Name = "btnMc2";
-            this.btnMc2.Size = new System.Drawing.Size(100, 57);
-            this.btnMc2.TabIndex = 18;
-            // 
-            // btnMc1
-            // 
-            this.btnMc1.Appearance.BackColor = System.Drawing.Color.RoyalBlue;
-            this.btnMc1.Appearance.ForeColor = System.Drawing.Color.White;
-            this.btnMc1.Appearance.Options.UseBackColor = true;
-            this.btnMc1.Appearance.Options.UseForeColor = true;
-            this.btnMc1.Appearance.Options.UseTextOptions = true;
-            this.btnMc1.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
-            this.btnMc1.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
-            this.btnMc1.Location = new System.Drawing.Point(106, 6);
-            this.btnMc1.Name = "btnMc1";
-            this.btnMc1.Size = new System.Drawing.Size(100, 57);
-            this.btnMc1.TabIndex = 17;
-            // 
-            // btnMc0
-            // 
-            this.btnMc0.Appearance.BackColor = System.Drawing.Color.RoyalBlue;
-            this.btnMc0.Appearance.ForeColor = System.Drawing.Color.White;
-            this.btnMc0.Appearance.Options.UseBackColor = true;
-            this.btnMc0.Appearance.Options.UseForeColor = true;
-            this.btnMc0.Appearance.Options.UseTextOptions = true;
-            this.btnMc0.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
-            this.btnMc0.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
-            this.btnMc0.Location = new System.Drawing.Point(4, 6);
-            this.btnMc0.Name = "btnMc0";
-            this.btnMc0.Size = new System.Drawing.Size(100, 57);
-            this.btnMc0.TabIndex = 16;
             // 
             // gbPayment
             // 
@@ -2894,6 +2012,896 @@
             this.lblTypeName.TabIndex = 55;
             this.lblTypeName.Text = "Delivery";
             // 
+            // pcMain
+            // 
+            this.pcMain.Controls.Add(this.panelControl5);
+            this.pcMain.Controls.Add(this.panelControl3);
+            this.pcMain.Controls.Add(this.panelControl2);
+            this.pcMain.Controls.Add(this.btnOrderType);
+            this.pcMain.Controls.Add(this.panelControl6);
+            this.pcMain.Controls.Add(this.btnCustInfo);
+            this.pcMain.Controls.Add(this.btnSearchMeal);
+            this.pcMain.Controls.Add(this.btnIngredMode);
+            this.pcMain.Location = new System.Drawing.Point(411, 5);
+            this.pcMain.Name = "pcMain";
+            this.pcMain.Size = new System.Drawing.Size(764, 770);
+            this.pcMain.TabIndex = 32;
+            // 
+            // panelControl5
+            // 
+            this.panelControl5.Controls.Add(this.btnMenu);
+            this.panelControl5.Controls.Add(this.btnEatIn);
+            this.panelControl5.Controls.Add(this.btnCancel);
+            this.panelControl5.Controls.Add(this.btnLanguage);
+            this.panelControl5.Controls.Add(this.btnSaveOrder);
+            this.panelControl5.Controls.Add(this.btnMcLeft);
+            this.panelControl5.Controls.Add(this.btnMcRight);
+            this.panelControl5.Controls.Add(this.btnCid);
+            this.panelControl5.Controls.Add(this.btnPendOrder);
+            this.panelControl5.Location = new System.Drawing.Point(5, 330);
+            this.panelControl5.Name = "panelControl5";
+            this.panelControl5.Size = new System.Drawing.Size(123, 433);
+            this.panelControl5.TabIndex = 33;
+            // 
+            // btnMenu
+            // 
+            this.btnMenu.Appearance.BackColor = System.Drawing.Color.Blue;
+            this.btnMenu.Appearance.Font = new System.Drawing.Font("Tahoma", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnMenu.Appearance.ForeColor = System.Drawing.Color.White;
+            this.btnMenu.Appearance.Options.UseBackColor = true;
+            this.btnMenu.Appearance.Options.UseFont = true;
+            this.btnMenu.Appearance.Options.UseForeColor = true;
+            this.btnMenu.Appearance.Options.UseTextOptions = true;
+            this.btnMenu.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
+            this.btnMenu.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
+            this.btnMenu.Location = new System.Drawing.Point(7, 8);
+            this.btnMenu.Name = "btnMenu";
+            this.btnMenu.Size = new System.Drawing.Size(111, 42);
+            this.btnMenu.TabIndex = 30;
+            this.btnMenu.Text = "Menu";
+            this.btnMenu.Click += new System.EventHandler(this.btnMenu_Click);
+            // 
+            // btnEatIn
+            // 
+            this.btnEatIn.Appearance.BackColor = System.Drawing.Color.Red;
+            this.btnEatIn.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEatIn.Appearance.ForeColor = System.Drawing.Color.White;
+            this.btnEatIn.Appearance.Options.UseBackColor = true;
+            this.btnEatIn.Appearance.Options.UseFont = true;
+            this.btnEatIn.Appearance.Options.UseForeColor = true;
+            this.btnEatIn.Appearance.Options.UseTextOptions = true;
+            this.btnEatIn.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
+            this.btnEatIn.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
+            this.btnEatIn.Location = new System.Drawing.Point(7, 299);
+            this.btnEatIn.Name = "btnEatIn";
+            this.btnEatIn.Size = new System.Drawing.Size(111, 42);
+            this.btnEatIn.TabIndex = 29;
+            this.btnEatIn.Text = "Eat In";
+            // 
+            // btnCancel
+            // 
+            this.btnCancel.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
+            this.btnCancel.Appearance.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCancel.Appearance.ForeColor = System.Drawing.Color.White;
+            this.btnCancel.Appearance.Options.UseBackColor = true;
+            this.btnCancel.Appearance.Options.UseFont = true;
+            this.btnCancel.Appearance.Options.UseForeColor = true;
+            this.btnCancel.Appearance.Options.UseTextOptions = true;
+            this.btnCancel.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
+            this.btnCancel.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
+            this.btnCancel.Location = new System.Drawing.Point(7, 251);
+            this.btnCancel.Name = "btnCancel";
+            this.btnCancel.Size = new System.Drawing.Size(111, 42);
+            this.btnCancel.TabIndex = 28;
+            this.btnCancel.Text = "CANCEL ORDER";
+            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
+            // 
+            // btnLanguage
+            // 
+            this.btnLanguage.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
+            this.btnLanguage.Appearance.Font = new System.Drawing.Font("Tahoma", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnLanguage.Appearance.ForeColor = System.Drawing.Color.White;
+            this.btnLanguage.Appearance.Options.UseBackColor = true;
+            this.btnLanguage.Appearance.Options.UseFont = true;
+            this.btnLanguage.Appearance.Options.UseForeColor = true;
+            this.btnLanguage.Appearance.Options.UseTextOptions = true;
+            this.btnLanguage.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
+            this.btnLanguage.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
+            this.btnLanguage.Location = new System.Drawing.Point(7, 105);
+            this.btnLanguage.Name = "btnLanguage";
+            this.btnLanguage.Size = new System.Drawing.Size(111, 42);
+            this.btnLanguage.TabIndex = 25;
+            this.btnLanguage.Text = "LANGUAGE";
+            this.btnLanguage.Click += new System.EventHandler(this.btnLanguage_Click);
+            // 
+            // btnSaveOrder
+            // 
+            this.btnSaveOrder.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
+            this.btnSaveOrder.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSaveOrder.Appearance.ForeColor = System.Drawing.Color.White;
+            this.btnSaveOrder.Appearance.Options.UseBackColor = true;
+            this.btnSaveOrder.Appearance.Options.UseFont = true;
+            this.btnSaveOrder.Appearance.Options.UseForeColor = true;
+            this.btnSaveOrder.Appearance.Options.UseTextOptions = true;
+            this.btnSaveOrder.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
+            this.btnSaveOrder.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
+            this.btnSaveOrder.Location = new System.Drawing.Point(7, 202);
+            this.btnSaveOrder.Name = "btnSaveOrder";
+            this.btnSaveOrder.Size = new System.Drawing.Size(111, 42);
+            this.btnSaveOrder.TabIndex = 16;
+            this.btnSaveOrder.Text = "Save Order";
+            this.btnSaveOrder.Click += new System.EventHandler(this.btnSaveOrder_Click);
+            // 
+            // btnMcLeft
+            // 
+            this.btnMcLeft.Appearance.BackColor = System.Drawing.Color.Gray;
+            this.btnMcLeft.Appearance.ForeColor = System.Drawing.Color.White;
+            this.btnMcLeft.Appearance.Options.UseBackColor = true;
+            this.btnMcLeft.Appearance.Options.UseForeColor = true;
+            this.btnMcLeft.Appearance.Options.UseTextOptions = true;
+            this.btnMcLeft.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.btnMcLeft.Appearance.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
+            this.btnMcLeft.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
+            this.btnMcLeft.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
+            this.btnMcLeft.Location = new System.Drawing.Point(7, 351);
+            this.btnMcLeft.Name = "btnMcLeft";
+            this.btnMcLeft.Size = new System.Drawing.Size(55, 35);
+            this.btnMcLeft.TabIndex = 17;
+            this.btnMcLeft.Text = "<<";
+            this.btnMcLeft.Click += new System.EventHandler(this.btnMcLeft_Click);
+            // 
+            // btnMcRight
+            // 
+            this.btnMcRight.Appearance.BackColor = System.Drawing.Color.Gray;
+            this.btnMcRight.Appearance.ForeColor = System.Drawing.Color.White;
+            this.btnMcRight.Appearance.Options.UseBackColor = true;
+            this.btnMcRight.Appearance.Options.UseForeColor = true;
+            this.btnMcRight.Appearance.Options.UseTextOptions = true;
+            this.btnMcRight.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.btnMcRight.Appearance.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
+            this.btnMcRight.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
+            this.btnMcRight.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
+            this.btnMcRight.Location = new System.Drawing.Point(63, 351);
+            this.btnMcRight.Name = "btnMcRight";
+            this.btnMcRight.Size = new System.Drawing.Size(55, 35);
+            this.btnMcRight.TabIndex = 18;
+            this.btnMcRight.Text = ">>";
+            this.btnMcRight.Click += new System.EventHandler(this.btnMcRight_Click);
+            // 
+            // btnCid
+            // 
+            this.btnCid.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
+            this.btnCid.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCid.Appearance.ForeColor = System.Drawing.Color.White;
+            this.btnCid.Appearance.Options.UseBackColor = true;
+            this.btnCid.Appearance.Options.UseFont = true;
+            this.btnCid.Appearance.Options.UseForeColor = true;
+            this.btnCid.Appearance.Options.UseTextOptions = true;
+            this.btnCid.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
+            this.btnCid.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
+            this.btnCid.Location = new System.Drawing.Point(7, 56);
+            this.btnCid.Name = "btnCid";
+            this.btnCid.Size = new System.Drawing.Size(111, 42);
+            this.btnCid.TabIndex = 18;
+            this.btnCid.Text = "CID";
+            this.btnCid.Click += new System.EventHandler(this.btnCid_Click);
+            // 
+            // btnPendOrder
+            // 
+            this.btnPendOrder.Appearance.BackColor = System.Drawing.Color.Orange;
+            this.btnPendOrder.Appearance.ForeColor = System.Drawing.Color.White;
+            this.btnPendOrder.Appearance.Options.UseBackColor = true;
+            this.btnPendOrder.Appearance.Options.UseForeColor = true;
+            this.btnPendOrder.Appearance.Options.UseTextOptions = true;
+            this.btnPendOrder.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
+            this.btnPendOrder.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
+            this.btnPendOrder.Location = new System.Drawing.Point(7, 154);
+            this.btnPendOrder.Name = "btnPendOrder";
+            this.btnPendOrder.Size = new System.Drawing.Size(111, 42);
+            this.btnPendOrder.TabIndex = 22;
+            this.btnPendOrder.Text = "Pending Orders";
+            this.btnPendOrder.Click += new System.EventHandler(this.btnPendOrder_Click);
+            // 
+            // panelControl3
+            // 
+            this.panelControl3.Controls.Add(this.btnMc41);
+            this.panelControl3.Controls.Add(this.btnMc40);
+            this.panelControl3.Controls.Add(this.btnMc39);
+            this.panelControl3.Controls.Add(this.btnMc38);
+            this.panelControl3.Controls.Add(this.btnMc37);
+            this.panelControl3.Controls.Add(this.btnMc36);
+            this.panelControl3.Controls.Add(this.btnMc35);
+            this.panelControl3.Controls.Add(this.btnMc34);
+            this.panelControl3.Controls.Add(this.btnMc33);
+            this.panelControl3.Controls.Add(this.btnMc32);
+            this.panelControl3.Controls.Add(this.btnMc31);
+            this.panelControl3.Controls.Add(this.btnMc30);
+            this.panelControl3.Controls.Add(this.btnMc29);
+            this.panelControl3.Controls.Add(this.btnMc28);
+            this.panelControl3.Controls.Add(this.btnMc27);
+            this.panelControl3.Controls.Add(this.btnMc26);
+            this.panelControl3.Controls.Add(this.btnMc25);
+            this.panelControl3.Controls.Add(this.btnMc24);
+            this.panelControl3.Controls.Add(this.btnMc23);
+            this.panelControl3.Controls.Add(this.btnMc22);
+            this.panelControl3.Controls.Add(this.btnMc21);
+            this.panelControl3.Controls.Add(this.btnMc20);
+            this.panelControl3.Controls.Add(this.btnMc19);
+            this.panelControl3.Controls.Add(this.btnMc18);
+            this.panelControl3.Controls.Add(this.btnMc17);
+            this.panelControl3.Controls.Add(this.btnMc16);
+            this.panelControl3.Controls.Add(this.btnMc15);
+            this.panelControl3.Controls.Add(this.btnMc14);
+            this.panelControl3.Controls.Add(this.btnMc13);
+            this.panelControl3.Controls.Add(this.btnMc12);
+            this.panelControl3.Controls.Add(this.btnMc11);
+            this.panelControl3.Controls.Add(this.btnMc10);
+            this.panelControl3.Controls.Add(this.btnMc9);
+            this.panelControl3.Controls.Add(this.btnMc8);
+            this.panelControl3.Controls.Add(this.btnMc7);
+            this.panelControl3.Controls.Add(this.btnMc6);
+            this.panelControl3.Controls.Add(this.btnMc5);
+            this.panelControl3.Controls.Add(this.btnMc4);
+            this.panelControl3.Controls.Add(this.btnMc3);
+            this.panelControl3.Controls.Add(this.btnMc2);
+            this.panelControl3.Controls.Add(this.btnMc1);
+            this.panelControl3.Controls.Add(this.btnMc0);
+            this.panelControl3.Location = new System.Drawing.Point(134, 330);
+            this.panelControl3.Name = "panelControl3";
+            this.panelControl3.Size = new System.Drawing.Size(622, 433);
+            this.panelControl3.TabIndex = 32;
+            // 
+            // btnMc41
+            // 
+            this.btnMc41.Appearance.BackColor = System.Drawing.Color.RoyalBlue;
+            this.btnMc41.Appearance.ForeColor = System.Drawing.Color.White;
+            this.btnMc41.Appearance.Options.UseBackColor = true;
+            this.btnMc41.Appearance.Options.UseForeColor = true;
+            this.btnMc41.Appearance.Options.UseTextOptions = true;
+            this.btnMc41.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
+            this.btnMc41.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
+            this.btnMc41.Location = new System.Drawing.Point(514, 372);
+            this.btnMc41.Name = "btnMc41";
+            this.btnMc41.Size = new System.Drawing.Size(100, 57);
+            this.btnMc41.TabIndex = 57;
+            // 
+            // btnMc40
+            // 
+            this.btnMc40.Appearance.BackColor = System.Drawing.Color.RoyalBlue;
+            this.btnMc40.Appearance.ForeColor = System.Drawing.Color.White;
+            this.btnMc40.Appearance.Options.UseBackColor = true;
+            this.btnMc40.Appearance.Options.UseForeColor = true;
+            this.btnMc40.Appearance.Options.UseTextOptions = true;
+            this.btnMc40.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
+            this.btnMc40.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
+            this.btnMc40.Location = new System.Drawing.Point(412, 372);
+            this.btnMc40.Name = "btnMc40";
+            this.btnMc40.Size = new System.Drawing.Size(100, 57);
+            this.btnMc40.TabIndex = 56;
+            // 
+            // btnMc39
+            // 
+            this.btnMc39.Appearance.BackColor = System.Drawing.Color.RoyalBlue;
+            this.btnMc39.Appearance.ForeColor = System.Drawing.Color.White;
+            this.btnMc39.Appearance.Options.UseBackColor = true;
+            this.btnMc39.Appearance.Options.UseForeColor = true;
+            this.btnMc39.Appearance.Options.UseTextOptions = true;
+            this.btnMc39.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
+            this.btnMc39.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
+            this.btnMc39.Location = new System.Drawing.Point(310, 372);
+            this.btnMc39.Name = "btnMc39";
+            this.btnMc39.Size = new System.Drawing.Size(100, 57);
+            this.btnMc39.TabIndex = 55;
+            // 
+            // btnMc38
+            // 
+            this.btnMc38.Appearance.BackColor = System.Drawing.Color.RoyalBlue;
+            this.btnMc38.Appearance.ForeColor = System.Drawing.Color.White;
+            this.btnMc38.Appearance.Options.UseBackColor = true;
+            this.btnMc38.Appearance.Options.UseForeColor = true;
+            this.btnMc38.Appearance.Options.UseTextOptions = true;
+            this.btnMc38.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
+            this.btnMc38.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
+            this.btnMc38.Location = new System.Drawing.Point(208, 372);
+            this.btnMc38.Name = "btnMc38";
+            this.btnMc38.Size = new System.Drawing.Size(100, 57);
+            this.btnMc38.TabIndex = 54;
+            // 
+            // btnMc37
+            // 
+            this.btnMc37.Appearance.BackColor = System.Drawing.Color.RoyalBlue;
+            this.btnMc37.Appearance.ForeColor = System.Drawing.Color.White;
+            this.btnMc37.Appearance.Options.UseBackColor = true;
+            this.btnMc37.Appearance.Options.UseForeColor = true;
+            this.btnMc37.Appearance.Options.UseTextOptions = true;
+            this.btnMc37.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
+            this.btnMc37.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
+            this.btnMc37.Location = new System.Drawing.Point(106, 372);
+            this.btnMc37.Name = "btnMc37";
+            this.btnMc37.Size = new System.Drawing.Size(100, 57);
+            this.btnMc37.TabIndex = 53;
+            // 
+            // btnMc36
+            // 
+            this.btnMc36.Appearance.BackColor = System.Drawing.Color.RoyalBlue;
+            this.btnMc36.Appearance.ForeColor = System.Drawing.Color.White;
+            this.btnMc36.Appearance.Options.UseBackColor = true;
+            this.btnMc36.Appearance.Options.UseForeColor = true;
+            this.btnMc36.Appearance.Options.UseTextOptions = true;
+            this.btnMc36.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
+            this.btnMc36.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
+            this.btnMc36.Location = new System.Drawing.Point(4, 372);
+            this.btnMc36.Name = "btnMc36";
+            this.btnMc36.Size = new System.Drawing.Size(100, 57);
+            this.btnMc36.TabIndex = 52;
+            // 
+            // btnMc35
+            // 
+            this.btnMc35.Appearance.BackColor = System.Drawing.Color.RoyalBlue;
+            this.btnMc35.Appearance.ForeColor = System.Drawing.Color.White;
+            this.btnMc35.Appearance.Options.UseBackColor = true;
+            this.btnMc35.Appearance.Options.UseForeColor = true;
+            this.btnMc35.Appearance.Options.UseTextOptions = true;
+            this.btnMc35.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
+            this.btnMc35.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
+            this.btnMc35.Location = new System.Drawing.Point(514, 311);
+            this.btnMc35.Name = "btnMc35";
+            this.btnMc35.Size = new System.Drawing.Size(100, 57);
+            this.btnMc35.TabIndex = 51;
+            // 
+            // btnMc34
+            // 
+            this.btnMc34.Appearance.BackColor = System.Drawing.Color.RoyalBlue;
+            this.btnMc34.Appearance.ForeColor = System.Drawing.Color.White;
+            this.btnMc34.Appearance.Options.UseBackColor = true;
+            this.btnMc34.Appearance.Options.UseForeColor = true;
+            this.btnMc34.Appearance.Options.UseTextOptions = true;
+            this.btnMc34.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
+            this.btnMc34.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
+            this.btnMc34.Location = new System.Drawing.Point(412, 311);
+            this.btnMc34.Name = "btnMc34";
+            this.btnMc34.Size = new System.Drawing.Size(100, 57);
+            this.btnMc34.TabIndex = 50;
+            // 
+            // btnMc33
+            // 
+            this.btnMc33.Appearance.BackColor = System.Drawing.Color.RoyalBlue;
+            this.btnMc33.Appearance.ForeColor = System.Drawing.Color.White;
+            this.btnMc33.Appearance.Options.UseBackColor = true;
+            this.btnMc33.Appearance.Options.UseForeColor = true;
+            this.btnMc33.Appearance.Options.UseTextOptions = true;
+            this.btnMc33.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
+            this.btnMc33.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
+            this.btnMc33.Location = new System.Drawing.Point(310, 311);
+            this.btnMc33.Name = "btnMc33";
+            this.btnMc33.Size = new System.Drawing.Size(100, 57);
+            this.btnMc33.TabIndex = 49;
+            // 
+            // btnMc32
+            // 
+            this.btnMc32.Appearance.BackColor = System.Drawing.Color.RoyalBlue;
+            this.btnMc32.Appearance.ForeColor = System.Drawing.Color.White;
+            this.btnMc32.Appearance.Options.UseBackColor = true;
+            this.btnMc32.Appearance.Options.UseForeColor = true;
+            this.btnMc32.Appearance.Options.UseTextOptions = true;
+            this.btnMc32.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
+            this.btnMc32.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
+            this.btnMc32.Location = new System.Drawing.Point(208, 311);
+            this.btnMc32.Name = "btnMc32";
+            this.btnMc32.Size = new System.Drawing.Size(100, 57);
+            this.btnMc32.TabIndex = 48;
+            // 
+            // btnMc31
+            // 
+            this.btnMc31.Appearance.BackColor = System.Drawing.Color.RoyalBlue;
+            this.btnMc31.Appearance.ForeColor = System.Drawing.Color.White;
+            this.btnMc31.Appearance.Options.UseBackColor = true;
+            this.btnMc31.Appearance.Options.UseForeColor = true;
+            this.btnMc31.Appearance.Options.UseTextOptions = true;
+            this.btnMc31.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
+            this.btnMc31.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
+            this.btnMc31.Location = new System.Drawing.Point(106, 311);
+            this.btnMc31.Name = "btnMc31";
+            this.btnMc31.Size = new System.Drawing.Size(100, 57);
+            this.btnMc31.TabIndex = 47;
+            // 
+            // btnMc30
+            // 
+            this.btnMc30.Appearance.BackColor = System.Drawing.Color.RoyalBlue;
+            this.btnMc30.Appearance.ForeColor = System.Drawing.Color.White;
+            this.btnMc30.Appearance.Options.UseBackColor = true;
+            this.btnMc30.Appearance.Options.UseForeColor = true;
+            this.btnMc30.Appearance.Options.UseTextOptions = true;
+            this.btnMc30.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
+            this.btnMc30.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
+            this.btnMc30.Location = new System.Drawing.Point(4, 311);
+            this.btnMc30.Name = "btnMc30";
+            this.btnMc30.Size = new System.Drawing.Size(100, 57);
+            this.btnMc30.TabIndex = 46;
+            // 
+            // btnMc29
+            // 
+            this.btnMc29.Appearance.BackColor = System.Drawing.Color.RoyalBlue;
+            this.btnMc29.Appearance.ForeColor = System.Drawing.Color.White;
+            this.btnMc29.Appearance.Options.UseBackColor = true;
+            this.btnMc29.Appearance.Options.UseForeColor = true;
+            this.btnMc29.Appearance.Options.UseTextOptions = true;
+            this.btnMc29.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
+            this.btnMc29.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
+            this.btnMc29.Location = new System.Drawing.Point(514, 250);
+            this.btnMc29.Name = "btnMc29";
+            this.btnMc29.Size = new System.Drawing.Size(100, 57);
+            this.btnMc29.TabIndex = 45;
+            // 
+            // btnMc28
+            // 
+            this.btnMc28.Appearance.BackColor = System.Drawing.Color.RoyalBlue;
+            this.btnMc28.Appearance.ForeColor = System.Drawing.Color.White;
+            this.btnMc28.Appearance.Options.UseBackColor = true;
+            this.btnMc28.Appearance.Options.UseForeColor = true;
+            this.btnMc28.Appearance.Options.UseTextOptions = true;
+            this.btnMc28.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
+            this.btnMc28.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
+            this.btnMc28.Location = new System.Drawing.Point(412, 250);
+            this.btnMc28.Name = "btnMc28";
+            this.btnMc28.Size = new System.Drawing.Size(100, 57);
+            this.btnMc28.TabIndex = 44;
+            // 
+            // btnMc27
+            // 
+            this.btnMc27.Appearance.BackColor = System.Drawing.Color.RoyalBlue;
+            this.btnMc27.Appearance.ForeColor = System.Drawing.Color.White;
+            this.btnMc27.Appearance.Options.UseBackColor = true;
+            this.btnMc27.Appearance.Options.UseForeColor = true;
+            this.btnMc27.Appearance.Options.UseTextOptions = true;
+            this.btnMc27.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
+            this.btnMc27.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
+            this.btnMc27.Location = new System.Drawing.Point(310, 250);
+            this.btnMc27.Name = "btnMc27";
+            this.btnMc27.Size = new System.Drawing.Size(100, 57);
+            this.btnMc27.TabIndex = 43;
+            // 
+            // btnMc26
+            // 
+            this.btnMc26.Appearance.BackColor = System.Drawing.Color.RoyalBlue;
+            this.btnMc26.Appearance.ForeColor = System.Drawing.Color.White;
+            this.btnMc26.Appearance.Options.UseBackColor = true;
+            this.btnMc26.Appearance.Options.UseForeColor = true;
+            this.btnMc26.Appearance.Options.UseTextOptions = true;
+            this.btnMc26.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
+            this.btnMc26.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
+            this.btnMc26.Location = new System.Drawing.Point(208, 250);
+            this.btnMc26.Name = "btnMc26";
+            this.btnMc26.Size = new System.Drawing.Size(100, 57);
+            this.btnMc26.TabIndex = 42;
+            // 
+            // btnMc25
+            // 
+            this.btnMc25.Appearance.BackColor = System.Drawing.Color.RoyalBlue;
+            this.btnMc25.Appearance.ForeColor = System.Drawing.Color.White;
+            this.btnMc25.Appearance.Options.UseBackColor = true;
+            this.btnMc25.Appearance.Options.UseForeColor = true;
+            this.btnMc25.Appearance.Options.UseTextOptions = true;
+            this.btnMc25.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
+            this.btnMc25.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
+            this.btnMc25.Location = new System.Drawing.Point(106, 250);
+            this.btnMc25.Name = "btnMc25";
+            this.btnMc25.Size = new System.Drawing.Size(100, 57);
+            this.btnMc25.TabIndex = 41;
+            // 
+            // btnMc24
+            // 
+            this.btnMc24.Appearance.BackColor = System.Drawing.Color.RoyalBlue;
+            this.btnMc24.Appearance.ForeColor = System.Drawing.Color.White;
+            this.btnMc24.Appearance.Options.UseBackColor = true;
+            this.btnMc24.Appearance.Options.UseForeColor = true;
+            this.btnMc24.Appearance.Options.UseTextOptions = true;
+            this.btnMc24.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
+            this.btnMc24.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
+            this.btnMc24.Location = new System.Drawing.Point(4, 250);
+            this.btnMc24.Name = "btnMc24";
+            this.btnMc24.Size = new System.Drawing.Size(100, 57);
+            this.btnMc24.TabIndex = 40;
+            // 
+            // btnMc23
+            // 
+            this.btnMc23.Appearance.BackColor = System.Drawing.Color.RoyalBlue;
+            this.btnMc23.Appearance.ForeColor = System.Drawing.Color.White;
+            this.btnMc23.Appearance.Options.UseBackColor = true;
+            this.btnMc23.Appearance.Options.UseForeColor = true;
+            this.btnMc23.Appearance.Options.UseTextOptions = true;
+            this.btnMc23.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
+            this.btnMc23.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
+            this.btnMc23.Location = new System.Drawing.Point(514, 189);
+            this.btnMc23.Name = "btnMc23";
+            this.btnMc23.Size = new System.Drawing.Size(100, 57);
+            this.btnMc23.TabIndex = 39;
+            // 
+            // btnMc22
+            // 
+            this.btnMc22.Appearance.BackColor = System.Drawing.Color.RoyalBlue;
+            this.btnMc22.Appearance.ForeColor = System.Drawing.Color.White;
+            this.btnMc22.Appearance.Options.UseBackColor = true;
+            this.btnMc22.Appearance.Options.UseForeColor = true;
+            this.btnMc22.Appearance.Options.UseTextOptions = true;
+            this.btnMc22.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
+            this.btnMc22.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
+            this.btnMc22.Location = new System.Drawing.Point(412, 189);
+            this.btnMc22.Name = "btnMc22";
+            this.btnMc22.Size = new System.Drawing.Size(100, 57);
+            this.btnMc22.TabIndex = 38;
+            // 
+            // btnMc21
+            // 
+            this.btnMc21.Appearance.BackColor = System.Drawing.Color.RoyalBlue;
+            this.btnMc21.Appearance.ForeColor = System.Drawing.Color.White;
+            this.btnMc21.Appearance.Options.UseBackColor = true;
+            this.btnMc21.Appearance.Options.UseForeColor = true;
+            this.btnMc21.Appearance.Options.UseTextOptions = true;
+            this.btnMc21.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
+            this.btnMc21.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
+            this.btnMc21.Location = new System.Drawing.Point(310, 189);
+            this.btnMc21.Name = "btnMc21";
+            this.btnMc21.Size = new System.Drawing.Size(100, 57);
+            this.btnMc21.TabIndex = 37;
+            // 
+            // btnMc20
+            // 
+            this.btnMc20.Appearance.BackColor = System.Drawing.Color.RoyalBlue;
+            this.btnMc20.Appearance.ForeColor = System.Drawing.Color.White;
+            this.btnMc20.Appearance.Options.UseBackColor = true;
+            this.btnMc20.Appearance.Options.UseForeColor = true;
+            this.btnMc20.Appearance.Options.UseTextOptions = true;
+            this.btnMc20.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
+            this.btnMc20.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
+            this.btnMc20.Location = new System.Drawing.Point(208, 189);
+            this.btnMc20.Name = "btnMc20";
+            this.btnMc20.Size = new System.Drawing.Size(100, 57);
+            this.btnMc20.TabIndex = 36;
+            // 
+            // btnMc19
+            // 
+            this.btnMc19.Appearance.BackColor = System.Drawing.Color.RoyalBlue;
+            this.btnMc19.Appearance.ForeColor = System.Drawing.Color.White;
+            this.btnMc19.Appearance.Options.UseBackColor = true;
+            this.btnMc19.Appearance.Options.UseForeColor = true;
+            this.btnMc19.Appearance.Options.UseTextOptions = true;
+            this.btnMc19.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
+            this.btnMc19.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
+            this.btnMc19.Location = new System.Drawing.Point(106, 189);
+            this.btnMc19.Name = "btnMc19";
+            this.btnMc19.Size = new System.Drawing.Size(100, 57);
+            this.btnMc19.TabIndex = 35;
+            // 
+            // btnMc18
+            // 
+            this.btnMc18.Appearance.BackColor = System.Drawing.Color.RoyalBlue;
+            this.btnMc18.Appearance.ForeColor = System.Drawing.Color.White;
+            this.btnMc18.Appearance.Options.UseBackColor = true;
+            this.btnMc18.Appearance.Options.UseForeColor = true;
+            this.btnMc18.Appearance.Options.UseTextOptions = true;
+            this.btnMc18.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
+            this.btnMc18.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
+            this.btnMc18.Location = new System.Drawing.Point(4, 189);
+            this.btnMc18.Name = "btnMc18";
+            this.btnMc18.Size = new System.Drawing.Size(100, 57);
+            this.btnMc18.TabIndex = 34;
+            // 
+            // btnMc17
+            // 
+            this.btnMc17.Appearance.BackColor = System.Drawing.Color.RoyalBlue;
+            this.btnMc17.Appearance.ForeColor = System.Drawing.Color.White;
+            this.btnMc17.Appearance.Options.UseBackColor = true;
+            this.btnMc17.Appearance.Options.UseForeColor = true;
+            this.btnMc17.Appearance.Options.UseTextOptions = true;
+            this.btnMc17.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
+            this.btnMc17.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
+            this.btnMc17.Location = new System.Drawing.Point(514, 128);
+            this.btnMc17.Name = "btnMc17";
+            this.btnMc17.Size = new System.Drawing.Size(100, 57);
+            this.btnMc17.TabIndex = 33;
+            // 
+            // btnMc16
+            // 
+            this.btnMc16.Appearance.BackColor = System.Drawing.Color.RoyalBlue;
+            this.btnMc16.Appearance.ForeColor = System.Drawing.Color.White;
+            this.btnMc16.Appearance.Options.UseBackColor = true;
+            this.btnMc16.Appearance.Options.UseForeColor = true;
+            this.btnMc16.Appearance.Options.UseTextOptions = true;
+            this.btnMc16.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
+            this.btnMc16.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
+            this.btnMc16.Location = new System.Drawing.Point(412, 128);
+            this.btnMc16.Name = "btnMc16";
+            this.btnMc16.Size = new System.Drawing.Size(100, 57);
+            this.btnMc16.TabIndex = 32;
+            // 
+            // btnMc15
+            // 
+            this.btnMc15.Appearance.BackColor = System.Drawing.Color.RoyalBlue;
+            this.btnMc15.Appearance.ForeColor = System.Drawing.Color.White;
+            this.btnMc15.Appearance.Options.UseBackColor = true;
+            this.btnMc15.Appearance.Options.UseForeColor = true;
+            this.btnMc15.Appearance.Options.UseTextOptions = true;
+            this.btnMc15.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
+            this.btnMc15.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
+            this.btnMc15.Location = new System.Drawing.Point(310, 128);
+            this.btnMc15.Name = "btnMc15";
+            this.btnMc15.Size = new System.Drawing.Size(100, 57);
+            this.btnMc15.TabIndex = 31;
+            // 
+            // btnMc14
+            // 
+            this.btnMc14.Appearance.BackColor = System.Drawing.Color.RoyalBlue;
+            this.btnMc14.Appearance.ForeColor = System.Drawing.Color.White;
+            this.btnMc14.Appearance.Options.UseBackColor = true;
+            this.btnMc14.Appearance.Options.UseForeColor = true;
+            this.btnMc14.Appearance.Options.UseTextOptions = true;
+            this.btnMc14.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
+            this.btnMc14.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
+            this.btnMc14.Location = new System.Drawing.Point(208, 128);
+            this.btnMc14.Name = "btnMc14";
+            this.btnMc14.Size = new System.Drawing.Size(100, 57);
+            this.btnMc14.TabIndex = 30;
+            // 
+            // btnMc13
+            // 
+            this.btnMc13.Appearance.BackColor = System.Drawing.Color.RoyalBlue;
+            this.btnMc13.Appearance.ForeColor = System.Drawing.Color.White;
+            this.btnMc13.Appearance.Options.UseBackColor = true;
+            this.btnMc13.Appearance.Options.UseForeColor = true;
+            this.btnMc13.Appearance.Options.UseTextOptions = true;
+            this.btnMc13.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
+            this.btnMc13.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
+            this.btnMc13.Location = new System.Drawing.Point(106, 128);
+            this.btnMc13.Name = "btnMc13";
+            this.btnMc13.Size = new System.Drawing.Size(100, 57);
+            this.btnMc13.TabIndex = 29;
+            // 
+            // btnMc12
+            // 
+            this.btnMc12.Appearance.BackColor = System.Drawing.Color.RoyalBlue;
+            this.btnMc12.Appearance.ForeColor = System.Drawing.Color.White;
+            this.btnMc12.Appearance.Options.UseBackColor = true;
+            this.btnMc12.Appearance.Options.UseForeColor = true;
+            this.btnMc12.Appearance.Options.UseTextOptions = true;
+            this.btnMc12.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
+            this.btnMc12.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
+            this.btnMc12.Location = new System.Drawing.Point(4, 128);
+            this.btnMc12.Name = "btnMc12";
+            this.btnMc12.Size = new System.Drawing.Size(100, 57);
+            this.btnMc12.TabIndex = 28;
+            // 
+            // btnMc11
+            // 
+            this.btnMc11.Appearance.BackColor = System.Drawing.Color.RoyalBlue;
+            this.btnMc11.Appearance.ForeColor = System.Drawing.Color.White;
+            this.btnMc11.Appearance.Options.UseBackColor = true;
+            this.btnMc11.Appearance.Options.UseForeColor = true;
+            this.btnMc11.Appearance.Options.UseTextOptions = true;
+            this.btnMc11.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
+            this.btnMc11.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
+            this.btnMc11.Location = new System.Drawing.Point(514, 67);
+            this.btnMc11.Name = "btnMc11";
+            this.btnMc11.Size = new System.Drawing.Size(100, 57);
+            this.btnMc11.TabIndex = 27;
+            // 
+            // btnMc10
+            // 
+            this.btnMc10.Appearance.BackColor = System.Drawing.Color.RoyalBlue;
+            this.btnMc10.Appearance.ForeColor = System.Drawing.Color.White;
+            this.btnMc10.Appearance.Options.UseBackColor = true;
+            this.btnMc10.Appearance.Options.UseForeColor = true;
+            this.btnMc10.Appearance.Options.UseTextOptions = true;
+            this.btnMc10.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
+            this.btnMc10.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
+            this.btnMc10.Location = new System.Drawing.Point(412, 67);
+            this.btnMc10.Name = "btnMc10";
+            this.btnMc10.Size = new System.Drawing.Size(100, 57);
+            this.btnMc10.TabIndex = 26;
+            // 
+            // btnMc9
+            // 
+            this.btnMc9.Appearance.BackColor = System.Drawing.Color.RoyalBlue;
+            this.btnMc9.Appearance.ForeColor = System.Drawing.Color.White;
+            this.btnMc9.Appearance.Options.UseBackColor = true;
+            this.btnMc9.Appearance.Options.UseForeColor = true;
+            this.btnMc9.Appearance.Options.UseTextOptions = true;
+            this.btnMc9.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
+            this.btnMc9.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
+            this.btnMc9.Location = new System.Drawing.Point(310, 67);
+            this.btnMc9.Name = "btnMc9";
+            this.btnMc9.Size = new System.Drawing.Size(100, 57);
+            this.btnMc9.TabIndex = 25;
+            // 
+            // btnMc8
+            // 
+            this.btnMc8.Appearance.BackColor = System.Drawing.Color.RoyalBlue;
+            this.btnMc8.Appearance.ForeColor = System.Drawing.Color.White;
+            this.btnMc8.Appearance.Options.UseBackColor = true;
+            this.btnMc8.Appearance.Options.UseForeColor = true;
+            this.btnMc8.Appearance.Options.UseTextOptions = true;
+            this.btnMc8.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
+            this.btnMc8.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
+            this.btnMc8.Location = new System.Drawing.Point(208, 67);
+            this.btnMc8.Name = "btnMc8";
+            this.btnMc8.Size = new System.Drawing.Size(100, 57);
+            this.btnMc8.TabIndex = 24;
+            // 
+            // btnMc7
+            // 
+            this.btnMc7.Appearance.BackColor = System.Drawing.Color.RoyalBlue;
+            this.btnMc7.Appearance.ForeColor = System.Drawing.Color.White;
+            this.btnMc7.Appearance.Options.UseBackColor = true;
+            this.btnMc7.Appearance.Options.UseForeColor = true;
+            this.btnMc7.Appearance.Options.UseTextOptions = true;
+            this.btnMc7.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
+            this.btnMc7.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
+            this.btnMc7.Location = new System.Drawing.Point(106, 67);
+            this.btnMc7.Name = "btnMc7";
+            this.btnMc7.Size = new System.Drawing.Size(100, 57);
+            this.btnMc7.TabIndex = 23;
+            // 
+            // btnMc6
+            // 
+            this.btnMc6.Appearance.BackColor = System.Drawing.Color.RoyalBlue;
+            this.btnMc6.Appearance.ForeColor = System.Drawing.Color.White;
+            this.btnMc6.Appearance.Options.UseBackColor = true;
+            this.btnMc6.Appearance.Options.UseForeColor = true;
+            this.btnMc6.Appearance.Options.UseTextOptions = true;
+            this.btnMc6.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
+            this.btnMc6.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
+            this.btnMc6.Location = new System.Drawing.Point(4, 67);
+            this.btnMc6.Name = "btnMc6";
+            this.btnMc6.Size = new System.Drawing.Size(100, 57);
+            this.btnMc6.TabIndex = 22;
+            // 
+            // btnMc5
+            // 
+            this.btnMc5.Appearance.BackColor = System.Drawing.Color.RoyalBlue;
+            this.btnMc5.Appearance.ForeColor = System.Drawing.Color.White;
+            this.btnMc5.Appearance.Options.UseBackColor = true;
+            this.btnMc5.Appearance.Options.UseForeColor = true;
+            this.btnMc5.Appearance.Options.UseTextOptions = true;
+            this.btnMc5.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
+            this.btnMc5.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
+            this.btnMc5.Location = new System.Drawing.Point(514, 6);
+            this.btnMc5.Name = "btnMc5";
+            this.btnMc5.Size = new System.Drawing.Size(100, 57);
+            this.btnMc5.TabIndex = 21;
+            // 
+            // btnMc4
+            // 
+            this.btnMc4.Appearance.BackColor = System.Drawing.Color.RoyalBlue;
+            this.btnMc4.Appearance.ForeColor = System.Drawing.Color.White;
+            this.btnMc4.Appearance.Options.UseBackColor = true;
+            this.btnMc4.Appearance.Options.UseForeColor = true;
+            this.btnMc4.Appearance.Options.UseTextOptions = true;
+            this.btnMc4.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
+            this.btnMc4.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
+            this.btnMc4.Location = new System.Drawing.Point(412, 6);
+            this.btnMc4.Name = "btnMc4";
+            this.btnMc4.Size = new System.Drawing.Size(100, 57);
+            this.btnMc4.TabIndex = 20;
+            // 
+            // btnMc3
+            // 
+            this.btnMc3.Appearance.BackColor = System.Drawing.Color.RoyalBlue;
+            this.btnMc3.Appearance.ForeColor = System.Drawing.Color.White;
+            this.btnMc3.Appearance.Options.UseBackColor = true;
+            this.btnMc3.Appearance.Options.UseForeColor = true;
+            this.btnMc3.Appearance.Options.UseTextOptions = true;
+            this.btnMc3.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
+            this.btnMc3.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
+            this.btnMc3.Location = new System.Drawing.Point(310, 6);
+            this.btnMc3.Name = "btnMc3";
+            this.btnMc3.Size = new System.Drawing.Size(100, 57);
+            this.btnMc3.TabIndex = 19;
+            // 
+            // btnMc2
+            // 
+            this.btnMc2.Appearance.BackColor = System.Drawing.Color.RoyalBlue;
+            this.btnMc2.Appearance.ForeColor = System.Drawing.Color.White;
+            this.btnMc2.Appearance.Options.UseBackColor = true;
+            this.btnMc2.Appearance.Options.UseForeColor = true;
+            this.btnMc2.Appearance.Options.UseTextOptions = true;
+            this.btnMc2.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
+            this.btnMc2.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
+            this.btnMc2.Location = new System.Drawing.Point(208, 6);
+            this.btnMc2.Name = "btnMc2";
+            this.btnMc2.Size = new System.Drawing.Size(100, 57);
+            this.btnMc2.TabIndex = 18;
+            // 
+            // btnMc1
+            // 
+            this.btnMc1.Appearance.BackColor = System.Drawing.Color.RoyalBlue;
+            this.btnMc1.Appearance.ForeColor = System.Drawing.Color.White;
+            this.btnMc1.Appearance.Options.UseBackColor = true;
+            this.btnMc1.Appearance.Options.UseForeColor = true;
+            this.btnMc1.Appearance.Options.UseTextOptions = true;
+            this.btnMc1.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
+            this.btnMc1.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
+            this.btnMc1.Location = new System.Drawing.Point(106, 6);
+            this.btnMc1.Name = "btnMc1";
+            this.btnMc1.Size = new System.Drawing.Size(100, 57);
+            this.btnMc1.TabIndex = 17;
+            // 
+            // btnMc0
+            // 
+            this.btnMc0.Appearance.BackColor = System.Drawing.Color.RoyalBlue;
+            this.btnMc0.Appearance.ForeColor = System.Drawing.Color.White;
+            this.btnMc0.Appearance.Options.UseBackColor = true;
+            this.btnMc0.Appearance.Options.UseForeColor = true;
+            this.btnMc0.Appearance.Options.UseTextOptions = true;
+            this.btnMc0.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
+            this.btnMc0.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
+            this.btnMc0.Location = new System.Drawing.Point(4, 6);
+            this.btnMc0.Name = "btnMc0";
+            this.btnMc0.Size = new System.Drawing.Size(100, 57);
+            this.btnMc0.TabIndex = 16;
+            // 
+            // btnOrderType
+            // 
+            this.btnOrderType.Appearance.BackColor = System.Drawing.Color.Gray;
+            this.btnOrderType.Appearance.Font = new System.Drawing.Font("Tahoma", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnOrderType.Appearance.ForeColor = System.Drawing.Color.White;
+            this.btnOrderType.Appearance.Options.UseBackColor = true;
+            this.btnOrderType.Appearance.Options.UseFont = true;
+            this.btnOrderType.Appearance.Options.UseForeColor = true;
+            this.btnOrderType.Appearance.Options.UseTextOptions = true;
+            this.btnOrderType.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
+            this.btnOrderType.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
+            this.btnOrderType.Location = new System.Drawing.Point(435, 271);
+            this.btnOrderType.Name = "btnOrderType";
+            this.btnOrderType.Size = new System.Drawing.Size(111, 42);
+            this.btnOrderType.TabIndex = 26;
+            this.btnOrderType.Text = "Order Type";
+            this.btnOrderType.Visible = false;
+            this.btnOrderType.Click += new System.EventHandler(this.btnOrderType_Click);
+            // 
+            // btnCustInfo
+            // 
+            this.btnCustInfo.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCustInfo.Appearance.ForeColor = System.Drawing.Color.Black;
+            this.btnCustInfo.Appearance.Options.UseFont = true;
+            this.btnCustInfo.Appearance.Options.UseForeColor = true;
+            this.btnCustInfo.Appearance.Options.UseTextOptions = true;
+            this.btnCustInfo.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
+            this.btnCustInfo.Location = new System.Drawing.Point(762, 36);
+            this.btnCustInfo.Name = "btnCustInfo";
+            this.btnCustInfo.Size = new System.Drawing.Size(80, 60);
+            this.btnCustInfo.TabIndex = 17;
+            this.btnCustInfo.Text = "Cust Info";
+            this.btnCustInfo.Visible = false;
+            this.btnCustInfo.Click += new System.EventHandler(this.btnCustInfo_Click);
+            // 
+            // btnSearchMeal
+            // 
+            this.btnSearchMeal.Appearance.Font = new System.Drawing.Font("Tahoma", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSearchMeal.Appearance.Options.UseFont = true;
+            this.btnSearchMeal.Appearance.Options.UseTextOptions = true;
+            this.btnSearchMeal.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
+            this.btnSearchMeal.Location = new System.Drawing.Point(762, 168);
+            this.btnSearchMeal.Name = "btnSearchMeal";
+            this.btnSearchMeal.Size = new System.Drawing.Size(80, 60);
+            this.btnSearchMeal.TabIndex = 24;
+            this.btnSearchMeal.Text = "Search Meal";
+            this.btnSearchMeal.Visible = false;
+            this.btnSearchMeal.Click += new System.EventHandler(this.btnSearchMeal_Click);
+            // 
+            // btnIngredMode
+            // 
+            this.btnIngredMode.Appearance.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.btnIngredMode.Appearance.Options.UseFont = true;
+            this.btnIngredMode.Appearance.Options.UseTextOptions = true;
+            this.btnIngredMode.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
+            this.btnIngredMode.Location = new System.Drawing.Point(762, 102);
+            this.btnIngredMode.Name = "btnIngredMode";
+            this.btnIngredMode.Size = new System.Drawing.Size(80, 60);
+            this.btnIngredMode.TabIndex = 21;
+            this.btnIngredMode.Text = "Ingred Mode";
+            this.btnIngredMode.Visible = false;
+            this.btnIngredMode.Click += new System.EventHandler(this.btnIngredMode_Click);
+            // 
             // FrmTaMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 18F);
@@ -2921,12 +2929,6 @@
             this.panelControl2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.panelControl4)).EndInit();
             this.panelControl4.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pcMain)).EndInit();
-            this.pcMain.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.panelControl5)).EndInit();
-            this.panelControl5.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.panelControl3)).EndInit();
-            this.panelControl3.ResumeLayout(false);
             this.gbPayment.ResumeLayout(false);
             this.gbPayment.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.lueNote.Properties)).EndInit();
@@ -2948,6 +2950,12 @@
             ((System.ComponentModel.ISupportInitialize)(this.txtTendered.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtSurcharge.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtDiscount.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pcMain)).EndInit();
+            this.pcMain.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.panelControl5)).EndInit();
+            this.panelControl5.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.panelControl3)).EndInit();
+            this.panelControl3.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
