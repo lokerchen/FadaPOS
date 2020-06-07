@@ -287,7 +287,7 @@ namespace SuperPOS.Print
                             taOrderItemInfo.ItemDishName, taOrderItemInfo.ItemTotalPrice, PrtStatic.PRT_GEN_SET1_FONT_SIZE_10.ToString());
                         strContent += "\n";
 
-                        if (strPrtLang.Equals(PrtStatic.PRT_GEN_SET1_LAN_Both))
+                        if (strPrtLang.Equals(PrtStatic.PRT_GEN_SET1_LAN_Both) || string.IsNullOrEmpty(strPrtLang))
                         {
                             strContent += PrtCommon.GetHanZiTab(taOrderItemInfo.ItemDishOtherName, PrtStatic.PRT_GEN_SET1_FONT_SIZE_10.ToString());
                             strContent += "\n";
