@@ -3325,6 +3325,10 @@ namespace SuperPOS.UI.TA
 
                 checkID = CommonDAL.GetCheckCode();
                 lblCheck.Text = checkID;
+
+                ORDER_TYPE = PubComm.ORDER_TYPE_SHOP;
+                btnType.Text = ORDER_TYPE;
+                GetCustInfo(0);
             }
         }
     }
