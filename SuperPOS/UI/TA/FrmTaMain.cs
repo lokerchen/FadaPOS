@@ -246,6 +246,11 @@ namespace SuperPOS.UI.TA
                     {
                         treeListOrder.Nodes.Clear();
                     }
+
+                    ORDER_TYPE = PubComm.ORDER_TYPE_SHOP;
+                    btnType.Text = ORDER_TYPE;
+                    ChangeOrderBtnColor(ORDER_TYPE);
+                    GetCustInfo(0);
                 }
             }
 
@@ -3329,6 +3334,7 @@ namespace SuperPOS.UI.TA
                 ORDER_TYPE = PubComm.ORDER_TYPE_SHOP;
                 btnType.Text = ORDER_TYPE;
                 GetCustInfo(0);
+                ChangeOrderBtnColor(btnType.Text);
             }
         }
     }
