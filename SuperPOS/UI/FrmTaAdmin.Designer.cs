@@ -436,7 +436,7 @@
             this.btnTaDriverSetup.Appearance.Options.UseTextOptions = true;
             this.btnTaDriverSetup.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
             this.btnTaDriverSetup.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
-            this.btnTaDriverSetup.Location = new System.Drawing.Point(755, 6);
+            this.btnTaDriverSetup.Location = new System.Drawing.Point(5, 62);
             this.btnTaDriverSetup.Name = "btnTaDriverSetup";
             this.btnTaDriverSetup.Size = new System.Drawing.Size(145, 50);
             this.btnTaDriverSetup.TabIndex = 7;
@@ -454,7 +454,7 @@
             this.btnTaPrtSetup.Appearance.Options.UseTextOptions = true;
             this.btnTaPrtSetup.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
             this.btnTaPrtSetup.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
-            this.btnTaPrtSetup.Location = new System.Drawing.Point(5, 62);
+            this.btnTaPrtSetup.Location = new System.Drawing.Point(155, 62);
             this.btnTaPrtSetup.Name = "btnTaPrtSetup";
             this.btnTaPrtSetup.Size = new System.Drawing.Size(145, 50);
             this.btnTaPrtSetup.TabIndex = 6;
