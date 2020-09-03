@@ -41,7 +41,7 @@ namespace SuperPOS.UI.Sys
             {
                 GenSetInfo genSetInfo = new GenSetInfo();
                 genSetInfo.TillNum = txtTillNum.Text;
-                genSetInfo.CheckCurrency = txtCheckCurrency.Text;
+                //genSetInfo.CheckCurrency = txtCheckCurrency.Text;
                 genSetInfo.VATPer = txtVatPer.Text;
                 genSetInfo.IsShowItemCode = chkDisplayCode.Checked ? "Y" : "N";
                 genSetInfo.IsBackup = chkIsBackup.Checked ? "Y" : "N";
@@ -99,7 +99,7 @@ namespace SuperPOS.UI.Sys
                     GenSetInfo genSetInfo = new GenSetInfo();
                     genSetInfo = CommonData.GenSet.FirstOrDefault();
                     txtTillNum.Text = genSetInfo.TillNum;
-                    txtCheckCurrency.Text = genSetInfo.CheckCurrency;
+                    //txtCheckCurrency.Text = genSetInfo.CheckCurrency;
                     txtVatPer.Text = genSetInfo.VATPer;
                     chkDisplayCode.Checked = genSetInfo.IsShowItemCode.Equals("Y");
                     if (string.IsNullOrEmpty(genSetInfo.IsBackup))

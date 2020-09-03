@@ -29,6 +29,13 @@
         private void InitializeComponent()
         {
             this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.txtPayType5 = new DevExpress.XtraEditors.TextEdit();
+            this.txtPayType4 = new DevExpress.XtraEditors.TextEdit();
+            this.txtPayType3 = new DevExpress.XtraEditors.TextEdit();
+            this.txtPayType2 = new DevExpress.XtraEditors.TextEdit();
+            this.txtPayType1 = new DevExpress.XtraEditors.TextEdit();
+            this.labelControl21 = new DevExpress.XtraEditors.LabelControl();
             this.btnExit = new DevExpress.XtraEditors.SimpleButton();
             this.btnSave = new DevExpress.XtraEditors.SimpleButton();
             this.groupControl7 = new DevExpress.XtraEditors.GroupControl();
@@ -84,15 +91,14 @@
             this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
             this.txtShopName = new DevExpress.XtraEditors.TextEdit();
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
-            this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.txtPayType5 = new DevExpress.XtraEditors.TextEdit();
-            this.txtPayType4 = new DevExpress.XtraEditors.TextEdit();
-            this.txtPayType3 = new DevExpress.XtraEditors.TextEdit();
-            this.txtPayType2 = new DevExpress.XtraEditors.TextEdit();
-            this.txtPayType1 = new DevExpress.XtraEditors.TextEdit();
-            this.labelControl21 = new DevExpress.XtraEditors.LabelControl();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
             this.panelControl1.SuspendLayout();
+            this.groupBox2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.txtPayType5.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtPayType4.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtPayType3.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtPayType2.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtPayType1.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl7)).BeginInit();
             this.groupControl7.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.chkTestMode.Properties)).BeginInit();
@@ -132,12 +138,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).BeginInit();
             this.groupControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.txtShopName.Properties)).BeginInit();
-            this.groupBox2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.txtPayType5.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtPayType4.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtPayType3.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtPayType2.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtPayType1.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // panelControl1
@@ -156,6 +156,80 @@
             this.panelControl1.Name = "panelControl1";
             this.panelControl1.Size = new System.Drawing.Size(797, 703);
             this.panelControl1.TabIndex = 2;
+            // 
+            // groupBox2
+            // 
+            this.groupBox2.Controls.Add(this.txtPayType5);
+            this.groupBox2.Controls.Add(this.txtPayType4);
+            this.groupBox2.Controls.Add(this.txtPayType3);
+            this.groupBox2.Controls.Add(this.txtPayType2);
+            this.groupBox2.Controls.Add(this.txtPayType1);
+            this.groupBox2.Controls.Add(this.labelControl21);
+            this.groupBox2.Location = new System.Drawing.Point(405, 450);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(306, 237);
+            this.groupBox2.TabIndex = 20;
+            this.groupBox2.TabStop = false;
+            this.groupBox2.Text = "PaymentType";
+            // 
+            // txtPayType5
+            // 
+            this.txtPayType5.EditValue = "";
+            this.txtPayType5.Location = new System.Drawing.Point(49, 198);
+            this.txtPayType5.Name = "txtPayType5";
+            this.txtPayType5.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 11F);
+            this.txtPayType5.Properties.Appearance.Options.UseFont = true;
+            this.txtPayType5.Size = new System.Drawing.Size(166, 28);
+            this.txtPayType5.TabIndex = 5;
+            // 
+            // txtPayType4
+            // 
+            this.txtPayType4.EditValue = "";
+            this.txtPayType4.Location = new System.Drawing.Point(49, 164);
+            this.txtPayType4.Name = "txtPayType4";
+            this.txtPayType4.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 11F);
+            this.txtPayType4.Properties.Appearance.Options.UseFont = true;
+            this.txtPayType4.Size = new System.Drawing.Size(166, 28);
+            this.txtPayType4.TabIndex = 4;
+            // 
+            // txtPayType3
+            // 
+            this.txtPayType3.EditValue = "";
+            this.txtPayType3.Location = new System.Drawing.Point(49, 130);
+            this.txtPayType3.Name = "txtPayType3";
+            this.txtPayType3.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 11F);
+            this.txtPayType3.Properties.Appearance.Options.UseFont = true;
+            this.txtPayType3.Size = new System.Drawing.Size(166, 28);
+            this.txtPayType3.TabIndex = 3;
+            // 
+            // txtPayType2
+            // 
+            this.txtPayType2.EditValue = "";
+            this.txtPayType2.Location = new System.Drawing.Point(49, 96);
+            this.txtPayType2.Name = "txtPayType2";
+            this.txtPayType2.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 11F);
+            this.txtPayType2.Properties.Appearance.Options.UseFont = true;
+            this.txtPayType2.Size = new System.Drawing.Size(166, 28);
+            this.txtPayType2.TabIndex = 2;
+            // 
+            // txtPayType1
+            // 
+            this.txtPayType1.EditValue = "";
+            this.txtPayType1.Location = new System.Drawing.Point(49, 62);
+            this.txtPayType1.Name = "txtPayType1";
+            this.txtPayType1.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 11F);
+            this.txtPayType1.Properties.Appearance.Options.UseFont = true;
+            this.txtPayType1.Size = new System.Drawing.Size(166, 28);
+            this.txtPayType1.TabIndex = 1;
+            // 
+            // labelControl21
+            // 
+            this.labelControl21.Appearance.Font = new System.Drawing.Font("Tahoma", 11F);
+            this.labelControl21.Location = new System.Drawing.Point(72, 34);
+            this.labelControl21.Name = "labelControl21";
+            this.labelControl21.Size = new System.Drawing.Size(113, 22);
+            this.labelControl21.TabIndex = 0;
+            this.labelControl21.Text = "Payment Type";
             // 
             // btnExit
             // 
@@ -577,6 +651,7 @@
             this.txtCheckCurrency.Name = "txtCheckCurrency";
             this.txtCheckCurrency.Size = new System.Drawing.Size(100, 24);
             this.txtCheckCurrency.TabIndex = 19;
+            this.txtCheckCurrency.Visible = false;
             // 
             // txtTillNum
             // 
@@ -602,6 +677,7 @@
             this.labelControl5.Size = new System.Drawing.Size(63, 18);
             this.labelControl5.TabIndex = 16;
             this.labelControl5.Text = "Currency:";
+            this.labelControl5.Visible = false;
             // 
             // labelControl6
             // 
@@ -662,80 +738,6 @@
             this.labelControl1.TabIndex = 5;
             this.labelControl1.Text = "Shop Name:";
             // 
-            // groupBox2
-            // 
-            this.groupBox2.Controls.Add(this.txtPayType5);
-            this.groupBox2.Controls.Add(this.txtPayType4);
-            this.groupBox2.Controls.Add(this.txtPayType3);
-            this.groupBox2.Controls.Add(this.txtPayType2);
-            this.groupBox2.Controls.Add(this.txtPayType1);
-            this.groupBox2.Controls.Add(this.labelControl21);
-            this.groupBox2.Location = new System.Drawing.Point(405, 450);
-            this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(306, 237);
-            this.groupBox2.TabIndex = 20;
-            this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "PaymentType";
-            // 
-            // txtPayType5
-            // 
-            this.txtPayType5.EditValue = "";
-            this.txtPayType5.Location = new System.Drawing.Point(49, 198);
-            this.txtPayType5.Name = "txtPayType5";
-            this.txtPayType5.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 11F);
-            this.txtPayType5.Properties.Appearance.Options.UseFont = true;
-            this.txtPayType5.Size = new System.Drawing.Size(166, 28);
-            this.txtPayType5.TabIndex = 5;
-            // 
-            // txtPayType4
-            // 
-            this.txtPayType4.EditValue = "";
-            this.txtPayType4.Location = new System.Drawing.Point(49, 164);
-            this.txtPayType4.Name = "txtPayType4";
-            this.txtPayType4.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 11F);
-            this.txtPayType4.Properties.Appearance.Options.UseFont = true;
-            this.txtPayType4.Size = new System.Drawing.Size(166, 28);
-            this.txtPayType4.TabIndex = 4;
-            // 
-            // txtPayType3
-            // 
-            this.txtPayType3.EditValue = "";
-            this.txtPayType3.Location = new System.Drawing.Point(49, 130);
-            this.txtPayType3.Name = "txtPayType3";
-            this.txtPayType3.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 11F);
-            this.txtPayType3.Properties.Appearance.Options.UseFont = true;
-            this.txtPayType3.Size = new System.Drawing.Size(166, 28);
-            this.txtPayType3.TabIndex = 3;
-            // 
-            // txtPayType2
-            // 
-            this.txtPayType2.EditValue = "";
-            this.txtPayType2.Location = new System.Drawing.Point(49, 96);
-            this.txtPayType2.Name = "txtPayType2";
-            this.txtPayType2.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 11F);
-            this.txtPayType2.Properties.Appearance.Options.UseFont = true;
-            this.txtPayType2.Size = new System.Drawing.Size(166, 28);
-            this.txtPayType2.TabIndex = 2;
-            // 
-            // txtPayType1
-            // 
-            this.txtPayType1.EditValue = "";
-            this.txtPayType1.Location = new System.Drawing.Point(49, 62);
-            this.txtPayType1.Name = "txtPayType1";
-            this.txtPayType1.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 11F);
-            this.txtPayType1.Properties.Appearance.Options.UseFont = true;
-            this.txtPayType1.Size = new System.Drawing.Size(166, 28);
-            this.txtPayType1.TabIndex = 1;
-            // 
-            // labelControl21
-            // 
-            this.labelControl21.Appearance.Font = new System.Drawing.Font("Tahoma", 11F);
-            this.labelControl21.Location = new System.Drawing.Point(72, 34);
-            this.labelControl21.Name = "labelControl21";
-            this.labelControl21.Size = new System.Drawing.Size(113, 22);
-            this.labelControl21.TabIndex = 0;
-            this.labelControl21.Text = "Payment Type";
-            // 
             // FrmTaAdminSysConf
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 18F);
@@ -751,6 +753,13 @@
             this.SizeChanged += new System.EventHandler(this.FrmTaAdminSysConf_SizeChanged);
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).EndInit();
             this.panelControl1.ResumeLayout(false);
+            this.groupBox2.ResumeLayout(false);
+            this.groupBox2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.txtPayType5.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtPayType4.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtPayType3.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtPayType2.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtPayType1.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl7)).EndInit();
             this.groupControl7.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.chkTestMode.Properties)).EndInit();
@@ -795,13 +804,6 @@
             this.groupControl1.ResumeLayout(false);
             this.groupControl1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.txtShopName.Properties)).EndInit();
-            this.groupBox2.ResumeLayout(false);
-            this.groupBox2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.txtPayType5.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtPayType4.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtPayType3.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtPayType2.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtPayType1.Properties)).EndInit();
             this.ResumeLayout(false);
 
         }
