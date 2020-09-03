@@ -33,6 +33,10 @@ namespace SuperPOS.UI
             btn8.Click += this.btn_Click;
             btn9.Click += this.btn_Click;
             btn0.Click += this.btn_Click;
+            btnA.Click += this.btn_Click;
+            btnB.Click += this.btn_Click;
+            btnC.Click += this.btn_Click;
+            btnD.Click += this.btn_Click;
             #endregion
 
             //Date

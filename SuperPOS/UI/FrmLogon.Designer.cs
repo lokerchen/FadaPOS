@@ -47,6 +47,8 @@
             this.btn2 = new DevExpress.XtraEditors.SimpleButton();
             this.btn1 = new DevExpress.XtraEditors.SimpleButton();
             this.groupControl1 = new DevExpress.XtraEditors.GroupControl();
+            this.labelControl3 = new DevExpress.XtraEditors.LabelControl();
+            this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
             this.lblSession = new DevExpress.XtraEditors.LabelControl();
             this.lblTime = new DevExpress.XtraEditors.LabelControl();
             this.labelControl5 = new DevExpress.XtraEditors.LabelControl();
@@ -54,8 +56,11 @@
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.tTimer = new System.Windows.Forms.Timer(this.components);
-            this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
-            this.labelControl3 = new DevExpress.XtraEditors.LabelControl();
+            this.btnLogon = new DevExpress.XtraEditors.SimpleButton();
+            this.btnD = new DevExpress.XtraEditors.SimpleButton();
+            this.btnC = new DevExpress.XtraEditors.SimpleButton();
+            this.btnB = new DevExpress.XtraEditors.SimpleButton();
+            this.btnA = new DevExpress.XtraEditors.SimpleButton();
             ((System.ComponentModel.ISupportInitialize)(this.txtPwd.Properties)).BeginInit();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).BeginInit();
@@ -68,12 +73,12 @@
             // 
             this.txtPwd.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.txtPwd.EditValue = "";
-            this.txtPwd.Location = new System.Drawing.Point(482, 231);
+            this.txtPwd.Location = new System.Drawing.Point(393, 241);
             this.txtPwd.Name = "txtPwd";
             this.txtPwd.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtPwd.Properties.Appearance.Options.UseFont = true;
             this.txtPwd.Properties.PasswordChar = '*';
-            this.txtPwd.Size = new System.Drawing.Size(225, 34);
+            this.txtPwd.Size = new System.Drawing.Size(266, 34);
             this.txtPwd.TabIndex = 12;
             // 
             // labelControl1
@@ -81,18 +86,21 @@
             this.labelControl1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.labelControl1.Appearance.Font = new System.Drawing.Font("Tahoma", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelControl1.Appearance.ForeColor = System.Drawing.Color.Red;
-            this.labelControl1.Location = new System.Drawing.Point(376, 237);
+            this.labelControl1.Location = new System.Drawing.Point(396, 212);
             this.labelControl1.Name = "labelControl1";
-            this.labelControl1.Size = new System.Drawing.Size(103, 28);
+            this.labelControl1.Size = new System.Drawing.Size(95, 28);
             this.labelControl1.TabIndex = 11;
-            this.labelControl1.Text = "Password:";
+            this.labelControl1.Text = "Password";
             // 
             // groupBox1
             // 
             this.groupBox1.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.groupBox1.Controls.Add(this.btnD);
+            this.groupBox1.Controls.Add(this.btnC);
+            this.groupBox1.Controls.Add(this.btnB);
+            this.groupBox1.Controls.Add(this.btnA);
             this.groupBox1.Controls.Add(this.btnClear);
             this.groupBox1.Controls.Add(this.btn0);
-            this.groupBox1.Controls.Add(this.btnExit);
             this.groupBox1.Controls.Add(this.btnOK);
             this.groupBox1.Controls.Add(this.btn9);
             this.groupBox1.Controls.Add(this.btn8);
@@ -113,15 +121,15 @@
             // 
             this.btnClear.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.btnClear.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
-            this.btnClear.Appearance.Font = new System.Drawing.Font("Tahoma", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnClear.Appearance.Font = new System.Drawing.Font("Tahoma", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnClear.Appearance.ForeColor = System.Drawing.Color.White;
             this.btnClear.Appearance.Options.UseBackColor = true;
             this.btnClear.Appearance.Options.UseFont = true;
             this.btnClear.Appearance.Options.UseForeColor = true;
             this.btnClear.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
-            this.btnClear.Location = new System.Drawing.Point(114, 176);
+            this.btnClear.Location = new System.Drawing.Point(88, 176);
             this.btnClear.Name = "btnClear";
-            this.btnClear.Size = new System.Drawing.Size(93, 45);
+            this.btnClear.Size = new System.Drawing.Size(60, 45);
             this.btnClear.TabIndex = 12;
             this.btnClear.Text = "CLEAR";
             this.btnClear.Click += new System.EventHandler(this.btnClear_Click);
@@ -136,9 +144,9 @@
             this.btn0.Appearance.Options.UseFont = true;
             this.btn0.Appearance.Options.UseForeColor = true;
             this.btn0.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
-            this.btn0.Location = new System.Drawing.Point(7, 176);
+            this.btn0.Location = new System.Drawing.Point(158, 176);
             this.btn0.Name = "btn0";
-            this.btn0.Size = new System.Drawing.Size(101, 45);
+            this.btn0.Size = new System.Drawing.Size(60, 45);
             this.btn0.TabIndex = 11;
             this.btn0.Text = "0";
             // 
@@ -152,7 +160,7 @@
             this.btnExit.Appearance.Options.UseFont = true;
             this.btnExit.Appearance.Options.UseForeColor = true;
             this.btnExit.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
-            this.btnExit.Location = new System.Drawing.Point(217, 125);
+            this.btnExit.Location = new System.Drawing.Point(214, 398);
             this.btnExit.Name = "btnExit";
             this.btnExit.Size = new System.Drawing.Size(110, 96);
             this.btnExit.TabIndex = 10;
@@ -169,9 +177,9 @@
             this.btnOK.Appearance.Options.UseFont = true;
             this.btnOK.Appearance.Options.UseForeColor = true;
             this.btnOK.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
-            this.btnOK.Location = new System.Drawing.Point(217, 15);
+            this.btnOK.Location = new System.Drawing.Point(228, 176);
             this.btnOK.Name = "btnOK";
-            this.btnOK.Size = new System.Drawing.Size(110, 100);
+            this.btnOK.Size = new System.Drawing.Size(60, 45);
             this.btnOK.TabIndex = 9;
             this.btnOK.Text = "OK";
             this.btnOK.Click += new System.EventHandler(this.btnOK_Click);
@@ -186,7 +194,7 @@
             this.btn9.Appearance.Options.UseFont = true;
             this.btn9.Appearance.Options.UseForeColor = true;
             this.btn9.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
-            this.btn9.Location = new System.Drawing.Point(147, 125);
+            this.btn9.Location = new System.Drawing.Point(228, 125);
             this.btn9.Name = "btn9";
             this.btn9.Size = new System.Drawing.Size(60, 45);
             this.btn9.TabIndex = 8;
@@ -202,7 +210,7 @@
             this.btn8.Appearance.Options.UseFont = true;
             this.btn8.Appearance.Options.UseForeColor = true;
             this.btn8.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
-            this.btn8.Location = new System.Drawing.Point(77, 125);
+            this.btn8.Location = new System.Drawing.Point(158, 125);
             this.btn8.Name = "btn8";
             this.btn8.Size = new System.Drawing.Size(60, 45);
             this.btn8.TabIndex = 7;
@@ -218,7 +226,7 @@
             this.btn7.Appearance.Options.UseFont = true;
             this.btn7.Appearance.Options.UseForeColor = true;
             this.btn7.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
-            this.btn7.Location = new System.Drawing.Point(7, 125);
+            this.btn7.Location = new System.Drawing.Point(88, 125);
             this.btn7.Name = "btn7";
             this.btn7.Size = new System.Drawing.Size(60, 45);
             this.btn7.TabIndex = 6;
@@ -234,7 +242,7 @@
             this.btn6.Appearance.Options.UseFont = true;
             this.btn6.Appearance.Options.UseForeColor = true;
             this.btn6.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
-            this.btn6.Location = new System.Drawing.Point(147, 70);
+            this.btn6.Location = new System.Drawing.Point(228, 70);
             this.btn6.Name = "btn6";
             this.btn6.Size = new System.Drawing.Size(60, 45);
             this.btn6.TabIndex = 5;
@@ -250,7 +258,7 @@
             this.btn5.Appearance.Options.UseFont = true;
             this.btn5.Appearance.Options.UseForeColor = true;
             this.btn5.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
-            this.btn5.Location = new System.Drawing.Point(77, 70);
+            this.btn5.Location = new System.Drawing.Point(158, 70);
             this.btn5.Name = "btn5";
             this.btn5.Size = new System.Drawing.Size(60, 45);
             this.btn5.TabIndex = 4;
@@ -266,7 +274,7 @@
             this.btn4.Appearance.Options.UseFont = true;
             this.btn4.Appearance.Options.UseForeColor = true;
             this.btn4.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
-            this.btn4.Location = new System.Drawing.Point(7, 70);
+            this.btn4.Location = new System.Drawing.Point(88, 70);
             this.btn4.Name = "btn4";
             this.btn4.Size = new System.Drawing.Size(60, 45);
             this.btn4.TabIndex = 3;
@@ -282,7 +290,7 @@
             this.btn3.Appearance.Options.UseFont = true;
             this.btn3.Appearance.Options.UseForeColor = true;
             this.btn3.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
-            this.btn3.Location = new System.Drawing.Point(147, 15);
+            this.btn3.Location = new System.Drawing.Point(228, 15);
             this.btn3.Name = "btn3";
             this.btn3.Size = new System.Drawing.Size(60, 45);
             this.btn3.TabIndex = 2;
@@ -298,7 +306,7 @@
             this.btn2.Appearance.Options.UseFont = true;
             this.btn2.Appearance.Options.UseForeColor = true;
             this.btn2.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
-            this.btn2.Location = new System.Drawing.Point(77, 15);
+            this.btn2.Location = new System.Drawing.Point(158, 15);
             this.btn2.Name = "btn2";
             this.btn2.Size = new System.Drawing.Size(60, 45);
             this.btn2.TabIndex = 1;
@@ -314,7 +322,7 @@
             this.btn1.Appearance.Options.UseFont = true;
             this.btn1.Appearance.Options.UseForeColor = true;
             this.btn1.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
-            this.btn1.Location = new System.Drawing.Point(7, 15);
+            this.btn1.Location = new System.Drawing.Point(88, 15);
             this.btn1.Name = "btn1";
             this.btn1.Size = new System.Drawing.Size(60, 45);
             this.btn1.TabIndex = 0;
@@ -323,7 +331,9 @@
             // groupControl1
             // 
             this.groupControl1.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.groupControl1.Appearance.BackColor = System.Drawing.Color.Lime;
             this.groupControl1.Appearance.Options.UseBackColor = true;
+            this.groupControl1.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
             this.groupControl1.Controls.Add(this.labelControl3);
             this.groupControl1.Controls.Add(this.labelControl2);
             this.groupControl1.Controls.Add(this.lblSession);
@@ -332,14 +342,37 @@
             this.groupControl1.Controls.Add(this.lblDate);
             this.groupControl1.Location = new System.Drawing.Point(17, 237);
             this.groupControl1.Name = "groupControl1";
-            this.groupControl1.Size = new System.Drawing.Size(348, 256);
+            this.groupControl1.Size = new System.Drawing.Size(348, 155);
             this.groupControl1.TabIndex = 9;
+            // 
+            // labelControl3
+            // 
+            this.labelControl3.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.labelControl3.Appearance.Font = new System.Drawing.Font("微软雅黑", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.labelControl3.Appearance.ForeColor = System.Drawing.Color.White;
+            this.labelControl3.Location = new System.Drawing.Point(32, 13);
+            this.labelControl3.Name = "labelControl3";
+            this.labelControl3.Size = new System.Drawing.Size(72, 36);
+            this.labelControl3.TabIndex = 7;
+            this.labelControl3.Text = "Date:";
+            // 
+            // labelControl2
+            // 
+            this.labelControl2.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.labelControl2.Appearance.Font = new System.Drawing.Font("微软雅黑", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.labelControl2.Appearance.ForeColor = System.Drawing.Color.White;
+            this.labelControl2.Location = new System.Drawing.Point(32, 64);
+            this.labelControl2.Name = "labelControl2";
+            this.labelControl2.Size = new System.Drawing.Size(76, 36);
+            this.labelControl2.TabIndex = 6;
+            this.labelControl2.Text = "Time:";
             // 
             // lblSession
             // 
             this.lblSession.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lblSession.Appearance.Font = new System.Drawing.Font("微软雅黑", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.lblSession.Location = new System.Drawing.Point(160, 173);
+            this.lblSession.Appearance.ForeColor = System.Drawing.Color.White;
+            this.lblSession.Location = new System.Drawing.Point(160, 110);
             this.lblSession.Name = "lblSession";
             this.lblSession.Size = new System.Drawing.Size(99, 36);
             this.lblSession.TabIndex = 5;
@@ -349,7 +382,8 @@
             // 
             this.lblTime.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lblTime.Appearance.Font = new System.Drawing.Font("Tahoma", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTime.Location = new System.Drawing.Point(160, 131);
+            this.lblTime.Appearance.ForeColor = System.Drawing.Color.White;
+            this.lblTime.Location = new System.Drawing.Point(160, 68);
             this.lblTime.Name = "lblTime";
             this.lblTime.Size = new System.Drawing.Size(102, 30);
             this.lblTime.TabIndex = 4;
@@ -359,7 +393,8 @@
             // 
             this.labelControl5.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.labelControl5.Appearance.Font = new System.Drawing.Font("微软雅黑", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.labelControl5.Location = new System.Drawing.Point(32, 173);
+            this.labelControl5.Appearance.ForeColor = System.Drawing.Color.White;
+            this.labelControl5.Location = new System.Drawing.Point(32, 110);
             this.labelControl5.Name = "labelControl5";
             this.labelControl5.Size = new System.Drawing.Size(110, 36);
             this.labelControl5.TabIndex = 3;
@@ -369,7 +404,8 @@
             // 
             this.lblDate.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lblDate.Appearance.Font = new System.Drawing.Font("Tahoma", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblDate.Location = new System.Drawing.Point(160, 80);
+            this.lblDate.Appearance.ForeColor = System.Drawing.Color.White;
+            this.lblDate.Location = new System.Drawing.Point(160, 17);
             this.lblDate.Name = "lblDate";
             this.lblDate.Size = new System.Drawing.Size(130, 30);
             this.lblDate.TabIndex = 1;
@@ -401,33 +437,95 @@
             this.tTimer.Interval = 1000;
             this.tTimer.Tick += new System.EventHandler(this.tTimer_Tick);
             // 
-            // labelControl2
+            // btnLogon
             // 
-            this.labelControl2.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.labelControl2.Appearance.Font = new System.Drawing.Font("微软雅黑", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.labelControl2.Location = new System.Drawing.Point(32, 127);
-            this.labelControl2.Name = "labelControl2";
-            this.labelControl2.Size = new System.Drawing.Size(76, 36);
-            this.labelControl2.TabIndex = 6;
-            this.labelControl2.Text = "Time:";
+            this.btnLogon.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btnLogon.Appearance.BackColor = System.Drawing.Color.Blue;
+            this.btnLogon.Appearance.Font = new System.Drawing.Font("Tahoma", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnLogon.Appearance.ForeColor = System.Drawing.Color.White;
+            this.btnLogon.Appearance.Options.UseBackColor = true;
+            this.btnLogon.Appearance.Options.UseFont = true;
+            this.btnLogon.Appearance.Options.UseForeColor = true;
+            this.btnLogon.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
+            this.btnLogon.Location = new System.Drawing.Point(49, 397);
+            this.btnLogon.Name = "btnLogon";
+            this.btnLogon.Size = new System.Drawing.Size(110, 96);
+            this.btnLogon.TabIndex = 13;
+            this.btnLogon.Text = "LOGON";
             // 
-            // labelControl3
+            // btnD
             // 
-            this.labelControl3.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.labelControl3.Appearance.Font = new System.Drawing.Font("微软雅黑", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.labelControl3.Location = new System.Drawing.Point(32, 76);
-            this.labelControl3.Name = "labelControl3";
-            this.labelControl3.Size = new System.Drawing.Size(72, 36);
-            this.labelControl3.TabIndex = 7;
-            this.labelControl3.Text = "Date:";
+            this.btnD.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btnD.Appearance.BackColor = System.Drawing.Color.Teal;
+            this.btnD.Appearance.Font = new System.Drawing.Font("Tahoma", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnD.Appearance.ForeColor = System.Drawing.Color.White;
+            this.btnD.Appearance.Options.UseBackColor = true;
+            this.btnD.Appearance.Options.UseFont = true;
+            this.btnD.Appearance.Options.UseForeColor = true;
+            this.btnD.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
+            this.btnD.Location = new System.Drawing.Point(22, 176);
+            this.btnD.Name = "btnD";
+            this.btnD.Size = new System.Drawing.Size(60, 45);
+            this.btnD.TabIndex = 16;
+            this.btnD.Text = "D";
+            // 
+            // btnC
+            // 
+            this.btnC.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btnC.Appearance.BackColor = System.Drawing.Color.Teal;
+            this.btnC.Appearance.Font = new System.Drawing.Font("Tahoma", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnC.Appearance.ForeColor = System.Drawing.Color.White;
+            this.btnC.Appearance.Options.UseBackColor = true;
+            this.btnC.Appearance.Options.UseFont = true;
+            this.btnC.Appearance.Options.UseForeColor = true;
+            this.btnC.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
+            this.btnC.Location = new System.Drawing.Point(22, 125);
+            this.btnC.Name = "btnC";
+            this.btnC.Size = new System.Drawing.Size(60, 45);
+            this.btnC.TabIndex = 15;
+            this.btnC.Text = "C";
+            // 
+            // btnB
+            // 
+            this.btnB.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btnB.Appearance.BackColor = System.Drawing.Color.Teal;
+            this.btnB.Appearance.Font = new System.Drawing.Font("Tahoma", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnB.Appearance.ForeColor = System.Drawing.Color.White;
+            this.btnB.Appearance.Options.UseBackColor = true;
+            this.btnB.Appearance.Options.UseFont = true;
+            this.btnB.Appearance.Options.UseForeColor = true;
+            this.btnB.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
+            this.btnB.Location = new System.Drawing.Point(22, 70);
+            this.btnB.Name = "btnB";
+            this.btnB.Size = new System.Drawing.Size(60, 45);
+            this.btnB.TabIndex = 14;
+            this.btnB.Text = "B";
+            // 
+            // btnA
+            // 
+            this.btnA.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btnA.Appearance.BackColor = System.Drawing.Color.Teal;
+            this.btnA.Appearance.Font = new System.Drawing.Font("Tahoma", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnA.Appearance.ForeColor = System.Drawing.Color.White;
+            this.btnA.Appearance.Options.UseBackColor = true;
+            this.btnA.Appearance.Options.UseFont = true;
+            this.btnA.Appearance.Options.UseForeColor = true;
+            this.btnA.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
+            this.btnA.Location = new System.Drawing.Point(22, 15);
+            this.btnA.Name = "btnA";
+            this.btnA.Size = new System.Drawing.Size(60, 45);
+            this.btnA.TabIndex = 13;
+            this.btnA.Text = "A";
             // 
             // FrmLogon
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(728, 507);
+            this.Controls.Add(this.btnLogon);
             this.Controls.Add(this.txtPwd);
             this.Controls.Add(this.labelControl1);
+            this.Controls.Add(this.btnExit);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.groupControl1);
             this.Controls.Add(this.pictureBox2);
@@ -479,5 +577,10 @@
         private System.Windows.Forms.Timer tTimer;
         private DevExpress.XtraEditors.LabelControl labelControl3;
         private DevExpress.XtraEditors.LabelControl labelControl2;
+        private DevExpress.XtraEditors.SimpleButton btnD;
+        private DevExpress.XtraEditors.SimpleButton btnC;
+        private DevExpress.XtraEditors.SimpleButton btnB;
+        private DevExpress.XtraEditors.SimpleButton btnA;
+        private DevExpress.XtraEditors.SimpleButton btnLogon;
     }
 }
