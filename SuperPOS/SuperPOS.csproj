@@ -139,6 +139,12 @@
     <Compile Include="UI\FrmTaAdminMain.Designer.cs">
       <DependentUpon>FrmTaAdminMain.cs</DependentUpon>
     </Compile>
+    <Compile Include="UI\TaAdmin\FrmSysCtrl.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\TaAdmin\FrmSysCtrl.Designer.cs">
+      <DependentUpon>FrmSysCtrl.cs</DependentUpon>
+    </Compile>
     <Compile Include="UI\TaAdmin\FrmTaAdminSysConf.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -498,6 +504,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UI\FrmTaAdminMain.resx">
       <DependentUpon>FrmTaAdminMain.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\TaAdmin\FrmSysCtrl.resx">
+      <DependentUpon>FrmSysCtrl.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UI\TaAdmin\FrmTaAdminSysConf.resx">
       <DependentUpon>FrmTaAdminSysConf.cs</DependentUpon>

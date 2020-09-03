@@ -79,6 +79,7 @@
     <Compile Include="Entities\TaPostcodeChargeInfo.cs" />
     <Compile Include="Entities\TaPostcodeSetInfo.cs" />
     <Compile Include="Entities\TaPostcodeZoneInfo.cs" />
+    <Compile Include="Entities\TaSysCtrlInfo.cs" />
     <Compile Include="Entities\TaPreviewInfo.cs" />
     <Compile Include="Entities\TaPrtSetupGeneralInfo.cs" />
     <Compile Include="Entities\TaPrtSetupGeneralSet1Info.cs" />
@@ -171,6 +172,7 @@
     <EmbeddedResource Include="Mappings\TaPrtSetupGeneralInfo.hbm.xml" />
     <EmbeddedResource Include="Mappings\TaPrtSetupGeneralSet1Info.hbm.xml" />
     <EmbeddedResource Include="Mappings\TaPreviewInfo.hbm.xml" />
+    <EmbeddedResource Include="Mappings\TASysCtrlInfo.hbm.xml" />
     <Content Include="Mappings\UsrAuthorityInfo.hbm.xml" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

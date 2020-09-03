@@ -127,6 +127,8 @@ namespace SuperPOS.Common
             //Takeaway Configuration
             systemData.GetTaConfMenuDisplayFont();
 
+            systemData.GetTaSysCtrl();
+
             ////打印模板
             //systemData.GetTaPreview();
             //DelegatePrt dp = new DelegatePrt();

@@ -186,7 +186,8 @@ namespace SuperPOS.UI
         #region Other
         private void btnSysCtrl_Click(object sender, EventArgs e)
         {
-
+            FrmSysCtrl frmSysCtrl = new FrmSysCtrl();
+            frmSysCtrl.ShowDialog();
         }
 
         private void btnExit_Click(object sender, EventArgs e)
