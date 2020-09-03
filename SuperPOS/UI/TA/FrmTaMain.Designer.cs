@@ -2926,7 +2926,6 @@
             this.btnOnlineOrder.Size = new System.Drawing.Size(80, 60);
             this.btnOnlineOrder.TabIndex = 34;
             this.btnOnlineOrder.Text = "Online Order";
-            this.btnOnlineOrder.Visible = false;
             // 
             // FrmTaMain
             // 
