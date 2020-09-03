@@ -591,7 +591,7 @@
             this.btnChange.Name = "btnChange";
             this.btnChange.Size = new System.Drawing.Size(80, 58);
             this.btnChange.TabIndex = 30;
-            this.btnChange.Text = "Change";
+            this.btnChange.Text = "CHGE";
             this.btnChange.Click += new System.EventHandler(this.btnChange_Click);
             // 
             // btnPay
