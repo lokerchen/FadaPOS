@@ -28,7 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
+            this.btnOrderScreen = new DevExpress.XtraEditors.SimpleButton();
             this.btnLogout = new DevExpress.XtraEditors.SimpleButton();
             this.lblUsrName = new DevExpress.XtraEditors.LabelControl();
             this.btnCtlPanel = new DevExpress.XtraEditors.SimpleButton();
@@ -36,13 +38,17 @@
             this.lblSession = new DevExpress.XtraEditors.LabelControl();
             this.btnDrawer = new DevExpress.XtraEditors.SimpleButton();
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
-            this.btnOrderScreen = new DevExpress.XtraEditors.SimpleButton();
+            this.lblTime = new DevExpress.XtraEditors.LabelControl();
+            this.lblDate = new DevExpress.XtraEditors.LabelControl();
+            this.tTimer = new System.Windows.Forms.Timer(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
             this.panelControl1.SuspendLayout();
             this.SuspendLayout();
             // 
             // panelControl1
             // 
+            this.panelControl1.Controls.Add(this.lblTime);
+            this.panelControl1.Controls.Add(this.lblDate);
             this.panelControl1.Controls.Add(this.btnOrderScreen);
             this.panelControl1.Controls.Add(this.btnLogout);
             this.panelControl1.Controls.Add(this.lblUsrName);
@@ -55,6 +61,22 @@
             this.panelControl1.Name = "panelControl1";
             this.panelControl1.Size = new System.Drawing.Size(866, 351);
             this.panelControl1.TabIndex = 0;
+            // 
+            // btnOrderScreen
+            // 
+            this.btnOrderScreen.Appearance.BackColor = System.Drawing.Color.Lime;
+            this.btnOrderScreen.Appearance.Font = new System.Drawing.Font("Tahoma", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnOrderScreen.Appearance.ForeColor = System.Drawing.Color.White;
+            this.btnOrderScreen.Appearance.Options.UseBackColor = true;
+            this.btnOrderScreen.Appearance.Options.UseFont = true;
+            this.btnOrderScreen.Appearance.Options.UseForeColor = true;
+            this.btnOrderScreen.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
+            this.btnOrderScreen.Location = new System.Drawing.Point(562, 250);
+            this.btnOrderScreen.Name = "btnOrderScreen";
+            this.btnOrderScreen.Size = new System.Drawing.Size(190, 80);
+            this.btnOrderScreen.TabIndex = 12;
+            this.btnOrderScreen.Text = "Order Screen";
+            this.btnOrderScreen.Click += new System.EventHandler(this.btnOrderScreen_Click);
             // 
             // btnLogout
             // 
@@ -146,21 +168,31 @@
             this.labelControl1.TabIndex = 1;
             this.labelControl1.Text = "Home Page";
             // 
-            // btnOrderScreen
+            // lblTime
             // 
-            this.btnOrderScreen.Appearance.BackColor = System.Drawing.Color.Lime;
-            this.btnOrderScreen.Appearance.Font = new System.Drawing.Font("Tahoma", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnOrderScreen.Appearance.ForeColor = System.Drawing.Color.White;
-            this.btnOrderScreen.Appearance.Options.UseBackColor = true;
-            this.btnOrderScreen.Appearance.Options.UseFont = true;
-            this.btnOrderScreen.Appearance.Options.UseForeColor = true;
-            this.btnOrderScreen.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
-            this.btnOrderScreen.Location = new System.Drawing.Point(562, 250);
-            this.btnOrderScreen.Name = "btnOrderScreen";
-            this.btnOrderScreen.Size = new System.Drawing.Size(190, 80);
-            this.btnOrderScreen.TabIndex = 12;
-            this.btnOrderScreen.Text = "Order Screen";
-            this.btnOrderScreen.Click += new System.EventHandler(this.btnOrderScreen_Click);
+            this.lblTime.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.lblTime.Appearance.Font = new System.Drawing.Font("Tahoma", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTime.Location = new System.Drawing.Point(28, 64);
+            this.lblTime.Name = "lblTime";
+            this.lblTime.Size = new System.Drawing.Size(102, 30);
+            this.lblTime.TabIndex = 14;
+            this.lblTime.Text = "08:08:08";
+            // 
+            // lblDate
+            // 
+            this.lblDate.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.lblDate.Appearance.Font = new System.Drawing.Font("Tahoma", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblDate.Location = new System.Drawing.Point(28, 19);
+            this.lblDate.Name = "lblDate";
+            this.lblDate.Size = new System.Drawing.Size(130, 30);
+            this.lblDate.TabIndex = 13;
+            this.lblDate.Text = "2017-05-05";
+            // 
+            // tTimer
+            // 
+            this.tTimer.Enabled = true;
+            this.tTimer.Interval = 1000;
+            this.tTimer.Tick += new System.EventHandler(this.tTimer_Tick);
             // 
             // FrmDesktopArea
             // 
@@ -192,5 +224,8 @@
         private DevExpress.XtraEditors.LabelControl lblUsrName;
         private DevExpress.XtraEditors.LabelControl lblSession;
         private DevExpress.XtraEditors.SimpleButton btnOrderScreen;
+        private DevExpress.XtraEditors.LabelControl lblTime;
+        private DevExpress.XtraEditors.LabelControl lblDate;
+        private System.Windows.Forms.Timer tTimer;
     }
 }

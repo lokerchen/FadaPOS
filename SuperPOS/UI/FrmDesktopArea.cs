@@ -49,6 +49,11 @@ namespace SuperPOS.UI
         {
             lblUsrName.Text = usrName;
 
+            //Date
+            lblDate.Text = DateTime.Now.ToShortDateString();
+            //Time
+            lblTime.Text = DateTime.Now.ToShortTimeString();
+
             new SystemData().GetTaShiftCodeList();
 
             var lstSession = CommonData.TaShiftCodeList.Where(s =>
@@ -85,6 +90,11 @@ namespace SuperPOS.UI
             //显示订餐界面
             FrmTaMain frmTaMain = new FrmTaMain(usrID);
             frmTaMain.ShowDialog();
+        }
+
+        private void tTimer_Tick(object sender, EventArgs e)
+        {
+            lblTime.Text = DateTime.Now.ToLongTimeString();
         }
     }
 }
