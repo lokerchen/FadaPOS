@@ -33,9 +33,12 @@
             this.txtPwd = new DevExpress.XtraEditors.TextEdit();
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.btnD = new DevExpress.XtraEditors.SimpleButton();
+            this.btnC = new DevExpress.XtraEditors.SimpleButton();
+            this.btnB = new DevExpress.XtraEditors.SimpleButton();
+            this.btnA = new DevExpress.XtraEditors.SimpleButton();
             this.btnClear = new DevExpress.XtraEditors.SimpleButton();
             this.btn0 = new DevExpress.XtraEditors.SimpleButton();
-            this.btnExit = new DevExpress.XtraEditors.SimpleButton();
             this.btnOK = new DevExpress.XtraEditors.SimpleButton();
             this.btn9 = new DevExpress.XtraEditors.SimpleButton();
             this.btn8 = new DevExpress.XtraEditors.SimpleButton();
@@ -46,6 +49,7 @@
             this.btn3 = new DevExpress.XtraEditors.SimpleButton();
             this.btn2 = new DevExpress.XtraEditors.SimpleButton();
             this.btn1 = new DevExpress.XtraEditors.SimpleButton();
+            this.btnExit = new DevExpress.XtraEditors.SimpleButton();
             this.groupControl1 = new DevExpress.XtraEditors.GroupControl();
             this.labelControl3 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
@@ -57,10 +61,6 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.tTimer = new System.Windows.Forms.Timer(this.components);
             this.btnLogon = new DevExpress.XtraEditors.SimpleButton();
-            this.btnD = new DevExpress.XtraEditors.SimpleButton();
-            this.btnC = new DevExpress.XtraEditors.SimpleButton();
-            this.btnB = new DevExpress.XtraEditors.SimpleButton();
-            this.btnA = new DevExpress.XtraEditors.SimpleButton();
             ((System.ComponentModel.ISupportInitialize)(this.txtPwd.Properties)).BeginInit();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).BeginInit();
@@ -117,6 +117,70 @@
             this.groupBox1.TabIndex = 10;
             this.groupBox1.TabStop = false;
             // 
+            // btnD
+            // 
+            this.btnD.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btnD.Appearance.BackColor = System.Drawing.Color.Teal;
+            this.btnD.Appearance.Font = new System.Drawing.Font("Tahoma", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnD.Appearance.ForeColor = System.Drawing.Color.White;
+            this.btnD.Appearance.Options.UseBackColor = true;
+            this.btnD.Appearance.Options.UseFont = true;
+            this.btnD.Appearance.Options.UseForeColor = true;
+            this.btnD.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
+            this.btnD.Location = new System.Drawing.Point(22, 176);
+            this.btnD.Name = "btnD";
+            this.btnD.Size = new System.Drawing.Size(60, 45);
+            this.btnD.TabIndex = 16;
+            this.btnD.Text = "D";
+            // 
+            // btnC
+            // 
+            this.btnC.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btnC.Appearance.BackColor = System.Drawing.Color.Teal;
+            this.btnC.Appearance.Font = new System.Drawing.Font("Tahoma", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnC.Appearance.ForeColor = System.Drawing.Color.White;
+            this.btnC.Appearance.Options.UseBackColor = true;
+            this.btnC.Appearance.Options.UseFont = true;
+            this.btnC.Appearance.Options.UseForeColor = true;
+            this.btnC.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
+            this.btnC.Location = new System.Drawing.Point(22, 125);
+            this.btnC.Name = "btnC";
+            this.btnC.Size = new System.Drawing.Size(60, 45);
+            this.btnC.TabIndex = 15;
+            this.btnC.Text = "C";
+            // 
+            // btnB
+            // 
+            this.btnB.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btnB.Appearance.BackColor = System.Drawing.Color.Teal;
+            this.btnB.Appearance.Font = new System.Drawing.Font("Tahoma", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnB.Appearance.ForeColor = System.Drawing.Color.White;
+            this.btnB.Appearance.Options.UseBackColor = true;
+            this.btnB.Appearance.Options.UseFont = true;
+            this.btnB.Appearance.Options.UseForeColor = true;
+            this.btnB.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
+            this.btnB.Location = new System.Drawing.Point(22, 70);
+            this.btnB.Name = "btnB";
+            this.btnB.Size = new System.Drawing.Size(60, 45);
+            this.btnB.TabIndex = 14;
+            this.btnB.Text = "B";
+            // 
+            // btnA
+            // 
+            this.btnA.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btnA.Appearance.BackColor = System.Drawing.Color.Teal;
+            this.btnA.Appearance.Font = new System.Drawing.Font("Tahoma", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnA.Appearance.ForeColor = System.Drawing.Color.White;
+            this.btnA.Appearance.Options.UseBackColor = true;
+            this.btnA.Appearance.Options.UseFont = true;
+            this.btnA.Appearance.Options.UseForeColor = true;
+            this.btnA.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
+            this.btnA.Location = new System.Drawing.Point(22, 15);
+            this.btnA.Name = "btnA";
+            this.btnA.Size = new System.Drawing.Size(60, 45);
+            this.btnA.TabIndex = 13;
+            this.btnA.Text = "A";
+            // 
             // btnClear
             // 
             this.btnClear.Anchor = System.Windows.Forms.AnchorStyles.None;
@@ -149,23 +213,6 @@
             this.btn0.Size = new System.Drawing.Size(60, 45);
             this.btn0.TabIndex = 11;
             this.btn0.Text = "0";
-            // 
-            // btnExit
-            // 
-            this.btnExit.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.btnExit.Appearance.BackColor = System.Drawing.Color.Blue;
-            this.btnExit.Appearance.Font = new System.Drawing.Font("Tahoma", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnExit.Appearance.ForeColor = System.Drawing.Color.White;
-            this.btnExit.Appearance.Options.UseBackColor = true;
-            this.btnExit.Appearance.Options.UseFont = true;
-            this.btnExit.Appearance.Options.UseForeColor = true;
-            this.btnExit.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
-            this.btnExit.Location = new System.Drawing.Point(214, 398);
-            this.btnExit.Name = "btnExit";
-            this.btnExit.Size = new System.Drawing.Size(110, 96);
-            this.btnExit.TabIndex = 10;
-            this.btnExit.Text = "EXIT";
-            this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
             // 
             // btnOK
             // 
@@ -328,6 +375,23 @@
             this.btn1.TabIndex = 0;
             this.btn1.Text = "1";
             // 
+            // btnExit
+            // 
+            this.btnExit.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btnExit.Appearance.BackColor = System.Drawing.Color.Blue;
+            this.btnExit.Appearance.Font = new System.Drawing.Font("Tahoma", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnExit.Appearance.ForeColor = System.Drawing.Color.White;
+            this.btnExit.Appearance.Options.UseBackColor = true;
+            this.btnExit.Appearance.Options.UseFont = true;
+            this.btnExit.Appearance.Options.UseForeColor = true;
+            this.btnExit.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
+            this.btnExit.Location = new System.Drawing.Point(214, 398);
+            this.btnExit.Name = "btnExit";
+            this.btnExit.Size = new System.Drawing.Size(110, 96);
+            this.btnExit.TabIndex = 10;
+            this.btnExit.Text = "EXIT";
+            this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
+            // 
             // groupControl1
             // 
             this.groupControl1.Anchor = System.Windows.Forms.AnchorStyles.None;
@@ -452,70 +516,7 @@
             this.btnLogon.Size = new System.Drawing.Size(110, 96);
             this.btnLogon.TabIndex = 13;
             this.btnLogon.Text = "LOGON";
-            // 
-            // btnD
-            // 
-            this.btnD.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.btnD.Appearance.BackColor = System.Drawing.Color.Teal;
-            this.btnD.Appearance.Font = new System.Drawing.Font("Tahoma", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnD.Appearance.ForeColor = System.Drawing.Color.White;
-            this.btnD.Appearance.Options.UseBackColor = true;
-            this.btnD.Appearance.Options.UseFont = true;
-            this.btnD.Appearance.Options.UseForeColor = true;
-            this.btnD.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
-            this.btnD.Location = new System.Drawing.Point(22, 176);
-            this.btnD.Name = "btnD";
-            this.btnD.Size = new System.Drawing.Size(60, 45);
-            this.btnD.TabIndex = 16;
-            this.btnD.Text = "D";
-            // 
-            // btnC
-            // 
-            this.btnC.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.btnC.Appearance.BackColor = System.Drawing.Color.Teal;
-            this.btnC.Appearance.Font = new System.Drawing.Font("Tahoma", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnC.Appearance.ForeColor = System.Drawing.Color.White;
-            this.btnC.Appearance.Options.UseBackColor = true;
-            this.btnC.Appearance.Options.UseFont = true;
-            this.btnC.Appearance.Options.UseForeColor = true;
-            this.btnC.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
-            this.btnC.Location = new System.Drawing.Point(22, 125);
-            this.btnC.Name = "btnC";
-            this.btnC.Size = new System.Drawing.Size(60, 45);
-            this.btnC.TabIndex = 15;
-            this.btnC.Text = "C";
-            // 
-            // btnB
-            // 
-            this.btnB.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.btnB.Appearance.BackColor = System.Drawing.Color.Teal;
-            this.btnB.Appearance.Font = new System.Drawing.Font("Tahoma", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnB.Appearance.ForeColor = System.Drawing.Color.White;
-            this.btnB.Appearance.Options.UseBackColor = true;
-            this.btnB.Appearance.Options.UseFont = true;
-            this.btnB.Appearance.Options.UseForeColor = true;
-            this.btnB.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
-            this.btnB.Location = new System.Drawing.Point(22, 70);
-            this.btnB.Name = "btnB";
-            this.btnB.Size = new System.Drawing.Size(60, 45);
-            this.btnB.TabIndex = 14;
-            this.btnB.Text = "B";
-            // 
-            // btnA
-            // 
-            this.btnA.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.btnA.Appearance.BackColor = System.Drawing.Color.Teal;
-            this.btnA.Appearance.Font = new System.Drawing.Font("Tahoma", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnA.Appearance.ForeColor = System.Drawing.Color.White;
-            this.btnA.Appearance.Options.UseBackColor = true;
-            this.btnA.Appearance.Options.UseFont = true;
-            this.btnA.Appearance.Options.UseForeColor = true;
-            this.btnA.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
-            this.btnA.Location = new System.Drawing.Point(22, 15);
-            this.btnA.Name = "btnA";
-            this.btnA.Size = new System.Drawing.Size(60, 45);
-            this.btnA.TabIndex = 13;
-            this.btnA.Text = "A";
+            this.btnLogon.Click += new System.EventHandler(this.btnLogon_Click);
             // 
             // FrmLogon
             // 

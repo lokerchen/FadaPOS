@@ -82,6 +82,21 @@ namespace SuperPOS.UI
         #region 确认按钮点击事件
         private void btnOK_Click(object sender, EventArgs e)
         {
+            Logon();
+        }
+        #endregion
+
+        private void btnLogon_Click(object sender, EventArgs e)
+        {
+            Logon();
+        }
+
+        #region 登录事件
+        /// <summary>
+        /// 登录事件
+        /// </summary>
+        private void Logon()
+        {
             if (CommonDAL.IsUsr(txtPwd.Text))
             {
                 int id = CommonDAL.GetUsrID(txtPwd.Text);
@@ -105,5 +120,6 @@ namespace SuperPOS.UI
             }
         }
         #endregion
+
     }
 }
