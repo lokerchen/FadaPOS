@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmTaMain));
             this.treeListOrder = new DevExpress.XtraTreeList.TreeList();
             this.ID = new DevExpress.XtraTreeList.Columns.TreeListColumn();
             this.ItemQty = new DevExpress.XtraTreeList.Columns.TreeListColumn();
@@ -45,6 +46,7 @@
             this.OrderStaff = new DevExpress.XtraTreeList.Columns.TreeListColumn();
             this.BusDate = new DevExpress.XtraTreeList.Columns.TreeListColumn();
             this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
+            this.btnOnlineOrder = new DevExpress.XtraEditors.SimpleButton();
             this.btnType = new DevExpress.XtraEditors.SimpleButton();
             this.panelMember = new DevExpress.XtraEditors.PanelControl();
             this.lblDiliveryFee = new DevExpress.XtraEditors.LabelControl();
@@ -64,33 +66,12 @@
             this.btnKeypad = new DevExpress.XtraEditors.SimpleButton();
             this.btnDel = new DevExpress.XtraEditors.SimpleButton();
             this.btnReduce = new DevExpress.XtraEditors.SimpleButton();
+            this.btnIngredMode = new DevExpress.XtraEditors.SimpleButton();
             this.btnAdd = new DevExpress.XtraEditors.SimpleButton();
             this.btnDown = new DevExpress.XtraEditors.SimpleButton();
             this.btnUp = new DevExpress.XtraEditors.SimpleButton();
             this.btnHome = new DevExpress.XtraEditors.SimpleButton();
             this.btnAppend = new DevExpress.XtraEditors.SimpleButton();
-            this.panelControl6 = new DevExpress.XtraEditors.PanelControl();
-            this.lblType = new DevExpress.XtraEditors.LabelControl();
-            this.lblCheck = new DevExpress.XtraEditors.LabelControl();
-            this.panelControl2 = new DevExpress.XtraEditors.PanelControl();
-            this.btnMi14 = new DevExpress.XtraEditors.SimpleButton();
-            this.btnMi12 = new DevExpress.XtraEditors.SimpleButton();
-            this.btnMi13 = new DevExpress.XtraEditors.SimpleButton();
-            this.btnMi15 = new DevExpress.XtraEditors.SimpleButton();
-            this.btnMi7 = new DevExpress.XtraEditors.SimpleButton();
-            this.btnMi3 = new DevExpress.XtraEditors.SimpleButton();
-            this.btnMi6 = new DevExpress.XtraEditors.SimpleButton();
-            this.btnMiRight = new DevExpress.XtraEditors.SimpleButton();
-            this.btnMi5 = new DevExpress.XtraEditors.SimpleButton();
-            this.btnMi4 = new DevExpress.XtraEditors.SimpleButton();
-            this.btnMi2 = new DevExpress.XtraEditors.SimpleButton();
-            this.btnMiLeft = new DevExpress.XtraEditors.SimpleButton();
-            this.btnMi1 = new DevExpress.XtraEditors.SimpleButton();
-            this.btnMi0 = new DevExpress.XtraEditors.SimpleButton();
-            this.btnMi10 = new DevExpress.XtraEditors.SimpleButton();
-            this.btnMi8 = new DevExpress.XtraEditors.SimpleButton();
-            this.btnMi9 = new DevExpress.XtraEditors.SimpleButton();
-            this.btnMi11 = new DevExpress.XtraEditors.SimpleButton();
             this.panelControl4 = new DevExpress.XtraEditors.PanelControl();
             this.gbPayment = new System.Windows.Forms.GroupBox();
             this.btnExit = new DevExpress.XtraEditors.SimpleButton();
@@ -213,21 +194,37 @@
             this.btnMc2 = new DevExpress.XtraEditors.SimpleButton();
             this.btnMc1 = new DevExpress.XtraEditors.SimpleButton();
             this.btnMc0 = new DevExpress.XtraEditors.SimpleButton();
+            this.panelControl2 = new DevExpress.XtraEditors.PanelControl();
+            this.btnMi14 = new DevExpress.XtraEditors.SimpleButton();
+            this.btnMi12 = new DevExpress.XtraEditors.SimpleButton();
+            this.btnMi13 = new DevExpress.XtraEditors.SimpleButton();
+            this.btnMi15 = new DevExpress.XtraEditors.SimpleButton();
+            this.btnMi7 = new DevExpress.XtraEditors.SimpleButton();
+            this.btnMi3 = new DevExpress.XtraEditors.SimpleButton();
+            this.btnMi6 = new DevExpress.XtraEditors.SimpleButton();
+            this.btnMiRight = new DevExpress.XtraEditors.SimpleButton();
+            this.btnMi5 = new DevExpress.XtraEditors.SimpleButton();
+            this.btnMi4 = new DevExpress.XtraEditors.SimpleButton();
+            this.btnMi2 = new DevExpress.XtraEditors.SimpleButton();
+            this.btnMiLeft = new DevExpress.XtraEditors.SimpleButton();
+            this.btnMi1 = new DevExpress.XtraEditors.SimpleButton();
+            this.btnMi0 = new DevExpress.XtraEditors.SimpleButton();
+            this.btnMi10 = new DevExpress.XtraEditors.SimpleButton();
+            this.btnMi8 = new DevExpress.XtraEditors.SimpleButton();
+            this.btnMi9 = new DevExpress.XtraEditors.SimpleButton();
+            this.btnMi11 = new DevExpress.XtraEditors.SimpleButton();
             this.btnOrderType = new DevExpress.XtraEditors.SimpleButton();
+            this.panelControl6 = new DevExpress.XtraEditors.PanelControl();
+            this.lblType = new DevExpress.XtraEditors.LabelControl();
+            this.lblCheck = new DevExpress.XtraEditors.LabelControl();
             this.btnCustInfo = new DevExpress.XtraEditors.SimpleButton();
             this.btnSearchMeal = new DevExpress.XtraEditors.SimpleButton();
-            this.btnIngredMode = new DevExpress.XtraEditors.SimpleButton();
-            this.btnOnlineOrder = new DevExpress.XtraEditors.SimpleButton();
             ((System.ComponentModel.ISupportInitialize)(this.treeListOrder)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemMemoEdit1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
             this.panelControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.panelMember)).BeginInit();
             this.panelMember.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.panelControl6)).BeginInit();
-            this.panelControl6.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.panelControl2)).BeginInit();
-            this.panelControl2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl4)).BeginInit();
             this.panelControl4.SuspendLayout();
             this.gbPayment.SuspendLayout();
@@ -255,6 +252,10 @@
             this.panelControl5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl3)).BeginInit();
             this.panelControl3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.panelControl2)).BeginInit();
+            this.panelControl2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.panelControl6)).BeginInit();
+            this.panelControl6.SuspendLayout();
             this.SuspendLayout();
             // 
             // treeListOrder
@@ -435,6 +436,23 @@
             this.panelControl1.Name = "panelControl1";
             this.panelControl1.Size = new System.Drawing.Size(400, 770);
             this.panelControl1.TabIndex = 1;
+            // 
+            // btnOnlineOrder
+            // 
+            this.btnOnlineOrder.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            this.btnOnlineOrder.Appearance.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.btnOnlineOrder.Appearance.ForeColor = System.Drawing.Color.White;
+            this.btnOnlineOrder.Appearance.Options.UseBackColor = true;
+            this.btnOnlineOrder.Appearance.Options.UseFont = true;
+            this.btnOnlineOrder.Appearance.Options.UseForeColor = true;
+            this.btnOnlineOrder.Appearance.Options.UseTextOptions = true;
+            this.btnOnlineOrder.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
+            this.btnOnlineOrder.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
+            this.btnOnlineOrder.Location = new System.Drawing.Point(179, 705);
+            this.btnOnlineOrder.Name = "btnOnlineOrder";
+            this.btnOnlineOrder.Size = new System.Drawing.Size(80, 60);
+            this.btnOnlineOrder.TabIndex = 34;
+            this.btnOnlineOrder.Text = "Online Order";
             // 
             // btnType
             // 
@@ -664,6 +682,24 @@
             this.btnReduce.Text = "-";
             this.btnReduce.Click += new System.EventHandler(this.btnReduce_Click);
             // 
+            // btnIngredMode
+            // 
+            this.btnIngredMode.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.btnIngredMode.Appearance.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.btnIngredMode.Appearance.ForeColor = System.Drawing.Color.White;
+            this.btnIngredMode.Appearance.Options.UseBackColor = true;
+            this.btnIngredMode.Appearance.Options.UseFont = true;
+            this.btnIngredMode.Appearance.Options.UseForeColor = true;
+            this.btnIngredMode.Appearance.Options.UseTextOptions = true;
+            this.btnIngredMode.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
+            this.btnIngredMode.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
+            this.btnIngredMode.Location = new System.Drawing.Point(93, 705);
+            this.btnIngredMode.Name = "btnIngredMode";
+            this.btnIngredMode.Size = new System.Drawing.Size(80, 60);
+            this.btnIngredMode.TabIndex = 21;
+            this.btnIngredMode.Text = "Ingred Mode";
+            this.btnIngredMode.Click += new System.EventHandler(this.btnIngredMode_Click);
+            // 
             // btnAdd
             // 
             this.btnAdd.Appearance.BackColor = System.Drawing.Color.Gray;
@@ -748,331 +784,14 @@
             this.btnAppend.Text = "+/-";
             this.btnAppend.Click += new System.EventHandler(this.btnAppend_Click);
             // 
-            // panelControl6
-            // 
-            this.panelControl6.Controls.Add(this.lblType);
-            this.panelControl6.Controls.Add(this.lblCheck);
-            this.panelControl6.Location = new System.Drawing.Point(21, 266);
-            this.panelControl6.Name = "panelControl6";
-            this.panelControl6.Size = new System.Drawing.Size(390, 40);
-            this.panelControl6.TabIndex = 31;
-            this.panelControl6.Visible = false;
-            // 
-            // lblType
-            // 
-            this.lblType.Appearance.Font = new System.Drawing.Font("Tahoma", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblType.Location = new System.Drawing.Point(5, 5);
-            this.lblType.Name = "lblType";
-            this.lblType.Size = new System.Drawing.Size(63, 30);
-            this.lblType.TabIndex = 6;
-            this.lblType.Text = "SHOP";
-            this.lblType.Visible = false;
-            // 
-            // lblCheck
-            // 
-            this.lblCheck.Appearance.Font = new System.Drawing.Font("Tahoma", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCheck.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
-            this.lblCheck.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
-            this.lblCheck.Location = new System.Drawing.Point(273, 5);
-            this.lblCheck.Name = "lblCheck";
-            this.lblCheck.Size = new System.Drawing.Size(112, 30);
-            this.lblCheck.TabIndex = 7;
-            this.lblCheck.Text = "001";
-            this.lblCheck.Visible = false;
-            // 
-            // panelControl2
-            // 
-            this.panelControl2.Controls.Add(this.btnMi14);
-            this.panelControl2.Controls.Add(this.btnMi12);
-            this.panelControl2.Controls.Add(this.btnMi13);
-            this.panelControl2.Controls.Add(this.btnMi15);
-            this.panelControl2.Controls.Add(this.btnMi7);
-            this.panelControl2.Controls.Add(this.btnMi3);
-            this.panelControl2.Controls.Add(this.btnMi6);
-            this.panelControl2.Controls.Add(this.btnMiRight);
-            this.panelControl2.Controls.Add(this.btnMi5);
-            this.panelControl2.Controls.Add(this.btnMi4);
-            this.panelControl2.Controls.Add(this.btnMi2);
-            this.panelControl2.Controls.Add(this.btnMiLeft);
-            this.panelControl2.Controls.Add(this.btnMi1);
-            this.panelControl2.Controls.Add(this.btnMi0);
-            this.panelControl2.Controls.Add(this.btnMi10);
-            this.panelControl2.Controls.Add(this.btnMi8);
-            this.panelControl2.Controls.Add(this.btnMi9);
-            this.panelControl2.Controls.Add(this.btnMi11);
-            this.panelControl2.Location = new System.Drawing.Point(5, 5);
-            this.panelControl2.Name = "panelControl2";
-            this.panelControl2.Size = new System.Drawing.Size(751, 247);
-            this.panelControl2.TabIndex = 3;
-            // 
-            // btnMi14
-            // 
-            this.btnMi14.Appearance.BackColor = System.Drawing.Color.Gold;
-            this.btnMi14.Appearance.Options.UseBackColor = true;
-            this.btnMi14.Appearance.Options.UseTextOptions = true;
-            this.btnMi14.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.btnMi14.Appearance.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
-            this.btnMi14.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
-            this.btnMi14.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
-            this.btnMi14.Location = new System.Drawing.Point(357, 185);
-            this.btnMi14.Name = "btnMi14";
-            this.btnMi14.Size = new System.Drawing.Size(173, 55);
-            this.btnMi14.TabIndex = 34;
-            // 
-            // btnMi12
-            // 
-            this.btnMi12.Appearance.BackColor = System.Drawing.Color.Gold;
-            this.btnMi12.Appearance.Options.UseBackColor = true;
-            this.btnMi12.Appearance.Options.UseTextOptions = true;
-            this.btnMi12.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.btnMi12.Appearance.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
-            this.btnMi12.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
-            this.btnMi12.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
-            this.btnMi12.Location = new System.Drawing.Point(5, 185);
-            this.btnMi12.Name = "btnMi12";
-            this.btnMi12.Size = new System.Drawing.Size(173, 55);
-            this.btnMi12.TabIndex = 32;
-            // 
-            // btnMi13
-            // 
-            this.btnMi13.Appearance.BackColor = System.Drawing.Color.Gold;
-            this.btnMi13.Appearance.Options.UseBackColor = true;
-            this.btnMi13.Appearance.Options.UseTextOptions = true;
-            this.btnMi13.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.btnMi13.Appearance.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
-            this.btnMi13.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
-            this.btnMi13.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
-            this.btnMi13.Location = new System.Drawing.Point(181, 185);
-            this.btnMi13.Name = "btnMi13";
-            this.btnMi13.Size = new System.Drawing.Size(173, 55);
-            this.btnMi13.TabIndex = 33;
-            // 
-            // btnMi15
-            // 
-            this.btnMi15.Appearance.BackColor = System.Drawing.Color.Gold;
-            this.btnMi15.Appearance.Options.UseBackColor = true;
-            this.btnMi15.Appearance.Options.UseTextOptions = true;
-            this.btnMi15.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.btnMi15.Appearance.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
-            this.btnMi15.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
-            this.btnMi15.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
-            this.btnMi15.Location = new System.Drawing.Point(533, 185);
-            this.btnMi15.Name = "btnMi15";
-            this.btnMi15.Size = new System.Drawing.Size(173, 55);
-            this.btnMi15.TabIndex = 35;
-            // 
-            // btnMi7
-            // 
-            this.btnMi7.Appearance.BackColor = System.Drawing.Color.Gold;
-            this.btnMi7.Appearance.Options.UseBackColor = true;
-            this.btnMi7.Appearance.Options.UseTextOptions = true;
-            this.btnMi7.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.btnMi7.Appearance.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
-            this.btnMi7.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
-            this.btnMi7.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
-            this.btnMi7.Location = new System.Drawing.Point(533, 67);
-            this.btnMi7.Name = "btnMi7";
-            this.btnMi7.Size = new System.Drawing.Size(173, 55);
-            this.btnMi7.TabIndex = 31;
-            // 
-            // btnMi3
-            // 
-            this.btnMi3.Appearance.BackColor = System.Drawing.Color.Gold;
-            this.btnMi3.Appearance.Options.UseBackColor = true;
-            this.btnMi3.Appearance.Options.UseTextOptions = true;
-            this.btnMi3.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.btnMi3.Appearance.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
-            this.btnMi3.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
-            this.btnMi3.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
-            this.btnMi3.Location = new System.Drawing.Point(533, 8);
-            this.btnMi3.Name = "btnMi3";
-            this.btnMi3.Size = new System.Drawing.Size(173, 55);
-            this.btnMi3.TabIndex = 31;
-            // 
-            // btnMi6
-            // 
-            this.btnMi6.Appearance.BackColor = System.Drawing.Color.Gold;
-            this.btnMi6.Appearance.Options.UseBackColor = true;
-            this.btnMi6.Appearance.Options.UseTextOptions = true;
-            this.btnMi6.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.btnMi6.Appearance.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
-            this.btnMi6.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
-            this.btnMi6.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
-            this.btnMi6.Location = new System.Drawing.Point(357, 67);
-            this.btnMi6.Name = "btnMi6";
-            this.btnMi6.Size = new System.Drawing.Size(173, 55);
-            this.btnMi6.TabIndex = 30;
-            // 
-            // btnMiRight
-            // 
-            this.btnMiRight.Appearance.BackColor = System.Drawing.Color.Red;
-            this.btnMiRight.Appearance.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold);
-            this.btnMiRight.Appearance.ForeColor = System.Drawing.Color.White;
-            this.btnMiRight.Appearance.Options.UseBackColor = true;
-            this.btnMiRight.Appearance.Options.UseFont = true;
-            this.btnMiRight.Appearance.Options.UseForeColor = true;
-            this.btnMiRight.Appearance.Options.UseTextOptions = true;
-            this.btnMiRight.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
-            this.btnMiRight.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
-            this.btnMiRight.Location = new System.Drawing.Point(709, 8);
-            this.btnMiRight.Name = "btnMiRight";
-            this.btnMiRight.Size = new System.Drawing.Size(34, 112);
-            this.btnMiRight.TabIndex = 14;
-            this.btnMiRight.Text = ">>";
-            this.btnMiRight.Click += new System.EventHandler(this.btnMiRight_Click);
-            // 
-            // btnMi5
-            // 
-            this.btnMi5.Appearance.BackColor = System.Drawing.Color.Gold;
-            this.btnMi5.Appearance.Options.UseBackColor = true;
-            this.btnMi5.Appearance.Options.UseTextOptions = true;
-            this.btnMi5.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.btnMi5.Appearance.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
-            this.btnMi5.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
-            this.btnMi5.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
-            this.btnMi5.Location = new System.Drawing.Point(181, 67);
-            this.btnMi5.Name = "btnMi5";
-            this.btnMi5.Size = new System.Drawing.Size(173, 55);
-            this.btnMi5.TabIndex = 29;
-            // 
-            // btnMi4
-            // 
-            this.btnMi4.Appearance.BackColor = System.Drawing.Color.Gold;
-            this.btnMi4.Appearance.Options.UseBackColor = true;
-            this.btnMi4.Appearance.Options.UseTextOptions = true;
-            this.btnMi4.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.btnMi4.Appearance.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
-            this.btnMi4.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
-            this.btnMi4.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
-            this.btnMi4.Location = new System.Drawing.Point(5, 67);
-            this.btnMi4.Name = "btnMi4";
-            this.btnMi4.Size = new System.Drawing.Size(173, 55);
-            this.btnMi4.TabIndex = 28;
-            // 
-            // btnMi2
-            // 
-            this.btnMi2.Appearance.BackColor = System.Drawing.Color.Gold;
-            this.btnMi2.Appearance.Options.UseBackColor = true;
-            this.btnMi2.Appearance.Options.UseTextOptions = true;
-            this.btnMi2.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.btnMi2.Appearance.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
-            this.btnMi2.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
-            this.btnMi2.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
-            this.btnMi2.Location = new System.Drawing.Point(357, 8);
-            this.btnMi2.Name = "btnMi2";
-            this.btnMi2.Size = new System.Drawing.Size(173, 55);
-            this.btnMi2.TabIndex = 30;
-            // 
-            // btnMiLeft
-            // 
-            this.btnMiLeft.Appearance.BackColor = System.Drawing.Color.Red;
-            this.btnMiLeft.Appearance.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold);
-            this.btnMiLeft.Appearance.ForeColor = System.Drawing.Color.White;
-            this.btnMiLeft.Appearance.Options.UseBackColor = true;
-            this.btnMiLeft.Appearance.Options.UseFont = true;
-            this.btnMiLeft.Appearance.Options.UseForeColor = true;
-            this.btnMiLeft.Appearance.Options.UseTextOptions = true;
-            this.btnMiLeft.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
-            this.btnMiLeft.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
-            this.btnMiLeft.Location = new System.Drawing.Point(709, 126);
-            this.btnMiLeft.Name = "btnMiLeft";
-            this.btnMiLeft.Size = new System.Drawing.Size(34, 114);
-            this.btnMiLeft.TabIndex = 15;
-            this.btnMiLeft.Text = "<<";
-            this.btnMiLeft.Click += new System.EventHandler(this.btnMiLeft_Click);
-            // 
-            // btnMi1
-            // 
-            this.btnMi1.Appearance.BackColor = System.Drawing.Color.Gold;
-            this.btnMi1.Appearance.Options.UseBackColor = true;
-            this.btnMi1.Appearance.Options.UseTextOptions = true;
-            this.btnMi1.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.btnMi1.Appearance.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
-            this.btnMi1.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
-            this.btnMi1.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
-            this.btnMi1.Location = new System.Drawing.Point(181, 8);
-            this.btnMi1.Name = "btnMi1";
-            this.btnMi1.Size = new System.Drawing.Size(173, 55);
-            this.btnMi1.TabIndex = 29;
-            // 
-            // btnMi0
-            // 
-            this.btnMi0.Appearance.BackColor = System.Drawing.Color.Gold;
-            this.btnMi0.Appearance.Options.UseBackColor = true;
-            this.btnMi0.Appearance.Options.UseTextOptions = true;
-            this.btnMi0.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.btnMi0.Appearance.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
-            this.btnMi0.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
-            this.btnMi0.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
-            this.btnMi0.Location = new System.Drawing.Point(5, 8);
-            this.btnMi0.Name = "btnMi0";
-            this.btnMi0.Size = new System.Drawing.Size(173, 55);
-            this.btnMi0.TabIndex = 28;
-            // 
-            // btnMi10
-            // 
-            this.btnMi10.Appearance.BackColor = System.Drawing.Color.Gold;
-            this.btnMi10.Appearance.Options.UseBackColor = true;
-            this.btnMi10.Appearance.Options.UseTextOptions = true;
-            this.btnMi10.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.btnMi10.Appearance.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
-            this.btnMi10.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
-            this.btnMi10.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
-            this.btnMi10.Location = new System.Drawing.Point(357, 126);
-            this.btnMi10.Name = "btnMi10";
-            this.btnMi10.Size = new System.Drawing.Size(173, 55);
-            this.btnMi10.TabIndex = 10;
-            // 
-            // btnMi8
-            // 
-            this.btnMi8.Appearance.BackColor = System.Drawing.Color.Gold;
-            this.btnMi8.Appearance.Options.UseBackColor = true;
-            this.btnMi8.Appearance.Options.UseTextOptions = true;
-            this.btnMi8.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.btnMi8.Appearance.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
-            this.btnMi8.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
-            this.btnMi8.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
-            this.btnMi8.Location = new System.Drawing.Point(5, 126);
-            this.btnMi8.Name = "btnMi8";
-            this.btnMi8.Size = new System.Drawing.Size(173, 55);
-            this.btnMi8.TabIndex = 3;
-            // 
-            // btnMi9
-            // 
-            this.btnMi9.Appearance.BackColor = System.Drawing.Color.Gold;
-            this.btnMi9.Appearance.Options.UseBackColor = true;
-            this.btnMi9.Appearance.Options.UseTextOptions = true;
-            this.btnMi9.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.btnMi9.Appearance.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
-            this.btnMi9.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
-            this.btnMi9.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
-            this.btnMi9.Location = new System.Drawing.Point(181, 126);
-            this.btnMi9.Name = "btnMi9";
-            this.btnMi9.Size = new System.Drawing.Size(173, 55);
-            this.btnMi9.TabIndex = 9;
-            // 
-            // btnMi11
-            // 
-            this.btnMi11.Appearance.BackColor = System.Drawing.Color.Gold;
-            this.btnMi11.Appearance.Options.UseBackColor = true;
-            this.btnMi11.Appearance.Options.UseTextOptions = true;
-            this.btnMi11.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.btnMi11.Appearance.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
-            this.btnMi11.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
-            this.btnMi11.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
-            this.btnMi11.Location = new System.Drawing.Point(533, 126);
-            this.btnMi11.Name = "btnMi11";
-            this.btnMi11.Size = new System.Drawing.Size(173, 55);
-            this.btnMi11.TabIndex = 11;
-            // 
             // panelControl4
             // 
-            this.panelControl4.Controls.Add(this.gbPayment);
             this.panelControl4.Controls.Add(this.pcMain);
+            this.panelControl4.Controls.Add(this.gbPayment);
             this.panelControl4.Controls.Add(this.panelControl1);
             this.panelControl4.Location = new System.Drawing.Point(0, 0);
             this.panelControl4.Name = "panelControl4";
-            this.panelControl4.Size = new System.Drawing.Size(1415, 780);
+            this.panelControl4.Size = new System.Drawing.Size(1413, 780);
             this.panelControl4.TabIndex = 5;
             // 
             // gbPayment
@@ -1095,7 +814,7 @@
             this.gbPayment.Location = new System.Drawing.Point(411, 5);
             this.gbPayment.Name = "gbPayment";
             this.gbPayment.Size = new System.Drawing.Size(995, 770);
-            this.gbPayment.TabIndex = 33;
+            this.gbPayment.TabIndex = 35;
             this.gbPayment.TabStop = false;
             this.gbPayment.Text = "Payment";
             // 
@@ -1111,7 +830,6 @@
             this.btnExit.Size = new System.Drawing.Size(151, 48);
             this.btnExit.TabIndex = 45;
             this.btnExit.Text = "Exit";
-            this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
             // 
             // lueNote
             // 
@@ -1124,7 +842,6 @@
             this.lueNote.Properties.NullText = "";
             this.lueNote.Size = new System.Drawing.Size(355, 30);
             this.lueNote.TabIndex = 108;
-            this.lueNote.EditValueChanged += new System.EventHandler(this.lueNote_EditValueChanged);
             // 
             // btnCollection
             // 
@@ -1326,7 +1043,6 @@
             this.btnNotPaid.Size = new System.Drawing.Size(165, 48);
             this.btnNotPaid.TabIndex = 52;
             this.btnNotPaid.Text = "NOT PAID";
-            this.btnNotPaid.Click += new System.EventHandler(this.btnNotPaid_Click);
             // 
             // lblCtlDiscount
             // 
@@ -1363,7 +1079,6 @@
             this.btnSave.Size = new System.Drawing.Size(165, 48);
             this.btnSave.TabIndex = 51;
             this.btnSave.Text = "Save";
-            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
             // btnPrtAll
             // 
@@ -1377,7 +1092,6 @@
             this.btnPrtAll.Size = new System.Drawing.Size(165, 48);
             this.btnPrtAll.TabIndex = 47;
             this.btnPrtAll.Text = "Print All";
-            this.btnPrtAll.Click += new System.EventHandler(this.btnPrtAll_Click);
             // 
             // btnPrtKitOnly
             // 
@@ -1391,7 +1105,6 @@
             this.btnPrtKitOnly.Size = new System.Drawing.Size(165, 48);
             this.btnPrtKitOnly.TabIndex = 50;
             this.btnPrtKitOnly.Text = "Print Kitchen Only";
-            this.btnPrtKitOnly.Click += new System.EventHandler(this.btnPrtKitOnly_Click);
             // 
             // btnPrtAllReceipt
             // 
@@ -1405,7 +1118,6 @@
             this.btnPrtAllReceipt.Size = new System.Drawing.Size(165, 48);
             this.btnPrtAllReceipt.TabIndex = 48;
             this.btnPrtAllReceipt.Text = "Print All And Receipt";
-            this.btnPrtAllReceipt.Click += new System.EventHandler(this.btnPrtAllReceipt_Click);
             // 
             // btnPrtBillOnly
             // 
@@ -1419,7 +1131,6 @@
             this.btnPrtBillOnly.Size = new System.Drawing.Size(165, 48);
             this.btnPrtBillOnly.TabIndex = 49;
             this.btnPrtBillOnly.Text = "Print Bill Only";
-            this.btnPrtBillOnly.Click += new System.EventHandler(this.btnPrtBillOnly_Click);
             // 
             // groupBox4
             // 
@@ -1655,8 +1366,6 @@
             this.txtPayTypePay5.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Numeric;
             this.txtPayTypePay5.Size = new System.Drawing.Size(130, 40);
             this.txtPayTypePay5.TabIndex = 98;
-            this.txtPayTypePay5.EditValueChanged += new System.EventHandler(this.txtPayTypePay5_EditValueChanged);
-            this.txtPayTypePay5.MouseDown += new System.Windows.Forms.MouseEventHandler(this.txtPayTypePay5_MouseDown);
             // 
             // lblPayType5
             // 
@@ -1669,7 +1378,6 @@
             this.lblPayType5.Size = new System.Drawing.Size(123, 36);
             this.lblPayType5.TabIndex = 97;
             this.lblPayType5.Text = "Pay Type";
-            this.lblPayType5.Click += new System.EventHandler(this.lblPayType5_Click);
             // 
             // txtPayTypePay4
             // 
@@ -1684,8 +1392,6 @@
             this.txtPayTypePay4.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Numeric;
             this.txtPayTypePay4.Size = new System.Drawing.Size(130, 40);
             this.txtPayTypePay4.TabIndex = 96;
-            this.txtPayTypePay4.EditValueChanged += new System.EventHandler(this.txtPayTypePay4_EditValueChanged);
-            this.txtPayTypePay4.MouseDown += new System.Windows.Forms.MouseEventHandler(this.txtPayTypePay4_MouseDown);
             // 
             // txtPayTypePay3
             // 
@@ -1700,8 +1406,6 @@
             this.txtPayTypePay3.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Numeric;
             this.txtPayTypePay3.Size = new System.Drawing.Size(130, 40);
             this.txtPayTypePay3.TabIndex = 95;
-            this.txtPayTypePay3.EditValueChanged += new System.EventHandler(this.txtPayTypePay3_EditValueChanged);
-            this.txtPayTypePay3.MouseDown += new System.Windows.Forms.MouseEventHandler(this.txtPayTypePay3_MouseDown);
             // 
             // txtPayTypePay2
             // 
@@ -1716,8 +1420,6 @@
             this.txtPayTypePay2.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Numeric;
             this.txtPayTypePay2.Size = new System.Drawing.Size(130, 40);
             this.txtPayTypePay2.TabIndex = 94;
-            this.txtPayTypePay2.EditValueChanged += new System.EventHandler(this.txtPayTypePay2_EditValueChanged);
-            this.txtPayTypePay2.MouseDown += new System.Windows.Forms.MouseEventHandler(this.txtPayTypePay2_MouseDown);
             // 
             // txtPayTypePay1
             // 
@@ -1732,8 +1434,6 @@
             this.txtPayTypePay1.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Numeric;
             this.txtPayTypePay1.Size = new System.Drawing.Size(130, 40);
             this.txtPayTypePay1.TabIndex = 93;
-            this.txtPayTypePay1.EditValueChanged += new System.EventHandler(this.txtPayTypePay1_EditValueChanged);
-            this.txtPayTypePay1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.txtPayTypePay1_MouseDown);
             // 
             // lblPayType4
             // 
@@ -1746,7 +1446,6 @@
             this.lblPayType4.Size = new System.Drawing.Size(123, 36);
             this.lblPayType4.TabIndex = 61;
             this.lblPayType4.Text = "Pay Type";
-            this.lblPayType4.Click += new System.EventHandler(this.lblPayType4_Click);
             // 
             // lblPayType3
             // 
@@ -1759,7 +1458,6 @@
             this.lblPayType3.Size = new System.Drawing.Size(123, 36);
             this.lblPayType3.TabIndex = 59;
             this.lblPayType3.Text = "Pay Type";
-            this.lblPayType3.Click += new System.EventHandler(this.lblPayType3_Click);
             // 
             // lblPayType2
             // 
@@ -1772,7 +1470,6 @@
             this.lblPayType2.Size = new System.Drawing.Size(123, 36);
             this.lblPayType2.TabIndex = 57;
             this.lblPayType2.Text = "Pay Type";
-            this.lblPayType2.Click += new System.EventHandler(this.lblPayType2_Click);
             // 
             // lblPayType1
             // 
@@ -1785,7 +1482,6 @@
             this.lblPayType1.Size = new System.Drawing.Size(123, 36);
             this.lblPayType1.TabIndex = 55;
             this.lblPayType1.Text = "Pay Type";
-            this.lblPayType1.Click += new System.EventHandler(this.lblPayType1_Click);
             // 
             // groupBox2
             // 
@@ -1822,8 +1518,6 @@
             this.txtPercentDiscount.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Numeric;
             this.txtPercentDiscount.Size = new System.Drawing.Size(71, 40);
             this.txtPercentDiscount.TabIndex = 103;
-            this.txtPercentDiscount.EditValueChanged += new System.EventHandler(this.txtPercentDiscount_EditValueChanged);
-            this.txtPercentDiscount.MouseDown += new System.Windows.Forms.MouseEventHandler(this.txtPercentDiscount_MouseDown);
             // 
             // labelControl7
             // 
@@ -1856,8 +1550,6 @@
             this.txtPercentSurcharge.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Numeric;
             this.txtPercentSurcharge.Size = new System.Drawing.Size(71, 40);
             this.txtPercentSurcharge.TabIndex = 104;
-            this.txtPercentSurcharge.EditValueChanged += new System.EventHandler(this.txtPercentSurcharge_EditValueChanged);
-            this.txtPercentSurcharge.MouseDown += new System.Windows.Forms.MouseEventHandler(this.txtPercentSurcharge_MouseDown);
             // 
             // txtChange
             // 
@@ -1923,8 +1615,6 @@
             this.txtSurcharge.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Numeric;
             this.txtSurcharge.Size = new System.Drawing.Size(121, 40);
             this.txtSurcharge.TabIndex = 99;
-            this.txtSurcharge.EditValueChanged += new System.EventHandler(this.txtSurcharge_EditValueChanged);
-            this.txtSurcharge.MouseDown += new System.Windows.Forms.MouseEventHandler(this.txtSurcharge_MouseDown);
             // 
             // txtDiscount
             // 
@@ -1939,8 +1629,6 @@
             this.txtDiscount.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Numeric;
             this.txtDiscount.Size = new System.Drawing.Size(121, 40);
             this.txtDiscount.TabIndex = 98;
-            this.txtDiscount.EditValueChanged += new System.EventHandler(this.txtDiscount_EditValueChanged);
-            this.txtDiscount.MouseDown += new System.Windows.Forms.MouseEventHandler(this.txtDiscount_MouseDown);
             // 
             // labelControl9
             // 
@@ -2028,8 +1716,8 @@
             this.pcMain.Controls.Add(this.btnSearchMeal);
             this.pcMain.Location = new System.Drawing.Point(411, 5);
             this.pcMain.Name = "pcMain";
-            this.pcMain.Size = new System.Drawing.Size(764, 770);
-            this.pcMain.TabIndex = 32;
+            this.pcMain.Size = new System.Drawing.Size(1006, 770);
+            this.pcMain.TabIndex = 37;
             // 
             // panelControl5
             // 
@@ -2044,7 +1732,7 @@
             this.panelControl5.Controls.Add(this.btnPendOrder);
             this.panelControl5.Location = new System.Drawing.Point(5, 330);
             this.panelControl5.Name = "panelControl5";
-            this.panelControl5.Size = new System.Drawing.Size(123, 433);
+            this.panelControl5.Size = new System.Drawing.Size(174, 433);
             this.panelControl5.TabIndex = 33;
             // 
             // btnMenu
@@ -2060,10 +1748,9 @@
             this.btnMenu.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
             this.btnMenu.Location = new System.Drawing.Point(7, 8);
             this.btnMenu.Name = "btnMenu";
-            this.btnMenu.Size = new System.Drawing.Size(111, 42);
+            this.btnMenu.Size = new System.Drawing.Size(162, 42);
             this.btnMenu.TabIndex = 30;
             this.btnMenu.Text = "Menu";
-            this.btnMenu.Click += new System.EventHandler(this.btnMenu_Click);
             // 
             // btnEatIn
             // 
@@ -2078,7 +1765,7 @@
             this.btnEatIn.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
             this.btnEatIn.Location = new System.Drawing.Point(7, 299);
             this.btnEatIn.Name = "btnEatIn";
-            this.btnEatIn.Size = new System.Drawing.Size(111, 42);
+            this.btnEatIn.Size = new System.Drawing.Size(162, 42);
             this.btnEatIn.TabIndex = 29;
             this.btnEatIn.Text = "Eat In";
             // 
@@ -2095,10 +1782,9 @@
             this.btnCancel.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
             this.btnCancel.Location = new System.Drawing.Point(7, 251);
             this.btnCancel.Name = "btnCancel";
-            this.btnCancel.Size = new System.Drawing.Size(111, 42);
+            this.btnCancel.Size = new System.Drawing.Size(162, 42);
             this.btnCancel.TabIndex = 28;
             this.btnCancel.Text = "CANCEL ORDER";
-            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
             // 
             // btnLanguage
             // 
@@ -2113,10 +1799,9 @@
             this.btnLanguage.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
             this.btnLanguage.Location = new System.Drawing.Point(7, 105);
             this.btnLanguage.Name = "btnLanguage";
-            this.btnLanguage.Size = new System.Drawing.Size(111, 42);
+            this.btnLanguage.Size = new System.Drawing.Size(162, 42);
             this.btnLanguage.TabIndex = 25;
             this.btnLanguage.Text = "LANGUAGE";
-            this.btnLanguage.Click += new System.EventHandler(this.btnLanguage_Click);
             // 
             // btnSaveOrder
             // 
@@ -2131,10 +1816,9 @@
             this.btnSaveOrder.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
             this.btnSaveOrder.Location = new System.Drawing.Point(7, 202);
             this.btnSaveOrder.Name = "btnSaveOrder";
-            this.btnSaveOrder.Size = new System.Drawing.Size(111, 42);
+            this.btnSaveOrder.Size = new System.Drawing.Size(162, 42);
             this.btnSaveOrder.TabIndex = 16;
             this.btnSaveOrder.Text = "Save Order";
-            this.btnSaveOrder.Click += new System.EventHandler(this.btnSaveOrder_Click);
             // 
             // btnMcLeft
             // 
@@ -2147,12 +1831,12 @@
             this.btnMcLeft.Appearance.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
             this.btnMcLeft.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
             this.btnMcLeft.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
+            this.btnMcLeft.Image = ((System.Drawing.Image)(resources.GetObject("btnMcLeft.Image")));
+            this.btnMcLeft.ImageLocation = DevExpress.XtraEditors.ImageLocation.MiddleCenter;
             this.btnMcLeft.Location = new System.Drawing.Point(7, 351);
             this.btnMcLeft.Name = "btnMcLeft";
-            this.btnMcLeft.Size = new System.Drawing.Size(55, 35);
+            this.btnMcLeft.Size = new System.Drawing.Size(81, 35);
             this.btnMcLeft.TabIndex = 17;
-            this.btnMcLeft.Text = "<<";
-            this.btnMcLeft.Click += new System.EventHandler(this.btnMcLeft_Click);
             // 
             // btnMcRight
             // 
@@ -2165,12 +1849,12 @@
             this.btnMcRight.Appearance.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
             this.btnMcRight.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
             this.btnMcRight.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
-            this.btnMcRight.Location = new System.Drawing.Point(63, 351);
+            this.btnMcRight.Image = ((System.Drawing.Image)(resources.GetObject("btnMcRight.Image")));
+            this.btnMcRight.ImageLocation = DevExpress.XtraEditors.ImageLocation.MiddleCenter;
+            this.btnMcRight.Location = new System.Drawing.Point(88, 351);
             this.btnMcRight.Name = "btnMcRight";
-            this.btnMcRight.Size = new System.Drawing.Size(55, 35);
+            this.btnMcRight.Size = new System.Drawing.Size(81, 35);
             this.btnMcRight.TabIndex = 18;
-            this.btnMcRight.Text = ">>";
-            this.btnMcRight.Click += new System.EventHandler(this.btnMcRight_Click);
             // 
             // btnCid
             // 
@@ -2185,10 +1869,9 @@
             this.btnCid.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
             this.btnCid.Location = new System.Drawing.Point(7, 56);
             this.btnCid.Name = "btnCid";
-            this.btnCid.Size = new System.Drawing.Size(111, 42);
+            this.btnCid.Size = new System.Drawing.Size(162, 42);
             this.btnCid.TabIndex = 18;
             this.btnCid.Text = "CID";
-            this.btnCid.Click += new System.EventHandler(this.btnCid_Click);
             // 
             // btnPendOrder
             // 
@@ -2201,10 +1884,9 @@
             this.btnPendOrder.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
             this.btnPendOrder.Location = new System.Drawing.Point(7, 154);
             this.btnPendOrder.Name = "btnPendOrder";
-            this.btnPendOrder.Size = new System.Drawing.Size(111, 42);
+            this.btnPendOrder.Size = new System.Drawing.Size(162, 42);
             this.btnPendOrder.TabIndex = 22;
             this.btnPendOrder.Text = "Pending Orders";
-            this.btnPendOrder.Click += new System.EventHandler(this.btnPendOrder_Click);
             // 
             // panelControl3
             // 
@@ -2250,9 +1932,9 @@
             this.panelControl3.Controls.Add(this.btnMc2);
             this.panelControl3.Controls.Add(this.btnMc1);
             this.panelControl3.Controls.Add(this.btnMc0);
-            this.panelControl3.Location = new System.Drawing.Point(134, 330);
+            this.panelControl3.Location = new System.Drawing.Point(181, 330);
             this.panelControl3.Name = "panelControl3";
-            this.panelControl3.Size = new System.Drawing.Size(622, 433);
+            this.panelControl3.Size = new System.Drawing.Size(813, 433);
             this.panelControl3.TabIndex = 32;
             // 
             // btnMc41
@@ -2264,9 +1946,9 @@
             this.btnMc41.Appearance.Options.UseTextOptions = true;
             this.btnMc41.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
             this.btnMc41.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
-            this.btnMc41.Location = new System.Drawing.Point(514, 372);
+            this.btnMc41.Location = new System.Drawing.Point(674, 372);
             this.btnMc41.Name = "btnMc41";
-            this.btnMc41.Size = new System.Drawing.Size(100, 57);
+            this.btnMc41.Size = new System.Drawing.Size(132, 57);
             this.btnMc41.TabIndex = 57;
             // 
             // btnMc40
@@ -2278,9 +1960,9 @@
             this.btnMc40.Appearance.Options.UseTextOptions = true;
             this.btnMc40.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
             this.btnMc40.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
-            this.btnMc40.Location = new System.Drawing.Point(412, 372);
+            this.btnMc40.Location = new System.Drawing.Point(540, 372);
             this.btnMc40.Name = "btnMc40";
-            this.btnMc40.Size = new System.Drawing.Size(100, 57);
+            this.btnMc40.Size = new System.Drawing.Size(132, 57);
             this.btnMc40.TabIndex = 56;
             // 
             // btnMc39
@@ -2292,9 +1974,9 @@
             this.btnMc39.Appearance.Options.UseTextOptions = true;
             this.btnMc39.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
             this.btnMc39.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
-            this.btnMc39.Location = new System.Drawing.Point(310, 372);
+            this.btnMc39.Location = new System.Drawing.Point(406, 372);
             this.btnMc39.Name = "btnMc39";
-            this.btnMc39.Size = new System.Drawing.Size(100, 57);
+            this.btnMc39.Size = new System.Drawing.Size(132, 57);
             this.btnMc39.TabIndex = 55;
             // 
             // btnMc38
@@ -2306,9 +1988,9 @@
             this.btnMc38.Appearance.Options.UseTextOptions = true;
             this.btnMc38.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
             this.btnMc38.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
-            this.btnMc38.Location = new System.Drawing.Point(208, 372);
+            this.btnMc38.Location = new System.Drawing.Point(272, 372);
             this.btnMc38.Name = "btnMc38";
-            this.btnMc38.Size = new System.Drawing.Size(100, 57);
+            this.btnMc38.Size = new System.Drawing.Size(132, 57);
             this.btnMc38.TabIndex = 54;
             // 
             // btnMc37
@@ -2320,9 +2002,9 @@
             this.btnMc37.Appearance.Options.UseTextOptions = true;
             this.btnMc37.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
             this.btnMc37.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
-            this.btnMc37.Location = new System.Drawing.Point(106, 372);
+            this.btnMc37.Location = new System.Drawing.Point(138, 372);
             this.btnMc37.Name = "btnMc37";
-            this.btnMc37.Size = new System.Drawing.Size(100, 57);
+            this.btnMc37.Size = new System.Drawing.Size(132, 57);
             this.btnMc37.TabIndex = 53;
             // 
             // btnMc36
@@ -2336,7 +2018,7 @@
             this.btnMc36.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
             this.btnMc36.Location = new System.Drawing.Point(4, 372);
             this.btnMc36.Name = "btnMc36";
-            this.btnMc36.Size = new System.Drawing.Size(100, 57);
+            this.btnMc36.Size = new System.Drawing.Size(132, 57);
             this.btnMc36.TabIndex = 52;
             // 
             // btnMc35
@@ -2348,9 +2030,9 @@
             this.btnMc35.Appearance.Options.UseTextOptions = true;
             this.btnMc35.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
             this.btnMc35.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
-            this.btnMc35.Location = new System.Drawing.Point(514, 311);
+            this.btnMc35.Location = new System.Drawing.Point(674, 311);
             this.btnMc35.Name = "btnMc35";
-            this.btnMc35.Size = new System.Drawing.Size(100, 57);
+            this.btnMc35.Size = new System.Drawing.Size(132, 57);
             this.btnMc35.TabIndex = 51;
             // 
             // btnMc34
@@ -2362,9 +2044,9 @@
             this.btnMc34.Appearance.Options.UseTextOptions = true;
             this.btnMc34.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
             this.btnMc34.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
-            this.btnMc34.Location = new System.Drawing.Point(412, 311);
+            this.btnMc34.Location = new System.Drawing.Point(540, 311);
             this.btnMc34.Name = "btnMc34";
-            this.btnMc34.Size = new System.Drawing.Size(100, 57);
+            this.btnMc34.Size = new System.Drawing.Size(132, 57);
             this.btnMc34.TabIndex = 50;
             // 
             // btnMc33
@@ -2376,9 +2058,9 @@
             this.btnMc33.Appearance.Options.UseTextOptions = true;
             this.btnMc33.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
             this.btnMc33.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
-            this.btnMc33.Location = new System.Drawing.Point(310, 311);
+            this.btnMc33.Location = new System.Drawing.Point(406, 311);
             this.btnMc33.Name = "btnMc33";
-            this.btnMc33.Size = new System.Drawing.Size(100, 57);
+            this.btnMc33.Size = new System.Drawing.Size(132, 57);
             this.btnMc33.TabIndex = 49;
             // 
             // btnMc32
@@ -2390,9 +2072,9 @@
             this.btnMc32.Appearance.Options.UseTextOptions = true;
             this.btnMc32.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
             this.btnMc32.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
-            this.btnMc32.Location = new System.Drawing.Point(208, 311);
+            this.btnMc32.Location = new System.Drawing.Point(272, 311);
             this.btnMc32.Name = "btnMc32";
-            this.btnMc32.Size = new System.Drawing.Size(100, 57);
+            this.btnMc32.Size = new System.Drawing.Size(132, 57);
             this.btnMc32.TabIndex = 48;
             // 
             // btnMc31
@@ -2404,9 +2086,9 @@
             this.btnMc31.Appearance.Options.UseTextOptions = true;
             this.btnMc31.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
             this.btnMc31.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
-            this.btnMc31.Location = new System.Drawing.Point(106, 311);
+            this.btnMc31.Location = new System.Drawing.Point(138, 311);
             this.btnMc31.Name = "btnMc31";
-            this.btnMc31.Size = new System.Drawing.Size(100, 57);
+            this.btnMc31.Size = new System.Drawing.Size(132, 57);
             this.btnMc31.TabIndex = 47;
             // 
             // btnMc30
@@ -2420,7 +2102,7 @@
             this.btnMc30.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
             this.btnMc30.Location = new System.Drawing.Point(4, 311);
             this.btnMc30.Name = "btnMc30";
-            this.btnMc30.Size = new System.Drawing.Size(100, 57);
+            this.btnMc30.Size = new System.Drawing.Size(132, 57);
             this.btnMc30.TabIndex = 46;
             // 
             // btnMc29
@@ -2432,9 +2114,9 @@
             this.btnMc29.Appearance.Options.UseTextOptions = true;
             this.btnMc29.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
             this.btnMc29.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
-            this.btnMc29.Location = new System.Drawing.Point(514, 250);
+            this.btnMc29.Location = new System.Drawing.Point(674, 250);
             this.btnMc29.Name = "btnMc29";
-            this.btnMc29.Size = new System.Drawing.Size(100, 57);
+            this.btnMc29.Size = new System.Drawing.Size(132, 57);
             this.btnMc29.TabIndex = 45;
             // 
             // btnMc28
@@ -2446,9 +2128,9 @@
             this.btnMc28.Appearance.Options.UseTextOptions = true;
             this.btnMc28.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
             this.btnMc28.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
-            this.btnMc28.Location = new System.Drawing.Point(412, 250);
+            this.btnMc28.Location = new System.Drawing.Point(540, 250);
             this.btnMc28.Name = "btnMc28";
-            this.btnMc28.Size = new System.Drawing.Size(100, 57);
+            this.btnMc28.Size = new System.Drawing.Size(132, 57);
             this.btnMc28.TabIndex = 44;
             // 
             // btnMc27
@@ -2460,9 +2142,9 @@
             this.btnMc27.Appearance.Options.UseTextOptions = true;
             this.btnMc27.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
             this.btnMc27.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
-            this.btnMc27.Location = new System.Drawing.Point(310, 250);
+            this.btnMc27.Location = new System.Drawing.Point(406, 250);
             this.btnMc27.Name = "btnMc27";
-            this.btnMc27.Size = new System.Drawing.Size(100, 57);
+            this.btnMc27.Size = new System.Drawing.Size(132, 57);
             this.btnMc27.TabIndex = 43;
             // 
             // btnMc26
@@ -2474,9 +2156,9 @@
             this.btnMc26.Appearance.Options.UseTextOptions = true;
             this.btnMc26.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
             this.btnMc26.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
-            this.btnMc26.Location = new System.Drawing.Point(208, 250);
+            this.btnMc26.Location = new System.Drawing.Point(272, 250);
             this.btnMc26.Name = "btnMc26";
-            this.btnMc26.Size = new System.Drawing.Size(100, 57);
+            this.btnMc26.Size = new System.Drawing.Size(132, 57);
             this.btnMc26.TabIndex = 42;
             // 
             // btnMc25
@@ -2488,9 +2170,9 @@
             this.btnMc25.Appearance.Options.UseTextOptions = true;
             this.btnMc25.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
             this.btnMc25.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
-            this.btnMc25.Location = new System.Drawing.Point(106, 250);
+            this.btnMc25.Location = new System.Drawing.Point(138, 250);
             this.btnMc25.Name = "btnMc25";
-            this.btnMc25.Size = new System.Drawing.Size(100, 57);
+            this.btnMc25.Size = new System.Drawing.Size(132, 57);
             this.btnMc25.TabIndex = 41;
             // 
             // btnMc24
@@ -2504,7 +2186,7 @@
             this.btnMc24.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
             this.btnMc24.Location = new System.Drawing.Point(4, 250);
             this.btnMc24.Name = "btnMc24";
-            this.btnMc24.Size = new System.Drawing.Size(100, 57);
+            this.btnMc24.Size = new System.Drawing.Size(132, 57);
             this.btnMc24.TabIndex = 40;
             // 
             // btnMc23
@@ -2516,9 +2198,9 @@
             this.btnMc23.Appearance.Options.UseTextOptions = true;
             this.btnMc23.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
             this.btnMc23.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
-            this.btnMc23.Location = new System.Drawing.Point(514, 189);
+            this.btnMc23.Location = new System.Drawing.Point(674, 189);
             this.btnMc23.Name = "btnMc23";
-            this.btnMc23.Size = new System.Drawing.Size(100, 57);
+            this.btnMc23.Size = new System.Drawing.Size(132, 57);
             this.btnMc23.TabIndex = 39;
             // 
             // btnMc22
@@ -2530,9 +2212,9 @@
             this.btnMc22.Appearance.Options.UseTextOptions = true;
             this.btnMc22.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
             this.btnMc22.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
-            this.btnMc22.Location = new System.Drawing.Point(412, 189);
+            this.btnMc22.Location = new System.Drawing.Point(540, 189);
             this.btnMc22.Name = "btnMc22";
-            this.btnMc22.Size = new System.Drawing.Size(100, 57);
+            this.btnMc22.Size = new System.Drawing.Size(132, 57);
             this.btnMc22.TabIndex = 38;
             // 
             // btnMc21
@@ -2544,9 +2226,9 @@
             this.btnMc21.Appearance.Options.UseTextOptions = true;
             this.btnMc21.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
             this.btnMc21.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
-            this.btnMc21.Location = new System.Drawing.Point(310, 189);
+            this.btnMc21.Location = new System.Drawing.Point(406, 189);
             this.btnMc21.Name = "btnMc21";
-            this.btnMc21.Size = new System.Drawing.Size(100, 57);
+            this.btnMc21.Size = new System.Drawing.Size(132, 57);
             this.btnMc21.TabIndex = 37;
             // 
             // btnMc20
@@ -2558,9 +2240,9 @@
             this.btnMc20.Appearance.Options.UseTextOptions = true;
             this.btnMc20.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
             this.btnMc20.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
-            this.btnMc20.Location = new System.Drawing.Point(208, 189);
+            this.btnMc20.Location = new System.Drawing.Point(272, 189);
             this.btnMc20.Name = "btnMc20";
-            this.btnMc20.Size = new System.Drawing.Size(100, 57);
+            this.btnMc20.Size = new System.Drawing.Size(132, 57);
             this.btnMc20.TabIndex = 36;
             // 
             // btnMc19
@@ -2572,9 +2254,9 @@
             this.btnMc19.Appearance.Options.UseTextOptions = true;
             this.btnMc19.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
             this.btnMc19.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
-            this.btnMc19.Location = new System.Drawing.Point(106, 189);
+            this.btnMc19.Location = new System.Drawing.Point(138, 189);
             this.btnMc19.Name = "btnMc19";
-            this.btnMc19.Size = new System.Drawing.Size(100, 57);
+            this.btnMc19.Size = new System.Drawing.Size(132, 57);
             this.btnMc19.TabIndex = 35;
             // 
             // btnMc18
@@ -2588,7 +2270,7 @@
             this.btnMc18.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
             this.btnMc18.Location = new System.Drawing.Point(4, 189);
             this.btnMc18.Name = "btnMc18";
-            this.btnMc18.Size = new System.Drawing.Size(100, 57);
+            this.btnMc18.Size = new System.Drawing.Size(132, 57);
             this.btnMc18.TabIndex = 34;
             // 
             // btnMc17
@@ -2600,9 +2282,9 @@
             this.btnMc17.Appearance.Options.UseTextOptions = true;
             this.btnMc17.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
             this.btnMc17.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
-            this.btnMc17.Location = new System.Drawing.Point(514, 128);
+            this.btnMc17.Location = new System.Drawing.Point(674, 128);
             this.btnMc17.Name = "btnMc17";
-            this.btnMc17.Size = new System.Drawing.Size(100, 57);
+            this.btnMc17.Size = new System.Drawing.Size(132, 57);
             this.btnMc17.TabIndex = 33;
             // 
             // btnMc16
@@ -2614,9 +2296,9 @@
             this.btnMc16.Appearance.Options.UseTextOptions = true;
             this.btnMc16.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
             this.btnMc16.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
-            this.btnMc16.Location = new System.Drawing.Point(412, 128);
+            this.btnMc16.Location = new System.Drawing.Point(540, 128);
             this.btnMc16.Name = "btnMc16";
-            this.btnMc16.Size = new System.Drawing.Size(100, 57);
+            this.btnMc16.Size = new System.Drawing.Size(132, 57);
             this.btnMc16.TabIndex = 32;
             // 
             // btnMc15
@@ -2628,9 +2310,9 @@
             this.btnMc15.Appearance.Options.UseTextOptions = true;
             this.btnMc15.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
             this.btnMc15.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
-            this.btnMc15.Location = new System.Drawing.Point(310, 128);
+            this.btnMc15.Location = new System.Drawing.Point(406, 128);
             this.btnMc15.Name = "btnMc15";
-            this.btnMc15.Size = new System.Drawing.Size(100, 57);
+            this.btnMc15.Size = new System.Drawing.Size(132, 57);
             this.btnMc15.TabIndex = 31;
             // 
             // btnMc14
@@ -2642,9 +2324,9 @@
             this.btnMc14.Appearance.Options.UseTextOptions = true;
             this.btnMc14.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
             this.btnMc14.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
-            this.btnMc14.Location = new System.Drawing.Point(208, 128);
+            this.btnMc14.Location = new System.Drawing.Point(272, 128);
             this.btnMc14.Name = "btnMc14";
-            this.btnMc14.Size = new System.Drawing.Size(100, 57);
+            this.btnMc14.Size = new System.Drawing.Size(132, 57);
             this.btnMc14.TabIndex = 30;
             // 
             // btnMc13
@@ -2656,9 +2338,9 @@
             this.btnMc13.Appearance.Options.UseTextOptions = true;
             this.btnMc13.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
             this.btnMc13.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
-            this.btnMc13.Location = new System.Drawing.Point(106, 128);
+            this.btnMc13.Location = new System.Drawing.Point(138, 128);
             this.btnMc13.Name = "btnMc13";
-            this.btnMc13.Size = new System.Drawing.Size(100, 57);
+            this.btnMc13.Size = new System.Drawing.Size(132, 57);
             this.btnMc13.TabIndex = 29;
             // 
             // btnMc12
@@ -2672,7 +2354,7 @@
             this.btnMc12.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
             this.btnMc12.Location = new System.Drawing.Point(4, 128);
             this.btnMc12.Name = "btnMc12";
-            this.btnMc12.Size = new System.Drawing.Size(100, 57);
+            this.btnMc12.Size = new System.Drawing.Size(132, 57);
             this.btnMc12.TabIndex = 28;
             // 
             // btnMc11
@@ -2684,9 +2366,9 @@
             this.btnMc11.Appearance.Options.UseTextOptions = true;
             this.btnMc11.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
             this.btnMc11.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
-            this.btnMc11.Location = new System.Drawing.Point(514, 67);
+            this.btnMc11.Location = new System.Drawing.Point(674, 67);
             this.btnMc11.Name = "btnMc11";
-            this.btnMc11.Size = new System.Drawing.Size(100, 57);
+            this.btnMc11.Size = new System.Drawing.Size(132, 57);
             this.btnMc11.TabIndex = 27;
             // 
             // btnMc10
@@ -2698,9 +2380,9 @@
             this.btnMc10.Appearance.Options.UseTextOptions = true;
             this.btnMc10.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
             this.btnMc10.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
-            this.btnMc10.Location = new System.Drawing.Point(412, 67);
+            this.btnMc10.Location = new System.Drawing.Point(540, 67);
             this.btnMc10.Name = "btnMc10";
-            this.btnMc10.Size = new System.Drawing.Size(100, 57);
+            this.btnMc10.Size = new System.Drawing.Size(132, 57);
             this.btnMc10.TabIndex = 26;
             // 
             // btnMc9
@@ -2712,9 +2394,9 @@
             this.btnMc9.Appearance.Options.UseTextOptions = true;
             this.btnMc9.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
             this.btnMc9.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
-            this.btnMc9.Location = new System.Drawing.Point(310, 67);
+            this.btnMc9.Location = new System.Drawing.Point(406, 67);
             this.btnMc9.Name = "btnMc9";
-            this.btnMc9.Size = new System.Drawing.Size(100, 57);
+            this.btnMc9.Size = new System.Drawing.Size(132, 57);
             this.btnMc9.TabIndex = 25;
             // 
             // btnMc8
@@ -2726,9 +2408,9 @@
             this.btnMc8.Appearance.Options.UseTextOptions = true;
             this.btnMc8.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
             this.btnMc8.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
-            this.btnMc8.Location = new System.Drawing.Point(208, 67);
+            this.btnMc8.Location = new System.Drawing.Point(272, 67);
             this.btnMc8.Name = "btnMc8";
-            this.btnMc8.Size = new System.Drawing.Size(100, 57);
+            this.btnMc8.Size = new System.Drawing.Size(132, 57);
             this.btnMc8.TabIndex = 24;
             // 
             // btnMc7
@@ -2740,9 +2422,9 @@
             this.btnMc7.Appearance.Options.UseTextOptions = true;
             this.btnMc7.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
             this.btnMc7.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
-            this.btnMc7.Location = new System.Drawing.Point(106, 67);
+            this.btnMc7.Location = new System.Drawing.Point(138, 67);
             this.btnMc7.Name = "btnMc7";
-            this.btnMc7.Size = new System.Drawing.Size(100, 57);
+            this.btnMc7.Size = new System.Drawing.Size(132, 57);
             this.btnMc7.TabIndex = 23;
             // 
             // btnMc6
@@ -2756,7 +2438,7 @@
             this.btnMc6.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
             this.btnMc6.Location = new System.Drawing.Point(4, 67);
             this.btnMc6.Name = "btnMc6";
-            this.btnMc6.Size = new System.Drawing.Size(100, 57);
+            this.btnMc6.Size = new System.Drawing.Size(132, 57);
             this.btnMc6.TabIndex = 22;
             // 
             // btnMc5
@@ -2768,9 +2450,9 @@
             this.btnMc5.Appearance.Options.UseTextOptions = true;
             this.btnMc5.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
             this.btnMc5.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
-            this.btnMc5.Location = new System.Drawing.Point(514, 6);
+            this.btnMc5.Location = new System.Drawing.Point(674, 6);
             this.btnMc5.Name = "btnMc5";
-            this.btnMc5.Size = new System.Drawing.Size(100, 57);
+            this.btnMc5.Size = new System.Drawing.Size(132, 57);
             this.btnMc5.TabIndex = 21;
             // 
             // btnMc4
@@ -2782,9 +2464,9 @@
             this.btnMc4.Appearance.Options.UseTextOptions = true;
             this.btnMc4.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
             this.btnMc4.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
-            this.btnMc4.Location = new System.Drawing.Point(412, 6);
+            this.btnMc4.Location = new System.Drawing.Point(540, 6);
             this.btnMc4.Name = "btnMc4";
-            this.btnMc4.Size = new System.Drawing.Size(100, 57);
+            this.btnMc4.Size = new System.Drawing.Size(132, 57);
             this.btnMc4.TabIndex = 20;
             // 
             // btnMc3
@@ -2796,9 +2478,9 @@
             this.btnMc3.Appearance.Options.UseTextOptions = true;
             this.btnMc3.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
             this.btnMc3.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
-            this.btnMc3.Location = new System.Drawing.Point(310, 6);
+            this.btnMc3.Location = new System.Drawing.Point(406, 6);
             this.btnMc3.Name = "btnMc3";
-            this.btnMc3.Size = new System.Drawing.Size(100, 57);
+            this.btnMc3.Size = new System.Drawing.Size(132, 57);
             this.btnMc3.TabIndex = 19;
             // 
             // btnMc2
@@ -2810,9 +2492,9 @@
             this.btnMc2.Appearance.Options.UseTextOptions = true;
             this.btnMc2.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
             this.btnMc2.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
-            this.btnMc2.Location = new System.Drawing.Point(208, 6);
+            this.btnMc2.Location = new System.Drawing.Point(272, 6);
             this.btnMc2.Name = "btnMc2";
-            this.btnMc2.Size = new System.Drawing.Size(100, 57);
+            this.btnMc2.Size = new System.Drawing.Size(132, 57);
             this.btnMc2.TabIndex = 18;
             // 
             // btnMc1
@@ -2824,9 +2506,9 @@
             this.btnMc1.Appearance.Options.UseTextOptions = true;
             this.btnMc1.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
             this.btnMc1.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
-            this.btnMc1.Location = new System.Drawing.Point(106, 6);
+            this.btnMc1.Location = new System.Drawing.Point(138, 6);
             this.btnMc1.Name = "btnMc1";
-            this.btnMc1.Size = new System.Drawing.Size(100, 57);
+            this.btnMc1.Size = new System.Drawing.Size(132, 57);
             this.btnMc1.TabIndex = 17;
             // 
             // btnMc0
@@ -2840,8 +2522,295 @@
             this.btnMc0.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
             this.btnMc0.Location = new System.Drawing.Point(4, 6);
             this.btnMc0.Name = "btnMc0";
-            this.btnMc0.Size = new System.Drawing.Size(100, 57);
+            this.btnMc0.Size = new System.Drawing.Size(132, 57);
             this.btnMc0.TabIndex = 16;
+            // 
+            // panelControl2
+            // 
+            this.panelControl2.Controls.Add(this.btnMi14);
+            this.panelControl2.Controls.Add(this.btnMi12);
+            this.panelControl2.Controls.Add(this.btnMi13);
+            this.panelControl2.Controls.Add(this.btnMi15);
+            this.panelControl2.Controls.Add(this.btnMi7);
+            this.panelControl2.Controls.Add(this.btnMi3);
+            this.panelControl2.Controls.Add(this.btnMi6);
+            this.panelControl2.Controls.Add(this.btnMiRight);
+            this.panelControl2.Controls.Add(this.btnMi5);
+            this.panelControl2.Controls.Add(this.btnMi4);
+            this.panelControl2.Controls.Add(this.btnMi2);
+            this.panelControl2.Controls.Add(this.btnMiLeft);
+            this.panelControl2.Controls.Add(this.btnMi1);
+            this.panelControl2.Controls.Add(this.btnMi0);
+            this.panelControl2.Controls.Add(this.btnMi10);
+            this.panelControl2.Controls.Add(this.btnMi8);
+            this.panelControl2.Controls.Add(this.btnMi9);
+            this.panelControl2.Controls.Add(this.btnMi11);
+            this.panelControl2.Location = new System.Drawing.Point(5, 5);
+            this.panelControl2.Name = "panelControl2";
+            this.panelControl2.Size = new System.Drawing.Size(989, 247);
+            this.panelControl2.TabIndex = 3;
+            // 
+            // btnMi14
+            // 
+            this.btnMi14.Appearance.BackColor = System.Drawing.Color.Gold;
+            this.btnMi14.Appearance.Options.UseBackColor = true;
+            this.btnMi14.Appearance.Options.UseTextOptions = true;
+            this.btnMi14.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.btnMi14.Appearance.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
+            this.btnMi14.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
+            this.btnMi14.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
+            this.btnMi14.Location = new System.Drawing.Point(457, 185);
+            this.btnMi14.Name = "btnMi14";
+            this.btnMi14.Size = new System.Drawing.Size(223, 55);
+            this.btnMi14.TabIndex = 34;
+            // 
+            // btnMi12
+            // 
+            this.btnMi12.Appearance.BackColor = System.Drawing.Color.Gold;
+            this.btnMi12.Appearance.Options.UseBackColor = true;
+            this.btnMi12.Appearance.Options.UseTextOptions = true;
+            this.btnMi12.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.btnMi12.Appearance.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
+            this.btnMi12.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
+            this.btnMi12.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
+            this.btnMi12.Location = new System.Drawing.Point(5, 185);
+            this.btnMi12.Name = "btnMi12";
+            this.btnMi12.Size = new System.Drawing.Size(223, 55);
+            this.btnMi12.TabIndex = 32;
+            // 
+            // btnMi13
+            // 
+            this.btnMi13.Appearance.BackColor = System.Drawing.Color.Gold;
+            this.btnMi13.Appearance.Options.UseBackColor = true;
+            this.btnMi13.Appearance.Options.UseTextOptions = true;
+            this.btnMi13.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.btnMi13.Appearance.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
+            this.btnMi13.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
+            this.btnMi13.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
+            this.btnMi13.Location = new System.Drawing.Point(231, 185);
+            this.btnMi13.Name = "btnMi13";
+            this.btnMi13.Size = new System.Drawing.Size(223, 55);
+            this.btnMi13.TabIndex = 33;
+            // 
+            // btnMi15
+            // 
+            this.btnMi15.Appearance.BackColor = System.Drawing.Color.Gold;
+            this.btnMi15.Appearance.Options.UseBackColor = true;
+            this.btnMi15.Appearance.Options.UseTextOptions = true;
+            this.btnMi15.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.btnMi15.Appearance.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
+            this.btnMi15.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
+            this.btnMi15.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
+            this.btnMi15.Location = new System.Drawing.Point(683, 185);
+            this.btnMi15.Name = "btnMi15";
+            this.btnMi15.Size = new System.Drawing.Size(223, 55);
+            this.btnMi15.TabIndex = 35;
+            // 
+            // btnMi7
+            // 
+            this.btnMi7.Appearance.BackColor = System.Drawing.Color.Gold;
+            this.btnMi7.Appearance.Options.UseBackColor = true;
+            this.btnMi7.Appearance.Options.UseTextOptions = true;
+            this.btnMi7.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.btnMi7.Appearance.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
+            this.btnMi7.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
+            this.btnMi7.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
+            this.btnMi7.Location = new System.Drawing.Point(683, 67);
+            this.btnMi7.Name = "btnMi7";
+            this.btnMi7.Size = new System.Drawing.Size(223, 55);
+            this.btnMi7.TabIndex = 31;
+            // 
+            // btnMi3
+            // 
+            this.btnMi3.Appearance.BackColor = System.Drawing.Color.Gold;
+            this.btnMi3.Appearance.Options.UseBackColor = true;
+            this.btnMi3.Appearance.Options.UseTextOptions = true;
+            this.btnMi3.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.btnMi3.Appearance.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
+            this.btnMi3.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
+            this.btnMi3.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
+            this.btnMi3.Location = new System.Drawing.Point(683, 8);
+            this.btnMi3.Name = "btnMi3";
+            this.btnMi3.Size = new System.Drawing.Size(223, 55);
+            this.btnMi3.TabIndex = 31;
+            // 
+            // btnMi6
+            // 
+            this.btnMi6.Appearance.BackColor = System.Drawing.Color.Gold;
+            this.btnMi6.Appearance.Options.UseBackColor = true;
+            this.btnMi6.Appearance.Options.UseTextOptions = true;
+            this.btnMi6.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.btnMi6.Appearance.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
+            this.btnMi6.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
+            this.btnMi6.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
+            this.btnMi6.Location = new System.Drawing.Point(457, 67);
+            this.btnMi6.Name = "btnMi6";
+            this.btnMi6.Size = new System.Drawing.Size(223, 55);
+            this.btnMi6.TabIndex = 30;
+            // 
+            // btnMiRight
+            // 
+            this.btnMiRight.Appearance.BackColor = System.Drawing.Color.Red;
+            this.btnMiRight.Appearance.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold);
+            this.btnMiRight.Appearance.ForeColor = System.Drawing.Color.White;
+            this.btnMiRight.Appearance.Options.UseBackColor = true;
+            this.btnMiRight.Appearance.Options.UseFont = true;
+            this.btnMiRight.Appearance.Options.UseForeColor = true;
+            this.btnMiRight.Appearance.Options.UseTextOptions = true;
+            this.btnMiRight.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
+            this.btnMiRight.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
+            this.btnMiRight.Image = ((System.Drawing.Image)(resources.GetObject("btnMiRight.Image")));
+            this.btnMiRight.ImageLocation = DevExpress.XtraEditors.ImageLocation.MiddleCenter;
+            this.btnMiRight.Location = new System.Drawing.Point(912, 8);
+            this.btnMiRight.Name = "btnMiRight";
+            this.btnMiRight.Size = new System.Drawing.Size(72, 120);
+            this.btnMiRight.TabIndex = 14;
+            this.btnMiRight.Text = ">>";
+            // 
+            // btnMi5
+            // 
+            this.btnMi5.Appearance.BackColor = System.Drawing.Color.Gold;
+            this.btnMi5.Appearance.Options.UseBackColor = true;
+            this.btnMi5.Appearance.Options.UseTextOptions = true;
+            this.btnMi5.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.btnMi5.Appearance.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
+            this.btnMi5.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
+            this.btnMi5.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
+            this.btnMi5.Location = new System.Drawing.Point(231, 67);
+            this.btnMi5.Name = "btnMi5";
+            this.btnMi5.Size = new System.Drawing.Size(223, 55);
+            this.btnMi5.TabIndex = 29;
+            // 
+            // btnMi4
+            // 
+            this.btnMi4.Appearance.BackColor = System.Drawing.Color.Gold;
+            this.btnMi4.Appearance.Options.UseBackColor = true;
+            this.btnMi4.Appearance.Options.UseTextOptions = true;
+            this.btnMi4.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.btnMi4.Appearance.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
+            this.btnMi4.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
+            this.btnMi4.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
+            this.btnMi4.Location = new System.Drawing.Point(5, 67);
+            this.btnMi4.Name = "btnMi4";
+            this.btnMi4.Size = new System.Drawing.Size(223, 55);
+            this.btnMi4.TabIndex = 28;
+            // 
+            // btnMi2
+            // 
+            this.btnMi2.Appearance.BackColor = System.Drawing.Color.Gold;
+            this.btnMi2.Appearance.Options.UseBackColor = true;
+            this.btnMi2.Appearance.Options.UseTextOptions = true;
+            this.btnMi2.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.btnMi2.Appearance.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
+            this.btnMi2.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
+            this.btnMi2.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
+            this.btnMi2.Location = new System.Drawing.Point(457, 8);
+            this.btnMi2.Name = "btnMi2";
+            this.btnMi2.Size = new System.Drawing.Size(223, 55);
+            this.btnMi2.TabIndex = 30;
+            // 
+            // btnMiLeft
+            // 
+            this.btnMiLeft.Appearance.BackColor = System.Drawing.Color.Red;
+            this.btnMiLeft.Appearance.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold);
+            this.btnMiLeft.Appearance.ForeColor = System.Drawing.Color.White;
+            this.btnMiLeft.Appearance.Options.UseBackColor = true;
+            this.btnMiLeft.Appearance.Options.UseFont = true;
+            this.btnMiLeft.Appearance.Options.UseForeColor = true;
+            this.btnMiLeft.Appearance.Options.UseTextOptions = true;
+            this.btnMiLeft.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
+            this.btnMiLeft.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
+            this.btnMiLeft.Image = ((System.Drawing.Image)(resources.GetObject("btnMiLeft.Image")));
+            this.btnMiLeft.ImageLocation = DevExpress.XtraEditors.ImageLocation.MiddleCenter;
+            this.btnMiLeft.Location = new System.Drawing.Point(912, 126);
+            this.btnMiLeft.Name = "btnMiLeft";
+            this.btnMiLeft.Size = new System.Drawing.Size(72, 114);
+            this.btnMiLeft.TabIndex = 15;
+            this.btnMiLeft.Text = "<<";
+            // 
+            // btnMi1
+            // 
+            this.btnMi1.Appearance.BackColor = System.Drawing.Color.Gold;
+            this.btnMi1.Appearance.Options.UseBackColor = true;
+            this.btnMi1.Appearance.Options.UseTextOptions = true;
+            this.btnMi1.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.btnMi1.Appearance.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
+            this.btnMi1.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
+            this.btnMi1.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
+            this.btnMi1.Location = new System.Drawing.Point(231, 8);
+            this.btnMi1.Name = "btnMi1";
+            this.btnMi1.Size = new System.Drawing.Size(223, 55);
+            this.btnMi1.TabIndex = 29;
+            // 
+            // btnMi0
+            // 
+            this.btnMi0.Appearance.BackColor = System.Drawing.Color.Gold;
+            this.btnMi0.Appearance.Options.UseBackColor = true;
+            this.btnMi0.Appearance.Options.UseTextOptions = true;
+            this.btnMi0.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.btnMi0.Appearance.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
+            this.btnMi0.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
+            this.btnMi0.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
+            this.btnMi0.Location = new System.Drawing.Point(5, 8);
+            this.btnMi0.Name = "btnMi0";
+            this.btnMi0.Size = new System.Drawing.Size(223, 55);
+            this.btnMi0.TabIndex = 28;
+            // 
+            // btnMi10
+            // 
+            this.btnMi10.Appearance.BackColor = System.Drawing.Color.Gold;
+            this.btnMi10.Appearance.Options.UseBackColor = true;
+            this.btnMi10.Appearance.Options.UseTextOptions = true;
+            this.btnMi10.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.btnMi10.Appearance.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
+            this.btnMi10.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
+            this.btnMi10.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
+            this.btnMi10.Location = new System.Drawing.Point(457, 126);
+            this.btnMi10.Name = "btnMi10";
+            this.btnMi10.Size = new System.Drawing.Size(223, 55);
+            this.btnMi10.TabIndex = 10;
+            // 
+            // btnMi8
+            // 
+            this.btnMi8.Appearance.BackColor = System.Drawing.Color.Gold;
+            this.btnMi8.Appearance.Options.UseBackColor = true;
+            this.btnMi8.Appearance.Options.UseTextOptions = true;
+            this.btnMi8.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.btnMi8.Appearance.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
+            this.btnMi8.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
+            this.btnMi8.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
+            this.btnMi8.Location = new System.Drawing.Point(5, 126);
+            this.btnMi8.Name = "btnMi8";
+            this.btnMi8.Size = new System.Drawing.Size(223, 55);
+            this.btnMi8.TabIndex = 3;
+            // 
+            // btnMi9
+            // 
+            this.btnMi9.Appearance.BackColor = System.Drawing.Color.Gold;
+            this.btnMi9.Appearance.Options.UseBackColor = true;
+            this.btnMi9.Appearance.Options.UseTextOptions = true;
+            this.btnMi9.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.btnMi9.Appearance.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
+            this.btnMi9.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
+            this.btnMi9.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
+            this.btnMi9.Location = new System.Drawing.Point(231, 126);
+            this.btnMi9.Name = "btnMi9";
+            this.btnMi9.Size = new System.Drawing.Size(223, 55);
+            this.btnMi9.TabIndex = 9;
+            // 
+            // btnMi11
+            // 
+            this.btnMi11.Appearance.BackColor = System.Drawing.Color.Gold;
+            this.btnMi11.Appearance.Options.UseBackColor = true;
+            this.btnMi11.Appearance.Options.UseTextOptions = true;
+            this.btnMi11.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.btnMi11.Appearance.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
+            this.btnMi11.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
+            this.btnMi11.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
+            this.btnMi11.Location = new System.Drawing.Point(683, 126);
+            this.btnMi11.Name = "btnMi11";
+            this.btnMi11.Size = new System.Drawing.Size(223, 55);
+            this.btnMi11.TabIndex = 11;
             // 
             // btnOrderType
             // 
@@ -2860,7 +2829,38 @@
             this.btnOrderType.TabIndex = 26;
             this.btnOrderType.Text = "Order Type";
             this.btnOrderType.Visible = false;
-            this.btnOrderType.Click += new System.EventHandler(this.btnOrderType_Click);
+            // 
+            // panelControl6
+            // 
+            this.panelControl6.Controls.Add(this.lblType);
+            this.panelControl6.Controls.Add(this.lblCheck);
+            this.panelControl6.Location = new System.Drawing.Point(21, 266);
+            this.panelControl6.Name = "panelControl6";
+            this.panelControl6.Size = new System.Drawing.Size(390, 40);
+            this.panelControl6.TabIndex = 31;
+            this.panelControl6.Visible = false;
+            // 
+            // lblType
+            // 
+            this.lblType.Appearance.Font = new System.Drawing.Font("Tahoma", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblType.Location = new System.Drawing.Point(5, 5);
+            this.lblType.Name = "lblType";
+            this.lblType.Size = new System.Drawing.Size(63, 30);
+            this.lblType.TabIndex = 6;
+            this.lblType.Text = "SHOP";
+            this.lblType.Visible = false;
+            // 
+            // lblCheck
+            // 
+            this.lblCheck.Appearance.Font = new System.Drawing.Font("Tahoma", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCheck.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
+            this.lblCheck.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
+            this.lblCheck.Location = new System.Drawing.Point(273, 5);
+            this.lblCheck.Name = "lblCheck";
+            this.lblCheck.Size = new System.Drawing.Size(112, 30);
+            this.lblCheck.TabIndex = 7;
+            this.lblCheck.Text = "001";
+            this.lblCheck.Visible = false;
             // 
             // btnCustInfo
             // 
@@ -2870,13 +2870,12 @@
             this.btnCustInfo.Appearance.Options.UseForeColor = true;
             this.btnCustInfo.Appearance.Options.UseTextOptions = true;
             this.btnCustInfo.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
-            this.btnCustInfo.Location = new System.Drawing.Point(762, 36);
+            this.btnCustInfo.Location = new System.Drawing.Point(566, 261);
             this.btnCustInfo.Name = "btnCustInfo";
             this.btnCustInfo.Size = new System.Drawing.Size(80, 60);
             this.btnCustInfo.TabIndex = 17;
             this.btnCustInfo.Text = "Cust Info";
             this.btnCustInfo.Visible = false;
-            this.btnCustInfo.Click += new System.EventHandler(this.btnCustInfo_Click);
             // 
             // btnSearchMeal
             // 
@@ -2884,54 +2883,18 @@
             this.btnSearchMeal.Appearance.Options.UseFont = true;
             this.btnSearchMeal.Appearance.Options.UseTextOptions = true;
             this.btnSearchMeal.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
-            this.btnSearchMeal.Location = new System.Drawing.Point(762, 168);
+            this.btnSearchMeal.Location = new System.Drawing.Point(668, 261);
             this.btnSearchMeal.Name = "btnSearchMeal";
             this.btnSearchMeal.Size = new System.Drawing.Size(80, 60);
             this.btnSearchMeal.TabIndex = 24;
             this.btnSearchMeal.Text = "Search Meal";
             this.btnSearchMeal.Visible = false;
-            this.btnSearchMeal.Click += new System.EventHandler(this.btnSearchMeal_Click);
-            // 
-            // btnIngredMode
-            // 
-            this.btnIngredMode.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.btnIngredMode.Appearance.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.btnIngredMode.Appearance.ForeColor = System.Drawing.Color.White;
-            this.btnIngredMode.Appearance.Options.UseBackColor = true;
-            this.btnIngredMode.Appearance.Options.UseFont = true;
-            this.btnIngredMode.Appearance.Options.UseForeColor = true;
-            this.btnIngredMode.Appearance.Options.UseTextOptions = true;
-            this.btnIngredMode.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
-            this.btnIngredMode.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
-            this.btnIngredMode.Location = new System.Drawing.Point(93, 705);
-            this.btnIngredMode.Name = "btnIngredMode";
-            this.btnIngredMode.Size = new System.Drawing.Size(80, 60);
-            this.btnIngredMode.TabIndex = 21;
-            this.btnIngredMode.Text = "Ingred Mode";
-            this.btnIngredMode.Click += new System.EventHandler(this.btnIngredMode_Click);
-            // 
-            // btnOnlineOrder
-            // 
-            this.btnOnlineOrder.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
-            this.btnOnlineOrder.Appearance.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.btnOnlineOrder.Appearance.ForeColor = System.Drawing.Color.White;
-            this.btnOnlineOrder.Appearance.Options.UseBackColor = true;
-            this.btnOnlineOrder.Appearance.Options.UseFont = true;
-            this.btnOnlineOrder.Appearance.Options.UseForeColor = true;
-            this.btnOnlineOrder.Appearance.Options.UseTextOptions = true;
-            this.btnOnlineOrder.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
-            this.btnOnlineOrder.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
-            this.btnOnlineOrder.Location = new System.Drawing.Point(179, 705);
-            this.btnOnlineOrder.Name = "btnOnlineOrder";
-            this.btnOnlineOrder.Size = new System.Drawing.Size(80, 60);
-            this.btnOnlineOrder.TabIndex = 34;
-            this.btnOnlineOrder.Text = "Online Order";
             // 
             // FrmTaMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1420, 785);
+            this.ClientSize = new System.Drawing.Size(1422, 785);
             this.Controls.Add(this.panelControl4);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "FrmTaMain";
@@ -2947,11 +2910,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.panelMember)).EndInit();
             this.panelMember.ResumeLayout(false);
             this.panelMember.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.panelControl6)).EndInit();
-            this.panelControl6.ResumeLayout(false);
-            this.panelControl6.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.panelControl2)).EndInit();
-            this.panelControl2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.panelControl4)).EndInit();
             this.panelControl4.ResumeLayout(false);
             this.gbPayment.ResumeLayout(false);
@@ -2981,6 +2939,11 @@
             this.panelControl5.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.panelControl3)).EndInit();
             this.panelControl3.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.panelControl2)).EndInit();
+            this.panelControl2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.panelControl6)).EndInit();
+            this.panelControl6.ResumeLayout(false);
+            this.panelControl6.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -2997,33 +2960,11 @@
         private DevExpress.XtraEditors.SimpleButton btnAdd;
         private DevExpress.XtraEditors.SimpleButton btnDown;
         private DevExpress.XtraEditors.SimpleButton btnUp;
-        private DevExpress.XtraEditors.PanelControl panelControl2;
-        private DevExpress.XtraEditors.SimpleButton btnMiLeft;
         private DevExpress.XtraEditors.PanelControl panelControl4;
         private DevExpress.XtraEditors.SimpleButton btnPay;
         private DevExpress.XtraEditors.SimpleButton btnKeypad;
-        private DevExpress.XtraEditors.SimpleButton btnOrderType;
         private DevExpress.XtraEditors.SimpleButton btnHome;
         private DevExpress.XtraEditors.SimpleButton btnAppend;
-        private DevExpress.XtraEditors.SimpleButton btnMi11;
-        private DevExpress.XtraEditors.SimpleButton btnMi10;
-        private DevExpress.XtraEditors.SimpleButton btnMi9;
-        private DevExpress.XtraEditors.SimpleButton btnMi8;
-        private DevExpress.XtraEditors.SimpleButton btnMiRight;
-        private DevExpress.XtraEditors.LabelControl lblCheck;
-        private DevExpress.XtraEditors.LabelControl lblType;
-        private DevExpress.XtraEditors.SimpleButton btnMi14;
-        private DevExpress.XtraEditors.SimpleButton btnMi12;
-        private DevExpress.XtraEditors.SimpleButton btnMi13;
-        private DevExpress.XtraEditors.SimpleButton btnMi15;
-        private DevExpress.XtraEditors.SimpleButton btnMi7;
-        private DevExpress.XtraEditors.SimpleButton btnMi3;
-        private DevExpress.XtraEditors.SimpleButton btnMi6;
-        private DevExpress.XtraEditors.SimpleButton btnMi5;
-        private DevExpress.XtraEditors.SimpleButton btnMi4;
-        private DevExpress.XtraEditors.SimpleButton btnMi2;
-        private DevExpress.XtraEditors.SimpleButton btnMi1;
-        private DevExpress.XtraEditors.SimpleButton btnMi0;
         private DevExpress.XtraTreeList.Columns.TreeListColumn ID;
         private DevExpress.XtraTreeList.Columns.TreeListColumn ItemCode;
         private DevExpress.XtraTreeList.Columns.TreeListColumn ItemDishOtherName;
@@ -3035,11 +2976,8 @@
         private DevExpress.XtraTreeList.Columns.TreeListColumn ItemParent;
         private DevExpress.XtraTreeList.Columns.TreeListColumn ItemID;
         private DevExpress.XtraEditors.Repository.RepositoryItemMemoEdit repositoryItemMemoEdit1;
-        private DevExpress.XtraEditors.SimpleButton btnSearchMeal;
-        private DevExpress.XtraEditors.SimpleButton btnCustInfo;
         private DevExpress.XtraEditors.SimpleButton btnIngredMode;
         private DevExpress.XtraEditors.SimpleButton btnChange;
-        private DevExpress.XtraEditors.PanelControl panelControl6;
         private DevExpress.XtraEditors.PanelControl panelMember;
         private DevExpress.XtraEditors.LabelControl lblDiliveryFee;
         private DevExpress.XtraEditors.LabelControl lblDistance;
@@ -3055,60 +2993,7 @@
         private DevExpress.XtraEditors.LabelControl labelControl1;
         private DevExpress.XtraEditors.SimpleButton btnType;
         private DevExpress.XtraTreeList.Columns.TreeListColumn BusDate;
-        private DevExpress.XtraEditors.PanelControl pcMain;
-        private DevExpress.XtraEditors.PanelControl panelControl5;
-        private DevExpress.XtraEditors.SimpleButton btnMenu;
-        private DevExpress.XtraEditors.SimpleButton btnEatIn;
-        private DevExpress.XtraEditors.SimpleButton btnCancel;
-        private DevExpress.XtraEditors.SimpleButton btnLanguage;
-        private DevExpress.XtraEditors.SimpleButton btnSaveOrder;
-        private DevExpress.XtraEditors.SimpleButton btnMcLeft;
-        private DevExpress.XtraEditors.SimpleButton btnMcRight;
-        private DevExpress.XtraEditors.SimpleButton btnCid;
-        private DevExpress.XtraEditors.SimpleButton btnPendOrder;
-        private DevExpress.XtraEditors.PanelControl panelControl3;
-        private DevExpress.XtraEditors.SimpleButton btnMc41;
-        private DevExpress.XtraEditors.SimpleButton btnMc40;
-        private DevExpress.XtraEditors.SimpleButton btnMc39;
-        private DevExpress.XtraEditors.SimpleButton btnMc38;
-        private DevExpress.XtraEditors.SimpleButton btnMc37;
-        private DevExpress.XtraEditors.SimpleButton btnMc36;
-        private DevExpress.XtraEditors.SimpleButton btnMc35;
-        private DevExpress.XtraEditors.SimpleButton btnMc34;
-        private DevExpress.XtraEditors.SimpleButton btnMc33;
-        private DevExpress.XtraEditors.SimpleButton btnMc32;
-        private DevExpress.XtraEditors.SimpleButton btnMc31;
-        private DevExpress.XtraEditors.SimpleButton btnMc30;
-        private DevExpress.XtraEditors.SimpleButton btnMc29;
-        private DevExpress.XtraEditors.SimpleButton btnMc28;
-        private DevExpress.XtraEditors.SimpleButton btnMc27;
-        private DevExpress.XtraEditors.SimpleButton btnMc26;
-        private DevExpress.XtraEditors.SimpleButton btnMc25;
-        private DevExpress.XtraEditors.SimpleButton btnMc24;
-        private DevExpress.XtraEditors.SimpleButton btnMc23;
-        private DevExpress.XtraEditors.SimpleButton btnMc22;
-        private DevExpress.XtraEditors.SimpleButton btnMc21;
-        private DevExpress.XtraEditors.SimpleButton btnMc20;
-        private DevExpress.XtraEditors.SimpleButton btnMc19;
-        private DevExpress.XtraEditors.SimpleButton btnMc18;
-        private DevExpress.XtraEditors.SimpleButton btnMc17;
-        private DevExpress.XtraEditors.SimpleButton btnMc16;
-        private DevExpress.XtraEditors.SimpleButton btnMc15;
-        private DevExpress.XtraEditors.SimpleButton btnMc14;
-        private DevExpress.XtraEditors.SimpleButton btnMc13;
-        private DevExpress.XtraEditors.SimpleButton btnMc12;
-        private DevExpress.XtraEditors.SimpleButton btnMc11;
-        private DevExpress.XtraEditors.SimpleButton btnMc10;
-        private DevExpress.XtraEditors.SimpleButton btnMc9;
-        private DevExpress.XtraEditors.SimpleButton btnMc8;
-        private DevExpress.XtraEditors.SimpleButton btnMc7;
-        private DevExpress.XtraEditors.SimpleButton btnMc6;
-        private DevExpress.XtraEditors.SimpleButton btnMc5;
-        private DevExpress.XtraEditors.SimpleButton btnMc4;
-        private DevExpress.XtraEditors.SimpleButton btnMc3;
-        private DevExpress.XtraEditors.SimpleButton btnMc2;
-        private DevExpress.XtraEditors.SimpleButton btnMc1;
-        private DevExpress.XtraEditors.SimpleButton btnMc0;
+        private DevExpress.XtraEditors.SimpleButton btnOnlineOrder;
         private System.Windows.Forms.GroupBox gbPayment;
         private DevExpress.XtraEditors.SimpleButton btnExit;
         private DevExpress.XtraEditors.LookUpEdit lueNote;
@@ -3176,6 +3061,84 @@
         private DevExpress.XtraEditors.LabelControl labelControl12;
         private DevExpress.XtraEditors.LabelControl labelControl13;
         private DevExpress.XtraEditors.LabelControl lblTypeName;
-        private DevExpress.XtraEditors.SimpleButton btnOnlineOrder;
+        private DevExpress.XtraEditors.PanelControl pcMain;
+        private DevExpress.XtraEditors.PanelControl panelControl5;
+        private DevExpress.XtraEditors.SimpleButton btnMenu;
+        private DevExpress.XtraEditors.SimpleButton btnEatIn;
+        private DevExpress.XtraEditors.SimpleButton btnCancel;
+        private DevExpress.XtraEditors.SimpleButton btnLanguage;
+        private DevExpress.XtraEditors.SimpleButton btnSaveOrder;
+        private DevExpress.XtraEditors.SimpleButton btnMcLeft;
+        private DevExpress.XtraEditors.SimpleButton btnMcRight;
+        private DevExpress.XtraEditors.SimpleButton btnCid;
+        private DevExpress.XtraEditors.SimpleButton btnPendOrder;
+        private DevExpress.XtraEditors.PanelControl panelControl3;
+        private DevExpress.XtraEditors.SimpleButton btnMc41;
+        private DevExpress.XtraEditors.SimpleButton btnMc40;
+        private DevExpress.XtraEditors.SimpleButton btnMc39;
+        private DevExpress.XtraEditors.SimpleButton btnMc38;
+        private DevExpress.XtraEditors.SimpleButton btnMc37;
+        private DevExpress.XtraEditors.SimpleButton btnMc36;
+        private DevExpress.XtraEditors.SimpleButton btnMc35;
+        private DevExpress.XtraEditors.SimpleButton btnMc34;
+        private DevExpress.XtraEditors.SimpleButton btnMc33;
+        private DevExpress.XtraEditors.SimpleButton btnMc32;
+        private DevExpress.XtraEditors.SimpleButton btnMc31;
+        private DevExpress.XtraEditors.SimpleButton btnMc30;
+        private DevExpress.XtraEditors.SimpleButton btnMc29;
+        private DevExpress.XtraEditors.SimpleButton btnMc28;
+        private DevExpress.XtraEditors.SimpleButton btnMc27;
+        private DevExpress.XtraEditors.SimpleButton btnMc26;
+        private DevExpress.XtraEditors.SimpleButton btnMc25;
+        private DevExpress.XtraEditors.SimpleButton btnMc24;
+        private DevExpress.XtraEditors.SimpleButton btnMc23;
+        private DevExpress.XtraEditors.SimpleButton btnMc22;
+        private DevExpress.XtraEditors.SimpleButton btnMc21;
+        private DevExpress.XtraEditors.SimpleButton btnMc20;
+        private DevExpress.XtraEditors.SimpleButton btnMc19;
+        private DevExpress.XtraEditors.SimpleButton btnMc18;
+        private DevExpress.XtraEditors.SimpleButton btnMc17;
+        private DevExpress.XtraEditors.SimpleButton btnMc16;
+        private DevExpress.XtraEditors.SimpleButton btnMc15;
+        private DevExpress.XtraEditors.SimpleButton btnMc14;
+        private DevExpress.XtraEditors.SimpleButton btnMc13;
+        private DevExpress.XtraEditors.SimpleButton btnMc12;
+        private DevExpress.XtraEditors.SimpleButton btnMc11;
+        private DevExpress.XtraEditors.SimpleButton btnMc10;
+        private DevExpress.XtraEditors.SimpleButton btnMc9;
+        private DevExpress.XtraEditors.SimpleButton btnMc8;
+        private DevExpress.XtraEditors.SimpleButton btnMc7;
+        private DevExpress.XtraEditors.SimpleButton btnMc6;
+        private DevExpress.XtraEditors.SimpleButton btnMc5;
+        private DevExpress.XtraEditors.SimpleButton btnMc4;
+        private DevExpress.XtraEditors.SimpleButton btnMc3;
+        private DevExpress.XtraEditors.SimpleButton btnMc2;
+        private DevExpress.XtraEditors.SimpleButton btnMc1;
+        private DevExpress.XtraEditors.SimpleButton btnMc0;
+        private DevExpress.XtraEditors.PanelControl panelControl2;
+        private DevExpress.XtraEditors.SimpleButton btnMi14;
+        private DevExpress.XtraEditors.SimpleButton btnMi12;
+        private DevExpress.XtraEditors.SimpleButton btnMi13;
+        private DevExpress.XtraEditors.SimpleButton btnMi15;
+        private DevExpress.XtraEditors.SimpleButton btnMi7;
+        private DevExpress.XtraEditors.SimpleButton btnMi3;
+        private DevExpress.XtraEditors.SimpleButton btnMi6;
+        private DevExpress.XtraEditors.SimpleButton btnMiRight;
+        private DevExpress.XtraEditors.SimpleButton btnMi5;
+        private DevExpress.XtraEditors.SimpleButton btnMi4;
+        private DevExpress.XtraEditors.SimpleButton btnMi2;
+        private DevExpress.XtraEditors.SimpleButton btnMiLeft;
+        private DevExpress.XtraEditors.SimpleButton btnMi1;
+        private DevExpress.XtraEditors.SimpleButton btnMi0;
+        private DevExpress.XtraEditors.SimpleButton btnMi10;
+        private DevExpress.XtraEditors.SimpleButton btnMi8;
+        private DevExpress.XtraEditors.SimpleButton btnMi9;
+        private DevExpress.XtraEditors.SimpleButton btnMi11;
+        private DevExpress.XtraEditors.SimpleButton btnOrderType;
+        private DevExpress.XtraEditors.PanelControl panelControl6;
+        private DevExpress.XtraEditors.LabelControl lblType;
+        private DevExpress.XtraEditors.LabelControl lblCheck;
+        private DevExpress.XtraEditors.SimpleButton btnCustInfo;
+        private DevExpress.XtraEditors.SimpleButton btnSearchMeal;
     }
 }
