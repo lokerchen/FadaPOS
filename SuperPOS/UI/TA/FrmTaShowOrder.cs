@@ -352,11 +352,6 @@ namespace SuperPOS.UI
         {
             GetBindData(PubComm.ORDER_TYPE_SHOP);
         }
-
-        private void btnEatIn_Click(object sender, EventArgs e)
-        {
-
-        }
         #endregion
 
         private string GetPayType(string sChkId)
@@ -620,6 +615,14 @@ namespace SuperPOS.UI
             Hide();
             FrmTaMain frmTaMain = new FrmTaMain(strChkOrder, usrID, intCusID, checkBusDate);
             frmTaMain.ShowDialog();
+        }
+
+        private void btnShowDriver_Click(object sender, EventArgs e)
+        {
+            FrmTaShowOrderDriver frmTaShowOrderDriver = new FrmTaShowOrderDriver();
+            frmTaShowOrderDriver.Location = gridControlTaShowOrder.Location;
+            frmTaShowOrderDriver.Size = gridControlTaShowOrder.Size;
+            frmTaShowOrderDriver.ShowDialog();
         }
     }
 }
