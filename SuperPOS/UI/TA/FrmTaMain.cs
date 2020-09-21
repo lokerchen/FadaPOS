@@ -626,6 +626,7 @@ namespace SuperPOS.UI.TA
                     isIngredMode = true;
 
                     FrmTaIngredMode frmTaIngredMode = new FrmTaIngredMode();
+                    frmTaIngredMode.Location = btnUp.PointToScreen(panelControl1.Location);
 
                     if (frmTaIngredMode.ShowDialog() == DialogResult.OK)
                     {

@@ -33,10 +33,11 @@ namespace SuperPOS.UI.TA
 
         private void FrmTaIngredMode_Load(object sender, EventArgs e)
         {
-            btnNoAction.Click += btnMode_Click;
             btnNo.Click += btnMode_Click;
-            btnAdd.Click += btnMode_Click;
+            btnLess.Click += btnMode_Click;
             btnChange.Click += btnMode_Click;
+            btnAdd.Click += btnMode_Click;
+            btnWO.Click += btnMode_Click;
         }
 
         private void btnMode_Click(object sender, EventArgs e)
@@ -45,23 +46,32 @@ namespace SuperPOS.UI.TA
 
             switch (btn.Name)
             {
-                case "btnNoAction":
-                    ingredModeValue = "";
-                    break;
                 case "btnNo":
-                    ingredModeValue = @"X";
+                    ingredModeValue = "X";
+                    break;
+                case "btnLess":
+                    ingredModeValue = @"-";
+                    break;
+                case "btnChange":
+                    ingredModeValue = @"/";
                     break;
                 case "btnAdd":
                     ingredModeValue = @"+";
                     break;
-                case "btnChange":
-                    ingredModeValue = @"/";
+                case "btnWO":
+                    ingredModeValue = @"x";
                     break;
                 default:
                     ingredModeValue = "";
                     break;
             }
 
+            this.DialogResult = DialogResult.OK;
+            Hide();
+        }
+
+        private void btnExit_Click_1(object sender, EventArgs e)
+        {
             this.DialogResult = DialogResult.OK;
             Hide();
         }
