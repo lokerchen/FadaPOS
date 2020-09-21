@@ -1971,6 +1971,8 @@ namespace SuperPOS.UI.TA
         private void btnKeypad_Click(object sender, EventArgs e)
         {
             FrmTaKeyPad frmTaKeyPad = new FrmTaKeyPad(this);
+            frmTaKeyPad.Location = panelControl3.PointToScreen(panelControl1.Location);
+            frmTaKeyPad.Size = panelControl3.Size;
 
             frmTaKeyPad.ShowDialog();
         }
