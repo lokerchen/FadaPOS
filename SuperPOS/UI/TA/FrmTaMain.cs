@@ -1255,7 +1255,8 @@ namespace SuperPOS.UI.TA
                     //弹出窗口选择
                     FrmTAOtherChoice frmTaOtherChoice1 = new FrmTAOtherChoice(2, mId, lstOther.Where(s => s.MiType == 2).ToList());
                     frmTaOtherChoice1.Location = panelControl5.PointToScreen(panelControl1.Location);
-                    frmTaOtherChoice1.Size = panelControl5.Size + panelControl3.Size;
+                    //frmTaOtherChoice1.Size = panelControl5.Size + panelControl3.Size;
+                    frmTaOtherChoice1.Size = new Size(panelControl5.Width + panelControl3.Width, panelControl5.Height);
                     if (frmTaOtherChoice1.ShowDialog() == DialogResult.OK)
                     {
                         lstResult = frmTaOtherChoice1.lstReturnChoice;
@@ -1267,7 +1268,8 @@ namespace SuperPOS.UI.TA
                     //弹出窗口选择
                     FrmTAOtherChoice frmTaOtherChoice2 = new FrmTAOtherChoice(3, mId, lstOther.Where(s => s.MiType == 3).ToList());
                     frmTaOtherChoice2.Location = panelControl5.PointToScreen(panelControl1.Location);
-                    frmTaOtherChoice2.Size = panelControl5.Size + panelControl3.Size;
+                    //frmTaOtherChoice2.Size = panelControl5.Size + panelControl3.Size;
+                    frmTaOtherChoice2.Size = new Size(panelControl5.Width + panelControl3.Width, panelControl5.Height);
                     if (frmTaOtherChoice2.ShowDialog() == DialogResult.OK)
                     {
                         if (frmTaOtherChoice2.lstReturnChoice.Any()) lstResult.AddRange(frmTaOtherChoice2.lstReturnChoice);

@@ -65,7 +65,7 @@
             this.btnOK.Appearance.Options.UseFont = true;
             this.btnOK.Appearance.Options.UseForeColor = true;
             this.btnOK.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
-            this.btnOK.Location = new System.Drawing.Point(218, 300);
+            this.btnOK.Location = new System.Drawing.Point(218, 275);
             this.btnOK.Name = "btnOK";
             this.btnOK.Size = new System.Drawing.Size(137, 54);
             this.btnOK.TabIndex = 1;
@@ -81,7 +81,7 @@
             this.btnExit.Appearance.Options.UseFont = true;
             this.btnExit.Appearance.Options.UseForeColor = true;
             this.btnExit.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
-            this.btnExit.Location = new System.Drawing.Point(431, 300);
+            this.btnExit.Location = new System.Drawing.Point(431, 275);
             this.btnExit.Name = "btnExit";
             this.btnExit.Size = new System.Drawing.Size(137, 54);
             this.btnExit.TabIndex = 2;
@@ -90,10 +90,10 @@
             // 
             // lblctlTxt
             // 
-            this.lblctlTxt.Appearance.Font = new System.Drawing.Font("Tahoma", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblctlTxt.Location = new System.Drawing.Point(13, 12);
+            this.lblctlTxt.Appearance.Font = new System.Drawing.Font("Tahoma", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblctlTxt.Location = new System.Drawing.Point(13, 5);
             this.lblctlTxt.Name = "lblctlTxt";
-            this.lblctlTxt.Size = new System.Drawing.Size(172, 33);
+            this.lblctlTxt.Size = new System.Drawing.Size(148, 28);
             this.lblctlTxt.TabIndex = 3;
             this.lblctlTxt.Text = "Second Choice";
             // 
@@ -119,7 +119,7 @@
             this.panelControl2.Controls.Add(this.btn3);
             this.panelControl2.Controls.Add(this.btn2);
             this.panelControl2.Controls.Add(this.btn1);
-            this.panelControl2.Location = new System.Drawing.Point(13, 52);
+            this.panelControl2.Location = new System.Drawing.Point(9, 32);
             this.panelControl2.Name = "panelControl2";
             this.panelControl2.Size = new System.Drawing.Size(762, 236);
             this.panelControl2.TabIndex = 5;
@@ -388,7 +388,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(783, 366);
+            this.ClientSize = new System.Drawing.Size(783, 335);
             this.Controls.Add(this.panelControl2);
             this.Controls.Add(this.lblctlTxt);
             this.Controls.Add(this.btnExit);
@@ -398,6 +398,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
             this.Text = "FrmTAOtherChoice";
             this.Load += new System.EventHandler(this.FrmTAOtherChoice_Load);
+            this.SizeChanged += new System.EventHandler(this.FrmTAOtherChoice_SizeChanged);
             ((System.ComponentModel.ISupportInitialize)(this.panelControl2)).EndInit();
             this.panelControl2.ResumeLayout(false);
             this.ResumeLayout(false);

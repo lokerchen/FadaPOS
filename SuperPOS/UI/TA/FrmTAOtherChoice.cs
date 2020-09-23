@@ -8,6 +8,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using DevExpress.XtraEditors;
+using SuperPOS.Common;
 using SuperPOS.Domain.Entities;
 
 namespace SuperPOS.UI.TA
@@ -30,6 +31,8 @@ namespace SuperPOS.UI.TA
 
         //No of Options
         public int NoOfOption = 0;
+
+        private AutoSizeFormClass asfc = new AutoSizeFormClass();
 
         public FrmTAOtherChoice()
         {
@@ -91,6 +94,8 @@ namespace SuperPOS.UI.TA
             btn18.Click += btnChoice_Click;
             btn19.Click += btnChoice_Click;
             btn20.Click += btnChoice_Click;
+
+            asfc.controllInitializeSize(this);
         }
 
         #region 设置Other Choice按钮
@@ -199,6 +204,11 @@ namespace SuperPOS.UI.TA
                 Hide();
             }
             
+        }
+
+        private void FrmTAOtherChoice_SizeChanged(object sender, EventArgs e)
+        {
+            asfc.controlAutoSize(this);
         }
     }
 }
