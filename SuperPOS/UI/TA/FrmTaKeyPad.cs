@@ -21,6 +21,8 @@ namespace SuperPOS.UI.TA
         //FrmTaMain窗口
         private FrmTaMain fTaMain = new FrmTaMain();
 
+        private AutoSizeFormClass asfc = new AutoSizeFormClass();
+
         public string DisCode
         {
             get { return txtDishCode.Text; }
@@ -108,6 +110,8 @@ namespace SuperPOS.UI.TA
             {
                 btnKey[j].Text = "";
             }
+
+            asfc.controllInitializeSize(this);
         }
 
         private void btnD_Click(object sender, EventArgs e)
@@ -177,6 +181,11 @@ namespace SuperPOS.UI.TA
             }
             else
                 txtDishName.Text = "";
+        }
+
+        private void FrmTaKeyPad_SizeChanged(object sender, EventArgs e)
+        {
+            asfc.controlAutoSize(this);
         }
     }
 }

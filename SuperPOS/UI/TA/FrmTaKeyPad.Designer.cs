@@ -29,9 +29,11 @@
         private void InitializeComponent()
         {
             this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
-            this.labelControl3 = new DevExpress.XtraEditors.LabelControl();
-            this.txtDishName = new System.Windows.Forms.TextBox();
-            this.btnExit = new DevExpress.XtraEditors.SimpleButton();
+            this.panelControl2 = new DevExpress.XtraEditors.PanelControl();
+            this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
+            this.txtDishCode = new System.Windows.Forms.TextBox();
+            this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
+            this.txtQty = new System.Windows.Forms.TextBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.btnQty5 = new DevExpress.XtraEditors.SimpleButton();
             this.btnKey10 = new DevExpress.XtraEditors.SimpleButton();
@@ -62,16 +64,14 @@
             this.btnQty2 = new DevExpress.XtraEditors.SimpleButton();
             this.btn8 = new DevExpress.XtraEditors.SimpleButton();
             this.btn7 = new DevExpress.XtraEditors.SimpleButton();
-            this.panelControl2 = new DevExpress.XtraEditors.PanelControl();
-            this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
-            this.txtDishCode = new System.Windows.Forms.TextBox();
-            this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
-            this.txtQty = new System.Windows.Forms.TextBox();
+            this.labelControl3 = new DevExpress.XtraEditors.LabelControl();
+            this.txtDishName = new System.Windows.Forms.TextBox();
+            this.btnExit = new DevExpress.XtraEditors.SimpleButton();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
             this.panelControl1.SuspendLayout();
-            this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl2)).BeginInit();
             this.panelControl2.SuspendLayout();
+            this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // panelControl1
@@ -85,37 +85,52 @@
             this.panelControl1.Size = new System.Drawing.Size(534, 486);
             this.panelControl1.TabIndex = 0;
             // 
-            // labelControl3
+            // panelControl2
             // 
-            this.labelControl3.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelControl3.Location = new System.Drawing.Point(34, 33);
-            this.labelControl3.Name = "labelControl3";
-            this.labelControl3.Size = new System.Drawing.Size(104, 24);
-            this.labelControl3.TabIndex = 56;
-            this.labelControl3.Text = "Dish Name:";
+            this.panelControl2.Controls.Add(this.labelControl1);
+            this.panelControl2.Controls.Add(this.txtDishCode);
+            this.panelControl2.Controls.Add(this.labelControl2);
+            this.panelControl2.Controls.Add(this.txtQty);
+            this.panelControl2.Location = new System.Drawing.Point(34, 76);
+            this.panelControl2.Name = "panelControl2";
+            this.panelControl2.Size = new System.Drawing.Size(463, 67);
+            this.panelControl2.TabIndex = 59;
             // 
-            // txtDishName
+            // labelControl1
             // 
-            this.txtDishName.Font = new System.Drawing.Font("Tahoma", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtDishName.Location = new System.Drawing.Point(144, 22);
-            this.txtDishName.Name = "txtDishName";
-            this.txtDishName.Size = new System.Drawing.Size(337, 35);
-            this.txtDishName.TabIndex = 57;
+            this.labelControl1.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelControl1.Location = new System.Drawing.Point(33, 26);
+            this.labelControl1.Name = "labelControl1";
+            this.labelControl1.Size = new System.Drawing.Size(45, 24);
+            this.labelControl1.TabIndex = 55;
+            this.labelControl1.Text = "Code";
             // 
-            // btnExit
+            // txtDishCode
             // 
-            this.btnExit.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.btnExit.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
-            this.btnExit.Appearance.Font = new System.Drawing.Font("Tahoma", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnExit.Appearance.Options.UseBackColor = true;
-            this.btnExit.Appearance.Options.UseFont = true;
-            this.btnExit.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
-            this.btnExit.Location = new System.Drawing.Point(81, 507);
-            this.btnExit.Name = "btnExit";
-            this.btnExit.Size = new System.Drawing.Size(429, 45);
-            this.btnExit.TabIndex = 115;
-            this.btnExit.Text = "Exit";
-            this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
+            this.txtDishCode.Font = new System.Drawing.Font("Tahoma", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtDishCode.Location = new System.Drawing.Point(96, 15);
+            this.txtDishCode.Name = "txtDishCode";
+            this.txtDishCode.Size = new System.Drawing.Size(167, 35);
+            this.txtDishCode.TabIndex = 56;
+            // 
+            // labelControl2
+            // 
+            this.labelControl2.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelControl2.Location = new System.Drawing.Point(298, 21);
+            this.labelControl2.Name = "labelControl2";
+            this.labelControl2.Size = new System.Drawing.Size(31, 24);
+            this.labelControl2.TabIndex = 57;
+            this.labelControl2.Text = "Qty";
+            // 
+            // txtQty
+            // 
+            this.txtQty.Font = new System.Drawing.Font("Tahoma", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtQty.Location = new System.Drawing.Point(335, 15);
+            this.txtQty.Name = "txtQty";
+            this.txtQty.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.txtQty.Size = new System.Drawing.Size(97, 35);
+            this.txtQty.TabIndex = 58;
+            this.txtQty.Text = "1";
             // 
             // groupBox1
             // 
@@ -561,52 +576,37 @@
             this.btn7.TabIndex = 127;
             this.btn7.Text = "7";
             // 
-            // panelControl2
+            // labelControl3
             // 
-            this.panelControl2.Controls.Add(this.labelControl1);
-            this.panelControl2.Controls.Add(this.txtDishCode);
-            this.panelControl2.Controls.Add(this.labelControl2);
-            this.panelControl2.Controls.Add(this.txtQty);
-            this.panelControl2.Location = new System.Drawing.Point(34, 76);
-            this.panelControl2.Name = "panelControl2";
-            this.panelControl2.Size = new System.Drawing.Size(463, 67);
-            this.panelControl2.TabIndex = 59;
+            this.labelControl3.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelControl3.Location = new System.Drawing.Point(34, 33);
+            this.labelControl3.Name = "labelControl3";
+            this.labelControl3.Size = new System.Drawing.Size(104, 24);
+            this.labelControl3.TabIndex = 56;
+            this.labelControl3.Text = "Dish Name:";
             // 
-            // labelControl1
+            // txtDishName
             // 
-            this.labelControl1.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelControl1.Location = new System.Drawing.Point(33, 26);
-            this.labelControl1.Name = "labelControl1";
-            this.labelControl1.Size = new System.Drawing.Size(45, 24);
-            this.labelControl1.TabIndex = 55;
-            this.labelControl1.Text = "Code";
+            this.txtDishName.Font = new System.Drawing.Font("Tahoma", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtDishName.Location = new System.Drawing.Point(144, 22);
+            this.txtDishName.Name = "txtDishName";
+            this.txtDishName.Size = new System.Drawing.Size(337, 35);
+            this.txtDishName.TabIndex = 57;
             // 
-            // txtDishCode
+            // btnExit
             // 
-            this.txtDishCode.Font = new System.Drawing.Font("Tahoma", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtDishCode.Location = new System.Drawing.Point(96, 15);
-            this.txtDishCode.Name = "txtDishCode";
-            this.txtDishCode.Size = new System.Drawing.Size(167, 35);
-            this.txtDishCode.TabIndex = 56;
-            // 
-            // labelControl2
-            // 
-            this.labelControl2.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelControl2.Location = new System.Drawing.Point(298, 21);
-            this.labelControl2.Name = "labelControl2";
-            this.labelControl2.Size = new System.Drawing.Size(31, 24);
-            this.labelControl2.TabIndex = 57;
-            this.labelControl2.Text = "Qty";
-            // 
-            // txtQty
-            // 
-            this.txtQty.Font = new System.Drawing.Font("Tahoma", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtQty.Location = new System.Drawing.Point(335, 15);
-            this.txtQty.Name = "txtQty";
-            this.txtQty.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.txtQty.Size = new System.Drawing.Size(97, 35);
-            this.txtQty.TabIndex = 58;
-            this.txtQty.Text = "1";
+            this.btnExit.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btnExit.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
+            this.btnExit.Appearance.Font = new System.Drawing.Font("Tahoma", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnExit.Appearance.Options.UseBackColor = true;
+            this.btnExit.Appearance.Options.UseFont = true;
+            this.btnExit.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
+            this.btnExit.Location = new System.Drawing.Point(81, 507);
+            this.btnExit.Name = "btnExit";
+            this.btnExit.Size = new System.Drawing.Size(429, 45);
+            this.btnExit.TabIndex = 115;
+            this.btnExit.Text = "Exit";
+            this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
             // 
             // FrmTaKeyPad
             // 
@@ -620,13 +620,14 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
             this.Text = "FrmTaKeyPad";
             this.Load += new System.EventHandler(this.FrmTaKeyPad_Load);
+            this.SizeChanged += new System.EventHandler(this.FrmTaKeyPad_SizeChanged);
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).EndInit();
             this.panelControl1.ResumeLayout(false);
             this.panelControl1.PerformLayout();
-            this.groupBox1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.panelControl2)).EndInit();
             this.panelControl2.ResumeLayout(false);
             this.panelControl2.PerformLayout();
+            this.groupBox1.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
