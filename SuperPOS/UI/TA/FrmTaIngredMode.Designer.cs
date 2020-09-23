@@ -29,12 +29,12 @@
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.btnExit = new DevExpress.XtraEditors.SimpleButton();
             this.btnWO = new DevExpress.XtraEditors.SimpleButton();
             this.btnAdd = new DevExpress.XtraEditors.SimpleButton();
             this.btnChange = new DevExpress.XtraEditors.SimpleButton();
             this.btnLess = new DevExpress.XtraEditors.SimpleButton();
             this.btnNo = new DevExpress.XtraEditors.SimpleButton();
-            this.btnExit = new DevExpress.XtraEditors.SimpleButton();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -52,6 +52,20 @@
             this.groupBox1.TabIndex = 1;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Ingredient Mode";
+            // 
+            // btnExit
+            // 
+            this.btnExit.Appearance.BackColor = System.Drawing.Color.Olive;
+            this.btnExit.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnExit.Appearance.Options.UseBackColor = true;
+            this.btnExit.Appearance.Options.UseFont = true;
+            this.btnExit.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
+            this.btnExit.Location = new System.Drawing.Point(605, 27);
+            this.btnExit.Name = "btnExit";
+            this.btnExit.Size = new System.Drawing.Size(115, 57);
+            this.btnExit.TabIndex = 10;
+            this.btnExit.Text = "Exit";
+            this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
             // 
             // btnWO
             // 
@@ -117,20 +131,6 @@
             this.btnNo.Size = new System.Drawing.Size(115, 57);
             this.btnNo.TabIndex = 5;
             this.btnNo.Text = "No (X)";
-            // 
-            // btnExit
-            // 
-            this.btnExit.Appearance.BackColor = System.Drawing.Color.Olive;
-            this.btnExit.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnExit.Appearance.Options.UseBackColor = true;
-            this.btnExit.Appearance.Options.UseFont = true;
-            this.btnExit.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
-            this.btnExit.Location = new System.Drawing.Point(605, 27);
-            this.btnExit.Name = "btnExit";
-            this.btnExit.Size = new System.Drawing.Size(115, 57);
-            this.btnExit.TabIndex = 10;
-            this.btnExit.Text = "Exit";
-            this.btnExit.Click += new System.EventHandler(this.btnExit_Click_1);
             // 
             // FrmTaIngredMode
             // 

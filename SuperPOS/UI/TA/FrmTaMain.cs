@@ -229,7 +229,11 @@ namespace SuperPOS.UI.TA
         {
             if (treeListOrder.AllNodesCount > 0)
             {
-                if (CommonTool.ConfirmMessage("Are you sure you want to cancel the order?") == DialogResult.OK)
+                FrmCancelOrder frmCancelOrder = new FrmCancelOrder();
+                frmCancelOrder.Location = panelControl3.PointToScreen(panelControl1.Location);
+                frmCancelOrder.Size = panelControl3.Size;
+                
+                if (frmCancelOrder.ShowDialog() == DialogResult.OK)
                 {
                     var lstChk = CommonData.TaCheckOrder.Where(s => s.CheckCode.Equals(checkID) && s.BusDate.Equals(strBusDate));
                     if (lstChk.Any())
@@ -1712,7 +1716,11 @@ namespace SuperPOS.UI.TA
         {
             if (treeListOrder.AllNodesCount > 0)
             {
-                if (CommonTool.ConfirmMessage("Are you sure you want to cancel the order?") == DialogResult.OK)
+                FrmCancelOrder frmCancelOrder = new FrmCancelOrder();
+                frmCancelOrder.Location = panelControl3.PointToScreen(panelControl1.Location);
+                frmCancelOrder.Size = panelControl3.Size;
+
+                if (frmCancelOrder.ShowDialog() == DialogResult.OK)
                 {
                     var lstChk = CommonData.TaCheckOrder.Where(s => s.CheckCode.Equals(checkID) && s.IsPaid.Equals("N") && s.BusDate.Equals(strBusDate));
                     if (lstChk.Any())

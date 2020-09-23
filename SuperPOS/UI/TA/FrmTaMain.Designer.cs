@@ -840,6 +840,7 @@
             this.btnMenu.Size = new System.Drawing.Size(162, 42);
             this.btnMenu.TabIndex = 30;
             this.btnMenu.Text = "Menu";
+            this.btnMenu.Click += new System.EventHandler(this.btnMenu_Click);
             // 
             // btnEatIn
             // 
@@ -874,6 +875,7 @@
             this.btnCancel.Size = new System.Drawing.Size(162, 42);
             this.btnCancel.TabIndex = 28;
             this.btnCancel.Text = "CANCEL ORDER";
+            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
             // 
             // btnLanguage
             // 
@@ -891,6 +893,7 @@
             this.btnLanguage.Size = new System.Drawing.Size(162, 42);
             this.btnLanguage.TabIndex = 25;
             this.btnLanguage.Text = "LANGUAGE";
+            this.btnLanguage.Click += new System.EventHandler(this.btnLanguage_Click);
             // 
             // btnSaveOrder
             // 
@@ -908,6 +911,7 @@
             this.btnSaveOrder.Size = new System.Drawing.Size(162, 42);
             this.btnSaveOrder.TabIndex = 16;
             this.btnSaveOrder.Text = "Save Order";
+            this.btnSaveOrder.Click += new System.EventHandler(this.btnSaveOrder_Click);
             // 
             // btnMcLeft
             // 
@@ -926,6 +930,7 @@
             this.btnMcLeft.Name = "btnMcLeft";
             this.btnMcLeft.Size = new System.Drawing.Size(81, 35);
             this.btnMcLeft.TabIndex = 17;
+            this.btnMcLeft.Click += new System.EventHandler(this.btnMcLeft_Click);
             // 
             // btnMcRight
             // 
@@ -944,6 +949,7 @@
             this.btnMcRight.Name = "btnMcRight";
             this.btnMcRight.Size = new System.Drawing.Size(81, 35);
             this.btnMcRight.TabIndex = 18;
+            this.btnMcRight.Click += new System.EventHandler(this.btnMiRight_Click);
             // 
             // btnCid
             // 
@@ -977,6 +983,7 @@
             this.btnPendOrder.Size = new System.Drawing.Size(162, 42);
             this.btnPendOrder.TabIndex = 22;
             this.btnPendOrder.Text = "Pending Orders";
+            this.btnPendOrder.Click += new System.EventHandler(this.btnPendOrder_Click);
             // 
             // panelControl3
             // 
@@ -1756,6 +1763,7 @@
             this.btnMiRight.Size = new System.Drawing.Size(72, 120);
             this.btnMiRight.TabIndex = 14;
             this.btnMiRight.Text = ">>";
+            this.btnMiRight.Click += new System.EventHandler(this.btnUp_Click);
             // 
             // btnMi5
             // 
@@ -1817,6 +1825,7 @@
             this.btnMiLeft.Size = new System.Drawing.Size(72, 114);
             this.btnMiLeft.TabIndex = 15;
             this.btnMiLeft.Text = "<<";
+            this.btnMiLeft.Click += new System.EventHandler(this.btnDown_Click);
             // 
             // btnMi1
             // 
