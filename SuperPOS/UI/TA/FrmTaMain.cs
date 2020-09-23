@@ -2061,6 +2061,9 @@ namespace SuperPOS.UI.TA
         {
             FrmCaller frmCaller = new FrmCaller(usrID);
 
+            frmCaller.Location = pcMain.Location;
+            frmCaller.Size = pcMain.Size;
+
             if (frmCaller.ShowDialog() == DialogResult.OK)
             {
                 string sCallNum = frmCaller.CallNum;

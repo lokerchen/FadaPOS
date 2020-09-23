@@ -29,38 +29,16 @@
         private void InitializeComponent()
         {
             this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
+            this.btnExit = new DevExpress.XtraEditors.SimpleButton();
+            this.panelControl5 = new DevExpress.XtraEditors.PanelControl();
+            this.panelControl7 = new DevExpress.XtraEditors.PanelControl();
+            this.labelControl19 = new DevExpress.XtraEditors.LabelControl();
+            this.labelControl18 = new DevExpress.XtraEditors.LabelControl();
             this.panelControl4 = new DevExpress.XtraEditors.PanelControl();
             this.panelControl6 = new DevExpress.XtraEditors.PanelControl();
             this.labelControl17 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl16 = new DevExpress.XtraEditors.LabelControl();
             this.panelControl3 = new DevExpress.XtraEditors.PanelControl();
-            this.btnCollection = new DevExpress.XtraEditors.SimpleButton();
-            this.btnDelivery = new DevExpress.XtraEditors.SimpleButton();
-            this.btnTblBooking = new DevExpress.XtraEditors.SimpleButton();
-            this.btnEdit = new DevExpress.XtraEditors.SimpleButton();
-            this.labelControl14 = new DevExpress.XtraEditors.LabelControl();
-            this.txtTelNum = new DevExpress.XtraEditors.TextEdit();
-            this.panelControl2 = new DevExpress.XtraEditors.PanelControl();
-            this.lblCallInfo = new DevExpress.XtraEditors.LabelControl();
-            this.labelControl13 = new DevExpress.XtraEditors.LabelControl();
-            this.btnExit = new DevExpress.XtraEditors.SimpleButton();
-            this.panelControl7 = new DevExpress.XtraEditors.PanelControl();
-            this.labelControl18 = new DevExpress.XtraEditors.LabelControl();
-            this.labelControl19 = new DevExpress.XtraEditors.LabelControl();
-            this.panelControl5 = new DevExpress.XtraEditors.PanelControl();
-            this.textEdit1 = new DevExpress.XtraEditors.TextEdit();
-            this.btnClear = new DevExpress.XtraEditors.SimpleButton();
-            this.btn0 = new DevExpress.XtraEditors.SimpleButton();
-            this.btnOK = new DevExpress.XtraEditors.SimpleButton();
-            this.btn9 = new DevExpress.XtraEditors.SimpleButton();
-            this.btn8 = new DevExpress.XtraEditors.SimpleButton();
-            this.btn7 = new DevExpress.XtraEditors.SimpleButton();
-            this.btn6 = new DevExpress.XtraEditors.SimpleButton();
-            this.btn5 = new DevExpress.XtraEditors.SimpleButton();
-            this.btn4 = new DevExpress.XtraEditors.SimpleButton();
-            this.btn3 = new DevExpress.XtraEditors.SimpleButton();
-            this.btn2 = new DevExpress.XtraEditors.SimpleButton();
-            this.btn1 = new DevExpress.XtraEditors.SimpleButton();
             this.simpleButton1 = new DevExpress.XtraEditors.SimpleButton();
             this.simpleButton2 = new DevExpress.XtraEditors.SimpleButton();
             this.simpleButton3 = new DevExpress.XtraEditors.SimpleButton();
@@ -73,22 +51,44 @@
             this.simpleButton10 = new DevExpress.XtraEditors.SimpleButton();
             this.simpleButton11 = new DevExpress.XtraEditors.SimpleButton();
             this.simpleButton12 = new DevExpress.XtraEditors.SimpleButton();
+            this.btnClear = new DevExpress.XtraEditors.SimpleButton();
+            this.btn0 = new DevExpress.XtraEditors.SimpleButton();
+            this.btnOK = new DevExpress.XtraEditors.SimpleButton();
+            this.btn9 = new DevExpress.XtraEditors.SimpleButton();
+            this.btn8 = new DevExpress.XtraEditors.SimpleButton();
+            this.btn7 = new DevExpress.XtraEditors.SimpleButton();
+            this.btn6 = new DevExpress.XtraEditors.SimpleButton();
+            this.btn5 = new DevExpress.XtraEditors.SimpleButton();
+            this.btn4 = new DevExpress.XtraEditors.SimpleButton();
+            this.btn3 = new DevExpress.XtraEditors.SimpleButton();
+            this.btn2 = new DevExpress.XtraEditors.SimpleButton();
+            this.btn1 = new DevExpress.XtraEditors.SimpleButton();
+            this.textEdit1 = new DevExpress.XtraEditors.TextEdit();
+            this.btnCollection = new DevExpress.XtraEditors.SimpleButton();
+            this.btnDelivery = new DevExpress.XtraEditors.SimpleButton();
+            this.btnTblBooking = new DevExpress.XtraEditors.SimpleButton();
+            this.btnEdit = new DevExpress.XtraEditors.SimpleButton();
+            this.labelControl14 = new DevExpress.XtraEditors.LabelControl();
+            this.txtTelNum = new DevExpress.XtraEditors.TextEdit();
+            this.panelControl2 = new DevExpress.XtraEditors.PanelControl();
+            this.lblCallInfo = new DevExpress.XtraEditors.LabelControl();
+            this.labelControl13 = new DevExpress.XtraEditors.LabelControl();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
             this.panelControl1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.panelControl5)).BeginInit();
+            this.panelControl5.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.panelControl7)).BeginInit();
+            this.panelControl7.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl4)).BeginInit();
             this.panelControl4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl6)).BeginInit();
             this.panelControl6.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl3)).BeginInit();
             this.panelControl3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.textEdit1.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtTelNum.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl2)).BeginInit();
             this.panelControl2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.panelControl7)).BeginInit();
-            this.panelControl7.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.panelControl5)).BeginInit();
-            this.panelControl5.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit1.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // panelControl1
@@ -102,6 +102,61 @@
             this.panelControl1.Name = "panelControl1";
             this.panelControl1.Size = new System.Drawing.Size(784, 622);
             this.panelControl1.TabIndex = 2;
+            // 
+            // btnExit
+            // 
+            this.btnExit.Appearance.BackColor = System.Drawing.Color.Olive;
+            this.btnExit.Appearance.Font = new System.Drawing.Font("Tahoma", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnExit.Appearance.ForeColor = System.Drawing.Color.White;
+            this.btnExit.Appearance.Options.UseBackColor = true;
+            this.btnExit.Appearance.Options.UseFont = true;
+            this.btnExit.Appearance.Options.UseForeColor = true;
+            this.btnExit.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
+            this.btnExit.Location = new System.Drawing.Point(250, 564);
+            this.btnExit.Name = "btnExit";
+            this.btnExit.Size = new System.Drawing.Size(259, 55);
+            this.btnExit.TabIndex = 3;
+            this.btnExit.Text = "Exit";
+            this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
+            // 
+            // panelControl5
+            // 
+            this.panelControl5.Controls.Add(this.panelControl7);
+            this.panelControl5.Location = new System.Drawing.Point(637, 7);
+            this.panelControl5.Name = "panelControl5";
+            this.panelControl5.Size = new System.Drawing.Size(141, 551);
+            this.panelControl5.TabIndex = 5;
+            // 
+            // panelControl7
+            // 
+            this.panelControl7.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
+            this.panelControl7.Appearance.Options.UseBackColor = true;
+            this.panelControl7.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
+            this.panelControl7.Controls.Add(this.labelControl19);
+            this.panelControl7.Controls.Add(this.labelControl18);
+            this.panelControl7.Location = new System.Drawing.Point(6, 3);
+            this.panelControl7.Name = "panelControl7";
+            this.panelControl7.Size = new System.Drawing.Size(129, 87);
+            this.panelControl7.TabIndex = 0;
+            // 
+            // labelControl19
+            // 
+            this.labelControl19.Appearance.ForeColor = System.Drawing.Color.White;
+            this.labelControl19.Location = new System.Drawing.Point(36, 57);
+            this.labelControl19.Name = "labelControl19";
+            this.labelControl19.Size = new System.Drawing.Size(58, 18);
+            this.labelControl19.TabIndex = 2;
+            this.labelControl19.Text = "19:30:00";
+            // 
+            // labelControl18
+            // 
+            this.labelControl18.Appearance.Font = new System.Drawing.Font("Tahoma", 25.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelControl18.Appearance.ForeColor = System.Drawing.Color.White;
+            this.labelControl18.Location = new System.Drawing.Point(13, 3);
+            this.labelControl18.Name = "labelControl18";
+            this.labelControl18.Size = new System.Drawing.Size(108, 52);
+            this.labelControl18.TabIndex = 0;
+            this.labelControl18.Text = "1000";
             // 
             // panelControl4
             // 
@@ -177,371 +232,6 @@
             this.panelControl3.Name = "panelControl3";
             this.panelControl3.Size = new System.Drawing.Size(448, 458);
             this.panelControl3.TabIndex = 3;
-            // 
-            // btnCollection
-            // 
-            this.btnCollection.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
-            this.btnCollection.Appearance.Font = new System.Drawing.Font("Tahoma", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCollection.Appearance.ForeColor = System.Drawing.Color.White;
-            this.btnCollection.Appearance.Options.UseBackColor = true;
-            this.btnCollection.Appearance.Options.UseFont = true;
-            this.btnCollection.Appearance.Options.UseForeColor = true;
-            this.btnCollection.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
-            this.btnCollection.Location = new System.Drawing.Point(145, 115);
-            this.btnCollection.Name = "btnCollection";
-            this.btnCollection.Size = new System.Drawing.Size(132, 55);
-            this.btnCollection.TabIndex = 19;
-            this.btnCollection.Text = "Conllection";
-            // 
-            // btnDelivery
-            // 
-            this.btnDelivery.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
-            this.btnDelivery.Appearance.Font = new System.Drawing.Font("Tahoma", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnDelivery.Appearance.ForeColor = System.Drawing.Color.White;
-            this.btnDelivery.Appearance.Options.UseBackColor = true;
-            this.btnDelivery.Appearance.Options.UseFont = true;
-            this.btnDelivery.Appearance.Options.UseForeColor = true;
-            this.btnDelivery.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
-            this.btnDelivery.Location = new System.Drawing.Point(7, 115);
-            this.btnDelivery.Name = "btnDelivery";
-            this.btnDelivery.Size = new System.Drawing.Size(132, 55);
-            this.btnDelivery.TabIndex = 4;
-            this.btnDelivery.Text = "Delivery";
-            // 
-            // btnTblBooking
-            // 
-            this.btnTblBooking.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
-            this.btnTblBooking.Appearance.ForeColor = System.Drawing.Color.White;
-            this.btnTblBooking.Appearance.Options.UseBackColor = true;
-            this.btnTblBooking.Appearance.Options.UseForeColor = true;
-            this.btnTblBooking.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
-            this.btnTblBooking.Location = new System.Drawing.Point(253, 51);
-            this.btnTblBooking.Name = "btnTblBooking";
-            this.btnTblBooking.Size = new System.Drawing.Size(109, 37);
-            this.btnTblBooking.TabIndex = 4;
-            this.btnTblBooking.Text = "Table Booking";
-            // 
-            // btnEdit
-            // 
-            this.btnEdit.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.btnEdit.Appearance.Font = new System.Drawing.Font("Tahoma", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnEdit.Appearance.ForeColor = System.Drawing.Color.White;
-            this.btnEdit.Appearance.Options.UseBackColor = true;
-            this.btnEdit.Appearance.Options.UseFont = true;
-            this.btnEdit.Appearance.Options.UseForeColor = true;
-            this.btnEdit.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
-            this.btnEdit.Location = new System.Drawing.Point(253, 5);
-            this.btnEdit.Name = "btnEdit";
-            this.btnEdit.Size = new System.Drawing.Size(109, 40);
-            this.btnEdit.TabIndex = 3;
-            this.btnEdit.Text = "Edit";
-            // 
-            // labelControl14
-            // 
-            this.labelControl14.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelControl14.Location = new System.Drawing.Point(23, 18);
-            this.labelControl14.Name = "labelControl14";
-            this.labelControl14.Size = new System.Drawing.Size(170, 24);
-            this.labelControl14.TabIndex = 2;
-            this.labelControl14.Text = "Telephone Number";
-            // 
-            // txtTelNum
-            // 
-            this.txtTelNum.EditValue = "07533375888";
-            this.txtTelNum.Location = new System.Drawing.Point(5, 48);
-            this.txtTelNum.Name = "txtTelNum";
-            this.txtTelNum.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtTelNum.Properties.Appearance.ForeColor = System.Drawing.Color.Red;
-            this.txtTelNum.Properties.Appearance.Options.UseFont = true;
-            this.txtTelNum.Properties.Appearance.Options.UseForeColor = true;
-            this.txtTelNum.Size = new System.Drawing.Size(206, 40);
-            this.txtTelNum.TabIndex = 0;
-            // 
-            // panelControl2
-            // 
-            this.panelControl2.Controls.Add(this.lblCallInfo);
-            this.panelControl2.Controls.Add(this.labelControl13);
-            this.panelControl2.Location = new System.Drawing.Point(6, 7);
-            this.panelControl2.Name = "panelControl2";
-            this.panelControl2.Size = new System.Drawing.Size(448, 86);
-            this.panelControl2.TabIndex = 2;
-            // 
-            // lblCallInfo
-            // 
-            this.lblCallInfo.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCallInfo.Location = new System.Drawing.Point(132, 50);
-            this.lblCallInfo.Name = "lblCallInfo";
-            this.lblCallInfo.Size = new System.Drawing.Size(159, 24);
-            this.lblCallInfo.TabIndex = 1;
-            this.lblCallInfo.Text = "2018-01-18 18:00";
-            // 
-            // labelControl13
-            // 
-            this.labelControl13.Appearance.Font = new System.Drawing.Font("Tahoma", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelControl13.Location = new System.Drawing.Point(102, 6);
-            this.labelControl13.Name = "labelControl13";
-            this.labelControl13.Size = new System.Drawing.Size(234, 30);
-            this.labelControl13.TabIndex = 0;
-            this.labelControl13.Text = "Caller ID Information";
-            // 
-            // btnExit
-            // 
-            this.btnExit.Appearance.BackColor = System.Drawing.Color.Olive;
-            this.btnExit.Appearance.Font = new System.Drawing.Font("Tahoma", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnExit.Appearance.ForeColor = System.Drawing.Color.White;
-            this.btnExit.Appearance.Options.UseBackColor = true;
-            this.btnExit.Appearance.Options.UseFont = true;
-            this.btnExit.Appearance.Options.UseForeColor = true;
-            this.btnExit.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
-            this.btnExit.Location = new System.Drawing.Point(250, 564);
-            this.btnExit.Name = "btnExit";
-            this.btnExit.Size = new System.Drawing.Size(259, 55);
-            this.btnExit.TabIndex = 3;
-            this.btnExit.Text = "Exit";
-            this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
-            // 
-            // panelControl7
-            // 
-            this.panelControl7.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
-            this.panelControl7.Appearance.Options.UseBackColor = true;
-            this.panelControl7.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
-            this.panelControl7.Controls.Add(this.labelControl19);
-            this.panelControl7.Controls.Add(this.labelControl18);
-            this.panelControl7.Location = new System.Drawing.Point(6, 3);
-            this.panelControl7.Name = "panelControl7";
-            this.panelControl7.Size = new System.Drawing.Size(129, 87);
-            this.panelControl7.TabIndex = 0;
-            // 
-            // labelControl18
-            // 
-            this.labelControl18.Appearance.Font = new System.Drawing.Font("Tahoma", 25.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelControl18.Appearance.ForeColor = System.Drawing.Color.White;
-            this.labelControl18.Location = new System.Drawing.Point(13, 3);
-            this.labelControl18.Name = "labelControl18";
-            this.labelControl18.Size = new System.Drawing.Size(108, 52);
-            this.labelControl18.TabIndex = 0;
-            this.labelControl18.Text = "1000";
-            // 
-            // labelControl19
-            // 
-            this.labelControl19.Appearance.ForeColor = System.Drawing.Color.White;
-            this.labelControl19.Location = new System.Drawing.Point(36, 57);
-            this.labelControl19.Name = "labelControl19";
-            this.labelControl19.Size = new System.Drawing.Size(58, 18);
-            this.labelControl19.TabIndex = 2;
-            this.labelControl19.Text = "19:30:00";
-            // 
-            // panelControl5
-            // 
-            this.panelControl5.Controls.Add(this.panelControl7);
-            this.panelControl5.Location = new System.Drawing.Point(637, 7);
-            this.panelControl5.Name = "panelControl5";
-            this.panelControl5.Size = new System.Drawing.Size(141, 551);
-            this.panelControl5.TabIndex = 5;
-            // 
-            // textEdit1
-            // 
-            this.textEdit1.EditValue = "";
-            this.textEdit1.Location = new System.Drawing.Point(283, 130);
-            this.textEdit1.Name = "textEdit1";
-            this.textEdit1.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textEdit1.Properties.Appearance.ForeColor = System.Drawing.Color.Red;
-            this.textEdit1.Properties.Appearance.Options.UseFont = true;
-            this.textEdit1.Properties.Appearance.Options.UseForeColor = true;
-            this.textEdit1.Size = new System.Drawing.Size(160, 40);
-            this.textEdit1.TabIndex = 20;
-            // 
-            // btnClear
-            // 
-            this.btnClear.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.btnClear.Appearance.BackColor = System.Drawing.Color.Green;
-            this.btnClear.Appearance.Font = new System.Drawing.Font("Tahoma", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnClear.Appearance.ForeColor = System.Drawing.Color.White;
-            this.btnClear.Appearance.Options.UseBackColor = true;
-            this.btnClear.Appearance.Options.UseFont = true;
-            this.btnClear.Appearance.Options.UseForeColor = true;
-            this.btnClear.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
-            this.btnClear.Location = new System.Drawing.Point(303, 372);
-            this.btnClear.Name = "btnClear";
-            this.btnClear.Size = new System.Drawing.Size(60, 45);
-            this.btnClear.TabIndex = 32;
-            this.btnClear.Text = ":";
-            // 
-            // btn0
-            // 
-            this.btn0.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.btn0.Appearance.BackColor = System.Drawing.Color.Green;
-            this.btn0.Appearance.Font = new System.Drawing.Font("Tahoma", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn0.Appearance.ForeColor = System.Drawing.Color.White;
-            this.btn0.Appearance.Options.UseBackColor = true;
-            this.btn0.Appearance.Options.UseFont = true;
-            this.btn0.Appearance.Options.UseForeColor = true;
-            this.btn0.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
-            this.btn0.Location = new System.Drawing.Point(233, 372);
-            this.btn0.Name = "btn0";
-            this.btn0.Size = new System.Drawing.Size(60, 45);
-            this.btn0.TabIndex = 31;
-            this.btn0.Text = "0";
-            // 
-            // btnOK
-            // 
-            this.btnOK.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.btnOK.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
-            this.btnOK.Appearance.Font = new System.Drawing.Font("Tahoma", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnOK.Appearance.ForeColor = System.Drawing.Color.White;
-            this.btnOK.Appearance.Options.UseBackColor = true;
-            this.btnOK.Appearance.Options.UseFont = true;
-            this.btnOK.Appearance.Options.UseForeColor = true;
-            this.btnOK.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
-            this.btnOK.Location = new System.Drawing.Point(373, 372);
-            this.btnOK.Name = "btnOK";
-            this.btnOK.Size = new System.Drawing.Size(60, 45);
-            this.btnOK.TabIndex = 30;
-            this.btnOK.Text = "CLR";
-            // 
-            // btn9
-            // 
-            this.btn9.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.btn9.Appearance.BackColor = System.Drawing.Color.Green;
-            this.btn9.Appearance.Font = new System.Drawing.Font("Tahoma", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn9.Appearance.ForeColor = System.Drawing.Color.White;
-            this.btn9.Appearance.Options.UseBackColor = true;
-            this.btn9.Appearance.Options.UseFont = true;
-            this.btn9.Appearance.Options.UseForeColor = true;
-            this.btn9.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
-            this.btn9.Location = new System.Drawing.Point(373, 321);
-            this.btn9.Name = "btn9";
-            this.btn9.Size = new System.Drawing.Size(60, 45);
-            this.btn9.TabIndex = 29;
-            this.btn9.Text = "9";
-            // 
-            // btn8
-            // 
-            this.btn8.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.btn8.Appearance.BackColor = System.Drawing.Color.Green;
-            this.btn8.Appearance.Font = new System.Drawing.Font("Tahoma", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn8.Appearance.ForeColor = System.Drawing.Color.White;
-            this.btn8.Appearance.Options.UseBackColor = true;
-            this.btn8.Appearance.Options.UseFont = true;
-            this.btn8.Appearance.Options.UseForeColor = true;
-            this.btn8.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
-            this.btn8.Location = new System.Drawing.Point(303, 321);
-            this.btn8.Name = "btn8";
-            this.btn8.Size = new System.Drawing.Size(60, 45);
-            this.btn8.TabIndex = 28;
-            this.btn8.Text = "8";
-            // 
-            // btn7
-            // 
-            this.btn7.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.btn7.Appearance.BackColor = System.Drawing.Color.Green;
-            this.btn7.Appearance.Font = new System.Drawing.Font("Tahoma", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn7.Appearance.ForeColor = System.Drawing.Color.White;
-            this.btn7.Appearance.Options.UseBackColor = true;
-            this.btn7.Appearance.Options.UseFont = true;
-            this.btn7.Appearance.Options.UseForeColor = true;
-            this.btn7.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
-            this.btn7.Location = new System.Drawing.Point(233, 321);
-            this.btn7.Name = "btn7";
-            this.btn7.Size = new System.Drawing.Size(60, 45);
-            this.btn7.TabIndex = 27;
-            this.btn7.Text = "7";
-            // 
-            // btn6
-            // 
-            this.btn6.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.btn6.Appearance.BackColor = System.Drawing.Color.Green;
-            this.btn6.Appearance.Font = new System.Drawing.Font("Tahoma", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn6.Appearance.ForeColor = System.Drawing.Color.White;
-            this.btn6.Appearance.Options.UseBackColor = true;
-            this.btn6.Appearance.Options.UseFont = true;
-            this.btn6.Appearance.Options.UseForeColor = true;
-            this.btn6.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
-            this.btn6.Location = new System.Drawing.Point(373, 266);
-            this.btn6.Name = "btn6";
-            this.btn6.Size = new System.Drawing.Size(60, 45);
-            this.btn6.TabIndex = 26;
-            this.btn6.Text = "6";
-            // 
-            // btn5
-            // 
-            this.btn5.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.btn5.Appearance.BackColor = System.Drawing.Color.Green;
-            this.btn5.Appearance.Font = new System.Drawing.Font("Tahoma", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn5.Appearance.ForeColor = System.Drawing.Color.White;
-            this.btn5.Appearance.Options.UseBackColor = true;
-            this.btn5.Appearance.Options.UseFont = true;
-            this.btn5.Appearance.Options.UseForeColor = true;
-            this.btn5.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
-            this.btn5.Location = new System.Drawing.Point(303, 266);
-            this.btn5.Name = "btn5";
-            this.btn5.Size = new System.Drawing.Size(60, 45);
-            this.btn5.TabIndex = 25;
-            this.btn5.Text = "5";
-            // 
-            // btn4
-            // 
-            this.btn4.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.btn4.Appearance.BackColor = System.Drawing.Color.Green;
-            this.btn4.Appearance.Font = new System.Drawing.Font("Tahoma", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn4.Appearance.ForeColor = System.Drawing.Color.White;
-            this.btn4.Appearance.Options.UseBackColor = true;
-            this.btn4.Appearance.Options.UseFont = true;
-            this.btn4.Appearance.Options.UseForeColor = true;
-            this.btn4.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
-            this.btn4.Location = new System.Drawing.Point(233, 266);
-            this.btn4.Name = "btn4";
-            this.btn4.Size = new System.Drawing.Size(60, 45);
-            this.btn4.TabIndex = 24;
-            this.btn4.Text = "4";
-            // 
-            // btn3
-            // 
-            this.btn3.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.btn3.Appearance.BackColor = System.Drawing.Color.Green;
-            this.btn3.Appearance.Font = new System.Drawing.Font("Tahoma", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn3.Appearance.ForeColor = System.Drawing.Color.White;
-            this.btn3.Appearance.Options.UseBackColor = true;
-            this.btn3.Appearance.Options.UseFont = true;
-            this.btn3.Appearance.Options.UseForeColor = true;
-            this.btn3.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
-            this.btn3.Location = new System.Drawing.Point(373, 211);
-            this.btn3.Name = "btn3";
-            this.btn3.Size = new System.Drawing.Size(60, 45);
-            this.btn3.TabIndex = 23;
-            this.btn3.Text = "3";
-            // 
-            // btn2
-            // 
-            this.btn2.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.btn2.Appearance.BackColor = System.Drawing.Color.Green;
-            this.btn2.Appearance.Font = new System.Drawing.Font("Tahoma", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn2.Appearance.ForeColor = System.Drawing.Color.White;
-            this.btn2.Appearance.Options.UseBackColor = true;
-            this.btn2.Appearance.Options.UseFont = true;
-            this.btn2.Appearance.Options.UseForeColor = true;
-            this.btn2.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
-            this.btn2.Location = new System.Drawing.Point(303, 211);
-            this.btn2.Name = "btn2";
-            this.btn2.Size = new System.Drawing.Size(60, 45);
-            this.btn2.TabIndex = 22;
-            this.btn2.Text = "2";
-            // 
-            // btn1
-            // 
-            this.btn1.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.btn1.Appearance.BackColor = System.Drawing.Color.Green;
-            this.btn1.Appearance.Font = new System.Drawing.Font("Tahoma", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn1.Appearance.ForeColor = System.Drawing.Color.White;
-            this.btn1.Appearance.Options.UseBackColor = true;
-            this.btn1.Appearance.Options.UseFont = true;
-            this.btn1.Appearance.Options.UseForeColor = true;
-            this.btn1.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
-            this.btn1.Location = new System.Drawing.Point(233, 211);
-            this.btn1.Name = "btn1";
-            this.btn1.Size = new System.Drawing.Size(60, 45);
-            this.btn1.TabIndex = 21;
-            this.btn1.Text = "1";
             // 
             // simpleButton1
             // 
@@ -735,6 +425,316 @@
             this.simpleButton12.TabIndex = 33;
             this.simpleButton12.Text = "+5";
             // 
+            // btnClear
+            // 
+            this.btnClear.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btnClear.Appearance.BackColor = System.Drawing.Color.Green;
+            this.btnClear.Appearance.Font = new System.Drawing.Font("Tahoma", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnClear.Appearance.ForeColor = System.Drawing.Color.White;
+            this.btnClear.Appearance.Options.UseBackColor = true;
+            this.btnClear.Appearance.Options.UseFont = true;
+            this.btnClear.Appearance.Options.UseForeColor = true;
+            this.btnClear.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
+            this.btnClear.Location = new System.Drawing.Point(303, 372);
+            this.btnClear.Name = "btnClear";
+            this.btnClear.Size = new System.Drawing.Size(60, 45);
+            this.btnClear.TabIndex = 32;
+            this.btnClear.Text = ":";
+            // 
+            // btn0
+            // 
+            this.btn0.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btn0.Appearance.BackColor = System.Drawing.Color.Green;
+            this.btn0.Appearance.Font = new System.Drawing.Font("Tahoma", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn0.Appearance.ForeColor = System.Drawing.Color.White;
+            this.btn0.Appearance.Options.UseBackColor = true;
+            this.btn0.Appearance.Options.UseFont = true;
+            this.btn0.Appearance.Options.UseForeColor = true;
+            this.btn0.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
+            this.btn0.Location = new System.Drawing.Point(233, 372);
+            this.btn0.Name = "btn0";
+            this.btn0.Size = new System.Drawing.Size(60, 45);
+            this.btn0.TabIndex = 31;
+            this.btn0.Text = "0";
+            // 
+            // btnOK
+            // 
+            this.btnOK.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btnOK.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
+            this.btnOK.Appearance.Font = new System.Drawing.Font("Tahoma", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnOK.Appearance.ForeColor = System.Drawing.Color.White;
+            this.btnOK.Appearance.Options.UseBackColor = true;
+            this.btnOK.Appearance.Options.UseFont = true;
+            this.btnOK.Appearance.Options.UseForeColor = true;
+            this.btnOK.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
+            this.btnOK.Location = new System.Drawing.Point(373, 372);
+            this.btnOK.Name = "btnOK";
+            this.btnOK.Size = new System.Drawing.Size(60, 45);
+            this.btnOK.TabIndex = 30;
+            this.btnOK.Text = "CLR";
+            // 
+            // btn9
+            // 
+            this.btn9.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btn9.Appearance.BackColor = System.Drawing.Color.Green;
+            this.btn9.Appearance.Font = new System.Drawing.Font("Tahoma", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn9.Appearance.ForeColor = System.Drawing.Color.White;
+            this.btn9.Appearance.Options.UseBackColor = true;
+            this.btn9.Appearance.Options.UseFont = true;
+            this.btn9.Appearance.Options.UseForeColor = true;
+            this.btn9.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
+            this.btn9.Location = new System.Drawing.Point(373, 321);
+            this.btn9.Name = "btn9";
+            this.btn9.Size = new System.Drawing.Size(60, 45);
+            this.btn9.TabIndex = 29;
+            this.btn9.Text = "9";
+            // 
+            // btn8
+            // 
+            this.btn8.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btn8.Appearance.BackColor = System.Drawing.Color.Green;
+            this.btn8.Appearance.Font = new System.Drawing.Font("Tahoma", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn8.Appearance.ForeColor = System.Drawing.Color.White;
+            this.btn8.Appearance.Options.UseBackColor = true;
+            this.btn8.Appearance.Options.UseFont = true;
+            this.btn8.Appearance.Options.UseForeColor = true;
+            this.btn8.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
+            this.btn8.Location = new System.Drawing.Point(303, 321);
+            this.btn8.Name = "btn8";
+            this.btn8.Size = new System.Drawing.Size(60, 45);
+            this.btn8.TabIndex = 28;
+            this.btn8.Text = "8";
+            // 
+            // btn7
+            // 
+            this.btn7.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btn7.Appearance.BackColor = System.Drawing.Color.Green;
+            this.btn7.Appearance.Font = new System.Drawing.Font("Tahoma", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn7.Appearance.ForeColor = System.Drawing.Color.White;
+            this.btn7.Appearance.Options.UseBackColor = true;
+            this.btn7.Appearance.Options.UseFont = true;
+            this.btn7.Appearance.Options.UseForeColor = true;
+            this.btn7.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
+            this.btn7.Location = new System.Drawing.Point(233, 321);
+            this.btn7.Name = "btn7";
+            this.btn7.Size = new System.Drawing.Size(60, 45);
+            this.btn7.TabIndex = 27;
+            this.btn7.Text = "7";
+            // 
+            // btn6
+            // 
+            this.btn6.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btn6.Appearance.BackColor = System.Drawing.Color.Green;
+            this.btn6.Appearance.Font = new System.Drawing.Font("Tahoma", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn6.Appearance.ForeColor = System.Drawing.Color.White;
+            this.btn6.Appearance.Options.UseBackColor = true;
+            this.btn6.Appearance.Options.UseFont = true;
+            this.btn6.Appearance.Options.UseForeColor = true;
+            this.btn6.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
+            this.btn6.Location = new System.Drawing.Point(373, 266);
+            this.btn6.Name = "btn6";
+            this.btn6.Size = new System.Drawing.Size(60, 45);
+            this.btn6.TabIndex = 26;
+            this.btn6.Text = "6";
+            // 
+            // btn5
+            // 
+            this.btn5.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btn5.Appearance.BackColor = System.Drawing.Color.Green;
+            this.btn5.Appearance.Font = new System.Drawing.Font("Tahoma", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn5.Appearance.ForeColor = System.Drawing.Color.White;
+            this.btn5.Appearance.Options.UseBackColor = true;
+            this.btn5.Appearance.Options.UseFont = true;
+            this.btn5.Appearance.Options.UseForeColor = true;
+            this.btn5.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
+            this.btn5.Location = new System.Drawing.Point(303, 266);
+            this.btn5.Name = "btn5";
+            this.btn5.Size = new System.Drawing.Size(60, 45);
+            this.btn5.TabIndex = 25;
+            this.btn5.Text = "5";
+            // 
+            // btn4
+            // 
+            this.btn4.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btn4.Appearance.BackColor = System.Drawing.Color.Green;
+            this.btn4.Appearance.Font = new System.Drawing.Font("Tahoma", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn4.Appearance.ForeColor = System.Drawing.Color.White;
+            this.btn4.Appearance.Options.UseBackColor = true;
+            this.btn4.Appearance.Options.UseFont = true;
+            this.btn4.Appearance.Options.UseForeColor = true;
+            this.btn4.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
+            this.btn4.Location = new System.Drawing.Point(233, 266);
+            this.btn4.Name = "btn4";
+            this.btn4.Size = new System.Drawing.Size(60, 45);
+            this.btn4.TabIndex = 24;
+            this.btn4.Text = "4";
+            // 
+            // btn3
+            // 
+            this.btn3.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btn3.Appearance.BackColor = System.Drawing.Color.Green;
+            this.btn3.Appearance.Font = new System.Drawing.Font("Tahoma", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn3.Appearance.ForeColor = System.Drawing.Color.White;
+            this.btn3.Appearance.Options.UseBackColor = true;
+            this.btn3.Appearance.Options.UseFont = true;
+            this.btn3.Appearance.Options.UseForeColor = true;
+            this.btn3.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
+            this.btn3.Location = new System.Drawing.Point(373, 211);
+            this.btn3.Name = "btn3";
+            this.btn3.Size = new System.Drawing.Size(60, 45);
+            this.btn3.TabIndex = 23;
+            this.btn3.Text = "3";
+            // 
+            // btn2
+            // 
+            this.btn2.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btn2.Appearance.BackColor = System.Drawing.Color.Green;
+            this.btn2.Appearance.Font = new System.Drawing.Font("Tahoma", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn2.Appearance.ForeColor = System.Drawing.Color.White;
+            this.btn2.Appearance.Options.UseBackColor = true;
+            this.btn2.Appearance.Options.UseFont = true;
+            this.btn2.Appearance.Options.UseForeColor = true;
+            this.btn2.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
+            this.btn2.Location = new System.Drawing.Point(303, 211);
+            this.btn2.Name = "btn2";
+            this.btn2.Size = new System.Drawing.Size(60, 45);
+            this.btn2.TabIndex = 22;
+            this.btn2.Text = "2";
+            // 
+            // btn1
+            // 
+            this.btn1.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btn1.Appearance.BackColor = System.Drawing.Color.Green;
+            this.btn1.Appearance.Font = new System.Drawing.Font("Tahoma", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn1.Appearance.ForeColor = System.Drawing.Color.White;
+            this.btn1.Appearance.Options.UseBackColor = true;
+            this.btn1.Appearance.Options.UseFont = true;
+            this.btn1.Appearance.Options.UseForeColor = true;
+            this.btn1.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
+            this.btn1.Location = new System.Drawing.Point(233, 211);
+            this.btn1.Name = "btn1";
+            this.btn1.Size = new System.Drawing.Size(60, 45);
+            this.btn1.TabIndex = 21;
+            this.btn1.Text = "1";
+            // 
+            // textEdit1
+            // 
+            this.textEdit1.EditValue = "";
+            this.textEdit1.Location = new System.Drawing.Point(283, 130);
+            this.textEdit1.Name = "textEdit1";
+            this.textEdit1.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textEdit1.Properties.Appearance.ForeColor = System.Drawing.Color.Red;
+            this.textEdit1.Properties.Appearance.Options.UseFont = true;
+            this.textEdit1.Properties.Appearance.Options.UseForeColor = true;
+            this.textEdit1.Size = new System.Drawing.Size(160, 40);
+            this.textEdit1.TabIndex = 20;
+            // 
+            // btnCollection
+            // 
+            this.btnCollection.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.btnCollection.Appearance.Font = new System.Drawing.Font("Tahoma", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCollection.Appearance.ForeColor = System.Drawing.Color.White;
+            this.btnCollection.Appearance.Options.UseBackColor = true;
+            this.btnCollection.Appearance.Options.UseFont = true;
+            this.btnCollection.Appearance.Options.UseForeColor = true;
+            this.btnCollection.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
+            this.btnCollection.Location = new System.Drawing.Point(145, 115);
+            this.btnCollection.Name = "btnCollection";
+            this.btnCollection.Size = new System.Drawing.Size(132, 55);
+            this.btnCollection.TabIndex = 19;
+            this.btnCollection.Text = "Conllection";
+            // 
+            // btnDelivery
+            // 
+            this.btnDelivery.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
+            this.btnDelivery.Appearance.Font = new System.Drawing.Font("Tahoma", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDelivery.Appearance.ForeColor = System.Drawing.Color.White;
+            this.btnDelivery.Appearance.Options.UseBackColor = true;
+            this.btnDelivery.Appearance.Options.UseFont = true;
+            this.btnDelivery.Appearance.Options.UseForeColor = true;
+            this.btnDelivery.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
+            this.btnDelivery.Location = new System.Drawing.Point(7, 115);
+            this.btnDelivery.Name = "btnDelivery";
+            this.btnDelivery.Size = new System.Drawing.Size(132, 55);
+            this.btnDelivery.TabIndex = 4;
+            this.btnDelivery.Text = "Delivery";
+            // 
+            // btnTblBooking
+            // 
+            this.btnTblBooking.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
+            this.btnTblBooking.Appearance.ForeColor = System.Drawing.Color.White;
+            this.btnTblBooking.Appearance.Options.UseBackColor = true;
+            this.btnTblBooking.Appearance.Options.UseForeColor = true;
+            this.btnTblBooking.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
+            this.btnTblBooking.Location = new System.Drawing.Point(253, 51);
+            this.btnTblBooking.Name = "btnTblBooking";
+            this.btnTblBooking.Size = new System.Drawing.Size(109, 37);
+            this.btnTblBooking.TabIndex = 4;
+            this.btnTblBooking.Text = "Table Booking";
+            // 
+            // btnEdit
+            // 
+            this.btnEdit.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.btnEdit.Appearance.Font = new System.Drawing.Font("Tahoma", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEdit.Appearance.ForeColor = System.Drawing.Color.White;
+            this.btnEdit.Appearance.Options.UseBackColor = true;
+            this.btnEdit.Appearance.Options.UseFont = true;
+            this.btnEdit.Appearance.Options.UseForeColor = true;
+            this.btnEdit.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
+            this.btnEdit.Location = new System.Drawing.Point(253, 5);
+            this.btnEdit.Name = "btnEdit";
+            this.btnEdit.Size = new System.Drawing.Size(109, 40);
+            this.btnEdit.TabIndex = 3;
+            this.btnEdit.Text = "Edit";
+            // 
+            // labelControl14
+            // 
+            this.labelControl14.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelControl14.Location = new System.Drawing.Point(23, 18);
+            this.labelControl14.Name = "labelControl14";
+            this.labelControl14.Size = new System.Drawing.Size(170, 24);
+            this.labelControl14.TabIndex = 2;
+            this.labelControl14.Text = "Telephone Number";
+            // 
+            // txtTelNum
+            // 
+            this.txtTelNum.EditValue = "07533375888";
+            this.txtTelNum.Location = new System.Drawing.Point(5, 48);
+            this.txtTelNum.Name = "txtTelNum";
+            this.txtTelNum.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtTelNum.Properties.Appearance.ForeColor = System.Drawing.Color.Red;
+            this.txtTelNum.Properties.Appearance.Options.UseFont = true;
+            this.txtTelNum.Properties.Appearance.Options.UseForeColor = true;
+            this.txtTelNum.Size = new System.Drawing.Size(206, 40);
+            this.txtTelNum.TabIndex = 0;
+            // 
+            // panelControl2
+            // 
+            this.panelControl2.Controls.Add(this.lblCallInfo);
+            this.panelControl2.Controls.Add(this.labelControl13);
+            this.panelControl2.Location = new System.Drawing.Point(6, 7);
+            this.panelControl2.Name = "panelControl2";
+            this.panelControl2.Size = new System.Drawing.Size(448, 86);
+            this.panelControl2.TabIndex = 2;
+            // 
+            // lblCallInfo
+            // 
+            this.lblCallInfo.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCallInfo.Location = new System.Drawing.Point(132, 50);
+            this.lblCallInfo.Name = "lblCallInfo";
+            this.lblCallInfo.Size = new System.Drawing.Size(159, 24);
+            this.lblCallInfo.TabIndex = 1;
+            this.lblCallInfo.Text = "2018-01-18 18:00";
+            // 
+            // labelControl13
+            // 
+            this.labelControl13.Appearance.Font = new System.Drawing.Font("Tahoma", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelControl13.Location = new System.Drawing.Point(102, 6);
+            this.labelControl13.Name = "labelControl13";
+            this.labelControl13.Size = new System.Drawing.Size(234, 30);
+            this.labelControl13.TabIndex = 0;
+            this.labelControl13.Text = "Caller ID Information";
+            // 
             // FrmCaller
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 18F);
@@ -743,13 +743,17 @@
             this.Controls.Add(this.panelControl1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "FrmCaller";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
             this.Text = "FrmCaller";
-            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.FrmCaller_Load);
             this.SizeChanged += new System.EventHandler(this.FrmCaller_SizeChanged);
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).EndInit();
             this.panelControl1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.panelControl5)).EndInit();
+            this.panelControl5.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.panelControl7)).EndInit();
+            this.panelControl7.ResumeLayout(false);
+            this.panelControl7.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl4)).EndInit();
             this.panelControl4.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.panelControl6)).EndInit();
@@ -758,16 +762,11 @@
             ((System.ComponentModel.ISupportInitialize)(this.panelControl3)).EndInit();
             this.panelControl3.ResumeLayout(false);
             this.panelControl3.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.textEdit1.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtTelNum.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl2)).EndInit();
             this.panelControl2.ResumeLayout(false);
             this.panelControl2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.panelControl7)).EndInit();
-            this.panelControl7.ResumeLayout(false);
-            this.panelControl7.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.panelControl5)).EndInit();
-            this.panelControl5.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit1.Properties)).EndInit();
             this.ResumeLayout(false);
 
         }
