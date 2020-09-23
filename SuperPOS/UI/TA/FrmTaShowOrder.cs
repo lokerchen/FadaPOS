@@ -620,8 +620,9 @@ namespace SuperPOS.UI
         private void btnShowDriver_Click(object sender, EventArgs e)
         {
             FrmTaShowOrderDriver frmTaShowOrderDriver = new FrmTaShowOrderDriver();
-            frmTaShowOrderDriver.Location = gridControlTaShowOrder.Location;
-            frmTaShowOrderDriver.Size = gridControlTaShowOrder.Size;
+            frmTaShowOrderDriver.Location = panelControl4.Location;
+            frmTaShowOrderDriver.Width = panelControl4.Width;
+            frmTaShowOrderDriver.Height = panelControl4.Height - panelControl6.Height;
             frmTaShowOrderDriver.ShowDialog();
         }
     }

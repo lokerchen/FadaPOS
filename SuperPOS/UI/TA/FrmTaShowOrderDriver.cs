@@ -8,11 +8,14 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using DevExpress.XtraEditors;
+using SuperPOS.Common;
 
 namespace SuperPOS.UI.TA
 {
     public partial class FrmTaShowOrderDriver : DevExpress.XtraEditors.XtraForm
     {
+        private AutoSizeFormClass asfc = new AutoSizeFormClass();
+
         public FrmTaShowOrderDriver()
         {
             InitializeComponent();
@@ -21,6 +24,16 @@ namespace SuperPOS.UI.TA
         private void btnExit_Click(object sender, EventArgs e)
         {
             Hide();
+        }
+
+        private void FrmTaShowOrderDriver_Load(object sender, EventArgs e)
+        {
+            asfc.controllInitializeSize(this);
+        }
+
+        private void FrmTaShowOrderDriver_SizeChanged(object sender, EventArgs e)
+        {
+            asfc.controlAutoSize(this);
         }
     }
 }

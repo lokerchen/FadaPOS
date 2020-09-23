@@ -29,24 +29,24 @@
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.txtTotalDeliveryCharge = new DevExpress.XtraEditors.TextEdit();
+            this.label1 = new System.Windows.Forms.Label();
             this.gridControlTaDriver = new DevExpress.XtraGrid.GridControl();
             this.gvTaPendOrder = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.ID = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.OrderNo = new DevExpress.XtraGrid.Columns.GridColumn();
             this.OrderTime = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.OrderNo = new DevExpress.XtraGrid.Columns.GridColumn();
             this.DeliveryCharge = new DevExpress.XtraGrid.Columns.GridColumn();
             this.Driver = new DevExpress.XtraGrid.Columns.GridColumn();
             this.btnExit = new System.Windows.Forms.Button();
             this.btnShowAllDriver = new System.Windows.Forms.Button();
             this.lueDriver = new DevExpress.XtraEditors.LookUpEdit();
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
-            this.label1 = new System.Windows.Forms.Label();
-            this.txtTotalDeliveryCharge = new DevExpress.XtraEditors.TextEdit();
             this.groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.txtTotalDeliveryCharge.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridControlTaDriver)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gvTaPendOrder)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.lueDriver.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtTotalDeliveryCharge.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox1
@@ -65,6 +65,26 @@
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Delivery Charges";
+            // 
+            // txtTotalDeliveryCharge
+            // 
+            this.txtTotalDeliveryCharge.EditValue = "0.00";
+            this.txtTotalDeliveryCharge.Location = new System.Drawing.Point(228, 399);
+            this.txtTotalDeliveryCharge.Name = "txtTotalDeliveryCharge";
+            this.txtTotalDeliveryCharge.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 12F);
+            this.txtTotalDeliveryCharge.Properties.Appearance.Options.UseFont = true;
+            this.txtTotalDeliveryCharge.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.txtTotalDeliveryCharge.Size = new System.Drawing.Size(161, 30);
+            this.txtTotalDeliveryCharge.TabIndex = 21;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(11, 402);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(211, 24);
+            this.label1.TabIndex = 20;
+            this.label1.Text = "Total Delivery Charge:";
             // 
             // gridControlTaDriver
             // 
@@ -107,14 +127,6 @@
             this.ID.FieldName = "ID";
             this.ID.Name = "ID";
             // 
-            // OrderNo
-            // 
-            this.OrderNo.Caption = "Order No.";
-            this.OrderNo.FieldName = "OrderNo";
-            this.OrderNo.Name = "OrderNo";
-            this.OrderNo.Visible = true;
-            this.OrderNo.VisibleIndex = 1;
-            // 
             // OrderTime
             // 
             this.OrderTime.Caption = "Time";
@@ -122,6 +134,14 @@
             this.OrderTime.Name = "OrderTime";
             this.OrderTime.Visible = true;
             this.OrderTime.VisibleIndex = 0;
+            // 
+            // OrderNo
+            // 
+            this.OrderNo.Caption = "Order No.";
+            this.OrderNo.FieldName = "OrderNo";
+            this.OrderNo.Name = "OrderNo";
+            this.OrderNo.Visible = true;
+            this.OrderNo.VisibleIndex = 1;
             // 
             // DeliveryCharge
             // 
@@ -189,26 +209,6 @@
             this.labelControl1.TabIndex = 0;
             this.labelControl1.Text = "Show Driver";
             // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(11, 402);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(211, 24);
-            this.label1.TabIndex = 20;
-            this.label1.Text = "Total Delivery Charge:";
-            // 
-            // txtTotalDeliveryCharge
-            // 
-            this.txtTotalDeliveryCharge.EditValue = "0.00";
-            this.txtTotalDeliveryCharge.Location = new System.Drawing.Point(228, 399);
-            this.txtTotalDeliveryCharge.Name = "txtTotalDeliveryCharge";
-            this.txtTotalDeliveryCharge.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 12F);
-            this.txtTotalDeliveryCharge.Properties.Appearance.Options.UseFont = true;
-            this.txtTotalDeliveryCharge.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.txtTotalDeliveryCharge.Size = new System.Drawing.Size(161, 30);
-            this.txtTotalDeliveryCharge.TabIndex = 21;
-            // 
             // FrmTaShowOrderDriver
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 18F);
@@ -219,12 +219,14 @@
             this.Name = "FrmTaShowOrderDriver";
             this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
             this.Text = "FrmTaShowOrderDriver";
+            this.Load += new System.EventHandler(this.FrmTaShowOrderDriver_Load);
+            this.SizeChanged += new System.EventHandler(this.FrmTaShowOrderDriver_SizeChanged);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.txtTotalDeliveryCharge.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridControlTaDriver)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gvTaPendOrder)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.lueDriver.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtTotalDeliveryCharge.Properties)).EndInit();
             this.ResumeLayout(false);
 
         }
