@@ -455,5 +455,18 @@ namespace SuperPOS.UI.TA
             txtNotesOnBill.Text = gvCompCustomer.GetRowCellValue(gvCompCustomer.FocusedRowHandle, "cusNotesOnBill") == null ? "" : gvCompCustomer.GetRowCellValue(gvCompCustomer.FocusedRowHandle, "cusNotesOnBill").ToString();
             chkBlackListed.Checked = gvCompCustomer.GetRowCellValue(gvCompCustomer.FocusedRowHandle, "cusIsBlack").ToString().Equals("Y") ? true : false;
         }
+
+        private void txtReadyTime_Click(object sender, EventArgs e)
+        {
+            FrmTaCustReadyTime frmTaCustReadyTime = new FrmTaCustReadyTime();
+            //frmTaCustReadyTime.Location = gridControlCustomer.Location;
+            frmTaCustReadyTime.Location = new Point(gridControlCustomer.Location.X + 100, gridControlCustomer.Location.Y + 50);
+            //frmTaCustReadyTime.Size = gridControlCustomer.Size;
+
+            if (frmTaCustReadyTime.ShowDialog() == DialogResult.OK)
+            {
+                
+            }
+        }
     }
 }

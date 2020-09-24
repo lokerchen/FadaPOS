@@ -454,6 +454,7 @@
             this.txtReadyTime.Name = "txtReadyTime";
             this.txtReadyTime.Size = new System.Drawing.Size(125, 24);
             this.txtReadyTime.TabIndex = 15;
+            this.txtReadyTime.Click += new System.EventHandler(this.txtReadyTime_Click);
             // 
             // labelControl5
             // 
