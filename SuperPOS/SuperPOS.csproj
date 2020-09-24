@@ -175,6 +175,12 @@
     <Compile Include="UI\TA\FrmCancelOrder.Designer.cs">
       <DependentUpon>FrmCancelOrder.cs</DependentUpon>
     </Compile>
+    <Compile Include="UI\TA\FrmFreeItem.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\TA\FrmFreeItem.Designer.cs">
+      <DependentUpon>FrmFreeItem.cs</DependentUpon>
+    </Compile>
     <Compile Include="UI\TA\FrmTaCustReadyTime.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -534,6 +540,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UI\TA\FrmCancelOrder.resx">
       <DependentUpon>FrmCancelOrder.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\TA\FrmFreeItem.resx">
+      <DependentUpon>FrmFreeItem.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UI\TA\FrmTaCustReadyTime.resx">
       <DependentUpon>FrmTaCustReadyTime.cs</DependentUpon>
