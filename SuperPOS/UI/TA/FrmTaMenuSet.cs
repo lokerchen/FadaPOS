@@ -24,6 +24,11 @@ namespace SuperPOS.UI.TA
 
         private AutoSizeFormClass asfc = new AutoSizeFormClass();
 
+        private TextBox[] txtEngName = new TextBox[4];
+        private TextBox[] txtOtherName = new TextBox[4];
+        private Label[] lblDelMenuContent = new Label[4];
+        private Label[] lblID = new Label[4];
+
         //是否为Add
         private bool isAdd = false;
 
@@ -39,96 +44,27 @@ namespace SuperPOS.UI.TA
             usrName = name;
         }
 
-        #region 显示Grid的行号
-        private void gvTaMenuSet_CustomDrawRowIndicator(object sender, DevExpress.XtraGrid.Views.Grid.RowIndicatorCustomDrawEventArgs e)
-        {
-            if (e.Info.IsRowIndicator && e.RowHandle > -1)
-            {
-                e.Info.DisplayText = (e.RowHandle + 1).ToString();
-            }
-        }
-        #endregion
-
-        #region Grid焦点行改变事件
-        private void gvTaMenuSet_FocusedRowChanged(object sender, DevExpress.XtraGrid.Views.Base.FocusedRowChangedEventArgs e)
-        {
-            txtEngName.Text = gvTaMenuSet.GetRowCellValue(gvTaMenuSet.FocusedRowHandle, "MSEngName").ToString();
-            txtOtherName.Text = gvTaMenuSet.GetRowCellValue(gvTaMenuSet.FocusedRowHandle, "MSOtherName").ToString();
-        }
-        #endregion
-
-        #region Add点击事件
-        private void btnAdd_Click(object sender, EventArgs e)
-        {
-            isAdd = true;
-
-            txtEngName.Text = "";
-            txtOtherName.Text = "";
-        }
-        #endregion
-
         #region Save保存事件
         private void btnSave_Click(object sender, EventArgs e)
         {
-            if (string.IsNullOrEmpty(txtEngName.Text))
+            for (int i = 0; i < 4; i++)
             {
-                CommonTool.ShowMessage("Name can not NULL!");
-                return;
-            }
+                new SystemData().GetTaMenuSet();
+                TaMenuSetInfo taMenuSetInfo = new TaMenuSetInfo();
+                taMenuSetInfo.MSEngName = txtEngName[i].Text;
+                taMenuSetInfo.MSOtherName = txtOtherName[i].Text;
 
-            if (string.IsNullOrEmpty(txtOtherName.Text))
-            {
-                CommonTool.ShowMessage("Other Name can not NULL!");
-                return;
-            }
-
-            new SystemData().GetTaMenuSet();
-            TaMenuSetInfo taMenuSetInfo = new TaMenuSetInfo();
-            taMenuSetInfo.MSEngName = txtEngName.Text;
-            taMenuSetInfo.MSOtherName = txtOtherName.Text;
-
-            try
-            {
-                if (isAdd)
-                {
-                    _control.AddEntity(taMenuSetInfo);
-                    isAdd = false;
-                }
-                else
-                {
-                    taMenuSetInfo.ID = Convert.ToInt32(gvTaMenuSet.GetRowCellValue(gvTaMenuSet.FocusedRowHandle, "ID"));
-                    _control.UpdateEntity(taMenuSetInfo);
-                }
-
-                BindData();
-
-            }
-            catch (Exception ex) { LogHelper.Error(this.Name, ex); }
-
-            CommonTool.ShowMessage("Save successful!");
-        }
-        #endregion
-
-        #region Delete删除事件
-        private void btnDel_Click(object sender, EventArgs e)
-        {
-            new SystemData().GetTaMenuSet();
-
-            if (CommonTool.ConfirmDelete() == DialogResult.Cancel) return;
-            else
-            {
                 try
                 {
-                    _control.DeleteEntity(CommonData.TaMenuSet.FirstOrDefault(s => s.ID == Convert.ToInt32(gvTaMenuSet.GetRowCellValue(gvTaMenuSet.FocusedRowHandle, "ID"))));
-                    CommonTool.ShowMessage("Delete successful!");
-                    BindData();
-                    isAdd = false;
+                    //taMenuSetInfo.ID = Convert.ToInt32(gvTaMenuSet.GetRowCellValue(gvTaMenuSet.FocusedRowHandle, "ID"));
+                    //_control.UpdateEntity(taMenuSetInfo);
+                    taMenuSetInfo.ID = Convert.ToInt32(lblID[i].Text);
+                    _control.UpdateEntity(taMenuSetInfo);
                 }
-                catch (Exception ex)
-                {
-                    LogHelper.Error(this.Name, ex);
-                }
+                catch (Exception ex) { LogHelper.Error(this.Name, ex); }
             }
+
+            CommonTool.ShowMessage("Save successful!");
         }
         #endregion
 
@@ -137,15 +73,64 @@ namespace SuperPOS.UI.TA
         {
             new SystemData().GetTaMenuSet();
 
-            gridControlTaMenuSet.DataSource = CommonData.TaMenuSet.ToList();
+            //gridControlTaMenuSet.DataSource = CommonData.TaMenuSet.ToList();
 
-            gvTaMenuSet.FocusedRowHandle = gvTaMenuSet.RowCount - 1;
+            //gvTaMenuSet.FocusedRowHandle = gvTaMenuSet.RowCount - 1;
+            
+            int i = 0;
+            foreach (var tms in CommonData.TaMenuSet)
+            {
+                txtEngName[i].Text = tms.MSEngName;
+                txtOtherName[i].Text = tms.MSOtherName;
+                lblID[i].Text = tms.ID.ToString();
+                i++;
+            }
+
+            lueFrom.Properties.DataSource = CommonData.TaMenuSet.ToList();
+            lueTo.Properties.DataSource = CommonData.TaMenuSet.ToList();
+
+            lueFrom.Properties.DisplayMember = "MSEngName";
+            lueFrom.Properties.ValueMember = "ID";
+            lueFrom.ItemIndex = 0;
+
+            lueTo.Properties.DisplayMember = "MSEngName";
+            lueTo.Properties.ValueMember = "ID";
+            lueTo.ItemIndex = 0;
         }
         #endregion
 
         private void FrmTaMenuSet_Load(object sender, EventArgs e)
         {
+            #region 控件赋值
+            txtEngName[0] = txtEngName1;
+            txtEngName[1] = txtEngName2;
+            txtEngName[2] = txtEngName3;
+            txtEngName[3] = txtEngName4;
+
+            txtOtherName[0] = txtOtherName1;
+            txtOtherName[1] = txtOtherName2;
+            txtOtherName[2] = txtOtherName3;
+            txtOtherName[3] = txtOtherName4;
+
+            lblID[0] = lbl1;
+            lblID[1] = lbl2;
+            lblID[2] = lbl3;
+            lblID[3] = lbl4;
+
+            lblDelMenuContent[0] = lblDeleteMenuContent1;
+            lblDelMenuContent[1] = lblDeleteMenuContent2;
+            lblDelMenuContent[2] = lblDeleteMenuContent3;
+            lblDelMenuContent[3] = lblDeleteMenuContent4;
+
+            lblDeleteMenuContent1.Click += DeleteMenu;
+            lblDeleteMenuContent2.Click += DeleteMenu;
+            lblDeleteMenuContent3.Click += DeleteMenu;
+            lblDeleteMenuContent4.Click += DeleteMenu;
+            #endregion
+            
             BindData();
+
+            //txtEngName[0] = txtEngName1;
 
             asfc.controllInitializeSize(this);
         }
@@ -158,6 +143,11 @@ namespace SuperPOS.UI.TA
         private void FrmTaMenuSet_SizeChanged(object sender, EventArgs e)
         {
             asfc.controlAutoSize(this);
+        }
+
+        private void DeleteMenu(object sender, EventArgs e)
+        {
+            //To Do Something
         }
     }
 }
