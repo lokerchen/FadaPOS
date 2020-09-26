@@ -26,6 +26,7 @@ namespace SuperPOS.UI.TaAdmin
 
         private TextEdit[] txtGsPayType = new TextEdit[5];
         private TextEdit[] txtGsFreeFoodItem = new TextEdit[4];
+        private TextEdit[] txtGsAddFreeFoodItem = new TextEdit[4];
         private TextEdit[] txtDsDistanceFrom = new TextEdit[4];
         private TextEdit[] txtDsDistanceTo = new TextEdit[4];
         private TextEdit[] txtDsAmountToPay = new TextEdit[4];
@@ -59,6 +60,11 @@ namespace SuperPOS.UI.TaAdmin
             txtGsFreeFoodItem[1] = txtFreeFoodItem2;
             txtGsFreeFoodItem[2] = txtFreeFoodItem3;
             txtGsFreeFoodItem[3] = txtFreeFoodItem4;
+
+            txtGsAddFreeFoodItem[0] = txtAddFreeFoodItem1;
+            txtGsAddFreeFoodItem[1] = txtAddFreeFoodItem2;
+            txtGsAddFreeFoodItem[2] = txtAddFreeFoodItem3;
+            txtGsAddFreeFoodItem[3] = txtAddFreeFoodItem4;
 
             txtDsDistanceFrom[0] = txtDsDistanceFrom1;
             txtDsDistanceFrom[1] = txtDsDistanceFrom2;
@@ -129,6 +135,20 @@ namespace SuperPOS.UI.TaAdmin
                 }
                 #endregion
 
+                #region Automatic Add
+                i = 0;
+                foreach (var freeFoodAdd in CommonData.TaFreeFoodAdd)
+                {
+                    txtGsAddFreeFoodItem[i].Text = freeFoodAdd.AddDishCode;
+                    i++;
+                }
+
+                for (int j = i; j < 4; j++)
+                {
+                    txtGsAddFreeFoodItem[j].Text = "";
+                }
+                #endregion
+
                 #region Discount
                 foreach (var taDiscountInfo in CommonData.TaDiscount)
                 {
@@ -157,6 +177,10 @@ namespace SuperPOS.UI.TaAdmin
                     chkGsMenuDishCodeFontBold.Checked = taConfMenuDisplayFontInfo.IsMenuDishCodeFontBold.Equals("Y");
                     txtCategoryBtnFontSize.Text = taConfMenuDisplayFontInfo.CategBtnFontSize;
                     chkGsCategBtnFontBold.Checked = taConfMenuDisplayFontInfo.IsCategFontBold.Equals("Y");
+                    txtMenuDishBtnOtherFontSize.Text = taConfMenuDisplayFontInfo.OtherMenuDisplayBtnFontSize;
+                    chkGsMenuDishCodeOtherFontBold.Checked = taConfMenuDisplayFontInfo.IsOtherMenuDishCodeFontBold.Equals("Y");
+                    txtCategoryBtnOtherFontSize.Text = taConfMenuDisplayFontInfo.OtherCategBtnFontSize;
+                    chkGsCategBtnOtherFontBold.Checked = taConfMenuDisplayFontInfo.IsOtherCategFontBold.Equals("Y");
                 }
                 #endregion
             }
@@ -374,6 +398,10 @@ namespace SuperPOS.UI.TaAdmin
                     taConfMenuDisplayFontInfo.IsMenuDishCodeFontBold = chkGsMenuDishCodeFontBold.Checked ? "Y" : "N";
                     taConfMenuDisplayFontInfo.CategBtnFontSize = txtCategoryBtnFontSize.Text;
                     taConfMenuDisplayFontInfo.IsCategFontBold = chkGsCategBtnFontBold.Checked ? "Y" : "N";
+                    taConfMenuDisplayFontInfo.OtherMenuDisplayBtnFontSize = txtMenuDishBtnOtherFontSize.Text;
+                    taConfMenuDisplayFontInfo.IsOtherMenuDishCodeFontBold = chkGsMenuDishCodeOtherFontBold.Checked ? "Y" : "N";
+                    taConfMenuDisplayFontInfo.OtherCategBtnFontSize = txtCategoryBtnOtherFontSize.Text;
+                    taConfMenuDisplayFontInfo.IsOtherCategFontBold = chkGsCategBtnOtherFontBold.Checked ? "Y" : "N";
                     _control.UpdateEntity(taConfMenuDisplayFontInfo);
                 }
                 else

@@ -18,5 +18,17 @@ namespace SuperPOS.Domain.Entities
 
         [XmlElement(ElementName = "IsCategFontBold")]
         public virtual string IsCategFontBold { get; set; }
+
+        [XmlElement(ElementName = "OtherMenuDisplayBtnFontSize")]
+        public virtual string OtherMenuDisplayBtnFontSize { get; set; }
+
+        [XmlElement(ElementName = "IsOtherMenuDishCodeFontBold")]
+        public virtual string IsOtherMenuDishCodeFontBold { get; set; }
+
+        [XmlElement(ElementName = "OtherCategBtnFontSize")]
+        public virtual string OtherCategBtnFontSize { get; set; }
+
+        [XmlElement(ElementName = "IsOtherCategFontBold")]
+        public virtual string IsOtherCategFontBold { get; set; }
     }
 }

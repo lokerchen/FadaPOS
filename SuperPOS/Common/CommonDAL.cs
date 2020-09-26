@@ -70,6 +70,8 @@ namespace SuperPOS.Common
             systemData.GetDataManager();
             //获得Free Food
             systemData.GetTaFreeFood();
+            //获得Free Food Add
+            systemData.GetTaFreeFoodAdd();
             //获得Delivery Set
             systemData.GetTaDeliverySet();
             systemData.GetTaDeliverySetDetail();

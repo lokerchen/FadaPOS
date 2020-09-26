@@ -101,16 +101,8 @@
             this.txtDsDistanceFrom1 = new DevExpress.XtraEditors.TextEdit();
             this.label13 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
-            this.btnExit = new DevExpress.XtraEditors.SimpleButton();
-            this.btnSave = new DevExpress.XtraEditors.SimpleButton();
             this.xtpChangeSet = new DevExpress.XtraTab.XtraTabPage();
             this.groupBox10 = new System.Windows.Forms.GroupBox();
-            this.txtEngName = new DevExpress.XtraEditors.TextEdit();
-            this.label15 = new System.Windows.Forms.Label();
-            this.txtOtherName = new DevExpress.XtraEditors.TextEdit();
-            this.label16 = new System.Windows.Forms.Label();
-            this.txtIncrement = new DevExpress.XtraEditors.TextEdit();
-            this.label17 = new System.Windows.Forms.Label();
             this.panelControl5 = new DevExpress.XtraEditors.PanelControl();
             this.btnAttr20 = new DevExpress.XtraEditors.SimpleButton();
             this.btnAttr19 = new DevExpress.XtraEditors.SimpleButton();
@@ -132,6 +124,30 @@
             this.btnAttr3 = new DevExpress.XtraEditors.SimpleButton();
             this.btnAttr2 = new DevExpress.XtraEditors.SimpleButton();
             this.btnAttr1 = new DevExpress.XtraEditors.SimpleButton();
+            this.txtIncrement = new DevExpress.XtraEditors.TextEdit();
+            this.label17 = new System.Windows.Forms.Label();
+            this.txtOtherName = new DevExpress.XtraEditors.TextEdit();
+            this.label16 = new System.Windows.Forms.Label();
+            this.txtEngName = new DevExpress.XtraEditors.TextEdit();
+            this.label15 = new System.Windows.Forms.Label();
+            this.btnExit = new DevExpress.XtraEditors.SimpleButton();
+            this.btnSave = new DevExpress.XtraEditors.SimpleButton();
+            this.groupBox11 = new System.Windows.Forms.GroupBox();
+            this.chkGsCategBtnOtherFontBold = new DevExpress.XtraEditors.CheckEdit();
+            this.chkGsMenuDishCodeOtherFontBold = new DevExpress.XtraEditors.CheckEdit();
+            this.txtCategoryBtnOtherFontSize = new DevExpress.XtraEditors.TextEdit();
+            this.label18 = new System.Windows.Forms.Label();
+            this.txtMenuDishBtnOtherFontSize = new DevExpress.XtraEditors.TextEdit();
+            this.label19 = new System.Windows.Forms.Label();
+            this.groupBox12 = new System.Windows.Forms.GroupBox();
+            this.txtAddTotalAmountThreshold = new DevExpress.XtraEditors.TextEdit();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.txtAddFreeFoodItem4 = new DevExpress.XtraEditors.TextEdit();
+            this.txtAddFreeFoodItem3 = new DevExpress.XtraEditors.TextEdit();
+            this.txtAddFreeFoodItem2 = new DevExpress.XtraEditors.TextEdit();
+            this.txtAddFreeFoodItem1 = new DevExpress.XtraEditors.TextEdit();
+            this.label20 = new System.Windows.Forms.Label();
+            this.label21 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.xtpTaConfig)).BeginInit();
             this.xtpTaConfig.SuspendLayout();
@@ -186,11 +202,23 @@
             ((System.ComponentModel.ISupportInitialize)(this.txtDsDistanceFrom1.Properties)).BeginInit();
             this.xtpChangeSet.SuspendLayout();
             this.groupBox10.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.txtEngName.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtOtherName.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtIncrement.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl5)).BeginInit();
             this.panelControl5.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.txtIncrement.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtOtherName.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtEngName.Properties)).BeginInit();
+            this.groupBox11.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.chkGsCategBtnOtherFontBold.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.chkGsMenuDishCodeOtherFontBold.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtCategoryBtnOtherFontSize.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtMenuDishBtnOtherFontSize.Properties)).BeginInit();
+            this.groupBox12.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.txtAddTotalAmountThreshold.Properties)).BeginInit();
+            this.panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.txtAddFreeFoodItem4.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtAddFreeFoodItem3.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtAddFreeFoodItem2.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtAddFreeFoodItem1.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox1
@@ -201,7 +229,7 @@
             this.groupBox1.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox1.Location = new System.Drawing.Point(12, 12);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(722, 708);
+            this.groupBox1.Size = new System.Drawing.Size(1053, 708);
             this.groupBox1.TabIndex = 1;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Takeaway Configuration";
@@ -212,7 +240,7 @@
             this.xtpTaConfig.Name = "xtpTaConfig";
             this.xtpTaConfig.PageImagePosition = DevExpress.XtraTab.TabPageImagePosition.Center;
             this.xtpTaConfig.SelectedTabPage = this.xtpGs;
-            this.xtpTaConfig.Size = new System.Drawing.Size(702, 600);
+            this.xtpTaConfig.Size = new System.Drawing.Size(1031, 600);
             this.xtpTaConfig.TabIndex = 2;
             this.xtpTaConfig.TabPages.AddRange(new DevExpress.XtraTab.XtraTabPage[] {
             this.xtpGs,
@@ -224,13 +252,15 @@
             // 
             this.xtpGs.Appearance.Header.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.xtpGs.Appearance.Header.Options.UseFont = true;
+            this.xtpGs.Controls.Add(this.groupBox12);
+            this.xtpGs.Controls.Add(this.groupBox11);
             this.xtpGs.Controls.Add(this.groupBox6);
             this.xtpGs.Controls.Add(this.groupBox5);
             this.xtpGs.Controls.Add(this.groupBox4);
             this.xtpGs.Controls.Add(this.groupBox3);
             this.xtpGs.Controls.Add(this.groupBox2);
             this.xtpGs.Name = "xtpGs";
-            this.xtpGs.Size = new System.Drawing.Size(695, 558);
+            this.xtpGs.Size = new System.Drawing.Size(1024, 558);
             this.xtpGs.Text = "General Setting";
             // 
             // groupBox6
@@ -335,12 +365,12 @@
             this.groupBox5.Controls.Add(this.label12);
             this.groupBox5.Controls.Add(this.txtMenuDishBtnFontSize);
             this.groupBox5.Controls.Add(this.label10);
-            this.groupBox5.Location = new System.Drawing.Point(371, 296);
+            this.groupBox5.Location = new System.Drawing.Point(700, 5);
             this.groupBox5.Name = "groupBox5";
             this.groupBox5.Size = new System.Drawing.Size(317, 221);
             this.groupBox5.TabIndex = 9;
             this.groupBox5.TabStop = false;
-            this.groupBox5.Text = "Menu Display Font";
+            this.groupBox5.Text = "Menu Display English Font";
             // 
             // chkGsCategBtnFontBold
             // 
@@ -1004,42 +1034,6 @@
             this.label11.TabIndex = 0;
             this.label11.Text = "Distance From";
             // 
-            // btnExit
-            // 
-            this.btnExit.Appearance.BackColor = System.Drawing.Color.Olive;
-            this.btnExit.Appearance.Font = new System.Drawing.Font("Tahoma", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnExit.Appearance.ForeColor = System.Drawing.Color.White;
-            this.btnExit.Appearance.Options.UseBackColor = true;
-            this.btnExit.Appearance.Options.UseFont = true;
-            this.btnExit.Appearance.Options.UseForeColor = true;
-            this.btnExit.Appearance.Options.UseTextOptions = true;
-            this.btnExit.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
-            this.btnExit.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
-            this.btnExit.Location = new System.Drawing.Point(624, 639);
-            this.btnExit.Name = "btnExit";
-            this.btnExit.Size = new System.Drawing.Size(88, 55);
-            this.btnExit.TabIndex = 9;
-            this.btnExit.Text = "Exit";
-            this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
-            // 
-            // btnSave
-            // 
-            this.btnSave.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
-            this.btnSave.Appearance.Font = new System.Drawing.Font("Tahoma", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSave.Appearance.ForeColor = System.Drawing.Color.White;
-            this.btnSave.Appearance.Options.UseBackColor = true;
-            this.btnSave.Appearance.Options.UseFont = true;
-            this.btnSave.Appearance.Options.UseForeColor = true;
-            this.btnSave.Appearance.Options.UseTextOptions = true;
-            this.btnSave.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
-            this.btnSave.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
-            this.btnSave.Location = new System.Drawing.Point(499, 639);
-            this.btnSave.Name = "btnSave";
-            this.btnSave.Size = new System.Drawing.Size(96, 55);
-            this.btnSave.TabIndex = 8;
-            this.btnSave.Text = "Save";
-            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
-            // 
             // xtpChangeSet
             // 
             this.xtpChangeSet.Appearance.Header.Font = new System.Drawing.Font("Tahoma", 12F);
@@ -1064,67 +1058,6 @@
             this.groupBox10.TabIndex = 11;
             this.groupBox10.TabStop = false;
             this.groupBox10.Text = "Change Settings";
-            // 
-            // txtEngName
-            // 
-            this.txtEngName.EditValue = "";
-            this.txtEngName.Location = new System.Drawing.Point(139, 51);
-            this.txtEngName.Name = "txtEngName";
-            this.txtEngName.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 12F);
-            this.txtEngName.Properties.Appearance.Options.UseFont = true;
-            this.txtEngName.Properties.Mask.EditMask = "f0";
-            this.txtEngName.Size = new System.Drawing.Size(171, 30);
-            this.txtEngName.TabIndex = 12;
-            // 
-            // label15
-            // 
-            this.label15.AutoSize = true;
-            this.label15.Location = new System.Drawing.Point(38, 63);
-            this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(95, 18);
-            this.label15.TabIndex = 11;
-            this.label15.Text = "English Name";
-            // 
-            // txtOtherName
-            // 
-            this.txtOtherName.EditValue = "";
-            this.txtOtherName.Location = new System.Drawing.Point(139, 97);
-            this.txtOtherName.Name = "txtOtherName";
-            this.txtOtherName.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 12F);
-            this.txtOtherName.Properties.Appearance.Options.UseFont = true;
-            this.txtOtherName.Properties.Mask.EditMask = "f0";
-            this.txtOtherName.Size = new System.Drawing.Size(171, 30);
-            this.txtOtherName.TabIndex = 14;
-            // 
-            // label16
-            // 
-            this.label16.AutoSize = true;
-            this.label16.Location = new System.Drawing.Point(44, 109);
-            this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(89, 18);
-            this.label16.TabIndex = 13;
-            this.label16.Text = "Ohter Name";
-            // 
-            // txtIncrement
-            // 
-            this.txtIncrement.EditValue = "";
-            this.txtIncrement.Location = new System.Drawing.Point(139, 148);
-            this.txtIncrement.Name = "txtIncrement";
-            this.txtIncrement.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 12F);
-            this.txtIncrement.Properties.Appearance.Options.UseFont = true;
-            this.txtIncrement.Properties.Mask.EditMask = "f2";
-            this.txtIncrement.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Numeric;
-            this.txtIncrement.Size = new System.Drawing.Size(171, 30);
-            this.txtIncrement.TabIndex = 16;
-            // 
-            // label17
-            // 
-            this.label17.AutoSize = true;
-            this.label17.Location = new System.Drawing.Point(22, 156);
-            this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(111, 18);
-            this.label17.TabIndex = 15;
-            this.label17.Text = "Increment Price";
             // 
             // panelControl5
             // 
@@ -1453,11 +1386,279 @@
             this.btnAttr1.Size = new System.Drawing.Size(160, 39);
             this.btnAttr1.TabIndex = 129;
             // 
+            // txtIncrement
+            // 
+            this.txtIncrement.EditValue = "";
+            this.txtIncrement.Location = new System.Drawing.Point(139, 148);
+            this.txtIncrement.Name = "txtIncrement";
+            this.txtIncrement.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 12F);
+            this.txtIncrement.Properties.Appearance.Options.UseFont = true;
+            this.txtIncrement.Properties.Mask.EditMask = "f2";
+            this.txtIncrement.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Numeric;
+            this.txtIncrement.Size = new System.Drawing.Size(171, 30);
+            this.txtIncrement.TabIndex = 16;
+            // 
+            // label17
+            // 
+            this.label17.AutoSize = true;
+            this.label17.Location = new System.Drawing.Point(22, 156);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(111, 18);
+            this.label17.TabIndex = 15;
+            this.label17.Text = "Increment Price";
+            // 
+            // txtOtherName
+            // 
+            this.txtOtherName.EditValue = "";
+            this.txtOtherName.Location = new System.Drawing.Point(139, 97);
+            this.txtOtherName.Name = "txtOtherName";
+            this.txtOtherName.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 12F);
+            this.txtOtherName.Properties.Appearance.Options.UseFont = true;
+            this.txtOtherName.Properties.Mask.EditMask = "f0";
+            this.txtOtherName.Size = new System.Drawing.Size(171, 30);
+            this.txtOtherName.TabIndex = 14;
+            // 
+            // label16
+            // 
+            this.label16.AutoSize = true;
+            this.label16.Location = new System.Drawing.Point(44, 109);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(89, 18);
+            this.label16.TabIndex = 13;
+            this.label16.Text = "Ohter Name";
+            // 
+            // txtEngName
+            // 
+            this.txtEngName.EditValue = "";
+            this.txtEngName.Location = new System.Drawing.Point(139, 51);
+            this.txtEngName.Name = "txtEngName";
+            this.txtEngName.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 12F);
+            this.txtEngName.Properties.Appearance.Options.UseFont = true;
+            this.txtEngName.Properties.Mask.EditMask = "f0";
+            this.txtEngName.Size = new System.Drawing.Size(171, 30);
+            this.txtEngName.TabIndex = 12;
+            // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.Location = new System.Drawing.Point(38, 63);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(95, 18);
+            this.label15.TabIndex = 11;
+            this.label15.Text = "English Name";
+            // 
+            // btnExit
+            // 
+            this.btnExit.Appearance.BackColor = System.Drawing.Color.Olive;
+            this.btnExit.Appearance.Font = new System.Drawing.Font("Tahoma", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnExit.Appearance.ForeColor = System.Drawing.Color.White;
+            this.btnExit.Appearance.Options.UseBackColor = true;
+            this.btnExit.Appearance.Options.UseFont = true;
+            this.btnExit.Appearance.Options.UseForeColor = true;
+            this.btnExit.Appearance.Options.UseTextOptions = true;
+            this.btnExit.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
+            this.btnExit.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
+            this.btnExit.Location = new System.Drawing.Point(946, 639);
+            this.btnExit.Name = "btnExit";
+            this.btnExit.Size = new System.Drawing.Size(88, 55);
+            this.btnExit.TabIndex = 9;
+            this.btnExit.Text = "Exit";
+            this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
+            // 
+            // btnSave
+            // 
+            this.btnSave.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
+            this.btnSave.Appearance.Font = new System.Drawing.Font("Tahoma", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSave.Appearance.ForeColor = System.Drawing.Color.White;
+            this.btnSave.Appearance.Options.UseBackColor = true;
+            this.btnSave.Appearance.Options.UseFont = true;
+            this.btnSave.Appearance.Options.UseForeColor = true;
+            this.btnSave.Appearance.Options.UseTextOptions = true;
+            this.btnSave.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
+            this.btnSave.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
+            this.btnSave.Location = new System.Drawing.Point(821, 639);
+            this.btnSave.Name = "btnSave";
+            this.btnSave.Size = new System.Drawing.Size(96, 55);
+            this.btnSave.TabIndex = 8;
+            this.btnSave.Text = "Save";
+            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
+            // 
+            // groupBox11
+            // 
+            this.groupBox11.Controls.Add(this.chkGsCategBtnOtherFontBold);
+            this.groupBox11.Controls.Add(this.chkGsMenuDishCodeOtherFontBold);
+            this.groupBox11.Controls.Add(this.txtCategoryBtnOtherFontSize);
+            this.groupBox11.Controls.Add(this.label18);
+            this.groupBox11.Controls.Add(this.txtMenuDishBtnOtherFontSize);
+            this.groupBox11.Controls.Add(this.label19);
+            this.groupBox11.Location = new System.Drawing.Point(700, 250);
+            this.groupBox11.Name = "groupBox11";
+            this.groupBox11.Size = new System.Drawing.Size(317, 221);
+            this.groupBox11.TabIndex = 11;
+            this.groupBox11.TabStop = false;
+            this.groupBox11.Text = "Menu Display Other Language Font";
+            // 
+            // chkGsCategBtnOtherFontBold
+            // 
+            this.chkGsCategBtnOtherFontBold.Location = new System.Drawing.Point(6, 175);
+            this.chkGsCategBtnOtherFontBold.Name = "chkGsCategBtnOtherFontBold";
+            this.chkGsCategBtnOtherFontBold.Properties.Appearance.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.chkGsCategBtnOtherFontBold.Properties.Appearance.Options.UseFont = true;
+            this.chkGsCategBtnOtherFontBold.Properties.Caption = "Category Button Font Bold";
+            this.chkGsCategBtnOtherFontBold.Size = new System.Drawing.Size(279, 31);
+            this.chkGsCategBtnOtherFontBold.TabIndex = 14;
+            // 
+            // chkGsMenuDishCodeOtherFontBold
+            // 
+            this.chkGsMenuDishCodeOtherFontBold.Location = new System.Drawing.Point(9, 84);
+            this.chkGsMenuDishCodeOtherFontBold.Name = "chkGsMenuDishCodeOtherFontBold";
+            this.chkGsMenuDishCodeOtherFontBold.Properties.Appearance.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.chkGsMenuDishCodeOtherFontBold.Properties.Appearance.Options.UseFont = true;
+            this.chkGsMenuDishCodeOtherFontBold.Properties.Caption = "Menu Dish Code Font Bold";
+            this.chkGsMenuDishCodeOtherFontBold.Size = new System.Drawing.Size(279, 31);
+            this.chkGsMenuDishCodeOtherFontBold.TabIndex = 13;
+            // 
+            // txtCategoryBtnOtherFontSize
+            // 
+            this.txtCategoryBtnOtherFontSize.EditValue = "";
+            this.txtCategoryBtnOtherFontSize.Location = new System.Drawing.Point(220, 128);
+            this.txtCategoryBtnOtherFontSize.Name = "txtCategoryBtnOtherFontSize";
+            this.txtCategoryBtnOtherFontSize.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 12F);
+            this.txtCategoryBtnOtherFontSize.Properties.Appearance.Options.UseFont = true;
+            this.txtCategoryBtnOtherFontSize.Properties.Mask.EditMask = "f0";
+            this.txtCategoryBtnOtherFontSize.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Numeric;
+            this.txtCategoryBtnOtherFontSize.Size = new System.Drawing.Size(83, 30);
+            this.txtCategoryBtnOtherFontSize.TabIndex = 12;
+            // 
+            // label18
+            // 
+            this.label18.AutoSize = true;
+            this.label18.Location = new System.Drawing.Point(6, 136);
+            this.label18.Name = "label18";
+            this.label18.Size = new System.Drawing.Size(174, 18);
+            this.label18.TabIndex = 11;
+            this.label18.Text = "Category Button FontSize";
+            // 
+            // txtMenuDishBtnOtherFontSize
+            // 
+            this.txtMenuDishBtnOtherFontSize.EditValue = "";
+            this.txtMenuDishBtnOtherFontSize.Location = new System.Drawing.Point(220, 38);
+            this.txtMenuDishBtnOtherFontSize.Name = "txtMenuDishBtnOtherFontSize";
+            this.txtMenuDishBtnOtherFontSize.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 12F);
+            this.txtMenuDishBtnOtherFontSize.Properties.Appearance.Options.UseFont = true;
+            this.txtMenuDishBtnOtherFontSize.Properties.Mask.EditMask = "f0";
+            this.txtMenuDishBtnOtherFontSize.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Numeric;
+            this.txtMenuDishBtnOtherFontSize.Size = new System.Drawing.Size(83, 30);
+            this.txtMenuDishBtnOtherFontSize.TabIndex = 8;
+            // 
+            // label19
+            // 
+            this.label19.AutoSize = true;
+            this.label19.Location = new System.Drawing.Point(6, 46);
+            this.label19.Name = "label19";
+            this.label19.Size = new System.Drawing.Size(183, 18);
+            this.label19.TabIndex = 7;
+            this.label19.Text = "Menu Dish Button FontSize";
+            // 
+            // groupBox12
+            // 
+            this.groupBox12.Controls.Add(this.txtAddTotalAmountThreshold);
+            this.groupBox12.Controls.Add(this.panel2);
+            this.groupBox12.Controls.Add(this.label20);
+            this.groupBox12.Controls.Add(this.label21);
+            this.groupBox12.Location = new System.Drawing.Point(371, 310);
+            this.groupBox12.Name = "groupBox12";
+            this.groupBox12.Size = new System.Drawing.Size(317, 136);
+            this.groupBox12.TabIndex = 12;
+            this.groupBox12.TabStop = false;
+            this.groupBox12.Text = "Automatic Added Item on Checkout";
+            // 
+            // txtAddTotalAmountThreshold
+            // 
+            this.txtAddTotalAmountThreshold.EditValue = "";
+            this.txtAddTotalAmountThreshold.Location = new System.Drawing.Point(214, 22);
+            this.txtAddTotalAmountThreshold.Name = "txtAddTotalAmountThreshold";
+            this.txtAddTotalAmountThreshold.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 12F);
+            this.txtAddTotalAmountThreshold.Properties.Appearance.Options.UseFont = true;
+            this.txtAddTotalAmountThreshold.Properties.Mask.EditMask = "f2";
+            this.txtAddTotalAmountThreshold.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Numeric;
+            this.txtAddTotalAmountThreshold.Size = new System.Drawing.Size(83, 30);
+            this.txtAddTotalAmountThreshold.TabIndex = 4;
+            // 
+            // panel2
+            // 
+            this.panel2.Controls.Add(this.txtAddFreeFoodItem4);
+            this.panel2.Controls.Add(this.txtAddFreeFoodItem3);
+            this.panel2.Controls.Add(this.txtAddFreeFoodItem2);
+            this.panel2.Controls.Add(this.txtAddFreeFoodItem1);
+            this.panel2.Location = new System.Drawing.Point(24, 88);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(249, 42);
+            this.panel2.TabIndex = 2;
+            // 
+            // txtAddFreeFoodItem4
+            // 
+            this.txtAddFreeFoodItem4.EditValue = "";
+            this.txtAddFreeFoodItem4.Location = new System.Drawing.Point(185, 7);
+            this.txtAddFreeFoodItem4.Name = "txtAddFreeFoodItem4";
+            this.txtAddFreeFoodItem4.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 12F);
+            this.txtAddFreeFoodItem4.Properties.Appearance.Options.UseFont = true;
+            this.txtAddFreeFoodItem4.Size = new System.Drawing.Size(52, 30);
+            this.txtAddFreeFoodItem4.TabIndex = 3;
+            // 
+            // txtAddFreeFoodItem3
+            // 
+            this.txtAddFreeFoodItem3.EditValue = "";
+            this.txtAddFreeFoodItem3.Location = new System.Drawing.Point(127, 7);
+            this.txtAddFreeFoodItem3.Name = "txtAddFreeFoodItem3";
+            this.txtAddFreeFoodItem3.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 12F);
+            this.txtAddFreeFoodItem3.Properties.Appearance.Options.UseFont = true;
+            this.txtAddFreeFoodItem3.Size = new System.Drawing.Size(52, 30);
+            this.txtAddFreeFoodItem3.TabIndex = 2;
+            // 
+            // txtAddFreeFoodItem2
+            // 
+            this.txtAddFreeFoodItem2.EditValue = "";
+            this.txtAddFreeFoodItem2.Location = new System.Drawing.Point(69, 7);
+            this.txtAddFreeFoodItem2.Name = "txtAddFreeFoodItem2";
+            this.txtAddFreeFoodItem2.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 12F);
+            this.txtAddFreeFoodItem2.Properties.Appearance.Options.UseFont = true;
+            this.txtAddFreeFoodItem2.Size = new System.Drawing.Size(52, 30);
+            this.txtAddFreeFoodItem2.TabIndex = 1;
+            // 
+            // txtAddFreeFoodItem1
+            // 
+            this.txtAddFreeFoodItem1.EditValue = "";
+            this.txtAddFreeFoodItem1.Location = new System.Drawing.Point(11, 7);
+            this.txtAddFreeFoodItem1.Name = "txtAddFreeFoodItem1";
+            this.txtAddFreeFoodItem1.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 12F);
+            this.txtAddFreeFoodItem1.Properties.Appearance.Options.UseFont = true;
+            this.txtAddFreeFoodItem1.Size = new System.Drawing.Size(52, 30);
+            this.txtAddFreeFoodItem1.TabIndex = 0;
+            // 
+            // label20
+            // 
+            this.label20.AutoSize = true;
+            this.label20.Location = new System.Drawing.Point(69, 67);
+            this.label20.Name = "label20";
+            this.label20.Size = new System.Drawing.Size(181, 18);
+            this.label20.TabIndex = 1;
+            this.label20.Text = "Free Food Item Dish Code";
+            // 
+            // label21
+            // 
+            this.label21.AutoSize = true;
+            this.label21.Location = new System.Drawing.Point(4, 34);
+            this.label21.Name = "label21";
+            this.label21.Size = new System.Drawing.Size(166, 18);
+            this.label21.TabIndex = 0;
+            this.label21.Text = "Total Amount Threshold";
+            // 
             // FrmTaConf
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(740, 725);
+            this.ClientSize = new System.Drawing.Size(1076, 725);
             this.Controls.Add(this.groupBox1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "FrmTaConf";
@@ -1528,11 +1729,25 @@
             this.xtpChangeSet.ResumeLayout(false);
             this.groupBox10.ResumeLayout(false);
             this.groupBox10.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.txtEngName.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtOtherName.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtIncrement.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl5)).EndInit();
             this.panelControl5.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.txtIncrement.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtOtherName.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtEngName.Properties)).EndInit();
+            this.groupBox11.ResumeLayout(false);
+            this.groupBox11.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.chkGsCategBtnOtherFontBold.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.chkGsMenuDishCodeOtherFontBold.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtCategoryBtnOtherFontSize.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtMenuDishBtnOtherFontSize.Properties)).EndInit();
+            this.groupBox12.ResumeLayout(false);
+            this.groupBox12.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.txtAddTotalAmountThreshold.Properties)).EndInit();
+            this.panel2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.txtAddFreeFoodItem4.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtAddFreeFoodItem3.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtAddFreeFoodItem2.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtAddFreeFoodItem1.Properties)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -1643,5 +1858,21 @@
         private DevExpress.XtraEditors.SimpleButton btnAttr3;
         private DevExpress.XtraEditors.SimpleButton btnAttr2;
         private DevExpress.XtraEditors.SimpleButton btnAttr1;
+        private System.Windows.Forms.GroupBox groupBox11;
+        private DevExpress.XtraEditors.CheckEdit chkGsCategBtnOtherFontBold;
+        private DevExpress.XtraEditors.CheckEdit chkGsMenuDishCodeOtherFontBold;
+        private DevExpress.XtraEditors.TextEdit txtCategoryBtnOtherFontSize;
+        private System.Windows.Forms.Label label18;
+        private DevExpress.XtraEditors.TextEdit txtMenuDishBtnOtherFontSize;
+        private System.Windows.Forms.Label label19;
+        private System.Windows.Forms.GroupBox groupBox12;
+        private DevExpress.XtraEditors.TextEdit txtAddTotalAmountThreshold;
+        private System.Windows.Forms.Panel panel2;
+        private DevExpress.XtraEditors.TextEdit txtAddFreeFoodItem4;
+        private DevExpress.XtraEditors.TextEdit txtAddFreeFoodItem3;
+        private DevExpress.XtraEditors.TextEdit txtAddFreeFoodItem2;
+        private DevExpress.XtraEditors.TextEdit txtAddFreeFoodItem1;
+        private System.Windows.Forms.Label label20;
+        private System.Windows.Forms.Label label21;
     }
 }

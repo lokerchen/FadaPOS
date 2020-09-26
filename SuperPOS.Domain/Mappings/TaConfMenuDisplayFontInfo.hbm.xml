@@ -12,6 +12,10 @@
     <property name="IsMenuDishCodeFontBold" column="IsMenuDishCodeFontBold" type="System.String" />
     <property name="CategBtnFontSize" column="CategBtnFontSize" type="System.String" />
     <property name="IsCategFontBold" column="IsCategFontBold" type="System.String" />
+    <property name="OtherMenuDisplayBtnFontSize" column="MenuDisplayBtnFontSize" type="System.String" />
+    <property name="IsOtherMenuDishCodeFontBold" column="IsMenuDishCodeFontBold" type="System.String" />
+    <property name="OtherCategBtnFontSize" column="CategBtnFontSize" type="System.String" />
+    <property name="IsOtherCategFontBold" column="IsCategFontBold" type="System.String" />
   </class>
 
 </hibernate-mapping>

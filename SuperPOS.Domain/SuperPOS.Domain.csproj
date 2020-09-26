@@ -67,6 +67,7 @@
     <Compile Include="Entities\TaDriverInfo.cs" />
     <Compile Include="Entities\TaExtraMenuInfo.cs" />
     <Compile Include="Entities\TaExtraResult.cs" />
+    <Compile Include="Entities\TaFreeFoodAddInfo.cs" />
     <Compile Include="Entities\TaFreeFoodInfo.cs" />
     <Compile Include="Entities\TaMenuCateInfo.cs" />
     <Compile Include="Entities\TaMenuItemInfo.cs" />
@@ -162,6 +163,7 @@
     <EmbeddedResource Include="Mappings\SysUsrMaintenanceInfo.hbm.xml" />
     <EmbeddedResource Include="Mappings\TaConfMenuDisplayFontInfo.hbm.xml" />
     <EmbeddedResource Include="Mappings\TaMenuItemSubMenuInfo.hbm.xml" />
+    <EmbeddedResource Include="Mappings\TaFreeFoodAddInfo.hbm.xml" />
     <Content Include="Mappings\TaPaymentInfo.hbm.xml" />
     <EmbeddedResource Include="Mappings\TaPostcodeChargeInfo.hbm.xml" />
     <EmbeddedResource Include="Mappings\TaPostcodeZoneInfo.hbm.xml" />
