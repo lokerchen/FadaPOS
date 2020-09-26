@@ -166,7 +166,8 @@ namespace SuperPOS.UI
 
         private void btnEiPrtSetup_Click(object sender, EventArgs e)
         {
-
+            FrmPrintSetup frmPrintSetup = new FrmPrintSetup();
+            frmPrintSetup.ShowDialog();
         }
         #endregion
 

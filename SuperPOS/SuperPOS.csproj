@@ -181,6 +181,36 @@
     <Compile Include="UI\TA\FrmFreeItem.Designer.cs">
       <DependentUpon>FrmFreeItem.cs</DependentUpon>
     </Compile>
+    <Compile Include="UI\TA\FrmPrintSetup.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\TA\FrmPrintSetup.Designer.cs">
+      <DependentUpon>FrmPrintSetup.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\TA\FrmPrintSetupGeneral.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\TA\FrmPrintSetupGeneral.Designer.cs">
+      <DependentUpon>FrmPrintSetupGeneral.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\TA\FrmPrintSetupKitchenSetting.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\TA\FrmPrintSetupKitchenSetting.Designer.cs">
+      <DependentUpon>FrmPrintSetupKitchenSetting.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\TA\FrmPrintSetupCounterSetting2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\TA\FrmPrintSetupCounterSetting2.Designer.cs">
+      <DependentUpon>FrmPrintSetupCounterSetting2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\TA\FrmPrintSetupCounterSetting1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\TA\FrmPrintSetupCounterSetting1.Designer.cs">
+      <DependentUpon>FrmPrintSetupCounterSetting1.cs</DependentUpon>
+    </Compile>
     <Compile Include="UI\TA\FrmTaCustReadyTime.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -543,6 +573,21 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UI\TA\FrmFreeItem.resx">
       <DependentUpon>FrmFreeItem.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\TA\FrmPrintSetup.resx">
+      <DependentUpon>FrmPrintSetup.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\TA\FrmPrintSetupGeneral.resx">
+      <DependentUpon>FrmPrintSetupGeneral.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\TA\FrmPrintSetupKitchenSetting.resx">
+      <DependentUpon>FrmPrintSetupKitchenSetting.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\TA\FrmPrintSetupCounterSetting2.resx">
+      <DependentUpon>FrmPrintSetupCounterSetting2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\TA\FrmPrintSetupCounterSetting1.resx">
+      <DependentUpon>FrmPrintSetupCounterSetting1.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UI\TA\FrmTaCustReadyTime.resx">
       <DependentUpon>FrmTaCustReadyTime.cs</DependentUpon>
