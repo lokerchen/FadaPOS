@@ -34,7 +34,7 @@
             this.gridControlReport = new DevExpress.XtraGrid.GridControl();
             this.gvTaShowOrder = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.ID = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.Name = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.CustName = new DevExpress.XtraGrid.Columns.GridColumn();
             this.PhoneNo1 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.PhoneNo2 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.Address1 = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -43,11 +43,11 @@
             this.Postcode2 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.Distance = new DevExpress.XtraGrid.Columns.GridColumn();
             this.Map = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.BlackListed = new DevExpress.XtraGrid.Columns.GridColumn();
             this.label1 = new System.Windows.Forms.Label();
             this.btnUp = new DevExpress.XtraEditors.SimpleButton();
             this.btnDown = new DevExpress.XtraEditors.SimpleButton();
             this.btnExport = new DevExpress.XtraEditors.SimpleButton();
-            this.BlackListed = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.gridControlReport)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gvTaShowOrder)).BeginInit();
             this.SuspendLayout();
@@ -104,7 +104,7 @@
             this.gvTaShowOrder.Appearance.HeaderPanel.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.gvTaShowOrder.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
             this.ID,
-            this.Name,
+            this.CustName,
             this.PhoneNo1,
             this.PhoneNo2,
             this.Address1,
@@ -133,17 +133,17 @@
             this.ID.FieldName = "ID";
             this.ID.Name = "ID";
             // 
-            // Name
+            // CustName
             // 
-            this.Name.AppearanceCell.Font = new System.Drawing.Font("Tahoma", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Name.AppearanceCell.Options.UseFont = true;
-            this.Name.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Name.AppearanceHeader.Options.UseFont = true;
-            this.Name.Caption = "Name";
-            this.Name.FieldName = "gridName";
-            this.Name.Name = "Name";
-            this.Name.Visible = true;
-            this.Name.VisibleIndex = 0;
+            this.CustName.AppearanceCell.Font = new System.Drawing.Font("Tahoma", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.CustName.AppearanceCell.Options.UseFont = true;
+            this.CustName.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.CustName.AppearanceHeader.Options.UseFont = true;
+            this.CustName.Caption = "Name";
+            this.CustName.FieldName = "gridCustName";
+            this.CustName.Name = "CustName";
+            this.CustName.Visible = true;
+            this.CustName.VisibleIndex = 0;
             // 
             // PhoneNo1
             // 
@@ -233,6 +233,14 @@
             this.Map.FieldName = "gridMap";
             this.Map.Name = "Map";
             // 
+            // BlackListed
+            // 
+            this.BlackListed.Caption = "BlackListed";
+            this.BlackListed.FieldName = "gridBlackListed";
+            this.BlackListed.Name = "BlackListed";
+            this.BlackListed.Visible = true;
+            this.BlackListed.VisibleIndex = 7;
+            // 
             // label1
             // 
             this.label1.AutoSize = true;
@@ -298,14 +306,6 @@
             this.btnExport.TabIndex = 96;
             this.btnExport.Text = "Export CSV";
             // 
-            // BlackListed
-            // 
-            this.BlackListed.Caption = "BlackListed";
-            this.BlackListed.FieldName = "gridBlackListed";
-            this.BlackListed.Name = "BlackListed";
-            this.BlackListed.Visible = true;
-            this.BlackListed.VisibleIndex = 7;
-            // 
             // RptCustomerDatabase
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 18F);
@@ -339,7 +339,7 @@
         private DevExpress.XtraGrid.GridControl gridControlReport;
         private DevExpress.XtraGrid.Views.Grid.GridView gvTaShowOrder;
         private DevExpress.XtraGrid.Columns.GridColumn ID;
-        private DevExpress.XtraGrid.Columns.GridColumn Name;
+        private DevExpress.XtraGrid.Columns.GridColumn CustName;
         private DevExpress.XtraGrid.Columns.GridColumn PhoneNo2;
         private DevExpress.XtraGrid.Columns.GridColumn Address1;
         private DevExpress.XtraGrid.Columns.GridColumn Address2;
