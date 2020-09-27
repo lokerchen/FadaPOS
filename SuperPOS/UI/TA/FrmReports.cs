@@ -12,21 +12,21 @@ using SuperPOS.Common;
 
 namespace SuperPOS.UI.TA
 {
-    public partial class FrmTaPrintSalesReprot : DevExpress.XtraEditors.XtraForm
+    public partial class FrmReports : DevExpress.XtraEditors.XtraForm
     {
         private AutoSizeFormClass asfc = new AutoSizeFormClass();
 
-        public FrmTaPrintSalesReprot()
+        public FrmReports()
         {
             InitializeComponent();
         }
 
-        private void FrmTaPrintSalesReprot_Load(object sender, EventArgs e)
+        private void FrmReports_Load(object sender, EventArgs e)
         {
             asfc.controllInitializeSize(this);
         }
 
-        private void FrmTaPrintSalesReprot_SizeChanged(object sender, EventArgs e)
+        private void FrmReports_SizeChanged(object sender, EventArgs e)
         {
             asfc.controlAutoSize(this);
         }

@@ -413,6 +413,8 @@
             this.Name = "FrmTaPrintSalesReprot";
             this.Text = "FrmTaPrintSalesReprot";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.Load += new System.EventHandler(this.FrmTaPrintSalesReprot_Load);
+            this.SizeChanged += new System.EventHandler(this.FrmTaPrintSalesReprot_SizeChanged);
             this.groupBox1.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();

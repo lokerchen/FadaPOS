@@ -213,6 +213,12 @@
     <Compile Include="UI\TA\FrmPrintSetupCounterSetting1.Designer.cs">
       <DependentUpon>FrmPrintSetupCounterSetting1.cs</DependentUpon>
     </Compile>
+    <Compile Include="UI\TA\FrmReports.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\TA\FrmReports.Designer.cs">
+      <DependentUpon>FrmReports.cs</DependentUpon>
+    </Compile>
     <Compile Include="UI\TA\FrmTaCustReadyTime.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -602,6 +608,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UI\TA\FrmPrintSetupCounterSetting1.resx">
       <DependentUpon>FrmPrintSetupCounterSetting1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\TA\FrmReports.resx">
+      <DependentUpon>FrmReports.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UI\TA\FrmTaCustReadyTime.resx">
       <DependentUpon>FrmTaCustReadyTime.cs</DependentUpon>
