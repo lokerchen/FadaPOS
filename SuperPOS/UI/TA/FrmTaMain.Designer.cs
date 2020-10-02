@@ -55,12 +55,12 @@
             this.lblAddress = new DevExpress.XtraEditors.LabelControl();
             this.lblPhone = new DevExpress.XtraEditors.LabelControl();
             this.lblName = new DevExpress.XtraEditors.LabelControl();
-            this.labelControl6 = new DevExpress.XtraEditors.LabelControl();
-            this.labelControl5 = new DevExpress.XtraEditors.LabelControl();
-            this.labelControl4 = new DevExpress.XtraEditors.LabelControl();
-            this.labelControl3 = new DevExpress.XtraEditors.LabelControl();
-            this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
-            this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
+            this.lblCustDeliveryFee = new DevExpress.XtraEditors.LabelControl();
+            this.lblCustDistance = new DevExpress.XtraEditors.LabelControl();
+            this.lblCustPostcode = new DevExpress.XtraEditors.LabelControl();
+            this.lblCustAddress = new DevExpress.XtraEditors.LabelControl();
+            this.lblCustPhone = new DevExpress.XtraEditors.LabelControl();
+            this.lblCustName = new DevExpress.XtraEditors.LabelControl();
             this.btnChange = new DevExpress.XtraEditors.SimpleButton();
             this.btnPay = new DevExpress.XtraEditors.SimpleButton();
             this.btnKeypad = new DevExpress.XtraEditors.SimpleButton();
@@ -480,12 +480,12 @@
             this.panelMember.Controls.Add(this.lblAddress);
             this.panelMember.Controls.Add(this.lblPhone);
             this.panelMember.Controls.Add(this.lblName);
-            this.panelMember.Controls.Add(this.labelControl6);
-            this.panelMember.Controls.Add(this.labelControl5);
-            this.panelMember.Controls.Add(this.labelControl4);
-            this.panelMember.Controls.Add(this.labelControl3);
-            this.panelMember.Controls.Add(this.labelControl2);
-            this.panelMember.Controls.Add(this.labelControl1);
+            this.panelMember.Controls.Add(this.lblCustDeliveryFee);
+            this.panelMember.Controls.Add(this.lblCustDistance);
+            this.panelMember.Controls.Add(this.lblCustPostcode);
+            this.panelMember.Controls.Add(this.lblCustAddress);
+            this.panelMember.Controls.Add(this.lblCustPhone);
+            this.panelMember.Controls.Add(this.lblCustName);
             this.panelMember.Location = new System.Drawing.Point(5, 9);
             this.panelMember.Name = "panelMember";
             this.panelMember.Size = new System.Drawing.Size(390, 126);
@@ -546,53 +546,71 @@
             this.lblName.TabIndex = 6;
             this.lblName.Text = "FadaPos";
             // 
-            // labelControl6
+            // lblCustDeliveryFee
             // 
-            this.labelControl6.Location = new System.Drawing.Point(5, 101);
-            this.labelControl6.Name = "labelControl6";
-            this.labelControl6.Size = new System.Drawing.Size(85, 18);
-            this.labelControl6.TabIndex = 5;
-            this.labelControl6.Text = "Delivery Fee:";
+            this.lblCustDeliveryFee.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
+            this.lblCustDeliveryFee.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
+            this.lblCustDeliveryFee.Location = new System.Drawing.Point(5, 101);
+            this.lblCustDeliveryFee.Name = "lblCustDeliveryFee";
+            this.lblCustDeliveryFee.Size = new System.Drawing.Size(85, 18);
+            this.lblCustDeliveryFee.TabIndex = 5;
+            this.lblCustDeliveryFee.Text = "Delivery Fee:";
+            this.lblCustDeliveryFee.Visible = false;
             // 
-            // labelControl5
+            // lblCustDistance
             // 
-            this.labelControl5.Location = new System.Drawing.Point(5, 81);
-            this.labelControl5.Name = "labelControl5";
-            this.labelControl5.Size = new System.Drawing.Size(60, 18);
-            this.labelControl5.TabIndex = 4;
-            this.labelControl5.Text = "Distance:";
+            this.lblCustDistance.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
+            this.lblCustDistance.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
+            this.lblCustDistance.Location = new System.Drawing.Point(5, 81);
+            this.lblCustDistance.Name = "lblCustDistance";
+            this.lblCustDistance.Size = new System.Drawing.Size(85, 18);
+            this.lblCustDistance.TabIndex = 4;
+            this.lblCustDistance.Text = "Distance:";
+            this.lblCustDistance.Visible = false;
             // 
-            // labelControl4
+            // lblCustPostcode
             // 
-            this.labelControl4.Location = new System.Drawing.Point(5, 62);
-            this.labelControl4.Name = "labelControl4";
-            this.labelControl4.Size = new System.Drawing.Size(64, 18);
-            this.labelControl4.TabIndex = 3;
-            this.labelControl4.Text = "Postcode:";
+            this.lblCustPostcode.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
+            this.lblCustPostcode.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
+            this.lblCustPostcode.Location = new System.Drawing.Point(5, 62);
+            this.lblCustPostcode.Name = "lblCustPostcode";
+            this.lblCustPostcode.Size = new System.Drawing.Size(85, 18);
+            this.lblCustPostcode.TabIndex = 3;
+            this.lblCustPostcode.Text = "Postcode:";
+            this.lblCustPostcode.Visible = false;
             // 
-            // labelControl3
+            // lblCustAddress
             // 
-            this.labelControl3.Location = new System.Drawing.Point(5, 43);
-            this.labelControl3.Name = "labelControl3";
-            this.labelControl3.Size = new System.Drawing.Size(57, 18);
-            this.labelControl3.TabIndex = 2;
-            this.labelControl3.Text = "Address:";
+            this.lblCustAddress.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
+            this.lblCustAddress.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
+            this.lblCustAddress.Location = new System.Drawing.Point(5, 43);
+            this.lblCustAddress.Name = "lblCustAddress";
+            this.lblCustAddress.Size = new System.Drawing.Size(85, 18);
+            this.lblCustAddress.TabIndex = 2;
+            this.lblCustAddress.Text = "Address:";
+            this.lblCustAddress.Visible = false;
             // 
-            // labelControl2
+            // lblCustPhone
             // 
-            this.labelControl2.Location = new System.Drawing.Point(5, 24);
-            this.labelControl2.Name = "labelControl2";
-            this.labelControl2.Size = new System.Drawing.Size(45, 18);
-            this.labelControl2.TabIndex = 1;
-            this.labelControl2.Text = "Phone:";
+            this.lblCustPhone.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
+            this.lblCustPhone.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
+            this.lblCustPhone.Location = new System.Drawing.Point(5, 24);
+            this.lblCustPhone.Name = "lblCustPhone";
+            this.lblCustPhone.Size = new System.Drawing.Size(85, 18);
+            this.lblCustPhone.TabIndex = 1;
+            this.lblCustPhone.Text = "Phone:";
+            this.lblCustPhone.Visible = false;
             // 
-            // labelControl1
+            // lblCustName
             // 
-            this.labelControl1.Location = new System.Drawing.Point(5, 5);
-            this.labelControl1.Name = "labelControl1";
-            this.labelControl1.Size = new System.Drawing.Size(44, 18);
-            this.labelControl1.TabIndex = 0;
-            this.labelControl1.Text = "Name:";
+            this.lblCustName.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
+            this.lblCustName.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
+            this.lblCustName.Location = new System.Drawing.Point(5, 5);
+            this.lblCustName.Name = "lblCustName";
+            this.lblCustName.Size = new System.Drawing.Size(85, 18);
+            this.lblCustName.TabIndex = 0;
+            this.lblCustName.Text = "Name:";
+            this.lblCustName.Visible = false;
             // 
             // btnChange
             // 
@@ -2995,12 +3013,12 @@
         private DevExpress.XtraEditors.LabelControl lblAddress;
         private DevExpress.XtraEditors.LabelControl lblPhone;
         private DevExpress.XtraEditors.LabelControl lblName;
-        private DevExpress.XtraEditors.LabelControl labelControl6;
-        private DevExpress.XtraEditors.LabelControl labelControl5;
-        private DevExpress.XtraEditors.LabelControl labelControl4;
-        private DevExpress.XtraEditors.LabelControl labelControl3;
-        private DevExpress.XtraEditors.LabelControl labelControl2;
-        private DevExpress.XtraEditors.LabelControl labelControl1;
+        private DevExpress.XtraEditors.LabelControl lblCustDeliveryFee;
+        private DevExpress.XtraEditors.LabelControl lblCustDistance;
+        private DevExpress.XtraEditors.LabelControl lblCustPostcode;
+        private DevExpress.XtraEditors.LabelControl lblCustAddress;
+        private DevExpress.XtraEditors.LabelControl lblCustPhone;
+        private DevExpress.XtraEditors.LabelControl lblCustName;
         private DevExpress.XtraEditors.SimpleButton btnType;
         private DevExpress.XtraTreeList.Columns.TreeListColumn BusDate;
         private DevExpress.XtraEditors.SimpleButton btnOnlineOrder;

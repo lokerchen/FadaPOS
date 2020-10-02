@@ -215,6 +215,13 @@ namespace SuperPOS.UI.TA
                 lblDiliveryFee.Text = "";
 
                 ORDER_TYPE = PubComm.ORDER_TYPE_SHOP;
+
+                lblCustName.Visible = false;
+                lblCustPhone.Visible = false;
+                lblCustAddress.Visible = false;
+                lblCustPostcode.Visible = false;
+                lblCustDistance.Visible = false;
+                lblCustDeliveryFee.Visible = false;
                 #endregion
 
                 checkID = CommonDAL.GetCheckCode();
@@ -2093,6 +2100,13 @@ namespace SuperPOS.UI.TA
                 lblPostcode.Text = "";
                 lblDistance.Text = "";
                 lblDiliveryFee.Text = "";
+
+                lblCustName.Visible = false;
+                lblCustPhone.Visible = false;
+                lblCustAddress.Visible = false;
+                lblCustPostcode.Visible = false;
+                lblCustDistance.Visible = false;
+                lblCustDeliveryFee.Visible = false;
             }
             else
             {
@@ -2110,6 +2124,13 @@ namespace SuperPOS.UI.TA
                     lblPostcode.Text = taCustomerInfo.cusPostcode;
                     lblDistance.Text = taCustomerInfo.cusDistance;
                     lblDiliveryFee.Text = taCustomerInfo.cusDelCharge;
+
+                    lblCustName.Visible = true;
+                    lblCustPhone.Visible = true;
+                    lblCustAddress.Visible = true;
+                    lblCustPostcode.Visible = true;
+                    lblCustDistance.Visible = true;
+                    lblCustDeliveryFee.Visible = true;
                 }
                 else
                 {
@@ -2119,6 +2140,13 @@ namespace SuperPOS.UI.TA
                     lblPostcode.Text = "";
                     lblDistance.Text = "";
                     lblDiliveryFee.Text = "";
+
+                    lblCustName.Visible = false;
+                    lblCustPhone.Visible = false;
+                    lblCustAddress.Visible = false;
+                    lblCustPostcode.Visible = false;
+                    lblCustDistance.Visible = false;
+                    lblCustDeliveryFee.Visible = false;
                 }
             }
         }
@@ -2142,6 +2170,13 @@ namespace SuperPOS.UI.TA
                         lblPostcode.Text = "";
                         lblDistance.Text = "";
                         lblDiliveryFee.Text = "";
+
+                        lblCustName.Visible = false;
+                        lblCustPhone.Visible = false;
+                        lblCustAddress.Visible = false;
+                        lblCustPostcode.Visible = false;
+                        lblCustDistance.Visible = false;
+                        lblCustDeliveryFee.Visible = false;
                     }
                     else
                     {
@@ -2151,6 +2186,13 @@ namespace SuperPOS.UI.TA
                         lblPostcode.Text = taCustomerInfo.cusPostcode;
                         lblDistance.Text = taCustomerInfo.cusDistance;
                         lblDiliveryFee.Text = taCustomerInfo.cusDelCharge;
+
+                        lblCustName.Visible = true;
+                        lblCustPhone.Visible = true;
+                        lblCustAddress.Visible = true;
+                        lblCustPostcode.Visible = true;
+                        lblCustDistance.Visible = true;
+                        lblCustDeliveryFee.Visible = true;
 
                         //存在客户信息时，变更订单类型
                         ORDER_TYPE = PubComm.ORDER_TYPE_DELIVERY;
