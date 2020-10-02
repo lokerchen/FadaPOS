@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.btnCollection = new DevExpress.XtraEditors.SimpleButton();
             this.btnPercent = new DevExpress.XtraEditors.SimpleButton();
             this.lblCtlSurcharge = new DevExpress.XtraEditors.LabelControl();
             this.btnNotPaid = new DevExpress.XtraEditors.SimpleButton();
@@ -82,19 +83,18 @@
             this.lblTypeName = new DevExpress.XtraEditors.LabelControl();
             this.btnExit = new DevExpress.XtraEditors.SimpleButton();
             this.groupBox6 = new System.Windows.Forms.GroupBox();
-            this.btnDriver1 = new DevExpress.XtraEditors.SimpleButton();
-            this.btnDriver2 = new DevExpress.XtraEditors.SimpleButton();
-            this.btnDriver3 = new DevExpress.XtraEditors.SimpleButton();
-            this.btnDriver6 = new DevExpress.XtraEditors.SimpleButton();
-            this.btnDriver5 = new DevExpress.XtraEditors.SimpleButton();
-            this.btnDriver4 = new DevExpress.XtraEditors.SimpleButton();
+            this.btnDriver10 = new DevExpress.XtraEditors.SimpleButton();
             this.btnDriver9 = new DevExpress.XtraEditors.SimpleButton();
             this.btnDriver8 = new DevExpress.XtraEditors.SimpleButton();
             this.btnDriver7 = new DevExpress.XtraEditors.SimpleButton();
-            this.btnDriver10 = new DevExpress.XtraEditors.SimpleButton();
+            this.btnDriver6 = new DevExpress.XtraEditors.SimpleButton();
+            this.btnDriver5 = new DevExpress.XtraEditors.SimpleButton();
+            this.btnDriver4 = new DevExpress.XtraEditors.SimpleButton();
+            this.btnDriver3 = new DevExpress.XtraEditors.SimpleButton();
+            this.btnDriver2 = new DevExpress.XtraEditors.SimpleButton();
+            this.btnDriver1 = new DevExpress.XtraEditors.SimpleButton();
             this.label1 = new System.Windows.Forms.Label();
             this.lueNote = new DevExpress.XtraEditors.LookUpEdit();
-            this.btnCollection = new DevExpress.XtraEditors.SimpleButton();
             this.groupBox1.SuspendLayout();
             this.groupBox5.SuspendLayout();
             this.groupBox4.SuspendLayout();
@@ -135,6 +135,19 @@
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Payment";
+            // 
+            // btnCollection
+            // 
+            this.btnCollection.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.btnCollection.Appearance.Font = new System.Drawing.Font("Tahoma", 14F);
+            this.btnCollection.Appearance.Options.UseBackColor = true;
+            this.btnCollection.Appearance.Options.UseFont = true;
+            this.btnCollection.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
+            this.btnCollection.Location = new System.Drawing.Point(626, 501);
+            this.btnCollection.Name = "btnCollection";
+            this.btnCollection.Size = new System.Drawing.Size(165, 56);
+            this.btnCollection.TabIndex = 52;
+            this.btnCollection.Text = "Collection";
             // 
             // btnPercent
             // 
@@ -899,77 +912,17 @@
             this.groupBox6.TabStop = false;
             this.groupBox6.Text = "Driver List";
             // 
-            // btnDriver1
+            // btnDriver10
             // 
-            this.btnDriver1.Appearance.BackColor = System.Drawing.Color.NavajoWhite;
-            this.btnDriver1.Appearance.Font = new System.Drawing.Font("Tahoma", 14F);
-            this.btnDriver1.Appearance.Options.UseBackColor = true;
-            this.btnDriver1.Appearance.Options.UseFont = true;
-            this.btnDriver1.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
-            this.btnDriver1.Location = new System.Drawing.Point(6, 28);
-            this.btnDriver1.Name = "btnDriver1";
-            this.btnDriver1.Size = new System.Drawing.Size(151, 48);
-            this.btnDriver1.TabIndex = 107;
-            // 
-            // btnDriver2
-            // 
-            this.btnDriver2.Appearance.BackColor = System.Drawing.Color.NavajoWhite;
-            this.btnDriver2.Appearance.Font = new System.Drawing.Font("Tahoma", 14F);
-            this.btnDriver2.Appearance.Options.UseBackColor = true;
-            this.btnDriver2.Appearance.Options.UseFont = true;
-            this.btnDriver2.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
-            this.btnDriver2.Location = new System.Drawing.Point(6, 82);
-            this.btnDriver2.Name = "btnDriver2";
-            this.btnDriver2.Size = new System.Drawing.Size(151, 48);
-            this.btnDriver2.TabIndex = 108;
-            // 
-            // btnDriver3
-            // 
-            this.btnDriver3.Appearance.BackColor = System.Drawing.Color.NavajoWhite;
-            this.btnDriver3.Appearance.Font = new System.Drawing.Font("Tahoma", 14F);
-            this.btnDriver3.Appearance.Options.UseBackColor = true;
-            this.btnDriver3.Appearance.Options.UseFont = true;
-            this.btnDriver3.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
-            this.btnDriver3.Location = new System.Drawing.Point(6, 136);
-            this.btnDriver3.Name = "btnDriver3";
-            this.btnDriver3.Size = new System.Drawing.Size(151, 48);
-            this.btnDriver3.TabIndex = 109;
-            // 
-            // btnDriver6
-            // 
-            this.btnDriver6.Appearance.BackColor = System.Drawing.Color.NavajoWhite;
-            this.btnDriver6.Appearance.Font = new System.Drawing.Font("Tahoma", 14F);
-            this.btnDriver6.Appearance.Options.UseBackColor = true;
-            this.btnDriver6.Appearance.Options.UseFont = true;
-            this.btnDriver6.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
-            this.btnDriver6.Location = new System.Drawing.Point(6, 298);
-            this.btnDriver6.Name = "btnDriver6";
-            this.btnDriver6.Size = new System.Drawing.Size(151, 48);
-            this.btnDriver6.TabIndex = 112;
-            // 
-            // btnDriver5
-            // 
-            this.btnDriver5.Appearance.BackColor = System.Drawing.Color.NavajoWhite;
-            this.btnDriver5.Appearance.Font = new System.Drawing.Font("Tahoma", 14F);
-            this.btnDriver5.Appearance.Options.UseBackColor = true;
-            this.btnDriver5.Appearance.Options.UseFont = true;
-            this.btnDriver5.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
-            this.btnDriver5.Location = new System.Drawing.Point(6, 244);
-            this.btnDriver5.Name = "btnDriver5";
-            this.btnDriver5.Size = new System.Drawing.Size(151, 48);
-            this.btnDriver5.TabIndex = 111;
-            // 
-            // btnDriver4
-            // 
-            this.btnDriver4.Appearance.BackColor = System.Drawing.Color.NavajoWhite;
-            this.btnDriver4.Appearance.Font = new System.Drawing.Font("Tahoma", 14F);
-            this.btnDriver4.Appearance.Options.UseBackColor = true;
-            this.btnDriver4.Appearance.Options.UseFont = true;
-            this.btnDriver4.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
-            this.btnDriver4.Location = new System.Drawing.Point(6, 190);
-            this.btnDriver4.Name = "btnDriver4";
-            this.btnDriver4.Size = new System.Drawing.Size(151, 48);
-            this.btnDriver4.TabIndex = 110;
+            this.btnDriver10.Appearance.BackColor = System.Drawing.Color.NavajoWhite;
+            this.btnDriver10.Appearance.Font = new System.Drawing.Font("Tahoma", 14F);
+            this.btnDriver10.Appearance.Options.UseBackColor = true;
+            this.btnDriver10.Appearance.Options.UseFont = true;
+            this.btnDriver10.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
+            this.btnDriver10.Location = new System.Drawing.Point(6, 514);
+            this.btnDriver10.Name = "btnDriver10";
+            this.btnDriver10.Size = new System.Drawing.Size(151, 48);
+            this.btnDriver10.TabIndex = 116;
             // 
             // btnDriver9
             // 
@@ -1007,17 +960,77 @@
             this.btnDriver7.Size = new System.Drawing.Size(151, 48);
             this.btnDriver7.TabIndex = 113;
             // 
-            // btnDriver10
+            // btnDriver6
             // 
-            this.btnDriver10.Appearance.BackColor = System.Drawing.Color.NavajoWhite;
-            this.btnDriver10.Appearance.Font = new System.Drawing.Font("Tahoma", 14F);
-            this.btnDriver10.Appearance.Options.UseBackColor = true;
-            this.btnDriver10.Appearance.Options.UseFont = true;
-            this.btnDriver10.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
-            this.btnDriver10.Location = new System.Drawing.Point(6, 514);
-            this.btnDriver10.Name = "btnDriver10";
-            this.btnDriver10.Size = new System.Drawing.Size(151, 48);
-            this.btnDriver10.TabIndex = 116;
+            this.btnDriver6.Appearance.BackColor = System.Drawing.Color.NavajoWhite;
+            this.btnDriver6.Appearance.Font = new System.Drawing.Font("Tahoma", 14F);
+            this.btnDriver6.Appearance.Options.UseBackColor = true;
+            this.btnDriver6.Appearance.Options.UseFont = true;
+            this.btnDriver6.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
+            this.btnDriver6.Location = new System.Drawing.Point(6, 298);
+            this.btnDriver6.Name = "btnDriver6";
+            this.btnDriver6.Size = new System.Drawing.Size(151, 48);
+            this.btnDriver6.TabIndex = 112;
+            // 
+            // btnDriver5
+            // 
+            this.btnDriver5.Appearance.BackColor = System.Drawing.Color.NavajoWhite;
+            this.btnDriver5.Appearance.Font = new System.Drawing.Font("Tahoma", 14F);
+            this.btnDriver5.Appearance.Options.UseBackColor = true;
+            this.btnDriver5.Appearance.Options.UseFont = true;
+            this.btnDriver5.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
+            this.btnDriver5.Location = new System.Drawing.Point(6, 244);
+            this.btnDriver5.Name = "btnDriver5";
+            this.btnDriver5.Size = new System.Drawing.Size(151, 48);
+            this.btnDriver5.TabIndex = 111;
+            // 
+            // btnDriver4
+            // 
+            this.btnDriver4.Appearance.BackColor = System.Drawing.Color.NavajoWhite;
+            this.btnDriver4.Appearance.Font = new System.Drawing.Font("Tahoma", 14F);
+            this.btnDriver4.Appearance.Options.UseBackColor = true;
+            this.btnDriver4.Appearance.Options.UseFont = true;
+            this.btnDriver4.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
+            this.btnDriver4.Location = new System.Drawing.Point(6, 190);
+            this.btnDriver4.Name = "btnDriver4";
+            this.btnDriver4.Size = new System.Drawing.Size(151, 48);
+            this.btnDriver4.TabIndex = 110;
+            // 
+            // btnDriver3
+            // 
+            this.btnDriver3.Appearance.BackColor = System.Drawing.Color.NavajoWhite;
+            this.btnDriver3.Appearance.Font = new System.Drawing.Font("Tahoma", 14F);
+            this.btnDriver3.Appearance.Options.UseBackColor = true;
+            this.btnDriver3.Appearance.Options.UseFont = true;
+            this.btnDriver3.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
+            this.btnDriver3.Location = new System.Drawing.Point(6, 136);
+            this.btnDriver3.Name = "btnDriver3";
+            this.btnDriver3.Size = new System.Drawing.Size(151, 48);
+            this.btnDriver3.TabIndex = 109;
+            // 
+            // btnDriver2
+            // 
+            this.btnDriver2.Appearance.BackColor = System.Drawing.Color.NavajoWhite;
+            this.btnDriver2.Appearance.Font = new System.Drawing.Font("Tahoma", 14F);
+            this.btnDriver2.Appearance.Options.UseBackColor = true;
+            this.btnDriver2.Appearance.Options.UseFont = true;
+            this.btnDriver2.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
+            this.btnDriver2.Location = new System.Drawing.Point(6, 82);
+            this.btnDriver2.Name = "btnDriver2";
+            this.btnDriver2.Size = new System.Drawing.Size(151, 48);
+            this.btnDriver2.TabIndex = 108;
+            // 
+            // btnDriver1
+            // 
+            this.btnDriver1.Appearance.BackColor = System.Drawing.Color.NavajoWhite;
+            this.btnDriver1.Appearance.Font = new System.Drawing.Font("Tahoma", 14F);
+            this.btnDriver1.Appearance.Options.UseBackColor = true;
+            this.btnDriver1.Appearance.Options.UseFont = true;
+            this.btnDriver1.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
+            this.btnDriver1.Location = new System.Drawing.Point(6, 28);
+            this.btnDriver1.Name = "btnDriver1";
+            this.btnDriver1.Size = new System.Drawing.Size(151, 48);
+            this.btnDriver1.TabIndex = 107;
             // 
             // label1
             // 
@@ -1042,19 +1055,6 @@
             this.lueNote.TabIndex = 108;
             this.lueNote.EditValueChanged += new System.EventHandler(this.lueNote_EditValueChanged);
             // 
-            // btnCollection
-            // 
-            this.btnCollection.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
-            this.btnCollection.Appearance.Font = new System.Drawing.Font("Tahoma", 14F);
-            this.btnCollection.Appearance.Options.UseBackColor = true;
-            this.btnCollection.Appearance.Options.UseFont = true;
-            this.btnCollection.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
-            this.btnCollection.Location = new System.Drawing.Point(626, 501);
-            this.btnCollection.Name = "btnCollection";
-            this.btnCollection.Size = new System.Drawing.Size(165, 56);
-            this.btnCollection.TabIndex = 52;
-            this.btnCollection.Text = "Collection";
-            // 
             // FrmTaPaymentDelivery
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 18F);
@@ -1067,9 +1067,8 @@
             this.Controls.Add(this.groupBox1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "FrmTaPaymentDelivery";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
             this.Text = "FrmTaPaymentShop";
-            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.FrmTaPaymentDelivery_Load);
             this.SizeChanged += new System.EventHandler(this.FrmTaPaymentShop_SizeChanged);
             this.groupBox1.ResumeLayout(false);

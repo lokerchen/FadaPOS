@@ -914,9 +914,8 @@
             this.Controls.Add(this.groupBox1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "FrmTaPaymentCollection";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
             this.Text = "FrmTaPaymentShop";
-            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.FrmTaPaymentCollection_Load);
             this.SizeChanged += new System.EventHandler(this.FrmTaPaymentShop_SizeChanged);
             this.groupBox1.ResumeLayout(false);

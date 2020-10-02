@@ -29,7 +29,10 @@
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.btnPercent = new DevExpress.XtraEditors.SimpleButton();
+            this.lblCtlSurcharge = new DevExpress.XtraEditors.LabelControl();
             this.btnNotPaid = new DevExpress.XtraEditors.SimpleButton();
+            this.lblCtlDiscount = new DevExpress.XtraEditors.LabelControl();
             this.groupBox5 = new System.Windows.Forms.GroupBox();
             this.btnSave = new DevExpress.XtraEditors.SimpleButton();
             this.btnPrtAll = new DevExpress.XtraEditors.SimpleButton();
@@ -37,7 +40,6 @@
             this.btnPrtAllReceipt = new DevExpress.XtraEditors.SimpleButton();
             this.btnPrtBillOnly = new DevExpress.XtraEditors.SimpleButton();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
-            this.btnPercent = new DevExpress.XtraEditors.SimpleButton();
             this.btnClear = new DevExpress.XtraEditors.SimpleButton();
             this.btnDel = new DevExpress.XtraEditors.SimpleButton();
             this.btnPoint = new DevExpress.XtraEditors.SimpleButton();
@@ -63,10 +65,10 @@
             this.lblPayType2 = new DevExpress.XtraEditors.LabelControl();
             this.lblPayType1 = new DevExpress.XtraEditors.LabelControl();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.lblCtlSurcharge = new DevExpress.XtraEditors.LabelControl();
-            this.lblCtlDiscount = new DevExpress.XtraEditors.LabelControl();
-            this.txtPercentSurcharge = new DevExpress.XtraEditors.TextEdit();
             this.txtPercentDiscount = new DevExpress.XtraEditors.TextEdit();
+            this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
+            this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
+            this.txtPercentSurcharge = new DevExpress.XtraEditors.TextEdit();
             this.txtChange = new DevExpress.XtraEditors.TextEdit();
             this.txtToPay = new DevExpress.XtraEditors.TextEdit();
             this.txtTendered = new DevExpress.XtraEditors.TextEdit();
@@ -79,8 +81,6 @@
             this.labelControl10 = new DevExpress.XtraEditors.LabelControl();
             this.lblTypeName = new DevExpress.XtraEditors.LabelControl();
             this.btnExit = new DevExpress.XtraEditors.SimpleButton();
-            this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
-            this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
             this.groupBox1.SuspendLayout();
             this.groupBox5.SuspendLayout();
             this.groupBox4.SuspendLayout();
@@ -91,8 +91,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.txtPayTypePay2.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtPayTypePay1.Properties)).BeginInit();
             this.groupBox2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.txtPercentSurcharge.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtPercentDiscount.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtPercentSurcharge.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtChange.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtToPay.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtTendered.Properties)).BeginInit();
@@ -119,6 +119,32 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Payment";
             // 
+            // btnPercent
+            // 
+            this.btnPercent.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btnPercent.Appearance.BackColor = System.Drawing.Color.OrangeRed;
+            this.btnPercent.Appearance.Font = new System.Drawing.Font("Tahoma", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnPercent.Appearance.Options.UseBackColor = true;
+            this.btnPercent.Appearance.Options.UseFont = true;
+            this.btnPercent.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
+            this.btnPercent.Location = new System.Drawing.Point(126, 168);
+            this.btnPercent.Name = "btnPercent";
+            this.btnPercent.Size = new System.Drawing.Size(60, 45);
+            this.btnPercent.TabIndex = 103;
+            this.btnPercent.Text = "%";
+            this.btnPercent.Visible = false;
+            this.btnPercent.Click += new System.EventHandler(this.btnPercent_Click);
+            // 
+            // lblCtlSurcharge
+            // 
+            this.lblCtlSurcharge.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
+            this.lblCtlSurcharge.Location = new System.Drawing.Point(72, 144);
+            this.lblCtlSurcharge.Name = "lblCtlSurcharge";
+            this.lblCtlSurcharge.Size = new System.Drawing.Size(63, 18);
+            this.lblCtlSurcharge.TabIndex = 105;
+            this.lblCtlSurcharge.Text = "0.00";
+            this.lblCtlSurcharge.Visible = false;
+            // 
             // btnNotPaid
             // 
             this.btnNotPaid.Appearance.BackColor = System.Drawing.Color.Red;
@@ -132,6 +158,16 @@
             this.btnNotPaid.TabIndex = 52;
             this.btnNotPaid.Text = "NOT PAID";
             this.btnNotPaid.Click += new System.EventHandler(this.btnNotPaid_Click);
+            // 
+            // lblCtlDiscount
+            // 
+            this.lblCtlDiscount.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
+            this.lblCtlDiscount.Location = new System.Drawing.Point(72, 100);
+            this.lblCtlDiscount.Name = "lblCtlDiscount";
+            this.lblCtlDiscount.Size = new System.Drawing.Size(63, 21);
+            this.lblCtlDiscount.TabIndex = 93;
+            this.lblCtlDiscount.Text = "0.00";
+            this.lblCtlDiscount.Visible = false;
             // 
             // groupBox5
             // 
@@ -236,22 +272,6 @@
             this.groupBox4.Size = new System.Drawing.Size(215, 296);
             this.groupBox4.TabIndex = 91;
             this.groupBox4.TabStop = false;
-            // 
-            // btnPercent
-            // 
-            this.btnPercent.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.btnPercent.Appearance.BackColor = System.Drawing.Color.OrangeRed;
-            this.btnPercent.Appearance.Font = new System.Drawing.Font("Tahoma", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnPercent.Appearance.Options.UseBackColor = true;
-            this.btnPercent.Appearance.Options.UseFont = true;
-            this.btnPercent.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
-            this.btnPercent.Location = new System.Drawing.Point(126, 168);
-            this.btnPercent.Name = "btnPercent";
-            this.btnPercent.Size = new System.Drawing.Size(60, 45);
-            this.btnPercent.TabIndex = 103;
-            this.btnPercent.Text = "%";
-            this.btnPercent.Visible = false;
-            this.btnPercent.Click += new System.EventHandler(this.btnPercent_Click);
             // 
             // btnClear
             // 
@@ -620,25 +640,39 @@
             this.groupBox2.TabIndex = 89;
             this.groupBox2.TabStop = false;
             // 
-            // lblCtlSurcharge
+            // txtPercentDiscount
             // 
-            this.lblCtlSurcharge.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
-            this.lblCtlSurcharge.Location = new System.Drawing.Point(72, 144);
-            this.lblCtlSurcharge.Name = "lblCtlSurcharge";
-            this.lblCtlSurcharge.Size = new System.Drawing.Size(63, 18);
-            this.lblCtlSurcharge.TabIndex = 105;
-            this.lblCtlSurcharge.Text = "0.00";
-            this.lblCtlSurcharge.Visible = false;
+            this.txtPercentDiscount.EditValue = "";
+            this.txtPercentDiscount.Location = new System.Drawing.Point(148, 25);
+            this.txtPercentDiscount.Name = "txtPercentDiscount";
+            this.txtPercentDiscount.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 16F);
+            this.txtPercentDiscount.Properties.Appearance.Options.UseFont = true;
+            this.txtPercentDiscount.Properties.Appearance.Options.UseTextOptions = true;
+            this.txtPercentDiscount.Properties.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
+            this.txtPercentDiscount.Properties.Mask.EditMask = "f2";
+            this.txtPercentDiscount.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Numeric;
+            this.txtPercentDiscount.Size = new System.Drawing.Size(71, 40);
+            this.txtPercentDiscount.TabIndex = 103;
+            this.txtPercentDiscount.EditValueChanged += new System.EventHandler(this.txtPercentDiscount_EditValueChanged);
+            this.txtPercentDiscount.MouseDown += new System.Windows.Forms.MouseEventHandler(this.txtPercentDiscount_MouseDown);
             // 
-            // lblCtlDiscount
+            // labelControl2
             // 
-            this.lblCtlDiscount.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
-            this.lblCtlDiscount.Location = new System.Drawing.Point(72, 100);
-            this.lblCtlDiscount.Name = "lblCtlDiscount";
-            this.lblCtlDiscount.Size = new System.Drawing.Size(63, 21);
-            this.lblCtlDiscount.TabIndex = 93;
-            this.lblCtlDiscount.Text = "0.00";
-            this.lblCtlDiscount.Visible = false;
+            this.labelControl2.Appearance.Font = new System.Drawing.Font("Tahoma", 12F);
+            this.labelControl2.Location = new System.Drawing.Point(225, 84);
+            this.labelControl2.Name = "labelControl2";
+            this.labelControl2.Size = new System.Drawing.Size(20, 24);
+            this.labelControl2.TabIndex = 106;
+            this.labelControl2.Text = "%";
+            // 
+            // labelControl1
+            // 
+            this.labelControl1.Appearance.Font = new System.Drawing.Font("Tahoma", 12F);
+            this.labelControl1.Location = new System.Drawing.Point(225, 38);
+            this.labelControl1.Name = "labelControl1";
+            this.labelControl1.Size = new System.Drawing.Size(20, 24);
+            this.labelControl1.TabIndex = 105;
+            this.labelControl1.Text = "%";
             // 
             // txtPercentSurcharge
             // 
@@ -655,22 +689,6 @@
             this.txtPercentSurcharge.TabIndex = 104;
             this.txtPercentSurcharge.EditValueChanged += new System.EventHandler(this.txtPercentSurcharge_EditValueChanged);
             this.txtPercentSurcharge.MouseDown += new System.Windows.Forms.MouseEventHandler(this.txtPercentSurcharge_MouseDown);
-            // 
-            // txtPercentDiscount
-            // 
-            this.txtPercentDiscount.EditValue = "";
-            this.txtPercentDiscount.Location = new System.Drawing.Point(148, 25);
-            this.txtPercentDiscount.Name = "txtPercentDiscount";
-            this.txtPercentDiscount.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 16F);
-            this.txtPercentDiscount.Properties.Appearance.Options.UseFont = true;
-            this.txtPercentDiscount.Properties.Appearance.Options.UseTextOptions = true;
-            this.txtPercentDiscount.Properties.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
-            this.txtPercentDiscount.Properties.Mask.EditMask = "f2";
-            this.txtPercentDiscount.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Numeric;
-            this.txtPercentDiscount.Size = new System.Drawing.Size(71, 40);
-            this.txtPercentDiscount.TabIndex = 103;
-            this.txtPercentDiscount.EditValueChanged += new System.EventHandler(this.txtPercentDiscount_EditValueChanged);
-            this.txtPercentDiscount.MouseDown += new System.Windows.Forms.MouseEventHandler(this.txtPercentDiscount_MouseDown);
             // 
             // txtChange
             // 
@@ -844,24 +862,6 @@
             this.btnExit.Text = "Exit";
             this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
             // 
-            // labelControl1
-            // 
-            this.labelControl1.Appearance.Font = new System.Drawing.Font("Tahoma", 12F);
-            this.labelControl1.Location = new System.Drawing.Point(225, 38);
-            this.labelControl1.Name = "labelControl1";
-            this.labelControl1.Size = new System.Drawing.Size(20, 24);
-            this.labelControl1.TabIndex = 105;
-            this.labelControl1.Text = "%";
-            // 
-            // labelControl2
-            // 
-            this.labelControl2.Appearance.Font = new System.Drawing.Font("Tahoma", 12F);
-            this.labelControl2.Location = new System.Drawing.Point(225, 84);
-            this.labelControl2.Name = "labelControl2";
-            this.labelControl2.Size = new System.Drawing.Size(20, 24);
-            this.labelControl2.TabIndex = 106;
-            this.labelControl2.Text = "%";
-            // 
             // FrmTaPaymentShop
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 18F);
@@ -871,9 +871,8 @@
             this.Controls.Add(this.groupBox1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "FrmTaPaymentShop";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
             this.Text = "FrmTaPaymentShop";
-            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.FrmTaPaymentShop_Load);
             this.SizeChanged += new System.EventHandler(this.FrmTaPaymentShop_SizeChanged);
             this.groupBox1.ResumeLayout(false);
@@ -888,8 +887,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.txtPayTypePay1.Properties)).EndInit();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.txtPercentSurcharge.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtPercentDiscount.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtPercentSurcharge.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtChange.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtToPay.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtTendered.Properties)).EndInit();
