@@ -100,6 +100,7 @@
             // labelControl1
             // 
             this.labelControl1.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
+            this.labelControl1.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
             this.labelControl1.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
             this.labelControl1.Location = new System.Drawing.Point(49, 11);
             this.labelControl1.Name = "labelControl1";
@@ -177,10 +178,12 @@
             // 
             // chkBlackListed
             // 
+            this.chkBlackListed.AutoSizeInLayoutControl = true;
             this.chkBlackListed.Location = new System.Drawing.Point(13, 524);
             this.chkBlackListed.Name = "chkBlackListed";
             this.chkBlackListed.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.chkBlackListed.Properties.Appearance.Options.UseFont = true;
+            this.chkBlackListed.Properties.AutoHeight = false;
             this.chkBlackListed.Properties.Caption = "Black Listed";
             this.chkBlackListed.Size = new System.Drawing.Size(224, 26);
             this.chkBlackListed.TabIndex = 31;
@@ -273,11 +276,13 @@
             // 
             this.txtHouseNo.Location = new System.Drawing.Point(112, 89);
             this.txtHouseNo.Name = "txtHouseNo";
+            this.txtHouseNo.Properties.AutoHeight = false;
             this.txtHouseNo.Size = new System.Drawing.Size(125, 24);
             this.txtHouseNo.TabIndex = 24;
             // 
             // labelControl9
             // 
+            this.labelControl9.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
             this.labelControl9.Location = new System.Drawing.Point(20, 95);
             this.labelControl9.Name = "labelControl9";
             this.labelControl9.Size = new System.Drawing.Size(74, 18);
@@ -422,11 +427,13 @@
             // 
             this.txtNotesOnBill.Location = new System.Drawing.Point(112, 487);
             this.txtNotesOnBill.Name = "txtNotesOnBill";
+            this.txtNotesOnBill.Properties.AutoHeight = false;
             this.txtNotesOnBill.Size = new System.Drawing.Size(125, 24);
             this.txtNotesOnBill.TabIndex = 19;
             // 
             // labelControl11
             // 
+            this.labelControl11.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
             this.labelControl11.Location = new System.Drawing.Point(11, 490);
             this.labelControl11.Name = "labelControl11";
             this.labelControl11.Size = new System.Drawing.Size(83, 18);
@@ -437,11 +444,13 @@
             // 
             this.txtIntNotes.Location = new System.Drawing.Point(112, 444);
             this.txtIntNotes.Name = "txtIntNotes";
+            this.txtIntNotes.Properties.AutoHeight = false;
             this.txtIntNotes.Size = new System.Drawing.Size(125, 24);
             this.txtIntNotes.TabIndex = 17;
             // 
             // labelControl12
             // 
+            this.labelControl12.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
             this.labelControl12.Location = new System.Drawing.Point(22, 447);
             this.labelControl12.Name = "labelControl12";
             this.labelControl12.Size = new System.Drawing.Size(72, 18);
@@ -452,12 +461,14 @@
             // 
             this.txtReadyTime.Location = new System.Drawing.Point(112, 405);
             this.txtReadyTime.Name = "txtReadyTime";
+            this.txtReadyTime.Properties.AutoHeight = false;
             this.txtReadyTime.Size = new System.Drawing.Size(125, 24);
             this.txtReadyTime.TabIndex = 15;
             this.txtReadyTime.Click += new System.EventHandler(this.txtReadyTime_Click);
             // 
             // labelControl5
             // 
+            this.labelControl5.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
             this.labelControl5.Location = new System.Drawing.Point(10, 408);
             this.labelControl5.Name = "labelControl5";
             this.labelControl5.Size = new System.Drawing.Size(84, 18);
@@ -468,11 +479,13 @@
             // 
             this.txtDelCharge.Location = new System.Drawing.Point(112, 362);
             this.txtDelCharge.Name = "txtDelCharge";
+            this.txtDelCharge.Properties.AutoHeight = false;
             this.txtDelCharge.Size = new System.Drawing.Size(125, 24);
             this.txtDelCharge.TabIndex = 13;
             // 
             // labelControl6
             // 
+            this.labelControl6.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
             this.labelControl6.Location = new System.Drawing.Point(18, 365);
             this.labelControl6.Name = "labelControl6";
             this.labelControl6.Size = new System.Drawing.Size(76, 18);
@@ -483,11 +496,13 @@
             // 
             this.txtPcZone.Location = new System.Drawing.Point(112, 318);
             this.txtPcZone.Name = "txtPcZone";
+            this.txtPcZone.Properties.AutoHeight = false;
             this.txtPcZone.Size = new System.Drawing.Size(125, 24);
             this.txtPcZone.TabIndex = 11;
             // 
             // labelControl7
             // 
+            this.labelControl7.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
             this.labelControl7.Location = new System.Drawing.Point(35, 321);
             this.labelControl7.Name = "labelControl7";
             this.labelControl7.Size = new System.Drawing.Size(59, 18);
@@ -498,12 +513,14 @@
             // 
             this.txtDistance.Location = new System.Drawing.Point(112, 275);
             this.txtDistance.Name = "txtDistance";
+            this.txtDistance.Properties.AutoHeight = false;
             this.txtDistance.Size = new System.Drawing.Size(125, 24);
             this.txtDistance.TabIndex = 9;
             // 
             // labelControl8
             // 
-            this.labelControl8.Location = new System.Drawing.Point(34, 278);
+            this.labelControl8.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
+            this.labelControl8.Location = new System.Drawing.Point(34, 273);
             this.labelControl8.Name = "labelControl8";
             this.labelControl8.Size = new System.Drawing.Size(60, 18);
             this.labelControl8.TabIndex = 8;
@@ -520,6 +537,7 @@
             // labelControl3
             // 
             this.labelControl3.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
+            this.labelControl3.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
             this.labelControl3.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
             this.labelControl3.Location = new System.Drawing.Point(30, 236);
             this.labelControl3.Name = "labelControl3";
@@ -529,7 +547,8 @@
             // 
             // labelControl4
             // 
-            this.labelControl4.Location = new System.Drawing.Point(13, 132);
+            this.labelControl4.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
+            this.labelControl4.Location = new System.Drawing.Point(13, 131);
             this.labelControl4.Name = "labelControl4";
             this.labelControl4.Size = new System.Drawing.Size(81, 18);
             this.labelControl4.TabIndex = 4;
@@ -539,11 +558,13 @@
             // 
             this.txtName.Location = new System.Drawing.Point(112, 48);
             this.txtName.Name = "txtName";
+            this.txtName.Properties.AutoHeight = false;
             this.txtName.Size = new System.Drawing.Size(125, 24);
             this.txtName.TabIndex = 3;
             // 
             // labelControl2
             // 
+            this.labelControl2.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
             this.labelControl2.Location = new System.Drawing.Point(50, 54);
             this.labelControl2.Name = "labelControl2";
             this.labelControl2.Size = new System.Drawing.Size(44, 18);
@@ -554,6 +575,7 @@
             // 
             this.txtPhone.Location = new System.Drawing.Point(112, 5);
             this.txtPhone.Name = "txtPhone";
+            this.txtPhone.Properties.AutoHeight = false;
             this.txtPhone.Size = new System.Drawing.Size(125, 24);
             this.txtPhone.TabIndex = 1;
             // 
@@ -568,6 +590,7 @@
             // 
             this.luePostcode.Location = new System.Drawing.Point(112, 233);
             this.luePostcode.Name = "luePostcode";
+            this.luePostcode.Properties.AutoHeight = false;
             this.luePostcode.Properties.BestFitMode = DevExpress.XtraEditors.Controls.BestFitMode.BestFit;
             this.luePostcode.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
@@ -599,7 +622,6 @@
             this.SizeChanged += new System.EventHandler(this.FrmTaCustomerInfo_SizeChanged);
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).EndInit();
             this.panelControl1.ResumeLayout(false);
-            this.panelControl1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.chkBlackListed.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtHouseNo.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridControlCustomer)).EndInit();
