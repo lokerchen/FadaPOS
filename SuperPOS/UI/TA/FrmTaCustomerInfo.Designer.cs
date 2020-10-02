@@ -100,11 +100,12 @@
             // labelControl1
             // 
             this.labelControl1.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
+            this.labelControl1.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
             this.labelControl1.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
             this.labelControl1.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
-            this.labelControl1.Location = new System.Drawing.Point(49, 11);
+            this.labelControl1.Location = new System.Drawing.Point(10, 11);
             this.labelControl1.Name = "labelControl1";
-            this.labelControl1.Size = new System.Drawing.Size(45, 18);
+            this.labelControl1.Size = new System.Drawing.Size(84, 18);
             this.labelControl1.TabIndex = 0;
             this.labelControl1.Text = "Phone:";
             // 
@@ -282,10 +283,11 @@
             // 
             // labelControl9
             // 
+            this.labelControl9.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
             this.labelControl9.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
-            this.labelControl9.Location = new System.Drawing.Point(20, 95);
+            this.labelControl9.Location = new System.Drawing.Point(10, 95);
             this.labelControl9.Name = "labelControl9";
-            this.labelControl9.Size = new System.Drawing.Size(74, 18);
+            this.labelControl9.Size = new System.Drawing.Size(84, 18);
             this.labelControl9.TabIndex = 23;
             this.labelControl9.Text = "House No.:";
             // 
@@ -433,10 +435,11 @@
             // 
             // labelControl11
             // 
+            this.labelControl11.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
             this.labelControl11.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
-            this.labelControl11.Location = new System.Drawing.Point(11, 490);
+            this.labelControl11.Location = new System.Drawing.Point(10, 490);
             this.labelControl11.Name = "labelControl11";
-            this.labelControl11.Size = new System.Drawing.Size(83, 18);
+            this.labelControl11.Size = new System.Drawing.Size(84, 18);
             this.labelControl11.TabIndex = 18;
             this.labelControl11.Text = "Notes on bill:";
             // 
@@ -450,10 +453,11 @@
             // 
             // labelControl12
             // 
+            this.labelControl12.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
             this.labelControl12.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
-            this.labelControl12.Location = new System.Drawing.Point(22, 447);
+            this.labelControl12.Location = new System.Drawing.Point(10, 447);
             this.labelControl12.Name = "labelControl12";
-            this.labelControl12.Size = new System.Drawing.Size(72, 18);
+            this.labelControl12.Size = new System.Drawing.Size(84, 18);
             this.labelControl12.TabIndex = 16;
             this.labelControl12.Text = "Int. Notes:";
             // 
@@ -468,6 +472,7 @@
             // 
             // labelControl5
             // 
+            this.labelControl5.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
             this.labelControl5.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
             this.labelControl5.Location = new System.Drawing.Point(10, 408);
             this.labelControl5.Name = "labelControl5";
@@ -485,10 +490,11 @@
             // 
             // labelControl6
             // 
+            this.labelControl6.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
             this.labelControl6.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
-            this.labelControl6.Location = new System.Drawing.Point(18, 365);
+            this.labelControl6.Location = new System.Drawing.Point(10, 365);
             this.labelControl6.Name = "labelControl6";
-            this.labelControl6.Size = new System.Drawing.Size(76, 18);
+            this.labelControl6.Size = new System.Drawing.Size(84, 18);
             this.labelControl6.TabIndex = 12;
             this.labelControl6.Text = "Del Charge:";
             // 
@@ -502,10 +508,11 @@
             // 
             // labelControl7
             // 
+            this.labelControl7.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
             this.labelControl7.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
-            this.labelControl7.Location = new System.Drawing.Point(35, 321);
+            this.labelControl7.Location = new System.Drawing.Point(10, 321);
             this.labelControl7.Name = "labelControl7";
-            this.labelControl7.Size = new System.Drawing.Size(59, 18);
+            this.labelControl7.Size = new System.Drawing.Size(84, 18);
             this.labelControl7.TabIndex = 10;
             this.labelControl7.Text = "PC Zone:";
             // 
@@ -519,10 +526,11 @@
             // 
             // labelControl8
             // 
+            this.labelControl8.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
             this.labelControl8.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
-            this.labelControl8.Location = new System.Drawing.Point(34, 273);
+            this.labelControl8.Location = new System.Drawing.Point(10, 273);
             this.labelControl8.Name = "labelControl8";
-            this.labelControl8.Size = new System.Drawing.Size(60, 18);
+            this.labelControl8.Size = new System.Drawing.Size(84, 18);
             this.labelControl8.TabIndex = 8;
             this.labelControl8.Text = "Distance:";
             // 
@@ -537,20 +545,22 @@
             // labelControl3
             // 
             this.labelControl3.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
+            this.labelControl3.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
             this.labelControl3.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
             this.labelControl3.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
-            this.labelControl3.Location = new System.Drawing.Point(30, 236);
+            this.labelControl3.Location = new System.Drawing.Point(10, 236);
             this.labelControl3.Name = "labelControl3";
-            this.labelControl3.Size = new System.Drawing.Size(64, 18);
+            this.labelControl3.Size = new System.Drawing.Size(84, 18);
             this.labelControl3.TabIndex = 6;
             this.labelControl3.Text = "Postcode:";
             // 
             // labelControl4
             // 
+            this.labelControl4.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
             this.labelControl4.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
-            this.labelControl4.Location = new System.Drawing.Point(13, 131);
+            this.labelControl4.Location = new System.Drawing.Point(10, 131);
             this.labelControl4.Name = "labelControl4";
-            this.labelControl4.Size = new System.Drawing.Size(81, 18);
+            this.labelControl4.Size = new System.Drawing.Size(84, 18);
             this.labelControl4.TabIndex = 4;
             this.labelControl4.Text = "Address #1:";
             // 
@@ -564,10 +574,11 @@
             // 
             // labelControl2
             // 
+            this.labelControl2.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
             this.labelControl2.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
-            this.labelControl2.Location = new System.Drawing.Point(50, 54);
+            this.labelControl2.Location = new System.Drawing.Point(10, 54);
             this.labelControl2.Name = "labelControl2";
-            this.labelControl2.Size = new System.Drawing.Size(44, 18);
+            this.labelControl2.Size = new System.Drawing.Size(84, 18);
             this.labelControl2.TabIndex = 2;
             this.labelControl2.Text = "Name:";
             // 
