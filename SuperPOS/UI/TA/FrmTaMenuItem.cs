@@ -222,7 +222,7 @@ namespace SuperPOS.UI.TA
                 else
                 {
                     gridControlMenuItem.DataSource = menuSetID >= 0
-                    ? lstMenuItem.Where(s => s.MiMenuSetID == menuSetID && s.MiDishCode.ToString().Contains(strDishCate)).ToList()
+                    ? lstMenuItem.Where(s => s.MiMenuSetID == menuSetID && s.MiMenuCateID.Split(',').Contains(strDishCate)).ToList()
                     : lstMenuItem.ToList();
                 }
             }
@@ -1162,7 +1162,8 @@ namespace SuperPOS.UI.TA
                               select new
                               {
                                   McID = mc.ID,
-                                  McName = mc.CateEngName
+                                  McName = mc.CateEngName,
+                                  MCOtherName = mc.CateOtherName
                               };
 
             lueDishCateSearch.Properties.DataSource = lstMenuCate.ToList();
