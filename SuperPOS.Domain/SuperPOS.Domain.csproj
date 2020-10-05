@@ -64,6 +64,7 @@
     <Compile Include="Entities\TaDeliverySetInfo.cs" />
     <Compile Include="Entities\TaDeptCodeInfo.cs" />
     <Compile Include="Entities\TaDiscountInfo.cs" />
+    <Compile Include="Entities\TaSysPrtSetCounterSetting1Info.cs" />
     <Compile Include="Entities\TaSysPrtSetGeneralInfo.cs" />
     <Compile Include="Entities\TaDriverInfo.cs" />
     <Compile Include="Entities\TaExtraMenuInfo.cs" />
@@ -177,6 +178,7 @@
     <EmbeddedResource Include="Mappings\TaPrtSetupGeneralSet1Info.hbm.xml" />
     <EmbeddedResource Include="Mappings\TaPreviewInfo.hbm.xml" />
     <EmbeddedResource Include="Mappings\TASysCtrlInfo.hbm.xml" />
+    <EmbeddedResource Include="Mappings\TaSysPrtSetCounterSetting1Info.hbm.xml" />
     <Content Include="Mappings\UsrAuthorityInfo.hbm.xml" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

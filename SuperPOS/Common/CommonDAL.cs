@@ -136,6 +136,7 @@ namespace SuperPOS.Common
             //DelegatePrt dp = new DelegatePrt();
             //dp.SaveShowOrderModelPreview();
             systemData.GetTaSysPrtSetGeneral();
+            systemData.GetTaSysPrtSetCountSetting1();
         }
         #endregion
 

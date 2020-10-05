@@ -183,8 +183,7 @@ namespace SuperPOS.UI.TA
                 {
                     generalInfo.ID = lstGen.FirstOrDefault().ID;
                     _control.UpdateEntity(generalInfo);
-                }
-                else
+                }else
                 {
                     _control.AddEntity(generalInfo);
                 }
