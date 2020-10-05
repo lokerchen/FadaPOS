@@ -101,5 +101,7 @@ namespace SuperPOS.Common
         public void GetTaSysCtrl() { CommonData.TaSysCtrl = _control.SelectAll<TaSysCtrlInfo>(); }
 
         public void GetTaFreeFoodAdd() { CommonData.TaFreeFoodAdd = _control.SelectAll<TaFreeFoodAddInfo>(); }
+
+        public void GetTaSysPrtSetGeneral() { CommonData.TaSysPrtSetGeneral = _control.SelectAll<TaSysPrtSetGeneralInfo>(); }
     }
 }

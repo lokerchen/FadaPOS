@@ -99,5 +99,7 @@ namespace SuperPOS.Common
         public static IList<TaSysCtrlInfo> TaSysCtrl { get; set; } 
 
         public static IList<TaFreeFoodAddInfo> TaFreeFoodAdd { get; set; }
+
+        public static IList<TaSysPrtSetGeneralInfo> TaSysPrtSetGeneral { get; set; }
     }
 }

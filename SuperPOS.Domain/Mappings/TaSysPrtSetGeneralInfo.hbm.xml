@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2"
+                   assembly="SuperPOS"
+                   namespace="SuperPOS.Domain">
+
+  <class name="SuperPOS.Domain.Entities.TaSysPrtSetGeneralInfo, SuperPOS.Domain" table="Sys_Prt_Setup_General">
+    <id name="ID" column="ID" type="System.Int32" unsaved-value="0">
+      <generator class="native" />
+    </id>
+
+    <property name="IsPrtLogo" column="IsPrtLogo" type="System.String" />
+    <property name="LogoFilePath" column="LogoFilePath" type="System.String" />
+    <property name="IsPrtStaff" column="IsPrtStaff" type="System.String" />
+    <property name="IsPrtTel" column="IsPrtTel" type="System.String" />
+    <property name="IsPrtAddr" column="IsPrtAddr" type="System.String" />
+    <property name="TelNo" column="TelNo" type="System.String" />
+    <property name="VATNo" column="VATNo" type="System.String" />
+    <property name="Msg1" column="Msg1" type="System.String" />
+    <property name="Msg2" column="Msg2" type="System.String" />
+    <property name="Msg3" column="Msg3" type="System.String" />
+    <property name="Msg4" column="Msg4" type="System.String" />
+    <property name="Msg5" column="Msg5" type="System.String" />
+  </class>
+
+</hibernate-mapping>
