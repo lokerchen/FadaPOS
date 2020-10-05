@@ -110,6 +110,10 @@
     <Compile Include="Print\PrtStatic.cs" />
     <Compile Include="Print\PrtTemplataTa.cs" />
     <Compile Include="Print\PrtTemplate.cs" />
+    <Compile Include="Print\WbPrtCommon.cs" />
+    <Compile Include="Print\WbPrtPrint.cs" />
+    <Compile Include="Print\WbPrtStatic.cs" />
+    <Compile Include="Print\WbPrtTemplataTa.cs" />
     <Compile Include="UI\FrmDesktopArea.cs">
       <SubType>Form</SubType>
     </Compile>
