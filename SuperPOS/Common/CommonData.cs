@@ -105,5 +105,7 @@ namespace SuperPOS.Common
         public static IList<TaSysPrtSetCounterSetting1Info> TaSysPrtSetCounterSetting1 { get; set; }
 
         public static IList<TaSysPrtSetCounterSetting2Info> TaSysPrtSetCounterSetting2 { get; set; }
+
+        public static IList<TaSysPrtSetKitchenInfo> TaSysPrtSetKitchen { get; set; }
     }
 }

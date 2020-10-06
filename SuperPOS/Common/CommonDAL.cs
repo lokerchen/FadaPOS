@@ -138,6 +138,7 @@ namespace SuperPOS.Common
             systemData.GetTaSysPrtSetGeneral();
             systemData.GetTaSysPrtSetCountSetting1();
             systemData.GetTaSysPrtSetCountSetting2();
+            systemData.GetTaSysPrtSetKitchen();
         }
         #endregion
 

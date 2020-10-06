@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2"
+                   assembly="SuperPOS"
+                   namespace="SuperPOS.Domain">
+
+  <class name="SuperPOS.Domain.Entities.TaSysPrtSetKitchenInfo, SuperPOS.Domain" table="Sys_Prt_Setup_Kitchen">
+    <id name="ID" column="ID" type="System.Int32" unsaved-value="0">
+      <generator class="native" />
+    </id>
+
+    <property name="PrintLang" column="PrintLang" type="System.String" />
+    <property name="PrintPriceDishCode" column="PrintPriceDishCode" type="System.String" />
+    <property name="EngFontSize" column="EngFontSize" type="System.String" />
+    <property name="OtherFontSize" column="OtherFontSize" type="System.String" />
+    <property name="DeliveryAddr" column="DeliveryAddr" type="System.String" />
+    <property name="IsPrintAsc" column="IsPrintAsc" type="System.String" />
+    <property name="IsPrintDate" column="IsPrintDate" type="System.String" />
+    <property name="IsPrintTime" column="IsPrintTime" type="System.String" />
+    <property name="IsPrintPayType" column="IsPrintPayType" type="System.String" />
+    <property name="IsPrintDeliveryAddr" column="IsPrintDeliveryAddr" type="System.String" />
+    <property name="IsPrintOrderNo" column="IsPrintOrderNo" type="System.String" />
+  </class>
+
+</hibernate-mapping>
