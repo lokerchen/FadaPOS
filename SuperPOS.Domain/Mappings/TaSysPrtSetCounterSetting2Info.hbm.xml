@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2"
+                   assembly="SuperPOS"
+                   namespace="SuperPOS.Domain">
+
+  <class name="SuperPOS.Domain.Entities.TaSysPrtSetCounterSetting2Info, SuperPOS.Domain" table="Sys_Prt_Setup_CounterSetting2">
+    <id name="ID" column="ID" type="System.Int32" unsaved-value="0">
+      <generator class="native" />
+    </id>
+
+    <property name="SoLocalPriter" column="SoLocalPriter" type="System.String" />
+    <property name="SoNumOfCopy" column="SoNumOfCopy" type="System.String" />
+    <property name="SoPrintLang" column="SoPrintLang" type="System.String" />
+    <property name="SoEngFontSize" column="SoEngFontSize" type="System.String" />
+    <property name="SoOtherLangFont" column="SoOtherLangFont" type="System.String" />
+    <property name="IsSoPrintDate" column="IsSoPrintDate" type="System.String" />
+    <property name="IsSoPrintTime" column="IsSoPrintTime" type="System.String" />
+    <property name="IsSoPrintVATNo" column="IsSoPrintVATNo" type="System.String" />
+    <property name="SoDriverPrintoutCopy" column="SoDriverPrintoutCopy" type="System.String" />
+    <property name="SoDeliveryAddrFont" column="SoDeliveryAddrFont" type="System.String" />
+    <property name="IsSoPrintOrderNo" column="IsSoPrintOrderNo" type="System.String" />
+    <property name="CoLocalPriter" column="CoLocalPriter" type="System.String" />
+    <property name="CoHeadWord" column="CoHeadWord" type="System.String" />
+    <property name="CoPrintLang" column="CoPrintLang" type="System.String" />
+    <property name="CoEngFontSize" column="CoEngFontSize" type="System.String" />
+    <property name="CoOtherLangFont" column="CoOtherLangFont" type="System.String" />
+    <property name="IsCoPrintDate" column="IsCoPrintDate" type="System.String" />
+    <property name="IsCoPrintTime" column="IsCoPrintTime" type="System.String" />
+    <property name="IsCoPrintOrderNo" column="IsCoPrintOrderNo" type="System.String" />
+    <property name="IsCoPrintVATNo" column="IsCoPrintVATNo" type="System.String" />
+    <property name="IsCoPrintVATCalculation" column="IsCoPrintVATCalculation" type="System.String" />
+    
+  </class>
+
+</hibernate-mapping>

@@ -29,351 +29,327 @@
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.checkBox10 = new System.Windows.Forms.CheckBox();
-            this.lookUpEdit12 = new DevExpress.XtraEditors.LookUpEdit();
+            this.chkSoPrintOrderNo = new System.Windows.Forms.CheckBox();
+            this.lueSoDeliveryAddressFont = new DevExpress.XtraEditors.LookUpEdit();
             this.label23 = new System.Windows.Forms.Label();
-            this.lookUpEdit11 = new DevExpress.XtraEditors.LookUpEdit();
+            this.lueSoDriverPrintoutCopy = new DevExpress.XtraEditors.LookUpEdit();
             this.label11 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
-            this.checkBox4 = new System.Windows.Forms.CheckBox();
-            this.label9 = new System.Windows.Forms.Label();
-            this.checkBox3 = new System.Windows.Forms.CheckBox();
+            this.chkSoPrtVATNo = new System.Windows.Forms.CheckBox();
             this.label8 = new System.Windows.Forms.Label();
-            this.checkBox2 = new System.Windows.Forms.CheckBox();
+            this.chkSoPrintTime = new System.Windows.Forms.CheckBox();
             this.label7 = new System.Windows.Forms.Label();
-            this.checkBox1 = new System.Windows.Forms.CheckBox();
-            this.lookUpEdit5 = new DevExpress.XtraEditors.LookUpEdit();
+            this.chkSoPrintDate = new System.Windows.Forms.CheckBox();
+            this.lueSoOtherLangFont = new DevExpress.XtraEditors.LookUpEdit();
             this.label6 = new System.Windows.Forms.Label();
-            this.lookUpEdit4 = new DevExpress.XtraEditors.LookUpEdit();
+            this.lueSoEngFontSize = new DevExpress.XtraEditors.LookUpEdit();
             this.label5 = new System.Windows.Forms.Label();
-            this.lookUpEdit3 = new DevExpress.XtraEditors.LookUpEdit();
+            this.lueSoPrtLang = new DevExpress.XtraEditors.LookUpEdit();
             this.label4 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.label3 = new System.Windows.Forms.Label();
-            this.lookUpEdit2 = new DevExpress.XtraEditors.LookUpEdit();
+            this.lueSoNumOfCopy = new DevExpress.XtraEditors.LookUpEdit();
             this.label2 = new System.Windows.Forms.Label();
-            this.lookUpEdit1 = new DevExpress.XtraEditors.LookUpEdit();
+            this.lueSoLocalPrinter = new DevExpress.XtraEditors.LookUpEdit();
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.label22 = new System.Windows.Forms.Label();
-            this.checkBox9 = new System.Windows.Forms.CheckBox();
+            this.chkCoPrintVATCalculation = new System.Windows.Forms.CheckBox();
             this.label12 = new System.Windows.Forms.Label();
-            this.checkBox5 = new System.Windows.Forms.CheckBox();
+            this.chkCoPrtVATNo = new System.Windows.Forms.CheckBox();
             this.label13 = new System.Windows.Forms.Label();
-            this.checkBox6 = new System.Windows.Forms.CheckBox();
+            this.chkCoPrintOrderNo = new System.Windows.Forms.CheckBox();
             this.label14 = new System.Windows.Forms.Label();
-            this.checkBox7 = new System.Windows.Forms.CheckBox();
+            this.chkCoPrintTime = new System.Windows.Forms.CheckBox();
             this.label15 = new System.Windows.Forms.Label();
-            this.checkBox8 = new System.Windows.Forms.CheckBox();
-            this.lookUpEdit6 = new DevExpress.XtraEditors.LookUpEdit();
+            this.chkCoPrintDate = new System.Windows.Forms.CheckBox();
+            this.lueCoOtherLangFont = new DevExpress.XtraEditors.LookUpEdit();
             this.label16 = new System.Windows.Forms.Label();
-            this.lookUpEdit7 = new DevExpress.XtraEditors.LookUpEdit();
+            this.lueCoEngFontSize = new DevExpress.XtraEditors.LookUpEdit();
             this.label17 = new System.Windows.Forms.Label();
-            this.lookUpEdit8 = new DevExpress.XtraEditors.LookUpEdit();
+            this.lueCoPrtLang = new DevExpress.XtraEditors.LookUpEdit();
             this.label18 = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.txtCoHeadWord = new System.Windows.Forms.TextBox();
             this.label19 = new System.Windows.Forms.Label();
-            this.lookUpEdit10 = new DevExpress.XtraEditors.LookUpEdit();
+            this.lueCoLocalPrinter = new DevExpress.XtraEditors.LookUpEdit();
             this.label21 = new System.Windows.Forms.Label();
-            this.btnGenExit = new DevExpress.XtraEditors.SimpleButton();
-            this.btnGenSave = new DevExpress.XtraEditors.SimpleButton();
+            this.btnExit = new DevExpress.XtraEditors.SimpleButton();
+            this.btnSave = new DevExpress.XtraEditors.SimpleButton();
+            this.label3 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.lookUpEdit12.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.lookUpEdit11.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.lookUpEdit5.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.lookUpEdit4.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.lookUpEdit3.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.lookUpEdit2.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.lookUpEdit1.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.lueSoDeliveryAddressFont.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.lueSoDriverPrintoutCopy.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.lueSoOtherLangFont.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.lueSoEngFontSize.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.lueSoPrtLang.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.lueSoNumOfCopy.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.lueSoLocalPrinter.Properties)).BeginInit();
             this.groupBox3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.lookUpEdit6.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.lookUpEdit7.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.lookUpEdit8.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.lookUpEdit10.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.lueCoOtherLangFont.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.lueCoEngFontSize.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.lueCoPrtLang.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.lueCoLocalPrinter.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.checkBox10);
-            this.groupBox1.Controls.Add(this.lookUpEdit12);
+            this.groupBox1.Controls.Add(this.label3);
+            this.groupBox1.Controls.Add(this.chkSoPrintOrderNo);
+            this.groupBox1.Controls.Add(this.lueSoDeliveryAddressFont);
             this.groupBox1.Controls.Add(this.label23);
-            this.groupBox1.Controls.Add(this.lookUpEdit11);
+            this.groupBox1.Controls.Add(this.lueSoDriverPrintoutCopy);
             this.groupBox1.Controls.Add(this.label11);
             this.groupBox1.Controls.Add(this.label10);
-            this.groupBox1.Controls.Add(this.checkBox4);
-            this.groupBox1.Controls.Add(this.label9);
-            this.groupBox1.Controls.Add(this.checkBox3);
+            this.groupBox1.Controls.Add(this.chkSoPrtVATNo);
             this.groupBox1.Controls.Add(this.label8);
-            this.groupBox1.Controls.Add(this.checkBox2);
+            this.groupBox1.Controls.Add(this.chkSoPrintTime);
             this.groupBox1.Controls.Add(this.label7);
-            this.groupBox1.Controls.Add(this.checkBox1);
-            this.groupBox1.Controls.Add(this.lookUpEdit5);
+            this.groupBox1.Controls.Add(this.chkSoPrintDate);
+            this.groupBox1.Controls.Add(this.lueSoOtherLangFont);
             this.groupBox1.Controls.Add(this.label6);
-            this.groupBox1.Controls.Add(this.lookUpEdit4);
+            this.groupBox1.Controls.Add(this.lueSoEngFontSize);
             this.groupBox1.Controls.Add(this.label5);
-            this.groupBox1.Controls.Add(this.lookUpEdit3);
+            this.groupBox1.Controls.Add(this.lueSoPrtLang);
             this.groupBox1.Controls.Add(this.label4);
-            this.groupBox1.Controls.Add(this.textBox1);
-            this.groupBox1.Controls.Add(this.label3);
-            this.groupBox1.Controls.Add(this.lookUpEdit2);
+            this.groupBox1.Controls.Add(this.lueSoNumOfCopy);
             this.groupBox1.Controls.Add(this.label2);
-            this.groupBox1.Controls.Add(this.lookUpEdit1);
+            this.groupBox1.Controls.Add(this.lueSoLocalPrinter);
             this.groupBox1.Controls.Add(this.label1);
-            this.groupBox1.Location = new System.Drawing.Point(56, 7);
+            this.groupBox1.Location = new System.Drawing.Point(49, 5);
+            this.groupBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(366, 604);
+            this.groupBox1.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.groupBox1.Size = new System.Drawing.Size(320, 470);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Shop Order Printout Settings";
             // 
-            // checkBox10
+            // chkSoPrintOrderNo
             // 
-            this.checkBox10.AutoSize = true;
-            this.checkBox10.Location = new System.Drawing.Point(226, 560);
-            this.checkBox10.Name = "checkBox10";
-            this.checkBox10.Size = new System.Drawing.Size(18, 17);
-            this.checkBox10.TabIndex = 26;
-            this.checkBox10.UseVisualStyleBackColor = true;
+            this.chkSoPrintOrderNo.AutoSize = true;
+            this.chkSoPrintOrderNo.Location = new System.Drawing.Point(198, 436);
+            this.chkSoPrintOrderNo.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.chkSoPrintOrderNo.Name = "chkSoPrintOrderNo";
+            this.chkSoPrintOrderNo.Size = new System.Drawing.Size(15, 14);
+            this.chkSoPrintOrderNo.TabIndex = 26;
+            this.chkSoPrintOrderNo.UseVisualStyleBackColor = true;
             // 
-            // lookUpEdit12
+            // lueSoDeliveryAddressFont
             // 
-            this.lookUpEdit12.Location = new System.Drawing.Point(226, 514);
-            this.lookUpEdit12.Name = "lookUpEdit12";
-            this.lookUpEdit12.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            this.lueSoDeliveryAddressFont.Location = new System.Drawing.Point(198, 400);
+            this.lueSoDeliveryAddressFont.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.lueSoDeliveryAddressFont.Name = "lueSoDeliveryAddressFont";
+            this.lueSoDeliveryAddressFont.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.lookUpEdit12.Size = new System.Drawing.Size(115, 24);
-            this.lookUpEdit12.TabIndex = 25;
+            this.lueSoDeliveryAddressFont.Size = new System.Drawing.Size(101, 20);
+            this.lueSoDeliveryAddressFont.TabIndex = 25;
             // 
             // label23
             // 
-            this.label23.AutoSize = true;
-            this.label23.Location = new System.Drawing.Point(30, 517);
+            this.label23.Location = new System.Drawing.Point(26, 402);
             this.label23.Name = "label23";
-            this.label23.Size = new System.Drawing.Size(180, 18);
+            this.label23.Size = new System.Drawing.Size(146, 18);
             this.label23.TabIndex = 24;
             this.label23.Text = "Delivery Address Font Size";
+            this.label23.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // lookUpEdit11
+            // lueSoDriverPrintoutCopy
             // 
-            this.lookUpEdit11.Location = new System.Drawing.Point(226, 470);
-            this.lookUpEdit11.Name = "lookUpEdit11";
-            this.lookUpEdit11.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            this.lueSoDriverPrintoutCopy.Location = new System.Drawing.Point(198, 366);
+            this.lueSoDriverPrintoutCopy.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.lueSoDriverPrintoutCopy.Name = "lueSoDriverPrintoutCopy";
+            this.lueSoDriverPrintoutCopy.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.lookUpEdit11.Size = new System.Drawing.Size(115, 24);
-            this.lookUpEdit11.TabIndex = 23;
+            this.lueSoDriverPrintoutCopy.Size = new System.Drawing.Size(101, 20);
+            this.lueSoDriverPrintoutCopy.TabIndex = 23;
             // 
             // label11
             // 
-            this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(30, 473);
+            this.label11.Location = new System.Drawing.Point(26, 368);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(138, 18);
+            this.label11.Size = new System.Drawing.Size(146, 18);
             this.label11.TabIndex = 22;
             this.label11.Text = "Driver Printout Copy";
+            this.label11.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // label10
             // 
-            this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(30, 432);
+            this.label10.Location = new System.Drawing.Point(26, 295);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(97, 18);
+            this.label10.Size = new System.Drawing.Size(146, 18);
             this.label10.TabIndex = 21;
             this.label10.Text = "Print VAT No.";
+            this.label10.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // checkBox4
+            // chkSoPrtVATNo
             // 
-            this.checkBox4.AutoSize = true;
-            this.checkBox4.Location = new System.Drawing.Point(226, 434);
-            this.checkBox4.Name = "checkBox4";
-            this.checkBox4.Size = new System.Drawing.Size(18, 17);
-            this.checkBox4.TabIndex = 20;
-            this.checkBox4.UseVisualStyleBackColor = true;
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(30, 393);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(188, 18);
-            this.label9.TabIndex = 19;
-            this.label9.Text = "Print Delivery Sequence No.";
-            // 
-            // checkBox3
-            // 
-            this.checkBox3.AutoSize = true;
-            this.checkBox3.Location = new System.Drawing.Point(226, 395);
-            this.checkBox3.Name = "checkBox3";
-            this.checkBox3.Size = new System.Drawing.Size(18, 17);
-            this.checkBox3.TabIndex = 18;
-            this.checkBox3.UseVisualStyleBackColor = true;
+            this.chkSoPrtVATNo.AutoSize = true;
+            this.chkSoPrtVATNo.Location = new System.Drawing.Point(198, 297);
+            this.chkSoPrtVATNo.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.chkSoPrtVATNo.Name = "chkSoPrtVATNo";
+            this.chkSoPrtVATNo.Size = new System.Drawing.Size(15, 14);
+            this.chkSoPrtVATNo.TabIndex = 20;
+            this.chkSoPrtVATNo.UseVisualStyleBackColor = true;
             // 
             // label8
             // 
-            this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(30, 344);
+            this.label8.Location = new System.Drawing.Point(26, 268);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(74, 18);
+            this.label8.Size = new System.Drawing.Size(146, 18);
             this.label8.TabIndex = 17;
             this.label8.Text = "Print Time";
+            this.label8.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // checkBox2
+            // chkSoPrintTime
             // 
-            this.checkBox2.AutoSize = true;
-            this.checkBox2.Location = new System.Drawing.Point(226, 346);
-            this.checkBox2.Name = "checkBox2";
-            this.checkBox2.Size = new System.Drawing.Size(18, 17);
-            this.checkBox2.TabIndex = 16;
-            this.checkBox2.UseVisualStyleBackColor = true;
+            this.chkSoPrintTime.AutoSize = true;
+            this.chkSoPrintTime.Location = new System.Drawing.Point(198, 269);
+            this.chkSoPrintTime.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.chkSoPrintTime.Name = "chkSoPrintTime";
+            this.chkSoPrintTime.Size = new System.Drawing.Size(15, 14);
+            this.chkSoPrintTime.TabIndex = 16;
+            this.chkSoPrintTime.UseVisualStyleBackColor = true;
             // 
             // label7
             // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(30, 309);
+            this.label7.Location = new System.Drawing.Point(26, 240);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(72, 18);
+            this.label7.Size = new System.Drawing.Size(146, 18);
             this.label7.TabIndex = 15;
             this.label7.Text = "Print Date";
+            this.label7.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // checkBox1
+            // chkSoPrintDate
             // 
-            this.checkBox1.AutoSize = true;
-            this.checkBox1.Location = new System.Drawing.Point(226, 311);
-            this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(18, 17);
-            this.checkBox1.TabIndex = 14;
-            this.checkBox1.UseVisualStyleBackColor = true;
+            this.chkSoPrintDate.AutoSize = true;
+            this.chkSoPrintDate.Location = new System.Drawing.Point(198, 242);
+            this.chkSoPrintDate.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.chkSoPrintDate.Name = "chkSoPrintDate";
+            this.chkSoPrintDate.Size = new System.Drawing.Size(15, 14);
+            this.chkSoPrintDate.TabIndex = 14;
+            this.chkSoPrintDate.UseVisualStyleBackColor = true;
             // 
-            // lookUpEdit5
+            // lueSoOtherLangFont
             // 
-            this.lookUpEdit5.Location = new System.Drawing.Point(226, 264);
-            this.lookUpEdit5.Name = "lookUpEdit5";
-            this.lookUpEdit5.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            this.lueSoOtherLangFont.Location = new System.Drawing.Point(198, 205);
+            this.lueSoOtherLangFont.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.lueSoOtherLangFont.Name = "lueSoOtherLangFont";
+            this.lueSoOtherLangFont.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.lookUpEdit5.Size = new System.Drawing.Size(115, 24);
-            this.lookUpEdit5.TabIndex = 13;
+            this.lueSoOtherLangFont.Size = new System.Drawing.Size(101, 20);
+            this.lueSoOtherLangFont.TabIndex = 13;
             // 
             // label6
             // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(30, 267);
+            this.label6.Location = new System.Drawing.Point(26, 208);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(177, 18);
+            this.label6.Size = new System.Drawing.Size(146, 18);
             this.label6.TabIndex = 12;
             this.label6.Text = "Other Language Font Size";
+            this.label6.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // lookUpEdit4
+            // lueSoEngFontSize
             // 
-            this.lookUpEdit4.Location = new System.Drawing.Point(226, 224);
-            this.lookUpEdit4.Name = "lookUpEdit4";
-            this.lookUpEdit4.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            this.lueSoEngFontSize.Location = new System.Drawing.Point(198, 174);
+            this.lueSoEngFontSize.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.lueSoEngFontSize.Name = "lueSoEngFontSize";
+            this.lueSoEngFontSize.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.lookUpEdit4.Size = new System.Drawing.Size(115, 24);
-            this.lookUpEdit4.TabIndex = 11;
+            this.lueSoEngFontSize.Size = new System.Drawing.Size(101, 20);
+            this.lueSoEngFontSize.TabIndex = 11;
             // 
             // label5
             // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(30, 227);
+            this.label5.Location = new System.Drawing.Point(26, 177);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(115, 18);
+            this.label5.Size = new System.Drawing.Size(146, 18);
             this.label5.TabIndex = 10;
             this.label5.Text = "English Font Size";
+            this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // lookUpEdit3
+            // lueSoPrtLang
             // 
-            this.lookUpEdit3.Location = new System.Drawing.Point(226, 183);
-            this.lookUpEdit3.Name = "lookUpEdit3";
-            this.lookUpEdit3.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            this.lueSoPrtLang.Location = new System.Drawing.Point(198, 142);
+            this.lueSoPrtLang.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.lueSoPrtLang.Name = "lueSoPrtLang";
+            this.lueSoPrtLang.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.lookUpEdit3.Size = new System.Drawing.Size(115, 24);
-            this.lookUpEdit3.TabIndex = 9;
+            this.lueSoPrtLang.Size = new System.Drawing.Size(101, 20);
+            this.lueSoPrtLang.TabIndex = 9;
             // 
             // label4
             // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(30, 186);
+            this.label4.Location = new System.Drawing.Point(26, 145);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(104, 18);
+            this.label4.Size = new System.Drawing.Size(146, 18);
             this.label4.TabIndex = 8;
             this.label4.Text = "Print Language";
+            this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // textBox1
+            // lueSoNumOfCopy
             // 
-            this.textBox1.Location = new System.Drawing.Point(226, 122);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(115, 26);
-            this.textBox1.TabIndex = 7;
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(30, 130);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(100, 18);
-            this.label3.TabIndex = 6;
-            this.label3.Text = "Heading Word";
-            // 
-            // lookUpEdit2
-            // 
-            this.lookUpEdit2.Location = new System.Drawing.Point(226, 82);
-            this.lookUpEdit2.Name = "lookUpEdit2";
-            this.lookUpEdit2.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            this.lueSoNumOfCopy.Location = new System.Drawing.Point(198, 64);
+            this.lueSoNumOfCopy.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.lueSoNumOfCopy.Name = "lueSoNumOfCopy";
+            this.lueSoNumOfCopy.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.lookUpEdit2.Size = new System.Drawing.Size(115, 24);
-            this.lookUpEdit2.TabIndex = 5;
+            this.lueSoNumOfCopy.Size = new System.Drawing.Size(101, 20);
+            this.lueSoNumOfCopy.TabIndex = 5;
             // 
             // label2
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(30, 85);
+            this.label2.Location = new System.Drawing.Point(26, 66);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(116, 18);
+            this.label2.Size = new System.Drawing.Size(146, 18);
             this.label2.TabIndex = 4;
             this.label2.Text = "Number of Copy";
+            this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // lookUpEdit1
+            // lueSoLocalPrinter
             // 
-            this.lookUpEdit1.Location = new System.Drawing.Point(226, 42);
-            this.lookUpEdit1.Name = "lookUpEdit1";
-            this.lookUpEdit1.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            this.lueSoLocalPrinter.Location = new System.Drawing.Point(198, 33);
+            this.lueSoLocalPrinter.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.lueSoLocalPrinter.Name = "lueSoLocalPrinter";
+            this.lueSoLocalPrinter.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.lookUpEdit1.Size = new System.Drawing.Size(115, 24);
-            this.lookUpEdit1.TabIndex = 3;
+            this.lueSoLocalPrinter.Size = new System.Drawing.Size(101, 20);
+            this.lueSoLocalPrinter.TabIndex = 3;
             // 
             // label1
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(30, 45);
+            this.label1.Font = new System.Drawing.Font("微软雅黑", 9F);
+            this.label1.Location = new System.Drawing.Point(26, 33);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(86, 18);
+            this.label1.Size = new System.Drawing.Size(146, 18);
             this.label1.TabIndex = 2;
             this.label1.Text = "Local Printer";
+            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // groupBox3
             // 
             this.groupBox3.Controls.Add(this.label22);
-            this.groupBox3.Controls.Add(this.checkBox9);
+            this.groupBox3.Controls.Add(this.chkCoPrintVATCalculation);
             this.groupBox3.Controls.Add(this.label12);
-            this.groupBox3.Controls.Add(this.checkBox5);
+            this.groupBox3.Controls.Add(this.chkCoPrtVATNo);
             this.groupBox3.Controls.Add(this.label13);
-            this.groupBox3.Controls.Add(this.checkBox6);
+            this.groupBox3.Controls.Add(this.chkCoPrintOrderNo);
             this.groupBox3.Controls.Add(this.label14);
-            this.groupBox3.Controls.Add(this.checkBox7);
+            this.groupBox3.Controls.Add(this.chkCoPrintTime);
             this.groupBox3.Controls.Add(this.label15);
-            this.groupBox3.Controls.Add(this.checkBox8);
-            this.groupBox3.Controls.Add(this.lookUpEdit6);
+            this.groupBox3.Controls.Add(this.chkCoPrintDate);
+            this.groupBox3.Controls.Add(this.lueCoOtherLangFont);
             this.groupBox3.Controls.Add(this.label16);
-            this.groupBox3.Controls.Add(this.lookUpEdit7);
+            this.groupBox3.Controls.Add(this.lueCoEngFontSize);
             this.groupBox3.Controls.Add(this.label17);
-            this.groupBox3.Controls.Add(this.lookUpEdit8);
+            this.groupBox3.Controls.Add(this.lueCoPrtLang);
             this.groupBox3.Controls.Add(this.label18);
-            this.groupBox3.Controls.Add(this.textBox2);
+            this.groupBox3.Controls.Add(this.txtCoHeadWord);
             this.groupBox3.Controls.Add(this.label19);
-            this.groupBox3.Controls.Add(this.lookUpEdit10);
+            this.groupBox3.Controls.Add(this.lueCoLocalPrinter);
             this.groupBox3.Controls.Add(this.label21);
-            this.groupBox3.Location = new System.Drawing.Point(443, 13);
+            this.groupBox3.Location = new System.Drawing.Point(388, 10);
+            this.groupBox3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(432, 505);
+            this.groupBox3.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.groupBox3.Size = new System.Drawing.Size(378, 393);
             this.groupBox3.TabIndex = 3;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Collection Order Printout Settings";
@@ -381,221 +357,245 @@
             // label22
             // 
             this.label22.AutoSize = true;
-            this.label22.Location = new System.Drawing.Point(58, 467);
+            this.label22.Location = new System.Drawing.Point(51, 363);
             this.label22.Name = "label22";
-            this.label22.Size = new System.Drawing.Size(141, 18);
+            this.label22.Size = new System.Drawing.Size(121, 14);
             this.label22.TabIndex = 43;
             this.label22.Text = "Print VAT Calculation";
             // 
-            // checkBox9
+            // chkCoPrintVATCalculation
             // 
-            this.checkBox9.AutoSize = true;
-            this.checkBox9.Location = new System.Drawing.Point(330, 468);
-            this.checkBox9.Name = "checkBox9";
-            this.checkBox9.Size = new System.Drawing.Size(18, 17);
-            this.checkBox9.TabIndex = 42;
-            this.checkBox9.UseVisualStyleBackColor = true;
+            this.chkCoPrintVATCalculation.AutoSize = true;
+            this.chkCoPrintVATCalculation.Location = new System.Drawing.Point(289, 364);
+            this.chkCoPrintVATCalculation.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.chkCoPrintVATCalculation.Name = "chkCoPrintVATCalculation";
+            this.chkCoPrintVATCalculation.Size = new System.Drawing.Size(15, 14);
+            this.chkCoPrintVATCalculation.TabIndex = 42;
+            this.chkCoPrintVATCalculation.UseVisualStyleBackColor = true;
             // 
             // label12
             // 
             this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(58, 427);
+            this.label12.Location = new System.Drawing.Point(51, 332);
             this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(97, 18);
+            this.label12.Size = new System.Drawing.Size(83, 14);
             this.label12.TabIndex = 41;
             this.label12.Text = "Print VAT No.";
             // 
-            // checkBox5
+            // chkCoPrtVATNo
             // 
-            this.checkBox5.AutoSize = true;
-            this.checkBox5.Location = new System.Drawing.Point(330, 428);
-            this.checkBox5.Name = "checkBox5";
-            this.checkBox5.Size = new System.Drawing.Size(18, 17);
-            this.checkBox5.TabIndex = 40;
-            this.checkBox5.UseVisualStyleBackColor = true;
+            this.chkCoPrtVATNo.AutoSize = true;
+            this.chkCoPrtVATNo.Location = new System.Drawing.Point(289, 333);
+            this.chkCoPrtVATNo.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.chkCoPrtVATNo.Name = "chkCoPrtVATNo";
+            this.chkCoPrtVATNo.Size = new System.Drawing.Size(15, 14);
+            this.chkCoPrtVATNo.TabIndex = 40;
+            this.chkCoPrtVATNo.UseVisualStyleBackColor = true;
             // 
             // label13
             // 
             this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(58, 387);
+            this.label13.Location = new System.Drawing.Point(51, 301);
             this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(106, 18);
+            this.label13.Size = new System.Drawing.Size(90, 14);
             this.label13.TabIndex = 39;
             this.label13.Text = "Print Order No.";
             // 
-            // checkBox6
+            // chkCoPrintOrderNo
             // 
-            this.checkBox6.AutoSize = true;
-            this.checkBox6.Location = new System.Drawing.Point(330, 389);
-            this.checkBox6.Name = "checkBox6";
-            this.checkBox6.Size = new System.Drawing.Size(18, 17);
-            this.checkBox6.TabIndex = 38;
-            this.checkBox6.UseVisualStyleBackColor = true;
+            this.chkCoPrintOrderNo.AutoSize = true;
+            this.chkCoPrintOrderNo.Location = new System.Drawing.Point(289, 303);
+            this.chkCoPrintOrderNo.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.chkCoPrintOrderNo.Name = "chkCoPrintOrderNo";
+            this.chkCoPrintOrderNo.Size = new System.Drawing.Size(15, 14);
+            this.chkCoPrintOrderNo.TabIndex = 38;
+            this.chkCoPrintOrderNo.UseVisualStyleBackColor = true;
             // 
             // label14
             // 
             this.label14.AutoSize = true;
-            this.label14.Location = new System.Drawing.Point(58, 338);
+            this.label14.Location = new System.Drawing.Point(51, 263);
             this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(74, 18);
+            this.label14.Size = new System.Drawing.Size(63, 14);
             this.label14.TabIndex = 37;
             this.label14.Text = "Print Time";
             // 
-            // checkBox7
+            // chkCoPrintTime
             // 
-            this.checkBox7.AutoSize = true;
-            this.checkBox7.Location = new System.Drawing.Point(330, 340);
-            this.checkBox7.Name = "checkBox7";
-            this.checkBox7.Size = new System.Drawing.Size(18, 17);
-            this.checkBox7.TabIndex = 36;
-            this.checkBox7.UseVisualStyleBackColor = true;
+            this.chkCoPrintTime.AutoSize = true;
+            this.chkCoPrintTime.Location = new System.Drawing.Point(289, 264);
+            this.chkCoPrintTime.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.chkCoPrintTime.Name = "chkCoPrintTime";
+            this.chkCoPrintTime.Size = new System.Drawing.Size(15, 14);
+            this.chkCoPrintTime.TabIndex = 36;
+            this.chkCoPrintTime.UseVisualStyleBackColor = true;
             // 
             // label15
             // 
             this.label15.AutoSize = true;
-            this.label15.Location = new System.Drawing.Point(58, 303);
+            this.label15.Location = new System.Drawing.Point(51, 236);
             this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(72, 18);
+            this.label15.Size = new System.Drawing.Size(62, 14);
             this.label15.TabIndex = 35;
             this.label15.Text = "Print Date";
             // 
-            // checkBox8
+            // chkCoPrintDate
             // 
-            this.checkBox8.AutoSize = true;
-            this.checkBox8.Location = new System.Drawing.Point(330, 305);
-            this.checkBox8.Name = "checkBox8";
-            this.checkBox8.Size = new System.Drawing.Size(18, 17);
-            this.checkBox8.TabIndex = 34;
-            this.checkBox8.UseVisualStyleBackColor = true;
+            this.chkCoPrintDate.AutoSize = true;
+            this.chkCoPrintDate.Location = new System.Drawing.Point(289, 237);
+            this.chkCoPrintDate.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.chkCoPrintDate.Name = "chkCoPrintDate";
+            this.chkCoPrintDate.Size = new System.Drawing.Size(15, 14);
+            this.chkCoPrintDate.TabIndex = 34;
+            this.chkCoPrintDate.UseVisualStyleBackColor = true;
             // 
-            // lookUpEdit6
+            // lueCoOtherLangFont
             // 
-            this.lookUpEdit6.Location = new System.Drawing.Point(254, 258);
-            this.lookUpEdit6.Name = "lookUpEdit6";
-            this.lookUpEdit6.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            this.lueCoOtherLangFont.Location = new System.Drawing.Point(222, 201);
+            this.lueCoOtherLangFont.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.lueCoOtherLangFont.Name = "lueCoOtherLangFont";
+            this.lueCoOtherLangFont.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.lookUpEdit6.Size = new System.Drawing.Size(115, 24);
-            this.lookUpEdit6.TabIndex = 33;
+            this.lueCoOtherLangFont.Size = new System.Drawing.Size(101, 20);
+            this.lueCoOtherLangFont.TabIndex = 33;
             // 
             // label16
             // 
             this.label16.AutoSize = true;
-            this.label16.Location = new System.Drawing.Point(58, 261);
+            this.label16.Location = new System.Drawing.Point(51, 203);
             this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(177, 18);
+            this.label16.Size = new System.Drawing.Size(150, 14);
             this.label16.TabIndex = 32;
             this.label16.Text = "Other Language Font Size";
             // 
-            // lookUpEdit7
+            // lueCoEngFontSize
             // 
-            this.lookUpEdit7.Location = new System.Drawing.Point(254, 218);
-            this.lookUpEdit7.Name = "lookUpEdit7";
-            this.lookUpEdit7.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            this.lueCoEngFontSize.Location = new System.Drawing.Point(222, 170);
+            this.lueCoEngFontSize.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.lueCoEngFontSize.Name = "lueCoEngFontSize";
+            this.lueCoEngFontSize.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.lookUpEdit7.Size = new System.Drawing.Size(115, 24);
-            this.lookUpEdit7.TabIndex = 31;
+            this.lueCoEngFontSize.Size = new System.Drawing.Size(101, 20);
+            this.lueCoEngFontSize.TabIndex = 31;
             // 
             // label17
             // 
             this.label17.AutoSize = true;
-            this.label17.Location = new System.Drawing.Point(58, 221);
+            this.label17.Location = new System.Drawing.Point(51, 172);
             this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(115, 18);
+            this.label17.Size = new System.Drawing.Size(98, 14);
             this.label17.TabIndex = 30;
             this.label17.Text = "English Font Size";
             // 
-            // lookUpEdit8
+            // lueCoPrtLang
             // 
-            this.lookUpEdit8.Location = new System.Drawing.Point(254, 177);
-            this.lookUpEdit8.Name = "lookUpEdit8";
-            this.lookUpEdit8.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            this.lueCoPrtLang.Location = new System.Drawing.Point(222, 138);
+            this.lueCoPrtLang.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.lueCoPrtLang.Name = "lueCoPrtLang";
+            this.lueCoPrtLang.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.lookUpEdit8.Size = new System.Drawing.Size(115, 24);
-            this.lookUpEdit8.TabIndex = 29;
+            this.lueCoPrtLang.Size = new System.Drawing.Size(101, 20);
+            this.lueCoPrtLang.TabIndex = 29;
             // 
             // label18
             // 
             this.label18.AutoSize = true;
-            this.label18.Location = new System.Drawing.Point(58, 180);
+            this.label18.Location = new System.Drawing.Point(51, 140);
             this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(104, 18);
+            this.label18.Size = new System.Drawing.Size(89, 14);
             this.label18.TabIndex = 28;
             this.label18.Text = "Print Language";
             // 
-            // textBox2
+            // txtCoHeadWord
             // 
-            this.textBox2.Location = new System.Drawing.Point(254, 116);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(115, 26);
-            this.textBox2.TabIndex = 27;
+            this.txtCoHeadWord.Location = new System.Drawing.Point(222, 90);
+            this.txtCoHeadWord.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txtCoHeadWord.Name = "txtCoHeadWord";
+            this.txtCoHeadWord.Size = new System.Drawing.Size(101, 22);
+            this.txtCoHeadWord.TabIndex = 27;
             // 
             // label19
             // 
             this.label19.AutoSize = true;
-            this.label19.Location = new System.Drawing.Point(58, 124);
+            this.label19.Location = new System.Drawing.Point(51, 96);
             this.label19.Name = "label19";
-            this.label19.Size = new System.Drawing.Size(100, 18);
+            this.label19.Size = new System.Drawing.Size(85, 14);
             this.label19.TabIndex = 26;
             this.label19.Text = "Heading Word";
             // 
-            // lookUpEdit10
+            // lueCoLocalPrinter
             // 
-            this.lookUpEdit10.Location = new System.Drawing.Point(254, 36);
-            this.lookUpEdit10.Name = "lookUpEdit10";
-            this.lookUpEdit10.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            this.lueCoLocalPrinter.Location = new System.Drawing.Point(222, 28);
+            this.lueCoLocalPrinter.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.lueCoLocalPrinter.Name = "lueCoLocalPrinter";
+            this.lueCoLocalPrinter.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.lookUpEdit10.Size = new System.Drawing.Size(115, 24);
-            this.lookUpEdit10.TabIndex = 23;
+            this.lueCoLocalPrinter.Size = new System.Drawing.Size(101, 20);
+            this.lueCoLocalPrinter.TabIndex = 23;
             // 
             // label21
             // 
             this.label21.AutoSize = true;
-            this.label21.Location = new System.Drawing.Point(58, 39);
+            this.label21.Location = new System.Drawing.Point(51, 30);
             this.label21.Name = "label21";
-            this.label21.Size = new System.Drawing.Size(86, 18);
+            this.label21.Size = new System.Drawing.Size(74, 14);
             this.label21.TabIndex = 22;
             this.label21.Text = "Local Printer";
             // 
-            // btnGenExit
+            // btnExit
             // 
-            this.btnGenExit.Appearance.BackColor = System.Drawing.Color.Green;
-            this.btnGenExit.Appearance.Font = new System.Drawing.Font("Tahoma", 12F);
-            this.btnGenExit.Appearance.ForeColor = System.Drawing.Color.White;
-            this.btnGenExit.Appearance.Options.UseBackColor = true;
-            this.btnGenExit.Appearance.Options.UseFont = true;
-            this.btnGenExit.Appearance.Options.UseForeColor = true;
-            this.btnGenExit.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
-            this.btnGenExit.Location = new System.Drawing.Point(762, 524);
-            this.btnGenExit.Name = "btnGenExit";
-            this.btnGenExit.Size = new System.Drawing.Size(95, 94);
-            this.btnGenExit.TabIndex = 7;
-            this.btnGenExit.Text = "Exit";
+            this.btnExit.Appearance.BackColor = System.Drawing.Color.Green;
+            this.btnExit.Appearance.Font = new System.Drawing.Font("Tahoma", 12F);
+            this.btnExit.Appearance.ForeColor = System.Drawing.Color.White;
+            this.btnExit.Appearance.Options.UseBackColor = true;
+            this.btnExit.Appearance.Options.UseFont = true;
+            this.btnExit.Appearance.Options.UseForeColor = true;
+            this.btnExit.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
+            this.btnExit.Location = new System.Drawing.Point(667, 408);
+            this.btnExit.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnExit.Name = "btnExit";
+            this.btnExit.Size = new System.Drawing.Size(83, 73);
+            this.btnExit.TabIndex = 7;
+            this.btnExit.Text = "Exit";
+            this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
             // 
-            // btnGenSave
+            // btnSave
             // 
-            this.btnGenSave.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
-            this.btnGenSave.Appearance.Font = new System.Drawing.Font("Tahoma", 12F);
-            this.btnGenSave.Appearance.ForeColor = System.Drawing.Color.White;
-            this.btnGenSave.Appearance.Options.UseBackColor = true;
-            this.btnGenSave.Appearance.Options.UseFont = true;
-            this.btnGenSave.Appearance.Options.UseForeColor = true;
-            this.btnGenSave.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
-            this.btnGenSave.Location = new System.Drawing.Point(642, 524);
-            this.btnGenSave.Name = "btnGenSave";
-            this.btnGenSave.Size = new System.Drawing.Size(95, 94);
-            this.btnGenSave.TabIndex = 6;
-            this.btnGenSave.Text = "Save";
+            this.btnSave.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
+            this.btnSave.Appearance.Font = new System.Drawing.Font("Tahoma", 12F);
+            this.btnSave.Appearance.ForeColor = System.Drawing.Color.White;
+            this.btnSave.Appearance.Options.UseBackColor = true;
+            this.btnSave.Appearance.Options.UseFont = true;
+            this.btnSave.Appearance.Options.UseForeColor = true;
+            this.btnSave.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
+            this.btnSave.Location = new System.Drawing.Point(562, 408);
+            this.btnSave.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnSave.Name = "btnSave";
+            this.btnSave.Size = new System.Drawing.Size(83, 73);
+            this.btnSave.TabIndex = 6;
+            this.btnSave.Text = "Save";
+            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
+            // 
+            // label3
+            // 
+            this.label3.ForeColor = System.Drawing.Color.Magenta;
+            this.label3.Location = new System.Drawing.Point(26, 436);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(90, 14);
+            this.label3.TabIndex = 46;
+            this.label3.Text = "Print Order No.";
             // 
             // FrmPrintSetupCounterSetting2
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 18F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 14F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(887, 623);
-            this.Controls.Add(this.btnGenExit);
-            this.Controls.Add(this.btnGenSave);
+            this.ClientSize = new System.Drawing.Size(776, 485);
+            this.Controls.Add(this.btnExit);
+            this.Controls.Add(this.btnSave);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "FrmPrintSetupCounterSetting2";
             this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
             this.Text = "FrmPrintSetupCounterSetting2";
@@ -603,19 +603,19 @@
             this.SizeChanged += new System.EventHandler(this.FrmPrintSetupCounterSetting2_SizeChanged);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.lookUpEdit12.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.lookUpEdit11.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.lookUpEdit5.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.lookUpEdit4.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.lookUpEdit3.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.lookUpEdit2.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.lookUpEdit1.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.lueSoDeliveryAddressFont.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.lueSoDriverPrintoutCopy.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.lueSoOtherLangFont.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.lueSoEngFontSize.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.lueSoPrtLang.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.lueSoNumOfCopy.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.lueSoLocalPrinter.Properties)).EndInit();
             this.groupBox3.ResumeLayout(false);
             this.groupBox3.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.lookUpEdit6.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.lookUpEdit7.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.lookUpEdit8.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.lookUpEdit10.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.lueCoOtherLangFont.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.lueCoEngFontSize.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.lueCoPrtLang.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.lueCoLocalPrinter.Properties)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -624,52 +624,49 @@
 
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.CheckBox checkBox2;
+        private System.Windows.Forms.CheckBox chkSoPrintTime;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.CheckBox checkBox1;
-        private DevExpress.XtraEditors.LookUpEdit lookUpEdit5;
+        private System.Windows.Forms.CheckBox chkSoPrintDate;
+        private DevExpress.XtraEditors.LookUpEdit lueSoOtherLangFont;
         private System.Windows.Forms.Label label6;
-        private DevExpress.XtraEditors.LookUpEdit lookUpEdit4;
+        private DevExpress.XtraEditors.LookUpEdit lueSoEngFontSize;
         private System.Windows.Forms.Label label5;
-        private DevExpress.XtraEditors.LookUpEdit lookUpEdit3;
+        private DevExpress.XtraEditors.LookUpEdit lueSoPrtLang;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.Label label3;
-        private DevExpress.XtraEditors.LookUpEdit lookUpEdit2;
+        private DevExpress.XtraEditors.LookUpEdit lueSoNumOfCopy;
         private System.Windows.Forms.Label label2;
-        private DevExpress.XtraEditors.LookUpEdit lookUpEdit1;
+        private DevExpress.XtraEditors.LookUpEdit lueSoLocalPrinter;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.CheckBox checkBox4;
-        private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.CheckBox checkBox3;
+        private System.Windows.Forms.CheckBox chkSoPrtVATNo;
         private System.Windows.Forms.GroupBox groupBox3;
         private System.Windows.Forms.Label label12;
-        private System.Windows.Forms.CheckBox checkBox5;
+        private System.Windows.Forms.CheckBox chkCoPrtVATNo;
         private System.Windows.Forms.Label label13;
-        private System.Windows.Forms.CheckBox checkBox6;
+        private System.Windows.Forms.CheckBox chkCoPrintOrderNo;
         private System.Windows.Forms.Label label14;
-        private System.Windows.Forms.CheckBox checkBox7;
+        private System.Windows.Forms.CheckBox chkCoPrintTime;
         private System.Windows.Forms.Label label15;
-        private System.Windows.Forms.CheckBox checkBox8;
-        private DevExpress.XtraEditors.LookUpEdit lookUpEdit6;
+        private System.Windows.Forms.CheckBox chkCoPrintDate;
+        private DevExpress.XtraEditors.LookUpEdit lueCoOtherLangFont;
         private System.Windows.Forms.Label label16;
-        private DevExpress.XtraEditors.LookUpEdit lookUpEdit7;
+        private DevExpress.XtraEditors.LookUpEdit lueCoEngFontSize;
         private System.Windows.Forms.Label label17;
-        private DevExpress.XtraEditors.LookUpEdit lookUpEdit8;
+        private DevExpress.XtraEditors.LookUpEdit lueCoPrtLang;
         private System.Windows.Forms.Label label18;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox txtCoHeadWord;
         private System.Windows.Forms.Label label19;
-        private DevExpress.XtraEditors.LookUpEdit lookUpEdit10;
+        private DevExpress.XtraEditors.LookUpEdit lueCoLocalPrinter;
         private System.Windows.Forms.Label label21;
-        private DevExpress.XtraEditors.SimpleButton btnGenExit;
-        private DevExpress.XtraEditors.SimpleButton btnGenSave;
-        private DevExpress.XtraEditors.LookUpEdit lookUpEdit11;
+        private DevExpress.XtraEditors.SimpleButton btnExit;
+        private DevExpress.XtraEditors.SimpleButton btnSave;
+        private DevExpress.XtraEditors.LookUpEdit lueSoDriverPrintoutCopy;
         private System.Windows.Forms.Label label11;
-        private DevExpress.XtraEditors.LookUpEdit lookUpEdit12;
+        private DevExpress.XtraEditors.LookUpEdit lueSoDeliveryAddressFont;
         private System.Windows.Forms.Label label23;
-        private System.Windows.Forms.CheckBox checkBox10;
+        private System.Windows.Forms.CheckBox chkSoPrintOrderNo;
         private System.Windows.Forms.Label label22;
-        private System.Windows.Forms.CheckBox checkBox9;
+        private System.Windows.Forms.CheckBox chkCoPrintVATCalculation;
+        private System.Windows.Forms.Label label3;
     }
 }

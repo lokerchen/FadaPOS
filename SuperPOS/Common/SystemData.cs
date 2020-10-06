@@ -105,5 +105,7 @@ namespace SuperPOS.Common
         public void GetTaSysPrtSetGeneral() { CommonData.TaSysPrtSetGeneral = _control.SelectAll<TaSysPrtSetGeneralInfo>(); }
 
         public void GetTaSysPrtSetCountSetting1() { CommonData.TaSysPrtSetCounterSetting1 = _control.SelectAll<TaSysPrtSetCounterSetting1Info>(); }
+
+        public void GetTaSysPrtSetCountSetting2() { CommonData.TaSysPrtSetCounterSetting2 = _control.SelectAll<TaSysPrtSetCounterSetting2Info>(); }
     }
 }
