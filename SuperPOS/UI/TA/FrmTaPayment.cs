@@ -476,7 +476,7 @@ namespace SuperPOS.UI.TA
 
                 new SystemData().GetTaOrderItem();
                 var lstOI = CommonData.TaOrderItem.Where(s => s.CheckCode.Equals(checkID) && s.BusDate.Equals(strBusDate)).ToList();
-
+                
                 PrtPrint.PrtBillBilingual(lstOI, htDetail);
             }
         }

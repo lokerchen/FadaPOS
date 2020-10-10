@@ -14,6 +14,7 @@
     <property name="SoEngFontSize" column="SoEngFontSize" type="System.String" />
     <property name="SoOtherFontSize" column="SoOtherFontSize" type="System.String" />
     <property name="IsSoPrtDate" column="IsSoPrtDate" type="System.String" />
+    <property name="IsSoPrtTime" column="IsSoPrtTime" type="System.String" />
     <property name="IsSoPrtOrderNoSlip" column="IsSoPrtOrderNoSlip" type="System.String" />
     <property name="IsSoPrtVATNo" column="IsSoPrtVATNo" type="System.String" />
     <property name="IsSoRefNum" column="IsSoRefNum" type="System.String" />
@@ -24,6 +25,7 @@
     <property name="CoEngFontSize" column="CoEngFontSize" type="System.String" />
     <property name="CoOtherFontSize" column="CoOtherFontSize" type="System.String" />
     <property name="IsCoPrtDate" column="IsCoPrtDate" type="System.String" />
+    <property name="IsCoPrtTime" column="IsCoPrtTime" type="System.String" />
     <property name="IsCoPrtOrderNoSlip" column="IsCoPrtOrderNoSlip" type="System.String" />
     <property name="IsCoPrtVATNo" column="IsCoPrtVATNo" type="System.String" />
     <property name="IsCoRefNum" column="IsCoRefNum" type="System.String" />

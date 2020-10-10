@@ -31,15 +31,15 @@ namespace SuperPOS
             pgInit.Minimum = 0;
 
             //打印模板
-            new SystemData().GetTaPreview();
+            //new SystemData().GetTaPreview();
 
-            DelegatePreview handler = DelegatePrt.SaveShowOrderModelPreview;
-            IAsyncResult result = handler.BeginInvoke(null, null);
+            //DelegatePreview handler = DelegatePrt.SaveShowOrderModelPreview;
+            //IAsyncResult result = handler.BeginInvoke(null, null);
 
             //加载系统数据
             CommonDAL.InitData();
 
-            handler.EndInvoke(result);
+            //handler.EndInvoke(result);
 
 
             //加载设置图片

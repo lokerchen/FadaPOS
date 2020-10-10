@@ -89,6 +89,7 @@ namespace SuperPOS.UI
         {
             //显示订餐界面
             FrmTaMain frmTaMain = new FrmTaMain(usrID);
+
             frmTaMain.ShowDialog();
         }
 

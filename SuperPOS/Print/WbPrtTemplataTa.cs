@@ -6,8 +6,9 @@ using System.Threading.Tasks;
 
 namespace SuperPOS.Print
 {
-    class WbPrtTemplataTa
+    public class WbPrtTemplataTa
     {
+        //Shop
         public string ImgLogo { get; set; }
         public string PrintAddress { get; set; }
         public string PrintTel { get; set; }
@@ -27,5 +28,31 @@ namespace SuperPOS.Print
         public string Msg3 { get; set; }
         public string Msg4 { get; set; }
         public string Msg5 { get; set; }
+
+        //Fast Food
+        public string RefNo { get; set; }
+
+        //Receipt
+        public string HeadingWord { get; set; }
+        public string Tendered { get; set; }
+        public string Change { get; set; }
+        public string Rate1 { get; set; }
+        public string Net1 { get; set; }
+        public string VatA { get; set; }
+        public string Gross1 { get; set; }
+        public string Rate2 { get; set; }
+        public string Net2 { get; set; }
+        public string VatB { get; set; }
+        public string Gross2 { get; set; }
+        
+        //Kitchen
+        public string CustName { get; set; }
+        public string CustPhone { get; set; }
+        public string CustDist { get; set; }
+        public string CustMapRef { get; set; }
+        public string CustHouseNo { get; set; }
+        public string CustAddr { get; set; }
+        public string CustPostCode { get; set; }
+        public string OrderType { get; set; }
     }
 }

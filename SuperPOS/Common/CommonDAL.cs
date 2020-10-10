@@ -393,7 +393,7 @@ namespace SuperPOS.Common
             new SystemData().GetSysValue();
             new SystemData().GetTaCheckOrder();
             //当前营业日期内是否存在订单
-            var lstCheck = CommonData.TaCheckOrder.Where(s => s.BusDate.Equals(GetBusDate())).OrderByDescending(s => s.CheckCode).Take(1);
+            var lstCheck = CommonData.TaCheckOrder.Where(s => s.BusDate.Equals(GetBusDate())).OrderByDescending(s => s.ID).Take(1);
 
             if (lstCheck.Any()) //若当前营业日期存在订单，则从订单列表中取最大订单号+1
             {

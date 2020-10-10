@@ -62,9 +62,9 @@ namespace SuperPOS.UI.TA
         {
             luePrintLang.Properties.DataSource = new List<string>(PubComm.PRT_LANGUAGE);
             luePrintPrice.Properties.DataSource = new List<string>(PubComm.PRT_KITCHEN_PRINT_PRICE_DISH_CODE);
-            lueEngFontSize.Properties.DataSource = new List<string>(PubComm.PRT_KITCHEN_FONT_SIZE);
-            lueOtherFontSize.Properties.DataSource = new List<string>(PubComm.PRT_KITCHEN_FONT_SIZE);
-            lueDeliveryAddr.Properties.DataSource = new List<string>(PubComm.PRT_KITCHEN_FONT_SIZE);
+            lueEngFontSize.Properties.DataSource = new List<string>(PubComm.PRT_FONT_SIZE);
+            lueOtherFontSize.Properties.DataSource = new List<string>(PubComm.PRT_FONT_SIZE);
+            lueDeliveryAddr.Properties.DataSource = new List<string>(PubComm.PRT_FONT_SIZE);
         }
 
         private void btnSave_Click(object sender, EventArgs e)

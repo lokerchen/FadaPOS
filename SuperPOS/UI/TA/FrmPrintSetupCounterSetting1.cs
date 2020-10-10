@@ -43,6 +43,7 @@ namespace SuperPOS.UI.TA
                 lueSOEngFontSize.EditValue = taSysPrtSetCounterSetting1.SoEngFontSize;
                 lueSOOtherFontSize.EditValue = taSysPrtSetCounterSetting1.SoOtherFontSize;
                 chkSOPrtDate.Checked = taSysPrtSetCounterSetting1.IsSoPrtDate.Equals("Y");
+                chkSOPrtTime.Checked = taSysPrtSetCounterSetting1.IsSoPrtTime.Equals("Y");
                 chkSOPrtOrderNoSlip.Checked = taSysPrtSetCounterSetting1.IsSoPrtOrderNoSlip.Equals("Y");
                 chkSOPrtVATNo.Checked = taSysPrtSetCounterSetting1.IsSoPrtVATNo.Equals("Y");
                 chkSOPrtRefNum.Checked = taSysPrtSetCounterSetting1.IsSoRefNum.Equals("Y");
@@ -54,6 +55,7 @@ namespace SuperPOS.UI.TA
                 lueCOEngFontSize.EditValue = taSysPrtSetCounterSetting1.CoEngFontSize;
                 lueCOOtherFontSize.EditValue = taSysPrtSetCounterSetting1.CoOtherFontSize;
                 chkCOPrtDate.Checked = taSysPrtSetCounterSetting1.IsCoPrtDate.Equals("Y");
+                chkCOPrtTime.Checked = taSysPrtSetCounterSetting1.IsCoPrtTime.Equals("Y");
                 chkCOPrtOrderNoSlip.Checked = taSysPrtSetCounterSetting1.IsCoPrtOrderNoSlip.Equals("Y");
                 chkCOPrtVATNo.Checked = taSysPrtSetCounterSetting1.IsCoPrtVATNo.Equals("Y");
                 chkCOPrtRefNum.Checked = taSysPrtSetCounterSetting1.IsCoRefNum.Equals("Y");
@@ -84,6 +86,7 @@ namespace SuperPOS.UI.TA
             taSysPrtSetCounterSetting1.SoEngFontSize = lueSOEngFontSize.EditValue.ToString();
             taSysPrtSetCounterSetting1.SoOtherFontSize = lueSOOtherFontSize.EditValue.ToString();
             taSysPrtSetCounterSetting1.IsSoPrtDate = chkSOPrtDate.Checked ? "Y" : "N";
+            taSysPrtSetCounterSetting1.IsSoPrtTime = chkSOPrtTime.Checked ? "Y" : "N";
             taSysPrtSetCounterSetting1.IsSoPrtOrderNoSlip = chkSOPrtOrderNoSlip.Checked ? "Y" : "N";
             taSysPrtSetCounterSetting1.IsSoPrtVATNo = chkSOPrtVATNo.Checked ? "Y" : "N";
             taSysPrtSetCounterSetting1.IsSoRefNum = chkSOPrtRefNum.Checked ? "Y" : "N";
@@ -95,6 +98,7 @@ namespace SuperPOS.UI.TA
             taSysPrtSetCounterSetting1.CoEngFontSize = lueCOEngFontSize.EditValue.ToString();
             taSysPrtSetCounterSetting1.CoOtherFontSize = lueCOOtherFontSize.EditValue.ToString();
             taSysPrtSetCounterSetting1.IsCoPrtDate = chkCOPrtDate.Checked ? "Y" : "N";
+            taSysPrtSetCounterSetting1.IsCoPrtTime = chkCOPrtTime.Checked ? "Y" : "N";
             taSysPrtSetCounterSetting1.IsCoPrtOrderNoSlip = chkCOPrtOrderNoSlip.Checked ? "Y" : "N";
             taSysPrtSetCounterSetting1.IsCoPrtVATNo = chkCOPrtVATNo.Checked ? "Y" : "N";
             taSysPrtSetCounterSetting1.IsCoRefNum = chkCOPrtRefNum.Checked ? "Y" : "N";

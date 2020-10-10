@@ -107,8 +107,11 @@ namespace SuperPOS.UI
 
         private void btnTaPrtSetup_Click(object sender, EventArgs e)
         {
-            FrmTaPrtSetup frmTaPrtSetup = new FrmTaPrtSetup(usrID, usrName);
-            frmTaPrtSetup.ShowDialog();}
+            //FrmTaPrtSetup frmTaPrtSetup = new FrmTaPrtSetup(usrID, usrName);
+            //frmTaPrtSetup.ShowDialog();
+            FrmPrintSetup frmPrintSetup = new FrmPrintSetup();
+            frmPrintSetup.ShowDialog();
+        }
 
         private void btnTaDriverSetup_Click(object sender, EventArgs e)
         {
@@ -166,8 +169,7 @@ namespace SuperPOS.UI
 
         private void btnEiPrtSetup_Click(object sender, EventArgs e)
         {
-            FrmPrintSetup frmPrintSetup = new FrmPrintSetup();
-            frmPrintSetup.ShowDialog();
+            
         }
         #endregion
 

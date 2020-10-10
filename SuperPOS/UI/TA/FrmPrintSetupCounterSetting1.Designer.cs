@@ -29,6 +29,8 @@
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.chkSOPrtOrderNo = new System.Windows.Forms.CheckBox();
             this.label10 = new System.Windows.Forms.Label();
             this.chkSOPrtRefNum = new System.Windows.Forms.CheckBox();
             this.label9 = new System.Windows.Forms.Label();
@@ -70,8 +72,10 @@
             this.label21 = new System.Windows.Forms.Label();
             this.btnExit = new DevExpress.XtraEditors.SimpleButton();
             this.btnSave = new DevExpress.XtraEditors.SimpleButton();
-            this.label3 = new System.Windows.Forms.Label();
-            this.chkSOPrtOrderNo = new System.Windows.Forms.CheckBox();
+            this.label11 = new System.Windows.Forms.Label();
+            this.chkSOPrtTime = new System.Windows.Forms.CheckBox();
+            this.label19 = new System.Windows.Forms.Label();
+            this.chkCOPrtTime = new System.Windows.Forms.CheckBox();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.lueSOOtherFontSize.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.lueSOEngFontSize.Properties)).BeginInit();
@@ -88,6 +92,8 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.label11);
+            this.groupBox1.Controls.Add(this.chkSOPrtTime);
             this.groupBox1.Controls.Add(this.label3);
             this.groupBox1.Controls.Add(this.chkSOPrtOrderNo);
             this.groupBox1.Controls.Add(this.label10);
@@ -116,6 +122,26 @@
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Shop Order Printout Settings";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.ForeColor = System.Drawing.Color.Magenta;
+            this.label3.Location = new System.Drawing.Point(26, 369);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(90, 14);
+            this.label3.TabIndex = 45;
+            this.label3.Text = "Print Order No.";
+            // 
+            // chkSOPrtOrderNo
+            // 
+            this.chkSOPrtOrderNo.AutoSize = true;
+            this.chkSOPrtOrderNo.Location = new System.Drawing.Point(198, 370);
+            this.chkSOPrtOrderNo.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.chkSOPrtOrderNo.Name = "chkSOPrtOrderNo";
+            this.chkSOPrtOrderNo.Size = new System.Drawing.Size(15, 14);
+            this.chkSOPrtOrderNo.TabIndex = 44;
+            this.chkSOPrtOrderNo.UseVisualStyleBackColor = true;
             // 
             // label10
             // 
@@ -177,7 +203,7 @@
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(26, 240);
+            this.label7.Location = new System.Drawing.Point(26, 213);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(62, 14);
             this.label7.TabIndex = 15;
@@ -186,7 +212,7 @@
             // chkSOPrtDate
             // 
             this.chkSOPrtDate.AutoSize = true;
-            this.chkSOPrtDate.Location = new System.Drawing.Point(198, 242);
+            this.chkSOPrtDate.Location = new System.Drawing.Point(198, 215);
             this.chkSOPrtDate.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.chkSOPrtDate.Name = "chkSOPrtDate";
             this.chkSOPrtDate.Size = new System.Drawing.Size(15, 14);
@@ -195,7 +221,7 @@
             // 
             // lueSOOtherFontSize
             // 
-            this.lueSOOtherFontSize.Location = new System.Drawing.Point(198, 205);
+            this.lueSOOtherFontSize.Location = new System.Drawing.Point(198, 172);
             this.lueSOOtherFontSize.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.lueSOOtherFontSize.Name = "lueSOOtherFontSize";
             this.lueSOOtherFontSize.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
@@ -206,7 +232,7 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(26, 208);
+            this.label6.Location = new System.Drawing.Point(26, 175);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(150, 14);
             this.label6.TabIndex = 12;
@@ -214,7 +240,7 @@
             // 
             // lueSOEngFontSize
             // 
-            this.lueSOEngFontSize.Location = new System.Drawing.Point(198, 174);
+            this.lueSOEngFontSize.Location = new System.Drawing.Point(198, 141);
             this.lueSOEngFontSize.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.lueSOEngFontSize.Name = "lueSOEngFontSize";
             this.lueSOEngFontSize.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
@@ -225,7 +251,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(26, 177);
+            this.label5.Location = new System.Drawing.Point(26, 144);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(98, 14);
             this.label5.TabIndex = 10;
@@ -233,7 +259,7 @@
             // 
             // lueSOPrtLang
             // 
-            this.lueSOPrtLang.Location = new System.Drawing.Point(198, 142);
+            this.lueSOPrtLang.Location = new System.Drawing.Point(198, 109);
             this.lueSOPrtLang.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.lueSOPrtLang.Name = "lueSOPrtLang";
             this.lueSOPrtLang.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
@@ -244,7 +270,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(26, 145);
+            this.label4.Location = new System.Drawing.Point(26, 112);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(89, 14);
             this.label4.TabIndex = 8;
@@ -290,6 +316,8 @@
             // 
             // groupBox3
             // 
+            this.groupBox3.Controls.Add(this.label19);
+            this.groupBox3.Controls.Add(this.chkCOPrtTime);
             this.groupBox3.Controls.Add(this.label22);
             this.groupBox3.Controls.Add(this.chkCOPrtOrderNo);
             this.groupBox3.Controls.Add(this.label12);
@@ -399,7 +427,7 @@
             // label15
             // 
             this.label15.AutoSize = true;
-            this.label15.Location = new System.Drawing.Point(51, 236);
+            this.label15.Location = new System.Drawing.Point(51, 210);
             this.label15.Name = "label15";
             this.label15.Size = new System.Drawing.Size(62, 14);
             this.label15.TabIndex = 35;
@@ -408,7 +436,7 @@
             // chkCOPrtDate
             // 
             this.chkCOPrtDate.AutoSize = true;
-            this.chkCOPrtDate.Location = new System.Drawing.Point(289, 237);
+            this.chkCOPrtDate.Location = new System.Drawing.Point(289, 211);
             this.chkCOPrtDate.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.chkCOPrtDate.Name = "chkCOPrtDate";
             this.chkCOPrtDate.Size = new System.Drawing.Size(15, 14);
@@ -417,7 +445,7 @@
             // 
             // lueCOOtherFontSize
             // 
-            this.lueCOOtherFontSize.Location = new System.Drawing.Point(222, 201);
+            this.lueCOOtherFontSize.Location = new System.Drawing.Point(222, 168);
             this.lueCOOtherFontSize.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.lueCOOtherFontSize.Name = "lueCOOtherFontSize";
             this.lueCOOtherFontSize.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
@@ -428,7 +456,7 @@
             // label16
             // 
             this.label16.AutoSize = true;
-            this.label16.Location = new System.Drawing.Point(51, 203);
+            this.label16.Location = new System.Drawing.Point(51, 170);
             this.label16.Name = "label16";
             this.label16.Size = new System.Drawing.Size(150, 14);
             this.label16.TabIndex = 32;
@@ -436,7 +464,7 @@
             // 
             // lueCOEngFontSize
             // 
-            this.lueCOEngFontSize.Location = new System.Drawing.Point(222, 170);
+            this.lueCOEngFontSize.Location = new System.Drawing.Point(222, 137);
             this.lueCOEngFontSize.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.lueCOEngFontSize.Name = "lueCOEngFontSize";
             this.lueCOEngFontSize.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
@@ -447,7 +475,7 @@
             // label17
             // 
             this.label17.AutoSize = true;
-            this.label17.Location = new System.Drawing.Point(51, 172);
+            this.label17.Location = new System.Drawing.Point(51, 139);
             this.label17.Name = "label17";
             this.label17.Size = new System.Drawing.Size(98, 14);
             this.label17.TabIndex = 30;
@@ -455,7 +483,7 @@
             // 
             // lueCOPrtLang
             // 
-            this.lueCOPrtLang.Location = new System.Drawing.Point(222, 138);
+            this.lueCOPrtLang.Location = new System.Drawing.Point(222, 105);
             this.lueCOPrtLang.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.lueCOPrtLang.Name = "lueCOPrtLang";
             this.lueCOPrtLang.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
@@ -466,7 +494,7 @@
             // label18
             // 
             this.label18.AutoSize = true;
-            this.label18.Location = new System.Drawing.Point(51, 140);
+            this.label18.Location = new System.Drawing.Point(51, 107);
             this.label18.Name = "label18";
             this.label18.Size = new System.Drawing.Size(89, 14);
             this.label18.TabIndex = 28;
@@ -544,25 +572,43 @@
             this.btnSave.Text = "Save";
             this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
-            // label3
+            // label11
             // 
-            this.label3.AutoSize = true;
-            this.label3.ForeColor = System.Drawing.Color.Magenta;
-            this.label3.Location = new System.Drawing.Point(26, 369);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(90, 14);
-            this.label3.TabIndex = 45;
-            this.label3.Text = "Print Order No.";
+            this.label11.AutoSize = true;
+            this.label11.Location = new System.Drawing.Point(26, 242);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(63, 14);
+            this.label11.TabIndex = 47;
+            this.label11.Text = "Print Time";
             // 
-            // chkSOPrtOrderNo
+            // chkSOPrtTime
             // 
-            this.chkSOPrtOrderNo.AutoSize = true;
-            this.chkSOPrtOrderNo.Location = new System.Drawing.Point(198, 370);
-            this.chkSOPrtOrderNo.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.chkSOPrtOrderNo.Name = "chkSOPrtOrderNo";
-            this.chkSOPrtOrderNo.Size = new System.Drawing.Size(15, 14);
-            this.chkSOPrtOrderNo.TabIndex = 44;
-            this.chkSOPrtOrderNo.UseVisualStyleBackColor = true;
+            this.chkSOPrtTime.AutoSize = true;
+            this.chkSOPrtTime.Location = new System.Drawing.Point(198, 244);
+            this.chkSOPrtTime.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.chkSOPrtTime.Name = "chkSOPrtTime";
+            this.chkSOPrtTime.Size = new System.Drawing.Size(15, 14);
+            this.chkSOPrtTime.TabIndex = 46;
+            this.chkSOPrtTime.UseVisualStyleBackColor = true;
+            // 
+            // label19
+            // 
+            this.label19.AutoSize = true;
+            this.label19.Location = new System.Drawing.Point(51, 237);
+            this.label19.Name = "label19";
+            this.label19.Size = new System.Drawing.Size(63, 14);
+            this.label19.TabIndex = 45;
+            this.label19.Text = "Print Time";
+            // 
+            // chkCOPrtTime
+            // 
+            this.chkCOPrtTime.AutoSize = true;
+            this.chkCOPrtTime.Location = new System.Drawing.Point(289, 238);
+            this.chkCOPrtTime.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.chkCOPrtTime.Name = "chkCOPrtTime";
+            this.chkCOPrtTime.Size = new System.Drawing.Size(15, 14);
+            this.chkCOPrtTime.TabIndex = 44;
+            this.chkCOPrtTime.UseVisualStyleBackColor = true;
             // 
             // FrmPrintSetupCounterSetting1
             // 
@@ -644,5 +690,9 @@
         private DevExpress.XtraEditors.SimpleButton btnSave;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.CheckBox chkSOPrtOrderNo;
+        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.CheckBox chkSOPrtTime;
+        private System.Windows.Forms.Label label19;
+        private System.Windows.Forms.CheckBox chkCOPrtTime;
     }
 }

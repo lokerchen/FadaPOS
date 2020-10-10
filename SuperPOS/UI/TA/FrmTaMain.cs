@@ -758,7 +758,7 @@ namespace SuperPOS.UI.TA
             //}
             if (ORDER_TYPE.Equals(PubComm.ORDER_TYPE_SHOP))
             {
-                FrmTaPaymentShop frmTaPaymentShop = new FrmTaPaymentShop(usrID, checkID, ORDER_TYPE, CallerID, ht, strBusDate);
+                FrmTaPaymentShop frmTaPaymentShop = new FrmTaPaymentShop(usrID, checkID, ORDER_TYPE, CustID.ToString(), ht, strBusDate);
                 frmTaPaymentShop.Location = pcMain.Location;
                 frmTaPaymentShop.Size = pcMain.Size;
 
@@ -2202,9 +2202,9 @@ namespace SuperPOS.UI.TA
                         lblCustDistance.Visible = true;
                         lblCustDeliveryFee.Visible = true;
 
-                        //存在客户信息时，变更订单类型
-                        ORDER_TYPE = PubComm.ORDER_TYPE_DELIVERY;
-                        ChangeOrderBtnColor(ORDER_TYPE);
+                        ////存在客户信息时，变更订单类型
+                        //ORDER_TYPE = PubComm.ORDER_TYPE_DELIVERY;
+                        //ChangeOrderBtnColor(ORDER_TYPE);
                     }
                     
                 }

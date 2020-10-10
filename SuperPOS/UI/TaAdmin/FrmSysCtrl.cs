@@ -17,6 +17,8 @@ namespace SuperPOS.UI.TaAdmin
     {
         private readonly EntityControl _control = new EntityControl();
 
+        private AutoSizeFormClass asfc = new AutoSizeFormClass();
+
         public FrmSysCtrl()
         {
             InitializeComponent();
@@ -55,6 +57,38 @@ namespace SuperPOS.UI.TaAdmin
         private void btnExit_Click(object sender, EventArgs e)
         {
             Close();
+        }
+
+        private void FrmSysCtrl_Load(object sender, EventArgs e)
+        {
+            try
+            {
+                new SystemData().GetTaSysCtrl();
+                var lstTaSysCtrl = CommonData.TaSysCtrl;
+
+                if (lstTaSysCtrl.Any())
+                {
+                    TaSysCtrlInfo taSysCtrl = new TaSysCtrlInfo();
+                    taSysCtrl = lstTaSysCtrl.FirstOrDefault();
+                    txtShopName.Text = taSysCtrl.ShopName;
+                    txtShopAddress.Text = taSysCtrl.ShopAddress;
+                    chkShopDetailReadOnly.Checked = taSysCtrl.IsShopDetailsReadOnly.Equals("Y");
+                }
+                else
+                {
+                    txtShopName.Text = "";
+                    txtShopAddress.Text = "";
+                    chkShopDetailReadOnly.Checked = false;
+                }
+            }
+            catch (Exception ex) { LogHelper.Error(this.Name, ex); }
+
+            asfc.controllInitializeSize(this);
+        }
+
+        private void FrmSysCtrl_SizeChanged(object sender, EventArgs e)
+        {
+            asfc.controlAutoSize(this);
         }
     }
 }

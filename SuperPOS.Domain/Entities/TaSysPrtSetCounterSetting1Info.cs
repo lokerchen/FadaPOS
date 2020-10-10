@@ -25,6 +25,9 @@ namespace SuperPOS.Domain.Entities
         [XmlElement(ElementName = "IsSoPrtDate")]
         public virtual string IsSoPrtDate { get; set; }
 
+        [XmlElement(ElementName = "IsSoPrtTime")]
+        public virtual string IsSoPrtTime { get; set; }
+
         [XmlElement(ElementName = "IsSoPrtOrderNoSlip")]
         public virtual string IsSoPrtOrderNoSlip { get; set; }
 
@@ -54,6 +57,9 @@ namespace SuperPOS.Domain.Entities
 
         [XmlElement(ElementName = "IsCoPrtDate")]
         public virtual string IsCoPrtDate { get; set; }
+
+        [XmlElement(ElementName = "IsCoPrtTime")]
+        public virtual string IsCoPrtTime { get; set; }
 
         [XmlElement(ElementName = "IsCoPrtOrderNoSlip")]
         public virtual string IsCoPrtOrderNoSlip { get; set; }

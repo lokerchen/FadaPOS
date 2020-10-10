@@ -122,5 +122,8 @@ namespace SuperPOS.Domain.Entities
         //是否临时保存账单
         [XmlElement(ElementName = "BusDate")]
         public virtual string BusDate { get; set; }
+
+        [XmlElement(ElementName = "RefNum")]
+        public virtual string RefNum { get; set; }
     }
 }

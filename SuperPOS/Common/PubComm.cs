@@ -76,9 +76,17 @@ namespace SuperPOS.Common
         #endregion
 
         public static string[] PRT_NUMBER_OF_COPY = new[] {"1", "2", "3"};
-        public static string[] PRT_LANGUAGE = new[] { "Only English", "Both" };
-        public static string[] PRT_FONT_SIZE = new[] {"15", "16", "17", "18", "19", "20", "21", "22", "23", "24"};
+        public static string[] PRT_LANGUAGE = new[] { "Both", "English", "Other"};
+        public static string PRT_LANGUAGE_BOTH = "Both";
+        public static string PRT_LANGUAGE_ENG = "English";
+        public static string PRT_LANGUAGE_OTHER = "Other";
+        public static string[] PRT_FONT_SIZE = new[] {"12","13", "14", "15", "16", "17", "18", "19", "20", "21", "22", "23", "24"};
         public static string[] PRT_KITCHEN_PRINT_PRICE_DISH_CODE = new[] {"Price", "Dish Code"};
-        public static string[] PRT_KITCHEN_FONT_SIZE = new[] {"Large", "Medium", "Small"};
+        public static string[] PRT_KITCHEN_PRINT_PRICE = new[] {"Price", "Dish Code"};
+        public static string[] PRT_KITCHEN_PRINT_DISH_CODE = new[] {"Price", "Dish Code"};
+
+        public static string PRT_PARAM_DISPALY = "display:";
+        public static string PRT_PARAM_DISPALY_NONE = "display:none";
+        public static string PRT_PARAM_FONT_SIZE = "font-size:";
     }
 }
