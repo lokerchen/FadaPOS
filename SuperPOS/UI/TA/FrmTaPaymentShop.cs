@@ -1178,7 +1178,7 @@ namespace SuperPOS.UI.TA
             if (!string.IsNullOrEmpty(callerID))
             {
                 new SystemData().GetTaCustomer();
-                var lstCust = CommonData.TaCustomer;
+                var lstCust = CommonData.TaCustomer.Where(s => s.ID.ToString().Equals(callerID));
                 if (lstCust.Any())
                 {
                     TaCustomerInfo taCustomerInfo = lstCust.FirstOrDefault();

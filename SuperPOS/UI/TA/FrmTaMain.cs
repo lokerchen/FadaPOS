@@ -2161,54 +2161,56 @@ namespace SuperPOS.UI.TA
 
         private void panelMember_Click(object sender, EventArgs e)
         {
-            if (CustID <= 0)
+            //if (CustID <= 0)
+            //{
+            FrmTaCustomerInfo frmTaCustomerInfo = new FrmTaCustomerInfo(CustID);
+
+            if (frmTaCustomerInfo.ShowDialog() == DialogResult.OK)
             {
-                FrmTaCustomerInfo frmTaCustomerInfo = new FrmTaCustomerInfo();
+                TaCustomerInfo taCustomerInfo = new TaCustomerInfo();
+                taCustomerInfo = frmTaCustomerInfo.CustomerInfo;
 
-                if (frmTaCustomerInfo.ShowDialog() == DialogResult.OK)
+                if (taCustomerInfo == null)
                 {
-                    TaCustomerInfo taCustomerInfo = new TaCustomerInfo();
-                    taCustomerInfo = frmTaCustomerInfo.CustomerInfo;
+                    CustID = 0;
+                    lblName.Text = "";
+                    lblPhone.Text = "";
+                    lblAddress.Text = "";
+                    lblPostcode.Text = "";
+                    lblDistance.Text = "";
+                    lblDiliveryFee.Text = "";
 
-                    if (taCustomerInfo == null)
-                    {
-                        lblName.Text = "";
-                        lblPhone.Text = "";
-                        lblAddress.Text = "";
-                        lblPostcode.Text = "";
-                        lblDistance.Text = "";
-                        lblDiliveryFee.Text = "";
-
-                        lblCustName.Visible = false;
-                        lblCustPhone.Visible = false;
-                        lblCustAddress.Visible = false;
-                        lblCustPostcode.Visible = false;
-                        lblCustDistance.Visible = false;
-                        lblCustDeliveryFee.Visible = false;
-                    }
-                    else
-                    {
-                        lblName.Text = taCustomerInfo.cusName;
-                        lblPhone.Text = taCustomerInfo.cusPhone;
-                        lblAddress.Text = taCustomerInfo.cusAddr;
-                        lblPostcode.Text = taCustomerInfo.cusPostcode;
-                        lblDistance.Text = taCustomerInfo.cusDistance;
-                        lblDiliveryFee.Text = taCustomerInfo.cusDelCharge;
-
-                        lblCustName.Visible = true;
-                        lblCustPhone.Visible = true;
-                        lblCustAddress.Visible = true;
-                        lblCustPostcode.Visible = true;
-                        lblCustDistance.Visible = true;
-                        lblCustDeliveryFee.Visible = true;
-
-                        ////存在客户信息时，变更订单类型
-                        //ORDER_TYPE = PubComm.ORDER_TYPE_DELIVERY;
-                        //ChangeOrderBtnColor(ORDER_TYPE);
-                    }
-                    
+                    lblCustName.Visible = false;
+                    lblCustPhone.Visible = false;
+                    lblCustAddress.Visible = false;
+                    lblCustPostcode.Visible = false;
+                    lblCustDistance.Visible = false;
+                    lblCustDeliveryFee.Visible = false;
                 }
+                else
+                {
+                    CustID = taCustomerInfo.ID;
+                    lblName.Text = taCustomerInfo.cusName;
+                    lblPhone.Text = taCustomerInfo.cusPhone;
+                    lblAddress.Text = taCustomerInfo.cusAddr;
+                    lblPostcode.Text = taCustomerInfo.cusPostcode;
+                    lblDistance.Text = taCustomerInfo.cusDistance;
+                    lblDiliveryFee.Text = taCustomerInfo.cusDelCharge;
+
+                    lblCustName.Visible = true;
+                    lblCustPhone.Visible = true;
+                    lblCustAddress.Visible = true;
+                    lblCustPostcode.Visible = true;
+                    lblCustDistance.Visible = true;
+                    lblCustDeliveryFee.Visible = true;
+
+                    ////存在客户信息时，变更订单类型
+                    //ORDER_TYPE = PubComm.ORDER_TYPE_DELIVERY;
+                    //ChangeOrderBtnColor(ORDER_TYPE);
+                }
+                    
             }
+            //}
         }
 
         #region 返回Other Choices的AutoAppend

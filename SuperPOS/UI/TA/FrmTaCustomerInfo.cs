@@ -32,6 +32,8 @@ namespace SuperPOS.UI.TA
         //来电号码
         private string cusNum = "";
 
+        private int cusID = 0;
+
         // 申明要使用的dll和api
         [DllImport("User32.dll", EntryPoint = "FindWindow")]
         public extern static IntPtr FindWindow(string lpClassName, string lpWindowName);
@@ -57,6 +59,12 @@ namespace SuperPOS.UI.TA
             cusNum = sComePhoe;
         }
 
+        public FrmTaCustomerInfo(int cID)
+        {
+            InitializeComponent();
+            cusID = cID;
+        }
+
         public TaCustomerInfo CustomerInfo
         {
             get { return taCustomerInfo; }
@@ -66,6 +74,11 @@ namespace SuperPOS.UI.TA
         private void FrmTaCustomerInfo_Load(object sender, EventArgs e)
         {
             BindLuePostCode();
+            
+            if (CommonData.TaCustomer.Count(s => s.ID == cusID) > 0) cusNum = CommonData.TaCustomer.FirstOrDefault(s => s.ID == cusID).cusPhone;
+            
+            //if (string.IsNullOrEmpty(cusNum)) return;
+
             BindData(cusNum);
             //gvCompCustomer.BestFitColumns();
 
@@ -329,6 +342,7 @@ namespace SuperPOS.UI.TA
                     if (string.IsNullOrEmpty(cusNum)) taCustomerInfo = null;
                     else
                     {
+                        taCustomerInfo.ID = Convert.ToInt32(gvCompCustomer.GetRowCellValue(gvCompCustomer.FocusedRowHandle, "ID") == null ? "0" : gvCompCustomer.GetRowCellValue(gvCompCustomer.FocusedRowHandle, "ID").ToString());
                         taCustomerInfo.cusPhone = gvCompCustomer.GetRowCellValue(gvCompCustomer.FocusedRowHandle, "cusPhone") == null ? "" : gvCompCustomer.GetRowCellValue(gvCompCustomer.FocusedRowHandle, "cusPhone").ToString();
                         taCustomerInfo.cusName = gvCompCustomer.GetRowCellValue(gvCompCustomer.FocusedRowHandle, "cusName") == null ? "" : gvCompCustomer.GetRowCellValue(gvCompCustomer.FocusedRowHandle, "cusName").ToString();
                         taCustomerInfo.cusHouseNo = gvCompCustomer.GetRowCellValue(gvCompCustomer.FocusedRowHandle, "cusHouseNo") == null ? "" : gvCompCustomer.GetRowCellValue(gvCompCustomer.FocusedRowHandle, "cusHouseNo").ToString();
