@@ -73,6 +73,9 @@ namespace SuperPOS.Common
         //Business Date
         public static string SYS_VALUE_BUS_DATE = "1004";
         public static string SYS_DESC_BUS_DATE = "BUSINESS DATE";
+
+        public static string SYS_VALUE_DEFAULT_PRINT_NAME = "1005";
+        public static string SYS_DESC_DEFAULT_PRINT_NAME = "";
         #endregion
 
         public static string[] PRT_NUMBER_OF_COPY = new[] {"1", "2", "3"};

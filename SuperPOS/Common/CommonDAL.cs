@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Drawing.Printing;
 using System.IO;
 using System.Linq;
 using System.Management;
@@ -42,6 +43,7 @@ namespace SuperPOS.Common
         /// </summary>
         public static void InitData()
         {
+            #region 数据加载
             SystemData systemData = new SystemData();
             //获得Shift Code
             systemData.GetTaShiftCodeList();
@@ -139,6 +141,28 @@ namespace SuperPOS.Common
             systemData.GetTaSysPrtSetCountSetting1();
             systemData.GetTaSysPrtSetCountSetting2();
             systemData.GetTaSysPrtSetKitchen();
+            #endregion
+
+            #region 存储默认打印机名，打印时需要用到
+            new SystemData().GetSysValue();
+            var lstSv = CommonData.SysValue.Where(s => s.ValueID.Equals(PubComm.SYS_VALUE_DEFAULT_PRINT_NAME));
+
+            SysValueInfo sysValueInfo = new SysValueInfo();
+            sysValueInfo.ValueID = PubComm.SYS_VALUE_DEFAULT_PRINT_NAME;
+            sysValueInfo.ValueDesc = @"PRINT_DEFAULT_NAME";
+            PrintDocument printDocument = new PrintDocument();
+            sysValueInfo.ValueResult = printDocument.PrinterSettings.PrinterName;
+
+            if (lstSv.Any())
+            {
+                sysValueInfo.ID = lstSv.FirstOrDefault().ID;
+                _control.UpdateEntity(sysValueInfo);
+            }
+            else
+            {
+                _control.AddEntity(sysValueInfo);
+            }
+            #endregion
         }
         #endregion
 

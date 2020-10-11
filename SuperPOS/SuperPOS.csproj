@@ -109,6 +109,7 @@
     <Compile Include="Common\PrimaryScreen .cs" />
     <Compile Include="Common\SessionFactory.cs" />
     <Compile Include="Common\SystemData.cs" />
+    <Compile Include="Print\PrinterExterns.cs" />
     <Compile Include="Print\PrtCommon.cs" />
     <Compile Include="Print\PrtPrint.cs" />
     <Compile Include="Print\PrtStatic.cs" />

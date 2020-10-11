@@ -277,6 +277,7 @@
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.luePrintPrice.Size = new System.Drawing.Size(101, 20);
             this.luePrintPrice.TabIndex = 5;
+            this.luePrintPrice.Visible = false;
             // 
             // label2
             // 
@@ -286,6 +287,7 @@
             this.label2.Size = new System.Drawing.Size(129, 14);
             this.label2.TabIndex = 4;
             this.label2.Text = "Print Price / Dish Code";
+            this.label2.Visible = false;
             // 
             // luePrintLang
             // 

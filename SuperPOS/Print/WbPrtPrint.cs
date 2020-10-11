@@ -37,6 +37,9 @@ namespace SuperPOS.Print
 
         private static bool isPrintFF = false;
 
+        private static string strDefaultPrintName = "";
+        private static string strPrintName = "";
+
         #region WebBrowser基本打印内容
         /// <summary>
         /// WebBrowser基本打印内容
@@ -150,86 +153,101 @@ namespace SuperPOS.Print
         /// <param name="isPrintFF">是否需要打印Fast Food</param>
         public static void PrintHtml(WebBrowser webBrowser, string strType, List<TaOrderItemInfo> lsTaOrderItemInfos, WbPrtTemplataTa wbPrtTemplataTa)
         {
-            //赋值WbPrtTemplataTa
-
-            wb = webBrowser;
-
-            if (strType.Equals(WbPrtStatic.PRT_TEMPLATE_FILE_NAME_SHOP))
+            try
             {
-                wb.DocumentText = PrintShop(strType, lsTaOrderItemInfos, wbPrtTemplataTa);
-                PrintContent();
-            }
-            else if (strType.Equals(WbPrtStatic.PRT_TEMPLATE_FILE_NAME_SHOP_FASTFOOD))
-            {
-                wb.DocumentText = PrintShopFastFood(strType, lsTaOrderItemInfos, wbPrtTemplataTa);
-                PrintContent();
+                wb = webBrowser;
 
-                if (isPrintFF)
+                strDefaultPrintName = GetDefaultPrintName();
+
+                if (string.IsNullOrEmpty(strDefaultPrintName))
                 {
-                    wb.DocumentText = PrintShopFF(strType, wbPrtTemplataTa);
+                    LogHelper.Info("WbPrtPrint.PrintHtml");
+                    return;
+                }
+
+                if (strType.Equals(WbPrtStatic.PRT_TEMPLATE_FILE_NAME_SHOP))
+                {
+                    wb.DocumentText = PrintShop(strType, lsTaOrderItemInfos, wbPrtTemplataTa);
+                    PrintContent();
+                }
+                else if (strType.Equals(WbPrtStatic.PRT_TEMPLATE_FILE_NAME_SHOP_FASTFOOD))
+                {
+                    wb.DocumentText = PrintShopFastFood(strType, lsTaOrderItemInfos, wbPrtTemplataTa);
+                    PrintContent();
+
+                    if (isPrintFF)
+                    {
+                        wb.DocumentText = PrintShopFF(strType, wbPrtTemplataTa);
+                        PrintContent();
+                    }
+                }
+                else if (strType.Equals(WbPrtStatic.PRT_TEMPLATE_FILE_NAME_KITCHEN))
+                {
+                    wb.DocumentText = PrintKitchen(WbPrtStatic.PRT_TEMPLATE_FILE_NAME_KITCHEN, lsTaOrderItemInfos, wbPrtTemplataTa);
+                    PrintContent();
+                }
+                else if (strType.Equals(WbPrtStatic.PRT_TEMPLATE_FILE_NAME_RECEIPT))
+                {
+                    wb.DocumentText = PrintReceipt(WbPrtStatic.PRT_TEMPLATE_FILE_NAME_RECEIPT, lsTaOrderItemInfos, wbPrtTemplataTa);
+                    PrintContent();
+                }
+                else if (strType.Equals(WbPrtStatic.PRT_TEMPLATE_FILE_ALL_SHOP))
+                {
+                    wb.DocumentText = PrintShop(WbPrtStatic.PRT_TEMPLATE_FILE_NAME_SHOP, lsTaOrderItemInfos, wbPrtTemplataTa);
+                    PrintContent();
+
+                    wb.DocumentText = PrintKitchen(WbPrtStatic.PRT_TEMPLATE_FILE_NAME_KITCHEN, lsTaOrderItemInfos, wbPrtTemplataTa);
+                    PrintContent();
+                }
+                else if (strType.Equals(WbPrtStatic.PRT_TEMPLATE_FILE_ALL_SHOP_FASTFOOD))
+                {
+                    wb.DocumentText = PrintShopFastFood(WbPrtStatic.PRT_TEMPLATE_FILE_NAME_SHOP_FASTFOOD, lsTaOrderItemInfos, wbPrtTemplataTa);
+                    PrintContent();
+
+                    if (isPrintFF)
+                    {
+                        wb.DocumentText = PrintShopFF(WbPrtStatic.PRT_TEMPLATE_FILE_NAME_SHOP_FF, wbPrtTemplataTa);
+                        PrintContent();
+                    }
+
+                    wb.DocumentText = PrintKitchen(WbPrtStatic.PRT_TEMPLATE_FILE_NAME_KITCHEN, lsTaOrderItemInfos, wbPrtTemplataTa);
+                    PrintContent();
+                }
+                else if (strType.Equals(WbPrtStatic.PRT_TEMPLATE_FILE_ALL_SHOP_RECEIPT))
+                {
+                    wb.DocumentText = PrintShop(WbPrtStatic.PRT_TEMPLATE_FILE_NAME_SHOP, lsTaOrderItemInfos, wbPrtTemplataTa);
+                    PrintContent();
+
+                    wb.DocumentText = PrintKitchen(WbPrtStatic.PRT_TEMPLATE_FILE_NAME_KITCHEN, lsTaOrderItemInfos, wbPrtTemplataTa);
+                    PrintContent();
+
+                    wb.DocumentText = PrintReceipt(WbPrtStatic.PRT_TEMPLATE_FILE_NAME_RECEIPT, lsTaOrderItemInfos, wbPrtTemplataTa);
+                    PrintContent();
+                }
+                else if (strType.Equals(WbPrtStatic.PRT_TEMPLATE_FILE_ALL_SHOP_RECEIPT_FASTFOOD))
+                {
+                    wb.DocumentText = PrintShopFastFood(WbPrtStatic.PRT_TEMPLATE_FILE_NAME_SHOP_FASTFOOD, lsTaOrderItemInfos, wbPrtTemplataTa);
+                    PrintContent();
+
+                    if (isPrintFF)
+                    {
+                        wb.DocumentText = PrintShopFF(WbPrtStatic.PRT_TEMPLATE_FILE_NAME_SHOP_FF, wbPrtTemplataTa);
+                        PrintContent();
+                    }
+
+                    wb.DocumentText = PrintKitchen(WbPrtStatic.PRT_TEMPLATE_FILE_NAME_KITCHEN, lsTaOrderItemInfos, wbPrtTemplataTa);
+                    PrintContent();
+
+                    wb.DocumentText = PrintReceipt(WbPrtStatic.PRT_TEMPLATE_FILE_NAME_RECEIPT, lsTaOrderItemInfos, wbPrtTemplataTa);
                     PrintContent();
                 }
             }
-            else if (strType.Equals(WbPrtStatic.PRT_TEMPLATE_FILE_NAME_KITCHEN))
+            catch (Exception ex)
             {
-                wb.DocumentText = PrintKitchen(WbPrtStatic.PRT_TEMPLATE_FILE_NAME_KITCHEN, lsTaOrderItemInfos, wbPrtTemplataTa);
-                PrintContent();
+                LogHelper.Error("WbPrtPrint.PrintHtml", ex);
+                return;
             }
-            else if (strType.Equals(WbPrtStatic.PRT_TEMPLATE_FILE_NAME_RECEIPT))
-            {
-                wb.DocumentText = PrintReceipt(WbPrtStatic.PRT_TEMPLATE_FILE_NAME_RECEIPT, lsTaOrderItemInfos, wbPrtTemplataTa);
-                PrintContent();
-            }
-            else if (strType.Equals(WbPrtStatic.PRT_TEMPLATE_FILE_ALL_SHOP))
-            {
-                wb.DocumentText = PrintShop(WbPrtStatic.PRT_TEMPLATE_FILE_NAME_SHOP, lsTaOrderItemInfos, wbPrtTemplataTa);
-                PrintContent();
-
-                wb.DocumentText = PrintKitchen(WbPrtStatic.PRT_TEMPLATE_FILE_NAME_KITCHEN, lsTaOrderItemInfos, wbPrtTemplataTa);
-                PrintContent();
-            }
-            else if (strType.Equals(WbPrtStatic.PRT_TEMPLATE_FILE_ALL_SHOP_FASTFOOD))
-            {
-                wb.DocumentText = PrintShopFastFood(WbPrtStatic.PRT_TEMPLATE_FILE_NAME_SHOP_FASTFOOD, lsTaOrderItemInfos, wbPrtTemplataTa);
-                PrintContent();
-
-                if (isPrintFF)
-                {
-                    wb.DocumentText = PrintShopFF(WbPrtStatic.PRT_TEMPLATE_FILE_NAME_SHOP_FF, wbPrtTemplataTa);
-                    PrintContent();
-                }
-                
-                wb.DocumentText = PrintKitchen(WbPrtStatic.PRT_TEMPLATE_FILE_NAME_KITCHEN, lsTaOrderItemInfos, wbPrtTemplataTa);
-                PrintContent();
-            }
-            else if (strType.Equals(WbPrtStatic.PRT_TEMPLATE_FILE_ALL_SHOP_RECEIPT))
-            {
-                wb.DocumentText = PrintShop(WbPrtStatic.PRT_TEMPLATE_FILE_NAME_SHOP, lsTaOrderItemInfos, wbPrtTemplataTa);
-                PrintContent();
-
-                wb.DocumentText = PrintKitchen(WbPrtStatic.PRT_TEMPLATE_FILE_NAME_KITCHEN, lsTaOrderItemInfos, wbPrtTemplataTa);
-                PrintContent();
-
-                wb.DocumentText = PrintReceipt(WbPrtStatic.PRT_TEMPLATE_FILE_NAME_RECEIPT, lsTaOrderItemInfos, wbPrtTemplataTa);
-                PrintContent();
-            }
-            else if (strType.Equals(WbPrtStatic.PRT_TEMPLATE_FILE_ALL_SHOP_RECEIPT_FASTFOOD))
-            {
-                wb.DocumentText = PrintShopFastFood(WbPrtStatic.PRT_TEMPLATE_FILE_NAME_SHOP_FASTFOOD, lsTaOrderItemInfos, wbPrtTemplataTa);
-                PrintContent();
-
-                if (isPrintFF)
-                {
-                    wb.DocumentText = PrintShopFF(WbPrtStatic.PRT_TEMPLATE_FILE_NAME_SHOP_FF, wbPrtTemplataTa);
-                    PrintContent();
-                }
-                
-                wb.DocumentText = PrintKitchen(WbPrtStatic.PRT_TEMPLATE_FILE_NAME_KITCHEN, lsTaOrderItemInfos, wbPrtTemplataTa);
-                PrintContent();
-
-                wb.DocumentText = PrintReceipt(WbPrtStatic.PRT_TEMPLATE_FILE_NAME_RECEIPT, lsTaOrderItemInfos, wbPrtTemplataTa);
-                PrintContent();
-            }
+            
             //PrintContent();
 
             //if (isPrintFF)
@@ -261,10 +279,13 @@ namespace SuperPOS.Print
             //替换Logo信息
             htmlText = htmlText.Replace("logo.jpg", WbPrtStatic.PRT_TEMPLATE_FILE_PATH + @"img\logo.jpg");
 
+            iOffset = 0;
+
             //打印基础信息判断
             htmlText = PrtGeneralInfo(htmlText);
             //Counter 1
             htmlText = PrtCountSetting1Info(htmlText);
+            //LogHelper.Info("2" + htmlText);
 
             htmlText = ReplaceHtmlPrtKeysShop(htmlText, wbPrtTemplataTa);
 
@@ -415,10 +436,10 @@ namespace SuperPOS.Print
                 iOffset += 4;
             }
 
-            if (taSysPrtSetKitchenInfo.IsPrintAsc.Equals("Y"))
-            {
-                //待补充
-            }
+            //if (taSysPrtSetKitchenInfo.IsPrintAsc.Equals("Y"))
+            //{
+            //    //待补充
+            //}
 
             return strHtmlText;
         }
@@ -465,23 +486,6 @@ namespace SuperPOS.Print
                 iOffset += 6;//6=4+2
             }
 
-            if (!taSysPrtSetCounterSetting1Info.SoPrtLang.Equals(PubComm.PRT_LANGUAGE_BOTH))
-            {
-                strHtmlText = strHtmlText.Replace(WbPrtStatic.PRT_PRINT_FONT_SIZE_OTHER, 
-                                                  WbPrtStatic.PRT_PRINT_FONT_SIZE_OTHER.Replace(WbPrtStatic.PRT_PRINT_DISPLAY,
-                                                                                                MakeupDisplay(WbPrtStatic.PRT_PRINT_DISPLAY)));
-                iOffset += 4;
-            }
-                
-            else
-            {
-                strHtmlText = strHtmlText.Replace(WbPrtStatic.PRT_PRINT_FONT_SIZE_OTHER, WbPrtStatic.PRT_PRINT_FONT_SIZE_OTHER + taSysPrtSetCounterSetting1Info.SoOtherFontSize);
-                iOffset += 2;
-            }
-
-            strHtmlText = strHtmlText.Replace(WbPrtStatic.PRT_PRINT_FONT_SIZE_ENG, WbPrtStatic.PRT_PRINT_FONT_SIZE_ENG + taSysPrtSetCounterSetting1Info.SoEngFontSize);
-            iOffset += 2;
-
             if (!taSysPrtSetCounterSetting1Info.IsSoPrtDate.Equals("Y"))
             {
                 strHtmlText = strHtmlText.Replace(WbPrtStatic.PRT_PRINT_ORDER_DATE, MakeupDisplay(WbPrtStatic.PRT_PRINT_ORDER_DATE));
@@ -518,6 +522,8 @@ namespace SuperPOS.Print
             }
             //if (!taSysPrtSetCounterSetting1Info.IsSoRefNum.Equals("Y"))
             //    //To do something
+
+            strPrintName = !taSysPrtSetCounterSetting1Info.SoLocalPrinter.Equals("Y") ? taSysPrtSetCounterSetting1Info.SoLocalPrinter : strDefaultPrintName;
 
             return strHtmlText;
         }
@@ -595,6 +601,8 @@ namespace SuperPOS.Print
                 strHtmlText = strHtmlText.Replace(WbPrtStatic.PRT_PRINT_TBL_VAT, MakeupDisplay(WbPrtStatic.PRT_PRINT_TBL_VAT));
             }
 
+            strPrintName = !taSysPrtSetCounterSetting2Info.CoLocalPriter.Equals("Y") ? taSysPrtSetCounterSetting2Info.CoLocalPriter : strDefaultPrintName;
+
             return strHtmlText;
         }
         #endregion
@@ -662,6 +670,7 @@ namespace SuperPOS.Print
             //For 循环打印次数
             //for (int i = 0; i < Convert.ToInt32(ShopOrderPrintNum); i++)
             //{
+            
             wb.DocumentCompleted += wb_DocumentCompleted;
             obj.Reset();
             //while (obj.WaitOne(10, false) == false)
@@ -670,6 +679,9 @@ namespace SuperPOS.Print
             obj.Set();
             wb.DocumentCompleted -= wb_DocumentCompleted;
             //}
+
+            //打印完成后恢复默认打印机
+            PrinterExterns.SetDefaultPrinter(strDefaultPrintName);
         }
         #endregion
 
@@ -692,17 +704,23 @@ namespace SuperPOS.Print
 
             if (string.IsNullOrEmpty(htmlText)) return "";
 
+            iOffset = 0;
+
             //替换Logo信息
             htmlText = htmlText.Replace("logo.jpg", WbPrtStatic.PRT_TEMPLATE_FILE_PATH + @"img\logo.jpg");
 
             //打印基础信息判断
             htmlText = PrtGeneralInfo(htmlText);
+            LogHelper.Info("1" + htmlText);
             //Counter 1
             htmlText = PrtCountSetting1Info(htmlText);
+            LogHelper.Info("2" + htmlText);
 
             htmlText = ReplaceHtmlPrtKeysShop(htmlText, wbPrtTemplataTa);
+            LogHelper.Info("3" + htmlText);
 
             htmlText = GetOrderItemInfo(doc, htmlText, lsTaOrderItemInfos);
+            LogHelper.Info("4" + htmlText);
             //File.Exists(Environment.CurrentDirectory + @"\PrintTemplate\img\logo.jpg");
             return htmlText;
         }
@@ -720,6 +738,8 @@ namespace SuperPOS.Print
             HtmlWeb hw = new HtmlWeb();
 
             HtmlDocument doc = hw.Load(WbPrtStatic.PRT_TEMPLATE_FILE_PATH + strType + WbPrtStatic.PRT_TEMPLATE_FILE_NAME_SUFFIX);
+
+            iOffset = 0;
 
             string htmlText = doc.Text;
 
@@ -745,6 +765,8 @@ namespace SuperPOS.Print
             HtmlWeb hw = new HtmlWeb();
 
             HtmlDocument doc = hw.Load(WbPrtStatic.PRT_TEMPLATE_FILE_PATH + strType + WbPrtStatic.PRT_TEMPLATE_FILE_NAME_SUFFIX);
+
+            iOffset = 0;
 
             string htmlText = doc.Text;
 
@@ -782,6 +804,8 @@ namespace SuperPOS.Print
 
             HtmlDocument doc = hw.Load(WbPrtStatic.PRT_TEMPLATE_FILE_PATH + strType + WbPrtStatic.PRT_TEMPLATE_FILE_NAME_SUFFIX);
 
+            iOffset = 0;
+
             string htmlText = doc.Text;
 
             if (string.IsNullOrEmpty(htmlText)) return "";
@@ -799,6 +823,17 @@ namespace SuperPOS.Print
             htmlText = GetOrderItemInfo(doc, htmlText, lsTaOrderItemInfos);
             //File.Exists(Environment.CurrentDirectory + @"\PrintTemplate\img\logo.jpg");
             return htmlText;
+        }
+        #endregion
+
+        #region 获得默认打印机名
+
+        private static string GetDefaultPrintName()
+        {
+            new SystemData().GetSysValue();
+            var lstSv = CommonData.SysValue.Where(s => s.ValueID.Equals(PubComm.SYS_VALUE_DEFAULT_PRINT_NAME));
+            
+            return lstSv.Any() ? lstSv.FirstOrDefault().ValueResult : "";
         }
         #endregion
     }
