@@ -775,7 +775,7 @@ namespace SuperPOS.Print
             //替换Logo信息
             htmlText = htmlText.Replace("logo.jpg", WbPrtStatic.PRT_TEMPLATE_FILE_PATH + @"img\logo.jpg");
 
-            htmlText = htmlText.Replace("delivery.jpg", WbPrtStatic.PRT_TEMPLATE_FILE_PATH + @"img\delivery.jpg");
+            //htmlText = htmlText.Replace("delivery.jpg", WbPrtStatic.PRT_TEMPLATE_FILE_PATH + @"img\delivery.jpg");
 
             //打印基础信息判断
             htmlText = PrtGeneralInfo(htmlText);
