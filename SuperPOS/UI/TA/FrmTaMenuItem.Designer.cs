@@ -1510,7 +1510,6 @@
             this.txtDishCode.Name = "txtDishCode";
             this.txtDishCode.Properties.AutoHeight = false;
             this.txtDishCode.Properties.Mask.EditMask = "f0";
-            this.txtDishCode.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Numeric;
             this.txtDishCode.Size = new System.Drawing.Size(129, 20);
             this.txtDishCode.TabIndex = 1;
             // 
