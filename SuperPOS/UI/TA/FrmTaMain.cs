@@ -927,8 +927,8 @@ namespace SuperPOS.UI.TA
             btnMenuCate[5] = btnMc5;
             btnMenuCate[6] = btnMc6;
             btnMenuCate[7] = btnMc7;
-            btnMenuCate[8] = btnMc9;
-            btnMenuCate[9] = btnMc10;
+            btnMenuCate[8] = btnMc8;
+            btnMenuCate[9] = btnMc9;
             btnMenuCate[10] = btnMc10;
             btnMenuCate[11] = btnMc11;
             btnMenuCate[12] = btnMc12;

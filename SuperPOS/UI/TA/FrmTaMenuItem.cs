@@ -1120,6 +1120,9 @@ namespace SuperPOS.UI.TA
                 _control.DeleteEntity(taMenuItemSubMenuInfo);
             }
 
+            //标记是否发生过修改，发生修改则为套餐，否则为正常菜品
+            bool isMod = false;
+
             for (int i = 0; i < 15; i++)
             {
                 //增加判断是否为一条正常记录：English Name + Other Name + Add Price
@@ -1136,9 +1139,23 @@ namespace SuperPOS.UI.TA
                     taMenuItemSubMenuInfo.SmMiID = miID;
 
                     _control.AddEntity(taMenuItemSubMenuInfo);
+
+                    isMod = true;
                 }
                 catch (Exception ex) { LogHelper.Error(this.Name, ex); }
             }
+
+            //更新MenuItem为套餐
+            try
+            {
+                if (isMod)
+                {
+                    TaMenuItemInfo smMenuItem = CommonData.TaMenuItem.FirstOrDefault(s => s.ID == miID);
+                    smMenuItem.MiRmk = @"Set Meal";
+                    _control.UpdateEntity(smMenuItem);
+                }
+            }
+            catch (Exception ex) { LogHelper.Error(this.Name, ex); }
 
             BindSubMenu(miID);
             CommonTool.ShowMessage("Save successful!");
