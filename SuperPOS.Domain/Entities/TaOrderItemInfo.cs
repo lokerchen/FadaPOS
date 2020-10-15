@@ -58,5 +58,9 @@ namespace SuperPOS.Domain.Entities
         //菜品下单营业日期
         [XmlElement(ElementName = "BusDate")]
         public virtual string BusDate { get; set; }
+
+        //MenuItem的ID
+        [XmlElement(ElementName = "MenuItemID")]
+        public virtual int MenuItemID { get; set; }
     }
 }

@@ -611,6 +611,7 @@ namespace SuperPOS.UI.TA
                                 taOrderItemInfo.OrderStaff = usrID;
 
                                 taOrderItemInfo.BusDate = strBusDate;
+                                taOrderItemInfo.MenuItemID = 0;
 
                                 lstMi.Add(taOrderItemInfo);
                             }
@@ -899,6 +900,8 @@ namespace SuperPOS.UI.TA
                             taOrderItemInfo.OrderStaff = usrID;
                             taOrderItemInfo.BusDate = strBusDate;
 
+                            taOrderItemInfo.MenuItemID = taMenuItemInfo.ID;
+
                             AddTreeListChild(taOrderItemInfo, treeListOrder.FocusedNode);
                         }
                     }
@@ -1101,7 +1104,8 @@ namespace SuperPOS.UI.TA
                 taOrderItemInfo.ItemParent,
                 taOrderItemInfo.OrderTime,
                 taOrderItemInfo.OrderStaff,
-                taOrderItemInfo.BusDate
+                taOrderItemInfo.BusDate,
+                taOrderItemInfo.MenuItemID
             }, -1);
 
             treeListOrder.EndUnboundLoad();
@@ -1150,7 +1154,8 @@ namespace SuperPOS.UI.TA
                 taOrderItemInfo.ItemParent,
                 taOrderItemInfo.OrderTime,
                 taOrderItemInfo.OrderStaff,
-                taOrderItemInfo.BusDate
+                taOrderItemInfo.BusDate,
+                taOrderItemInfo.MenuItemID
             }, node);
 
             //Console.WriteLine(node1["ItemParent"].ToString());
@@ -1309,6 +1314,8 @@ namespace SuperPOS.UI.TA
                 taOrderItemInfo.ItemQty = mQty;
                 taOrderItemInfo.ItemTotalPrice = (Convert.ToInt32(mQty) * Convert.ToDecimal(taMenuItemOtherChoiceInfo.MiPrice)).ToString();
                 taOrderItemInfo.BusDate = strBusDate;
+                taOrderItemInfo.MenuItemID = taMenuItemOtherChoiceInfo.ID;
+
                 if (taMenuItemOtherChoiceInfo.IsAutoAppend.Equals("Y"))
                 {
                     //为语言转换做数据存储
@@ -1340,6 +1347,8 @@ namespace SuperPOS.UI.TA
                     taOrderItemInfo.ItemParent = itemId;
                     taOrderItemInfo.OrderTime = DateTime.Now.ToString();
                     taOrderItemInfo.OrderStaff = usrID;
+
+                    taOrderItemInfo.MenuItemID = taMenuItemOtherChoiceInfo.ID;
 
                     lstMi.Add(taOrderItemInfo);
                 }
@@ -1381,17 +1390,20 @@ namespace SuperPOS.UI.TA
 
                     taOrderItemInfo.ItemID = node["ItemID"].ToString();
                     taOrderItemInfo.ItemCode = node["ItemCode"].ToString();
-                    taOrderItemInfo.ItemDishName = node["ItemDishName"].ToString();
-                    taOrderItemInfo.ItemDishOtherName = node["ItemDishOtherName"].ToString();
                     taOrderItemInfo.ItemQty = node["ItemQty"].ToString();
                     taOrderItemInfo.ItemPrice = node["ItemPrice"].ToString();
                     taOrderItemInfo.ItemTotalPrice = node["ItemTotalPrice"].ToString();
                     taOrderItemInfo.CheckCode = node["CheckCode"].ToString();
                     taOrderItemInfo.ItemType = Convert.ToInt32(node["ItemType"]);
+
+                    taOrderItemInfo.ItemDishName = node["ItemDishName"].ToString();
+                    taOrderItemInfo.ItemDishOtherName = node["ItemDishOtherName"].ToString();
+                    
                     taOrderItemInfo.ItemParent = "0";
                     taOrderItemInfo.OrderTime = DateTime.Now.ToString();
                     taOrderItemInfo.OrderStaff = usrID;
                     taOrderItemInfo.BusDate = strBusDate;
+                    taOrderItemInfo.MenuItemID = Convert.ToInt32(node["MenuItemID"]);
 
                     lstTaOI.Add(taOrderItemInfo);
 
@@ -1429,17 +1441,20 @@ namespace SuperPOS.UI.TA
 
                     taOrderItemInfo.ItemID = "0";
                     taOrderItemInfo.ItemCode = childNode["ItemCode"].ToString();
-                    taOrderItemInfo.ItemDishName = childNode["ItemDishName"].ToString();
-                    taOrderItemInfo.ItemDishOtherName = childNode["ItemDishOtherName"].ToString();
                     taOrderItemInfo.ItemQty = childNode["ItemQty"].ToString();
                     taOrderItemInfo.ItemPrice = childNode["ItemPrice"].ToString();
                     taOrderItemInfo.ItemTotalPrice = childNode["ItemTotalPrice"].ToString();
                     taOrderItemInfo.CheckCode = childNode["CheckCode"].ToString();
                     taOrderItemInfo.ItemType = Convert.ToInt32(childNode["ItemType"]);
+
+                    taOrderItemInfo.ItemDishName = childNode["ItemDishName"].ToString();
+                    taOrderItemInfo.ItemDishOtherName = childNode["ItemDishOtherName"].ToString();
+
                     taOrderItemInfo.ItemParent = parentID;
                     taOrderItemInfo.OrderTime = DateTime.Now.ToString();
                     taOrderItemInfo.OrderStaff = usrID;
                     taOrderItemInfo.BusDate = strBusDate;
+                    taOrderItemInfo.MenuItemID = Convert.ToInt32(childNode["MenuItemID"]);
 
                     lstTaOI.Add(taOrderItemInfo);
                 }
@@ -1863,18 +1878,21 @@ namespace SuperPOS.UI.TA
                     taOrderItemInfo.ItemCode = taMenuItemInfo.MiDishCode;
                     //taOrderItemInfo.ItemDishName = taMenuItemInfo.MiEngName;
                     //taOrderItemInfo.ItemDishOtherName = taMenuItemInfo.MiOtherName;
-                    taOrderItemInfo.ItemDishName = taMenuItemInfo.MiEngName;
-                    taOrderItemInfo.ItemDishOtherName = taMenuItemInfo.MiOtherName;
                     taOrderItemInfo.ItemPrice = (Convert.ToDecimal(taMenuItemInfo.MiRegularPrice)).ToString("0.00");
                     taOrderItemInfo.ItemQty = iQty.ToString();
                     taOrderItemInfo.ItemTotalPrice = (iQty * Convert.ToDecimal(taOrderItemInfo.ItemPrice)).ToString("0.00");
                     taOrderItemInfo.CheckCode = checkID;
                     taOrderItemInfo.ItemType = PubComm.MENU_ITEM_MAIN;
+
+                    taOrderItemInfo.ItemDishName = taMenuItemInfo.MiEngName;
+                    taOrderItemInfo.ItemDishOtherName = taMenuItemInfo.MiOtherName;
+
                     taOrderItemInfo.ItemParent = "0";
                     //taOrderItemInfo.ItemParent = Convert.ToInt32(taMenuItemInfo.ID);
                     taOrderItemInfo.OrderTime = DateTime.Now.ToString();
                     taOrderItemInfo.OrderStaff = usrID;
                     taOrderItemInfo.BusDate = strBusDate;
+                    taOrderItemInfo.MenuItemID = taMenuItemInfo.ID;
 
                     TreeListNode node = AddTreeListNode(taOrderItemInfo);
 
@@ -1923,8 +1941,6 @@ namespace SuperPOS.UI.TA
                     taOrderItemInfo.ItemCode = taMenuItemInfo.MiDishCode;
                     //taOrderItemInfo.ItemDishName = taMenuItemInfo.MiEngName;
                     //taOrderItemInfo.ItemDishOtherName = taMenuItemInfo.MiOtherName;
-                    taOrderItemInfo.ItemDishName = taMenuItemInfo.MiEngName;
-                    taOrderItemInfo.ItemDishOtherName = taMenuItemInfo.MiOtherName;
                     taOrderItemInfo.ItemPrice = (Convert.ToDecimal(taMenuItemInfo.MiRegularPrice)).ToString("0.00");
                     taOrderItemInfo.ItemQty = iQty.ToString();
                     taOrderItemInfo.ItemTotalPrice = (iQty * Convert.ToDecimal(taOrderItemInfo.ItemPrice)).ToString();
@@ -1932,9 +1948,15 @@ namespace SuperPOS.UI.TA
                     taOrderItemInfo.ItemType = PubComm.MENU_ITEM_MAIN;
                     taOrderItemInfo.ItemParent = "0";
                     //taOrderItemInfo.ItemParent = Convert.ToInt32(taMenuItemInfo.ID);
+
+                    taOrderItemInfo.ItemDishName = taMenuItemInfo.MiEngName;
+                    taOrderItemInfo.ItemDishOtherName = taMenuItemInfo.MiOtherName;
+
                     taOrderItemInfo.OrderTime = DateTime.Now.ToString();
                     taOrderItemInfo.OrderStaff = usrID;
                     taOrderItemInfo.BusDate = strBusDate;
+
+                    taOrderItemInfo.MenuItemID = taMenuItemInfo.ID;
 
                     TreeListNode node = AddTreeListNode(taOrderItemInfo);
 
@@ -2290,6 +2312,7 @@ namespace SuperPOS.UI.TA
                     taOrderItemInfo.OrderTime = DateTime.Now.ToString();
                     taOrderItemInfo.OrderStaff = usrID;
                     taOrderItemInfo.BusDate = strBusDate;
+                    taOrderItemInfo.MenuItemID = taMenuItemSubMenuInfo.ID;
                     lstMi.Add(taOrderItemInfo);
                 }
 

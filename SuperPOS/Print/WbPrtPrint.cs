@@ -289,7 +289,7 @@ namespace SuperPOS.Print
 
             htmlText = ReplaceHtmlPrtKeysShop(htmlText, wbPrtTemplataTa);
 
-            htmlText = GetOrderItemInfo(doc, htmlText, lsTaOrderItemInfos);
+            htmlText = GetOrderItemInfo(doc, htmlText, lsTaOrderItemInfos, false);
             //File.Exists(Environment.CurrentDirectory + @"\PrintTemplate\img\logo.jpg");
             return htmlText;
         }
@@ -383,40 +383,40 @@ namespace SuperPOS.Print
                 iOffset += 6;
             }
 
-            if (taSysPrtSetKitchenInfo.IsPrintDeliveryAddr.Equals("Y"))
-            {
-                strHtmlText = strHtmlText.Replace(WbPrtStatic.PRT_PRINT_TD_CUST_NAME,
-                    WbPrtStatic.PRT_PRINT_TD_CUST_NAME + taSysPrtSetKitchenInfo.DeliveryAddr);
-                iOffset += 2;
+            //if (taSysPrtSetKitchenInfo.IsPrintDeliveryAddr.Equals("Y"))
+            //{
+            //    strHtmlText = strHtmlText.Replace(WbPrtStatic.PRT_PRINT_TD_CUST_NAME,
+            //        WbPrtStatic.PRT_PRINT_TD_CUST_NAME + taSysPrtSetKitchenInfo.DeliveryAddr);
+            //    iOffset += 2;
 
-                strHtmlText = strHtmlText.Replace(WbPrtStatic.PRT_PRINT_TD_CUST_PHONE,
-                    WbPrtStatic.PRT_PRINT_TD_CUST_PHONE + taSysPrtSetKitchenInfo.DeliveryAddr);
-                iOffset += 2;
+            //    strHtmlText = strHtmlText.Replace(WbPrtStatic.PRT_PRINT_TD_CUST_PHONE,
+            //        WbPrtStatic.PRT_PRINT_TD_CUST_PHONE + taSysPrtSetKitchenInfo.DeliveryAddr);
+            //    iOffset += 2;
 
-                strHtmlText = strHtmlText.Replace(WbPrtStatic.PRT_PRINT_TD_CUST_DIST,
-                    WbPrtStatic.PRT_PRINT_TD_CUST_DIST + taSysPrtSetKitchenInfo.DeliveryAddr);
-                iOffset += 2;
+            //    strHtmlText = strHtmlText.Replace(WbPrtStatic.PRT_PRINT_TD_CUST_DIST,
+            //        WbPrtStatic.PRT_PRINT_TD_CUST_DIST + taSysPrtSetKitchenInfo.DeliveryAddr);
+            //    iOffset += 2;
 
-                strHtmlText = strHtmlText.Replace(WbPrtStatic.PRT_PRINT_TD_CUST_MAP_REF,
-                    WbPrtStatic.PRT_PRINT_TD_CUST_MAP_REF + taSysPrtSetKitchenInfo.DeliveryAddr);
-                iOffset += 2;
+            //    strHtmlText = strHtmlText.Replace(WbPrtStatic.PRT_PRINT_TD_CUST_MAP_REF,
+            //        WbPrtStatic.PRT_PRINT_TD_CUST_MAP_REF + taSysPrtSetKitchenInfo.DeliveryAddr);
+            //    iOffset += 2;
 
-                strHtmlText = strHtmlText.Replace(WbPrtStatic.PRT_PRINT_TD_CUST_ADDR,
-                    WbPrtStatic.PRT_PRINT_TD_CUST_ADDR + taSysPrtSetKitchenInfo.DeliveryAddr);
-                iOffset += 2;
+            //    strHtmlText = strHtmlText.Replace(WbPrtStatic.PRT_PRINT_TD_CUST_ADDR,
+            //        WbPrtStatic.PRT_PRINT_TD_CUST_ADDR + taSysPrtSetKitchenInfo.DeliveryAddr);
+            //    iOffset += 2;
 
-                strHtmlText = strHtmlText.Replace(WbPrtStatic.PRT_PRINT_TD_CUST_POST_CODE,
-                    WbPrtStatic.PRT_PRINT_TD_CUST_POST_CODE + taSysPrtSetKitchenInfo.DeliveryAddr);
-                iOffset += 2;
-            }
-            else
-            {
-                strHtmlText = strHtmlText.Replace(WbPrtStatic.PRT_PRINT_TBL_CUST_BASIC, MakeupDisplay(WbPrtStatic.PRT_PRINT_TBL_CUST_BASIC));
-                iOffset += 4;
+            //    strHtmlText = strHtmlText.Replace(WbPrtStatic.PRT_PRINT_TD_CUST_POST_CODE,
+            //        WbPrtStatic.PRT_PRINT_TD_CUST_POST_CODE + taSysPrtSetKitchenInfo.DeliveryAddr);
+            //    iOffset += 2;
+            //}
+            //else
+            //{
+            //    strHtmlText = strHtmlText.Replace(WbPrtStatic.PRT_PRINT_TBL_CUST_BASIC, MakeupDisplay(WbPrtStatic.PRT_PRINT_TBL_CUST_BASIC));
+            //    iOffset += 4;
 
-                strHtmlText = strHtmlText.Replace(WbPrtStatic.PRT_PRINT_TBL_CUST_INFO, MakeupDisplay(WbPrtStatic.PRT_PRINT_TBL_CUST_INFO));
-                iOffset += 4;
-            }
+            //    strHtmlText = strHtmlText.Replace(WbPrtStatic.PRT_PRINT_TBL_CUST_INFO, MakeupDisplay(WbPrtStatic.PRT_PRINT_TBL_CUST_INFO));
+            //    iOffset += 4;
+            //}
 
             if (!taSysPrtSetKitchenInfo.IsPrintDate.Equals("Y"))
             {
@@ -614,8 +614,9 @@ namespace SuperPOS.Print
         /// <param name="document">Html文档对象</param>
         /// <param name="strHtmlText">Html格式化文本内容</param>
         /// <param name="lsTaOrderItemInfos">Order Item信息</param>
+        /// <param name="isKitchen">是否为Kitchen单</param>
         /// <returns></returns>
-        private static string GetOrderItemInfo(HtmlDocument document, string strHtmlText, List<TaOrderItemInfo> lsTaOrderItemInfos)
+        private static string GetOrderItemInfo(HtmlDocument document, string strHtmlText, List<TaOrderItemInfo> lsTaOrderItemInfos, bool isKitchen)
         {
             HtmlNode node;
 
@@ -633,17 +634,43 @@ namespace SuperPOS.Print
             //}
 
             int i = 0;
+            int j = 0;
             foreach (var oi in lsTaOrderItemInfos)
             {
-                strTr = strTr.Replace("{MiCode}", oi.ItemCode);
-                strTr = strTr.Replace("{MiQty}", oi.ItemQty);
-                strTr = strTr.Replace("{MiEngName}", oi.ItemDishName);
-                strTr = strTr.Replace("{MiOtherName}", oi.ItemDishOtherName);
-                strTr = strTr.Replace("{MiPrice}", oi.ItemTotalPrice);
+                if (oi.ItemParent.Length > 1) //套餐
+                {
+                    var lstSm = CommonData.TaMenuItemSubMenu.Where(s => s.SmMiID == lsTaOrderItemInfos.FirstOrDefault(t => t.ItemID.Equals(oi.ItemParent)).MenuItemID);
+                    if (lstSm.Any())
+                    {
+                        if (lstSm.FirstOrDefault().IsShowContentOnPrtOut.Equals("Y"))
+                        {
+                            strTr = strTr.Replace("{MiCode}", @" ");
+                            strTr = strTr.Replace("{MiQty}", @" ");
+                            strTr = strTr.Replace("{MiEngName}", oi.ItemDishName);
+                            strTr = strTr.Replace("{MiOtherName}", oi.ItemDishOtherName);
+                            strTr = strTr.Replace("{MiPrice}", @" ");
+                        }
+                        else
+                        {
+                            j++;
+                            continue;
+                        }
+                    }
+                }
+                else //非套餐
+                {
+                    strTr = strTr.Replace("{MiCode}", oi.ItemCode);
+                    strTr = strTr.Replace("{MiQty}", oi.ItemQty);
+                    strTr = strTr.Replace("{MiEngName}", oi.ItemDishName);
+                    strTr = strTr.Replace("{MiOtherName}", oi.ItemDishOtherName);
+                    strTr = strTr.Replace("{MiPrice}", oi.ItemTotalPrice);
+                }
                 i++;
 
-                if (i < lsTaOrderItemInfos.Count) strTr += strTrTemp;
+                if (i < (lsTaOrderItemInfos.Count - j)) strTr += strTrTemp;
             }
+
+            if (j > 0) strTr = strTr.Replace(strTrTemp, "");
 
             return strHtmlText.Replace(strTrTemp, strTr);
         }
@@ -719,7 +746,7 @@ namespace SuperPOS.Print
             htmlText = ReplaceHtmlPrtKeysShop(htmlText, wbPrtTemplataTa);
             LogHelper.Info("3" + htmlText);
 
-            htmlText = GetOrderItemInfo(doc, htmlText, lsTaOrderItemInfos);
+            htmlText = GetOrderItemInfo(doc, htmlText, lsTaOrderItemInfos, false);
             LogHelper.Info("4" + htmlText);
             //File.Exists(Environment.CurrentDirectory + @"\PrintTemplate\img\logo.jpg");
             return htmlText;
@@ -784,7 +811,7 @@ namespace SuperPOS.Print
             
             htmlText = ReplaceHtmlPrtKeysShop(htmlText, wbPrtTemplataTa);
 
-            htmlText = GetOrderItemInfo(doc, htmlText, lsTaOrderItemInfos);
+            htmlText = GetOrderItemInfo(doc, htmlText, lsTaOrderItemInfos, true);
             //File.Exists(Environment.CurrentDirectory + @"\PrintTemplate\img\logo.jpg");
             return htmlText;
         }
@@ -820,7 +847,7 @@ namespace SuperPOS.Print
 
             htmlText = ReplaceHtmlPrtKeysShop(htmlText, wbPrtTemplataTa);
 
-            htmlText = GetOrderItemInfo(doc, htmlText, lsTaOrderItemInfos);
+            htmlText = GetOrderItemInfo(doc, htmlText, lsTaOrderItemInfos, false);
             //File.Exists(Environment.CurrentDirectory + @"\PrintTemplate\img\logo.jpg");
             return htmlText;
         }

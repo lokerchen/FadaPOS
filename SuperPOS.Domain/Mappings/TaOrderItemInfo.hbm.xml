@@ -21,6 +21,7 @@
     <property name="OrderTime" column="OrderTime" type="System.String" />
     <property name="OrderStaff" column="OrderStaff" type="System.Int32" />
     <property name="BusDate" column="BusDate" type="System.String" />
+    <property name="MenuItemID" column="MenuItemID" type="System.Int32" />
   </class>
 
 </hibernate-mapping>
