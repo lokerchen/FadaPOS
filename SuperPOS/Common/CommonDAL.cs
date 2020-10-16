@@ -293,7 +293,7 @@ namespace SuperPOS.Common
                 }
                 else
                 {
-                    return CommonData.TaMenuItem.Where(s => s.MiMenuCateID.Contains(iMenuCateId.ToString()))
+                    return CommonData.TaMenuItem.Where(s => s.MiMenuCateID.Equals(iMenuCateId.ToString()))
                            .Skip(PAGESIZE_MENUITEM * (iPageNum - 1))
                            .Take(PAGESIZE_MENUITEM).ToList();
                 }
@@ -308,7 +308,7 @@ namespace SuperPOS.Common
                 }
                 else
                 {
-                    return CommonData.TaMenuItem.Where(s => s.MiMenuSetID == iMenuSetId && s.MiMenuCateID.Contains(iMenuCateId.ToString()))
+                    return CommonData.TaMenuItem.Where(s => s.MiMenuSetID == iMenuSetId && s.MiMenuCateID.Equals(iMenuCateId.ToString()))
                                          .Skip(PAGESIZE_MENUITEM * (iPageNum - 1))
                                          .Take(PAGESIZE_MENUITEM).ToList();
                 }
