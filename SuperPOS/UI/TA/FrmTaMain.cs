@@ -515,16 +515,16 @@ namespace SuperPOS.UI.TA
 
                 if (dQty > 1)
                 {
-                    treeListOrder.FocusedNode["ItemQty"] = (dQty + 1).ToString();
+                    treeListOrder.FocusedNode["ItemQty"] = (Convert.ToInt32(dQty + 1)).ToString();
                     treeListOrder.FocusedNode["ItemTotalPrice"] = ((dPrice / dQty) * (dQty + 1)).ToString("0.00");
                 }
                 else
                 {
-                    treeListOrder.FocusedNode["ItemQty"] = (dQty + 1).ToString();
+                    treeListOrder.FocusedNode["ItemQty"] = (Convert.ToInt32(dQty + 1)).ToString();
                     treeListOrder.FocusedNode["ItemTotalPrice"] = (dPrice * 2.0m).ToString("0.00");
                 }
 
-                GetChildNodes(treeListOrder.FocusedNode, Convert.ToDecimal(treeListOrder.FocusedNode["ItemQty"]));
+                GetChildNodes(treeListOrder.FocusedNode, Convert.ToInt32(Convert.ToDecimal(treeListOrder.FocusedNode["ItemQty"].ToString())));
 
                 treeListOrder.EndUpdate();
 
@@ -544,10 +544,10 @@ namespace SuperPOS.UI.TA
 
                 if (dQty > 1.0m)
                 {
-                    treeListOrder.FocusedNode["ItemQty"] = (dQty - 1).ToString("0.00");
+                    treeListOrder.FocusedNode["ItemQty"] = (Convert.ToInt32(dQty - 1)).ToString();
                     treeListOrder.FocusedNode["ItemTotalPrice"] = ((dPrice/dQty)*(dQty - 1)).ToString("0.00");
 
-                    GetChildNodes(treeListOrder.FocusedNode, Convert.ToDecimal(treeListOrder.FocusedNode["ItemQty"]));
+                    GetChildNodes(treeListOrder.FocusedNode, Convert.ToInt32(Convert.ToDecimal(treeListOrder.FocusedNode["ItemQty"].ToString())));
                 }
                 else
                 {
@@ -1865,17 +1865,17 @@ namespace SuperPOS.UI.TA
 
                         if (dQty > 1)
                         {
-                            treeListNode["ItemQty"] = (dQty + iQ).ToString();
+                            treeListNode["ItemQty"] = (Convert.ToInt32(dQty + iQ)).ToString();
                             treeListNode["ItemTotalPrice"] = ((dPrice / dQty) * (dQty + iQ)).ToString("0.00");
 
-                            GetChildNodes(treeListOrder.FocusedNode, Convert.ToDecimal(treeListOrder.FocusedNode["ItemQty"]));
+                            GetChildNodes(treeListOrder.FocusedNode, Convert.ToInt32(Convert.ToDecimal(treeListOrder.FocusedNode["ItemQty"].ToString())));
                         }
                         else
                         {
-                            treeListNode["ItemQty"] = (dQty + iQ).ToString();
+                            treeListNode["ItemQty"] = (Convert.ToInt32(dQty + iQ)).ToString();
                             treeListNode["ItemTotalPrice"] = (dPrice * (dQty + iQ)).ToString();
 
-                            GetChildNodes(treeListOrder.FocusedNode, Convert.ToDecimal(treeListOrder.FocusedNode["ItemQty"]));
+                            GetChildNodes(treeListOrder.FocusedNode, Convert.ToInt32(Convert.ToDecimal(treeListOrder.FocusedNode["ItemQty"].ToString())));
                         }
                         treeListOrder.EndUpdate();
 
@@ -1954,12 +1954,12 @@ namespace SuperPOS.UI.TA
 
                         if (dQty > 1)
                         {
-                            treeListNode["ItemQty"] = (dQty + iQ).ToString();
+                            treeListNode["ItemQty"] = (Convert.ToInt32(dQty + iQ)).ToString();
                             treeListNode["ItemTotalPrice"] = ((dPrice / dQty) * (dQty + iQ)).ToString();
                         }
                         else
                         {
-                            treeListNode["ItemQty"] = (dQty + iQ).ToString();
+                            treeListNode["ItemQty"] = (Convert.ToInt32(dQty + iQ)).ToString();
                             treeListNode["ItemTotalPrice"] = (dPrice * (dQty + iQ)).ToString();
                         }
                         treeListOrder.EndUpdate();
@@ -2295,7 +2295,7 @@ namespace SuperPOS.UI.TA
         /// </summary>
         /// <param name="parentNode">父节点</param>
         /// <param name="dQty">父节点数量</param>
-        private void GetChildNodes(TreeListNode parentNode, decimal dQty)
+        private void GetChildNodes(TreeListNode parentNode, int dQty)
         {
             if (parentNode.Nodes.Count > 0)
             {
@@ -2304,7 +2304,7 @@ namespace SuperPOS.UI.TA
                     if (node.Nodes.Count == 0)
                     {
                         //Console.WriteLine(node.GetValue("ItemQty"));
-                        node.SetValue("ItemQty", dQty.ToString("0.00"));
+                        node.SetValue("ItemQty", dQty.ToString("0"));
                         node.SetValue("ItemTotalPrice", (dQty * Convert.ToDecimal(node.GetValue("ItemPrice"))).ToString("0.00"));
                         
                     }
