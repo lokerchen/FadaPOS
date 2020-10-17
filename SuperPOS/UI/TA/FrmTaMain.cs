@@ -820,9 +820,29 @@ namespace SuperPOS.UI.TA
         #region Pend Order按钮
         private void btnPendOrder_Click(object sender, EventArgs e)
         {
-            FrmTaPendOrder frmTaPendOrder = new FrmTaPendOrder(usrID);
-            this.Hide();
-            frmTaPendOrder.ShowDialog();
+            if (treeListOrder.AllNodesCount > 0)
+            {
+                FrmCancelOrder frmCancelOrder = new FrmCancelOrder();
+                frmCancelOrder.Location = panelControl3.PointToScreen(panelControl1.Location);
+                frmCancelOrder.Size = panelControl3.Size;
+
+                if (frmCancelOrder.ShowDialog() == DialogResult.OK)
+                {
+                    var lstChk = CommonData.TaCheckOrder.Where(s => s.CheckCode.Equals(checkID) && s.IsPaid.Equals("N") && s.BusDate.Equals(strBusDate));
+                    if (lstChk.Any())
+                    {
+                        TaCheckOrderInfo taCheck = lstChk.FirstOrDefault();
+                        taCheck.IsCancel = "Y";
+                        _control.UpdateEntity(taCheck);
+                    }
+
+                    treeListOrder.Nodes.Clear();
+
+                    FrmTaPendOrder frmTaPendOrder = new FrmTaPendOrder(usrID);
+                    this.Hide();
+                    frmTaPendOrder.ShowDialog();
+                }
+            }
         }
         #endregion
 
