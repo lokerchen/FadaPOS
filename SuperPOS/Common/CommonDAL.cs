@@ -328,8 +328,8 @@ namespace SuperPOS.Common
             new SystemData().GetTaMenuCate();
 
             return msId == 0
-                ? CommonData.TaMenuCate.Skip(PAGESIZE_MENUCATE*(iPageNum - 1)).Take(PAGESIZE_MENUCATE).ToList()
-                : CommonData.TaMenuCate.Where(s => s.MenuSetID == msId).Skip(PAGESIZE_MENUCATE*(iPageNum - 1)).Take(PAGESIZE_MENUCATE).ToList();
+                ? CommonData.TaMenuCate.OrderBy(s => Convert.ToInt32(s.CatePosition)).Skip(PAGESIZE_MENUCATE*(iPageNum - 1)).Take(PAGESIZE_MENUCATE).ToList()
+                : CommonData.TaMenuCate.Where(s => s.MenuSetID == msId).Skip(PAGESIZE_MENUCATE*(iPageNum - 1)).Take(PAGESIZE_MENUCATE).OrderBy(s => Convert.ToInt32(s.CatePosition)).ToList();
         }
 
         #endregion
