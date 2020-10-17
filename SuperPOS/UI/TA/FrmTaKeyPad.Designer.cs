@@ -80,9 +80,10 @@
             this.panelControl1.Controls.Add(this.groupBox1);
             this.panelControl1.Controls.Add(this.labelControl3);
             this.panelControl1.Controls.Add(this.txtDishName);
-            this.panelControl1.Location = new System.Drawing.Point(29, 6);
+            this.panelControl1.Location = new System.Drawing.Point(25, 5);
+            this.panelControl1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panelControl1.Name = "panelControl1";
-            this.panelControl1.Size = new System.Drawing.Size(534, 486);
+            this.panelControl1.Size = new System.Drawing.Size(467, 378);
             this.panelControl1.TabIndex = 0;
             // 
             // panelControl2
@@ -91,44 +92,50 @@
             this.panelControl2.Controls.Add(this.txtDishCode);
             this.panelControl2.Controls.Add(this.labelControl2);
             this.panelControl2.Controls.Add(this.txtQty);
-            this.panelControl2.Location = new System.Drawing.Point(34, 76);
+            this.panelControl2.Location = new System.Drawing.Point(30, 59);
+            this.panelControl2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panelControl2.Name = "panelControl2";
-            this.panelControl2.Size = new System.Drawing.Size(463, 67);
+            this.panelControl2.Size = new System.Drawing.Size(405, 52);
             this.panelControl2.TabIndex = 59;
             // 
             // labelControl1
             // 
             this.labelControl1.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelControl1.Location = new System.Drawing.Point(33, 26);
+            this.labelControl1.Location = new System.Drawing.Point(29, 20);
+            this.labelControl1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.labelControl1.Name = "labelControl1";
-            this.labelControl1.Size = new System.Drawing.Size(45, 24);
+            this.labelControl1.Size = new System.Drawing.Size(36, 19);
             this.labelControl1.TabIndex = 55;
             this.labelControl1.Text = "Code";
             // 
             // txtDishCode
             // 
             this.txtDishCode.Font = new System.Drawing.Font("Tahoma", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtDishCode.Location = new System.Drawing.Point(96, 15);
+            this.txtDishCode.Location = new System.Drawing.Point(84, 12);
+            this.txtDishCode.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtDishCode.Name = "txtDishCode";
-            this.txtDishCode.Size = new System.Drawing.Size(167, 35);
+            this.txtDishCode.Size = new System.Drawing.Size(147, 30);
             this.txtDishCode.TabIndex = 56;
+            this.txtDishCode.TextChanged += new System.EventHandler(this.txtDishCode_TextChanged);
             // 
             // labelControl2
             // 
             this.labelControl2.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelControl2.Location = new System.Drawing.Point(298, 21);
+            this.labelControl2.Location = new System.Drawing.Point(261, 16);
+            this.labelControl2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.labelControl2.Name = "labelControl2";
-            this.labelControl2.Size = new System.Drawing.Size(31, 24);
+            this.labelControl2.Size = new System.Drawing.Size(25, 19);
             this.labelControl2.TabIndex = 57;
             this.labelControl2.Text = "Qty";
             // 
             // txtQty
             // 
             this.txtQty.Font = new System.Drawing.Font("Tahoma", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtQty.Location = new System.Drawing.Point(335, 15);
+            this.txtQty.Location = new System.Drawing.Point(293, 12);
+            this.txtQty.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtQty.Name = "txtQty";
             this.txtQty.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.txtQty.Size = new System.Drawing.Size(97, 35);
+            this.txtQty.Size = new System.Drawing.Size(85, 30);
             this.txtQty.TabIndex = 58;
             this.txtQty.Text = "1";
             // 
@@ -163,9 +170,11 @@
             this.groupBox1.Controls.Add(this.btnQty2);
             this.groupBox1.Controls.Add(this.btn8);
             this.groupBox1.Controls.Add(this.btn7);
-            this.groupBox1.Location = new System.Drawing.Point(34, 153);
+            this.groupBox1.Location = new System.Drawing.Point(30, 119);
+            this.groupBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(463, 328);
+            this.groupBox1.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.groupBox1.Size = new System.Drawing.Size(405, 255);
             this.groupBox1.TabIndex = 58;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Keypad";
@@ -178,9 +187,10 @@
             this.btnQty5.Appearance.Options.UseBackColor = true;
             this.btnQty5.Appearance.Options.UseFont = true;
             this.btnQty5.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
-            this.btnQty5.Location = new System.Drawing.Point(380, 249);
+            this.btnQty5.Location = new System.Drawing.Point(332, 194);
+            this.btnQty5.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnQty5.Name = "btnQty5";
-            this.btnQty5.Size = new System.Drawing.Size(60, 45);
+            this.btnQty5.Size = new System.Drawing.Size(52, 35);
             this.btnQty5.TabIndex = 143;
             this.btnQty5.Text = "X6";
             // 
@@ -192,9 +202,10 @@
             this.btnKey10.Appearance.Options.UseBackColor = true;
             this.btnKey10.Appearance.Options.UseFont = true;
             this.btnKey10.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
-            this.btnKey10.Location = new System.Drawing.Point(310, 249);
+            this.btnKey10.Location = new System.Drawing.Point(271, 194);
+            this.btnKey10.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnKey10.Name = "btnKey10";
-            this.btnKey10.Size = new System.Drawing.Size(60, 45);
+            this.btnKey10.Size = new System.Drawing.Size(52, 35);
             this.btnKey10.TabIndex = 142;
             this.btnKey10.Text = "K";
             // 
@@ -206,9 +217,10 @@
             this.btnKey5.Appearance.Options.UseBackColor = true;
             this.btnKey5.Appearance.Options.UseFont = true;
             this.btnKey5.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
-            this.btnKey5.Location = new System.Drawing.Point(240, 249);
+            this.btnKey5.Location = new System.Drawing.Point(210, 194);
+            this.btnKey5.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnKey5.Name = "btnKey5";
-            this.btnKey5.Size = new System.Drawing.Size(60, 45);
+            this.btnKey5.Size = new System.Drawing.Size(52, 35);
             this.btnKey5.TabIndex = 141;
             this.btnKey5.Text = "E";
             // 
@@ -220,11 +232,13 @@
             this.btnC.Appearance.Options.UseBackColor = true;
             this.btnC.Appearance.Options.UseFont = true;
             this.btnC.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
-            this.btnC.Location = new System.Drawing.Point(170, 249);
+            this.btnC.Location = new System.Drawing.Point(149, 194);
+            this.btnC.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnC.Name = "btnC";
-            this.btnC.Size = new System.Drawing.Size(60, 45);
+            this.btnC.Size = new System.Drawing.Size(52, 35);
             this.btnC.TabIndex = 140;
             this.btnC.Text = "Clear";
+            this.btnC.Click += new System.EventHandler(this.btnC_Click);
             // 
             // btn1
             // 
@@ -234,9 +248,10 @@
             this.btn1.Appearance.Options.UseBackColor = true;
             this.btn1.Appearance.Options.UseFont = true;
             this.btn1.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
-            this.btn1.Location = new System.Drawing.Point(29, 45);
+            this.btn1.Location = new System.Drawing.Point(25, 35);
+            this.btn1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btn1.Name = "btn1";
-            this.btn1.Size = new System.Drawing.Size(60, 45);
+            this.btn1.Size = new System.Drawing.Size(52, 35);
             this.btn1.TabIndex = 115;
             this.btn1.Text = "1";
             // 
@@ -248,11 +263,13 @@
             this.btnOK.Appearance.Options.UseBackColor = true;
             this.btnOK.Appearance.Options.UseFont = true;
             this.btnOK.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
-            this.btnOK.Location = new System.Drawing.Point(30, 249);
+            this.btnOK.Location = new System.Drawing.Point(26, 194);
+            this.btnOK.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnOK.Name = "btnOK";
-            this.btnOK.Size = new System.Drawing.Size(129, 45);
+            this.btnOK.Size = new System.Drawing.Size(113, 35);
             this.btnOK.TabIndex = 139;
             this.btnOK.Text = "OK";
+            this.btnOK.Click += new System.EventHandler(this.btnOK_Click);
             // 
             // btn2
             // 
@@ -262,9 +279,10 @@
             this.btn2.Appearance.Options.UseBackColor = true;
             this.btn2.Appearance.Options.UseFont = true;
             this.btn2.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
-            this.btn2.Location = new System.Drawing.Point(99, 45);
+            this.btn2.Location = new System.Drawing.Point(87, 35);
+            this.btn2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btn2.Name = "btn2";
-            this.btn2.Size = new System.Drawing.Size(60, 45);
+            this.btn2.Size = new System.Drawing.Size(52, 35);
             this.btn2.TabIndex = 116;
             this.btn2.Text = "2";
             // 
@@ -276,9 +294,10 @@
             this.btnQty4.Appearance.Options.UseBackColor = true;
             this.btnQty4.Appearance.Options.UseFont = true;
             this.btnQty4.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
-            this.btnQty4.Location = new System.Drawing.Point(380, 198);
+            this.btnQty4.Location = new System.Drawing.Point(332, 154);
+            this.btnQty4.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnQty4.Name = "btnQty4";
-            this.btnQty4.Size = new System.Drawing.Size(60, 45);
+            this.btnQty4.Size = new System.Drawing.Size(52, 35);
             this.btnQty4.TabIndex = 138;
             this.btnQty4.Text = "X5";
             // 
@@ -290,9 +309,10 @@
             this.btn3.Appearance.Options.UseBackColor = true;
             this.btn3.Appearance.Options.UseFont = true;
             this.btn3.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
-            this.btn3.Location = new System.Drawing.Point(169, 45);
+            this.btn3.Location = new System.Drawing.Point(148, 35);
+            this.btn3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btn3.Name = "btn3";
-            this.btn3.Size = new System.Drawing.Size(60, 45);
+            this.btn3.Size = new System.Drawing.Size(52, 35);
             this.btn3.TabIndex = 117;
             this.btn3.Text = "3";
             // 
@@ -304,9 +324,10 @@
             this.btnKey9.Appearance.Options.UseBackColor = true;
             this.btnKey9.Appearance.Options.UseFont = true;
             this.btnKey9.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
-            this.btnKey9.Location = new System.Drawing.Point(310, 198);
+            this.btnKey9.Location = new System.Drawing.Point(271, 154);
+            this.btnKey9.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnKey9.Name = "btnKey9";
-            this.btnKey9.Size = new System.Drawing.Size(60, 45);
+            this.btnKey9.Size = new System.Drawing.Size(52, 35);
             this.btnKey9.TabIndex = 137;
             this.btnKey9.Text = "J";
             // 
@@ -318,9 +339,10 @@
             this.btnKey1.Appearance.Options.UseBackColor = true;
             this.btnKey1.Appearance.Options.UseFont = true;
             this.btnKey1.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
-            this.btnKey1.Location = new System.Drawing.Point(239, 45);
+            this.btnKey1.Location = new System.Drawing.Point(209, 35);
+            this.btnKey1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnKey1.Name = "btnKey1";
-            this.btnKey1.Size = new System.Drawing.Size(60, 45);
+            this.btnKey1.Size = new System.Drawing.Size(52, 35);
             this.btnKey1.TabIndex = 118;
             this.btnKey1.Text = "A";
             // 
@@ -332,9 +354,10 @@
             this.btnKey4.Appearance.Options.UseBackColor = true;
             this.btnKey4.Appearance.Options.UseFont = true;
             this.btnKey4.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
-            this.btnKey4.Location = new System.Drawing.Point(240, 198);
+            this.btnKey4.Location = new System.Drawing.Point(210, 154);
+            this.btnKey4.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnKey4.Name = "btnKey4";
-            this.btnKey4.Size = new System.Drawing.Size(60, 45);
+            this.btnKey4.Size = new System.Drawing.Size(52, 35);
             this.btnKey4.TabIndex = 136;
             this.btnKey4.Text = "D";
             // 
@@ -346,9 +369,10 @@
             this.btnKey6.Appearance.Options.UseBackColor = true;
             this.btnKey6.Appearance.Options.UseFont = true;
             this.btnKey6.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
-            this.btnKey6.Location = new System.Drawing.Point(309, 45);
+            this.btnKey6.Location = new System.Drawing.Point(270, 35);
+            this.btnKey6.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnKey6.Name = "btnKey6";
-            this.btnKey6.Size = new System.Drawing.Size(60, 45);
+            this.btnKey6.Size = new System.Drawing.Size(52, 35);
             this.btnKey6.TabIndex = 119;
             this.btnKey6.Text = "F";
             // 
@@ -360,11 +384,13 @@
             this.btnD.Appearance.Options.UseBackColor = true;
             this.btnD.Appearance.Options.UseFont = true;
             this.btnD.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
-            this.btnD.Location = new System.Drawing.Point(170, 198);
+            this.btnD.Location = new System.Drawing.Point(149, 154);
+            this.btnD.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnD.Name = "btnD";
-            this.btnD.Size = new System.Drawing.Size(60, 45);
+            this.btnD.Size = new System.Drawing.Size(52, 35);
             this.btnD.TabIndex = 135;
             this.btnD.Text = "Del";
+            this.btnD.Click += new System.EventHandler(this.btnD_Click);
             // 
             // btnQty1
             // 
@@ -374,9 +400,10 @@
             this.btnQty1.Appearance.Options.UseBackColor = true;
             this.btnQty1.Appearance.Options.UseFont = true;
             this.btnQty1.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
-            this.btnQty1.Location = new System.Drawing.Point(379, 45);
+            this.btnQty1.Location = new System.Drawing.Point(332, 35);
+            this.btnQty1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnQty1.Name = "btnQty1";
-            this.btnQty1.Size = new System.Drawing.Size(60, 45);
+            this.btnQty1.Size = new System.Drawing.Size(52, 35);
             this.btnQty1.TabIndex = 120;
             this.btnQty1.Text = "X2";
             // 
@@ -388,9 +415,10 @@
             this.btnP.Appearance.Options.UseBackColor = true;
             this.btnP.Appearance.Options.UseFont = true;
             this.btnP.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
-            this.btnP.Location = new System.Drawing.Point(100, 198);
+            this.btnP.Location = new System.Drawing.Point(88, 154);
+            this.btnP.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnP.Name = "btnP";
-            this.btnP.Size = new System.Drawing.Size(60, 45);
+            this.btnP.Size = new System.Drawing.Size(52, 35);
             this.btnP.TabIndex = 134;
             this.btnP.Text = ".";
             // 
@@ -402,9 +430,10 @@
             this.btn4.Appearance.Options.UseBackColor = true;
             this.btn4.Appearance.Options.UseFont = true;
             this.btn4.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
-            this.btn4.Location = new System.Drawing.Point(29, 96);
+            this.btn4.Location = new System.Drawing.Point(25, 75);
+            this.btn4.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btn4.Name = "btn4";
-            this.btn4.Size = new System.Drawing.Size(60, 45);
+            this.btn4.Size = new System.Drawing.Size(52, 35);
             this.btn4.TabIndex = 121;
             this.btn4.Text = "4";
             // 
@@ -416,9 +445,10 @@
             this.btn0.Appearance.Options.UseBackColor = true;
             this.btn0.Appearance.Options.UseFont = true;
             this.btn0.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
-            this.btn0.Location = new System.Drawing.Point(30, 198);
+            this.btn0.Location = new System.Drawing.Point(26, 154);
+            this.btn0.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btn0.Name = "btn0";
-            this.btn0.Size = new System.Drawing.Size(60, 45);
+            this.btn0.Size = new System.Drawing.Size(52, 35);
             this.btn0.TabIndex = 133;
             this.btn0.Text = "0";
             // 
@@ -430,9 +460,10 @@
             this.btn5.Appearance.Options.UseBackColor = true;
             this.btn5.Appearance.Options.UseFont = true;
             this.btn5.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
-            this.btn5.Location = new System.Drawing.Point(99, 96);
+            this.btn5.Location = new System.Drawing.Point(87, 75);
+            this.btn5.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btn5.Name = "btn5";
-            this.btn5.Size = new System.Drawing.Size(60, 45);
+            this.btn5.Size = new System.Drawing.Size(52, 35);
             this.btn5.TabIndex = 122;
             this.btn5.Text = "5";
             // 
@@ -444,9 +475,10 @@
             this.btnQty3.Appearance.Options.UseBackColor = true;
             this.btnQty3.Appearance.Options.UseFont = true;
             this.btnQty3.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
-            this.btnQty3.Location = new System.Drawing.Point(379, 147);
+            this.btnQty3.Location = new System.Drawing.Point(332, 114);
+            this.btnQty3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnQty3.Name = "btnQty3";
-            this.btnQty3.Size = new System.Drawing.Size(60, 45);
+            this.btnQty3.Size = new System.Drawing.Size(52, 35);
             this.btnQty3.TabIndex = 132;
             this.btnQty3.Text = "X4";
             // 
@@ -458,9 +490,10 @@
             this.btn6.Appearance.Options.UseBackColor = true;
             this.btn6.Appearance.Options.UseFont = true;
             this.btn6.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
-            this.btn6.Location = new System.Drawing.Point(169, 96);
+            this.btn6.Location = new System.Drawing.Point(148, 75);
+            this.btn6.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btn6.Name = "btn6";
-            this.btn6.Size = new System.Drawing.Size(60, 45);
+            this.btn6.Size = new System.Drawing.Size(52, 35);
             this.btn6.TabIndex = 123;
             this.btn6.Text = "6";
             // 
@@ -472,9 +505,10 @@
             this.btnKey8.Appearance.Options.UseBackColor = true;
             this.btnKey8.Appearance.Options.UseFont = true;
             this.btnKey8.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
-            this.btnKey8.Location = new System.Drawing.Point(309, 147);
+            this.btnKey8.Location = new System.Drawing.Point(270, 114);
+            this.btnKey8.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnKey8.Name = "btnKey8";
-            this.btnKey8.Size = new System.Drawing.Size(60, 45);
+            this.btnKey8.Size = new System.Drawing.Size(52, 35);
             this.btnKey8.TabIndex = 131;
             this.btnKey8.Text = "H";
             // 
@@ -486,9 +520,10 @@
             this.btnKey2.Appearance.Options.UseBackColor = true;
             this.btnKey2.Appearance.Options.UseFont = true;
             this.btnKey2.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
-            this.btnKey2.Location = new System.Drawing.Point(239, 96);
+            this.btnKey2.Location = new System.Drawing.Point(209, 75);
+            this.btnKey2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnKey2.Name = "btnKey2";
-            this.btnKey2.Size = new System.Drawing.Size(60, 45);
+            this.btnKey2.Size = new System.Drawing.Size(52, 35);
             this.btnKey2.TabIndex = 124;
             this.btnKey2.Text = "B";
             // 
@@ -500,9 +535,10 @@
             this.btnKey3.Appearance.Options.UseBackColor = true;
             this.btnKey3.Appearance.Options.UseFont = true;
             this.btnKey3.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
-            this.btnKey3.Location = new System.Drawing.Point(239, 147);
+            this.btnKey3.Location = new System.Drawing.Point(209, 114);
+            this.btnKey3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnKey3.Name = "btnKey3";
-            this.btnKey3.Size = new System.Drawing.Size(60, 45);
+            this.btnKey3.Size = new System.Drawing.Size(52, 35);
             this.btnKey3.TabIndex = 130;
             this.btnKey3.Text = "C";
             // 
@@ -514,9 +550,10 @@
             this.btnKey7.Appearance.Options.UseBackColor = true;
             this.btnKey7.Appearance.Options.UseFont = true;
             this.btnKey7.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
-            this.btnKey7.Location = new System.Drawing.Point(309, 96);
+            this.btnKey7.Location = new System.Drawing.Point(270, 75);
+            this.btnKey7.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnKey7.Name = "btnKey7";
-            this.btnKey7.Size = new System.Drawing.Size(60, 45);
+            this.btnKey7.Size = new System.Drawing.Size(52, 35);
             this.btnKey7.TabIndex = 125;
             this.btnKey7.Text = "G";
             // 
@@ -528,9 +565,10 @@
             this.btn9.Appearance.Options.UseBackColor = true;
             this.btn9.Appearance.Options.UseFont = true;
             this.btn9.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
-            this.btn9.Location = new System.Drawing.Point(169, 147);
+            this.btn9.Location = new System.Drawing.Point(148, 114);
+            this.btn9.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btn9.Name = "btn9";
-            this.btn9.Size = new System.Drawing.Size(60, 45);
+            this.btn9.Size = new System.Drawing.Size(52, 35);
             this.btn9.TabIndex = 129;
             this.btn9.Text = "9";
             // 
@@ -542,9 +580,10 @@
             this.btnQty2.Appearance.Options.UseBackColor = true;
             this.btnQty2.Appearance.Options.UseFont = true;
             this.btnQty2.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
-            this.btnQty2.Location = new System.Drawing.Point(379, 96);
+            this.btnQty2.Location = new System.Drawing.Point(332, 75);
+            this.btnQty2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnQty2.Name = "btnQty2";
-            this.btnQty2.Size = new System.Drawing.Size(60, 45);
+            this.btnQty2.Size = new System.Drawing.Size(52, 35);
             this.btnQty2.TabIndex = 126;
             this.btnQty2.Text = "X3";
             // 
@@ -556,9 +595,10 @@
             this.btn8.Appearance.Options.UseBackColor = true;
             this.btn8.Appearance.Options.UseFont = true;
             this.btn8.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
-            this.btn8.Location = new System.Drawing.Point(99, 147);
+            this.btn8.Location = new System.Drawing.Point(87, 114);
+            this.btn8.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btn8.Name = "btn8";
-            this.btn8.Size = new System.Drawing.Size(60, 45);
+            this.btn8.Size = new System.Drawing.Size(52, 35);
             this.btn8.TabIndex = 128;
             this.btn8.Text = "8";
             // 
@@ -570,27 +610,30 @@
             this.btn7.Appearance.Options.UseBackColor = true;
             this.btn7.Appearance.Options.UseFont = true;
             this.btn7.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
-            this.btn7.Location = new System.Drawing.Point(29, 147);
+            this.btn7.Location = new System.Drawing.Point(25, 114);
+            this.btn7.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btn7.Name = "btn7";
-            this.btn7.Size = new System.Drawing.Size(60, 45);
+            this.btn7.Size = new System.Drawing.Size(52, 35);
             this.btn7.TabIndex = 127;
             this.btn7.Text = "7";
             // 
             // labelControl3
             // 
             this.labelControl3.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelControl3.Location = new System.Drawing.Point(34, 33);
+            this.labelControl3.Location = new System.Drawing.Point(30, 26);
+            this.labelControl3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.labelControl3.Name = "labelControl3";
-            this.labelControl3.Size = new System.Drawing.Size(104, 24);
+            this.labelControl3.Size = new System.Drawing.Size(83, 19);
             this.labelControl3.TabIndex = 56;
             this.labelControl3.Text = "Dish Name:";
             // 
             // txtDishName
             // 
             this.txtDishName.Font = new System.Drawing.Font("Tahoma", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtDishName.Location = new System.Drawing.Point(144, 22);
+            this.txtDishName.Location = new System.Drawing.Point(126, 17);
+            this.txtDishName.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtDishName.Name = "txtDishName";
-            this.txtDishName.Size = new System.Drawing.Size(337, 35);
+            this.txtDishName.Size = new System.Drawing.Size(295, 30);
             this.txtDishName.TabIndex = 57;
             // 
             // btnExit
@@ -601,21 +644,23 @@
             this.btnExit.Appearance.Options.UseBackColor = true;
             this.btnExit.Appearance.Options.UseFont = true;
             this.btnExit.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
-            this.btnExit.Location = new System.Drawing.Point(81, 507);
+            this.btnExit.Location = new System.Drawing.Point(71, 394);
+            this.btnExit.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnExit.Name = "btnExit";
-            this.btnExit.Size = new System.Drawing.Size(429, 45);
+            this.btnExit.Size = new System.Drawing.Size(375, 35);
             this.btnExit.TabIndex = 115;
             this.btnExit.Text = "Exit";
             this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
             // 
             // FrmTaKeyPad
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 18F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 14F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(586, 564);
+            this.ClientSize = new System.Drawing.Size(513, 439);
             this.Controls.Add(this.btnExit);
             this.Controls.Add(this.panelControl1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "FrmTaKeyPad";
             this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
             this.Text = "FrmTaKeyPad";
