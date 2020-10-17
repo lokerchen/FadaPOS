@@ -576,7 +576,8 @@ namespace SuperPOS.UI
 
         private int GetItemCount(string chkCode)
         {
-            return CommonData.TaOrderItem.Count(s => s.CheckCode.Equals(chkCode) && s.ItemType == 1 && s.BusDate.Equals(checkBusDate));
+            //return CommonData.TaOrderItem.Count(s => s.CheckCode.Equals(chkCode) && s.ItemType == 1 && s.BusDate.Equals(checkBusDate));
+            return CommonData.TaOrderItem.Where(s => s.CheckCode.Equals(chkCode) && s.ItemType == 1 && s.BusDate.Equals(checkBusDate)).Sum(s => int.Parse(s.ItemQty));
         }
 
         #region 设置打印相关信息

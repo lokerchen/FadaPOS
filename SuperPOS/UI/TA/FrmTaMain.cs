@@ -11,6 +11,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using DevExpress.XtraEditors;
 using DevExpress.XtraGrid.Views.Grid.ViewInfo;
+using DevExpress.XtraTreeList;
 using DevExpress.XtraTreeList.Nodes;
 using SuperPOS.Common;
 using SuperPOS.Domain.Entities;
@@ -1710,7 +1711,18 @@ namespace SuperPOS.UI.TA
 
             htDetail["Staff"] = CommonData.UsrBase.Any(s => s.ID == usrID) ? CommonData.UsrBase.FirstOrDefault(s => s.ID == usrID).UsrName : "";
 
-            htDetail["ItemQty"] = treeListOrder.Nodes.Count;
+            new SystemData().GetTaOrderItem();
+
+            int iItemCount = 0;
+            foreach (TreeListNode treeListNode in treeListOrder.Nodes)
+            {
+                
+                if (treeListNode["ItemType"].ToString().Equals("1"))
+                {
+                    iItemCount += Convert.ToInt32(treeListNode["ItemQty"].ToString());
+                }
+            }
+            htDetail["ItemQty"] = iItemCount.ToString();
             htDetail["SubTotal"] = lstOi.Sum(s => Convert.ToDecimal(s.ItemTotalPrice)).ToString();
             htDetail["Total"] = lstOi.Sum(s => Convert.ToDecimal(s.ItemTotalPrice)).ToString();
 
