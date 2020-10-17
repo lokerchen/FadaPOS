@@ -48,6 +48,7 @@ namespace SuperPOS.UI.TA
                 chkPrintPayType.Checked = taSysPrtSetKitchen.IsPrintPayType.Equals("Y");
                 chkPrintDeliveryAddr.Checked = taSysPrtSetKitchen.IsPrintDeliveryAddr.Equals("Y");
                 chkPrintOrderNo.Checked = taSysPrtSetKitchen.IsPrintOrderNo.Equals("Y");
+                chkPrintAscendingSortNo.Checked = taSysPrtSetKitchen.IsPrintAscendingSortNo.Equals("Y");
             }
             
             asfc.controllInitializeSize(this);
@@ -83,6 +84,7 @@ namespace SuperPOS.UI.TA
             taSysPrtSetKitchen.IsPrintPayType = chkPrintPayType.Checked ? "Y" : "N";
             taSysPrtSetKitchen.IsPrintDeliveryAddr = chkPrintDeliveryAddr.Checked ? "Y" : "N";
             taSysPrtSetKitchen.IsPrintOrderNo = chkPrintOrderNo.Checked ? "Y" : "N";
+            taSysPrtSetKitchen.IsPrintAscendingSortNo = chkPrintAscendingSortNo.Checked ? "Y" : "N";
 
             try
             {

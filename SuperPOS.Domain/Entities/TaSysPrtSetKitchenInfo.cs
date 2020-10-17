@@ -39,5 +39,8 @@ namespace SuperPOS.Domain.Entities
 
         [XmlElement(ElementName = "IsPrintOrderNo")]
         public virtual string IsPrintOrderNo { get; set; }
+
+        [XmlElement(ElementName = "IsPrintAscendingSortNo")]
+        public virtual string IsPrintAscendingSortNo { get; set; }
     }
 }

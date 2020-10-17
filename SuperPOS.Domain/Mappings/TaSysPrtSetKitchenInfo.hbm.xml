@@ -19,6 +19,7 @@
     <property name="IsPrintPayType" column="IsPrintPayType" type="System.String" />
     <property name="IsPrintDeliveryAddr" column="IsPrintDeliveryAddr" type="System.String" />
     <property name="IsPrintOrderNo" column="IsPrintOrderNo" type="System.String" />
+    <property name="IsPrintAscendingSortNo" column="IsPrintAscendingSortNo" type="System.String" />
   </class>
 
 </hibernate-mapping>

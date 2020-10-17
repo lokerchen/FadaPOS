@@ -53,6 +53,8 @@
             this.label1 = new System.Windows.Forms.Label();
             this.btnExit = new DevExpress.XtraEditors.SimpleButton();
             this.btnSave = new DevExpress.XtraEditors.SimpleButton();
+            this.label12 = new System.Windows.Forms.Label();
+            this.chkPrintAscendingSortNo = new System.Windows.Forms.CheckBox();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.lueDeliveryAddr.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.lueOtherFontSize.Properties)).BeginInit();
@@ -63,6 +65,8 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.label12);
+            this.groupBox1.Controls.Add(this.chkPrintAscendingSortNo);
             this.groupBox1.Controls.Add(this.label6);
             this.groupBox1.Controls.Add(this.chkPrintAsc);
             this.groupBox1.Controls.Add(this.label3);
@@ -342,6 +346,24 @@
             this.btnSave.Text = "Save";
             this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
+            // label12
+            // 
+            this.label12.Location = new System.Drawing.Point(360, 202);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(158, 14);
+            this.label12.TabIndex = 29;
+            this.label12.Text = "Print Ascending Sorting No.";
+            // 
+            // chkPrintAscendingSortNo
+            // 
+            this.chkPrintAscendingSortNo.AutoSize = true;
+            this.chkPrintAscendingSortNo.Location = new System.Drawing.Point(609, 203);
+            this.chkPrintAscendingSortNo.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.chkPrintAscendingSortNo.Name = "chkPrintAscendingSortNo";
+            this.chkPrintAscendingSortNo.Size = new System.Drawing.Size(15, 14);
+            this.chkPrintAscendingSortNo.TabIndex = 28;
+            this.chkPrintAscendingSortNo.UseVisualStyleBackColor = true;
+            // 
             // FrmPrintSetupKitchenSetting
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 14F);
@@ -395,5 +417,7 @@
         private System.Windows.Forms.CheckBox chkPrintOrderNo;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.CheckBox chkPrintAsc;
+        private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.CheckBox chkPrintAscendingSortNo;
     }
 }
