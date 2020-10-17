@@ -38,6 +38,7 @@
             this.btnPrtBill = new DevExpress.XtraEditors.SimpleButton();
             this.btnExit = new DevExpress.XtraEditors.SimpleButton();
             this.panelControl6 = new DevExpress.XtraEditors.PanelControl();
+            this.btnEatIn = new DevExpress.XtraEditors.SimpleButton();
             this.btnShowDriver = new DevExpress.XtraEditors.SimpleButton();
             this.btnEditOrder = new DevExpress.XtraEditors.SimpleButton();
             this.btnChangePayment = new DevExpress.XtraEditors.SimpleButton();
@@ -61,7 +62,10 @@
             this.Discount = new DevExpress.XtraGrid.Columns.GridColumn();
             this.SubToal = new DevExpress.XtraGrid.Columns.GridColumn();
             this.BusDate = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.btnEatIn = new DevExpress.XtraEditors.SimpleButton();
+            this.gridTendered = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridChange = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridRefNo = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.webBrowser1 = new System.Windows.Forms.WebBrowser();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
             this.panelControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl4)).BeginInit();
@@ -78,15 +82,16 @@
             // 
             this.panelControl1.Controls.Add(this.richEditCtlPreview);
             this.panelControl1.Controls.Add(this.panelControl4);
-            this.panelControl1.Location = new System.Drawing.Point(6, 5);
+            this.panelControl1.Location = new System.Drawing.Point(5, 4);
+            this.panelControl1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panelControl1.Name = "panelControl1";
-            this.panelControl1.Size = new System.Drawing.Size(1189, 691);
+            this.panelControl1.Size = new System.Drawing.Size(1040, 537);
             this.panelControl1.TabIndex = 0;
             // 
             // richEditCtlPreview
             // 
             this.richEditCtlPreview.EnableToolTips = true;
-            this.richEditCtlPreview.Location = new System.Drawing.Point(7, 5);
+            this.richEditCtlPreview.Location = new System.Drawing.Point(6, 4);
             this.richEditCtlPreview.Margin = new System.Windows.Forms.Padding(0);
             this.richEditCtlPreview.Name = "richEditCtlPreview";
             this.richEditCtlPreview.Options.Export.PlainText.ExportFinalParagraphMark = DevExpress.XtraRichEdit.Export.PlainText.ExportFinalParagraphMark.Never;
@@ -96,19 +101,21 @@
             this.richEditCtlPreview.Options.HorizontalScrollbar.Visibility = DevExpress.XtraRichEdit.RichEditScrollbarVisibility.Hidden;
             this.richEditCtlPreview.Options.VerticalRuler.Visibility = DevExpress.XtraRichEdit.RichEditRulerVisibility.Hidden;
             this.richEditCtlPreview.Options.VerticalScrollbar.Visibility = DevExpress.XtraRichEdit.RichEditScrollbarVisibility.Hidden;
-            this.richEditCtlPreview.Size = new System.Drawing.Size(368, 679);
+            this.richEditCtlPreview.Size = new System.Drawing.Size(322, 528);
             this.richEditCtlPreview.TabIndex = 3;
             this.richEditCtlPreview.Text = "rich";
             // 
             // panelControl4
             // 
+            this.panelControl4.Controls.Add(this.webBrowser1);
             this.panelControl4.Controls.Add(this.panelControl5);
             this.panelControl4.Controls.Add(this.btnExit);
             this.panelControl4.Controls.Add(this.panelControl6);
             this.panelControl4.Controls.Add(this.gridControlTaShowOrder);
-            this.panelControl4.Location = new System.Drawing.Point(381, 5);
+            this.panelControl4.Location = new System.Drawing.Point(333, 4);
+            this.panelControl4.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panelControl4.Name = "panelControl4";
-            this.panelControl4.Size = new System.Drawing.Size(801, 679);
+            this.panelControl4.Size = new System.Drawing.Size(701, 528);
             this.panelControl4.TabIndex = 2;
             // 
             // panelControl5
@@ -117,9 +124,10 @@
             this.panelControl5.Controls.Add(this.btnPrtReceipt);
             this.panelControl5.Controls.Add(this.btnPrtKit);
             this.panelControl5.Controls.Add(this.btnPrtBill);
-            this.panelControl5.Location = new System.Drawing.Point(664, 56);
+            this.panelControl5.Location = new System.Drawing.Point(581, 44);
+            this.panelControl5.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panelControl5.Name = "panelControl5";
-            this.panelControl5.Size = new System.Drawing.Size(130, 393);
+            this.panelControl5.Size = new System.Drawing.Size(114, 306);
             this.panelControl5.TabIndex = 64;
             // 
             // btnAccount
@@ -135,9 +143,10 @@
             this.btnAccount.Appearance.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
             this.btnAccount.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
             this.btnAccount.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
-            this.btnAccount.Location = new System.Drawing.Point(8, 297);
+            this.btnAccount.Location = new System.Drawing.Point(7, 231);
+            this.btnAccount.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnAccount.Name = "btnAccount";
-            this.btnAccount.Size = new System.Drawing.Size(115, 90);
+            this.btnAccount.Size = new System.Drawing.Size(101, 70);
             this.btnAccount.TabIndex = 55;
             this.btnAccount.Text = "Print Account Summary";
             this.btnAccount.Click += new System.EventHandler(this.btnAccount_Click);
@@ -155,9 +164,10 @@
             this.btnPrtReceipt.Appearance.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
             this.btnPrtReceipt.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
             this.btnPrtReceipt.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
-            this.btnPrtReceipt.Location = new System.Drawing.Point(8, 6);
+            this.btnPrtReceipt.Location = new System.Drawing.Point(7, 5);
+            this.btnPrtReceipt.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnPrtReceipt.Name = "btnPrtReceipt";
-            this.btnPrtReceipt.Size = new System.Drawing.Size(115, 90);
+            this.btnPrtReceipt.Size = new System.Drawing.Size(101, 70);
             this.btnPrtReceipt.TabIndex = 52;
             this.btnPrtReceipt.Text = "Print Receipt";
             this.btnPrtReceipt.Click += new System.EventHandler(this.btnPrtReceipt_Click);
@@ -175,9 +185,10 @@
             this.btnPrtKit.Appearance.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
             this.btnPrtKit.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
             this.btnPrtKit.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
-            this.btnPrtKit.Location = new System.Drawing.Point(8, 201);
+            this.btnPrtKit.Location = new System.Drawing.Point(7, 156);
+            this.btnPrtKit.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnPrtKit.Name = "btnPrtKit";
-            this.btnPrtKit.Size = new System.Drawing.Size(115, 90);
+            this.btnPrtKit.Size = new System.Drawing.Size(101, 70);
             this.btnPrtKit.TabIndex = 54;
             this.btnPrtKit.Text = "Print Kitchen Paper";
             this.btnPrtKit.Click += new System.EventHandler(this.btnPrtKit_Click);
@@ -195,9 +206,10 @@
             this.btnPrtBill.Appearance.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
             this.btnPrtBill.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
             this.btnPrtBill.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
-            this.btnPrtBill.Location = new System.Drawing.Point(8, 105);
+            this.btnPrtBill.Location = new System.Drawing.Point(7, 82);
+            this.btnPrtBill.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnPrtBill.Name = "btnPrtBill";
-            this.btnPrtBill.Size = new System.Drawing.Size(115, 90);
+            this.btnPrtBill.Size = new System.Drawing.Size(101, 70);
             this.btnPrtBill.TabIndex = 53;
             this.btnPrtBill.Text = "Print Bill";
             this.btnPrtBill.Click += new System.EventHandler(this.btnPrtBill_Click);
@@ -211,9 +223,10 @@
             this.btnExit.Appearance.Options.UseFont = true;
             this.btnExit.Appearance.Options.UseForeColor = true;
             this.btnExit.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
-            this.btnExit.Location = new System.Drawing.Point(672, 588);
+            this.btnExit.Location = new System.Drawing.Point(588, 457);
+            this.btnExit.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnExit.Name = "btnExit";
-            this.btnExit.Size = new System.Drawing.Size(123, 86);
+            this.btnExit.Size = new System.Drawing.Size(108, 67);
             this.btnExit.TabIndex = 61;
             this.btnExit.Text = "Exit";
             this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
@@ -229,10 +242,27 @@
             this.panelControl6.Controls.Add(this.btnDelivery);
             this.panelControl6.Controls.Add(this.btnShop);
             this.panelControl6.Controls.Add(this.btnCollection);
-            this.panelControl6.Location = new System.Drawing.Point(5, 525);
+            this.panelControl6.Location = new System.Drawing.Point(4, 408);
+            this.panelControl6.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panelControl6.Name = "panelControl6";
-            this.panelControl6.Size = new System.Drawing.Size(652, 151);
+            this.panelControl6.Size = new System.Drawing.Size(570, 117);
             this.panelControl6.TabIndex = 66;
+            // 
+            // btnEatIn
+            // 
+            this.btnEatIn.Appearance.BackColor = System.Drawing.Color.RoyalBlue;
+            this.btnEatIn.Appearance.Font = new System.Drawing.Font("Tahoma", 10F);
+            this.btnEatIn.Appearance.ForeColor = System.Drawing.Color.White;
+            this.btnEatIn.Appearance.Options.UseBackColor = true;
+            this.btnEatIn.Appearance.Options.UseFont = true;
+            this.btnEatIn.Appearance.Options.UseForeColor = true;
+            this.btnEatIn.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
+            this.btnEatIn.Location = new System.Drawing.Point(414, 61);
+            this.btnEatIn.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnEatIn.Name = "btnEatIn";
+            this.btnEatIn.Size = new System.Drawing.Size(79, 51);
+            this.btnEatIn.TabIndex = 64;
+            this.btnEatIn.Text = "Eat In";
             // 
             // btnShowDriver
             // 
@@ -247,9 +277,10 @@
             this.btnShowDriver.Appearance.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
             this.btnShowDriver.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
             this.btnShowDriver.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
-            this.btnShowDriver.Location = new System.Drawing.Point(377, 79);
+            this.btnShowDriver.Location = new System.Drawing.Point(330, 61);
+            this.btnShowDriver.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnShowDriver.Name = "btnShowDriver";
-            this.btnShowDriver.Size = new System.Drawing.Size(90, 65);
+            this.btnShowDriver.Size = new System.Drawing.Size(79, 51);
             this.btnShowDriver.TabIndex = 63;
             this.btnShowDriver.Text = "Show Driver D/C";
             this.btnShowDriver.Click += new System.EventHandler(this.btnShowDriver_Click);
@@ -267,9 +298,10 @@
             this.btnEditOrder.Appearance.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
             this.btnEditOrder.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
             this.btnEditOrder.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
-            this.btnEditOrder.Location = new System.Drawing.Point(282, 79);
+            this.btnEditOrder.Location = new System.Drawing.Point(247, 61);
+            this.btnEditOrder.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnEditOrder.Name = "btnEditOrder";
-            this.btnEditOrder.Size = new System.Drawing.Size(90, 65);
+            this.btnEditOrder.Size = new System.Drawing.Size(79, 51);
             this.btnEditOrder.TabIndex = 62;
             this.btnEditOrder.Text = "Edit Order";
             this.btnEditOrder.Click += new System.EventHandler(this.btnEditOrder_Click);
@@ -287,9 +319,10 @@
             this.btnChangePayment.Appearance.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
             this.btnChangePayment.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
             this.btnChangePayment.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
-            this.btnChangePayment.Location = new System.Drawing.Point(186, 79);
+            this.btnChangePayment.Location = new System.Drawing.Point(163, 61);
+            this.btnChangePayment.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnChangePayment.Name = "btnChangePayment";
-            this.btnChangePayment.Size = new System.Drawing.Size(90, 65);
+            this.btnChangePayment.Size = new System.Drawing.Size(79, 51);
             this.btnChangePayment.TabIndex = 61;
             this.btnChangePayment.Text = "Change Payment";
             this.btnChangePayment.Click += new System.EventHandler(this.btnChangePayment_Click);
@@ -303,9 +336,10 @@
             this.btnFastFood.Appearance.Options.UseFont = true;
             this.btnFastFood.Appearance.Options.UseForeColor = true;
             this.btnFastFood.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
-            this.btnFastFood.Location = new System.Drawing.Point(473, 8);
+            this.btnFastFood.Location = new System.Drawing.Point(414, 6);
+            this.btnFastFood.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnFastFood.Name = "btnFastFood";
-            this.btnFastFood.Size = new System.Drawing.Size(90, 65);
+            this.btnFastFood.Size = new System.Drawing.Size(79, 51);
             this.btnFastFood.TabIndex = 60;
             this.btnFastFood.Text = "Fast Food";
             // 
@@ -318,9 +352,10 @@
             this.btnAll.Appearance.Options.UseFont = true;
             this.btnAll.Appearance.Options.UseForeColor = true;
             this.btnAll.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
-            this.btnAll.Location = new System.Drawing.Point(90, 8);
+            this.btnAll.Location = new System.Drawing.Point(79, 6);
+            this.btnAll.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnAll.Name = "btnAll";
-            this.btnAll.Size = new System.Drawing.Size(90, 65);
+            this.btnAll.Size = new System.Drawing.Size(79, 51);
             this.btnAll.TabIndex = 59;
             this.btnAll.Text = "Show All";
             this.btnAll.Click += new System.EventHandler(this.btnAll_Click);
@@ -334,9 +369,10 @@
             this.btnDelivery.Appearance.Options.UseFont = true;
             this.btnDelivery.Appearance.Options.UseForeColor = true;
             this.btnDelivery.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
-            this.btnDelivery.Location = new System.Drawing.Point(282, 8);
+            this.btnDelivery.Location = new System.Drawing.Point(247, 6);
+            this.btnDelivery.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnDelivery.Name = "btnDelivery";
-            this.btnDelivery.Size = new System.Drawing.Size(90, 65);
+            this.btnDelivery.Size = new System.Drawing.Size(79, 51);
             this.btnDelivery.TabIndex = 56;
             this.btnDelivery.Text = "Delivery";
             this.btnDelivery.Click += new System.EventHandler(this.btnDelivery_Click);
@@ -350,9 +386,10 @@
             this.btnShop.Appearance.Options.UseFont = true;
             this.btnShop.Appearance.Options.UseForeColor = true;
             this.btnShop.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
-            this.btnShop.Location = new System.Drawing.Point(377, 8);
+            this.btnShop.Location = new System.Drawing.Point(330, 6);
+            this.btnShop.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnShop.Name = "btnShop";
-            this.btnShop.Size = new System.Drawing.Size(90, 65);
+            this.btnShop.Size = new System.Drawing.Size(79, 51);
             this.btnShop.TabIndex = 58;
             this.btnShop.Text = "Shop";
             this.btnShop.Click += new System.EventHandler(this.btnShop_Click);
@@ -366,19 +403,22 @@
             this.btnCollection.Appearance.Options.UseFont = true;
             this.btnCollection.Appearance.Options.UseForeColor = true;
             this.btnCollection.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
-            this.btnCollection.Location = new System.Drawing.Point(186, 8);
+            this.btnCollection.Location = new System.Drawing.Point(163, 6);
+            this.btnCollection.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnCollection.Name = "btnCollection";
-            this.btnCollection.Size = new System.Drawing.Size(90, 65);
+            this.btnCollection.Size = new System.Drawing.Size(79, 51);
             this.btnCollection.TabIndex = 57;
             this.btnCollection.Text = "Collect";
             this.btnCollection.Click += new System.EventHandler(this.btnCollection_Click);
             // 
             // gridControlTaShowOrder
             // 
-            this.gridControlTaShowOrder.Location = new System.Drawing.Point(5, 13);
+            this.gridControlTaShowOrder.EmbeddedNavigator.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.gridControlTaShowOrder.Location = new System.Drawing.Point(4, 10);
             this.gridControlTaShowOrder.MainView = this.gvTaShowOrder;
+            this.gridControlTaShowOrder.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.gridControlTaShowOrder.Name = "gridControlTaShowOrder";
-            this.gridControlTaShowOrder.Size = new System.Drawing.Size(653, 506);
+            this.gridControlTaShowOrder.Size = new System.Drawing.Size(571, 394);
             this.gridControlTaShowOrder.TabIndex = 65;
             this.gridControlTaShowOrder.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gvTaShowOrder});
@@ -402,7 +442,10 @@
             this.DiscountPer,
             this.Discount,
             this.SubToal,
-            this.BusDate});
+            this.BusDate,
+            this.gridTendered,
+            this.gridChange,
+            this.gridRefNo});
             this.gvTaShowOrder.GridControl = this.gridControlTaShowOrder;
             this.gvTaShowOrder.IndicatorWidth = 50;
             this.gvTaShowOrder.Name = "gvTaShowOrder";
@@ -541,28 +584,41 @@
             this.BusDate.FieldName = "gridBusDate";
             this.BusDate.Name = "BusDate";
             // 
-            // btnEatIn
+            // gridTendered
             // 
-            this.btnEatIn.Appearance.BackColor = System.Drawing.Color.RoyalBlue;
-            this.btnEatIn.Appearance.Font = new System.Drawing.Font("Tahoma", 10F);
-            this.btnEatIn.Appearance.ForeColor = System.Drawing.Color.White;
-            this.btnEatIn.Appearance.Options.UseBackColor = true;
-            this.btnEatIn.Appearance.Options.UseFont = true;
-            this.btnEatIn.Appearance.Options.UseForeColor = true;
-            this.btnEatIn.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
-            this.btnEatIn.Location = new System.Drawing.Point(473, 79);
-            this.btnEatIn.Name = "btnEatIn";
-            this.btnEatIn.Size = new System.Drawing.Size(90, 65);
-            this.btnEatIn.TabIndex = 64;
-            this.btnEatIn.Text = "Eat In";
+            this.gridTendered.Caption = "gridTendered";
+            this.gridTendered.FieldName = "gridTendered";
+            this.gridTendered.Name = "gridTendered";
+            // 
+            // gridChange
+            // 
+            this.gridChange.Caption = "gridChange";
+            this.gridChange.FieldName = "gridChange";
+            this.gridChange.Name = "gridChange";
+            // 
+            // gridRefNo
+            // 
+            this.gridRefNo.Caption = "gridRefNo";
+            this.gridRefNo.FieldName = "gridRefNo";
+            this.gridRefNo.Name = "gridRefNo";
+            // 
+            // webBrowser1
+            // 
+            this.webBrowser1.Location = new System.Drawing.Point(604, 373);
+            this.webBrowser1.MinimumSize = new System.Drawing.Size(20, 20);
+            this.webBrowser1.Name = "webBrowser1";
+            this.webBrowser1.Size = new System.Drawing.Size(60, 30);
+            this.webBrowser1.TabIndex = 67;
+            this.webBrowser1.Visible = false;
             // 
             // FrmTaShowOrder
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 18F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 14F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1199, 698);
+            this.ClientSize = new System.Drawing.Size(1049, 543);
             this.Controls.Add(this.panelControl1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "FrmTaShowOrder";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FrmTaShowOrder";
@@ -619,5 +675,9 @@
         private DevExpress.XtraRichEdit.RichEditControl richEditCtlPreview;
         private DevExpress.XtraGrid.Columns.GridColumn BusDate;
         private DevExpress.XtraEditors.SimpleButton btnEatIn;
+        private DevExpress.XtraGrid.Columns.GridColumn gridTendered;
+        private DevExpress.XtraGrid.Columns.GridColumn gridChange;
+        private DevExpress.XtraGrid.Columns.GridColumn gridRefNo;
+        private System.Windows.Forms.WebBrowser webBrowser1;
     }
 }
