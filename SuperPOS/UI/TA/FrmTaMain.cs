@@ -1468,7 +1468,8 @@ namespace SuperPOS.UI.TA
                     taOrderItemInfo.ItemType = Convert.ToInt32(node["ItemType"]);
 
                     taOrderItemInfo.ItemDishName = node["ItemDishName"].ToString();
-                    taOrderItemInfo.ItemDishOtherName = node["ItemDishOtherName"].ToString();
+                    
+                    taOrderItemInfo.ItemDishOtherName = ModifItemOtherName(node["ItemDishOtherName"].ToString(), PubComm.MENU_LANG_OTHER);
                     
                     taOrderItemInfo.ItemParent = "0";
                     taOrderItemInfo.OrderTime = DateTime.Now.ToString();
@@ -2241,6 +2242,8 @@ namespace SuperPOS.UI.TA
                                 treeListOrder.FocusedNode["ItemDishName"] += " " + taChangeMenuAttrInfo.MenuAttrEnglishName;
                             else
                                 treeListOrder.FocusedNode["ItemDishName"] += " " + taChangeMenuAttrInfo.MenuAttrOtherName;
+
+                            treeListOrder.FocusedNode["ItemDishOtherName"] += @" " + taChangeMenuAttrInfo.MenuAttrOtherName;
                         }
                     }
                 }
