@@ -774,7 +774,7 @@ namespace SuperPOS.UI.TA
 
             var lstDetail = CommonData.TaPaymentDetail.Where(s => s.CheckOrder.Equals(chkId));
 
-            return lstDetail.Any() ? lstDetail.Where(s => s.CheckOrder.Equals(chkId)).Sum(s => Convert.ToDecimal(s.PayAmount)) : 0.00m;
+            return lstDetail.Any() ? lstDetail.Where(s => s.CheckOrder.Equals(chkId)).Sum(s => Convert.ToDecimal(string.IsNullOrEmpty(s.PayAmount) ? "0.00" : s.PayAmount)) : 0.00m;
         }
         #endregion
 

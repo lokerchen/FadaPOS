@@ -1698,7 +1698,7 @@ namespace SuperPOS.UI.TA
             {
                 taCheckOrderInfo = lstChk.FirstOrDefault();
                 taCheckOrderInfo.PayOrderType = ORDER_TYPE;
-                taCheckOrderInfo.MenuAmount = lstTaOI.Sum(s => Convert.ToDecimal(s.ItemTotalPrice)).ToString();
+                taCheckOrderInfo.MenuAmount = lstTaOI.Sum(s => Convert.ToDecimal(string.IsNullOrEmpty(s.ItemTotalPrice) ? "0.00" : s.ItemTotalPrice)).ToString();
                 //taCheckOrderInfo.PayDiscount = CommonDAL.GetTaDiscount(ORDER_TYPE, Convert.ToDecimal(taCheckOrderInfo.MenuAmount)).ToString();
                 taCheckOrderInfo.TotalAmount = CommonDAL.GetTotalAmount(Convert.ToDecimal(taCheckOrderInfo.MenuAmount), Convert.ToDecimal(CommonDAL.GetTaDiscount(ORDER_TYPE, Convert.ToDecimal(taCheckOrderInfo.MenuAmount)))).ToString();
                 taCheckOrderInfo.StaffID = usrID;
@@ -1711,7 +1711,7 @@ namespace SuperPOS.UI.TA
                 taCheckOrderInfo.CheckCode = checkID;
                 taCheckOrderInfo.PayOrderType = ORDER_TYPE;
                 taCheckOrderInfo.PayDelivery = "0.00";
-                taCheckOrderInfo.MenuAmount = lstTaOI.Sum(s => Convert.ToDecimal(s.ItemTotalPrice)).ToString();
+                taCheckOrderInfo.MenuAmount = lstTaOI.Sum(s => Convert.ToDecimal(string.IsNullOrEmpty(s.ItemTotalPrice) ? "0.00" : s.ItemTotalPrice)).ToString();
                 //taCheckOrderInfo.PayDiscount = CommonDAL.GetTaDiscount(ORDER_TYPE, Convert.ToDecimal(taCheckOrderInfo.MenuAmount)).ToString();
 
                 taCheckOrderInfo.TotalAmount = CommonDAL.GetTotalAmount(Convert.ToDecimal(taCheckOrderInfo.MenuAmount), CommonDAL.GetTaDiscount(ORDER_TYPE, Convert.ToDecimal(taCheckOrderInfo.MenuAmount))).ToString();
@@ -1790,8 +1790,8 @@ namespace SuperPOS.UI.TA
                 }
             }
             htDetail["ItemQty"] = iItemCount.ToString();
-            htDetail["SubTotal"] = lstOi.Sum(s => Convert.ToDecimal(s.ItemTotalPrice)).ToString();
-            htDetail["Total"] = lstOi.Sum(s => Convert.ToDecimal(s.ItemTotalPrice)).ToString();
+            htDetail["SubTotal"] = lstOi.Sum(s => Convert.ToDecimal(string.IsNullOrEmpty(s.ItemTotalPrice) ? "0.00" : s.ItemTotalPrice)).ToString();
+            htDetail["Total"] = lstOi.Sum(s => Convert.ToDecimal(string.IsNullOrEmpty(s.ItemTotalPrice) ? "0.00" : s.ItemTotalPrice)).ToString();
 
             return htDetail;
         }
@@ -2448,12 +2448,12 @@ namespace SuperPOS.UI.TA
                     TaOrderItemInfo taOrderItemInfo = new TaOrderItemInfo();
 
                     taOrderItemInfo.ItemID = "0";
-                    taOrderItemInfo.ItemCode = taMenuItemSubMenuInfo.ID.ToString();
+                    taOrderItemInfo.ItemCode = "";
                     taOrderItemInfo.ItemDishName = taMenuItemSubMenuInfo.SmEngName;
                     taOrderItemInfo.ItemDishOtherName = taMenuItemSubMenuInfo.SmOtherName;
-                    taOrderItemInfo.ItemQty = miQty;
-                    taOrderItemInfo.ItemPrice = "0.00";
-                    taOrderItemInfo.ItemTotalPrice = "0.00";
+                    taOrderItemInfo.ItemQty = "";
+                    taOrderItemInfo.ItemPrice = "";
+                    taOrderItemInfo.ItemTotalPrice = "";
                     taOrderItemInfo.CheckCode = miCheckCode;
                     taOrderItemInfo.ItemType = PubComm.MENU_ITEM_CHILD;
                     taOrderItemInfo.ItemParent = itemId;

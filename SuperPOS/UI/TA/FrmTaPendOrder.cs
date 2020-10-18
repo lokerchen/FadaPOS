@@ -170,7 +170,7 @@ namespace SuperPOS.UI.TA
             gvTaPendOrder.FocusedRowHandle = gvTaPendOrder.RowCount - 1;
             gvTaPendOrder.Columns["OrderTime"].BestFit();
             
-            txtTotal.Text = lstTmp.Sum(s => Convert.ToDecimal(s.TotalAmount)).ToString();
+            txtTotal.Text = lstTmp.Sum(s => Convert.ToDecimal(string.IsNullOrEmpty(s.TotalAmount)? "0.00" : s.TotalAmount)).ToString();
         }
 
         private void FrmTaPendOrder_Load(object sender, EventArgs e)
