@@ -506,7 +506,7 @@ namespace SuperPOS.UI.TA
 
                 //找零
                 decimal change = Convert.ToDecimal(txtTendered.Text) - Convert.ToDecimal(txtToPay.Text);
-                txtChange.Text = change < 0 ? "0.00" : change.ToString("0.00");
+                txtChange.Text = change.ToString("0.00");
 
                 lblCtlDiscount.Text = discount.ToString("0.00");
             }
