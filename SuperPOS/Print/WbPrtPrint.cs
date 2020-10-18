@@ -639,7 +639,7 @@ namespace SuperPOS.Print
             {
                 if (oi.ItemParent.Length > 1) //套餐
                 {
-                    if (oi.ItemType.Equals(PubComm.MENU_TIEM_SUB_CHILD)) //套餐子菜品
+                    if (oi.ItemType.Equals(PubComm.MENU_ITEM_SUB_CHILD)) //套餐子菜品
                     {
                         var lstSm = CommonData.TaMenuItemSubMenu.Where(s => s.SmMiID == lsTaOrderItemInfos.FirstOrDefault(t => t.ItemID.Equals(oi.ItemParent)).MenuItemID);
                         if (lstSm.Any())
@@ -658,6 +658,11 @@ namespace SuperPOS.Print
                                 continue;
                             }
                         }
+                        else
+                        {
+                            j++;
+                            continue;
+                        }
                     }
                     else if (oi.ItemType.Equals(PubComm.MENU_ITEM_CHILD)) //正常Other Choice
                     {
@@ -671,6 +676,49 @@ namespace SuperPOS.Print
                             strTr = strTr.Replace("{MiEngName}", taMenuItemOtherChoiceInfo.MiEngName);
                             strTr = strTr.Replace("{MiOtherName}", taMenuItemOtherChoiceInfo.MiOtherName);
                             strTr = strTr.Replace("{MiPrice}", oi.ItemTotalPrice);
+                        }
+                        else
+                        {
+                            j++;
+                            continue;
+                        }
+                    }
+                    else if (oi.ItemType.Equals(PubComm.MENU_ITEM_INGRED_MODE))
+                    {
+                        var lstMi = CommonData.TaMenuItem.Where(s => s.ID == oi.MenuItemID);
+                        if (lstMi.Any())
+                        {
+                            TaMenuItemInfo mi = lstMi.FirstOrDefault();
+                            strTr = strTr.Replace("{MiCode}", @" ");
+                            strTr = strTr.Replace("{MiQty}", @" ");
+                            strTr = strTr.Replace("{MiEngName}", mi.MiEngName);
+                            strTr = strTr.Replace("{MiOtherName}", mi.MiOtherName);
+                            strTr = strTr.Replace("{MiPrice}", @" ");
+                        }
+                        else
+                        {
+                            j++;
+                            continue;
+                        }
+                    }
+                    else if (oi.ItemType.Equals(PubComm.MENU_ITEM_APPEND))
+                    {
+                        var lstAppend = CommonData.TaExtraMenu.Where(s => s.ID.ToString().Equals(oi.ItemCode));
+
+                        if (lstAppend.Any())
+                        {
+                            TaExtraMenuInfo taExtraMenuInfo = lstAppend.FirstOrDefault();
+
+                            strTr = strTr.Replace("{MiCode}", @" ");
+                            strTr = strTr.Replace("{MiQty}", oi.ItemQty);
+                            strTr = strTr.Replace("{MiEngName}", taExtraMenuInfo.eMenuEngName);
+                            strTr = strTr.Replace("{MiOtherName}", taExtraMenuInfo.eMenuOtherName);
+                            strTr = strTr.Replace("{MiPrice}", oi.ItemTotalPrice);
+                        }
+                        else
+                        {
+                            j++;
+                            continue;
                         }
                     }
                 }

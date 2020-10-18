@@ -33,7 +33,9 @@ namespace SuperPOS.Common
         //改码
         public static int MENU_ITEM_APPEND = 3;
         //套餐子菜品
-        public static int MENU_TIEM_SUB_CHILD = 4;
+        public static int MENU_ITEM_SUB_CHILD = 4;
+        //Ingred Mode菜品
+        public static int MENU_ITEM_INGRED_MODE = 5;
 
         //改码类型
         public static string[] EXTRA_MENU_EDIT_TYPE = new[] {"Vegetable", "Vegetable2", "Bean", "Meat", "Seafood", "Sauce", "Taste", "Fruit", "Cooking", "Others"};
