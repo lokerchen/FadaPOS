@@ -639,21 +639,38 @@ namespace SuperPOS.Print
             {
                 if (oi.ItemParent.Length > 1) //套餐
                 {
-                    var lstSm = CommonData.TaMenuItemSubMenu.Where(s => s.SmMiID == lsTaOrderItemInfos.FirstOrDefault(t => t.ItemID.Equals(oi.ItemParent)).MenuItemID);
-                    if (lstSm.Any())
+                    if (oi.ItemType.Equals(PubComm.MENU_TIEM_SUB_CHILD)) //套餐子菜品
                     {
-                        if (lstSm.FirstOrDefault().IsShowContentOnPrtOut.Equals("Y"))
+                        var lstSm = CommonData.TaMenuItemSubMenu.Where(s => s.SmMiID == lsTaOrderItemInfos.FirstOrDefault(t => t.ItemID.Equals(oi.ItemParent)).MenuItemID);
+                        if (lstSm.Any())
                         {
-                            strTr = strTr.Replace("{MiCode}", @" ");
-                            strTr = strTr.Replace("{MiQty}", @" ");
-                            strTr = strTr.Replace("{MiEngName}", oi.ItemDishName);
-                            strTr = strTr.Replace("{MiOtherName}", oi.ItemDishOtherName);
-                            strTr = strTr.Replace("{MiPrice}", @" ");
+                            if (lstSm.FirstOrDefault().IsShowContentOnPrtOut.Equals("Y"))
+                            {
+                                strTr = strTr.Replace("{MiCode}", @" ");
+                                strTr = strTr.Replace("{MiQty}", @" ");
+                                strTr = strTr.Replace("{MiEngName}", oi.ItemDishName);
+                                strTr = strTr.Replace("{MiOtherName}", oi.ItemDishOtherName);
+                                strTr = strTr.Replace("{MiPrice}", @" ");
+                            }
+                            else
+                            {
+                                j++;
+                                continue;
+                            }
                         }
-                        else
+                    }
+                    else if (oi.ItemType.Equals(PubComm.MENU_ITEM_CHILD)) //正常Other Choice
+                    {
+                        var lstOh = CommonData.TaMenuItemOtherChoice.Where(s => s.ID == oi.MenuItemID);
+                        if (lstOh.Any())
                         {
-                            j++;
-                            continue;
+                            TaMenuItemOtherChoiceInfo taMenuItemOtherChoiceInfo = lstOh.FirstOrDefault();
+
+                            strTr = strTr.Replace("{MiCode}", @" ");
+                            strTr = strTr.Replace("{MiQty}", oi.ItemQty);
+                            strTr = strTr.Replace("{MiEngName}", taMenuItemOtherChoiceInfo.MiEngName);
+                            strTr = strTr.Replace("{MiOtherName}", taMenuItemOtherChoiceInfo.MiOtherName);
+                            strTr = strTr.Replace("{MiPrice}", oi.ItemTotalPrice);
                         }
                     }
                 }

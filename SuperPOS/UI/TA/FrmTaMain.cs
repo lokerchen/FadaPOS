@@ -1855,7 +1855,7 @@ namespace SuperPOS.UI.TA
                 if (iLangStatusId == PubComm.MENU_LANG_DEFAULT)
                 {
                     //子菜品
-                    if (treeListNode["ItemType"].ToString().Equals(PubComm.MENU_ITEM_CHILD.ToString()))
+                    if (treeListNode["ItemType"].ToString().Equals(PubComm.MENU_ITEM_CHILD.ToString()) || treeListNode["ItemType"].ToString().Equals(PubComm.MENU_TIEM_SUB_CHILD.ToString()))
                     {
                         if (CommonData.TaMenuItemOtherChoice.Any(s => s.ID.ToString().Equals(treeListNode["ItemCode"].ToString())))
                         {
@@ -1883,7 +1883,7 @@ namespace SuperPOS.UI.TA
                 else
                 {
                     //子菜品
-                    if (treeListNode["ItemType"].ToString().Equals(PubComm.MENU_ITEM_CHILD.ToString()))
+                    if (treeListNode["ItemType"].ToString().Equals(PubComm.MENU_ITEM_CHILD.ToString()) || treeListNode["ItemType"].ToString().Equals(PubComm.MENU_TIEM_SUB_CHILD.ToString()))
                     {
                         if (CommonData.TaMenuItemOtherChoice.Any(s => s.ID.ToString().Equals(treeListNode["ItemCode"].ToString())))
                         {
@@ -2455,7 +2455,7 @@ namespace SuperPOS.UI.TA
                     taOrderItemInfo.ItemPrice = "";
                     taOrderItemInfo.ItemTotalPrice = "";
                     taOrderItemInfo.CheckCode = miCheckCode;
-                    taOrderItemInfo.ItemType = PubComm.MENU_ITEM_CHILD;
+                    taOrderItemInfo.ItemType = PubComm.MENU_TIEM_SUB_CHILD;
                     taOrderItemInfo.ItemParent = itemId;
                     taOrderItemInfo.OrderTime = DateTime.Now.ToString();
                     taOrderItemInfo.OrderStaff = usrID;
