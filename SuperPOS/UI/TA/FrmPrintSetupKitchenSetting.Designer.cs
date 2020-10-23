@@ -29,6 +29,8 @@
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.label12 = new System.Windows.Forms.Label();
+            this.chkPrintAscendingSortNo = new System.Windows.Forms.CheckBox();
             this.label6 = new System.Windows.Forms.Label();
             this.chkPrintAsc = new System.Windows.Forms.CheckBox();
             this.label3 = new System.Windows.Forms.Label();
@@ -53,8 +55,6 @@
             this.label1 = new System.Windows.Forms.Label();
             this.btnExit = new DevExpress.XtraEditors.SimpleButton();
             this.btnSave = new DevExpress.XtraEditors.SimpleButton();
-            this.label12 = new System.Windows.Forms.Label();
-            this.chkPrintAscendingSortNo = new System.Windows.Forms.CheckBox();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.lueDeliveryAddr.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.lueOtherFontSize.Properties)).BeginInit();
@@ -96,7 +96,24 @@
             this.groupBox1.Size = new System.Drawing.Size(701, 359);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Shop Order Printout Settings";
+            // 
+            // label12
+            // 
+            this.label12.Location = new System.Drawing.Point(360, 202);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(158, 14);
+            this.label12.TabIndex = 29;
+            this.label12.Text = "Print Ascending Sorting No.";
+            // 
+            // chkPrintAscendingSortNo
+            // 
+            this.chkPrintAscendingSortNo.AutoSize = true;
+            this.chkPrintAscendingSortNo.Location = new System.Drawing.Point(609, 203);
+            this.chkPrintAscendingSortNo.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.chkPrintAscendingSortNo.Name = "chkPrintAscendingSortNo";
+            this.chkPrintAscendingSortNo.Size = new System.Drawing.Size(15, 14);
+            this.chkPrintAscendingSortNo.TabIndex = 28;
+            this.chkPrintAscendingSortNo.UseVisualStyleBackColor = true;
             // 
             // label6
             // 
@@ -345,24 +362,6 @@
             this.btnSave.TabIndex = 6;
             this.btnSave.Text = "Save";
             this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
-            // 
-            // label12
-            // 
-            this.label12.Location = new System.Drawing.Point(360, 202);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(158, 14);
-            this.label12.TabIndex = 29;
-            this.label12.Text = "Print Ascending Sorting No.";
-            // 
-            // chkPrintAscendingSortNo
-            // 
-            this.chkPrintAscendingSortNo.AutoSize = true;
-            this.chkPrintAscendingSortNo.Location = new System.Drawing.Point(609, 203);
-            this.chkPrintAscendingSortNo.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.chkPrintAscendingSortNo.Name = "chkPrintAscendingSortNo";
-            this.chkPrintAscendingSortNo.Size = new System.Drawing.Size(15, 14);
-            this.chkPrintAscendingSortNo.TabIndex = 28;
-            this.chkPrintAscendingSortNo.UseVisualStyleBackColor = true;
             // 
             // FrmPrintSetupKitchenSetting
             // 

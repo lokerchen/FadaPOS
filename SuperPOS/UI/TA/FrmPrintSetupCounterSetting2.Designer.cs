@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.label3 = new System.Windows.Forms.Label();
             this.chkSoPrintOrderNo = new System.Windows.Forms.CheckBox();
             this.lueSoDeliveryAddressFont = new DevExpress.XtraEditors.LookUpEdit();
             this.label23 = new System.Windows.Forms.Label();
@@ -73,7 +74,6 @@
             this.label21 = new System.Windows.Forms.Label();
             this.btnExit = new DevExpress.XtraEditors.SimpleButton();
             this.btnSave = new DevExpress.XtraEditors.SimpleButton();
-            this.label3 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.lueSoDeliveryAddressFont.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.lueSoDriverPrintoutCopy.Properties)).BeginInit();
@@ -120,7 +120,16 @@
             this.groupBox1.Size = new System.Drawing.Size(320, 470);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Shop Order Printout Settings";
+            this.groupBox1.Text = "Delivery Order Printout Settings";
+            // 
+            // label3
+            // 
+            this.label3.ForeColor = System.Drawing.Color.Magenta;
+            this.label3.Location = new System.Drawing.Point(26, 436);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(90, 14);
+            this.label3.TabIndex = 46;
+            this.label3.Text = "Print Order No.";
             // 
             // chkSoPrintOrderNo
             // 
@@ -352,7 +361,7 @@
             this.groupBox3.Size = new System.Drawing.Size(378, 393);
             this.groupBox3.TabIndex = 3;
             this.groupBox3.TabStop = false;
-            this.groupBox3.Text = "Collection Order Printout Settings";
+            this.groupBox3.Text = "Customer Receipt Printout Settings";
             // 
             // label22
             // 
@@ -575,15 +584,6 @@
             this.btnSave.TabIndex = 6;
             this.btnSave.Text = "Save";
             this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
-            // 
-            // label3
-            // 
-            this.label3.ForeColor = System.Drawing.Color.Magenta;
-            this.label3.Location = new System.Drawing.Point(26, 436);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(90, 14);
-            this.label3.TabIndex = 46;
-            this.label3.Text = "Print Order No.";
             // 
             // FrmPrintSetupCounterSetting2
             // 

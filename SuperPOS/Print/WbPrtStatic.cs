@@ -13,6 +13,14 @@ namespace SuperPOS.Print
 
         //Shop文件名
         public static string PRT_TEMPLATE_FILE_NAME_SHOP = "Shop";
+        public static string PRT_TEMPLATE_FILE_NAME_KITCHEN_SHOP = "ShopKitchen";
+        //Collection文件名
+        public static string PRT_TEMPLATE_FILE_NAME_COLLECTION = "Collection";
+        public static string PRT_TEMPLATE_FILE_NAME_KITCHEN_COLLECTION = "CollectionKitchen";
+        //Delivery文件名
+        public static string PRT_TEMPLATE_FILE_NAME_DELIVERY = "Delivery";
+        public static string PRT_TEMPLATE_FILE_NAME_KITCHEN_DELIVERY = "DeliveryKitchen";
+        //Fast Food
         public static string PRT_TEMPLATE_FILE_NAME_SHOP_FASTFOOD = "FastFood";
         public static string PRT_TEMPLATE_FILE_NAME_SHOP_FF = "ff";
         public static string PRT_TEMPLATE_FILE_NAME_KITCHEN = "Kitchen";
@@ -21,6 +29,12 @@ namespace SuperPOS.Print
         public static string PRT_TEMPLATE_FILE_ALL_SHOP_FASTFOOD = "AllShopFastFood";
         public static string PRT_TEMPLATE_FILE_ALL_SHOP_RECEIPT = "AllShopReceipt";
         public static string PRT_TEMPLATE_FILE_ALL_SHOP_RECEIPT_FASTFOOD = "AllShopReceiptFastFood";
+
+        public static string PRT_CLASS_BILL = @"Bill";
+        public static string PRT_CLASS_KITCHEN = @"Kitchen";
+        public static string PRT_CLASS_RECEIPT = @"Receipt";
+        public static string PRT_CLASS_ALL = @"All";
+        public static string PRT_CLASS_ALL_AND_RECEIPT = @"AllReceipt";
 
         public static string PRT_TEMPLATE_FILE_NAME_SUFFIX = ".html";
 

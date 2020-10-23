@@ -934,10 +934,12 @@ namespace SuperPOS.UI.TA
 
             wbPrtTemplataTa = GetAllPrtInfo();
 
-            WbPrtPrint.PrintHtml(webBrowser1,
-                string.IsNullOrEmpty(RefNum)
-                    ? WbPrtStatic.PRT_TEMPLATE_FILE_ALL_SHOP
-                    : WbPrtStatic.PRT_TEMPLATE_FILE_ALL_SHOP_FASTFOOD, lstOI, wbPrtTemplataTa);
+            //WbPrtPrint.PrintHtml(webBrowser1,
+            //    string.IsNullOrEmpty(RefNum)
+            //        ? WbPrtStatic.PRT_TEMPLATE_FILE_ALL_SHOP
+            //        : WbPrtStatic.PRT_TEMPLATE_FILE_ALL_SHOP_FASTFOOD, lstOI, wbPrtTemplataTa, PubComm.ORDER_TYPE_SHOP);
+
+            WbPrtPrint.PrintHtml(webBrowser1, WbPrtStatic.PRT_CLASS_ALL, lstOI, wbPrtTemplataTa, PubComm.ORDER_TYPE_SHOP);
         }
 
         private string GetPayType()
@@ -1061,10 +1063,11 @@ namespace SuperPOS.UI.TA
 
             wbPrtTemplataTa = GetAllPrtInfo();
 
-            WbPrtPrint.PrintHtml(webBrowser1,
-                string.IsNullOrEmpty(RefNum)
-                    ? WbPrtStatic.PRT_TEMPLATE_FILE_ALL_SHOP_RECEIPT
-                    : WbPrtStatic.PRT_TEMPLATE_FILE_ALL_SHOP_RECEIPT_FASTFOOD, lstOI, wbPrtTemplataTa);
+            //WbPrtPrint.PrintHtml(webBrowser1,
+            //    string.IsNullOrEmpty(RefNum)
+            //        ? WbPrtStatic.PRT_TEMPLATE_FILE_ALL_SHOP_RECEIPT
+            //        : WbPrtStatic.PRT_TEMPLATE_FILE_ALL_SHOP_RECEIPT_FASTFOOD, lstOI, wbPrtTemplataTa, PubComm.ORDER_TYPE_SHOP);
+            WbPrtPrint.PrintHtml(webBrowser1, WbPrtStatic.PRT_CLASS_ALL_AND_RECEIPT, lstOI, wbPrtTemplataTa, PubComm.ORDER_TYPE_SHOP);
         }
 
         private void btnPrtBillOnly_Click(object sender, EventArgs e)
@@ -1098,10 +1101,11 @@ namespace SuperPOS.UI.TA
 
             wbPrtTemplataTa = GetAllPrtInfo();
 
-            WbPrtPrint.PrintHtml(webBrowser1,
-                string.IsNullOrEmpty(RefNum)
-                    ? WbPrtStatic.PRT_TEMPLATE_FILE_NAME_SHOP
-                    : WbPrtStatic.PRT_TEMPLATE_FILE_NAME_SHOP_FASTFOOD, lstOI, wbPrtTemplataTa);
+            //WbPrtPrint.PrintHtml(webBrowser1,
+            //    string.IsNullOrEmpty(RefNum)
+            //        ? WbPrtStatic.PRT_TEMPLATE_FILE_NAME_SHOP
+            //        : WbPrtStatic.PRT_TEMPLATE_FILE_NAME_SHOP_FASTFOOD, lstOI, wbPrtTemplataTa, PubComm.ORDER_TYPE_SHOP);
+            WbPrtPrint.PrintHtml(webBrowser1, WbPrtStatic.PRT_CLASS_BILL, lstOI, wbPrtTemplataTa, PubComm.ORDER_TYPE_SHOP);
         }
 
         private void btnPrtKitOnly_Click(object sender, EventArgs e)
@@ -1136,7 +1140,8 @@ namespace SuperPOS.UI.TA
 
             wbPrtTemplataTa = GetAllPrtInfo();
 
-            WbPrtPrint.PrintHtml(webBrowser1, WbPrtStatic.PRT_TEMPLATE_FILE_NAME_KITCHEN, lstOI, wbPrtTemplataTa);
+            //WbPrtPrint.PrintHtml(webBrowser1, WbPrtStatic.PRT_TEMPLATE_FILE_NAME_KITCHEN, lstOI, wbPrtTemplataTa, PubComm.ORDER_TYPE_SHOP);
+            WbPrtPrint.PrintHtml(webBrowser1, WbPrtStatic.PRT_CLASS_KITCHEN, lstOI, wbPrtTemplataTa, PubComm.ORDER_TYPE_SHOP);
         }
 
         private void btnNotPaid_Click(object sender, EventArgs e)
