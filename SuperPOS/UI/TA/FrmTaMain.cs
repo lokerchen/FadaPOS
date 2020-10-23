@@ -784,6 +784,11 @@ namespace SuperPOS.UI.TA
 
                     checkID = CommonDAL.GetCheckCode();
                     lblCheck.Text = checkID;
+
+                    SetCustClear();
+                    ORDER_TYPE = PubComm.ORDER_TYPE_SHOP;
+                    btnType.Appearance.BackColor = Color.HotPink;
+                    btnType.Text = PubComm.ORDER_TYPE_SHOP;
                 }
             }
             else if (ORDER_TYPE.Equals(PubComm.ORDER_TYPE_COLLECTION))
@@ -798,6 +803,11 @@ namespace SuperPOS.UI.TA
 
                     checkID = CommonDAL.GetCheckCode();
                     lblCheck.Text = checkID;
+
+                    SetCustClear();
+                    ORDER_TYPE = PubComm.ORDER_TYPE_SHOP;
+                    btnType.Appearance.BackColor = Color.HotPink;
+                    btnType.Text = PubComm.ORDER_TYPE_SHOP;
                 }
             }
             else
@@ -3609,5 +3619,23 @@ namespace SuperPOS.UI.TA
         //        ChangeOrderBtnColor(btnType.Text);
         //    }
         //}
+
+        private void SetCustClear()
+        {
+            CustID = 0;
+            lblName.Text = "";
+            lblPhone.Text = "";
+            lblAddress.Text = "";
+            lblPostcode.Text = "";
+            lblDistance.Text = "";
+            lblDiliveryFee.Text = "";
+
+            lblCustName.Visible = false;
+            lblCustPhone.Visible = false;
+            lblCustAddress.Visible = false;
+            lblCustPostcode.Visible = false;
+            lblCustDistance.Visible = false;
+            lblCustDeliveryFee.Visible = false;
+        }
     }
 }
