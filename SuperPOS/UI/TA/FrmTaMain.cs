@@ -847,12 +847,12 @@ namespace SuperPOS.UI.TA
                     }
 
                     treeListOrder.Nodes.Clear();
+
+                    FrmTaPendOrder frmTaPendOrder = new FrmTaPendOrder(usrID);
+                    this.Hide();
+                    frmTaPendOrder.ShowDialog();
                 }
             }
-
-            FrmTaPendOrder frmTaPendOrder = new FrmTaPendOrder(usrID);
-            this.Hide();
-            frmTaPendOrder.ShowDialog();
         }
         #endregion
 
