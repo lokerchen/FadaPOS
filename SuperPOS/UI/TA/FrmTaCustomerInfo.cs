@@ -217,23 +217,23 @@ namespace SuperPOS.UI.TA
                 return;
             }
 
-            if (string.IsNullOrEmpty(txtReadyTime.Text))
-            {
-                CommonTool.ShowMessage("Ready Time can not empty!");
-                return;
-            }
+            //if (string.IsNullOrEmpty(txtReadyTime.Text))
+            //{
+            //    CommonTool.ShowMessage("Ready Time can not empty!");
+            //    return;
+            //}
 
-            if (string.IsNullOrEmpty(txtIntNotes.Text))
-            {
-                CommonTool.ShowMessage("Int Notes can not empty!");
-                return;
-            }
+            //if (string.IsNullOrEmpty(txtIntNotes.Text))
+            //{
+            //    CommonTool.ShowMessage("Int Notes can not empty!");
+            //    return;
+            //}
 
-            if (string.IsNullOrEmpty(txtNotesOnBill.Text))
-            {
-                CommonTool.ShowMessage("Notes On Bill can not empty!");
-                return;
-            }
+            //if (string.IsNullOrEmpty(txtNotesOnBill.Text))
+            //{
+            //    CommonTool.ShowMessage("Notes On Bill can not empty!");
+            //    return;
+            //}
             #endregion
 
             TaCustomerInfo taCustomerInfo = new TaCustomerInfo();
