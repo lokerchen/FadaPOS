@@ -138,6 +138,9 @@ namespace SuperPOS.Print
             strHtmlText = strHtmlText.Replace("{CustPostCode}", wbPrtTemplataTa.CustPostCode);
             strHtmlText = strHtmlText.Replace("{OrderType}", wbPrtTemplataTa.OrderType);
 
+            //Delivery Fee
+            strHtmlText = strHtmlText.Replace("{DeliveryFee}", wbPrtTemplataTa.DeliveryFee);
+
             return strHtmlText;
         }
         #endregion

@@ -38,6 +38,7 @@ namespace SuperPOS.UI
         private string sTendered = @"0.00";
         private string sChange = @"0.00";
         private string sRefNo = @" ";
+        private string sDeliveryFee = @"";
 
         private PrtTemplataTa ptl = new PrtTemplataTa();
         private string ptl_Msg1 = "";
@@ -147,7 +148,8 @@ namespace SuperPOS.UI
                             gridBusDate = check.BusDate,
                             gridTendered = check.Paid,
                             gridChange = (Convert.ToDecimal(check.Paid) - Convert.ToDecimal(check.TotalAmount)) <= 0 ? "0.0" : (Convert.ToDecimal(check.Paid) - Convert.ToDecimal(check.TotalAmount)).ToString(),
-                            gridRefNo = check.RefNum
+                            gridRefNo = check.RefNum,
+                            gridDeliveryFee = check.DeliveryFee
                         };
 
             gridControlTaShowOrder.DataSource = !string.IsNullOrEmpty(orderType)
@@ -193,7 +195,8 @@ namespace SuperPOS.UI
             sTendered = gvTaShowOrder.GetRowCellValue(gvTaShowOrder.FocusedRowHandle, "gridTendered").ToString();
             sChange = gvTaShowOrder.GetRowCellValue(gvTaShowOrder.FocusedRowHandle, "gridChange").ToString();
             sRefNo = gvTaShowOrder.GetRowCellValue(gvTaShowOrder.FocusedRowHandle, "gridRefNo") == null ? "" : gvTaShowOrder.GetRowCellValue(gvTaShowOrder.FocusedRowHandle, "gridRefNo").ToString();
-
+            sDeliveryFee = gvTaShowOrder.GetRowCellValue(gvTaShowOrder.FocusedRowHandle, "gridDeliveryFee") == null ? "" : gvTaShowOrder.GetRowCellValue(gvTaShowOrder.FocusedRowHandle, "gridDeliveryFee").ToString();
+            
             sItemCount = GetItemCount(strChkOrder);
 
 
@@ -713,6 +716,7 @@ namespace SuperPOS.UI
             wbPrtTemplataTa.Change = sChange;
             wbPrtTemplataTa.OrderType = GetPayType(strChkOrder);
             wbPrtTemplataTa.RefNo = sRefNo;
+            wbPrtTemplataTa.DeliveryFee = sDeliveryFee;
 
             #region VAT计算
             if (CommonData.GenSet.Any())

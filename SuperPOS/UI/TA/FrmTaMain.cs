@@ -838,7 +838,9 @@ namespace SuperPOS.UI.TA
 
                 if (frmCancelOrder.ShowDialog() == DialogResult.OK)
                 {
-                    var lstChk = CommonData.TaCheckOrder.Where(s => s.CheckCode.Equals(checkID) && s.IsPaid.Equals("N") && s.BusDate.Equals(strBusDate));
+                    var lstChk =
+                        CommonData.TaCheckOrder.Where(
+                            s => s.CheckCode.Equals(checkID) && s.IsPaid.Equals("N") && s.BusDate.Equals(strBusDate));
                     if (lstChk.Any())
                     {
                         TaCheckOrderInfo taCheck = lstChk.FirstOrDefault();
@@ -852,6 +854,12 @@ namespace SuperPOS.UI.TA
                     this.Hide();
                     frmTaPendOrder.ShowDialog();
                 }
+            }
+            else
+            {
+                FrmTaPendOrder frmTaPendOrder = new FrmTaPendOrder(usrID);
+                this.Hide();
+                frmTaPendOrder.ShowDialog();
             }
         }
         #endregion
@@ -1720,6 +1728,7 @@ namespace SuperPOS.UI.TA
                 taCheckOrderInfo.StaffID = usrID;
                 taCheckOrderInfo.PayTime = DateTime.Now.ToString();
                 taCheckOrderInfo.IsSave = isSave ? "Y" : "N";
+                taCheckOrderInfo.DeliveryFee = @"0.00";
                 _control.UpdateEntity(taCheckOrderInfo);
             }
             else
@@ -1778,6 +1787,8 @@ namespace SuperPOS.UI.TA
                 taCheckOrderInfo.IsSave = isSave ? "Y" : "N";
 
                 taCheckOrderInfo.BusDate = CommonDAL.GetBusDate();
+
+                taCheckOrderInfo.DeliveryFee = @"0.00";
 
                 _control.AddEntity(taCheckOrderInfo);
             }

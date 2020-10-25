@@ -125,5 +125,8 @@ namespace SuperPOS.Domain.Entities
 
         [XmlElement(ElementName = "RefNum")]
         public virtual string RefNum { get; set; }
+
+        [XmlElement(ElementName = "DeliveryFee")]
+        public virtual string DeliveryFee { get; set; }
     }
 }

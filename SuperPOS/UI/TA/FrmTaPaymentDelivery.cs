@@ -917,6 +917,8 @@ namespace SuperPOS.UI.TA
 
                 taCheckOrder.CustomerNote = strDeliveryNote;
 
+                taCheckOrder.DeliveryFee = txtDeliveryFee.Text;
+
                 _control.UpdateEntity(taCheckOrder);
             }
 
@@ -978,6 +980,8 @@ namespace SuperPOS.UI.TA
                 taCheckOrder.DriverID = iDriverID;
 
                 taCheckOrder.CustomerNote = strDeliveryNote;
+
+                taCheckOrder.DeliveryFee = txtDeliveryFee.Text;
 
                 _control.UpdateEntity(taCheckOrder);
             }
@@ -1296,6 +1300,7 @@ namespace SuperPOS.UI.TA
             wbPrtTemplataTa.Change = txtChange.Text;
             wbPrtTemplataTa.OrderType = orderType;
             wbPrtTemplataTa.RefNo = @"";
+            wbPrtTemplataTa.DeliveryFee = txtDeliveryFee.Text;
 
             #region VAT计算
             if (CommonData.GenSet.Any())

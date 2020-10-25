@@ -54,5 +54,8 @@ namespace SuperPOS.Print
         public string CustAddr { get; set; }
         public string CustPostCode { get; set; }
         public string OrderType { get; set; }
+
+        //Delivery Fee
+        public string DeliveryFee { get; set; }
     }
 }

@@ -822,6 +822,8 @@ namespace SuperPOS.UI.TA
 
                 taCheckOrder.BusDate = CommonDAL.GetBusDate();
 
+                taCheckOrder.DeliveryFee = @"0.00";
+
                 _control.UpdateEntity(taCheckOrder);
             }
 
@@ -879,6 +881,8 @@ namespace SuperPOS.UI.TA
                 taCheckOrder.IsPaid = isPaid ? @"Y" : @"N";
 
                 taCheckOrder.BusDate = CommonDAL.GetBusDate();
+
+                taCheckOrder.DeliveryFee = @"0.00";
 
                 _control.UpdateEntity(taCheckOrder);
             }
@@ -1210,6 +1214,7 @@ namespace SuperPOS.UI.TA
             wbPrtTemplataTa.Change = txtChange.Text;
             wbPrtTemplataTa.OrderType = orderType;
             wbPrtTemplataTa.RefNo = RefNum;
+            wbPrtTemplataTa.DeliveryFee = @"0.00";
 
             #region VAT计算
             if (CommonData.GenSet.Any())

@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.webBrowser1 = new System.Windows.Forms.WebBrowser();
             this.btnCollection = new DevExpress.XtraEditors.SimpleButton();
             this.btnPercent = new DevExpress.XtraEditors.SimpleButton();
             this.lblCtlSurcharge = new DevExpress.XtraEditors.LabelControl();
@@ -95,7 +96,8 @@
             this.btnDriver1 = new DevExpress.XtraEditors.SimpleButton();
             this.label1 = new System.Windows.Forms.Label();
             this.lueNote = new DevExpress.XtraEditors.LookUpEdit();
-            this.webBrowser1 = new System.Windows.Forms.WebBrowser();
+            this.txtDeliveryFee = new DevExpress.XtraEditors.TextEdit();
+            this.labelControl3 = new DevExpress.XtraEditors.LabelControl();
             this.groupBox1.SuspendLayout();
             this.groupBox5.SuspendLayout();
             this.groupBox4.SuspendLayout();
@@ -115,6 +117,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.txtDiscount.Properties)).BeginInit();
             this.groupBox6.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.lueNote.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtDeliveryFee.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox1
@@ -135,10 +138,19 @@
             this.groupBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.groupBox1.Size = new System.Drawing.Size(705, 443);
+            this.groupBox1.Size = new System.Drawing.Size(705, 482);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Payment";
+            // 
+            // webBrowser1
+            // 
+            this.webBrowser1.Location = new System.Drawing.Point(61, 38);
+            this.webBrowser1.MinimumSize = new System.Drawing.Size(20, 20);
+            this.webBrowser1.Name = "webBrowser1";
+            this.webBrowser1.Size = new System.Drawing.Size(111, 66);
+            this.webBrowser1.TabIndex = 106;
+            this.webBrowser1.Visible = false;
             // 
             // btnCollection
             // 
@@ -162,7 +174,7 @@
             this.btnPercent.Appearance.Options.UseBackColor = true;
             this.btnPercent.Appearance.Options.UseFont = true;
             this.btnPercent.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
-            this.btnPercent.Location = new System.Drawing.Point(21, 187);
+            this.btnPercent.Location = new System.Drawing.Point(61, 149);
             this.btnPercent.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnPercent.Name = "btnPercent";
             this.btnPercent.Size = new System.Drawing.Size(52, 35);
@@ -317,7 +329,7 @@
             this.groupBox4.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.groupBox4.Name = "groupBox4";
             this.groupBox4.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.groupBox4.Size = new System.Drawing.Size(188, 230);
+            this.groupBox4.Size = new System.Drawing.Size(188, 259);
             this.groupBox4.TabIndex = 91;
             this.groupBox4.TabStop = false;
             // 
@@ -329,7 +341,7 @@
             this.btnClear.Appearance.Options.UseBackColor = true;
             this.btnClear.Appearance.Options.UseFont = true;
             this.btnClear.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
-            this.btnClear.Location = new System.Drawing.Point(7, 187);
+            this.btnClear.Location = new System.Drawing.Point(7, 201);
             this.btnClear.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnClear.Name = "btnClear";
             this.btnClear.Size = new System.Drawing.Size(171, 35);
@@ -344,7 +356,7 @@
             this.btnDel.Appearance.Options.UseBackColor = true;
             this.btnDel.Appearance.Options.UseFont = true;
             this.btnDel.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
-            this.btnDel.Location = new System.Drawing.Point(125, 148);
+            this.btnDel.Location = new System.Drawing.Point(125, 162);
             this.btnDel.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnDel.Name = "btnDel";
             this.btnDel.Size = new System.Drawing.Size(52, 35);
@@ -359,7 +371,7 @@
             this.btnPoint.Appearance.Options.UseBackColor = true;
             this.btnPoint.Appearance.Options.UseFont = true;
             this.btnPoint.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
-            this.btnPoint.Location = new System.Drawing.Point(64, 148);
+            this.btnPoint.Location = new System.Drawing.Point(64, 162);
             this.btnPoint.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnPoint.Name = "btnPoint";
             this.btnPoint.Size = new System.Drawing.Size(52, 35);
@@ -374,7 +386,7 @@
             this.btn0.Appearance.Options.UseBackColor = true;
             this.btn0.Appearance.Options.UseFont = true;
             this.btn0.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
-            this.btn0.Location = new System.Drawing.Point(7, 148);
+            this.btn0.Location = new System.Drawing.Point(7, 162);
             this.btn0.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btn0.Name = "btn0";
             this.btn0.Size = new System.Drawing.Size(52, 35);
@@ -389,7 +401,7 @@
             this.btn3.Appearance.Options.UseBackColor = true;
             this.btn3.Appearance.Options.UseFont = true;
             this.btn3.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
-            this.btn3.Location = new System.Drawing.Point(125, 108);
+            this.btn3.Location = new System.Drawing.Point(125, 122);
             this.btn3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btn3.Name = "btn3";
             this.btn3.Size = new System.Drawing.Size(52, 35);
@@ -404,7 +416,7 @@
             this.btn2.Appearance.Options.UseBackColor = true;
             this.btn2.Appearance.Options.UseFont = true;
             this.btn2.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
-            this.btn2.Location = new System.Drawing.Point(64, 108);
+            this.btn2.Location = new System.Drawing.Point(64, 122);
             this.btn2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btn2.Name = "btn2";
             this.btn2.Size = new System.Drawing.Size(52, 35);
@@ -419,7 +431,7 @@
             this.btn1.Appearance.Options.UseBackColor = true;
             this.btn1.Appearance.Options.UseFont = true;
             this.btn1.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
-            this.btn1.Location = new System.Drawing.Point(7, 108);
+            this.btn1.Location = new System.Drawing.Point(7, 122);
             this.btn1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btn1.Name = "btn1";
             this.btn1.Size = new System.Drawing.Size(52, 35);
@@ -434,7 +446,7 @@
             this.btn6.Appearance.Options.UseBackColor = true;
             this.btn6.Appearance.Options.UseFont = true;
             this.btn6.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
-            this.btn6.Location = new System.Drawing.Point(125, 65);
+            this.btn6.Location = new System.Drawing.Point(125, 79);
             this.btn6.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btn6.Name = "btn6";
             this.btn6.Size = new System.Drawing.Size(52, 35);
@@ -449,7 +461,7 @@
             this.btn5.Appearance.Options.UseBackColor = true;
             this.btn5.Appearance.Options.UseFont = true;
             this.btn5.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
-            this.btn5.Location = new System.Drawing.Point(64, 65);
+            this.btn5.Location = new System.Drawing.Point(64, 79);
             this.btn5.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btn5.Name = "btn5";
             this.btn5.Size = new System.Drawing.Size(52, 35);
@@ -464,7 +476,7 @@
             this.btn4.Appearance.Options.UseBackColor = true;
             this.btn4.Appearance.Options.UseFont = true;
             this.btn4.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
-            this.btn4.Location = new System.Drawing.Point(7, 65);
+            this.btn4.Location = new System.Drawing.Point(7, 79);
             this.btn4.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btn4.Name = "btn4";
             this.btn4.Size = new System.Drawing.Size(52, 35);
@@ -479,7 +491,7 @@
             this.btn9.Appearance.Options.UseBackColor = true;
             this.btn9.Appearance.Options.UseFont = true;
             this.btn9.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
-            this.btn9.Location = new System.Drawing.Point(125, 23);
+            this.btn9.Location = new System.Drawing.Point(125, 37);
             this.btn9.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btn9.Name = "btn9";
             this.btn9.Size = new System.Drawing.Size(52, 35);
@@ -494,7 +506,7 @@
             this.btn8.Appearance.Options.UseBackColor = true;
             this.btn8.Appearance.Options.UseFont = true;
             this.btn8.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
-            this.btn8.Location = new System.Drawing.Point(64, 23);
+            this.btn8.Location = new System.Drawing.Point(64, 37);
             this.btn8.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btn8.Name = "btn8";
             this.btn8.Size = new System.Drawing.Size(52, 35);
@@ -509,7 +521,7 @@
             this.btn7.Appearance.Options.UseBackColor = true;
             this.btn7.Appearance.Options.UseFont = true;
             this.btn7.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
-            this.btn7.Location = new System.Drawing.Point(7, 23);
+            this.btn7.Location = new System.Drawing.Point(7, 37);
             this.btn7.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btn7.Name = "btn7";
             this.btn7.Size = new System.Drawing.Size(52, 35);
@@ -693,6 +705,8 @@
             // 
             // groupBox2
             // 
+            this.groupBox2.Controls.Add(this.txtDeliveryFee);
+            this.groupBox2.Controls.Add(this.labelControl3);
             this.groupBox2.Controls.Add(this.txtPercentDiscount);
             this.groupBox2.Controls.Add(this.labelControl2);
             this.groupBox2.Controls.Add(this.labelControl1);
@@ -711,7 +725,7 @@
             this.groupBox2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.groupBox2.Size = new System.Drawing.Size(339, 215);
+            this.groupBox2.Size = new System.Drawing.Size(339, 259);
             this.groupBox2.TabIndex = 89;
             this.groupBox2.TabStop = false;
             // 
@@ -773,7 +787,7 @@
             // 
             this.txtChange.EditValue = "0.00";
             this.txtChange.Enabled = false;
-            this.txtChange.Location = new System.Drawing.Point(130, 176);
+            this.txtChange.Location = new System.Drawing.Point(130, 214);
             this.txtChange.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtChange.Name = "txtChange";
             this.txtChange.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 18F);
@@ -791,7 +805,7 @@
             // 
             this.txtToPay.EditValue = "0.00";
             this.txtToPay.Enabled = false;
-            this.txtToPay.Location = new System.Drawing.Point(130, 135);
+            this.txtToPay.Location = new System.Drawing.Point(130, 173);
             this.txtToPay.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtToPay.Name = "txtToPay";
             this.txtToPay.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 16F);
@@ -809,7 +823,7 @@
             // 
             this.txtTendered.EditValue = "0.00";
             this.txtTendered.Enabled = false;
-            this.txtTendered.Location = new System.Drawing.Point(130, 97);
+            this.txtTendered.Location = new System.Drawing.Point(130, 135);
             this.txtTendered.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtTendered.Name = "txtTendered";
             this.txtTendered.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 16F);
@@ -892,7 +906,7 @@
             this.labelControl5.Appearance.ForeColor = System.Drawing.Color.White;
             this.labelControl5.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.labelControl5.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
-            this.labelControl5.Location = new System.Drawing.Point(5, 100);
+            this.labelControl5.Location = new System.Drawing.Point(5, 138);
             this.labelControl5.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.labelControl5.Name = "labelControl5";
             this.labelControl5.Size = new System.Drawing.Size(119, 29);
@@ -906,7 +920,7 @@
             this.labelControl11.Appearance.ForeColor = System.Drawing.Color.Black;
             this.labelControl11.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.labelControl11.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
-            this.labelControl11.Location = new System.Drawing.Point(5, 171);
+            this.labelControl11.Location = new System.Drawing.Point(5, 209);
             this.labelControl11.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.labelControl11.Name = "labelControl11";
             this.labelControl11.Size = new System.Drawing.Size(119, 37);
@@ -920,7 +934,7 @@
             this.labelControl10.Appearance.ForeColor = System.Drawing.Color.White;
             this.labelControl10.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.labelControl10.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
-            this.labelControl10.Location = new System.Drawing.Point(5, 138);
+            this.labelControl10.Location = new System.Drawing.Point(5, 176);
             this.labelControl10.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.labelControl10.Name = "labelControl10";
             this.labelControl10.Size = new System.Drawing.Size(119, 29);
@@ -945,7 +959,7 @@
             this.btnExit.Appearance.Options.UseBackColor = true;
             this.btnExit.Appearance.Options.UseFont = true;
             this.btnExit.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
-            this.btnExit.Location = new System.Drawing.Point(574, 464);
+            this.btnExit.Location = new System.Drawing.Point(574, 500);
             this.btnExit.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnExit.Name = "btnExit";
             this.btnExit.Size = new System.Drawing.Size(132, 37);
@@ -970,7 +984,7 @@
             this.groupBox6.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.groupBox6.Name = "groupBox6";
             this.groupBox6.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.groupBox6.Size = new System.Drawing.Size(144, 443);
+            this.groupBox6.Size = new System.Drawing.Size(144, 482);
             this.groupBox6.TabIndex = 106;
             this.groupBox6.TabStop = false;
             this.groupBox6.Text = "Driver List";
@@ -1109,7 +1123,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Tahoma", 10F);
-            this.label1.Location = new System.Drawing.Point(4, 453);
+            this.label1.Location = new System.Drawing.Point(4, 489);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(166, 17);
             this.label1.TabIndex = 107;
@@ -1117,7 +1131,7 @@
             // 
             // lueNote
             // 
-            this.lueNote.Location = new System.Drawing.Point(7, 472);
+            this.lueNote.Location = new System.Drawing.Point(7, 508);
             this.lueNote.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.lueNote.Name = "lueNote";
             this.lueNote.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 12F);
@@ -1129,20 +1143,43 @@
             this.lueNote.TabIndex = 108;
             this.lueNote.EditValueChanged += new System.EventHandler(this.lueNote_EditValueChanged);
             // 
-            // webBrowser1
+            // txtDeliveryFee
             // 
-            this.webBrowser1.Location = new System.Drawing.Point(61, 38);
-            this.webBrowser1.MinimumSize = new System.Drawing.Size(20, 20);
-            this.webBrowser1.Name = "webBrowser1";
-            this.webBrowser1.Size = new System.Drawing.Size(111, 66);
-            this.webBrowser1.TabIndex = 106;
-            this.webBrowser1.Visible = false;
+            this.txtDeliveryFee.EditValue = "0.00";
+            this.txtDeliveryFee.Enabled = false;
+            this.txtDeliveryFee.Location = new System.Drawing.Point(130, 94);
+            this.txtDeliveryFee.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txtDeliveryFee.Name = "txtDeliveryFee";
+            this.txtDeliveryFee.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 16F);
+            this.txtDeliveryFee.Properties.Appearance.ForeColor = System.Drawing.Color.Red;
+            this.txtDeliveryFee.Properties.Appearance.Options.UseFont = true;
+            this.txtDeliveryFee.Properties.Appearance.Options.UseForeColor = true;
+            this.txtDeliveryFee.Properties.Appearance.Options.UseTextOptions = true;
+            this.txtDeliveryFee.Properties.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
+            this.txtDeliveryFee.Properties.Mask.EditMask = "f2";
+            this.txtDeliveryFee.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Numeric;
+            this.txtDeliveryFee.Size = new System.Drawing.Size(200, 32);
+            this.txtDeliveryFee.TabIndex = 108;
+            // 
+            // labelControl3
+            // 
+            this.labelControl3.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
+            this.labelControl3.Appearance.Font = new System.Drawing.Font("Tahoma", 12F);
+            this.labelControl3.Appearance.ForeColor = System.Drawing.Color.White;
+            this.labelControl3.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.labelControl3.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
+            this.labelControl3.Location = new System.Drawing.Point(5, 97);
+            this.labelControl3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.labelControl3.Name = "labelControl3";
+            this.labelControl3.Size = new System.Drawing.Size(119, 29);
+            this.labelControl3.TabIndex = 107;
+            this.labelControl3.Text = "Delivery";
             // 
             // FrmTaPaymentDelivery
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 14F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(865, 513);
+            this.ClientSize = new System.Drawing.Size(865, 549);
             this.Controls.Add(this.lueNote);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.groupBox6);
@@ -1176,6 +1213,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.txtDiscount.Properties)).EndInit();
             this.groupBox6.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.lueNote.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtDeliveryFee.Properties)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1251,5 +1289,7 @@
         private DevExpress.XtraEditors.LookUpEdit lueNote;
         private DevExpress.XtraEditors.SimpleButton btnCollection;
         private System.Windows.Forms.WebBrowser webBrowser1;
+        private DevExpress.XtraEditors.TextEdit txtDeliveryFee;
+        private DevExpress.XtraEditors.LabelControl labelControl3;
     }
 }

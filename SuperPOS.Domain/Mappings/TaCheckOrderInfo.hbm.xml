@@ -38,6 +38,7 @@
     <property name="IsSave" column="IsSave" type="System.String" />
     <property name="BusDate" column="BusDate" type="System.String" />
     <property name="RefNum" column="RefNum" type="System.String" />
+    <property name="DeliveryFee" column="DeliveryFee" type="System.String" />
   </class>
 
 </hibernate-mapping>

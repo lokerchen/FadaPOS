@@ -31,6 +31,7 @@
             this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
             this.richEditCtlPreview = new DevExpress.XtraRichEdit.RichEditControl();
             this.panelControl4 = new DevExpress.XtraEditors.PanelControl();
+            this.webBrowser1 = new System.Windows.Forms.WebBrowser();
             this.panelControl5 = new DevExpress.XtraEditors.PanelControl();
             this.btnAccount = new DevExpress.XtraEditors.SimpleButton();
             this.btnPrtReceipt = new DevExpress.XtraEditors.SimpleButton();
@@ -65,7 +66,7 @@
             this.gridTendered = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridChange = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridRefNo = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.webBrowser1 = new System.Windows.Forms.WebBrowser();
+            this.gridDeliveryFee = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
             this.panelControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl4)).BeginInit();
@@ -117,6 +118,15 @@
             this.panelControl4.Name = "panelControl4";
             this.panelControl4.Size = new System.Drawing.Size(701, 528);
             this.panelControl4.TabIndex = 2;
+            // 
+            // webBrowser1
+            // 
+            this.webBrowser1.Location = new System.Drawing.Point(604, 373);
+            this.webBrowser1.MinimumSize = new System.Drawing.Size(20, 20);
+            this.webBrowser1.Name = "webBrowser1";
+            this.webBrowser1.Size = new System.Drawing.Size(60, 30);
+            this.webBrowser1.TabIndex = 67;
+            this.webBrowser1.Visible = false;
             // 
             // panelControl5
             // 
@@ -445,7 +455,8 @@
             this.BusDate,
             this.gridTendered,
             this.gridChange,
-            this.gridRefNo});
+            this.gridRefNo,
+            this.gridDeliveryFee});
             this.gvTaShowOrder.GridControl = this.gridControlTaShowOrder;
             this.gvTaShowOrder.IndicatorWidth = 50;
             this.gvTaShowOrder.Name = "gvTaShowOrder";
@@ -602,14 +613,11 @@
             this.gridRefNo.FieldName = "gridRefNo";
             this.gridRefNo.Name = "gridRefNo";
             // 
-            // webBrowser1
+            // gridDeliveryFee
             // 
-            this.webBrowser1.Location = new System.Drawing.Point(604, 373);
-            this.webBrowser1.MinimumSize = new System.Drawing.Size(20, 20);
-            this.webBrowser1.Name = "webBrowser1";
-            this.webBrowser1.Size = new System.Drawing.Size(60, 30);
-            this.webBrowser1.TabIndex = 67;
-            this.webBrowser1.Visible = false;
+            this.gridDeliveryFee.Caption = "gridDeliveryFee";
+            this.gridDeliveryFee.FieldName = "gridDeliveryFee";
+            this.gridDeliveryFee.Name = "gridDeliveryFee";
             // 
             // FrmTaShowOrder
             // 
@@ -679,5 +687,6 @@
         private DevExpress.XtraGrid.Columns.GridColumn gridChange;
         private DevExpress.XtraGrid.Columns.GridColumn gridRefNo;
         private System.Windows.Forms.WebBrowser webBrowser1;
+        private DevExpress.XtraGrid.Columns.GridColumn gridDeliveryFee;
     }
 }
