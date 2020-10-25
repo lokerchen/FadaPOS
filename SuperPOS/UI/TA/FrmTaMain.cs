@@ -2213,7 +2213,14 @@ namespace SuperPOS.UI.TA
                         foreach (var taChangeMenuAttrInfo in lstTaChangeMenuAttrInfos)
                         {
                             if (!dChangePrice.ContainsKey(taChangeMenuAttrInfo.MenuAttrEnglishName))
+                            {
+                                if (string.IsNullOrEmpty(taChangeMenuAttrInfo.MenuAttrOtherName))
+                                {
+                                    taChangeMenuAttrInfo.MenuAttrOtherName = taChangeMenuAttrInfo.MenuAttrEnglishName;
+                                }
+
                                 dChangePrice.Add(taChangeMenuAttrInfo.MenuAttrEnglishName, taChangeMenuAttrInfo.MenuAttrOtherName);
+                            }
 
                             if (iLangStatusId == PubComm.MENU_LANG_DEFAULT)
                                 treeListOrder.FocusedNode["ItemDishName"] += " " + taChangeMenuAttrInfo.MenuAttrEnglishName;
