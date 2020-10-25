@@ -40,6 +40,10 @@ namespace SuperPOS.Print
         private static string strDefaultPrintName = "";
         private static string strPrintName = "";
 
+        private static bool isPrintDriverCopy = false;
+        private static string strDriverCopyFont = "12";
+        private static string countPrintDriverCopy = "0";
+
         #region WebBrowser基本打印内容
         /// <summary>
         /// WebBrowser基本打印内容
@@ -176,6 +180,15 @@ namespace SuperPOS.Print
                 else if (strType.Equals(WbPrtStatic.PRT_CLASS_KITCHEN))
                 {
                     PrintOnlyKitchen(strOrderType, lsTaOrderItemInfos, wbPrtTemplataTa);
+
+                    if (isPrintDriverCopy)
+                    {
+                        for (int i = 0; i < Convert.ToInt32(countPrintDriverCopy); i++)
+                        {
+                            wb.DocumentText = PrintOnlyDriverCopy(strOrderType, wbPrtTemplataTa);
+                            PrintContent();
+                        }
+                    }
                 }
                 else if (strType.Equals(WbPrtStatic.PRT_CLASS_RECEIPT))
                 {
@@ -192,6 +205,15 @@ namespace SuperPOS.Print
                         wb.DocumentText = PrintShopFF(WbPrtStatic.PRT_TEMPLATE_FILE_NAME_SHOP_FF, wbPrtTemplataTa);
                         PrintContent();
                     }
+
+                    if (isPrintDriverCopy)
+                    {
+                        for (int i = 0; i < Convert.ToInt32(countPrintDriverCopy); i++)
+                        {
+                            wb.DocumentText = PrintOnlyDriverCopy(strOrderType, wbPrtTemplataTa);
+                            PrintContent();
+                        }
+                    }
                 }
                 else if (strType.Equals(WbPrtStatic.PRT_CLASS_ALL_AND_RECEIPT))
                 {
@@ -206,11 +228,18 @@ namespace SuperPOS.Print
                         wb.DocumentText = PrintShopFF(WbPrtStatic.PRT_TEMPLATE_FILE_NAME_SHOP_FF, wbPrtTemplataTa);
                         PrintContent();
                     }
+
+                    if (isPrintDriverCopy)
+                    {
+                        for (int i = 0; i < Convert.ToInt32(countPrintDriverCopy); i++)
+                        {
+                            wb.DocumentText = PrintOnlyDriverCopy(strOrderType, wbPrtTemplataTa);
+                            PrintContent();
+                        }
+                    }
                 }
 
-
-
-
+                #region 原打印方法-注释
                 //if (strType.Equals(WbPrtStatic.PRT_TEMPLATE_FILE_NAME_SHOP))
                 //{
                 //    wb.DocumentText = PrintBill(strType, lsTaOrderItemInfos, wbPrtTemplataTa);
@@ -287,6 +316,7 @@ namespace SuperPOS.Print
                 //    wb.DocumentText = PrintReceipt(WbPrtStatic.PRT_TEMPLATE_FILE_NAME_RECEIPT, lsTaOrderItemInfos, wbPrtTemplataTa);
                 //    PrintContent();
                 //}
+                #endregion
             }
             catch (Exception ex)
             {
@@ -804,8 +834,38 @@ namespace SuperPOS.Print
             {
                 strHtmlText = strHtmlText.Replace(WbPrtStatic.PRT_PRINT_TBL_VAT, MakeupDisplay(WbPrtStatic.PRT_PRINT_TBL_VAT));
             }
-
+            
             strPrintName = !taSysPrtSetCounterSetting2Info.CoLocalPriter.Equals("Y") ? taSysPrtSetCounterSetting2Info.CoLocalPriter : strDefaultPrintName;
+
+            return strHtmlText;
+        }
+        #endregion
+
+        #region DriverCopy打印信息
+        /// <summary>
+        /// DriverCopy打印信息
+        /// </summary>
+        /// <param name="strHtmlText">原始Html文本信息</param>
+        /// <returns></returns>
+        private static string PrtDriverCopySettingInfo(string strHtmlText)
+        {
+            TaSysPrtSetCounterSetting2Info taSysPrtSetCounterSetting2Info = WbPrtCommon.GetTaTaSysPrtSetCounterSetting2();
+
+            if (!taSysPrtSetCounterSetting2Info.SoDriverPrintoutCopy.Equals("0"))
+            {
+                isPrintDriverCopy = true;
+                strDriverCopyFont = taSysPrtSetCounterSetting2Info.SoDeliveryAddrFont;
+                countPrintDriverCopy = taSysPrtSetCounterSetting2Info.SoDriverPrintoutCopy;
+
+                if (strHtmlText.Length > 0)
+                {
+                    strHtmlText = strHtmlText.Replace(WbPrtStatic.PRT_PRINT_TD_CUST_DIST, WbPrtStatic.PRT_PRINT_TD_CUST_DIST + strDriverCopyFont);
+                    strHtmlText = strHtmlText.Replace(WbPrtStatic.PRT_PRINT_TD_CUST_MAP_REF, WbPrtStatic.PRT_PRINT_TD_CUST_MAP_REF + strDriverCopyFont);
+                    strHtmlText = strHtmlText.Replace(WbPrtStatic.PRT_PRINT_TD_CUST_ADDR, WbPrtStatic.PRT_PRINT_TD_CUST_ADDR + strDriverCopyFont);
+                    strHtmlText = strHtmlText.Replace(WbPrtStatic.PRT_PRINT_TD_CUST_POST_CODE, WbPrtStatic.PRT_PRINT_TD_CUST_POST_CODE + strDriverCopyFont);
+                    iOffset += 8;
+                }
+            }
 
             return strHtmlText;
         }
@@ -1086,6 +1146,10 @@ namespace SuperPOS.Print
 
             htmlText = GetOrderItemInfo(doc, htmlText, lsTaOrderItemInfos, true);
             //File.Exists(Environment.CurrentDirectory + @"\PrintTemplate\img\logo.jpg");
+
+            isPrintDriverCopy = false;
+            PrtDriverCopySettingInfo("");
+
             return htmlText;
         }
         #endregion
@@ -1159,6 +1223,46 @@ namespace SuperPOS.Print
             htmlText = ReplaceHtmlPrtKeysShop(htmlText, wbPrtTemplataTa);
 
             htmlText = GetOrderItemInfo(doc, htmlText, lsTaOrderItemInfos, false);
+            //File.Exists(Environment.CurrentDirectory + @"\PrintTemplate\img\logo.jpg");
+            return htmlText;
+        }
+        #endregion
+
+        #region 打印Driver Copy
+
+        public static string PrintOnlyDriverCopy(string strOrderType, WbPrtTemplataTa wbPrtTemplataTa)
+        {
+            HtmlWeb hw = new HtmlWeb();
+
+            HtmlDocument doc = hw.Load(WbPrtStatic.PRT_TEMPLATE_FILE_PATH + WbPrtStatic.PRT_TEMPLATE_FILE_NAME_DRIVER_COPY + WbPrtStatic.PRT_TEMPLATE_FILE_NAME_SUFFIX);
+
+            iOffset = 0;
+
+            string htmlText = doc.Text;
+
+            if (string.IsNullOrEmpty(htmlText)) return "";
+
+            //替换Logo信息
+            htmlText = htmlText.Replace("logo.jpg", WbPrtStatic.PRT_TEMPLATE_FILE_PATH + @"img\logo.jpg");
+
+            //替换特有标识
+            if (strOrderType.Equals(PubComm.ORDER_TYPE_COLLECTION))
+            {
+                htmlText = htmlText.Replace("phone.jpg", WbPrtStatic.PRT_TEMPLATE_FILE_PATH + @"img\phone.jpg");
+            }
+            else if (strOrderType.Equals(PubComm.ORDER_TYPE_DELIVERY))
+            {
+                htmlText = htmlText.Replace("phone.jpg", WbPrtStatic.PRT_TEMPLATE_FILE_PATH + @"img\delivery.jpg");
+            }
+
+            //打印基础信息判断
+            htmlText = PrtGeneralInfo(htmlText);
+
+            htmlText = PrtDriverCopySettingInfo(htmlText);
+
+            htmlText = ReplaceHtmlPrtKeysShop(htmlText, wbPrtTemplataTa);
+
+            //htmlText = GetOrderItemInfo(doc, htmlText, lsTaOrderItemInfos, true);
             //File.Exists(Environment.CurrentDirectory + @"\PrintTemplate\img\logo.jpg");
             return htmlText;
         }

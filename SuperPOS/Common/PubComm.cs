@@ -83,6 +83,7 @@ namespace SuperPOS.Common
         #endregion
 
         public static string[] PRT_NUMBER_OF_COPY = new[] {"1", "2", "3"};
+        public static string[] PRT_NUMBER_OF_COPY_DRIVER = new[] { "0", "1", "2"};
         public static string[] PRT_LANGUAGE = new[] { "Both", "English", "Other"};
         public static string PRT_LANGUAGE_BOTH = "Both";
         public static string PRT_LANGUAGE_ENG = "English";

@@ -85,7 +85,7 @@ namespace SuperPOS.UI.TA
             lueSoOtherLangFont.Properties.DataSource = new List<string>(PubComm.PRT_FONT_SIZE);
             lueCoOtherLangFont.Properties.DataSource = new List<string>(PubComm.PRT_FONT_SIZE);
 
-            lueSoDriverPrintoutCopy.Properties.DataSource = new List<string>(PubComm.PRT_NUMBER_OF_COPY);
+            lueSoDriverPrintoutCopy.Properties.DataSource = new List<string>(PubComm.PRT_NUMBER_OF_COPY_DRIVER);
 
             lueSoDeliveryAddressFont.Properties.DataSource = new List<string>(PubComm.PRT_FONT_SIZE);
         }

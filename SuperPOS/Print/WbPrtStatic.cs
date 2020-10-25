@@ -30,6 +30,8 @@ namespace SuperPOS.Print
         public static string PRT_TEMPLATE_FILE_ALL_SHOP_RECEIPT = "AllShopReceipt";
         public static string PRT_TEMPLATE_FILE_ALL_SHOP_RECEIPT_FASTFOOD = "AllShopReceiptFastFood";
 
+        public static string PRT_TEMPLATE_FILE_NAME_DRIVER_COPY = "dc";
+
         public static string PRT_CLASS_BILL = @"Bill";
         public static string PRT_CLASS_KITCHEN = @"Kitchen";
         public static string PRT_CLASS_RECEIPT = @"Receipt";
@@ -37,7 +39,7 @@ namespace SuperPOS.Print
         public static string PRT_CLASS_ALL_AND_RECEIPT = @"AllReceipt";
 
         public static string PRT_TEMPLATE_FILE_NAME_SUFFIX = ".html";
-
+        
         #region Shop模板内参数为主
         //table Universal Print基本表格
         public static string PRT_PARAM_TBL_UNIVERSAL_PRINT = @"Tbl_UniversalPrint";
@@ -121,13 +123,13 @@ namespace SuperPOS.Print
 
         public static string PRT_PRINT_TD_CUST_NAME = "<td id=\"Td_CustName\" style=\"font-size:\"";
         public static string PRT_PRINT_TD_CUST_PHONE = "<td id=\"Td_CustPhone\" style=\"font-size:\"";
-        public static string PRT_PRINT_TD_CUST_DIST = "<td id=\"Td_CustDist\" style=\"font-size:\"";
-        public static string PRT_PRINT_TD_CUST_MAP_REF = "<td id=\"Td_CustMapRef\" style=\"font-size:\"";
-        public static string PRT_PRINT_TD_CUST_ADDR = "<td id=\"Td_CustAddr\" style=\"font-size:\"";
-        public static string PRT_PRINT_TD_CUST_POST_CODE = "<td id=\"Td_CustPostCode\" style=\"font-size:\"";
+        public static string PRT_PRINT_TD_CUST_DIST = "<td id=\"Td_CustDist\" style=\"font-size:";
+        public static string PRT_PRINT_TD_CUST_MAP_REF = "<td id=\"Td_CustMapRef\" style=\"font-size:";
+        public static string PRT_PRINT_TD_CUST_ADDR = "<td id=\"Td_CustAddr\" style=\"font-size:";
+        public static string PRT_PRINT_TD_CUST_POST_CODE = "<td id=\"Td_CustPostCode\" style=\"font-size:";
         public static string PRT_PRINT_TBL_PAY_TYPE = "<table id=\"Tbl_PayType\" style=\"display:\"";
         public static string PRT_PRINT_TBL_VAT = "<table id=\"Tbl_Vat\" style=\"display:\"";
-
+        
         #endregion
     }
 }
