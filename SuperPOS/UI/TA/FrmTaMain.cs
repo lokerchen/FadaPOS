@@ -2288,7 +2288,7 @@ namespace SuperPOS.UI.TA
 
                     lblName.Text = taCustomerInfo.cusName;
                     lblPhone.Text = taCustomerInfo.cusPhone;
-                    lblAddress.Text = taCustomerInfo.cusAddr;
+                    lblAddress.Text = taCustomerInfo.cusHouseNo + @" " + taCustomerInfo.cusAddr;
                     lblPostcode.Text = taCustomerInfo.cusPostcode;
                     lblDistance.Text = taCustomerInfo.cusDistance;
                     lblDiliveryFee.Text = taCustomerInfo.cusDelCharge;
@@ -2352,7 +2352,7 @@ namespace SuperPOS.UI.TA
                     CustID = taCustomerInfo.ID;
                     lblName.Text = taCustomerInfo.cusName;
                     lblPhone.Text = taCustomerInfo.cusPhone;
-                    lblAddress.Text = taCustomerInfo.cusAddr;
+                    lblAddress.Text = taCustomerInfo.cusHouseNo + @" " + taCustomerInfo.cusAddr;
                     lblPostcode.Text = taCustomerInfo.cusPostcode;
                     lblDistance.Text = taCustomerInfo.cusDistance;
                     lblDiliveryFee.Text = taCustomerInfo.cusDelCharge;
