@@ -472,14 +472,17 @@ namespace SuperPOS.UI.TA
 
         private void txtReadyTime_Click(object sender, EventArgs e)
         {
-            FrmTaCustReadyTime frmTaCustReadyTime = new FrmTaCustReadyTime();
-            //frmTaCustReadyTime.Location = gridControlCustomer.Location;
-            frmTaCustReadyTime.Location = new Point(gridControlCustomer.Location.X + 100, gridControlCustomer.Location.Y + 50);
-            //frmTaCustReadyTime.Size = gridControlCustomer.Size;
-
-            if (frmTaCustReadyTime.ShowDialog() == DialogResult.OK)
+            if (!string.IsNullOrEmpty(cusNum))
             {
-                
+                FrmTaCustReadyTime frmTaCustReadyTime = new FrmTaCustReadyTime();
+                //frmTaCustReadyTime.Location = gridControlCustomer.Location;
+                frmTaCustReadyTime.Location = new Point(gridControlCustomer.Location.X + 100, gridControlCustomer.Location.Y + 50);
+                //frmTaCustReadyTime.Size = gridControlCustomer.Size;
+
+                if (frmTaCustReadyTime.ShowDialog() == DialogResult.OK)
+                {
+                    txtReadyTime.Text = frmTaCustReadyTime.strShopTime;
+                }
             }
         }
     }
