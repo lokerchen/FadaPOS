@@ -45,6 +45,7 @@
             this.OrderTime = new DevExpress.XtraTreeList.Columns.TreeListColumn();
             this.OrderStaff = new DevExpress.XtraTreeList.Columns.TreeListColumn();
             this.BusDate = new DevExpress.XtraTreeList.Columns.TreeListColumn();
+            this.MenuItemID = new DevExpress.XtraTreeList.Columns.TreeListColumn();
             this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
             this.btnOnlineOrder = new DevExpress.XtraEditors.SimpleButton();
             this.btnType = new DevExpress.XtraEditors.SimpleButton();
@@ -139,7 +140,6 @@
             this.btnMi5 = new DevExpress.XtraEditors.SimpleButton();
             this.btnMi4 = new DevExpress.XtraEditors.SimpleButton();
             this.btnMi2 = new DevExpress.XtraEditors.SimpleButton();
-            this.btnMiLeft = new DevExpress.XtraEditors.SimpleButton();
             this.btnMi1 = new DevExpress.XtraEditors.SimpleButton();
             this.btnMi0 = new DevExpress.XtraEditors.SimpleButton();
             this.btnMi10 = new DevExpress.XtraEditors.SimpleButton();
@@ -152,7 +152,7 @@
             this.lblCheck = new DevExpress.XtraEditors.LabelControl();
             this.btnCustInfo = new DevExpress.XtraEditors.SimpleButton();
             this.btnSearchMeal = new DevExpress.XtraEditors.SimpleButton();
-            this.MenuItemID = new DevExpress.XtraTreeList.Columns.TreeListColumn();
+            this.btnMiLeft = new DevExpress.XtraEditors.SimpleButton();
             ((System.ComponentModel.ISupportInitialize)(this.treeListOrder)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemMemoEdit1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
@@ -331,6 +331,12 @@
             this.BusDate.Caption = "BusDate";
             this.BusDate.FieldName = "BusDate";
             this.BusDate.Name = "BusDate";
+            // 
+            // MenuItemID
+            // 
+            this.MenuItemID.Caption = "MenuItemID";
+            this.MenuItemID.FieldName = "MenuItemID";
+            this.MenuItemID.Name = "MenuItemID";
             // 
             // panelControl1
             // 
@@ -900,6 +906,7 @@
             this.btnMcLeft.Name = "btnMcLeft";
             this.btnMcLeft.Size = new System.Drawing.Size(71, 27);
             this.btnMcLeft.TabIndex = 17;
+            this.btnMcLeft.Click += new System.EventHandler(this.btnMcLeft_Click);
             // 
             // btnMcRight
             // 
@@ -919,6 +926,7 @@
             this.btnMcRight.Name = "btnMcRight";
             this.btnMcRight.Size = new System.Drawing.Size(71, 27);
             this.btnMcRight.TabIndex = 18;
+            this.btnMcRight.Click += new System.EventHandler(this.btnMcRight_Click);
             // 
             // btnCid
             // 
@@ -1786,6 +1794,7 @@
             this.btnMiRight.Size = new System.Drawing.Size(63, 93);
             this.btnMiRight.TabIndex = 14;
             this.btnMiRight.Text = ">>";
+            this.btnMiRight.Click += new System.EventHandler(this.btnMiLeft_Click);
             // 
             // btnMi5
             // 
@@ -1831,26 +1840,6 @@
             this.btnMi2.Name = "btnMi2";
             this.btnMi2.Size = new System.Drawing.Size(195, 43);
             this.btnMi2.TabIndex = 30;
-            // 
-            // btnMiLeft
-            // 
-            this.btnMiLeft.Appearance.BackColor = System.Drawing.Color.Red;
-            this.btnMiLeft.Appearance.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold);
-            this.btnMiLeft.Appearance.ForeColor = System.Drawing.Color.White;
-            this.btnMiLeft.Appearance.Options.UseBackColor = true;
-            this.btnMiLeft.Appearance.Options.UseFont = true;
-            this.btnMiLeft.Appearance.Options.UseForeColor = true;
-            this.btnMiLeft.Appearance.Options.UseTextOptions = true;
-            this.btnMiLeft.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
-            this.btnMiLeft.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
-            this.btnMiLeft.Image = ((System.Drawing.Image)(resources.GetObject("btnMiLeft.Image")));
-            this.btnMiLeft.ImageLocation = DevExpress.XtraEditors.ImageLocation.MiddleCenter;
-            this.btnMiLeft.Location = new System.Drawing.Point(798, 98);
-            this.btnMiLeft.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.btnMiLeft.Name = "btnMiLeft";
-            this.btnMiLeft.Size = new System.Drawing.Size(63, 89);
-            this.btnMiLeft.TabIndex = 15;
-            this.btnMiLeft.Text = "<<";
             // 
             // btnMi1
             // 
@@ -2011,6 +2000,7 @@
             this.btnCustInfo.TabIndex = 17;
             this.btnCustInfo.Text = "Cust Info";
             this.btnCustInfo.Visible = false;
+            this.btnCustInfo.Click += new System.EventHandler(this.btnCustInfo_Click);
             // 
             // btnSearchMeal
             // 
@@ -2025,12 +2015,28 @@
             this.btnSearchMeal.TabIndex = 24;
             this.btnSearchMeal.Text = "Search Meal";
             this.btnSearchMeal.Visible = false;
+            this.btnSearchMeal.Click += new System.EventHandler(this.btnSearchMeal_Click);
             // 
-            // MenuItemID
+            // btnMiLeft
             // 
-            this.MenuItemID.Caption = "MenuItemID";
-            this.MenuItemID.FieldName = "MenuItemID";
-            this.MenuItemID.Name = "MenuItemID";
+            this.btnMiLeft.Appearance.BackColor = System.Drawing.Color.Red;
+            this.btnMiLeft.Appearance.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold);
+            this.btnMiLeft.Appearance.ForeColor = System.Drawing.Color.White;
+            this.btnMiLeft.Appearance.Options.UseBackColor = true;
+            this.btnMiLeft.Appearance.Options.UseFont = true;
+            this.btnMiLeft.Appearance.Options.UseForeColor = true;
+            this.btnMiLeft.Appearance.Options.UseTextOptions = true;
+            this.btnMiLeft.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
+            this.btnMiLeft.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
+            this.btnMiLeft.Image = ((System.Drawing.Image)(resources.GetObject("btnMiLeft.Image")));
+            this.btnMiLeft.ImageLocation = DevExpress.XtraEditors.ImageLocation.MiddleCenter;
+            this.btnMiLeft.Location = new System.Drawing.Point(798, 98);
+            this.btnMiLeft.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnMiLeft.Name = "btnMiLeft";
+            this.btnMiLeft.Size = new System.Drawing.Size(63, 89);
+            this.btnMiLeft.TabIndex = 15;
+            this.btnMiLeft.Text = "<<";
+            this.btnMiLeft.Click += new System.EventHandler(this.btnMiRight_Click);
             // 
             // FrmTaMain
             // 
@@ -2182,7 +2188,6 @@
         private DevExpress.XtraEditors.SimpleButton btnMi5;
         private DevExpress.XtraEditors.SimpleButton btnMi4;
         private DevExpress.XtraEditors.SimpleButton btnMi2;
-        private DevExpress.XtraEditors.SimpleButton btnMiLeft;
         private DevExpress.XtraEditors.SimpleButton btnMi1;
         private DevExpress.XtraEditors.SimpleButton btnMi0;
         private DevExpress.XtraEditors.SimpleButton btnMi10;
@@ -2196,5 +2201,6 @@
         private DevExpress.XtraEditors.SimpleButton btnCustInfo;
         private DevExpress.XtraEditors.SimpleButton btnSearchMeal;
         private DevExpress.XtraTreeList.Columns.TreeListColumn MenuItemID;
+        private DevExpress.XtraEditors.SimpleButton btnMiLeft;
     }
 }
