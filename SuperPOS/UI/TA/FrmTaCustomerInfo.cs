@@ -75,12 +75,12 @@ namespace SuperPOS.UI.TA
         {
             BindLuePostCode();
             
-            if (CommonData.TaCustomer.Count(s => s.ID == cusID) > 0) cusNum = CommonData.TaCustomer.FirstOrDefault(s => s.ID == cusID).cusPhone;
-            
             //if (string.IsNullOrEmpty(cusNum)) return;
 
-            BindData(cusNum);
+            BindData("");
             //gvCompCustomer.BestFitColumns();
+
+            if (CommonData.TaCustomer.Count(s => s.ID == cusID) > 0) cusNum = CommonData.TaCustomer.FirstOrDefault(s => s.ID == cusID).cusPhone;
 
             if (string.IsNullOrEmpty(cusNum))
             {
@@ -97,25 +97,22 @@ namespace SuperPOS.UI.TA
                 txtNotesOnBill.Text = "";
                 chkBlackListed.Checked = false;
             }
-
-            if (gvCompCustomer.FocusedRowHandle >= 0)
+            else
             {
-                cusNum = "";
+                if (gvCompCustomer.FocusedRowHandle >= 0)
+                {
+                    for (int i = 0; i < gvCompCustomer.RowCount; i++)
+                    {
+                        string colValue = gvCompCustomer.GetRowCellValue(i, "cusPhone").ToString();
 
-                txtPhone.Text = "";
-                txtName.Text = "";
-                txtHouseNo.Text = "";
-                txtAddress.Text = "";
-                txtPcZone.Text = "";
-                txtDistance.Text = "";
-                luePostcode.Text = "";
-                txtDelCharge.Text = "";
-                txtReadyTime.Text = "";
-                txtIntNotes.Text = "";
-                txtNotesOnBill.Text = "";
-                chkBlackListed.Checked = false;
+                        if (colValue.Equals(cusNum))
+                        {
+                            gvCompCustomer.FocusedRowHandle = i;
+                            break;
+                        }
+                    }
+                }
             }
-
             asfc.controllInitializeSize(this);
         }
 
