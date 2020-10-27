@@ -977,7 +977,7 @@ namespace SuperPOS.UI.TA
 
             wbPrtTemplataTa = GetAllPrtInfo();
 
-            WbPrtPrint.PrintHtml(webBrowser1, WbPrtStatic.PRT_CLASS_RECEIPT, lstOI, wbPrtTemplataTa, PubComm.ORDER_TYPE_COLLECTION);
+            WbPrtPrint.PrintHtml(webBrowser1, WbPrtStatic.PRT_CLASS_ALL, lstOI, wbPrtTemplataTa, PubComm.ORDER_TYPE_COLLECTION);
         }
 
         private string GetPayType()
