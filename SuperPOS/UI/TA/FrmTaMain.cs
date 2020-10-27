@@ -2375,9 +2375,9 @@ namespace SuperPOS.UI.TA
                     lblCustDistance.Visible = true;
                     lblCustDeliveryFee.Visible = true;
 
-                    ////存在客户信息时，变更订单类型
-                    //ORDER_TYPE = PubComm.ORDER_TYPE_DELIVERY;
-                    //ChangeOrderBtnColor(ORDER_TYPE);
+                    //存在客户信息时，变更订单类型
+                    ORDER_TYPE = PubComm.ORDER_TYPE_DELIVERY;
+                    ChangeOrderBtnColor(ORDER_TYPE);
                 }
                     
             }
