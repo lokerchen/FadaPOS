@@ -1759,7 +1759,7 @@ namespace SuperPOS.UI.TA
 
                 taCheckOrderInfo.Paid = "0.00";
                 taCheckOrderInfo.IsPaid = "N";
-                taCheckOrderInfo.CustomerID = string.IsNullOrEmpty(CallerID) ? "1" : CallerID;
+                taCheckOrderInfo.CustomerID = string.IsNullOrEmpty(CustID.ToString()) ? "1" : CustID.ToString();
                 taCheckOrderInfo.CustomerNote = "";
                 taCheckOrderInfo.StaffID = usrID;
                 taCheckOrderInfo.PayTime = DateTime.Now.ToString();

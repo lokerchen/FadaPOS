@@ -160,6 +160,8 @@ namespace SuperPOS.UI.TA
                     menuAmout = Convert.ToDecimal(taCheckOrder.MenuAmount);
                     txtChange.Text = "0.00";
 
+                    txtDeliveryFee.Text = (CommonDAL.GetDeliveryFee(Convert.ToInt32(callerID), txtToPay.Text)).ToString("0.00");
+
                     GetAllAmount();
                 }
                 else if (lstTco.Any(s => s.IsPaid.Equals("Y")))
@@ -187,6 +189,8 @@ namespace SuperPOS.UI.TA
                     menuAmout = Convert.ToDecimal(taCheckOrder.MenuAmount);
                     txtChange.Text = "0.00";
 
+                    txtDeliveryFee.Text = (CommonDAL.GetDeliveryFee(Convert.ToInt32(callerID), txtToPay.Text)).ToString("0.00");
+
                     GetAllAmount();
                 }
                 
@@ -196,9 +200,7 @@ namespace SuperPOS.UI.TA
             //默认为PayType1
             objTxt = txtPayTypePay1;
             objName = @"txtPayTypePay1";
-
-            txtDeliveryFee.Text = (CommonDAL.GetDeliveryFee(Convert.ToInt32(callerID), txtToPay.Text)).ToString("0.00");
-
+            
             asfc.controllInitializeSize(this);
         }
 
@@ -579,6 +581,10 @@ namespace SuperPOS.UI.TA
             discount = GetDiscount(menuAmout);
             surcharge = GetSurcharge(menuAmout);
 
+            decimal dDeliveryFee = 0.00m;
+
+            dDeliveryFee = Convert.ToDecimal(txtDeliveryFee.Text);
+
             //折扣 > 菜单总价 = 免单
             if (discount >= menuAmout)
             {
@@ -592,7 +598,7 @@ namespace SuperPOS.UI.TA
             else
             {
                 //需付款
-                txtToPay.Text = (menuAmout - discount + surcharge).ToString("0.00");
+                txtToPay.Text = (menuAmout - discount + surcharge + dDeliveryFee).ToString("0.00");
 
                 //已付款金额
                 txtTendered.Text = (ptPay1 + ptPay2 + ptPay3 + ptPay4 + ptPay5).ToString("0.00");

@@ -39,7 +39,7 @@ namespace SuperPOS.UI
         private string sChange = @"0.00";
         private string sRefNo = @" ";
         private string sDeliveryFee = @"";
-
+        
         private PrtTemplataTa ptl = new PrtTemplataTa();
         private string ptl_Msg1 = "";
         private string ptl_Msg2 = "";
@@ -109,7 +109,7 @@ namespace SuperPOS.UI
                 TaPrtSetupGeneralSet1Info taPrtSetupGeneralSet1Info = lstGsSet1.FirstOrDefault();
                 PrtLang = taPrtSetupGeneralSet1Info.PrtLang;
             }
-
+            
             asfc.controllInitializeSize(this);
         }
 
@@ -296,7 +296,7 @@ namespace SuperPOS.UI
 
             wbPrtTemplataTa = GetAllPrtInfo();
 
-            WbPrtPrint.PrintHtml(webBrowser1, WbPrtStatic.PRT_CLASS_RECEIPT, lstOI, wbPrtTemplataTa, wbPrtTemplataTa.OrderType);
+            WbPrtPrint.PrintHtml(webBrowser1, WbPrtStatic.PRT_CLASS_RECEIPT, lstOI, wbPrtTemplataTa, sOrderType);
         }
 
         private void btnPrtBill_Click(object sender, EventArgs e)
@@ -328,7 +328,7 @@ namespace SuperPOS.UI
             //    string.IsNullOrEmpty(sRefNo)
             //        ? WbPrtStatic.PRT_TEMPLATE_FILE_NAME_SHOP
             //        : WbPrtStatic.PRT_TEMPLATE_FILE_NAME_SHOP_FASTFOOD, lstOI, wbPrtTemplataTa, wbPrtTemplataTa.OrderType);
-            WbPrtPrint.PrintHtml(webBrowser1, WbPrtStatic.PRT_CLASS_BILL, lstOI, wbPrtTemplataTa, wbPrtTemplataTa.OrderType);
+            WbPrtPrint.PrintHtml(webBrowser1, WbPrtStatic.PRT_CLASS_BILL, lstOI, wbPrtTemplataTa, sOrderType);
         }
 
         private void btnPrtKit_Click(object sender, EventArgs e)
@@ -356,7 +356,7 @@ namespace SuperPOS.UI
 
             wbPrtTemplataTa = GetAllPrtInfo();
 
-            WbPrtPrint.PrintHtml(webBrowser1, WbPrtStatic.PRT_CLASS_KITCHEN, lstOI, wbPrtTemplataTa, wbPrtTemplataTa.OrderType);
+            WbPrtPrint.PrintHtml(webBrowser1, WbPrtStatic.PRT_CLASS_KITCHEN, lstOI, wbPrtTemplataTa, sOrderType);
         }
 
         private void btnAccount_Click(object sender, EventArgs e)
