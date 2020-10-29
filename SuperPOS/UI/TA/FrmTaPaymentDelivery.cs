@@ -126,7 +126,7 @@ namespace SuperPOS.UI.TA
             SetClick();
 
             BindlueNote();
-
+            
             #region 查询账单
             new SystemData().GetTaCheckOrder();
 
@@ -196,6 +196,8 @@ namespace SuperPOS.UI.TA
             //默认为PayType1
             objTxt = txtPayTypePay1;
             objName = @"txtPayTypePay1";
+
+            txtDeliveryFee.Text = (CommonDAL.GetDeliveryFee(Convert.ToInt32(callerID), txtToPay.Text)).ToString("0.00");
 
             asfc.controllInitializeSize(this);
         }

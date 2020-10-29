@@ -94,11 +94,8 @@
             this.txtOrderThreshold = new DevExpress.XtraEditors.TextEdit();
             this.labelControl3 = new DevExpress.XtraEditors.LabelControl();
             this.groupBox8 = new System.Windows.Forms.GroupBox();
-            this.labelControl5 = new DevExpress.XtraEditors.LabelControl();
             this.chkIgnoreDelivery = new DevExpress.XtraEditors.CheckEdit();
             this.chkDeliveryChge = new DevExpress.XtraEditors.CheckEdit();
-            this.txtMile = new DevExpress.XtraEditors.TextEdit();
-            this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
             this.groupBox7 = new System.Windows.Forms.GroupBox();
             this.txtPerMile = new DevExpress.XtraEditors.TextEdit();
             this.labelControl6 = new DevExpress.XtraEditors.LabelControl();
@@ -148,6 +145,7 @@
             this.label15 = new System.Windows.Forms.Label();
             this.btnExit = new DevExpress.XtraEditors.SimpleButton();
             this.btnSave = new DevExpress.XtraEditors.SimpleButton();
+            this.chkIgnoreDeliveryIfCharge = new DevExpress.XtraEditors.CheckEdit();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.xtpTaConfig)).BeginInit();
             this.xtpTaConfig.SuspendLayout();
@@ -197,7 +195,6 @@
             this.groupBox8.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.chkIgnoreDelivery.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.chkDeliveryChge.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtMile.Properties)).BeginInit();
             this.groupBox7.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.txtPerMile.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtDsAmountToPay4.Properties)).BeginInit();
@@ -219,6 +216,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.txtIncrement.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtOtherName.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtEngName.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.chkIgnoreDeliveryIfCharge.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox1
@@ -996,11 +994,9 @@
             // 
             // groupBox8
             // 
-            this.groupBox8.Controls.Add(this.labelControl5);
+            this.groupBox8.Controls.Add(this.chkIgnoreDeliveryIfCharge);
             this.groupBox8.Controls.Add(this.chkIgnoreDelivery);
             this.groupBox8.Controls.Add(this.chkDeliveryChge);
-            this.groupBox8.Controls.Add(this.txtMile);
-            this.groupBox8.Controls.Add(this.labelControl2);
             this.groupBox8.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox8.Location = new System.Drawing.Point(25, 226);
             this.groupBox8.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -1010,16 +1006,6 @@
             this.groupBox8.TabIndex = 1;
             this.groupBox8.TabStop = false;
             this.groupBox8.Text = "Charge Options";
-            // 
-            // labelControl5
-            // 
-            this.labelControl5.Appearance.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelControl5.Location = new System.Drawing.Point(491, 53);
-            this.labelControl5.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.labelControl5.Name = "labelControl5";
-            this.labelControl5.Size = new System.Drawing.Size(40, 21);
-            this.labelControl5.TabIndex = 15;
-            this.labelControl5.Text = "Miles";
             // 
             // chkIgnoreDelivery
             // 
@@ -1031,6 +1017,7 @@
             this.chkIgnoreDelivery.Properties.Caption = "Ignore Delivery Distance Charge If Surcharge Applies";
             this.chkIgnoreDelivery.Size = new System.Drawing.Size(474, 25);
             this.chkIgnoreDelivery.TabIndex = 14;
+            this.chkIgnoreDelivery.CheckedChanged += new System.EventHandler(this.chkIgnoreDelivery_CheckedChanged);
             // 
             // chkDeliveryChge
             // 
@@ -1042,28 +1029,6 @@
             this.chkDeliveryChge.Properties.Caption = "Delivery Charge Includes In Order";
             this.chkDeliveryChge.Size = new System.Drawing.Size(319, 25);
             this.chkDeliveryChge.TabIndex = 13;
-            // 
-            // txtMile
-            // 
-            this.txtMile.Location = new System.Drawing.Point(434, 47);
-            this.txtMile.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.txtMile.Name = "txtMile";
-            this.txtMile.Properties.Appearance.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtMile.Properties.Appearance.Options.UseFont = true;
-            this.txtMile.Properties.Mask.EditMask = "n2";
-            this.txtMile.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Numeric;
-            this.txtMile.Size = new System.Drawing.Size(52, 28);
-            this.txtMile.TabIndex = 12;
-            // 
-            // labelControl2
-            // 
-            this.labelControl2.Appearance.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelControl2.Location = new System.Drawing.Point(11, 57);
-            this.labelControl2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.labelControl2.Name = "labelControl2";
-            this.labelControl2.Size = new System.Drawing.Size(382, 21);
-            this.labelControl2.TabIndex = 11;
-            this.labelControl2.Text = "Ignore Delivery Surcharge When Distance Exceeds";
             // 
             // groupBox7
             // 
@@ -1765,6 +1730,18 @@
             this.btnSave.Text = "Save";
             this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
+            // chkIgnoreDeliveryIfCharge
+            // 
+            this.chkIgnoreDeliveryIfCharge.Location = new System.Drawing.Point(11, 53);
+            this.chkIgnoreDeliveryIfCharge.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.chkIgnoreDeliveryIfCharge.Name = "chkIgnoreDeliveryIfCharge";
+            this.chkIgnoreDeliveryIfCharge.Properties.Appearance.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.chkIgnoreDeliveryIfCharge.Properties.Appearance.Options.UseFont = true;
+            this.chkIgnoreDeliveryIfCharge.Properties.Caption = "Ignore Delivery Surcharge if Delivery Charge Applies";
+            this.chkIgnoreDeliveryIfCharge.Size = new System.Drawing.Size(474, 25);
+            this.chkIgnoreDeliveryIfCharge.TabIndex = 15;
+            this.chkIgnoreDeliveryIfCharge.CheckedChanged += new System.EventHandler(this.chkIgnoreDeliveryIfCharge_CheckedChanged);
+            // 
             // FrmTaConf
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 14F);
@@ -1833,10 +1810,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.txtSurchargeAmount.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtOrderThreshold.Properties)).EndInit();
             this.groupBox8.ResumeLayout(false);
-            this.groupBox8.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.chkIgnoreDelivery.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.chkDeliveryChge.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtMile.Properties)).EndInit();
             this.groupBox7.ResumeLayout(false);
             this.groupBox7.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.txtPerMile.Properties)).EndInit();
@@ -1860,6 +1835,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.txtIncrement.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtOtherName.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtEngName.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.chkIgnoreDeliveryIfCharge.Properties)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -1915,11 +1891,8 @@
         private System.Windows.Forms.GroupBox groupBox9;
         private System.Windows.Forms.GroupBox groupBox8;
         private System.Windows.Forms.GroupBox groupBox7;
-        private DevExpress.XtraEditors.LabelControl labelControl5;
         private DevExpress.XtraEditors.CheckEdit chkIgnoreDelivery;
         private DevExpress.XtraEditors.CheckEdit chkDeliveryChge;
-        private DevExpress.XtraEditors.TextEdit txtMile;
-        private DevExpress.XtraEditors.LabelControl labelControl2;
         private DevExpress.XtraEditors.TextEdit txtSurchargeAmount;
         private DevExpress.XtraEditors.LabelControl labelControl4;
         private DevExpress.XtraEditors.TextEdit txtOrderThreshold;
@@ -1986,5 +1959,6 @@
         private DevExpress.XtraEditors.TextEdit txtAddFreeFoodItem1;
         private System.Windows.Forms.Label label20;
         private System.Windows.Forms.Label label21;
+        private DevExpress.XtraEditors.CheckEdit chkIgnoreDeliveryIfCharge;
     }
 }

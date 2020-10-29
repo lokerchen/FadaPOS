@@ -667,5 +667,181 @@ namespace SuperPOS.Common
             //return "2019-12-15";
         }
         #endregion
+
+        #region 计算Delivery Fee
+        /// <summary>
+        /// 计算Delivery Fee
+        /// </summary>
+        /// <param name="strDistance">用户距离</param>
+        /// <returns></returns>
+        public static decimal GetDeliveryFee(string strDistance, string strOrderTotal)
+        {
+            //结算结果
+            decimal dResult = 0.00m;
+
+            try
+            {
+                //送餐费
+                decimal dDistFee = 0.00m;
+                //附加费
+                decimal dSurcharge = 0.00m;
+                //餐费分隔点
+                decimal dOrderThreshold = 0.00m;
+                //总餐费
+                decimal dOrderTotal = Convert.ToDecimal(strOrderTotal);
+
+                var lstDsd = CommonData.TaDeliverySetDetail.OrderByDescending(s => s.AmountToPay);
+
+                if (lstDsd.Any())
+                {
+                    decimal dDistance = Convert.ToDecimal(strDistance);
+
+                    
+
+                    foreach (var taDeliverySetDetailInfo in lstDsd.Where(taDeliverySetDetailInfo => dDistance >= Convert.ToDecimal(string.IsNullOrEmpty(taDeliverySetDetailInfo.DistFrom) ? "0" : taDeliverySetDetailInfo.DistFrom)
+                                                                                                    && dDistance <= Convert.ToDecimal(string.IsNullOrEmpty(taDeliverySetDetailInfo.DistTo) ? "9999" : taDeliverySetDetailInfo.DistTo)))
+                    {
+                        dDistFee = Convert.ToDecimal(string.IsNullOrEmpty(taDeliverySetDetailInfo.AmountToPay) ? "0" : taDeliverySetDetailInfo.AmountToPay);
+                        break;
+                    }
+
+                    if (dDistFee > 0.0m)
+                    {
+                        var lstDs = CommonData.TaDeliverySet;
+
+                        if (lstDs.Any())
+                        {
+                            TaDeliverySetInfo taDeliverySetInfo = lstDs.FirstOrDefault();
+
+                            if (taDeliverySetInfo.IsIgnoreDelivery.Equals("Y"))
+                            {
+                                dResult = dDistance;
+                            }
+                            else
+                            {
+                                if (taDeliverySetInfo.DeliveryMile.Equals("Y"))
+                                {
+                                    dResult = dOrderTotal < dOrderThreshold
+                                        ? Convert.ToDecimal(taDeliverySetInfo.SurchargeAmount)
+                                        : dDistance;
+                                }
+                                else
+                                {
+                                    dOrderThreshold = Convert.ToDecimal(taDeliverySetInfo.OrderThreshold);
+
+                                    if (dOrderTotal < dOrderThreshold)
+                                        dSurcharge = Convert.ToDecimal(taDeliverySetInfo.SurchargeAmount);
+
+                                    dResult = dDistance + dSurcharge;
+                                }
+                            }
+                        }
+                    }
+                }
+                
+            }
+            catch (Exception ex) {
+                LogHelper.Error("CommonDAL/GetDeliveryFee", ex);
+                return dResult;
+            }
+
+            return dResult;
+        }
+
+        public static decimal GetDeliveryFee(int iCallerID, string strOrderTotal)
+        {
+            //结算结果
+            decimal dResult = 0.00m;
+
+            string strDistance = GetUserDistance(iCallerID.ToString());
+
+            try
+            {
+                //送餐费
+                decimal dDistFee = 0.00m;
+                //附加费
+                decimal dSurcharge = 0.00m;
+                //餐费分隔点
+                decimal dOrderThreshold = 0.00m;
+                //总餐费
+                decimal dOrderTotal = Convert.ToDecimal(strOrderTotal);
+
+                new SystemData().GetTaDeliverySetDetail();
+                var lstDsd = CommonData.TaDeliverySetDetail.OrderByDescending(s => s.AmountToPay);
+
+                if (lstDsd.Any())
+                {
+                    decimal dDistance = Convert.ToDecimal(strDistance);
+                    
+                    foreach (var taDeliverySetDetailInfo in lstDsd.Where(taDeliverySetDetailInfo => dDistance >= Convert.ToDecimal(string.IsNullOrEmpty(taDeliverySetDetailInfo.DistFrom) ? "0" : taDeliverySetDetailInfo.DistFrom)
+                                                                                                    && dDistance <= Convert.ToDecimal(string.IsNullOrEmpty(taDeliverySetDetailInfo.DistTo) ? "9999" : taDeliverySetDetailInfo.DistTo)))
+                    {
+                        dDistFee = Convert.ToDecimal(string.IsNullOrEmpty(taDeliverySetDetailInfo.AmountToPay) ? "0" : taDeliverySetDetailInfo.AmountToPay);
+                        break;
+                    }
+
+                    if (dDistFee > 0.0m)
+                    {
+                        new SystemData().GetTaDeliverySet();
+                        var lstDs = CommonData.TaDeliverySet;
+
+                        if (lstDs.Any())
+                        {
+                            TaDeliverySetInfo taDeliverySetInfo = lstDs.FirstOrDefault();
+                            dOrderThreshold = Convert.ToDecimal(taDeliverySetInfo.OrderThreshold);
+
+                            if (taDeliverySetInfo.DeliveryMile.Equals("Y"))
+                            {
+                                dResult = dDistFee;
+                            }
+                            else
+                            {
+                                if (taDeliverySetInfo.IsIgnoreDelivery.Equals("Y"))
+                                {
+                                    dResult = dOrderTotal < dOrderThreshold ? Convert.ToDecimal(taDeliverySetInfo.SurchargeAmount) : dDistFee;
+                                }
+                                else
+                                {
+                                    if (dOrderTotal < dOrderThreshold)
+                                        dSurcharge = Convert.ToDecimal(taDeliverySetInfo.SurchargeAmount);
+
+                                    dResult = dDistance + dSurcharge;
+                                }
+                            }
+                        }
+                    }
+                }
+
+            }
+            catch (Exception ex)
+            {
+                LogHelper.Error("CommonDAL/GetDeliveryFee", ex);
+                return dResult;
+            }
+
+            return dResult;
+        }
+        #endregion
+
+        #region 依据Caller ID获得Distance
+
+        public static string GetUserDistance(string callerID)
+        {
+            string strResult = "";
+
+            if (!string.IsNullOrEmpty(callerID))
+            {
+                new SystemData().GetTaCustomer();
+                var lstCust = CommonData.TaCustomer.Where(s => s.ID.ToString().Equals(callerID));
+                if (lstCust.Any())
+                {
+                    TaCustomerInfo taCustomerInfo = lstCust.FirstOrDefault();
+                    strResult = taCustomerInfo.cusDistance;
+                }                
+            }
+
+            return strResult;
+        }
+        #endregion
     }
 }

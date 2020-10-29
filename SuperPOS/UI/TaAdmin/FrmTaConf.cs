@@ -268,7 +268,7 @@ namespace SuperPOS.UI.TaAdmin
                     TaDeliverySetInfo taDeliverySetInfo = lstTds.FirstOrDefault();
                     txtPerMile.Text = taDeliverySetInfo.PerMile;
                     chkDeliveryChge.Checked = taDeliverySetInfo.IsDeliveryCharge.Equals("Y");
-                    txtMile.Text = taDeliverySetInfo.DeliveryMile;
+                    chkIgnoreDeliveryIfCharge.Checked = taDeliverySetInfo.DeliveryMile.Equals("Y");
                     chkIgnoreDelivery.Checked = taDeliverySetInfo.IsIgnoreDelivery.Equals("Y");
                     txtOrderThreshold.Text = taDeliverySetInfo.OrderThreshold;
                     txtSurchargeAmount.Text = taDeliverySetInfo.SurchargeAmount;
@@ -276,8 +276,8 @@ namespace SuperPOS.UI.TaAdmin
                 else
                 {
                     txtPerMile.Text = "";
-                    chkDeliveryChge.Checked = false;
-                    txtMile.Text = "";
+                    chkDeliveryChge.Checked = true;
+                    chkIgnoreDeliveryIfCharge.Checked = false;
                     chkIgnoreDelivery.Checked = false;
                     txtOrderThreshold.Text = "";
                     txtSurchargeAmount.Text = "";
@@ -439,7 +439,7 @@ namespace SuperPOS.UI.TaAdmin
                 TaDeliverySetInfo taDeliverySetInfo = new TaDeliverySetInfo();
                 taDeliverySetInfo.PerMile = txtPerMile.Text;
                 taDeliverySetInfo.IsDeliveryCharge = chkDeliveryChge.Checked ? "Y" : "N";
-                taDeliverySetInfo.DeliveryMile = txtMile.Text;
+                taDeliverySetInfo.DeliveryMile = chkIgnoreDeliveryIfCharge.Checked ? "Y" : "N";
                 taDeliverySetInfo.IsIgnoreDelivery = chkIgnoreDelivery.Checked ? "Y" : "N";
                 taDeliverySetInfo.OrderThreshold = txtOrderThreshold.Text;
                 taDeliverySetInfo.SurchargeAmount = txtSurchargeAmount.Text;
@@ -506,6 +506,16 @@ namespace SuperPOS.UI.TaAdmin
                     txtIncrement.Text = taChangeMenuAttrInfo.IncrementPrice;
                 }
             }
+        }
+
+        private void chkIgnoreDelivery_CheckedChanged(object sender, EventArgs e)
+        {
+            chkIgnoreDeliveryIfCharge.Checked = !chkIgnoreDelivery.Checked;
+        }
+
+        private void chkIgnoreDeliveryIfCharge_CheckedChanged(object sender, EventArgs e)
+        {
+            chkIgnoreDelivery.Checked = !chkIgnoreDeliveryIfCharge.Checked;
         }
     }
 }
