@@ -510,12 +510,14 @@ namespace SuperPOS.UI.TaAdmin
 
         private void chkIgnoreDelivery_CheckedChanged(object sender, EventArgs e)
         {
-            chkIgnoreDeliveryIfCharge.Checked = !chkIgnoreDelivery.Checked;
+            //chkIgnoreDeliveryIfCharge.Checked = !chkIgnoreDelivery.Checked;
+            if (chkIgnoreDeliveryIfCharge.Checked) chkIgnoreDeliveryIfCharge.Checked = !chkIgnoreDelivery.Checked;
         }
 
         private void chkIgnoreDeliveryIfCharge_CheckedChanged(object sender, EventArgs e)
         {
-            chkIgnoreDelivery.Checked = !chkIgnoreDeliveryIfCharge.Checked;
+            //chkIgnoreDelivery.Checked = !chkIgnoreDeliveryIfCharge.Checked;
+            if (chkIgnoreDelivery.Checked) chkIgnoreDelivery.Checked = !chkIgnoreDeliveryIfCharge.Checked;
         }
     }
 }
