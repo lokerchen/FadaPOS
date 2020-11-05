@@ -103,9 +103,10 @@
             this.labelControl1.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
             this.labelControl1.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
             this.labelControl1.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
-            this.labelControl1.Location = new System.Drawing.Point(10, 11);
+            this.labelControl1.Location = new System.Drawing.Point(9, 9);
+            this.labelControl1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.labelControl1.Name = "labelControl1";
-            this.labelControl1.Size = new System.Drawing.Size(84, 18);
+            this.labelControl1.Size = new System.Drawing.Size(74, 14);
             this.labelControl1.TabIndex = 0;
             this.labelControl1.Text = "Phone:";
             // 
@@ -144,9 +145,10 @@
             this.panelControl1.Controls.Add(this.labelControl1);
             this.panelControl1.Controls.Add(this.txtAddress);
             this.panelControl1.Controls.Add(this.luePostcode);
-            this.panelControl1.Location = new System.Drawing.Point(6, 6);
+            this.panelControl1.Location = new System.Drawing.Point(5, 5);
+            this.panelControl1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panelControl1.Name = "panelControl1";
-            this.panelControl1.Size = new System.Drawing.Size(1077, 553);
+            this.panelControl1.Size = new System.Drawing.Size(942, 430);
             this.panelControl1.TabIndex = 1;
             // 
             // btnKeyBoard
@@ -156,9 +158,10 @@
             this.btnKeyBoard.Appearance.Options.UseBackColor = true;
             this.btnKeyBoard.Appearance.Options.UseFont = true;
             this.btnKeyBoard.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
-            this.btnKeyBoard.Location = new System.Drawing.Point(243, 329);
+            this.btnKeyBoard.Location = new System.Drawing.Point(213, 256);
+            this.btnKeyBoard.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnKeyBoard.Name = "btnKeyBoard";
-            this.btnKeyBoard.Size = new System.Drawing.Size(828, 50);
+            this.btnKeyBoard.Size = new System.Drawing.Size(724, 39);
             this.btnKeyBoard.TabIndex = 33;
             this.btnKeyBoard.Text = "KeyBoard";
             this.btnKeyBoard.Click += new System.EventHandler(this.btnKeyBoard_Click);
@@ -170,9 +173,10 @@
             this.btnExit.Appearance.Options.UseBackColor = true;
             this.btnExit.Appearance.Options.UseFont = true;
             this.btnExit.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
-            this.btnExit.Location = new System.Drawing.Point(962, 273);
+            this.btnExit.Location = new System.Drawing.Point(842, 212);
+            this.btnExit.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnExit.Name = "btnExit";
-            this.btnExit.Size = new System.Drawing.Size(110, 50);
+            this.btnExit.Size = new System.Drawing.Size(96, 39);
             this.btnExit.TabIndex = 32;
             this.btnExit.Text = "Exit";
             this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
@@ -180,13 +184,14 @@
             // chkBlackListed
             // 
             this.chkBlackListed.AutoSizeInLayoutControl = true;
-            this.chkBlackListed.Location = new System.Drawing.Point(13, 524);
+            this.chkBlackListed.Location = new System.Drawing.Point(11, 408);
+            this.chkBlackListed.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.chkBlackListed.Name = "chkBlackListed";
             this.chkBlackListed.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.chkBlackListed.Properties.Appearance.Options.UseFont = true;
             this.chkBlackListed.Properties.AutoHeight = false;
             this.chkBlackListed.Properties.Caption = "Black Listed";
-            this.chkBlackListed.Size = new System.Drawing.Size(224, 26);
+            this.chkBlackListed.Size = new System.Drawing.Size(196, 26);
             this.chkBlackListed.TabIndex = 31;
             // 
             // btnExport
@@ -196,9 +201,10 @@
             this.btnExport.Appearance.Options.UseBackColor = true;
             this.btnExport.Appearance.Options.UseFont = true;
             this.btnExport.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
-            this.btnExport.Location = new System.Drawing.Point(842, 273);
+            this.btnExport.Location = new System.Drawing.Point(737, 212);
+            this.btnExport.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnExport.Name = "btnExport";
-            this.btnExport.Size = new System.Drawing.Size(110, 50);
+            this.btnExport.Size = new System.Drawing.Size(96, 39);
             this.btnExport.TabIndex = 30;
             this.btnExport.Text = "Export Data";
             this.btnExport.Click += new System.EventHandler(this.btnExport_Click);
@@ -210,9 +216,10 @@
             this.btnImport.Appearance.Options.UseBackColor = true;
             this.btnImport.Appearance.Options.UseFont = true;
             this.btnImport.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
-            this.btnImport.Location = new System.Drawing.Point(722, 273);
+            this.btnImport.Location = new System.Drawing.Point(632, 212);
+            this.btnImport.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnImport.Name = "btnImport";
-            this.btnImport.Size = new System.Drawing.Size(110, 50);
+            this.btnImport.Size = new System.Drawing.Size(96, 39);
             this.btnImport.TabIndex = 29;
             this.btnImport.Text = "Import Data";
             this.btnImport.Click += new System.EventHandler(this.btnImport_Click);
@@ -224,9 +231,10 @@
             this.btnDelete.Appearance.Options.UseBackColor = true;
             this.btnDelete.Appearance.Options.UseFont = true;
             this.btnDelete.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
-            this.btnDelete.Location = new System.Drawing.Point(482, 273);
+            this.btnDelete.Location = new System.Drawing.Point(422, 212);
+            this.btnDelete.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnDelete.Name = "btnDelete";
-            this.btnDelete.Size = new System.Drawing.Size(110, 50);
+            this.btnDelete.Size = new System.Drawing.Size(96, 39);
             this.btnDelete.TabIndex = 28;
             this.btnDelete.Text = "Delete";
             this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
@@ -238,9 +246,10 @@
             this.btnSave.Appearance.Options.UseBackColor = true;
             this.btnSave.Appearance.Options.UseFont = true;
             this.btnSave.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
-            this.btnSave.Location = new System.Drawing.Point(362, 273);
+            this.btnSave.Location = new System.Drawing.Point(317, 212);
+            this.btnSave.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnSave.Name = "btnSave";
-            this.btnSave.Size = new System.Drawing.Size(110, 50);
+            this.btnSave.Size = new System.Drawing.Size(96, 39);
             this.btnSave.TabIndex = 27;
             this.btnSave.Text = "Save";
             this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
@@ -252,9 +261,10 @@
             this.btnNew.Appearance.Options.UseBackColor = true;
             this.btnNew.Appearance.Options.UseFont = true;
             this.btnNew.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
-            this.btnNew.Location = new System.Drawing.Point(242, 273);
+            this.btnNew.Location = new System.Drawing.Point(212, 212);
+            this.btnNew.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnNew.Name = "btnNew";
-            this.btnNew.Size = new System.Drawing.Size(110, 50);
+            this.btnNew.Size = new System.Drawing.Size(96, 39);
             this.btnNew.TabIndex = 26;
             this.btnNew.Text = "New";
             this.btnNew.Click += new System.EventHandler(this.btnNew_Click);
@@ -266,37 +276,42 @@
             this.btnClear.Appearance.Options.UseBackColor = true;
             this.btnClear.Appearance.Options.UseFont = true;
             this.btnClear.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
-            this.btnClear.Location = new System.Drawing.Point(602, 273);
+            this.btnClear.Location = new System.Drawing.Point(527, 212);
+            this.btnClear.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnClear.Name = "btnClear";
-            this.btnClear.Size = new System.Drawing.Size(110, 50);
+            this.btnClear.Size = new System.Drawing.Size(96, 39);
             this.btnClear.TabIndex = 25;
             this.btnClear.Text = "Clear";
             this.btnClear.Click += new System.EventHandler(this.btnClear_Click);
             // 
             // txtHouseNo
             // 
-            this.txtHouseNo.Location = new System.Drawing.Point(112, 89);
+            this.txtHouseNo.Location = new System.Drawing.Point(98, 69);
+            this.txtHouseNo.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtHouseNo.Name = "txtHouseNo";
             this.txtHouseNo.Properties.AutoHeight = false;
-            this.txtHouseNo.Size = new System.Drawing.Size(125, 24);
+            this.txtHouseNo.Size = new System.Drawing.Size(109, 24);
             this.txtHouseNo.TabIndex = 24;
             // 
             // labelControl9
             // 
             this.labelControl9.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
             this.labelControl9.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
-            this.labelControl9.Location = new System.Drawing.Point(10, 95);
+            this.labelControl9.Location = new System.Drawing.Point(9, 74);
+            this.labelControl9.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.labelControl9.Name = "labelControl9";
-            this.labelControl9.Size = new System.Drawing.Size(84, 18);
+            this.labelControl9.Size = new System.Drawing.Size(74, 14);
             this.labelControl9.TabIndex = 23;
             this.labelControl9.Text = "House No.:";
             // 
             // gridControlCustomer
             // 
-            this.gridControlCustomer.Location = new System.Drawing.Point(243, 5);
+            this.gridControlCustomer.EmbeddedNavigator.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.gridControlCustomer.Location = new System.Drawing.Point(213, 4);
             this.gridControlCustomer.MainView = this.gvCompCustomer;
+            this.gridControlCustomer.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.gridControlCustomer.Name = "gridControlCustomer";
-            this.gridControlCustomer.Size = new System.Drawing.Size(830, 262);
+            this.gridControlCustomer.Size = new System.Drawing.Size(726, 204);
             this.gridControlCustomer.TabIndex = 22;
             this.gridControlCustomer.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gvCompCustomer});
@@ -427,46 +442,51 @@
             // 
             // txtNotesOnBill
             // 
-            this.txtNotesOnBill.Location = new System.Drawing.Point(112, 487);
+            this.txtNotesOnBill.Location = new System.Drawing.Point(98, 379);
+            this.txtNotesOnBill.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtNotesOnBill.Name = "txtNotesOnBill";
             this.txtNotesOnBill.Properties.AutoHeight = false;
-            this.txtNotesOnBill.Size = new System.Drawing.Size(125, 24);
+            this.txtNotesOnBill.Size = new System.Drawing.Size(109, 24);
             this.txtNotesOnBill.TabIndex = 19;
             // 
             // labelControl11
             // 
             this.labelControl11.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
             this.labelControl11.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
-            this.labelControl11.Location = new System.Drawing.Point(10, 490);
+            this.labelControl11.Location = new System.Drawing.Point(9, 381);
+            this.labelControl11.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.labelControl11.Name = "labelControl11";
-            this.labelControl11.Size = new System.Drawing.Size(84, 18);
+            this.labelControl11.Size = new System.Drawing.Size(74, 14);
             this.labelControl11.TabIndex = 18;
             this.labelControl11.Text = "Notes on bill:";
             // 
             // txtIntNotes
             // 
-            this.txtIntNotes.Location = new System.Drawing.Point(112, 444);
+            this.txtIntNotes.Location = new System.Drawing.Point(98, 345);
+            this.txtIntNotes.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtIntNotes.Name = "txtIntNotes";
             this.txtIntNotes.Properties.AutoHeight = false;
-            this.txtIntNotes.Size = new System.Drawing.Size(125, 24);
+            this.txtIntNotes.Size = new System.Drawing.Size(109, 24);
             this.txtIntNotes.TabIndex = 17;
             // 
             // labelControl12
             // 
             this.labelControl12.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
             this.labelControl12.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
-            this.labelControl12.Location = new System.Drawing.Point(10, 447);
+            this.labelControl12.Location = new System.Drawing.Point(9, 348);
+            this.labelControl12.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.labelControl12.Name = "labelControl12";
-            this.labelControl12.Size = new System.Drawing.Size(84, 18);
+            this.labelControl12.Size = new System.Drawing.Size(74, 14);
             this.labelControl12.TabIndex = 16;
             this.labelControl12.Text = "Int. Notes:";
             // 
             // txtReadyTime
             // 
-            this.txtReadyTime.Location = new System.Drawing.Point(112, 405);
+            this.txtReadyTime.Location = new System.Drawing.Point(98, 315);
+            this.txtReadyTime.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtReadyTime.Name = "txtReadyTime";
             this.txtReadyTime.Properties.AutoHeight = false;
-            this.txtReadyTime.Size = new System.Drawing.Size(125, 24);
+            this.txtReadyTime.Size = new System.Drawing.Size(109, 24);
             this.txtReadyTime.TabIndex = 15;
             this.txtReadyTime.Click += new System.EventHandler(this.txtReadyTime_Click);
             // 
@@ -474,71 +494,80 @@
             // 
             this.labelControl5.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
             this.labelControl5.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
-            this.labelControl5.Location = new System.Drawing.Point(10, 408);
+            this.labelControl5.Location = new System.Drawing.Point(9, 317);
+            this.labelControl5.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.labelControl5.Name = "labelControl5";
-            this.labelControl5.Size = new System.Drawing.Size(84, 18);
+            this.labelControl5.Size = new System.Drawing.Size(74, 14);
             this.labelControl5.TabIndex = 14;
             this.labelControl5.Text = "Ready Time:";
             // 
             // txtDelCharge
             // 
-            this.txtDelCharge.Location = new System.Drawing.Point(112, 362);
+            this.txtDelCharge.Location = new System.Drawing.Point(98, 282);
+            this.txtDelCharge.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtDelCharge.Name = "txtDelCharge";
             this.txtDelCharge.Properties.AutoHeight = false;
-            this.txtDelCharge.Size = new System.Drawing.Size(125, 24);
+            this.txtDelCharge.Size = new System.Drawing.Size(109, 24);
             this.txtDelCharge.TabIndex = 13;
             // 
             // labelControl6
             // 
             this.labelControl6.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
             this.labelControl6.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
-            this.labelControl6.Location = new System.Drawing.Point(10, 365);
+            this.labelControl6.Location = new System.Drawing.Point(9, 284);
+            this.labelControl6.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.labelControl6.Name = "labelControl6";
-            this.labelControl6.Size = new System.Drawing.Size(84, 18);
+            this.labelControl6.Size = new System.Drawing.Size(74, 14);
             this.labelControl6.TabIndex = 12;
             this.labelControl6.Text = "Del Charge:";
             // 
             // txtPcZone
             // 
-            this.txtPcZone.Location = new System.Drawing.Point(112, 318);
+            this.txtPcZone.Location = new System.Drawing.Point(98, 247);
+            this.txtPcZone.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtPcZone.Name = "txtPcZone";
             this.txtPcZone.Properties.AutoHeight = false;
-            this.txtPcZone.Size = new System.Drawing.Size(125, 24);
+            this.txtPcZone.Size = new System.Drawing.Size(109, 24);
             this.txtPcZone.TabIndex = 11;
             // 
             // labelControl7
             // 
             this.labelControl7.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
             this.labelControl7.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
-            this.labelControl7.Location = new System.Drawing.Point(10, 321);
+            this.labelControl7.Location = new System.Drawing.Point(9, 250);
+            this.labelControl7.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.labelControl7.Name = "labelControl7";
-            this.labelControl7.Size = new System.Drawing.Size(84, 18);
+            this.labelControl7.Size = new System.Drawing.Size(74, 14);
             this.labelControl7.TabIndex = 10;
             this.labelControl7.Text = "PC Zone:";
             // 
             // txtDistance
             // 
-            this.txtDistance.Location = new System.Drawing.Point(112, 275);
+            this.txtDistance.Location = new System.Drawing.Point(98, 214);
+            this.txtDistance.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtDistance.Name = "txtDistance";
             this.txtDistance.Properties.AutoHeight = false;
-            this.txtDistance.Size = new System.Drawing.Size(125, 24);
+            this.txtDistance.Size = new System.Drawing.Size(109, 24);
             this.txtDistance.TabIndex = 9;
+            this.txtDistance.EditValueChanged += new System.EventHandler(this.txtDistance_EditValueChanged);
             // 
             // labelControl8
             // 
             this.labelControl8.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
             this.labelControl8.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
-            this.labelControl8.Location = new System.Drawing.Point(10, 273);
+            this.labelControl8.Location = new System.Drawing.Point(9, 212);
+            this.labelControl8.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.labelControl8.Name = "labelControl8";
-            this.labelControl8.Size = new System.Drawing.Size(84, 18);
+            this.labelControl8.Size = new System.Drawing.Size(74, 14);
             this.labelControl8.TabIndex = 8;
             this.labelControl8.Text = "Distance:";
             // 
             // txtPostcode
             // 
-            this.txtPostcode.Location = new System.Drawing.Point(259, 385);
+            this.txtPostcode.Location = new System.Drawing.Point(227, 299);
+            this.txtPostcode.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtPostcode.Name = "txtPostcode";
-            this.txtPostcode.Size = new System.Drawing.Size(125, 24);
+            this.txtPostcode.Size = new System.Drawing.Size(109, 20);
             this.txtPostcode.TabIndex = 7;
             this.txtPostcode.Visible = false;
             // 
@@ -548,9 +577,10 @@
             this.labelControl3.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
             this.labelControl3.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
             this.labelControl3.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
-            this.labelControl3.Location = new System.Drawing.Point(10, 236);
+            this.labelControl3.Location = new System.Drawing.Point(9, 184);
+            this.labelControl3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.labelControl3.Name = "labelControl3";
-            this.labelControl3.Size = new System.Drawing.Size(84, 18);
+            this.labelControl3.Size = new System.Drawing.Size(74, 14);
             this.labelControl3.TabIndex = 6;
             this.labelControl3.Text = "Postcode:";
             // 
@@ -558,48 +588,54 @@
             // 
             this.labelControl4.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
             this.labelControl4.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
-            this.labelControl4.Location = new System.Drawing.Point(10, 131);
+            this.labelControl4.Location = new System.Drawing.Point(9, 102);
+            this.labelControl4.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.labelControl4.Name = "labelControl4";
-            this.labelControl4.Size = new System.Drawing.Size(84, 18);
+            this.labelControl4.Size = new System.Drawing.Size(74, 14);
             this.labelControl4.TabIndex = 4;
             this.labelControl4.Text = "Address #1:";
             // 
             // txtName
             // 
-            this.txtName.Location = new System.Drawing.Point(112, 48);
+            this.txtName.Location = new System.Drawing.Point(98, 37);
+            this.txtName.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtName.Name = "txtName";
             this.txtName.Properties.AutoHeight = false;
-            this.txtName.Size = new System.Drawing.Size(125, 24);
+            this.txtName.Size = new System.Drawing.Size(109, 24);
             this.txtName.TabIndex = 3;
             // 
             // labelControl2
             // 
             this.labelControl2.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
             this.labelControl2.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
-            this.labelControl2.Location = new System.Drawing.Point(10, 54);
+            this.labelControl2.Location = new System.Drawing.Point(9, 42);
+            this.labelControl2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.labelControl2.Name = "labelControl2";
-            this.labelControl2.Size = new System.Drawing.Size(84, 18);
+            this.labelControl2.Size = new System.Drawing.Size(74, 14);
             this.labelControl2.TabIndex = 2;
             this.labelControl2.Text = "Name:";
             // 
             // txtPhone
             // 
-            this.txtPhone.Location = new System.Drawing.Point(112, 5);
+            this.txtPhone.Location = new System.Drawing.Point(98, 4);
+            this.txtPhone.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtPhone.Name = "txtPhone";
             this.txtPhone.Properties.AutoHeight = false;
-            this.txtPhone.Size = new System.Drawing.Size(125, 24);
+            this.txtPhone.Size = new System.Drawing.Size(109, 24);
             this.txtPhone.TabIndex = 1;
             // 
             // txtAddress
             // 
-            this.txtAddress.Location = new System.Drawing.Point(112, 130);
+            this.txtAddress.Location = new System.Drawing.Point(98, 101);
+            this.txtAddress.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtAddress.Name = "txtAddress";
-            this.txtAddress.Size = new System.Drawing.Size(125, 86);
+            this.txtAddress.Size = new System.Drawing.Size(109, 67);
             this.txtAddress.TabIndex = 5;
             // 
             // luePostcode
             // 
-            this.luePostcode.Location = new System.Drawing.Point(112, 233);
+            this.luePostcode.Location = new System.Drawing.Point(98, 181);
+            this.luePostcode.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.luePostcode.Name = "luePostcode";
             this.luePostcode.Properties.AutoHeight = false;
             this.luePostcode.Properties.BestFitMode = DevExpress.XtraEditors.Controls.BestFitMode.BestFit;
@@ -607,7 +643,7 @@
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.luePostcode.Properties.NullText = "[Please select...]";
             this.luePostcode.Properties.View = this.searchLookUpEdit1View;
-            this.luePostcode.Size = new System.Drawing.Size(125, 24);
+            this.luePostcode.Size = new System.Drawing.Size(109, 24);
             this.luePostcode.TabIndex = 34;
             this.luePostcode.EditValueChanged += new System.EventHandler(this.luePostcode_EditValueChanged);
             // 
@@ -620,11 +656,12 @@
             // 
             // FrmTaCustomerInfo
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 18F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 14F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1089, 564);
+            this.ClientSize = new System.Drawing.Size(953, 439);
             this.Controls.Add(this.panelControl1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "FrmTaCustomerInfo";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "FrmTaCustomerInfo";

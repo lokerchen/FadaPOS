@@ -32,6 +32,11 @@ namespace SuperPOS.UI.TA
         //来电号码
         private string cusNum = "";
 
+        //电话来源号码
+        private string sCallerPhoneNum = "";
+        //订单总额
+        private string sOrderTotal = "0.00";
+
         private int cusID = 0;
 
         // 申明要使用的dll和api
@@ -56,13 +61,14 @@ namespace SuperPOS.UI.TA
         public FrmTaCustomerInfo(string sComePhoe)
         {
             InitializeComponent();
-            cusNum = sComePhoe;
+            sCallerPhoneNum = sComePhoe;
         }
 
-        public FrmTaCustomerInfo(int cID)
+        public FrmTaCustomerInfo(int cID, string sTotal)
         {
             InitializeComponent();
             cusID = cID;
+            sOrderTotal = sTotal;
         }
 
         public TaCustomerInfo CustomerInfo
@@ -84,33 +90,49 @@ namespace SuperPOS.UI.TA
 
             if (string.IsNullOrEmpty(cusNum))
             {
-                txtPhone.Text = "";
-                txtName.Text = "";
-                txtHouseNo.Text = "";
-                txtAddress.Text = "";
-                txtPcZone.Text = "";
-                txtDistance.Text = "";
-                luePostcode.Text = "";
-                txtDelCharge.Text = "";
-                txtReadyTime.Text = "";
-                txtIntNotes.Text = "";
-                txtNotesOnBill.Text = "";
-                chkBlackListed.Checked = false;
+                if (string.IsNullOrEmpty(sCallerPhoneNum))
+                {
+                    txtPhone.Text = "";
+                    txtName.Text = "";
+                    txtHouseNo.Text = "";
+                    txtAddress.Text = "";
+                    txtPcZone.Text = "";
+                    txtDistance.Text = "";
+                    luePostcode.Text = "";
+                    txtDelCharge.Text = "";
+                    txtReadyTime.Text = "";
+                    txtIntNotes.Text = "";
+                    txtNotesOnBill.Text = "";
+                    chkBlackListed.Checked = false;
+                }
+                else
+                {
+                    btnNew_Click(sender, e);
+                    txtPhone.Text = sCallerPhoneNum;
+                }
+
             }
             else
             {
-                if (gvCompCustomer.FocusedRowHandle >= 0)
+                string sTemp = string.IsNullOrEmpty(sCallerPhoneNum) ? cusNum : sCallerPhoneNum;
+                
+                bool isExit = false;
+                for (int i = 0; i < gvCompCustomer.RowCount; i++)
                 {
-                    for (int i = 0; i < gvCompCustomer.RowCount; i++)
-                    {
-                        string colValue = gvCompCustomer.GetRowCellValue(i, "cusPhone").ToString();
+                    string colValue = gvCompCustomer.GetRowCellValue(i, "cusPhone").ToString();
 
-                        if (colValue.Equals(cusNum))
-                        {
-                            gvCompCustomer.FocusedRowHandle = i;
-                            break;
-                        }
+                    if (colValue.Equals(sTemp))
+                    {
+                        gvCompCustomer.FocusedRowHandle = i;
+                        isExit = true;
+                        break;
                     }
+                }
+
+                if (!isExit && !string.IsNullOrEmpty(sCallerPhoneNum))
+                {
+                    btnNew_Click(sender, e);
+                    txtPhone.Text = sCallerPhoneNum;
                 }
             }
             asfc.controllInitializeSize(this);
@@ -478,9 +500,17 @@ namespace SuperPOS.UI.TA
 
                 if (frmTaCustReadyTime.ShowDialog() == DialogResult.OK)
                 {
-                    txtReadyTime.Text = frmTaCustReadyTime.strShopTime;
+                    if (!string.IsNullOrEmpty(frmTaCustReadyTime.strShopTime))
+                    {
+                        txtReadyTime.Text = frmTaCustReadyTime.strShopTime;
+                    }
                 }
             }
+        }
+
+        private void txtDistance_EditValueChanged(object sender, EventArgs e)
+        {
+            CommonDAL.GetDeliveryFee(txtDistance.Text, "0.00");
         }
     }
 }

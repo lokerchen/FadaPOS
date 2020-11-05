@@ -57,6 +57,7 @@
     <Compile Include="Entities\TaCashDrawSetInfo.cs" />
     <Compile Include="Entities\TaChangeMenuAttrInfo.cs" />
     <Compile Include="Entities\TaCheckOrderInfo.cs" />
+    <Compile Include="Entities\TaComePhoneInfo.cs" />
     <Compile Include="Entities\TaConfMenuDisplayFontInfo.cs" />
     <Compile Include="Entities\TaCustomerInfo.cs" />
     <Compile Include="Entities\TaDeliveryNoteInfo.cs" />
@@ -169,6 +170,7 @@
     <EmbeddedResource Include="Mappings\TaMenuItemSubMenuInfo.hbm.xml" />
     <EmbeddedResource Include="Mappings\TaFreeFoodAddInfo.hbm.xml" />
     <EmbeddedResource Include="Mappings\TaSysPrtSetGeneralInfo.hbm.xml" />
+    <EmbeddedResource Include="Mappings\TaComePhoneInfo.hbm.xml" />
     <Content Include="Mappings\TaPaymentInfo.hbm.xml" />
     <EmbeddedResource Include="Mappings\TaPostcodeChargeInfo.hbm.xml" />
     <EmbeddedResource Include="Mappings\TaPostcodeZoneInfo.hbm.xml" />

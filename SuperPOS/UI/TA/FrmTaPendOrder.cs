@@ -68,6 +68,10 @@ namespace SuperPOS.UI.TA
 
         private AutoSizeFormClass asfc = new AutoSizeFormClass();
 
+        private string strOrderNo = "";
+        private string strBusDate = "";
+        private string strCustPhone = "";
+
         public FrmTaPendOrder()
         {
             InitializeComponent();
@@ -77,6 +81,14 @@ namespace SuperPOS.UI.TA
         {
             InitializeComponent();
             usrID = uID;
+        }
+
+        public FrmTaPendOrder(string sOrderNo, string sBusDate, string sCustPhone)
+        {
+            InitializeComponent();
+            strOrderNo = sOrderNo;
+            strBusDate = sBusDate;
+            strCustPhone = sCustPhone;
         }
 
         private void GetBindData(string orderType, int iDriver, bool isSaveOrder)
@@ -171,6 +183,23 @@ namespace SuperPOS.UI.TA
             gvTaPendOrder.Columns["OrderTime"].BestFit();
             
             txtTotal.Text = lstTmp.Sum(s => Convert.ToDecimal(string.IsNullOrEmpty(s.TotalAmount)? "0.00" : s.TotalAmount)).ToString();
+
+            if (!string.IsNullOrEmpty(strOrderNo) && !string.IsNullOrEmpty(strBusDate) && !string.IsNullOrEmpty(strCustPhone))
+            {
+                if (gvTaPendOrder.FocusedRowHandle >= 0)
+                {
+                    for (int i = 0; i < gvTaPendOrder.RowCount; i++)
+                    {
+                        string colValue = gvTaPendOrder.GetRowCellValue(i, "CheckCode").ToString();
+
+                        if (colValue.Equals(strCustPhone))
+                        {
+                            gvTaPendOrder.FocusedRowHandle = i;
+                            break;
+                        }
+                    }
+                }
+            }
         }
 
         private void FrmTaPendOrder_Load(object sender, EventArgs e)

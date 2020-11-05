@@ -21,9 +21,11 @@ namespace SuperPOS.UI.TA
         //点击按钮名字
         private string objName = "txtHour";
 
+        private string sShopTime = "";
+
         public string strShopTime
         {
-            get { return txtHour.Text + @":" + txtMinute.Text; }
+            get { return sShopTime; }
             set { strShopTime = value; }
         }
 
@@ -34,7 +36,7 @@ namespace SuperPOS.UI.TA
 
         private void btnExit_Click(object sender, EventArgs e)
         {
-            strShopTime = @"";
+            sShopTime = @"";
             Close();
         }
 
@@ -58,31 +60,40 @@ namespace SuperPOS.UI.TA
         private void btnNum_Click(object sender, EventArgs e)
         {
             var btn = (SimpleButton)sender;
-
-            string tmpHour = txtHour.Text;
-            string tmpMinute = txtMinute.Text;
-
+            
             if (objName.Equals("txtHour"))
             {
                 if (txtHour.Text.Length >= 2)
                 {
                     txtHour.Text = txtHour.Text.Substring(1, txtHour.Text.Length - 1) + btn.Text;
+
+                    if (Convert.ToInt32(txtHour.Text) >= 24)
+                    {
+                        txtHour.Text = btn.Text;
+                    }
+                    else
+                    {
+                        objName = "txtMinute";
+                    }
                 }
                 else
+                {
                     txtHour.Text += btn.Text;
 
-                if (Convert.ToInt32(txtHour.Text) >= 24) txtHour.Text = tmpHour;
+                    if (txtHour.Text.Length >= 2) objName = "txtMinute";
+                }
+                    
             }
             else if (objName.Equals("txtMinute"))
             {
                 if (txtMinute.Text.Length >= 2)
                 {
                     txtMinute.Text = txtMinute.Text.Substring(1, txtMinute.Text.Length - 1) + btn.Text;
+
+                    if (Convert.ToInt32(txtMinute.Text) >= 60) txtMinute.Text = btn.Text;
                 }
                 else
                     txtMinute.Text += btn.Text;
-
-                if (Convert.ToInt32(txtMinute.Text) >= 60) txtMinute.Text = tmpMinute;
             }
         }
         #endregion
@@ -141,19 +152,21 @@ namespace SuperPOS.UI.TA
 
         private void btnClr_Click(object sender, EventArgs e)
         {
-            if (objName.Equals("txtHour"))
-            {
-                txtHour.Text = "";
-            }
-            else if (objName.Equals("txtMinute"))
-            {
-                txtMinute.Text = "";
-            }
-            
+            //if (objName.Equals("txtHour"))
+            //{
+            //    txtHour.Text = "";
+            //}
+            //else if (objName.Equals("txtMinute"))
+            //{
+            //    txtMinute.Text = "";
+            //}
+            txtHour.Text = "";
+            txtMinute.Text = "";
         }
 
         private void btnOK_Click(object sender, EventArgs e)
         {
+            sShopTime = txtHour.Text + @":" + txtMinute.Text;
             this.DialogResult = DialogResult.OK;
             Close();
         }

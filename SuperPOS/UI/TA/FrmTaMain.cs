@@ -112,6 +112,8 @@ namespace SuperPOS.UI.TA
         #endregion
 
         private Hashtable ht = new Hashtable();
+
+        private bool isCalling = false;
         
         #region 来电显示相关
         [StructLayout(LayoutKind.Sequential)]
@@ -151,6 +153,16 @@ namespace SuperPOS.UI.TA
             usrID = id;
             CustID = cusId;
             strBusDate = string.IsNullOrEmpty(sBusDate) ? CommonDAL.GetBusDate() : sBusDate;
+        }
+
+        public FrmTaMain(string cId, int id, int cusId, string sBusDate, bool isCall)
+        {
+            InitializeComponent();
+            checkID = cId;
+            usrID = id;
+            CustID = cusId;
+            strBusDate = string.IsNullOrEmpty(sBusDate) ? CommonDAL.GetBusDate() : sBusDate;
+            isCalling = isCall;
         }
 
         #region 事件
@@ -205,24 +217,15 @@ namespace SuperPOS.UI.TA
                 SaveCheckOrder(lstTaOI, true);
                 #endregion
 
+                //如果是来电显示的，保存后直接关闭当前窗口
+                if (isCalling) this.Close();
+
                 treeListOrder.Nodes.Clear();
 
                 #region 清空会员信息
-                lblName.Text = "";
-                lblPhone.Text = "";
-                lblAddress.Text = "";
-                lblPostcode.Text = "";
-                lblDistance.Text = "";
-                lblDiliveryFee.Text = "";
+                SetCustInfo(true, true, null);
 
                 ORDER_TYPE = PubComm.ORDER_TYPE_SHOP;
-
-                lblCustName.Visible = false;
-                lblCustPhone.Visible = false;
-                lblCustAddress.Visible = false;
-                lblCustPostcode.Visible = false;
-                lblCustDistance.Visible = false;
-                lblCustDeliveryFee.Visible = false;
                 #endregion
 
                 checkID = CommonDAL.GetCheckCode();
@@ -721,43 +724,7 @@ namespace SuperPOS.UI.TA
             #endregion
 
             ht = SetPrtInfo(lstTaOI);
-            //ORDER_TYPE_SHOP
-            //lblTypeName.Text = ORDER_TYPE;
-            //if (ORDER_TYPE.Equals(PubComm.ORDER_TYPE_SHOP))
-            //{
-            //    PaymentPubLoad();
-
-            //    ReloadParam(true);
-            //    QueryPayment();
-            //    lueNote.Visible = false;
-            //    gbDriver.Visible = false;
-
-            //    btnCollection.Visible = false;
-            //}
-            //else if (ORDER_TYPE.Equals(PubComm.ORDER_TYPE_DELIVERY))
-            //{
-            //    PaymentPubLoad();
-
-            //    ReloadParam(true);
-            //    QueryPayment();
-            //    lueNote.Visible = true;
-            //    gbDriver.Visible = true;
-
-            //    btnCollection.Visible = true;
-            //    btnCollection.Text = @"Collection";
-            //}
-            //else if (ORDER_TYPE.Equals(PubComm.ORDER_TYPE_COLLECTION))
-            //{
-            //    PaymentPubLoad();
-
-            //    ReloadParam(true);
-            //    QueryPayment();
-            //    lueNote.Visible = true;
-            //    gbDriver.Visible = false;
-
-            //    btnCollection.Visible = true;
-            //    btnCollection.Text = @"Delivery";
-            //}
+   
             if (ORDER_TYPE.Equals(PubComm.ORDER_TYPE_SHOP))
             {
                 FrmTaPaymentShop frmTaPaymentShop = new FrmTaPaymentShop(usrID, checkID, ORDER_TYPE, CustID.ToString(), ht, strBusDate);
@@ -1576,116 +1543,179 @@ namespace SuperPOS.UI.TA
             return (constructedString);
         }
 
-        //protected override void DefWndProc(ref System.Windows.Forms.Message m)
-        //{
-        //    switch (m.Msg)
-        //    {
-        //        case BriSDKLib.BRI_EVENT_MESSAGE:
-        //            {
-        //                BriSDKLib.TBriEvent_Data EventData = (BriSDKLib.TBriEvent_Data)Marshal.PtrToStructure(m.LParam, typeof(BriSDKLib.TBriEvent_Data));
-        //                string strValue = "";
-                        
-        //                if (BriSDKLib.QNV_SetParam(EventData.uChannelID, BriSDKLib.QNV_PARAM_RINGCALLIDTYPE, BriSDKLib.DIALTYPE_FSK) <= 0)
-        //                {
-        //                    AppendStatus("QNV_PARAM_RINGCALLIDTYPE");
-        //                    return;
-        //                }
+        protected override void DefWndProc(ref System.Windows.Forms.Message m)
+        {
+            switch (m.Msg)
+            {
+                case BriSDKLib.BRI_EVENT_MESSAGE:
+                    {
+                        BriSDKLib.TBriEvent_Data EventData = (BriSDKLib.TBriEvent_Data)Marshal.PtrToStructure(m.LParam, typeof(BriSDKLib.TBriEvent_Data));
+                        string strValue = "";
 
-        //                if (BriSDKLib.QNV_SetParam(EventData.uChannelID, BriSDKLib.QNV_PARAM_AM_LINEIN, 6) <= 0)
-        //                {
-        //                    AppendStatus("QNV_PARAM_AM_LINEIN");
-        //                    return;
-        //                }
+                        if (BriSDKLib.QNV_SetParam(EventData.uChannelID, BriSDKLib.QNV_PARAM_RINGCALLIDTYPE, BriSDKLib.DIALTYPE_FSK) <= 0)
+                        {
+                            AppendStatus("QNV_PARAM_RINGCALLIDTYPE");
+                            return;
+                        }
 
-        //                if (BriSDKLib.QNV_SetDevCtrl(EventData.uChannelID, BriSDKLib.QNV_CTRL_RECVFSK, 1) <= 0)
-        //                {
-        //                    AppendStatus("QNV_CTRL_RECVFSK");
-        //                    return;
-        //                }
+                        if (BriSDKLib.QNV_SetParam(EventData.uChannelID, BriSDKLib.QNV_PARAM_AM_LINEIN, 6) <= 0)
+                        {
+                            AppendStatus("QNV_PARAM_AM_LINEIN");
+                            return;
+                        }
 
-        //                if (BriSDKLib.QNV_SetDevCtrl(EventData.uChannelID, BriSDKLib.QNV_CTRL_SELECTADCIN, 1) < 0)
-        //                {
-        //                    AppendStatus("QNV_CTRL_SELECTADCIN");
-        //                    return;
-        //                }
+                        if (BriSDKLib.QNV_SetDevCtrl(EventData.uChannelID, BriSDKLib.QNV_CTRL_RECVFSK, 1) <= 0)
+                        {
+                            AppendStatus("QNV_CTRL_RECVFSK");
+                            return;
+                        }
 
-        //                switch (EventData.lEventType)
-        //                {
-        //                    case BriSDKLib.BriEvent_PhoneHook:
-        //                        {
-        //                            strValue = "通道" + (EventData.uChannelID + 1).ToString() + "：电话机摘机";
-        //                        }
-        //                        break;
-        //                    case BriSDKLib.BriEvent_PhoneHang:
-        //                        {
-        //                            strValue = "通道" + (EventData.uChannelID + 1).ToString() + "：电话机挂机";
-        //                        }
-        //                        break;
-        //                    case BriSDKLib.BriEvent_CallIn:
-        //                        {////两声响铃结束后开始呼叫转移到CC
-        //                            //AppendStatus(BriSDKLib.BriEvent_CallIn.ToString());
-        //                            strValue = "通道" + (EventData.uChannelID + 1).ToString() + "：来电响铃：" + FromASCIIByteArray(EventData.szData);
-        //                        }
-        //                        break;
-        //                    case BriSDKLib.BriEvent_GetCallID:
-        //                        {
-        //                            //AppendStatus(BriSDKLib.BriEvent_GetCallID.ToString());
-        //                            //strValue = "通道" + (EventData.uChannelID + 1).ToString() + "：接收到来电号码 " + FromASCIIByteArray(EventData.szData);
+                        if (BriSDKLib.QNV_SetDevCtrl(EventData.uChannelID, BriSDKLib.QNV_CTRL_SELECTADCIN, 1) < 0)
+                        {
+                            AppendStatus("QNV_CTRL_SELECTADCIN");
+                            return;
+                        }
 
-        //                            //MessageBox.Show(strValue);
-        //                            string CallerPhone = FromASCIIByteArray(EventData.szData);
+                        switch (EventData.lEventType)
+                        {
+                            case BriSDKLib.BriEvent_PhoneHook:
+                                {
+                                    strValue = "通道" + (EventData.uChannelID + 1).ToString() + "：电话机摘机";
+                                }
+                                break;
+                            case BriSDKLib.BriEvent_PhoneHang:
+                                {
+                                    strValue = "通道" + (EventData.uChannelID + 1).ToString() + "：电话机挂机";
+                                }
+                                break;
+                            case BriSDKLib.BriEvent_CallIn:
+                                {////两声响铃结束后开始呼叫转移到CC
+                                    //AppendStatus(BriSDKLib.BriEvent_CallIn.ToString());
+                                    strValue = "通道" + (EventData.uChannelID + 1).ToString() + "：来电响铃：" + FromASCIIByteArray(EventData.szData);
+                                }
+                                break;
+                            case BriSDKLib.BriEvent_GetCallID:
+                                {
+                                    //AppendStatus(BriSDKLib.BriEvent_GetCallID.ToString());
+                                    //strValue = "通道" + (EventData.uChannelID + 1).ToString() + "：接收到来电号码 " + FromASCIIByteArray(EventData.szData);
 
-        //                            if (string.IsNullOrEmpty(CallerPhone))
-        //                            {
-        //                                //新客户
-        //                            }
-        //                            else
-        //                            {
-        //                                //老客户
-        //                            }
-        //                        }
-        //                        break;
-        //                    case BriSDKLib.BriEvent_StopCallIn:
-        //                        {
-        //                            strValue = "通道" + (EventData.uChannelID + 1).ToString() + "：停止呼入，产生一个未接电话 ";
-        //                        }
-        //                        break;
-        //                    case BriSDKLib.BriEvent_GetDTMFChar: strValue = "通道" + (EventData.uChannelID + 1).ToString() + "：接收到按键 " + FromASCIIByteArray(EventData.szData); break;
-        //                    case BriSDKLib.BriEvent_RemoteHang:
-        //                        {
-        //                            strValue = "通道" + (EventData.uChannelID + 1).ToString() + "：远程挂机 ";
-        //                        }
-        //                        break;
-        //                    case BriSDKLib.BriEvent_Busy:
-        //                        {
+                                    //MessageBox.Show(strValue);
+                                    try
+                                    {
+                                        #region 来电显示
+                                        string CallerPhone = FromASCIIByteArray(EventData.szData);
 
-        //                            strValue = "通道" + (EventData.uChannelID + 1).ToString() + "：接收到忙音,线路已经断开 ";
-        //                        }
-        //                        break;
-        //                    case BriSDKLib.BriEvent_DialTone: strValue = "通道" + (EventData.uChannelID + 1).ToString() + "：检测到拨号音 "; break;
-        //                    case BriSDKLib.BriEvent_PhoneDial: strValue = "通道" + (EventData.uChannelID + 1).ToString() + "：电话机拨号 " + FromASCIIByteArray(EventData.szData); break;
-        //                    case BriSDKLib.BriEvent_RingBack: strValue = "通道" + (EventData.uChannelID + 1).ToString() + "：拨号后接收到回铃音 "; break;
-        //                    case BriSDKLib.BriEvent_DevErr:
-        //                        {
-        //                            if (EventData.lResult == 3)
-        //                            {
-        //                                strValue = "通道" + (EventData.uChannelID + 1).ToString() + "：设备可能被移除 ";
-        //                            }
-        //                        }
-        //                        break;
-        //                    default: break;
-        //                }
-        //                if (strValue.Length > 0)
-        //                {
-        //                    AppendStatus(strValue);
-        //                }
-        //            }
-        //            break;
-        //        default:
-        //            base.DefWndProc(ref m);
-        //            break;
-        //    }
-        //}
+                                        if (!string.IsNullOrEmpty(CallerPhone))
+                                        {
+                                            if (treeListOrder.Nodes.Count > 0)
+                                            {
+                                                #region 保存TreeList
+                                                new SystemData().GetTaOrderItem();
+                                                var lstDelOi = CommonData.TaOrderItem.Where(s => s.CheckCode.Equals(checkID) && s.BusDate.Equals(strBusDate));
+
+                                                foreach (var taOrderItemInfo in lstDelOi)
+                                                {
+                                                    _control.DeleteEntity(taOrderItemInfo);
+                                                }
+
+                                                List<TaOrderItemInfo> lstTaOI = new List<TaOrderItemInfo>();
+
+                                                lstTaOI = TreeListToOrderItem(isNew);
+
+                                                foreach (var taOrderItemInfo in lstTaOI)
+                                                {
+                                                    new SystemData().GetTaOrderItem();
+
+                                                    if (CommonData.TaOrderItem.Any(s => s.ID == taOrderItemInfo.ID))
+                                                    {
+                                                        _control.UpdateEntity(taOrderItemInfo);
+                                                    }
+                                                    else
+                                                    {
+                                                        _control.AddEntity(taOrderItemInfo);
+                                                    }
+                                                }
+                                                #endregion
+
+                                                #region 保存账单
+                                                SaveCheckOrder(lstTaOI, false);
+                                                #endregion
+                                            }
+
+                                            //新客户
+                                            FrmCaller frmCaller = new FrmCaller(CallerPhone, strBusDate, ORDER_TYPE);
+                                            frmCaller.Location = pcMain.Location;
+                                            frmCaller.Size = pcMain.Size;
+
+                                            if (frmCaller.ShowDialog() == DialogResult.OK)
+                                            {
+                                                TaCustomerInfo taCustomerInfo = new TaCustomerInfo();
+
+                                                ORDER_TYPE = frmCaller.OrderType;
+                                                taCustomerInfo = frmCaller.TaCustomer;
+                                                string strReadTime = frmCaller.ReadyTime;
+
+                                                if (taCustomerInfo == null)
+                                                {
+                                                    SetCustInfo(true, true, null);
+                                                }
+                                                else
+                                                {
+                                                    SetCustInfo(false, false, taCustomerInfo);
+                                                }
+
+                                                ChangeOrderBtnColor(ORDER_TYPE);
+                                            }
+                                        }
+                                        #endregion
+                                    }
+                                    catch (Exception ex) { LogHelper.Error("DefWndProc", ex); }
+                                }
+                                break;
+                            case BriSDKLib.BriEvent_StopCallIn:
+                                {
+                                    strValue = "通道" + (EventData.uChannelID + 1).ToString() + "：停止呼入，产生一个未接电话 ";
+                                    break;
+                                }
+                                break;
+                            case BriSDKLib.BriEvent_GetDTMFChar: strValue = "通道" + (EventData.uChannelID + 1).ToString() + "：接收到按键 " + FromASCIIByteArray(EventData.szData); break;
+                            case BriSDKLib.BriEvent_RemoteHang:
+                                {
+                                    strValue = "通道" + (EventData.uChannelID + 1).ToString() + "：远程挂机 ";
+                                    break;
+                                }
+                                break;
+                            case BriSDKLib.BriEvent_Busy:
+                                {
+
+                                    strValue = "通道" + (EventData.uChannelID + 1).ToString() + "：接收到忙音,线路已经断开 ";
+                                    break;
+                                }
+                                break;
+                            case BriSDKLib.BriEvent_DialTone: strValue = "通道" + (EventData.uChannelID + 1).ToString() + "：检测到拨号音 "; break;
+                            case BriSDKLib.BriEvent_PhoneDial: strValue = "通道" + (EventData.uChannelID + 1).ToString() + "：电话机拨号 " + FromASCIIByteArray(EventData.szData); break;
+                            case BriSDKLib.BriEvent_RingBack: strValue = "通道" + (EventData.uChannelID + 1).ToString() + "：拨号后接收到回铃音 "; break;
+                            case BriSDKLib.BriEvent_DevErr:
+                                {
+                                    if (EventData.lResult == 3)
+                                    {
+                                        strValue = "通道" + (EventData.uChannelID + 1).ToString() + "：设备可能被移除 ";
+                                    }
+                                }
+                                break;
+                            default: break;
+                        }
+                        //if (strValue.Length > 0)
+                        //{
+                        //    AppendStatus(strValue);
+                        //}
+                    }
+                    break;
+                default:
+                    base.DefWndProc(ref m);
+                    break;
+            }
+        }
 
         #region 打开设备
         private bool openDev()
@@ -2273,19 +2303,7 @@ namespace SuperPOS.UI.TA
         {
             if (cID <= 0)
             {
-                lblName.Text = "";
-                lblPhone.Text = "";
-                lblAddress.Text = "";
-                lblPostcode.Text = "";
-                lblDistance.Text = "";
-                lblDiliveryFee.Text = "";
-
-                lblCustName.Visible = false;
-                lblCustPhone.Visible = false;
-                lblCustAddress.Visible = false;
-                lblCustPostcode.Visible = false;
-                lblCustDistance.Visible = false;
-                lblCustDeliveryFee.Visible = false;
+                SetCustInfo(true, true, null);
             }
             else
             {
@@ -2297,35 +2315,11 @@ namespace SuperPOS.UI.TA
                 {
                     TaCustomerInfo taCustomerInfo = lstCust.FirstOrDefault();
 
-                    lblName.Text = taCustomerInfo.cusName;
-                    lblPhone.Text = taCustomerInfo.cusPhone;
-                    lblAddress.Text = taCustomerInfo.cusHouseNo + @" " + taCustomerInfo.cusAddr;
-                    lblPostcode.Text = taCustomerInfo.cusPostcode;
-                    lblDistance.Text = taCustomerInfo.cusDistance;
-                    lblDiliveryFee.Text = taCustomerInfo.cusDelCharge;
-
-                    lblCustName.Visible = true;
-                    lblCustPhone.Visible = true;
-                    lblCustAddress.Visible = true;
-                    lblCustPostcode.Visible = true;
-                    lblCustDistance.Visible = true;
-                    lblCustDeliveryFee.Visible = true;
+                    SetCustInfo(false, false, taCustomerInfo);
                 }
                 else
                 {
-                    lblName.Text = "";
-                    lblPhone.Text = "";
-                    lblAddress.Text = "";
-                    lblPostcode.Text = "";
-                    lblDistance.Text = "";
-                    lblDiliveryFee.Text = "";
-
-                    lblCustName.Visible = false;
-                    lblCustPhone.Visible = false;
-                    lblCustAddress.Visible = false;
-                    lblCustPostcode.Visible = false;
-                    lblCustDistance.Visible = false;
-                    lblCustDeliveryFee.Visible = false;
+                    SetCustInfo(true, true, null);
                 }
             }
         }
@@ -2334,7 +2328,9 @@ namespace SuperPOS.UI.TA
         {
             //if (CustID <= 0)
             //{
-            FrmTaCustomerInfo frmTaCustomerInfo = new FrmTaCustomerInfo(CustID);
+            
+            string sFoot = treeListOrder.Nodes.Count > 0 ? treeListOrder.GetSummaryValue(treeListOrder.Columns[7]).ToString() : "0.00";
+            FrmTaCustomerInfo frmTaCustomerInfo = new FrmTaCustomerInfo(CustID, sFoot);
 
             if (frmTaCustomerInfo.ShowDialog() == DialogResult.OK)
             {
@@ -2343,37 +2339,11 @@ namespace SuperPOS.UI.TA
 
                 if (taCustomerInfo == null)
                 {
-                    CustID = 0;
-                    lblName.Text = "";
-                    lblPhone.Text = "";
-                    lblAddress.Text = "";
-                    lblPostcode.Text = "";
-                    lblDistance.Text = "";
-                    lblDiliveryFee.Text = "";
-
-                    lblCustName.Visible = false;
-                    lblCustPhone.Visible = false;
-                    lblCustAddress.Visible = false;
-                    lblCustPostcode.Visible = false;
-                    lblCustDistance.Visible = false;
-                    lblCustDeliveryFee.Visible = false;
+                    SetCustInfo(true, true, null);
                 }
                 else
                 {
-                    CustID = taCustomerInfo.ID;
-                    lblName.Text = taCustomerInfo.cusName;
-                    lblPhone.Text = taCustomerInfo.cusPhone;
-                    lblAddress.Text = taCustomerInfo.cusHouseNo + @" " + taCustomerInfo.cusAddr;
-                    lblPostcode.Text = taCustomerInfo.cusPostcode;
-                    lblDistance.Text = taCustomerInfo.cusDistance;
-                    lblDiliveryFee.Text = taCustomerInfo.cusDelCharge;
-
-                    lblCustName.Visible = true;
-                    lblCustPhone.Visible = true;
-                    lblCustAddress.Visible = true;
-                    lblCustPostcode.Visible = true;
-                    lblCustDistance.Visible = true;
-                    lblCustDeliveryFee.Visible = true;
+                    SetCustInfo(false, false, taCustomerInfo);
 
                     //存在客户信息时，变更订单类型
                     ORDER_TYPE = PubComm.ORDER_TYPE_DELIVERY;
@@ -3640,20 +3610,138 @@ namespace SuperPOS.UI.TA
 
         private void SetCustClear()
         {
-            CustID = 0;
-            lblName.Text = "";
-            lblPhone.Text = "";
-            lblAddress.Text = "";
-            lblPostcode.Text = "";
-            lblDistance.Text = "";
-            lblDiliveryFee.Text = "";
+            SetCustInfo(true, false, null);
+        }
 
-            lblCustName.Visible = false;
-            lblCustPhone.Visible = false;
-            lblCustAddress.Visible = false;
-            lblCustPostcode.Visible = false;
-            lblCustDistance.Visible = false;
-            lblCustDeliveryFee.Visible = false;
+        private void button1_Click(object sender, EventArgs e)
+        {
+            string CallerPhone = lblPhone.Text;
+            
+            if (!string.IsNullOrEmpty(CallerPhone))
+            {
+                if (treeListOrder.Nodes.Count > 0)
+                {
+                    #region 保存TreeList
+                    new SystemData().GetTaOrderItem();
+                    var lstDelOi = CommonData.TaOrderItem.Where(s => s.CheckCode.Equals(checkID) && s.BusDate.Equals(strBusDate));
+
+                    foreach (var taOrderItemInfo in lstDelOi)
+                    {
+                        _control.DeleteEntity(taOrderItemInfo);
+                    }
+
+                    List<TaOrderItemInfo> lstTaOI = new List<TaOrderItemInfo>();
+
+                    lstTaOI = TreeListToOrderItem(isNew);
+
+                    foreach (var taOrderItemInfo in lstTaOI)
+                    {
+                        new SystemData().GetTaOrderItem();
+
+                        if (CommonData.TaOrderItem.Any(s => s.ID == taOrderItemInfo.ID))
+                        {
+                            _control.UpdateEntity(taOrderItemInfo);
+                        }
+                        else
+                        {
+                            _control.AddEntity(taOrderItemInfo);
+                        }
+                    }
+                    #endregion
+
+                    #region 保存账单
+                    SaveCheckOrder(lstTaOI, false);
+                    #endregion
+                }
+
+                //新客户
+                FrmCaller frmCaller = new FrmCaller(CallerPhone, strBusDate, ORDER_TYPE);
+                frmCaller.Location = pcMain.Location;
+                frmCaller.Size = pcMain.Size;
+
+                if (frmCaller.ShowDialog() == DialogResult.OK)
+                {
+                    TaCustomerInfo taCustomerInfo = new TaCustomerInfo();
+
+                    ORDER_TYPE = frmCaller.OrderType;
+                    taCustomerInfo = frmCaller.TaCustomer;
+                    string strReadTime = frmCaller.ReadyTime;
+
+                    if (taCustomerInfo == null)
+                    {
+                        SetCustInfo(true, true, null);
+                    }
+                    else
+                    {
+                        SetCustInfo(false, false, taCustomerInfo);
+                    }
+
+                    ChangeOrderBtnColor(ORDER_TYPE);
+                }
+            }
+        }
+
+        private void SetCustInfo(bool bStatus, bool bClear, TaCustomerInfo tci)
+        {
+            if (bStatus)
+            {
+                CustID = 0;
+
+                lblName.Text = "";
+                lblPhone.Text = "";
+                lblAddress.Text = "";
+                lblPostcode.Text = "";
+                lblDistance.Text = "";
+                lblDeliveryFee.Text = "";
+                lblReadyTime.Text = "";
+
+                if (bClear)
+                {
+                    lblName.Visible = false;
+                    lblPhone.Visible = false;
+                    lblAddress.Visible = false;
+                    lblPostcode.Visible = false;
+                    lblDistance.Visible = false;
+                    lblDeliveryFee.Visible = false;
+                    lblReadyTime.Visible = false;
+                }
+
+                lblCustName.Visible = false;
+                lblCustPhone.Visible = false;
+                lblCustAddress.Visible = false;
+                lblCustPostcode.Visible = false;
+                lblCustDistance.Visible = false;
+                lblCustDeliveryFee.Visible = false;
+                lblCustReadyTime.Visible = false;
+            }
+            else
+            {
+                CustID = tci.ID;
+
+                lblName.Visible = true;
+                lblPhone.Visible = true;
+                lblAddress.Visible = true;
+                lblPostcode.Visible = true;
+                lblDistance.Visible = true;
+                lblDeliveryFee.Visible = true;
+                lblReadyTime.Visible = true;
+
+                lblName.Text = tci.cusName;
+                lblPhone.Text = tci.cusPhone;
+                lblAddress.Text = tci.cusHouseNo + @" " + tci.cusAddr;
+                lblPostcode.Text = tci.cusPostcode;
+                lblDistance.Text = tci.cusDistance;
+                lblDeliveryFee.Text = tci.cusDelCharge;
+                lblReadyTime.Text = tci.cusReadyTime;
+
+                lblCustName.Visible = true;
+                lblCustPhone.Visible = true;
+                lblCustAddress.Visible = true;
+                lblCustPostcode.Visible = true;
+                lblCustDistance.Visible = true;
+                lblCustDeliveryFee.Visible = true;
+                lblCustReadyTime.Visible = true;
+            }
         }
     }
 }

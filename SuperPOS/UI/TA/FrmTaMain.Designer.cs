@@ -50,7 +50,7 @@
             this.btnOnlineOrder = new DevExpress.XtraEditors.SimpleButton();
             this.btnType = new DevExpress.XtraEditors.SimpleButton();
             this.panelMember = new DevExpress.XtraEditors.PanelControl();
-            this.lblDiliveryFee = new DevExpress.XtraEditors.LabelControl();
+            this.lblDeliveryFee = new DevExpress.XtraEditors.LabelControl();
             this.lblDistance = new DevExpress.XtraEditors.LabelControl();
             this.lblPostcode = new DevExpress.XtraEditors.LabelControl();
             this.lblAddress = new DevExpress.XtraEditors.LabelControl();
@@ -140,6 +140,7 @@
             this.btnMi5 = new DevExpress.XtraEditors.SimpleButton();
             this.btnMi4 = new DevExpress.XtraEditors.SimpleButton();
             this.btnMi2 = new DevExpress.XtraEditors.SimpleButton();
+            this.btnMiLeft = new DevExpress.XtraEditors.SimpleButton();
             this.btnMi1 = new DevExpress.XtraEditors.SimpleButton();
             this.btnMi0 = new DevExpress.XtraEditors.SimpleButton();
             this.btnMi10 = new DevExpress.XtraEditors.SimpleButton();
@@ -152,7 +153,9 @@
             this.lblCheck = new DevExpress.XtraEditors.LabelControl();
             this.btnCustInfo = new DevExpress.XtraEditors.SimpleButton();
             this.btnSearchMeal = new DevExpress.XtraEditors.SimpleButton();
-            this.btnMiLeft = new DevExpress.XtraEditors.SimpleButton();
+            this.lblReadyTime = new DevExpress.XtraEditors.LabelControl();
+            this.lblCustReadyTime = new DevExpress.XtraEditors.LabelControl();
+            this.button1 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.treeListOrder)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemMemoEdit1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
@@ -400,7 +403,9 @@
             // 
             // panelMember
             // 
-            this.panelMember.Controls.Add(this.lblDiliveryFee);
+            this.panelMember.Controls.Add(this.lblReadyTime);
+            this.panelMember.Controls.Add(this.lblCustReadyTime);
+            this.panelMember.Controls.Add(this.lblDeliveryFee);
             this.panelMember.Controls.Add(this.lblDistance);
             this.panelMember.Controls.Add(this.lblPostcode);
             this.panelMember.Controls.Add(this.lblAddress);
@@ -419,15 +424,15 @@
             this.panelMember.TabIndex = 32;
             this.panelMember.Click += new System.EventHandler(this.panelMember_Click);
             // 
-            // lblDiliveryFee
+            // lblDeliveryFee
             // 
-            this.lblDiliveryFee.Appearance.ForeColor = System.Drawing.Color.Red;
-            this.lblDiliveryFee.Location = new System.Drawing.Point(81, 79);
-            this.lblDiliveryFee.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.lblDiliveryFee.Name = "lblDiliveryFee";
-            this.lblDiliveryFee.Size = new System.Drawing.Size(25, 14);
-            this.lblDiliveryFee.TabIndex = 11;
-            this.lblDiliveryFee.Text = "1.50";
+            this.lblDeliveryFee.Appearance.ForeColor = System.Drawing.Color.Red;
+            this.lblDeliveryFee.Location = new System.Drawing.Point(81, 79);
+            this.lblDeliveryFee.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.lblDeliveryFee.Name = "lblDeliveryFee";
+            this.lblDeliveryFee.Size = new System.Drawing.Size(25, 14);
+            this.lblDeliveryFee.TabIndex = 11;
+            this.lblDeliveryFee.Text = "1.50";
             // 
             // lblDistance
             // 
@@ -764,6 +769,7 @@
             // 
             // pcMain
             // 
+            this.pcMain.Controls.Add(this.button1);
             this.pcMain.Controls.Add(this.panelControl5);
             this.pcMain.Controls.Add(this.panelControl3);
             this.pcMain.Controls.Add(this.panelControl2);
@@ -1841,6 +1847,27 @@
             this.btnMi2.Size = new System.Drawing.Size(195, 43);
             this.btnMi2.TabIndex = 30;
             // 
+            // btnMiLeft
+            // 
+            this.btnMiLeft.Appearance.BackColor = System.Drawing.Color.Red;
+            this.btnMiLeft.Appearance.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold);
+            this.btnMiLeft.Appearance.ForeColor = System.Drawing.Color.White;
+            this.btnMiLeft.Appearance.Options.UseBackColor = true;
+            this.btnMiLeft.Appearance.Options.UseFont = true;
+            this.btnMiLeft.Appearance.Options.UseForeColor = true;
+            this.btnMiLeft.Appearance.Options.UseTextOptions = true;
+            this.btnMiLeft.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
+            this.btnMiLeft.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
+            this.btnMiLeft.Image = ((System.Drawing.Image)(resources.GetObject("btnMiLeft.Image")));
+            this.btnMiLeft.ImageLocation = DevExpress.XtraEditors.ImageLocation.MiddleCenter;
+            this.btnMiLeft.Location = new System.Drawing.Point(798, 98);
+            this.btnMiLeft.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnMiLeft.Name = "btnMiLeft";
+            this.btnMiLeft.Size = new System.Drawing.Size(63, 89);
+            this.btnMiLeft.TabIndex = 15;
+            this.btnMiLeft.Text = "<<";
+            this.btnMiLeft.Click += new System.EventHandler(this.btnMiRight_Click);
+            // 
             // btnMi1
             // 
             this.btnMi1.Appearance.BackColor = System.Drawing.Color.Gold;
@@ -2017,26 +2044,37 @@
             this.btnSearchMeal.Visible = false;
             this.btnSearchMeal.Click += new System.EventHandler(this.btnSearchMeal_Click);
             // 
-            // btnMiLeft
+            // lblReadyTime
             // 
-            this.btnMiLeft.Appearance.BackColor = System.Drawing.Color.Red;
-            this.btnMiLeft.Appearance.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold);
-            this.btnMiLeft.Appearance.ForeColor = System.Drawing.Color.White;
-            this.btnMiLeft.Appearance.Options.UseBackColor = true;
-            this.btnMiLeft.Appearance.Options.UseFont = true;
-            this.btnMiLeft.Appearance.Options.UseForeColor = true;
-            this.btnMiLeft.Appearance.Options.UseTextOptions = true;
-            this.btnMiLeft.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
-            this.btnMiLeft.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
-            this.btnMiLeft.Image = ((System.Drawing.Image)(resources.GetObject("btnMiLeft.Image")));
-            this.btnMiLeft.ImageLocation = DevExpress.XtraEditors.ImageLocation.MiddleCenter;
-            this.btnMiLeft.Location = new System.Drawing.Point(798, 98);
-            this.btnMiLeft.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.btnMiLeft.Name = "btnMiLeft";
-            this.btnMiLeft.Size = new System.Drawing.Size(63, 89);
-            this.btnMiLeft.TabIndex = 15;
-            this.btnMiLeft.Text = "<<";
-            this.btnMiLeft.Click += new System.EventHandler(this.btnMiRight_Click);
+            this.lblReadyTime.Appearance.ForeColor = System.Drawing.Color.Red;
+            this.lblReadyTime.Location = new System.Drawing.Point(275, 78);
+            this.lblReadyTime.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.lblReadyTime.Name = "lblReadyTime";
+            this.lblReadyTime.Size = new System.Drawing.Size(32, 14);
+            this.lblReadyTime.TabIndex = 13;
+            this.lblReadyTime.Text = "00:00";
+            // 
+            // lblCustReadyTime
+            // 
+            this.lblCustReadyTime.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
+            this.lblCustReadyTime.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
+            this.lblCustReadyTime.Location = new System.Drawing.Point(198, 78);
+            this.lblCustReadyTime.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.lblCustReadyTime.Name = "lblCustReadyTime";
+            this.lblCustReadyTime.Size = new System.Drawing.Size(74, 14);
+            this.lblCustReadyTime.TabIndex = 12;
+            this.lblCustReadyTime.Text = "Ready Time:";
+            this.lblCustReadyTime.Visible = false;
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(677, 210);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(92, 40);
+            this.button1.TabIndex = 34;
+            this.button1.Text = "button1";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // FrmTaMain
             // 
@@ -2107,7 +2145,7 @@
         private DevExpress.XtraEditors.SimpleButton btnIngredMode;
         private DevExpress.XtraEditors.SimpleButton btnChange;
         private DevExpress.XtraEditors.PanelControl panelMember;
-        private DevExpress.XtraEditors.LabelControl lblDiliveryFee;
+        private DevExpress.XtraEditors.LabelControl lblDeliveryFee;
         private DevExpress.XtraEditors.LabelControl lblDistance;
         private DevExpress.XtraEditors.LabelControl lblPostcode;
         private DevExpress.XtraEditors.LabelControl lblAddress;
@@ -2202,5 +2240,8 @@
         private DevExpress.XtraEditors.SimpleButton btnSearchMeal;
         private DevExpress.XtraTreeList.Columns.TreeListColumn MenuItemID;
         private DevExpress.XtraEditors.SimpleButton btnMiLeft;
+        private DevExpress.XtraEditors.LabelControl lblReadyTime;
+        private DevExpress.XtraEditors.LabelControl lblCustReadyTime;
+        private System.Windows.Forms.Button button1;
     }
 }

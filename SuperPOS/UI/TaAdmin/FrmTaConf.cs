@@ -33,6 +33,8 @@ namespace SuperPOS.UI.TaAdmin
 
         private SimpleButton[] btnMenuAttr = new SimpleButton[20];
 
+        private int iMenuAttrID = 0;
+
         public FrmTaConf()
         {
             InitializeComponent();
@@ -208,34 +210,7 @@ namespace SuperPOS.UI.TaAdmin
                 btnMenuAttr[18] = btnAttr19;
                 btnMenuAttr[19] = btnAttr20;
 
-                new SystemData().GetTaChangeMenuAttr();
-
-                int i = 0;
-                foreach (var taChangeMenuAttrInfo in CommonData.TaChangeMenuAttr.Where(s => !string.IsNullOrEmpty(s.MenuAttrEnglishName)))
-                {
-                    btnMenuAttr[i].Text = taChangeMenuAttrInfo.MenuAttrEnglishName;
-                    btnMenuAttr[i].Click += BtnAttr_Click;
-                    i++;
-                }
-
-                if (i > 0)
-                {
-                    var lstCma = CommonData.TaChangeMenuAttr.Where(s => s.MenuAttrEnglishName.Equals(btnMenuAttr[0].Text));
-
-                    if (lstCma.Any())
-                    {
-                        TaChangeMenuAttrInfo taChangeMenuAttrInfo = lstCma.FirstOrDefault();
-
-                        txtEngName.Text = taChangeMenuAttrInfo.MenuAttrEnglishName;
-                        txtOtherName.Text = taChangeMenuAttrInfo.MenuAttrOtherName;
-                        txtIncrement.Text = taChangeMenuAttrInfo.IncrementPrice;
-                    }
-                }
-
-                for (int j = i; j < 20; j++)
-                {
-                    btnMenuAttr[j].Visible = false;
-                }
+                SetMenuAtt();
                 #endregion
             }
             else //xtpDs
@@ -463,8 +438,10 @@ namespace SuperPOS.UI.TaAdmin
                 #endregion
 
                 #region Change Settings
-                var lstIp = CommonData.TaChangeMenuAttr.Where(s => s.MenuAttrEnglishName.Equals(txtEngName.Text));
-
+                var lstIp = CommonData.TaChangeMenuAttr;
+                lstIp = iMenuAttrID > 0 ? CommonData.TaChangeMenuAttr.Where(s => s.ID == iMenuAttrID).ToList() 
+                                        : CommonData.TaChangeMenuAttr.Where(s => s.MenuAttrEnglishName.Equals(txtEngName.Text)).ToList();
+                
                 if (lstIp.Any())
                 {
                     TaChangeMenuAttrInfo taChangeMenuAttrInfo = lstIp.FirstOrDefault();
@@ -480,6 +457,8 @@ namespace SuperPOS.UI.TaAdmin
             catch (Exception ex) { LogHelper.Error(this.Name, ex); }
 
             CommonTool.ShowMessage("Save successful!");
+
+            SetMenuAtt();
 
         }
 
@@ -504,6 +483,7 @@ namespace SuperPOS.UI.TaAdmin
                     txtEngName.Text = taChangeMenuAttrInfo.MenuAttrEnglishName;
                     txtOtherName.Text = taChangeMenuAttrInfo.MenuAttrOtherName;
                     txtIncrement.Text = taChangeMenuAttrInfo.IncrementPrice;
+                    iMenuAttrID = taChangeMenuAttrInfo.ID;
                 }
             }
         }
@@ -518,6 +498,38 @@ namespace SuperPOS.UI.TaAdmin
         {
             //chkIgnoreDelivery.Checked = !chkIgnoreDeliveryIfCharge.Checked;
             if (chkIgnoreDelivery.Checked) chkIgnoreDelivery.Checked = !chkIgnoreDeliveryIfCharge.Checked;
+        }
+
+        private void SetMenuAtt()
+        {
+            new SystemData().GetTaChangeMenuAttr();
+
+            int i = 0;
+            foreach (var taChangeMenuAttrInfo in CommonData.TaChangeMenuAttr.Where(s => !string.IsNullOrEmpty(s.MenuAttrEnglishName)))
+            {
+                btnMenuAttr[i].Text = taChangeMenuAttrInfo.MenuAttrEnglishName;
+                btnMenuAttr[i].Click += BtnAttr_Click;
+                i++;
+            }
+
+            if (i > 0)
+            {
+                var lstCma = CommonData.TaChangeMenuAttr.Where(s => s.MenuAttrEnglishName.Equals(btnMenuAttr[0].Text));
+
+                if (lstCma.Any())
+                {
+                    TaChangeMenuAttrInfo taChangeMenuAttrInfo = lstCma.FirstOrDefault();
+
+                    txtEngName.Text = taChangeMenuAttrInfo.MenuAttrEnglishName;
+                    txtOtherName.Text = taChangeMenuAttrInfo.MenuAttrOtherName;
+                    txtIncrement.Text = taChangeMenuAttrInfo.IncrementPrice;
+                }
+            }
+
+            for (int j = i; j < 20; j++)
+            {
+                btnMenuAttr[j].Visible = false;
+            }
         }
     }
 }
