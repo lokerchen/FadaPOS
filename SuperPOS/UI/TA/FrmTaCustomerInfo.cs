@@ -52,6 +52,14 @@ namespace SuperPOS.UI.TA
         private System.Diagnostics.Process softKey;
 
         private bool isClear = false;
+
+        private string sReadyTime = "";
+
+        public string strReadyTime
+        {
+            get { return sReadyTime; }
+            set { strReadyTime = value; }
+        }
         
         public FrmTaCustomerInfo()
         {
@@ -284,6 +292,8 @@ namespace SuperPOS.UI.TA
 
             isAdd = false;
             isClear = false;
+
+            sReadyTime = txtReadyTime.Text;
 
             CommonTool.ShowMessage("Save successful!");
         }

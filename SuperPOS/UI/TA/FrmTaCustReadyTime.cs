@@ -162,6 +162,7 @@ namespace SuperPOS.UI.TA
             //}
             txtHour.Text = "";
             txtMinute.Text = "";
+            objName = "txtHour";
         }
 
         private void btnOK_Click(object sender, EventArgs e)

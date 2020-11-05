@@ -3615,7 +3615,7 @@ namespace SuperPOS.UI.TA
 
         private void button1_Click(object sender, EventArgs e)
         {
-            string CallerPhone = lblPhone.Text;
+            string CallerPhone = string.IsNullOrEmpty(lblPhone.Text) ? "07533375888" : lblPhone.Text;
             
             if (!string.IsNullOrEmpty(CallerPhone))
             {

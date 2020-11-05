@@ -180,6 +180,12 @@ namespace SuperPOS.UI.TA
                     //{
                     //}
                 }
+                else
+                {
+                    lblNew.Visible = true;
+                    btnDelivery.Enabled = false;
+                    btnCollection.Enabled = false;
+                }
 
                 new SystemData().GetTaCheckOrder();
 
@@ -230,7 +236,27 @@ namespace SuperPOS.UI.TA
         private void btnEdit_Click(object sender, EventArgs e)
         {
             FrmTaCustomerInfo frmTaCustomerInfo = new FrmTaCustomerInfo(txtTelNum.Text);
-            frmTaCustomerInfo.ShowDialog();
+            if (frmTaCustomerInfo.ShowDialog() == DialogResult.OK)
+            {
+                if (!string.IsNullOrEmpty(frmTaCustomerInfo.strReadyTime))
+                {
+                    string[] sRt = frmTaCustomerInfo.strReadyTime.Split(':');
+                    txtHour.Text = sRt[0];
+                    txtMinute.Text = sRt[1];
+                }
+            }
+
+            new SystemData().GetTaCustomer();
+            TaCustomerInfo taCustomerInfo = new TaCustomerInfo();
+
+            var lstCust = CommonData.TaCustomer.Where(s => s.cusPhone.Equals(strCallPhone));
+
+            if (lstCust.Any())
+            {
+                lblNew.Visible = false;
+                btnDelivery.Enabled = true;
+                btnCollection.Enabled = true;
+            }
         }
 
         private void btnDelivery_Click(object sender, EventArgs e)
