@@ -346,14 +346,14 @@ namespace SuperPOS.UI.TA
             #region 提示打开来电设备失败
             //if (isNew)
             //{
-            //    if (!openDev())
-            //    {
-            //        if (CommonTool.ConfirmMessage("Failed to open device, continue to order meal?") == DialogResult.Cancel)
-            //        {
-            //            //无来电设备连接时，取消打开
-            //            Close();
-            //        }
-            //    }
+                if (!openDev())
+                {
+                    if (CommonTool.ConfirmMessage("Failed to open device, continue to order meal?") == DialogResult.Cancel)
+                    {
+                        //无来电设备连接时，取消打开
+                        Close();
+                    }
+                }
             //}
             #endregion
         }
@@ -1589,24 +1589,37 @@ namespace SuperPOS.UI.TA
                                 }
                                 break;
                             case BriSDKLib.BriEvent_CallIn:
-                                {////两声响铃结束后开始呼叫转移到CC
-                                    //AppendStatus(BriSDKLib.BriEvent_CallIn.ToString());
-                                    strValue = "通道" + (EventData.uChannelID + 1).ToString() + "：来电响铃：" + FromASCIIByteArray(EventData.szData);
-                                }
-                                break;
+                                //{////两声响铃结束后开始呼叫转移到CC
+                                //    //AppendStatus(BriSDKLib.BriEvent_CallIn.ToString());
+                                //    strValue = "通道" + (EventData.uChannelID + 1).ToString() + "：来电响铃：" + FromASCIIByteArray(EventData.szData);
+                                //}
+                                //break;
                             case BriSDKLib.BriEvent_GetCallID:
                                 {
                                     //AppendStatus(BriSDKLib.BriEvent_GetCallID.ToString());
                                     //strValue = "通道" + (EventData.uChannelID + 1).ToString() + "：接收到来电号码 " + FromASCIIByteArray(EventData.szData);
 
                                     //MessageBox.Show(strValue);
+                                    LogHelper.Info("ComeNum.->FromASCIIByteArray:" + FromASCIIByteArray(EventData.szData) + "->FromUnicodeByteArray:" + FromUnicodeByteArray(EventData.szData));
                                     try
                                     {
                                         #region 来电显示
+
                                         string CallerPhone = FromASCIIByteArray(EventData.szData);
 
                                         if (!string.IsNullOrEmpty(CallerPhone))
                                         {
+                                            #region 保存来电信息
+                                            TaComePhoneInfo taComePhoneInfo = new TaComePhoneInfo();
+                                            taComePhoneInfo.CustPhoneNo = CallerPhone;
+                                            taComePhoneInfo.ComePhoneTime = DateTime.Now.ToString();
+                                            taComePhoneInfo.CustName = @"";
+                                            taComePhoneInfo.CustID = "0";
+                                            taComePhoneInfo.BusDate = strBusDate;
+
+                                            _control.AddEntity(taComePhoneInfo);
+                                            #endregion
+
                                             if (treeListOrder.Nodes.Count > 0)
                                             {
                                                 #region 保存TreeList
@@ -1705,6 +1718,8 @@ namespace SuperPOS.UI.TA
                                 break;
                             default: break;
                         }
+
+                        if (!string.IsNullOrEmpty(strValue)) LogHelper.Info("strValue:" + strValue);
                         //if (strValue.Length > 0)
                         //{
                         //    AppendStatus(strValue);
@@ -1720,21 +1735,29 @@ namespace SuperPOS.UI.TA
         #region 打开设备
         private bool openDev()
         {
-            //if (BriSDKLib.QNV_OpenDevice(BriSDKLib.ODT_LBRIDGE, 0, "") <= 0 || BriSDKLib.QNV_DevInfo(0, BriSDKLib.QNV_DEVINFO_GETCHANNELS) <= 0)
-            if (BriSDKLib.QNV_OpenDevice(BriSDKLib.ODT_LBRIDGE, 0, "") <= 0 || BriSDKLib.QNV_DevInfo(0, BriSDKLib.QNV_DEVINFO_GETCHANNELS) <= 0)
+            try
             {
-                AppendStatus("Open device failure!");
-                //MessageBox.Show("打开设备失败");
+                if (BriSDKLib.QNV_OpenDevice(BriSDKLib.ODT_LBRIDGE, 0, "") <= 0 || BriSDKLib.QNV_DevInfo(0, BriSDKLib.QNV_DEVINFO_GETCHANNELS) <= 0)
+                {
+                    AppendStatus("Open device failure!");
+                    LogHelper.Info(@"Open device failure!" + DateTime.Now.ToString());
+                    return false;
+                }
+
+                for (Int16 i = 0; i < BriSDKLib.QNV_DevInfo(-1, BriSDKLib.QNV_DEVINFO_GETCHANNELS); i++)
+                {//在windowproc处理接收到的消息
+                    BriSDKLib.QNV_Event(i, BriSDKLib.QNV_EVENT_REGWND, (Int32)this.Handle, "", new StringBuilder(0), 0);
+                    LogHelper.Info(@"Open device done!" + DateTime.Now.ToString());
+                }
+
+                //AppendStatus("打开设备成功");
+                return true;
+            }
+            catch (Exception ex)
+            {
+                LogHelper.Error("opendev:" + ex.Message);
                 return false;
             }
-
-            for (Int16 i = 0; i < BriSDKLib.QNV_DevInfo(-1, BriSDKLib.QNV_DEVINFO_GETCHANNELS); i++)
-            {//在windowproc处理接收到的消息
-                BriSDKLib.QNV_Event(i, BriSDKLib.QNV_EVENT_REGWND, (Int32)this.Handle, "", new StringBuilder(0), 0);
-            }
-
-            //AppendStatus("打开设备成功");
-            return true;
         }
 
         #endregion

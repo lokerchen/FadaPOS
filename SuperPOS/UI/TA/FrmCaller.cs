@@ -180,12 +180,6 @@ namespace SuperPOS.UI.TA
                     //{
                     //}
                 }
-                else
-                {
-                    lblNew.Visible = true;
-                    btnDelivery.Enabled = false;
-                    btnCollection.Enabled = false;
-                }
 
                 new SystemData().GetTaCheckOrder();
 
