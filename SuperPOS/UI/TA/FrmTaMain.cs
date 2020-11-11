@@ -114,8 +114,11 @@ namespace SuperPOS.UI.TA
         private Hashtable ht = new Hashtable();
 
         private bool isCalling = false;
-        
+
         #region 来电显示相关
+        //是否已在接听电话
+        private bool isGetPhone = false;
+
         [StructLayout(LayoutKind.Sequential)]
         public struct tag_pstn_Data
         {
@@ -218,7 +221,10 @@ namespace SuperPOS.UI.TA
                 #endregion
 
                 //如果是来电显示的，保存后直接关闭当前窗口
-                if (isCalling) this.Close();
+                if (isCalling)
+                {
+                    this.Close();
+                }
 
                 treeListOrder.Nodes.Clear();
 
@@ -346,7 +352,7 @@ namespace SuperPOS.UI.TA
             #region 提示打开来电设备失败
             //if (isNew)
             //{
-                if (!openDev())
+                if (!opendev())
                 {
                     if (CommonTool.ConfirmMessage("Failed to open device, continue to order meal?") == DialogResult.Cancel)
                     {
@@ -1553,31 +1559,6 @@ namespace SuperPOS.UI.TA
                     {
                         BriSDKLib.TBriEvent_Data EventData = (BriSDKLib.TBriEvent_Data)Marshal.PtrToStructure(m.LParam, typeof(BriSDKLib.TBriEvent_Data));
                         string strValue = "";
-
-                        if (BriSDKLib.QNV_SetParam(EventData.uChannelID, BriSDKLib.QNV_PARAM_RINGCALLIDTYPE, BriSDKLib.DIALTYPE_FSK) <= 0)
-                        {
-                            AppendStatus("QNV_PARAM_RINGCALLIDTYPE");
-                            return;
-                        }
-
-                        if (BriSDKLib.QNV_SetParam(EventData.uChannelID, BriSDKLib.QNV_PARAM_AM_LINEIN, 6) <= 0)
-                        {
-                            AppendStatus("QNV_PARAM_AM_LINEIN");
-                            return;
-                        }
-
-                        if (BriSDKLib.QNV_SetDevCtrl(EventData.uChannelID, BriSDKLib.QNV_CTRL_RECVFSK, 1) <= 0)
-                        {
-                            AppendStatus("QNV_CTRL_RECVFSK");
-                            return;
-                        }
-
-                        if (BriSDKLib.QNV_SetDevCtrl(EventData.uChannelID, BriSDKLib.QNV_CTRL_SELECTADCIN, 1) < 0)
-                        {
-                            AppendStatus("QNV_CTRL_SELECTADCIN");
-                            return;
-                        }
-
                         switch (EventData.lEventType)
                         {
                             case BriSDKLib.BriEvent_PhoneHook:
@@ -1591,26 +1572,26 @@ namespace SuperPOS.UI.TA
                                 }
                                 break;
                             case BriSDKLib.BriEvent_CallIn:
-                                //{////两声响铃结束后开始呼叫转移到CC
-                                //    //AppendStatus(BriSDKLib.BriEvent_CallIn.ToString());
-                                //    strValue = "通道" + (EventData.uChannelID + 1).ToString() + "：来电响铃：" + FromASCIIByteArray(EventData.szData);
-                                //}
-                                //break;
+                                {////两声响铃结束后开始呼叫转移到CC
+                                    strValue = "通道" + (EventData.uChannelID + 1).ToString() + "：来电响铃" + FromASCIIByteArray(EventData.szData);
+                                }
+                                break;
                             case BriSDKLib.BriEvent_GetCallID:
+                            case BriSDKLib.BriEvent_RecvedFSK:
                                 {
-                                    //AppendStatus(BriSDKLib.BriEvent_GetCallID.ToString());
-                                    //strValue = "通道" + (EventData.uChannelID + 1).ToString() + "：接收到来电号码 " + FromASCIIByteArray(EventData.szData);
+                                    strValue = "通道" + (EventData.uChannelID + 1).ToString() + "：接收到来电号码 " + FromASCIIByteArray(EventData.szData);
 
-                                    //MessageBox.Show(strValue);
-                                    LogHelper.Info("ComeNum.->FromASCIIByteArray:" + FromASCIIByteArray(EventData.szData) + "->FromUnicodeByteArray:" + FromUnicodeByteArray(EventData.szData));
                                     try
                                     {
                                         #region 来电显示
+                                        if (!string.IsNullOrEmpty(FromASCIIByteArray(EventData.szData)) && isGetPhone) return;
 
                                         string CallerPhone = FromASCIIByteArray(EventData.szData);
 
                                         if (!string.IsNullOrEmpty(CallerPhone))
                                         {
+                                            isGetPhone = true;
+                                            
                                             #region 保存来电信息
                                             TaComePhoneInfo taComePhoneInfo = new TaComePhoneInfo();
                                             taComePhoneInfo.CustPhoneNo = CallerPhone;
@@ -1690,21 +1671,20 @@ namespace SuperPOS.UI.TA
                             case BriSDKLib.BriEvent_StopCallIn:
                                 {
                                     strValue = "通道" + (EventData.uChannelID + 1).ToString() + "：停止呼入，产生一个未接电话 ";
-                                    break;
                                 }
                                 break;
-                            case BriSDKLib.BriEvent_GetDTMFChar: strValue = "通道" + (EventData.uChannelID + 1).ToString() + "：接收到按键 " + FromASCIIByteArray(EventData.szData); break;
+                            case BriSDKLib.BriEvent_GetDTMFChar:
+                                strValue = "通道" + (EventData.uChannelID + 1).ToString() + "：接收到按键 " + FromASCIIByteArray(EventData.szData);
+                                break;
                             case BriSDKLib.BriEvent_RemoteHang:
                                 {
                                     strValue = "通道" + (EventData.uChannelID + 1).ToString() + "：远程挂机 ";
-                                    break;
                                 }
                                 break;
                             case BriSDKLib.BriEvent_Busy:
                                 {
 
                                     strValue = "通道" + (EventData.uChannelID + 1).ToString() + "：接收到忙音,线路已经断开 ";
-                                    break;
                                 }
                                 break;
                             case BriSDKLib.BriEvent_DialTone: strValue = "通道" + (EventData.uChannelID + 1).ToString() + "：检测到拨号音 "; break;
@@ -1718,14 +1698,14 @@ namespace SuperPOS.UI.TA
                                     }
                                 }
                                 break;
-                            default: break;
+                            default:
+                                strValue = "通道" + (EventData.uChannelID + 1).ToString() + "：接受到未解析消息代码 " + EventData.lEventType.ToString();
+                                break;
                         }
-
-                        if (!string.IsNullOrEmpty(strValue)) LogHelper.Info("strValue:" + strValue);
-                        //if (strValue.Length > 0)
-                        //{
-                        //    AppendStatus(strValue);
-                        //}
+                        if (strValue.Length > 0)
+                        {
+                            AppendStatus(strValue);
+                        }
                     }
                     break;
                 default:
@@ -1735,23 +1715,59 @@ namespace SuperPOS.UI.TA
         }
 
         #region 打开设备
-        private bool openDev()
+        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
+        private delegate Int32 ProcEventCallback(Int16 uChannelID, Int32 dwUserData, Int32 lType, Int32 lHandle, Int32 lResult, Int32 lParam, IntPtr pData, IntPtr pDataEx);
+
+        [DllImport("user32.dll", EntryPoint = "SendMessageA")]
+        public static extern int SendMessage(IntPtr hwnd, int wMsg, IntPtr wParam, IntPtr lParam);
+
+        private static ProcEventCallback procEvent;
+
+        static Int32 procEventCallback(Int16 uChannelID, Int32 dwUserData, Int32 lType, Int32 lHandle, Int32 lResult, Int32 lParam, IntPtr pData, IntPtr pDataEx)
+        {
+            //回调函数被调用，用户可以根据需要编写自己的代码
+            //以下代码只是为展示消息，向窗体传送消息。非必须。
+            BriSDKLib.TBriEvent_Data tbe = new BriSDKLib.TBriEvent_Data { };
+            tbe.uChannelID = uChannelID;
+            tbe.lEventType = lType;
+            tbe.lEventHandle = lHandle;
+            tbe.lParam = lParam;
+            tbe.lResult = lResult;
+            tbe.szData = new byte[BriSDKLib.MAX_BRIEVENT_DATA];
+            Marshal.Copy(pData, tbe.szData, 0, BriSDKLib.MAX_BRIEVENT_DATA - 1);
+            int size = Marshal.SizeOf(typeof(BriSDKLib.TBriEvent_Data));
+            IntPtr bufferIntPtr = Marshal.AllocHGlobal(size);
+            Marshal.StructureToPtr(tbe, bufferIntPtr, false);
+            SendMessage((IntPtr)dwUserData, BriSDKLib.BRI_EVENT_MESSAGE, IntPtr.Zero, bufferIntPtr);
+            Marshal.FreeHGlobal(bufferIntPtr);
+            return 1;
+        }
+
+        private bool opendev()
         {
             try
             {
                 if (BriSDKLib.QNV_OpenDevice(BriSDKLib.ODT_LBRIDGE, 0, "") <= 0 || BriSDKLib.QNV_DevInfo(0, BriSDKLib.QNV_DEVINFO_GETCHANNELS) <= 0)
                 {
-                    AppendStatus("Open device failure!");
-                    LogHelper.Info(@"Open device failure!" + DateTime.Now.ToString());
+                    AppendStatus("打开设备失败");
                     return false;
                 }
+            
+                procEvent = new ProcEventCallback(procEventCallback);
 
                 for (Int16 i = 0; i < BriSDKLib.QNV_DevInfo(-1, BriSDKLib.QNV_DEVINFO_GETCHANNELS); i++)
-                {//在windowproc处理接收到的消息
-                    BriSDKLib.QNV_Event(i, BriSDKLib.QNV_EVENT_REGWND, (Int32)this.Handle, "", new StringBuilder(0), 0);
-                    LogHelper.Info(@"Open device done!" + DateTime.Now.ToString());
-                }
+                {
+                    //方式1还是2，根据自己需要,任选一种
+                    //
+                    //方式1：有窗体程序，在windowproc处理接收到的消息
+                    BriSDKLib.QNV_Event(i, BriSDKLib.QNV_EVENT_REGWND, (Int32)this.Handle, IntPtr.Zero, new StringBuilder(0), 0);
 
+                    //方式2：无窗体程序，在回调函数procEvent里面处理消息，窗体Handle不是必须参数（无窗体可以传0），本例为在窗体显示消息方便才传递过去，会在回调函数里面原样传回
+                    //BriSDKLib.QNV_Event(i, BriSDKLib.QNV_EVENT_REGCBFUNC, (Int32)this.Handle, Marshal.GetFunctionPointerForDelegate(procEvent), new StringBuilder(0), 0);                
+                    
+                    BriSDKLib.QNV_SetParam(i, BriSDKLib.QNV_PARAM_AM_LINEIN, 5);  //设置线路增益              
+                }
+                
                 //AppendStatus("打开设备成功");
                 return true;
             }
@@ -1761,7 +1777,7 @@ namespace SuperPOS.UI.TA
                 return false;
             }
         }
-
+        
         #endregion
         
         #endregion
@@ -1924,6 +1940,7 @@ namespace SuperPOS.UI.TA
                 }
             }
 
+            BriSDKLib.QNV_CloseDevice(BriSDKLib.ODT_ALL, 0);
             this.Close();
         }
 

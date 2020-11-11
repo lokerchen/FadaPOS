@@ -1,11 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Runtime.InteropServices;
 using System.Text;
-using System.Threading.Tasks;
+using System.Runtime.InteropServices;
 
-//namespace SuperPOS.UI.Phone
+
+//namespace pstndemo
 //{
 class BriSDKLib
 {
@@ -1178,13 +1178,14 @@ class BriSDKLib
     public static extern Int32 QNV_Fax(Int16 nChannelID, UInt32 uFaxType, Int32 nValue, string pValue);
     // event
     [DllImport("qnviccub.dll")]
-    public static extern Int32 QNV_Event(Int16 nChannelID, UInt32 uEventType, Int32 nValue, string pInValue, [Out, MarshalAs(UnmanagedType.LPTStr)] StringBuilder pOutValue, Int32 nBufSize);
+    public static extern Int32 QNV_Event(Int16 nChannelID, UInt32 uEventType, Int32 nValue, IntPtr pInValue, [Out, MarshalAs(UnmanagedType.LPTStr)] StringBuilder pOutValue, Int32 nBufSize);
     // general
     [DllImport("qnviccub.dll")]
     public static extern Int32 QNV_General(Int16 nChannelID, UInt32 uGeneralType, Int32 nValue, string pValue);
     // pstn call log
     [DllImport("qnviccub.dll")]
-    public static extern Int32 QNV_CallLog(Int16 nChannelID, UInt32 uLogType, string pValue, Int32 nValue);
+    public static extern Int32 QNV_CallLog(Int16 nChannelID, UInt32 uLogType, ref byte pValue, Int32 nValue);
+    //public static extern Int32 QNV_CallLog(Int16 nChannelID,UInt32 uLogType, string pValue,Int32 nValue);
     // devinfo
     [DllImport("qnviccub.dll")]
     public static extern Int32 QNV_DevInfo(Int16 nChannelID, UInt32 uDevInfoType);
