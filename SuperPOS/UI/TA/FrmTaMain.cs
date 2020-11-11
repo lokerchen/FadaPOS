@@ -959,6 +959,8 @@ namespace SuperPOS.UI.TA
 
                             //添加完菜品后恢复到正常状态
                             isIngredMode = false;
+
+                            SetLang();
                         }
                     }
                 }
@@ -1935,11 +1937,22 @@ namespace SuperPOS.UI.TA
                 if (iLangStatusId == PubComm.MENU_LANG_DEFAULT)
                 {
                     //子菜品
-                    if (treeListNode["ItemType"].ToString().Equals(PubComm.MENU_ITEM_CHILD.ToString()) || treeListNode["ItemType"].ToString().Equals(PubComm.MENU_ITEM_INGRED_MODE.ToString()))
+                    if (treeListNode["ItemType"].ToString().Equals(PubComm.MENU_ITEM_CHILD.ToString()))
                     {
                         if (CommonData.TaMenuItemOtherChoice.Any(s => s.ID.ToString().Equals(treeListNode["ItemCode"].ToString())))
                         {
                             treeListNode["ItemDishName"] = CommonData.TaMenuItemOtherChoice.FirstOrDefault(s => s.ID.ToString().Equals(treeListNode["ItemCode"]))?.MiEngName;
+                        }
+                    }
+
+                    if (treeListNode["ItemType"].ToString().Equals(PubComm.MENU_ITEM_INGRED_MODE.ToString()))
+                    {
+                        if (CommonData.TaMenuItem.Any(s => s.MiDishCode.Equals(treeListNode["ItemCode"].ToString())))
+                        {
+                            TaMenuItemInfo taMi = CommonData.TaMenuItem.FirstOrDefault(s => s.MiDishCode.Equals(treeListNode["ItemCode"]));
+                            treeListNode["ItemDishName"] = treeListNode["ItemDishName"].ToString().Replace(
+                                                           taMi.MiOtherName,
+                                                           taMi.MiEngName);
                         }
                     }
 
@@ -1969,11 +1982,22 @@ namespace SuperPOS.UI.TA
                 else
                 {
                     //子菜品
-                    if (treeListNode["ItemType"].ToString().Equals(PubComm.MENU_ITEM_CHILD.ToString()) || treeListNode["ItemType"].ToString().Equals(PubComm.MENU_ITEM_INGRED_MODE.ToString()))
+                    if (treeListNode["ItemType"].ToString().Equals(PubComm.MENU_ITEM_CHILD.ToString()))
                     {
                         if (CommonData.TaMenuItemOtherChoice.Any(s => s.ID.ToString().Equals(treeListNode["ItemCode"].ToString())))
                         {
                             treeListNode["ItemDishName"] = CommonData.TaMenuItemOtherChoice.FirstOrDefault(s => s.ID.ToString().Equals(treeListNode["ItemCode"].ToString()))?.MiOtherName;
+                        }
+                    }
+
+                    if (treeListNode["ItemType"].ToString().Equals(PubComm.MENU_ITEM_INGRED_MODE.ToString()))
+                    {
+                        if (CommonData.TaMenuItem.Any(s => s.MiDishCode.Equals(treeListNode["ItemCode"].ToString())))
+                        {
+                            TaMenuItemInfo taMi = CommonData.TaMenuItem.FirstOrDefault(s => s.MiDishCode.Equals(treeListNode["ItemCode"]));
+                            treeListNode["ItemDishName"] = treeListNode["ItemDishName"].ToString().Replace(
+                                                           taMi.MiEngName,
+                                                           taMi.MiOtherName);
                         }
                     }
 
