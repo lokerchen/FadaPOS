@@ -458,7 +458,7 @@ namespace SuperPOS.UI.TaAdmin
 
             CommonTool.ShowMessage("Save successful!");
 
-            SetMenuAtt();
+            if(xtpTaConfig.SelectedTabPage.Name.Equals("xtpChangeSet")) SetMenuAtt();
 
         }
 

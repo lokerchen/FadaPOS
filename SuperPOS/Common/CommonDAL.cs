@@ -690,14 +690,12 @@ namespace SuperPOS.Common
                 //总餐费
                 decimal dOrderTotal = Convert.ToDecimal(strOrderTotal);
 
-                var lstDsd = CommonData.TaDeliverySetDetail.OrderByDescending(s => s.AmountToPay);
+                var lstDsd = CommonData.TaDeliverySetDetail.Where(s => !string.IsNullOrEmpty(s.DistFrom) && !string.IsNullOrEmpty(s.DistTo)).OrderByDescending(s => s.AmountToPay);
 
                 if (lstDsd.Any())
                 {
                     decimal dDistance = Convert.ToDecimal(strDistance);
-
                     
-
                     foreach (var taDeliverySetDetailInfo in lstDsd.Where(taDeliverySetDetailInfo => dDistance >= Convert.ToDecimal(string.IsNullOrEmpty(taDeliverySetDetailInfo.DistFrom) ? "0" : taDeliverySetDetailInfo.DistFrom)
                                                                                                     && dDistance <= Convert.ToDecimal(string.IsNullOrEmpty(taDeliverySetDetailInfo.DistTo) ? "9999" : taDeliverySetDetailInfo.DistTo)))
                     {
@@ -715,24 +713,24 @@ namespace SuperPOS.Common
 
                             if (taDeliverySetInfo.IsIgnoreDelivery.Equals("Y"))
                             {
-                                dResult = dDistance;
+                                dResult = dDistFee;
                             }
                             else
                             {
                                 if (taDeliverySetInfo.DeliveryMile.Equals("Y"))
                                 {
                                     dResult = dOrderTotal < dOrderThreshold
-                                        ? Convert.ToDecimal(taDeliverySetInfo.SurchargeAmount)
-                                        : dDistance;
+                                        ? Convert.ToDecimal(string.IsNullOrEmpty(taDeliverySetInfo.SurchargeAmount) ? "0.00" : taDeliverySetInfo.SurchargeAmount)
+                                        : dDistFee;
                                 }
                                 else
                                 {
-                                    dOrderThreshold = Convert.ToDecimal(taDeliverySetInfo.OrderThreshold);
+                                    dOrderThreshold = Convert.ToDecimal(string.IsNullOrEmpty(taDeliverySetInfo.OrderThreshold) ? "0.00" : taDeliverySetInfo.OrderThreshold);
 
                                     if (dOrderTotal < dOrderThreshold)
-                                        dSurcharge = Convert.ToDecimal(taDeliverySetInfo.SurchargeAmount);
+                                        dSurcharge = Convert.ToDecimal(string.IsNullOrEmpty(taDeliverySetInfo.SurchargeAmount) ? "0.00" : taDeliverySetInfo.SurchargeAmount);
 
-                                    dResult = dDistance + dSurcharge;
+                                    dResult = dDistFee + dSurcharge;
                                 }
                             }
                         }
