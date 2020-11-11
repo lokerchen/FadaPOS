@@ -1572,10 +1572,10 @@ namespace SuperPOS.UI.TA
                                 }
                                 break;
                             case BriSDKLib.BriEvent_CallIn:
-                                {////两声响铃结束后开始呼叫转移到CC
-                                    strValue = "通道" + (EventData.uChannelID + 1).ToString() + "：来电响铃" + FromASCIIByteArray(EventData.szData);
-                                }
-                                break;
+                                //{////两声响铃结束后开始呼叫转移到CC
+                                //    strValue = "通道" + (EventData.uChannelID + 1).ToString() + "：来电响铃" + FromASCIIByteArray(EventData.szData);
+                                //}
+                                //break;
                             case BriSDKLib.BriEvent_GetCallID:
                             case BriSDKLib.BriEvent_RecvedFSK:
                                 {
@@ -1584,8 +1584,12 @@ namespace SuperPOS.UI.TA
                                     try
                                     {
                                         #region 来电显示
+                                        if (!string.IsNullOrEmpty(FromASCIIByteArray(EventData.szData)))
+                                        {
+                                            if (FromASCIIByteArray(EventData.szData).Equals("0") || FromASCIIByteArray(EventData.szData).Equals("1")) return;
+                                        }
                                         if (!string.IsNullOrEmpty(FromASCIIByteArray(EventData.szData)) && isGetPhone) return;
-
+                                        
                                         string CallerPhone = FromASCIIByteArray(EventData.szData);
 
                                         if (!string.IsNullOrEmpty(CallerPhone))
@@ -1661,6 +1665,7 @@ namespace SuperPOS.UI.TA
                                                 }
 
                                                 ChangeOrderBtnColor(ORDER_TYPE);
+                                                isGetPhone = false;
                                             }
                                         }
                                         #endregion
