@@ -1336,13 +1336,14 @@ namespace SuperPOS.UI.TA
             #region VAT计算
             if (CommonData.GenSet.Any())
             {
-                wbPrtTemplataTa.Rate1 = CommonData.GenSet.FirstOrDefault().VATPer + @"%";
+                GenSetInfo gsi = CommonData.GenSet.FirstOrDefault();
 
                 var lstVAT = from oi in CommonData.TaOrderItem.Where(s => s.CheckCode.Equals(checkID) && s.BusDate.Equals(strBusDate))
                              join mi in CommonData.TaMenuItem on oi.ItemCode equals mi.MiDishCode
-                             where !string.IsNullOrEmpty(mi.MiRmk) && mi.MiRmk.Contains(@"Without VAT")
+                             where !string.IsNullOrEmpty(mi.MiRmk)
                              select new
                              {
+                                 isVat = mi.MiRmk,
                                  itemTotalPrice = oi.ItemTotalPrice
                              };
 
@@ -1352,22 +1353,27 @@ namespace SuperPOS.UI.TA
 
                 if (lstVAT.Any())
                 {
-                    dTotal = lstVAT.ToList().Sum(vat => Convert.ToDecimal(vat.itemTotalPrice));
+                    //VAT1
+                    wbPrtTemplataTa.Rate1 = gsi.VATPer + @"%";
+
+                    dTotal = lstVAT.Where(s => s.isVat.Contains("Without VAT")).ToList().Sum(vat => Convert.ToDecimal(vat.itemTotalPrice));
                     //交税
-                    dVatTmp = (Convert.ToDecimal(CommonData.GenSet.FirstOrDefault().VATPer) / 100) * dTotal;
-
+                    dVatTmp = dTotal / ((100 + Convert.ToDecimal(gsi.VATPer)) / 100);
                     dVat = Math.Round(dVatTmp, 2, MidpointRounding.AwayFromZero);
-                }
+                    //
+                    wbPrtTemplataTa.Net1 = dVat.ToString("0.00");
 
-                wbPrtTemplataTa.VatA = dVat.ToString();
-                //税前
-                wbPrtTemplataTa.Net1 = dTotal.ToString();
-                //总价
-                wbPrtTemplataTa.Gross1 = (dTotal - dVat).ToString();
-                wbPrtTemplataTa.Rate2 = "0.00%";
-                wbPrtTemplataTa.Net2 = (Convert.ToDecimal(htDetail["SubTotal"]) - dTotal).ToString();
-                wbPrtTemplataTa.VatB = "0.00";
-                wbPrtTemplataTa.Gross2 = (Convert.ToDecimal(htDetail["SubTotal"]) - dTotal).ToString();
+                    wbPrtTemplataTa.VatA = (dTotal - dVat).ToString("0.00");
+
+                    wbPrtTemplataTa.Gross1 = dTotal.ToString("0.00");
+
+                    //VAT2
+                    dTotal = lstVAT.Where(s => !s.isVat.Contains("Without VAT")).ToList().Sum(vat => Convert.ToDecimal(vat.itemTotalPrice));
+                    wbPrtTemplataTa.Rate2 = @"0.0%";
+                    wbPrtTemplataTa.Net2 = dTotal.ToString("0.00");
+                    wbPrtTemplataTa.VatB = @"0.00";
+                    wbPrtTemplataTa.Gross2 = dTotal.ToString("0.00");
+                }
             }
             else
             {
