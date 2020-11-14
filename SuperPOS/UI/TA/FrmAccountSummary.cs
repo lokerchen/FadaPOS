@@ -635,5 +635,14 @@ namespace SuperPOS.UI.TA
             FrmTaMain frmTaMain = new FrmTaMain(strChkOrder, usrID, intCusID, deDay.Text);
             frmTaMain.ShowDialog();
         }
+        
+        private void FrmAccountSummary_KeyDown(object sender, KeyEventArgs e)
+        {
+            if ((int)e.Modifiers == ((int)Keys.Control + ((int)Keys.Shift)) && e.KeyCode == Keys.P)
+            {
+                FrmTaSummaryManagement frmTaSummaryManagement = new FrmTaSummaryManagement();
+                frmTaSummaryManagement.ShowDialog();
+            }
+        }
     }
 }
