@@ -1356,7 +1356,7 @@ namespace SuperPOS.UI.TA
                     //VAT1
                     wbPrtTemplataTa.Rate1 = gsi.VATPer + @"%";
 
-                    dTotal = lstVAT.Where(s => s.isVat.Contains("Without VAT")).ToList().Sum(vat => Convert.ToDecimal(vat.itemTotalPrice));
+                    dTotal = lstVAT.Where(s => !s.isVat.Contains("Without VAT")).ToList().Sum(vat => Convert.ToDecimal(vat.itemTotalPrice));
                     //交税
                     dVatTmp = dTotal / ((100 + Convert.ToDecimal(gsi.VATPer)) / 100);
                     dVat = Math.Round(dVatTmp, 2, MidpointRounding.AwayFromZero);
@@ -1368,7 +1368,7 @@ namespace SuperPOS.UI.TA
                     wbPrtTemplataTa.Gross1 = dTotal.ToString("0.00");
 
                     //VAT2
-                    dTotal = lstVAT.Where(s => !s.isVat.Contains("Without VAT")).ToList().Sum(vat => Convert.ToDecimal(vat.itemTotalPrice));
+                    dTotal = lstVAT.Where(s => s.isVat.Contains("Without VAT")).ToList().Sum(vat => Convert.ToDecimal(vat.itemTotalPrice));
                     wbPrtTemplataTa.Rate2 = @"0.0%";
                     wbPrtTemplataTa.Net2 = dTotal.ToString("0.00");
                     wbPrtTemplataTa.VatB = @"0.00";
