@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.webBrowser1 = new System.Windows.Forms.WebBrowser();
             this.btnCollection = new DevExpress.XtraEditors.SimpleButton();
             this.btnPercent = new DevExpress.XtraEditors.SimpleButton();
             this.lblCtlSurcharge = new DevExpress.XtraEditors.LabelControl();
@@ -84,7 +85,8 @@
             this.btnExit = new DevExpress.XtraEditors.SimpleButton();
             this.label1 = new System.Windows.Forms.Label();
             this.lueNote = new DevExpress.XtraEditors.LookUpEdit();
-            this.webBrowser1 = new System.Windows.Forms.WebBrowser();
+            this.labelControl3 = new DevExpress.XtraEditors.LabelControl();
+            this.txtReadyTime = new DevExpress.XtraEditors.TextEdit();
             this.groupBox1.SuspendLayout();
             this.groupBox5.SuspendLayout();
             this.groupBox4.SuspendLayout();
@@ -103,6 +105,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.txtSurcharge.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtDiscount.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.lueNote.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtReadyTime.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox1
@@ -127,6 +130,15 @@
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Payment";
+            // 
+            // webBrowser1
+            // 
+            this.webBrowser1.Location = new System.Drawing.Point(16, 43);
+            this.webBrowser1.MinimumSize = new System.Drawing.Size(20, 20);
+            this.webBrowser1.Name = "webBrowser1";
+            this.webBrowser1.Size = new System.Drawing.Size(113, 60);
+            this.webBrowser1.TabIndex = 109;
+            this.webBrowser1.Visible = false;
             // 
             // btnCollection
             // 
@@ -965,21 +977,39 @@
             this.lueNote.TabIndex = 108;
             this.lueNote.EditValueChanged += new System.EventHandler(this.lueNote_EditValueChanged);
             // 
-            // webBrowser1
+            // labelControl3
             // 
-            this.webBrowser1.Location = new System.Drawing.Point(16, 43);
-            this.webBrowser1.MinimumSize = new System.Drawing.Size(20, 20);
-            this.webBrowser1.Name = "webBrowser1";
-            this.webBrowser1.Size = new System.Drawing.Size(113, 60);
-            this.webBrowser1.TabIndex = 109;
-            this.webBrowser1.Visible = false;
+            this.labelControl3.Appearance.Font = new System.Drawing.Font("Tahoma", 12F);
+            this.labelControl3.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
+            this.labelControl3.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
+            this.labelControl3.Location = new System.Drawing.Point(324, 464);
+            this.labelControl3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.labelControl3.Name = "labelControl3";
+            this.labelControl3.Size = new System.Drawing.Size(100, 34);
+            this.labelControl3.TabIndex = 99;
+            this.labelControl3.Text = "Ready Time:";
+            // 
+            // txtReadyTime
+            // 
+            this.txtReadyTime.EditValue = "";
+            this.txtReadyTime.Location = new System.Drawing.Point(430, 466);
+            this.txtReadyTime.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txtReadyTime.Name = "txtReadyTime";
+            this.txtReadyTime.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 16F);
+            this.txtReadyTime.Properties.Appearance.Options.UseFont = true;
+            this.txtReadyTime.Properties.Appearance.Options.UseTextOptions = true;
+            this.txtReadyTime.Properties.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
+            this.txtReadyTime.Size = new System.Drawing.Size(114, 32);
+            this.txtReadyTime.TabIndex = 100;
             // 
             // FrmTaPaymentCollection
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 14F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(718, 513);
+            this.Controls.Add(this.labelControl3);
             this.Controls.Add(this.lueNote);
+            this.Controls.Add(this.txtReadyTime);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.btnExit);
             this.Controls.Add(this.groupBox1);
@@ -1010,6 +1040,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.txtSurcharge.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtDiscount.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.lueNote.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtReadyTime.Properties)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1074,5 +1105,7 @@
         private DevExpress.XtraEditors.LookUpEdit lueNote;
         private DevExpress.XtraEditors.SimpleButton btnCollection;
         private System.Windows.Forms.WebBrowser webBrowser1;
+        private DevExpress.XtraEditors.LabelControl labelControl3;
+        private DevExpress.XtraEditors.TextEdit txtReadyTime;
     }
 }

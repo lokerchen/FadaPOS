@@ -342,6 +342,7 @@ namespace SuperPOS.UI.TA
             btn0.Click += btn_Click;
             btnClear.Click += btn_Click;
             btnDel.Click += btn_Click;
+            btnPoint.Click += btn_Click;
         }
 
         #endregion
@@ -370,6 +371,10 @@ namespace SuperPOS.UI.TA
             else if (btn.Name.Equals("btnDel"))
             {
                 objTxt.Text = objTxt.Text.Length > 0 ? objTxt.Text.Substring(0, objTxt.Text.Length - 1) : "";
+            }
+            else if (btn.Name.Equals("btnPoint"))
+            {
+                if (!objTxt.Text.Contains(".")) objTxt.Text += btn.Text;
             }
             else
             {
@@ -892,6 +897,14 @@ namespace SuperPOS.UI.TA
 
         private void SaveOrder()
         {
+            if (txtReadyTime.Text.Length > 0)
+            {
+                if (txtReadyTime.Text.Length != 4)
+                {
+                    MessageBox.Show("Ready Time INPUT Error", "Info", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    return;
+                }
+            }
 
             new SystemData().GetTaCheckOrder();
             var lstChk = CommonData.TaCheckOrder.Where(s => s.CheckCode.Equals(checkID) && s.BusDate.Equals(strBusDate));
@@ -956,6 +969,14 @@ namespace SuperPOS.UI.TA
         #region Not Paid时
         private void SaveOrder(bool isPaid)
         {
+            if (txtReadyTime.Text.Length > 0)
+            {
+                if (txtReadyTime.Text.Length != 4)
+                {
+                    MessageBox.Show("Ready Time INPUT Error", "Info", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    return;
+                }
+            }
 
             new SystemData().GetTaCheckOrder();
             var lstChk = CommonData.TaCheckOrder.Where(s => s.CheckCode.Equals(checkID) && s.BusDate.Equals(strBusDate));
@@ -1292,9 +1313,11 @@ namespace SuperPOS.UI.TA
                     wbPrtTemplataTa.CustHouseNo = taCustomerInfo.cusHouseNo;
                     wbPrtTemplataTa.CustAddr = taCustomerInfo.cusAddr;
                     wbPrtTemplataTa.CustPostCode = taCustomerInfo.cusPostcode;
-                    wbPrtTemplataTa.ShopTime = taCustomerInfo.cusReadyTime;
+                    //wbPrtTemplataTa.ShopTime = taCustomerInfo.cusReadyTime;
                 }
             }
+
+            wbPrtTemplataTa.ShopTime = string.IsNullOrEmpty(txtReadyTime.Text) ? "ASAP" : txtReadyTime.Text;
 
             wbPrtTemplataTa.OrderDate = DateTime.Now.ToShortDateString();
             wbPrtTemplataTa.OrderTime = DateTime.Now.ToShortTimeString();

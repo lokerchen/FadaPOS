@@ -67,6 +67,8 @@
             this.lblPayType2 = new DevExpress.XtraEditors.LabelControl();
             this.lblPayType1 = new DevExpress.XtraEditors.LabelControl();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.txtDeliveryFee = new DevExpress.XtraEditors.TextEdit();
+            this.labelControl3 = new DevExpress.XtraEditors.LabelControl();
             this.txtPercentDiscount = new DevExpress.XtraEditors.TextEdit();
             this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
@@ -96,8 +98,8 @@
             this.btnDriver1 = new DevExpress.XtraEditors.SimpleButton();
             this.label1 = new System.Windows.Forms.Label();
             this.lueNote = new DevExpress.XtraEditors.LookUpEdit();
-            this.txtDeliveryFee = new DevExpress.XtraEditors.TextEdit();
-            this.labelControl3 = new DevExpress.XtraEditors.LabelControl();
+            this.labelControl4 = new DevExpress.XtraEditors.LabelControl();
+            this.txtReadyTime = new DevExpress.XtraEditors.TextEdit();
             this.groupBox1.SuspendLayout();
             this.groupBox5.SuspendLayout();
             this.groupBox4.SuspendLayout();
@@ -108,6 +110,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.txtPayTypePay2.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtPayTypePay1.Properties)).BeginInit();
             this.groupBox2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.txtDeliveryFee.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtPercentDiscount.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtPercentSurcharge.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtChange.Properties)).BeginInit();
@@ -117,7 +120,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.txtDiscount.Properties)).BeginInit();
             this.groupBox6.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.lueNote.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtDeliveryFee.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtReadyTime.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox1
@@ -729,6 +732,38 @@
             this.groupBox2.TabIndex = 89;
             this.groupBox2.TabStop = false;
             // 
+            // txtDeliveryFee
+            // 
+            this.txtDeliveryFee.EditValue = "0.00";
+            this.txtDeliveryFee.Enabled = false;
+            this.txtDeliveryFee.Location = new System.Drawing.Point(130, 94);
+            this.txtDeliveryFee.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txtDeliveryFee.Name = "txtDeliveryFee";
+            this.txtDeliveryFee.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 16F);
+            this.txtDeliveryFee.Properties.Appearance.ForeColor = System.Drawing.Color.Red;
+            this.txtDeliveryFee.Properties.Appearance.Options.UseFont = true;
+            this.txtDeliveryFee.Properties.Appearance.Options.UseForeColor = true;
+            this.txtDeliveryFee.Properties.Appearance.Options.UseTextOptions = true;
+            this.txtDeliveryFee.Properties.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
+            this.txtDeliveryFee.Properties.Mask.EditMask = "f2";
+            this.txtDeliveryFee.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Numeric;
+            this.txtDeliveryFee.Size = new System.Drawing.Size(200, 32);
+            this.txtDeliveryFee.TabIndex = 108;
+            // 
+            // labelControl3
+            // 
+            this.labelControl3.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
+            this.labelControl3.Appearance.Font = new System.Drawing.Font("Tahoma", 12F);
+            this.labelControl3.Appearance.ForeColor = System.Drawing.Color.White;
+            this.labelControl3.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.labelControl3.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
+            this.labelControl3.Location = new System.Drawing.Point(5, 97);
+            this.labelControl3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.labelControl3.Name = "labelControl3";
+            this.labelControl3.Size = new System.Drawing.Size(119, 29);
+            this.labelControl3.TabIndex = 107;
+            this.labelControl3.Text = "Delivery";
+            // 
             // txtPercentDiscount
             // 
             this.txtPercentDiscount.EditValue = "";
@@ -1143,43 +1178,38 @@
             this.lueNote.TabIndex = 108;
             this.lueNote.EditValueChanged += new System.EventHandler(this.lueNote_EditValueChanged);
             // 
-            // txtDeliveryFee
+            // labelControl4
             // 
-            this.txtDeliveryFee.EditValue = "0.00";
-            this.txtDeliveryFee.Enabled = false;
-            this.txtDeliveryFee.Location = new System.Drawing.Point(130, 94);
-            this.txtDeliveryFee.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.txtDeliveryFee.Name = "txtDeliveryFee";
-            this.txtDeliveryFee.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 16F);
-            this.txtDeliveryFee.Properties.Appearance.ForeColor = System.Drawing.Color.Red;
-            this.txtDeliveryFee.Properties.Appearance.Options.UseFont = true;
-            this.txtDeliveryFee.Properties.Appearance.Options.UseForeColor = true;
-            this.txtDeliveryFee.Properties.Appearance.Options.UseTextOptions = true;
-            this.txtDeliveryFee.Properties.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
-            this.txtDeliveryFee.Properties.Mask.EditMask = "f2";
-            this.txtDeliveryFee.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Numeric;
-            this.txtDeliveryFee.Size = new System.Drawing.Size(200, 32);
-            this.txtDeliveryFee.TabIndex = 108;
+            this.labelControl4.Appearance.Font = new System.Drawing.Font("Tahoma", 12F);
+            this.labelControl4.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
+            this.labelControl4.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
+            this.labelControl4.Location = new System.Drawing.Point(339, 500);
+            this.labelControl4.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.labelControl4.Name = "labelControl4";
+            this.labelControl4.Size = new System.Drawing.Size(100, 34);
+            this.labelControl4.TabIndex = 109;
+            this.labelControl4.Text = "Ready Time:";
             // 
-            // labelControl3
+            // txtReadyTime
             // 
-            this.labelControl3.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
-            this.labelControl3.Appearance.Font = new System.Drawing.Font("Tahoma", 12F);
-            this.labelControl3.Appearance.ForeColor = System.Drawing.Color.White;
-            this.labelControl3.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.labelControl3.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
-            this.labelControl3.Location = new System.Drawing.Point(5, 97);
-            this.labelControl3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.labelControl3.Name = "labelControl3";
-            this.labelControl3.Size = new System.Drawing.Size(119, 29);
-            this.labelControl3.TabIndex = 107;
-            this.labelControl3.Text = "Delivery";
+            this.txtReadyTime.EditValue = "";
+            this.txtReadyTime.Location = new System.Drawing.Point(445, 502);
+            this.txtReadyTime.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txtReadyTime.Name = "txtReadyTime";
+            this.txtReadyTime.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 16F);
+            this.txtReadyTime.Properties.Appearance.Options.UseFont = true;
+            this.txtReadyTime.Properties.Appearance.Options.UseTextOptions = true;
+            this.txtReadyTime.Properties.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
+            this.txtReadyTime.Size = new System.Drawing.Size(114, 32);
+            this.txtReadyTime.TabIndex = 110;
             // 
             // FrmTaPaymentDelivery
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 14F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(865, 549);
+            this.Controls.Add(this.labelControl4);
+            this.Controls.Add(this.txtReadyTime);
             this.Controls.Add(this.lueNote);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.groupBox6);
@@ -1204,6 +1234,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.txtPayTypePay1.Properties)).EndInit();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.txtDeliveryFee.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtPercentDiscount.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtPercentSurcharge.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtChange.Properties)).EndInit();
@@ -1213,7 +1244,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.txtDiscount.Properties)).EndInit();
             this.groupBox6.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.lueNote.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtDeliveryFee.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtReadyTime.Properties)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1291,5 +1322,7 @@
         private System.Windows.Forms.WebBrowser webBrowser1;
         private DevExpress.XtraEditors.TextEdit txtDeliveryFee;
         private DevExpress.XtraEditors.LabelControl labelControl3;
+        private DevExpress.XtraEditors.LabelControl labelControl4;
+        private DevExpress.XtraEditors.TextEdit txtReadyTime;
     }
 }

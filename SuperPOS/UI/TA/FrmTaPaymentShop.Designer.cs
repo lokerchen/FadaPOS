@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.btnFastFood = new DevExpress.XtraEditors.SimpleButton();
             this.btnPercent = new DevExpress.XtraEditors.SimpleButton();
             this.lblCtlSurcharge = new DevExpress.XtraEditors.LabelControl();
             this.btnNotPaid = new DevExpress.XtraEditors.SimpleButton();
@@ -82,7 +83,8 @@
             this.lblTypeName = new DevExpress.XtraEditors.LabelControl();
             this.btnExit = new DevExpress.XtraEditors.SimpleButton();
             this.webBrowser1 = new System.Windows.Forms.WebBrowser();
-            this.btnFastFood = new DevExpress.XtraEditors.SimpleButton();
+            this.labelControl3 = new DevExpress.XtraEditors.LabelControl();
+            this.txtReadyTime = new DevExpress.XtraEditors.TextEdit();
             this.groupBox1.SuspendLayout();
             this.groupBox5.SuspendLayout();
             this.groupBox4.SuspendLayout();
@@ -100,6 +102,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.txtTendered.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtSurcharge.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtDiscount.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtReadyTime.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox1
@@ -123,6 +126,23 @@
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Payment";
+            // 
+            // btnFastFood
+            // 
+            this.btnFastFood.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
+            this.btnFastFood.Appearance.Font = new System.Drawing.Font("Tahoma", 14F);
+            this.btnFastFood.Appearance.ForeColor = System.Drawing.Color.White;
+            this.btnFastFood.Appearance.Options.UseBackColor = true;
+            this.btnFastFood.Appearance.Options.UseFont = true;
+            this.btnFastFood.Appearance.Options.UseForeColor = true;
+            this.btnFastFood.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
+            this.btnFastFood.Location = new System.Drawing.Point(547, 395);
+            this.btnFastFood.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnFastFood.Name = "btnFastFood";
+            this.btnFastFood.Size = new System.Drawing.Size(144, 37);
+            this.btnFastFood.TabIndex = 106;
+            this.btnFastFood.Text = "Fast Food";
+            this.btnFastFood.Click += new System.EventHandler(this.btnFastFood_Click);
             // 
             // btnPercent
             // 
@@ -932,28 +952,38 @@
             this.webBrowser1.TabIndex = 46;
             this.webBrowser1.Visible = false;
             // 
-            // btnFastFood
+            // labelControl3
             // 
-            this.btnFastFood.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
-            this.btnFastFood.Appearance.Font = new System.Drawing.Font("Tahoma", 14F);
-            this.btnFastFood.Appearance.ForeColor = System.Drawing.Color.White;
-            this.btnFastFood.Appearance.Options.UseBackColor = true;
-            this.btnFastFood.Appearance.Options.UseFont = true;
-            this.btnFastFood.Appearance.Options.UseForeColor = true;
-            this.btnFastFood.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
-            this.btnFastFood.Location = new System.Drawing.Point(547, 395);
-            this.btnFastFood.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.btnFastFood.Name = "btnFastFood";
-            this.btnFastFood.Size = new System.Drawing.Size(144, 37);
-            this.btnFastFood.TabIndex = 106;
-            this.btnFastFood.Text = "Fast Food";
-            this.btnFastFood.Click += new System.EventHandler(this.btnFastFood_Click);
+            this.labelControl3.Appearance.Font = new System.Drawing.Font("Tahoma", 12F);
+            this.labelControl3.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
+            this.labelControl3.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
+            this.labelControl3.Location = new System.Drawing.Point(25, 468);
+            this.labelControl3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.labelControl3.Name = "labelControl3";
+            this.labelControl3.Size = new System.Drawing.Size(100, 34);
+            this.labelControl3.TabIndex = 101;
+            this.labelControl3.Text = "Ready Time:";
+            // 
+            // txtReadyTime
+            // 
+            this.txtReadyTime.EditValue = "";
+            this.txtReadyTime.Location = new System.Drawing.Point(131, 470);
+            this.txtReadyTime.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txtReadyTime.Name = "txtReadyTime";
+            this.txtReadyTime.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 16F);
+            this.txtReadyTime.Properties.Appearance.Options.UseFont = true;
+            this.txtReadyTime.Properties.Appearance.Options.UseTextOptions = true;
+            this.txtReadyTime.Properties.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
+            this.txtReadyTime.Size = new System.Drawing.Size(114, 32);
+            this.txtReadyTime.TabIndex = 102;
             // 
             // FrmTaPaymentShop
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 14F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(731, 513);
+            this.Controls.Add(this.labelControl3);
+            this.Controls.Add(this.txtReadyTime);
             this.Controls.Add(this.webBrowser1);
             this.Controls.Add(this.btnExit);
             this.Controls.Add(this.groupBox1);
@@ -983,6 +1013,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.txtTendered.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtSurcharge.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtDiscount.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtReadyTime.Properties)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -1044,5 +1075,7 @@
         private DevExpress.XtraEditors.LabelControl labelControl1;
         private System.Windows.Forms.WebBrowser webBrowser1;
         private DevExpress.XtraEditors.SimpleButton btnFastFood;
+        private DevExpress.XtraEditors.LabelControl labelControl3;
+        private DevExpress.XtraEditors.TextEdit txtReadyTime;
     }
 }
