@@ -938,7 +938,7 @@ namespace SuperPOS.Print
                             strTr = strTr.Replace("{MiCode}", @" ");
                             strTr = strTr.Replace("{MiQty}", oi.ItemQty);
                             strTr = strTr.Replace("{MiEngName}", taMenuItemOtherChoiceInfo.MiEngName);
-                            strTr = strTr.Replace("{MiOtherName}", taMenuItemOtherChoiceInfo.MiOtherName);
+                            strTr = strTr.Replace("{MiOtherName}", oi.ItemDishName.Replace(taMenuItemOtherChoiceInfo.MiEngName, taMenuItemOtherChoiceInfo.MiOtherName));
                             strTr = strTr.Replace("{MiPrice}", oi.ItemTotalPrice);
                         }
                         else
@@ -955,8 +955,8 @@ namespace SuperPOS.Print
                             TaMenuItemInfo mi = lstMi.FirstOrDefault();
                             strTr = strTr.Replace("{MiCode}", @" ");
                             strTr = strTr.Replace("{MiQty}", @" ");
-                            strTr = strTr.Replace("{MiEngName}", mi.MiEngName);
-                            strTr = strTr.Replace("{MiOtherName}", mi.MiOtherName);
+                            strTr = strTr.Replace("{MiEngName}", oi.ItemDishName);
+                            strTr = strTr.Replace("{MiOtherName}", oi.ItemDishOtherName);
                             strTr = strTr.Replace("{MiPrice}", @" ");
                         }
                         else
@@ -975,8 +975,8 @@ namespace SuperPOS.Print
 
                             strTr = strTr.Replace("{MiCode}", @" ");
                             strTr = strTr.Replace("{MiQty}", oi.ItemQty);
-                            strTr = strTr.Replace("{MiEngName}", taExtraMenuInfo.eMenuEngName);
-                            strTr = strTr.Replace("{MiOtherName}", taExtraMenuInfo.eMenuOtherName);
+                            strTr = strTr.Replace("{MiEngName}", oi.ItemDishName);
+                            strTr = strTr.Replace("{MiOtherName}", oi.ItemDishName.Replace(taExtraMenuInfo.eMenuEngName, taExtraMenuInfo.eMenuOtherName));
                             strTr = strTr.Replace("{MiPrice}", oi.ItemTotalPrice);
                         }
                         else

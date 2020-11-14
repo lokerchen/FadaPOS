@@ -162,8 +162,15 @@ namespace SuperPOS.UI.TA
                 TaExtraResult taExtraResultInfo = new TaExtraResult();
                 taExtraResultInfo.rID = Convert.ToInt32(gvTaExtraMenu.GetRowCellValue(gvTaExtraMenu.FocusedRowHandle, "ID").ToString());
                 taExtraResultInfo.rItemName = gvTaExtraMenu.GetRowCellValue(gvTaExtraMenu.FocusedRowHandle, "eMenuEngName").ToString();
-                taExtraResultInfo.rPrice = gvTaExtraMenu.GetRowCellValue(gvTaExtraMenu.FocusedRowHandle, "eMenuPrice").ToString();
                 taExtraResultInfo.rType = btn.Text.Substring(btn.Text.IndexOf("(") + 1, btn.Text.IndexOf(")") - btn.Text.IndexOf("(") - 1);
+                if (taExtraResultInfo.rType.Equals("+") || taExtraResultInfo.rType.Equals("++"))
+                {
+                    taExtraResultInfo.rPrice = @"0.00";
+                }
+                else
+                {
+                    taExtraResultInfo.rPrice = gvTaExtraMenu.GetRowCellValue(gvTaExtraMenu.FocusedRowHandle, "eMenuPrice").ToString();
+                }
                 lstRusult.Add(taExtraResultInfo);
 
                 BindResultData();
