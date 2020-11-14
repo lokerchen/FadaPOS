@@ -115,6 +115,8 @@ namespace SuperPOS.UI.TA
 
         private bool isCalling = false;
 
+        private FrmTaKeyPad frmTaKeyPad;
+
         #region 来电显示相关
         //是否已在接听电话
         private bool isGetPhone = false;
@@ -882,7 +884,7 @@ namespace SuperPOS.UI.TA
         {
             SimpleButton btn = sender as SimpleButton;
 
-            TaMenuItemInfo taMenuItemInfo = GetMenuItemInfo(btn.Text, iMenuCateId, iMenuSetId);
+            TaMenuItemInfo taMenuItemInfo = GetMenuItemInfo(btn.Text, iMenuCateId, iMenuSetId, false);
 
             if (taMenuItemInfo != null)
             {
@@ -1240,18 +1242,29 @@ namespace SuperPOS.UI.TA
         /// <param name="mcId">MenuCate ID</param>
         /// <param name="msId">MenuSet ID</param>
         /// <returns></returns>
-        public TaMenuItemInfo GetMenuItemInfo(string name, int mcId, int msId)
+        public TaMenuItemInfo GetMenuItemInfo(string name, int mcId, int msId, bool isKeyPad)
         {
             var lstMc = CommonData.TaMenuItem;
 
-            if (CommonDAL.IsShowMenuItemCode())
+            if (isKeyPad)
             {
-                name = name.Substring(name.IndexOf(")") + 1);
+                lstMc = CommonData.TaMenuItem.Where(s => s.MiDishCode.Equals(name)).ToList();
             }
+            else
+            {
+                if (CommonDAL.IsShowMenuItemCode())
+                {
+                    name = name.Substring(name.IndexOf("(") + 1, name.IndexOf(")") - name.IndexOf("(") - 1);
 
-            lstMc = iLangStatusId == PubComm.MENU_LANG_DEFAULT
+                    lstMc = CommonData.TaMenuItem.Where(s => s.MiDishCode.Equals(name)).ToList();
+                }
+                else
+                {
+                    lstMc = iLangStatusId == PubComm.MENU_LANG_DEFAULT
                     ? CommonData.TaMenuItem.Where(s => s.MiEngName.Equals(name)).ToList()
                     : CommonData.TaMenuItem.Where(s => s.MiOtherName.Equals(name)).ToList();
+                }
+            }
 
             if (msId == 0)
             {
@@ -2256,11 +2269,28 @@ namespace SuperPOS.UI.TA
 
         private void btnKeypad_Click(object sender, EventArgs e)
         {
-            FrmTaKeyPad frmTaKeyPad = new FrmTaKeyPad(this);
+            if (frmTaKeyPad == null)
+            {
+                frmTaKeyPad = new FrmTaKeyPad(this);
+                
+            }
+            else
+            {
+                if (frmTaKeyPad.IsDisposed)
+                {
+                    frmTaKeyPad = new FrmTaKeyPad(this);
+                    frmTaKeyPad.Show();
+                }
+                else
+                {
+                    frmTaKeyPad.Activate();
+                }
+            }
+
             frmTaKeyPad.Location = panelControl3.PointToScreen(panelControl1.Location);
             frmTaKeyPad.Size = panelControl3.Size;
 
-            frmTaKeyPad.ShowDialog();
+            frmTaKeyPad.Show();
         }
 
         private void treeListOrder_DoubleClick(object sender, EventArgs e)
@@ -2604,7 +2634,7 @@ namespace SuperPOS.UI.TA
         /// <summary>
         /// 根据当前语言进行自动菜品名称选择
         /// </summary>
-        private void SetLang()
+        public void SetLang()
         {
             //英文
             if (iLangStatusId == PubComm.MENU_LANG_DEFAULT)

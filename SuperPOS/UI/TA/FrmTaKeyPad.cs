@@ -147,16 +147,19 @@ namespace SuperPOS.UI.TA
             {
                 if (CommonData.TaMenuItem.Any(s => s.MiDishCode.Equals(txtDishCode.Text)))
                 {
-                    string sWord = fTaMain.iLangStatusId == PubComm.MENU_LANG_DEFAULT
-                        ? CommonData.TaMenuItem.FirstOrDefault(s => s.MiDishCode.Equals(txtDishCode.Text)).MiEngName
-                        : CommonData.TaMenuItem.FirstOrDefault(s => s.MiDishCode.Equals(txtDishCode.Text)).MiOtherName;
-                    TaMenuItemInfo taMenuItemInfo = fTaMain.GetMenuItemInfo(sWord, fTaMain.iMenuCateId,
-                        fTaMain.iMenuSetId);
+                    //string sWord = fTaMain.iLangStatusId == PubComm.MENU_LANG_DEFAULT
+                    //    ? CommonData.TaMenuItem.FirstOrDefault(s => s.MiDishCode.Equals(txtDishCode.Text)).MiEngName
+                    //    : CommonData.TaMenuItem.FirstOrDefault(s => s.MiDishCode.Equals(txtDishCode.Text)).MiOtherName;
+                    TaMenuItemInfo taMenuItemInfo = fTaMain.GetMenuItemInfo(txtDishCode.Text, fTaMain.iMenuCateId, fTaMain.iMenuSetId, true);
 
-                    if (taMenuItemInfo != null) fTaMain.SetListNode(taMenuItemInfo, Convert.ToInt32(txtQty.Text));
+                    if (taMenuItemInfo != null)
+                    {
+                        fTaMain.SetListNode(taMenuItemInfo, Convert.ToInt32(txtQty.Text));
+                        fTaMain.SetLang();
+                    }
 
                     txtDishCode.Text = "";
-                    txtQty.Text = "1";
+                    txtQty.Text = @"1";
                 }
             }
             else
