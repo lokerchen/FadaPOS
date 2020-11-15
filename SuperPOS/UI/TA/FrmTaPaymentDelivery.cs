@@ -255,9 +255,20 @@ namespace SuperPOS.UI.TA
         {
             var btn = (SimpleButton)sender;
 
-            for (int i = 0; i < CommonData.TaDriver.Count(s => s.DriverWorkDay.Contains(DateTime.Now.DayOfWeek.ToString())); i++)
+            foreach (SimpleButton t in btnDriver)
             {
-                btnDriver[i].Appearance.BackColor = btnDriver[i].Text.Equals(btn.Text) ? Color.LightGreen : Color.NavajoWhite;
+                if (t.Text.Equals(btn.Text))
+                {
+                    t.Appearance.BackColor = Color.LightGreen;
+
+                    var lstD = CommonData.TaDriver.Where(s => s.DriverWorkDay.Contains(DateTime.Now.DayOfWeek.ToString()));
+
+                    iDriverID = lstD.Any() ? lstD.FirstOrDefault().ID : 1;
+                }
+                else
+                {
+                    t.Appearance.BackColor = Color.NavajoWhite;
+                }
             }
         }
 
