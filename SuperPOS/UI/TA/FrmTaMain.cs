@@ -2387,11 +2387,11 @@ namespace SuperPOS.UI.TA
                             }
 
                             if (iLangStatusId == PubComm.MENU_LANG_DEFAULT)
-                                treeListOrder.FocusedNode["ItemDishName"] += " " + taChangeMenuAttrInfo.MenuAttrEnglishName;
+                                treeListOrder.FocusedNode["ItemDishName"] += taChangeMenuAttrInfo.MenuAttrEnglishName;
                             else
-                                treeListOrder.FocusedNode["ItemDishName"] += " " + taChangeMenuAttrInfo.MenuAttrOtherName;
+                                treeListOrder.FocusedNode["ItemDishName"] += taChangeMenuAttrInfo.MenuAttrOtherName;
 
-                            treeListOrder.FocusedNode["ItemDishOtherName"] += @" " + taChangeMenuAttrInfo.MenuAttrOtherName;
+                            treeListOrder.FocusedNode["ItemDishOtherName"] += taChangeMenuAttrInfo.MenuAttrOtherName;
                         }
                     }
                 }
