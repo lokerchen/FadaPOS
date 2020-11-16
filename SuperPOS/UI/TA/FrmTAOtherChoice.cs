@@ -32,6 +32,9 @@ namespace SuperPOS.UI.TA
         //No of Options
         public int NoOfOption = 0;
 
+        //Language标识
+        public int iLang = PubComm.MENU_LANG_DEFAULT;
+
         private AutoSizeFormClass asfc = new AutoSizeFormClass();
 
         public FrmTAOtherChoice()
@@ -39,7 +42,7 @@ namespace SuperPOS.UI.TA
             InitializeComponent();
         }
 
-        public FrmTAOtherChoice(int mType, int mID, List<TaMenuItemOtherChoiceInfo> lstList)
+        public FrmTAOtherChoice(int mType, int mID, List<TaMenuItemOtherChoiceInfo> lstList, int iLanguage)
         {
             InitializeComponent();
             miType = mType;
@@ -50,10 +53,14 @@ namespace SuperPOS.UI.TA
             {
                 NoOfOption = Convert.ToInt32(lstList.FirstOrDefault(s => s.MiID == mID && s.MiType == mType).OptionNum);
             }
+
+            iLang = iLanguage;
         }
 
         private void FrmTAOtherChoice_Load(object sender, EventArgs e)
         {
+            new SystemData().GetTaMenuItemOtherChoice();
+
             lblctlTxt.Text = miType == 2 ? @"Second Choice" : @"Third Choice";
 
             SetOtherChoiceBtn();
@@ -62,7 +69,7 @@ namespace SuperPOS.UI.TA
 
             foreach (var taMenuItemOtherChoiceInfo in lstOtherChoice)
             {
-                btnChoice[i].Text = taMenuItemOtherChoiceInfo.MiEngName;
+                btnChoice[i].Text = iLang == PubComm.MENU_LANG_DEFAULT ? taMenuItemOtherChoiceInfo.MiEngName : taMenuItemOtherChoiceInfo.MiOtherName;
                 btnChoice[i].Appearance.BackColor = Color.Orange;
                 i++;
             }
@@ -178,9 +185,19 @@ namespace SuperPOS.UI.TA
                 {
                     foreach (var btn in btnChoice.Where(btn => btn.Appearance.BackColor == Color.LightGreen))
                     {
-                        if (lstOtherChoice.Any(s => s.MiEngName.Equals(btn.Text)))
+                        if (iLang == PubComm.MENU_LANG_DEFAULT)
                         {
-                            lstReturnChoice.Add(lstOtherChoice.FirstOrDefault(s => s.MiEngName.Equals(btn.Text)));
+                            if (lstOtherChoice.Any(s => s.MiEngName.Equals(btn.Text)))
+                            {
+                                lstReturnChoice.Add(lstOtherChoice.FirstOrDefault(s => s.MiEngName.Equals(btn.Text)));
+                            }
+                        }
+                        else
+                        {
+                            if (lstOtherChoice.Any(s => s.MiOtherName.Equals(btn.Text)))
+                            {
+                                lstReturnChoice.Add(lstOtherChoice.FirstOrDefault(s => s.MiOtherName.Equals(btn.Text)));
+                            }
                         }
                     }
 
@@ -193,9 +210,19 @@ namespace SuperPOS.UI.TA
             {
                 foreach (var btn in btnChoice.Where(btn => btn.Appearance.BackColor == Color.LightGreen))
                 {
-                    if (lstOtherChoice.Any(s => s.MiEngName.Equals(btn.Text)))
+                    if (iLang == PubComm.MENU_LANG_DEFAULT)
                     {
-                        lstReturnChoice.Add(lstOtherChoice.FirstOrDefault(s => s.MiEngName.Equals(btn.Text)));
+                        if (lstOtherChoice.Any(s => s.MiEngName.Equals(btn.Text)))
+                        {
+                            lstReturnChoice.Add(lstOtherChoice.FirstOrDefault(s => s.MiEngName.Equals(btn.Text)));
+                        }
+                    }
+                    else
+                    {
+                        if (lstOtherChoice.Any(s => s.MiOtherName.Equals(btn.Text)))
+                        {
+                            lstReturnChoice.Add(lstOtherChoice.FirstOrDefault(s => s.MiOtherName.Equals(btn.Text)));
+                        }
                     }
                 }
 

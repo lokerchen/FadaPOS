@@ -1375,7 +1375,7 @@ namespace SuperPOS.UI.TA
                 if (lstOther.Any(s => s.MiType == 2)) //存在Second Choices
                 {
                     //弹出窗口选择
-                    FrmTAOtherChoice frmTaOtherChoice1 = new FrmTAOtherChoice(2, mId, lstOther.Where(s => s.MiType == 2).ToList());
+                    FrmTAOtherChoice frmTaOtherChoice1 = new FrmTAOtherChoice(2, mId, lstOther.Where(s => s.MiType == 2).ToList(), iLangStatusId);
                     frmTaOtherChoice1.Location = panelControl5.PointToScreen(panelControl1.Location);
                     //frmTaOtherChoice1.Size = panelControl5.Size + panelControl3.Size;
                     frmTaOtherChoice1.Size = new Size(panelControl5.Width + panelControl3.Width, panelControl5.Height);
@@ -1388,7 +1388,7 @@ namespace SuperPOS.UI.TA
                 if (lstOther.Any(s => s.MiType == 3))
                 {
                     //弹出窗口选择
-                    FrmTAOtherChoice frmTaOtherChoice2 = new FrmTAOtherChoice(3, mId, lstOther.Where(s => s.MiType == 3).ToList());
+                    FrmTAOtherChoice frmTaOtherChoice2 = new FrmTAOtherChoice(3, mId, lstOther.Where(s => s.MiType == 3).ToList(), iLangStatusId);
                     frmTaOtherChoice2.Location = panelControl5.PointToScreen(panelControl1.Location);
                     //frmTaOtherChoice2.Size = panelControl5.Size + panelControl3.Size;
                     frmTaOtherChoice2.Size = new Size(panelControl5.Width + panelControl3.Width, panelControl5.Height);
@@ -1419,8 +1419,8 @@ namespace SuperPOS.UI.TA
                     //为语言转换做数据存储
                     if (!dOtherChoice.ContainsKey(taMenuItemOtherChoiceInfo.MiEngName)) dOtherChoice.Add(taMenuItemOtherChoiceInfo.MiEngName, taMenuItemOtherChoiceInfo.MiOtherName);
 
-                    mNode["ItemDishName"] = mNode["ItemDishName"] + @" " + taMenuItemOtherChoiceInfo.MiEngName;
-                    mNode["ItemDishOtherName"] = mNode["ItemDishOtherName"] + @" " + taMenuItemOtherChoiceInfo.MiOtherName;
+                    mNode["ItemDishName"] = mNode["ItemDishName"] + taMenuItemOtherChoiceInfo.MiEngName;
+                    mNode["ItemDishOtherName"] = mNode["ItemDishOtherName"] + taMenuItemOtherChoiceInfo.MiOtherName;
 
                     treeListOrder.BeginUpdate();
                     decimal dQty = Convert.ToDecimal(mNode["ItemQty"]);
@@ -1494,8 +1494,26 @@ namespace SuperPOS.UI.TA
                     taOrderItemInfo.CheckCode = node["CheckCode"].ToString();
                     taOrderItemInfo.ItemType = Convert.ToInt32(node["ItemType"]);
 
-                    taOrderItemInfo.ItemDishName = node["ItemDishName"].ToString();
-                    
+                    //taOrderItemInfo.ItemDishName = node["ItemDishName"].ToString();
+                    if (iLangStatusId != PubComm.MENU_LANG_DEFAULT)
+                    {
+                        if (taOrderItemInfo.ItemType == PubComm.MENU_ITEM_MAIN)
+                        {
+                            if (CommonData.TaMenuItem.Any(s => s.MiDishCode.Equals(taOrderItemInfo.ItemCode)))
+                            {
+                                taOrderItemInfo.ItemDishName = node["ItemDishName"].ToString().Replace(
+                                             CommonData.TaMenuItem.FirstOrDefault(s => s.MiDishCode.Equals(node["ItemCode"]))?.MiOtherName,
+                                             CommonData.TaMenuItem.FirstOrDefault(s => s.MiDishCode.Equals(node["ItemCode"]))?.MiEngName);
+                            }
+
+                            taOrderItemInfo.ItemDishName = ModifItemOtherName(taOrderItemInfo.ItemDishName, PubComm.MENU_LANG_DEFAULT);
+                        }
+                    }
+                    else
+                    {
+                        taOrderItemInfo.ItemDishName = node["ItemDishName"].ToString();
+                    }
+
                     taOrderItemInfo.ItemDishOtherName = ModifItemOtherName(node["ItemDishOtherName"].ToString(), PubComm.MENU_LANG_OTHER);
                     
                     taOrderItemInfo.ItemParent = "0";
@@ -2225,7 +2243,7 @@ namespace SuperPOS.UI.TA
                     taOrderItemInfo.ItemParent = "0";
                     //taOrderItemInfo.ItemParent = Convert.ToInt32(taMenuItemInfo.ID);
 
-                    taOrderItemInfo.ItemDishName = taMenuItemInfo.MiEngName;
+                    taOrderItemInfo.ItemDishName = iLangStatusId == PubComm.MENU_LANG_DEFAULT ? taMenuItemInfo.MiEngName : taMenuItemInfo.MiOtherName;
                     taOrderItemInfo.ItemDishOtherName = taMenuItemInfo.MiOtherName;
 
                     taOrderItemInfo.OrderTime = DateTime.Now.ToString();
@@ -2490,8 +2508,8 @@ namespace SuperPOS.UI.TA
 
             foreach (var taMenuItemOtherChoiceInfo in lstOther)
             {
-                miEngName += " " + taMenuItemOtherChoiceInfo.MiEngName;
-                miOtherName += " " + taMenuItemOtherChoiceInfo.MiOtherName;
+                miEngName += taMenuItemOtherChoiceInfo.MiEngName;
+                miOtherName += taMenuItemOtherChoiceInfo.MiOtherName;
                 miPrice += Convert.ToDecimal(taMenuItemOtherChoiceInfo.MiPrice);
             }
         }
