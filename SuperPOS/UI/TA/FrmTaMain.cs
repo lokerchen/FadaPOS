@@ -299,8 +299,19 @@ namespace SuperPOS.UI.TA
                 iMenuSetId = CommonData.TaMenuCate.OrderBy(s => s.ID).FirstOrDefault().MenuSetID;
             }
 
-            SetMenuItemBtn();
-            SetMenuCateBtn();
+            TaSysFontInfo taSysFontInfo = new TaSysFontInfo();
+            if (CommonData.TaSysFont.Any())
+            {
+                taSysFontInfo = CommonData.TaSysFont.FirstOrDefault();
+            }
+            else
+            {
+                taSysFontInfo.miFont = "12";
+                taSysFontInfo.cateFont = "12";
+            }
+            
+            SetMenuItemBtn(taSysFontInfo);
+            SetMenuCateBtn(taSysFontInfo);
 
             //加载MenuCate
             SetMenuCate(iCatePageNum, iMenuSetId);
@@ -327,8 +338,13 @@ namespace SuperPOS.UI.TA
                 //TO DO something
                 lblCheck.Text = checkID;
 
-                if (CommonData.TaCheckOrder.Any(s => s.CheckCode.Equals(checkID) && s.BusDate.Equals(strBusDate)))
-                    ORDER_TYPE = lblType.Text = CommonData.TaCheckOrder.FirstOrDefault(s => s.CheckCode.Equals(checkID) && s.BusDate.Equals(strBusDate)).PayOrderType;
+                var lstTaCO = CommonData.TaCheckOrder.Where(s => s.CheckCode.Equals(checkID) && s.BusDate.Equals(strBusDate));
+
+                if (lstTaCO.Any())
+                {
+                    TaCheckOrderInfo taCheck = lstTaCO.FirstOrDefault();
+                    ORDER_TYPE = lblType.Text = taCheck.PayOrderType;
+                }
                 //BindData(checkID);
                 
                 ChangeOrderBtnColor(ORDER_TYPE);
@@ -850,7 +866,7 @@ namespace SuperPOS.UI.TA
         /// <summary>
         /// 设置MenuItem按钮
         /// </summary>
-        private void SetMenuItemBtn()
+        private void SetMenuItemBtn(TaSysFontInfo taSysFontInfo)
         {
             btnMenuItem[0] = btnMi0;
             btnMenuItem[1] = btnMi1;
@@ -872,7 +888,7 @@ namespace SuperPOS.UI.TA
             for (int i = 0; i < 16; i++)
             {
                 btnMenuItem[i].Click += btnMenuItem_Click;
-                btnMenuItem[i].Font = new Font(SystemFonts.DefaultFont.FontFamily, float.Parse(CommonData.TaSysFont.FirstOrDefault().miFont));
+                btnMenuItem[i].Font = new Font(SystemFonts.DefaultFont.FontFamily, float.Parse(taSysFontInfo.miFont));
             }
         }
         #endregion
@@ -991,7 +1007,7 @@ namespace SuperPOS.UI.TA
         /// <summary>
         /// 设置MenuCate按钮
         /// </summary>
-        private void SetMenuCateBtn()
+        private void SetMenuCateBtn(TaSysFontInfo taSysFontInfo)
         {
             btnMenuCate[0] = btnMc0;
             btnMenuCate[1] = btnMc1;
@@ -1039,7 +1055,7 @@ namespace SuperPOS.UI.TA
             for (int i = 0; i < 42; i++)
             {
                 btnMenuCate[i].Click += btnMenuCate_Click;
-                btnMenuCate[i].Font = new Font(SystemFonts.DefaultFont.FontFamily, float.Parse(CommonData.TaSysFont.FirstOrDefault().cateFont));
+                btnMenuCate[i].Font = new Font(SystemFonts.DefaultFont.FontFamily, float.Parse(taSysFontInfo.cateFont));
             }
         }
         #endregion
