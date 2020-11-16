@@ -64,6 +64,9 @@ namespace SuperPOS.UI.TA
 
         private string strDeliveryNote = "";
 
+        //在Main中被保存的账单
+        private TaCheckOrderInfo saveTaCheckOrderInfo = new TaCheckOrderInfo();
+
         public FrmTaPaymentDelivery()
         {
             InitializeComponent();
@@ -80,7 +83,7 @@ namespace SuperPOS.UI.TA
             htDetail = ht;
         }
 
-        public FrmTaPaymentDelivery(int id, string chkId, string type, string caller, Hashtable ht, string sBusDate)
+        public FrmTaPaymentDelivery(int id, string chkId, string type, string caller, Hashtable ht, string sBusDate, TaCheckOrderInfo taCheckOrder)
         {
             InitializeComponent();
 
@@ -90,6 +93,7 @@ namespace SuperPOS.UI.TA
             callerID = caller;
             htDetail = ht;
             strBusDate = sBusDate;
+            saveTaCheckOrderInfo = taCheckOrder;
         }
 
         public FrmTaPaymentDelivery(int id, string chkId, string type, Hashtable ht)
@@ -126,75 +130,35 @@ namespace SuperPOS.UI.TA
             SetClick();
 
             BindlueNote();
-            
+
             #region 查询账单
-            new SystemData().GetTaCheckOrder();
+            if (saveTaCheckOrderInfo == null) return;
+            TaCheckOrderInfo taCheckOrder = saveTaCheckOrderInfo;
 
-            var lstTco = CommonData.TaCheckOrder.Where(s => s.CheckCode.Equals(checkID) && s.BusDate.Equals(strBusDate));
+            txtPayTypePay1.Text = taCheckOrder.PayTypePay1;
+            txtPayTypePay2.Text = taCheckOrder.PayTypePay2;
+            txtPayTypePay3.Text = taCheckOrder.PayTypePay3;
+            txtPayTypePay4.Text = taCheckOrder.PayTypePay4;
+            txtPayTypePay5.Text = taCheckOrder.PayTypePay5;
 
-            if (lstTco.Any())
-            {
-                if (lstTco.Any(s => s.IsPaid.Equals("N")))
-                {
+            txtPercentDiscount.Text = string.IsNullOrEmpty(taCheckOrder.PayPerDiscount) 
+                                        ? taCheckOrder.PayPerDiscount 
+                                        : taCheckOrder.PayPerDiscount.Substring(0, taCheckOrder.PayPerDiscount.Length - 1);
+            txtDiscount.Text = taCheckOrder.PayDiscount;
 
-                    TaCheckOrderInfo taCheckOrder = lstTco.FirstOrDefault(s => s.IsPaid.Equals("N"));
+            txtPercentSurcharge.Text = string.IsNullOrEmpty(taCheckOrder.PayPerSurcharge) 
+                                        ? taCheckOrder.PayPerSurcharge
+                                        : taCheckOrder.PayPerSurcharge.Substring(0, taCheckOrder.PayPerSurcharge.Length - 1);
+            txtSurcharge.Text = taCheckOrder.PaySurcharge;
 
-                    txtPayTypePay1.Text = taCheckOrder.PayTypePay1;
-                    txtPayTypePay2.Text = taCheckOrder.PayTypePay2;
-                    txtPayTypePay3.Text = taCheckOrder.PayTypePay3;
-                    txtPayTypePay4.Text = taCheckOrder.PayTypePay4;
-                    txtPayTypePay5.Text = taCheckOrder.PayTypePay5;
+            txtTendered.Text = "0.00";
+            txtToPay.Text = taCheckOrder.TotalAmount;
+            menuAmout = Convert.ToDecimal(taCheckOrder.MenuAmount);
+            txtChange.Text = "0.00";
 
-                    txtPercentDiscount.Text = string.IsNullOrEmpty(taCheckOrder.PayPerDiscount) 
-                                              ? taCheckOrder.PayPerDiscount 
-                                              : taCheckOrder.PayPerDiscount.Substring(0, taCheckOrder.PayPerDiscount.Length - 1);
-                    txtDiscount.Text = taCheckOrder.PayDiscount;
+            txtDeliveryFee.Text = (CommonDAL.GetDeliveryFee(Convert.ToInt32(callerID), txtToPay.Text)).ToString("0.00");
 
-                    txtPercentSurcharge.Text = string.IsNullOrEmpty(taCheckOrder.PayPerSurcharge) 
-                                               ? taCheckOrder.PayPerSurcharge
-                                               : taCheckOrder.PayPerSurcharge.Substring(0, taCheckOrder.PayPerSurcharge.Length - 1);
-                    txtSurcharge.Text = taCheckOrder.PaySurcharge;
-
-                    txtTendered.Text = "0.00";
-                    txtToPay.Text = taCheckOrder.TotalAmount;
-                    menuAmout = Convert.ToDecimal(taCheckOrder.MenuAmount);
-                    txtChange.Text = "0.00";
-
-                    txtDeliveryFee.Text = (CommonDAL.GetDeliveryFee(Convert.ToInt32(callerID), txtToPay.Text)).ToString("0.00");
-
-                    GetAllAmount();
-                }
-                else if (lstTco.Any(s => s.IsPaid.Equals("Y")))
-                {
-                    TaCheckOrderInfo taCheckOrder = lstTco.FirstOrDefault(s => s.IsPaid.Equals("Y"));
-
-                    txtPayTypePay1.Text = taCheckOrder.PayTypePay1;
-                    txtPayTypePay2.Text = taCheckOrder.PayTypePay2;
-                    txtPayTypePay3.Text = taCheckOrder.PayTypePay3;
-                    txtPayTypePay4.Text = taCheckOrder.PayTypePay4;
-                    txtPayTypePay5.Text = taCheckOrder.PayTypePay5;
-
-                    txtPercentDiscount.Text = string.IsNullOrEmpty(taCheckOrder.PayPerDiscount)
-                                              ? taCheckOrder.PayPerDiscount
-                                              : taCheckOrder.PayPerDiscount.Substring(0, taCheckOrder.PayPerDiscount.Length - 1);
-                    txtDiscount.Text = taCheckOrder.PayDiscount;
-
-                    txtPercentSurcharge.Text = string.IsNullOrEmpty(taCheckOrder.PayPerSurcharge)
-                                               ? taCheckOrder.PayPerSurcharge
-                                               : taCheckOrder.PayPerSurcharge.Substring(0, taCheckOrder.PayPerSurcharge.Length - 1);
-                    txtSurcharge.Text = taCheckOrder.PaySurcharge;
-
-                    txtTendered.Text = "0.00";
-                    txtToPay.Text = taCheckOrder.TotalAmount;
-                    menuAmout = Convert.ToDecimal(taCheckOrder.MenuAmount);
-                    txtChange.Text = "0.00";
-
-                    txtDeliveryFee.Text = (CommonDAL.GetDeliveryFee(Convert.ToInt32(callerID), txtToPay.Text)).ToString("0.00");
-
-                    GetAllAmount();
-                }
-                
-            }
+            GetAllAmount();
             #endregion
 
             //默认为PayType1

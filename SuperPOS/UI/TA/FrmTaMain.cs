@@ -68,6 +68,9 @@ namespace SuperPOS.UI.TA
 
         //保存菜品中英文
         private Dictionary<string, string> dItemName = new Dictionary<string, string>();
+        
+        //被保存的账单
+        private TaCheckOrderInfo saveTaCheckOrderInfo = new TaCheckOrderInfo();
 
         //营业日期
         private string strBusDate = "";
@@ -735,7 +738,7 @@ namespace SuperPOS.UI.TA
    
             if (ORDER_TYPE.Equals(PubComm.ORDER_TYPE_SHOP))
             {
-                FrmTaPaymentShop frmTaPaymentShop = new FrmTaPaymentShop(usrID, checkID, ORDER_TYPE, CustID.ToString(), ht, strBusDate);
+                FrmTaPaymentShop frmTaPaymentShop = new FrmTaPaymentShop(usrID, checkID, ORDER_TYPE, CustID.ToString(), ht, strBusDate, saveTaCheckOrderInfo);
                 frmTaPaymentShop.Location = pcMain.Location;
                 frmTaPaymentShop.Size = pcMain.Size;
 
@@ -743,13 +746,13 @@ namespace SuperPOS.UI.TA
                 {
                     if (frmTaPaymentShop.returnPaid) treeListOrder.Nodes.Clear();
 
-                    checkID = CommonDAL.GetCheckCode();
+                    checkID = (Convert.ToInt32(checkID) + 1).ToString();
                     lblCheck.Text = checkID;
                 }
             }
             else if (ORDER_TYPE.Equals(PubComm.ORDER_TYPE_DELIVERY))
             {
-                FrmTaPaymentDelivery frmTaPaymentDelivery = new FrmTaPaymentDelivery(usrID, checkID, ORDER_TYPE, CustID.ToString(), ht, strBusDate);
+                FrmTaPaymentDelivery frmTaPaymentDelivery = new FrmTaPaymentDelivery(usrID, checkID, ORDER_TYPE, CustID.ToString(), ht, strBusDate, saveTaCheckOrderInfo);
                 frmTaPaymentDelivery.Location = pcMain.Location;
                 frmTaPaymentDelivery.Size = pcMain.Size;
 
@@ -757,7 +760,7 @@ namespace SuperPOS.UI.TA
                 {
                     if (frmTaPaymentDelivery.returnPaid) treeListOrder.Nodes.Clear();
 
-                    checkID = CommonDAL.GetCheckCode();
+                    checkID = (Convert.ToInt32(checkID) + 1).ToString();
                     lblCheck.Text = checkID;
 
                     SetCustClear();
@@ -768,7 +771,7 @@ namespace SuperPOS.UI.TA
             }
             else if (ORDER_TYPE.Equals(PubComm.ORDER_TYPE_COLLECTION))
             {
-                FrmTaPaymentCollection frmTaPaymentCollection = new FrmTaPaymentCollection(usrID, checkID, ORDER_TYPE, CustID.ToString(), ht, strBusDate);
+                FrmTaPaymentCollection frmTaPaymentCollection = new FrmTaPaymentCollection(usrID, checkID, ORDER_TYPE, CustID.ToString(), ht, strBusDate, saveTaCheckOrderInfo);
                 frmTaPaymentCollection.Location = pcMain.Location;
                 frmTaPaymentCollection.Size = pcMain.Size;
 
@@ -776,7 +779,7 @@ namespace SuperPOS.UI.TA
                 {
                     if (frmTaPaymentCollection.returnPaid) treeListOrder.Nodes.Clear();
 
-                    checkID = CommonDAL.GetCheckCode();
+                    checkID = (Convert.ToInt32(checkID) + 1).ToString();
                     lblCheck.Text = checkID;
 
                     SetCustClear();
@@ -1818,6 +1821,9 @@ namespace SuperPOS.UI.TA
                 taCheckOrderInfo.PayTime = DateTime.Now.ToString();
                 taCheckOrderInfo.IsSave = isSave ? "Y" : "N";
                 taCheckOrderInfo.DeliveryFee = @"0.00";
+
+                saveTaCheckOrderInfo = taCheckOrderInfo;
+
                 _control.UpdateEntity(taCheckOrderInfo);
             }
             else
@@ -1878,6 +1884,8 @@ namespace SuperPOS.UI.TA
                 taCheckOrderInfo.BusDate = CommonDAL.GetBusDate();
 
                 taCheckOrderInfo.DeliveryFee = @"0.00";
+
+                saveTaCheckOrderInfo = taCheckOrderInfo;
 
                 _control.AddEntity(taCheckOrderInfo);
             }

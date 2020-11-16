@@ -17,6 +17,7 @@ namespace SuperPOS.UI.TA
 {
     public partial class FrmTaPendOrder : DevExpress.XtraEditors.XtraForm
     {
+        #region 定义
         //用户ID
         private int usrID;
 
@@ -24,7 +25,7 @@ namespace SuperPOS.UI.TA
         private int checkID;
         //账单号
         private string checkCode;
-        
+
         //账单总价
         private string checkTotalAmount;
         //已付款
@@ -71,6 +72,7 @@ namespace SuperPOS.UI.TA
         private string strOrderNo = "";
         private string strBusDate = "";
         private string strCustPhone = "";
+        #endregion
 
         public FrmTaPendOrder()
         {
@@ -273,11 +275,13 @@ namespace SuperPOS.UI.TA
 
     }
 
-    private void btnPay_Click(object sender, EventArgs e)
+        private void btnPay_Click(object sender, EventArgs e)
         {
+            TaCheckOrderInfo taCheckOrderInfo = CommonData.TaCheckOrder.FirstOrDefault(s => s.CheckCode.Equals(checkCode));
+
             if (checkOrderType.Equals(PubComm.ORDER_TYPE_SHOP))
             {
-                FrmTaPaymentShop frmTaPaymentShop = new FrmTaPaymentShop(usrID, checkCode, checkOrderType, checkCustID.ToString(), SetPrtInfo(), checkBusDate);
+                FrmTaPaymentShop frmTaPaymentShop = new FrmTaPaymentShop(usrID, checkCode, checkOrderType, checkCustID.ToString(), SetPrtInfo(), checkBusDate, taCheckOrderInfo);
 
                 if (frmTaPaymentShop.ShowDialog() == DialogResult.OK)
                 {
@@ -286,7 +290,7 @@ namespace SuperPOS.UI.TA
             }
             else if (checkOrderType.Equals(PubComm.ORDER_TYPE_DELIVERY))
             {
-                FrmTaPaymentDelivery frmTaPaymentDelivery = new FrmTaPaymentDelivery(usrID, checkCode, checkOrderType, checkCustID.ToString(), SetPrtInfo(), checkBusDate);
+                FrmTaPaymentDelivery frmTaPaymentDelivery = new FrmTaPaymentDelivery(usrID, checkCode, checkOrderType, checkCustID.ToString(), SetPrtInfo(), checkBusDate, taCheckOrderInfo);
 
                 if (frmTaPaymentDelivery.ShowDialog() == DialogResult.OK)
                 {
@@ -295,7 +299,7 @@ namespace SuperPOS.UI.TA
             }
             else if (checkOrderType.Equals(PubComm.ORDER_TYPE_COLLECTION))
             {
-                FrmTaPaymentCollection frmTaPaymentCollection = new FrmTaPaymentCollection(usrID, checkCode, checkOrderType, checkCustID.ToString(), SetPrtInfo(), checkBusDate);
+                FrmTaPaymentCollection frmTaPaymentCollection = new FrmTaPaymentCollection(usrID, checkCode, checkOrderType, checkCustID.ToString(), SetPrtInfo(), checkBusDate, taCheckOrderInfo);
 
                 if (frmTaPaymentCollection.ShowDialog() == DialogResult.OK)
                 {
@@ -371,12 +375,12 @@ namespace SuperPOS.UI.TA
                 ht["Rate1"] = CommonData.GenSet.FirstOrDefault().VATPer + @"%";
 
                 var lstVAT = from oi in CommonData.TaOrderItem.Where(s => s.CheckCode.Equals(checkID) && s.BusDate.Equals(checkBusDate))
-                             join mi in CommonData.TaMenuItem on oi.ItemCode equals mi.MiDishCode
-                             where !string.IsNullOrEmpty(mi.MiRmk) && mi.MiRmk.Contains(@"Without VAT")
-                             select new
-                             {
-                                 itemTotalPrice = oi.ItemTotalPrice
-                             };
+                                join mi in CommonData.TaMenuItem on oi.ItemCode equals mi.MiDishCode
+                                where !string.IsNullOrEmpty(mi.MiRmk) && mi.MiRmk.Contains(@"Without VAT")
+                                select new
+                                {
+                                    itemTotalPrice = oi.ItemTotalPrice
+                                };
 
                 decimal dTotal = 0.00m;
                 decimal dVatTmp = 0.00m;
@@ -501,11 +505,11 @@ namespace SuperPOS.UI.TA
             new SystemData().GetTaDriver();
 
             var lstDriver = from td in CommonData.TaDriver
-                             select new
-                             {
-                                 driverID = td.ID,
-                                 driverName = td.DriverName
-                             };
+                                select new
+                                {
+                                    driverID = td.ID,
+                                    driverName = td.DriverName
+                                };
             lueDriver.Properties.DataSource = lstDriver.ToList();
             lueDriver.Properties.DisplayMember = "driverName";
             lueDriver.Properties.ValueMember = "driverID";
