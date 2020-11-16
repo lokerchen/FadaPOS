@@ -407,6 +407,17 @@ namespace SuperPOS.UI.TA
             pcCust6.Click += btnPanelCustInfo_Click;
             pcCust7.Click += btnPanelCustInfo_Click;
             pcCust8.Click += btnPanelCustInfo_Click;
+
+            new SystemData().GetComePhoneInfo();
+
+            int i = 0;
+            foreach (var tcpi in CommonData.TaComePhoneInfo.OrderByDescending(s => s.ID).Take(8))
+            {
+                pcCust[i].Visible = true;
+                lblCustInfo[i].Text = tcpi.ComePhoneTime;
+                lblCustPhone[i].Text = tcpi.CustPhoneNo;
+                i++;
+            }
         }
 
         private void SetPanelOrderInfo()
