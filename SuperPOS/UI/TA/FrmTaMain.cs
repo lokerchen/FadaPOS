@@ -718,13 +718,13 @@ namespace SuperPOS.UI.TA
             if (treeListOrder.AllNodesCount <= 0) return;
 
             #region 保存TreeList
-            new SystemData().GetTaOrderItem();
-            var lstDelOi = CommonData.TaOrderItem.Where(s => s.CheckCode.Equals(checkID) && s.BusDate.Equals(strBusDate));
+            //new SystemData().GetTaOrderItem();
+            //var lstDelOi = CommonData.TaOrderItem.Where(s => s.CheckCode.Equals(checkID) && s.BusDate.Equals(strBusDate));
 
-            foreach (var taOrderItemInfo in lstDelOi)
-            {
-                _control.DeleteEntity(taOrderItemInfo);
-            }
+            //foreach (var taOrderItemInfo in lstDelOi)
+            //{
+            //    _control.DeleteEntity(taOrderItemInfo);
+            //}
 
             List<TaOrderItemInfo> lstTaOI = new List<TaOrderItemInfo>();
 
@@ -1848,7 +1848,8 @@ namespace SuperPOS.UI.TA
             {
                 taCheckOrderInfo = lstChk.FirstOrDefault();
                 taCheckOrderInfo.PayOrderType = ORDER_TYPE;
-                taCheckOrderInfo.MenuAmount = lstTaOI.Sum(s => Convert.ToDecimal(string.IsNullOrEmpty(s.ItemTotalPrice) ? "0.00" : s.ItemTotalPrice)).ToString();
+                //taCheckOrderInfo.MenuAmount = lstTaOI.Sum(s => Convert.ToDecimal(string.IsNullOrEmpty(s.ItemTotalPrice) ? "0.00" : s.ItemTotalPrice)).ToString();
+                taCheckOrderInfo.MenuAmount = treeListOrder.Nodes.Count > 0 ? treeListOrder.GetSummaryValue(treeListOrder.Columns[7]).ToString() : "0.00";
                 //taCheckOrderInfo.PayDiscount = CommonDAL.GetTaDiscount(ORDER_TYPE, Convert.ToDecimal(taCheckOrderInfo.MenuAmount)).ToString();
                 taCheckOrderInfo.TotalAmount = CommonDAL.GetTotalAmount(Convert.ToDecimal(taCheckOrderInfo.MenuAmount), Convert.ToDecimal(CommonDAL.GetTaDiscount(ORDER_TYPE, Convert.ToDecimal(taCheckOrderInfo.MenuAmount)))).ToString();
                 taCheckOrderInfo.StaffID = usrID;
@@ -1865,7 +1866,10 @@ namespace SuperPOS.UI.TA
                 taCheckOrderInfo.CheckCode = checkID;
                 taCheckOrderInfo.PayOrderType = ORDER_TYPE;
                 taCheckOrderInfo.PayDelivery = "0.00";
-                taCheckOrderInfo.MenuAmount = lstTaOI.Sum(s => Convert.ToDecimal(string.IsNullOrEmpty(s.ItemTotalPrice) ? "0.00" : s.ItemTotalPrice)).ToString();
+
+                
+                //taCheckOrderInfo.MenuAmount = lstTaOI.Sum(s => Convert.ToDecimal(string.IsNullOrEmpty(s.ItemTotalPrice) ? "0.00" : s.ItemTotalPrice)).ToString();
+                taCheckOrderInfo.MenuAmount = treeListOrder.Nodes.Count > 0 ? treeListOrder.GetSummaryValue(treeListOrder.Columns[7]).ToString() : "0.00";
                 //taCheckOrderInfo.PayDiscount = CommonDAL.GetTaDiscount(ORDER_TYPE, Convert.ToDecimal(taCheckOrderInfo.MenuAmount)).ToString();
 
                 taCheckOrderInfo.TotalAmount = CommonDAL.GetTotalAmount(Convert.ToDecimal(taCheckOrderInfo.MenuAmount), CommonDAL.GetTaDiscount(ORDER_TYPE, Convert.ToDecimal(taCheckOrderInfo.MenuAmount))).ToString();
@@ -1915,7 +1919,7 @@ namespace SuperPOS.UI.TA
 
                 taCheckOrderInfo.IsSave = isSave ? "Y" : "N";
 
-                taCheckOrderInfo.BusDate = CommonDAL.GetBusDate();
+                taCheckOrderInfo.BusDate = string.IsNullOrEmpty(strBusDate) ? CommonDAL.GetBusDate() : strBusDate;
 
                 taCheckOrderInfo.DeliveryFee = @"0.00";
 
@@ -1939,17 +1943,20 @@ namespace SuperPOS.UI.TA
             new SystemData().GetTaOrderItem();
 
             int iItemCount = 0;
-            foreach (TreeListNode treeListNode in treeListOrder.Nodes)
-            {
-                
-                if (treeListNode["ItemType"].ToString().Equals("1"))
-                {
-                    iItemCount += Convert.ToInt32(treeListNode["ItemQty"].ToString());
-                }
-            }
+            //foreach (TreeListNode treeListNode in treeListOrder.Nodes)
+            //{
+
+            //    if (treeListNode["ItemType"].ToString().Equals("1"))
+            //    {
+            //        iItemCount += Convert.ToInt32(treeListNode["ItemQty"].ToString());
+            //    }
+            //}
+            iItemCount = treeListOrder.Nodes.Count > 0 ? Convert.ToInt32(treeListOrder.GetSummaryValue(treeListOrder.Columns[1])) : 0;
             htDetail["ItemQty"] = iItemCount.ToString();
-            htDetail["SubTotal"] = lstOi.Sum(s => Convert.ToDecimal(string.IsNullOrEmpty(s.ItemTotalPrice) ? "0.00" : s.ItemTotalPrice)).ToString();
-            htDetail["Total"] = lstOi.Sum(s => Convert.ToDecimal(string.IsNullOrEmpty(s.ItemTotalPrice) ? "0.00" : s.ItemTotalPrice)).ToString();
+            //htDetail["SubTotal"] = lstOi.Sum(s => Convert.ToDecimal(string.IsNullOrEmpty(s.ItemTotalPrice) ? "0.00" : s.ItemTotalPrice)).ToString();
+            //htDetail["Total"] = lstOi.Sum(s => Convert.ToDecimal(string.IsNullOrEmpty(s.ItemTotalPrice) ? "0.00" : s.ItemTotalPrice)).ToString();
+            htDetail["SubTotal"] = treeListOrder.Nodes.Count > 0 ? treeListOrder.GetSummaryValue(treeListOrder.Columns[7]).ToString() : "0.00";
+            htDetail["Total"] = treeListOrder.Nodes.Count > 0 ? treeListOrder.GetSummaryValue(treeListOrder.Columns[7]).ToString() : "0.00";
 
             return htDetail;
         }
