@@ -124,9 +124,7 @@ namespace SuperPOS.UI.TA
 
             //获得付款类型列表
             SetPayType();
-            //获得司机列表
-            SetDriver();
-
+            
             SetClick();
 
             BindlueNote();
@@ -158,6 +156,9 @@ namespace SuperPOS.UI.TA
 
             txtDeliveryFee.Text = (CommonDAL.GetDeliveryFee(Convert.ToInt32(callerID), txtToPay.Text)).ToString("0.00");
 
+            //获得司机列表
+            SetDriver(taCheckOrder.DriverID);
+
             GetAllAmount();
             #endregion
 
@@ -172,7 +173,7 @@ namespace SuperPOS.UI.TA
         /// <summary>
         /// 获得司机列表
         /// </summary>
-        private void SetDriver()
+        private void SetDriver(int iDriver)
         {
             btnDriver[0] = btnDriver1;
             btnDriver[1] = btnDriver2;
@@ -201,6 +202,15 @@ namespace SuperPOS.UI.TA
             foreach (var taDriverInfo in CommonData.TaDriver.Where(s => s.DriverWorkDay.Contains(DateTime.Now.DayOfWeek.ToString())))
             {
                 btnDriver[i].Text = taDriverInfo.DriverName;
+
+                if (iDriver > 1)
+                {
+                    if (taDriverInfo.ID == iDriver)
+                    {
+                        btnDriver[i].Appearance.BackColor = Color.LightGreen;
+                        iDriverID = taDriverInfo.ID;
+                    }
+                }
 
                 i++;
 
