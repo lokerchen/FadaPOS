@@ -165,11 +165,11 @@ namespace SuperPOS.UI.TA
                 taExtraResultInfo.rType = btn.Text.Substring(btn.Text.IndexOf("(") + 1, btn.Text.IndexOf(")") - btn.Text.IndexOf("(") - 1);
                 if (taExtraResultInfo.rType.Equals("+") || taExtraResultInfo.rType.Equals("++"))
                 {
-                    taExtraResultInfo.rPrice = @"0.00";
+                    taExtraResultInfo.rPrice = gvTaExtraMenu.GetRowCellValue(gvTaExtraMenu.FocusedRowHandle, "eMenuPrice").ToString();
                 }
                 else
                 {
-                    taExtraResultInfo.rPrice = gvTaExtraMenu.GetRowCellValue(gvTaExtraMenu.FocusedRowHandle, "eMenuPrice").ToString();
+                    taExtraResultInfo.rPrice = @"0.00";
                 }
                 lstRusult.Add(taExtraResultInfo);
 
