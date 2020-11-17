@@ -95,10 +95,12 @@ namespace SuperPOS.UI.TA
 
         private void GetBindData(string orderType, int iDriver, bool isSaveOrder)
         {
-            var lstDb = from check in CommonData.TaCheckOrder
+            var lstDb1 = from check in CommonData.TaCheckOrder.Where(s => s.CustomerID.Equals("0") || s.CustomerID.Equals("1"))
                         join user in CommonData.UsrBase
                             on check.StaffID equals user.ID
-                        where !check.IsPaid.Equals("Y") 
+                         join driver in CommonData.TaDriver
+                             on check.DriverID equals driver.ID
+                         where !check.IsPaid.Equals("Y") 
                               && !check.IsCancel.Equals("Y")
                         select new
                         {
@@ -116,8 +118,8 @@ namespace SuperPOS.UI.TA
                             StaffName = user.UsrName,
                             Paid = check.Paid,
                             CustID = Convert.ToInt32(check.CustomerID),
-                            DriverID = 0,
-                            DriverName = "",
+                            DriverID = check.DriverID,
+                            DriverName = driver.DriverName,
                             MenuAmount = check.MenuAmount,
                             Discount = check.PayDiscount,
                             DiscountPer = check.PayPerDiscount,
@@ -126,42 +128,79 @@ namespace SuperPOS.UI.TA
                             gridBusDate = check.BusDate
                         };
 
+            var lstDb2 = from check in CommonData.TaCheckOrder.Where(s => !s.CustomerID.Equals("0") && !s.CustomerID.Equals("1"))
+                         join user in CommonData.UsrBase
+                             on check.StaffID equals user.ID
+                         join driver in CommonData.TaDriver
+                             on check.DriverID equals driver.ID
+                         join cust in CommonData.TaCustomer
+                            on check.CustomerID equals cust.ID.ToString()
+                         where !check.IsPaid.Equals("Y")
+                               && !check.IsCancel.Equals("Y")
+                         select new
+                         {
+                             ID = check.ID,
+                             CheckCode = check.CheckCode,
+                             OrderTime = check.PayTime,
+                             PostCode = cust.cusPostcode,
+                             PostCodeZone = cust.cusPcZone,
+                             Addr = cust.cusAddr,
+                             PayOrderType = check.PayOrderType,
+                             CustomerName = cust.cusName,
+                             CustomerPhone = cust.cusPhone,
+                             IsPaid = check.IsPaid,
+                             TotalAmount = check.TotalAmount,
+                             StaffName = user.UsrName,
+                             Paid = check.Paid,
+                             CustID = Convert.ToInt32(check.CustomerID),
+                             DriverID = check.DriverID,
+                             DriverName = driver.DriverName,
+                             MenuAmount = check.MenuAmount,
+                             Discount = check.PayDiscount,
+                             DiscountPer = check.PayPerDiscount,
+                             IsSave = check.IsSave,
+                             OtherCheckCode = !check.IsSave.Equals("N") ? " " : check.CheckCode,
+                             gridBusDate = check.BusDate
+                         };
+
+            var lstDb = lstDb1.Union(lstDb2);
+
             if (isSaveOrder)
                 lstDb = lstDb.Where(s => s.IsSave.Equals("Y"));
 
-            if (iDriver != 0)
-            {
-                lstDb = from db in lstDb
-                        join cust in CommonData.TaCustomer
-                            on db.CustID equals cust.ID
-                        join driver in CommonData.TaDriver
-                            on db.DriverID equals driver.ID
-                        select new
-                        {
-                            ID = db.ID,
-                            CheckCode = db.CheckCode,
-                            OrderTime = db.OrderTime,
-                            PostCode = cust.cusPostcode,
-                            PostCodeZone = cust.cusPcZone,
-                            Addr = cust.cusAddr,
-                            PayOrderType = db.PayOrderType,
-                            CustomerName = cust.cusName,
-                            CustomerPhone = cust.cusPhone,
-                            IsPaid = db.IsPaid,
-                            TotalAmount = db.TotalAmount,
-                            StaffName = db.StaffName,
-                            Paid = db.Paid,
-                            CustID = cust.ID,
-                            DriverID = db.DriverID,
-                            DriverName = driver.DriverName,
-                            MenuAmount = db.MenuAmount,
-                            Discount = db.Discount,
-                            DiscountPer = db.DiscountPer,
-                            IsSave = db.IsSave,
-                            OtherCheckCode = !db.IsSave.Equals("N") ? " " : db.CheckCode,
-                            gridBusDate = db.gridBusDate
-                        };
-            }
+            //if (iDriver != 0)
+            //{
+            //    lstDb = from db in lstDb
+            //            join cust in CommonData.TaCustomer
+            //                on db.CustID equals cust.ID
+            //            join driver in CommonData.TaDriver
+            //                on db.DriverID equals driver.ID
+            //            select new
+            //            {
+            //                ID = db.ID,
+            //                CheckCode = db.CheckCode,
+            //                OrderTime = db.OrderTime,
+            //                PostCode = cust.cusPostcode,
+            //                PostCodeZone = cust.cusPcZone,
+            //                Addr = cust.cusAddr,
+            //                PayOrderType = db.PayOrderType,
+            //                CustomerName = cust.cusName,
+            //                CustomerPhone = cust.cusPhone,
+            //                IsPaid = db.IsPaid,
+            //                TotalAmount = db.TotalAmount,
+            //                StaffName = db.StaffName,
+            //                Paid = db.Paid,
+            //                CustID = cust.ID,
+            //                DriverID = db.DriverID,
+            //                DriverName = driver.DriverName,
+            //                MenuAmount = db.MenuAmount,
+            //                Discount = db.Discount,
+            //                DiscountPer = db.DiscountPer,
+            //                IsSave = db.IsSave,
+            //                OtherCheckCode = !db.IsSave.Equals("N") ? " " : db.CheckCode,
+            //                gridBusDate = db.gridBusDate
+            //            };
+            //}
 
             var lstTmp = lstDb;
 
@@ -504,7 +543,7 @@ namespace SuperPOS.UI.TA
         {
             new SystemData().GetTaDriver();
 
-            var lstDriver = from td in CommonData.TaDriver
+            var lstDriver = from td in CommonData.TaDriver.Where(s => !string.IsNullOrEmpty(s.DriverName))
                                 select new
                                 {
                                     driverID = td.ID,
