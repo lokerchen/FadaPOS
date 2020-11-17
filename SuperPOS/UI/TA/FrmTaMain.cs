@@ -921,7 +921,7 @@ namespace SuperPOS.UI.TA
                             taOrderItemInfo.ItemID = Guid.NewGuid().ToString();
                             taOrderItemInfo.ItemCode = taMenuItemInfo.MiDishCode;
                             taOrderItemInfo.ItemDishName = sModeValue + " " + taMenuItemInfo.MiEngName;
-                            taOrderItemInfo.ItemDishOtherName = taMenuItemInfo.MiOtherName;
+                            taOrderItemInfo.ItemDishOtherName = sModeValue + " " + taMenuItemInfo.MiOtherName;
                             taOrderItemInfo.ItemQty = sQty.ToString();
                             taOrderItemInfo.ItemPrice = "0.00";
                             taOrderItemInfo.ItemTotalPrice = "0.00";
