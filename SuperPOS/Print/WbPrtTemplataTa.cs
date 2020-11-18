@@ -57,5 +57,8 @@ namespace SuperPOS.Print
 
         //Delivery Fee
         public string DeliveryFee { get; set; }
+
+        //Discount
+        public string Discount { get; set; }
     }
 }

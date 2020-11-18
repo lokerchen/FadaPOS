@@ -1318,6 +1318,8 @@ namespace SuperPOS.UI.TA
             wbPrtTemplataTa.RefNo = @"";
             wbPrtTemplataTa.DeliveryFee = txtDeliveryFee.Text;
 
+            wbPrtTemplataTa.Discount = txtDiscount.Text;
+
             #region VAT计算
             if (CommonData.GenSet.Any())
             {

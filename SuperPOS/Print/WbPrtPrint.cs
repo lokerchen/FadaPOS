@@ -8,6 +8,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using HtmlAgilityPack;
 using Microsoft.Win32;
+using NHibernate.Linq.Functions;
 using SuperPOS.Common;
 using SuperPOS.Domain.Entities;
 using HtmlDocument = HtmlAgilityPack.HtmlDocument;
@@ -144,6 +145,8 @@ namespace SuperPOS.Print
 
             //Delivery Fee
             strHtmlText = strHtmlText.Replace("{DeliveryFee}", wbPrtTemplataTa.DeliveryFee);
+
+            strHtmlText = strHtmlText.Replace("{Discount}", wbPrtTemplataTa.Discount);
 
             return strHtmlText;
         }
