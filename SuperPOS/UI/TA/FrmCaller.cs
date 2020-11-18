@@ -219,6 +219,8 @@ namespace SuperPOS.UI.TA
             SetPanelCustInfo();
             SetPanelOrderInfo();
 
+            lblCallInfo.Text = DateTime.Now.ToShortDateString() + DateTime.Now.ToShortTimeString();
+
             asfc.controllInitializeSize(this);
         }
 
