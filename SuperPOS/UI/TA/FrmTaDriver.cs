@@ -136,7 +136,7 @@ namespace SuperPOS.UI.TA
         {
             new SystemData().GetTaDriver();
 
-            gridControlTaDriver.DataSource = CommonData.TaDriver.ToList();
+            gridControlTaDriver.DataSource = CommonData.TaDriver.Where(s => !string.IsNullOrEmpty(s.DriverName)).ToList();
 
             gvTaDriver.FocusedRowHandle = gvTaDriver.RowCount - 1;
         }
