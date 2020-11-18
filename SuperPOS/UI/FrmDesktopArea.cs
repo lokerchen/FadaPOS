@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Diagnostics;
 using System.Drawing;
 using System.Text;
 using System.Linq;
@@ -21,6 +22,8 @@ namespace SuperPOS.UI
         public string usrName = "";
 
         private AutoSizeFormClass asfc = new AutoSizeFormClass();
+
+        private string strBusDate = "";
 
         public FrmDesktopArea()
         {
@@ -65,6 +68,8 @@ namespace SuperPOS.UI
                 lblSession.Text = lstSession.FirstOrDefault().ShiftName;
             }
 
+            strBusDate = CommonDAL.GetBusDate();
+
             asfc.controllInitializeSize(this);
         }
 
@@ -81,7 +86,7 @@ namespace SuperPOS.UI
 
         private void btnShowOrder_Click(object sender, EventArgs e)
         {
-            FrmTaShowOrder frmTaShowOrder = new FrmTaShowOrder(usrID);
+            FrmTaShowOrder frmTaShowOrder = new FrmTaShowOrder(usrID, strBusDate);
             frmTaShowOrder.ShowDialog();
         }
 

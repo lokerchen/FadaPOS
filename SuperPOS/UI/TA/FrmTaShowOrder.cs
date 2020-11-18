@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Diagnostics;
 using System.Drawing;
 using System.IO;
 using System.Text;
@@ -11,10 +12,12 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using DevExpress.XtraEditors;
 using DevExpress.XtraTreeList.Nodes;
+using HtmlAgilityPack;
 using SuperPOS.Common;
 using SuperPOS.Domain.Entities;
 using SuperPOS.Print;
 using SuperPOS.UI.TA;
+using HtmlDocument = System.Windows.Forms.HtmlDocument;
 
 namespace SuperPOS.UI
 {
@@ -64,52 +67,41 @@ namespace SuperPOS.UI
 
         private string checkBusDate = @"";
 
+        private string strBusDate = "";
+
+        private int intStaffID = 0;
+
+        HtmlAgilityPack.HtmlDocument doc = null;
+
         public FrmTaShowOrder()
         {
             InitializeComponent();
         }
 
-        public FrmTaShowOrder(int uId)
+        public FrmTaShowOrder(int uId, string sBusDate)
         {
             InitializeComponent();
 
             usrID = uId;
+            strBusDate = sBusDate;
         }
 
         private void FrmTaShowOrder_Load(object sender, EventArgs e)
         {
-            SystemData sysData = new SystemData();
+            //SystemData sysData = new SystemData();
 
-            sysData.GetTaCheckOrder();
-            //sysData.GetTaCustomer();
-            sysData.GetUsrBase();
-            sysData.GetTaOrderItem();
-            //sysData.GetTaPaymentDetail();
-            sysData.GetTaPreview();
+            //sysData.GetTaCheckOrder();
+            ////sysData.GetTaCustomer();
+            //sysData.GetUsrBase();
+            //sysData.GetTaOrderItem();
+            ////sysData.GetTaPaymentDetail();
+            //sysData.GetTaPreview();
 
-            GetBindData("");
+            webBrowser2.Navigate("about:blank/");
+            GetBindData("", false);
             
-            //richEditCtlPreview.Font = new Font(@"Courier New", PrtStatic.PRT_GEN_SET1_FONT_SIZE_10);
-            richEditCtlPreview.Font = new Font(@"Courier New", 10f);
+            //RefreshPrtInfo();
 
-            //richEditCtlPreview.Margin.Left = 0;
-
-            //SetPrtTmpInfo();
-
-            if (CommonData.TaPreview.Any())
-            {
-                PreviewContent = CommonData.TaPreview.FirstOrDefault().PreviewContent;
-            }
-
-            richEditCtlPreview.Text = SetPreviewInfo(PreviewContent);
-
-            var lstGsSet1 = CommonData.TaPrtSetupGeneralSet1;
-            if (lstGsSet1.Any())
-            {
-                TaPrtSetupGeneralSet1Info taPrtSetupGeneralSet1Info = lstGsSet1.FirstOrDefault();
-                PrtLang = taPrtSetupGeneralSet1Info.PrtLang;
-            }
-            
             asfc.controllInitializeSize(this);
         }
 
@@ -118,39 +110,100 @@ namespace SuperPOS.UI
         /// 绑定初始数据
         /// </summary>
         /// <param name="orderType">账单类型</param>
-        private void GetBindData(string orderType)
+        private void GetBindData(string orderType, bool isNeedStaff)
         {
-            var lstDb = from check in CommonData.TaCheckOrder
-                        join user in CommonData.UsrBase
-                            on check.StaffID equals user.ID
-                        join driver in CommonData.TaDriver
-                            on check.DriverID equals driver.ID
-                        where check.IsPaid.Equals("Y")
-                              && check.BusDate.Equals(CommonDAL.GetBusDate())
-                        select new
-                        {
-                            ID = check.ID,
-                            gridOrderNo = check.CheckCode,
-                            gridPayType = (GetAllPayType(check.PayTypePay1, check.PayType1) + @" "
-                                            + GetAllPayType(check.PayTypePay2, check.PayType2) + @" "
-                                            + GetAllPayType(check.PayTypePay3, check.PayType3) + @" "
-                                            + GetAllPayType(check.PayTypePay4, check.PayType4) + @" "
-                                            + GetAllPayType(check.PayTypePay5, check.PayType5)).Trim(),
-                            gridOrderType = check.PayOrderType,
-                            gridOrderTime = check.PayTime,
-                            gridTotal = check.TotalAmount,
-                            gridDriver = driver.DriverName,
-                            gridStaff = user.UsrName,
-                            gridCustID = check.CustomerID,
-                            gridDiscountPer = check.PayPerDiscount,
-                            gridDisount = check.PayDiscount,
-                            gridSubTotal = check.MenuAmount,
-                            gridBusDate = check.BusDate,
-                            gridTendered = check.Paid,
-                            gridChange = (Convert.ToDecimal(check.Paid) - Convert.ToDecimal(check.TotalAmount)) <= 0 ? "0.0" : (Convert.ToDecimal(check.Paid) - Convert.ToDecimal(check.TotalAmount)).ToString(),
-                            gridRefNo = check.RefNum,
-                            gridDeliveryFee = check.DeliveryFee
-                        };
+            var lstCo = CommonData.TaCheckOrder.Where(s => s.IsPaid.Equals("Y") && s.BusDate.Equals(strBusDate));
+            //var lstDb = from check in lstCo
+            //            join user in CommonData.UsrBase
+            //                on check.StaffID equals user.ID
+            //            select new
+            //            {
+            //                ID = check.ID,
+            //                gridOrderNo = check.CheckCode,
+            //                gridPayType = (GetAllPayType(check.PayTypePay1, check.PayType1) + @" "
+            //                                + GetAllPayType(check.PayTypePay2, check.PayType2) + @" "
+            //                                + GetAllPayType(check.PayTypePay3, check.PayType3) + @" "
+            //                                + GetAllPayType(check.PayTypePay4, check.PayType4) + @" "
+            //                                + GetAllPayType(check.PayTypePay5, check.PayType5)).Trim(),
+            //                gridOrderType = check.PayOrderType,
+            //                gridOrderTime = check.PayTime,
+            //                gridTotal = check.TotalAmount,
+            //                //gridDriver = driver.DriverName,
+            //                gridDriver = "",
+            //                gridStaff = user.UsrName,
+            //                gridCustID = check.CustomerID,
+            //                gridDiscountPer = check.PayPerDiscount,
+            //                gridDisount = check.PayDiscount,
+            //                gridSubTotal = check.MenuAmount,
+            //                gridBusDate = check.BusDate,
+            //                gridTendered = check.Paid,
+            //                gridChange = (Convert.ToDecimal(check.Paid) - Convert.ToDecimal(check.TotalAmount)) <= 0 ? "0.0" : (Convert.ToDecimal(check.Paid) - Convert.ToDecimal(check.TotalAmount)).ToString(),
+            //                gridRefNo = check.RefNum,
+            //                gridDeliveryFee = check.DeliveryFee
+            //            };
+            var lstDb = from check in lstCo select new
+            {
+                ID = check.ID,
+                gridOrderNo = check.CheckCode,
+                gridPayType = (GetAllPayType(check.PayTypePay1, check.PayType1) + @" "
+                               + GetAllPayType(check.PayTypePay2, check.PayType2) + @" "
+                               + GetAllPayType(check.PayTypePay3, check.PayType3) + @" "
+                               + GetAllPayType(check.PayTypePay4, check.PayType4) + @" "
+                               + GetAllPayType(check.PayTypePay5, check.PayType5)).Trim(),
+                gridOrderType = check.PayOrderType,
+                gridOrderTime = check.PayTime,
+                gridTotal = check.TotalAmount,
+                //gridDriver = driver.DriverName,
+                gridDriver = "",
+                gridStaff = "",
+                gridCustID = check.CustomerID,
+                gridDiscountPer = check.PayPerDiscount,
+                gridDisount = check.PayDiscount,
+                gridSubTotal = check.MenuAmount,
+                gridBusDate = check.BusDate,
+                gridTendered = check.Paid,
+                gridChange =
+                    (Convert.ToDecimal(check.Paid) - Convert.ToDecimal(check.TotalAmount)) <= 0
+                        ? "0.0"
+                        : (Convert.ToDecimal(check.Paid) - Convert.ToDecimal(check.TotalAmount)).ToString(),
+                gridRefNo = check.RefNum,
+                gridDeliveryFee = check.DeliveryFee,
+                gridStaffId = check.StaffID
+            };
+
+            if (isNeedStaff)
+            {
+                lstDb = lstCo.Join(CommonData.UsrBase, check => check.StaffID, user => user.ID, (check, user) => new
+                {
+                    ID = check.ID,
+                    gridOrderNo = check.CheckCode,
+                    gridPayType = (GetAllPayType(check.PayTypePay1, check.PayType1) + @" "
+                               + GetAllPayType(check.PayTypePay2, check.PayType2) + @" "
+                               + GetAllPayType(check.PayTypePay3, check.PayType3) + @" "
+                               + GetAllPayType(check.PayTypePay4, check.PayType4) + @" "
+                               + GetAllPayType(check.PayTypePay5, check.PayType5)).Trim(),
+                    gridOrderType = check.PayOrderType,
+                    gridOrderTime = check.PayTime,
+                    gridTotal = check.TotalAmount,
+                    //gridDriver = driver.DriverName,
+                    gridDriver = "",
+                    gridStaff = user.UsrName,
+                    gridCustID = check.CustomerID,
+                    gridDiscountPer = check.PayPerDiscount,
+                    gridDisount = check.PayDiscount,
+                    gridSubTotal = check.MenuAmount,
+                    gridBusDate = check.BusDate,
+                    gridTendered = check.Paid,
+                    gridChange =
+                    (Convert.ToDecimal(check.Paid) - Convert.ToDecimal(check.TotalAmount)) <= 0
+                        ? "0.0"
+                        : (Convert.ToDecimal(check.Paid) - Convert.ToDecimal(check.TotalAmount)).ToString(),
+                    gridRefNo = check.RefNum,
+                    gridDeliveryFee = check.DeliveryFee,
+                    gridStaffId = check.StaffID
+                });
+            }
+            
 
             gridControlTaShowOrder.DataSource = !string.IsNullOrEmpty(orderType)
                                                 ? lstDb.Where(s => s.gridOrderType.Equals(orderType)).ToList()
@@ -196,18 +249,21 @@ namespace SuperPOS.UI
             sChange = gvTaShowOrder.GetRowCellValue(gvTaShowOrder.FocusedRowHandle, "gridChange").ToString();
             sRefNo = gvTaShowOrder.GetRowCellValue(gvTaShowOrder.FocusedRowHandle, "gridRefNo") == null ? "" : gvTaShowOrder.GetRowCellValue(gvTaShowOrder.FocusedRowHandle, "gridRefNo").ToString();
             sDeliveryFee = gvTaShowOrder.GetRowCellValue(gvTaShowOrder.FocusedRowHandle, "gridDeliveryFee") == null ? "" : gvTaShowOrder.GetRowCellValue(gvTaShowOrder.FocusedRowHandle, "gridDeliveryFee").ToString();
-            
+
+            intStaffID = Convert.ToInt32(gvTaShowOrder.GetRowCellValue(gvTaShowOrder.FocusedRowHandle, "gridStaffId").ToString());
+
             sItemCount = GetItemCount(strChkOrder);
 
 
-            richEditCtlPreview.Font = new Font(@"Courier New", 10f);
+            //richEditCtlPreview.Font = new Font(@"Courier New", 10f);
             ////预览信息
             ////richEditCtlPreview.Text = SetPreviewInfo();
             //if (CommonData.TaPreview.Any())
             //{
             //    richEditCtlPreview.Text = SetPreviewInfo(CommonData.TaPreview.FirstOrDefault().PreviewContent);
             //}
-            richEditCtlPreview.Text = SetPreviewInfo(PreviewContent);
+            //richEditCtlPreview.Text = SetPreviewInfo(PreviewContent);
+            RefreshPrtInfo();
         }
 
         private void btnExit_Click(object sender, EventArgs e)
@@ -368,22 +424,22 @@ namespace SuperPOS.UI
         #region 列表过滤
         private void btnAll_Click(object sender, EventArgs e)
         {
-            GetBindData("");
+            GetBindData("", true);
         }
 
         private void btnCollection_Click(object sender, EventArgs e)
         {
-            GetBindData(PubComm.ORDER_TYPE_COLLECTION);
+            GetBindData(PubComm.ORDER_TYPE_COLLECTION, true);
         }
 
         private void btnDelivery_Click(object sender, EventArgs e)
         {
-            GetBindData(PubComm.ORDER_TYPE_DELIVERY);
+            GetBindData(PubComm.ORDER_TYPE_DELIVERY, true);
         }
 
         private void btnShop_Click(object sender, EventArgs e)
         {
-            GetBindData(PubComm.ORDER_TYPE_SHOP);
+            GetBindData(PubComm.ORDER_TYPE_SHOP, true);
         }
         #endregion
 
@@ -441,56 +497,7 @@ namespace SuperPOS.UI
             prtTemplataTa.StaffName = sStaff;
             prtTemplataTa.ItemCount = sItemCount >= 1 ? sItemCount.ToString() : "0";
             prtTemplataTa.Discount = sDiscount + sDiscountPer;
-
-            #region VAT计算
-            if (CommonData.GenSet.Any())
-            {
-                prtTemplataTa.Rete1 = CommonData.GenSet.FirstOrDefault().VATPer + @"%";
-
-                var lstVAT = from oi in CommonData.TaOrderItem.Where(s => s.CheckCode.Equals(strChkOrder) && s.BusDate.Equals(checkBusDate))
-                             join mi in CommonData.TaMenuItem on oi.ItemCode equals mi.MiDishCode
-                             where !string.IsNullOrEmpty(mi.MiRmk) && mi.MiRmk.Contains(@"Without VAT")
-                             select new
-                             {
-                                 itemTotalPrice = oi.ItemTotalPrice
-                             };
-
-                decimal dTotal = 0;
-                decimal dVatTmp = 0;
-                decimal dVat = 0;
-
-                if (lstVAT.Any())
-                {
-                    dTotal = lstVAT.ToList().Sum(vat => Convert.ToDecimal(vat.itemTotalPrice));
-                    //交税
-                    dVatTmp = (Convert.ToDecimal(CommonData.GenSet.FirstOrDefault().VATPer) / 100) * dTotal;
-
-                    dVat = Math.Round(dVatTmp, 2, MidpointRounding.AwayFromZero);
-                }
-
-                prtTemplataTa.VatA = dVat.ToString();
-                //税前
-                prtTemplataTa.Net1 = dTotal.ToString();
-                //总价
-                prtTemplataTa.Gross1 = (dTotal - dVat).ToString();
-                prtTemplataTa.Rate2 = "0.00%";
-                prtTemplataTa.Net2 = (Convert.ToDecimal(sSubTotal) - dTotal).ToString();
-                prtTemplataTa.VatB = "0.00";
-                prtTemplataTa.Gross2 = (Convert.ToDecimal(sSubTotal) - dTotal).ToString();
-            }
-            else
-            {
-                prtTemplataTa.Rete1 = "0.00%";
-                prtTemplataTa.Net1 = "0.00";
-                prtTemplataTa.VatA = "0.00";
-                prtTemplataTa.Gross1 = "0.00";
-                prtTemplataTa.Rate2 = "0.00%";
-                prtTemplataTa.Net2 = "0.00";
-                prtTemplataTa.VatB = "0.00";
-                prtTemplataTa.Gross2 = "0.00";
-            }
-            #endregion
-
+            
             return PrtTemplate.ReplacePrtKeysPreviewContent(content, prtTemplataTa, lstOI, PrtLang);
         }
 
@@ -644,7 +651,7 @@ namespace SuperPOS.UI
 
             frmTaPaymentShop.ShowDialog();
 
-            GetBindData("");
+            GetBindData("", true);
         }
 
         private void btnEditOrder_Click(object sender, EventArgs e)
@@ -709,7 +716,7 @@ namespace SuperPOS.UI
 
             wbPrtTemplataTa.OrderDate = DateTime.Now.ToShortDateString();
             wbPrtTemplataTa.OrderTime = DateTime.Now.ToShortTimeString();
-            wbPrtTemplataTa.Staff = sStaff;
+            wbPrtTemplataTa.Staff = string.IsNullOrEmpty(sStaff) ? CommonData.UsrBase.FirstOrDefault(s => s.ID == intStaffID).UsrName : sStaff;
             wbPrtTemplataTa.OrderNo = strChkOrder;
             wbPrtTemplataTa.ItemCount = sItemCount >= 1 ? sItemCount.ToString() : "0";
             wbPrtTemplataTa.SubTotal = sSubTotal;
@@ -720,6 +727,8 @@ namespace SuperPOS.UI
             wbPrtTemplataTa.OrderType = GetPayType(strChkOrder);
             wbPrtTemplataTa.RefNo = sRefNo;
             wbPrtTemplataTa.DeliveryFee = sDeliveryFee;
+
+            wbPrtTemplataTa.Discount = sDiscount;
 
             #region VAT计算
             if (CommonData.GenSet.Any())
@@ -771,6 +780,31 @@ namespace SuperPOS.UI
             #endregion
 
             return wbPrtTemplataTa;
+        }
+
+        private void RefreshPrtInfo()
+        {
+            if(string.IsNullOrEmpty(strChkOrder)) return;
+
+            if (doc == null) doc = new HtmlWeb().Load(WbPrtStatic.PRT_TEMPLATE_FILE_PATH + @"so" + WbPrtStatic.PRT_TEMPLATE_FILE_NAME_SUFFIX);
+
+            new SystemData().GetTaOrderItem();
+            var lstOI = CommonData.TaOrderItem.Where(s => s.CheckCode.Equals(strChkOrder) && s.BusDate.Equals(checkBusDate)).ToList();
+
+            WbPrtTemplataTa wbPrtTemplataTa = new WbPrtTemplataTa();
+            wbPrtTemplataTa = GetAllPrtInfo();
+            
+            string htmlText = doc.Text;
+
+            if (string.IsNullOrEmpty(htmlText)) webBrowser2.DocumentText = "";
+
+            htmlText = WbPrtPrint.ReplaceHtmlPrtKeysShop(htmlText, wbPrtTemplataTa);
+
+            htmlText = WbPrtPrint.GetOrderItemInfo(doc, htmlText, lstOI, false);
+            
+            webBrowser2.DocumentText = htmlText;
+            
+            //webBrowser2.Refresh();
         }
     }
 }

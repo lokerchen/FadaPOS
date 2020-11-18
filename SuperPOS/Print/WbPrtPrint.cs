@@ -883,7 +883,7 @@ namespace SuperPOS.Print
         /// <param name="lsTaOrderItemInfos">Order Item信息</param>
         /// <param name="isKitchen">是否为Kitchen单</param>
         /// <returns></returns>
-        private static string GetOrderItemInfo(HtmlDocument document, string strHtmlText, List<TaOrderItemInfo> lsTaOrderItemInfos, bool isKitchen)
+        public static string GetOrderItemInfo(HtmlDocument document, string strHtmlText, List<TaOrderItemInfo> lsTaOrderItemInfos, bool isKitchen)
         {
             HtmlNode node;
 
