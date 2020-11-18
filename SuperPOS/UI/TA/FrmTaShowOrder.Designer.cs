@@ -68,6 +68,7 @@
             this.gridRefNo = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridDeliveryFee = new DevExpress.XtraGrid.Columns.GridColumn();
             this.webBrowser2 = new System.Windows.Forms.WebBrowser();
+            this.gridStaffId = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
             this.panelControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl4)).BeginInit();
@@ -459,7 +460,8 @@
             this.gridTendered,
             this.gridChange,
             this.gridRefNo,
-            this.gridDeliveryFee});
+            this.gridDeliveryFee,
+            this.gridStaffId});
             this.gvTaShowOrder.GridControl = this.gridControlTaShowOrder;
             this.gvTaShowOrder.IndicatorWidth = 50;
             this.gvTaShowOrder.Name = "gvTaShowOrder";
@@ -630,6 +632,14 @@
             this.webBrowser2.Size = new System.Drawing.Size(322, 524);
             this.webBrowser2.TabIndex = 4;
             // 
+            // gridStaffId
+            // 
+            this.gridStaffId.Caption = "StaffId";
+            this.gridStaffId.FieldName = "gridStaffId";
+            this.gridStaffId.Name = "gridStaffId";
+            this.gridStaffId.Visible = true;
+            this.gridStaffId.VisibleIndex = 7;
+            // 
             // FrmTaShowOrder
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 14F);
@@ -700,5 +710,6 @@
         private System.Windows.Forms.WebBrowser webBrowser1;
         private DevExpress.XtraGrid.Columns.GridColumn gridDeliveryFee;
         private System.Windows.Forms.WebBrowser webBrowser2;
+        private DevExpress.XtraGrid.Columns.GridColumn gridStaffId;
     }
 }
