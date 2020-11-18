@@ -230,7 +230,7 @@ namespace SuperPOS.UI
         {
             if (gvTaShowOrder.RowCount <= 0)
             {
-                richEditCtlPreview.Text = "";
+                webBrowser2.DocumentText = "";
                 return;
             }
 

@@ -83,7 +83,6 @@
             // panelControl1
             // 
             this.panelControl1.Controls.Add(this.webBrowser2);
-            this.panelControl1.Controls.Add(this.richEditCtlPreview);
             this.panelControl1.Controls.Add(this.panelControl4);
             this.panelControl1.Location = new System.Drawing.Point(5, 4);
             this.panelControl1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -94,7 +93,7 @@
             // richEditCtlPreview
             // 
             this.richEditCtlPreview.EnableToolTips = true;
-            this.richEditCtlPreview.Location = new System.Drawing.Point(12, 440);
+            this.richEditCtlPreview.Location = new System.Drawing.Point(604, 414);
             this.richEditCtlPreview.Margin = new System.Windows.Forms.Padding(0);
             this.richEditCtlPreview.Name = "richEditCtlPreview";
             this.richEditCtlPreview.Options.Export.PlainText.ExportFinalParagraphMark = DevExpress.XtraRichEdit.Export.PlainText.ExportFinalParagraphMark.Never;
@@ -104,13 +103,15 @@
             this.richEditCtlPreview.Options.HorizontalScrollbar.Visibility = DevExpress.XtraRichEdit.RichEditScrollbarVisibility.Hidden;
             this.richEditCtlPreview.Options.VerticalRuler.Visibility = DevExpress.XtraRichEdit.RichEditRulerVisibility.Hidden;
             this.richEditCtlPreview.Options.VerticalScrollbar.Visibility = DevExpress.XtraRichEdit.RichEditScrollbarVisibility.Hidden;
-            this.richEditCtlPreview.Size = new System.Drawing.Size(237, 48);
+            this.richEditCtlPreview.Size = new System.Drawing.Size(50, 30);
             this.richEditCtlPreview.TabIndex = 3;
             this.richEditCtlPreview.Text = "rich";
+            this.richEditCtlPreview.Visible = false;
             // 
             // panelControl4
             // 
             this.panelControl4.Controls.Add(this.webBrowser1);
+            this.panelControl4.Controls.Add(this.richEditCtlPreview);
             this.panelControl4.Controls.Add(this.panelControl5);
             this.panelControl4.Controls.Add(this.btnExit);
             this.panelControl4.Controls.Add(this.panelControl6);
@@ -123,7 +124,7 @@
             // 
             // webBrowser1
             // 
-            this.webBrowser1.Location = new System.Drawing.Point(604, 373);
+            this.webBrowser1.Location = new System.Drawing.Point(604, 365);
             this.webBrowser1.MinimumSize = new System.Drawing.Size(20, 20);
             this.webBrowser1.Name = "webBrowser1";
             this.webBrowser1.Size = new System.Drawing.Size(60, 30);
@@ -626,7 +627,7 @@
             this.webBrowser2.Location = new System.Drawing.Point(5, 5);
             this.webBrowser2.MinimumSize = new System.Drawing.Size(20, 20);
             this.webBrowser2.Name = "webBrowser2";
-            this.webBrowser2.Size = new System.Drawing.Size(322, 413);
+            this.webBrowser2.Size = new System.Drawing.Size(322, 524);
             this.webBrowser2.TabIndex = 4;
             // 
             // FrmTaShowOrder
