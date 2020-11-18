@@ -75,7 +75,7 @@ namespace SuperPOS.UI
 
         private void btnOrder_Click(object sender, EventArgs e)
         {
-            FrmTaMain frmTaMain = new FrmTaMain(usrID);
+            FrmTaMain frmTaMain = new FrmTaMain(usrID, PubComm.MENU_LANG_DEFAULT);
             frmTaMain.ShowDialog();
         }
 
@@ -88,7 +88,7 @@ namespace SuperPOS.UI
         private void btnOrderScreen_Click(object sender, EventArgs e)
         {
             //显示订餐界面
-            FrmTaMain frmTaMain = new FrmTaMain(usrID);
+            FrmTaMain frmTaMain = new FrmTaMain(usrID, PubComm.MENU_LANG_DEFAULT);
 
             frmTaMain.ShowDialog();
         }

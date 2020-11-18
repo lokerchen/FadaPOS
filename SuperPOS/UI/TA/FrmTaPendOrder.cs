@@ -72,6 +72,9 @@ namespace SuperPOS.UI.TA
         private string strOrderNo = "";
         private string strBusDate = "";
         private string strCustPhone = "";
+
+        //语言状态位
+        private int iLang = PubComm.MENU_LANG_DEFAULT;
         #endregion
 
         public FrmTaPendOrder()
@@ -79,10 +82,11 @@ namespace SuperPOS.UI.TA
             InitializeComponent();
         }
 
-        public FrmTaPendOrder(int uID)
+        public FrmTaPendOrder(int uID, int iLanguage)
         {
             InitializeComponent();
             usrID = uID;
+            iLang = iLanguage;
         }
 
         public FrmTaPendOrder(string sOrderNo, string sBusDate, string sCustPhone)
@@ -487,14 +491,14 @@ namespace SuperPOS.UI.TA
         private void btnExit_Click(object sender, EventArgs e)
         {
             Hide();
-            FrmTaMain frmTaMain = new FrmTaMain(usrID);
+            FrmTaMain frmTaMain = new FrmTaMain(usrID, iLang);
             frmTaMain.ShowDialog();
         }
 
         private void gvTaPendOrder_DoubleClick(object sender, EventArgs e)
         {
             Hide();
-            FrmTaMain frmTaMain = new FrmTaMain(checkCode, usrID, checkCustID, checkBusDate);
+            FrmTaMain frmTaMain = new FrmTaMain(checkCode, usrID, checkCustID, checkBusDate, iLang);
             frmTaMain.ShowDialog();
         }
 
@@ -560,7 +564,7 @@ namespace SuperPOS.UI.TA
         private void btnOpen_Click(object sender, EventArgs e)
         {
             Hide();
-            FrmTaMain frmTaMain = new FrmTaMain(checkCode, usrID, checkCustID, checkBusDate);
+            FrmTaMain frmTaMain = new FrmTaMain(checkCode, usrID, checkCustID, checkBusDate, iLang);
             frmTaMain.ShowDialog();
         }
 

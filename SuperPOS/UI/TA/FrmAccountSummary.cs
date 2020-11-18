@@ -635,7 +635,7 @@ namespace SuperPOS.UI.TA
         private void btnAmendOrder_Click(object sender, EventArgs e)
         {
             //Hide();
-            FrmTaMain frmTaMain = new FrmTaMain(strChkOrder, usrID, intCusID, deDay.Text);
+            FrmTaMain frmTaMain = new FrmTaMain(strChkOrder, usrID, intCusID, deDay.Text, PubComm.MENU_LANG_DEFAULT);
             frmTaMain.ShowDialog();
         }
         

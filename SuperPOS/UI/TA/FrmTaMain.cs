@@ -140,10 +140,11 @@ namespace SuperPOS.UI.TA
             InitializeComponent();
         }
 
-        public FrmTaMain(int id)
+        public FrmTaMain(int id, int iLanguage)
         {
             InitializeComponent();
             usrID = id;
+            iLangStatusId = iLanguage;
         }
 
         public FrmTaMain(string cId, int id, int cusId)
@@ -154,13 +155,14 @@ namespace SuperPOS.UI.TA
             CustID = cusId;
         }
 
-        public FrmTaMain(string cId, int id, int cusId, string sBusDate)
+        public FrmTaMain(string cId, int id, int cusId, string sBusDate, int iLanguage)
         {
             InitializeComponent();
             checkID = cId;
             usrID = id;
             CustID = cusId;
             strBusDate = string.IsNullOrEmpty(sBusDate) ? CommonDAL.GetBusDate() : sBusDate;
+            iLangStatusId = iLanguage;
         }
 
         public FrmTaMain(string cId, int id, int cusId, string sBusDate, bool isCall)
@@ -844,14 +846,14 @@ namespace SuperPOS.UI.TA
 
                     treeListOrder.Nodes.Clear();
 
-                    FrmTaPendOrder frmTaPendOrder = new FrmTaPendOrder(usrID);
+                    FrmTaPendOrder frmTaPendOrder = new FrmTaPendOrder(usrID, iLangStatusId);
                     this.Hide();
                     frmTaPendOrder.ShowDialog();
                 }
             }
             else
             {
-                FrmTaPendOrder frmTaPendOrder = new FrmTaPendOrder(usrID);
+                FrmTaPendOrder frmTaPendOrder = new FrmTaPendOrder(usrID, iLangStatusId);
                 this.Hide();
                 frmTaPendOrder.ShowDialog();
             }
