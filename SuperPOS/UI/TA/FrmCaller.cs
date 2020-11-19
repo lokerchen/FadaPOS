@@ -97,8 +97,8 @@ namespace SuperPOS.UI.TA
         {
             txtTelNum.Text = strCallPhone;
 
-            txtHour.Text = dt.Hour.ToString();
-            txtMinute.Text = dt.Minute.ToString();
+            txtHour.Text = dt.ToString().Split(':')[0].Substring(dt.ToString().Split(':')[0].Length - 2);
+            txtMinute.Text = dt.ToString().Split(':')[1];
 
             #region 设置Panel
 
@@ -219,7 +219,7 @@ namespace SuperPOS.UI.TA
             SetPanelCustInfo();
             SetPanelOrderInfo();
 
-            lblCallInfo.Text = DateTime.Now.ToShortDateString() + DateTime.Now.ToShortTimeString();
+            lblCallInfo.Text = DateTime.Now.ToShortDateString() + @" " + DateTime.Now.ToShortTimeString();
 
             asfc.controllInitializeSize(this);
         }

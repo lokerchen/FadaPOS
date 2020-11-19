@@ -72,6 +72,7 @@
             this.lblCustInfo1 = new DevExpress.XtraEditors.LabelControl();
             this.lblCustPhone1 = new DevExpress.XtraEditors.LabelControl();
             this.panelControl3 = new DevExpress.XtraEditors.PanelControl();
+            this.lblNew = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.txtMinute = new DevExpress.XtraEditors.TextEdit();
             this.txtHour = new DevExpress.XtraEditors.TextEdit();
@@ -107,7 +108,6 @@
             this.panelControl2 = new DevExpress.XtraEditors.PanelControl();
             this.lblCallInfo = new DevExpress.XtraEditors.LabelControl();
             this.labelControl13 = new DevExpress.XtraEditors.LabelControl();
-            this.lblNew = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
             this.panelControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl5)).BeginInit();
@@ -708,6 +708,18 @@
             this.panelControl3.Size = new System.Drawing.Size(392, 356);
             this.panelControl3.TabIndex = 3;
             // 
+            // lblNew
+            // 
+            this.lblNew.AutoSize = true;
+            this.lblNew.Font = new System.Drawing.Font("Tahoma", 14F, System.Drawing.FontStyle.Bold);
+            this.lblNew.ForeColor = System.Drawing.Color.Red;
+            this.lblNew.Location = new System.Drawing.Point(186, 42);
+            this.lblNew.Name = "lblNew";
+            this.lblNew.Size = new System.Drawing.Size(57, 23);
+            this.lblNew.TabIndex = 103;
+            this.lblNew.Text = "NEW";
+            this.lblNew.Visible = false;
+            // 
             // label1
             // 
             this.label1.AutoSize = true;
@@ -1256,18 +1268,6 @@
             this.labelControl13.Size = new System.Drawing.Size(188, 24);
             this.labelControl13.TabIndex = 0;
             this.labelControl13.Text = "Caller ID Information";
-            // 
-            // lblNew
-            // 
-            this.lblNew.AutoSize = true;
-            this.lblNew.Font = new System.Drawing.Font("Tahoma", 14F, System.Drawing.FontStyle.Bold);
-            this.lblNew.ForeColor = System.Drawing.Color.Red;
-            this.lblNew.Location = new System.Drawing.Point(186, 42);
-            this.lblNew.Name = "lblNew";
-            this.lblNew.Size = new System.Drawing.Size(57, 23);
-            this.lblNew.TabIndex = 103;
-            this.lblNew.Text = "NEW";
-            this.lblNew.Visible = false;
             // 
             // FrmCaller
             // 

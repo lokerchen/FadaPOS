@@ -3744,15 +3744,32 @@ namespace SuperPOS.UI.TA
 
         private void button1_Click(object sender, EventArgs e)
         {
-            string CallerPhone = string.IsNullOrEmpty(lblPhone.Text) ? "07533375888" : lblPhone.Text;
-            
+            string CallerPhone = "07533375888";
+
             if (!string.IsNullOrEmpty(CallerPhone))
             {
+                isGetPhone = true;
+
+                #region 保存来电信息
+
+                TaComePhoneInfo taComePhoneInfo = new TaComePhoneInfo();
+                taComePhoneInfo.CustPhoneNo = CallerPhone;
+                taComePhoneInfo.ComePhoneTime = DateTime.Now.ToString();
+                taComePhoneInfo.CustName = @"";
+                taComePhoneInfo.CustID = "0";
+                taComePhoneInfo.BusDate = strBusDate;
+
+                _control.AddEntity(taComePhoneInfo);
+
+                #endregion
+
                 if (treeListOrder.Nodes.Count > 0)
                 {
                     #region 保存TreeList
+
                     new SystemData().GetTaOrderItem();
-                    var lstDelOi = CommonData.TaOrderItem.Where(s => s.CheckCode.Equals(checkID) && s.BusDate.Equals(strBusDate));
+                    var lstDelOi =
+                        CommonData.TaOrderItem.Where(s => s.CheckCode.Equals(checkID) && s.BusDate.Equals(strBusDate));
 
                     foreach (var taOrderItemInfo in lstDelOi)
                     {
@@ -3776,10 +3793,13 @@ namespace SuperPOS.UI.TA
                             _control.AddEntity(taOrderItemInfo);
                         }
                     }
+
                     #endregion
 
                     #region 保存账单
+
                     SaveCheckOrder(lstTaOI, false);
+
                     #endregion
                 }
 
@@ -3806,6 +3826,7 @@ namespace SuperPOS.UI.TA
                     }
 
                     ChangeOrderBtnColor(ORDER_TYPE);
+                    isGetPhone = false;
                 }
             }
         }
