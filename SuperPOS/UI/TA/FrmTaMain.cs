@@ -256,10 +256,11 @@ namespace SuperPOS.UI.TA
                 FrmCancelOrder frmCancelOrder = new FrmCancelOrder();
                 frmCancelOrder.Location = panelControl3.PointToScreen(panelControl1.Location);
                 frmCancelOrder.Size = panelControl3.Size;
-                
+
                 if (frmCancelOrder.ShowDialog() == DialogResult.OK)
                 {
-                    var lstChk = CommonData.TaCheckOrder.Where(s => s.CheckCode.Equals(checkID) && s.BusDate.Equals(strBusDate));
+                    var lstChk =
+                        CommonData.TaCheckOrder.Where(s => s.CheckCode.Equals(checkID) && s.BusDate.Equals(strBusDate));
                     if (lstChk.Any())
                     {
                         TaCheckOrderInfo taCheck = lstChk.FirstOrDefault();
@@ -280,6 +281,14 @@ namespace SuperPOS.UI.TA
                     ChangeOrderBtnColor(ORDER_TYPE);
                     GetCustInfo(0);
                 }
+            }
+            else
+            {
+                ORDER_TYPE = PubComm.ORDER_TYPE_DELIVERY;
+                btnType.Appearance.BackColor = Color.ForestGreen;
+                btnType.Text = PubComm.ORDER_TYPE_DELIVERY;
+
+                SetCustInfo(true, true, null);
             }
 
             //Close();
