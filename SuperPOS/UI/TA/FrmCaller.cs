@@ -183,7 +183,7 @@ namespace SuperPOS.UI.TA
 
                 new SystemData().GetTaCheckOrder();
 
-                var lstCo = CommonData.TaCheckOrder.Where(s => s.BusDate.Equals(strBustDate)).OrderByDescending(s => Convert.ToDateTime(s.PayTime)).Take(5);
+                var lstCo = CommonData.TaCheckOrder.Where(s => s.BusDate.Equals(strBustDate) && !s.IsPaid.Equals("Y")).OrderByDescending(s => Convert.ToDateTime(s.PayTime)).Take(5);
 
                 if (lstCo.Any())
                 {
