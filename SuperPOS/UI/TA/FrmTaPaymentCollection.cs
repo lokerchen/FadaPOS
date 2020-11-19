@@ -1230,7 +1230,7 @@ namespace SuperPOS.UI.TA
             wbPrtTemplataTa.OrderNo = checkID;
             wbPrtTemplataTa.ItemCount = htDetail["ItemQty"].ToString();
             wbPrtTemplataTa.SubTotal = htDetail["SubTotal"].ToString();
-            wbPrtTemplataTa.Total = htDetail["Total"].ToString();
+            wbPrtTemplataTa.Total = txtToPay.Text;
             wbPrtTemplataTa.PayType = IsNotPaid ? @"NOT PAID" : GetPayType();
             wbPrtTemplataTa.Tendered = txtTendered.Text;
             wbPrtTemplataTa.Change = txtChange.Text;
