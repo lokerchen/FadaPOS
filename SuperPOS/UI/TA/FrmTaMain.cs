@@ -370,6 +370,8 @@ namespace SuperPOS.UI.TA
             //QueryPayment();
             #endregion
 
+            SetBtnLang(iLangStatusId);
+            
             asfc.controllInitializeSize(this);
 
             #region 提示打开来电设备失败
@@ -421,18 +423,6 @@ namespace SuperPOS.UI.TA
                         }
                     }
                 }
-
-                btnHome.Text = @"HOME";
-                btnKeypad.Text = @"Key";
-                btnChange.Text = @"CHGE";
-                btnPay.Text = @"Accept";
-                btnMenu.Text = @"Menu";
-                btnCid.Text = @"CID";
-                btnLanguage.Text = @"LANGUAGE";
-                btnPendOrder.Text = @"Pending Orders";
-                btnSaveOrder.Text = @"Save Order";
-                btnCancel.Text = @"CANCEL ORDER";
-                btnEatIn.Text = @"Eat In";
             }
             else
             {
@@ -456,20 +446,9 @@ namespace SuperPOS.UI.TA
                         }
                     }
                 }
-
-                btnHome.Text = @"主界面";
-                btnKeypad.Text = @"快捷按钮";
-                btnChange.Text = @"改码";
-                btnPay.Text = @"付款";
-                btnMenu.Text = @"菜谱";
-                btnCid.Text = @"来电";
-                btnLanguage.Text = @"语言";
-                btnPendOrder.Text = @"挂单";
-                btnSaveOrder.Text = @"保存";
-                btnCancel.Text = @"取消订单";
-                btnEatIn.Text = @"堂食";
             }
-            
+
+            SetBtnLang(iLangStatusId);
         }
         #endregion
 
@@ -3891,6 +3870,38 @@ namespace SuperPOS.UI.TA
                 lblCustDistance.Visible = true;
                 lblCustDeliveryFee.Visible = true;
                 lblCustReadyTime.Visible = true;
+            }
+        }
+
+        private void SetBtnLang(int iLanguage)
+        {
+            if (iLanguage == PubComm.MENU_LANG_DEFAULT)
+            {
+                btnHome.Text = @"HOME";
+                btnKeypad.Text = @"Key";
+                btnChange.Text = @"CHGE";
+                btnPay.Text = @"Accept";
+                btnMenu.Text = @"Menu";
+                btnCid.Text = @"CID";
+                btnLanguage.Text = @"LANGUAGE";
+                btnPendOrder.Text = @"Pending Orders";
+                btnSaveOrder.Text = @"Save Order";
+                btnCancel.Text = @"CANCEL ORDER";
+                btnEatIn.Text = @"Eat In";
+            }
+            else
+            {
+                btnHome.Text = @"主界面";
+                btnKeypad.Text = @"快捷按钮";
+                btnChange.Text = @"改码";
+                btnPay.Text = @"付款";
+                btnMenu.Text = @"菜谱";
+                btnCid.Text = @"来电";
+                btnLanguage.Text = @"语言";
+                btnPendOrder.Text = @"挂单";
+                btnSaveOrder.Text = @"保存";
+                btnCancel.Text = @"取消订单";
+                btnEatIn.Text = @"堂食";
             }
         }
     }
