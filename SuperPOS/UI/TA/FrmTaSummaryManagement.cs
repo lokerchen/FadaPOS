@@ -30,5 +30,10 @@ namespace SuperPOS.UI.TA
         {
             asfc.controlAutoSize(this);
         }
+
+        private void btnExit_Click(object sender, EventArgs e)
+        {
+            Close();
+        }
     }
 }

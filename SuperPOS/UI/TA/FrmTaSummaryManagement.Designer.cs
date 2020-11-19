@@ -111,9 +111,11 @@
             this.groupBox1.Controls.Add(this.groupBox2);
             this.groupBox1.Controls.Add(this.gridControlTaSummaryManagement);
             this.groupBox1.Font = new System.Drawing.Font("Tahoma", 12F);
-            this.groupBox1.Location = new System.Drawing.Point(10, 10);
+            this.groupBox1.Location = new System.Drawing.Point(9, 8);
+            this.groupBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(1116, 684);
+            this.groupBox1.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.groupBox1.Size = new System.Drawing.Size(976, 532);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Summary Management";
@@ -129,11 +131,13 @@
             this.btnExit.Appearance.Options.UseTextOptions = true;
             this.btnExit.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
             this.btnExit.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
-            this.btnExit.Location = new System.Drawing.Point(989, 594);
+            this.btnExit.Location = new System.Drawing.Point(865, 462);
+            this.btnExit.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnExit.Name = "btnExit";
-            this.btnExit.Size = new System.Drawing.Size(108, 68);
+            this.btnExit.Size = new System.Drawing.Size(94, 53);
             this.btnExit.TabIndex = 85;
             this.btnExit.Text = "Exit";
+            this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
             // 
             // btnLanguage
             // 
@@ -146,30 +150,32 @@
             this.btnLanguage.Appearance.Options.UseTextOptions = true;
             this.btnLanguage.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
             this.btnLanguage.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
-            this.btnLanguage.Location = new System.Drawing.Point(767, 620);
+            this.btnLanguage.Location = new System.Drawing.Point(671, 482);
+            this.btnLanguage.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnLanguage.Name = "btnLanguage";
-            this.btnLanguage.Size = new System.Drawing.Size(162, 42);
+            this.btnLanguage.Size = new System.Drawing.Size(142, 33);
             this.btnLanguage.TabIndex = 84;
             this.btnLanguage.Text = "LANGUAGE";
             // 
             // textEdit6
             // 
             this.textEdit6.EditValue = "2020-09-26";
-            this.textEdit6.Location = new System.Drawing.Point(813, 518);
+            this.textEdit6.Location = new System.Drawing.Point(711, 403);
+            this.textEdit6.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.textEdit6.Name = "textEdit6";
             this.textEdit6.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 14F);
             this.textEdit6.Properties.Appearance.Options.UseFont = true;
             this.textEdit6.Properties.Appearance.Options.UseTextOptions = true;
             this.textEdit6.Properties.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.textEdit6.Size = new System.Drawing.Size(147, 34);
+            this.textEdit6.Size = new System.Drawing.Size(129, 30);
             this.textEdit6.TabIndex = 83;
             // 
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(763, 521);
+            this.label5.Location = new System.Drawing.Point(668, 405);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(53, 24);
+            this.label5.Size = new System.Drawing.Size(41, 19);
             this.label5.TabIndex = 4;
             this.label5.Text = "Date";
             // 
@@ -186,9 +192,10 @@
             this.btnDateLeft.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
             this.btnDateLeft.Image = ((System.Drawing.Image)(resources.GetObject("btnDateLeft.Image")));
             this.btnDateLeft.ImageLocation = DevExpress.XtraEditors.ImageLocation.MiddleCenter;
-            this.btnDateLeft.Location = new System.Drawing.Point(676, 517);
+            this.btnDateLeft.Location = new System.Drawing.Point(592, 402);
+            this.btnDateLeft.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnDateLeft.Name = "btnDateLeft";
-            this.btnDateLeft.Size = new System.Drawing.Size(81, 35);
+            this.btnDateLeft.Size = new System.Drawing.Size(71, 27);
             this.btnDateLeft.TabIndex = 81;
             // 
             // btnDateRight
@@ -204,9 +211,10 @@
             this.btnDateRight.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
             this.btnDateRight.Image = ((System.Drawing.Image)(resources.GetObject("btnDateRight.Image")));
             this.btnDateRight.ImageLocation = DevExpress.XtraEditors.ImageLocation.MiddleCenter;
-            this.btnDateRight.Location = new System.Drawing.Point(965, 517);
+            this.btnDateRight.Location = new System.Drawing.Point(844, 402);
+            this.btnDateRight.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnDateRight.Name = "btnDateRight";
-            this.btnDateRight.Size = new System.Drawing.Size(81, 35);
+            this.btnDateRight.Size = new System.Drawing.Size(71, 27);
             this.btnDateRight.TabIndex = 82;
             // 
             // groupBox5
@@ -215,9 +223,11 @@
             this.groupBox5.Controls.Add(this.label3);
             this.groupBox5.Controls.Add(this.txtRemainingOrderQty);
             this.groupBox5.Controls.Add(this.label4);
-            this.groupBox5.Location = new System.Drawing.Point(400, 558);
+            this.groupBox5.Location = new System.Drawing.Point(350, 434);
+            this.groupBox5.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.groupBox5.Name = "groupBox5";
-            this.groupBox5.Size = new System.Drawing.Size(299, 110);
+            this.groupBox5.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.groupBox5.Size = new System.Drawing.Size(262, 86);
             this.groupBox5.TabIndex = 80;
             this.groupBox5.TabStop = false;
             this.groupBox5.Text = "Remaining";
@@ -225,42 +235,44 @@
             // txtRemainingTotalAmt
             // 
             this.txtRemainingTotalAmt.EditValue = "129.70";
-            this.txtRemainingTotalAmt.Location = new System.Drawing.Point(159, 70);
+            this.txtRemainingTotalAmt.Location = new System.Drawing.Point(139, 54);
+            this.txtRemainingTotalAmt.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtRemainingTotalAmt.Name = "txtRemainingTotalAmt";
             this.txtRemainingTotalAmt.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 14F);
             this.txtRemainingTotalAmt.Properties.Appearance.Options.UseFont = true;
             this.txtRemainingTotalAmt.Properties.Appearance.Options.UseTextOptions = true;
             this.txtRemainingTotalAmt.Properties.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.txtRemainingTotalAmt.Size = new System.Drawing.Size(120, 34);
+            this.txtRemainingTotalAmt.Size = new System.Drawing.Size(105, 30);
             this.txtRemainingTotalAmt.TabIndex = 3;
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(170, 44);
+            this.label3.Location = new System.Drawing.Point(149, 34);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(98, 24);
+            this.label3.Size = new System.Drawing.Size(80, 19);
             this.label3.TabIndex = 2;
             this.label3.Text = "Total Amt";
             // 
             // txtRemainingOrderQty
             // 
             this.txtRemainingOrderQty.EditValue = "1";
-            this.txtRemainingOrderQty.Location = new System.Drawing.Point(17, 70);
+            this.txtRemainingOrderQty.Location = new System.Drawing.Point(15, 54);
+            this.txtRemainingOrderQty.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtRemainingOrderQty.Name = "txtRemainingOrderQty";
             this.txtRemainingOrderQty.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 14F);
             this.txtRemainingOrderQty.Properties.Appearance.Options.UseFont = true;
             this.txtRemainingOrderQty.Properties.Appearance.Options.UseTextOptions = true;
             this.txtRemainingOrderQty.Properties.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.txtRemainingOrderQty.Size = new System.Drawing.Size(120, 34);
+            this.txtRemainingOrderQty.Size = new System.Drawing.Size(105, 30);
             this.txtRemainingOrderQty.TabIndex = 1;
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(31, 44);
+            this.label4.Location = new System.Drawing.Point(27, 34);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(97, 24);
+            this.label4.Size = new System.Drawing.Size(80, 19);
             this.label4.TabIndex = 0;
             this.label4.Text = "Order Qty";
             // 
@@ -270,9 +282,11 @@
             this.groupBox4.Controls.Add(this.label2);
             this.groupBox4.Controls.Add(this.txtSelectedOrders);
             this.groupBox4.Controls.Add(this.label1);
-            this.groupBox4.Location = new System.Drawing.Point(80, 558);
+            this.groupBox4.Location = new System.Drawing.Point(70, 434);
+            this.groupBox4.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.groupBox4.Name = "groupBox4";
-            this.groupBox4.Size = new System.Drawing.Size(299, 110);
+            this.groupBox4.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.groupBox4.Size = new System.Drawing.Size(262, 86);
             this.groupBox4.TabIndex = 78;
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "Selected";
@@ -280,42 +294,44 @@
             // txtSelectedAmount
             // 
             this.txtSelectedAmount.EditValue = "129.70";
-            this.txtSelectedAmount.Location = new System.Drawing.Point(159, 70);
+            this.txtSelectedAmount.Location = new System.Drawing.Point(139, 54);
+            this.txtSelectedAmount.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtSelectedAmount.Name = "txtSelectedAmount";
             this.txtSelectedAmount.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 14F);
             this.txtSelectedAmount.Properties.Appearance.Options.UseFont = true;
             this.txtSelectedAmount.Properties.Appearance.Options.UseTextOptions = true;
             this.txtSelectedAmount.Properties.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.txtSelectedAmount.Size = new System.Drawing.Size(120, 34);
+            this.txtSelectedAmount.Size = new System.Drawing.Size(105, 30);
             this.txtSelectedAmount.TabIndex = 3;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(187, 44);
+            this.label2.Location = new System.Drawing.Point(164, 34);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(79, 24);
+            this.label2.Size = new System.Drawing.Size(66, 19);
             this.label2.TabIndex = 2;
             this.label2.Text = "Amount";
             // 
             // txtSelectedOrders
             // 
             this.txtSelectedOrders.EditValue = "1";
-            this.txtSelectedOrders.Location = new System.Drawing.Point(17, 70);
+            this.txtSelectedOrders.Location = new System.Drawing.Point(15, 54);
+            this.txtSelectedOrders.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtSelectedOrders.Name = "txtSelectedOrders";
             this.txtSelectedOrders.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 14F);
             this.txtSelectedOrders.Properties.Appearance.Options.UseFont = true;
             this.txtSelectedOrders.Properties.Appearance.Options.UseTextOptions = true;
             this.txtSelectedOrders.Properties.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.txtSelectedOrders.Size = new System.Drawing.Size(120, 34);
+            this.txtSelectedOrders.Size = new System.Drawing.Size(105, 30);
             this.txtSelectedOrders.TabIndex = 1;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(45, 44);
+            this.label1.Location = new System.Drawing.Point(39, 34);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(69, 24);
+            this.label1.Size = new System.Drawing.Size(57, 19);
             this.label1.TabIndex = 0;
             this.label1.Text = "Orders";
             // 
@@ -332,9 +348,10 @@
             this.btnUp.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
             this.btnUp.Image = ((System.Drawing.Image)(resources.GetObject("btnUp.Image")));
             this.btnUp.ImageLocation = DevExpress.XtraEditors.ImageLocation.MiddleCenter;
-            this.btnUp.Location = new System.Drawing.Point(17, 558);
+            this.btnUp.Location = new System.Drawing.Point(15, 434);
+            this.btnUp.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnUp.Name = "btnUp";
-            this.btnUp.Size = new System.Drawing.Size(55, 60);
+            this.btnUp.Size = new System.Drawing.Size(48, 47);
             this.btnUp.TabIndex = 76;
             this.btnUp.Text = ">>";
             // 
@@ -351,9 +368,10 @@
             this.btnDown.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
             this.btnDown.Image = ((System.Drawing.Image)(resources.GetObject("btnDown.Image")));
             this.btnDown.ImageLocation = DevExpress.XtraEditors.ImageLocation.MiddleCenter;
-            this.btnDown.Location = new System.Drawing.Point(17, 624);
+            this.btnDown.Location = new System.Drawing.Point(15, 485);
+            this.btnDown.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnDown.Name = "btnDown";
-            this.btnDown.Size = new System.Drawing.Size(55, 60);
+            this.btnDown.Size = new System.Drawing.Size(48, 47);
             this.btnDown.TabIndex = 77;
             this.btnDown.Text = "<<";
             // 
@@ -370,9 +388,10 @@
             this.btnArchiveDayRecord.Appearance.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
             this.btnArchiveDayRecord.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
             this.btnArchiveDayRecord.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
-            this.btnArchiveDayRecord.Location = new System.Drawing.Point(860, 389);
+            this.btnArchiveDayRecord.Location = new System.Drawing.Point(752, 303);
+            this.btnArchiveDayRecord.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnArchiveDayRecord.Name = "btnArchiveDayRecord";
-            this.btnArchiveDayRecord.Size = new System.Drawing.Size(137, 94);
+            this.btnArchiveDayRecord.Size = new System.Drawing.Size(120, 73);
             this.btnArchiveDayRecord.TabIndex = 75;
             this.btnArchiveDayRecord.Text = "Archive Day Record";
             // 
@@ -389,9 +408,10 @@
             this.btnSelectAllOrders.Appearance.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
             this.btnSelectAllOrders.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
             this.btnSelectAllOrders.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
-            this.btnSelectAllOrders.Location = new System.Drawing.Point(690, 389);
+            this.btnSelectAllOrders.Location = new System.Drawing.Point(604, 303);
+            this.btnSelectAllOrders.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnSelectAllOrders.Name = "btnSelectAllOrders";
-            this.btnSelectAllOrders.Size = new System.Drawing.Size(137, 94);
+            this.btnSelectAllOrders.Size = new System.Drawing.Size(120, 73);
             this.btnSelectAllOrders.TabIndex = 74;
             this.btnSelectAllOrders.Text = "Select All Orders";
             // 
@@ -408,9 +428,10 @@
             this.btnPrintAllOrders.Appearance.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
             this.btnPrintAllOrders.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
             this.btnPrintAllOrders.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
-            this.btnPrintAllOrders.Location = new System.Drawing.Point(860, 270);
+            this.btnPrintAllOrders.Location = new System.Drawing.Point(752, 210);
+            this.btnPrintAllOrders.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnPrintAllOrders.Name = "btnPrintAllOrders";
-            this.btnPrintAllOrders.Size = new System.Drawing.Size(137, 94);
+            this.btnPrintAllOrders.Size = new System.Drawing.Size(120, 73);
             this.btnPrintAllOrders.TabIndex = 73;
             this.btnPrintAllOrders.Text = "Print All Orders";
             // 
@@ -427,9 +448,10 @@
             this.btnAmendOrder.Appearance.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
             this.btnAmendOrder.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
             this.btnAmendOrder.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
-            this.btnAmendOrder.Location = new System.Drawing.Point(690, 270);
+            this.btnAmendOrder.Location = new System.Drawing.Point(604, 210);
+            this.btnAmendOrder.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnAmendOrder.Name = "btnAmendOrder";
-            this.btnAmendOrder.Size = new System.Drawing.Size(137, 94);
+            this.btnAmendOrder.Size = new System.Drawing.Size(120, 73);
             this.btnAmendOrder.TabIndex = 72;
             this.btnAmendOrder.Text = "Amend Order";
             // 
@@ -446,9 +468,10 @@
             this.btnPrintAccountSummary.Appearance.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
             this.btnPrintAccountSummary.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
             this.btnPrintAccountSummary.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
-            this.btnPrintAccountSummary.Location = new System.Drawing.Point(860, 156);
+            this.btnPrintAccountSummary.Location = new System.Drawing.Point(752, 121);
+            this.btnPrintAccountSummary.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnPrintAccountSummary.Name = "btnPrintAccountSummary";
-            this.btnPrintAccountSummary.Size = new System.Drawing.Size(137, 94);
+            this.btnPrintAccountSummary.Size = new System.Drawing.Size(120, 73);
             this.btnPrintAccountSummary.TabIndex = 71;
             this.btnPrintAccountSummary.Text = "Print Account Summary";
             // 
@@ -465,18 +488,21 @@
             this.btnRefreshOrders.Appearance.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
             this.btnRefreshOrders.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
             this.btnRefreshOrders.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
-            this.btnRefreshOrders.Location = new System.Drawing.Point(690, 156);
+            this.btnRefreshOrders.Location = new System.Drawing.Point(604, 121);
+            this.btnRefreshOrders.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnRefreshOrders.Name = "btnRefreshOrders";
-            this.btnRefreshOrders.Size = new System.Drawing.Size(137, 94);
+            this.btnRefreshOrders.Size = new System.Drawing.Size(120, 73);
             this.btnRefreshOrders.TabIndex = 70;
             this.btnRefreshOrders.Text = "Refresh Orders";
             // 
             // groupBox3
             // 
             this.groupBox3.Controls.Add(this.txtCurrentDate);
-            this.groupBox3.Location = new System.Drawing.Point(860, 30);
+            this.groupBox3.Location = new System.Drawing.Point(752, 23);
+            this.groupBox3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(177, 100);
+            this.groupBox3.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.groupBox3.Size = new System.Drawing.Size(155, 78);
             this.groupBox3.TabIndex = 69;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Current Date";
@@ -484,21 +510,24 @@
             // txtCurrentDate
             // 
             this.txtCurrentDate.EditValue = "2020-09-26";
-            this.txtCurrentDate.Location = new System.Drawing.Point(16, 50);
+            this.txtCurrentDate.Location = new System.Drawing.Point(14, 39);
+            this.txtCurrentDate.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtCurrentDate.Name = "txtCurrentDate";
             this.txtCurrentDate.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 14F);
             this.txtCurrentDate.Properties.Appearance.Options.UseFont = true;
             this.txtCurrentDate.Properties.Appearance.Options.UseTextOptions = true;
             this.txtCurrentDate.Properties.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.txtCurrentDate.Size = new System.Drawing.Size(147, 34);
+            this.txtCurrentDate.Size = new System.Drawing.Size(129, 30);
             this.txtCurrentDate.TabIndex = 0;
             // 
             // groupBox2
             // 
             this.groupBox2.Controls.Add(this.txtCurrentTime);
-            this.groupBox2.Location = new System.Drawing.Point(650, 30);
+            this.groupBox2.Location = new System.Drawing.Point(569, 23);
+            this.groupBox2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(177, 100);
+            this.groupBox2.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.groupBox2.Size = new System.Drawing.Size(155, 78);
             this.groupBox2.TabIndex = 67;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Current Time";
@@ -506,21 +535,24 @@
             // txtCurrentTime
             // 
             this.txtCurrentTime.EditValue = "18:35:36";
-            this.txtCurrentTime.Location = new System.Drawing.Point(16, 50);
+            this.txtCurrentTime.Location = new System.Drawing.Point(14, 39);
+            this.txtCurrentTime.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtCurrentTime.Name = "txtCurrentTime";
             this.txtCurrentTime.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 14F);
             this.txtCurrentTime.Properties.Appearance.Options.UseFont = true;
             this.txtCurrentTime.Properties.Appearance.Options.UseTextOptions = true;
             this.txtCurrentTime.Properties.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.txtCurrentTime.Size = new System.Drawing.Size(147, 34);
+            this.txtCurrentTime.Size = new System.Drawing.Size(129, 30);
             this.txtCurrentTime.TabIndex = 0;
             // 
             // gridControlTaSummaryManagement
             // 
-            this.gridControlTaSummaryManagement.Location = new System.Drawing.Point(17, 41);
+            this.gridControlTaSummaryManagement.EmbeddedNavigator.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.gridControlTaSummaryManagement.Location = new System.Drawing.Point(15, 32);
             this.gridControlTaSummaryManagement.MainView = this.gvTaShowOrder;
+            this.gridControlTaSummaryManagement.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.gridControlTaSummaryManagement.Name = "gridControlTaSummaryManagement";
-            this.gridControlTaSummaryManagement.Size = new System.Drawing.Size(604, 511);
+            this.gridControlTaSummaryManagement.Size = new System.Drawing.Size(528, 397);
             this.gridControlTaSummaryManagement.TabIndex = 66;
             this.gridControlTaSummaryManagement.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gvTaShowOrder});
@@ -682,11 +714,12 @@
             // 
             // FrmTaSummaryManagement
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 18F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 14F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1138, 706);
+            this.ClientSize = new System.Drawing.Size(996, 549);
             this.Controls.Add(this.groupBox1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "FrmTaSummaryManagement";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FrmTaSummaryManagement";
