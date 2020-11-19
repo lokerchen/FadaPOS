@@ -144,12 +144,14 @@ namespace SuperPOS.UI.TA
             lblOderNo[4] = lblOrderNo5;
             lblOrderTime[4] = lblOrderTime5;
             #endregion
-            
+
+            int iCustID = 0;
+
             if (!string.IsNullOrEmpty(strCallPhone))
             {
                 new SystemData().GetComePhoneInfo();
                 var lstCp = CommonData.TaComePhoneInfo.Where(s => s.CustPhoneNo.Equals(strCallPhone) && s.BusDate.Equals(strBustDate)).OrderByDescending(s => Convert.ToDateTime(s.ComePhoneTime)).Take(8);
-
+                
                 if (lstCp.Any())
                 {
                     int i = 0;
@@ -175,6 +177,8 @@ namespace SuperPOS.UI.TA
                         btnDelivery.Enabled = false;
                         btnCollection.Enabled = false;
                     }
+                    else
+                        iCustID = lstCust.FirstOrDefault().ID;
 
                     //if (strCustID.Length > 0)
                     //{
@@ -188,7 +192,10 @@ namespace SuperPOS.UI.TA
                 if (lstCo.Any())
                 {
                     int j = 0;
-                    foreach (var taCheckOrderInfo in lstCo)
+
+                    var lstCheck = iCustID <= 0 ? lstCo : lstCo.Where(s => s.CustomerID.Equals(iCustID.ToString()));
+
+                    foreach (var taCheckOrderInfo in lstCheck)
                     {
                         pcOrder[j].Visible = true;
                         lblOderNo[j].Text = taCheckOrderInfo.CheckCode;
