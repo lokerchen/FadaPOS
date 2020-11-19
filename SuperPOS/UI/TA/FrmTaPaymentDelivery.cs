@@ -235,7 +235,7 @@ namespace SuperPOS.UI.TA
                 {
                     t.Appearance.BackColor = Color.LightGreen;
 
-                    var lstD = CommonData.TaDriver.Where(s => s.DriverWorkDay.Contains(DateTime.Now.DayOfWeek.ToString()));
+                    var lstD = CommonData.TaDriver.Where(s => s.DriverWorkDay.Contains(DateTime.Now.DayOfWeek.ToString()) && s.DriverName.Equals(t.Text));
 
                     iDriverID = lstD.Any() ? lstD.FirstOrDefault().ID : 1;
                 }
