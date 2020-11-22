@@ -1632,7 +1632,7 @@ namespace SuperPOS.UI.TA
                                         
                                         string CallerPhone = FromASCIIByteArray(EventData.szData);
 
-                                        if (!string.IsNullOrEmpty(CallerPhone))
+                                        if (!string.IsNullOrEmpty(CallerPhone.Trim()))
                                         {
                                             isGetPhone = true;
                                             
