@@ -284,9 +284,9 @@ namespace SuperPOS.UI.TA
             }
             else
             {
-                ORDER_TYPE = PubComm.ORDER_TYPE_DELIVERY;
-                btnType.Appearance.BackColor = Color.ForestGreen;
-                btnType.Text = PubComm.ORDER_TYPE_DELIVERY;
+                ORDER_TYPE = PubComm.ORDER_TYPE_SHOP;
+                btnType.Appearance.BackColor = Color.HotPink;
+                btnType.Text = PubComm.ORDER_TYPE_SHOP;
 
                 SetCustInfo(true, true, null);
             }
