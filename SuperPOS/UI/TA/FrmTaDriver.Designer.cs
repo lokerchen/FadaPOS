@@ -37,6 +37,7 @@
             this.DriverWorkDay = new DevExpress.XtraGrid.Columns.GridColumn();
             this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
             this.panelControl3 = new DevExpress.XtraEditors.PanelControl();
+            this.btnExit = new DevExpress.XtraEditors.SimpleButton();
             this.btnDel = new DevExpress.XtraEditors.SimpleButton();
             this.btnSave = new DevExpress.XtraEditors.SimpleButton();
             this.btnAdd = new DevExpress.XtraEditors.SimpleButton();
@@ -46,7 +47,6 @@
             this.txtPhoneNum = new DevExpress.XtraEditors.TextEdit();
             this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
             this.txtDriverName = new DevExpress.XtraEditors.TextEdit();
-            this.btnExit = new DevExpress.XtraEditors.SimpleButton();
             ((System.ComponentModel.ISupportInitialize)(this.gridControlTaDriver)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gvTaDriver)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
@@ -62,18 +62,21 @@
             // 
             // labelControl1
             // 
-            this.labelControl1.Location = new System.Drawing.Point(22, 24);
+            this.labelControl1.Location = new System.Drawing.Point(19, 19);
+            this.labelControl1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.labelControl1.Name = "labelControl1";
-            this.labelControl1.Size = new System.Drawing.Size(87, 18);
+            this.labelControl1.Size = new System.Drawing.Size(70, 14);
             this.labelControl1.TabIndex = 0;
             this.labelControl1.Text = "Driver Name:";
             // 
             // gridControlTaDriver
             // 
-            this.gridControlTaDriver.Location = new System.Drawing.Point(5, 148);
+            this.gridControlTaDriver.EmbeddedNavigator.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.gridControlTaDriver.Location = new System.Drawing.Point(4, 115);
             this.gridControlTaDriver.MainView = this.gvTaDriver;
+            this.gridControlTaDriver.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.gridControlTaDriver.Name = "gridControlTaDriver";
-            this.gridControlTaDriver.Size = new System.Drawing.Size(425, 366);
+            this.gridControlTaDriver.Size = new System.Drawing.Size(372, 285);
             this.gridControlTaDriver.TabIndex = 2;
             this.gridControlTaDriver.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gvTaDriver});
@@ -136,9 +139,10 @@
             this.panelControl1.Controls.Add(this.gridControlTaDriver);
             this.panelControl1.Controls.Add(this.panelControl3);
             this.panelControl1.Controls.Add(this.panelControl2);
-            this.panelControl1.Location = new System.Drawing.Point(8, 8);
+            this.panelControl1.Location = new System.Drawing.Point(7, 6);
+            this.panelControl1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panelControl1.Name = "panelControl1";
-            this.panelControl1.Size = new System.Drawing.Size(439, 521);
+            this.panelControl1.Size = new System.Drawing.Size(384, 405);
             this.panelControl1.TabIndex = 3;
             // 
             // panelControl3
@@ -147,34 +151,48 @@
             this.panelControl3.Controls.Add(this.btnDel);
             this.panelControl3.Controls.Add(this.btnSave);
             this.panelControl3.Controls.Add(this.btnAdd);
-            this.panelControl3.Location = new System.Drawing.Point(318, 5);
+            this.panelControl3.Location = new System.Drawing.Point(278, 4);
+            this.panelControl3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panelControl3.Name = "panelControl3";
-            this.panelControl3.Size = new System.Drawing.Size(112, 137);
+            this.panelControl3.Size = new System.Drawing.Size(98, 107);
             this.panelControl3.TabIndex = 1;
+            // 
+            // btnExit
+            // 
+            this.btnExit.Location = new System.Drawing.Point(8, 80);
+            this.btnExit.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnExit.Name = "btnExit";
+            this.btnExit.Size = new System.Drawing.Size(83, 19);
+            this.btnExit.TabIndex = 3;
+            this.btnExit.Text = "Exit";
+            this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
             // 
             // btnDel
             // 
-            this.btnDel.Location = new System.Drawing.Point(9, 72);
+            this.btnDel.Location = new System.Drawing.Point(8, 56);
+            this.btnDel.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnDel.Name = "btnDel";
-            this.btnDel.Size = new System.Drawing.Size(95, 25);
+            this.btnDel.Size = new System.Drawing.Size(83, 19);
             this.btnDel.TabIndex = 2;
             this.btnDel.Text = "Delete";
             this.btnDel.Click += new System.EventHandler(this.btnDel_Click);
             // 
             // btnSave
             // 
-            this.btnSave.Location = new System.Drawing.Point(9, 41);
+            this.btnSave.Location = new System.Drawing.Point(8, 32);
+            this.btnSave.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnSave.Name = "btnSave";
-            this.btnSave.Size = new System.Drawing.Size(95, 25);
+            this.btnSave.Size = new System.Drawing.Size(83, 19);
             this.btnSave.TabIndex = 1;
             this.btnSave.Text = "Save";
             this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
             // btnAdd
             // 
-            this.btnAdd.Location = new System.Drawing.Point(9, 10);
+            this.btnAdd.Location = new System.Drawing.Point(8, 8);
+            this.btnAdd.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnAdd.Name = "btnAdd";
-            this.btnAdd.Size = new System.Drawing.Size(95, 25);
+            this.btnAdd.Size = new System.Drawing.Size(83, 19);
             this.btnAdd.TabIndex = 0;
             this.btnAdd.Text = "Add";
             this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
@@ -187,69 +205,65 @@
             this.panelControl2.Controls.Add(this.labelControl2);
             this.panelControl2.Controls.Add(this.txtDriverName);
             this.panelControl2.Controls.Add(this.labelControl1);
-            this.panelControl2.Location = new System.Drawing.Point(5, 5);
+            this.panelControl2.Location = new System.Drawing.Point(4, 4);
+            this.panelControl2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panelControl2.Name = "panelControl2";
-            this.panelControl2.Size = new System.Drawing.Size(307, 137);
+            this.panelControl2.Size = new System.Drawing.Size(269, 107);
             this.panelControl2.TabIndex = 0;
             // 
             // labelControl11
             // 
-            this.labelControl11.Location = new System.Drawing.Point(21, 102);
+            this.labelControl11.Location = new System.Drawing.Point(18, 79);
+            this.labelControl11.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.labelControl11.Name = "labelControl11";
-            this.labelControl11.Size = new System.Drawing.Size(88, 18);
+            this.labelControl11.Size = new System.Drawing.Size(73, 14);
             this.labelControl11.TabIndex = 22;
             this.labelControl11.Text = "Working Day:";
             // 
             // chkWorkDay
             // 
-            this.chkWorkDay.Location = new System.Drawing.Point(115, 96);
+            this.chkWorkDay.Location = new System.Drawing.Point(101, 75);
+            this.chkWorkDay.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.chkWorkDay.Name = "chkWorkDay";
             this.chkWorkDay.Properties.AllowMultiSelect = true;
             this.chkWorkDay.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.chkWorkDay.Size = new System.Drawing.Size(146, 24);
+            this.chkWorkDay.Size = new System.Drawing.Size(128, 20);
             this.chkWorkDay.TabIndex = 21;
             // 
             // txtPhoneNum
             // 
-            this.txtPhoneNum.Location = new System.Drawing.Point(115, 57);
+            this.txtPhoneNum.Location = new System.Drawing.Point(101, 44);
+            this.txtPhoneNum.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtPhoneNum.Name = "txtPhoneNum";
-            this.txtPhoneNum.Properties.Mask.EditMask = "f0";
-            this.txtPhoneNum.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Numeric;
-            this.txtPhoneNum.Size = new System.Drawing.Size(146, 24);
+            this.txtPhoneNum.Size = new System.Drawing.Size(128, 20);
             this.txtPhoneNum.TabIndex = 3;
             // 
             // labelControl2
             // 
-            this.labelControl2.Location = new System.Drawing.Point(7, 63);
+            this.labelControl2.Location = new System.Drawing.Point(6, 49);
+            this.labelControl2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.labelControl2.Name = "labelControl2";
-            this.labelControl2.Size = new System.Drawing.Size(102, 18);
+            this.labelControl2.Size = new System.Drawing.Size(86, 14);
             this.labelControl2.TabIndex = 2;
             this.labelControl2.Text = "Phone Number:";
             // 
             // txtDriverName
             // 
-            this.txtDriverName.Location = new System.Drawing.Point(115, 18);
+            this.txtDriverName.Location = new System.Drawing.Point(101, 14);
+            this.txtDriverName.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtDriverName.Name = "txtDriverName";
-            this.txtDriverName.Size = new System.Drawing.Size(146, 24);
+            this.txtDriverName.Size = new System.Drawing.Size(128, 20);
             this.txtDriverName.TabIndex = 1;
-            // 
-            // btnExit
-            // 
-            this.btnExit.Location = new System.Drawing.Point(9, 103);
-            this.btnExit.Name = "btnExit";
-            this.btnExit.Size = new System.Drawing.Size(95, 25);
-            this.btnExit.TabIndex = 3;
-            this.btnExit.Text = "Exit";
-            this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
             // 
             // FrmTaDriver
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 18F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 14F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(455, 538);
+            this.ClientSize = new System.Drawing.Size(398, 418);
             this.Controls.Add(this.panelControl1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "FrmTaDriver";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "FrmTaDriver";
