@@ -22,6 +22,8 @@ namespace SuperPOS.Print
         public static string PRT_TEMPLATE_FILE_NAME_KITCHEN_DELIVERY = "DeliveryKitchen";
         //Fast Food
         public static string PRT_TEMPLATE_FILE_NAME_SHOP_FASTFOOD = "FastFood";
+        public static string PRT_TEMPLATE_FILE_NAME_KITCHEN_FASTFOOD = "FastFoodKitchen";
+
         public static string PRT_TEMPLATE_FILE_NAME_SHOP_FF = "ff";
         public static string PRT_TEMPLATE_FILE_NAME_KITCHEN = "Kitchen";
         public static string PRT_TEMPLATE_FILE_NAME_RECEIPT = "Receipt";

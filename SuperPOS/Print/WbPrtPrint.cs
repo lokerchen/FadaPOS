@@ -349,7 +349,11 @@ namespace SuperPOS.Print
         {
             HtmlWeb hw = new HtmlWeb();
 
-            HtmlDocument doc = hw.Load(WbPrtStatic.PRT_TEMPLATE_FILE_PATH + strType + WbPrtStatic.PRT_TEMPLATE_FILE_NAME_SUFFIX);
+            HtmlDocument doc;
+            
+            doc = string.IsNullOrEmpty(wbPrtTemplataTa.RefNo) 
+                  ? hw.Load(WbPrtStatic.PRT_TEMPLATE_FILE_PATH + strType + WbPrtStatic.PRT_TEMPLATE_FILE_NAME_SUFFIX) 
+                  : hw.Load(WbPrtStatic.PRT_TEMPLATE_FILE_PATH + WbPrtStatic.PRT_TEMPLATE_FILE_NAME_SHOP_FASTFOOD + WbPrtStatic.PRT_TEMPLATE_FILE_NAME_SUFFIX);
 
             string htmlText = doc.Text;
 
@@ -1321,9 +1325,13 @@ namespace SuperPOS.Print
         /// <param name="wbPrtTemplataTa">模板参数</param>
         private static void PrintOnlyKitchen(string strOrderType, List<TaOrderItemInfo> lsTaOrderItemInfos, WbPrtTemplataTa wbPrtTemplataTa)
         {
-            if (strOrderType.Equals(PubComm.ORDER_TYPE_SHOP) || strOrderType.Equals(PubComm.ORDER_TYPE_FAST_FOOD))
+            if (strOrderType.Equals(PubComm.ORDER_TYPE_SHOP))
             {
                 wb.DocumentText = PrintKitchen(WbPrtStatic.PRT_TEMPLATE_FILE_NAME_KITCHEN_SHOP, lsTaOrderItemInfos, wbPrtTemplataTa, strOrderType);
+            }
+            else if (strOrderType.Equals(PubComm.ORDER_TYPE_FAST_FOOD))
+            {
+                wb.DocumentText = PrintKitchen(WbPrtStatic.PRT_TEMPLATE_FILE_NAME_KITCHEN_FASTFOOD, lsTaOrderItemInfos, wbPrtTemplataTa, strOrderType);
             }
             else if (strOrderType.Equals(PubComm.ORDER_TYPE_COLLECTION))
             {
