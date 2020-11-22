@@ -95,7 +95,7 @@ namespace SuperPOS.UI.TA
 
         private void FrmCaller_Load(object sender, EventArgs e)
         {
-            txtTelNum.Text = strCallPhone;
+            txtTelNum.Text = strCallPhone.Trim();
 
             txtHour.Text = dt.ToString().Split(':')[0].Substring(dt.ToString().Split(':')[0].Length - 2);
             txtMinute.Text = dt.ToString().Split(':')[1];
@@ -150,7 +150,7 @@ namespace SuperPOS.UI.TA
             if (!string.IsNullOrEmpty(strCallPhone))
             {
                 new SystemData().GetComePhoneInfo();
-                var lstCp = CommonData.TaComePhoneInfo.Where(s => s.CustPhoneNo.Equals(strCallPhone) && s.BusDate.Equals(strBustDate)).OrderByDescending(s => Convert.ToDateTime(s.ComePhoneTime)).Take(8);
+                var lstCp = CommonData.TaComePhoneInfo.Where(s => s.CustPhoneNo.Equals(txtTelNum.Text.Trim()) && s.BusDate.Equals(strBustDate)).OrderByDescending(s => Convert.ToDateTime(s.ComePhoneTime)).Take(8);
                 
                 if (lstCp.Any())
                 {
@@ -168,8 +168,7 @@ namespace SuperPOS.UI.TA
                     new SystemData().GetTaCustomer();
                     TaCustomerInfo taCustomerInfo = new TaCustomerInfo();
 
-                    var lstCust = CommonData.TaCustomer.Where(s => s.cusPhone.Equals(strCallPhone));
-
+                    var lstCust = CommonData.TaCustomer.Where(s => s.cusPhone.Equals(txtTelNum.Text.Trim()));
                     if (!lstCust.Any())
                     {
                         //taCustomerInfo = lstCust.FirstOrDefault();
@@ -178,7 +177,13 @@ namespace SuperPOS.UI.TA
                         btnCollection.Enabled = false;
                     }
                     else
+                    {
                         iCustID = lstCust.FirstOrDefault().ID;
+                        lblNew.Visible = false;
+                        btnDelivery.Enabled = true;
+                        btnCollection.Enabled = true;
+                    }
+                        
 
                     //if (strCustID.Length > 0)
                     //{
@@ -238,7 +243,7 @@ namespace SuperPOS.UI.TA
 
         private void btnEdit_Click(object sender, EventArgs e)
         {
-            FrmTaCustomerInfo frmTaCustomerInfo = new FrmTaCustomerInfo(txtTelNum.Text);
+            FrmTaCustomerInfo frmTaCustomerInfo = new FrmTaCustomerInfo(txtTelNum.Text.Trim());
             if (frmTaCustomerInfo.ShowDialog() == DialogResult.OK)
             {
                 if (!string.IsNullOrEmpty(frmTaCustomerInfo.strReadyTime))
@@ -252,7 +257,7 @@ namespace SuperPOS.UI.TA
             new SystemData().GetTaCustomer();
             TaCustomerInfo taCustomerInfo = new TaCustomerInfo();
 
-            var lstCust = CommonData.TaCustomer.Where(s => s.cusPhone.Equals(strCallPhone));
+            var lstCust = CommonData.TaCustomer.Where(s => s.cusPhone.Equals(txtTelNum.Text.Trim()));
 
             if (lstCust.Any())
             {
@@ -266,7 +271,7 @@ namespace SuperPOS.UI.TA
         {
             if ((txtHour.Text.Length + txtMinute.Text.Length) < 4) return;
             strOrderType = PubComm.ORDER_TYPE_DELIVERY;
-            taCust = GetCustInfo(txtTelNum.Text);
+            taCust = GetCustInfo(txtTelNum.Text.Trim());
             SetReadyTime();
             DialogResult = DialogResult.OK;
         }
@@ -275,7 +280,7 @@ namespace SuperPOS.UI.TA
         {
             if((txtHour.Text.Length +txtMinute.Text.Length) < 4) return;
             strOrderType = PubComm.ORDER_TYPE_COLLECTION;
-            taCust = GetCustInfo(txtTelNum.Text);
+            taCust = GetCustInfo(txtTelNum.Text.Trim());
             SetReadyTime();
             DialogResult = DialogResult.OK;
         }
@@ -484,12 +489,12 @@ namespace SuperPOS.UI.TA
 
         private void SetReadyTime()
         {
-            if (!string.IsNullOrEmpty(strCallPhone))
+            if (!string.IsNullOrEmpty(txtTelNum.Text))
             {
                 new SystemData().GetTaCustomer();
                 TaCustomerInfo taCustomerInfo = new TaCustomerInfo();
 
-                var lstCust = CommonData.TaCustomer.Where(s => s.cusPhone.Equals(strCallPhone));
+                var lstCust = CommonData.TaCustomer.Where(s => s.cusPhone.Equals(txtTelNum.Text));
 
                 string strReadyTime = (!string.IsNullOrEmpty(txtHour.Text) && !string.IsNullOrEmpty(txtMinute.Text))
                     ? txtHour.Text + @":" + txtMinute.Text
