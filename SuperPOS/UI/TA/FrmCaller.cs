@@ -164,30 +164,25 @@ namespace SuperPOS.UI.TA
 
                         i++;
                     }
+                }
 
-                    new SystemData().GetTaCustomer();
-                    TaCustomerInfo taCustomerInfo = new TaCustomerInfo();
+                new SystemData().GetTaCustomer();
+                TaCustomerInfo taCustomerInfo = new TaCustomerInfo();
 
-                    var lstCust = CommonData.TaCustomer.Where(s => s.cusPhone.Equals(txtTelNum.Text.Trim()));
-                    if (!lstCust.Any())
-                    {
-                        //taCustomerInfo = lstCust.FirstOrDefault();
-                        lblNew.Visible = true;
-                        btnDelivery.Enabled = false;
-                        btnCollection.Enabled = false;
-                    }
-                    else
-                    {
-                        iCustID = lstCust.FirstOrDefault().ID;
-                        lblNew.Visible = false;
-                        btnDelivery.Enabled = true;
-                        btnCollection.Enabled = true;
-                    }
-                        
-
-                    //if (strCustID.Length > 0)
-                    //{
-                    //}
+                var lstCust = CommonData.TaCustomer.Where(s => s.cusPhone.Equals(txtTelNum.Text.Trim()));
+                if (!lstCust.Any())
+                {
+                    //taCustomerInfo = lstCust.FirstOrDefault();
+                    lblNew.Visible = true;
+                    btnDelivery.Enabled = false;
+                    btnCollection.Enabled = false;
+                }
+                else
+                {
+                    iCustID = lstCust.FirstOrDefault().ID;
+                    lblNew.Visible = false;
+                    btnDelivery.Enabled = true;
+                    btnCollection.Enabled = true;
                 }
 
                 new SystemData().GetTaCheckOrder();
