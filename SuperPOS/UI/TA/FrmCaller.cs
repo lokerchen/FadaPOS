@@ -452,7 +452,7 @@ namespace SuperPOS.UI.TA
 
             if (string.IsNullOrEmpty(txtTelNum.Text))
             {
-                txtTelNum.Text = lblCustInfo[iNum - 1].Text;
+                txtTelNum.Text = lblCustPhone[iNum - 1].Text;
             }
         }
 
