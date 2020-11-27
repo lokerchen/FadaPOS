@@ -1238,6 +1238,7 @@
             this.txtTelNum.Properties.Appearance.Options.UseForeColor = true;
             this.txtTelNum.Size = new System.Drawing.Size(180, 34);
             this.txtTelNum.TabIndex = 0;
+            this.txtTelNum.MouseDown += new System.Windows.Forms.MouseEventHandler(this.txtTelNum_MouseDown);
             // 
             // panelControl2
             // 

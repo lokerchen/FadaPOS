@@ -329,6 +329,10 @@ namespace SuperPOS.UI.TA
                 else
                     txtMinute.Text += btn.Text;
             }
+            else if (objName.Equals("txtTelNum"))
+            {
+                txtTelNum.Text += btn.Text;
+            }
         }
 
         #endregion
@@ -518,6 +522,11 @@ namespace SuperPOS.UI.TA
         private void txtHour_MouseDown(object sender, MouseEventArgs e)
         {
             objName = "txtHour";
+        }
+
+        private void txtTelNum_MouseDown(object sender, MouseEventArgs e)
+        {
+            objName = "txtTelNum";
         }
     }
 }
