@@ -529,26 +529,31 @@ namespace SuperPOS.UI.TA
         {
             if (treeListOrder.FocusedNode != null)
             {
-                treeListOrder.BeginUpdate();
-                decimal dQty = Convert.ToDecimal(treeListOrder.FocusedNode["ItemQty"]);
-                decimal dPrice = Convert.ToDecimal(treeListOrder.FocusedNode["ItemTotalPrice"]);
-
-                if (dQty > 1)
+                //只允许菜品操作
+                if (treeListOrder.FocusedNode["ItemType"].ToString().Equals("1"))
                 {
-                    treeListOrder.FocusedNode["ItemQty"] = (Convert.ToInt32(dQty + 1)).ToString();
-                    treeListOrder.FocusedNode["ItemTotalPrice"] = ((dPrice / dQty) * (dQty + 1)).ToString("0.00");
+                    treeListOrder.BeginUpdate();
+                    decimal dQty = Convert.ToDecimal(treeListOrder.FocusedNode["ItemQty"]);
+                    decimal dPrice = Convert.ToDecimal(treeListOrder.FocusedNode["ItemTotalPrice"]);
+
+                    if (dQty > 1)
+                    {
+                        treeListOrder.FocusedNode["ItemQty"] = (Convert.ToInt32(dQty + 1)).ToString();
+                        treeListOrder.FocusedNode["ItemTotalPrice"] = ((dPrice / dQty) * (dQty + 1)).ToString("0.00");
+                    }
+                    else
+                    {
+                        treeListOrder.FocusedNode["ItemQty"] = (Convert.ToInt32(dQty + 1)).ToString();
+                        treeListOrder.FocusedNode["ItemTotalPrice"] = (dPrice * 2.0m).ToString("0.00");
+                    }
+
+                    GetChildNodes(treeListOrder.FocusedNode, Convert.ToInt32(Convert.ToDecimal(treeListOrder.FocusedNode["ItemQty"].ToString())));
+
+                    treeListOrder.EndUpdate();
+
+                    treeListOrder.ExpandAll();
                 }
-                else
-                {
-                    treeListOrder.FocusedNode["ItemQty"] = (Convert.ToInt32(dQty + 1)).ToString();
-                    treeListOrder.FocusedNode["ItemTotalPrice"] = (dPrice * 2.0m).ToString("0.00");
-                }
-
-                GetChildNodes(treeListOrder.FocusedNode, Convert.ToInt32(Convert.ToDecimal(treeListOrder.FocusedNode["ItemQty"].ToString())));
-
-                treeListOrder.EndUpdate();
-
-                treeListOrder.ExpandAll();
+                
             }
         }
         #endregion
@@ -558,24 +563,27 @@ namespace SuperPOS.UI.TA
         {
             if (treeListOrder.FocusedNode != null)
             {
-                treeListOrder.BeginUpdate();
-                decimal dQty = Convert.ToDecimal(treeListOrder.FocusedNode["ItemQty"]);
-                decimal dPrice = Convert.ToDecimal(treeListOrder.FocusedNode["ItemTotalPrice"]);
-
-                if (dQty > 1.0m)
+                if (treeListOrder.FocusedNode["ItemType"].ToString().Equals("1"))
                 {
-                    treeListOrder.FocusedNode["ItemQty"] = (Convert.ToInt32(dQty - 1)).ToString();
-                    treeListOrder.FocusedNode["ItemTotalPrice"] = ((dPrice/dQty)*(dQty - 1)).ToString("0.00");
+                    treeListOrder.BeginUpdate();
+                    decimal dQty = Convert.ToDecimal(treeListOrder.FocusedNode["ItemQty"]);
+                    decimal dPrice = Convert.ToDecimal(treeListOrder.FocusedNode["ItemTotalPrice"]);
 
-                    GetChildNodes(treeListOrder.FocusedNode, Convert.ToInt32(Convert.ToDecimal(treeListOrder.FocusedNode["ItemQty"].ToString())));
-                }
-                else
-                {
-                    treeListOrder.DeleteNode(treeListOrder.FocusedNode);
-                }
-                treeListOrder.EndUpdate();
+                    if (dQty > 1.0m)
+                    {
+                        treeListOrder.FocusedNode["ItemQty"] = (Convert.ToInt32(dQty - 1)).ToString();
+                        treeListOrder.FocusedNode["ItemTotalPrice"] = ((dPrice / dQty) * (dQty - 1)).ToString("0.00");
 
-                treeListOrder.ExpandAll();
+                        GetChildNodes(treeListOrder.FocusedNode, Convert.ToInt32(Convert.ToDecimal(treeListOrder.FocusedNode["ItemQty"].ToString())));
+                    }
+                    else
+                    {
+                        treeListOrder.DeleteNode(treeListOrder.FocusedNode);
+                    }
+                    treeListOrder.EndUpdate();
+
+                    treeListOrder.ExpandAll();
+                }
             }
 
         }
@@ -1986,7 +1994,9 @@ namespace SuperPOS.UI.TA
 
                 if (frmCancelOrder.ShowDialog() == DialogResult.OK)
                 {
-                    var lstChk = CommonData.TaCheckOrder.Where(s => s.CheckCode.Equals(checkID) && s.IsPaid.Equals("N") && s.BusDate.Equals(strBusDate));
+                    var lstChk =
+                        CommonData.TaCheckOrder.Where(
+                            s => s.CheckCode.Equals(checkID) && s.IsPaid.Equals("N") && s.BusDate.Equals(strBusDate));
                     if (lstChk.Any())
                     {
                         TaCheckOrderInfo taCheck = lstChk.FirstOrDefault();
@@ -1994,11 +2004,16 @@ namespace SuperPOS.UI.TA
                         _control.UpdateEntity(taCheck);
                         treeListOrder.Nodes.Clear();
                     }
+
+                    this.Close();
                 }
             }
-
+            else
+            {
+                this.Close();
+            }
             BriSDKLib.QNV_CloseDevice(BriSDKLib.ODT_ALL, 0);
-            this.Close();
+            //this.Close();
         }
 
         #region 对Node子节点操作中英文显示
@@ -2527,9 +2542,11 @@ namespace SuperPOS.UI.TA
                     if (node.Nodes.Count == 0)
                     {
                         //Console.WriteLine(node.GetValue("ItemQty"));
-                        node.SetValue("ItemQty", dQty.ToString("0"));
-                        node.SetValue("ItemTotalPrice", (dQty * Convert.ToDecimal(node.GetValue("ItemPrice"))).ToString("0.00"));
-                        
+                        if (!string.IsNullOrEmpty(node.GetValue("ItemPrice").ToString()))
+                        {
+                            node.SetValue("ItemQty", dQty.ToString("0"));
+                            node.SetValue("ItemTotalPrice", (dQty * Convert.ToDecimal(node.GetValue("ItemPrice"))).ToString("0.00"));
+                        }
                     }
                     if (node.Nodes.Count > 0)
                     {
