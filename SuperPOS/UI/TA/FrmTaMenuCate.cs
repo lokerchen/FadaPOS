@@ -163,6 +163,9 @@ namespace SuperPOS.UI.TA
 
         private void gvMenuCate_FocusedRowChanged(object sender, DevExpress.XtraGrid.Views.Base.FocusedRowChangedEventArgs e)
         {
+            //判断是否为正常值
+            if (gvMenuCate.FocusedRowHandle < 0) return;
+
             txtEngName.Text = gvMenuCate.GetRowCellValue(gvMenuCate.FocusedRowHandle, "CateEngName").ToString();
             txtOtherName.Text = gvMenuCate.GetRowCellValue(gvMenuCate.FocusedRowHandle, "CateOtherName").ToString();
             txtPosition.Text = gvMenuCate.GetRowCellValue(gvMenuCate.FocusedRowHandle, "CatePosition").ToString();

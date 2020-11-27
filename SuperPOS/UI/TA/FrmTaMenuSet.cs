@@ -148,6 +148,61 @@ namespace SuperPOS.UI.TA
         private void DeleteMenu(object sender, EventArgs e)
         {
             //To Do Something
+            Label lbl = (Label) sender;
+
+            lbl.Enabled = false;
+
+            new SystemData().GetTaMenuItem();
+
+            int iNum = Convert.ToInt32(lbl.Text.Replace("lblDeleteMenuContent", ""));
+
+            var lstMi = CommonData.TaMenuItem.Where(s => s.MiMenuSetID == iNum);
+
+            try
+            {
+                foreach (var taMenuItemInfo in lstMi)
+                {
+                    taMenuItemInfo.MiMenuSetID = Convert.ToInt32(lueTo.EditValue);
+                    _control.DeleteEntity(taMenuItemInfo);
+                }
+            }
+            catch (Exception ex)
+            {
+                LogHelper.Error(this.Name, ex);
+            }
+
+            CommonTool.ShowMessage("Delete successful!");
+
+            lbl.Enabled = true;
+        }
+
+        private void btnCopy_Click(object sender, EventArgs e)
+        {
+            if (lueFrom.EditValue.Equals(lueTo.EditValue)) return;
+
+            btnCopy.Enabled = false;
+
+            new SystemData().GetTaMenuItem();
+
+            var lstMi = CommonData.TaMenuItem.Where(s => s.MiMenuSetID == Convert.ToInt32(lueFrom.EditValue));
+
+            try
+            {
+                foreach (var taMenuItemInfo in lstMi)
+                {
+                    taMenuItemInfo.MiMenuSetID = Convert.ToInt32(lueTo.EditValue);
+                    _control.AddEntity(taMenuItemInfo);
+                }
+            }
+            catch (Exception ex)
+            {
+                LogHelper.Error(this.Name, ex);
+            }
+
+            CommonTool.ShowMessage("Save successful!");
+
+
+            btnCopy.Enabled = true;
         }
     }
 }
