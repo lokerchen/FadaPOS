@@ -154,7 +154,7 @@ namespace SuperPOS.UI.TA
 
                     if (taMenuItemInfo != null)
                     {
-                        fTaMain.SetListNode(taMenuItemInfo, Convert.ToInt32(txtQty.Text));
+                        fTaMain.SetListNode(taMenuItemInfo, Convert.ToInt32(txtQty.Text), true);
                         fTaMain.SetLang();
                     }
 

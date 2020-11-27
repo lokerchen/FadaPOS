@@ -991,7 +991,7 @@ namespace SuperPOS.UI.TA
                 }
                 else
                 {
-                    SetListNode(taMenuItemInfo, 1);
+                    SetListNode(taMenuItemInfo, 1, false);
 
                     SetLang();
                 }
@@ -2117,7 +2117,7 @@ namespace SuperPOS.UI.TA
         }
         #endregion
 
-        public void SetListNode(TaMenuItemInfo taMenuItemInfo, int iQ)
+        public void SetListNode(TaMenuItemInfo taMenuItemInfo, int iQ, bool isKeypad)
         {
             //套餐
             if (taMenuItemInfo.MiRmk.Contains("Set Meal"))
@@ -2270,6 +2270,9 @@ namespace SuperPOS.UI.TA
                     SetAllOtherChoice(taMenuItemInfo.ID, iQty.ToString(), checkID, taOrderItemInfo.ItemID, node, false);
                 }
             }
+
+            if (isKeypad)
+                if (treeListOrder.Nodes.Count > 0) treeListOrder.SetFocusedNode(treeListOrder.Nodes[treeListOrder.Nodes.Count - 1]);
         }
 
         private void btnSearchMeal_Click(object sender, EventArgs e)
