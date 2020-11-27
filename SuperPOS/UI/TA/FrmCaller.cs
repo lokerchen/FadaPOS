@@ -528,5 +528,58 @@ namespace SuperPOS.UI.TA
         {
             objName = "txtTelNum";
         }
+
+        private void txtTelNum_EditValueChanged(object sender, EventArgs e)
+        {
+            SetUsrComePhoneAndIsNewUser();
+        }
+
+        private void SetUsrComePhoneAndIsNewUser()
+        {
+            int iCustID = 0;
+
+            if (!string.IsNullOrEmpty(strCallPhone))
+            {
+                new SystemData().GetComePhoneInfo();
+                var lstCp =
+                    CommonData.TaComePhoneInfo.Where(
+                        s => s.CustPhoneNo.Equals(txtTelNum.Text.Trim()) && s.BusDate.Equals(strBustDate))
+                        .OrderByDescending(s => Convert.ToDateTime(s.ComePhoneTime))
+                        .Take(8);
+
+                if (lstCp.Any())
+                {
+                    int i = 0;
+                    foreach (var taComePhoneInfo in lstCp)
+                    {
+                        pcCust[0].Visible = true;
+                        lblCustPhone[i].Text = taComePhoneInfo.CustPhoneNo;
+                        lblCustInfo[i].Text = taComePhoneInfo.ComePhoneTime;
+                        //strCustID[i] = taCustomerInfo.ID.ToString();
+
+                        i++;
+                    }
+                }
+
+                new SystemData().GetTaCustomer();
+                TaCustomerInfo taCustomerInfo = new TaCustomerInfo();
+
+                var lstCust = CommonData.TaCustomer.Where(s => s.cusPhone.Equals(txtTelNum.Text.Trim()));
+                if (!lstCust.Any())
+                {
+                    //taCustomerInfo = lstCust.FirstOrDefault();
+                    lblNew.Visible = true;
+                    btnDelivery.Enabled = false;
+                    btnCollection.Enabled = false;
+                }
+                else
+                {
+                    iCustID = lstCust.FirstOrDefault().ID;
+                    lblNew.Visible = false;
+                    btnDelivery.Enabled = true;
+                    btnCollection.Enabled = true;
+                }
+            }
+        }
     }
 }
