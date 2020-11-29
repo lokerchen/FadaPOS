@@ -227,9 +227,15 @@ namespace SuperPOS.UI.TA
             new SystemData().GetTaChangeMenuAttr();
 
             int i = 0;
-            foreach (var taChangeMenuAttrInfo in CommonData.TaChangeMenuAttr)
+            //var lstMiAttr = CommonData.TaChangeMenuAttr.Where(s =>
+            //            !s.MenuAttrEnglishName.Equals(PubComm.MENU_ITEM_LARGE_ENG) &&
+            //            !s.MenuAttrEnglishName.Equals(PubComm.MENU_ITEM_SMALL_ENG));
+            var lstMiAttr = CommonData.TaChangeMenuAttr;
+            foreach (var taChangeMenuAttrInfo in lstMiAttr)
             {
                 hsMenuName.Add(taChangeMenuAttrInfo.MenuAttrEnglishName, string.IsNullOrEmpty(taChangeMenuAttrInfo.MenuAttrOtherName) ? "" : taChangeMenuAttrInfo.MenuAttrOtherName);
+
+                if (taChangeMenuAttrInfo.MenuAttrEnglishName.Equals(PubComm.MENU_ITEM_LARGE_ENG) || taChangeMenuAttrInfo.MenuAttrEnglishName.Equals(PubComm.MENU_ITEM_SMALL_ENG)) continue;
 
                 btnMenuAttr[i].Text = iLange == PubComm.MENU_LANG_DEFAULT 
                                         ? taChangeMenuAttrInfo.MenuAttrEnglishName
@@ -435,7 +441,6 @@ namespace SuperPOS.UI.TA
 
         private void BtnAttr_Click(object sender, EventArgs e)
         {
-
             if (!string.IsNullOrEmpty(txtEngName.Text))
             {
                 SimpleButton btn = (SimpleButton)sender;
@@ -494,12 +499,16 @@ namespace SuperPOS.UI.TA
         private void btnLarge_Click(object sender, EventArgs e)
         {
             //txtOriginalPrice.Text = miLargePrice;
+            BtnAttr_Click(sender, e);
+
             txtNewPrice.Text = (Convert.ToDecimal(miLargePrice) + Convert.ToDecimal(txtIncrement.Text)).ToString();
         }
 
         private void btnSmall_Click(object sender, EventArgs e)
         {
             //txtOriginalPrice.Text = miSmallPrice;
+            BtnAttr_Click(sender, e);
+
             txtNewPrice.Text = (Convert.ToDecimal(miSmallPrice) + Convert.ToDecimal(txtIncrement.Text)).ToString(); ;
         }
 

@@ -438,9 +438,10 @@ namespace SuperPOS.UI.TaAdmin
                 #endregion
 
                 #region Change Settings
-                var lstIp = CommonData.TaChangeMenuAttr;
-                lstIp = iMenuAttrID > 0 ? CommonData.TaChangeMenuAttr.Where(s => s.ID == iMenuAttrID).ToList() 
-                                        : CommonData.TaChangeMenuAttr.Where(s => s.MenuAttrEnglishName.Equals(txtEngName.Text)).ToList();
+                var lstIpAttr = CommonData.TaChangeMenuAttr.Where(s => !s.MenuAttrEnglishName.Equals(PubComm.MENU_ITEM_LARGE_ENG) &&
+                        !s.MenuAttrEnglishName.Equals(PubComm.MENU_ITEM_SMALL_ENG));
+                var lstIp = iMenuAttrID > 0 ? lstIpAttr.Where(s => s.ID == iMenuAttrID).ToList() 
+                                            : lstIpAttr.Where(s => s.MenuAttrEnglishName.Equals(txtEngName.Text)).ToList();
                 
                 if (lstIp.Any())
                 {
@@ -505,7 +506,10 @@ namespace SuperPOS.UI.TaAdmin
             new SystemData().GetTaChangeMenuAttr();
 
             int i = 0;
-            foreach (var taChangeMenuAttrInfo in CommonData.TaChangeMenuAttr.Where(s => !string.IsNullOrEmpty(s.MenuAttrEnglishName)))
+            var lstMiAttr = CommonData.TaChangeMenuAttr.Where(s => !string.IsNullOrEmpty(s.MenuAttrEnglishName)
+                            && !s.MenuAttrEnglishName.Equals(PubComm.MENU_ITEM_LARGE_ENG)
+                            && !s.MenuAttrEnglishName.Equals(PubComm.MENU_ITEM_SMALL_ENG));
+            foreach (var taChangeMenuAttrInfo in lstMiAttr)
             {
                 btnMenuAttr[i].Text = taChangeMenuAttrInfo.MenuAttrEnglishName;
                 btnMenuAttr[i].Click += BtnAttr_Click;
