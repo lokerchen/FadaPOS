@@ -1165,7 +1165,7 @@
             this.btnCollection.Name = "btnCollection";
             this.btnCollection.Size = new System.Drawing.Size(116, 43);
             this.btnCollection.TabIndex = 19;
-            this.btnCollection.Text = "Conllection";
+            this.btnCollection.Text = "Collection";
             this.btnCollection.Click += new System.EventHandler(this.btnCollection_Click);
             // 
             // btnDelivery
