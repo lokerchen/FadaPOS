@@ -2446,7 +2446,24 @@ namespace SuperPOS.UI.TA
 
             if (frmCaller.ShowDialog() == DialogResult.OK)
             {
-                string sCallNum = frmCaller.CallNum;
+                //string sCallNum = frmCaller.CallNum;
+                TaCustomerInfo taCustomerInfo = new TaCustomerInfo();
+
+                ORDER_TYPE = string.IsNullOrEmpty(frmCaller.OrderType) ? PubComm.ORDER_TYPE_SHOP : frmCaller.OrderType;
+                taCustomerInfo = frmCaller.TaCustomer;
+                string strReadTime = frmCaller.ReadyTime;
+
+                if (taCustomerInfo == null)
+                {
+                    SetCustInfo(true, true, null);
+                }
+                else
+                {
+                    SetCustInfo(false, false, taCustomerInfo);
+                }
+
+                ChangeOrderBtnColor(ORDER_TYPE);
+                isGetPhone = false;
             }
         }
 
@@ -3841,7 +3858,7 @@ namespace SuperPOS.UI.TA
                 {
                     TaCustomerInfo taCustomerInfo = new TaCustomerInfo();
 
-                    ORDER_TYPE = frmCaller.OrderType;
+                    ORDER_TYPE = string.IsNullOrEmpty(frmCaller.OrderType) ? PubComm.ORDER_TYPE_SHOP : frmCaller.OrderType;
                     taCustomerInfo = frmCaller.TaCustomer;
                     string strReadTime = frmCaller.ReadyTime;
 
