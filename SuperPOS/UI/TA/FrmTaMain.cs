@@ -1687,6 +1687,7 @@ namespace SuperPOS.UI.TA
 
                                                 #region 保存账单
                                                 SaveCheckOrder(lstTaOI, false);
+                                                treeListOrder.Nodes.Clear();
                                                 #endregion
                                             }
 
