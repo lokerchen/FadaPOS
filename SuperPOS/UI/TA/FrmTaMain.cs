@@ -2439,7 +2439,7 @@ namespace SuperPOS.UI.TA
 
         private void btnCid_Click(object sender, EventArgs e)
         {
-            FrmCaller frmCaller = new FrmCaller(usrID);
+            FrmCaller frmCaller = new FrmCaller(usrID, strBusDate);
 
             frmCaller.Location = pcMain.Location;
             frmCaller.Size = pcMain.Size;

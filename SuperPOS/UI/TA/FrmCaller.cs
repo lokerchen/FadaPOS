@@ -73,10 +73,11 @@ namespace SuperPOS.UI.TA
             InitializeComponent();
         }
 
-        public FrmCaller(int uId)
+        public FrmCaller(int uId, string sBusDate)
         {
             InitializeComponent();
             usrId = uId;
+            strBustDate = sBusDate;
         }
 
         public FrmCaller(string sCallerPhoneNum, string sBusDate, string sOrderType)
@@ -145,79 +146,8 @@ namespace SuperPOS.UI.TA
             lblOrderTime[4] = lblOrderTime5;
             #endregion
 
-            int iCustID = 0;
+            SetUsrComePhoneAndIsNewUser(txtTelNum.Text);
 
-            if (!string.IsNullOrEmpty(strCallPhone))
-            {
-                new SystemData().GetComePhoneInfo();
-                var lstCp = CommonData.TaComePhoneInfo.Where(s => s.CustPhoneNo.Equals(txtTelNum.Text.Trim()) && s.BusDate.Equals(strBustDate)).OrderByDescending(s => Convert.ToDateTime(s.ComePhoneTime)).Take(8);
-                
-                if (lstCp.Any())
-                {
-                    int i = 0;
-                    foreach (var taComePhoneInfo in lstCp)
-                    {
-                        pcCust[0].Visible = true;
-                        lblCustPhone[i].Text = taComePhoneInfo.CustPhoneNo;
-                        lblCustInfo[i].Text = taComePhoneInfo.ComePhoneTime;
-                        //strCustID[i] = taCustomerInfo.ID.ToString();
-
-                        i++;
-                    }
-                }
-
-                new SystemData().GetTaCustomer();
-                TaCustomerInfo taCustomerInfo = new TaCustomerInfo();
-
-                var lstCust = CommonData.TaCustomer.Where(s => s.cusPhone.Equals(txtTelNum.Text.Trim()));
-                if (!lstCust.Any())
-                {
-                    //taCustomerInfo = lstCust.FirstOrDefault();
-                    lblNew.Visible = true;
-                    btnDelivery.Enabled = false;
-                    btnCollection.Enabled = false;
-                }
-                else
-                {
-                    iCustID = lstCust.FirstOrDefault().ID;
-                    lblNew.Visible = false;
-                    btnDelivery.Enabled = true;
-                    btnCollection.Enabled = true;
-                }
-
-                new SystemData().GetTaCheckOrder();
-
-                var lstCo = CommonData.TaCheckOrder.Where(s => s.BusDate.Equals(strBustDate) && !s.IsPaid.Equals("Y")).OrderByDescending(s => Convert.ToDateTime(s.PayTime)).Take(5);
-
-                if (lstCo.Any())
-                {
-                    int j = 0;
-
-                    var lstCheck = iCustID <= 0 ? lstCo : lstCo.Where(s => s.CustomerID.Equals(iCustID.ToString()));
-
-                    foreach (var taCheckOrderInfo in lstCheck)
-                    {
-                        pcOrder[j].Visible = true;
-                        lblOderNo[j].Text = taCheckOrderInfo.CheckCode;
-                        lblOrderTime[j].Text = taCheckOrderInfo.PayTime;
-
-                        if (taCheckOrderInfo.PayOrderType.Equals(PubComm.ORDER_TYPE_DELIVERY))
-                        {
-                            pcOrder[j].BackColor = Color.ForestGreen;
-                        }
-                        else if (taCheckOrderInfo.PayOrderType.Equals(PubComm.ORDER_TYPE_SHOP))
-                        {
-                            pcOrder[j].BackColor = Color.HotPink;
-                        }
-                        else if (taCheckOrderInfo.PayOrderType.Equals(PubComm.ORDER_TYPE_COLLECTION))
-                        {
-                            pcOrder[j].BackColor = Color.Turquoise;
-                        }
-
-                        j++;
-                    }
-                }
-            }
             #endregion
 
             SetNumClick();
@@ -249,17 +179,7 @@ namespace SuperPOS.UI.TA
                 }
             }
 
-            new SystemData().GetTaCustomer();
-            TaCustomerInfo taCustomerInfo = new TaCustomerInfo();
-
-            var lstCust = CommonData.TaCustomer.Where(s => s.cusPhone.Equals(txtTelNum.Text.Trim()));
-
-            if (lstCust.Any())
-            {
-                lblNew.Visible = false;
-                btnDelivery.Enabled = true;
-                btnCollection.Enabled = true;
-            }
+            SetUsrComePhoneAndIsNewUser(txtTelNum.Text.Trim());
         }
 
         private void btnDelivery_Click(object sender, EventArgs e)
@@ -507,7 +427,7 @@ namespace SuperPOS.UI.TA
                 }
                 else
                 {
-                    taCustomerInfo.cusPhone = strCallPhone;
+                    taCustomerInfo.cusPhone = txtTelNum.Text.Trim();
                     taCustomerInfo.cusReadyTime = strReadyTime;
                     _control.AddEntity(taCustomerInfo);
                 }
@@ -531,14 +451,14 @@ namespace SuperPOS.UI.TA
 
         private void txtTelNum_EditValueChanged(object sender, EventArgs e)
         {
-            SetUsrComePhoneAndIsNewUser();
+            SetUsrComePhoneAndIsNewUser(txtTelNum.Text.Trim());
         }
 
-        private void SetUsrComePhoneAndIsNewUser()
+        private void SetUsrComePhoneAndIsNewUser(string sCallPhone)
         {
             int iCustID = 0;
 
-            if (!string.IsNullOrEmpty(strCallPhone))
+            if (!string.IsNullOrEmpty(sCallPhone))
             {
                 new SystemData().GetComePhoneInfo();
                 var lstCp =
@@ -578,6 +498,42 @@ namespace SuperPOS.UI.TA
                     lblNew.Visible = false;
                     btnDelivery.Enabled = true;
                     btnCollection.Enabled = true;
+                }
+
+                if (iCustID > 0)
+                {
+                    new SystemData().GetTaCheckOrder();
+
+                    var lstCo = CommonData.TaCheckOrder.Where(s => s.BusDate.Equals(strBustDate) && !s.IsPaid.Equals("Y")).OrderByDescending(s => Convert.ToDateTime(s.PayTime)).Take(5);
+
+                    if (lstCo.Any())
+                    {
+                        int j = 0;
+
+                        var lstCheck = iCustID <= 0 ? lstCo : lstCo.Where(s => s.CustomerID.Equals(iCustID.ToString()));
+
+                        foreach (var taCheckOrderInfo in lstCheck)
+                        {
+                            pcOrder[j].Visible = true;
+                            lblOderNo[j].Text = taCheckOrderInfo.CheckCode;
+                            lblOrderTime[j].Text = taCheckOrderInfo.PayTime;
+
+                            if (taCheckOrderInfo.PayOrderType.Equals(PubComm.ORDER_TYPE_DELIVERY))
+                            {
+                                pcOrder[j].BackColor = Color.ForestGreen;
+                            }
+                            else if (taCheckOrderInfo.PayOrderType.Equals(PubComm.ORDER_TYPE_SHOP))
+                            {
+                                pcOrder[j].BackColor = Color.HotPink;
+                            }
+                            else if (taCheckOrderInfo.PayOrderType.Equals(PubComm.ORDER_TYPE_COLLECTION))
+                            {
+                                pcOrder[j].BackColor = Color.Turquoise;
+                            }
+
+                            j++;
+                        }
+                    }
                 }
             }
         }
