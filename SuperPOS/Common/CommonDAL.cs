@@ -702,7 +702,7 @@ namespace SuperPOS.Common
 
                 if (lstDsd.Any())
                 {
-                    decimal dDistance = Convert.ToDecimal(strDistance);
+                    decimal dDistance = Convert.ToDecimal(string.IsNullOrEmpty(strDistance) ? "0.00" : strDistance);
 
                     TaDeliverySetDetailInfo taDeliverySetDetail = lstDsd.FirstOrDefault();
                     dOutDistance = Convert.ToDecimal(taDeliverySetDetail.DistTo);
