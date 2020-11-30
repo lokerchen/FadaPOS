@@ -96,8 +96,6 @@ namespace SuperPOS.UI.TA
 
         private void FrmCaller_Load(object sender, EventArgs e)
         {
-            txtTelNum.Text = strCallPhone.Trim();
-
             txtHour.Text = dt.ToString().Split(':')[0].Substring(dt.ToString().Split(':')[0].Length - 2);
             txtMinute.Text = dt.ToString().Split(':')[1];
 
@@ -145,9 +143,7 @@ namespace SuperPOS.UI.TA
             lblOderNo[4] = lblOrderNo5;
             lblOrderTime[4] = lblOrderTime5;
             #endregion
-
-            SetUsrComePhoneAndIsNewUser(txtTelNum.Text);
-
+            
             #endregion
 
             SetNumClick();
@@ -158,7 +154,13 @@ namespace SuperPOS.UI.TA
 
             lblCallInfo.Text = DateTime.Now.ToShortDateString() + @" " + DateTime.Now.ToShortTimeString();
 
+            txtTelNum.Text = strCallPhone.Trim();
+
+            SetUsrComePhoneAndIsNewUser(txtTelNum.Text);
+
             asfc.controllInitializeSize(this);
+            
+            LogHelper.Info(@"FrmCaller_Load");
         }
 
         private void FrmCaller_SizeChanged(object sender, EventArgs e)
@@ -451,6 +453,7 @@ namespace SuperPOS.UI.TA
 
         private void txtTelNum_EditValueChanged(object sender, EventArgs e)
         {
+            LogHelper.Info("txtTelNum_EditValueChanged");
             SetUsrComePhoneAndIsNewUser(txtTelNum.Text.Trim());
         }
 
