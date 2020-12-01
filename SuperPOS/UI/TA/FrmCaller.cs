@@ -90,6 +90,7 @@ namespace SuperPOS.UI.TA
 
         private void btnExit_Click(object sender, EventArgs e)
         {
+            taCust = null;
             DialogResult = DialogResult.OK;
             Close();
         }
@@ -191,6 +192,7 @@ namespace SuperPOS.UI.TA
             taCust = GetCustInfo(txtTelNum.Text.Trim());
             SetReadyTime();
             DialogResult = DialogResult.OK;
+            Close();
         }
 
         private void btnCollection_Click(object sender, EventArgs e)
@@ -200,6 +202,7 @@ namespace SuperPOS.UI.TA
             taCust = GetCustInfo(txtTelNum.Text.Trim());
             SetReadyTime();
             DialogResult = DialogResult.OK;
+            Close();
         }
 
         private TaCustomerInfo GetCustInfo(string custPhone)

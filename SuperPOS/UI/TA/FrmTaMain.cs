@@ -659,6 +659,8 @@ namespace SuperPOS.UI.TA
         #region Ingred Mode
         private void btnIngredMode_Click(object sender, EventArgs e)
         {
+            isGetPhone = true;
+
             if (treeListOrder.FocusedNode != null)
             {
                 //只允许菜品
@@ -822,6 +824,8 @@ namespace SuperPOS.UI.TA
         #region Pend Order按钮
         private void btnPendOrder_Click(object sender, EventArgs e)
         {
+            isGetPhone = true;
+
             if (treeListOrder.AllNodesCount > 0)
             {
                 FrmCancelOrder frmCancelOrder = new FrmCancelOrder();
@@ -1687,7 +1691,6 @@ namespace SuperPOS.UI.TA
 
                                                 #region 保存账单
                                                 SaveCheckOrder(lstTaOI, false);
-                                                treeListOrder.Nodes.Clear();
                                                 #endregion
                                             }
 
@@ -1710,10 +1713,12 @@ namespace SuperPOS.UI.TA
                                                 }
                                                 else
                                                 {
+                                                    treeListOrder.Nodes.Clear();
+                                                    checkID = CommonDAL.GetCheckCode();
+                                                    lblCheck.Text = checkID;
+                                                    ChangeOrderBtnColor(ORDER_TYPE);
                                                     SetCustInfo(false, false, taCustomerInfo);
                                                 }
-
-                                                ChangeOrderBtnColor(ORDER_TYPE);
                                                 isGetPhone = false;
                                             }
                                         }
@@ -3793,12 +3798,11 @@ namespace SuperPOS.UI.TA
         {
             string CallerPhone = "07533375888";
 
-            if (!string.IsNullOrEmpty(CallerPhone))
+            if (!string.IsNullOrEmpty(CallerPhone.Trim()))
             {
                 isGetPhone = true;
 
                 #region 保存来电信息
-
                 TaComePhoneInfo taComePhoneInfo = new TaComePhoneInfo();
                 taComePhoneInfo.CustPhoneNo = CallerPhone;
                 taComePhoneInfo.ComePhoneTime = DateTime.Now.ToString();
@@ -3807,16 +3811,13 @@ namespace SuperPOS.UI.TA
                 taComePhoneInfo.BusDate = strBusDate;
 
                 _control.AddEntity(taComePhoneInfo);
-
                 #endregion
 
                 if (treeListOrder.Nodes.Count > 0)
                 {
                     #region 保存TreeList
-
                     new SystemData().GetTaOrderItem();
-                    var lstDelOi =
-                        CommonData.TaOrderItem.Where(s => s.CheckCode.Equals(checkID) && s.BusDate.Equals(strBusDate));
+                    var lstDelOi = CommonData.TaOrderItem.Where(s => s.CheckCode.Equals(checkID) && s.BusDate.Equals(strBusDate));
 
                     foreach (var taOrderItemInfo in lstDelOi)
                     {
@@ -3840,13 +3841,10 @@ namespace SuperPOS.UI.TA
                             _control.AddEntity(taOrderItemInfo);
                         }
                     }
-
                     #endregion
 
                     #region 保存账单
-
                     SaveCheckOrder(lstTaOI, false);
-
                     #endregion
                 }
 
@@ -3859,7 +3857,7 @@ namespace SuperPOS.UI.TA
                 {
                     TaCustomerInfo taCustomerInfo = new TaCustomerInfo();
 
-                    ORDER_TYPE = string.IsNullOrEmpty(frmCaller.OrderType) ? PubComm.ORDER_TYPE_SHOP : frmCaller.OrderType;
+                    ORDER_TYPE = frmCaller.OrderType;
                     taCustomerInfo = frmCaller.TaCustomer;
                     string strReadTime = frmCaller.ReadyTime;
 
@@ -3869,10 +3867,12 @@ namespace SuperPOS.UI.TA
                     }
                     else
                     {
+                        treeListOrder.Nodes.Clear();
+                        checkID = CommonDAL.GetCheckCode();
+                        lblCheck.Text = checkID;
+                        ChangeOrderBtnColor(ORDER_TYPE);
                         SetCustInfo(false, false, taCustomerInfo);
                     }
-
-                    ChangeOrderBtnColor(ORDER_TYPE);
                     isGetPhone = false;
                 }
             }
