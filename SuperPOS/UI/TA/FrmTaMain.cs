@@ -1882,7 +1882,8 @@ namespace SuperPOS.UI.TA
                 var lstDiscount = CommonData.TaDiscount.Where(s => s.TaType.Equals(ORDER_TYPE));
                 if (lstDiscount.Any())
                 {
-                    taCheckOrderInfo.PayPerDiscount = lstDiscount.FirstOrDefault().TaDiscount + @"%";
+                    string strPayPerDiscount = lstDiscount.FirstOrDefault().TaDiscount;
+                    taCheckOrderInfo.PayPerDiscount = strPayPerDiscount.Equals(@"0") ? "" : strPayPerDiscount + @"%";
                     taCheckOrderInfo.PayDiscount = (Convert.ToDecimal(taCheckOrderInfo.TotalAmount) 
                                                    * Convert.ToDecimal(lstDiscount.FirstOrDefault().TaDiscount) / 100).ToString("0.00");
                 }
