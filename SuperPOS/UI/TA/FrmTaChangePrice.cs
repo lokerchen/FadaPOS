@@ -237,11 +237,14 @@ namespace SuperPOS.UI.TA
 
                 if (taChangeMenuAttrInfo.MenuAttrEnglishName.Equals(PubComm.MENU_ITEM_LARGE_ENG) || taChangeMenuAttrInfo.MenuAttrEnglishName.Equals(PubComm.MENU_ITEM_SMALL_ENG)) continue;
 
-                btnMenuAttr[i].Text = iLange == PubComm.MENU_LANG_DEFAULT 
+                if (i < 20)
+                {
+                    btnMenuAttr[i].Text = iLange == PubComm.MENU_LANG_DEFAULT
                                         ? taChangeMenuAttrInfo.MenuAttrEnglishName
                                         : taChangeMenuAttrInfo.MenuAttrOtherName;
-                btnMenuAttr[i].Click += BtnAttr_Click;
-                i++;
+                    btnMenuAttr[i].Click += BtnAttr_Click;
+                    i++;
+                }
             }
 
             for (int j = i; j < 20; j++)
@@ -448,12 +451,17 @@ namespace SuperPOS.UI.TA
                 string eName = "";
                 string oName = "";
 
+                string strBtnText = btn.Text;
+
+                if (strBtnText.Equals(PubComm.MENU_ITEM_LARGE_ENG) || strBtnText.Equals(PubComm.MENU_ITEM_SMALL_ENG))
+                    strBtnText = @"(" + strBtnText + ")";
+
                 if (iLange == PubComm.MENU_LANG_DEFAULT)
                 {
-                    if (hsMenuName.ContainsKey(btn.Text))
+                    if (hsMenuName.ContainsKey(strBtnText))
                     {
-                        eName = btn.Text;
-                        oName = hsMenuName[btn.Text].ToString();
+                        eName = strBtnText;
+                        oName = hsMenuName[strBtnText].ToString();
                     }
 
                     TaChangeMenuAttrInfo taMenuItemInfo = new TaChangeMenuAttrInfo();
@@ -463,14 +471,14 @@ namespace SuperPOS.UI.TA
                 }
                 else
                 {
-                    if (hsMenuName.ContainsValue(btn.Text))
+                    if (hsMenuName.ContainsValue(strBtnText))
                     {
                         foreach (DictionaryEntry kv in hsMenuName)
                         {
-                            if (kv.Value.Equals(btn.Text))
+                            if (kv.Value.Equals(strBtnText))
                             {
                                 eName = kv.Key.ToString();
-                                oName = btn.Text;
+                                oName = strBtnText;
                                 break;
                             }
                         }
@@ -485,7 +493,7 @@ namespace SuperPOS.UI.TA
                 txtEngName.Text += @" " + eName;
                 txtOtherName.Text += @" " + oName;
 
-                txtIncrement.Text = GetIncrementPrice(btn.Text, iLange);
+                txtIncrement.Text = GetIncrementPrice(strBtnText, iLange);
 
                 if (string.IsNullOrEmpty(txtIncrement.Text))
                 {
