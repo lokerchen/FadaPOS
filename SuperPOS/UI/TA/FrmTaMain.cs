@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Diagnostics;
 using System.Drawing;
 using System.Text;
 using System.Linq;
@@ -207,19 +208,22 @@ namespace SuperPOS.UI.TA
 
                 lstTaOI = TreeListToOrderItem(isNew);
 
-                foreach (var taOrderItemInfo in lstTaOI)
-                {
-                    new SystemData().GetTaOrderItem();
+                //foreach (var taOrderItemInfo in lstTaOI)
+                //{
+                //    new SystemData().GetTaOrderItem();
 
-                    if (CommonData.TaOrderItem.Any(s => s.ID == taOrderItemInfo.ID && s.BusDate.Equals(strBusDate)))
-                    {
-                        _control.UpdateEntity(taOrderItemInfo);
-                    }
-                    else
-                    {
-                        _control.AddEntity(taOrderItemInfo);
-                    }
-                }
+                //    if (CommonData.TaOrderItem.Any(s => s.ID == taOrderItemInfo.ID && s.BusDate.Equals(strBusDate)))
+                //    {
+                //        _control.UpdateEntity(taOrderItemInfo);
+                //    }
+                //    else
+                //    {
+                //        _control.AddEntity(taOrderItemInfo);
+                //    }
+                //}
+
+                DelegateOrder handler = DelegateOrderOpt.SaveOrder;
+                IAsyncResult result = handler.BeginInvoke(checkID, strBusDate, lstTaOI, null, null);
                 #endregion
 
                 #region 保存账单
@@ -243,6 +247,8 @@ namespace SuperPOS.UI.TA
 
                 checkID = CommonDAL.GetCheckCode();
                 lblCheck.Text = checkID;
+
+                handler.EndInvoke(result);
             }
             catch (Exception ex) { LogHelper.Error(this.Name, ex); }
         }
@@ -725,37 +731,44 @@ namespace SuperPOS.UI.TA
             //}
 
             List<TaOrderItemInfo> lstTaOI = new List<TaOrderItemInfo>();
-
+            
             lstTaOI = TreeListToOrderItem(isNew);
+            
+            //代码
+            //new SystemData().GetTaOrderItem();
 
-            foreach (var taOrderItemInfo in lstTaOI)
-            {
-                new SystemData().GetTaOrderItem();
+            //foreach (var taOrderItemInfo in lstTaOI)
+            //{
+            //    TaOrderItemInfo taOi = CommonData.TaOrderItem.FirstOrDefault(s => s.ID == taOrderItemInfo.ID);
 
-                if (CommonData.TaOrderItem.Any(s => s.ID == taOrderItemInfo.ID))
-                {
-                    _control.UpdateEntity(taOrderItemInfo);
-                }
-                else
-                {
-                    _control.AddEntity(taOrderItemInfo);
-                }
-            }
+            //    if (taOi != null)
+            //    {
+            //        _control.UpdateEntity(taOrderItemInfo);
+            //    }
+            //    else
+            //    {
+            //        _control.AddEntity(taOrderItemInfo);
+            //    }
+            //}
+
+            DelegateOrder handler = DelegateOrderOpt.SaveOrder;
+            IAsyncResult result = handler.BeginInvoke(checkID, strBusDate, lstTaOI, null, null);
+
             #endregion
 
             #region 保存账单
             //Console.WriteLine(treeListOrder.Columns["ItemTotalPrice"].SummaryFooter.ToString());
             SaveCheckOrder(lstTaOI, false);
             #endregion
-
+            
             ht = SetPrtInfo(lstTaOI);
-   
+            
             if (ORDER_TYPE.Equals(PubComm.ORDER_TYPE_SHOP))
             {
                 FrmTaPaymentShop frmTaPaymentShop = new FrmTaPaymentShop(usrID, checkID, ORDER_TYPE, CustID.ToString(), ht, strBusDate, saveTaCheckOrderInfo);
                 frmTaPaymentShop.Location = pcMain.Location;
                 frmTaPaymentShop.Size = pcMain.Size;
-
+                
                 if (frmTaPaymentShop.ShowDialog() == DialogResult.OK)
                 {
                     if (frmTaPaymentShop.returnPaid) treeListOrder.Nodes.Clear();
@@ -816,6 +829,8 @@ namespace SuperPOS.UI.TA
                     lblCheck.Text = checkID;
                 }
             }
+
+            handler.EndInvoke(result);
         }
         #endregion
 
@@ -1499,11 +1514,10 @@ namespace SuperPOS.UI.TA
                     {
                         if (taOrderItemInfo.ItemType == PubComm.MENU_ITEM_MAIN)
                         {
-                            if (CommonData.TaMenuItem.Any(s => s.MiDishCode.Equals(taOrderItemInfo.ItemCode)))
+                            TaMenuItemInfo taMi = CommonData.TaMenuItem.FirstOrDefault(s => s.MiDishCode.Equals(node["ItemCode"]));
+                            if (taMi != null)
                             {
-                                taOrderItemInfo.ItemDishName = node["ItemDishName"].ToString().Replace(
-                                             CommonData.TaMenuItem.FirstOrDefault(s => s.MiDishCode.Equals(node["ItemCode"]))?.MiOtherName,
-                                             CommonData.TaMenuItem.FirstOrDefault(s => s.MiDishCode.Equals(node["ItemCode"]))?.MiEngName);
+                                taOrderItemInfo.ItemDishName = node["ItemDishName"].ToString().Replace(taMi?.MiOtherName, taMi?.MiEngName);
                             }
 
                             taOrderItemInfo.ItemDishName = ModifItemOtherName(taOrderItemInfo.ItemDishName, PubComm.MENU_LANG_DEFAULT);
@@ -1642,6 +1656,9 @@ namespace SuperPOS.UI.TA
                                         
                                         string CallerPhone = FromASCIIByteArray(EventData.szData);
 
+                                        DelegateOrder handler = null;
+                                        IAsyncResult result = null;
+
                                         if (!string.IsNullOrEmpty(CallerPhone.Trim()))
                                         {
                                             isGetPhone = true;
@@ -1660,31 +1677,33 @@ namespace SuperPOS.UI.TA
                                             if (treeListOrder.Nodes.Count > 0)
                                             {
                                                 #region 保存TreeList
-                                                new SystemData().GetTaOrderItem();
-                                                var lstDelOi = CommonData.TaOrderItem.Where(s => s.CheckCode.Equals(checkID) && s.BusDate.Equals(strBusDate));
+                                                //new SystemData().GetTaOrderItem();
+                                                //var lstDelOi = CommonData.TaOrderItem.Where(s => s.CheckCode.Equals(checkID) && s.BusDate.Equals(strBusDate));
 
-                                                foreach (var taOrderItemInfo in lstDelOi)
-                                                {
-                                                    _control.DeleteEntity(taOrderItemInfo);
-                                                }
+                                                //foreach (var taOrderItemInfo in lstDelOi)
+                                                //{
+                                                //    _control.DeleteEntity(taOrderItemInfo);
+                                                //}
 
                                                 List<TaOrderItemInfo> lstTaOI = new List<TaOrderItemInfo>();
 
                                                 lstTaOI = TreeListToOrderItem(isNew);
 
-                                                foreach (var taOrderItemInfo in lstTaOI)
-                                                {
-                                                    new SystemData().GetTaOrderItem();
+                                                //foreach (var taOrderItemInfo in lstTaOI)
+                                                //{
+                                                //    new SystemData().GetTaOrderItem();
 
-                                                    if (CommonData.TaOrderItem.Any(s => s.ID == taOrderItemInfo.ID))
-                                                    {
-                                                        _control.UpdateEntity(taOrderItemInfo);
-                                                    }
-                                                    else
-                                                    {
-                                                        _control.AddEntity(taOrderItemInfo);
-                                                    }
-                                                }
+                                                //    if (CommonData.TaOrderItem.Any(s => s.ID == taOrderItemInfo.ID))
+                                                //    {
+                                                //        _control.UpdateEntity(taOrderItemInfo);
+                                                //    }
+                                                //    else
+                                                //    {
+                                                //        _control.AddEntity(taOrderItemInfo);
+                                                //    }
+                                                //}
+                                                handler = DelegateOrderOpt.SaveOrder;
+                                                result = handler.BeginInvoke(checkID, strBusDate, lstTaOI, null, null);
                                                 #endregion
 
                                                 #region 保存账单
@@ -1719,6 +1738,7 @@ namespace SuperPOS.UI.TA
                                                 }
                                                 isGetPhone = false;
                                             }
+                                            if (!string.IsNullOrEmpty(CallerPhone.Trim())) handler.EndInvoke(result);
                                         }
                                         #endregion
                                     }
@@ -1849,6 +1869,7 @@ namespace SuperPOS.UI.TA
             if (lstChk.Any())
             {
                 taCheckOrderInfo = lstChk.FirstOrDefault();
+                //taCheckOrderInfo = lstChk.FirstOrDefault();
                 taCheckOrderInfo.PayOrderType = ORDER_TYPE;
                 //taCheckOrderInfo.MenuAmount = lstTaOI.Sum(s => Convert.ToDecimal(string.IsNullOrEmpty(s.ItemTotalPrice) ? "0.00" : s.ItemTotalPrice)).ToString();
                 taCheckOrderInfo.MenuAmount = treeListOrder.Nodes.Count > 0 ? treeListOrder.GetSummaryValue(treeListOrder.Columns[7]).ToString() : "0.00";
@@ -1877,13 +1898,21 @@ namespace SuperPOS.UI.TA
                 taCheckOrderInfo.TotalAmount = CommonDAL.GetTotalAmount(Convert.ToDecimal(taCheckOrderInfo.MenuAmount), CommonDAL.GetTaDiscount(ORDER_TYPE, Convert.ToDecimal(taCheckOrderInfo.MenuAmount))).ToString();
 
                 new SystemData().GetTaDiscount();
-                var lstDiscount = CommonData.TaDiscount.Where(s => s.TaType.Equals(ORDER_TYPE));
-                if (lstDiscount.Any())
+                //var lstDiscount = CommonData.TaDiscount.Where(s => s.TaType.Equals(ORDER_TYPE));
+                //if (lstDiscount.Any())
+                //{
+                //    string strPayPerDiscount = lstDiscount.FirstOrDefault().TaDiscount;
+                //    taCheckOrderInfo.PayPerDiscount = strPayPerDiscount.Equals(@"0") ? "" : strPayPerDiscount + @"%";
+                //    taCheckOrderInfo.PayDiscount = (Convert.ToDecimal(taCheckOrderInfo.TotalAmount) 
+                //                                   * Convert.ToDecimal(lstDiscount.FirstOrDefault().TaDiscount) / 100).ToString("0.00");
+                //}
+                TaDiscountInfo tdi = CommonData.TaDiscount.FirstOrDefault(s => s.TaType.Equals(ORDER_TYPE));
+                if (tdi != null)
                 {
-                    string strPayPerDiscount = lstDiscount.FirstOrDefault().TaDiscount;
+                    string strPayPerDiscount = tdi.TaDiscount;
                     taCheckOrderInfo.PayPerDiscount = strPayPerDiscount.Equals(@"0") ? "" : strPayPerDiscount + @"%";
-                    taCheckOrderInfo.PayDiscount = (Convert.ToDecimal(taCheckOrderInfo.TotalAmount) 
-                                                   * Convert.ToDecimal(lstDiscount.FirstOrDefault().TaDiscount) / 100).ToString("0.00");
+                    taCheckOrderInfo.PayDiscount = (Convert.ToDecimal(taCheckOrderInfo.TotalAmount)
+                                                   * Convert.ToDecimal(strPayPerDiscount) / 100).ToString("0.00");
                 }
                 else
                     taCheckOrderInfo.PayDiscount = @"0.00";
@@ -1941,9 +1970,11 @@ namespace SuperPOS.UI.TA
 
             new SystemData().GetUsrBase();
 
-            htDetail["Staff"] = CommonData.UsrBase.Any(s => s.ID == usrID) ? CommonData.UsrBase.FirstOrDefault(s => s.ID == usrID).UsrName : "";
+            UsrBaseInfo ubi = CommonData.UsrBase.FirstOrDefault(s => s.ID == usrID);
 
-            new SystemData().GetTaOrderItem();
+            htDetail["Staff"] = ubi != null ? ubi.UsrName : "";
+
+            //new SystemData().GetTaOrderItem();
 
             int iItemCount = 0;
             //foreach (TreeListNode treeListNode in treeListOrder.Nodes)
@@ -2900,34 +2931,39 @@ namespace SuperPOS.UI.TA
                 _control.AddEntity(taComePhoneInfo);
                 #endregion
 
+                IAsyncResult result = null;
+                DelegateOrder handler = null;
+
                 if (treeListOrder.Nodes.Count > 0)
                 {
                     #region 保存TreeList
-                    new SystemData().GetTaOrderItem();
-                    var lstDelOi = CommonData.TaOrderItem.Where(s => s.CheckCode.Equals(checkID) && s.BusDate.Equals(strBusDate));
+                    //new SystemData().GetTaOrderItem();
+                    //var lstDelOi = CommonData.TaOrderItem.Where(s => s.CheckCode.Equals(checkID) && s.BusDate.Equals(strBusDate));
 
-                    foreach (var taOrderItemInfo in lstDelOi)
-                    {
-                        _control.DeleteEntity(taOrderItemInfo);
-                    }
+                    //foreach (var taOrderItemInfo in lstDelOi)
+                    //{
+                    //    _control.DeleteEntity(taOrderItemInfo);
+                    //}
 
                     List<TaOrderItemInfo> lstTaOI = new List<TaOrderItemInfo>();
 
                     lstTaOI = TreeListToOrderItem(isNew);
 
-                    foreach (var taOrderItemInfo in lstTaOI)
-                    {
-                        new SystemData().GetTaOrderItem();
+                    //foreach (var taOrderItemInfo in lstTaOI)
+                    //{
+                    //    new SystemData().GetTaOrderItem();
 
-                        if (CommonData.TaOrderItem.Any(s => s.ID == taOrderItemInfo.ID))
-                        {
-                            _control.UpdateEntity(taOrderItemInfo);
-                        }
-                        else
-                        {
-                            _control.AddEntity(taOrderItemInfo);
-                        }
-                    }
+                    //    if (CommonData.TaOrderItem.Any(s => s.ID == taOrderItemInfo.ID))
+                    //    {
+                    //        _control.UpdateEntity(taOrderItemInfo);
+                    //    }
+                    //    else
+                    //    {
+                    //        _control.AddEntity(taOrderItemInfo);
+                    //    }
+                    //}
+                    handler = DelegateOrderOpt.SaveOrder;
+                    result = handler.BeginInvoke(checkID, strBusDate, lstTaOI, null, null);
                     #endregion
 
                     #region 保存账单
@@ -2962,6 +2998,8 @@ namespace SuperPOS.UI.TA
                     }
                     isGetPhone = false;
                 }
+
+                if (treeListOrder.Nodes.Count > 0) handler.EndInvoke(result);
             }
         }
 

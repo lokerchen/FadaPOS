@@ -11,6 +11,8 @@ namespace SuperPOS.Common
 {
     public delegate void DelegatePreview();
 
+    public delegate void DelegateOrder(string strCheckId, string strBusDate, List<TaOrderItemInfo> lstOi);
+
     public class DelegatePrt
     {
         private static EntityControl _control = new EntityControl();
@@ -73,6 +75,40 @@ namespace SuperPOS.Common
                 }
             }
             catch (Exception ex) { LogHelper.Error(@"CommonDAL", ex); }
+        }
+        #endregion
+    }
+
+    public class DelegateOrderOpt
+    {
+        private static EntityControl _control = new EntityControl();
+
+        #region 存储OrderItem到数据库
+        public static void SaveOrder(string strCheckId, string strBusDate, List<TaOrderItemInfo> lstOi)
+        {
+            new SystemData().GetTaOrderItem();
+
+            var lstDelOi = CommonData.TaOrderItem.Where(s => s.CheckCode.Equals(strCheckId) && s.BusDate.Equals(strBusDate));
+            //删除原始数据
+            foreach (var taOrderItemInfo in lstDelOi)
+            {
+                _control.DeleteEntity(taOrderItemInfo);
+            }
+
+            foreach (var taOrderItemInfo in lstOi)
+            {
+                //TaOrderItemInfo taOi = CommonData.TaOrderItem.FirstOrDefault(s => s.ID == taOrderItemInfo.ID);
+
+                //if (taOi != null)
+                //{
+                //    _control.UpdateEntity(taOrderItemInfo);
+                //}
+                //else
+                //{
+                //    _control.AddEntity(taOrderItemInfo);
+                //}
+                _control.AddEntity(taOrderItemInfo);
+            }
         }
         #endregion
     }

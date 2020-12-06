@@ -504,9 +504,11 @@ namespace SuperPOS.Common
 
             var lstDiscount = CommonData.TaDiscount.Where(s => s.TaType.Equals(sType.ToUpper()));
 
-            return lstDiscount.Any()
-                ? (MenuAmount >= Convert.ToDecimal(lstDiscount.FirstOrDefault().TaDiscThre)
-                    ? 1 - Convert.ToDecimal(lstDiscount.FirstOrDefault().TaDiscount) / 100
+            TaDiscountInfo tdi = lstDiscount.FirstOrDefault();
+
+            return tdi != null
+                ? (MenuAmount >= Convert.ToDecimal(tdi.TaDiscThre)
+                    ? 1 - Convert.ToDecimal(tdi.TaDiscount) / 100
                     : 0.00m)
                 : 0.00m;
         }
