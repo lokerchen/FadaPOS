@@ -2247,36 +2247,36 @@ namespace SuperPOS.UI.TA
             }
             else//非套餐
             {
-                //判断是否存在相同菜品
-                //若存在，则合并，并对数量+1
-                if (treeListOrder.Nodes.Any(s => s["ItemCode"].Equals(taMenuItemInfo.MiDishCode) && s["ItemType"].ToString().Equals("1"))
-                    && !treeListOrder.Nodes.FirstOrDefault(s => s["ItemCode"].Equals(taMenuItemInfo.MiDishCode) && s["ItemType"].ToString().Equals("1")).HasChildren)
-                {
-                    foreach (TreeListNode treeListNode in treeListOrder.Nodes.Where(s => s["ItemCode"].Equals(taMenuItemInfo.MiDishCode) && s["ItemType"].ToString().Equals("1")))
-                    {
-                        //if (treeListNode["ItemCode"].ToString().Equals(taMenuItemInfo.MiDishCode))
-                        //btnAdd_Click(sender, e);
-                        treeListOrder.BeginUpdate();
-                        decimal dQty = Convert.ToDecimal(treeListNode["ItemQty"]);
-                        decimal dPrice = Convert.ToDecimal(treeListNode["ItemTotalPrice"]);
+                ////判断是否存在相同菜品
+                ////若存在，则合并，并对数量+1
+                //if (treeListOrder.Nodes.Any(s => s["ItemCode"].Equals(taMenuItemInfo.MiDishCode) && s["ItemType"].ToString().Equals("1"))
+                //    && !treeListOrder.Nodes.FirstOrDefault(s => s["ItemCode"].Equals(taMenuItemInfo.MiDishCode) && s["ItemType"].ToString().Equals("1")).HasChildren)
+                //{
+                //    foreach (TreeListNode treeListNode in treeListOrder.Nodes.Where(s => s["ItemCode"].Equals(taMenuItemInfo.MiDishCode) && s["ItemType"].ToString().Equals("1")))
+                //    {
+                //        //if (treeListNode["ItemCode"].ToString().Equals(taMenuItemInfo.MiDishCode))
+                //        //btnAdd_Click(sender, e);
+                //        treeListOrder.BeginUpdate();
+                //        decimal dQty = Convert.ToDecimal(treeListNode["ItemQty"]);
+                //        decimal dPrice = Convert.ToDecimal(treeListNode["ItemTotalPrice"]);
 
-                        if (dQty > 1)
-                        {
-                            treeListNode["ItemQty"] = (Convert.ToInt32(dQty + iQ)).ToString();
-                            treeListNode["ItemTotalPrice"] = ((dPrice / dQty) * (dQty + iQ)).ToString();
-                        }
-                        else
-                        {
-                            treeListNode["ItemQty"] = (Convert.ToInt32(dQty + iQ)).ToString();
-                            treeListNode["ItemTotalPrice"] = (dPrice * (dQty + iQ)).ToString();
-                        }
-                        treeListOrder.EndUpdate();
+                //        if (dQty > 1)
+                //        {
+                //            treeListNode["ItemQty"] = (Convert.ToInt32(dQty + iQ)).ToString();
+                //            treeListNode["ItemTotalPrice"] = ((dPrice / dQty) * (dQty + iQ)).ToString();
+                //        }
+                //        else
+                //        {
+                //            treeListNode["ItemQty"] = (Convert.ToInt32(dQty + iQ)).ToString();
+                //            treeListNode["ItemTotalPrice"] = (dPrice * (dQty + iQ)).ToString();
+                //        }
+                //        treeListOrder.EndUpdate();
 
-                        treeListOrder.ExpandAll();
-                    }
-                }
-                else
-                {
+                //        treeListOrder.ExpandAll();
+                //    }
+                //}
+                //else
+                //{
                     int iQty = iQ;
                     TaOrderItemInfo taOrderItemInfo = new TaOrderItemInfo();
                     taOrderItemInfo.ItemID = Guid.NewGuid().ToString();
@@ -2304,7 +2304,7 @@ namespace SuperPOS.UI.TA
 
                     //Second/Third Choices
                     SetAllOtherChoice(taMenuItemInfo.ID, iQty.ToString(), checkID, taOrderItemInfo.ItemID, node, false);
-                }
+                //}
             }
 
             if (isKeypad)
