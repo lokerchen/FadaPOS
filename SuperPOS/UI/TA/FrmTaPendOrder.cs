@@ -324,7 +324,7 @@ namespace SuperPOS.UI.TA
 
             if (checkOrderType.Equals(PubComm.ORDER_TYPE_SHOP))
             {
-                FrmTaPaymentShop frmTaPaymentShop = new FrmTaPaymentShop(usrID, checkCode, checkOrderType, checkCustID.ToString(), SetPrtInfo(), checkBusDate, taCheckOrderInfo);
+                FrmTaPaymentShop frmTaPaymentShop = new FrmTaPaymentShop(usrID, checkCode, checkOrderType, checkCustID.ToString(), SetPrtInfo(), checkBusDate, taCheckOrderInfo, "");
 
                 if (frmTaPaymentShop.ShowDialog() == DialogResult.OK)
                 {
@@ -333,7 +333,7 @@ namespace SuperPOS.UI.TA
             }
             else if (checkOrderType.Equals(PubComm.ORDER_TYPE_DELIVERY))
             {
-                FrmTaPaymentDelivery frmTaPaymentDelivery = new FrmTaPaymentDelivery(usrID, checkCode, checkOrderType, checkCustID.ToString(), SetPrtInfo(), checkBusDate, taCheckOrderInfo);
+                FrmTaPaymentDelivery frmTaPaymentDelivery = new FrmTaPaymentDelivery(usrID, checkCode, checkOrderType, checkCustID.ToString(), SetPrtInfo(), checkBusDate, taCheckOrderInfo, "");
 
                 if (frmTaPaymentDelivery.ShowDialog() == DialogResult.OK)
                 {
@@ -342,7 +342,7 @@ namespace SuperPOS.UI.TA
             }
             else if (checkOrderType.Equals(PubComm.ORDER_TYPE_COLLECTION))
             {
-                FrmTaPaymentCollection frmTaPaymentCollection = new FrmTaPaymentCollection(usrID, checkCode, checkOrderType, checkCustID.ToString(), SetPrtInfo(), checkBusDate, taCheckOrderInfo);
+                FrmTaPaymentCollection frmTaPaymentCollection = new FrmTaPaymentCollection(usrID, checkCode, checkOrderType, checkCustID.ToString(), SetPrtInfo(), checkBusDate, taCheckOrderInfo, "");
 
                 if (frmTaPaymentCollection.ShowDialog() == DialogResult.OK)
                 {
