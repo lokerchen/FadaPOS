@@ -904,8 +904,8 @@ namespace SuperPOS.UI.TA
             //保存账单信息
             SaveOrder();
 
-            //未完成付款
-            if (!IsPaid) return;
+            ////未完成付款
+            //if (!IsPaid) return;
             
             new SystemData().GetTaOrderItem();
             var lstOI = CommonData.TaOrderItem.Where(s => s.CheckCode.Equals(checkID) && s.BusDate.Equals(strBusDate)).ToList();
@@ -984,8 +984,8 @@ namespace SuperPOS.UI.TA
             //保存账单信息
             SaveOrder();
 
-            //未完成付款
-            if (!IsPaid) return;
+            ////未完成付款
+            //if (!IsPaid) return;
 
             new SystemData().GetTaOrderItem();
             var lstOI = CommonData.TaOrderItem.Where(s => s.CheckCode.Equals(checkID) && s.BusDate.Equals(strBusDate)).ToList();
@@ -1072,8 +1072,8 @@ namespace SuperPOS.UI.TA
             //保存账单信息
             SaveOrder();
 
-            //未完成付款
-            if (!IsPaid) return;
+            ////未完成付款
+            //if (!IsPaid) return;
 
             new SystemData().GetTaOrderItem();
             var lstOI = CommonData.TaOrderItem.Where(s => s.CheckCode.Equals(checkID) && s.BusDate.Equals(strBusDate)).ToList();
@@ -1110,8 +1110,8 @@ namespace SuperPOS.UI.TA
             //保存账单信息
             SaveOrder();
 
-            //未完成付款
-            if (!IsPaid) return;
+            ////未完成付款
+            //if (!IsPaid) return;
 
             new SystemData().GetTaOrderItem();
             var lstOI = CommonData.TaOrderItem.Where(s => s.CheckCode.Equals(checkID) && s.BusDate.Equals(strBusDate)).ToList();
