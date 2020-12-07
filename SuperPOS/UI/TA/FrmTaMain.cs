@@ -765,7 +765,7 @@ namespace SuperPOS.UI.TA
             
             if (ORDER_TYPE.Equals(PubComm.ORDER_TYPE_SHOP))
             {
-                FrmTaPaymentShop frmTaPaymentShop = new FrmTaPaymentShop(usrID, checkID, ORDER_TYPE, CustID.ToString(), ht, strBusDate, saveTaCheckOrderInfo);
+                FrmTaPaymentShop frmTaPaymentShop = new FrmTaPaymentShop(usrID, checkID, ORDER_TYPE, CustID.ToString(), ht, strBusDate, saveTaCheckOrderInfo, lblReadyTime.Visible ? lblReadyTime.Text : "");
                 frmTaPaymentShop.Location = pcMain.Location;
                 frmTaPaymentShop.Size = pcMain.Size;
                 
@@ -779,7 +779,7 @@ namespace SuperPOS.UI.TA
             }
             else if (ORDER_TYPE.Equals(PubComm.ORDER_TYPE_DELIVERY))
             {
-                FrmTaPaymentDelivery frmTaPaymentDelivery = new FrmTaPaymentDelivery(usrID, checkID, ORDER_TYPE, CustID.ToString(), ht, strBusDate, saveTaCheckOrderInfo);
+                FrmTaPaymentDelivery frmTaPaymentDelivery = new FrmTaPaymentDelivery(usrID, checkID, ORDER_TYPE, CustID.ToString(), ht, strBusDate, saveTaCheckOrderInfo, lblReadyTime.Visible ? lblReadyTime.Text : "");
                 frmTaPaymentDelivery.Location = pcMain.Location;
                 frmTaPaymentDelivery.Size = pcMain.Size;
 
@@ -798,7 +798,7 @@ namespace SuperPOS.UI.TA
             }
             else if (ORDER_TYPE.Equals(PubComm.ORDER_TYPE_COLLECTION))
             {
-                FrmTaPaymentCollection frmTaPaymentCollection = new FrmTaPaymentCollection(usrID, checkID, ORDER_TYPE, CustID.ToString(), ht, strBusDate, saveTaCheckOrderInfo);
+                FrmTaPaymentCollection frmTaPaymentCollection = new FrmTaPaymentCollection(usrID, checkID, ORDER_TYPE, CustID.ToString(), ht, strBusDate, saveTaCheckOrderInfo, lblReadyTime.Visible ? lblReadyTime.Text : "");
                 frmTaPaymentCollection.Location = pcMain.Location;
                 frmTaPaymentCollection.Size = pcMain.Size;
 

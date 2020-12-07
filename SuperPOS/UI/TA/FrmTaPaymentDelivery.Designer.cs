@@ -1200,6 +1200,7 @@
             this.txtReadyTime.Properties.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
             this.txtReadyTime.Size = new System.Drawing.Size(114, 32);
             this.txtReadyTime.TabIndex = 110;
+            this.txtReadyTime.Click += new System.EventHandler(this.txtReadyTime_Click);
             // 
             // FrmTaPaymentDelivery
             // 

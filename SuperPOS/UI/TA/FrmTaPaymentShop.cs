@@ -58,6 +58,8 @@ namespace SuperPOS.UI.TA
 
         private string RefNum = "";
 
+        private string strReadyTime = "";
+
         //在Main中被保存的账单
         private TaCheckOrderInfo saveTaCheckOrderInfo = new TaCheckOrderInfo();
 
@@ -77,7 +79,7 @@ namespace SuperPOS.UI.TA
             htDetail = ht;
         }
 
-        public FrmTaPaymentShop(int id, string chkId, string type, string caller, Hashtable ht, string sBusDate, TaCheckOrderInfo taCheckOrder)
+        public FrmTaPaymentShop(int id, string chkId, string type, string caller, Hashtable ht, string sBusDate, TaCheckOrderInfo taCheckOrder, string sReadyTime)
         {
             InitializeComponent();
 
@@ -88,6 +90,7 @@ namespace SuperPOS.UI.TA
             htDetail = ht;
             strBusDate = sBusDate;
             saveTaCheckOrderInfo = taCheckOrder;
+            strReadyTime = sReadyTime;
         }
 
         public FrmTaPaymentShop(int id, string chkId, string type, Hashtable ht)
@@ -152,6 +155,8 @@ namespace SuperPOS.UI.TA
             //默认为PayType1
             objTxt = txtPayTypePay1;
             objName = @"txtPayTypePay1";
+
+            txtReadyTime.Text = strReadyTime;
 
             asfc.controllInitializeSize(this);
         }
@@ -1273,6 +1278,20 @@ namespace SuperPOS.UI.TA
             if (frmTaPaymentShopFastFood.ShowDialog() == DialogResult.OK)
             {
                 RefNum = frmTaPaymentShopFastFood.RefNum;
+            }
+        }
+
+        private void txtReadyTime_Click(object sender, EventArgs e)
+        {
+            FrmTaCustReadyTime frmTaCustReadyTime = new FrmTaCustReadyTime();
+            frmTaCustReadyTime.Location = new Point(groupBox2.Location.X, groupBox2.Location.Y);
+
+            if (frmTaCustReadyTime.ShowDialog() == DialogResult.OK)
+            {
+                if (!string.IsNullOrEmpty(frmTaCustReadyTime.strShopTime))
+                {
+                    txtReadyTime.Text = frmTaCustReadyTime.strShopTime;
+                }
             }
         }
     }
