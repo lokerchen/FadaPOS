@@ -1712,7 +1712,7 @@ namespace SuperPOS.UI.TA
                                             }
 
                                             //新客户
-                                            FrmCaller frmCaller = new FrmCaller(CallerPhone, strBusDate, ORDER_TYPE);
+                                            FrmCaller frmCaller = new FrmCaller(CallerPhone, strBusDate, ORDER_TYPE, lblReadyTime.Visible ? lblReadyTime.Text : "");
                                             frmCaller.Location = pcMain.Location;
                                             frmCaller.Size = pcMain.Size;
 
@@ -2972,7 +2972,7 @@ namespace SuperPOS.UI.TA
                 }
 
                 //新客户
-                FrmCaller frmCaller = new FrmCaller(CallerPhone, strBusDate, ORDER_TYPE);
+                FrmCaller frmCaller = new FrmCaller(CallerPhone, strBusDate, ORDER_TYPE, lblReadyTime.Visible ? lblReadyTime.Text : "");
                 frmCaller.Location = pcMain.Location;
                 frmCaller.Size = pcMain.Size;
 

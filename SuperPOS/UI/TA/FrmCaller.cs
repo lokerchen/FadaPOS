@@ -19,7 +19,7 @@ namespace SuperPOS.UI.TA
 
         //点击按钮名字
         private string objName = "txtHour";
-        private DateTime dt = DateTime.Now;
+        //private DateTime dt = DateTime.Now;
 
         private PanelControl[] pcCust = new PanelControl[8];
         private PanelControl[] pcOrder= new PanelControl[5];
@@ -68,6 +68,8 @@ namespace SuperPOS.UI.TA
 
         private string strBustDate = "";
 
+        private string strReadyTime = "";
+
         public FrmCaller()
         {
             InitializeComponent();
@@ -80,12 +82,14 @@ namespace SuperPOS.UI.TA
             strBustDate = sBusDate;
         }
 
-        public FrmCaller(string sCallerPhoneNum, string sBusDate, string sOrderType)
+        public FrmCaller(string sCallerPhoneNum, string sBusDate, string sOrderType, string sReadyTime)
         {
             InitializeComponent();
             strCallPhone = sCallerPhoneNum;
             strBustDate = sBusDate;
             strOrderType = sOrderType;
+
+            strReadyTime = sReadyTime;
         }
 
         private void btnExit_Click(object sender, EventArgs e)
@@ -97,9 +101,11 @@ namespace SuperPOS.UI.TA
 
         private void FrmCaller_Load(object sender, EventArgs e)
         {
-            txtHour.Text = dt.ToString().Split(':')[0].Substring(dt.ToString().Split(':')[0].Length - 2);
-            txtMinute.Text = dt.ToString().Split(':')[1];
+            string strDt = string.IsNullOrEmpty(strReadyTime) ? DateTime.Now.ToShortTimeString() : strReadyTime;
 
+            string[] sRt = strDt.Split(':');
+            txtHour.Text = sRt[0];
+            txtMinute.Text = sRt[1];
             #region 设置Panel
 
             #region 控件赋值
@@ -268,6 +274,9 @@ namespace SuperPOS.UI.TA
         {
             var btn = (SimpleButton) sender;
 
+            DateTime dt = string.IsNullOrEmpty(strReadyTime) 
+                          ? Convert.ToDateTime(DateTime.Now.ToShortDateString() + " " + DateTime.Now.ToShortTimeString())
+                          : Convert.ToDateTime(DateTime.Now.ToShortDateString() + " " + strReadyTime);
             DateTime dtAdd = dt.AddMinutes(Convert.ToDouble(btn.Text.Replace("+", "")));
 
             txtHour.Text = dtAdd.Hour.ToString();
