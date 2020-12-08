@@ -453,8 +453,12 @@ namespace SuperPOS.UI.TA
 
                 string strBtnText = btn.Text;
 
+                bool isLargeOrSmall = false;
+
                 if (strBtnText.Equals(PubComm.MENU_ITEM_LARGE_ENG) || strBtnText.Equals(PubComm.MENU_ITEM_SMALL_ENG))
-                    strBtnText = @"(" + strBtnText + ")";
+                    isLargeOrSmall = true;
+
+                if (isLargeOrSmall) strBtnText = @"(" + strBtnText + @")";
 
                 if (iLange == PubComm.MENU_LANG_DEFAULT)
                 {
@@ -464,6 +468,17 @@ namespace SuperPOS.UI.TA
                         oName = hsMenuName[strBtnText].ToString();
                     }
 
+                    if (isLargeOrSmall)
+                    {
+                        TaChangeMenuAttrInfo taCmai = lstMenuAttr.FirstOrDefault(s => s.MenuAttrEnglishName.Equals(@"(" + PubComm.MENU_ITEM_LARGE_ENG + @")")
+                                                                                 || s.MenuAttrEnglishName.Equals(@"(" + PubComm.MENU_ITEM_SMALL_ENG + @")"));
+
+                        if (taCmai != null)
+                        {
+                            lstMenuAttr.Remove(taCmai);
+                        }    
+                    }
+                    
                     TaChangeMenuAttrInfo taMenuItemInfo = new TaChangeMenuAttrInfo();
                     taMenuItemInfo.MenuAttrEnglishName = eName;
                     taMenuItemInfo.MenuAttrOtherName = oName;
@@ -471,27 +486,79 @@ namespace SuperPOS.UI.TA
                 }
                 else
                 {
-                    if (hsMenuName.ContainsValue(strBtnText))
+                    if (isLargeOrSmall)
                     {
-                        foreach (DictionaryEntry kv in hsMenuName)
+                        if (hsMenuName.ContainsKey(strBtnText))
                         {
-                            if (kv.Value.Equals(strBtnText))
+                            foreach (DictionaryEntry kv in hsMenuName)
                             {
-                                eName = kv.Key.ToString();
-                                oName = strBtnText;
-                                break;
+                                if (kv.Key.Equals(strBtnText))
+                                {
+                                    eName = strBtnText; 
+                                    oName = kv.Value.ToString();
+                                    break;
+                                }
                             }
-                        }
 
-                        TaChangeMenuAttrInfo taMenuItemInfo = new TaChangeMenuAttrInfo();
-                        taMenuItemInfo.MenuAttrEnglishName = eName;
-                        taMenuItemInfo.MenuAttrOtherName = oName;
-                        lstMenuAttr.Add(taMenuItemInfo);
+                            TaChangeMenuAttrInfo taCmai = lstMenuAttr.FirstOrDefault(s => s.MenuAttrEnglishName.Equals(@"(" + PubComm.MENU_ITEM_LARGE_ENG + @")")
+                                                                                    || s.MenuAttrEnglishName.Equals(@"(" + PubComm.MENU_ITEM_SMALL_ENG + @")"));
+
+                            if (taCmai != null)
+                            {
+                                lstMenuAttr.Remove(taCmai);
+                            }
+
+                            TaChangeMenuAttrInfo taMenuItemInfo = new TaChangeMenuAttrInfo();
+                            taMenuItemInfo.MenuAttrEnglishName = eName;
+                            taMenuItemInfo.MenuAttrOtherName = oName;
+                            lstMenuAttr.Add(taMenuItemInfo);
+                        }
+                    }
+                    else
+                    {
+                        if (hsMenuName.ContainsValue(strBtnText))
+                        {
+                            foreach (DictionaryEntry kv in hsMenuName)
+                            {
+                                if (kv.Value.Equals(strBtnText))
+                                {
+                                    eName = kv.Key.ToString();
+                                    oName = strBtnText;
+                                    break;
+                                }
+                            }
+                            
+                            TaChangeMenuAttrInfo taMenuItemInfo = new TaChangeMenuAttrInfo();
+                            taMenuItemInfo.MenuAttrEnglishName = eName;
+                            taMenuItemInfo.MenuAttrOtherName = oName;
+                            lstMenuAttr.Add(taMenuItemInfo);
+                        }
                     }
                 }
-                
-                txtEngName.Text += @" " + eName;
-                txtOtherName.Text += @" " + oName;
+
+                if (isLargeOrSmall)
+                {
+                    if (txtEngName.Text.Contains(@"(" + PubComm.MENU_ITEM_LARGE_ENG + @")"))
+                    {
+                        txtEngName.Text = txtEngName.Text.Replace(@"(" + PubComm.MENU_ITEM_LARGE_ENG + @")", eName);
+                        txtOtherName.Text = txtOtherName.Text.Replace(@"(" + PubComm.MENU_ITEM_LARGE_OTHER + @")", oName);
+                    }
+                    else if (txtEngName.Text.Contains(@"(" + PubComm.MENU_ITEM_SMALL_ENG + @")"))
+                    {
+                        txtEngName.Text = txtEngName.Text.Replace(@"(" + PubComm.MENU_ITEM_SMALL_ENG + @")", eName);
+                        txtOtherName.Text = txtOtherName.Text.Replace(@"(" + PubComm.MENU_ITEM_SMALL_OTHER+ @")", oName);
+                    }
+                    else
+                    {
+                        txtEngName.Text += @" " + eName;
+                        txtOtherName.Text += @" " + oName;
+                    }
+                }
+                else
+                {
+                    txtEngName.Text += @" " + eName;
+                    txtOtherName.Text += @" " + oName;
+                }
 
                 txtIncrement.Text = GetIncrementPrice(strBtnText, iLange);
 
