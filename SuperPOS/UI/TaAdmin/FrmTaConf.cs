@@ -138,6 +138,9 @@ namespace SuperPOS.UI.TaAdmin
                 #endregion
 
                 #region Automatic Add
+
+                txtAddTotalAmountThreshold.Text = CommonDAL.GetSysValue(PubComm.SYS_VALUE_ADD_ITEM_AMOUNT, PubComm.SYS_DESC_ADD_ITEM_AMOUNT, "");
+
                 i = 0;
                 foreach (var freeFoodAdd in CommonData.TaFreeFoodAdd)
                 {
@@ -299,6 +302,20 @@ namespace SuperPOS.UI.TaAdmin
                     taFreeFoodInfo.DishCode = txtGsFreeFoodItem[i].Text;
 
                     _control.UpdateEntity(taFreeFoodInfo);
+
+                    i++;
+                }
+                #endregion
+
+                #region Automatic Added Item on Checkout
+                CommonDAL.GetSysValue(PubComm.SYS_VALUE_ADD_ITEM_AMOUNT, PubComm.SYS_DESC_ADD_ITEM_AMOUNT, txtAddTotalAmountThreshold.Text);
+
+                i = 0;
+                foreach (var taFreeFoodAddInfo in CommonData.TaFreeFoodAdd)
+                {
+                    taFreeFoodAddInfo.AddDishCode = txtGsAddFreeFoodItem[i].Text;
+
+                    _control.UpdateEntity(taFreeFoodAddInfo);
 
                     i++;
                 }

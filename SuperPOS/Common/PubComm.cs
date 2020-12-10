@@ -82,6 +82,10 @@ namespace SuperPOS.Common
         public static string SYS_VALUE_FREE_FOOD_ITEM_AMOUNT = "1002";
         public static string SYS_DESC_FREE_FOOD_ITEM_AMOUNT = "FREEFOODITEMAMOUNT";
 
+        //Automatic Added Item on Checkout
+        public static string SYS_VALUE_ADD_ITEM_AMOUNT = "1006";
+        public static string SYS_DESC_ADD_ITEM_AMOUNT = "ADDFREEFOODITEMAMOUNT";
+
         //Business Date
         public static string SYS_VALUE_BUS_DATE = "1004";
         public static string SYS_DESC_BUS_DATE = "BUSINESS DATE";
