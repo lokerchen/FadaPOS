@@ -507,8 +507,8 @@ namespace SuperPOS.UI.TaAdmin
 
             int i = 0;
             var lstMiAttr = CommonData.TaChangeMenuAttr.Where(s => !string.IsNullOrEmpty(s.MenuAttrEnglishName)
-                            && !s.MenuAttrEnglishName.Equals(PubComm.MENU_ITEM_LARGE_ENG)
-                            && !s.MenuAttrEnglishName.Equals(PubComm.MENU_ITEM_SMALL_ENG));
+                            && !s.MenuAttrEnglishName.Equals(@"(" + PubComm.MENU_ITEM_LARGE_ENG + @")")
+                            && !s.MenuAttrEnglishName.Equals(@"(" + PubComm.MENU_ITEM_SMALL_ENG + @")"));
             foreach (var taChangeMenuAttrInfo in lstMiAttr)
             {
                 btnMenuAttr[i].Text = taChangeMenuAttrInfo.MenuAttrEnglishName;
