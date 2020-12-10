@@ -94,6 +94,7 @@
             this.txtOrderThreshold = new DevExpress.XtraEditors.TextEdit();
             this.labelControl3 = new DevExpress.XtraEditors.LabelControl();
             this.groupBox8 = new System.Windows.Forms.GroupBox();
+            this.chkIgnoreDeliveryIfCharge = new DevExpress.XtraEditors.CheckEdit();
             this.chkIgnoreDelivery = new DevExpress.XtraEditors.CheckEdit();
             this.chkDeliveryChge = new DevExpress.XtraEditors.CheckEdit();
             this.groupBox7 = new System.Windows.Forms.GroupBox();
@@ -145,7 +146,6 @@
             this.label15 = new System.Windows.Forms.Label();
             this.btnExit = new DevExpress.XtraEditors.SimpleButton();
             this.btnSave = new DevExpress.XtraEditors.SimpleButton();
-            this.chkIgnoreDeliveryIfCharge = new DevExpress.XtraEditors.CheckEdit();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.xtpTaConfig)).BeginInit();
             this.xtpTaConfig.SuspendLayout();
@@ -193,6 +193,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.txtSurchargeAmount.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtOrderThreshold.Properties)).BeginInit();
             this.groupBox8.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.chkIgnoreDeliveryIfCharge.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.chkIgnoreDelivery.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.chkDeliveryChge.Properties)).BeginInit();
             this.groupBox7.SuspendLayout();
@@ -216,7 +217,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.txtIncrement.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtOtherName.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtEngName.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.chkIgnoreDeliveryIfCharge.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox1
@@ -354,9 +354,9 @@
             this.label20.AutoSize = true;
             this.label20.Location = new System.Drawing.Point(60, 52);
             this.label20.Name = "label20";
-            this.label20.Size = new System.Drawing.Size(150, 14);
+            this.label20.Size = new System.Drawing.Size(122, 14);
             this.label20.TabIndex = 1;
-            this.label20.Text = "Free Food Item Dish Code";
+            this.label20.Text = "Food Item Dish Code";
             // 
             // label21
             // 
@@ -1006,6 +1006,18 @@
             this.groupBox8.TabIndex = 1;
             this.groupBox8.TabStop = false;
             this.groupBox8.Text = "Charge Options";
+            // 
+            // chkIgnoreDeliveryIfCharge
+            // 
+            this.chkIgnoreDeliveryIfCharge.Location = new System.Drawing.Point(11, 53);
+            this.chkIgnoreDeliveryIfCharge.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.chkIgnoreDeliveryIfCharge.Name = "chkIgnoreDeliveryIfCharge";
+            this.chkIgnoreDeliveryIfCharge.Properties.Appearance.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.chkIgnoreDeliveryIfCharge.Properties.Appearance.Options.UseFont = true;
+            this.chkIgnoreDeliveryIfCharge.Properties.Caption = "Ignore Delivery Surcharge if Delivery Charge Applies";
+            this.chkIgnoreDeliveryIfCharge.Size = new System.Drawing.Size(474, 25);
+            this.chkIgnoreDeliveryIfCharge.TabIndex = 15;
+            this.chkIgnoreDeliveryIfCharge.CheckedChanged += new System.EventHandler(this.chkIgnoreDeliveryIfCharge_CheckedChanged);
             // 
             // chkIgnoreDelivery
             // 
@@ -1730,18 +1742,6 @@
             this.btnSave.Text = "Save";
             this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
-            // chkIgnoreDeliveryIfCharge
-            // 
-            this.chkIgnoreDeliveryIfCharge.Location = new System.Drawing.Point(11, 53);
-            this.chkIgnoreDeliveryIfCharge.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.chkIgnoreDeliveryIfCharge.Name = "chkIgnoreDeliveryIfCharge";
-            this.chkIgnoreDeliveryIfCharge.Properties.Appearance.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.chkIgnoreDeliveryIfCharge.Properties.Appearance.Options.UseFont = true;
-            this.chkIgnoreDeliveryIfCharge.Properties.Caption = "Ignore Delivery Surcharge if Delivery Charge Applies";
-            this.chkIgnoreDeliveryIfCharge.Size = new System.Drawing.Size(474, 25);
-            this.chkIgnoreDeliveryIfCharge.TabIndex = 15;
-            this.chkIgnoreDeliveryIfCharge.CheckedChanged += new System.EventHandler(this.chkIgnoreDeliveryIfCharge_CheckedChanged);
-            // 
             // FrmTaConf
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 14F);
@@ -1810,6 +1810,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.txtSurchargeAmount.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtOrderThreshold.Properties)).EndInit();
             this.groupBox8.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.chkIgnoreDeliveryIfCharge.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.chkIgnoreDelivery.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.chkDeliveryChge.Properties)).EndInit();
             this.groupBox7.ResumeLayout(false);
@@ -1835,7 +1836,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.txtIncrement.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtOtherName.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtEngName.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.chkIgnoreDeliveryIfCharge.Properties)).EndInit();
             this.ResumeLayout(false);
 
         }
