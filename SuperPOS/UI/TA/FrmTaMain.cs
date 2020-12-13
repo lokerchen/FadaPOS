@@ -2158,153 +2158,11 @@ namespace SuperPOS.UI.TA
             //套餐
             if (taMenuItemInfo.MiRmk.Contains("Set Meal"))
             {
-                //判断是否存在相同菜品
-                //若存在，则合并，并对数量+1
-                if (treeListOrder.Nodes.Any(s => s["ItemCode"].Equals(taMenuItemInfo.MiDishCode) && s["ItemType"].ToString().Equals("1"))
-                    && !treeListOrder.Nodes.FirstOrDefault(s => s["ItemCode"].Equals(taMenuItemInfo.MiDishCode) && s["ItemType"].ToString().Equals("1")).HasChildren)
-                {
-                    foreach (TreeListNode treeListNode in treeListOrder.Nodes.Where(s => s["ItemCode"].Equals(taMenuItemInfo.MiDishCode) && s["ItemType"].ToString().Equals("1")))
-                    {
-                        //if (treeListNode["ItemCode"].ToString().Equals(taMenuItemInfo.MiDishCode))
-                        //btnAdd_Click(sender, e);
-                        treeListOrder.BeginUpdate();
-                        decimal dQty = Convert.ToDecimal(treeListNode["ItemQty"]);
-                        decimal dPrice = Convert.ToDecimal(treeListNode["ItemTotalPrice"]);
-
-                        if (dQty > 1)
-                        {
-                            treeListNode["ItemQty"] = (Convert.ToInt32(dQty + iQ)).ToString();
-                            treeListNode["ItemTotalPrice"] = ((dPrice / dQty) * (dQty + iQ)).ToString("0.00");
-
-                            GetChildNodes(treeListOrder.FocusedNode, Convert.ToInt32(Convert.ToDecimal(treeListOrder.FocusedNode["ItemQty"].ToString())));
-                        }
-                        else
-                        {
-                            treeListNode["ItemQty"] = (Convert.ToInt32(dQty + iQ)).ToString();
-                            treeListNode["ItemTotalPrice"] = (dPrice * (dQty + iQ)).ToString();
-
-                            GetChildNodes(treeListOrder.FocusedNode, Convert.ToInt32(Convert.ToDecimal(treeListOrder.FocusedNode["ItemQty"].ToString())));
-                        }
-                        treeListOrder.EndUpdate();
-
-                        treeListOrder.ExpandAll();
-                    }
-                }
-                else
-                {
-                    int iQty = iQ;
-                    TaOrderItemInfo taOrderItemInfo = new TaOrderItemInfo();
-                    taOrderItemInfo.ItemID = Guid.NewGuid().ToString();
-                    taOrderItemInfo.ItemCode = taMenuItemInfo.MiDishCode;
-                    //taOrderItemInfo.ItemDishName = taMenuItemInfo.MiEngName;
-                    //taOrderItemInfo.ItemDishOtherName = taMenuItemInfo.MiOtherName;
-                    taOrderItemInfo.ItemPrice = (Convert.ToDecimal(taMenuItemInfo.MiRegularPrice)).ToString("0.00");
-                    taOrderItemInfo.ItemQty = iQty.ToString();
-                    taOrderItemInfo.ItemTotalPrice = (iQty * Convert.ToDecimal(taOrderItemInfo.ItemPrice)).ToString("0.00");
-                    taOrderItemInfo.CheckCode = checkID;
-                    taOrderItemInfo.ItemType = PubComm.MENU_ITEM_MAIN;
-
-                    taOrderItemInfo.ItemDishName = taMenuItemInfo.MiEngName;
-                    taOrderItemInfo.ItemDishOtherName = taMenuItemInfo.MiOtherName;
-
-                    taOrderItemInfo.ItemParent = "0";
-                    //taOrderItemInfo.ItemParent = Convert.ToInt32(taMenuItemInfo.ID);
-                    taOrderItemInfo.OrderTime = DateTime.Now.ToString();
-                    taOrderItemInfo.OrderStaff = usrID;
-                    taOrderItemInfo.BusDate = strBusDate;
-                    taOrderItemInfo.MenuItemID = taMenuItemInfo.ID;
-
-                    TreeListNode node = AddTreeListNode(taOrderItemInfo);
-
-                    //Sub Menu的子菜品
-                    GetMenuItemSubMenu(taMenuItemInfo.ID, iQty.ToString(), checkID, taOrderItemInfo.ItemID, node);
-
-                    //Second/Third Choices
-                    SetAllOtherChoice(taMenuItemInfo.ID, iQty.ToString(), checkID, taOrderItemInfo.ItemID, node, true);
-
-                    //    //TreeListNode 语言
-                    //    foreach (TreeListNode treeListNode in treeListOrder.Nodes)
-                    //    {
-                    //        //主菜品
-                    //        if (treeListNode["ItemType"].ToString().Equals(PubComm.MENU_ITEM_MAIN.ToString()))
-                    //        {
-                    //            if (CommonData.TaMenuItem.Any(s => s.MiDishCode.Equals(treeListNode["ItemCode"])))
-                    //            {
-                    //                treeListNode["ItemDishName"] = treeListNode["ItemDishName"].ToString()
-                    //                    .Replace(CommonData.TaMenuItem.FirstOrDefault(s => s.MiDishCode.Equals(treeListNode["ItemCode"]))?.MiEngName,
-                    //                        CommonData.TaMenuItem.FirstOrDefault(s => s.MiDishCode.Equals(treeListNode["ItemCode"]))?.MiOtherName);
-                    //            }
-
-                    //            treeListNode["ItemDishName"] = ModifItemOtherName(treeListNode["ItemDishName"].ToString(), iLangStatusId);
-
-                    //            if (treeListNode.HasChildren)
-                    //            {
-                    //                SetChildNode(treeListNode);
-                    //            }
-                    //        }
-                    //    }
-                }
+                SetSameMenuItemMerge(taMenuItemInfo, iQ, true);
             }
             else//非套餐
             {
-                ////判断是否存在相同菜品
-                ////若存在，则合并，并对数量+1
-                //if (treeListOrder.Nodes.Any(s => s["ItemCode"].Equals(taMenuItemInfo.MiDishCode) && s["ItemType"].ToString().Equals("1"))
-                //    && !treeListOrder.Nodes.FirstOrDefault(s => s["ItemCode"].Equals(taMenuItemInfo.MiDishCode) && s["ItemType"].ToString().Equals("1")).HasChildren)
-                //{
-                //    foreach (TreeListNode treeListNode in treeListOrder.Nodes.Where(s => s["ItemCode"].Equals(taMenuItemInfo.MiDishCode) && s["ItemType"].ToString().Equals("1")))
-                //    {
-                //        //if (treeListNode["ItemCode"].ToString().Equals(taMenuItemInfo.MiDishCode))
-                //        //btnAdd_Click(sender, e);
-                //        treeListOrder.BeginUpdate();
-                //        decimal dQty = Convert.ToDecimal(treeListNode["ItemQty"]);
-                //        decimal dPrice = Convert.ToDecimal(treeListNode["ItemTotalPrice"]);
-
-                //        if (dQty > 1)
-                //        {
-                //            treeListNode["ItemQty"] = (Convert.ToInt32(dQty + iQ)).ToString();
-                //            treeListNode["ItemTotalPrice"] = ((dPrice / dQty) * (dQty + iQ)).ToString();
-                //        }
-                //        else
-                //        {
-                //            treeListNode["ItemQty"] = (Convert.ToInt32(dQty + iQ)).ToString();
-                //            treeListNode["ItemTotalPrice"] = (dPrice * (dQty + iQ)).ToString();
-                //        }
-                //        treeListOrder.EndUpdate();
-
-                //        treeListOrder.ExpandAll();
-                //    }
-                //}
-                //else
-                //{
-                    int iQty = iQ;
-                    TaOrderItemInfo taOrderItemInfo = new TaOrderItemInfo();
-                    taOrderItemInfo.ItemID = Guid.NewGuid().ToString();
-                    taOrderItemInfo.ItemCode = taMenuItemInfo.MiDishCode;
-                    //taOrderItemInfo.ItemDishName = taMenuItemInfo.MiEngName;
-                    //taOrderItemInfo.ItemDishOtherName = taMenuItemInfo.MiOtherName;
-                    taOrderItemInfo.ItemPrice = (Convert.ToDecimal(taMenuItemInfo.MiRegularPrice)).ToString("0.00");
-                    taOrderItemInfo.ItemQty = iQty.ToString();
-                    taOrderItemInfo.ItemTotalPrice = (iQty * Convert.ToDecimal(taOrderItemInfo.ItemPrice)).ToString();
-                    taOrderItemInfo.CheckCode = checkID;
-                    taOrderItemInfo.ItemType = PubComm.MENU_ITEM_MAIN;
-                    taOrderItemInfo.ItemParent = "0";
-                    //taOrderItemInfo.ItemParent = Convert.ToInt32(taMenuItemInfo.ID);
-
-                    taOrderItemInfo.ItemDishName = iLangStatusId == PubComm.MENU_LANG_DEFAULT ? taMenuItemInfo.MiEngName : taMenuItemInfo.MiOtherName;
-                    taOrderItemInfo.ItemDishOtherName = taMenuItemInfo.MiOtherName;
-
-                    taOrderItemInfo.OrderTime = DateTime.Now.ToString();
-                    taOrderItemInfo.OrderStaff = usrID;
-                    taOrderItemInfo.BusDate = strBusDate;
-
-                    taOrderItemInfo.MenuItemID = taMenuItemInfo.ID;
-
-                    TreeListNode node = AddTreeListNode(taOrderItemInfo);
-
-                    //Second/Third Choices
-                    SetAllOtherChoice(taMenuItemInfo.ID, iQty.ToString(), checkID, taOrderItemInfo.ItemID, node, false);
-                //}
+                SetSameMenuItemMerge(taMenuItemInfo, iQ, false);
             }
 
             if (isKeypad)
@@ -3095,6 +2953,82 @@ namespace SuperPOS.UI.TA
                 btnSaveOrder.Text = @"保存";
                 btnCancel.Text = @"取消订单";
                 btnEatIn.Text = @"堂食";
+            }
+        }
+
+        private void SetSameMenuItemMerge(TaMenuItemInfo taMenuItemInfo, int iQ, bool isSubMenu)
+        {
+            //判断是否存在相同菜品
+            //若存在，则合并，并对数量+1
+            TreeListNode TlNSameMi = treeListOrder.Nodes.FirstOrDefault(s => s["ItemCode"].Equals(taMenuItemInfo.MiDishCode)
+                                                         && s["ItemType"].ToString().Equals("1")
+                                                         && s["ItemDishName"].Equals(iLangStatusId == PubComm.MENU_LANG_DEFAULT
+                                                                                     ? taMenuItemInfo.MiEngName
+                                                                                     : taMenuItemInfo.MiOtherName));
+
+
+            if (TlNSameMi != null && !TlNSameMi.HasChildren)
+            {
+                foreach (TreeListNode treeListNode in treeListOrder.Nodes.Where(s => s["ItemCode"].Equals(taMenuItemInfo.MiDishCode)
+                                                                                && s["ItemType"].ToString().Equals("1")
+                                                                                && s["ItemDishName"].Equals(iLangStatusId == PubComm.MENU_LANG_DEFAULT ? taMenuItemInfo.MiEngName : taMenuItemInfo.MiOtherName)))
+                {
+                    //if (treeListNode["ItemCode"].ToString().Equals(taMenuItemInfo.MiDishCode))
+                    //btnAdd_Click(sender, e);
+                    treeListOrder.BeginUpdate();
+                    decimal dQty = Convert.ToDecimal(treeListNode["ItemQty"]);
+                    decimal dPrice = Convert.ToDecimal(treeListNode["ItemTotalPrice"]);
+
+                    if (dQty > 1)
+                    {
+                        treeListNode["ItemQty"] = (Convert.ToInt32(dQty + iQ)).ToString();
+                        treeListNode["ItemTotalPrice"] = ((dPrice / dQty) * (dQty + iQ)).ToString("0.00");
+
+                        GetChildNodes(treeListOrder.FocusedNode, Convert.ToInt32(Convert.ToDecimal(treeListOrder.FocusedNode["ItemQty"].ToString())));
+                    }
+                    else
+                    {
+                        treeListNode["ItemQty"] = (Convert.ToInt32(dQty + iQ)).ToString();
+                        treeListNode["ItemTotalPrice"] = (dPrice * (dQty + iQ)).ToString();
+
+                        GetChildNodes(treeListOrder.FocusedNode, Convert.ToInt32(Convert.ToDecimal(treeListOrder.FocusedNode["ItemQty"].ToString())));
+                    }
+                    treeListOrder.EndUpdate();
+
+                    treeListOrder.ExpandAll();
+                }
+            }
+            else
+            {
+                int iQty = iQ;
+                TaOrderItemInfo taOrderItemInfo = new TaOrderItemInfo();
+                taOrderItemInfo.ItemID = Guid.NewGuid().ToString();
+                taOrderItemInfo.ItemCode = taMenuItemInfo.MiDishCode;
+                //taOrderItemInfo.ItemDishName = taMenuItemInfo.MiEngName;
+                //taOrderItemInfo.ItemDishOtherName = taMenuItemInfo.MiOtherName;
+                taOrderItemInfo.ItemPrice = (Convert.ToDecimal(taMenuItemInfo.MiRegularPrice)).ToString("0.00");
+                taOrderItemInfo.ItemQty = iQty.ToString();
+                taOrderItemInfo.ItemTotalPrice = (iQty * Convert.ToDecimal(taOrderItemInfo.ItemPrice)).ToString("0.00");
+                taOrderItemInfo.CheckCode = checkID;
+                taOrderItemInfo.ItemType = PubComm.MENU_ITEM_MAIN;
+
+                taOrderItemInfo.ItemDishName = taMenuItemInfo.MiEngName;
+                taOrderItemInfo.ItemDishOtherName = taMenuItemInfo.MiOtherName;
+
+                taOrderItemInfo.ItemParent = "0";
+                //taOrderItemInfo.ItemParent = Convert.ToInt32(taMenuItemInfo.ID);
+                taOrderItemInfo.OrderTime = DateTime.Now.ToString();
+                taOrderItemInfo.OrderStaff = usrID;
+                taOrderItemInfo.BusDate = strBusDate;
+                taOrderItemInfo.MenuItemID = taMenuItemInfo.ID;
+
+                TreeListNode node = AddTreeListNode(taOrderItemInfo);
+
+                //Sub Menu的子菜品
+                if (isSubMenu) GetMenuItemSubMenu(taMenuItemInfo.ID, iQty.ToString(), checkID, taOrderItemInfo.ItemID, node);
+
+                //Second/Third Choices
+                SetAllOtherChoice(taMenuItemInfo.ID, iQty.ToString(), checkID, taOrderItemInfo.ItemID, node, true);
             }
         }
     }
