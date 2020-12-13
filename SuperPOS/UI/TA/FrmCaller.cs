@@ -355,6 +355,15 @@ namespace SuperPOS.UI.TA
             pcCust7.Click += btnPanelCustInfo_Click;
             pcCust8.Click += btnPanelCustInfo_Click;
 
+            lblCustPhone1.Click += btnPanelCustPhone_Click;
+            lblCustPhone2.Click += btnPanelCustPhone_Click;
+            lblCustPhone3.Click += btnPanelCustPhone_Click;
+            lblCustPhone4.Click += btnPanelCustPhone_Click;
+            lblCustPhone5.Click += btnPanelCustPhone_Click;
+            lblCustPhone6.Click += btnPanelCustPhone_Click;
+            lblCustPhone7.Click += btnPanelCustPhone_Click;
+            lblCustPhone8.Click += btnPanelCustPhone_Click;
+
             new SystemData().GetComePhoneInfo();
 
             int i = 0;
@@ -382,16 +391,22 @@ namespace SuperPOS.UI.TA
             lblOrderNo5.Click += btnPanelOrder_Click;
         }
 
+        private void btnPanelCustPhone_Click(object sender, EventArgs e)
+        {
+            var btn = (LabelControl)sender;
+
+            int iNum = Convert.ToInt32(btn.Name.Replace("lblCustPhone", ""));
+
+            txtTelNum.Text = lblCustPhone[iNum - 1].Text;
+        }
+
         private void btnPanelCustInfo_Click(object sender, EventArgs e)
         {
             var btn = (PanelControl)sender;
 
             int iNum = Convert.ToInt32(btn.Name.Replace("pcCust", ""));
 
-            if (string.IsNullOrEmpty(txtTelNum.Text))
-            {
-                txtTelNum.Text = lblCustPhone[iNum - 1].Text;
-            }
+            txtTelNum.Text = lblCustPhone[iNum - 1].Text;
         }
 
         private void btnPanelOrder_Click(object sender, EventArgs e)
