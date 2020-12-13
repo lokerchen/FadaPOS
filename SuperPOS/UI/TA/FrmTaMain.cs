@@ -2313,10 +2313,51 @@ namespace SuperPOS.UI.TA
                                 dChangePrice.Add(taChangeMenuAttrInfo.MenuAttrEnglishName, taChangeMenuAttrInfo.MenuAttrOtherName);
                             }
 
+                            bool isSmalOrLarge = taChangeMenuAttrInfo.MenuAttrEnglishName.Equals(@"(" + PubComm.MENU_ITEM_LARGE_ENG + ")") ||
+                                                 taChangeMenuAttrInfo.MenuAttrEnglishName.Equals(@"(" + PubComm.MENU_ITEM_SMALL_ENG + ")");
                             if (iLangStatusId == PubComm.MENU_LANG_DEFAULT)
-                                treeListOrder.FocusedNode["ItemDishName"] += taChangeMenuAttrInfo.MenuAttrEnglishName;
+                            {
+                                if (isSmalOrLarge)
+                                {
+                                    if (treeListOrder.FocusedNode["ItemDishName"].ToString().Contains(@"(" + PubComm.MENU_ITEM_LARGE_ENG + ")")
+                                        || treeListOrder.FocusedNode["ItemDishName"].ToString().Contains(@"(" + PubComm.MENU_ITEM_SMALL_ENG + ")"))
+                                    {
+                                        treeListOrder.FocusedNode["ItemDishName"] = treeListOrder.FocusedNode["ItemDishName"].ToString()
+                                            .Replace(@"(" + PubComm.MENU_ITEM_LARGE_ENG + ")", taChangeMenuAttrInfo.MenuAttrEnglishName)
+                                            .Replace(@"(" + PubComm.MENU_ITEM_SMALL_ENG + ")", taChangeMenuAttrInfo.MenuAttrEnglishName);
+                                    }
+                                    else
+                                    {
+                                        treeListOrder.FocusedNode["ItemDishName"] += taChangeMenuAttrInfo.MenuAttrEnglishName;
+                                    }
+
+                                }
+                                else
+                                {
+                                    treeListOrder.FocusedNode["ItemDishName"] += taChangeMenuAttrInfo.MenuAttrEnglishName;
+                                }
+                            }
                             else
-                                treeListOrder.FocusedNode["ItemDishName"] += taChangeMenuAttrInfo.MenuAttrOtherName;
+                            {
+                                if (isSmalOrLarge)
+                                {
+                                    if (treeListOrder.FocusedNode["ItemDishName"].ToString().Contains(@"(" + PubComm.MENU_ITEM_LARGE_OTHER + ")")
+                                        || treeListOrder.FocusedNode["ItemDishName"].ToString().Contains(@"(" + PubComm.MENU_ITEM_SMALL_OTHER + ")"))
+                                    {
+                                        treeListOrder.FocusedNode["ItemDishName"] = treeListOrder.FocusedNode["ItemDishName"].ToString()
+                                            .Replace(@"(" + PubComm.MENU_ITEM_LARGE_OTHER + ")", taChangeMenuAttrInfo.MenuAttrOtherName)
+                                            .Replace(@"(" + PubComm.MENU_ITEM_SMALL_OTHER + ")", taChangeMenuAttrInfo.MenuAttrOtherName);
+                                    }
+                                    else
+                                    {
+                                        treeListOrder.FocusedNode["ItemDishName"] += taChangeMenuAttrInfo.MenuAttrOtherName;
+                                    }
+                                }
+                                else
+                                {
+                                    treeListOrder.FocusedNode["ItemDishName"] += taChangeMenuAttrInfo.MenuAttrOtherName;
+                                }
+                            }
 
                             treeListOrder.FocusedNode["ItemDishOtherName"] += taChangeMenuAttrInfo.MenuAttrOtherName;
                         }
