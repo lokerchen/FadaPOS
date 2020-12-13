@@ -167,7 +167,7 @@ namespace SuperPOS.UI.TA
 
             asfc.controllInitializeSize(this);
             
-            LogHelper.Info(@"FrmCaller_Load");
+            //LogHelper.Info(@"FrmCaller_Load");
         }
 
         private void FrmCaller_SizeChanged(object sender, EventArgs e)
@@ -480,7 +480,7 @@ namespace SuperPOS.UI.TA
 
         private void txtTelNum_EditValueChanged(object sender, EventArgs e)
         {
-            LogHelper.Info("txtTelNum_EditValueChanged");
+            //LogHelper.Info("txtTelNum_EditValueChanged");
             SetUsrComePhoneAndIsNewUser(txtTelNum.Text.Trim());
         }
 
