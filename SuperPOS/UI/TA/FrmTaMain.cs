@@ -204,6 +204,8 @@ namespace SuperPOS.UI.TA
             try
             {
                 #region 保存TreeList
+                AddFreeOrAutomatic();
+
                 List<TaOrderItemInfo> lstTaOI = new List<TaOrderItemInfo>();
 
                 lstTaOI = TreeListToOrderItem(isNew);
@@ -729,6 +731,8 @@ namespace SuperPOS.UI.TA
             //{
             //    _control.DeleteEntity(taOrderItemInfo);
             //}
+
+            AddFreeOrAutomatic();
 
             List<TaOrderItemInfo> lstTaOI = new List<TaOrderItemInfo>();
             
@@ -1684,6 +1688,7 @@ namespace SuperPOS.UI.TA
                                                 //{
                                                 //    _control.DeleteEntity(taOrderItemInfo);
                                                 //}
+                                                AddFreeOrAutomatic();
 
                                                 List<TaOrderItemInfo> lstTaOI = new List<TaOrderItemInfo>();
 
@@ -2843,6 +2848,7 @@ namespace SuperPOS.UI.TA
                     //{
                     //    _control.DeleteEntity(taOrderItemInfo);
                     //}
+                    AddFreeOrAutomatic();
 
                     List<TaOrderItemInfo> lstTaOI = new List<TaOrderItemInfo>();
 
@@ -3070,6 +3076,73 @@ namespace SuperPOS.UI.TA
 
                 //Second/Third Choices
                 SetAllOtherChoice(taMenuItemInfo.ID, iQty.ToString(), checkID, taOrderItemInfo.ItemID, node, true);
+            }
+        }
+
+        private void AddFreeOrAutomatic()
+        {
+            try
+            {
+                //判断Automatic
+                SysValueInfo svAutomatic = CommonData.SysValue.FirstOrDefault(s => s.ValueID.Equals(PubComm.SYS_VALUE_ADD_ITEM_AMOUNT));
+                if (svAutomatic != null)
+                {
+                    if (Convert.ToDecimal(treeListOrder.GetSummaryValue(treeListOrder.Columns[7]).ToString()) > Convert.ToDecimal(svAutomatic.ValueResult))
+                    {
+                        var lstAuto = CommonData.TaFreeFoodAdd.Where(s => !string.IsNullOrEmpty(s.AddDishCode.Trim()));
+                        
+                        foreach (var autoMi in lstAuto)
+                        {
+                            //不存在才加，否则不加
+                            if (!treeListOrder.Nodes.Any(s => s["ItemCode"].Equals(autoMi.AddDishCode.Trim())))
+                            {
+                                TaMenuItemInfo taMi = CommonData.TaMenuItem.FirstOrDefault(s => s.MiDishCode.Equals(autoMi.AddDishCode.Trim()));
+                                if (taMi != null) SetSameMenuItemMerge(taMi, 1, false);
+                            }
+                        }
+                    }
+                }
+
+                //判断Free
+                SysValueInfo svFree = CommonData.SysValue.FirstOrDefault(s => s.ValueID.Equals(PubComm.SYS_VALUE_FREE_FOOD_ITEM_AMOUNT));
+                if (svFree != null)
+                {
+                    if (Convert.ToDecimal(treeListOrder.GetSummaryValue(treeListOrder.Columns[7]).ToString()) > Convert.ToDecimal(svAutomatic.ValueResult))
+                    {
+                        var lstAdd = CommonData.TaFreeFood.Where(s => !string.IsNullOrEmpty(s.DishCode));
+
+                        //存在Free
+                        if (lstAdd.Any())
+                        {
+                            FrmFreeItem frmTaFreeItem = new FrmFreeItem(iLangStatusId);
+                            frmTaFreeItem.Location = panelControl3.PointToScreen(panelControl1.Location);
+                            frmTaFreeItem.Size = panelControl3.Size;
+                            
+                            if (frmTaFreeItem.ShowDialog() == DialogResult.OK)
+                            {
+                                TaMenuItemInfo taMiFree = frmTaFreeItem.TaMiFreeMi;
+
+                                //不存在才加，否则不加
+                                if (taMiFree != null)
+                                {
+                                    if (!treeListOrder.Nodes.Any(s => s["ItemCode"].Equals(taMiFree.MiDishCode)))
+                                    {
+                                        taMiFree.MiSmallPrice = "0.00";
+                                        taMiFree.MiLargePrice = "0.00";
+                                        taMiFree.MiRegularPrice = "0.00";
+                                        taMiFree.MiSpecialPrice = "0.00";
+                                        SetSameMenuItemMerge(taMiFree, 1, false);
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                LogHelper.Error("FrmMain.AddFreeOrAutomatic", ex.InnerException);
+                return;
             }
         }
     }
