@@ -158,7 +158,7 @@ namespace SuperPOS.UI.TA
             menuAmout = Convert.ToDecimal(taCheckOrder.MenuAmount);
             txtChange.Text = "0.00";
 
-            txtDeliveryFee.Text = (CommonDAL.GetDeliveryFee(Convert.ToInt32(callerID), txtToPay.Text)).ToString("0.00");
+            txtDeliveryFee.Text = taCheckOrder.PayOrderType.Equals(PubComm.ORDER_TYPE_DELIVERY) ? taCheckOrder.DeliveryFee : @"0.00";
 
             //获得司机列表
             SetDriver(taCheckOrder.DriverID);
