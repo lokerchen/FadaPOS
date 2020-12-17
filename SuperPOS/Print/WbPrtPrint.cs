@@ -148,6 +148,8 @@ namespace SuperPOS.Print
 
             strHtmlText = strHtmlText.Replace("{Discount}", wbPrtTemplataTa.Discount);
 
+            strHtmlText = strHtmlText.Replace("{Surcharge}", wbPrtTemplataTa.Surcharge);
+
             return strHtmlText;
         }
         #endregion

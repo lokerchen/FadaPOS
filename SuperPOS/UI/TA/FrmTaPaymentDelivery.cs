@@ -1324,7 +1324,7 @@ namespace SuperPOS.UI.TA
             wbPrtTemplataTa.DeliveryFee = string.IsNullOrEmpty(txtDeliveryFee.Text) ? "0.00" : txtDeliveryFee.Text;
 
             wbPrtTemplataTa.Discount = txtDiscount.Text;
-
+            wbPrtTemplataTa.Surcharge = txtSurcharge.Text;
             #region VAT计算
             if (CommonData.GenSet.Any())
             {

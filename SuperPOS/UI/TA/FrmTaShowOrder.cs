@@ -41,7 +41,8 @@ namespace SuperPOS.UI
         private string sTendered = @"0.00";
         private string sChange = @"0.00";
         private string sRefNo = @" ";
-        private string sDeliveryFee = @"";
+        private string sDeliveryFee = @"0.00";
+        private string sSurcharge = @"0.00";
         
         private PrtTemplataTa ptl = new PrtTemplataTa();
         private string ptl_Msg1 = "";
@@ -168,7 +169,8 @@ namespace SuperPOS.UI
                         : (Convert.ToDecimal(check.Paid) - Convert.ToDecimal(check.TotalAmount)).ToString(),
                 gridRefNo = check.RefNum,
                 gridDeliveryFee = check.DeliveryFee,
-                gridStaffId = check.StaffID
+                gridStaffId = check.StaffID,
+                gridSurcharge = check.PaySurcharge
             };
 
             if (isNeedStaff)
@@ -200,7 +202,8 @@ namespace SuperPOS.UI
                         : (Convert.ToDecimal(check.Paid) - Convert.ToDecimal(check.TotalAmount)).ToString(),
                     gridRefNo = check.RefNum,
                     gridDeliveryFee = check.DeliveryFee,
-                    gridStaffId = check.StaffID
+                    gridStaffId = check.StaffID,
+                    gridSurcharge = check.PaySurcharge
                 });
             }
             
@@ -251,6 +254,8 @@ namespace SuperPOS.UI
             sDeliveryFee = gvTaShowOrder.GetRowCellValue(gvTaShowOrder.FocusedRowHandle, "gridDeliveryFee") == null ? "" : gvTaShowOrder.GetRowCellValue(gvTaShowOrder.FocusedRowHandle, "gridDeliveryFee").ToString();
 
             intStaffID = Convert.ToInt32(gvTaShowOrder.GetRowCellValue(gvTaShowOrder.FocusedRowHandle, "gridStaffId").ToString());
+
+            sSurcharge = gvTaShowOrder.GetRowCellValue(gvTaShowOrder.FocusedRowHandle, "gridSurcharge") == null ? "0.00" : gvTaShowOrder.GetRowCellValue(gvTaShowOrder.FocusedRowHandle, "gridSurcharge").ToString();
 
             sItemCount = GetItemCount(strChkOrder);
 
@@ -729,6 +734,7 @@ namespace SuperPOS.UI
             wbPrtTemplataTa.DeliveryFee = sDeliveryFee;
 
             wbPrtTemplataTa.Discount = sDiscount;
+            wbPrtTemplataTa.Surcharge = sSurcharge;
 
             #region VAT计算
             if (CommonData.GenSet.Any())

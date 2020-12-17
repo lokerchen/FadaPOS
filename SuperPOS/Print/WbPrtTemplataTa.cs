@@ -60,5 +60,6 @@ namespace SuperPOS.Print
 
         //Discount
         public string Discount { get; set; }
+        public string Surcharge { get; set; }
     }
 }

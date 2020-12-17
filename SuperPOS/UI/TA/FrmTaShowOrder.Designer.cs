@@ -29,9 +29,10 @@
         private void InitializeComponent()
         {
             this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
-            this.richEditCtlPreview = new DevExpress.XtraRichEdit.RichEditControl();
+            this.webBrowser2 = new System.Windows.Forms.WebBrowser();
             this.panelControl4 = new DevExpress.XtraEditors.PanelControl();
             this.webBrowser1 = new System.Windows.Forms.WebBrowser();
+            this.richEditCtlPreview = new DevExpress.XtraRichEdit.RichEditControl();
             this.panelControl5 = new DevExpress.XtraEditors.PanelControl();
             this.btnAccount = new DevExpress.XtraEditors.SimpleButton();
             this.btnPrtReceipt = new DevExpress.XtraEditors.SimpleButton();
@@ -67,8 +68,8 @@
             this.gridChange = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridRefNo = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridDeliveryFee = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.webBrowser2 = new System.Windows.Forms.WebBrowser();
             this.gridStaffId = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridSurcharge = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
             this.panelControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl4)).BeginInit();
@@ -91,23 +92,13 @@
             this.panelControl1.Size = new System.Drawing.Size(1040, 537);
             this.panelControl1.TabIndex = 0;
             // 
-            // richEditCtlPreview
+            // webBrowser2
             // 
-            this.richEditCtlPreview.EnableToolTips = true;
-            this.richEditCtlPreview.Location = new System.Drawing.Point(604, 414);
-            this.richEditCtlPreview.Margin = new System.Windows.Forms.Padding(0);
-            this.richEditCtlPreview.Name = "richEditCtlPreview";
-            this.richEditCtlPreview.Options.Export.PlainText.ExportFinalParagraphMark = DevExpress.XtraRichEdit.Export.PlainText.ExportFinalParagraphMark.Never;
-            this.richEditCtlPreview.Options.Fields.UpdateFieldsInTextBoxes = false;
-            this.richEditCtlPreview.Options.HorizontalRuler.ShowTabs = false;
-            this.richEditCtlPreview.Options.HorizontalRuler.Visibility = DevExpress.XtraRichEdit.RichEditRulerVisibility.Hidden;
-            this.richEditCtlPreview.Options.HorizontalScrollbar.Visibility = DevExpress.XtraRichEdit.RichEditScrollbarVisibility.Hidden;
-            this.richEditCtlPreview.Options.VerticalRuler.Visibility = DevExpress.XtraRichEdit.RichEditRulerVisibility.Hidden;
-            this.richEditCtlPreview.Options.VerticalScrollbar.Visibility = DevExpress.XtraRichEdit.RichEditScrollbarVisibility.Hidden;
-            this.richEditCtlPreview.Size = new System.Drawing.Size(50, 30);
-            this.richEditCtlPreview.TabIndex = 3;
-            this.richEditCtlPreview.Text = "rich";
-            this.richEditCtlPreview.Visible = false;
+            this.webBrowser2.Location = new System.Drawing.Point(5, 5);
+            this.webBrowser2.MinimumSize = new System.Drawing.Size(20, 20);
+            this.webBrowser2.Name = "webBrowser2";
+            this.webBrowser2.Size = new System.Drawing.Size(322, 524);
+            this.webBrowser2.TabIndex = 4;
             // 
             // panelControl4
             // 
@@ -131,6 +122,24 @@
             this.webBrowser1.Size = new System.Drawing.Size(60, 30);
             this.webBrowser1.TabIndex = 67;
             this.webBrowser1.Visible = false;
+            // 
+            // richEditCtlPreview
+            // 
+            this.richEditCtlPreview.EnableToolTips = true;
+            this.richEditCtlPreview.Location = new System.Drawing.Point(604, 414);
+            this.richEditCtlPreview.Margin = new System.Windows.Forms.Padding(0);
+            this.richEditCtlPreview.Name = "richEditCtlPreview";
+            this.richEditCtlPreview.Options.Export.PlainText.ExportFinalParagraphMark = DevExpress.XtraRichEdit.Export.PlainText.ExportFinalParagraphMark.Never;
+            this.richEditCtlPreview.Options.Fields.UpdateFieldsInTextBoxes = false;
+            this.richEditCtlPreview.Options.HorizontalRuler.ShowTabs = false;
+            this.richEditCtlPreview.Options.HorizontalRuler.Visibility = DevExpress.XtraRichEdit.RichEditRulerVisibility.Hidden;
+            this.richEditCtlPreview.Options.HorizontalScrollbar.Visibility = DevExpress.XtraRichEdit.RichEditScrollbarVisibility.Hidden;
+            this.richEditCtlPreview.Options.VerticalRuler.Visibility = DevExpress.XtraRichEdit.RichEditRulerVisibility.Hidden;
+            this.richEditCtlPreview.Options.VerticalScrollbar.Visibility = DevExpress.XtraRichEdit.RichEditScrollbarVisibility.Hidden;
+            this.richEditCtlPreview.Size = new System.Drawing.Size(50, 30);
+            this.richEditCtlPreview.TabIndex = 3;
+            this.richEditCtlPreview.Text = "rich";
+            this.richEditCtlPreview.Visible = false;
             // 
             // panelControl5
             // 
@@ -461,7 +470,8 @@
             this.gridChange,
             this.gridRefNo,
             this.gridDeliveryFee,
-            this.gridStaffId});
+            this.gridStaffId,
+            this.gridSurcharge});
             this.gvTaShowOrder.GridControl = this.gridControlTaShowOrder;
             this.gvTaShowOrder.IndicatorWidth = 50;
             this.gvTaShowOrder.Name = "gvTaShowOrder";
@@ -624,14 +634,6 @@
             this.gridDeliveryFee.FieldName = "gridDeliveryFee";
             this.gridDeliveryFee.Name = "gridDeliveryFee";
             // 
-            // webBrowser2
-            // 
-            this.webBrowser2.Location = new System.Drawing.Point(5, 5);
-            this.webBrowser2.MinimumSize = new System.Drawing.Size(20, 20);
-            this.webBrowser2.Name = "webBrowser2";
-            this.webBrowser2.Size = new System.Drawing.Size(322, 524);
-            this.webBrowser2.TabIndex = 4;
-            // 
             // gridStaffId
             // 
             this.gridStaffId.Caption = "StaffId";
@@ -639,6 +641,12 @@
             this.gridStaffId.Name = "gridStaffId";
             this.gridStaffId.Visible = true;
             this.gridStaffId.VisibleIndex = 7;
+            // 
+            // gridSurcharge
+            // 
+            this.gridSurcharge.Caption = "Surcharge";
+            this.gridSurcharge.FieldName = "gridSurcharge";
+            this.gridSurcharge.Name = "gridSurcharge";
             // 
             // FrmTaShowOrder
             // 
@@ -711,5 +719,6 @@
         private DevExpress.XtraGrid.Columns.GridColumn gridDeliveryFee;
         private System.Windows.Forms.WebBrowser webBrowser2;
         private DevExpress.XtraGrid.Columns.GridColumn gridStaffId;
+        private DevExpress.XtraGrid.Columns.GridColumn gridSurcharge;
     }
 }
