@@ -181,12 +181,7 @@ namespace SuperPOS.UI.TA
             {
                 int iTime = Convert.ToInt32(strHour);
 
-                if (iTime < 10)
-                {
-                    return @"0" + iTime.ToString();
-                }
-                else
-                    return iTime.ToString();
+                return iTime < 10 ? @"0" + iTime.ToString() : iTime.ToString();
             }
             catch (Exception ex)
             {

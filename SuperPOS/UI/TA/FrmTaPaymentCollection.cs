@@ -803,7 +803,7 @@ namespace SuperPOS.UI.TA
         {
             if (txtReadyTime.Text.Length > 0)
             {
-                if (txtReadyTime.Text.Length != 4)
+                if (txtReadyTime.Text.Length != 5)
                 {
                     MessageBox.Show("Ready Time INPUT Error", "Info", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     return;
@@ -875,7 +875,7 @@ namespace SuperPOS.UI.TA
         {
             if (txtReadyTime.Text.Length > 0)
             {
-                if (txtReadyTime.Text.Length != 4)
+                if (txtReadyTime.Text.Length != 5)
                 {
                     MessageBox.Show("Ready Time INPUT Error", "Info", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     return;

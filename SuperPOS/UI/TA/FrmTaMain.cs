@@ -1654,7 +1654,7 @@ namespace SuperPOS.UI.TA
                                         #region 来电显示
                                         if (!string.IsNullOrEmpty(FromASCIIByteArray(EventData.szData)))
                                         {
-                                            if (FromASCIIByteArray(EventData.szData).Equals("0") || FromASCIIByteArray(EventData.szData).Equals("1")) return;
+                                            if (FromASCIIByteArray(EventData.szData).Trim().Equals("0") || FromASCIIByteArray(EventData.szData).Trim().Equals("1")) return;
                                         }
                                         if (!string.IsNullOrEmpty(FromASCIIByteArray(EventData.szData)) && isGetPhone) return;
                                         
@@ -1845,8 +1845,8 @@ namespace SuperPOS.UI.TA
                     BriSDKLib.QNV_Event(i, BriSDKLib.QNV_EVENT_REGWND, (Int32)this.Handle, IntPtr.Zero, new StringBuilder(0), 0);
 
                     //方式2：无窗体程序，在回调函数procEvent里面处理消息，窗体Handle不是必须参数（无窗体可以传0），本例为在窗体显示消息方便才传递过去，会在回调函数里面原样传回
-                    //BriSDKLib.QNV_Event(i, BriSDKLib.QNV_EVENT_REGCBFUNC, (Int32)this.Handle, Marshal.GetFunctionPointerForDelegate(procEvent), new StringBuilder(0), 0);                
-                    
+                    //BriSDKLib.QNV_Event(i, BriSDKLib.QNV_EVENT_REGCBFUNC, (Int32)this.Handle, Marshal.GetFunctionPointerForDelegate(procEvent), new StringBuilder(0), 0);
+
                     BriSDKLib.QNV_SetParam(i, BriSDKLib.QNV_PARAM_AM_LINEIN, 5);  //设置线路增益              
                 }
                 
