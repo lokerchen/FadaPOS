@@ -318,15 +318,15 @@ namespace SuperPOS.UI.TA
                 iMenuSetId = CommonData.TaMenuCate.OrderBy(s => s.ID).FirstOrDefault().MenuSetID;
             }
 
-            TaSysFontInfo taSysFontInfo = new TaSysFontInfo();
-            if (CommonData.TaSysFont.Any())
+            TaConfMenuDisplayFontInfo taSysFontInfo = new TaConfMenuDisplayFontInfo();
+            if (CommonData.TaConfMenuDisplayFont.Any())
             {
-                taSysFontInfo = CommonData.TaSysFont.FirstOrDefault();
+                taSysFontInfo = CommonData.TaConfMenuDisplayFont.FirstOrDefault();
             }
             else
             {
-                taSysFontInfo.miFont = "12";
-                taSysFontInfo.cateFont = "12";
+                taSysFontInfo.MenuDisplayBtnFontSize = "12";
+                taSysFontInfo.OtherMenuDisplayBtnFontSize = "12";
             }
             
             SetMenuItemBtn(taSysFontInfo);
@@ -885,7 +885,7 @@ namespace SuperPOS.UI.TA
         /// <summary>
         /// 设置MenuItem按钮
         /// </summary>
-        private void SetMenuItemBtn(TaSysFontInfo taSysFontInfo)
+        private void SetMenuItemBtn(TaConfMenuDisplayFontInfo taSysFontInfo)
         {
             btnMenuItem[0] = btnMi0;
             btnMenuItem[1] = btnMi1;
@@ -907,7 +907,7 @@ namespace SuperPOS.UI.TA
             for (int i = 0; i < 16; i++)
             {
                 btnMenuItem[i].Click += btnMenuItem_Click;
-                btnMenuItem[i].Font = new Font(SystemFonts.DefaultFont.FontFamily, float.Parse(taSysFontInfo.miFont));
+                btnMenuItem[i].Font = SetBtnFont(taSysFontInfo, iLangStatusId, 1);
             }
         }
         #endregion
@@ -1026,7 +1026,7 @@ namespace SuperPOS.UI.TA
         /// <summary>
         /// 设置MenuCate按钮
         /// </summary>
-        private void SetMenuCateBtn(TaSysFontInfo taSysFontInfo)
+        private void SetMenuCateBtn(TaConfMenuDisplayFontInfo taSysFontInfo)
         {
             btnMenuCate[0] = btnMc0;
             btnMenuCate[1] = btnMc1;
@@ -1074,7 +1074,7 @@ namespace SuperPOS.UI.TA
             for (int i = 0; i < 42; i++)
             {
                 btnMenuCate[i].Click += btnMenuCate_Click;
-                btnMenuCate[i].Font = new Font(SystemFonts.DefaultFont.FontFamily, float.Parse(taSysFontInfo.cateFont));
+                btnMenuCate[i].Font = SetBtnFont(taSysFontInfo, iLangStatusId, 2); ;
             }
         }
         #endregion
@@ -1116,6 +1116,17 @@ namespace SuperPOS.UI.TA
         {
             bool status = CommonDAL.IsShowMenuItemCode();
 
+            TaConfMenuDisplayFontInfo taSysFontInfo = new TaConfMenuDisplayFontInfo();
+            if (CommonData.TaConfMenuDisplayFont.Any())
+            {
+                taSysFontInfo = CommonData.TaConfMenuDisplayFont.FirstOrDefault();
+            }
+            else
+            {
+                taSysFontInfo.MenuDisplayBtnFontSize = "12";
+                taSysFontInfo.OtherMenuDisplayBtnFontSize = "12";
+            }
+
             int i = 0;
             foreach (var taMenuItemInfo in CommonDAL.GetListQueryPageMenuItem(iPageNum, iMenuCateId, iMenuSetId))
             {
@@ -1132,6 +1143,8 @@ namespace SuperPOS.UI.TA
                 btnMenuItem[i].Appearance.BackColor = string.IsNullOrEmpty(taMenuItemInfo.MiBtnColor) 
                                                         ? Color.FromName(@"Gold")
                                                         : Color.FromName(taMenuItemInfo.MiBtnColor);
+                btnMenuItem[i].Font = SetBtnFont(taSysFontInfo, iLangStatusId, 1);
+
                 i++;
             }
 
@@ -1153,6 +1166,17 @@ namespace SuperPOS.UI.TA
         {
             int i = 0;
 
+            TaConfMenuDisplayFontInfo taSysFontInfo = new TaConfMenuDisplayFontInfo();
+            if (CommonData.TaConfMenuDisplayFont.Any())
+            {
+                taSysFontInfo = CommonData.TaConfMenuDisplayFont.FirstOrDefault();
+            }
+            else
+            {
+                taSysFontInfo.MenuDisplayBtnFontSize = "12";
+                taSysFontInfo.OtherMenuDisplayBtnFontSize = "12";
+            }
+
             foreach (var taMenuCateInfo in CommonDAL.GetListQueryPageMenuCate(iPageNum, msId))
             {
                 btnMenuCate[i].Text = iLangStatusId == PubComm.MENU_LANG_DEFAULT
@@ -1161,6 +1185,9 @@ namespace SuperPOS.UI.TA
                 btnMenuCate[i].Appearance.BackColor = string.IsNullOrEmpty(taMenuCateInfo.BtnColor)
                                                         ? Color.FromName(@"RoyalBlue")
                                                         : Color.FromName(taMenuCateInfo.BtnColor);
+
+                btnMenuCate[i].Font = SetBtnFont(taSysFontInfo, iLangStatusId, 2);
+
                 i++;
             }
 
@@ -3160,6 +3187,30 @@ namespace SuperPOS.UI.TA
             {
                 LogHelper.Error("FrmMain.AddFreeOrAutomatic", ex.InnerException);
                 return;
+            }
+        }
+
+        private Font SetBtnFont(TaConfMenuDisplayFontInfo taConfMenuDisplayFontInfo, int iLange, int iMenuItemOrCate)
+        {
+            if (iLange == PubComm.MENU_LANG_DEFAULT)
+            {
+                return iMenuItemOrCate == 1
+                    ? (string.IsNullOrEmpty(taConfMenuDisplayFontInfo.MenuDisplayBtnFontSize)
+                        ? new Font(SystemFonts.DefaultFont.FontFamily, float.Parse("12.00"))
+                        : new Font(SystemFonts.DefaultFont.FontFamily, float.Parse(taConfMenuDisplayFontInfo.MenuDisplayBtnFontSize)))
+                    : (string.IsNullOrEmpty(taConfMenuDisplayFontInfo.CategBtnFontSize)
+                        ? new Font(SystemFonts.DefaultFont.FontFamily, float.Parse("12.00"))
+                        : new Font(SystemFonts.DefaultFont.FontFamily, float.Parse(taConfMenuDisplayFontInfo.CategBtnFontSize)));
+            }
+            else
+            {
+                return iMenuItemOrCate == 1
+                    ? (string.IsNullOrEmpty(taConfMenuDisplayFontInfo.OtherMenuDisplayBtnFontSize)
+                        ? new Font(SystemFonts.DefaultFont.FontFamily, float.Parse("12.00"))
+                        : new Font(SystemFonts.DefaultFont.FontFamily, float.Parse(taConfMenuDisplayFontInfo.OtherMenuDisplayBtnFontSize)))
+                    : (string.IsNullOrEmpty(taConfMenuDisplayFontInfo.OtherCategBtnFontSize)
+                        ? new Font(SystemFonts.DefaultFont.FontFamily, float.Parse("12.00"))
+                        : new Font(SystemFonts.DefaultFont.FontFamily, float.Parse(taConfMenuDisplayFontInfo.OtherCategBtnFontSize)));
             }
         }
     }
