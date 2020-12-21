@@ -3124,7 +3124,7 @@ namespace SuperPOS.UI.TA
                 SysValueInfo svFree = CommonData.SysValue.FirstOrDefault(s => s.ValueID.Equals(PubComm.SYS_VALUE_FREE_FOOD_ITEM_AMOUNT));
                 if (svFree != null)
                 {
-                    if (Convert.ToDecimal(treeListOrder.GetSummaryValue(treeListOrder.Columns[7]).ToString()) > Convert.ToDecimal(svAutomatic.ValueResult))
+                    if (Convert.ToDecimal(treeListOrder.GetSummaryValue(treeListOrder.Columns[7]).ToString()) > Convert.ToDecimal(svFree.ValueResult))
                     {
                         var lstAdd = CommonData.TaFreeFood.Where(s => !string.IsNullOrEmpty(s.DishCode));
 
