@@ -3072,12 +3072,13 @@ namespace SuperPOS.UI.TA
             //若存在，则合并，并对数量+1
             TreeListNode TlNSameMi = treeListOrder.Nodes.FirstOrDefault(s => s["ItemCode"].Equals(taMenuItemInfo.MiDishCode)
                                                          && s["ItemType"].ToString().Equals("1")
+                                                         && !s["ItemPrice"].ToString().Equals("0.00")
                                                          && s["ItemDishName"].Equals(iLangStatusId == PubComm.MENU_LANG_DEFAULT
                                                                                      ? taMenuItemInfo.MiEngName
                                                                                      : taMenuItemInfo.MiOtherName));
 
 
-            if (TlNSameMi != null && !TlNSameMi.HasChildren)
+            if (TlNSameMi != null && !TlNSameMi.HasChildren && !taMenuItemInfo.MiRegularPrice.Equals("0.00"))
             {
                 foreach (TreeListNode treeListNode in treeListOrder.Nodes.Where(s => s["ItemCode"].Equals(taMenuItemInfo.MiDishCode)
                                                                                 && s["ItemType"].ToString().Equals("1")
@@ -3177,24 +3178,41 @@ namespace SuperPOS.UI.TA
                         //存在Free
                         if (lstAdd.Any())
                         {
-                            FrmFreeItem frmTaFreeItem = new FrmFreeItem(iLangStatusId);
-                            frmTaFreeItem.Location = panelControl3.PointToScreen(panelControl1.Location);
-                            frmTaFreeItem.Size = panelControl3.Size;
-                            
-                            if (frmTaFreeItem.ShowDialog() == DialogResult.OK)
-                            {
-                                TaMenuItemInfo taMiFree = frmTaFreeItem.TaMiFreeMi;
+                            TreeListNode nodeFree = null;
+                            bool isContainFreeItem = false;
 
-                                //不存在才加，否则不加
-                                if (taMiFree != null)
+                            foreach (var taFreeFoodInfo in lstAdd)
+                            {
+                                nodeFree = treeListOrder.Nodes.FirstOrDefault(s => s["ItemCode"].Equals(taFreeFoodInfo.DishCode) && s["ItemPrice"].Equals("0.00"));
+
+                                if (nodeFree != null)
                                 {
-                                    if (!treeListOrder.Nodes.Any(s => s["ItemCode"].Equals(taMiFree.MiDishCode)))
+                                    isContainFreeItem = true;
+                                    break;
+                                }
+                            }
+
+                            if (!isContainFreeItem)
+                            {
+                                FrmFreeItem frmTaFreeItem = new FrmFreeItem(iLangStatusId);
+                                frmTaFreeItem.Location = panelControl3.PointToScreen(panelControl1.Location);
+                                frmTaFreeItem.Size = panelControl3.Size;
+
+                                if (frmTaFreeItem.ShowDialog() == DialogResult.OK)
+                                {
+                                    TaMenuItemInfo taMiFree = frmTaFreeItem.TaMiFreeMi;
+
+                                    //不存在才加，否则不加
+                                    if (taMiFree != null)
                                     {
+                                        //if (!treeListOrder.Nodes.Any(s => s["ItemCode"].Equals(taMiFree.MiDishCode)))
+                                        //{
                                         taMiFree.MiSmallPrice = "0.00";
                                         taMiFree.MiLargePrice = "0.00";
                                         taMiFree.MiRegularPrice = "0.00";
                                         taMiFree.MiSpecialPrice = "0.00";
                                         SetSameMenuItemMerge(taMiFree, 1, false);
+                                        //}
                                     }
                                 }
                             }

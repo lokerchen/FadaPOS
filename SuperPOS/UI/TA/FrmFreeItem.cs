@@ -83,22 +83,35 @@ namespace SuperPOS.UI.TA
                           {
                               ID = mi.ID,
                               EngName = mi.MiEngName,
-                              OtherName = mi.MiOtherName
+                              OtherName = mi.MiOtherName,
+                              DishCode = mi.MiDishCode
                           };
             int i = 0;
+
+            int tmpId = 0;
 
             foreach (var taFreeFoodInfo in lstFree)
             {
                 btnFree[i].Text = iLangeStatus == PubComm.MENU_LANG_DEFAULT
-                                ? taFreeFoodInfo.EngName
-                                : taFreeFoodInfo.OtherName;
+                                ? @"(" + taFreeFoodInfo.DishCode + @")" + taFreeFoodInfo.EngName
+                                : @"(" + taFreeFoodInfo.DishCode + @")" + taFreeFoodInfo.OtherName;
                 lblId[i].Text = taFreeFoodInfo.ID.ToString();
+
+                if (i == 0) tmpId = taFreeFoodInfo.ID;
+
+                i++;
             }
 
             btn1.Click += btnFree_Click;
             btn2.Click += btnFree_Click;
             btn3.Click += btnFree_Click;
             btn4.Click += btnFree_Click;
+
+            if (tmpId > 0)
+            {
+                btnFree[0].Appearance.BackColor = Color.DarkGreen;
+                taMiFree = CommonData.TaMenuItem.FirstOrDefault(s => s.ID == tmpId);
+            }
         }
 
         private void btnFree_Click(object sender, EventArgs e)
