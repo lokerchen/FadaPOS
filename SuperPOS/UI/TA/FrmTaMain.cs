@@ -1906,13 +1906,32 @@ namespace SuperPOS.UI.TA
                 //taCheckOrderInfo.MenuAmount = lstTaOI.Sum(s => Convert.ToDecimal(string.IsNullOrEmpty(s.ItemTotalPrice) ? "0.00" : s.ItemTotalPrice)).ToString();
                 taCheckOrderInfo.MenuAmount = treeListOrder.Nodes.Count > 0 ? treeListOrder.GetSummaryValue(treeListOrder.Columns[7]).ToString() : "0.00";
                 //taCheckOrderInfo.PayDiscount = CommonDAL.GetTaDiscount(ORDER_TYPE, Convert.ToDecimal(taCheckOrderInfo.MenuAmount)).ToString();
-                decimal dDiscount = CommonDAL.GetTaDiscount(ORDER_TYPE, Convert.ToDecimal(taCheckOrderInfo.MenuAmount));
-                taCheckOrderInfo.TotalAmount = CommonDAL.GetTotalAmount(Convert.ToDecimal(taCheckOrderInfo.MenuAmount), dDiscount).ToString();
-                if (dDiscount <= 0.0m)
+
+                TaDiscountInfo tdi = CommonData.TaDiscount.FirstOrDefault(s => s.TaType.Equals(ORDER_TYPE));
+                if (tdi != null)
                 {
-                    taCheckOrderInfo.PayPerDiscount = "";
-                    taCheckOrderInfo.PayDiscount = @"0.00";
+                    string strPayPerDiscount = tdi.TaDiscount;
+
+                    if (Convert.ToDecimal(taCheckOrderInfo.MenuAmount) > Convert.ToDecimal(string.IsNullOrEmpty(tdi.TaDiscThre) ? "0.00" : tdi.TaDiscThre))
+                    {
+                        taCheckOrderInfo.PayPerDiscount = strPayPerDiscount.Equals(@"0") ? "" : strPayPerDiscount + @"%";
+                        taCheckOrderInfo.PayDiscount = (Convert.ToDecimal(taCheckOrderInfo.TotalAmount)
+                                                        * Convert.ToDecimal(strPayPerDiscount) / 100).ToString("0.00");
+                    }
+                    else
+                    {
+                        taCheckOrderInfo.PayPerDiscount = "";
+                        taCheckOrderInfo.PayDiscount = @"0.00";
+                    }
                 }
+                else
+                    taCheckOrderInfo.PayDiscount = @"0.00";
+
+                if (Convert.ToDecimal(taCheckOrderInfo.PayDiscount) > 0)
+                {
+                    taCheckOrderInfo.TotalAmount = (Convert.ToDecimal(taCheckOrderInfo.TotalAmount) - Convert.ToDecimal(taCheckOrderInfo.PayDiscount)).ToString();
+                }
+                
                 taCheckOrderInfo.StaffID = usrID;
                 taCheckOrderInfo.PayTime = DateTime.Now.ToString();
                 taCheckOrderInfo.IsSave = isSave ? "Y" : "N";
