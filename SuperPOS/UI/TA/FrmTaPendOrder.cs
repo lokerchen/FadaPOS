@@ -99,7 +99,8 @@ namespace SuperPOS.UI.TA
 
         private void GetBindData(string orderType, int iDriver, bool isSaveOrder)
         {
-            var lstDb1 = from check in CommonData.TaCheckOrder.Where(s => s.CustomerID.Equals("0") || s.CustomerID.Equals("1"))
+            var lstCheck1 = CommonData.TaCheckOrder.Where(s => s.CustomerID.Equals("0") || s.CustomerID.Equals("1"));
+            var lstDb1 = from check in lstCheck1
                         join user in CommonData.UsrBase
                             on check.StaffID equals user.ID
                          join driver in CommonData.TaDriver
@@ -123,16 +124,17 @@ namespace SuperPOS.UI.TA
                             Paid = check.Paid,
                             CustID = Convert.ToInt32(check.CustomerID),
                             DriverID = check.DriverID,
-                            DriverName = driver.DriverName,
+                            DriverName = string.IsNullOrEmpty(driver.DriverName) ? "" : driver.DriverName,
                             MenuAmount = check.MenuAmount,
-                            Discount = check.PayDiscount,
-                            DiscountPer = check.PayPerDiscount,
+                            Discount = string.IsNullOrEmpty(check.PayDiscount) ? "" : check.PayDiscount,
+                            DiscountPer = string.IsNullOrEmpty(check.PayPerDiscount) ? "" : check.PayPerDiscount,
                             IsSave = check.IsSave,
                             OtherCheckCode = !check.IsSave.Equals("N") ? " ": check.CheckCode,
                             gridBusDate = check.BusDate
                         };
 
-            var lstDb2 = from check in CommonData.TaCheckOrder.Where(s => !s.CustomerID.Equals("0") && !s.CustomerID.Equals("1"))
+            var lstCheck2 = CommonData.TaCheckOrder.Where(s => !s.CustomerID.Equals("0") && !s.CustomerID.Equals("1"));
+            var lstDb2 = from check in lstCheck2
                          join user in CommonData.UsrBase
                              on check.StaffID equals user.ID
                          join driver in CommonData.TaDriver
@@ -147,21 +149,21 @@ namespace SuperPOS.UI.TA
                              CheckCode = check.CheckCode,
                              OrderTime = check.PayTime,
                              PostCode = cust.cusPostcode,
-                             PostCodeZone = cust.cusPcZone,
-                             Addr = cust.cusAddr,
+                             PostCodeZone = string.IsNullOrEmpty(cust.cusPcZone) ? "" : cust.cusPcZone,
+                             Addr = string.IsNullOrEmpty(cust.cusAddr) ? "" : cust.cusAddr,
                              PayOrderType = check.PayOrderType,
                              CustomerName = cust.cusName,
-                             CustomerPhone = cust.cusPhone,
+                             CustomerPhone = string.IsNullOrEmpty(cust.cusPhone) ? "" : cust.cusPhone,
                              IsPaid = check.IsPaid,
                              TotalAmount = check.TotalAmount,
                              StaffName = user.UsrName,
                              Paid = check.Paid,
                              CustID = Convert.ToInt32(check.CustomerID),
                              DriverID = check.DriverID,
-                             DriverName = driver.DriverName,
+                             DriverName = string.IsNullOrEmpty(driver.DriverName) ? "" : driver.DriverName,
                              MenuAmount = check.MenuAmount,
-                             Discount = check.PayDiscount,
-                             DiscountPer = check.PayPerDiscount,
+                             Discount = string.IsNullOrEmpty(check.PayDiscount) ? "" : check.PayDiscount,
+                             DiscountPer = string.IsNullOrEmpty(check.PayPerDiscount) ? "" : check.PayPerDiscount,
                              IsSave = check.IsSave,
                              OtherCheckCode = !check.IsSave.Equals("N") ? " " : check.CheckCode,
                              gridBusDate = check.BusDate
