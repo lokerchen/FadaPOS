@@ -1100,8 +1100,6 @@
             this.txtDsAmountToPay4.Name = "txtDsAmountToPay4";
             this.txtDsAmountToPay4.Properties.Appearance.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtDsAmountToPay4.Properties.Appearance.Options.UseFont = true;
-            this.txtDsAmountToPay4.Properties.Mask.EditMask = "f2";
-            this.txtDsAmountToPay4.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Numeric;
             this.txtDsAmountToPay4.Size = new System.Drawing.Size(135, 28);
             this.txtDsAmountToPay4.TabIndex = 14;
             // 
@@ -1112,8 +1110,6 @@
             this.txtDsAmountToPay3.Name = "txtDsAmountToPay3";
             this.txtDsAmountToPay3.Properties.Appearance.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtDsAmountToPay3.Properties.Appearance.Options.UseFont = true;
-            this.txtDsAmountToPay3.Properties.Mask.EditMask = "f2";
-            this.txtDsAmountToPay3.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Numeric;
             this.txtDsAmountToPay3.Size = new System.Drawing.Size(135, 28);
             this.txtDsAmountToPay3.TabIndex = 13;
             // 
@@ -1124,8 +1120,6 @@
             this.txtDsAmountToPay2.Name = "txtDsAmountToPay2";
             this.txtDsAmountToPay2.Properties.Appearance.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtDsAmountToPay2.Properties.Appearance.Options.UseFont = true;
-            this.txtDsAmountToPay2.Properties.Mask.EditMask = "f2";
-            this.txtDsAmountToPay2.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Numeric;
             this.txtDsAmountToPay2.Size = new System.Drawing.Size(135, 28);
             this.txtDsAmountToPay2.TabIndex = 12;
             // 
@@ -1136,8 +1130,6 @@
             this.txtDsDistanceTo4.Name = "txtDsDistanceTo4";
             this.txtDsDistanceTo4.Properties.Appearance.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtDsDistanceTo4.Properties.Appearance.Options.UseFont = true;
-            this.txtDsDistanceTo4.Properties.Mask.EditMask = "f2";
-            this.txtDsDistanceTo4.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Numeric;
             this.txtDsDistanceTo4.Size = new System.Drawing.Size(102, 28);
             this.txtDsDistanceTo4.TabIndex = 11;
             // 
@@ -1148,8 +1140,6 @@
             this.txtDsDistanceTo3.Name = "txtDsDistanceTo3";
             this.txtDsDistanceTo3.Properties.Appearance.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtDsDistanceTo3.Properties.Appearance.Options.UseFont = true;
-            this.txtDsDistanceTo3.Properties.Mask.EditMask = "f2";
-            this.txtDsDistanceTo3.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Numeric;
             this.txtDsDistanceTo3.Size = new System.Drawing.Size(102, 28);
             this.txtDsDistanceTo3.TabIndex = 10;
             // 
@@ -1160,8 +1150,6 @@
             this.txtDsDistanceTo2.Name = "txtDsDistanceTo2";
             this.txtDsDistanceTo2.Properties.Appearance.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtDsDistanceTo2.Properties.Appearance.Options.UseFont = true;
-            this.txtDsDistanceTo2.Properties.Mask.EditMask = "f2";
-            this.txtDsDistanceTo2.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Numeric;
             this.txtDsDistanceTo2.Size = new System.Drawing.Size(102, 28);
             this.txtDsDistanceTo2.TabIndex = 9;
             // 
@@ -1172,8 +1160,6 @@
             this.txtDsDistanceFrom4.Name = "txtDsDistanceFrom4";
             this.txtDsDistanceFrom4.Properties.Appearance.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtDsDistanceFrom4.Properties.Appearance.Options.UseFont = true;
-            this.txtDsDistanceFrom4.Properties.Mask.EditMask = "f2";
-            this.txtDsDistanceFrom4.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Numeric;
             this.txtDsDistanceFrom4.Size = new System.Drawing.Size(126, 28);
             this.txtDsDistanceFrom4.TabIndex = 8;
             // 
@@ -1184,8 +1170,6 @@
             this.txtDsDistanceFrom3.Name = "txtDsDistanceFrom3";
             this.txtDsDistanceFrom3.Properties.Appearance.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtDsDistanceFrom3.Properties.Appearance.Options.UseFont = true;
-            this.txtDsDistanceFrom3.Properties.Mask.EditMask = "f2";
-            this.txtDsDistanceFrom3.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Numeric;
             this.txtDsDistanceFrom3.Size = new System.Drawing.Size(126, 28);
             this.txtDsDistanceFrom3.TabIndex = 7;
             // 
@@ -1196,8 +1180,6 @@
             this.txtDsDistanceFrom2.Name = "txtDsDistanceFrom2";
             this.txtDsDistanceFrom2.Properties.Appearance.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtDsDistanceFrom2.Properties.Appearance.Options.UseFont = true;
-            this.txtDsDistanceFrom2.Properties.Mask.EditMask = "f2";
-            this.txtDsDistanceFrom2.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Numeric;
             this.txtDsDistanceFrom2.Size = new System.Drawing.Size(126, 28);
             this.txtDsDistanceFrom2.TabIndex = 6;
             // 
@@ -1208,8 +1190,6 @@
             this.txtDsAmountToPay1.Name = "txtDsAmountToPay1";
             this.txtDsAmountToPay1.Properties.Appearance.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtDsAmountToPay1.Properties.Appearance.Options.UseFont = true;
-            this.txtDsAmountToPay1.Properties.Mask.EditMask = "f2";
-            this.txtDsAmountToPay1.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Numeric;
             this.txtDsAmountToPay1.Size = new System.Drawing.Size(135, 28);
             this.txtDsAmountToPay1.TabIndex = 5;
             // 
@@ -1220,8 +1200,6 @@
             this.txtDsDistanceTo1.Name = "txtDsDistanceTo1";
             this.txtDsDistanceTo1.Properties.Appearance.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtDsDistanceTo1.Properties.Appearance.Options.UseFont = true;
-            this.txtDsDistanceTo1.Properties.Mask.EditMask = "f2";
-            this.txtDsDistanceTo1.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Numeric;
             this.txtDsDistanceTo1.Size = new System.Drawing.Size(102, 28);
             this.txtDsDistanceTo1.TabIndex = 4;
             // 
@@ -1241,8 +1219,7 @@
             this.txtDsDistanceFrom1.Name = "txtDsDistanceFrom1";
             this.txtDsDistanceFrom1.Properties.Appearance.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtDsDistanceFrom1.Properties.Appearance.Options.UseFont = true;
-            this.txtDsDistanceFrom1.Properties.Mask.EditMask = "f2";
-            this.txtDsDistanceFrom1.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Numeric;
+            this.txtDsDistanceFrom1.Properties.Mask.EditMask = "0";
             this.txtDsDistanceFrom1.Size = new System.Drawing.Size(126, 28);
             this.txtDsDistanceFrom1.TabIndex = 2;
             // 
