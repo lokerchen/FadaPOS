@@ -1999,8 +1999,17 @@ namespace SuperPOS.UI.TA
 
                 //taCheckOrderInfo.PayPerDiscount = "";
                 //taCheckOrderInfo.PayDiscount = @"0.00";
-                taCheckOrderInfo.PayPerSurcharge = "";
-                taCheckOrderInfo.PaySurcharge = @"0.00";
+                if (ORDER_TYPE.Equals(PubComm.ORDER_TYPE_DELIVERY))
+                {
+                    decimal dSurcharge = CommonDAL.GetTaDeliverySurcharge(Convert.ToDecimal(taCheckOrderInfo.MenuAmount));
+                    taCheckOrderInfo.PayPerSurcharge = "";
+                    taCheckOrderInfo.PaySurcharge = dSurcharge.ToString("0.00");
+                }
+                else
+                {
+                    taCheckOrderInfo.PayPerSurcharge = "";
+                    taCheckOrderInfo.PaySurcharge = @"0.00";
+                }
                 taCheckOrderInfo.PayType1 = "";
                 taCheckOrderInfo.PayTypePay1 = @"0.00";
                 taCheckOrderInfo.PayType2 = "";

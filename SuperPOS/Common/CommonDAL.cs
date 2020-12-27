@@ -514,6 +514,25 @@ namespace SuperPOS.Common
         }
         #endregion
 
+        #region 获得Delivery Surcharge
+
+        public static decimal GetTaDeliverySurcharge(decimal dMenuAmount)
+        {
+            new SystemData().GetTaDeliverySet();
+
+            var lstDs = CommonData.TaDeliverySet;
+
+            TaDeliverySetInfo tds = lstDs.FirstOrDefault();
+
+            return tds != null
+                ? (dMenuAmount <=
+                   Convert.ToDecimal(string.IsNullOrEmpty(tds.OrderThreshold) ? "0.00" : tds.OrderThreshold)
+                    ? Convert.ToDecimal(string.IsNullOrEmpty(tds.SurchargeAmount) ? "0.00" : tds.SurchargeAmount)
+                    : 0.00m)
+                : 0.00m;
+        }
+        #endregion
+
         #region 获得具体折扣值
 
         public static decimal GetTaDiscountAmount(string sType, decimal MenuAmount)
