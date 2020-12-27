@@ -2339,18 +2339,28 @@ namespace SuperPOS.UI.TA
                         dPrice = Convert.ToDecimal(treeListOrder.FocusedNode["ItemTotalPrice"].ToString());
 
                     FrmTaChangePrice frmTaChangePrice = null;
-                    if (iLangStatusId == PubComm.MENU_LANG_DEFAULT)
-                        frmTaChangePrice = new FrmTaChangePrice(treeListOrder.FocusedNode["ItemCode"].ToString(),
-                                                                             treeListOrder.FocusedNode["ItemDishName"].ToString(),
-                                                                             treeListOrder.FocusedNode["ItemDishOtherName"].ToString(),
-                                                                             dPrice.ToString(),
-                                                                             iLangStatusId);
-                    else
-                        frmTaChangePrice = new FrmTaChangePrice(treeListOrder.FocusedNode["ItemCode"].ToString(),
-                                                                             treeListOrder.FocusedNode["ItemDishOtherName"].ToString(),
-                                                                             treeListOrder.FocusedNode["ItemDishName"].ToString(),
-                                                                             dPrice.ToString(),
-                                                                             iLangStatusId);
+                    //if (iLangStatusId == PubComm.MENU_LANG_DEFAULT)
+                    TaMenuItemInfo taMi = CommonData.TaMenuItem.FirstOrDefault(s => s.MiDishCode.Equals(treeListOrder.FocusedNode["ItemCode"].ToString()));
+
+                    string sEName = treeListOrder.FocusedNode["ItemDishName"].ToString();
+                    string sOName = treeListOrder.FocusedNode["ItemDishOtherName"].ToString();
+                    if (taMi != null)
+                    {
+                        sEName = taMi.MiEngName;
+                        sOName = taMi.MiOtherName;
+                    }
+
+                    frmTaChangePrice = new FrmTaChangePrice(treeListOrder.FocusedNode["ItemCode"].ToString(),
+                                                                            sEName,
+                                                                            sOName,
+                                                                            dPrice.ToString(),
+                                                                            iLangStatusId);
+                    //else
+                    //    frmTaChangePrice = new FrmTaChangePrice(treeListOrder.FocusedNode["ItemCode"].ToString(),
+                    //                                                         treeListOrder.FocusedNode["ItemDishOtherName"].ToString(),
+                    //                                                         treeListOrder.FocusedNode["ItemDishName"].ToString(),
+                    //                                                         dPrice.ToString(),
+                    //                                                         iLangStatusId);
 
                     string sNewPrice = dPrice.ToString();
 
