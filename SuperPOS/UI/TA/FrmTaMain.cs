@@ -779,6 +779,8 @@ namespace SuperPOS.UI.TA
 
                     checkID = (Convert.ToInt32(checkID) + 1).ToString();
                     lblCheck.Text = checkID;
+
+                    SetCustClear();
                 }
             }
             else if (ORDER_TYPE.Equals(PubComm.ORDER_TYPE_DELIVERY))
@@ -831,6 +833,8 @@ namespace SuperPOS.UI.TA
 
                     checkID = CommonDAL.GetCheckCode();
                     lblCheck.Text = checkID;
+
+                    SetCustClear();
                 }
             }
 
