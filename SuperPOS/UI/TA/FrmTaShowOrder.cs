@@ -99,7 +99,7 @@ namespace SuperPOS.UI
             //sysData.GetTaPreview();
 
             webBrowser2.Navigate("about:blank/");
-            GetBindData("", false);
+            GetBindData("", true);
             
             //RefreshPrtInfo();
 
@@ -142,69 +142,77 @@ namespace SuperPOS.UI
             //                gridRefNo = check.RefNum,
             //                gridDeliveryFee = check.DeliveryFee
             //            };
-            var lstDb = from check in lstCo select new
-            {
-                ID = check.ID,
-                gridOrderNo = check.CheckCode,
-                gridPayType = (GetAllPayType(check.PayTypePay1, check.PayType1) + @" "
-                               + GetAllPayType(check.PayTypePay2, check.PayType2) + @" "
-                               + GetAllPayType(check.PayTypePay3, check.PayType3) + @" "
-                               + GetAllPayType(check.PayTypePay4, check.PayType4) + @" "
-                               + GetAllPayType(check.PayTypePay5, check.PayType5)).Trim(),
-                gridOrderType = check.PayOrderType,
-                gridOrderTime = check.PayTime,
-                gridTotal = check.TotalAmount,
-                //gridDriver = driver.DriverName,
-                gridDriver = "",
-                gridStaff = "",
-                gridCustID = check.CustomerID,
-                gridDiscountPer = check.PayPerDiscount,
-                gridDisount = check.PayDiscount,
-                gridSubTotal = check.MenuAmount,
-                gridBusDate = check.BusDate,
-                gridTendered = check.Paid,
-                gridChange =
-                    (Convert.ToDecimal(check.Paid) - Convert.ToDecimal(check.TotalAmount)) <= 0
-                        ? "0.0"
-                        : (Convert.ToDecimal(check.Paid) - Convert.ToDecimal(check.TotalAmount)).ToString(),
-                gridRefNo = check.RefNum,
-                gridDeliveryFee = check.DeliveryFee,
-                gridStaffId = check.StaffID,
-                gridSurcharge = check.PaySurcharge
-            };
+            var lstDb = from check in lstCo
+                        join driver in CommonData.TaDriver
+                        on check.DriverID equals driver.ID
+                        select new
+                        {
+                            ID = check.ID,
+                            gridOrderNo = check.CheckCode,
+                            gridPayType = (GetAllPayType(check.PayTypePay1, check.PayType1) + @" "
+                                           + GetAllPayType(check.PayTypePay2, check.PayType2) + @" "
+                                           + GetAllPayType(check.PayTypePay3, check.PayType3) + @" "
+                                           + GetAllPayType(check.PayTypePay4, check.PayType4) + @" "
+                                           + GetAllPayType(check.PayTypePay5, check.PayType5)).Trim(),
+                            gridOrderType = check.PayOrderType,
+                            gridOrderTime = check.PayTime,
+                            gridTotal = check.TotalAmount,
+                            gridDriver = driver.DriverName,
+                            //gridDriver = "",
+                            gridStaff = "",
+                            gridCustID = check.CustomerID,
+                            gridDiscountPer = check.PayPerDiscount,
+                            gridDisount = check.PayDiscount,
+                            gridSubTotal = check.MenuAmount,
+                            gridBusDate = check.BusDate,
+                            gridTendered = check.Paid,
+                            gridChange =
+                                (Convert.ToDecimal(check.Paid) - Convert.ToDecimal(check.TotalAmount)) <= 0
+                                    ? "0.0"
+                                    : (Convert.ToDecimal(check.Paid) - Convert.ToDecimal(check.TotalAmount)).ToString(),
+                            gridRefNo = check.RefNum,
+                            gridDeliveryFee = check.DeliveryFee,
+                            gridStaffId = check.StaffID,
+                            gridSurcharge = check.PaySurcharge
+                        };
 
             if (isNeedStaff)
             {
-                lstDb = lstCo.Join(CommonData.UsrBase, check => check.StaffID, user => user.ID, (check, user) => new
-                {
-                    ID = check.ID,
-                    gridOrderNo = check.CheckCode,
-                    gridPayType = (GetAllPayType(check.PayTypePay1, check.PayType1) + @" "
-                               + GetAllPayType(check.PayTypePay2, check.PayType2) + @" "
-                               + GetAllPayType(check.PayTypePay3, check.PayType3) + @" "
-                               + GetAllPayType(check.PayTypePay4, check.PayType4) + @" "
-                               + GetAllPayType(check.PayTypePay5, check.PayType5)).Trim(),
-                    gridOrderType = check.PayOrderType,
-                    gridOrderTime = check.PayTime,
-                    gridTotal = check.TotalAmount,
-                    //gridDriver = driver.DriverName,
-                    gridDriver = "",
-                    gridStaff = user.UsrName,
-                    gridCustID = check.CustomerID,
-                    gridDiscountPer = check.PayPerDiscount,
-                    gridDisount = check.PayDiscount,
-                    gridSubTotal = check.MenuAmount,
-                    gridBusDate = check.BusDate,
-                    gridTendered = check.Paid,
-                    gridChange =
-                    (Convert.ToDecimal(check.Paid) - Convert.ToDecimal(check.TotalAmount)) <= 0
-                        ? "0.0"
-                        : (Convert.ToDecimal(check.Paid) - Convert.ToDecimal(check.TotalAmount)).ToString(),
-                    gridRefNo = check.RefNum,
-                    gridDeliveryFee = check.DeliveryFee,
-                    gridStaffId = check.StaffID,
-                    gridSurcharge = check.PaySurcharge
-                });
+                lstDb = from check in lstCo
+                        join driver in CommonData.TaDriver
+                        on check.DriverID equals driver.ID
+                        join user in CommonData.UsrBase
+                        on check.StaffID equals user.ID
+                        select new 
+                        {
+                            ID = check.ID,
+                            gridOrderNo = check.CheckCode,
+                            gridPayType = (GetAllPayType(check.PayTypePay1, check.PayType1) + @" "
+                                       + GetAllPayType(check.PayTypePay2, check.PayType2) + @" "
+                                       + GetAllPayType(check.PayTypePay3, check.PayType3) + @" "
+                                       + GetAllPayType(check.PayTypePay4, check.PayType4) + @" "
+                                       + GetAllPayType(check.PayTypePay5, check.PayType5)).Trim(),
+                            gridOrderType = check.PayOrderType,
+                            gridOrderTime = check.PayTime,
+                            gridTotal = check.TotalAmount,
+                            gridDriver = driver.DriverName,
+                            //gridDriver = "",
+                            gridStaff = user.UsrName,
+                            gridCustID = check.CustomerID,
+                            gridDiscountPer = check.PayPerDiscount,
+                            gridDisount = check.PayDiscount,
+                            gridSubTotal = check.MenuAmount,
+                            gridBusDate = check.BusDate,
+                            gridTendered = check.Paid,
+                            gridChange =
+                            (Convert.ToDecimal(check.Paid) - Convert.ToDecimal(check.TotalAmount)) <= 0
+                                ? "0.0"
+                                : (Convert.ToDecimal(check.Paid) - Convert.ToDecimal(check.TotalAmount)).ToString(),
+                            gridRefNo = check.RefNum,
+                            gridDeliveryFee = check.DeliveryFee,
+                            gridStaffId = check.StaffID,
+                            gridSurcharge = check.PaySurcharge
+                        };
             }
             
 
