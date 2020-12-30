@@ -571,11 +571,15 @@ namespace SuperPOS.UI.TA
         {
             if (treeListOrder.FocusedNode != null)
             {
-                if (treeListOrder.FocusedNode["ItemType"].ToString().Equals("1"))
-                {
+                //if (treeListOrder.FocusedNode["ItemType"].ToString().Equals("1"))
+                //{
                     treeListOrder.BeginUpdate();
-                    decimal dQty = Convert.ToDecimal(treeListOrder.FocusedNode["ItemQty"]);
-                    decimal dPrice = Convert.ToDecimal(treeListOrder.FocusedNode["ItemTotalPrice"]);
+                    decimal dQty = Convert.ToDecimal(string.IsNullOrEmpty(treeListOrder.FocusedNode["ItemQty"].ToString()) 
+                                                     ? "0" 
+                                                     : treeListOrder.FocusedNode["ItemQty"]);
+                    decimal dPrice = Convert.ToDecimal(string.IsNullOrEmpty(treeListOrder.FocusedNode["ItemTotalPrice"].ToString()) 
+                                                       ? "0" 
+                                                       : treeListOrder.FocusedNode["ItemTotalPrice"]);
 
                     if (dQty > 1.0m)
                     {
@@ -591,7 +595,7 @@ namespace SuperPOS.UI.TA
                     treeListOrder.EndUpdate();
 
                     treeListOrder.ExpandAll();
-                }
+                //}
             }
 
         }
