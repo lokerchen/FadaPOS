@@ -37,7 +37,7 @@ namespace SuperPOS.UI.TA
             btnLess.Click += btnMode_Click;
             btnChange.Click += btnMode_Click;
             btnAdd.Click += btnMode_Click;
-            btnWO.Click += btnMode_Click;
+            btnNA.Click += btnMode_Click;
         }
 
         private void btnMode_Click(object sender, EventArgs e)
@@ -58,20 +58,14 @@ namespace SuperPOS.UI.TA
                 case "btnAdd":
                     ingredModeValue = @"+";
                     break;
-                case "btnWO":
-                    ingredModeValue = @"x";
+                case "btnNA":
+                    ingredModeValue = @" ";
                     break;
                 default:
                     ingredModeValue = "";
                     break;
             }
 
-            this.DialogResult = DialogResult.OK;
-            Hide();
-        }
-
-        private void btnExit_Click_1(object sender, EventArgs e)
-        {
             this.DialogResult = DialogResult.OK;
             Hide();
         }

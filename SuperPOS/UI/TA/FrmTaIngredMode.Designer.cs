@@ -30,7 +30,7 @@
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.btnExit = new DevExpress.XtraEditors.SimpleButton();
-            this.btnWO = new DevExpress.XtraEditors.SimpleButton();
+            this.btnNA = new DevExpress.XtraEditors.SimpleButton();
             this.btnAdd = new DevExpress.XtraEditors.SimpleButton();
             this.btnChange = new DevExpress.XtraEditors.SimpleButton();
             this.btnLess = new DevExpress.XtraEditors.SimpleButton();
@@ -41,14 +41,16 @@
             // groupBox1
             // 
             this.groupBox1.Controls.Add(this.btnExit);
-            this.groupBox1.Controls.Add(this.btnWO);
+            this.groupBox1.Controls.Add(this.btnNA);
             this.groupBox1.Controls.Add(this.btnAdd);
             this.groupBox1.Controls.Add(this.btnChange);
             this.groupBox1.Controls.Add(this.btnLess);
             this.groupBox1.Controls.Add(this.btnNo);
-            this.groupBox1.Location = new System.Drawing.Point(6, 6);
+            this.groupBox1.Location = new System.Drawing.Point(5, 5);
+            this.groupBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(726, 100);
+            this.groupBox1.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.groupBox1.Size = new System.Drawing.Size(635, 78);
             this.groupBox1.TabIndex = 1;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Ingredient Mode";
@@ -60,25 +62,27 @@
             this.btnExit.Appearance.Options.UseBackColor = true;
             this.btnExit.Appearance.Options.UseFont = true;
             this.btnExit.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
-            this.btnExit.Location = new System.Drawing.Point(605, 27);
+            this.btnExit.Location = new System.Drawing.Point(529, 21);
+            this.btnExit.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnExit.Name = "btnExit";
-            this.btnExit.Size = new System.Drawing.Size(115, 57);
+            this.btnExit.Size = new System.Drawing.Size(101, 44);
             this.btnExit.TabIndex = 10;
             this.btnExit.Text = "Exit";
             this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
             // 
-            // btnWO
+            // btnNA
             // 
-            this.btnWO.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
-            this.btnWO.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnWO.Appearance.Options.UseBackColor = true;
-            this.btnWO.Appearance.Options.UseFont = true;
-            this.btnWO.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
-            this.btnWO.Location = new System.Drawing.Point(485, 27);
-            this.btnWO.Name = "btnWO";
-            this.btnWO.Size = new System.Drawing.Size(115, 57);
-            this.btnWO.TabIndex = 9;
-            this.btnWO.Text = "W/O (x)";
+            this.btnNA.Appearance.BackColor = System.Drawing.Color.Silver;
+            this.btnNA.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnNA.Appearance.Options.UseBackColor = true;
+            this.btnNA.Appearance.Options.UseFont = true;
+            this.btnNA.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
+            this.btnNA.Location = new System.Drawing.Point(424, 21);
+            this.btnNA.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnNA.Name = "btnNA";
+            this.btnNA.Size = new System.Drawing.Size(101, 44);
+            this.btnNA.TabIndex = 9;
+            this.btnNA.Text = "No Action";
             // 
             // btnAdd
             // 
@@ -87,9 +91,10 @@
             this.btnAdd.Appearance.Options.UseBackColor = true;
             this.btnAdd.Appearance.Options.UseFont = true;
             this.btnAdd.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
-            this.btnAdd.Location = new System.Drawing.Point(365, 27);
+            this.btnAdd.Location = new System.Drawing.Point(319, 21);
+            this.btnAdd.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnAdd.Name = "btnAdd";
-            this.btnAdd.Size = new System.Drawing.Size(115, 57);
+            this.btnAdd.Size = new System.Drawing.Size(101, 44);
             this.btnAdd.TabIndex = 8;
             this.btnAdd.Text = "Add (+)";
             // 
@@ -100,9 +105,10 @@
             this.btnChange.Appearance.Options.UseBackColor = true;
             this.btnChange.Appearance.Options.UseFont = true;
             this.btnChange.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
-            this.btnChange.Location = new System.Drawing.Point(245, 27);
+            this.btnChange.Location = new System.Drawing.Point(214, 21);
+            this.btnChange.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnChange.Name = "btnChange";
-            this.btnChange.Size = new System.Drawing.Size(115, 57);
+            this.btnChange.Size = new System.Drawing.Size(101, 44);
             this.btnChange.TabIndex = 7;
             this.btnChange.Text = "Change (/)";
             // 
@@ -113,9 +119,10 @@
             this.btnLess.Appearance.Options.UseBackColor = true;
             this.btnLess.Appearance.Options.UseFont = true;
             this.btnLess.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
-            this.btnLess.Location = new System.Drawing.Point(125, 27);
+            this.btnLess.Location = new System.Drawing.Point(109, 21);
+            this.btnLess.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnLess.Name = "btnLess";
-            this.btnLess.Size = new System.Drawing.Size(115, 57);
+            this.btnLess.Size = new System.Drawing.Size(101, 44);
             this.btnLess.TabIndex = 6;
             this.btnLess.Text = "Less (-)";
             // 
@@ -126,19 +133,21 @@
             this.btnNo.Appearance.Options.UseBackColor = true;
             this.btnNo.Appearance.Options.UseFont = true;
             this.btnNo.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
-            this.btnNo.Location = new System.Drawing.Point(5, 27);
+            this.btnNo.Location = new System.Drawing.Point(4, 21);
+            this.btnNo.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnNo.Name = "btnNo";
-            this.btnNo.Size = new System.Drawing.Size(115, 57);
+            this.btnNo.Size = new System.Drawing.Size(101, 44);
             this.btnNo.TabIndex = 5;
             this.btnNo.Text = "No (X)";
             // 
             // FrmTaIngredMode
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 18F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 14F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(737, 111);
+            this.ClientSize = new System.Drawing.Size(645, 86);
             this.Controls.Add(this.groupBox1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "FrmTaIngredMode";
             this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
             this.Text = "FrmTaIngredMode";
@@ -150,7 +159,7 @@
 
         #endregion
         private System.Windows.Forms.GroupBox groupBox1;
-        private DevExpress.XtraEditors.SimpleButton btnWO;
+        private DevExpress.XtraEditors.SimpleButton btnNA;
         private DevExpress.XtraEditors.SimpleButton btnAdd;
         private DevExpress.XtraEditors.SimpleButton btnChange;
         private DevExpress.XtraEditors.SimpleButton btnLess;
