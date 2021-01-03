@@ -250,6 +250,11 @@ namespace SuperPOS.UI.TA
                 checkID = CommonDAL.GetCheckCode();
                 lblCheck.Text = checkID;
 
+                SetCustClear();
+                ORDER_TYPE = PubComm.ORDER_TYPE_SHOP;
+                btnType.Appearance.BackColor = Color.HotPink;
+                btnType.Text = PubComm.ORDER_TYPE_SHOP;
+
                 handler.EndInvoke(result);
             }
             catch (Exception ex) { LogHelper.Error(this.Name, ex); }
