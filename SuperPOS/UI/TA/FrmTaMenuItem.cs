@@ -229,7 +229,7 @@ namespace SuperPOS.UI.TA
             else
             {
                 gridControlMenuItem.DataSource = menuSetID >= 0
-                    ? lstMenuItem.Where(s => s.MiMenuSetID == menuSetID && s.MiDishCode.ToString().Contains(strDishCode)).ToList()
+                    ? lstMenuItem.Where(s => s.MiMenuSetID == menuSetID && s.MiDishCode.ToString().Equals(strDishCode)).ToList()
                     : lstMenuItem.ToList();
             }
             
