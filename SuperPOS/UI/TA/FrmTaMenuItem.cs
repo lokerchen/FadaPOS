@@ -232,8 +232,8 @@ namespace SuperPOS.UI.TA
                     ? lstMenuItem.Where(s => s.MiMenuSetID == menuSetID && s.MiDishCode.ToString().Contains(strDishCode)).ToList()
                     : lstMenuItem.ToList();
             }
-
-            gvMenuItem.FocusedRowHandle = gvMenuItem.RowCount - 1;
+            
+            gvMenuItem.FocusedRowHandle = 0;
         }
         #endregion
 
