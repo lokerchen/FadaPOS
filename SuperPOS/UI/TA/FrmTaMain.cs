@@ -496,19 +496,26 @@ namespace SuperPOS.UI.TA
         #region MenuCate Right翻页
         private void btnMcRight_Click(object sender, EventArgs e)
         {
-            if (!string.IsNullOrEmpty(btnMenuCate[0].Text) && !string.IsNullOrEmpty(btnMenuCate[41].Text))
-                iCatePageNum = iCatePageNum + 1;
+            //if (!string.IsNullOrEmpty(btnMenuCate[0].Text) && !string.IsNullOrEmpty(btnMenuCate[41].Text))
+            if (!string.IsNullOrEmpty(btnMenuCate[0].Text))
+            {
+                iCatePageNum = iCatePageNum >= 2 ? 1 : iCatePageNum + 1;
+            }
 
-            SetMenuItem(iPageNum, iCatePageNum, iMenuSetId);
+            SetMenuCate(iCatePageNum, iMenuSetId);
+
+            //SetMenuItem(iPageNum, iCatePageNum, iMenuSetId);
         }
         #endregion
 
         #region MenuCate Left翻页
         private void btnMcLeft_Click(object sender, EventArgs e)
         {
-            iCatePageNum = iCatePageNum <= 1 ? 1 : (iCatePageNum <= 1 ? 1 : iCatePageNum - 1);
+            iCatePageNum = iCatePageNum <= 1 ? 2 : iCatePageNum - 1;
 
-            SetMenuItem(iPageNum, iCatePageNum, iMenuSetId);
+            SetMenuCate(iCatePageNum, iMenuSetId);
+
+            //SetMenuItem(iPageNum, iCatePageNum, iMenuSetId);
         }
         #endregion
 
