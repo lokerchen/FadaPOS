@@ -455,7 +455,9 @@ namespace SuperPOS.UI.TA
                 }
 
                 //BindData();
-                BindGridData(iMenuSetKey, "", "");
+                if(!string.IsNullOrEmpty(txtSearchDishCode.Text)) BindGridData(iMenuSetKey, txtSearchDishCode.Text, "");
+                else if (!string.IsNullOrEmpty(lueDishCateSearch.EditValue.ToString())) BindGridData(iMenuSetKey, "", lueDishCateSearch.EditValue.ToString());
+                else BindGridData(iMenuSetKey, "", "");
             }
             catch (Exception ex)
             {
@@ -1250,6 +1252,14 @@ namespace SuperPOS.UI.TA
             txtSmallPrice.Text = gvMenuItem.GetRowCellValue(gvMenuItem.FocusedRowHandle, "MiSmallPrice") == null ? "" : gvMenuItem.GetRowCellValue(gvMenuItem.FocusedRowHandle, "MiSmallPrice").ToString();
 
             colorEditBtn.Text = gvMenuItem.GetRowCellValue(gvMenuItem.FocusedRowHandle, "MiBtnColor") == null ? @"Gold" : gvMenuItem.GetRowCellValue(gvMenuItem.FocusedRowHandle, "MiBtnColor").ToString();
+        }
+
+        private void lueDishCateSearch_Properties_ButtonPressed(object sender, ButtonPressedEventArgs e)
+        {
+            if (e.Button.Index == 1)
+            {
+                lueDishCateSearch.Text = "";
+            }
         }
     }
 }

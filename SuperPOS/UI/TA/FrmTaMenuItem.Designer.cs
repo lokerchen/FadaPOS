@@ -829,7 +829,9 @@
             this.lueDishCateSearch.Properties.BestFitMode = DevExpress.XtraEditors.Controls.BestFitMode.BestFitResizePopup;
             this.lueDishCateSearch.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.lueDishCateSearch.Properties.DropDownRows = 10;
             this.lueDishCateSearch.Properties.NullText = "";
+            this.lueDishCateSearch.Properties.ButtonPressed += new DevExpress.XtraEditors.Controls.ButtonPressedEventHandler(this.lueDishCateSearch_Properties_ButtonPressed);
             this.lueDishCateSearch.Size = new System.Drawing.Size(122, 20);
             this.lueDishCateSearch.TabIndex = 52;
             this.lueDishCateSearch.EditValueChanged += new System.EventHandler(this.chkComboDishSearch_EditValueChanged);
