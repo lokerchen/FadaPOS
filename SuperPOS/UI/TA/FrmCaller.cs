@@ -367,7 +367,7 @@ namespace SuperPOS.UI.TA
             new SystemData().GetComePhoneInfo();
 
             int i = 0;
-            foreach (var tcpi in CommonData.TaComePhoneInfo.OrderByDescending(s => s.ID).Take(8))
+            foreach (var tcpi in CommonData.TaComePhoneInfo.Where(s => s.BusDate.Equals(strBustDate)).OrderByDescending(s => s.ID).Take(8))
             {
                 pcCust[i].Visible = true;
                 lblCustInfo[i].Text = tcpi.ComePhoneTime;
