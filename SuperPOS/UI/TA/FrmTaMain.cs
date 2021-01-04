@@ -528,9 +528,13 @@ namespace SuperPOS.UI.TA
             //treeListOrder.SetNodeIndex(treeListOrder.FocusedNode, treeListOrder.GetNodeIndex(treeListOrder.FocusedNode.PrevNode));
 
             //treeListOrder.EndUpdate();
-            treeListOrder.SetFocusedNode(treeListOrder.GetNodeIndex(treeListOrder.FocusedNode) - 1 >= 0
-                ? treeListOrder.Nodes[treeListOrder.GetNodeIndex(treeListOrder.FocusedNode) - 1]
-                : treeListOrder.Nodes[0]);
+
+            if (treeListOrder.Nodes.Count > 0)
+            {
+                treeListOrder.SetFocusedNode(treeListOrder.GetNodeIndex(treeListOrder.FocusedNode) - 1 >= 0
+                   ? treeListOrder.Nodes[treeListOrder.GetNodeIndex(treeListOrder.FocusedNode) - 1]
+                   : treeListOrder.Nodes[0]);
+            }
         }
 
         #endregion
@@ -538,9 +542,12 @@ namespace SuperPOS.UI.TA
         #region TreeList向下移动
         private void btnDown_Click(object sender, EventArgs e)
         {
-            treeListOrder.SetFocusedNode(treeListOrder.GetNodeIndex(treeListOrder.FocusedNode) - treeListOrder.Nodes.Count < 1
-                ? treeListOrder.Nodes[treeListOrder.Nodes.Count - 1]
-                : treeListOrder.Nodes[treeListOrder.GetNodeIndex(treeListOrder.FocusedNode) + 1]);
+            if (treeListOrder.Nodes.Count > 0)
+            {
+                treeListOrder.SetFocusedNode(treeListOrder.GetNodeIndex(treeListOrder.FocusedNode) - treeListOrder.Nodes.Count < 1
+                   ? treeListOrder.Nodes[treeListOrder.Nodes.Count - 1]
+                   : treeListOrder.Nodes[treeListOrder.GetNodeIndex(treeListOrder.FocusedNode) + 1]);
+            }
         }
         #endregion
 
