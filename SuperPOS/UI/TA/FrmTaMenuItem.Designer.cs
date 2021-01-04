@@ -807,8 +807,6 @@
             this.txtSearchDishCode.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtSearchDishCode.Name = "txtSearchDishCode";
             this.txtSearchDishCode.Properties.AutoHeight = false;
-            this.txtSearchDishCode.Properties.Mask.EditMask = "f0";
-            this.txtSearchDishCode.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Numeric;
             this.txtSearchDishCode.Size = new System.Drawing.Size(89, 20);
             this.txtSearchDishCode.TabIndex = 3;
             // 
@@ -950,6 +948,7 @@
             this.gvMenuItem.OptionsView.ShowGroupPanel = false;
             this.gvMenuItem.CustomDrawRowIndicator += new DevExpress.XtraGrid.Views.Grid.RowIndicatorCustomDrawEventHandler(this.gvMenuItem_CustomDrawRowIndicator);
             this.gvMenuItem.FocusedRowChanged += new DevExpress.XtraGrid.Views.Base.FocusedRowChangedEventHandler(this.gvMenuItem_FocusedRowChanged);
+            this.gvMenuItem.FocusedRowObjectChanged += new DevExpress.XtraGrid.Views.Base.FocusedRowObjectChangedEventHandler(this.gvMenuItem_FocusedRowObjectChanged);
             // 
             // ID
             // 

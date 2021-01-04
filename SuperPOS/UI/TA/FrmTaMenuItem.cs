@@ -496,43 +496,43 @@ namespace SuperPOS.UI.TA
 
         private void gvMenuItem_FocusedRowChanged(object sender, DevExpress.XtraGrid.Views.Base.FocusedRowChangedEventArgs e)
         {
-            if (gvMenuItem.RowCount < 1 ) return;
+            //if (gvMenuItem.RowCount < 1 ) return;
 
-            if (gvMenuItem.GetRowCellValue(gvMenuItem.FocusedRowHandle, "MiDishCode") != null)
-                miID = Convert.ToInt32(gvMenuItem.GetRowCellValue(gvMenuItem.FocusedRowHandle, "ID"));
-            txtDishCode.Text = gvMenuItem.GetRowCellValue(gvMenuItem.FocusedRowHandle, "MiDishCode") == null ? "" : gvMenuItem.GetRowCellValue(gvMenuItem.FocusedRowHandle, "MiDishCode").ToString();
-            txtDispPosition.Text = gvMenuItem.GetRowCellValue(gvMenuItem.FocusedRowHandle, "MiPosition") == null ? "" : gvMenuItem.GetRowCellValue(gvMenuItem.FocusedRowHandle, "MiPosition").ToString();
-            if (gvMenuItem.GetRowCellValue(gvMenuItem.FocusedRowHandle, "MiEngName") != null)
-                miEngName = gvMenuItem.GetRowCellValue(gvMenuItem.FocusedRowHandle, "MiEngName").ToString();
-            txtEngName.Text = gvMenuItem.GetRowCellValue(gvMenuItem.FocusedRowHandle, "MiEngName") == null ? "" : gvMenuItem.GetRowCellValue(gvMenuItem.FocusedRowHandle, "MiEngName").ToString();
-            txtOtherName.Text = gvMenuItem.GetRowCellValue(gvMenuItem.FocusedRowHandle, "MiOtherName") == null ? "" : gvMenuItem.GetRowCellValue(gvMenuItem.FocusedRowHandle, "MiOtherName").ToString();
-            txtRegularPrice.Text = gvMenuItem.GetRowCellValue(gvMenuItem.FocusedRowHandle, "MiRegularPrice").ToString();
-            //txtSpecailRegularPrice.Text = gvMenuItem.GetRowCellValue(gvMenuItem.FocusedRowHandle, "MiSpecialPrice").ToString();
-            //lueMenuSet.EditValue = Convert.ToInt32(gvMenuItem.GetRowCellValue(gvMenuItem.FocusedRowHandle, "MiMenuSetID"));
-            //lueMenuSet.Text = gvMenuItem.GetRowCellValue(gvMenuItem.FocusedRowHandle, "MiMenuSet").ToString();
-            //lueSuppleShift.EditValue = Convert.ToInt32(gvMenuItem.GetRowCellValue(gvMenuItem.FocusedRowHandle, "MiSuppleShiftID"));
-            //lueSuppleShift.Text = gvMenuItem.GetRowCellValue(gvMenuItem.FocusedRowHandle, "MiSuppleShift").ToString();
-            luePrtName.EditValue = Convert.ToInt32(gvMenuItem.GetRowCellValue(gvMenuItem.FocusedRowHandle, "MiPrintID"));
-            luePrtName.Text = gvMenuItem.GetRowCellValue(gvMenuItem.FocusedRowHandle, "MiPrint") == null ? "" : gvMenuItem.GetRowCellValue(gvMenuItem.FocusedRowHandle, "MiPrint").ToString();
-            //luePrtOrder.EditValue = Convert.ToInt32(gvMenuItem.GetRowCellValue(gvMenuItem.FocusedRowHandle, "MiDeptCodeID"));
-            //luePrtOrder.Text = gvMenuItem.GetRowCellValue(gvMenuItem.FocusedRowHandle, "MiDeptCode").ToString();
-            //chkComboWorkDay.EditValue = gvMenuItem.GetRowCellValue(gvMenuItem.FocusedRowHandle, "MiWorkDay");
-            //chkComboWorkDay.Text = gvMenuItem.GetRowCellValue(gvMenuItem.FocusedRowHandle, "MiWorkDay").ToString();
-            chkComboMenuCate.EditValue = gvMenuItem.GetRowCellValue(gvMenuItem.FocusedRowHandle, "MiMenuCateID") == null ? "" : gvMenuItem.GetRowCellValue(gvMenuItem.FocusedRowHandle, "MiMenuCateID").ToString();
-            chkComboMenuCate.SetEditValue(gvMenuItem.GetRowCellValue(gvMenuItem.FocusedRowHandle, "MiMenuCateID") == null ? "" : gvMenuItem.GetRowCellValue(gvMenuItem.FocusedRowHandle, "MiMenuCateID").ToString());
-            //chkComboOtherSet.EditValue = gvMenuItem.GetRowCellValue(gvMenuItem.FocusedRowHandle, "MiRmk");
-            string strRmk = gvMenuItem.GetRowCellValue(gvMenuItem.FocusedRowHandle, "MiRmk") == null ? "" : gvMenuItem.GetRowCellValue(gvMenuItem.FocusedRowHandle, "MiRmk").ToString();
-            chk1.Checked = false;
-            chk2.Checked = false;
-            chk3.Checked = false;
-            if (strRmk.Contains("Without VAT")) chk1.Checked = true;
-            if (strRmk.Contains("Set Meal")) chk2.Checked = true;
-            if (strRmk.Contains("Discountable")) chk3.Checked = true;
+            //if (gvMenuItem.GetRowCellValue(gvMenuItem.FocusedRowHandle, "MiDishCode") != null)
+            //    miID = Convert.ToInt32(gvMenuItem.GetRowCellValue(gvMenuItem.FocusedRowHandle, "ID"));
+            //txtDishCode.Text = gvMenuItem.GetRowCellValue(gvMenuItem.FocusedRowHandle, "MiDishCode") == null ? "" : gvMenuItem.GetRowCellValue(gvMenuItem.FocusedRowHandle, "MiDishCode").ToString();
+            //txtDispPosition.Text = gvMenuItem.GetRowCellValue(gvMenuItem.FocusedRowHandle, "MiPosition") == null ? "" : gvMenuItem.GetRowCellValue(gvMenuItem.FocusedRowHandle, "MiPosition").ToString();
+            //if (gvMenuItem.GetRowCellValue(gvMenuItem.FocusedRowHandle, "MiEngName") != null)
+            //    miEngName = gvMenuItem.GetRowCellValue(gvMenuItem.FocusedRowHandle, "MiEngName").ToString();
+            //txtEngName.Text = gvMenuItem.GetRowCellValue(gvMenuItem.FocusedRowHandle, "MiEngName") == null ? "" : gvMenuItem.GetRowCellValue(gvMenuItem.FocusedRowHandle, "MiEngName").ToString();
+            //txtOtherName.Text = gvMenuItem.GetRowCellValue(gvMenuItem.FocusedRowHandle, "MiOtherName") == null ? "" : gvMenuItem.GetRowCellValue(gvMenuItem.FocusedRowHandle, "MiOtherName").ToString();
+            //txtRegularPrice.Text = gvMenuItem.GetRowCellValue(gvMenuItem.FocusedRowHandle, "MiRegularPrice").ToString();
+            ////txtSpecailRegularPrice.Text = gvMenuItem.GetRowCellValue(gvMenuItem.FocusedRowHandle, "MiSpecialPrice").ToString();
+            ////lueMenuSet.EditValue = Convert.ToInt32(gvMenuItem.GetRowCellValue(gvMenuItem.FocusedRowHandle, "MiMenuSetID"));
+            ////lueMenuSet.Text = gvMenuItem.GetRowCellValue(gvMenuItem.FocusedRowHandle, "MiMenuSet").ToString();
+            ////lueSuppleShift.EditValue = Convert.ToInt32(gvMenuItem.GetRowCellValue(gvMenuItem.FocusedRowHandle, "MiSuppleShiftID"));
+            ////lueSuppleShift.Text = gvMenuItem.GetRowCellValue(gvMenuItem.FocusedRowHandle, "MiSuppleShift").ToString();
+            //luePrtName.EditValue = Convert.ToInt32(gvMenuItem.GetRowCellValue(gvMenuItem.FocusedRowHandle, "MiPrintID"));
+            //luePrtName.Text = gvMenuItem.GetRowCellValue(gvMenuItem.FocusedRowHandle, "MiPrint") == null ? "" : gvMenuItem.GetRowCellValue(gvMenuItem.FocusedRowHandle, "MiPrint").ToString();
+            ////luePrtOrder.EditValue = Convert.ToInt32(gvMenuItem.GetRowCellValue(gvMenuItem.FocusedRowHandle, "MiDeptCodeID"));
+            ////luePrtOrder.Text = gvMenuItem.GetRowCellValue(gvMenuItem.FocusedRowHandle, "MiDeptCode").ToString();
+            ////chkComboWorkDay.EditValue = gvMenuItem.GetRowCellValue(gvMenuItem.FocusedRowHandle, "MiWorkDay");
+            ////chkComboWorkDay.Text = gvMenuItem.GetRowCellValue(gvMenuItem.FocusedRowHandle, "MiWorkDay").ToString();
+            //chkComboMenuCate.EditValue = gvMenuItem.GetRowCellValue(gvMenuItem.FocusedRowHandle, "MiMenuCateID") == null ? "" : gvMenuItem.GetRowCellValue(gvMenuItem.FocusedRowHandle, "MiMenuCateID").ToString();
+            //chkComboMenuCate.SetEditValue(gvMenuItem.GetRowCellValue(gvMenuItem.FocusedRowHandle, "MiMenuCateID") == null ? "" : gvMenuItem.GetRowCellValue(gvMenuItem.FocusedRowHandle, "MiMenuCateID").ToString());
+            ////chkComboOtherSet.EditValue = gvMenuItem.GetRowCellValue(gvMenuItem.FocusedRowHandle, "MiRmk");
+            //string strRmk = gvMenuItem.GetRowCellValue(gvMenuItem.FocusedRowHandle, "MiRmk") == null ? "" : gvMenuItem.GetRowCellValue(gvMenuItem.FocusedRowHandle, "MiRmk").ToString();
+            //chk1.Checked = false;
+            //chk2.Checked = false;
+            //chk3.Checked = false;
+            //if (strRmk.Contains("Without VAT")) chk1.Checked = true;
+            //if (strRmk.Contains("Set Meal")) chk2.Checked = true;
+            //if (strRmk.Contains("Discountable")) chk3.Checked = true;
             
-            txtLargePrice.Text = gvMenuItem.GetRowCellValue(gvMenuItem.FocusedRowHandle, "MiLargePrice") == null ? "" : gvMenuItem.GetRowCellValue(gvMenuItem.FocusedRowHandle, "MiLargePrice").ToString();
-            txtSmallPrice.Text = gvMenuItem.GetRowCellValue(gvMenuItem.FocusedRowHandle, "MiSmallPrice") == null ? "" : gvMenuItem.GetRowCellValue(gvMenuItem.FocusedRowHandle, "MiSmallPrice").ToString();
+            //txtLargePrice.Text = gvMenuItem.GetRowCellValue(gvMenuItem.FocusedRowHandle, "MiLargePrice") == null ? "" : gvMenuItem.GetRowCellValue(gvMenuItem.FocusedRowHandle, "MiLargePrice").ToString();
+            //txtSmallPrice.Text = gvMenuItem.GetRowCellValue(gvMenuItem.FocusedRowHandle, "MiSmallPrice") == null ? "" : gvMenuItem.GetRowCellValue(gvMenuItem.FocusedRowHandle, "MiSmallPrice").ToString();
 
-            colorEditBtn.Text = gvMenuItem.GetRowCellValue(gvMenuItem.FocusedRowHandle, "MiBtnColor") == null ? @"Gold" : gvMenuItem.GetRowCellValue(gvMenuItem.FocusedRowHandle, "MiBtnColor").ToString();
+            //colorEditBtn.Text = gvMenuItem.GetRowCellValue(gvMenuItem.FocusedRowHandle, "MiBtnColor") == null ? @"Gold" : gvMenuItem.GetRowCellValue(gvMenuItem.FocusedRowHandle, "MiBtnColor").ToString();
         }
 
         #region Grid单元格双击事件
@@ -1209,6 +1209,47 @@ namespace SuperPOS.UI.TA
             {
                 frmTaMenuItemCopyChoices.Close();
             }
+        }
+
+        private void gvMenuItem_FocusedRowObjectChanged(object sender, DevExpress.XtraGrid.Views.Base.FocusedRowObjectChangedEventArgs e)
+        {
+            if (gvMenuItem.RowCount < 1) return;
+
+            if (gvMenuItem.GetRowCellValue(gvMenuItem.FocusedRowHandle, "MiDishCode") != null)
+                miID = Convert.ToInt32(gvMenuItem.GetRowCellValue(gvMenuItem.FocusedRowHandle, "ID"));
+            txtDishCode.Text = gvMenuItem.GetRowCellValue(gvMenuItem.FocusedRowHandle, "MiDishCode") == null ? "" : gvMenuItem.GetRowCellValue(gvMenuItem.FocusedRowHandle, "MiDishCode").ToString();
+            txtDispPosition.Text = gvMenuItem.GetRowCellValue(gvMenuItem.FocusedRowHandle, "MiPosition") == null ? "" : gvMenuItem.GetRowCellValue(gvMenuItem.FocusedRowHandle, "MiPosition").ToString();
+            if (gvMenuItem.GetRowCellValue(gvMenuItem.FocusedRowHandle, "MiEngName") != null)
+                miEngName = gvMenuItem.GetRowCellValue(gvMenuItem.FocusedRowHandle, "MiEngName").ToString();
+            txtEngName.Text = gvMenuItem.GetRowCellValue(gvMenuItem.FocusedRowHandle, "MiEngName") == null ? "" : gvMenuItem.GetRowCellValue(gvMenuItem.FocusedRowHandle, "MiEngName").ToString();
+            txtOtherName.Text = gvMenuItem.GetRowCellValue(gvMenuItem.FocusedRowHandle, "MiOtherName") == null ? "" : gvMenuItem.GetRowCellValue(gvMenuItem.FocusedRowHandle, "MiOtherName").ToString();
+            txtRegularPrice.Text = gvMenuItem.GetRowCellValue(gvMenuItem.FocusedRowHandle, "MiRegularPrice").ToString();
+            //txtSpecailRegularPrice.Text = gvMenuItem.GetRowCellValue(gvMenuItem.FocusedRowHandle, "MiSpecialPrice").ToString();
+            //lueMenuSet.EditValue = Convert.ToInt32(gvMenuItem.GetRowCellValue(gvMenuItem.FocusedRowHandle, "MiMenuSetID"));
+            //lueMenuSet.Text = gvMenuItem.GetRowCellValue(gvMenuItem.FocusedRowHandle, "MiMenuSet").ToString();
+            //lueSuppleShift.EditValue = Convert.ToInt32(gvMenuItem.GetRowCellValue(gvMenuItem.FocusedRowHandle, "MiSuppleShiftID"));
+            //lueSuppleShift.Text = gvMenuItem.GetRowCellValue(gvMenuItem.FocusedRowHandle, "MiSuppleShift").ToString();
+            luePrtName.EditValue = Convert.ToInt32(gvMenuItem.GetRowCellValue(gvMenuItem.FocusedRowHandle, "MiPrintID"));
+            luePrtName.Text = gvMenuItem.GetRowCellValue(gvMenuItem.FocusedRowHandle, "MiPrint") == null ? "" : gvMenuItem.GetRowCellValue(gvMenuItem.FocusedRowHandle, "MiPrint").ToString();
+            //luePrtOrder.EditValue = Convert.ToInt32(gvMenuItem.GetRowCellValue(gvMenuItem.FocusedRowHandle, "MiDeptCodeID"));
+            //luePrtOrder.Text = gvMenuItem.GetRowCellValue(gvMenuItem.FocusedRowHandle, "MiDeptCode").ToString();
+            //chkComboWorkDay.EditValue = gvMenuItem.GetRowCellValue(gvMenuItem.FocusedRowHandle, "MiWorkDay");
+            //chkComboWorkDay.Text = gvMenuItem.GetRowCellValue(gvMenuItem.FocusedRowHandle, "MiWorkDay").ToString();
+            chkComboMenuCate.EditValue = gvMenuItem.GetRowCellValue(gvMenuItem.FocusedRowHandle, "MiMenuCateID") == null ? "" : gvMenuItem.GetRowCellValue(gvMenuItem.FocusedRowHandle, "MiMenuCateID").ToString();
+            chkComboMenuCate.SetEditValue(gvMenuItem.GetRowCellValue(gvMenuItem.FocusedRowHandle, "MiMenuCateID") == null ? "" : gvMenuItem.GetRowCellValue(gvMenuItem.FocusedRowHandle, "MiMenuCateID").ToString());
+            //chkComboOtherSet.EditValue = gvMenuItem.GetRowCellValue(gvMenuItem.FocusedRowHandle, "MiRmk");
+            string strRmk = gvMenuItem.GetRowCellValue(gvMenuItem.FocusedRowHandle, "MiRmk") == null ? "" : gvMenuItem.GetRowCellValue(gvMenuItem.FocusedRowHandle, "MiRmk").ToString();
+            chk1.Checked = false;
+            chk2.Checked = false;
+            chk3.Checked = false;
+            if (strRmk.Contains("Without VAT")) chk1.Checked = true;
+            if (strRmk.Contains("Set Meal")) chk2.Checked = true;
+            if (strRmk.Contains("Discountable")) chk3.Checked = true;
+
+            txtLargePrice.Text = gvMenuItem.GetRowCellValue(gvMenuItem.FocusedRowHandle, "MiLargePrice") == null ? "" : gvMenuItem.GetRowCellValue(gvMenuItem.FocusedRowHandle, "MiLargePrice").ToString();
+            txtSmallPrice.Text = gvMenuItem.GetRowCellValue(gvMenuItem.FocusedRowHandle, "MiSmallPrice") == null ? "" : gvMenuItem.GetRowCellValue(gvMenuItem.FocusedRowHandle, "MiSmallPrice").ToString();
+
+            colorEditBtn.Text = gvMenuItem.GetRowCellValue(gvMenuItem.FocusedRowHandle, "MiBtnColor") == null ? @"Gold" : gvMenuItem.GetRowCellValue(gvMenuItem.FocusedRowHandle, "MiBtnColor").ToString();
         }
     }
 }
