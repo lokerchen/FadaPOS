@@ -25,6 +25,8 @@ namespace SuperPOS.UI
 
         private string strBusDate = "";
 
+        private FrmTaMain frmTaMain;
+
         public FrmDesktopArea()
         {
             InitializeComponent();
@@ -92,10 +94,30 @@ namespace SuperPOS.UI
 
         private void btnOrderScreen_Click(object sender, EventArgs e)
         {
-            //显示订餐界面
-            FrmTaMain frmTaMain = new FrmTaMain(usrID, PubComm.MENU_LANG_DEFAULT);
+            ////显示订餐界面
+            //FrmTaMain frmTaMain = new FrmTaMain(usrID, PubComm.MENU_LANG_DEFAULT);
 
-            frmTaMain.ShowDialog();
+            //frmTaMain.ShowDialog();
+
+            if (frmTaMain == null)
+            {
+                frmTaMain = new FrmTaMain(usrID, PubComm.MENU_LANG_DEFAULT);
+                frmTaMain.Show();
+            }
+            else
+            {
+                if (frmTaMain.IsDisposed)
+                {
+                    frmTaMain = new FrmTaMain(usrID, PubComm.MENU_LANG_DEFAULT);
+                    frmTaMain.Show();
+                }
+                else
+                {
+                    frmTaMain.isGetPhone = false;
+                    frmTaMain.Activate();
+                    frmTaMain.Show();
+                }
+            }
         }
 
         private void tTimer_Tick(object sender, EventArgs e)

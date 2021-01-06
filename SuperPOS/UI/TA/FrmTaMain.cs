@@ -123,7 +123,7 @@ namespace SuperPOS.UI.TA
 
         #region 来电显示相关
         //是否已在接听电话
-        private bool isGetPhone = false;
+        public bool isGetPhone = false;
 
         [StructLayout(LayoutKind.Sequential)]
         public struct tag_pstn_Data
@@ -134,6 +134,9 @@ namespace SuperPOS.UI.TA
         }
 
         tag_pstn_Data[] m_tagpstnData = new tag_pstn_Data[BriSDKLib.MAX_CHANNEL_COUNT];
+
+        //来电号码被呼叫转移时的临时存储
+        private string strTranPhoneNum = "";
         #endregion
 
         public FrmTaMain()
@@ -893,6 +896,7 @@ namespace SuperPOS.UI.TA
                     FrmTaPendOrder frmTaPendOrder = new FrmTaPendOrder(usrID, iLangStatusId);
                     this.Hide();
                     frmTaPendOrder.ShowDialog();
+                    isGetPhone = false;
                 }
             }
             else
@@ -900,6 +904,7 @@ namespace SuperPOS.UI.TA
                 FrmTaPendOrder frmTaPendOrder = new FrmTaPendOrder(usrID, iLangStatusId);
                 this.Hide();
                 frmTaPendOrder.ShowDialog();
+                isGetPhone = false;
             }
         }
         #endregion
@@ -1694,10 +1699,28 @@ namespace SuperPOS.UI.TA
                                 }
                                 break;
                             case BriSDKLib.BriEvent_CallIn:
-                                //{////两声响铃结束后开始呼叫转移到CC
-                                //    strValue = "通道" + (EventData.uChannelID + 1).ToString() + "：来电响铃" + FromASCIIByteArray(EventData.szData);
-                                //}
-                                //break;
+                                {////两声响铃结束后开始呼叫转移到CC
+                                    //strValue = "通道" + (EventData.uChannelID + 1).ToString() + "：来电响铃" + FromASCIIByteArray(EventData.szData);
+                                    //if (string.IsNullOrEmpty(strTranPhoneNum.Trim())) return;
+                                    if (strTranPhoneNum.Trim().Equals("0") || strTranPhoneNum.Trim().Equals("1")) return;
+                                    if (!string.IsNullOrEmpty(FromASCIIByteArray(EventData.szData).Trim()))
+                                    {
+                                        if (FromASCIIByteArray(EventData.szData).Trim().Equals("0") || FromASCIIByteArray(EventData.szData).Trim().Equals("1")) return;
+                                    }
+
+                                    //LogHelper.Info("BriEvent_CallIn#strTranPhoneNum:" + strTranPhoneNum + "##" + FromASCIIByteArray(EventData.szData).Trim() + "#isGetPhone:" + isGetPhone.ToString());
+
+                                    if (string.IsNullOrEmpty(strTranPhoneNum))
+                                    {
+                                        strTranPhoneNum = FromASCIIByteArray(EventData.szData).Trim();
+                                    }
+                                    
+                                    if (!string.IsNullOrEmpty(strTranPhoneNum) && !isGetPhone)
+                                    {
+                                        ShowCallIdWindow(strTranPhoneNum);
+                                    }
+                                }
+                                break;
                             case BriSDKLib.BriEvent_GetCallID:
                             case BriSDKLib.BriEvent_RecvedFSK:
                                 {
@@ -1705,133 +1728,26 @@ namespace SuperPOS.UI.TA
 
                                     try
                                     {
+                                        //LogHelper.Info("a:#" + isGetPhone.ToString() + "#");
                                         #region 来电显示
-                                        if (!string.IsNullOrEmpty(FromASCIIByteArray(EventData.szData)))
+                                        if (!string.IsNullOrEmpty(FromASCIIByteArray(EventData.szData).Trim()))
                                         {
                                             if (FromASCIIByteArray(EventData.szData).Trim().Equals("0") || FromASCIIByteArray(EventData.szData).Trim().Equals("1")) return;
                                         }
-                                        if (!string.IsNullOrEmpty(FromASCIIByteArray(EventData.szData)) && isGetPhone) return;
-                                        
+
                                         string CallerPhone = FromASCIIByteArray(EventData.szData);
 
-                                        DelegateOrder handler = null;
-                                        IAsyncResult result = null;
+                                        strTranPhoneNum = CallerPhone.Trim();
 
-                                        if (!string.IsNullOrEmpty(CallerPhone.Trim()))
-                                        {
-                                            isGetPhone = true;
-                                            
-                                            #region 保存来电信息
-                                            TaComePhoneInfo taComePhoneInfo = new TaComePhoneInfo();
-                                            taComePhoneInfo.CustPhoneNo = CallerPhone;
-                                            taComePhoneInfo.ComePhoneTime = DateTime.Now.ToString();
-                                            taComePhoneInfo.CustName = @"";
-                                            taComePhoneInfo.CustID = "0";
-                                            taComePhoneInfo.BusDate = strBusDate;
+                                        if (isGetPhone) return;
+                                        
+                                        //LogHelper.Info("BriEvent_GetCallID#CallerPhone:" + CallerPhone.Trim() + "strTranPhoneNum:" + strTranPhoneNum + "#isGetPhone:" + isGetPhone.ToString());
 
-                                            _control.AddEntity(taComePhoneInfo);
-                                            #endregion
+                                        ShowCallIdWindow(CallerPhone);
 
-                                            if (treeListOrder.Nodes.Count > 0)
-                                            {
-                                                #region 保存TreeList
-                                                //new SystemData().GetTaOrderItem();
-                                                //var lstDelOi = CommonData.TaOrderItem.Where(s => s.CheckCode.Equals(checkID) && s.BusDate.Equals(strBusDate));
-
-                                                //foreach (var taOrderItemInfo in lstDelOi)
-                                                //{
-                                                //    _control.DeleteEntity(taOrderItemInfo);
-                                                //}
-                                                AddFreeOrAutomatic();
-
-                                                List<TaOrderItemInfo> lstTaOI = new List<TaOrderItemInfo>();
-
-                                                lstTaOI = TreeListToOrderItem(isNew);
-
-                                                //foreach (var taOrderItemInfo in lstTaOI)
-                                                //{
-                                                //    new SystemData().GetTaOrderItem();
-
-                                                //    if (CommonData.TaOrderItem.Any(s => s.ID == taOrderItemInfo.ID))
-                                                //    {
-                                                //        _control.UpdateEntity(taOrderItemInfo);
-                                                //    }
-                                                //    else
-                                                //    {
-                                                //        _control.AddEntity(taOrderItemInfo);
-                                                //    }
-                                                //}
-                                                handler = DelegateOrderOpt.SaveOrder;
-                                                result = handler.BeginInvoke(checkID, strBusDate, lstTaOI, null, null);
-                                                #endregion
-
-                                                #region 保存账单
-                                                SaveCheckOrder(lstTaOI, false);
-                                                #endregion
-                                            }
-
-                                            //新客户
-                                            FrmCaller frmCaller = new FrmCaller(CallerPhone, strBusDate, ORDER_TYPE, lblReadyTime.Visible ? lblReadyTime.Text : "");
-                                            frmCaller.Location = pcMain.Location;
-                                            frmCaller.Size = pcMain.Size;
-
-                                            if (frmCaller.ShowDialog() == DialogResult.OK)
-                                            {
-                                                TaCustomerInfo taCustomerInfo = new TaCustomerInfo();
-
-                                                ORDER_TYPE = frmCaller.OrderType;
-                                                taCustomerInfo = frmCaller.TaCustomer;
-                                                string strReadTime = frmCaller.ReadyTime;
-
-                                                if (taCustomerInfo == null)
-                                                {
-                                                    SetCustInfo(true, true, null);
-                                                }
-                                                else
-                                                {
-                                                    treeListOrder.Nodes.Clear();
-                                                    checkID = CommonDAL.GetCheckCode();
-                                                    lblCheck.Text = checkID;
-                                                    ChangeOrderBtnColor(ORDER_TYPE);
-                                                    SetCustInfo(false, false, taCustomerInfo);
-                                                }
-                                                isGetPhone = false;
-                                            }
-                                            if (!string.IsNullOrEmpty(CallerPhone.Trim())) handler.EndInvoke(result);
-                                        }
                                         #endregion
                                     }
                                     catch (Exception ex) { LogHelper.Error("DefWndProc", ex); }
-                                }
-                                break;
-                            case BriSDKLib.BriEvent_StopCallIn:
-                                {
-                                    strValue = "通道" + (EventData.uChannelID + 1).ToString() + "：停止呼入，产生一个未接电话 ";
-                                }
-                                break;
-                            case BriSDKLib.BriEvent_GetDTMFChar:
-                                strValue = "通道" + (EventData.uChannelID + 1).ToString() + "：接收到按键 " + FromASCIIByteArray(EventData.szData);
-                                break;
-                            case BriSDKLib.BriEvent_RemoteHang:
-                                {
-                                    strValue = "通道" + (EventData.uChannelID + 1).ToString() + "：远程挂机 ";
-                                }
-                                break;
-                            case BriSDKLib.BriEvent_Busy:
-                                {
-
-                                    strValue = "通道" + (EventData.uChannelID + 1).ToString() + "：接收到忙音,线路已经断开 ";
-                                }
-                                break;
-                            case BriSDKLib.BriEvent_DialTone: strValue = "通道" + (EventData.uChannelID + 1).ToString() + "：检测到拨号音 "; break;
-                            case BriSDKLib.BriEvent_PhoneDial: strValue = "通道" + (EventData.uChannelID + 1).ToString() + "：电话机拨号 " + FromASCIIByteArray(EventData.szData); break;
-                            case BriSDKLib.BriEvent_RingBack: strValue = "通道" + (EventData.uChannelID + 1).ToString() + "：拨号后接收到回铃音 "; break;
-                            case BriSDKLib.BriEvent_DevErr:
-                                {
-                                    if (EventData.lResult == 3)
-                                    {
-                                        strValue = "通道" + (EventData.uChannelID + 1).ToString() + "：设备可能被移除 ";
-                                    }
                                 }
                                 break;
                             default:
@@ -2145,14 +2061,16 @@ namespace SuperPOS.UI.TA
                         treeListOrder.Nodes.Clear();
                     }
 
-                    this.Close();
+                    isGetPhone = true;
+                    this.Hide();
                 }
             }
             else
             {
-                this.Close();
+                isGetPhone = true;
+                this.Hide();
             }
-            BriSDKLib.QNV_CloseDevice(BriSDKLib.ODT_ALL, 0);
+            //BriSDKLib.QNV_CloseDevice(BriSDKLib.ODT_ALL, 0);
             //this.Close();
         }
 
@@ -2985,6 +2903,7 @@ namespace SuperPOS.UI.TA
                     #endregion
                 }
 
+                LogHelper.Info("CallerPhone:" + CallerPhone);
                 //新客户
                 FrmCaller frmCaller = new FrmCaller(CallerPhone, strBusDate, ORDER_TYPE, lblReadyTime.Visible ? lblReadyTime.Text : "");
                 frmCaller.Location = pcMain.Location;
@@ -3295,6 +3214,90 @@ namespace SuperPOS.UI.TA
                         ? new Font(SystemFonts.DefaultFont.FontFamily, float.Parse("12.00"))
                         : new Font(SystemFonts.DefaultFont.FontFamily, float.Parse(taConfMenuDisplayFontInfo.OtherCategBtnFontSize)));
             }
+        }
+
+        private void ShowCallIdWindow(string CallerPhone)
+        {
+            try
+            {
+                DelegateOrder handler = null;
+                IAsyncResult result = null;
+
+                if (!string.IsNullOrEmpty(CallerPhone.Trim()))
+                {
+                    isGetPhone = true;
+
+                    #region 保存来电信息
+
+                    TaComePhoneInfo taComePhoneInfo = new TaComePhoneInfo();
+                    taComePhoneInfo.CustPhoneNo = CallerPhone;
+                    taComePhoneInfo.ComePhoneTime = DateTime.Now.ToString();
+                    taComePhoneInfo.CustName = @"";
+                    taComePhoneInfo.CustID = "0";
+                    taComePhoneInfo.BusDate = strBusDate;
+
+                    _control.AddEntity(taComePhoneInfo);
+
+                    #endregion
+
+                    if (treeListOrder.Nodes.Count > 0)
+                    {
+                        #region 保存TreeList
+
+                        AddFreeOrAutomatic();
+
+                        List<TaOrderItemInfo> lstTaOI = new List<TaOrderItemInfo>();
+
+                        lstTaOI = TreeListToOrderItem(isNew);
+
+                        handler = DelegateOrderOpt.SaveOrder;
+                        result = handler.BeginInvoke(checkID, strBusDate, lstTaOI, null, null);
+
+                        #endregion
+
+                        #region 保存账单
+
+                        SaveCheckOrder(lstTaOI, false);
+
+                        #endregion
+                    }
+
+                    LogHelper.Info("CallerPhone:" + CallerPhone);
+
+                    //新客户
+                    FrmCaller frmCaller = new FrmCaller(CallerPhone, strBusDate, ORDER_TYPE,
+                        lblReadyTime.Visible ? lblReadyTime.Text : "");
+                    frmCaller.Location = pcMain.Location;
+                    frmCaller.Size = pcMain.Size;
+
+                    if (frmCaller.ShowDialog() == DialogResult.OK)
+                    {
+                        TaCustomerInfo taCustomerInfo = new TaCustomerInfo();
+
+                        ORDER_TYPE = frmCaller.OrderType;
+                        taCustomerInfo = frmCaller.TaCustomer;
+                        string strReadTime = frmCaller.ReadyTime;
+
+                        if (taCustomerInfo == null)
+                        {
+                            SetCustInfo(true, true, null);
+                        }
+                        else
+                        {
+                            treeListOrder.Nodes.Clear();
+                            checkID = CommonDAL.GetCheckCode();
+                            lblCheck.Text = checkID;
+                            ChangeOrderBtnColor(ORDER_TYPE);
+                            SetCustInfo(false, false, taCustomerInfo);
+                        }
+                        isGetPhone = false;
+                        strTranPhoneNum = "";
+                    }
+
+                    if (!string.IsNullOrEmpty(CallerPhone.Trim())) handler.EndInvoke(result);
+                }
+            }
+            catch (Exception ex) { LogHelper.Error("ShowCallIdWindow", ex); }
         }
     }
 }
