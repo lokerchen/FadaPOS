@@ -1702,17 +1702,21 @@ namespace SuperPOS.UI.TA
                                 {////两声响铃结束后开始呼叫转移到CC
                                     //strValue = "通道" + (EventData.uChannelID + 1).ToString() + "：来电响铃" + FromASCIIByteArray(EventData.szData);
                                     //if (string.IsNullOrEmpty(strTranPhoneNum.Trim())) return;
-                                    if (strTranPhoneNum.Trim().Equals("0") || strTranPhoneNum.Trim().Equals("1")) return;
-                                    if (!string.IsNullOrEmpty(FromASCIIByteArray(EventData.szData).Trim()))
-                                    {
-                                        if (FromASCIIByteArray(EventData.szData).Trim().Equals("0") || FromASCIIByteArray(EventData.szData).Trim().Equals("1")) return;
-                                    }
 
+                                    if (strTranPhoneNum.Trim().Equals("0") || strTranPhoneNum.Trim().Equals("1")) return;
+
+                                    string strPhoneNum = FromASCIIByteArray(EventData.szData).Trim();
+                                    
+                                    if (!string.IsNullOrEmpty(strPhoneNum))
+                                    {
+                                        if (strPhoneNum.Equals("0") || strPhoneNum.Equals("1")) return;
+                                    }
+                                    
                                     //LogHelper.Info("BriEvent_CallIn#strTranPhoneNum:" + strTranPhoneNum + "##" + FromASCIIByteArray(EventData.szData).Trim() + "#isGetPhone:" + isGetPhone.ToString());
 
                                     if (string.IsNullOrEmpty(strTranPhoneNum))
                                     {
-                                        strTranPhoneNum = FromASCIIByteArray(EventData.szData).Trim();
+                                        strTranPhoneNum = strPhoneNum;
                                     }
                                     
                                     if (!string.IsNullOrEmpty(strTranPhoneNum) && !isGetPhone)
@@ -1724,19 +1728,20 @@ namespace SuperPOS.UI.TA
                             case BriSDKLib.BriEvent_GetCallID:
                             case BriSDKLib.BriEvent_RecvedFSK:
                                 {
-                                    strValue = "通道" + (EventData.uChannelID + 1).ToString() + "：接收到来电号码 " + FromASCIIByteArray(EventData.szData);
+                                    //strValue = "通道" + (EventData.uChannelID + 1).ToString() + "：接收到来电号码 " + FromASCIIByteArray(EventData.szData);
 
                                     try
                                     {
                                         //LogHelper.Info("a:#" + isGetPhone.ToString() + "#");
                                         #region 来电显示
-                                        if (!string.IsNullOrEmpty(FromASCIIByteArray(EventData.szData).Trim()))
+                                        
+                                        string CallerPhone = FromASCIIByteArray(EventData.szData).Trim();
+
+                                        if (!string.IsNullOrEmpty(CallerPhone))
                                         {
-                                            if (FromASCIIByteArray(EventData.szData).Trim().Equals("0") || FromASCIIByteArray(EventData.szData).Trim().Equals("1")) return;
+                                            if (CallerPhone.Equals("0") || CallerPhone.Equals("1")) return;
                                         }
-
-                                        string CallerPhone = FromASCIIByteArray(EventData.szData);
-
+                                        
                                         strTranPhoneNum = CallerPhone.Trim();
 
                                         if (isGetPhone) return;
