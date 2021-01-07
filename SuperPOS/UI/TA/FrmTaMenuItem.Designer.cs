@@ -1170,8 +1170,8 @@
             this.chk3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.chk3.Name = "chk3";
             this.chk3.Properties.AutoWidth = true;
-            this.chk3.Properties.Caption = "Discountable";
-            this.chk3.Size = new System.Drawing.Size(91, 19);
+            this.chk3.Properties.Caption = "Non Discountable";
+            this.chk3.Size = new System.Drawing.Size(117, 19);
             this.chk3.TabIndex = 49;
             // 
             // chk2
