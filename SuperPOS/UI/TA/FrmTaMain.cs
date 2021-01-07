@@ -2426,7 +2426,7 @@ namespace SuperPOS.UI.TA
 
         private void btnCid_Click(object sender, EventArgs e)
         {
-            FrmCaller frmCaller = new FrmCaller(usrID, strBusDate);
+            FrmCaller frmCaller = new FrmCaller(usrID, strBusDate, true);
 
             frmCaller.Location = pcMain.Location;
             frmCaller.Size = pcMain.Size;
@@ -2446,6 +2446,28 @@ namespace SuperPOS.UI.TA
                 }
                 else
                 {
+                    SetCustInfo(false, false, taCustomerInfo);
+                }
+
+                ChangeOrderBtnColor(ORDER_TYPE);
+                isGetPhone = false;
+            }
+            else
+            {
+                TaCustomerInfo taCustomerInfo = new TaCustomerInfo();
+
+                //ORDER_TYPE = string.IsNullOrEmpty(frmCaller.OrderType) ? PubComm.ORDER_TYPE_SHOP : frmCaller.OrderType;
+                taCustomerInfo = frmCaller.TaCustomer;
+                string strReadTime = frmCaller.ReadyTime;
+
+                if (taCustomerInfo == null)
+                {
+                    ORDER_TYPE = PubComm.ORDER_TYPE_SHOP;
+                    SetCustInfo(true, true, null);
+                }
+                else
+                {
+                    ORDER_TYPE = PubComm.ORDER_TYPE_DELIVERY;
                     SetCustInfo(false, false, taCustomerInfo);
                 }
 
@@ -3285,8 +3307,7 @@ namespace SuperPOS.UI.TA
                     LogHelper.Info("CallerPhone:" + CallerPhone);
 
                     //新客户
-                    FrmCaller frmCaller = new FrmCaller(CallerPhone, strBusDate, ORDER_TYPE,
-                        lblReadyTime.Visible ? lblReadyTime.Text : "");
+                    FrmCaller frmCaller = new FrmCaller(CallerPhone, strBusDate, ORDER_TYPE, lblReadyTime.Visible ? lblReadyTime.Text : "");
                     frmCaller.Location = pcMain.Location;
                     frmCaller.Size = pcMain.Size;
 

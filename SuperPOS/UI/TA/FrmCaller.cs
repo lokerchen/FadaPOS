@@ -38,6 +38,9 @@ namespace SuperPOS.UI.TA
         private string strOrderType = "";
         private TaCustomerInfo taCust = new TaCustomerInfo();
 
+        //是否为从CID打开
+        private bool isCid = false;
+
         public string CallNum
         {
             get { return txtTelNum.Text; }
@@ -75,11 +78,13 @@ namespace SuperPOS.UI.TA
             InitializeComponent();
         }
 
-        public FrmCaller(int uId, string sBusDate)
+        public FrmCaller(int uId, string sBusDate, bool isFromCid)
         {
             InitializeComponent();
             usrId = uId;
             strBustDate = sBusDate;
+
+            isCid = isFromCid;
         }
 
         public FrmCaller(string sCallerPhoneNum, string sBusDate, string sOrderType, string sReadyTime)
@@ -178,17 +183,31 @@ namespace SuperPOS.UI.TA
         private void btnEdit_Click(object sender, EventArgs e)
         {
             FrmTaCustomerInfo frmTaCustomerInfo = new FrmTaCustomerInfo(txtTelNum.Text.Trim());
-            if (frmTaCustomerInfo.ShowDialog() == DialogResult.OK)
+
+            if (isCid)
             {
-                if (!string.IsNullOrEmpty(frmTaCustomerInfo.strReadyTime))
+                this.Close();
+                //frmTaCustomerInfo.ShowDialog();
+
+                if (frmTaCustomerInfo.ShowDialog() == DialogResult.OK)
                 {
-                    string[] sRt = frmTaCustomerInfo.strReadyTime.Split(':');
-                    txtHour.Text = SetAddZeroFront(sRt[0]);
-                    txtMinute.Text = SetAddZeroFront(sRt[1]);
+                    taCust = frmTaCustomerInfo.CustomerInfo;
                 }
             }
+            else
+            {
+                if (frmTaCustomerInfo.ShowDialog() == DialogResult.OK)
+                {
+                    if (!string.IsNullOrEmpty(frmTaCustomerInfo.strReadyTime))
+                    {
+                        string[] sRt = frmTaCustomerInfo.strReadyTime.Split(':');
+                        txtHour.Text = SetAddZeroFront(sRt[0]);
+                        txtMinute.Text = SetAddZeroFront(sRt[1]);
+                    }
+                }
 
-            SetUsrComePhoneAndIsNewUser(txtTelNum.Text.Trim());
+                SetUsrComePhoneAndIsNewUser(txtTelNum.Text.Trim());
+            }
         }
 
         private void btnDelivery_Click(object sender, EventArgs e)
