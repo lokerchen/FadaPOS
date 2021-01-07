@@ -695,9 +695,9 @@ namespace SuperPOS.UI.TA
         {
             if (treeListOrder.FocusedNode != null)
             {
-                //只允许菜品
-                if (treeListOrder.FocusedNode["ItemType"].ToString().Equals("1"))
-                {
+                ////只允许菜品
+                //if (treeListOrder.FocusedNode["ItemType"].ToString().Equals("1"))
+                //{
                     isIngredMode = true;
 
                     FrmTaIngredMode frmTaIngredMode = new FrmTaIngredMode();
@@ -709,7 +709,7 @@ namespace SuperPOS.UI.TA
 
                         if (string.IsNullOrEmpty(sModeValue)) isIngredMode = false;
                     }
-                }
+                //}
             }
         }
         #endregion
@@ -964,6 +964,21 @@ namespace SuperPOS.UI.TA
 
                     if (treeListOrder.FocusedNode != null)
                     {
+                        //treeListOrder.SetFocusedNode(treeListOrder.Nodes[treeListOrder.GetVisibleIndexByNode(treeListOrder.FocusedNode) - 1]);
+
+                        if (!treeListOrder.FocusedNode["ItemType"].ToString().Equals("1"))
+                        {
+                            for (int i = 1; i < treeListOrder.AllNodesCount; i++)
+                            {
+                                TreeListNode tLn = treeListOrder.Nodes[treeListOrder.GetVisibleIndexByNode(treeListOrder.FocusedNode) - i];
+                                if (tLn["ItemType"].ToString().Equals("1"))
+                                {
+                                    treeListOrder.SetFocusedNode(tLn);
+                                    break;
+                                }
+                            }
+                        }
+                        
                         int sQty = Convert.ToInt32(treeListOrder.FocusedNode["ItemQty"].ToString());
 
                         //只允许菜品
