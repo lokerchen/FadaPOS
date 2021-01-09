@@ -251,6 +251,7 @@ namespace SuperPOS.UI.TA
                 #endregion
 
                 checkID = CommonDAL.GetCheckCode();
+                LogHelper.Info("#checkID:" + checkID + "#btnSaveOrder_Click");
                 lblCheck.Text = checkID;
 
                 SetCustClear();
@@ -285,6 +286,7 @@ namespace SuperPOS.UI.TA
                         treeListOrder.Nodes.Clear();
 
                         checkID = CommonDAL.GetCheckCode();
+                        LogHelper.Info("#checkID:" + checkID + "#btnCancel_Click");
                         lblCheck.Text = checkID;
                     }
                     else //未存储的已点菜品列表
@@ -355,7 +357,7 @@ namespace SuperPOS.UI.TA
             {
                 //获得账单号
                 checkID = CommonDAL.GetCheckCode();
-
+                LogHelper.Info("#checkID:" + checkID + "#FrmTaMain_Load");
                 lblCheck.Text = checkID;
             }
             else
@@ -859,7 +861,7 @@ namespace SuperPOS.UI.TA
 
                     checkID = CommonDAL.GetCheckCode();
                     lblCheck.Text = checkID;
-
+                    LogHelper.Info("#checkID:" + checkID + "#btnPay_Click");
                     SetCustClear();
                 }
             }
@@ -2080,6 +2082,17 @@ namespace SuperPOS.UI.TA
                         _control.UpdateEntity(taCheck);
                         treeListOrder.Nodes.Clear();
                     }
+                    else
+                    {
+                        treeListOrder.Nodes.Clear();
+                        //checkID = CommonDAL.GetCheckCode();
+                        //LogHelper.Info("#checkID:" + checkID + "#button1_Click");
+                        //lblCheck.Text = checkID;
+                        ORDER_TYPE = PubComm.ORDER_TYPE_SHOP;
+                        btnType.Text = PubComm.ORDER_TYPE_SHOP;
+                        ChangeOrderBtnColor(PubComm.ORDER_TYPE_SHOP);
+                        SetCustInfo(true, true, new TaCustomerInfo());
+                    }
 
                     isGetPhone = true;
                     this.Hide();
@@ -2967,6 +2980,7 @@ namespace SuperPOS.UI.TA
                     {
                         treeListOrder.Nodes.Clear();
                         checkID = CommonDAL.GetCheckCode();
+                        LogHelper.Info("#checkID:" + checkID + "#button1_Click");
                         lblCheck.Text = checkID;
                         ChangeOrderBtnColor(ORDER_TYPE);
                         SetCustInfo(false, false, taCustomerInfo);
@@ -3327,6 +3341,7 @@ namespace SuperPOS.UI.TA
                         {
                             treeListOrder.Nodes.Clear();
                             checkID = CommonDAL.GetCheckCode();
+                            LogHelper.Info("#checkID:" + checkID + "#ShowCallIdWindow");
                             lblCheck.Text = checkID;
                             ChangeOrderBtnColor(ORDER_TYPE);
                             SetCustInfo(false, false, taCustomerInfo);
