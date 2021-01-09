@@ -970,14 +970,16 @@ namespace SuperPOS.UI.TA
 
                         if (!treeListOrder.FocusedNode["ItemType"].ToString().Equals("1"))
                         {
-                            for (int i = 1; i < treeListOrder.AllNodesCount; i++)
+                            //for (int i = 1; i < treeListOrder.AllNodesCount; i++)
+                            //{
+                            //    //TreeListNode tLn = treeListOrder.Nodes[treeListOrder.GetVisibleIndexByNode(treeListOrder.FocusedNode) - i];
+                            //    //TreeListNode tLn = treeListOrder.Nodes[treeListOrder.GetNodeIndex(treeListOrder.FocusedNode) - i];
+
+                            //}
+                            TreeListNode tLn = treeListOrder.FocusedNode.ParentNode;
+                            if (tLn["ItemType"].ToString().Equals("1"))
                             {
-                                TreeListNode tLn = treeListOrder.Nodes[treeListOrder.GetVisibleIndexByNode(treeListOrder.FocusedNode) - i];
-                                if (tLn["ItemType"].ToString().Equals("1"))
-                                {
-                                    treeListOrder.SetFocusedNode(tLn);
-                                    break;
-                                }
+                                treeListOrder.SetFocusedNode(tLn);
                             }
                         }
                         
