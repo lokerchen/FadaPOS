@@ -526,7 +526,7 @@ namespace SuperPOS.UI.TA
 
         private void btnAssignDriver_Click(object sender, EventArgs e)
         {
-            if (gvTaPendOrder.FocusedRowHandle <= 0) return;
+            if (gvTaPendOrder.FocusedRowHandle < 0) return;
 
             new SystemData().GetTaCheckOrder();
             var lstRec = CommonData.TaCheckOrder.Where(s => s.ID == Convert.ToInt32(gvTaPendOrder.GetRowCellValue(gvTaPendOrder.FocusedRowHandle, "ID").ToString()) && s.BusDate.Equals(checkBusDate));
