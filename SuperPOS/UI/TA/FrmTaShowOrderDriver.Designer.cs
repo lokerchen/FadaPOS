@@ -37,11 +37,12 @@
             this.OrderTime = new DevExpress.XtraGrid.Columns.GridColumn();
             this.OrderNo = new DevExpress.XtraGrid.Columns.GridColumn();
             this.DeliveryCharge = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.Driver = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.DriverID = new DevExpress.XtraGrid.Columns.GridColumn();
             this.btnExit = new System.Windows.Forms.Button();
             this.btnShowAllDriver = new System.Windows.Forms.Button();
             this.lueDriver = new DevExpress.XtraEditors.LookUpEdit();
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
+            this.DriverName = new DevExpress.XtraGrid.Columns.GridColumn();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.txtTotalDeliveryCharge.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridControlTaDriver)).BeginInit();
@@ -59,9 +60,11 @@
             this.groupBox1.Controls.Add(this.lueDriver);
             this.groupBox1.Controls.Add(this.labelControl1);
             this.groupBox1.Font = new System.Drawing.Font("Tahoma", 12F);
-            this.groupBox1.Location = new System.Drawing.Point(7, 6);
+            this.groupBox1.Location = new System.Drawing.Point(6, 5);
+            this.groupBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(586, 444);
+            this.groupBox1.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.groupBox1.Size = new System.Drawing.Size(513, 345);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Delivery Charges";
@@ -69,29 +72,32 @@
             // txtTotalDeliveryCharge
             // 
             this.txtTotalDeliveryCharge.EditValue = "0.00";
-            this.txtTotalDeliveryCharge.Location = new System.Drawing.Point(228, 399);
+            this.txtTotalDeliveryCharge.Location = new System.Drawing.Point(200, 310);
+            this.txtTotalDeliveryCharge.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtTotalDeliveryCharge.Name = "txtTotalDeliveryCharge";
             this.txtTotalDeliveryCharge.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 12F);
             this.txtTotalDeliveryCharge.Properties.Appearance.Options.UseFont = true;
             this.txtTotalDeliveryCharge.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.txtTotalDeliveryCharge.Size = new System.Drawing.Size(161, 30);
+            this.txtTotalDeliveryCharge.Size = new System.Drawing.Size(141, 26);
             this.txtTotalDeliveryCharge.TabIndex = 21;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(11, 402);
+            this.label1.Location = new System.Drawing.Point(10, 313);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(211, 24);
+            this.label1.Size = new System.Drawing.Size(168, 19);
             this.label1.TabIndex = 20;
             this.label1.Text = "Total Delivery Charge:";
             // 
             // gridControlTaDriver
             // 
-            this.gridControlTaDriver.Location = new System.Drawing.Point(15, 93);
+            this.gridControlTaDriver.EmbeddedNavigator.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.gridControlTaDriver.Location = new System.Drawing.Point(13, 72);
             this.gridControlTaDriver.MainView = this.gvTaPendOrder;
+            this.gridControlTaDriver.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.gridControlTaDriver.Name = "gridControlTaDriver";
-            this.gridControlTaDriver.Size = new System.Drawing.Size(522, 278);
+            this.gridControlTaDriver.Size = new System.Drawing.Size(457, 216);
             this.gridControlTaDriver.TabIndex = 19;
             this.gridControlTaDriver.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gvTaPendOrder});
@@ -107,7 +113,8 @@
             this.OrderTime,
             this.OrderNo,
             this.DeliveryCharge,
-            this.Driver});
+            this.DriverID,
+            this.DriverName});
             this.gvTaPendOrder.GridControl = this.gridControlTaDriver;
             this.gvTaPendOrder.IndicatorWidth = 50;
             this.gvTaPendOrder.Name = "gvTaPendOrder";
@@ -138,7 +145,7 @@
             // OrderNo
             // 
             this.OrderNo.Caption = "Order No.";
-            this.OrderNo.FieldName = "OrderNo";
+            this.OrderNo.FieldName = "CheckCode";
             this.OrderNo.Name = "OrderNo";
             this.OrderNo.Visible = true;
             this.OrderNo.VisibleIndex = 1;
@@ -146,28 +153,25 @@
             // DeliveryCharge
             // 
             this.DeliveryCharge.Caption = "Delivery Charge";
-            this.DeliveryCharge.FieldName = "DeliveryCharge";
+            this.DeliveryCharge.FieldName = "DeliveryFee";
             this.DeliveryCharge.Name = "DeliveryCharge";
             this.DeliveryCharge.Visible = true;
             this.DeliveryCharge.VisibleIndex = 2;
             // 
-            // Driver
+            // DriverID
             // 
-            this.Driver.Caption = "Driver";
-            this.Driver.FieldName = "Driver";
-            this.Driver.Name = "Driver";
-            this.Driver.Visible = true;
-            this.Driver.VisibleIndex = 3;
+            this.DriverID.Caption = "Driver";
+            this.DriverID.FieldName = "DriverID";
+            this.DriverID.Name = "DriverID";
             // 
             // btnExit
             // 
             this.btnExit.BackColor = System.Drawing.Color.Green;
             this.btnExit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnExit.ForeColor = System.Drawing.Color.White;
-            this.btnExit.Location = new System.Drawing.Point(463, 378);
-            this.btnExit.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btnExit.Location = new System.Drawing.Point(405, 294);
             this.btnExit.Name = "btnExit";
-            this.btnExit.Size = new System.Drawing.Size(117, 57);
+            this.btnExit.Size = new System.Drawing.Size(102, 44);
             this.btnExit.TabIndex = 18;
             this.btnExit.Text = "Exit";
             this.btnExit.UseVisualStyleBackColor = false;
@@ -179,17 +183,18 @@
             this.btnShowAllDriver.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnShowAllDriver.Font = new System.Drawing.Font("Tahoma", 10F);
             this.btnShowAllDriver.ForeColor = System.Drawing.Color.White;
-            this.btnShowAllDriver.Location = new System.Drawing.Point(434, 46);
-            this.btnShowAllDriver.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btnShowAllDriver.Location = new System.Drawing.Point(380, 36);
             this.btnShowAllDriver.Name = "btnShowAllDriver";
-            this.btnShowAllDriver.Size = new System.Drawing.Size(146, 37);
+            this.btnShowAllDriver.Size = new System.Drawing.Size(128, 29);
             this.btnShowAllDriver.TabIndex = 17;
             this.btnShowAllDriver.Text = "Show All Driver";
             this.btnShowAllDriver.UseVisualStyleBackColor = false;
+            this.btnShowAllDriver.Click += new System.EventHandler(this.btnShowAllDriver_Click);
             // 
             // lueDriver
             // 
-            this.lueDriver.Location = new System.Drawing.Point(138, 53);
+            this.lueDriver.Location = new System.Drawing.Point(121, 41);
+            this.lueDriver.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.lueDriver.Name = "lueDriver";
             this.lueDriver.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 12F);
             this.lueDriver.Properties.Appearance.Options.UseFont = true;
@@ -197,25 +202,36 @@
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.lueDriver.Properties.NullText = "[Please select...]";
             this.lueDriver.Properties.SearchMode = DevExpress.XtraEditors.Controls.SearchMode.OnlyInPopup;
-            this.lueDriver.Size = new System.Drawing.Size(207, 30);
+            this.lueDriver.Size = new System.Drawing.Size(181, 26);
             this.lueDriver.TabIndex = 15;
+            this.lueDriver.EditValueChanged += new System.EventHandler(this.lueDriver_EditValueChanged);
             // 
             // labelControl1
             // 
             this.labelControl1.Appearance.Font = new System.Drawing.Font("Tahoma", 12F);
-            this.labelControl1.Location = new System.Drawing.Point(15, 59);
+            this.labelControl1.Location = new System.Drawing.Point(13, 46);
+            this.labelControl1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.labelControl1.Name = "labelControl1";
-            this.labelControl1.Size = new System.Drawing.Size(108, 24);
+            this.labelControl1.Size = new System.Drawing.Size(87, 19);
             this.labelControl1.TabIndex = 0;
             this.labelControl1.Text = "Show Driver";
             // 
+            // DriverName
+            // 
+            this.DriverName.Caption = "Driver";
+            this.DriverName.FieldName = "DriverName";
+            this.DriverName.Name = "DriverName";
+            this.DriverName.Visible = true;
+            this.DriverName.VisibleIndex = 3;
+            // 
             // FrmTaShowOrderDriver
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 18F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 14F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(599, 458);
+            this.ClientSize = new System.Drawing.Size(524, 356);
             this.Controls.Add(this.groupBox1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "FrmTaShowOrderDriver";
             this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
             this.Text = "FrmTaShowOrderDriver";
@@ -244,8 +260,9 @@
         private DevExpress.XtraGrid.Columns.GridColumn OrderNo;
         private DevExpress.XtraGrid.Columns.GridColumn OrderTime;
         private DevExpress.XtraGrid.Columns.GridColumn DeliveryCharge;
-        private DevExpress.XtraGrid.Columns.GridColumn Driver;
+        private DevExpress.XtraGrid.Columns.GridColumn DriverID;
         private DevExpress.XtraEditors.TextEdit txtTotalDeliveryCharge;
         private System.Windows.Forms.Label label1;
+        private DevExpress.XtraGrid.Columns.GridColumn DriverName;
     }
 }
