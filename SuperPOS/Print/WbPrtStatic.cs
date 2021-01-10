@@ -101,14 +101,14 @@ namespace SuperPOS.Print
         public static string PRT_PRINT_DISPLAY_NONE = "none";
         
         public static string PRT_PRINT_LOGO = "<div style=\"display:";
-        public static string PRT_PRINT_ADDR = "<tr id=\"Tr_PrintAddress\" style=\"display:";
-        public static string PRT_PRINT_TEL = "<tr id=\"Tr_PrintTel\" style=\"display:";
-        public static string PRT_PRINT_VATNO = "<tr id=\"Tr_VATNo\" style=\"display:";
+        public static string PRT_PRINT_ADDR = "<td id=\"Td_PrintAddress\" style=\"display:";
+        public static string PRT_PRINT_TEL = "<td id=\"Td_PrintTel\" style=\"display:";
+        public static string PRT_PRINT_VATNO = "<td id=\"Td_VATNo\" style=\"display:";
         public static string PRT_PRINT_SHOPTIME = "<table id=\"Tbl_ShopTime\" style=\"display:";
         public static string PRT_PRINT_ORDER_DATE = "<td id=\"Td_OrderDate\" style=\"display:";
-        public static string PRT_PRINT_ORDER_TIME = "<tr id=\"Td_OrderTime\" style=\"display:";
-        public static string PRT_PRINT_STAFF = "<tr id=\"Td_Staff\" style=\"display:";
-        public static string PRT_PRINT_ORDER_NO = "<tr id=\"Td_OrderNo\" style=\"display:";
+        public static string PRT_PRINT_ORDER_TIME = "<td id=\"Td_OrderTime\" style=\"display:";
+        public static string PRT_PRINT_STAFF = "<td id=\"Td_Staff\" style=\"display:";
+        public static string PRT_PRINT_ORDER_NO = "<td id=\"Td_OrderNo\" style=\"display:";
         public static string PRT_PRINT_ORDER_ITEM = "<tr id=\"Tr_OrderItem\"";
         //public static string PRT_PRINT_ITEM_COUNT = "<td id=\"Td_ItemCount\"";
         //public static string PRT_PRINT_SUB_TOTAL = "<td id=\"Td_SubTotal\"";

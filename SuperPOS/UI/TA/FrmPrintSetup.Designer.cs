@@ -52,6 +52,8 @@
             this.btnGenExit = new DevExpress.XtraEditors.SimpleButton();
             this.btnGenSave = new DevExpress.XtraEditors.SimpleButton();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.lblFilePath = new System.Windows.Forms.Label();
+            this.btnFileUpload = new DevExpress.XtraEditors.SimpleButton();
             this.label5 = new System.Windows.Forms.Label();
             this.chkPrtAddr = new System.Windows.Forms.CheckBox();
             this.label4 = new System.Windows.Forms.Label();
@@ -61,8 +63,6 @@
             this.lblFileUpload = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.chkPrtLogo = new System.Windows.Forms.CheckBox();
-            this.btnFileUpload = new DevExpress.XtraEditors.SimpleButton();
-            this.lblFilePath = new System.Windows.Forms.Label();
             this.ofdOpenFile = new System.Windows.Forms.OpenFileDialog();
             this.groupBox1.SuspendLayout();
             this.panelBox.SuspendLayout();
@@ -393,7 +393,31 @@
             this.groupBox3.Size = new System.Drawing.Size(295, 359);
             this.groupBox3.TabIndex = 49;
             this.groupBox3.TabStop = false;
-            this.groupBox3.Text = "Shop Order Printout Settings";
+            this.groupBox3.Text = "Universal Print Options";
+            // 
+            // lblFilePath
+            // 
+            this.lblFilePath.Location = new System.Drawing.Point(26, 113);
+            this.lblFilePath.Name = "lblFilePath";
+            this.lblFilePath.Size = new System.Drawing.Size(263, 54);
+            this.lblFilePath.TabIndex = 35;
+            // 
+            // btnFileUpload
+            // 
+            this.btnFileUpload.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
+            this.btnFileUpload.Appearance.Font = new System.Drawing.Font("Tahoma", 8F);
+            this.btnFileUpload.Appearance.ForeColor = System.Drawing.Color.White;
+            this.btnFileUpload.Appearance.Options.UseBackColor = true;
+            this.btnFileUpload.Appearance.Options.UseFont = true;
+            this.btnFileUpload.Appearance.Options.UseForeColor = true;
+            this.btnFileUpload.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
+            this.btnFileUpload.Location = new System.Drawing.Point(202, 69);
+            this.btnFileUpload.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnFileUpload.Name = "btnFileUpload";
+            this.btnFileUpload.Size = new System.Drawing.Size(46, 26);
+            this.btnFileUpload.TabIndex = 11;
+            this.btnFileUpload.Text = "...";
+            this.btnFileUpload.Click += new System.EventHandler(this.btnFileUpload_Click);
             // 
             // label5
             // 
@@ -480,30 +504,6 @@
             this.chkPrtLogo.TabIndex = 24;
             this.chkPrtLogo.UseVisualStyleBackColor = true;
             this.chkPrtLogo.CheckedChanged += new System.EventHandler(this.chkPrtLogo_CheckedChanged);
-            // 
-            // btnFileUpload
-            // 
-            this.btnFileUpload.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
-            this.btnFileUpload.Appearance.Font = new System.Drawing.Font("Tahoma", 8F);
-            this.btnFileUpload.Appearance.ForeColor = System.Drawing.Color.White;
-            this.btnFileUpload.Appearance.Options.UseBackColor = true;
-            this.btnFileUpload.Appearance.Options.UseFont = true;
-            this.btnFileUpload.Appearance.Options.UseForeColor = true;
-            this.btnFileUpload.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
-            this.btnFileUpload.Location = new System.Drawing.Point(202, 69);
-            this.btnFileUpload.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.btnFileUpload.Name = "btnFileUpload";
-            this.btnFileUpload.Size = new System.Drawing.Size(46, 26);
-            this.btnFileUpload.TabIndex = 11;
-            this.btnFileUpload.Text = "...";
-            this.btnFileUpload.Click += new System.EventHandler(this.btnFileUpload_Click);
-            // 
-            // lblFilePath
-            // 
-            this.lblFilePath.Location = new System.Drawing.Point(26, 113);
-            this.lblFilePath.Name = "lblFilePath";
-            this.lblFilePath.Size = new System.Drawing.Size(263, 54);
-            this.lblFilePath.TabIndex = 35;
             // 
             // ofdOpenFile
             // 
