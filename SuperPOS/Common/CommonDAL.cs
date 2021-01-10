@@ -546,12 +546,28 @@ namespace SuperPOS.Common
         #endregion
 
         #region 获得总单价格
-        public static decimal GetTotalAmount(decimal menuAmount, decimal dDiscount)
+        public static decimal GetTotalAmount(decimal menuAmount, decimal dDiscount, List<TaOrderItemInfo> lstTaOi)
         {
             return dDiscount <= 0.00m ? Math.Round(menuAmount, 2)  : Math.Round(menuAmount * dDiscount, 2);
         }
 
         #endregion
+
+        public static decimal GetAllDiscount(List<TaOrderItemInfo> lstTaOi, decimal dDiscount)
+        {
+            var lstDMi = lstTaOi.Where(s => s.IsDiscount.Equals("Y") && s.ItemType.Equals(PubComm.MENU_ITEM_MAIN));
+
+            decimal dAmount = 0.00m;
+
+            if (lstDMi.Any())
+            {
+                dAmount = lstDMi.Sum(s => Convert.ToDecimal(s.ItemTotalPrice));
+            }
+
+            return dDiscount <= 0 
+                    ? 0.00m 
+                    : dDiscount >= 1.00m ? 0.00m : Math.Round(dAmount * (1 - dDiscount), 2);
+        }
 
         #region 获得系统盘符列表（只有硬盘和可移动磁盘）
         /// <summary>

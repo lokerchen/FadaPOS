@@ -62,5 +62,9 @@ namespace SuperPOS.Domain.Entities
         //MenuItem的ID
         [XmlElement(ElementName = "MenuItemID")]
         public virtual int MenuItemID { get; set; }
+
+        //是否折扣
+        [XmlElement(ElementName = "IsDiscount")]
+        public virtual string IsDiscount { get; set; }
     }
 }

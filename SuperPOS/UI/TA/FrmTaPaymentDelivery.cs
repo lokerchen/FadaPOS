@@ -623,30 +623,31 @@ namespace SuperPOS.UI.TA
             //百分比折扣
             try
             {
-                if (!string.IsNullOrEmpty(txtPercentDiscount.Text))
-                {
-                    if (Convert.ToDecimal(txtPercentDiscount.Text) >= 100)
-                    {
-                        return dTotal;
-                    }
-                    else
-                    {
-                        if (Convert.ToDecimal(txtPercentDiscount.Text) <= 0)
-                        {
-                            return 0.0m;
-                        }
-                        else
-                        {
-                            decimal tmpDiscount = dTotal*(Convert.ToDecimal(txtPercentDiscount.Text)/100);
-                            txtDiscount.Text = tmpDiscount.ToString("F");
-                            return tmpDiscount;
-                        }
-                    }
-                }
-                else
-                {
-                    return Convert.ToDecimal(txtDiscount.Text);
-                }
+                //if (!string.IsNullOrEmpty(txtPercentDiscount.Text))
+                //{
+                //    if (Convert.ToDecimal(txtPercentDiscount.Text) >= 100)
+                //    {
+                //        return dTotal;
+                //    }
+                //    else
+                //    {
+                //        if (Convert.ToDecimal(txtPercentDiscount.Text) <= 0)
+                //        {
+                //            return 0.0m;
+                //        }
+                //        else
+                //        {
+                //            decimal tmpDiscount = dTotal*(Convert.ToDecimal(txtPercentDiscount.Text)/100);
+                //            txtDiscount.Text = tmpDiscount.ToString("F");
+                //            return tmpDiscount;
+                //        }
+                //    }
+                //}
+                //else
+                //{
+                //    return Convert.ToDecimal(txtDiscount.Text);
+                //}
+                return string.IsNullOrEmpty(txtDiscount.Text) ? 0.00m : Convert.ToDecimal(txtDiscount.Text);
             }
             catch (Exception ex)
             {
@@ -668,31 +669,31 @@ namespace SuperPOS.UI.TA
             //百分比折扣
             try
             {
-                if (!string.IsNullOrEmpty(txtPercentSurcharge.Text))
-                {
-                    if (Convert.ToDecimal(txtPercentSurcharge.Text) >= 100)
-                    {
-                        return dTotal;
-                    }
-                    else
-                    {
-                        if (Convert.ToDecimal(txtPercentSurcharge.Text) <= 0)
-                        {
-                            return 0.0m;
-                        }
-                        else
-                        {
-                            decimal tmpDiscount = dTotal*(Convert.ToDecimal(txtPercentSurcharge.Text)/100);
-                            txtSurcharge.Text = tmpDiscount.ToString("F");
-                            return tmpDiscount;
-                        }
-                    }
-                }
-                else
-                {
-                    return Convert.ToDecimal(txtSurcharge.Text);
-                }
-                    
+                //if (!string.IsNullOrEmpty(txtPercentSurcharge.Text))
+                //{
+                //    if (Convert.ToDecimal(txtPercentSurcharge.Text) >= 100)
+                //    {
+                //        return dTotal;
+                //    }
+                //    else
+                //    {
+                //        if (Convert.ToDecimal(txtPercentSurcharge.Text) <= 0)
+                //        {
+                //            return 0.0m;
+                //        }
+                //        else
+                //        {
+                //            decimal tmpDiscount = dTotal*(Convert.ToDecimal(txtPercentSurcharge.Text)/100);
+                //            txtSurcharge.Text = tmpDiscount.ToString("F");
+                //            return tmpDiscount;
+                //        }
+                //    }
+                //}
+                //else
+                //{
+                //    return Convert.ToDecimal(txtSurcharge.Text);
+                //}
+                return string.IsNullOrEmpty(txtSurcharge.Text) ? 0.00m : Convert.ToDecimal(txtSurcharge.Text);
             }
             catch (Exception ex)
             {

@@ -50,6 +50,8 @@
             this.btnOnlineOrder = new DevExpress.XtraEditors.SimpleButton();
             this.btnType = new DevExpress.XtraEditors.SimpleButton();
             this.panelMember = new DevExpress.XtraEditors.PanelControl();
+            this.lblReadyTime = new DevExpress.XtraEditors.LabelControl();
+            this.lblCustReadyTime = new DevExpress.XtraEditors.LabelControl();
             this.lblDeliveryFee = new DevExpress.XtraEditors.LabelControl();
             this.lblDistance = new DevExpress.XtraEditors.LabelControl();
             this.lblPostcode = new DevExpress.XtraEditors.LabelControl();
@@ -75,6 +77,7 @@
             this.btnAppend = new DevExpress.XtraEditors.SimpleButton();
             this.panelControl4 = new DevExpress.XtraEditors.PanelControl();
             this.pcMain = new DevExpress.XtraEditors.PanelControl();
+            this.button1 = new System.Windows.Forms.Button();
             this.panelControl5 = new DevExpress.XtraEditors.PanelControl();
             this.btnMenu = new DevExpress.XtraEditors.SimpleButton();
             this.btnEatIn = new DevExpress.XtraEditors.SimpleButton();
@@ -153,9 +156,7 @@
             this.lblCheck = new DevExpress.XtraEditors.LabelControl();
             this.btnCustInfo = new DevExpress.XtraEditors.SimpleButton();
             this.btnSearchMeal = new DevExpress.XtraEditors.SimpleButton();
-            this.lblReadyTime = new DevExpress.XtraEditors.LabelControl();
-            this.lblCustReadyTime = new DevExpress.XtraEditors.LabelControl();
-            this.button1 = new System.Windows.Forms.Button();
+            this.IsDiscount = new DevExpress.XtraTreeList.Columns.TreeListColumn();
             ((System.ComponentModel.ISupportInitialize)(this.treeListOrder)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemMemoEdit1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
@@ -195,7 +196,8 @@
             this.OrderTime,
             this.OrderStaff,
             this.BusDate,
-            this.MenuItemID});
+            this.MenuItemID,
+            this.IsDiscount});
             this.treeListOrder.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.treeListOrder.IndicatorWidth = 40;
             this.treeListOrder.Location = new System.Drawing.Point(4, 142);
@@ -423,6 +425,28 @@
             this.panelMember.Size = new System.Drawing.Size(341, 98);
             this.panelMember.TabIndex = 32;
             this.panelMember.Click += new System.EventHandler(this.panelMember_Click);
+            // 
+            // lblReadyTime
+            // 
+            this.lblReadyTime.Appearance.ForeColor = System.Drawing.Color.Red;
+            this.lblReadyTime.Location = new System.Drawing.Point(275, 78);
+            this.lblReadyTime.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.lblReadyTime.Name = "lblReadyTime";
+            this.lblReadyTime.Size = new System.Drawing.Size(32, 14);
+            this.lblReadyTime.TabIndex = 13;
+            this.lblReadyTime.Text = "00:00";
+            // 
+            // lblCustReadyTime
+            // 
+            this.lblCustReadyTime.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
+            this.lblCustReadyTime.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
+            this.lblCustReadyTime.Location = new System.Drawing.Point(198, 78);
+            this.lblCustReadyTime.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.lblCustReadyTime.Name = "lblCustReadyTime";
+            this.lblCustReadyTime.Size = new System.Drawing.Size(74, 14);
+            this.lblCustReadyTime.TabIndex = 12;
+            this.lblCustReadyTime.Text = "Ready Time:";
+            this.lblCustReadyTime.Visible = false;
             // 
             // lblDeliveryFee
             // 
@@ -782,6 +806,16 @@
             this.pcMain.Name = "pcMain";
             this.pcMain.Size = new System.Drawing.Size(880, 599);
             this.pcMain.TabIndex = 38;
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(677, 210);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(92, 40);
+            this.button1.TabIndex = 34;
+            this.button1.Text = "button1";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // panelControl5
             // 
@@ -2044,37 +2078,11 @@
             this.btnSearchMeal.Visible = false;
             this.btnSearchMeal.Click += new System.EventHandler(this.btnSearchMeal_Click);
             // 
-            // lblReadyTime
+            // IsDiscount
             // 
-            this.lblReadyTime.Appearance.ForeColor = System.Drawing.Color.Red;
-            this.lblReadyTime.Location = new System.Drawing.Point(275, 78);
-            this.lblReadyTime.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.lblReadyTime.Name = "lblReadyTime";
-            this.lblReadyTime.Size = new System.Drawing.Size(32, 14);
-            this.lblReadyTime.TabIndex = 13;
-            this.lblReadyTime.Text = "00:00";
-            // 
-            // lblCustReadyTime
-            // 
-            this.lblCustReadyTime.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
-            this.lblCustReadyTime.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
-            this.lblCustReadyTime.Location = new System.Drawing.Point(198, 78);
-            this.lblCustReadyTime.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.lblCustReadyTime.Name = "lblCustReadyTime";
-            this.lblCustReadyTime.Size = new System.Drawing.Size(74, 14);
-            this.lblCustReadyTime.TabIndex = 12;
-            this.lblCustReadyTime.Text = "Ready Time:";
-            this.lblCustReadyTime.Visible = false;
-            // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(677, 210);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(92, 40);
-            this.button1.TabIndex = 34;
-            this.button1.Text = "button1";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.IsDiscount.Caption = "IsDiscount";
+            this.IsDiscount.FieldName = "IsDiscount";
+            this.IsDiscount.Name = "IsDiscount";
             // 
             // FrmTaMain
             // 
@@ -2243,5 +2251,6 @@
         private DevExpress.XtraEditors.LabelControl lblReadyTime;
         private DevExpress.XtraEditors.LabelControl lblCustReadyTime;
         private System.Windows.Forms.Button button1;
+        private DevExpress.XtraTreeList.Columns.TreeListColumn IsDiscount;
     }
 }

@@ -678,6 +678,8 @@ namespace SuperPOS.UI.TA
                                 taOrderItemInfo.BusDate = strBusDate;
                                 taOrderItemInfo.MenuItemID = 0;
 
+                                taOrderItemInfo.IsDiscount = "N";
+
                                 lstMi.Add(taOrderItemInfo);
                             }
                         }
@@ -1195,7 +1197,8 @@ namespace SuperPOS.UI.TA
                 taOrderItemInfo.OrderTime,
                 taOrderItemInfo.OrderStaff,
                 taOrderItemInfo.BusDate,
-                taOrderItemInfo.MenuItemID
+                taOrderItemInfo.MenuItemID,
+                taOrderItemInfo.IsDiscount
             }, -1);
 
             treeListOrder.EndUnboundLoad();
@@ -1245,7 +1248,8 @@ namespace SuperPOS.UI.TA
                 taOrderItemInfo.OrderTime,
                 taOrderItemInfo.OrderStaff,
                 taOrderItemInfo.BusDate,
-                taOrderItemInfo.MenuItemID
+                taOrderItemInfo.MenuItemID,
+                taOrderItemInfo.IsDiscount
             }, node);
 
             //Console.WriteLine(node1["ItemParent"].ToString());
@@ -1524,6 +1528,8 @@ namespace SuperPOS.UI.TA
                     taOrderItemInfo.BusDate = strBusDate;
                     taOrderItemInfo.MenuItemID = Convert.ToInt32(node["MenuItemID"]);
 
+                    taOrderItemInfo.IsDiscount = node["IsDiscount"].ToString();
+
                     lstTaOI.Add(taOrderItemInfo);
 
                     if (node.HasChildren)
@@ -1574,6 +1580,8 @@ namespace SuperPOS.UI.TA
                     taOrderItemInfo.OrderStaff = usrID;
                     taOrderItemInfo.BusDate = strBusDate;
                     taOrderItemInfo.MenuItemID = Convert.ToInt32(childNode["MenuItemID"]);
+
+                    taOrderItemInfo.IsDiscount = childNode["IsDiscount"].ToString();
 
                     lstTaOI.Add(taOrderItemInfo);
                 }
@@ -1788,8 +1796,13 @@ namespace SuperPOS.UI.TA
                     if (Convert.ToDecimal(taCheckOrderInfo.MenuAmount) > Convert.ToDecimal(string.IsNullOrEmpty(tdi.TaDiscThre) ? "0.00" : tdi.TaDiscThre))
                     {
                         taCheckOrderInfo.PayPerDiscount = strPayPerDiscount.Equals(@"0") ? "" : strPayPerDiscount + @"%";
-                        taCheckOrderInfo.PayDiscount = (Convert.ToDecimal(taCheckOrderInfo.TotalAmount)
-                                                        * Convert.ToDecimal(strPayPerDiscount) / 100).ToString("0.00");
+                        //taCheckOrderInfo.PayDiscount = (Convert.ToDecimal(taCheckOrderInfo.TotalAmount)
+                        //                                * Convert.ToDecimal(strPayPerDiscount) / 100).ToString("0.00");
+                        //折扣
+                        decimal dDiscount = CommonDAL.GetTaDiscount(ORDER_TYPE, Convert.ToDecimal(taCheckOrderInfo.MenuAmount));
+                        //折扣后的价格
+                        decimal dDiscountTotal = CommonDAL.GetAllDiscount(lstTaOI, dDiscount);
+                        taCheckOrderInfo.PayDiscount = dDiscountTotal.ToString("0.00");
                     }
                     else
                     {
@@ -1826,8 +1839,8 @@ namespace SuperPOS.UI.TA
                 //taCheckOrderInfo.PayDiscount = CommonDAL.GetTaDiscount(ORDER_TYPE, Convert.ToDecimal(taCheckOrderInfo.MenuAmount)).ToString();
 
                 decimal dDiscount = CommonDAL.GetTaDiscount(ORDER_TYPE, Convert.ToDecimal(taCheckOrderInfo.MenuAmount));
-                decimal dTotal = CommonDAL.GetTotalAmount(Convert.ToDecimal(taCheckOrderInfo.MenuAmount), dDiscount);
-                taCheckOrderInfo.TotalAmount = dTotal.ToString();
+                decimal dDiscountTotal = CommonDAL.GetAllDiscount(lstTaOI, dDiscount);
+                taCheckOrderInfo.TotalAmount = (Convert.ToDecimal(taCheckOrderInfo.MenuAmount) - dDiscountTotal).ToString("0.00");
 
                 new SystemData().GetTaDiscount();
                 //var lstDiscount = CommonData.TaDiscount.Where(s => s.TaType.Equals(ORDER_TYPE));
@@ -1846,8 +1859,9 @@ namespace SuperPOS.UI.TA
                     if (Convert.ToDecimal(taCheckOrderInfo.MenuAmount) > Convert.ToDecimal(string.IsNullOrEmpty(tdi.TaDiscThre) ? "0.00" : tdi.TaDiscThre))
                     {
                         taCheckOrderInfo.PayPerDiscount = strPayPerDiscount.Equals(@"0") ? "" : strPayPerDiscount + @"%";
-                        taCheckOrderInfo.PayDiscount = (Convert.ToDecimal(taCheckOrderInfo.TotalAmount)
-                                                        *Convert.ToDecimal(strPayPerDiscount)/100).ToString("0.00");
+                        decimal dDiscount1 = CommonDAL.GetTaDiscount(ORDER_TYPE, Convert.ToDecimal(taCheckOrderInfo.MenuAmount));
+                        decimal dDiscountTotal1 = CommonDAL.GetAllDiscount(lstTaOI, dDiscount1);
+                        taCheckOrderInfo.PayDiscount = dDiscountTotal1.ToString("0.00");
                     }
                     else
                     {
@@ -2537,6 +2551,7 @@ namespace SuperPOS.UI.TA
                     taOrderItemInfo.OrderStaff = usrID;
                     taOrderItemInfo.BusDate = strBusDate;
                     taOrderItemInfo.MenuItemID = taMenuItemSubMenuInfo.ID;
+                    taOrderItemInfo.IsDiscount = "N";
                     lstMi.Add(taOrderItemInfo);
                 }
 
@@ -3062,6 +3077,8 @@ namespace SuperPOS.UI.TA
                 taOrderItemInfo.BusDate = strBusDate;
                 taOrderItemInfo.MenuItemID = taMenuItemInfo.ID;
 
+                taOrderItemInfo.IsDiscount = taMenuItemInfo.MiRmk.Contains("Discountable") ? "Y" : "N";
+
                 TreeListNode node = AddTreeListNode(taOrderItemInfo);
 
                 //Sub Menu的子菜品
@@ -3312,6 +3329,8 @@ namespace SuperPOS.UI.TA
                             taOrderItemInfo.BusDate = strBusDate;
 
                             taOrderItemInfo.MenuItemID = taMenuItemInfo.ID;
+
+                            taOrderItemInfo.IsDiscount = taMenuItemInfo.MiRmk.Contains("Discountable") ? "Y" : "N";
 
                             AddTreeListChild(taOrderItemInfo, treeListOrder.FocusedNode);
 
