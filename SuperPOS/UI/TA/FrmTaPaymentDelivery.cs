@@ -1032,7 +1032,7 @@ namespace SuperPOS.UI.TA
             SaveOrder();
 
             //未完成付款
-            //if (!IsPaid) return;
+            if (!IsPaid) return;
 
             new SystemData().GetTaOrderItem();
             var lstOI = CommonData.TaOrderItem.Where(s => s.CheckCode.Equals(checkID) && s.BusDate.Equals(strBusDate)).ToList();
@@ -1106,7 +1106,7 @@ namespace SuperPOS.UI.TA
             SaveOrder();
 
             //未完成付款
-            //if (!IsPaid) return;
+            if (!IsPaid) return;
 
             new SystemData().GetTaOrderItem();
             var lstOI = CommonData.TaOrderItem.Where(s => s.CheckCode.Equals(checkID) && s.BusDate.Equals(strBusDate)).ToList();
@@ -1189,7 +1189,7 @@ namespace SuperPOS.UI.TA
             SaveOrder();
 
             //未完成付款
-            //if (!IsPaid) return;
+            if (!IsPaid) return;
 
             new SystemData().GetTaOrderItem();
             var lstOI = CommonData.TaOrderItem.Where(s => s.CheckCode.Equals(checkID) && s.BusDate.Equals(strBusDate)).ToList();
@@ -1223,7 +1223,7 @@ namespace SuperPOS.UI.TA
             SaveOrder();
 
             //未完成付款
-            //if (!IsPaid) return;
+            if (!IsPaid) return;
 
             new SystemData().GetTaOrderItem();
             var lstOI = CommonData.TaOrderItem.Where(s => s.CheckCode.Equals(checkID) && s.BusDate.Equals(strBusDate)).ToList();
