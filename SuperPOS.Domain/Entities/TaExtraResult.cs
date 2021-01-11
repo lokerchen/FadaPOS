@@ -9,6 +9,8 @@
 
         public virtual string rItemName { get; set; }
 
+        public virtual string rOtherItemName { get; set; }
+
         public virtual string rPrice { get; set; }
     }
 }

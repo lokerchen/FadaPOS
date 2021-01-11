@@ -649,8 +649,7 @@ namespace SuperPOS.UI.TA
 
                     List<TaOrderItemInfo> lstMi = new List<TaOrderItemInfo>();
 
-                    FrmTaAppendItem frmTaAppendItem = new FrmTaAppendItem();
-
+                    FrmTaAppendItem frmTaAppendItem = new FrmTaAppendItem(iLangStatusId);
                     if (frmTaAppendItem.ShowDialog() == DialogResult.OK)
                     {
                         List<TaExtraResult> lstAppend = new List<TaExtraResult>();
@@ -663,8 +662,8 @@ namespace SuperPOS.UI.TA
                                 TaOrderItemInfo taOrderItemInfo = new TaOrderItemInfo();
                                 taOrderItemInfo.ItemID = "0";
                                 taOrderItemInfo.ItemCode = taExtraResult.rID.ToString();
-                                taOrderItemInfo.ItemDishName = taExtraResult.rType + " " + taExtraResult.rItemName;
-                                taOrderItemInfo.ItemDishOtherName = taExtraResult.rType + " " + taExtraResult.rItemName;
+                                taOrderItemInfo.ItemDishName = taExtraResult.rType + " " + (iLangStatusId == PubComm.MENU_LANG_DEFAULT ? taExtraResult.rItemName : taExtraResult.rOtherItemName);
+                                taOrderItemInfo.ItemDishOtherName = taExtraResult.rType + " " + taExtraResult.rOtherItemName;
                                 taOrderItemInfo.ItemQty = sQty;
                                 taOrderItemInfo.ItemPrice = taExtraResult.rPrice;
                                 taOrderItemInfo.ItemTotalPrice = (Convert.ToDecimal(sQty) * Convert.ToDecimal(taExtraResult.rPrice)).ToString();
@@ -1514,6 +1513,7 @@ namespace SuperPOS.UI.TA
 
                             taOrderItemInfo.ItemDishName = ModifItemOtherName(taOrderItemInfo.ItemDishName, PubComm.MENU_LANG_DEFAULT);
                         }
+
                     }
                     else
                     {
@@ -1572,7 +1572,19 @@ namespace SuperPOS.UI.TA
                     taOrderItemInfo.CheckCode = childNode["CheckCode"].ToString();
                     taOrderItemInfo.ItemType = Convert.ToInt32(childNode["ItemType"]);
 
-                    taOrderItemInfo.ItemDishName = childNode["ItemDishName"].ToString();
+                    if (taOrderItemInfo.ItemType == PubComm.MENU_ITEM_APPEND)
+                    {
+                        TaExtraMenuInfo taExtraMenuInfo = CommonData.TaExtraMenu.FirstOrDefault(s => s.ID.ToString().Equals(childNode["ItemCode"]));
+                        if (taExtraMenuInfo != null)
+                        {
+                            taOrderItemInfo.ItemDishName = childNode["ItemDishName"].ToString().Replace(taExtraMenuInfo?.eMenuOtherName, taExtraMenuInfo?.eMenuEngName);
+                        }
+                    }
+                    else
+                    {
+                        taOrderItemInfo.ItemDishName = childNode["ItemDishName"].ToString();
+                    }
+
                     taOrderItemInfo.ItemDishOtherName = childNode["ItemDishOtherName"].ToString();
 
                     taOrderItemInfo.ItemParent = parentID;
@@ -2061,17 +2073,19 @@ namespace SuperPOS.UI.TA
                     //改码
                     if (treeListNode["ItemType"].ToString().Equals(PubComm.MENU_ITEM_APPEND.ToString()))
                     {
-                        if (CommonData.TaMenuItem.Any(s => s.MiDishCode.Equals(treeListNode["ItemCode"])))
+                        //if (CommonData.TaMenuItem.Any(s => s.MiDishCode.Equals(treeListNode["ItemCode"])))
+                        //{
+                        //    treeListNode["ItemDishName"] = treeListNode["ItemDishName"].ToString().Split(' ')[0] + " " + CommonData.TaMenuItem.FirstOrDefault(s => s.MiDishCode.Equals(treeListNode["ItemCode"]))?.MiEngName;
+                        //}
+                        //else if (CommonData.TaMenuItemOtherChoice.Any(s => s.ID.ToString().Equals(treeListNode["ItemCode"].ToString())))
+                        //{
+                        //    treeListNode["ItemDishName"] = CommonData.TaMenuItemOtherChoice.FirstOrDefault(s => s.ID.ToString().Equals(treeListNode["ItemCode"].ToString()))?.MiEngName;
+                        //}
+                        //else if (CommonData.TaExtraMenu.Any(s => s.ID.ToString().Equals(treeListNode["ItemCode"].ToString())))
+                        if (CommonData.TaExtraMenu.Any(s => s.ID.ToString().Equals(treeListNode["ItemCode"].ToString())))
                         {
-                            treeListNode["ItemDishName"] = treeListNode["ItemDishName"].ToString().Split(' ')[0] + " " + CommonData.TaMenuItem.FirstOrDefault(s => s.MiDishCode.Equals(treeListNode["ItemCode"]))?.MiEngName;
-                        }
-                        else if (CommonData.TaMenuItemOtherChoice.Any(s => s.ID.ToString().Equals(treeListNode["ItemCode"].ToString())))
-                        {
-                            treeListNode["ItemDishName"] = CommonData.TaMenuItemOtherChoice.FirstOrDefault(s => s.ID.ToString().Equals(treeListNode["ItemCode"].ToString()))?.MiEngName;
-                        }
-                        else if (CommonData.TaExtraMenu.Any(s => s.ID.ToString().Equals(treeListNode["ItemCode"].ToString())))
-                        {
-                            treeListNode["ItemDishName"] = CommonData.TaExtraMenu.FirstOrDefault(s => s.ID.ToString().Equals(treeListNode["ItemCode"].ToString()))?.eMenuEngName;
+                            TaExtraMenuInfo taEmi = CommonData.TaExtraMenu.FirstOrDefault(s => s.ID.ToString().Equals(treeListNode["ItemCode"].ToString()));
+                            treeListNode["ItemDishName"] = treeListNode["ItemDishName"].ToString().Replace(taEmi.eMenuOtherName, taEmi.eMenuEngName);
                         }
                     }
 
@@ -2106,17 +2120,19 @@ namespace SuperPOS.UI.TA
                     //改码
                     if (treeListNode["ItemType"].ToString().Equals(PubComm.MENU_ITEM_APPEND.ToString()))
                     {
-                        if (CommonData.TaMenuItem.Any(s => s.MiDishCode.Equals(treeListNode["ItemCode"])))
+                        //if (CommonData.TaMenuItem.Any(s => s.MiDishCode.Equals(treeListNode["ItemCode"])))
+                        //{
+                        //    treeListNode["ItemDishName"] = treeListNode["ItemDishName"].ToString().Split(' ')[0] + " " + CommonData.TaMenuItem.FirstOrDefault(s => s.MiDishCode.Equals(treeListNode["ItemCode"]))?.MiOtherName;
+                        //}
+                        //else if (CommonData.TaMenuItemOtherChoice.Any(s => s.ID.ToString().Equals(treeListNode["ItemCode"].ToString())))
+                        //{
+                        //    treeListNode["ItemDishName"] = CommonData.TaMenuItemOtherChoice.FirstOrDefault(s => s.ID.ToString().Equals(treeListNode["ItemCode"].ToString()))?.MiOtherName;
+                        //}
+                        //else if (CommonData.TaExtraMenu.Any(s => s.ID.ToString().Equals(treeListNode["ItemCode"].ToString())))
+                        if (CommonData.TaExtraMenu.Any(s => s.ID.ToString().Equals(treeListNode["ItemCode"].ToString())))
                         {
-                            treeListNode["ItemDishName"] = treeListNode["ItemDishName"].ToString().Split(' ')[0] + " " + CommonData.TaMenuItem.FirstOrDefault(s => s.MiDishCode.Equals(treeListNode["ItemCode"]))?.MiOtherName;
-                        }
-                        else if (CommonData.TaMenuItemOtherChoice.Any(s => s.ID.ToString().Equals(treeListNode["ItemCode"].ToString())))
-                        {
-                            treeListNode["ItemDishName"] = CommonData.TaMenuItemOtherChoice.FirstOrDefault(s => s.ID.ToString().Equals(treeListNode["ItemCode"].ToString()))?.MiOtherName;
-                        }
-                        else if (CommonData.TaExtraMenu.Any(s => s.ID.ToString().Equals(treeListNode["ItemCode"].ToString())))
-                        {
-                            treeListNode["ItemDishName"] = CommonData.TaExtraMenu.FirstOrDefault(s => s.ID.ToString().Equals(treeListNode["ItemCode"].ToString()))?.eMenuOtherName;
+                            TaExtraMenuInfo taEmi = CommonData.TaExtraMenu.FirstOrDefault(s => s.ID.ToString().Equals(treeListNode["ItemCode"].ToString()));
+                            treeListNode["ItemDishName"] = treeListNode["ItemDishName"].ToString().Replace(taEmi.eMenuEngName, taEmi.eMenuOtherName);
                         }
                     }
 

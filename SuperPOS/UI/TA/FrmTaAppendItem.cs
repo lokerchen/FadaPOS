@@ -25,9 +25,17 @@ namespace SuperPOS.UI.TA
 
         public List<TaExtraResult> LstResults => lstRusult;
 
+        private int iLang = PubComm.MENU_LANG_DEFAULT;
+
         public FrmTaAppendItem()
         {
             InitializeComponent();
+        }
+
+        public FrmTaAppendItem(int languageId)
+        {
+            InitializeComponent();
+            iLang = languageId;
         }
 
         private void FrmTaAppendItem_Load(object sender, EventArgs e)
@@ -93,23 +101,38 @@ namespace SuperPOS.UI.TA
             else if (!chkDrink.Checked && chkTaste.Checked) str = "Taste Item";
             else str = "";
 
-            if (string.IsNullOrEmpty(str))
-            {
-                lstExtraMenu = CommonData.TaExtraMenu.ToList();
-            }
-            else
-            {
-                lstExtraMenu = CommonData.TaExtraMenu.Where(s => s.eMenuBtnName.Equals("str")).ToList();
-            }
+            lstExtraMenu = string.IsNullOrEmpty(str) ? CommonData.TaExtraMenu.ToList() : CommonData.TaExtraMenu.Where(s => s.eMenuBtnName.Equals(str)).ToList();
 
-            gridControlTaExtraMenu.DataSource = sType.Equals(BTN_TYPE) ? lstExtraMenu : lstExtraMenu.Where(s => s.eMenuType.Equals(sType)).ToList();
+            var lstDb = from em in lstExtraMenu
+                        select new
+                        {
+                            ID = em.ID,
+                            ShowName = iLang == PubComm.MENU_LANG_DEFAULT ? em.eMenuEngName : em.eMenuOtherName,
+                            eMenuEngName = em.eMenuEngName,
+                            eMenuOtherName = em.eMenuOtherName,
+                            eMenuPrice = em.eMenuPrice,
+                            eMenuType = em.eMenuType
+                        };
+
+            gridControlTaExtraMenu.DataSource = sType.Equals(BTN_TYPE) ? lstDb : lstDb.Where(s => s.eMenuType.Equals(sType)).ToList();
 
             gvTaExtraMenu.FocusedRowHandle = gvTaExtraMenu.RowCount - 1;
         }
 
         private void BindResultData()
         {
-            gridControlResult.DataSource = lstRusult;
+            var lstDb = from em in lstRusult
+                        select new
+                        {
+                            ID = em.rID,
+                            ShowName = iLang == PubComm.MENU_LANG_DEFAULT ? em.rItemName : em.rOtherItemName,
+                            rItemName = em.rItemName,
+                            rOtherItemName = em.rOtherItemName,
+                            rPrice = em.rPrice,
+                            rType = em.rType
+                        };
+
+            gridControlResult.DataSource = lstDb;
 
             gvResult.FocusedRowHandle = gvResult.RowCount - 1;
         }
@@ -162,6 +185,7 @@ namespace SuperPOS.UI.TA
                 TaExtraResult taExtraResultInfo = new TaExtraResult();
                 taExtraResultInfo.rID = Convert.ToInt32(gvTaExtraMenu.GetRowCellValue(gvTaExtraMenu.FocusedRowHandle, "ID").ToString());
                 taExtraResultInfo.rItemName = gvTaExtraMenu.GetRowCellValue(gvTaExtraMenu.FocusedRowHandle, "eMenuEngName").ToString();
+                taExtraResultInfo.rOtherItemName = gvTaExtraMenu.GetRowCellValue(gvTaExtraMenu.FocusedRowHandle, "eMenuOtherName").ToString();
                 taExtraResultInfo.rType = btn.Text.Substring(btn.Text.IndexOf("(") + 1, btn.Text.IndexOf(")") - btn.Text.IndexOf("(") - 1);
                 if (taExtraResultInfo.rType.Equals("+") || taExtraResultInfo.rType.Equals("++"))
                 {
