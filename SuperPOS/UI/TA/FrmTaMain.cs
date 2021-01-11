@@ -3093,7 +3093,7 @@ namespace SuperPOS.UI.TA
                 taOrderItemInfo.BusDate = strBusDate;
                 taOrderItemInfo.MenuItemID = taMenuItemInfo.ID;
 
-                taOrderItemInfo.IsDiscount = taMenuItemInfo.MiRmk.Contains("Discountable") ? "Y" : "N";
+                taOrderItemInfo.IsDiscount = taMenuItemInfo.MiRmk.Contains("Discountable") ? "N" : "Y";
 
                 TreeListNode node = AddTreeListNode(taOrderItemInfo);
 
@@ -3346,7 +3346,7 @@ namespace SuperPOS.UI.TA
 
                             taOrderItemInfo.MenuItemID = taMenuItemInfo.ID;
 
-                            taOrderItemInfo.IsDiscount = taMenuItemInfo.MiRmk.Contains("Discountable") ? "Y" : "N";
+                            taOrderItemInfo.IsDiscount = taMenuItemInfo.MiRmk.Contains("Discountable") ? "N" : "Y";
 
                             AddTreeListChild(taOrderItemInfo, treeListOrder.FocusedNode);
 
