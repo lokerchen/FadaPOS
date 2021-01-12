@@ -245,6 +245,7 @@ namespace SuperPOS.UI.TaAdmin
                 {
                     TaDeliverySetInfo taDeliverySetInfo = lstTds.FirstOrDefault();
                     txtPerMile.Text = taDeliverySetInfo.PerMile;
+                    txtOverMile.Text = taDeliverySetInfo.OverMile;
                     //chkDeliveryChge.Checked = taDeliverySetInfo.IsDeliveryCharge.Equals("Y");
                     chkDeliveryChge.Checked = true;
                     chkIgnoreDeliveryIfCharge.Checked = taDeliverySetInfo.DeliveryMile.Equals("Y");
@@ -255,6 +256,7 @@ namespace SuperPOS.UI.TaAdmin
                 else
                 {
                     txtPerMile.Text = "";
+                    txtOverMile.Text = "";
                     chkDeliveryChge.Checked = true;
                     chkIgnoreDeliveryIfCharge.Checked = false;
                     chkIgnoreDelivery.Checked = false;
@@ -431,6 +433,7 @@ namespace SuperPOS.UI.TaAdmin
 
                 TaDeliverySetInfo taDeliverySetInfo = new TaDeliverySetInfo();
                 taDeliverySetInfo.PerMile = txtPerMile.Text;
+                taDeliverySetInfo.OverMile = txtOverMile.Text;
                 //taDeliverySetInfo.IsDeliveryCharge = chkDeliveryChge.Checked ? "Y" : "N";
                 taDeliverySetInfo.IsDeliveryCharge = "Y";
                 taDeliverySetInfo.DeliveryMile = chkIgnoreDeliveryIfCharge.Checked ? "Y" : "N";

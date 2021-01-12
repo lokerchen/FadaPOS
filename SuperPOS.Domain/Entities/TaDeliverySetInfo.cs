@@ -35,5 +35,8 @@ namespace SuperPOS.Domain.Entities
         //Surcharge Amount
         [XmlElement(ElementName = "SurchargeAmount")]
         public virtual string SurchargeAmount { get; set; }
+
+        [XmlElement(ElementName = "OverMile")]
+        public virtual string OverMile { get; set; }
     }
 }

@@ -744,10 +744,13 @@ namespace SuperPOS.Common
                     TaDeliverySetDetailInfo taDeliverySetDetail = lstDsd.FirstOrDefault();
                     dOutDistance = Convert.ToDecimal(taDeliverySetDetail.DistTo);
 
+                    bool isRangeDist = false;
+
                     foreach (var taDeliverySetDetailInfo in lstDsd.Where(taDeliverySetDetailInfo => dDistance >= Convert.ToDecimal(string.IsNullOrEmpty(taDeliverySetDetailInfo.DistFrom) ? "0" : taDeliverySetDetailInfo.DistFrom)
                                                                                                 && dDistance <= Convert.ToDecimal(string.IsNullOrEmpty(taDeliverySetDetailInfo.DistTo) ? "9999" : taDeliverySetDetailInfo.DistTo)))
                     {
                         dDistFee = Convert.ToDecimal(string.IsNullOrEmpty(taDeliverySetDetailInfo.AmountToPay) ? "0" : taDeliverySetDetailInfo.AmountToPay);
+                        isRangeDist = true;
                         break;
                     }
 
@@ -760,9 +763,18 @@ namespace SuperPOS.Common
                     {
                         TaDeliverySetInfo taDeliverySetInfo = lstDs.FirstOrDefault();
 
-                        if (dDistance > dOutDistance)
+                        //if (dDistance > dOutDistance)
+                        //{
+                        //    dDistFee += Math.Ceiling(dDistance - dOutDistance) * Convert.ToDecimal(string.IsNullOrEmpty(taDeliverySetInfo.DeliveryMile) ? "0.00" : taDeliverySetInfo.PerMile);
+                        //}
+
+                        if (!isRangeDist)
                         {
-                            dDistFee += Math.Ceiling(dDistance - dOutDistance) * Convert.ToDecimal(string.IsNullOrEmpty(taDeliverySetInfo.DeliveryMile) ? "0.00" : taDeliverySetInfo.PerMile);
+                            decimal dOverMile = Convert.ToDecimal(string.IsNullOrEmpty(taDeliverySetInfo.OverMile) ? "0.00" : taDeliverySetInfo.OverMile);
+                            decimal dPerMile = Convert.ToDecimal(string.IsNullOrEmpty(taDeliverySetInfo.PerMile) ? "0.00" : taDeliverySetInfo.PerMile);
+
+                            if (Convert.ToDecimal(string.IsNullOrEmpty(strDistance) ? "0.00" : strDistance) >= dOverMile)
+                                dDistFee += Math.Ceiling(Convert.ToDecimal(string.IsNullOrEmpty(strDistance) ? "0.00" : strDistance)) * dPerMile;
                         }
 
                         if (taDeliverySetInfo.IsIgnoreDelivery.Equals("Y"))

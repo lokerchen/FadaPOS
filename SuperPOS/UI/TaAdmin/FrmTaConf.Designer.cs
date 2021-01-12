@@ -146,6 +146,9 @@
             this.label15 = new System.Windows.Forms.Label();
             this.btnExit = new DevExpress.XtraEditors.SimpleButton();
             this.btnSave = new DevExpress.XtraEditors.SimpleButton();
+            this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
+            this.txtOverMile = new DevExpress.XtraEditors.TextEdit();
+            this.labelControl5 = new DevExpress.XtraEditors.LabelControl();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.xtpTaConfig)).BeginInit();
             this.xtpTaConfig.SuspendLayout();
@@ -217,6 +220,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.txtIncrement.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtOtherName.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtEngName.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtOverMile.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox1
@@ -1044,6 +1048,9 @@
             // 
             // groupBox7
             // 
+            this.groupBox7.Controls.Add(this.labelControl5);
+            this.groupBox7.Controls.Add(this.txtOverMile);
+            this.groupBox7.Controls.Add(this.labelControl2);
             this.groupBox7.Controls.Add(this.txtPerMile);
             this.groupBox7.Controls.Add(this.labelControl6);
             this.groupBox7.Controls.Add(this.txtDsAmountToPay4);
@@ -1073,7 +1080,7 @@
             // 
             // txtPerMile
             // 
-            this.txtPerMile.Location = new System.Drawing.Point(34, 179);
+            this.txtPerMile.Location = new System.Drawing.Point(235, 184);
             this.txtPerMile.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtPerMile.Name = "txtPerMile";
             this.txtPerMile.Properties.Appearance.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -1086,12 +1093,12 @@
             // labelControl6
             // 
             this.labelControl6.Appearance.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelControl6.Location = new System.Drawing.Point(127, 181);
+            this.labelControl6.Location = new System.Drawing.Point(329, 187);
             this.labelControl6.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.labelControl6.Name = "labelControl6";
-            this.labelControl6.Size = new System.Drawing.Size(147, 21);
+            this.labelControl6.Size = new System.Drawing.Size(63, 21);
             this.labelControl6.TabIndex = 15;
-            this.labelControl6.Text = "Per Mile Thereafter";
+            this.labelControl6.Text = "Per Mile";
             // 
             // txtDsAmountToPay4
             // 
@@ -1719,6 +1726,38 @@
             this.btnSave.Text = "Save";
             this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
+            // labelControl2
+            // 
+            this.labelControl2.Appearance.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelControl2.Location = new System.Drawing.Point(34, 187);
+            this.labelControl2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.labelControl2.Name = "labelControl2";
+            this.labelControl2.Size = new System.Drawing.Size(36, 21);
+            this.labelControl2.TabIndex = 17;
+            this.labelControl2.Text = "Over";
+            // 
+            // txtOverMile
+            // 
+            this.txtOverMile.Location = new System.Drawing.Point(76, 180);
+            this.txtOverMile.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txtOverMile.Name = "txtOverMile";
+            this.txtOverMile.Properties.Appearance.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtOverMile.Properties.Appearance.Options.UseFont = true;
+            this.txtOverMile.Properties.Mask.EditMask = "f2";
+            this.txtOverMile.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Numeric;
+            this.txtOverMile.Size = new System.Drawing.Size(88, 28);
+            this.txtOverMile.TabIndex = 18;
+            // 
+            // labelControl5
+            // 
+            this.labelControl5.Appearance.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelControl5.Location = new System.Drawing.Point(170, 187);
+            this.labelControl5.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.labelControl5.Name = "labelControl5";
+            this.labelControl5.Size = new System.Drawing.Size(59, 21);
+            this.labelControl5.TabIndex = 19;
+            this.labelControl5.Text = "miles at";
+            // 
             // FrmTaConf
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 14F);
@@ -1813,6 +1852,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.txtIncrement.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtOtherName.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtEngName.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtOverMile.Properties)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -1937,5 +1977,8 @@
         private System.Windows.Forms.Label label20;
         private System.Windows.Forms.Label label21;
         private DevExpress.XtraEditors.CheckEdit chkIgnoreDeliveryIfCharge;
+        private DevExpress.XtraEditors.LabelControl labelControl5;
+        private DevExpress.XtraEditors.TextEdit txtOverMile;
+        private DevExpress.XtraEditors.LabelControl labelControl2;
     }
 }
