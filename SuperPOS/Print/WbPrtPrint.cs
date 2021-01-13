@@ -55,6 +55,8 @@ namespace SuperPOS.Print
         {
             if (wb.ReadyState < WebBrowserReadyState.Complete) return;
 
+            ((WebBrowser)sender).Document.Window.Error += new HtmlElementErrorEventHandler(Window_Error);
+
             string keyName = @"Software\Microsoft\Internet Explorer\PageSetup\";
             using (RegistryKey key = Registry.CurrentUser.OpenSubKey(keyName, true))
             {
@@ -84,6 +86,11 @@ namespace SuperPOS.Print
             }
         }
         #endregion
+
+        private static void Window_Error(object sender, HtmlElementErrorEventArgs e)
+        {
+            e.Handled = true;
+        }
 
         #region 替代HtmlText中模板的关键字
         /// <summary>
