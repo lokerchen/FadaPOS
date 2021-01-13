@@ -1052,6 +1052,7 @@ namespace SuperPOS.UI.TA
 
                 if (taMenuItemInfo != null)
                 {
+                    iMenuCateId = 0;
                     SetMenuItem(taMenuItemInfo);
                 }
             }
