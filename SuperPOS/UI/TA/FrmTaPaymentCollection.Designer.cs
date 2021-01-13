@@ -153,6 +153,7 @@
             this.btnCollection.Size = new System.Drawing.Size(144, 44);
             this.btnCollection.TabIndex = 52;
             this.btnCollection.Text = "Delivery";
+            this.btnCollection.Visible = false;
             // 
             // btnPercent
             // 
