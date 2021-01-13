@@ -183,15 +183,23 @@ namespace SuperPOS.UI.TA
             btnCopy.Enabled = false;
 
             new SystemData().GetTaMenuItem();
-
-            var lstMi = CommonData.TaMenuItem.Where(s => s.MiMenuSetID == Convert.ToInt32(lueFrom.EditValue));
+            new SystemData().GetTaMenuCate();
 
             try
             {
+                var lstMi = CommonData.TaMenuItem.Where(s => s.MiMenuSetID == Convert.ToInt32(lueFrom.EditValue));
+
                 foreach (var taMenuItemInfo in lstMi)
                 {
                     taMenuItemInfo.MiMenuSetID = Convert.ToInt32(lueTo.EditValue);
                     _control.AddEntity(taMenuItemInfo);
+                }
+
+                var lstMc = CommonData.TaMenuCate.Where(s => s.MenuSetID == Convert.ToInt32(lueFrom.EditValue));
+                foreach (var taMenuCateInfo in lstMc)
+                {
+                    taMenuCateInfo.MenuSetID = Convert.ToInt32(lueTo.EditValue);
+                    _control.AddEntity(taMenuCateInfo);
                 }
             }
             catch (Exception ex)
