@@ -20,5 +20,17 @@ namespace SuperPOS.Domain.Entities
         //钱箱密码
         [XmlElement(ElementName = "CashDrawPwd")]
         public virtual string CashDrawPwd { get; set; }
+
+        //钱箱密码
+        [XmlElement(ElementName = "ReportPrinter")]
+        public virtual string ReportPrinter { get; set; }
+
+        //钱箱密码
+        [XmlElement(ElementName = "A4ReportPrinter")]
+        public virtual string A4ReportPrinter { get; set; }
+
+        //钱箱密码
+        [XmlElement(ElementName = "RoundUpDecimal")]
+        public virtual string RoundUpDecimal { get; set; }
     }
 }

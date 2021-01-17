@@ -6,10 +6,12 @@ using System.Diagnostics;
 using System.Drawing;
 using System.Text;
 using System.Linq;
+using System.Runtime.InteropServices;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using DevExpress.XtraEditors;
 using SuperPOS.Common;
+using SuperPOS.Domain.Entities;
 using SuperPOS.UI.TA;
 
 namespace SuperPOS.UI
@@ -26,6 +28,9 @@ namespace SuperPOS.UI
         private string strBusDate = "";
 
         private FrmTaMain frmTaMain;
+
+        [DllImport("Drawcash.dll")]
+        private static extern bool OpenDriverCash2(int code1, int code2, int code3, int code4, int code5, string printerName);
 
         public FrmDesktopArea()
         {
@@ -123,6 +128,28 @@ namespace SuperPOS.UI
         private void tTimer_Tick(object sender, EventArgs e)
         {
             lblTime.Text = DateTime.Now.ToLongTimeString();
+        }
+
+        private void btnDrawer_Click(object sender, EventArgs e)
+        {
+            new SystemData().GetTaCashDrawSet();
+            TaCashDrawSetInfo taCashDrawSetInfo = CommonData.TaCashDrawSet.FirstOrDefault();
+
+            if (taCashDrawSetInfo != null)
+            {
+                if (taCashDrawSetInfo.IsUseCashDraw.Equals("Y"))
+                {
+                    FrmCashDraw frmCashDraw = new FrmCashDraw();
+
+                    frmCashDraw.ShowDialog();
+                }
+                else
+                {
+                    string strPrtName = taCashDrawSetInfo.ReportPrinter;
+                    OpenDriverCash2(27, 112, 48, 55, 121, strPrtName);
+                }
+            }
+            
         }
     }
 }

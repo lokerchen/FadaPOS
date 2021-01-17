@@ -848,6 +848,11 @@ namespace SuperPOS.UI.TA
                 _control.UpdateEntity(taCheckOrder);
             }
 
+            bool isOpenCashDrawSuccess = CommonDAL.OpenCashDraw(false, "");
+
+            if (!isOpenCashDrawSuccess)
+                MessageBox.Show(PubComm.CASH_DRAW_INFO, PubComm.CASH_DRAW_TEXT_TITLE, MessageBoxButtons.OK);
+
             if (IsPaid)
             {
                 returnPaid = true;

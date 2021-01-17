@@ -193,21 +193,26 @@ namespace SuperPOS.UI.TaAdmin
         {
             new SystemData().GetTaCashDrawSet();
 
-            if (CommonData.TaCashDrawSet.Any())
+            TaCashDrawSetInfo taCashDrawSetInfo = CommonData.TaCashDrawSet.FirstOrDefault();
+
+            if (taCashDrawSetInfo != null)
             {
-                var lstTaCashDraw = CommonData.TaCashDrawSet.FirstOrDefault();
-                chkCashDrawSet.Checked = lstTaCashDraw.IsUseCashDraw.Equals("Y");
+                chkCashDrawSet.Checked = taCashDrawSetInfo.IsUseCashDraw.Equals("Y");
+
                 if (chkCashDrawSet.Checked)
                 {
                     txtPwd.Enabled = true;
-                    txtPwd.Text = lstTaCashDraw.CashDrawPwd;
+                    txtPwd.Text = taCashDrawSetInfo.CashDrawPwd;
                 }
                 else
                 {
                     txtPwd.Enabled = false;
                     txtPwd.Text = "";
                 }
-            }
+
+                luePrtOpRptPrt.EditValue = taCashDrawSetInfo.ReportPrinter;
+                luePrtOpA4.EditValue = taCashDrawSetInfo.A4ReportPrinter;
+                txtPrtOpRoundUpDecimal.Text = taCashDrawSetInfo.RoundUpDecimal;}
             else
             {
                 chkCashDrawSet.Checked = false;
@@ -343,6 +348,12 @@ namespace SuperPOS.UI.TaAdmin
             taCashDrawSetInfo.IsUseCashDraw = chkCashDrawSet.Checked ? "Y" : "N";
 
             taCashDrawSetInfo.CashDrawPwd = chkCashDrawSet.Checked ? txtPwd.Text : "";
+
+            taCashDrawSetInfo.ReportPrinter = luePrtOpRptPrt.EditValue.ToString();
+
+            taCashDrawSetInfo.A4ReportPrinter = luePrtOpA4.EditValue.ToString();
+
+            taCashDrawSetInfo.RoundUpDecimal = txtPrtOpRoundUpDecimal.Text;
 
             new SystemData().GetTaCashDrawSet();
 

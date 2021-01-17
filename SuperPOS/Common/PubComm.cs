@@ -108,5 +108,8 @@ namespace SuperPOS.Common
         public static string PRT_PARAM_DISPALY = "display:";
         public static string PRT_PARAM_DISPALY_NONE = "display:none";
         public static string PRT_PARAM_FONT_SIZE = "font-size:";
+
+        public static string CASH_DRAW_INFO = @"Please check your cash draw Setting!";
+        public static string CASH_DRAW_TEXT_TITLE = @"Check Setting";
     }
 }

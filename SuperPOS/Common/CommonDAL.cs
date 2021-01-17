@@ -34,7 +34,10 @@ namespace SuperPOS.Common
 
         [DllImport("user32.dll")]
         static extern bool SetForegroundWindow(IntPtr hWnd);
-        
+
+        [DllImport("Drawcash.dll")]
+        private static extern bool OpenDriverCash2(int code1, int code2, int code3, int code4, int code5, string printerName);
+
         private static System.Diagnostics.Process softKey;
 
         #region 加载系统数据
@@ -933,6 +936,45 @@ namespace SuperPOS.Common
             }
 
             return strResult;
+        }
+        #endregion
+
+        #region 打开钱箱
+
+        public static bool OpenCashDraw(bool isNeedPwd, string strPwd)
+        {
+            try
+            {
+                new SystemData().GetTaCashDrawSet();
+                TaCashDrawSetInfo taCashDrawSetInfo = CommonData.TaCashDrawSet.FirstOrDefault();
+
+                if (taCashDrawSetInfo != null)
+                {
+                    string strPrtName = taCashDrawSetInfo.ReportPrinter;
+
+                    if (isNeedPwd)
+                    {
+                        if (taCashDrawSetInfo.IsUseCashDraw.Equals("Y"))
+                        {
+                            if (!strPwd.Equals(taCashDrawSetInfo.CashDrawPwd))
+                            {
+                                return false;
+                            }
+                        }
+                    }
+
+                    OpenDriverCash2(27, 112, 48, 55, 121, strPrtName);
+                    return true;
+                }
+
+                LogHelper.Error("#Cash Draw Printer ERROR#");
+                return false;
+            }
+            catch (Exception ex)
+            {
+                LogHelper.Error(ex.Message, ex.InnerException);
+                return false;
+            }
         }
         #endregion
     }

@@ -10,6 +10,9 @@
 
     <property name="IsUseCashDraw" column="IsUseCashDraw" type="System.String" />
     <property name="CashDrawPwd" column="CashDrawPwd" type="System.String" />
+    <property name="ReportPrinter" column="ReportPrinter" type="System.String" />
+    <property name="A4ReportPrinter" column="A4ReportPrinter" type="System.String" />
+    <property name="RoundUpDecimal" column="RoundUpDecimal" type="System.String" />
   </class>
 
 </hibernate-mapping>
