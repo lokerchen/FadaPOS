@@ -65,19 +65,23 @@
             this.groupBox1.Controls.Add(this.btnExit);
             this.groupBox1.Controls.Add(this.btnOK);
             this.groupBox1.Font = new System.Drawing.Font("Tahoma", 12F);
-            this.groupBox1.Location = new System.Drawing.Point(9, 4);
+            this.groupBox1.Location = new System.Drawing.Point(8, 3);
+            this.groupBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(716, 488);
+            this.groupBox1.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.groupBox1.Size = new System.Drawing.Size(626, 380);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Select Menu Item";
             // 
             // gridControlMenuItem
             // 
-            this.gridControlMenuItem.Location = new System.Drawing.Point(6, 31);
+            this.gridControlMenuItem.EmbeddedNavigator.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.gridControlMenuItem.Location = new System.Drawing.Point(5, 24);
             this.gridControlMenuItem.MainView = this.gvMenuItem;
+            this.gridControlMenuItem.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.gridControlMenuItem.Name = "gridControlMenuItem";
-            this.gridControlMenuItem.Size = new System.Drawing.Size(704, 374);
+            this.gridControlMenuItem.Size = new System.Drawing.Size(616, 291);
             this.gridControlMenuItem.TabIndex = 14;
             this.gridControlMenuItem.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gvMenuItem});
@@ -90,6 +94,8 @@
             this.gvMenuItem.Appearance.OddRow.Options.UseBackColor = true;
             this.gvMenuItem.Appearance.Row.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.gvMenuItem.Appearance.Row.Options.UseFont = true;
+            this.gvMenuItem.Appearance.SelectedRow.BackColor = System.Drawing.Color.RoyalBlue;
+            this.gvMenuItem.Appearance.SelectedRow.Options.UseBackColor = true;
             this.gvMenuItem.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
             this.ID,
             this.MiDishCode,
@@ -118,6 +124,8 @@
             this.gvMenuItem.OptionsBehavior.Editable = false;
             this.gvMenuItem.OptionsMenu.EnableColumnMenu = false;
             this.gvMenuItem.OptionsSelection.EnableAppearanceFocusedCell = false;
+            this.gvMenuItem.OptionsSelection.MultiSelect = true;
+            this.gvMenuItem.OptionsSelection.MultiSelectMode = DevExpress.XtraGrid.Views.Grid.GridMultiSelectMode.CheckBoxRowSelect;
             this.gvMenuItem.OptionsView.EnableAppearanceEvenRow = true;
             this.gvMenuItem.OptionsView.EnableAppearanceOddRow = true;
             this.gvMenuItem.OptionsView.ShowGroupPanel = false;
@@ -136,7 +144,7 @@
             this.MiDishCode.FieldName = "MiDishCode";
             this.MiDishCode.Name = "MiDishCode";
             this.MiDishCode.Visible = true;
-            this.MiDishCode.VisibleIndex = 0;
+            this.MiDishCode.VisibleIndex = 1;
             this.MiDishCode.Width = 78;
             // 
             // MiPosition
@@ -152,7 +160,7 @@
             this.MiEngName.FieldName = "MiEngName";
             this.MiEngName.Name = "MiEngName";
             this.MiEngName.Visible = true;
-            this.MiEngName.VisibleIndex = 1;
+            this.MiEngName.VisibleIndex = 2;
             this.MiEngName.Width = 98;
             // 
             // MiOtherName
@@ -273,10 +281,9 @@
             this.btnExit.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
             this.btnExit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnExit.ForeColor = System.Drawing.Color.White;
-            this.btnExit.Location = new System.Drawing.Point(452, 422);
-            this.btnExit.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btnExit.Location = new System.Drawing.Point(396, 328);
             this.btnExit.Name = "btnExit";
-            this.btnExit.Size = new System.Drawing.Size(82, 57);
+            this.btnExit.Size = new System.Drawing.Size(72, 44);
             this.btnExit.TabIndex = 9;
             this.btnExit.Text = "Exit";
             this.btnExit.UseVisualStyleBackColor = false;
@@ -287,10 +294,9 @@
             this.btnOK.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
             this.btnOK.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnOK.ForeColor = System.Drawing.Color.White;
-            this.btnOK.Location = new System.Drawing.Point(170, 422);
-            this.btnOK.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btnOK.Location = new System.Drawing.Point(149, 328);
             this.btnOK.Name = "btnOK";
-            this.btnOK.Size = new System.Drawing.Size(82, 57);
+            this.btnOK.Size = new System.Drawing.Size(72, 44);
             this.btnOK.TabIndex = 8;
             this.btnOK.Text = "OK";
             this.btnOK.UseVisualStyleBackColor = false;
@@ -298,11 +304,12 @@
             // 
             // FrmTaMenuItemCopyChoices
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 18F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 14F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(732, 495);
+            this.ClientSize = new System.Drawing.Size(640, 385);
             this.Controls.Add(this.groupBox1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "FrmTaMenuItemCopyChoices";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FrmTaMenuItemCopyChoices";

@@ -61,11 +61,16 @@ namespace SuperPOS.UI.TA
                     taMenuItemOtherChoiceInfo.MiPrice = taMiOther.MiPrice;
                     taMenuItemOtherChoiceInfo.IsAutoAppend = taMiOther.IsAutoAppend;
                     taMenuItemOtherChoiceInfo.IsEnableChoice = taMiOther.IsEnableChoice;
-                    taMenuItemOtherChoiceInfo.MiID = saveMiID;
                     taMenuItemOtherChoiceInfo.MiType = miOtherType;
                     taMenuItemOtherChoiceInfo.OptionNum = taMiOther.OptionNum;
 
-                    _control.AddEntity(taMenuItemOtherChoiceInfo);
+                    int[] iSelectRows = gvMenuItem.GetSelectedRows();
+
+                    foreach (int rows in iSelectRows)
+                    {
+                        taMenuItemOtherChoiceInfo.MiID = Convert.ToInt32(gvMenuItem.GetRowCellValue(rows, "ID"));
+                        _control.AddEntity(taMenuItemOtherChoiceInfo);
+                    }
                 }
                 catch (Exception ex) { LogHelper.Error(this.Name, ex); }
             }
@@ -83,8 +88,8 @@ namespace SuperPOS.UI.TA
 
         private void gvMenuItem_FocusedRowChanged(object sender, DevExpress.XtraGrid.Views.Base.FocusedRowChangedEventArgs e)
         {
-            if (gvMenuItem.GetRowCellValue(gvMenuItem.FocusedRowHandle, "MiDishCode") != null)
-                saveMiID = Convert.ToInt32(gvMenuItem.GetRowCellValue(gvMenuItem.FocusedRowHandle, "ID"));
+            //if (gvMenuItem.GetRowCellValue(gvMenuItem.FocusedRowHandle, "MiDishCode") != null)
+            //    saveMiID = Convert.ToInt32(gvMenuItem.GetRowCellValue(gvMenuItem.FocusedRowHandle, "ID"));
         }
 
         private void gvMenuItem_CustomDrawRowIndicator(object sender, DevExpress.XtraGrid.Views.Grid.RowIndicatorCustomDrawEventArgs e)
