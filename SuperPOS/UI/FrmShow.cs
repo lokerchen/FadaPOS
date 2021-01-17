@@ -8,6 +8,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using DevExpress.XtraEditors;
+using SuperPOS.Common;
 
 namespace SuperPOS.UI
 {
@@ -27,6 +28,7 @@ namespace SuperPOS.UI
 
         private void btnExit_Click(object sender, EventArgs e)
         {
+            CommonDAL.IsBackupSysData();
             Close();
         }
     }

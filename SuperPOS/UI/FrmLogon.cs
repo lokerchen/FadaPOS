@@ -3,12 +3,14 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Text;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using DevExpress.XtraEditors;
 using SuperPOS.Common;
+using SuperPOS.Domain.Entities;
 using SuperPOS.UI.TA;
 
 namespace SuperPOS.UI
@@ -65,6 +67,8 @@ namespace SuperPOS.UI
         #region Exit按钮
         private void btnExit_Click(object sender, EventArgs e)
         {
+            CommonDAL.IsBackupSysData();
+
             this.Close();
             Application.Exit();
         }

@@ -977,5 +977,34 @@ namespace SuperPOS.Common
             }
         }
         #endregion
+
+        #region 是否进行系统数据备份
+
+        public static void IsBackupSysData()
+        {
+            new SystemData().GenSet();
+
+            GenSetInfo genSetInfo = CommonData.GenSet.FirstOrDefault();
+
+            if (genSetInfo != null)
+            {
+                if (genSetInfo.IsBackup.Equals("Y"))
+                {
+                    FileInfo oldFile = new FileInfo(Environment.CurrentDirectory + @"\SuperPOS2.db");
+
+                    string newFileName = @"SuperPOS2-" + Environment.TickCount.ToString() + ".db";
+
+                    string strNewFilePath = genSetInfo.BackupDriver + @":\Backup\";
+
+                    if (!Directory.Exists(strNewFilePath))
+                    {
+                        Directory.CreateDirectory(strNewFilePath);
+                    }
+
+                    oldFile.CopyTo(strNewFilePath + newFileName, true);
+                }
+            }
+        }
+        #endregion
     }
 }
