@@ -13,6 +13,7 @@ using LinqToDB;
 using SuperPOS.Common;
 using SuperPOS.Domain.Entities;
 using SuperPOS.Print;
+using HtmlAgilityPack;
 
 namespace SuperPOS.UI.TA
 {
@@ -24,8 +25,6 @@ namespace SuperPOS.UI.TA
         private int usrID = 0;
         //登录用户名字
         private string usrName = "";
-
-        private string PreviewContent = "";
 
         //记录账单号Order No
         private string strChkOrder = "";
@@ -39,10 +38,25 @@ namespace SuperPOS.UI.TA
         private string sDiscountPer = @"";
         private string sDiscount = @"0.00";
         private string sSubTotal = @"0.00";
+        
+        private string PreviewContent = "";
 
         private int sItemCount = 0;
         private string sOrderType = "";
 
+        private string checkBusDate = @"";
+
+        private string strBusDate = "";
+
+        private int intStaffID = 0;
+
+        HtmlAgilityPack.HtmlDocument doc = null;
+
+        private string sTendered = @"0.00";
+        private string sChange = @"0.00";
+        private string sRefNo = @" ";
+        private string sDeliveryFee = @"0.00";
+        private string sSurcharge = @"0.00";
         private decimal dTotalTA = 0.00m;
         private decimal dCollection = 0.00m;
         private decimal dDelivery = 0.00m;
@@ -59,9 +73,7 @@ namespace SuperPOS.UI.TA
 
         //默认语言标识状态位
         public int iLangStatusId = PubComm.MENU_LANG_DEFAULT;
-
-        private string strBusDate = @"";
-
+        
         public FrmAccountSummary()
         {
             InitializeComponent();
@@ -84,16 +96,18 @@ namespace SuperPOS.UI.TA
             sysData.GetTaOrderItem();
             sysData.GetTaPreview();
 
+            webBrowser2.Navigate("about:blank/");
+
             GetBindData(CommonDAL.GetBusDate());
             
-            richEditCtlPreview.Font = new Font(@"Courier New", 10f);
+            //richEditCtlPreview.Font = new Font(@"Courier New", 10f);
 
-            if (CommonData.TaPreview.Any())
-            {
-                PreviewContent = CommonData.TaPreview.FirstOrDefault().PreviewContent;
-            }
+            //if (CommonData.TaPreview.Any())
+            //{
+            //    PreviewContent = CommonData.TaPreview.FirstOrDefault().PreviewContent;
+            //}
 
-            richEditCtlPreview.Text = SetPreviewInfo(PreviewContent);
+            //richEditCtlPreview.Text = SetPreviewInfo(PreviewContent);
 
             var lstGsSet1 = CommonData.TaPrtSetupGeneralSet1;
             if (lstGsSet1.Any())
@@ -103,6 +117,10 @@ namespace SuperPOS.UI.TA
             }
 
             deDay.Text = CommonDAL.GetBusDate();
+
+            gvTaShowOrder.FocusedRowHandle = gvTaShowOrder.RowCount - 1;
+
+            //RefreshPrtInfo();
 
             asfc.controllInitializeSize(this);
         }
@@ -145,12 +163,21 @@ namespace SuperPOS.UI.TA
                             gridOrderTime = check.PayTime,
                             gridTotal = check.TotalAmount,
                             gridDriver = driver.DriverName,
+                            //gridDriver = "",
                             gridStaff = user.UsrName,
                             gridCustID = check.CustomerID,
                             gridDiscountPer = check.PayPerDiscount,
                             gridDisount = check.PayDiscount,
                             gridSubTotal = check.MenuAmount,
                             gridBusDate = check.BusDate,
+                            gridTendered = check.Paid,
+                            gridChange =
+                                (Convert.ToDecimal(check.Paid) - Convert.ToDecimal(check.TotalAmount)) <= 0
+                                    ? "0.0"
+                                    : (Convert.ToDecimal(check.Paid) - Convert.ToDecimal(check.TotalAmount)).ToString(),
+                            gridRefNo = check.RefNum,
+                            gridDeliveryFee = check.DeliveryFee,
+                            gridStaffId = check.StaffID,
                             gridSurcharge = check.PaySurcharge
                         };
 
@@ -160,6 +187,7 @@ namespace SuperPOS.UI.TA
             gvTaShowOrder.Columns["gridOrderTime"].BestFit();
             gvTaShowOrder.FocusedRowHandle = gvTaShowOrder.RowCount - 1;
 
+            #region 数据计算
             if (lstDb.Any())
             {
                 dDelivery = lstDb.ToList().Any(s => s.gridOrderType.Equals(PubComm.ORDER_TYPE_DELIVERY) && s.gridBusDate.Equals(busDate))
@@ -182,9 +210,10 @@ namespace SuperPOS.UI.TA
                             : 0.00m;
                 txtFastFood.Text = dFastFood.ToString("0.00");
 
-                dEatIn = lstDb.ToList().Any(s => s.gridOrderType.Equals(PubComm.ORDER_TYPE_EAT_IN) && s.gridBusDate.Equals(busDate))
-                         ? lstDb.ToList().Where(s => s.gridOrderType.Equals(PubComm.ORDER_TYPE_EAT_IN) && s.gridBusDate.Equals(busDate)).Sum(s => Convert.ToDecimal(s.gridTotal))
-                         : 0.00m;
+                //dEatIn = lstDb.ToList().Any(s => s.gridOrderType.Equals(PubComm.ORDER_TYPE_EAT_IN) && s.gridBusDate.Equals(busDate))
+                //         ? lstDb.ToList().Where(s => s.gridOrderType.Equals(PubComm.ORDER_TYPE_EAT_IN) && s.gridBusDate.Equals(busDate)).Sum(s => Convert.ToDecimal(s.gridTotal))
+                //         : 0.00m;
+                dEatIn = 0.00m;
                 txtEatIn.Text = dEatIn.ToString("0.00");
 
                 dTotalTA = dDelivery + dCollection + dShop;
@@ -234,6 +263,7 @@ namespace SuperPOS.UI.TA
                 dSC = 0.00m;
                 txtSc.Text = @"0.00";
             }
+            #endregion
         }
         #endregion
 
@@ -321,7 +351,7 @@ namespace SuperPOS.UI.TA
         {
             if (gvTaShowOrder.RowCount <= 0)
             {
-                richEditCtlPreview.Text = "";
+                webBrowser2.DocumentText = "";
                 return;
             }
 
@@ -334,13 +364,72 @@ namespace SuperPOS.UI.TA
             sDiscount = gvTaShowOrder.GetRowCellValue(gvTaShowOrder.FocusedRowHandle, "gridDisount").ToString();
             sSubTotal = gvTaShowOrder.GetRowCellValue(gvTaShowOrder.FocusedRowHandle, "gridSubTotal").ToString();
             sOrderType = gvTaShowOrder.GetRowCellValue(gvTaShowOrder.FocusedRowHandle, "gridOrderType").ToString();
+            checkBusDate = gvTaShowOrder.GetRowCellValue(gvTaShowOrder.FocusedRowHandle, "gridBusDate").ToString();
+
+            sTendered = gvTaShowOrder.GetRowCellValue(gvTaShowOrder.FocusedRowHandle, "gridTendered").ToString();
+            sChange = gvTaShowOrder.GetRowCellValue(gvTaShowOrder.FocusedRowHandle, "gridChange").ToString();
+            sRefNo = gvTaShowOrder.GetRowCellValue(gvTaShowOrder.FocusedRowHandle, "gridRefNo") == null ? "" : gvTaShowOrder.GetRowCellValue(gvTaShowOrder.FocusedRowHandle, "gridRefNo").ToString();
+            sDeliveryFee = gvTaShowOrder.GetRowCellValue(gvTaShowOrder.FocusedRowHandle, "gridDeliveryFee") == null ? "" : gvTaShowOrder.GetRowCellValue(gvTaShowOrder.FocusedRowHandle, "gridDeliveryFee").ToString();
+
+            intStaffID = Convert.ToInt32(gvTaShowOrder.GetRowCellValue(gvTaShowOrder.FocusedRowHandle, "gridStaffId").ToString());
+
+            sSurcharge = gvTaShowOrder.GetRowCellValue(gvTaShowOrder.FocusedRowHandle, "gridSurcharge") == null ? "0.00" : gvTaShowOrder.GetRowCellValue(gvTaShowOrder.FocusedRowHandle, "gridSurcharge").ToString();
 
             sItemCount = GetItemCount(strChkOrder);
 
 
-            richEditCtlPreview.Font = new Font(@"Courier New", 10f);
+            //richEditCtlPreview.Font = new Font(@"Courier New", 10f);
+            ////预览信息
+            ////richEditCtlPreview.Text = SetPreviewInfo();
+            //if (CommonData.TaPreview.Any())
+            //{
+            //    richEditCtlPreview.Text = SetPreviewInfo(CommonData.TaPreview.FirstOrDefault().PreviewContent);
+            //}
+            //richEditCtlPreview.Text = SetPreviewInfo(PreviewContent);
+            RefreshPrtInfo();
 
-            richEditCtlPreview.Text = SetPreviewInfo(PreviewContent);
+
+            //richEditCtlPreview.Font = new Font(@"Courier New", 10f);
+
+            //richEditCtlPreview.Text = SetPreviewInfo(PreviewContent);
+        }
+
+        private void RefreshPrtInfo()
+        {
+            if (string.IsNullOrEmpty(strChkOrder)) return;
+
+            if (doc == null) doc = new HtmlWeb().Load(WbPrtStatic.PRT_TEMPLATE_FILE_PATH + @"so" + WbPrtStatic.PRT_TEMPLATE_FILE_NAME_SUFFIX);
+
+            new SystemData().GetTaOrderItem();
+            var lstOI = CommonData.TaOrderItem.Where(s => s.CheckCode.Equals(strChkOrder) && s.BusDate.Equals(checkBusDate)).ToList();
+
+            WbPrtTemplataTa wbPrtTemplataTa = new WbPrtTemplataTa();
+            wbPrtTemplataTa = CommonDAL.GetAllPrtInfo(intCusID <= 0 ? "" : intCusID.ToString(),
+                                                      sStaff,
+                                                      intStaffID.ToString(),
+                                                      strChkOrder,
+                                                      sItemCount,
+                                                      sSubTotal,
+                                                      sTotalAmount,
+                                                      sTendered,
+                                                      sChange,
+                                                      sRefNo,
+                                                      sDeliveryFee,
+                                                      sDiscount,
+                                                      sSurcharge,
+                                                      checkBusDate);
+
+            string htmlText = doc.Text;
+
+            if (string.IsNullOrEmpty(htmlText)) webBrowser2.DocumentText = "";
+
+            htmlText = WbPrtPrint.ReplaceHtmlPrtKeysShop(htmlText, wbPrtTemplataTa);
+
+            htmlText = WbPrtPrint.GetOrderItemInfo(doc, htmlText, lstOI, false);
+
+            webBrowser2.DocumentText = htmlText;
+
+            //webBrowser2.Refresh();
         }
 
         private int GetItemCount(string chkCode)
