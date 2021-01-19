@@ -32,7 +32,7 @@
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.btnExit = new DevExpress.XtraEditors.SimpleButton();
             this.btnLanguage = new DevExpress.XtraEditors.SimpleButton();
-            this.textEdit6 = new DevExpress.XtraEditors.TextEdit();
+            this.deDay = new DevExpress.XtraEditors.TextEdit();
             this.label5 = new System.Windows.Forms.Label();
             this.btnDateLeft = new DevExpress.XtraEditors.SimpleButton();
             this.btnDateRight = new DevExpress.XtraEditors.SimpleButton();
@@ -73,8 +73,11 @@
             this.Discount = new DevExpress.XtraGrid.Columns.GridColumn();
             this.SubToal = new DevExpress.XtraGrid.Columns.GridColumn();
             this.BusDate = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.repositoryItemCheckedComboBoxEdit1 = new DevExpress.XtraEditors.Repository.RepositoryItemCheckedComboBoxEdit();
+            this.repositoryItemCheckEdit1 = new DevExpress.XtraEditors.Repository.RepositoryItemCheckEdit();
+            this.repositoryItemCheckEdit2 = new DevExpress.XtraEditors.Repository.RepositoryItemCheckEdit();
             this.groupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit6.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.deDay.Properties)).BeginInit();
             this.groupBox5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.txtRemainingTotalAmt.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtRemainingOrderQty.Properties)).BeginInit();
@@ -87,13 +90,16 @@
             ((System.ComponentModel.ISupportInitialize)(this.txtCurrentTime.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridControlTaSummaryManagement)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gvTaShowOrder)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemCheckedComboBoxEdit1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemCheckEdit1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemCheckEdit2)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox1
             // 
             this.groupBox1.Controls.Add(this.btnExit);
             this.groupBox1.Controls.Add(this.btnLanguage);
-            this.groupBox1.Controls.Add(this.textEdit6);
+            this.groupBox1.Controls.Add(this.deDay);
             this.groupBox1.Controls.Add(this.label5);
             this.groupBox1.Controls.Add(this.btnDateLeft);
             this.groupBox1.Controls.Add(this.btnDateRight);
@@ -157,18 +163,18 @@
             this.btnLanguage.TabIndex = 84;
             this.btnLanguage.Text = "LANGUAGE";
             // 
-            // textEdit6
+            // deDay
             // 
-            this.textEdit6.EditValue = "2020-09-26";
-            this.textEdit6.Location = new System.Drawing.Point(711, 403);
-            this.textEdit6.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.textEdit6.Name = "textEdit6";
-            this.textEdit6.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 14F);
-            this.textEdit6.Properties.Appearance.Options.UseFont = true;
-            this.textEdit6.Properties.Appearance.Options.UseTextOptions = true;
-            this.textEdit6.Properties.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.textEdit6.Size = new System.Drawing.Size(129, 30);
-            this.textEdit6.TabIndex = 83;
+            this.deDay.EditValue = "2020-09-26";
+            this.deDay.Location = new System.Drawing.Point(711, 403);
+            this.deDay.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.deDay.Name = "deDay";
+            this.deDay.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 14F);
+            this.deDay.Properties.Appearance.Options.UseFont = true;
+            this.deDay.Properties.Appearance.Options.UseTextOptions = true;
+            this.deDay.Properties.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.deDay.Size = new System.Drawing.Size(129, 30);
+            this.deDay.TabIndex = 83;
             // 
             // label5
             // 
@@ -197,6 +203,7 @@
             this.btnDateLeft.Name = "btnDateLeft";
             this.btnDateLeft.Size = new System.Drawing.Size(71, 27);
             this.btnDateLeft.TabIndex = 81;
+            this.btnDateLeft.Click += new System.EventHandler(this.btnDateLeft_Click);
             // 
             // btnDateRight
             // 
@@ -216,6 +223,7 @@
             this.btnDateRight.Name = "btnDateRight";
             this.btnDateRight.Size = new System.Drawing.Size(71, 27);
             this.btnDateRight.TabIndex = 82;
+            this.btnDateRight.Click += new System.EventHandler(this.btnDateRight_Click);
             // 
             // groupBox5
             // 
@@ -234,7 +242,7 @@
             // 
             // txtRemainingTotalAmt
             // 
-            this.txtRemainingTotalAmt.EditValue = "129.70";
+            this.txtRemainingTotalAmt.EditValue = "0.00";
             this.txtRemainingTotalAmt.Location = new System.Drawing.Point(139, 54);
             this.txtRemainingTotalAmt.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtRemainingTotalAmt.Name = "txtRemainingTotalAmt";
@@ -256,7 +264,7 @@
             // 
             // txtRemainingOrderQty
             // 
-            this.txtRemainingOrderQty.EditValue = "1";
+            this.txtRemainingOrderQty.EditValue = "0";
             this.txtRemainingOrderQty.Location = new System.Drawing.Point(15, 54);
             this.txtRemainingOrderQty.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtRemainingOrderQty.Name = "txtRemainingOrderQty";
@@ -293,7 +301,7 @@
             // 
             // txtSelectedAmount
             // 
-            this.txtSelectedAmount.EditValue = "129.70";
+            this.txtSelectedAmount.EditValue = "0.00";
             this.txtSelectedAmount.Location = new System.Drawing.Point(139, 54);
             this.txtSelectedAmount.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtSelectedAmount.Name = "txtSelectedAmount";
@@ -315,7 +323,7 @@
             // 
             // txtSelectedOrders
             // 
-            this.txtSelectedOrders.EditValue = "1";
+            this.txtSelectedOrders.EditValue = "0";
             this.txtSelectedOrders.Location = new System.Drawing.Point(15, 54);
             this.txtSelectedOrders.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtSelectedOrders.Name = "txtSelectedOrders";
@@ -552,6 +560,10 @@
             this.gridControlTaSummaryManagement.MainView = this.gvTaShowOrder;
             this.gridControlTaSummaryManagement.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.gridControlTaSummaryManagement.Name = "gridControlTaSummaryManagement";
+            this.gridControlTaSummaryManagement.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
+            this.repositoryItemCheckedComboBoxEdit1,
+            this.repositoryItemCheckEdit1,
+            this.repositoryItemCheckEdit2});
             this.gridControlTaSummaryManagement.Size = new System.Drawing.Size(528, 397);
             this.gridControlTaSummaryManagement.TabIndex = 66;
             this.gridControlTaSummaryManagement.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
@@ -583,10 +595,14 @@
             this.gvTaShowOrder.OptionsBehavior.Editable = false;
             this.gvTaShowOrder.OptionsMenu.EnableColumnMenu = false;
             this.gvTaShowOrder.OptionsSelection.EnableAppearanceFocusedCell = false;
+            this.gvTaShowOrder.OptionsSelection.MultiSelect = true;
+            this.gvTaShowOrder.OptionsSelection.MultiSelectMode = DevExpress.XtraGrid.Views.Grid.GridMultiSelectMode.CheckBoxRowSelect;
             this.gvTaShowOrder.OptionsView.EnableAppearanceEvenRow = true;
             this.gvTaShowOrder.OptionsView.EnableAppearanceOddRow = true;
             this.gvTaShowOrder.OptionsView.ShowGroupPanel = false;
             this.gvTaShowOrder.OptionsView.ShowIndicator = false;
+            this.gvTaShowOrder.RowClick += new DevExpress.XtraGrid.Views.Grid.RowClickEventHandler(this.gvTaShowOrder_RowClick);
+            this.gvTaShowOrder.CustomDrawRowIndicator += new DevExpress.XtraGrid.Views.Grid.RowIndicatorCustomDrawEventHandler(this.gvTaShowOrder_CustomDrawRowIndicator);
             // 
             // ID
             // 
@@ -606,7 +622,7 @@
             this.CheckCode.FieldName = "gridOrderNo";
             this.CheckCode.Name = "CheckCode";
             this.CheckCode.Visible = true;
-            this.CheckCode.VisibleIndex = 0;
+            this.CheckCode.VisibleIndex = 2;
             // 
             // OrderTime
             // 
@@ -618,7 +634,7 @@
             this.OrderTime.FieldName = "gridOrderTime";
             this.OrderTime.Name = "OrderTime";
             this.OrderTime.Visible = true;
-            this.OrderTime.VisibleIndex = 1;
+            this.OrderTime.VisibleIndex = 3;
             // 
             // Payment
             // 
@@ -630,7 +646,7 @@
             this.Payment.FieldName = "gridPayType";
             this.Payment.Name = "Payment";
             this.Payment.Visible = true;
-            this.Payment.VisibleIndex = 2;
+            this.Payment.VisibleIndex = 4;
             // 
             // PayOrderType
             // 
@@ -642,7 +658,7 @@
             this.PayOrderType.FieldName = "gridOrderType";
             this.PayOrderType.Name = "PayOrderType";
             this.PayOrderType.Visible = true;
-            this.PayOrderType.VisibleIndex = 3;
+            this.PayOrderType.VisibleIndex = 5;
             // 
             // TotalAmount
             // 
@@ -654,7 +670,7 @@
             this.TotalAmount.FieldName = "gridTotal";
             this.TotalAmount.Name = "TotalAmount";
             this.TotalAmount.Visible = true;
-            this.TotalAmount.VisibleIndex = 4;
+            this.TotalAmount.VisibleIndex = 6;
             // 
             // StaffName
             // 
@@ -666,7 +682,7 @@
             this.StaffName.FieldName = "gridStaff";
             this.StaffName.Name = "StaffName";
             this.StaffName.Visible = true;
-            this.StaffName.VisibleIndex = 5;
+            this.StaffName.VisibleIndex = 7;
             // 
             // DriverName
             // 
@@ -712,6 +728,25 @@
             this.BusDate.FieldName = "gridBusDate";
             this.BusDate.Name = "BusDate";
             // 
+            // repositoryItemCheckedComboBoxEdit1
+            // 
+            this.repositoryItemCheckedComboBoxEdit1.AutoHeight = false;
+            this.repositoryItemCheckedComboBoxEdit1.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.repositoryItemCheckedComboBoxEdit1.Name = "repositoryItemCheckedComboBoxEdit1";
+            // 
+            // repositoryItemCheckEdit1
+            // 
+            this.repositoryItemCheckEdit1.AutoHeight = false;
+            this.repositoryItemCheckEdit1.Name = "repositoryItemCheckEdit1";
+            // 
+            // repositoryItemCheckEdit2
+            // 
+            this.repositoryItemCheckEdit2.AutoHeight = false;
+            this.repositoryItemCheckEdit2.Name = "repositoryItemCheckEdit2";
+            this.repositoryItemCheckEdit2.ValueChecked = "1";
+            this.repositoryItemCheckEdit2.ValueUnchecked = "0";
+            // 
             // FrmTaSummaryManagement
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 14F);
@@ -728,7 +763,7 @@
             this.SizeChanged += new System.EventHandler(this.FrmTaSummaryManagement_SizeChanged);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit6.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.deDay.Properties)).EndInit();
             this.groupBox5.ResumeLayout(false);
             this.groupBox5.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.txtRemainingTotalAmt.Properties)).EndInit();
@@ -743,6 +778,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.txtCurrentTime.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridControlTaSummaryManagement)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gvTaShowOrder)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemCheckedComboBoxEdit1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemCheckEdit1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemCheckEdit2)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -787,11 +825,14 @@
         private System.Windows.Forms.Label label1;
         private DevExpress.XtraEditors.SimpleButton btnUp;
         private DevExpress.XtraEditors.SimpleButton btnDown;
-        private DevExpress.XtraEditors.TextEdit textEdit6;
+        private DevExpress.XtraEditors.TextEdit deDay;
         private System.Windows.Forms.Label label5;
         private DevExpress.XtraEditors.SimpleButton btnDateLeft;
         private DevExpress.XtraEditors.SimpleButton btnDateRight;
         private DevExpress.XtraEditors.SimpleButton btnExit;
         private DevExpress.XtraEditors.SimpleButton btnLanguage;
+        private DevExpress.XtraEditors.Repository.RepositoryItemCheckEdit repositoryItemCheckEdit1;
+        private DevExpress.XtraEditors.Repository.RepositoryItemCheckedComboBoxEdit repositoryItemCheckedComboBoxEdit1;
+        private DevExpress.XtraEditors.Repository.RepositoryItemCheckEdit repositoryItemCheckEdit2;
     }
 }
