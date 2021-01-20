@@ -56,11 +56,12 @@
             this.btnSummaryView = new DevExpress.XtraEditors.SimpleButton();
             this.btnExit = new DevExpress.XtraEditors.SimpleButton();
             this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
+            this.webBrowser2 = new System.Windows.Forms.WebBrowser();
             this.btnLeft = new DevExpress.XtraEditors.SimpleButton();
             this.btnRight = new DevExpress.XtraEditors.SimpleButton();
             this.deDay = new DevExpress.XtraEditors.DateEdit();
-            this.richEditCtlPreview = new DevExpress.XtraRichEdit.RichEditControl();
             this.panelControl4 = new DevExpress.XtraEditors.PanelControl();
+            this.richEditCtlPreview = new DevExpress.XtraRichEdit.RichEditControl();
             this.panelControl5 = new DevExpress.XtraEditors.PanelControl();
             this.btnAccount = new DevExpress.XtraEditors.SimpleButton();
             this.btnPrtReceipt = new DevExpress.XtraEditors.SimpleButton();
@@ -81,7 +82,6 @@
             this.Discount = new DevExpress.XtraGrid.Columns.GridColumn();
             this.SubToal = new DevExpress.XtraGrid.Columns.GridColumn();
             this.BusDate = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.webBrowser2 = new System.Windows.Forms.WebBrowser();
             ((System.ComponentModel.ISupportInitialize)(this.txtSc.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtDc.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtTotalOrder.Properties)).BeginInit();
@@ -478,6 +478,14 @@
             this.panelControl1.Size = new System.Drawing.Size(1040, 526);
             this.panelControl1.TabIndex = 1;
             // 
+            // webBrowser2
+            // 
+            this.webBrowser2.Location = new System.Drawing.Point(6, 5);
+            this.webBrowser2.MinimumSize = new System.Drawing.Size(20, 20);
+            this.webBrowser2.Name = "webBrowser2";
+            this.webBrowser2.Size = new System.Drawing.Size(322, 427);
+            this.webBrowser2.TabIndex = 91;
+            // 
             // btnLeft
             // 
             this.btnLeft.Appearance.BackColor = System.Drawing.Color.RoyalBlue;
@@ -528,6 +536,7 @@
             this.deDay.Name = "deDay";
             this.deDay.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 12F);
             this.deDay.Properties.Appearance.Options.UseFont = true;
+            this.deDay.Properties.AutoHeight = false;
             this.deDay.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.deDay.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
@@ -537,24 +546,6 @@
             this.deDay.Properties.VistaDisplayMode = DevExpress.Utils.DefaultBoolean.False;
             this.deDay.Size = new System.Drawing.Size(164, 26);
             this.deDay.TabIndex = 88;
-            // 
-            // richEditCtlPreview
-            // 
-            this.richEditCtlPreview.EnableToolTips = true;
-            this.richEditCtlPreview.Location = new System.Drawing.Point(578, 366);
-            this.richEditCtlPreview.Margin = new System.Windows.Forms.Padding(0);
-            this.richEditCtlPreview.Name = "richEditCtlPreview";
-            this.richEditCtlPreview.Options.Export.PlainText.ExportFinalParagraphMark = DevExpress.XtraRichEdit.Export.PlainText.ExportFinalParagraphMark.Never;
-            this.richEditCtlPreview.Options.Fields.UpdateFieldsInTextBoxes = false;
-            this.richEditCtlPreview.Options.HorizontalRuler.ShowTabs = false;
-            this.richEditCtlPreview.Options.HorizontalRuler.Visibility = DevExpress.XtraRichEdit.RichEditRulerVisibility.Hidden;
-            this.richEditCtlPreview.Options.HorizontalScrollbar.Visibility = DevExpress.XtraRichEdit.RichEditScrollbarVisibility.Hidden;
-            this.richEditCtlPreview.Options.VerticalRuler.Visibility = DevExpress.XtraRichEdit.RichEditRulerVisibility.Hidden;
-            this.richEditCtlPreview.Options.VerticalScrollbar.Visibility = DevExpress.XtraRichEdit.RichEditScrollbarVisibility.Hidden;
-            this.richEditCtlPreview.Size = new System.Drawing.Size(83, 27);
-            this.richEditCtlPreview.TabIndex = 3;
-            this.richEditCtlPreview.Text = "rich";
-            this.richEditCtlPreview.Visible = false;
             // 
             // panelControl4
             // 
@@ -589,6 +580,24 @@
             this.panelControl4.Name = "panelControl4";
             this.panelControl4.Size = new System.Drawing.Size(701, 516);
             this.panelControl4.TabIndex = 2;
+            // 
+            // richEditCtlPreview
+            // 
+            this.richEditCtlPreview.EnableToolTips = true;
+            this.richEditCtlPreview.Location = new System.Drawing.Point(578, 366);
+            this.richEditCtlPreview.Margin = new System.Windows.Forms.Padding(0);
+            this.richEditCtlPreview.Name = "richEditCtlPreview";
+            this.richEditCtlPreview.Options.Export.PlainText.ExportFinalParagraphMark = DevExpress.XtraRichEdit.Export.PlainText.ExportFinalParagraphMark.Never;
+            this.richEditCtlPreview.Options.Fields.UpdateFieldsInTextBoxes = false;
+            this.richEditCtlPreview.Options.HorizontalRuler.ShowTabs = false;
+            this.richEditCtlPreview.Options.HorizontalRuler.Visibility = DevExpress.XtraRichEdit.RichEditRulerVisibility.Hidden;
+            this.richEditCtlPreview.Options.HorizontalScrollbar.Visibility = DevExpress.XtraRichEdit.RichEditScrollbarVisibility.Hidden;
+            this.richEditCtlPreview.Options.VerticalRuler.Visibility = DevExpress.XtraRichEdit.RichEditRulerVisibility.Hidden;
+            this.richEditCtlPreview.Options.VerticalScrollbar.Visibility = DevExpress.XtraRichEdit.RichEditScrollbarVisibility.Hidden;
+            this.richEditCtlPreview.Size = new System.Drawing.Size(83, 27);
+            this.richEditCtlPreview.TabIndex = 3;
+            this.richEditCtlPreview.Text = "rich";
+            this.richEditCtlPreview.Visible = false;
             // 
             // panelControl5
             // 
@@ -855,14 +864,6 @@
             this.BusDate.Caption = "BusDate";
             this.BusDate.FieldName = "gridBusDate";
             this.BusDate.Name = "BusDate";
-            // 
-            // webBrowser2
-            // 
-            this.webBrowser2.Location = new System.Drawing.Point(6, 5);
-            this.webBrowser2.MinimumSize = new System.Drawing.Size(20, 20);
-            this.webBrowser2.Name = "webBrowser2";
-            this.webBrowser2.Size = new System.Drawing.Size(322, 427);
-            this.webBrowser2.TabIndex = 91;
             // 
             // FrmAccountSummary
             // 

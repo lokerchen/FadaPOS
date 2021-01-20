@@ -94,11 +94,13 @@ namespace SuperPOS.UI.TA
             sysData.GetTaCheckOrder();
             sysData.GetUsrBase();
             sysData.GetTaOrderItem();
-            sysData.GetTaPreview();
+            //sysData.GetTaPreview();
 
             webBrowser2.Navigate("about:blank/");
 
-            GetBindData(CommonDAL.GetBusDate());
+            deDay.Text = CommonDAL.GetBusDate();
+
+            GetBindData(deDay.Text);
             
             //richEditCtlPreview.Font = new Font(@"Courier New", 10f);
 
@@ -109,14 +111,12 @@ namespace SuperPOS.UI.TA
 
             //richEditCtlPreview.Text = SetPreviewInfo(PreviewContent);
 
-            var lstGsSet1 = CommonData.TaPrtSetupGeneralSet1;
-            if (lstGsSet1.Any())
-            {
-                TaPrtSetupGeneralSet1Info taPrtSetupGeneralSet1Info = lstGsSet1.FirstOrDefault();
-                PrtLang = taPrtSetupGeneralSet1Info.PrtLang;
-            }
-
-            deDay.Text = CommonDAL.GetBusDate();
+            //var lstGsSet1 = CommonData.TaPrtSetupGeneralSet1;
+            //if (lstGsSet1.Any())
+            //{
+            //    TaPrtSetupGeneralSet1Info taPrtSetupGeneralSet1Info = lstGsSet1.FirstOrDefault();
+            //    PrtLang = taPrtSetupGeneralSet1Info.PrtLang;
+            //}
 
             gvTaShowOrder.FocusedRowHandle = gvTaShowOrder.RowCount - 1;
 
@@ -144,12 +144,13 @@ namespace SuperPOS.UI.TA
         /// <param name="busDate">营业日</param>
         private void GetBindData(string busDate)
         {
-            var lstDb = from check in CommonData.TaCheckOrder
+            var lstCo = CommonData.TaCheckOrder.Where(s => s.IsPaid.Equals("Y"));
+
+            var lstDb = from check in lstCo
                         join user in CommonData.UsrBase
                             on check.StaffID equals user.ID
                         join driver in CommonData.TaDriver
                             on check.DriverID equals driver.ID
-                        where check.IsPaid.Equals("Y")
                         select new
                         {
                             ID = check.ID,
@@ -174,7 +175,7 @@ namespace SuperPOS.UI.TA
                             gridChange =
                                 (Convert.ToDecimal(check.Paid) - Convert.ToDecimal(check.TotalAmount)) <= 0
                                     ? "0.0"
-                                    : (Convert.ToDecimal(check.Paid) - Convert.ToDecimal(check.TotalAmount)).ToString(),
+                                    : (Convert.ToDecimal(check.Paid) - Convert.ToDecimal(check.TotalAmount)).ToString("0.00"),
                             gridRefNo = check.RefNum,
                             gridDeliveryFee = check.DeliveryFee,
                             gridStaffId = check.StaffID,
@@ -187,83 +188,7 @@ namespace SuperPOS.UI.TA
             gvTaShowOrder.Columns["gridOrderTime"].BestFit();
             gvTaShowOrder.FocusedRowHandle = gvTaShowOrder.RowCount - 1;
 
-            #region 数据计算
-            if (lstDb.Any())
-            {
-                dDelivery = lstDb.ToList().Any(s => s.gridOrderType.Equals(PubComm.ORDER_TYPE_DELIVERY) && s.gridBusDate.Equals(busDate))
-                            ? lstDb.ToList().Where(s => s.gridOrderType.Equals(PubComm.ORDER_TYPE_DELIVERY) && s.gridBusDate.Equals(busDate)).Sum(s => Convert.ToDecimal(s.gridTotal))
-                            : 0.00m;
-                txtDelivery.Text = dDelivery.ToString("0.00");
-
-                dCollection = lstDb.ToList().Any(s => s.gridOrderType.Equals(PubComm.ORDER_TYPE_COLLECTION) && s.gridBusDate.Equals(busDate))
-                              ? lstDb.ToList().Where(s => s.gridOrderType.Equals(PubComm.ORDER_TYPE_COLLECTION) && s.gridBusDate.Equals(busDate)).Sum(s => Convert.ToDecimal(s.gridTotal))
-                              : 0.00m;
-                txtCollection.Text = dCollection.ToString("0.00");
-
-                dShop = lstDb.ToList().Any(s => s.gridOrderType.Equals(PubComm.ORDER_TYPE_SHOP) && s.gridBusDate.Equals(busDate))
-                        ? lstDb.ToList().Where(s => s.gridOrderType.Equals(PubComm.ORDER_TYPE_SHOP) && s.gridBusDate.Equals(busDate)).Sum(s => Convert.ToDecimal(s.gridTotal))
-                        : 0.00m;
-                txtShop.Text = dShop.ToString("0.00");
-
-                dFastFood = lstDb.ToList().Any(s => s.gridOrderType.Equals(PubComm.ORDER_TYPE_FAST_FOOD) && s.gridBusDate.Equals(busDate))
-                            ? lstDb.ToList().Where(s => s.gridOrderType.Equals(PubComm.ORDER_TYPE_FAST_FOOD) && s.gridBusDate.Equals(busDate)).Sum(s => Convert.ToDecimal(s.gridTotal))
-                            : 0.00m;
-                txtFastFood.Text = dFastFood.ToString("0.00");
-
-                //dEatIn = lstDb.ToList().Any(s => s.gridOrderType.Equals(PubComm.ORDER_TYPE_EAT_IN) && s.gridBusDate.Equals(busDate))
-                //         ? lstDb.ToList().Where(s => s.gridOrderType.Equals(PubComm.ORDER_TYPE_EAT_IN) && s.gridBusDate.Equals(busDate)).Sum(s => Convert.ToDecimal(s.gridTotal))
-                //         : 0.00m;
-                dEatIn = 0.00m;
-                txtEatIn.Text = dEatIn.ToString("0.00");
-
-                dTotalTA = dDelivery + dCollection + dShop;
-                txtTotalTA.Text = dTotalTA.ToString("0.00");
-
-                dTotalTaking = dTotalTA + dEatIn;
-                txtTotalTaking.Text = dTotalTaking.ToString("0.00");
-
-                dTotalOrder = lstDb.Count(s => s.gridBusDate.Equals(busDate));
-                txtTotalOrder.Text = dTotalOrder.ToString("0.00");
-
-                dDC = lstDb.ToList().Where(s => s.gridBusDate.Equals(busDate)).Sum(s => Convert.ToDecimal(s.gridDisount));
-                txtDc.Text = dDC.ToString("0.00");
-
-                dSC = lstDb.ToList().Where(s => s.gridBusDate.Equals(busDate)).Sum(s => Convert.ToDecimal(s.gridSurcharge));
-                txtSc.Text = dSC.ToString("0.00");
-            }
-            else
-            {
-                dDelivery = 0.00m;
-                txtDelivery.Text = @"0.00";
-
-                dCollection = 0.00m;
-                txtCollection.Text = @"0.00";
-
-                dShop = 0.00m;
-                txtShop.Text = @"0.00";
-
-                dFastFood = 0.00m;
-                txtFastFood.Text = @"0.00";
-
-                dEatIn = 0.00m;
-                txtEatIn.Text = @"0.00";
-
-                dTotalTA = dDelivery + dCollection + dShop;
-                txtTotalTA.Text = @"0.00";
-
-                dTotalTaking = dTotalTA + dEatIn;
-                txtTotalTaking.Text = @"0.00";
-
-                dTotalOrder = 0.00m;
-                txtTotalOrder.Text = @"0.00";
-
-                dDC = 0.00m;
-                txtDc.Text = @"0.00";
-
-                dSC = 0.00m;
-                txtSc.Text = @"0.00";
-            }
-            #endregion
+            SetTxtContent(busDate);
         }
         #endregion
 
@@ -697,10 +622,12 @@ namespace SuperPOS.UI.TA
                                                                      SetPrtInfo(CommonData.TaOrderItem.Where(s => s.CheckCode.Equals(strChkOrder) && s.BusDate.Equals(deDay.Text)).ToList()),
                                                                      strBusDate,
                                                                      taCheckOrderInfo);
+            frmTaPaymentShop.Location = panelControl4.Location;
+            frmTaPaymentShop.Size = panelControl4.Size;
 
             frmTaPaymentShop.ShowDialog();
 
-            GetBindData(CommonDAL.GetBusDate());
+            GetBindData(deDay.Text);
         }
 
         #region 设置打印相关信息
@@ -735,6 +662,87 @@ namespace SuperPOS.UI.TA
                 FrmTaSummaryManagement frmTaSummaryManagement = new FrmTaSummaryManagement();
                 frmTaSummaryManagement.ShowDialog();
             }
+        }
+
+        private void SetTxtContent(string busDate)
+        {
+            #region 数据计算
+            if (gvTaShowOrder.RowCount > 0)
+            {
+                for (int i = 0; i < gvTaShowOrder.RowCount; i++)
+                {
+                    if (gvTaShowOrder.GetRowCellValue(i, "gridBusDate").Equals(busDate))
+                    {
+                        if (gvTaShowOrder.GetRowCellValue(i, "gridOrderType").Equals(PubComm.ORDER_TYPE_DELIVERY))
+                            dDelivery += gvTaShowOrder.GetRowCellValue(i, "gridTotal") == null ? 0.00m : Convert.ToDecimal(gvTaShowOrder.GetRowCellValue(i, "gridTotal"));
+                        else if (gvTaShowOrder.GetRowCellValue(i, "gridOrderType").Equals(PubComm.ORDER_TYPE_COLLECTION))
+                            dCollection += gvTaShowOrder.GetRowCellValue(i, "gridTotal") == null ? 0.00m : Convert.ToDecimal(gvTaShowOrder.GetRowCellValue(i, "gridTotal"));
+                        else if (gvTaShowOrder.GetRowCellValue(i, "gridOrderType").Equals(PubComm.ORDER_TYPE_SHOP))
+                            dShop += gvTaShowOrder.GetRowCellValue(i, "gridTotal") == null ? 0.00m : Convert.ToDecimal(gvTaShowOrder.GetRowCellValue(i, "gridTotal"));
+                        else if (gvTaShowOrder.GetRowCellValue(i, "gridOrderType").Equals(PubComm.ORDER_TYPE_FAST_FOOD))
+                            dShop += gvTaShowOrder.GetRowCellValue(i, "gridTotal") == null ? 0.00m : Convert.ToDecimal(gvTaShowOrder.GetRowCellValue(i, "gridTotal"));
+
+                        dDC += gvTaShowOrder.GetRowCellValue(i, "gridDisount") == null ? 0.00m : Convert.ToDecimal(gvTaShowOrder.GetRowCellValue(i, "gridDisount"));
+                        dSC += gvTaShowOrder.GetRowCellValue(i, "gridSurcharge") == null ? 0.00m : Convert.ToDecimal(gvTaShowOrder.GetRowCellValue(i, "gridSurcharge"));
+                    }
+                }
+
+                txtDelivery.Text = dDelivery.ToString("0.00");
+                txtCollection.Text = dCollection.ToString("0.00");
+                txtShop.Text = dShop.ToString("0.00");
+                txtFastFood.Text = dFastFood.ToString("0.00");
+
+                //dEatIn = lstDb.ToList().Any(s => s.gridOrderType.Equals(PubComm.ORDER_TYPE_EAT_IN) && s.gridBusDate.Equals(busDate))
+                //         ? lstDb.ToList().Where(s => s.gridOrderType.Equals(PubComm.ORDER_TYPE_EAT_IN) && s.gridBusDate.Equals(busDate)).Sum(s => Convert.ToDecimal(s.gridTotal))
+                //         : 0.00m;
+                dEatIn = 0.00m;
+                txtEatIn.Text = dEatIn.ToString("0.00");
+
+                dTotalTA = dDelivery + dCollection + dShop;
+                txtTotalTA.Text = dTotalTA.ToString("0.00");
+
+                dTotalTaking = dTotalTA + dEatIn;
+                txtTotalTaking.Text = dTotalTaking.ToString("0.00");
+
+                dTotalOrder = gvTaShowOrder.RowCount;
+                txtTotalOrder.Text = dTotalOrder.ToString();
+
+                txtDc.Text = dDC.ToString("0.00");
+                txtSc.Text = dSC.ToString("0.00");
+            }
+            else
+            {
+                dDelivery = 0.00m;
+                txtDelivery.Text = @"0.00";
+
+                dCollection = 0.00m;
+                txtCollection.Text = @"0.00";
+
+                dShop = 0.00m;
+                txtShop.Text = @"0.00";
+
+                dFastFood = 0.00m;
+                txtFastFood.Text = @"0.00";
+
+                dEatIn = 0.00m;
+                txtEatIn.Text = @"0.00";
+
+                dTotalTA = dDelivery + dCollection + dShop;
+                txtTotalTA.Text = @"0.00";
+
+                dTotalTaking = dTotalTA + dEatIn;
+                txtTotalTaking.Text = @"0.00";
+
+                dTotalOrder = 0.00m;
+                txtTotalOrder.Text = @"0.00";
+
+                dDC = 0.00m;
+                txtDc.Text = @"0.00";
+
+                dSC = 0.00m;
+                txtSc.Text = @"0.00";
+            }
+            #endregion
         }
     }
 }
