@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmTaSummaryManagement));
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.btnExit = new DevExpress.XtraEditors.SimpleButton();
@@ -76,6 +77,7 @@
             this.repositoryItemCheckedComboBoxEdit1 = new DevExpress.XtraEditors.Repository.RepositoryItemCheckedComboBoxEdit();
             this.repositoryItemCheckEdit1 = new DevExpress.XtraEditors.Repository.RepositoryItemCheckEdit();
             this.repositoryItemCheckEdit2 = new DevExpress.XtraEditors.Repository.RepositoryItemCheckEdit();
+            this.tTimer = new System.Windows.Forms.Timer(this.components);
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.deDay.Properties)).BeginInit();
             this.groupBox5.SuspendLayout();
@@ -166,24 +168,25 @@
             // deDay
             // 
             this.deDay.EditValue = "2020-09-26";
-            this.deDay.Location = new System.Drawing.Point(711, 403);
+            this.deDay.Location = new System.Drawing.Point(709, 402);
             this.deDay.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.deDay.Name = "deDay";
             this.deDay.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 14F);
             this.deDay.Properties.Appearance.Options.UseFont = true;
             this.deDay.Properties.Appearance.Options.UseTextOptions = true;
             this.deDay.Properties.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.deDay.Size = new System.Drawing.Size(129, 30);
+            this.deDay.Properties.AutoHeight = false;
+            this.deDay.Size = new System.Drawing.Size(130, 30);
             this.deDay.TabIndex = 83;
             // 
             // label5
             // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(668, 405);
+            this.label5.Location = new System.Drawing.Point(665, 402);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(41, 19);
+            this.label5.Size = new System.Drawing.Size(41, 31);
             this.label5.TabIndex = 4;
             this.label5.Text = "Date";
+            this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // btnDateLeft
             // 
@@ -201,7 +204,7 @@
             this.btnDateLeft.Location = new System.Drawing.Point(592, 402);
             this.btnDateLeft.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnDateLeft.Name = "btnDateLeft";
-            this.btnDateLeft.Size = new System.Drawing.Size(71, 27);
+            this.btnDateLeft.Size = new System.Drawing.Size(70, 30);
             this.btnDateLeft.TabIndex = 81;
             this.btnDateLeft.Click += new System.EventHandler(this.btnDateLeft_Click);
             // 
@@ -221,7 +224,7 @@
             this.btnDateRight.Location = new System.Drawing.Point(844, 402);
             this.btnDateRight.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnDateRight.Name = "btnDateRight";
-            this.btnDateRight.Size = new System.Drawing.Size(71, 27);
+            this.btnDateRight.Size = new System.Drawing.Size(70, 30);
             this.btnDateRight.TabIndex = 82;
             this.btnDateRight.Click += new System.EventHandler(this.btnDateRight_Click);
             // 
@@ -362,6 +365,7 @@
             this.btnUp.Size = new System.Drawing.Size(48, 47);
             this.btnUp.TabIndex = 76;
             this.btnUp.Text = ">>";
+            this.btnUp.Click += new System.EventHandler(this.btnUp_Click);
             // 
             // btnDown
             // 
@@ -382,6 +386,7 @@
             this.btnDown.Size = new System.Drawing.Size(48, 47);
             this.btnDown.TabIndex = 77;
             this.btnDown.Text = "<<";
+            this.btnDown.Click += new System.EventHandler(this.btnDown_Click);
             // 
             // btnArchiveDayRecord
             // 
@@ -422,6 +427,7 @@
             this.btnSelectAllOrders.Size = new System.Drawing.Size(120, 73);
             this.btnSelectAllOrders.TabIndex = 74;
             this.btnSelectAllOrders.Text = "Select All Orders";
+            this.btnSelectAllOrders.Click += new System.EventHandler(this.btnSelectAllOrders_Click);
             // 
             // btnPrintAllOrders
             // 
@@ -573,6 +579,8 @@
             // 
             this.gvTaShowOrder.Appearance.EvenRow.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
             this.gvTaShowOrder.Appearance.EvenRow.Options.UseBackColor = true;
+            this.gvTaShowOrder.Appearance.FocusedRow.BackColor = System.Drawing.Color.RoyalBlue;
+            this.gvTaShowOrder.Appearance.FocusedRow.Options.UseBackColor = true;
             this.gvTaShowOrder.Appearance.HeaderPanel.Options.UseTextOptions = true;
             this.gvTaShowOrder.Appearance.HeaderPanel.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.gvTaShowOrder.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
@@ -601,8 +609,8 @@
             this.gvTaShowOrder.OptionsView.EnableAppearanceOddRow = true;
             this.gvTaShowOrder.OptionsView.ShowGroupPanel = false;
             this.gvTaShowOrder.OptionsView.ShowIndicator = false;
-            this.gvTaShowOrder.RowClick += new DevExpress.XtraGrid.Views.Grid.RowClickEventHandler(this.gvTaShowOrder_RowClick);
             this.gvTaShowOrder.CustomDrawRowIndicator += new DevExpress.XtraGrid.Views.Grid.RowIndicatorCustomDrawEventHandler(this.gvTaShowOrder_CustomDrawRowIndicator);
+            this.gvTaShowOrder.SelectionChanged += new DevExpress.Data.SelectionChangedEventHandler(this.gvTaShowOrder_SelectionChanged);
             // 
             // ID
             // 
@@ -622,7 +630,7 @@
             this.CheckCode.FieldName = "gridOrderNo";
             this.CheckCode.Name = "CheckCode";
             this.CheckCode.Visible = true;
-            this.CheckCode.VisibleIndex = 2;
+            this.CheckCode.VisibleIndex = 1;
             // 
             // OrderTime
             // 
@@ -634,7 +642,7 @@
             this.OrderTime.FieldName = "gridOrderTime";
             this.OrderTime.Name = "OrderTime";
             this.OrderTime.Visible = true;
-            this.OrderTime.VisibleIndex = 3;
+            this.OrderTime.VisibleIndex = 2;
             // 
             // Payment
             // 
@@ -646,7 +654,7 @@
             this.Payment.FieldName = "gridPayType";
             this.Payment.Name = "Payment";
             this.Payment.Visible = true;
-            this.Payment.VisibleIndex = 4;
+            this.Payment.VisibleIndex = 3;
             // 
             // PayOrderType
             // 
@@ -658,7 +666,7 @@
             this.PayOrderType.FieldName = "gridOrderType";
             this.PayOrderType.Name = "PayOrderType";
             this.PayOrderType.Visible = true;
-            this.PayOrderType.VisibleIndex = 5;
+            this.PayOrderType.VisibleIndex = 4;
             // 
             // TotalAmount
             // 
@@ -670,7 +678,7 @@
             this.TotalAmount.FieldName = "gridTotal";
             this.TotalAmount.Name = "TotalAmount";
             this.TotalAmount.Visible = true;
-            this.TotalAmount.VisibleIndex = 6;
+            this.TotalAmount.VisibleIndex = 5;
             // 
             // StaffName
             // 
@@ -682,7 +690,7 @@
             this.StaffName.FieldName = "gridStaff";
             this.StaffName.Name = "StaffName";
             this.StaffName.Visible = true;
-            this.StaffName.VisibleIndex = 7;
+            this.StaffName.VisibleIndex = 6;
             // 
             // DriverName
             // 
@@ -747,6 +755,12 @@
             this.repositoryItemCheckEdit2.ValueChecked = "1";
             this.repositoryItemCheckEdit2.ValueUnchecked = "0";
             // 
+            // tTimer
+            // 
+            this.tTimer.Enabled = true;
+            this.tTimer.Interval = 1000;
+            this.tTimer.Tick += new System.EventHandler(this.tTimer_Tick);
+            // 
             // FrmTaSummaryManagement
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 14F);
@@ -762,7 +776,6 @@
             this.Load += new System.EventHandler(this.FrmTaSummaryManagement_Load);
             this.SizeChanged += new System.EventHandler(this.FrmTaSummaryManagement_SizeChanged);
             this.groupBox1.ResumeLayout(false);
-            this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.deDay.Properties)).EndInit();
             this.groupBox5.ResumeLayout(false);
             this.groupBox5.PerformLayout();
@@ -834,5 +847,6 @@
         private DevExpress.XtraEditors.Repository.RepositoryItemCheckEdit repositoryItemCheckEdit1;
         private DevExpress.XtraEditors.Repository.RepositoryItemCheckedComboBoxEdit repositoryItemCheckedComboBoxEdit1;
         private DevExpress.XtraEditors.Repository.RepositoryItemCheckEdit repositoryItemCheckEdit2;
+        private System.Windows.Forms.Timer tTimer;
     }
 }

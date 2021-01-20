@@ -30,6 +30,8 @@ namespace SuperPOS.UI.TA
             sysData.GetTaOrderItem();
             sysData.GetTaPreview();
 
+            txtCurrentDate.Text = DateTime.Now.ToShortDateString();
+
             GetBindData(CommonDAL.GetBusDate());
 
             deDay.Text = CommonDAL.GetBusDate();
@@ -127,13 +129,35 @@ namespace SuperPOS.UI.TA
             }
         }
 
-        private void gvTaShowOrder_RowClick(object sender, DevExpress.XtraGrid.Views.Grid.RowClickEventArgs e)
+        private void btnUp_Click(object sender, EventArgs e)
         {
-            //Console.WriteLine(@"2");
+            if (gvTaShowOrder.RowCount > 1)
+            {
+                gvTaShowOrder.FocusedRowHandle -= 1;
+                //gvTaShowOrder.MovePrev();
+                //gvTaShowOrder.SetFocusedRowModified();
+                //gvTaShowOrder.RefreshRow(gvTaShowOrder.FocusedRowHandle);
+                gvTaShowOrder.Focus();
+            }
+        }
 
-            //gvTaShowOrder.GetFocusedRowCellValue("ID");
-            //gvTaShowOrder.FocusedColumn = gvTaShowOrder.Columns[1];
+        private void btnDown_Click(object sender, EventArgs e)
+        {
+            if (gvTaShowOrder.FocusedRowHandle < gvTaShowOrder.RowCount - 1)
+            {
+                gvTaShowOrder.FocusedRowHandle += 1;
+                //gvTaShowOrder.MoveNext();
+                gvTaShowOrder.Focus();
+            }
+        }
 
+        private void tTimer_Tick(object sender, EventArgs e)
+        {
+            txtCurrentTime.Text = DateTime.Now.ToLongTimeString();
+        }
+
+        private void gvTaShowOrder_SelectionChanged(object sender, DevExpress.Data.SelectionChangedEventArgs e)
+        {
             if (gvTaShowOrder.RowCount < 1) return;
 
             int[] iSelectRows = gvTaShowOrder.GetSelectedRows();
@@ -157,6 +181,11 @@ namespace SuperPOS.UI.TA
 
             txtRemainingOrderQty.Text = (iAllOrder - iSelectOrder).ToString();
             txtRemainingTotalAmt.Text = (dAllTotal - dSelectTotal).ToString("0.00");
+        }
+
+        private void btnSelectAllOrders_Click(object sender, EventArgs e)
+        {
+            gvTaShowOrder.SelectAll();
         }
     }
 }
