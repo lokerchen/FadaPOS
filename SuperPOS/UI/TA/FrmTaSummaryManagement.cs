@@ -25,10 +25,9 @@ namespace SuperPOS.UI.TA
         {
             SystemData sysData = new SystemData();
 
-            sysData.GetTaCheckOrder();
-            sysData.GetUsrBase();
-            sysData.GetTaOrderItem();
-            sysData.GetTaPreview();
+            //sysData.GetTaCheckOrder();
+            //sysData.GetUsrBase();
+            //sysData.GetTaPreview();
 
             txtCurrentDate.Text = DateTime.Now.ToShortDateString();
 
@@ -39,6 +38,8 @@ namespace SuperPOS.UI.TA
             gvTaShowOrder.FocusedRowHandle = gvTaShowOrder.RowCount - 1;
 
             asfc.controllInitializeSize(this);
+
+            sysData.GetTaOrderItem();
         }
 
         private void FrmTaSummaryManagement_SizeChanged(object sender, EventArgs e)
@@ -58,15 +59,9 @@ namespace SuperPOS.UI.TA
         /// <param name="busDate">营业日</param>
         private void GetBindData(string busDate)
         {
-            var lstDb = from check in CommonData.TaCheckOrder
-                        join user in CommonData.UsrBase
-                            on check.StaffID equals user.ID
-                        join driver in CommonData.TaDriver
-                            on check.DriverID equals driver.ID
-                        where check.IsPaid.Equals("Y")
+            var lstDb = from check in CommonData.GetAccountSummaryInfos
                         select new
                         {
-                            RowCheck = "0",
                             ID = check.ID,
                             gridOrderNo = check.CheckCode,
                             gridPayType = (GetAllPayType(check.PayTypePay1, check.PayType1) + @" "
@@ -77,9 +72,9 @@ namespace SuperPOS.UI.TA
                             gridOrderType = check.PayOrderType,
                             gridOrderTime = check.PayTime,
                             gridTotal = check.TotalAmount,
-                            gridDriver = driver.DriverName,
+                            gridDriver = check.DriverName,
                             //gridDriver = "",
-                            gridStaff = user.UsrName,
+                            gridStaff = check.UsrName,
                             gridCustID = check.CustomerID,
                             gridDiscountPer = check.PayPerDiscount,
                             gridDisount = check.PayDiscount,

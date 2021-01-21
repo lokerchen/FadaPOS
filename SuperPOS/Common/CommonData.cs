@@ -109,5 +109,7 @@ namespace SuperPOS.Common
         public static IList<TaSysPrtSetKitchenInfo> TaSysPrtSetKitchen { get; set; }
 
         public static IList<TaComePhoneInfo> TaComePhoneInfo { get; set; } 
+
+        public static IList<AccountSummaryInfo> GetAccountSummaryInfos { get; set; }
     }
 }

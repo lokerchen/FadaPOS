@@ -46,6 +46,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Entities\AccountSummaryInfo.cs" />
     <Compile Include="Entities\CompAddrInfo.cs" />
     <Compile Include="Entities\DataManagerInfo.cs" />
     <Compile Include="Entities\GenSetInfo.cs" />

@@ -111,5 +111,7 @@ namespace SuperPOS.Common
         public void GetTaSysPrtSetKitchen() { CommonData.TaSysPrtSetKitchen = _control.SelectAll<TaSysPrtSetKitchenInfo>(); }
 
         public void GetComePhoneInfo() { CommonData.TaComePhoneInfo = _control.SelectAll<TaComePhoneInfo>(); }
+
+        public void GetAccountSummary() { CommonData.GetAccountSummaryInfos = _control.GetAccountSummary(); }
     }
 }

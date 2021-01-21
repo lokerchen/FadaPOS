@@ -2,8 +2,12 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
+using DevExpress.Xpo.DB.Helpers;
+using DevExpress.Xpo.Helpers;
 using NHibernate;
 using NHibernate.Criterion;
+using NHibernate.Transform;
+using SuperPOS.Domain.Entities;
 
 namespace SuperPOS.Common
 {
@@ -332,5 +336,77 @@ namespace SuperPOS.Common
             }
         }
         #endregion
+
+        public IList<AccountSummaryInfo> GetAccountSummary()
+        {
+            using (ISession session = SessionFactory.OpenSession())
+            {
+                string sql = "SELECT " +
+                             "CO.ID AS ID," +
+                             "CO.CheckCode AS CheckCode," +
+                             "CO.PayType1 AS PayType1," +
+                             "CO.PayType2 AS PayType2," +
+                             "CO.PayType3 AS PayType3," +
+                             "CO.PayType4 AS PayType4," +
+                             "CO.PayType5 AS PayType5," +
+                             "CO.PayOrderType AS PayOrderType," +
+                             "CO.PayTime AS PayTime," +
+                             "CO.TotalAmount AS TotalAmount," +
+                             "TD.DriverName AS DriverName," +
+                             "UB.UsrName AS UsrName," +
+                             "CO.CustomerID AS CustomerID," +
+                             "CO.PayPerDiscount AS PayPerDiscount," +
+                             "CO.PayDiscount AS PayDiscount," +
+                             "CO.MenuAmount AS MenuAmount," +
+                             "CO.BusDate AS BusDate," +
+                             "CO.Paid AS Paid," +
+                             "CO.RefNum AS RefNum," +
+                             "CO.DeliveryFee AS DeliveryFee," +
+                             "CO.StaffID AS StaffID," +
+                             "CO.PaySurcharge AS PaySurcharge," +
+                             "CO.PayTypePay1 AS PayTypePay1," +
+                             "CO.PayTypePay2 AS PayTypePay2," +
+                             "CO.PayTypePay3 AS PayTypePay3," +
+                             "CO.PayTypePay4 AS PayTypePay4," +
+                             "CO.PayTypePay5 AS PayTypePay5 " +
+                             "FROM Ta_CheckOrder CO " +
+                             "LEFT JOIN Usr_Base UB ON CO.StaffID = UB.ID " +
+                             "LEFT JOIN Ta_Driver TD ON CO.DriverID = TD.ID " +
+                             "WHERE CO.IsPaid = 'Y'";
+                //return session.CreateSQLQuery(sql).List<AccountSummaryInfo>();
+                IList<object[]> query = session.CreateSQLQuery(sql).List<object[]>();
+                IList<AccountSummaryInfo> result = query.Select(s => new AccountSummaryInfo(
+                                                   s[0] == null ? 0 : Convert.ToInt32(s[0]),
+                                                   s[1]?.ToString() ?? "",
+                                                   s[2]?.ToString() ?? "",
+                                                   s[3]?.ToString() ?? "",
+                                                   s[4]?.ToString() ?? "",
+                                                   s[5]?.ToString() ?? "",
+                                                   s[6]?.ToString() ?? "",
+                                                   s[7]?.ToString() ?? "",
+                                                   s[8]?.ToString() ?? "",
+                                                   s[9] == null ? 0.00m : Convert.ToDecimal(s[9]),
+                                                   s[10]?.ToString() ?? "",
+                                                   s[11]?.ToString() ?? "",
+                                                   s[12] == null ? 0 : Convert.ToInt32(s[12]),
+                                                   s[13]?.ToString() ?? "",
+                                                   s[14] == null ? 0.00m : Convert.ToDecimal(s[14]),
+                                                   s[15] == null ? 0.00m : Convert.ToDecimal(s[15]),
+                                                   s[16]?.ToString() ?? "",
+                                                   s[17]?.ToString() ?? "",
+                                                   s[18]?.ToString() ?? "",
+                                                   s[19] == null ? 0.00m : Convert.ToDecimal(s[19]),
+                                                   s[20] == null ? 0 : Convert.ToInt32(s[20]),
+                                                   s[21] == null ? 0.00m : Convert.ToDecimal(s[21]),
+                                                   s[22]?.ToString() ?? "",
+                                                   s[23]?.ToString() ?? "",
+                                                   s[24]?.ToString() ?? "",
+                                                   s[25]?.ToString() ?? "",
+                                                   s[26]?.ToString() ?? ""
+                                                   )).ToList();
+                return result;
+            }
+                
+        }
     }
 }

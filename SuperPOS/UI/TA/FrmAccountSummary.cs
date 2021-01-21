@@ -91,9 +91,9 @@ namespace SuperPOS.UI.TA
         {
             SystemData sysData = new SystemData();
 
-            sysData.GetTaCheckOrder();
-            sysData.GetUsrBase();
-            sysData.GetTaOrderItem();
+            //sysData.GetTaCheckOrder();
+            //sysData.GetUsrBase();
+            //sysData.GetTaOrderItem();
             //sysData.GetTaPreview();
 
             webBrowser2.Navigate("about:blank/");
@@ -123,6 +123,8 @@ namespace SuperPOS.UI.TA
             //RefreshPrtInfo();
 
             asfc.controllInitializeSize(this);
+
+            sysData.GetTaOrderItem();
         }
 
         #region 窗口大小自动改变
@@ -144,13 +146,7 @@ namespace SuperPOS.UI.TA
         /// <param name="busDate">营业日</param>
         private void GetBindData(string busDate)
         {
-            var lstCo = CommonData.TaCheckOrder.Where(s => s.IsPaid.Equals("Y"));
-
-            var lstDb = from check in lstCo
-                        join user in CommonData.UsrBase
-                            on check.StaffID equals user.ID
-                        join driver in CommonData.TaDriver
-                            on check.DriverID equals driver.ID
+            var lstDb = from check in CommonData.GetAccountSummaryInfos
                         select new
                         {
                             ID = check.ID,
@@ -163,9 +159,9 @@ namespace SuperPOS.UI.TA
                             gridOrderType = check.PayOrderType,
                             gridOrderTime = check.PayTime,
                             gridTotal = check.TotalAmount,
-                            gridDriver = driver.DriverName,
+                            gridDriver = check.DriverName,
                             //gridDriver = "",
-                            gridStaff = user.UsrName,
+                            gridStaff = check.UsrName,
                             gridCustID = check.CustomerID,
                             gridDiscountPer = check.PayPerDiscount,
                             gridDisount = check.PayDiscount,
