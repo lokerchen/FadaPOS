@@ -408,5 +408,56 @@ namespace SuperPOS.Common
             }
                 
         }
+
+        public PrtAccountSummaryInfo GetPrtAccountSummary()
+        {
+            using (ISession session = SessionFactory.OpenSession())
+            {
+                string sql = "SELECT " +
+                             "SUM(DeliveryFee) AS DeliveryFee," +
+                             "SUM(CASE WHEN PayOrderType = 'SHOP' THEN 1 ELSE 0 END) AS ShopCount," +
+                             "SUM(CASE WHEN PayOrderType = 'SHOP' THEN TotalAmount ELSE 0 END) AS ShopAmount," +
+                             "SUM(CASE WHEN PayOrderType = 'DELIVERY' THEN 1 ELSE 0 END) AS DeliveryCount," +
+                             "SUM(CASE WHEN PayOrderType = 'DELIVERY' THEN TotalAmount ELSE 0 END) AS DeliveryAmount," +
+                             "SUM(CASE WHEN PayOrderType = 'COLLECTION' THEN 1 ELSE 0 END) AS CollectionCount," +
+                             "SUM(CASE WHEN PayOrderType = 'COLLECTION' THEN TotalAmount ELSE 0 END) AS CollectionAmount," +
+                             "SUM(CASE WHEN CAST(PayTypePay1 AS NUMERIC) > 0 THEN 1 ELSE 0 END) AS PayType1Count," +
+                             "SUM(CASE WHEN CAST(PayTypePay1 AS NUMERIC) > 0 THEN PayTypePay1 ELSE 0 END) AS PayType1Amount," +
+                             "SUM(CASE WHEN CAST(PayTypePay2 AS NUMERIC) > 0 THEN 1 ELSE 0 END) AS PayType2Count," +
+                             "SUM(CASE WHEN CAST(PayTypePay2 AS NUMERIC) > 0 THEN PayTypePay2 ELSE 0 END) AS PayType2Amount," +
+                             "SUM(CASE WHEN CAST(PayTypePay3 AS NUMERIC) > 0 THEN 1 ELSE 0 END) AS PayType3Count," +
+                             "SUM(CASE WHEN CAST(PayTypePay3 AS NUMERIC) > 0 THEN PayTypePay3 ELSE 0 END) AS PayType3Amount," +
+                             "SUM(CASE WHEN CAST(PayTypePay4 AS NUMERIC) > 0 THEN 1 ELSE 0 END) AS PayType4Count," +
+                             "SUM(CASE WHEN CAST(PayTypePay4 AS NUMERIC) > 0 THEN PayTypePay4 ELSE 0 END) AS PayType4Amount," +
+                             "SUM(CASE WHEN CAST(PayTypePay5 AS NUMERIC) > 0 THEN 1 ELSE 0 END) AS PayType5Count," +
+                             "SUM(CASE WHEN CAST(PayTypePay5 AS NUMERIC) > 0 THEN PayTypePay5 ELSE 0 END) AS PayType5Amount," +
+                             "SUM(CASE WHEN PayOrderType = 'FAST FOOD' THEN 1 ELSE 0 END) AS FastFoodCount," +
+                             "SUM(CASE WHEN PayOrderType = 'FAST FOOD' THEN TotalAmount ELSE 0 END) AS FastFoodAmount " +
+                             "FROM Ta_CheckOrder WHERE IsPaid = 'Y'";
+                IList<object[]> query = session.CreateSQLQuery(sql).List<object[]>();
+                IList<PrtAccountSummaryInfo> result = query.Select(s => new PrtAccountSummaryInfo(
+                                                   s[0] == null ? 0.00m : Convert.ToDecimal(s[0]),
+                                                   s[1] == null ? 0 : Convert.ToInt32(s[1]),
+                                                   s[2] == null ? 0.00m : Convert.ToDecimal(s[2]),
+                                                   s[3] == null ? 0 : Convert.ToInt32(s[3]),
+                                                   s[4] == null ? 0.00m : Convert.ToDecimal(s[4]),
+                                                   s[5] == null ? 0 : Convert.ToInt32(s[5]),
+                                                   s[6] == null ? 0.00m : Convert.ToDecimal(s[6]),
+                                                   s[7] == null ? 0 : Convert.ToInt32(s[7]),
+                                                   s[8] == null ? 0.00m : Convert.ToDecimal(s[8]),
+                                                   s[9] == null ? 0 : Convert.ToInt32(s[9]),
+                                                   s[10] == null ? 0.00m : Convert.ToDecimal(s[10]),
+                                                   s[11] == null ? 0 : Convert.ToInt32(s[11]),
+                                                   s[12] == null ? 0.00m : Convert.ToDecimal(s[12]),
+                                                   s[13] == null ? 0 : Convert.ToInt32(s[13]),
+                                                   s[14] == null ? 0.00m : Convert.ToDecimal(s[14]),
+                                                   s[15] == null ? 0 : Convert.ToInt32(s[15]),
+                                                   s[16] == null ? 0.00m : Convert.ToDecimal(s[16]),
+                                                   s[17] == null ? 0 : Convert.ToInt32(s[17]),
+                                                   s[18] == null ? 0.00m : Convert.ToDecimal(s[18])
+                                                   )).ToList();
+                return result.FirstOrDefault();
+            }
+        }
     }
 }

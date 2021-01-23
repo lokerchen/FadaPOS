@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Diagnostics;
 using System.Drawing;
 using System.Text;
 using System.Linq;
@@ -14,6 +15,7 @@ using SuperPOS.Common;
 using SuperPOS.Domain.Entities;
 using SuperPOS.Print;
 using HtmlAgilityPack;
+using Microsoft.Office.Interop.Excel;
 
 namespace SuperPOS.UI.TA
 {
@@ -424,7 +426,16 @@ namespace SuperPOS.UI.TA
 
         private void btnAccount_Click(object sender, EventArgs e)
         {
+            PrtAccountSummaryInfo prtAsi = CommonData.GetPrtAccountSummaryInfos;
+            prtAsi.TotalVAT = "0.00";
+            prtAsi.NotPaid = "0.00";
+            prtAsi.PayType1 = "Cash";
+            prtAsi.PayType2 = "Card";
+            prtAsi.PayType3 = "Other";
+            prtAsi.PayType4 = "VISA";
+            prtAsi.PayType5 = "PayPal";
 
+            CommonDAL.ExportToExcel(prtAsi);
         }
 
         private void btnLanguage_Click(object sender, EventArgs e)
@@ -641,5 +652,7 @@ namespace SuperPOS.UI.TA
             }
             #endregion
         }
+
+        
     }
 }

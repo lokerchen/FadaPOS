@@ -111,5 +111,7 @@ namespace SuperPOS.Common
         public static IList<TaComePhoneInfo> TaComePhoneInfo { get; set; } 
 
         public static IList<AccountSummaryInfo> GetAccountSummaryInfos { get; set; }
+
+        public static PrtAccountSummaryInfo GetPrtAccountSummaryInfos { get; set; }
     }
 }

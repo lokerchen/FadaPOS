@@ -51,6 +51,7 @@
     <Compile Include="Entities\DataManagerInfo.cs" />
     <Compile Include="Entities\GenSetInfo.cs" />
     <Compile Include="Entities\KeypadInfo.cs" />
+    <Compile Include="Entities\PrtAccountSummaryInfo.cs" />
     <Compile Include="Entities\ShopDetailInfo.cs" />
     <Compile Include="Entities\SysPrtSetInfo.cs" />
     <Compile Include="Entities\SysUsrMaintenanceInfo.cs" />
