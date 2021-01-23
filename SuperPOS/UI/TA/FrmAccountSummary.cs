@@ -73,7 +73,9 @@ namespace SuperPOS.UI.TA
 
         //默认语言标识状态位
         public int iLangStatusId = PubComm.MENU_LANG_DEFAULT;
-        
+
+        private IList<AccountSummaryInfo> lstAccountSummaryInfos = CommonData.GetAccountSummaryInfos;
+
         public FrmAccountSummary()
         {
             InitializeComponent();
@@ -98,7 +100,8 @@ namespace SuperPOS.UI.TA
 
             webBrowser2.Navigate("about:blank/");
 
-            deDay.Text = CommonDAL.GetBusDate();
+            //deDay.Text = CommonDAL.GetBusDate();
+            deDay.Text = DateTime.Now.ToShortDateString();
 
             GetBindData(deDay.Text);
             
@@ -146,119 +149,17 @@ namespace SuperPOS.UI.TA
         /// <param name="busDate">营业日</param>
         private void GetBindData(string busDate)
         {
-            var lstDb = from check in CommonData.GetAccountSummaryInfos
-                        select new
-                        {
-                            ID = check.ID,
-                            gridOrderNo = check.CheckCode,
-                            gridPayType = (GetAllPayType(check.PayTypePay1, check.PayType1) + @" "
-                                            + GetAllPayType(check.PayTypePay2, check.PayType2) + @" "
-                                            + GetAllPayType(check.PayTypePay3, check.PayType3) + @" "
-                                            + GetAllPayType(check.PayTypePay4, check.PayType4) + @" "
-                                            + GetAllPayType(check.PayTypePay5, check.PayType5)).Trim(),
-                            gridOrderType = check.PayOrderType,
-                            gridOrderTime = check.PayTime,
-                            gridTotal = check.TotalAmount,
-                            gridDriver = check.DriverName,
-                            //gridDriver = "",
-                            gridStaff = check.UsrName,
-                            gridCustID = check.CustomerID,
-                            gridDiscountPer = check.PayPerDiscount,
-                            gridDisount = check.PayDiscount,
-                            gridSubTotal = check.MenuAmount,
-                            gridBusDate = check.BusDate,
-                            gridTendered = check.Paid,
-                            gridChange =
-                                (Convert.ToDecimal(check.Paid) - Convert.ToDecimal(check.TotalAmount)) <= 0
-                                    ? "0.0"
-                                    : (Convert.ToDecimal(check.Paid) - Convert.ToDecimal(check.TotalAmount)).ToString("0.00"),
-                            gridRefNo = check.RefNum,
-                            gridDeliveryFee = check.DeliveryFee,
-                            gridStaffId = check.StaffID,
-                            gridSurcharge = check.PaySurcharge
-                        };
+            var lstDb = lstAccountSummaryInfos;
 
             gridControlTaShowOrder.DataSource = !string.IsNullOrEmpty(busDate)
-                                                ? lstDb.Where(s => s.gridBusDate.Equals(busDate)).ToList()
+                                                ? lstDb.Where(s => s.BusDate.Equals(busDate)).ToList()
                                                 : lstDb.ToList();
-            gvTaShowOrder.Columns["gridOrderTime"].BestFit();
+            gvTaShowOrder.Columns["PayTime"].BestFit();
             gvTaShowOrder.FocusedRowHandle = gvTaShowOrder.RowCount - 1;
 
             SetTxtContent(busDate);
         }
         #endregion
-
-        private string GetAllPayType(string s1, string s2)
-        {
-            return Convert.ToDecimal(s1) > 0.00m ? s2 : "";
-        }
-
-        private string SetPreviewInfo(string content)
-        {
-            new SystemData().GetTaOrderItem();
-            var lstOI = CommonData.TaOrderItem.Where(s => s.CheckCode.Equals(strChkOrder) && s.BusDate.Equals(deDay.Text)).ToList();
-
-            PrtTemplataTa prtTemplataTa = new PrtTemplataTa();
-            //prtTemplataTa = ptl;
-            prtTemplataTa.OrderNo = strChkOrder;
-            prtTemplataTa.PayType = GetPayType(strChkOrder);
-            prtTemplataTa.TotalAmount = sTotalAmount;
-            prtTemplataTa.SubTotal = sSubTotal;
-            prtTemplataTa.StaffName = sStaff;
-            prtTemplataTa.ItemCount = sItemCount >= 1 ? sItemCount.ToString() : "0";
-            prtTemplataTa.Discount = sDiscount + sDiscountPer;
-
-            #region VAT计算
-            if (CommonData.GenSet.Any())
-            {
-                prtTemplataTa.Rete1 = CommonData.GenSet.FirstOrDefault().VATPer + @"%";
-
-                var lstVAT = from oi in CommonData.TaOrderItem.Where(s => s.CheckCode.Equals(strChkOrder) && s.BusDate.Equals(deDay.Text))
-                             join mi in CommonData.TaMenuItem on oi.ItemCode equals mi.MiDishCode
-                             where !string.IsNullOrEmpty(mi.MiRmk) && mi.MiRmk.Contains(@"Without VAT")
-                             select new
-                             {
-                                 itemTotalPrice = oi.ItemTotalPrice
-                             };
-
-                decimal dTotal = 0;
-                decimal dVatTmp = 0;
-                decimal dVat = 0;
-
-                if (lstVAT.Any())
-                {
-                    dTotal = lstVAT.ToList().Sum(vat => Convert.ToDecimal(vat.itemTotalPrice));
-                    //交税
-                    dVatTmp = (Convert.ToDecimal(CommonData.GenSet.FirstOrDefault().VATPer) / 100) * dTotal;
-
-                    dVat = Math.Round(dVatTmp, 2, MidpointRounding.AwayFromZero);
-                }
-
-                prtTemplataTa.VatA = dVat.ToString();
-                //税前
-                prtTemplataTa.Net1 = dTotal.ToString();
-                //总价
-                prtTemplataTa.Gross1 = (dTotal - dVat).ToString();
-                prtTemplataTa.Rate2 = "0.00%";
-                prtTemplataTa.Net2 = (Convert.ToDecimal(sSubTotal) - dTotal).ToString();
-                prtTemplataTa.VatB = "0.00";
-                prtTemplataTa.Gross2 = (Convert.ToDecimal(sSubTotal) - dTotal).ToString();
-            }
-            else
-            {
-                prtTemplataTa.Rete1 = "0.00%";
-                prtTemplataTa.Net1 = "0.00";
-                prtTemplataTa.VatA = "0.00";
-                prtTemplataTa.Gross1 = "0.00";
-                prtTemplataTa.Rate2 = "0.00%";
-                prtTemplataTa.Net2 = "0.00";
-                prtTemplataTa.VatB = "0.00";
-                prtTemplataTa.Gross2 = "0.00";
-            }
-            #endregion
-
-            return PrtTemplate.ReplacePrtKeysPreviewContent(content, prtTemplataTa, lstOI, PrtLang);
-        }
 
         private void gvTaShowOrder_CustomDrawRowIndicator(object sender, DevExpress.XtraGrid.Views.Grid.RowIndicatorCustomDrawEventArgs e)
         {
@@ -277,24 +178,24 @@ namespace SuperPOS.UI.TA
             }
 
             intChkID = Convert.ToInt32(gvTaShowOrder.GetRowCellValue(gvTaShowOrder.FocusedRowHandle, "ID").ToString());
-            strChkOrder = gvTaShowOrder.GetRowCellValue(gvTaShowOrder.FocusedRowHandle, "gridOrderNo").ToString();
-            intCusID = Convert.ToInt32(gvTaShowOrder.GetRowCellValue(gvTaShowOrder.FocusedRowHandle, "gridCustID").ToString());
-            sTotalAmount = gvTaShowOrder.GetRowCellValue(gvTaShowOrder.FocusedRowHandle, "gridTotal").ToString();
-            sStaff = gvTaShowOrder.GetRowCellValue(gvTaShowOrder.FocusedRowHandle, "gridStaff").ToString();
-            sDiscountPer = gvTaShowOrder.GetRowCellValue(gvTaShowOrder.FocusedRowHandle, "gridDiscountPer").ToString();
-            sDiscount = gvTaShowOrder.GetRowCellValue(gvTaShowOrder.FocusedRowHandle, "gridDisount").ToString();
-            sSubTotal = gvTaShowOrder.GetRowCellValue(gvTaShowOrder.FocusedRowHandle, "gridSubTotal").ToString();
-            sOrderType = gvTaShowOrder.GetRowCellValue(gvTaShowOrder.FocusedRowHandle, "gridOrderType").ToString();
-            checkBusDate = gvTaShowOrder.GetRowCellValue(gvTaShowOrder.FocusedRowHandle, "gridBusDate").ToString();
+            strChkOrder = gvTaShowOrder.GetRowCellValue(gvTaShowOrder.FocusedRowHandle, "CheckCode").ToString();
+            intCusID = Convert.ToInt32(gvTaShowOrder.GetRowCellValue(gvTaShowOrder.FocusedRowHandle, "CustomerID").ToString());
+            sTotalAmount = gvTaShowOrder.GetRowCellValue(gvTaShowOrder.FocusedRowHandle, "TotalAmount").ToString();
+            sStaff = gvTaShowOrder.GetRowCellValue(gvTaShowOrder.FocusedRowHandle, "UsrName").ToString();
+            sDiscountPer = gvTaShowOrder.GetRowCellValue(gvTaShowOrder.FocusedRowHandle, "PayPerDiscount").ToString();
+            sDiscount = gvTaShowOrder.GetRowCellValue(gvTaShowOrder.FocusedRowHandle, "PayDiscount").ToString();
+            sSubTotal = gvTaShowOrder.GetRowCellValue(gvTaShowOrder.FocusedRowHandle, "MenuAmount").ToString();
+            sOrderType = gvTaShowOrder.GetRowCellValue(gvTaShowOrder.FocusedRowHandle, "PayOrderType").ToString();
+            checkBusDate = gvTaShowOrder.GetRowCellValue(gvTaShowOrder.FocusedRowHandle, "BusDate").ToString();
 
-            sTendered = gvTaShowOrder.GetRowCellValue(gvTaShowOrder.FocusedRowHandle, "gridTendered").ToString();
-            sChange = gvTaShowOrder.GetRowCellValue(gvTaShowOrder.FocusedRowHandle, "gridChange").ToString();
-            sRefNo = gvTaShowOrder.GetRowCellValue(gvTaShowOrder.FocusedRowHandle, "gridRefNo") == null ? "" : gvTaShowOrder.GetRowCellValue(gvTaShowOrder.FocusedRowHandle, "gridRefNo").ToString();
-            sDeliveryFee = gvTaShowOrder.GetRowCellValue(gvTaShowOrder.FocusedRowHandle, "gridDeliveryFee") == null ? "" : gvTaShowOrder.GetRowCellValue(gvTaShowOrder.FocusedRowHandle, "gridDeliveryFee").ToString();
+            sTendered = gvTaShowOrder.GetRowCellValue(gvTaShowOrder.FocusedRowHandle, "Paid").ToString();
+            sChange = gvTaShowOrder.GetRowCellValue(gvTaShowOrder.FocusedRowHandle, "Change").ToString();
+            sRefNo = gvTaShowOrder.GetRowCellValue(gvTaShowOrder.FocusedRowHandle, "RefNum") == null ? "" : gvTaShowOrder.GetRowCellValue(gvTaShowOrder.FocusedRowHandle, "RefNum").ToString();
+            sDeliveryFee = gvTaShowOrder.GetRowCellValue(gvTaShowOrder.FocusedRowHandle, "DeliveryFee") == null ? "" : gvTaShowOrder.GetRowCellValue(gvTaShowOrder.FocusedRowHandle, "DeliveryFee").ToString();
 
-            intStaffID = Convert.ToInt32(gvTaShowOrder.GetRowCellValue(gvTaShowOrder.FocusedRowHandle, "gridStaffId").ToString());
+            intStaffID = Convert.ToInt32(gvTaShowOrder.GetRowCellValue(gvTaShowOrder.FocusedRowHandle, "StaffID").ToString());
 
-            sSurcharge = gvTaShowOrder.GetRowCellValue(gvTaShowOrder.FocusedRowHandle, "gridSurcharge") == null ? "0.00" : gvTaShowOrder.GetRowCellValue(gvTaShowOrder.FocusedRowHandle, "gridSurcharge").ToString();
+            sSurcharge = gvTaShowOrder.GetRowCellValue(gvTaShowOrder.FocusedRowHandle, "PaySurcharge") == null ? "0.00" : gvTaShowOrder.GetRowCellValue(gvTaShowOrder.FocusedRowHandle, "PaySurcharge").ToString();
 
             sItemCount = GetItemCount(strChkOrder);
 
@@ -655,7 +556,7 @@ namespace SuperPOS.UI.TA
         {
             if ((int)e.Modifiers == ((int)Keys.Control + ((int)Keys.Shift)) && e.KeyCode == Keys.P)
             {
-                FrmTaSummaryManagement frmTaSummaryManagement = new FrmTaSummaryManagement();
+                FrmTaSummaryManagement frmTaSummaryManagement = new FrmTaSummaryManagement(lstAccountSummaryInfos);
                 frmTaSummaryManagement.ShowDialog();
             }
         }
@@ -667,19 +568,19 @@ namespace SuperPOS.UI.TA
             {
                 for (int i = 0; i < gvTaShowOrder.RowCount; i++)
                 {
-                    if (gvTaShowOrder.GetRowCellValue(i, "gridBusDate").Equals(busDate))
+                    if (gvTaShowOrder.GetRowCellValue(i, "BusDate").Equals(busDate))
                     {
-                        if (gvTaShowOrder.GetRowCellValue(i, "gridOrderType").Equals(PubComm.ORDER_TYPE_DELIVERY))
-                            dDelivery += gvTaShowOrder.GetRowCellValue(i, "gridTotal") == null ? 0.00m : Convert.ToDecimal(gvTaShowOrder.GetRowCellValue(i, "gridTotal"));
-                        else if (gvTaShowOrder.GetRowCellValue(i, "gridOrderType").Equals(PubComm.ORDER_TYPE_COLLECTION))
-                            dCollection += gvTaShowOrder.GetRowCellValue(i, "gridTotal") == null ? 0.00m : Convert.ToDecimal(gvTaShowOrder.GetRowCellValue(i, "gridTotal"));
-                        else if (gvTaShowOrder.GetRowCellValue(i, "gridOrderType").Equals(PubComm.ORDER_TYPE_SHOP))
-                            dShop += gvTaShowOrder.GetRowCellValue(i, "gridTotal") == null ? 0.00m : Convert.ToDecimal(gvTaShowOrder.GetRowCellValue(i, "gridTotal"));
-                        else if (gvTaShowOrder.GetRowCellValue(i, "gridOrderType").Equals(PubComm.ORDER_TYPE_FAST_FOOD))
-                            dShop += gvTaShowOrder.GetRowCellValue(i, "gridTotal") == null ? 0.00m : Convert.ToDecimal(gvTaShowOrder.GetRowCellValue(i, "gridTotal"));
+                        if (gvTaShowOrder.GetRowCellValue(i, "PayOrderType").Equals(PubComm.ORDER_TYPE_DELIVERY))
+                            dDelivery += gvTaShowOrder.GetRowCellValue(i, "TotalAmount") == null ? 0.00m : Convert.ToDecimal(gvTaShowOrder.GetRowCellValue(i, "TotalAmount"));
+                        else if (gvTaShowOrder.GetRowCellValue(i, "PayOrderType").Equals(PubComm.ORDER_TYPE_COLLECTION))
+                            dCollection += gvTaShowOrder.GetRowCellValue(i, "TotalAmount") == null ? 0.00m : Convert.ToDecimal(gvTaShowOrder.GetRowCellValue(i, "TotalAmount"));
+                        else if (gvTaShowOrder.GetRowCellValue(i, "PayOrderType").Equals(PubComm.ORDER_TYPE_SHOP))
+                            dShop += gvTaShowOrder.GetRowCellValue(i, "TotalAmount") == null ? 0.00m : Convert.ToDecimal(gvTaShowOrder.GetRowCellValue(i, "TotalAmount"));
+                        else if (gvTaShowOrder.GetRowCellValue(i, "PayOrderType").Equals(PubComm.ORDER_TYPE_FAST_FOOD))
+                            dShop += gvTaShowOrder.GetRowCellValue(i, "TotalAmount") == null ? 0.00m : Convert.ToDecimal(gvTaShowOrder.GetRowCellValue(i, "TotalAmount"));
 
-                        dDC += gvTaShowOrder.GetRowCellValue(i, "gridDisount") == null ? 0.00m : Convert.ToDecimal(gvTaShowOrder.GetRowCellValue(i, "gridDisount"));
-                        dSC += gvTaShowOrder.GetRowCellValue(i, "gridSurcharge") == null ? 0.00m : Convert.ToDecimal(gvTaShowOrder.GetRowCellValue(i, "gridSurcharge"));
+                        dDC += gvTaShowOrder.GetRowCellValue(i, "PayDiscount") == null ? 0.00m : Convert.ToDecimal(gvTaShowOrder.GetRowCellValue(i, "PayDiscount"));
+                        dSC += gvTaShowOrder.GetRowCellValue(i, "PaySurcharge") == null ? 0.00m : Convert.ToDecimal(gvTaShowOrder.GetRowCellValue(i, "PaySurcharge"));
                     }
                 }
 

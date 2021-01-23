@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using DevExpress.XtraEditors;
 using SuperPOS.Common;
+using SuperPOS.Domain.Entities;
 
 namespace SuperPOS.UI.TA
 {
@@ -16,9 +17,17 @@ namespace SuperPOS.UI.TA
     {
         private AutoSizeFormClass asfc = new AutoSizeFormClass();
 
+        private IList<AccountSummaryInfo> lstAccountSummaryInfos = new List<AccountSummaryInfo>();
+
         public FrmTaSummaryManagement()
         {
             InitializeComponent();
+        }
+
+        public FrmTaSummaryManagement(IList<AccountSummaryInfo> lstAsi)
+        {
+            InitializeComponent();
+            lstAccountSummaryInfos = lstAsi;
         }
 
         private void FrmTaSummaryManagement_Load(object sender, EventArgs e)
@@ -31,9 +40,9 @@ namespace SuperPOS.UI.TA
 
             txtCurrentDate.Text = DateTime.Now.ToShortDateString();
 
-            GetBindData(CommonDAL.GetBusDate());
-
             deDay.Text = CommonDAL.GetBusDate();
+
+            GetBindData(deDay.Text);
 
             gvTaShowOrder.FocusedRowHandle = gvTaShowOrder.RowCount - 1;
 
@@ -59,42 +68,11 @@ namespace SuperPOS.UI.TA
         /// <param name="busDate">营业日</param>
         private void GetBindData(string busDate)
         {
-            var lstDb = from check in CommonData.GetAccountSummaryInfos
-                        select new
-                        {
-                            ID = check.ID,
-                            gridOrderNo = check.CheckCode,
-                            gridPayType = (GetAllPayType(check.PayTypePay1, check.PayType1) + @" "
-                                           + GetAllPayType(check.PayTypePay2, check.PayType2) + @" "
-                                           + GetAllPayType(check.PayTypePay3, check.PayType3) + @" "
-                                           + GetAllPayType(check.PayTypePay4, check.PayType4) + @" "
-                                           + GetAllPayType(check.PayTypePay5, check.PayType5)).Trim(),
-                            gridOrderType = check.PayOrderType,
-                            gridOrderTime = check.PayTime,
-                            gridTotal = check.TotalAmount,
-                            gridDriver = check.DriverName,
-                            //gridDriver = "",
-                            gridStaff = check.UsrName,
-                            gridCustID = check.CustomerID,
-                            gridDiscountPer = check.PayPerDiscount,
-                            gridDisount = check.PayDiscount,
-                            gridSubTotal = check.MenuAmount,
-                            gridBusDate = check.BusDate,
-                            gridTendered = check.Paid,
-                            gridChange =
-                                (Convert.ToDecimal(check.Paid) - Convert.ToDecimal(check.TotalAmount)) <= 0
-                                    ? "0.0"
-                                    : (Convert.ToDecimal(check.Paid) - Convert.ToDecimal(check.TotalAmount)).ToString(),
-                            gridRefNo = check.RefNum,
-                            gridDeliveryFee = check.DeliveryFee,
-                            gridStaffId = check.StaffID,
-                            gridSurcharge = check.PaySurcharge
-                        };
-
+            var lstDb = lstAccountSummaryInfos;
             gridControlTaSummaryManagement.DataSource = !string.IsNullOrEmpty(busDate)
-                                                        ? lstDb.Where(s => s.gridBusDate.Equals(busDate)).ToList()
+                                                        ? lstDb.Where(s => s.BusDate.Equals(busDate)).ToList()
                                                         : lstDb.ToList();
-            gvTaShowOrder.Columns["gridOrderTime"].BestFit();
+            gvTaShowOrder.Columns["PayTime"].BestFit();
             gvTaShowOrder.FocusedRowHandle = gvTaShowOrder.RowCount - 1;
         }
         #endregion
@@ -163,13 +141,13 @@ namespace SuperPOS.UI.TA
             decimal dAllTotal = 0.0m;
             for (int i = 0; i < gvTaShowOrder.RowCount; i++)
             {
-                dAllTotal += Convert.ToDecimal(gvTaShowOrder.GetRowCellValue(i, "gridTotal"));
+                dAllTotal += Convert.ToDecimal(gvTaShowOrder.GetRowCellValue(i, "Paid"));
             }
 
             //被选中的行数
             int iSelectOrder = iSelectRows.Length;
             //被选中的订单总和
-            decimal dSelectTotal = iSelectRows.Sum(s => Convert.ToDecimal(gvTaShowOrder.GetRowCellValue(s, "gridTotal")));
+            decimal dSelectTotal = iSelectRows.Sum(s => Convert.ToDecimal(gvTaShowOrder.GetRowCellValue(s, "Paid")));
 
             txtSelectedOrders.Text = iSelectOrder.ToString();
             txtSelectedAmount.Text = dSelectTotal.ToString("0.00");

@@ -754,7 +754,7 @@
             this.CheckCode.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.CheckCode.AppearanceHeader.Options.UseFont = true;
             this.CheckCode.Caption = "Order No.";
-            this.CheckCode.FieldName = "gridOrderNo";
+            this.CheckCode.FieldName = "CheckCode";
             this.CheckCode.Name = "CheckCode";
             this.CheckCode.Visible = true;
             this.CheckCode.VisibleIndex = 0;
@@ -766,7 +766,7 @@
             this.OrderTime.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.OrderTime.AppearanceHeader.Options.UseFont = true;
             this.OrderTime.Caption = "Order Time";
-            this.OrderTime.FieldName = "gridOrderTime";
+            this.OrderTime.FieldName = "PayTime";
             this.OrderTime.Name = "OrderTime";
             this.OrderTime.Visible = true;
             this.OrderTime.VisibleIndex = 2;
@@ -778,7 +778,7 @@
             this.Payment.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Payment.AppearanceHeader.Options.UseFont = true;
             this.Payment.Caption = "Payment";
-            this.Payment.FieldName = "gridPayType";
+            this.Payment.FieldName = "Paid";
             this.Payment.Name = "Payment";
             this.Payment.Visible = true;
             this.Payment.VisibleIndex = 3;
@@ -790,7 +790,7 @@
             this.PayOrderType.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.PayOrderType.AppearanceHeader.Options.UseFont = true;
             this.PayOrderType.Caption = "Type";
-            this.PayOrderType.FieldName = "gridOrderType";
+            this.PayOrderType.FieldName = "PayOrderType";
             this.PayOrderType.Name = "PayOrderType";
             this.PayOrderType.Visible = true;
             this.PayOrderType.VisibleIndex = 1;
@@ -802,7 +802,7 @@
             this.TotalAmount.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.TotalAmount.AppearanceHeader.Options.UseFont = true;
             this.TotalAmount.Caption = "Total";
-            this.TotalAmount.FieldName = "gridTotal";
+            this.TotalAmount.FieldName = "TotalAmount";
             this.TotalAmount.Name = "TotalAmount";
             this.TotalAmount.Visible = true;
             this.TotalAmount.VisibleIndex = 4;
@@ -814,7 +814,7 @@
             this.StaffName.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.StaffName.AppearanceHeader.Options.UseFont = true;
             this.StaffName.Caption = "Staff";
-            this.StaffName.FieldName = "gridStaff";
+            this.StaffName.FieldName = "UsrName";
             this.StaffName.Name = "StaffName";
             this.StaffName.Visible = true;
             this.StaffName.VisibleIndex = 6;
@@ -826,7 +826,7 @@
             this.DriverName.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.DriverName.AppearanceHeader.Options.UseFont = true;
             this.DriverName.Caption = "Driver";
-            this.DriverName.FieldName = "gridDriver";
+            this.DriverName.FieldName = "DriverName";
             this.DriverName.Name = "DriverName";
             this.DriverName.Visible = true;
             this.DriverName.VisibleIndex = 5;
@@ -838,31 +838,31 @@
             this.CustomerID.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.CustomerID.AppearanceHeader.Options.UseFont = true;
             this.CustomerID.Caption = "CustomerID";
-            this.CustomerID.FieldName = "gridCustID";
+            this.CustomerID.FieldName = "CustomerID";
             this.CustomerID.Name = "CustomerID";
             // 
             // DiscountPer
             // 
             this.DiscountPer.Caption = "Discount Per";
-            this.DiscountPer.FieldName = "gridDiscountPer";
+            this.DiscountPer.FieldName = "PayPerDiscount";
             this.DiscountPer.Name = "DiscountPer";
             // 
             // Discount
             // 
             this.Discount.Caption = "Discount";
-            this.Discount.FieldName = "gridDiscount";
+            this.Discount.FieldName = "PayDiscount";
             this.Discount.Name = "Discount";
             // 
             // SubToal
             // 
             this.SubToal.Caption = "SubTotal";
-            this.SubToal.FieldName = "gridSubTotal";
+            this.SubToal.FieldName = "MenuAmount";
             this.SubToal.Name = "SubToal";
             // 
             // BusDate
             // 
             this.BusDate.Caption = "BusDate";
-            this.BusDate.FieldName = "gridBusDate";
+            this.BusDate.FieldName = "BusDate";
             this.BusDate.Name = "BusDate";
             // 
             // FrmAccountSummary

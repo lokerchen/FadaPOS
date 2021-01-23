@@ -37,6 +37,10 @@ namespace SuperPOS.Domain.Entities
         public virtual int StaffID { get; set; }
         public virtual decimal PaySurcharge { get; set; }
 
+        public virtual string PayType { get; set; }
+        public virtual string Change { get; set; }
+        
+
         public AccountSummaryInfo()
         {
             
@@ -97,6 +101,16 @@ namespace SuperPOS.Domain.Entities
             this.PayTypePay3 = PayTypePay3;
             this.PayTypePay4 = PayTypePay4;
             this.PayTypePay5 = PayTypePay5;
+
+            this.PayType = ((Convert.ToDecimal(this.PayTypePay1) > 0.00m ? this.PayType1 : "") + @" "
+                  + (Convert.ToDecimal(this.PayTypePay2) > 0.00m ? this.PayType2 : "") + @" "
+                  + (Convert.ToDecimal(this.PayTypePay3) > 0.00m ? this.PayType3 : "") + @" "
+                  + (Convert.ToDecimal(this.PayTypePay4) > 0.00m ? this.PayType4 : "") + @" "
+                  + (Convert.ToDecimal(this.PayTypePay5) > 0.00m ? this.PayType5 : "")).Trim();
+
+            this.Change = (Convert.ToDecimal(this.Paid) - Convert.ToDecimal(this.TotalAmount)) <= 0
+                          ? "0.0"
+                          : (Convert.ToDecimal(this.Paid) - Convert.ToDecimal(this.TotalAmount)).ToString("0.00");
         }
     }
 }
