@@ -10,6 +10,9 @@ using System.Windows.Forms;
 using SuperPOS.Domain.Entities;
 using SuperPOS.Print;
 using Microsoft.Office.Interop.Excel;
+using NPOI.HSSF.UserModel;
+using NPOI.SS.UserModel;
+using NPOI.XSSF.UserModel;
 
 namespace SuperPOS.Common
 {
@@ -1182,79 +1185,185 @@ namespace SuperPOS.Common
 
         public static void ExportToExcel(PrtAccountSummaryInfo prtAsI)
         {
-            Microsoft.Office.Interop.Excel.Application objExcelApp = new ApplicationClass();//定义Excel Application对象
-            Workbooks objExcelWorkBooks;//定义Workbook工作簿集合对象
-            Workbook objExcelWorkbook;//定义Excel workbook工作簿对象
-            Worksheet objExcelWorkSheet;//定义Workbook工作表对象
-
             try
             {
-                string workTmp = PubComm.PRT_ACCOUNT_SUMMARY_EXCEL_TEMPLATE;
-                //objExcelApp = new ApplicationClass();
-                objExcelWorkBooks = objExcelApp.Workbooks;
-                objExcelWorkbook = objExcelWorkBooks.Open(workTmp, Type.Missing, Type.Missing, Type.Missing,
-                    Type.Missing, Type.Missing, Type.Missing, Type.Missing, Type.Missing, Type.Missing, Type.Missing,
-                    Type.Missing, Type.Missing, Type.Missing, Type.Missing);
+                //要操作的excel模板文件路径
+                string strTemplatePath = PubComm.PRT_ACCOUNT_SUMMARY_EXCEL_TEMPLATE;
 
-                objExcelWorkSheet = (Worksheet) objExcelWorkbook.Worksheets[1];
-                    //strSheetName是指的Exce工作簿的Sheet名，如果没有命名则为"1" 
-                objExcelWorkSheet.Cells[2, 3] = prtAsI.TotalDeliveryCharge.ToString("0.00"); //intRow,行；intCol;列；strValue，你处理完以后的值
-                objExcelWorkSheet.Cells[3, 3] = prtAsI.TotalVAT;
-                objExcelWorkSheet.Cells[4, 3] = prtAsI.NotPaid;
+                //把文件内容导入到工作薄当中，然后关闭文件
+                FileStream fs = File.OpenRead(strTemplatePath);
+                //IWorkbook workbook = new XSSFWorkbook(fs);
+                HSSFWorkbook workbook = new HSSFWorkbook(fs);
+                fs.Close();
 
+                //编辑工作薄当中内容
+                ISheet sheet = workbook.GetSheetAt(0);
+
+                IRow row = null;
+
+                row = sheet.GetRow(1);
+                row.Cells[2].SetCellValue(prtAsI.TotalDeliveryCharge.ToString("0.00"));
+
+                row = sheet.GetRow(2);
+                row.Cells[2].SetCellValue(prtAsI.TotalVAT);
+
+                row = sheet.GetRow(3);
+                row.Cells[2].SetCellValue(prtAsI.NotPaid);
+
+                row = sheet.GetRow(7);
+                row.Cells[1].SetCellValue(prtAsI.DeliveryCount.ToString());
+                row.Cells[2].SetCellValue(prtAsI.DeliveryAmount.ToString("0.00"));
+
+                row = sheet.GetRow(8);
+                row.Cells[1].SetCellValue(prtAsI.CollectionCount.ToString());
+                row.Cells[2].SetCellValue(prtAsI.CollectionAmount.ToString("0.00"));
+
+                row = sheet.GetRow(9);
+                row.Cells[1].SetCellValue(prtAsI.ShopCount.ToString());
+                row.Cells[2].SetCellValue(prtAsI.ShopAmount.ToString("0.00"));
+
+                row = sheet.GetRow(10);
+                row.Cells[1].SetCellValue(prtAsI.FastFoodCount.ToString());
+                row.Cells[2].SetCellValue(prtAsI.FastFoodAmount.ToString("0.00"));
+
+                row = sheet.GetRow(11);
+                row.Cells[1].SetCellValue(prtAsI.EatInCount.ToString());
+                row.Cells[2].SetCellValue(prtAsI.EatInAmount.ToString("0.00"));
+
+                row = sheet.GetRow(12);
                 int iAllTakeCount = prtAsI.DeliveryCount + prtAsI.CollectionCount + prtAsI.ShopCount + prtAsI.FastFoodCount;
                 decimal dAllTakeAmount = prtAsI.DeliveryAmount + prtAsI.CollectionAmount + prtAsI.ShopAmount + prtAsI.FastFoodAmount;
-                objExcelWorkSheet.Cells[8, 2] = prtAsI.DeliveryCount.ToString();
-                objExcelWorkSheet.Cells[9, 2] = prtAsI.CollectionCount.ToString();
-                objExcelWorkSheet.Cells[10, 2] = prtAsI.ShopCount.ToString();
-                objExcelWorkSheet.Cells[11, 2] = prtAsI.FastFoodCount.ToString();
-                objExcelWorkSheet.Cells[12, 2] = prtAsI.EatInCount.ToString();
-                objExcelWorkSheet.Cells[13, 2] = iAllTakeCount.ToString();
+                row.Cells[1].SetCellValue(iAllTakeCount.ToString());
+                row.Cells[2].SetCellValue(dAllTakeAmount.ToString("0.00"));
 
-                objExcelWorkSheet.Cells[8, 3] = prtAsI.DeliveryAmount.ToString("0.00");
-                objExcelWorkSheet.Cells[9, 3] = prtAsI.CollectionAmount.ToString("0.00");
-                objExcelWorkSheet.Cells[10, 3] = prtAsI.ShopAmount.ToString("0.00");
-                objExcelWorkSheet.Cells[11, 3] = prtAsI.FastFoodAmount.ToString("0.00");
-                objExcelWorkSheet.Cells[12, 3] = prtAsI.EatInAmount.ToString("0.00");
-                objExcelWorkSheet.Cells[13, 3] = dAllTakeAmount.ToString("0.00");
+                row = sheet.GetRow(16);
+                row.Cells[1].SetCellValue(prtAsI.PayType1Count.ToString());
+                row.Cells[2].SetCellValue(prtAsI.PayType1Amount.ToString("0.00"));
+
+                row = sheet.GetRow(17);
+                row.Cells[1].SetCellValue(prtAsI.PayType2Count.ToString());
+                row.Cells[2].SetCellValue(prtAsI.PayType2Amount.ToString("0.00"));
+
+                row = sheet.GetRow(18);
+                row.Cells[1].SetCellValue(prtAsI.PayType3Count.ToString());
+                row.Cells[2].SetCellValue(prtAsI.PayType3Amount.ToString("0.00"));
+
+                row = sheet.GetRow(19);
+                row.Cells[1].SetCellValue(prtAsI.PayType4Count.ToString());
+                row.Cells[2].SetCellValue(prtAsI.PayType4Amount.ToString("0.00"));
+
+                row = sheet.GetRow(20);
+                row.Cells[1].SetCellValue(prtAsI.PayType5Count.ToString());
+                row.Cells[2].SetCellValue(prtAsI.PayType5Amount.ToString("0.00"));
 
                 int iAllPayeCount = prtAsI.PayType1Count + prtAsI.PayType2Count + prtAsI.PayType3Count + prtAsI.PayType4Count + prtAsI.PayType5Count;
                 decimal dAllPayAmount = prtAsI.PayType1Amount + prtAsI.PayType2Amount + prtAsI.PayType3Amount + prtAsI.PayType4Amount + +prtAsI.PayType5Amount;
-                objExcelWorkSheet.Cells[17, 2] = prtAsI.PayType1Count.ToString();
-                objExcelWorkSheet.Cells[18, 2] = prtAsI.PayType2Count.ToString();
-                objExcelWorkSheet.Cells[19, 2] = prtAsI.PayType3Count.ToString();
-                objExcelWorkSheet.Cells[20, 2] = prtAsI.PayType4Count.ToString();
-                objExcelWorkSheet.Cells[21, 2] = prtAsI.PayType5Count.ToString();
-                objExcelWorkSheet.Cells[22, 2] = iAllPayeCount.ToString();
+                row = sheet.GetRow(21);
+                row.Cells[1].SetCellValue(iAllPayeCount.ToString());
+                row.Cells[2].SetCellValue(dAllPayAmount.ToString("0.00"));
 
-                objExcelWorkSheet.Cells[17, 3] = prtAsI.PayType1Amount.ToString("0.00");
-                objExcelWorkSheet.Cells[18, 3] = prtAsI.PayType2Amount.ToString("0.00");
-                objExcelWorkSheet.Cells[19, 3] = prtAsI.PayType3Amount.ToString("0.00");
-                objExcelWorkSheet.Cells[20, 3] = prtAsI.PayType4Amount.ToString("0.00");
-                objExcelWorkSheet.Cells[21, 3] = prtAsI.PayType5Amount.ToString("0.00");
-                objExcelWorkSheet.Cells[22, 3] = dAllPayAmount.ToString("0.00");
-                //object missing = System.Reflection.Missing.Value;
-
+                //把编辑过后的工作薄重新保存为excel文件
                 FolderBrowserDialog dialog = new FolderBrowserDialog();
-                dialog.SelectedPath = @"C:\";
+                dialog.SelectedPath = System.Environment.CurrentDirectory + @"\";
                 dialog.Description = @"Please select save path";
 
-                string path = @"C:\";
+                string path = System.Environment.CurrentDirectory;
 
                 if (dialog.ShowDialog() == DialogResult.OK)
                 {
                     path = dialog.SelectedPath;
                 }
-                string fileName = path + DateTime.Now.Ticks + @".xls";
-                objExcelWorkbook.SaveAs(fileName, Type.Missing, Type.Missing, Type.Missing, Type.Missing, Type.Missing,
-                    XlSaveAsAccessMode.xlNoChange, Type.Missing, Type.Missing, Type.Missing, Type.Missing, Type.Missing);
+                string fileName = path + @"\" + DateTime.Now.Ticks + @".xls";
+
+                FileStream fs2 = File.Create(fileName);
+                workbook.Write(fs2);
+                fs2.Close();
             }
-            finally
+            catch (Exception ex)
             {
-                objExcelApp.Quit();
+                LogHelper.Error("ExportToExcel", ex);
             }
 
+            CommonTool.ShowMessage("File save successful!");
+
+            #region 保存至C盘时存在异常，弃用
+
+            //Microsoft.Office.Interop.Excel.Application objExcelApp = new ApplicationClass();//定义Excel Application对象
+            //Workbooks objExcelWorkBooks;//定义Workbook工作簿集合对象
+            //Workbook objExcelWorkbook;//定义Excel workbook工作簿对象
+            //Worksheet objExcelWorkSheet;//定义Workbook工作表对象
+
+            //try
+            //{
+            //    string workTmp = PubComm.PRT_ACCOUNT_SUMMARY_EXCEL_TEMPLATE;
+            //    //objExcelApp = new ApplicationClass();
+            //    objExcelWorkBooks = objExcelApp.Workbooks;
+            //    objExcelWorkbook = objExcelWorkBooks.Open(workTmp, Type.Missing, Type.Missing, Type.Missing,
+            //        Type.Missing, Type.Missing, Type.Missing, Type.Missing, Type.Missing, Type.Missing, Type.Missing,
+            //        Type.Missing, Type.Missing, Type.Missing, Type.Missing);
+
+            //    objExcelWorkSheet = (Worksheet)objExcelWorkbook.Worksheets[1];
+            //    //strSheetName是指的Exce工作簿的Sheet名，如果没有命名则为"1" 
+            //    objExcelWorkSheet.Cells[2, 3] = prtAsI.TotalDeliveryCharge.ToString("0.00"); //intRow,行；intCol;列；strValue，你处理完以后的值
+            //    objExcelWorkSheet.Cells[3, 3] = prtAsI.TotalVAT;
+            //    objExcelWorkSheet.Cells[4, 3] = prtAsI.NotPaid;
+
+            //    int iAllTakeCount = prtAsI.DeliveryCount + prtAsI.CollectionCount + prtAsI.ShopCount + prtAsI.FastFoodCount;
+            //    decimal dAllTakeAmount = prtAsI.DeliveryAmount + prtAsI.CollectionAmount + prtAsI.ShopAmount + prtAsI.FastFoodAmount;
+            //    objExcelWorkSheet.Cells[8, 2] = prtAsI.DeliveryCount.ToString();
+            //    objExcelWorkSheet.Cells[9, 2] = prtAsI.CollectionCount.ToString();
+            //    objExcelWorkSheet.Cells[10, 2] = prtAsI.ShopCount.ToString();
+            //    objExcelWorkSheet.Cells[11, 2] = prtAsI.FastFoodCount.ToString();
+            //    objExcelWorkSheet.Cells[12, 2] = prtAsI.EatInCount.ToString();
+            //    objExcelWorkSheet.Cells[13, 2] = iAllTakeCount.ToString();
+
+            //    objExcelWorkSheet.Cells[8, 3] = prtAsI.DeliveryAmount.ToString("0.00");
+            //    objExcelWorkSheet.Cells[9, 3] = prtAsI.CollectionAmount.ToString("0.00");
+            //    objExcelWorkSheet.Cells[10, 3] = prtAsI.ShopAmount.ToString("0.00");
+            //    objExcelWorkSheet.Cells[11, 3] = prtAsI.FastFoodAmount.ToString("0.00");
+            //    objExcelWorkSheet.Cells[12, 3] = prtAsI.EatInAmount.ToString("0.00");
+            //    objExcelWorkSheet.Cells[13, 3] = dAllTakeAmount.ToString("0.00");
+
+            //    int iAllPayeCount = prtAsI.PayType1Count + prtAsI.PayType2Count + prtAsI.PayType3Count + prtAsI.PayType4Count + prtAsI.PayType5Count;
+            //    decimal dAllPayAmount = prtAsI.PayType1Amount + prtAsI.PayType2Amount + prtAsI.PayType3Amount + prtAsI.PayType4Amount + +prtAsI.PayType5Amount;
+            //    objExcelWorkSheet.Cells[17, 2] = prtAsI.PayType1Count.ToString();
+            //    objExcelWorkSheet.Cells[18, 2] = prtAsI.PayType2Count.ToString();
+            //    objExcelWorkSheet.Cells[19, 2] = prtAsI.PayType3Count.ToString();
+            //    objExcelWorkSheet.Cells[20, 2] = prtAsI.PayType4Count.ToString();
+            //    objExcelWorkSheet.Cells[21, 2] = prtAsI.PayType5Count.ToString();
+            //    objExcelWorkSheet.Cells[22, 2] = iAllPayeCount.ToString();
+
+            //    objExcelWorkSheet.Cells[17, 3] = prtAsI.PayType1Amount.ToString("0.00");
+            //    objExcelWorkSheet.Cells[18, 3] = prtAsI.PayType2Amount.ToString("0.00");
+            //    objExcelWorkSheet.Cells[19, 3] = prtAsI.PayType3Amount.ToString("0.00");
+            //    objExcelWorkSheet.Cells[20, 3] = prtAsI.PayType4Amount.ToString("0.00");
+            //    objExcelWorkSheet.Cells[21, 3] = prtAsI.PayType5Amount.ToString("0.00");
+            //    objExcelWorkSheet.Cells[22, 3] = dAllPayAmount.ToString("0.00");
+            //    //object missing = System.Reflection.Missing.Value;
+
+            //    FolderBrowserDialog dialog = new FolderBrowserDialog();
+            //    dialog.SelectedPath = @"C:\";
+            //    dialog.Description = @"Please select save path";
+
+            //    string path = @"C:\";
+
+            //    if (dialog.ShowDialog() == DialogResult.OK)
+            //    {
+            //        path = dialog.SelectedPath;
+            //    }
+            //    string fileName = path + DateTime.Now.Ticks + @".xls";
+            //    objExcelWorkbook.SaveAs(fileName, Type.Missing, Type.Missing, Type.Missing, Type.Missing, Type.Missing,
+            //        XlSaveAsAccessMode.xlNoChange, Type.Missing, Type.Missing, Type.Missing, Type.Missing, Type.Missing);
+            //}
+            //finally
+            //{
+            //    objExcelApp.Quit();
+            //}
+
+            #endregion
+
             #region 原导出代码，速度太慢，弃用
+
             //Microsoft.Office.Interop.Excel.Application xlApp = new Microsoft.Office.Interop.Excel.Application();
 
             //if (xlApp == null) return;
@@ -1345,6 +1454,7 @@ namespace SuperPOS.Common
             //xlBook.SaveCopyAs(@"D:\" + DateTime.Now.Ticks + @".xls");
             //xlApp.Quit();
             //xlApp = null;
+
             #endregion
         }
 

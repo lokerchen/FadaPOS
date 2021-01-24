@@ -426,7 +426,7 @@ namespace SuperPOS.UI.TA
 
         private void btnAccount_Click(object sender, EventArgs e)
         {
-            new SystemData().GetPrtAccountSummary("", strBusDate);
+            new SystemData().GetPrtAccountSummary("", deDay.Text);
             PrtAccountSummaryInfo prtAsi = CommonData.GetPrtAccountSummaryInfos;
 
             //临时设置为0
