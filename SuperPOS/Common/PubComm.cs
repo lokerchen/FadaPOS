@@ -111,5 +111,8 @@ namespace SuperPOS.Common
 
         public static string CASH_DRAW_INFO = @"Please check your cash draw Setting!";
         public static string CASH_DRAW_TEXT_TITLE = @"Check Setting";
+
+        public static string PRT_ACCOUNT_SUMMARY_EXCEL_FILE = "ExcelAs.xls";
+        public static string PRT_ACCOUNT_SUMMARY_EXCEL_TEMPLATE = System.Environment.CurrentDirectory + @"\PrintTemplate\" + PRT_ACCOUNT_SUMMARY_EXCEL_FILE;
     }
 }

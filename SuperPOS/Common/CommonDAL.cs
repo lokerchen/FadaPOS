@@ -1182,96 +1182,159 @@ namespace SuperPOS.Common
 
         public static void ExportToExcel(PrtAccountSummaryInfo prtAsI)
         {
-            Microsoft.Office.Interop.Excel.Application xlApp = new Microsoft.Office.Interop.Excel.Application();
+            Microsoft.Office.Interop.Excel.Application objExcelApp = new ApplicationClass();//定义Excel Application对象
+            Workbooks objExcelWorkBooks;//定义Workbook工作簿集合对象
+            Workbook objExcelWorkbook;//定义Excel workbook工作簿对象
+            Worksheet objExcelWorkSheet;//定义Workbook工作表对象
 
-            if (xlApp == null) return;
+            try
+            {
+                string workTmp = PubComm.PRT_ACCOUNT_SUMMARY_EXCEL_TEMPLATE;
+                //objExcelApp = new ApplicationClass();
+                objExcelWorkBooks = objExcelApp.Workbooks;
+                objExcelWorkbook = objExcelWorkBooks.Open(workTmp, Type.Missing, Type.Missing, Type.Missing,
+                    Type.Missing, Type.Missing, Type.Missing, Type.Missing, Type.Missing, Type.Missing, Type.Missing,
+                    Type.Missing, Type.Missing, Type.Missing, Type.Missing);
 
-            //System.Globalization.CultureInfo CurrentCI = System.Threading.Thread.CurrentThread.CurrentCulture;
-            //System.Threading.Thread.CurrentThread.CurrentCulture = new System.Globalization.CultureInfo("en-US");
-            //Microsoft.Office.Interop.Excel.Workbooks workBooks = xlApp.Workbooks;
-            //Microsoft.Office.Interop.Excel.Workbook workbook = workBooks.Add(Microsoft.Office.Interop.Excel.XlWBATemplate.xlWBATWorksheet);
-            //Microsoft.Office.Interop.Excel.Worksheet worksheet = (Microsoft.Office.Interop.Excel.Worksheet)workbook.Worksheets[1];
-            //Microsoft.Office.Interop.Excel.Range range;
+                objExcelWorkSheet = (Worksheet) objExcelWorkbook.Worksheets[1];
+                    //strSheetName是指的Exce工作簿的Sheet名，如果没有命名则为"1" 
+                objExcelWorkSheet.Cells[2, 3] = prtAsI.TotalDeliveryCharge.ToString("0.00"); //intRow,行；intCol;列；strValue，你处理完以后的值
+                objExcelWorkSheet.Cells[3, 3] = prtAsI.TotalVAT;
+                objExcelWorkSheet.Cells[4, 3] = prtAsI.NotPaid;
 
-            Workbook xlBook = xlApp.Workbooks.Add();
+                int iAllTakeCount = prtAsI.DeliveryCount + prtAsI.CollectionCount + prtAsI.ShopCount + prtAsI.FastFoodCount;
+                decimal dAllTakeAmount = prtAsI.DeliveryAmount + prtAsI.CollectionAmount + prtAsI.ShopAmount + prtAsI.FastFoodAmount;
+                objExcelWorkSheet.Cells[8, 2] = prtAsI.DeliveryCount.ToString();
+                objExcelWorkSheet.Cells[9, 2] = prtAsI.CollectionCount.ToString();
+                objExcelWorkSheet.Cells[10, 2] = prtAsI.ShopCount.ToString();
+                objExcelWorkSheet.Cells[11, 2] = prtAsI.FastFoodCount.ToString();
+                objExcelWorkSheet.Cells[12, 2] = prtAsI.EatInCount.ToString();
+                objExcelWorkSheet.Cells[13, 2] = iAllTakeCount.ToString();
 
-            _Worksheet oSheet = (_Worksheet)xlBook.Worksheets[1];
+                objExcelWorkSheet.Cells[8, 3] = prtAsI.DeliveryAmount.ToString("0.00");
+                objExcelWorkSheet.Cells[9, 3] = prtAsI.CollectionAmount.ToString("0.00");
+                objExcelWorkSheet.Cells[10, 3] = prtAsI.ShopAmount.ToString("0.00");
+                objExcelWorkSheet.Cells[11, 3] = prtAsI.FastFoodAmount.ToString("0.00");
+                objExcelWorkSheet.Cells[12, 3] = prtAsI.EatInAmount.ToString("0.00");
+                objExcelWorkSheet.Cells[13, 3] = dAllTakeAmount.ToString("0.00");
 
-            RangeBuild(oSheet, "A1", "C1", @"Account Summary", 20, 2, true);
+                int iAllPayeCount = prtAsI.PayType1Count + prtAsI.PayType2Count + prtAsI.PayType3Count + prtAsI.PayType4Count + prtAsI.PayType5Count;
+                decimal dAllPayAmount = prtAsI.PayType1Amount + prtAsI.PayType2Amount + prtAsI.PayType3Amount + prtAsI.PayType4Amount + +prtAsI.PayType5Amount;
+                objExcelWorkSheet.Cells[17, 2] = prtAsI.PayType1Count.ToString();
+                objExcelWorkSheet.Cells[18, 2] = prtAsI.PayType2Count.ToString();
+                objExcelWorkSheet.Cells[19, 2] = prtAsI.PayType3Count.ToString();
+                objExcelWorkSheet.Cells[20, 2] = prtAsI.PayType4Count.ToString();
+                objExcelWorkSheet.Cells[21, 2] = prtAsI.PayType5Count.ToString();
+                objExcelWorkSheet.Cells[22, 2] = iAllPayeCount.ToString();
 
-            RangeBuild(oSheet, "A2", "B2", @"Total Delivery Charge", 14, 1, false);
-            RangeBuild(oSheet, "C2", "C2", prtAsI.TotalDeliveryCharge.ToString("0.00"), 14, 3, false);
+                objExcelWorkSheet.Cells[17, 3] = prtAsI.PayType1Amount.ToString("0.00");
+                objExcelWorkSheet.Cells[18, 3] = prtAsI.PayType2Amount.ToString("0.00");
+                objExcelWorkSheet.Cells[19, 3] = prtAsI.PayType3Amount.ToString("0.00");
+                objExcelWorkSheet.Cells[20, 3] = prtAsI.PayType4Amount.ToString("0.00");
+                objExcelWorkSheet.Cells[21, 3] = prtAsI.PayType5Amount.ToString("0.00");
+                objExcelWorkSheet.Cells[22, 3] = dAllPayAmount.ToString("0.00");
+                //object missing = System.Reflection.Missing.Value;
+                string fileName = @"D:\" + DateTime.Now.Ticks + @".xls";
+                objExcelWorkbook.SaveAs(fileName, Type.Missing, Type.Missing, Type.Missing, Type.Missing, Type.Missing,
+                    XlSaveAsAccessMode.xlNoChange, Type.Missing, Type.Missing, Type.Missing, Type.Missing, Type.Missing);
+            }
+            finally
+            {
+                objExcelApp.Quit();
+            }
 
-            RangeBuild(oSheet, "A3", "B3", @"Total VAT", 14, 1, false);
-            RangeBuild(oSheet, "C3", "C3", prtAsI.TotalVAT, 14, 3, false);
+            #region 原导出代码，速度太慢，弃用
+            //Microsoft.Office.Interop.Excel.Application xlApp = new Microsoft.Office.Interop.Excel.Application();
 
-            RangeBuild(oSheet, "A4", "B4", @"Not Paid", 14, 1, false);
-            RangeBuild(oSheet, "C4", "C4", prtAsI.NotPaid, 14, 3, false);
-            
-            RangeBuild(oSheet, "A5", "A5", @"", 14, 2, false);
-            RangeBuild(oSheet, "B5", "B5", @"", 14, 2, false);
-            RangeBuild(oSheet, "C5", "C5", @"", 14, 2, false);
+            //if (xlApp == null) return;
 
-            RangeBuild(oSheet, "A6", "C6", @"Total Summary", 20, 2, true);
-            RangeBuild(oSheet, "A7", "A7", @"Order Type", 14, 2, false);
-            RangeBuild(oSheet, "B7", "B7", @"Qty", 14, 2, false);
-            RangeBuild(oSheet, "C7", "C7", @"Account", 14, 2, false);
-            RangeBuild(oSheet, "A8", "A8", @"Delivery", 14, 1, false);
-            RangeBuild(oSheet, "B8", "B8", prtAsI.DeliveryCount.ToString(), 14, 2, false);
-            RangeBuild(oSheet, "C8", "C8", prtAsI.DeliveryAmount.ToString("0.00"), 14, 3, false);
-            RangeBuild(oSheet, "A9", "A9", @"Collection", 14, 1, false);
-            RangeBuild(oSheet, "B9", "B9", prtAsI.CollectionCount.ToString(), 14, 2, false);
-            RangeBuild(oSheet, "C9", "C9", prtAsI.CollectionAmount.ToString("0.00"), 14, 3, false);
-            RangeBuild(oSheet, "A10", "A10", @"Shop", 14, 1, false);
-            RangeBuild(oSheet, "B10", "B10", prtAsI.ShopCount.ToString(), 14, 2, false);
-            RangeBuild(oSheet, "C10", "C10", prtAsI.ShopAmount.ToString("0.00"), 14, 3, false);
-            RangeBuild(oSheet, "A11", "A11", @"Fast Food", 14, 1, false);
-            RangeBuild(oSheet, "B11", "B11", prtAsI.FastFoodCount.ToString(), 14, 2, false);
-            RangeBuild(oSheet, "C11", "C11", prtAsI.FastFoodAmount.ToString("0.00"), 14, 3, false);
-            //Eat In暂时为0
-            RangeBuild(oSheet, "A12", "A12", @"Eat In", 14, 1, false);
-            RangeBuild(oSheet, "B12", "B12", "0", 14, 2, false);
-            RangeBuild(oSheet, "C12", "C12", "0.00", 14, 3, false);
-            int iAllTakeCount = prtAsI.DeliveryCount + prtAsI.CollectionCount + prtAsI.ShopCount + prtAsI.FastFoodCount;
-            decimal dAllTakeAmount = prtAsI.DeliveryAmount + prtAsI.CollectionAmount + prtAsI.ShopAmount + prtAsI.FastFoodAmount;
-            RangeBuild(oSheet, "A13", "A13", @"Total Takings", 14, 1, false);
-            RangeBuild(oSheet, "B13", "B13", iAllTakeCount.ToString(), 14, 2, false);
-            RangeBuild(oSheet, "C13", "C13", dAllTakeAmount.ToString("0.00"), 14, 3, false);
+            ////System.Globalization.CultureInfo CurrentCI = System.Threading.Thread.CurrentThread.CurrentCulture;
+            ////System.Threading.Thread.CurrentThread.CurrentCulture = new System.Globalization.CultureInfo("en-US");
+            ////Microsoft.Office.Interop.Excel.Workbooks workBooks = xlApp.Workbooks;
+            ////Microsoft.Office.Interop.Excel.Workbook workbook = workBooks.Add(Microsoft.Office.Interop.Excel.XlWBATemplate.xlWBATWorksheet);
+            ////Microsoft.Office.Interop.Excel.Worksheet worksheet = (Microsoft.Office.Interop.Excel.Worksheet)workbook.Worksheets[1];
+            ////Microsoft.Office.Interop.Excel.Range range;
 
-            RangeBuild(oSheet, "A14", "A14", @"", 14, 2, false);
-            RangeBuild(oSheet, "B14", "B14", @"", 14, 2, false);
-            RangeBuild(oSheet, "C14", "C14", @"", 14, 2, false);
+            //Workbook xlBook = xlApp.Workbooks.Add();
 
-            RangeBuild(oSheet, "A15", "C15", @"Payment Summary", 20, 2, true);
-            RangeBuild(oSheet, "A16", "A16", @"Payment Type", 14, 2, false);
-            RangeBuild(oSheet, "B16", "B16", @"Qty", 14, 2, false);
-            RangeBuild(oSheet, "C16", "C16", @"Account", 14, 2, false);
-            RangeBuild(oSheet, "A17", "A17", prtAsI.PayType1, 14, 1, false);
-            RangeBuild(oSheet, "B17", "B17", prtAsI.PayType1Count.ToString(), 14, 2, false);
-            RangeBuild(oSheet, "C17", "C17", prtAsI.PayType1Amount.ToString("0.00"), 14, 3, false);
-            RangeBuild(oSheet, "A18", "A18", prtAsI.PayType2, 14, 1, false);
-            RangeBuild(oSheet, "B18", "B18", prtAsI.PayType2Count.ToString(), 14, 2, false);
-            RangeBuild(oSheet, "C18", "C18", prtAsI.PayType2Amount.ToString("0.00"), 14, 3, false);
-            RangeBuild(oSheet, "A19", "A19", prtAsI.PayType3, 14, 1, false);
-            RangeBuild(oSheet, "B19", "B19", prtAsI.PayType3Count.ToString(), 14, 2, false);
-            RangeBuild(oSheet, "C19", "C19", prtAsI.PayType3Amount.ToString("0.00"), 14, 3, false);
-            RangeBuild(oSheet, "A20", "A20", prtAsI.PayType4, 14, 1, false);
-            RangeBuild(oSheet, "B20", "B20", prtAsI.PayType4Count.ToString(), 14, 2, false);
-            RangeBuild(oSheet, "C20", "C20", prtAsI.PayType4Amount.ToString("0.00"), 14, 3, false);
-            RangeBuild(oSheet, "A21", "A21", prtAsI.PayType5, 14, 1, false);
-            RangeBuild(oSheet, "B21", "B21", prtAsI.PayType5Count.ToString(), 14, 2, false);
-            RangeBuild(oSheet, "C21", "C21", prtAsI.PayType5Amount.ToString("0.00"), 14, 3, false);
-            RangeBuild(oSheet, "A22", "A22", @"Payment Total", 14, 1, false);
-            int iAllPayeCount = prtAsI.PayType1Count + prtAsI.PayType2Count + prtAsI.PayType3Count + prtAsI.PayType4Count + prtAsI.PayType5Count;
-            decimal dAllPayAmount = prtAsI.PayType1Amount + prtAsI.PayType2Amount + prtAsI.PayType3Amount + prtAsI.PayType4Amount + +prtAsI.PayType5Amount;
-            RangeBuild(oSheet, "B22", "B22", iAllPayeCount.ToString(), 14, 2, false);
-            RangeBuild(oSheet, "C22", "C22", dAllPayAmount.ToString("0.00"), 14, 3, false);
+            //_Worksheet oSheet = (_Worksheet)xlBook.Worksheets[1];
 
-            //oSheet.SaveAs(@"C:\" + DateTime.Now.Ticks + @".xls");
-            xlBook.Saved = true;
-            xlBook.SaveCopyAs(@"D:\" + DateTime.Now.Ticks + @".xls");
-            xlApp.Quit();
-            xlApp = null;
+            //RangeBuild(oSheet, "A1", "C1", @"Account Summary", 20, 2, true);
+
+            //RangeBuild(oSheet, "A2", "B2", @"Total Delivery Charge", 14, 1, false);
+            //RangeBuild(oSheet, "C2", "C2", prtAsI.TotalDeliveryCharge.ToString("0.00"), 14, 3, false);
+
+            //RangeBuild(oSheet, "A3", "B3", @"Total VAT", 14, 1, false);
+            //RangeBuild(oSheet, "C3", "C3", prtAsI.TotalVAT, 14, 3, false);
+
+            //RangeBuild(oSheet, "A4", "B4", @"Not Paid", 14, 1, false);
+            //RangeBuild(oSheet, "C4", "C4", prtAsI.NotPaid, 14, 3, false);
+
+            //RangeBuild(oSheet, "A5", "A5", @"", 14, 2, false);
+            //RangeBuild(oSheet, "B5", "B5", @"", 14, 2, false);
+            //RangeBuild(oSheet, "C5", "C5", @"", 14, 2, false);
+
+            //RangeBuild(oSheet, "A6", "C6", @"Total Summary", 20, 2, true);
+            //RangeBuild(oSheet, "A7", "A7", @"Order Type", 14, 2, false);
+            //RangeBuild(oSheet, "B7", "B7", @"Qty", 14, 2, false);
+            //RangeBuild(oSheet, "C7", "C7", @"Account", 14, 2, false);
+            //RangeBuild(oSheet, "A8", "A8", @"Delivery", 14, 1, false);
+            //RangeBuild(oSheet, "B8", "B8", prtAsI.DeliveryCount.ToString(), 14, 2, false);
+            //RangeBuild(oSheet, "C8", "C8", prtAsI.DeliveryAmount.ToString("0.00"), 14, 3, false);
+            //RangeBuild(oSheet, "A9", "A9", @"Collection", 14, 1, false);
+            //RangeBuild(oSheet, "B9", "B9", prtAsI.CollectionCount.ToString(), 14, 2, false);
+            //RangeBuild(oSheet, "C9", "C9", prtAsI.CollectionAmount.ToString("0.00"), 14, 3, false);
+            //RangeBuild(oSheet, "A10", "A10", @"Shop", 14, 1, false);
+            //RangeBuild(oSheet, "B10", "B10", prtAsI.ShopCount.ToString(), 14, 2, false);
+            //RangeBuild(oSheet, "C10", "C10", prtAsI.ShopAmount.ToString("0.00"), 14, 3, false);
+            //RangeBuild(oSheet, "A11", "A11", @"Fast Food", 14, 1, false);
+            //RangeBuild(oSheet, "B11", "B11", prtAsI.FastFoodCount.ToString(), 14, 2, false);
+            //RangeBuild(oSheet, "C11", "C11", prtAsI.FastFoodAmount.ToString("0.00"), 14, 3, false);
+            ////Eat In暂时为0
+            //RangeBuild(oSheet, "A12", "A12", @"Eat In", 14, 1, false);
+            //RangeBuild(oSheet, "B12", "B12", "0", 14, 2, false);
+            //RangeBuild(oSheet, "C12", "C12", "0.00", 14, 3, false);
+            //int iAllTakeCount = prtAsI.DeliveryCount + prtAsI.CollectionCount + prtAsI.ShopCount + prtAsI.FastFoodCount;
+            //decimal dAllTakeAmount = prtAsI.DeliveryAmount + prtAsI.CollectionAmount + prtAsI.ShopAmount + prtAsI.FastFoodAmount;
+            //RangeBuild(oSheet, "A13", "A13", @"Total Takings", 14, 1, false);
+            //RangeBuild(oSheet, "B13", "B13", iAllTakeCount.ToString(), 14, 2, false);
+            //RangeBuild(oSheet, "C13", "C13", dAllTakeAmount.ToString("0.00"), 14, 3, false);
+
+            //RangeBuild(oSheet, "A14", "A14", @"", 14, 2, false);
+            //RangeBuild(oSheet, "B14", "B14", @"", 14, 2, false);
+            //RangeBuild(oSheet, "C14", "C14", @"", 14, 2, false);
+
+            //RangeBuild(oSheet, "A15", "C15", @"Payment Summary", 20, 2, true);
+            //RangeBuild(oSheet, "A16", "A16", @"Payment Type", 14, 2, false);
+            //RangeBuild(oSheet, "B16", "B16", @"Qty", 14, 2, false);
+            //RangeBuild(oSheet, "C16", "C16", @"Account", 14, 2, false);
+            //RangeBuild(oSheet, "A17", "A17", prtAsI.PayType1, 14, 1, false);
+            //RangeBuild(oSheet, "B17", "B17", prtAsI.PayType1Count.ToString(), 14, 2, false);
+            //RangeBuild(oSheet, "C17", "C17", prtAsI.PayType1Amount.ToString("0.00"), 14, 3, false);
+            //RangeBuild(oSheet, "A18", "A18", prtAsI.PayType2, 14, 1, false);
+            //RangeBuild(oSheet, "B18", "B18", prtAsI.PayType2Count.ToString(), 14, 2, false);
+            //RangeBuild(oSheet, "C18", "C18", prtAsI.PayType2Amount.ToString("0.00"), 14, 3, false);
+            //RangeBuild(oSheet, "A19", "A19", prtAsI.PayType3, 14, 1, false);
+            //RangeBuild(oSheet, "B19", "B19", prtAsI.PayType3Count.ToString(), 14, 2, false);
+            //RangeBuild(oSheet, "C19", "C19", prtAsI.PayType3Amount.ToString("0.00"), 14, 3, false);
+            //RangeBuild(oSheet, "A20", "A20", prtAsI.PayType4, 14, 1, false);
+            //RangeBuild(oSheet, "B20", "B20", prtAsI.PayType4Count.ToString(), 14, 2, false);
+            //RangeBuild(oSheet, "C20", "C20", prtAsI.PayType4Amount.ToString("0.00"), 14, 3, false);
+            //RangeBuild(oSheet, "A21", "A21", prtAsI.PayType5, 14, 1, false);
+            //RangeBuild(oSheet, "B21", "B21", prtAsI.PayType5Count.ToString(), 14, 2, false);
+            //RangeBuild(oSheet, "C21", "C21", prtAsI.PayType5Amount.ToString("0.00"), 14, 3, false);
+            //RangeBuild(oSheet, "A22", "A22", @"Payment Total", 14, 1, false);
+            //int iAllPayeCount = prtAsI.PayType1Count + prtAsI.PayType2Count + prtAsI.PayType3Count + prtAsI.PayType4Count + prtAsI.PayType5Count;
+            //decimal dAllPayAmount = prtAsI.PayType1Amount + prtAsI.PayType2Amount + prtAsI.PayType3Amount + prtAsI.PayType4Amount + +prtAsI.PayType5Amount;
+            //RangeBuild(oSheet, "B22", "B22", iAllPayeCount.ToString(), 14, 2, false);
+            //RangeBuild(oSheet, "C22", "C22", dAllPayAmount.ToString("0.00"), 14, 3, false);
+
+            ////oSheet.SaveAs(@"C:\" + DateTime.Now.Ticks + @".xls");
+            //xlBook.Saved = true;
+            //xlBook.SaveCopyAs(@"D:\" + DateTime.Now.Ticks + @".xls");
+            //xlApp.Quit();
+            //xlApp = null;
+            #endregion
         }
 
         public static void RangeBuild(_Worksheet oSheet, string startCell, string endCell, string strValue, int iFontSize, int iLocation, bool isBold)
