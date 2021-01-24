@@ -409,7 +409,7 @@ namespace SuperPOS.Common
                 
         }
 
-        public PrtAccountSummaryInfo GetPrtAccountSummary()
+        public PrtAccountSummaryInfo GetPrtAccountSummary(string strOrderNum, string strBusDate)
         {
             using (ISession session = SessionFactory.OpenSession())
             {
@@ -434,6 +434,8 @@ namespace SuperPOS.Common
                              "SUM(CASE WHEN PayOrderType = 'FAST FOOD' THEN 1 ELSE 0 END) AS FastFoodCount," +
                              "SUM(CASE WHEN PayOrderType = 'FAST FOOD' THEN TotalAmount ELSE 0 END) AS FastFoodAmount " +
                              "FROM Ta_CheckOrder WHERE IsPaid = 'Y'";
+                if (!string.IsNullOrEmpty(strOrderNum)) sql += " AND CheckCode IN (" + strOrderNum + ")";
+                if (!string.IsNullOrEmpty(strBusDate)) sql += " AND BusDate='" + strBusDate + "'";
                 IList<object[]> query = session.CreateSQLQuery(sql).List<object[]>();
                 IList<PrtAccountSummaryInfo> result = query.Select(s => new PrtAccountSummaryInfo(
                                                    s[0] == null ? 0.00m : Convert.ToDecimal(s[0]),

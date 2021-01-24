@@ -114,6 +114,6 @@ namespace SuperPOS.Common
 
         public void GetAccountSummary() { CommonData.GetAccountSummaryInfos = _control.GetAccountSummary(); }
 
-        public void GetPrtAccountSummary() { CommonData.GetPrtAccountSummaryInfos = _control.GetPrtAccountSummary(); }
+        public void GetPrtAccountSummary(string strOrderNum, string strBusDate) { CommonData.GetPrtAccountSummaryInfos = _control.GetPrtAccountSummary(strOrderNum, strBusDate); }
     }
 }

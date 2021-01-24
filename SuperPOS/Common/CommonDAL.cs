@@ -149,7 +149,7 @@ namespace SuperPOS.Common
 
             systemData.GetAccountSummary();
 
-            systemData.GetPrtAccountSummary();
+            //systemData.GetPrtAccountSummary("", "");
 
             #region 存储默认打印机名，打印时需要用到
             new SystemData().GetSysValue();

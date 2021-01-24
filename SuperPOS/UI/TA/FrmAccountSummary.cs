@@ -426,9 +426,13 @@ namespace SuperPOS.UI.TA
 
         private void btnAccount_Click(object sender, EventArgs e)
         {
+            new SystemData().GetPrtAccountSummary("", strBusDate);
             PrtAccountSummaryInfo prtAsi = CommonData.GetPrtAccountSummaryInfos;
+
+            //临时设置为0
             prtAsi.TotalVAT = "0.00";
             prtAsi.NotPaid = "0.00";
+
             prtAsi.PayType1 = "Cash";
             prtAsi.PayType2 = "Card";
             prtAsi.PayType3 = "Other";
