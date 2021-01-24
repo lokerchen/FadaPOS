@@ -1234,7 +1234,18 @@ namespace SuperPOS.Common
                 objExcelWorkSheet.Cells[21, 3] = prtAsI.PayType5Amount.ToString("0.00");
                 objExcelWorkSheet.Cells[22, 3] = dAllPayAmount.ToString("0.00");
                 //object missing = System.Reflection.Missing.Value;
-                string fileName = @"D:\" + DateTime.Now.Ticks + @".xls";
+
+                FolderBrowserDialog dialog = new FolderBrowserDialog();
+                dialog.SelectedPath = @"C:\";
+                dialog.Description = @"Please select save path";
+
+                string path = @"C:\";
+
+                if (dialog.ShowDialog() == DialogResult.OK)
+                {
+                    path = dialog.SelectedPath;
+                }
+                string fileName = path + DateTime.Now.Ticks + @".xls";
                 objExcelWorkbook.SaveAs(fileName, Type.Missing, Type.Missing, Type.Missing, Type.Missing, Type.Missing,
                     XlSaveAsAccessMode.xlNoChange, Type.Missing, Type.Missing, Type.Missing, Type.Missing, Type.Missing);
             }
