@@ -160,5 +160,18 @@ namespace SuperPOS.UI.TA
         {
             gvTaShowOrder.SelectAll();
         }
+
+        private void btnAmendOrder_Click(object sender, EventArgs e)
+        {
+            if (txtSelectedOrders.Text.Equals("1"))
+            {
+                string strChkOrder = gvTaShowOrder.GetRowCellValue(gvTaShowOrder.FocusedRowHandle, "CheckCode").ToString();
+                int usrID = Convert.ToInt32(gvTaShowOrder.GetRowCellValue(gvTaShowOrder.FocusedRowHandle, "StaffID").ToString());
+                int intCusID = Convert.ToInt32(gvTaShowOrder.GetRowCellValue(gvTaShowOrder.FocusedRowHandle, "CustomerID").ToString());
+
+                FrmTaMain frmTaMain = new FrmTaMain(strChkOrder, usrID, intCusID, deDay.Text, PubComm.MENU_LANG_DEFAULT);
+                frmTaMain.ShowDialog();
+            }
+        }
     }
 }

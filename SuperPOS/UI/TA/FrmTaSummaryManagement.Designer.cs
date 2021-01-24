@@ -468,6 +468,7 @@
             this.btnAmendOrder.Size = new System.Drawing.Size(120, 73);
             this.btnAmendOrder.TabIndex = 72;
             this.btnAmendOrder.Text = "Amend Order";
+            this.btnAmendOrder.Click += new System.EventHandler(this.btnAmendOrder_Click);
             // 
             // btnPrintAccountSummary
             // 
