@@ -739,7 +739,11 @@ namespace SuperPOS.Common
             string sBusDate = CommonData.SysValue.FirstOrDefault(s => s.ValueID.Equals(PubComm.SYS_VALUE_BUS_DATE)).ValueResult;
 
             //Now大于SysValue中设置的值，则属于当天，否则减一天
-            return DateTime.Compare(DateTime.Now, Convert.ToDateTime(sBusDate)) > 0 ? DateTime.Now.ToShortDateString() : DateTime.Now.AddDays(-1).ToShortDateString();
+            DateTime dt = DateTime.Compare(DateTime.Now, Convert.ToDateTime(sBusDate)) > 0 ? DateTime.Now : DateTime.Now.AddDays(-1);
+            
+            string strBusDate = dt.ToString("yyyy-MM-dd");
+
+            return strBusDate;
             //return "2019-12-15";
         }
         #endregion
