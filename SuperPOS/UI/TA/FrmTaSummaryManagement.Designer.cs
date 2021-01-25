@@ -489,6 +489,7 @@
             this.btnPrintAccountSummary.Size = new System.Drawing.Size(120, 73);
             this.btnPrintAccountSummary.TabIndex = 71;
             this.btnPrintAccountSummary.Text = "Print Account Summary";
+            this.btnPrintAccountSummary.Click += new System.EventHandler(this.btnPrintAccountSummary_Click);
             // 
             // btnRefreshOrders
             // 

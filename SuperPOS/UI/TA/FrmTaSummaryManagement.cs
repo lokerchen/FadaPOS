@@ -173,5 +173,40 @@ namespace SuperPOS.UI.TA
                 frmTaMain.ShowDialog();
             }
         }
+
+        private void btnPrintAccountSummary_Click(object sender, EventArgs e)
+        {
+            int[] iSelectRows = gvTaShowOrder.GetSelectedRows();
+
+            string strOrder = "";
+            if (gvTaShowOrder.SelectedRowsCount == 1)
+            {
+                strOrder = "'" + gvTaShowOrder.GetRowCellValue(0, "Paid") + "'";
+            }
+            else
+            {
+                for (int i = 0; i < iSelectRows.Length; i++)
+                {
+                    strOrder += i == iSelectRows.Length - 1
+                        ? "'" + gvTaShowOrder.GetRowCellValue(i, "CheckCode") + "'"
+                        : "'" + gvTaShowOrder.GetRowCellValue(i, "CheckCode") + "',";
+                }
+            }
+            
+            new SystemData().GetPrtAccountSummary(strOrder, deDay.Text);
+            PrtAccountSummaryInfo prtAsi = CommonData.GetPrtAccountSummaryInfos;
+
+            //临时设置为0
+            prtAsi.TotalVAT = "0.00";
+            prtAsi.NotPaid = "0.00";
+
+            prtAsi.PayType1 = "Cash";
+            prtAsi.PayType2 = "Card";
+            prtAsi.PayType3 = "Other";
+            prtAsi.PayType4 = "VISA";
+            prtAsi.PayType5 = "PayPal";
+
+            CommonDAL.ExportToExcel(prtAsi);
+        }
     }
 }
