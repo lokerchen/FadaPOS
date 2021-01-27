@@ -308,120 +308,153 @@ namespace SuperPOS.UI.TA
 
         private void btnPrtReceipt_Click(object sender, EventArgs e)
         {
-            new SystemData().GetTaOrderItem();
-            var lstOI = CommonData.TaOrderItem.Where(s => s.CheckCode.Equals(strChkOrder) && s.BusDate.Equals(deDay.Text)).ToList();
+            #region 原打印方式
+            //new SystemData().GetTaOrderItem();
+            //var lstOI = CommonData.TaOrderItem.Where(s => s.CheckCode.Equals(strChkOrder) && s.BusDate.Equals(deDay.Text)).ToList();
 
-            PrtTemplataTa prtTemplataTa = new PrtTemplataTa();
-            prtTemplataTa.RestaurantName = PrtCommon.GetRestName();
-            prtTemplataTa.Addr = PrtCommon.GetRestAddr();
-            prtTemplataTa.Telephone = PrtCommon.GetRestTel();
-            prtTemplataTa.VatNo = PrtCommon.GetRestVATNo();
-            prtTemplataTa.OrderTime = PrtCommon.GetPrtTime();
-            prtTemplataTa.OrderDate = PrtCommon.GetPrtDateTime();
-            prtTemplataTa.OrderNo = strChkOrder;
-            prtTemplataTa.PayType = GetPayType(strChkOrder);
-            prtTemplataTa.TotalAmount = sTotalAmount;
-            prtTemplataTa.SubTotal = sSubTotal;
-            prtTemplataTa.StaffName = sStaff;
-            prtTemplataTa.ItemCount = sItemCount >= 1 ? sItemCount.ToString() : "0";
-            prtTemplataTa.Discount = sDiscount + sDiscountPer;
+            //PrtTemplataTa prtTemplataTa = new PrtTemplataTa();
+            //prtTemplataTa.RestaurantName = PrtCommon.GetRestName();
+            //prtTemplataTa.Addr = PrtCommon.GetRestAddr();
+            //prtTemplataTa.Telephone = PrtCommon.GetRestTel();
+            //prtTemplataTa.VatNo = PrtCommon.GetRestVATNo();
+            //prtTemplataTa.OrderTime = PrtCommon.GetPrtTime();
+            //prtTemplataTa.OrderDate = PrtCommon.GetPrtDateTime();
+            //prtTemplataTa.OrderNo = strChkOrder;
+            //prtTemplataTa.PayType = GetPayType(strChkOrder);
+            //prtTemplataTa.TotalAmount = sTotalAmount;
+            //prtTemplataTa.SubTotal = sSubTotal;
+            //prtTemplataTa.StaffName = sStaff;
+            //prtTemplataTa.ItemCount = sItemCount >= 1 ? sItemCount.ToString() : "0";
+            //prtTemplataTa.Discount = sDiscount + sDiscountPer;
 
-            #region VAT计算
-            if (CommonData.GenSet.Any())
-            {
-                prtTemplataTa.Rete1 = CommonData.GenSet.FirstOrDefault().VATPer + @"%";
+            //#region VAT计算
+            //if (CommonData.GenSet.Any())
+            //{
+            //    prtTemplataTa.Rete1 = CommonData.GenSet.FirstOrDefault().VATPer + @"%";
 
-                var lstVAT = from oi in CommonData.TaOrderItem.Where(s => s.CheckCode.Equals(strChkOrder) && s.BusDate.Equals(deDay.Text))
-                             join mi in CommonData.TaMenuItem on oi.ItemCode equals mi.MiDishCode
-                             where !string.IsNullOrEmpty(mi.MiRmk) && mi.MiRmk.Contains(@"Without VAT")
-                             select new
-                             {
-                                 itemTotalPrice = oi.ItemTotalPrice
-                             };
+            //    var lstVAT = from oi in CommonData.TaOrderItem.Where(s => s.CheckCode.Equals(strChkOrder) && s.BusDate.Equals(deDay.Text))
+            //                 join mi in CommonData.TaMenuItem on oi.ItemCode equals mi.MiDishCode
+            //                 where !string.IsNullOrEmpty(mi.MiRmk) && mi.MiRmk.Contains(@"Without VAT")
+            //                 select new
+            //                 {
+            //                     itemTotalPrice = oi.ItemTotalPrice
+            //                 };
 
-                decimal dTotal = 0;
-                decimal dVatTmp = 0;
-                decimal dVat = 0;
+            //    decimal dTotal = 0;
+            //    decimal dVatTmp = 0;
+            //    decimal dVat = 0;
 
-                if (lstVAT.Any())
-                {
-                    dTotal = lstVAT.ToList().Sum(vat => Convert.ToDecimal(vat.itemTotalPrice));
-                    //交税
-                    dVatTmp = (Convert.ToDecimal(CommonData.GenSet.FirstOrDefault().VATPer) / 100) * dTotal;
+            //    if (lstVAT.Any())
+            //    {
+            //        dTotal = lstVAT.ToList().Sum(vat => Convert.ToDecimal(vat.itemTotalPrice));
+            //        //交税
+            //        dVatTmp = (Convert.ToDecimal(CommonData.GenSet.FirstOrDefault().VATPer) / 100) * dTotal;
 
-                    dVat = Math.Round(dVatTmp, 2, MidpointRounding.AwayFromZero);
-                }
+            //        dVat = Math.Round(dVatTmp, 2, MidpointRounding.AwayFromZero);
+            //    }
 
-                prtTemplataTa.VatA = dVat.ToString();
-                //税前
-                prtTemplataTa.Net1 = dTotal.ToString();
-                //总价
-                prtTemplataTa.Gross1 = (dTotal - dVat).ToString();
-                prtTemplataTa.Rate2 = "0.00%";
-                prtTemplataTa.Net2 = (Convert.ToDecimal(sSubTotal) - dTotal).ToString();
-                prtTemplataTa.VatB = "0.00";
-                prtTemplataTa.Gross2 = (Convert.ToDecimal(sSubTotal) - dTotal).ToString();
-            }
-            else
-            {
-                prtTemplataTa.Rete1 = "0.00%";
-                prtTemplataTa.Net1 = "0.00";
-                prtTemplataTa.VatA = "0.00";
-                prtTemplataTa.Gross1 = "0.00";
-                prtTemplataTa.Rate2 = "0.00%";
-                prtTemplataTa.Net2 = "0.00";
-                prtTemplataTa.VatB = "0.00";
-                prtTemplataTa.Gross2 = "0.00";
-            }
+            //    prtTemplataTa.VatA = dVat.ToString();
+            //    //税前
+            //    prtTemplataTa.Net1 = dTotal.ToString();
+            //    //总价
+            //    prtTemplataTa.Gross1 = (dTotal - dVat).ToString();
+            //    prtTemplataTa.Rate2 = "0.00%";
+            //    prtTemplataTa.Net2 = (Convert.ToDecimal(sSubTotal) - dTotal).ToString();
+            //    prtTemplataTa.VatB = "0.00";
+            //    prtTemplataTa.Gross2 = (Convert.ToDecimal(sSubTotal) - dTotal).ToString();
+            //}
+            //else
+            //{
+            //    prtTemplataTa.Rete1 = "0.00%";
+            //    prtTemplataTa.Net1 = "0.00";
+            //    prtTemplataTa.VatA = "0.00";
+            //    prtTemplataTa.Gross1 = "0.00";
+            //    prtTemplataTa.Rate2 = "0.00%";
+            //    prtTemplataTa.Net2 = "0.00";
+            //    prtTemplataTa.VatB = "0.00";
+            //    prtTemplataTa.Gross2 = "0.00";
+            //}
+            //#endregion
+
+            //PrtTemplate.PrtTa(prtTemplataTa, lstOI, PrtStatic.PRT_TEMPLATE_TA_RECEIPT_TYPE);
             #endregion
 
-            PrtTemplate.PrtTa(prtTemplataTa, lstOI, PrtStatic.PRT_TEMPLATE_TA_RECEIPT_TYPE);
+            new SystemData().GetTaOrderItem();
+            var lstOI = CommonData.TaOrderItem.Where(s => s.CheckCode.Equals(strChkOrder) && s.BusDate.Equals(checkBusDate)).ToList();
+
+            WbPrtTemplataTa wbPrtTemplataTa = new WbPrtTemplataTa();
+
+            wbPrtTemplataTa = GetAllPrtInfo();
+
+            WbPrtPrint.PrintHtml(webBrowser2, WbPrtStatic.PRT_CLASS_RECEIPT, lstOI, wbPrtTemplataTa, sOrderType);
         }
 
         private void btnPrtBill_Click(object sender, EventArgs e)
         {
+            #region 原打印方式
+            //new SystemData().GetTaOrderItem();
+            //var lstOI = CommonData.TaOrderItem.Where(s => s.CheckCode.Equals(strChkOrder) && s.BusDate.Equals(deDay.Text)).ToList();
+
+            //PrtTemplataTa prtTemplataTa = new PrtTemplataTa();
+            //prtTemplataTa.RestaurantName = PrtCommon.GetRestName();
+            //prtTemplataTa.Addr = PrtCommon.GetRestAddr();
+            //prtTemplataTa.Telephone = PrtCommon.GetRestTel();
+            //prtTemplataTa.VatNo = PrtCommon.GetRestVATNo();
+            //prtTemplataTa.OrderTime = PrtCommon.GetPrtTime();
+            //prtTemplataTa.OrderDate = PrtCommon.GetPrtDateTime();
+            //prtTemplataTa.OrderNo = strChkOrder;
+            //prtTemplataTa.PayType = GetPayType(strChkOrder);
+            //prtTemplataTa.TotalAmount = sTotalAmount;
+            //prtTemplataTa.SubTotal = sSubTotal;
+            //prtTemplataTa.StaffName = sStaff;
+            //prtTemplataTa.ItemCount = sItemCount >= 1 ? sItemCount.ToString() : "0";
+            //prtTemplataTa.Discount = sDiscount + sDiscountPer;
+
+            //PrtTemplate.PrtTa(prtTemplataTa, lstOI, PrtStatic.PRT_TEMPLATE_TA_BILL_TYPE);
+            #endregion
+
             new SystemData().GetTaOrderItem();
-            var lstOI = CommonData.TaOrderItem.Where(s => s.CheckCode.Equals(strChkOrder) && s.BusDate.Equals(deDay.Text)).ToList();
+            var lstOI = CommonData.TaOrderItem.Where(s => s.CheckCode.Equals(strChkOrder) && s.BusDate.Equals(checkBusDate)).ToList();
 
-            PrtTemplataTa prtTemplataTa = new PrtTemplataTa();
-            prtTemplataTa.RestaurantName = PrtCommon.GetRestName();
-            prtTemplataTa.Addr = PrtCommon.GetRestAddr();
-            prtTemplataTa.Telephone = PrtCommon.GetRestTel();
-            prtTemplataTa.VatNo = PrtCommon.GetRestVATNo();
-            prtTemplataTa.OrderTime = PrtCommon.GetPrtTime();
-            prtTemplataTa.OrderDate = PrtCommon.GetPrtDateTime();
-            prtTemplataTa.OrderNo = strChkOrder;
-            prtTemplataTa.PayType = GetPayType(strChkOrder);
-            prtTemplataTa.TotalAmount = sTotalAmount;
-            prtTemplataTa.SubTotal = sSubTotal;
-            prtTemplataTa.StaffName = sStaff;
-            prtTemplataTa.ItemCount = sItemCount >= 1 ? sItemCount.ToString() : "0";
-            prtTemplataTa.Discount = sDiscount + sDiscountPer;
+            WbPrtTemplataTa wbPrtTemplataTa = new WbPrtTemplataTa();
 
-            PrtTemplate.PrtTa(prtTemplataTa, lstOI, PrtStatic.PRT_TEMPLATE_TA_BILL_TYPE);
+            wbPrtTemplataTa = GetAllPrtInfo();
+
+            WbPrtPrint.PrintHtml(webBrowser2, WbPrtStatic.PRT_CLASS_BILL, lstOI, wbPrtTemplataTa, sOrderType);
         }
 
         private void btnPrtKit_Click(object sender, EventArgs e)
         {
+            #region 原打印方式
+            //new SystemData().GetTaOrderItem();
+            //var lstOI = CommonData.TaOrderItem.Where(s => s.CheckCode.Equals(strChkOrder) && s.BusDate.Equals(deDay.Text)).ToList();
+
+            //PrtTemplataTa prtTemplataTa = new PrtTemplataTa();
+            //prtTemplataTa.RestaurantName = PrtCommon.GetRestName();
+            //prtTemplataTa.Addr = PrtCommon.GetRestAddr();
+            //prtTemplataTa.Telephone = PrtCommon.GetRestTel();
+            //prtTemplataTa.VatNo = PrtCommon.GetRestVATNo();
+            //prtTemplataTa.OrderTime = PrtCommon.GetPrtTime();
+            //prtTemplataTa.OrderDate = PrtCommon.GetPrtDateTime();
+            //prtTemplataTa.OrderNo = strChkOrder;
+            //prtTemplataTa.PayType = GetPayType(strChkOrder);
+            //prtTemplataTa.TotalAmount = sTotalAmount;
+            //prtTemplataTa.SubTotal = sSubTotal;
+            //prtTemplataTa.StaffName = sStaff;
+            //prtTemplataTa.ItemCount = sItemCount >= 1 ? sItemCount.ToString() : "0";
+            //prtTemplataTa.Discount = sDiscount + sDiscountPer;
+
+            //PrtTemplate.PrtTa(prtTemplataTa, lstOI, PrtStatic.PRT_TEMPLATE_TA_KITCHEN_TYPE);
+            #endregion
+
             new SystemData().GetTaOrderItem();
-            var lstOI = CommonData.TaOrderItem.Where(s => s.CheckCode.Equals(strChkOrder) && s.BusDate.Equals(deDay.Text)).ToList();
+            var lstOI = CommonData.TaOrderItem.Where(s => s.CheckCode.Equals(strChkOrder) && s.BusDate.Equals(checkBusDate)).ToList();
 
-            PrtTemplataTa prtTemplataTa = new PrtTemplataTa();
-            prtTemplataTa.RestaurantName = PrtCommon.GetRestName();
-            prtTemplataTa.Addr = PrtCommon.GetRestAddr();
-            prtTemplataTa.Telephone = PrtCommon.GetRestTel();
-            prtTemplataTa.VatNo = PrtCommon.GetRestVATNo();
-            prtTemplataTa.OrderTime = PrtCommon.GetPrtTime();
-            prtTemplataTa.OrderDate = PrtCommon.GetPrtDateTime();
-            prtTemplataTa.OrderNo = strChkOrder;
-            prtTemplataTa.PayType = GetPayType(strChkOrder);
-            prtTemplataTa.TotalAmount = sTotalAmount;
-            prtTemplataTa.SubTotal = sSubTotal;
-            prtTemplataTa.StaffName = sStaff;
-            prtTemplataTa.ItemCount = sItemCount >= 1 ? sItemCount.ToString() : "0";
-            prtTemplataTa.Discount = sDiscount + sDiscountPer;
+            WbPrtTemplataTa wbPrtTemplataTa = new WbPrtTemplataTa();
 
-            PrtTemplate.PrtTa(prtTemplataTa, lstOI, PrtStatic.PRT_TEMPLATE_TA_KITCHEN_TYPE);
+            wbPrtTemplataTa = GetAllPrtInfo();
+
+            WbPrtPrint.PrintHtml(webBrowser2, WbPrtStatic.PRT_CLASS_KITCHEN, lstOI, wbPrtTemplataTa, sOrderType);
         }
 
         private void btnAccount_Click(object sender, EventArgs e)
@@ -657,6 +690,117 @@ namespace SuperPOS.UI.TA
             #endregion
         }
 
-        
+        private WbPrtTemplataTa GetAllPrtInfo()
+        {
+            WbPrtTemplataTa wbPrtTemplataTa = new WbPrtTemplataTa();
+            new SystemData().GetTaSysPrtSetGeneral();
+            var lstGen = CommonData.TaSysPrtSetGeneral;
+            if (lstGen.Any())
+            {
+                TaSysPrtSetGeneralInfo taSysPrtSetGeneralInfo = lstGen.FirstOrDefault();
+
+                //wbPrtTemplataTa.PrintAddress = taSysPrtSetGeneralInfo.IsPrtAddr;
+                new SystemData().GetTaSysCtrl();
+                var lstTaSysCtrl = CommonData.TaSysCtrl;
+
+                if (lstTaSysCtrl.Any())
+                {
+                    wbPrtTemplataTa.PrintAddress = lstTaSysCtrl.FirstOrDefault().ShopAddress;
+                }
+                wbPrtTemplataTa.PrintTel = taSysPrtSetGeneralInfo.TelNo;
+                wbPrtTemplataTa.VATNo = taSysPrtSetGeneralInfo.VATNo;
+                wbPrtTemplataTa.Msg1 = taSysPrtSetGeneralInfo.Msg1;
+                wbPrtTemplataTa.Msg2 = taSysPrtSetGeneralInfo.Msg2;
+                wbPrtTemplataTa.Msg3 = taSysPrtSetGeneralInfo.Msg3;
+                wbPrtTemplataTa.Msg4 = taSysPrtSetGeneralInfo.Msg4;
+                wbPrtTemplataTa.Msg5 = taSysPrtSetGeneralInfo.Msg5;
+            }
+
+            if (!string.IsNullOrEmpty(intCusID.ToString()))
+            {
+                new SystemData().GetTaCustomer();
+                var lstCust = CommonData.TaCustomer.Where(s => s.ID == intCusID);
+                if (lstCust.Any())
+                {
+                    TaCustomerInfo taCustomerInfo = lstCust.FirstOrDefault();
+                    wbPrtTemplataTa.CustName = taCustomerInfo.cusName;
+                    wbPrtTemplataTa.CustPhone = taCustomerInfo.cusPhone;
+                    wbPrtTemplataTa.CustDist = taCustomerInfo.cusDistance;
+                    wbPrtTemplataTa.CustMapRef = taCustomerInfo.cusPcZone;
+                    wbPrtTemplataTa.CustHouseNo = taCustomerInfo.cusHouseNo;
+                    wbPrtTemplataTa.CustAddr = taCustomerInfo.cusAddr;
+                    wbPrtTemplataTa.CustPostCode = taCustomerInfo.cusPostcode;
+                    wbPrtTemplataTa.ShopTime = taCustomerInfo.cusReadyTime;
+                }
+            }
+
+            wbPrtTemplataTa.OrderDate = DateTime.Now.ToShortDateString();
+            wbPrtTemplataTa.OrderTime = DateTime.Now.ToShortTimeString();
+            wbPrtTemplataTa.Staff = string.IsNullOrEmpty(sStaff) ? CommonData.UsrBase.FirstOrDefault(s => s.ID == intStaffID).UsrName : sStaff;
+            wbPrtTemplataTa.OrderNo = strChkOrder;
+            wbPrtTemplataTa.ItemCount = sItemCount >= 1 ? sItemCount.ToString() : "0";
+            wbPrtTemplataTa.SubTotal = sSubTotal;
+            wbPrtTemplataTa.Total = sTotalAmount;
+            wbPrtTemplataTa.PayType = GetPayType(strChkOrder);
+            wbPrtTemplataTa.Tendered = sTendered;
+            wbPrtTemplataTa.Change = sChange;
+            wbPrtTemplataTa.OrderType = GetPayType(strChkOrder);
+            wbPrtTemplataTa.RefNo = sRefNo;
+            wbPrtTemplataTa.DeliveryFee = sDeliveryFee;
+
+            wbPrtTemplataTa.Discount = sDiscount;
+            wbPrtTemplataTa.Surcharge = sSurcharge;
+
+            #region VAT计算
+            if (CommonData.GenSet.Any())
+            {
+                wbPrtTemplataTa.Rate1 = CommonData.GenSet.FirstOrDefault().VATPer + @"%";
+
+                var lstVAT = from oi in CommonData.TaOrderItem.Where(s => s.CheckCode.Equals(strChkOrder) && s.BusDate.Equals(checkBusDate))
+                             join mi in CommonData.TaMenuItem on oi.ItemCode equals mi.MiDishCode
+                             where !string.IsNullOrEmpty(mi.MiRmk) && mi.MiRmk.Contains(@"Without VAT")
+                             select new
+                             {
+                                 itemTotalPrice = oi.ItemTotalPrice
+                             };
+
+                decimal dTotal = 0;
+                decimal dVatTmp = 0;
+                decimal dVat = 0;
+
+                if (lstVAT.Any())
+                {
+                    dTotal = lstVAT.ToList().Sum(vat => Convert.ToDecimal(vat.itemTotalPrice));
+                    //交税
+                    dVatTmp = (Convert.ToDecimal(CommonData.GenSet.FirstOrDefault().VATPer) / 100) * dTotal;
+
+                    dVat = Math.Round(dVatTmp, 2, MidpointRounding.AwayFromZero);
+                }
+
+                wbPrtTemplataTa.VatA = dVat.ToString();
+                //税前
+                wbPrtTemplataTa.Net1 = dTotal.ToString();
+                //总价
+                wbPrtTemplataTa.Gross1 = (dTotal - dVat).ToString();
+                wbPrtTemplataTa.Rate2 = "0.00%";
+                wbPrtTemplataTa.Net2 = (Convert.ToDecimal(sSubTotal) - dTotal).ToString();
+                wbPrtTemplataTa.VatB = "0.00";
+                wbPrtTemplataTa.Gross2 = (Convert.ToDecimal(sSubTotal) - dTotal).ToString();
+            }
+            else
+            {
+                wbPrtTemplataTa.Rate1 = "0.00%";
+                wbPrtTemplataTa.Net1 = "0.00";
+                wbPrtTemplataTa.VatA = "0.00";
+                wbPrtTemplataTa.Gross1 = "0.00";
+                wbPrtTemplataTa.Rate2 = "0.00%";
+                wbPrtTemplataTa.Net2 = "0.00";
+                wbPrtTemplataTa.VatB = "0.00";
+                wbPrtTemplataTa.Gross2 = "0.00";
+            }
+            #endregion
+
+            return wbPrtTemplataTa;
+        }
     }
 }
