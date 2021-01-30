@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using DevExpress.XtraEditors;
 using SuperPOS.Common;
+using SuperPOS.UI.Report;
 
 namespace SuperPOS.UI.TA
 {
@@ -29,6 +30,17 @@ namespace SuperPOS.UI.TA
         private void FrmReports_SizeChanged(object sender, EventArgs e)
         {
             asfc.controlAutoSize(this);
+        }
+
+        private void btnMenuItemListing_Click(object sender, EventArgs e)
+        {
+            RptMenuItemListing rptMenuItemListing = new RptMenuItemListing();
+            rptMenuItemListing.ShowDialog();
+        }
+
+        private void btnExit_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

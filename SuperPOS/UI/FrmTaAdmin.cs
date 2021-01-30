@@ -182,7 +182,8 @@ namespace SuperPOS.UI
 
         private void btnRepReport_Click(object sender, EventArgs e)
         {
-
+            FrmReports frmReports = new FrmReports();
+            frmReports.ShowDialog();
         }
 
         #endregion
