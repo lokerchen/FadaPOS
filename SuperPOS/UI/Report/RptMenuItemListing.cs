@@ -3,11 +3,13 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Drawing.Printing;
 using System.Text;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using DevExpress.XtraEditors;
+using DevExpress.XtraPrinting;
 using SuperPOS.Common;
 using SuperPOS.Domain.Entities;
 
@@ -74,9 +76,25 @@ namespace SuperPOS.UI.Report
                         };
 
             gridControlReport.DataSource = lstDb.ToList();
-            gvTaShowOrder.Columns["gridItemDescriptions"].BestFit();
+            //gvTaShowOrder.BestFitColumns();
+            //gvTaShowOrder.Columns["gridItemDescriptions"].BestFit();
             gvTaShowOrder.FocusedRowHandle = gvTaShowOrder.RowCount - 1;
         }
         #endregion
+
+        private void btnPrint_Click(object sender, EventArgs e)
+        {
+            CommonDAL.SetPrintPreview(gridControlReport);
+        }
+
+        //private void Link_CreateMarginalHeaderArea(object sender, CreateAreaEventArgs e)
+        //{
+        //    string title = @"Menu Item Listing";
+        //    PageInfoBrick brick = e.Graph.DrawPageInfo(PageInfo.None, title, Color.DarkBlue, new RectangleF(0, 0, 100, 21), BorderSide.None);
+        //    brick.LineAlignment = BrickAlignment.Center;
+        //    brick.Alignment = BrickAlignment.Center;
+        //    brick.AutoWidth = true;
+        //    //brick.Font = new System.Drawing.Font("宋体", 11f, FontStyle.Bold);
+        //}
     }
 }

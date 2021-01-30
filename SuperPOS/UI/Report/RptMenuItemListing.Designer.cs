@@ -86,6 +86,7 @@
             this.btnPrint.Size = new System.Drawing.Size(117, 33);
             this.btnPrint.TabIndex = 88;
             this.btnPrint.Text = "Print(A4)";
+            this.btnPrint.Click += new System.EventHandler(this.btnPrint_Click);
             // 
             // gridControlReport
             // 
@@ -117,8 +118,8 @@
             this.gvTaShowOrder.IndicatorWidth = 50;
             this.gvTaShowOrder.Name = "gvTaShowOrder";
             this.gvTaShowOrder.OptionsBehavior.Editable = false;
-            this.gvTaShowOrder.OptionsMenu.EnableColumnMenu = false;
             this.gvTaShowOrder.OptionsSelection.EnableAppearanceFocusedCell = false;
+            this.gvTaShowOrder.OptionsView.ColumnAutoWidth = false;
             this.gvTaShowOrder.OptionsView.EnableAppearanceEvenRow = true;
             this.gvTaShowOrder.OptionsView.EnableAppearanceOddRow = true;
             this.gvTaShowOrder.OptionsView.ShowGroupPanel = false;
@@ -143,6 +144,7 @@
             this.DishCode.Name = "DishCode";
             this.DishCode.Visible = true;
             this.DishCode.VisibleIndex = 0;
+            this.DishCode.Width = 94;
             // 
             // ItemDescriptions
             // 
@@ -155,6 +157,7 @@
             this.ItemDescriptions.Name = "ItemDescriptions";
             this.ItemDescriptions.Visible = true;
             this.ItemDescriptions.VisibleIndex = 1;
+            this.ItemDescriptions.Width = 198;
             // 
             // OtherLang
             // 
@@ -167,6 +170,7 @@
             this.OtherLang.Name = "OtherLang";
             this.OtherLang.Visible = true;
             this.OtherLang.VisibleIndex = 2;
+            this.OtherLang.Width = 158;
             // 
             // RegPrice
             // 
@@ -179,6 +183,7 @@
             this.RegPrice.Name = "RegPrice";
             this.RegPrice.Visible = true;
             this.RegPrice.VisibleIndex = 3;
+            this.RegPrice.Width = 77;
             // 
             // SpecialPrice
             // 
@@ -191,6 +196,7 @@
             this.SpecialPrice.Name = "SpecialPrice";
             this.SpecialPrice.Visible = true;
             this.SpecialPrice.VisibleIndex = 4;
+            this.SpecialPrice.Width = 91;
             // 
             // Category
             // 
@@ -203,6 +209,7 @@
             this.Category.Name = "Category";
             this.Category.Visible = true;
             this.Category.VisibleIndex = 5;
+            this.Category.Width = 101;
             // 
             // label1
             // 

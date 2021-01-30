@@ -7,6 +7,7 @@ using System.Management;
 using System.Runtime.InteropServices;
 using System.Text;
 using System.Windows.Forms;
+using DevExpress.XtraPrinting;
 using SuperPOS.Domain.Entities;
 using SuperPOS.Print;
 using Microsoft.Office.Interop.Excel;
@@ -1512,6 +1513,38 @@ namespace SuperPOS.Common
             {
                 LogHelper.Error("CommonDAL/GetAllVAT", ex.InnerException);
                 return 0.00m;
+            }
+        }
+
+        public static void SetPrintPreview(IPrintable panel)
+        {
+            try
+            {
+                PrintingSystem ps = new PrintingSystem();
+                PrintableComponentLink link = new PrintableComponentLink();
+                ps.Links.Add(link);
+                link.Component = panel;
+                link.PaperKind = PaperKind.A4;
+                link.Margins = new Margins(2, 2, 2, 2);
+                //link.CreateMarginalHeaderArea += Link_CreateMarginalHeaderArea;
+                ps.PreviewFormEx.PrintControl.PrintingSystem.SetCommandVisibility(
+                        new[]
+                        {
+                        PrintingSystemCommand.Save,
+                        PrintingSystemCommand.Print,
+                        PrintingSystemCommand.ExportXls,
+                        PrintingSystemCommand.ClosePreview,
+                        PrintingSystemCommand.ShowFirstPage,
+                        PrintingSystemCommand.ShowLastPage,
+                        }, CommandVisibility.Toolbar);
+
+                link.CreateDocument();
+                link.PrintingSystem.ShowMarginsWarning = false;
+                ps.PreviewFormEx.Show();
+            }
+            catch (Exception ex)
+            {
+                LogHelper.Error("CommonDAL/SetPrintPreview", ex.InnerException);
             }
         }
     }
