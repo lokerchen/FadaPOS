@@ -422,6 +422,7 @@
             this.btnPrtSalesRpt.Size = new System.Drawing.Size(254, 33);
             this.btnPrtSalesRpt.TabIndex = 67;
             this.btnPrtSalesRpt.Text = "Print Sales Report";
+            this.btnPrtSalesRpt.Click += new System.EventHandler(this.btnPrtSalesRpt_Click);
             // 
             // btnSummaryView
             // 

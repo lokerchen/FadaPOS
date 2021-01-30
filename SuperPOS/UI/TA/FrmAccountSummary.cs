@@ -462,9 +462,10 @@ namespace SuperPOS.UI.TA
             new SystemData().GetPrtAccountSummary("", deDay.Text);
             PrtAccountSummaryInfo prtAsi = CommonData.GetPrtAccountSummaryInfos;
 
-            //临时设置为0
-            prtAsi.TotalVAT = "0.00";
-            prtAsi.NotPaid = "0.00";
+            prtAsi.TotalVAT = (CommonDAL.GetAllVAT("", "", deDay.Text)).ToString("0.00");
+
+            new SystemData().GetTaCheckOrder();
+            prtAsi.NotPaid = (CommonData.TaCheckOrder.Where(s => !s.IsPaid.Equals("Y") && !s.IsCancel.Equals("Y")).Sum(s => Convert.ToDecimal(s.TotalAmount))).ToString("0.00");
 
             prtAsi.PayType1 = "Cash";
             prtAsi.PayType2 = "Card";
@@ -755,7 +756,7 @@ namespace SuperPOS.UI.TA
             if (CommonData.GenSet.Any())
             {
                 wbPrtTemplataTa.Rate1 = CommonData.GenSet.FirstOrDefault().VATPer + @"%";
-
+                
                 var lstVAT = from oi in CommonData.TaOrderItem.Where(s => s.CheckCode.Equals(strChkOrder) && s.BusDate.Equals(checkBusDate))
                              join mi in CommonData.TaMenuItem on oi.ItemCode equals mi.MiDishCode
                              where !string.IsNullOrEmpty(mi.MiRmk) && mi.MiRmk.Contains(@"Without VAT")
@@ -801,6 +802,13 @@ namespace SuperPOS.UI.TA
             #endregion
 
             return wbPrtTemplataTa;
+        }
+
+        
+
+        private void btnPrtSalesRpt_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

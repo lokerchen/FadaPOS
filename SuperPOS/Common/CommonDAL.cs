@@ -1478,5 +1478,41 @@ namespace SuperPOS.Common
             
             range.EntireColumn.AutoFit();
         }
+
+        public static decimal GetAllVAT(string sVatRat, string strOrderNum, string strBusDate)
+        {
+            try
+            {
+                if (string.IsNullOrEmpty(sVatRat)) sVatRat = CommonData.GenSet.FirstOrDefault().VATPer;
+
+                if (sVatRat != null)
+                {
+                    new SystemData().GetOrderItemSumForVatInfos(strOrderNum, strBusDate);
+                    var lstVAT = CommonData.GetOrderItemSumForVatInfos;
+
+                    decimal dVatTotal = 0;
+                    decimal dVatTmp = 0;
+                    decimal dVat = 0;
+
+                    if (lstVAT.Any())
+                    {
+                        dVatTotal = lstVAT.ToList().Sum(vat => vat.ItemTotalPrice);
+                        //交税
+                        dVatTmp = (Convert.ToDecimal(sVatRat) / 100) * dVatTotal;
+
+                        dVat = Math.Round(dVatTmp, 2, MidpointRounding.AwayFromZero);
+                    }
+
+                    return dVat;
+                }
+
+                return 0.00m;
+            }
+            catch (Exception ex)
+            {
+                LogHelper.Error("CommonDAL/GetAllVAT", ex.InnerException);
+                return 0.00m;
+            }
+        }
     }
 }
