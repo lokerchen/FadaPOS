@@ -34,13 +34,11 @@
             this.btnPrint = new DevExpress.XtraEditors.SimpleButton();
             this.gridControlReport = new DevExpress.XtraGrid.GridControl();
             this.gvTaShowOrder = new DevExpress.XtraGrid.Views.Grid.GridView();
-            this.ID = new DevExpress.XtraGrid.Columns.GridColumn();
             this.DishCode = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.OtherLanguage = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.TotalAmount = new DevExpress.XtraGrid.Columns.GridColumn();
             this.ItemDescriptions = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.OtherLanguage = new DevExpress.XtraGrid.Columns.GridColumn();
             this.TotalQuantity = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.BusDate = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.TotalAmount = new DevExpress.XtraGrid.Columns.GridColumn();
             this.label1 = new System.Windows.Forms.Label();
             this.btnUp = new DevExpress.XtraEditors.SimpleButton();
             this.btnDown = new DevExpress.XtraEditors.SimpleButton();
@@ -62,11 +60,13 @@
             this.btnExit.Appearance.Options.UseTextOptions = true;
             this.btnExit.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
             this.btnExit.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
-            this.btnExit.Location = new System.Drawing.Point(747, 576);
+            this.btnExit.Location = new System.Drawing.Point(654, 448);
+            this.btnExit.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnExit.Name = "btnExit";
-            this.btnExit.Size = new System.Drawing.Size(108, 68);
+            this.btnExit.Size = new System.Drawing.Size(94, 53);
             this.btnExit.TabIndex = 87;
             this.btnExit.Text = "Exit";
+            this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
             // 
             // btnLanguage
             // 
@@ -79,11 +79,13 @@
             this.btnLanguage.Appearance.Options.UseTextOptions = true;
             this.btnLanguage.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
             this.btnLanguage.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
-            this.btnLanguage.Location = new System.Drawing.Point(525, 602);
+            this.btnLanguage.Location = new System.Drawing.Point(459, 468);
+            this.btnLanguage.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnLanguage.Name = "btnLanguage";
-            this.btnLanguage.Size = new System.Drawing.Size(162, 42);
+            this.btnLanguage.Size = new System.Drawing.Size(142, 33);
             this.btnLanguage.TabIndex = 86;
             this.btnLanguage.Text = "LANGUAGE";
+            this.btnLanguage.Visible = false;
             // 
             // btnPrint
             // 
@@ -96,18 +98,22 @@
             this.btnPrint.Appearance.Options.UseTextOptions = true;
             this.btnPrint.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
             this.btnPrint.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
-            this.btnPrint.Location = new System.Drawing.Point(12, 12);
+            this.btnPrint.Location = new System.Drawing.Point(10, 9);
+            this.btnPrint.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnPrint.Name = "btnPrint";
-            this.btnPrint.Size = new System.Drawing.Size(134, 42);
+            this.btnPrint.Size = new System.Drawing.Size(117, 33);
             this.btnPrint.TabIndex = 88;
             this.btnPrint.Text = "Print(A4)";
+            this.btnPrint.Click += new System.EventHandler(this.btnPrint_Click);
             // 
             // gridControlReport
             // 
-            this.gridControlReport.Location = new System.Drawing.Point(12, 88);
+            this.gridControlReport.EmbeddedNavigator.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.gridControlReport.Location = new System.Drawing.Point(10, 68);
             this.gridControlReport.MainView = this.gvTaShowOrder;
+            this.gridControlReport.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.gridControlReport.Name = "gridControlReport";
-            this.gridControlReport.Size = new System.Drawing.Size(768, 483);
+            this.gridControlReport.Size = new System.Drawing.Size(672, 376);
             this.gridControlReport.TabIndex = 89;
             this.gridControlReport.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gvTaShowOrder});
@@ -119,13 +125,11 @@
             this.gvTaShowOrder.Appearance.HeaderPanel.Options.UseTextOptions = true;
             this.gvTaShowOrder.Appearance.HeaderPanel.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.gvTaShowOrder.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
-            this.ID,
             this.DishCode,
             this.ItemDescriptions,
             this.OtherLanguage,
             this.TotalQuantity,
-            this.TotalAmount,
-            this.BusDate});
+            this.TotalAmount});
             this.gvTaShowOrder.GridControl = this.gridControlReport;
             this.gvTaShowOrder.IndicatorWidth = 50;
             this.gvTaShowOrder.Name = "gvTaShowOrder";
@@ -137,14 +141,6 @@
             this.gvTaShowOrder.OptionsView.ShowFooter = true;
             this.gvTaShowOrder.OptionsView.ShowGroupPanel = false;
             this.gvTaShowOrder.OptionsView.ShowIndicator = false;
-            // 
-            // ID
-            // 
-            this.ID.AppearanceCell.Font = new System.Drawing.Font("Tahoma", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ID.AppearanceCell.Options.UseFont = true;
-            this.ID.Caption = "ID";
-            this.ID.FieldName = "ID";
-            this.ID.Name = "ID";
             // 
             // DishCode
             // 
@@ -158,6 +154,18 @@
             this.DishCode.Visible = true;
             this.DishCode.VisibleIndex = 0;
             // 
+            // ItemDescriptions
+            // 
+            this.ItemDescriptions.AppearanceCell.Font = new System.Drawing.Font("Tahoma", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ItemDescriptions.AppearanceCell.Options.UseFont = true;
+            this.ItemDescriptions.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ItemDescriptions.AppearanceHeader.Options.UseFont = true;
+            this.ItemDescriptions.Caption = "Item Descriptions";
+            this.ItemDescriptions.FieldName = "gridItemDescriptions";
+            this.ItemDescriptions.Name = "ItemDescriptions";
+            this.ItemDescriptions.Visible = true;
+            this.ItemDescriptions.VisibleIndex = 1;
+            // 
             // OtherLanguage
             // 
             this.OtherLanguage.AppearanceCell.Font = new System.Drawing.Font("Tahoma", 10F);
@@ -169,6 +177,20 @@
             this.OtherLanguage.Name = "OtherLanguage";
             this.OtherLanguage.Visible = true;
             this.OtherLanguage.VisibleIndex = 2;
+            // 
+            // TotalQuantity
+            // 
+            this.TotalQuantity.AppearanceCell.Font = new System.Drawing.Font("Tahoma", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TotalQuantity.AppearanceCell.Options.UseFont = true;
+            this.TotalQuantity.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TotalQuantity.AppearanceHeader.Options.UseFont = true;
+            this.TotalQuantity.Caption = "Total Quantity";
+            this.TotalQuantity.FieldName = "gridTotalQuantity";
+            this.TotalQuantity.Name = "TotalQuantity";
+            this.TotalQuantity.Summary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
+            new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "gridTotalQuantity", "Total:{0}")});
+            this.TotalQuantity.Visible = true;
+            this.TotalQuantity.VisibleIndex = 3;
             // 
             // TotalAmount
             // 
@@ -184,45 +206,13 @@
             this.TotalAmount.Visible = true;
             this.TotalAmount.VisibleIndex = 4;
             // 
-            // ItemDescriptions
-            // 
-            this.ItemDescriptions.AppearanceCell.Font = new System.Drawing.Font("Tahoma", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ItemDescriptions.AppearanceCell.Options.UseFont = true;
-            this.ItemDescriptions.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ItemDescriptions.AppearanceHeader.Options.UseFont = true;
-            this.ItemDescriptions.Caption = "Item Descriptions";
-            this.ItemDescriptions.FieldName = "gridItemDescriptions";
-            this.ItemDescriptions.Name = "ItemDescriptions";
-            this.ItemDescriptions.Visible = true;
-            this.ItemDescriptions.VisibleIndex = 1;
-            // 
-            // TotalQuantity
-            // 
-            this.TotalQuantity.AppearanceCell.Font = new System.Drawing.Font("Tahoma", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TotalQuantity.AppearanceCell.Options.UseFont = true;
-            this.TotalQuantity.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TotalQuantity.AppearanceHeader.Options.UseFont = true;
-            this.TotalQuantity.Caption = "Total Quantity";
-            this.TotalQuantity.FieldName = "gridTotalQuantity";
-            this.TotalQuantity.Name = "TotalQuantity";
-            this.TotalQuantity.Summary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
-            new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "gridQuantity", "Total:{0}")});
-            this.TotalQuantity.Visible = true;
-            this.TotalQuantity.VisibleIndex = 3;
-            // 
-            // BusDate
-            // 
-            this.BusDate.Caption = "BusDate";
-            this.BusDate.FieldName = "gridBusDate";
-            this.BusDate.Name = "BusDate";
-            // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold);
-            this.label1.Location = new System.Drawing.Point(12, 67);
+            this.label1.Location = new System.Drawing.Point(10, 52);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(174, 18);
+            this.label1.Size = new System.Drawing.Size(145, 14);
             this.label1.TabIndex = 90;
             this.label1.Text = "Top Item Sales Report";
             // 
@@ -239,9 +229,10 @@
             this.btnUp.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
             this.btnUp.Image = ((System.Drawing.Image)(resources.GetObject("btnUp.Image")));
             this.btnUp.ImageLocation = DevExpress.XtraEditors.ImageLocation.MiddleCenter;
-            this.btnUp.Location = new System.Drawing.Point(800, 226);
+            this.btnUp.Location = new System.Drawing.Point(700, 176);
+            this.btnUp.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnUp.Name = "btnUp";
-            this.btnUp.Size = new System.Drawing.Size(55, 60);
+            this.btnUp.Size = new System.Drawing.Size(48, 47);
             this.btnUp.TabIndex = 92;
             this.btnUp.Text = ">>";
             // 
@@ -258,9 +249,10 @@
             this.btnDown.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
             this.btnDown.Image = ((System.Drawing.Image)(resources.GetObject("btnDown.Image")));
             this.btnDown.ImageLocation = DevExpress.XtraEditors.ImageLocation.MiddleCenter;
-            this.btnDown.Location = new System.Drawing.Point(800, 341);
+            this.btnDown.Location = new System.Drawing.Point(700, 265);
+            this.btnDown.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnDown.Name = "btnDown";
-            this.btnDown.Size = new System.Drawing.Size(55, 60);
+            this.btnDown.Size = new System.Drawing.Size(48, 47);
             this.btnDown.TabIndex = 93;
             this.btnDown.Text = "<<";
             // 
@@ -275,11 +267,13 @@
             this.btnRefresh.Appearance.Options.UseTextOptions = true;
             this.btnRefresh.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
             this.btnRefresh.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
-            this.btnRefresh.Location = new System.Drawing.Point(647, 12);
+            this.btnRefresh.Location = new System.Drawing.Point(566, 9);
+            this.btnRefresh.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnRefresh.Name = "btnRefresh";
-            this.btnRefresh.Size = new System.Drawing.Size(134, 42);
+            this.btnRefresh.Size = new System.Drawing.Size(117, 33);
             this.btnRefresh.TabIndex = 99;
             this.btnRefresh.Text = "Refresh";
+            this.btnRefresh.Visible = false;
             // 
             // btnTakeaway
             // 
@@ -292,11 +286,13 @@
             this.btnTakeaway.Appearance.Options.UseTextOptions = true;
             this.btnTakeaway.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
             this.btnTakeaway.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
-            this.btnTakeaway.Location = new System.Drawing.Point(428, 12);
+            this.btnTakeaway.Location = new System.Drawing.Point(374, 9);
+            this.btnTakeaway.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnTakeaway.Name = "btnTakeaway";
-            this.btnTakeaway.Size = new System.Drawing.Size(134, 42);
+            this.btnTakeaway.Size = new System.Drawing.Size(117, 33);
             this.btnTakeaway.TabIndex = 98;
             this.btnTakeaway.Text = "Takeaway";
+            this.btnTakeaway.Visible = false;
             // 
             // btnEatIn
             // 
@@ -309,17 +305,19 @@
             this.btnEatIn.Appearance.Options.UseTextOptions = true;
             this.btnEatIn.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
             this.btnEatIn.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
-            this.btnEatIn.Location = new System.Drawing.Point(272, 12);
+            this.btnEatIn.Location = new System.Drawing.Point(238, 9);
+            this.btnEatIn.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnEatIn.Name = "btnEatIn";
-            this.btnEatIn.Size = new System.Drawing.Size(134, 42);
+            this.btnEatIn.Size = new System.Drawing.Size(117, 33);
             this.btnEatIn.TabIndex = 97;
             this.btnEatIn.Text = "Eat In";
+            this.btnEatIn.Visible = false;
             // 
             // RptTopItemSalesReport
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 18F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 14F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(867, 656);
+            this.ClientSize = new System.Drawing.Size(759, 510);
             this.Controls.Add(this.btnRefresh);
             this.Controls.Add(this.btnTakeaway);
             this.Controls.Add(this.btnEatIn);
@@ -331,6 +329,7 @@
             this.Controls.Add(this.btnExit);
             this.Controls.Add(this.btnLanguage);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "RptTopItemSalesReport";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "RptTopItemSalesReport";
@@ -351,13 +350,11 @@
         private DevExpress.XtraEditors.SimpleButton btnPrint;
         private DevExpress.XtraGrid.GridControl gridControlReport;
         private DevExpress.XtraGrid.Views.Grid.GridView gvTaShowOrder;
-        private DevExpress.XtraGrid.Columns.GridColumn ID;
         private DevExpress.XtraGrid.Columns.GridColumn DishCode;
         private DevExpress.XtraGrid.Columns.GridColumn TotalAmount;
         private DevExpress.XtraGrid.Columns.GridColumn ItemDescriptions;
         private DevExpress.XtraGrid.Columns.GridColumn TotalQuantity;
         private DevExpress.XtraGrid.Columns.GridColumn OtherLanguage;
-        private DevExpress.XtraGrid.Columns.GridColumn BusDate;
         private System.Windows.Forms.Label label1;
         private DevExpress.XtraEditors.SimpleButton btnUp;
         private DevExpress.XtraEditors.SimpleButton btnDown;

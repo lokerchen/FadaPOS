@@ -115,5 +115,7 @@ namespace SuperPOS.Common
         public static PrtAccountSummaryInfo GetPrtAccountSummaryInfos { get; set; }
 
         public static IList<OrderItemSumForVatInfo> GetOrderItemSumForVatInfos { get; set; }
+
+        public static IList<RptTotalSalesInfo> GetRptTotalSalesInfo { get; set; }
     }
 }

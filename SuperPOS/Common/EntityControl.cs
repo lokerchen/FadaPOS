@@ -480,5 +480,27 @@ namespace SuperPOS.Common
                 return result;
             }
         }
+
+        public IList<RptTotalSalesInfo> GetRptTotalSales()
+        {
+            using (ISession session = SessionFactory.OpenSession())
+            {
+                string sql = "SELECT OI.ItemCode AS ItemCode, OI.ItemDishName AS ItemDishName, OI.ItemDishOtherName AS ItemDishOtherName, " +
+                             "SUM(OI.ItemQty) AS ItemQty, SUM(OI.ItemTotalPrice)AS ItemTotalPrice " +
+                             "FROM Ta_OrderItem OI LEFT JOIN Ta_CheckOrder CO ON OI.CheckCode = CO.CheckCode AND OI.BusDate = CO.BusDate " + 
+                             "WHERE CO.IsPaid = 'Y' AND OI.ItemType = '1' " + 
+                             "GROUP BY OI.ItemCode, OI.ItemDishName, OI.ItemDishOtherName " + 
+                             "ORDER BY ItemQty DESC, ItemTotalPrice DESC";
+                IList<object[]> query = session.CreateSQLQuery(sql).List<object[]>();
+                IList<RptTotalSalesInfo> result = query.Select(s => new RptTotalSalesInfo(
+                                                                    s[0]?.ToString() ?? "",
+                                                                    s[1]?.ToString() ?? "",
+                                                                    s[2]?.ToString() ?? "",
+                                                                    s[3] == null ? 0 : Convert.ToInt32(s[3]),
+                                                                    s[4] == null ? 0.00m : Convert.ToDecimal(s[4])
+                                                                    )).ToList();
+                return result;
+            }
+        }
     }
 }

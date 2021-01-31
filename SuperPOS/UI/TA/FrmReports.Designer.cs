@@ -170,6 +170,7 @@
             this.btnTopItemsSalesReport.Size = new System.Drawing.Size(254, 47);
             this.btnTopItemsSalesReport.TabIndex = 96;
             this.btnTopItemsSalesReport.Text = "Top Items Sales Report";
+            this.btnTopItemsSalesReport.Click += new System.EventHandler(this.btnTopItemsSalesReport_Click);
             // 
             // btnFoodCategoryPerformance
             // 

@@ -48,5 +48,11 @@ namespace SuperPOS.UI.TA
             RptCustomerDatabase rptCustomerDatabase = new RptCustomerDatabase();
             rptCustomerDatabase.ShowDialog();
         }
+
+        private void btnTopItemsSalesReport_Click(object sender, EventArgs e)
+        {
+            RptTopItemSalesReport rptTopItemSalesReport = new RptTopItemSalesReport();
+            rptTopItemSalesReport.ShowDialog();
+        }
     }
 }
