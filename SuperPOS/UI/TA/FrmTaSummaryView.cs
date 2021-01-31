@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using DevExpress.XtraEditors;
 using SuperPOS.Common;
+using SuperPOS.Domain.Entities;
 
 namespace SuperPOS.UI.TA
 {
@@ -50,8 +51,16 @@ namespace SuperPOS.UI.TA
         private decimal dStTotalOrder = 0.00m;
         private decimal dStTotalVat = 0.00m;
 
+        private IList<AccountSummaryInfo> lstAccountSummaryInfos = null;
+
         public FrmTaSummaryView()
         {
+            InitializeComponent();
+        }
+
+        public FrmTaSummaryView(IList<AccountSummaryInfo> lstAsi)
+        {
+            this.lstAccountSummaryInfos = lstAsi;
             InitializeComponent();
         }
 
@@ -122,24 +131,9 @@ namespace SuperPOS.UI.TA
                 gbCurrentTime.Text = @"Current Time";
                 gbCurrentDate.Text = @"Current Date";
 
-                lblPtOrder1.Text = @"Order";
                 lblPtTotal1.Text = @"Total";
-                lblPtTips1.Text = @"Tips";
-
-                lblPtOrder2.Text = @"Order";
-                lblPtTotal2.Text = @"Total";
-                lblPtTips2.Text = @"Tips";
-
-                lblPtOrder3.Text = @"Order";
-                lblPtTotal3.Text = @"Total";
-                lblPtTips3.Text = @"Tips";
-
-                lblPtOrder4.Text = @"Order";
-                lblPtTotal4.Text = @"Total";
-                lblPtTips4.Text = @"Tips";
 
                 lblPtOrder5.Text = @"Order";
-                lblPtTotal5.Text = @"Total";
                 lblPtTips5.Text = @"Tips";
 
                 btnLanguage.Text = @"LANGUAGE";
@@ -175,24 +169,9 @@ namespace SuperPOS.UI.TA
                 gbCurrentTime.Text = @"当前时间";
                 gbCurrentDate.Text = @"当前日期";
 
-                lblPtOrder1.Text = @"单";
                 lblPtTotal1.Text = @"总数";
-                lblPtTips1.Text = @"";
-
-                lblPtOrder2.Text = @"单";
-                lblPtTotal2.Text = @"总数";
-                lblPtTips2.Text = @"小费";
-
-                lblPtOrder3.Text = @"单";
-                lblPtTotal3.Text = @"总数";
-                lblPtTips3.Text = @"小费";
-
-                lblPtOrder4.Text = @"单";
-                lblPtTotal4.Text = @"总数";
-                lblPtTips4.Text = @"小费";
-
+                
                 lblPtOrder5.Text = @"单";
-                lblPtTotal5.Text = @"总数";
                 lblPtTips5.Text = @"小费";
 
                 btnLanguage.Text = @"语言";
@@ -211,56 +190,33 @@ namespace SuperPOS.UI.TA
         /// <param name="busDate">营业日</param>
         private void GetBindData(string busDate)
         {
-            var lstDb = from check in CommonData.TaCheckOrder
-                        join user in CommonData.UsrBase
-                            on check.StaffID equals user.ID
-                        join driver in CommonData.TaDriver
-                            on check.DriverID equals driver.ID
-                        where check.IsPaid.Equals("Y")
-                        select new
-                        {
-                            ID = check.ID,
-                            gridOrderNo = check.CheckCode,
-                            gridPayType = (GetAllPayType(check.PayTypePay1, check.PayType1) + @" "
-                                            + GetAllPayType(check.PayTypePay2, check.PayType2) + @" "
-                                            + GetAllPayType(check.PayTypePay3, check.PayType3) + @" "
-                                            + GetAllPayType(check.PayTypePay4, check.PayType4) + @" "
-                                            + GetAllPayType(check.PayTypePay5, check.PayType5)).Trim(),
-                            gridOrderType = check.PayOrderType,
-                            gridOrderTime = check.PayTime,
-                            gridTotal = check.TotalAmount,
-                            gridDriver = driver.DriverName,
-                            gridStaff = user.UsrName,
-                            gridCustID = check.CustomerID,
-                            gridDiscountPer = check.PayPerDiscount,
-                            gridDisount = check.PayDiscount,
-                            gridSubTotal = check.MenuAmount,
-                            gridBusDate = check.BusDate,
-                            gridSurcharge = check.PaySurcharge
-                        };
+            var lstDb = lstAccountSummaryInfos;
 
+            #region 统计面板
             if (lstDb.Any())
             {
-                dTsCollection = lstDb.ToList().Any(s => s.gridOrderType.Equals(PubComm.ORDER_TYPE_COLLECTION) && s.gridBusDate.Equals(busDate))
-                              ? lstDb.ToList().Where(s => s.gridOrderType.Equals(PubComm.ORDER_TYPE_COLLECTION) && s.gridBusDate.Equals(busDate)).Sum(s => Convert.ToDecimal(s.gridTotal))
+                //txtTsTotalTA.Text = dTsTotalTA.ToString("0.00");
+
+                dTsCollection = lstDb.ToList().Any(s => s.PayOrderType.Equals(PubComm.ORDER_TYPE_COLLECTION) && s.BusDate.Equals(busDate))
+                              ? lstDb.ToList().Where(s => s.PayOrderType.Equals(PubComm.ORDER_TYPE_COLLECTION) && s.BusDate.Equals(busDate)).Sum(s => Convert.ToDecimal(s.Paid))
                               : 0.00m;
                 txtTsCollection.Text = dTsCollection.ToString("0.00");
 
-                dTsDelivery = lstDb.ToList().Any(s => s.gridOrderType.Equals(PubComm.ORDER_TYPE_DELIVERY) && s.gridBusDate.Equals(busDate))
-                            ? lstDb.ToList().Where(s => s.gridOrderType.Equals(PubComm.ORDER_TYPE_DELIVERY) && s.gridBusDate.Equals(busDate)).Sum(s => Convert.ToDecimal(s.gridTotal))
+                dTsDelivery = lstDb.ToList().Any(s => s.PayOrderType.Equals(PubComm.ORDER_TYPE_DELIVERY) && s.BusDate.Equals(busDate))
+                            ? lstDb.ToList().Where(s => s.PayOrderType.Equals(PubComm.ORDER_TYPE_DELIVERY) && s.BusDate.Equals(busDate)).Sum(s => Convert.ToDecimal(s.Paid))
                             : 0.00m;
                 txtTsDelivery.Text = dTsDelivery.ToString("0.00");
 
-                dTsShop = lstDb.ToList().Any(s => s.gridOrderType.Equals(PubComm.ORDER_TYPE_SHOP) && s.gridBusDate.Equals(busDate))
-                        ? lstDb.ToList().Where(s => s.gridOrderType.Equals(PubComm.ORDER_TYPE_SHOP) && s.gridBusDate.Equals(busDate)).Sum(s => Convert.ToDecimal(s.gridTotal))
+                dTsShop = lstDb.ToList().Any(s => s.PayOrderType.Equals(PubComm.ORDER_TYPE_SHOP) && s.BusDate.Equals(busDate))
+                        ? lstDb.ToList().Where(s => s.PayOrderType.Equals(PubComm.ORDER_TYPE_SHOP) && s.BusDate.Equals(busDate)).Sum(s => Convert.ToDecimal(s.Paid))
                         : 0.00m;
                 txtTsShop.Text = dTsShop.ToString("0.00");
 
-                dTsFastFood = lstDb.ToList().Any(s => s.gridOrderType.Equals(PubComm.ORDER_TYPE_FAST_FOOD) && s.gridBusDate.Equals(busDate))
-                            ? lstDb.ToList().Where(s => s.gridOrderType.Equals(PubComm.ORDER_TYPE_FAST_FOOD) && s.gridBusDate.Equals(busDate)).Sum(s => Convert.ToDecimal(s.gridTotal))
+                dTsFastFood = lstDb.ToList().Any(s => s.PayOrderType.Equals(PubComm.ORDER_TYPE_FAST_FOOD) && s.BusDate.Equals(busDate))
+                            ? lstDb.ToList().Where(s => s.PayOrderType.Equals(PubComm.ORDER_TYPE_FAST_FOOD) && s.BusDate.Equals(busDate)).Sum(s => Convert.ToDecimal(s.Paid))
                             : 0.00m;
                 txtTsFastFood.Text = dTsFastFood.ToString("0.00");
-                
+
                 dTsTotalTA = dTsCollection + dTsDelivery + dTsShop + dTsFastFood;
                 txtTsTotalTA.Text = dTsTotalTA.ToString("0.00");
 
@@ -268,28 +224,51 @@ namespace SuperPOS.UI.TA
                 dTsTotalOrder = lstDb.Count();
                 txtTsTotalOrder.Text = dTsTotalOrder.ToString("0.00");
 
-                dTsTotalCollection = lstDb.ToList().Any(s => s.gridOrderType.Equals(PubComm.ORDER_TYPE_COLLECTION))
-                              ? lstDb.ToList().Where(s => s.gridOrderType.Equals(PubComm.ORDER_TYPE_COLLECTION)).Sum(s => Convert.ToDecimal(s.gridTotal))
+                dTsTotalCollection = lstDb.ToList().Any(s => s.PayOrderType.Equals(PubComm.ORDER_TYPE_COLLECTION))
+                              ? lstDb.ToList().Where(s => s.PayOrderType.Equals(PubComm.ORDER_TYPE_COLLECTION)).Sum(s => Convert.ToDecimal(s.Paid))
                               : 0.00m;
                 txtTsTotalCol.Text = dTsTotalCollection.ToString("0.00");
 
-                dTsTotalDelivery = lstDb.ToList().Any(s => s.gridOrderType.Equals(PubComm.ORDER_TYPE_DELIVERY))
-                            ? lstDb.ToList().Where(s => s.gridOrderType.Equals(PubComm.ORDER_TYPE_DELIVERY)).Sum(s => Convert.ToDecimal(s.gridTotal))
+                dTsTotalDelivery = lstDb.ToList().Any(s => s.PayOrderType.Equals(PubComm.ORDER_TYPE_DELIVERY))
+                            ? lstDb.ToList().Where(s => s.PayOrderType.Equals(PubComm.ORDER_TYPE_DELIVERY)).Sum(s => Convert.ToDecimal(s.Paid))
                             : 0.00m;
                 txtTsTotalDel.Text = dTsTotalDelivery.ToString("0.00");
 
-                dTsTotalShop = lstDb.ToList().Any(s => s.gridOrderType.Equals(PubComm.ORDER_TYPE_SHOP))
-                        ? lstDb.ToList().Where(s => s.gridOrderType.Equals(PubComm.ORDER_TYPE_SHOP)).Sum(s => Convert.ToDecimal(s.gridTotal))
+                dTsTotalShop = lstDb.ToList().Any(s => s.PayOrderType.Equals(PubComm.ORDER_TYPE_SHOP))
+                        ? lstDb.ToList().Where(s => s.PayOrderType.Equals(PubComm.ORDER_TYPE_SHOP)).Sum(s => Convert.ToDecimal(s.Paid))
                         : 0.00m;
                 txtTsTotalShop.Text = dTsTotalShop.ToString("0.00");
 
-                dTsTotalFastFood = lstDb.ToList().Any(s => s.gridOrderType.Equals(PubComm.ORDER_TYPE_FAST_FOOD))
-                            ? lstDb.ToList().Where(s => s.gridOrderType.Equals(PubComm.ORDER_TYPE_FAST_FOOD)).Sum(s => Convert.ToDecimal(s.gridTotal))
+                dTsTotalFastFood = lstDb.ToList().Any(s => s.PayOrderType.Equals(PubComm.ORDER_TYPE_FAST_FOOD))
+                            ? lstDb.ToList().Where(s => s.PayOrderType.Equals(PubComm.ORDER_TYPE_FAST_FOOD)).Sum(s => Convert.ToDecimal(s.Paid))
                             : 0.00m;
                 txtTsTotalFF.Text = dTsTotalFastFood.ToString("0.00");
 
-                dTsTotalDc = lstDb.ToList().Sum(s => Convert.ToDecimal(s.gridDisount));
+                dTsTotalOrder = dTsTotalDelivery + dTsTotalCollection + dTsTotalShop + dTsTotalFastFood;
+                txtTsTotalOrder.Text = dTsTotalOrder.ToString("0.00");
+
+                dTsTotalDc = lstDb.ToList().Any()
+                            ? lstDb.ToList().Sum(s => Convert.ToDecimal(s.DeliveryFee))
+                            : 0.00m;
                 txtTsTotalDc.Text = dTsTotalDc.ToString("0.00");
+
+                dTsTotalDcCash = lstDb.ToList().Any()
+                                ? lstDb.ToList().Sum(s => Convert.ToDecimal(s.PayTypePay1))
+                                : 0.00m;
+                txtTsDcCash.Text = dTsTotalDcCash.ToString("0.00");
+
+                dTsTotalDcOther = lstDb.ToList().Any()
+                                  ? lstDb.ToList().Sum(s => (Convert.ToDecimal(s.PayTypePay2) + Convert.ToDecimal(s.PayTypePay3) + Convert.ToDecimal(s.PayTypePay4)))
+                                  : 0.00m;
+                txtTsDcOther.Text = dTsTotalDcOther.ToString("0.00");
+
+                txtStTotalTakings.Text = txtTsTotalOrder.Text;
+                txtStTotalOrder.Text = lstDb.Count.ToString();
+                txtStTotalVat.Text = (CommonDAL.GetAllVAT("", "", deDay.Text)).ToString("0.00");
+
+                txtEsTotalEatIn.Text = @"0.00";
+                txtEsSc.Text = @"0.00";
+                txtEsTotalOrder.Text = @"0.00";
             }
             else
             {
@@ -345,11 +324,30 @@ namespace SuperPOS.UI.TA
                 txtStTotalTakings.Text = @"0.00";
 
                 dStTotalOrder = 0.00m;
-                txtStTotalOrder.Text =@"0.00";
+                txtStTotalOrder.Text = @"0.00";
 
                 dStTotalVat = 0.00m;
                 txtStTotalVat.Text = @"0.00";
             }
+            #endregion
+
+            #region 不同付款类型
+            lblPayType1.Text = @"Cash";
+            txtPtOrder1.Text = (lstDb.Where(s => Convert.ToDecimal(s.PayTypePay1) > 0.0m && s.BusDate.Equals(deDay.Text)).Sum(s => Convert.ToDecimal(s.PayTypePay1))).ToString("0.00");
+
+            lblPayType2.Text = @"Card";
+            txtPtOrder2.Text = (lstDb.Where(s => Convert.ToDecimal(s.PayTypePay2) > 0.0m && s.BusDate.Equals(deDay.Text)).Sum(s => Convert.ToDecimal(s.PayTypePay2))).ToString("0.00");
+
+            lblPayType3.Text = @"Other";
+            txtPtOrder3.Text = (lstDb.Where(s => Convert.ToDecimal(s.PayTypePay3) > 0.0m && s.BusDate.Equals(deDay.Text)).Sum(s => Convert.ToDecimal(s.PayTypePay3))).ToString("0.00");
+
+            lblPayType4.Text = @"VISA";
+            txtPtOrder4.Text = (lstDb.Where(s => Convert.ToDecimal(s.PayTypePay4) > 0.0m && s.BusDate.Equals(deDay.Text)).Sum(s => Convert.ToDecimal(s.PayTypePay4))).ToString("0.00");
+
+            lblPayType5.Text = @"PayPal";
+            txtPtOrder5.Text = (lstDb.Where(s => Convert.ToDecimal(s.PayTypePay5) > 0.0m && s.BusDate.Equals(deDay.Text)).Sum(s => Convert.ToDecimal(s.PayTypePay5))).ToString("0.00");
+
+            #endregion
         }
         #endregion
 

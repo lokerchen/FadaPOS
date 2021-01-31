@@ -554,7 +554,7 @@ namespace SuperPOS.UI.TA
 
         private void btnSummaryView_Click(object sender, EventArgs e)
         {
-            FrmTaSummaryView frmTaSummaryView = new FrmTaSummaryView();
+            FrmTaSummaryView frmTaSummaryView = new FrmTaSummaryView(lstAccountSummaryInfos);
             frmTaSummaryView.ShowDialog();
         }
 
@@ -615,6 +615,11 @@ namespace SuperPOS.UI.TA
             #region 数据计算
             if (gvTaShowOrder.RowCount > 0)
             {
+                dDelivery = 0.00m;
+                dCollection = 0.00m;
+                dShop = 0.00m;
+                dDC = 0.00m;
+                dSC = 0.00m;
                 for (int i = 0; i < gvTaShowOrder.RowCount; i++)
                 {
                     if (gvTaShowOrder.GetRowCellValue(i, "BusDate").Equals(busDate))
@@ -803,9 +808,7 @@ namespace SuperPOS.UI.TA
 
             return wbPrtTemplataTa;
         }
-
         
-
         private void btnPrtSalesRpt_Click(object sender, EventArgs e)
         {
 
