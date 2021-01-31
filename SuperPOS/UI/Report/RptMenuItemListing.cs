@@ -26,7 +26,9 @@ namespace SuperPOS.UI.Report
 
         private void RptMenuItemListing_Load(object sender, EventArgs e)
         {
-            GetBindData();asfc.controllInitializeSize(this);
+            GetBindData();
+
+            asfc.controllInitializeSize(this);
         }
 
         private void RptMenuItemListing_SizeChanged(object sender, EventArgs e)

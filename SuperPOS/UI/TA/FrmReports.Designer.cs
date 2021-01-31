@@ -149,6 +149,7 @@
             this.btnPrintCustomerDatabase.Size = new System.Drawing.Size(254, 47);
             this.btnPrintCustomerDatabase.TabIndex = 97;
             this.btnPrintCustomerDatabase.Text = "Print Customer Database";
+            this.btnPrintCustomerDatabase.Click += new System.EventHandler(this.btnPrintCustomerDatabase_Click);
             // 
             // btnTopItemsSalesReport
             // 

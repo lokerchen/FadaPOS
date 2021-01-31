@@ -42,5 +42,11 @@ namespace SuperPOS.UI.TA
         {
             this.Close();
         }
+
+        private void btnPrintCustomerDatabase_Click(object sender, EventArgs e)
+        {
+            RptCustomerDatabase rptCustomerDatabase = new RptCustomerDatabase();
+            rptCustomerDatabase.ShowDialog();
+        }
     }
 }

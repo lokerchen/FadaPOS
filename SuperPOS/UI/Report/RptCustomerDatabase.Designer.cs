@@ -36,11 +36,8 @@
             this.ID = new DevExpress.XtraGrid.Columns.GridColumn();
             this.CustName = new DevExpress.XtraGrid.Columns.GridColumn();
             this.PhoneNo1 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.PhoneNo2 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.Address1 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.Address2 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.Postcode1 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.Postcode2 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.Distance = new DevExpress.XtraGrid.Columns.GridColumn();
             this.Map = new DevExpress.XtraGrid.Columns.GridColumn();
             this.BlackListed = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -63,11 +60,13 @@
             this.btnExit.Appearance.Options.UseTextOptions = true;
             this.btnExit.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
             this.btnExit.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
-            this.btnExit.Location = new System.Drawing.Point(998, 570);
+            this.btnExit.Location = new System.Drawing.Point(873, 443);
+            this.btnExit.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnExit.Name = "btnExit";
-            this.btnExit.Size = new System.Drawing.Size(108, 68);
+            this.btnExit.Size = new System.Drawing.Size(94, 53);
             this.btnExit.TabIndex = 87;
             this.btnExit.Text = "Exit";
+            this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
             // 
             // btnPrint
             // 
@@ -80,18 +79,22 @@
             this.btnPrint.Appearance.Options.UseTextOptions = true;
             this.btnPrint.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
             this.btnPrint.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
-            this.btnPrint.Location = new System.Drawing.Point(12, 12);
+            this.btnPrint.Location = new System.Drawing.Point(10, 9);
+            this.btnPrint.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnPrint.Name = "btnPrint";
-            this.btnPrint.Size = new System.Drawing.Size(134, 42);
+            this.btnPrint.Size = new System.Drawing.Size(117, 33);
             this.btnPrint.TabIndex = 88;
             this.btnPrint.Text = "Print(A4)";
+            this.btnPrint.Click += new System.EventHandler(this.btnPrint_Click);
             // 
             // gridControlReport
             // 
-            this.gridControlReport.Location = new System.Drawing.Point(15, 88);
+            this.gridControlReport.EmbeddedNavigator.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.gridControlReport.Location = new System.Drawing.Point(13, 68);
             this.gridControlReport.MainView = this.gvTaShowOrder;
+            this.gridControlReport.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.gridControlReport.Name = "gridControlReport";
-            this.gridControlReport.Size = new System.Drawing.Size(1030, 464);
+            this.gridControlReport.Size = new System.Drawing.Size(901, 361);
             this.gridControlReport.TabIndex = 89;
             this.gridControlReport.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gvTaShowOrder});
@@ -106,11 +109,8 @@
             this.ID,
             this.CustName,
             this.PhoneNo1,
-            this.PhoneNo2,
             this.Address1,
-            this.Address2,
             this.Postcode1,
-            this.Postcode2,
             this.Distance,
             this.Map,
             this.BlackListed});
@@ -157,18 +157,6 @@
             this.PhoneNo1.Visible = true;
             this.PhoneNo1.VisibleIndex = 1;
             // 
-            // PhoneNo2
-            // 
-            this.PhoneNo2.AppearanceCell.Font = new System.Drawing.Font("Tahoma", 10F);
-            this.PhoneNo2.AppearanceCell.Options.UseFont = true;
-            this.PhoneNo2.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.PhoneNo2.AppearanceHeader.Options.UseFont = true;
-            this.PhoneNo2.Caption = "Phone No.2";
-            this.PhoneNo2.FieldName = "gridPhoneNo2";
-            this.PhoneNo2.Name = "PhoneNo2";
-            this.PhoneNo2.Visible = true;
-            this.PhoneNo2.VisibleIndex = 2;
-            // 
             // Address1
             // 
             this.Address1.AppearanceCell.Font = new System.Drawing.Font("Tahoma", 10F);
@@ -179,19 +167,7 @@
             this.Address1.FieldName = "gridAddress1";
             this.Address1.Name = "Address1";
             this.Address1.Visible = true;
-            this.Address1.VisibleIndex = 3;
-            // 
-            // Address2
-            // 
-            this.Address2.AppearanceCell.Font = new System.Drawing.Font("Tahoma", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Address2.AppearanceCell.Options.UseFont = true;
-            this.Address2.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Address2.AppearanceHeader.Options.UseFont = true;
-            this.Address2.Caption = "Address #2";
-            this.Address2.FieldName = "gridAddress2";
-            this.Address2.Name = "Address2";
-            this.Address2.Visible = true;
-            this.Address2.VisibleIndex = 4;
+            this.Address1.VisibleIndex = 2;
             // 
             // Postcode1
             // 
@@ -203,19 +179,7 @@
             this.Postcode1.FieldName = "gridPostcode1";
             this.Postcode1.Name = "Postcode1";
             this.Postcode1.Visible = true;
-            this.Postcode1.VisibleIndex = 5;
-            // 
-            // Postcode2
-            // 
-            this.Postcode2.AppearanceCell.Font = new System.Drawing.Font("Tahoma", 10F);
-            this.Postcode2.AppearanceCell.Options.UseFont = true;
-            this.Postcode2.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Postcode2.AppearanceHeader.Options.UseFont = true;
-            this.Postcode2.Caption = "Postcode #2";
-            this.Postcode2.FieldName = "gridPostcode2";
-            this.Postcode2.Name = "Postcode2";
-            this.Postcode2.Visible = true;
-            this.Postcode2.VisibleIndex = 6;
+            this.Postcode1.VisibleIndex = 3;
             // 
             // Distance
             // 
@@ -239,15 +203,15 @@
             this.BlackListed.FieldName = "gridBlackListed";
             this.BlackListed.Name = "BlackListed";
             this.BlackListed.Visible = true;
-            this.BlackListed.VisibleIndex = 7;
+            this.BlackListed.VisibleIndex = 4;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold);
-            this.label1.Location = new System.Drawing.Point(12, 67);
+            this.label1.Location = new System.Drawing.Point(10, 52);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(153, 18);
+            this.label1.Size = new System.Drawing.Size(127, 14);
             this.label1.TabIndex = 90;
             this.label1.Text = "Customer Database";
             // 
@@ -264,9 +228,10 @@
             this.btnUp.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
             this.btnUp.Image = ((System.Drawing.Image)(resources.GetObject("btnUp.Image")));
             this.btnUp.ImageLocation = DevExpress.XtraEditors.ImageLocation.MiddleCenter;
-            this.btnUp.Location = new System.Drawing.Point(1051, 220);
+            this.btnUp.Location = new System.Drawing.Point(920, 171);
+            this.btnUp.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnUp.Name = "btnUp";
-            this.btnUp.Size = new System.Drawing.Size(55, 60);
+            this.btnUp.Size = new System.Drawing.Size(48, 47);
             this.btnUp.TabIndex = 92;
             this.btnUp.Text = ">>";
             // 
@@ -283,9 +248,10 @@
             this.btnDown.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
             this.btnDown.Image = ((System.Drawing.Image)(resources.GetObject("btnDown.Image")));
             this.btnDown.ImageLocation = DevExpress.XtraEditors.ImageLocation.MiddleCenter;
-            this.btnDown.Location = new System.Drawing.Point(1051, 335);
+            this.btnDown.Location = new System.Drawing.Point(920, 261);
+            this.btnDown.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnDown.Name = "btnDown";
-            this.btnDown.Size = new System.Drawing.Size(55, 60);
+            this.btnDown.Size = new System.Drawing.Size(48, 47);
             this.btnDown.TabIndex = 93;
             this.btnDown.Text = "<<";
             // 
@@ -300,17 +266,19 @@
             this.btnExport.Appearance.Options.UseTextOptions = true;
             this.btnExport.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
             this.btnExport.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
-            this.btnExport.Location = new System.Drawing.Point(892, 12);
+            this.btnExport.Location = new System.Drawing.Point(780, 9);
+            this.btnExport.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnExport.Name = "btnExport";
-            this.btnExport.Size = new System.Drawing.Size(134, 42);
+            this.btnExport.Size = new System.Drawing.Size(117, 33);
             this.btnExport.TabIndex = 96;
             this.btnExport.Text = "Export CSV";
+            this.btnExport.Visible = false;
             // 
             // RptCustomerDatabase
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 18F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 14F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1118, 656);
+            this.ClientSize = new System.Drawing.Size(978, 510);
             this.Controls.Add(this.btnExport);
             this.Controls.Add(this.btnUp);
             this.Controls.Add(this.btnDown);
@@ -319,6 +287,7 @@
             this.Controls.Add(this.btnPrint);
             this.Controls.Add(this.btnExit);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "RptCustomerDatabase";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "RptCustomerDatabase";
@@ -340,12 +309,9 @@
         private DevExpress.XtraGrid.Views.Grid.GridView gvTaShowOrder;
         private DevExpress.XtraGrid.Columns.GridColumn ID;
         private DevExpress.XtraGrid.Columns.GridColumn CustName;
-        private DevExpress.XtraGrid.Columns.GridColumn PhoneNo2;
         private DevExpress.XtraGrid.Columns.GridColumn Address1;
-        private DevExpress.XtraGrid.Columns.GridColumn Address2;
         private DevExpress.XtraGrid.Columns.GridColumn Postcode1;
         private DevExpress.XtraGrid.Columns.GridColumn PhoneNo1;
-        private DevExpress.XtraGrid.Columns.GridColumn Postcode2;
         private DevExpress.XtraGrid.Columns.GridColumn Distance;
         private DevExpress.XtraGrid.Columns.GridColumn Map;
         private System.Windows.Forms.Label label1;
