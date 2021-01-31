@@ -54,5 +54,11 @@ namespace SuperPOS.UI.TA
             RptTopItemSalesReport rptTopItemSalesReport = new RptTopItemSalesReport();
             rptTopItemSalesReport.ShowDialog();
         }
+
+        private void btnFoodCategoryPerformance_Click(object sender, EventArgs e)
+        {
+            RptCategoryPerformance rptCategoryPerformance = new RptCategoryPerformance();
+            rptCategoryPerformance.ShowDialog();
+        }
     }
 }

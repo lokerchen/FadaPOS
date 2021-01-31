@@ -81,7 +81,7 @@
             this.label5.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.label5.Location = new System.Drawing.Point(324, 369);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(207, 32);
+            this.label5.Size = new System.Drawing.Size(291, 32);
             this.label5.TabIndex = 103;
             this.label5.Text = "Print whole customer list to specified printer";
             // 
@@ -90,7 +90,7 @@
             this.label6.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.label6.Location = new System.Drawing.Point(324, 314);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(236, 32);
+            this.label6.Size = new System.Drawing.Size(306, 32);
             this.label6.TabIndex = 102;
             this.label6.Text = "Shows sales performance of food items with best selling items on the top";
             // 
@@ -99,7 +99,7 @@
             this.label7.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.label7.Location = new System.Drawing.Point(324, 260);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(188, 32);
+            this.label7.Size = new System.Drawing.Size(313, 32);
             this.label7.TabIndex = 101;
             this.label7.Text = "Shows sales performance of each of the categories";
             // 
@@ -108,7 +108,7 @@
             this.label3.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.label3.Location = new System.Drawing.Point(324, 205);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(228, 32);
+            this.label3.Size = new System.Drawing.Size(306, 32);
             this.label3.TabIndex = 100;
             this.label3.Text = "Shows all menu items of Takeaway and Eat In";
             // 
@@ -117,7 +117,7 @@
             this.label4.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.label4.Location = new System.Drawing.Point(324, 151);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(228, 32);
+            this.label4.Size = new System.Drawing.Size(313, 32);
             this.label4.TabIndex = 99;
             this.label4.Text = "Shows all food items that have been deleted after the invoice is printed";
             // 
@@ -191,6 +191,7 @@
             this.btnFoodCategoryPerformance.Size = new System.Drawing.Size(254, 47);
             this.btnFoodCategoryPerformance.TabIndex = 95;
             this.btnFoodCategoryPerformance.Text = "Food Category Performance";
+            this.btnFoodCategoryPerformance.Click += new System.EventHandler(this.btnFoodCategoryPerformance_Click);
             // 
             // btnMenuItemListing
             // 
@@ -258,7 +259,7 @@
             this.label1.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.label1.Location = new System.Drawing.Point(324, 46);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(207, 32);
+            this.label1.Size = new System.Drawing.Size(291, 32);
             this.label1.TabIndex = 91;
             this.label1.Text = "Shows inventory status of Takeaway and Eat In";
             // 
