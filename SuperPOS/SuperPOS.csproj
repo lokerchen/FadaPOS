@@ -632,7 +632,6 @@
     <Compile Include="UI\TA\FrmTaSummaryView.Designer.cs">
       <DependentUpon>FrmTaSummaryView.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="Properties\licenses.licx" />
     <EmbeddedResource Include="UI\FrmDesktopArea.resx">
       <DependentUpon>FrmDesktopArea.cs</DependentUpon>
     </EmbeddedResource>
