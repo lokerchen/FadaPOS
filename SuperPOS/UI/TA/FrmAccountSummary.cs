@@ -811,7 +811,8 @@ namespace SuperPOS.UI.TA
         
         private void btnPrtSalesRpt_Click(object sender, EventArgs e)
         {
-
+            FrmTaPrintSalesReprot frmTaPrintSalesReprot = new FrmTaPrintSalesReprot();
+            frmTaPrintSalesReprot.ShowDialog();
         }
     }
 }
