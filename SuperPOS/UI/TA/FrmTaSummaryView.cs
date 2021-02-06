@@ -225,23 +225,23 @@ namespace SuperPOS.UI.TA
                 dTsTotalOrder = lstDb.Count();
                 txtTsTotalOrder.Text = dTsTotalOrder.ToString("0.00");
 
-                dTsTotalCollection = lstDb.ToList().Any(s => s.PayOrderType.Equals(PubComm.ORDER_TYPE_COLLECTION))
-                              ? lstDb.Count(s => s.PayOrderType.Equals(PubComm.ORDER_TYPE_COLLECTION))
+                dTsTotalCollection = lstDb.ToList().Any(s => s.PayOrderType.Equals(PubComm.ORDER_TYPE_COLLECTION) && s.BusDate.Equals(busDate))
+                              ? lstDb.Count(s => s.PayOrderType.Equals(PubComm.ORDER_TYPE_COLLECTION) && s.BusDate.Equals(busDate))
                               : 0;
                 txtTsTotalCol.Text = dTsTotalCollection.ToString();
 
-                dTsTotalDelivery = lstDb.ToList().Any(s => s.PayOrderType.Equals(PubComm.ORDER_TYPE_DELIVERY))
-                            ? lstDb.Count(s => s.PayOrderType.Equals(PubComm.ORDER_TYPE_DELIVERY))
+                dTsTotalDelivery = lstDb.ToList().Any(s => s.PayOrderType.Equals(PubComm.ORDER_TYPE_DELIVERY) && s.BusDate.Equals(busDate))
+                            ? lstDb.Count(s => s.PayOrderType.Equals(PubComm.ORDER_TYPE_DELIVERY) && s.BusDate.Equals(busDate))
                             : 0;
                 txtTsTotalDel.Text = dTsTotalDelivery.ToString();
 
-                dTsTotalShop = lstDb.ToList().Any(s => s.PayOrderType.Equals(PubComm.ORDER_TYPE_SHOP))
-                        ? lstDb.Count(s => s.PayOrderType.Equals(PubComm.ORDER_TYPE_SHOP))
+                dTsTotalShop = lstDb.ToList().Any(s => s.PayOrderType.Equals(PubComm.ORDER_TYPE_SHOP) && s.BusDate.Equals(busDate))
+                        ? lstDb.Count(s => s.PayOrderType.Equals(PubComm.ORDER_TYPE_SHOP) && s.BusDate.Equals(busDate))
                         : 0;
                 txtTsTotalShop.Text = dTsTotalShop.ToString("0.00");
 
-                dTsTotalFastFood = lstDb.ToList().Any(s => s.PayOrderType.Equals(PubComm.ORDER_TYPE_FAST_FOOD))
-                            ? lstDb.Count(s => s.PayOrderType.Equals(PubComm.ORDER_TYPE_FAST_FOOD))
+                dTsTotalFastFood = lstDb.ToList().Any(s => s.PayOrderType.Equals(PubComm.ORDER_TYPE_FAST_FOOD) && s.BusDate.Equals(busDate))
+                            ? lstDb.Count(s => s.PayOrderType.Equals(PubComm.ORDER_TYPE_FAST_FOOD) && s.BusDate.Equals(busDate))
                             : 0;
                 txtTsTotalFF.Text = dTsTotalFastFood.ToString("0.00");
 
