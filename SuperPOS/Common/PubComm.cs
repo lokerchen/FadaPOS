@@ -114,5 +114,8 @@ namespace SuperPOS.Common
 
         public static string PRT_ACCOUNT_SUMMARY_EXCEL_FILE = "ExcelAs.xls";
         public static string PRT_ACCOUNT_SUMMARY_EXCEL_TEMPLATE = System.Environment.CurrentDirectory + @"\PrintTemplate\" + PRT_ACCOUNT_SUMMARY_EXCEL_FILE;
+
+        //日期统一格式
+        public static string DATE_TIME_FORMAT = "dd/MM/yyyy";
     }
 }

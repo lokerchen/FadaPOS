@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Drawing.Printing;
+using System.Globalization;
 using System.IO;
 using System.Linq;
 using System.Management;
@@ -742,7 +743,7 @@ namespace SuperPOS.Common
             //Now大于SysValue中设置的值，则属于当天，否则减一天
             DateTime dt = DateTime.Compare(DateTime.Now, Convert.ToDateTime(sBusDate)) > 0 ? DateTime.Now : DateTime.Now.AddDays(-1);
             
-            string strBusDate = dt.ToString("yyyy-MM-dd");
+            string strBusDate = dt.ToString(PubComm.DATE_TIME_FORMAT, DateTimeFormatInfo.InvariantInfo);
 
             return strBusDate;
             //return "2019-12-15";
@@ -1546,6 +1547,16 @@ namespace SuperPOS.Common
             {
                 LogHelper.Error("CommonDAL/SetPrintPreview", ex.InnerException);
             }
+        }
+
+        public static string SetDateTimeFormat(string strDt, int iAddOrReduce)
+        {
+            DateTimeFormatInfo dtFormat = new DateTimeFormatInfo
+            {
+                ShortDatePattern = PubComm.DATE_TIME_FORMAT
+            };
+
+            return (Convert.ToDateTime(strDt, dtFormat)).AddDays(iAddOrReduce).ToString(PubComm.DATE_TIME_FORMAT, DateTimeFormatInfo.InvariantInfo);
         }
     }
 }

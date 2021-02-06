@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Globalization;
 using System.Text;
 using System.Linq;
 using System.Threading.Tasks;
@@ -35,10 +36,10 @@ namespace SuperPOS.UI.TA
         private decimal dTsShop = 0.00m;
         private decimal dTsFastFood = 0.00m;
         private decimal dTsTotalOrder = 0.00m;
-        private decimal dTsTotalCollection = 0.00m;
-        private decimal dTsTotalDelivery = 0.00m;
-        private decimal dTsTotalShop = 0.00m;
-        private decimal dTsTotalFastFood = 0.00m;
+        private int dTsTotalCollection = 0;
+        private int dTsTotalDelivery = 0;
+        private int dTsTotalShop = 0;
+        private int dTsTotalFastFood = 0;
         private decimal dTsTotalDc = 0.00m;
         private decimal dTsTotalDcCash = 0.00m;
         private decimal dTsTotalDcOther = 0.00m;
@@ -69,7 +70,7 @@ namespace SuperPOS.UI.TA
             ChangeLang(iLangStatusId);
             asfc.controllInitializeSize(this);
 
-            deDay.Text = CommonDAL.GetBusDate();
+            deDay.Text = DateTime.Now.ToString(PubComm.DATE_TIME_FORMAT, DateTimeFormatInfo.InvariantInfo);
 
             txtCurrentTime.Text = DateTime.Now.ToLongTimeString();
             txtCurrentDate.Text = DateTime.Now.ToShortDateString();
@@ -225,23 +226,23 @@ namespace SuperPOS.UI.TA
                 txtTsTotalOrder.Text = dTsTotalOrder.ToString("0.00");
 
                 dTsTotalCollection = lstDb.ToList().Any(s => s.PayOrderType.Equals(PubComm.ORDER_TYPE_COLLECTION))
-                              ? lstDb.ToList().Where(s => s.PayOrderType.Equals(PubComm.ORDER_TYPE_COLLECTION)).Sum(s => Convert.ToDecimal(s.Paid))
-                              : 0.00m;
-                txtTsTotalCol.Text = dTsTotalCollection.ToString("0.00");
+                              ? lstDb.Count(s => s.PayOrderType.Equals(PubComm.ORDER_TYPE_COLLECTION))
+                              : 0;
+                txtTsTotalCol.Text = dTsTotalCollection.ToString();
 
                 dTsTotalDelivery = lstDb.ToList().Any(s => s.PayOrderType.Equals(PubComm.ORDER_TYPE_DELIVERY))
-                            ? lstDb.ToList().Where(s => s.PayOrderType.Equals(PubComm.ORDER_TYPE_DELIVERY)).Sum(s => Convert.ToDecimal(s.Paid))
-                            : 0.00m;
-                txtTsTotalDel.Text = dTsTotalDelivery.ToString("0.00");
+                            ? lstDb.Count(s => s.PayOrderType.Equals(PubComm.ORDER_TYPE_DELIVERY))
+                            : 0;
+                txtTsTotalDel.Text = dTsTotalDelivery.ToString();
 
                 dTsTotalShop = lstDb.ToList().Any(s => s.PayOrderType.Equals(PubComm.ORDER_TYPE_SHOP))
-                        ? lstDb.ToList().Where(s => s.PayOrderType.Equals(PubComm.ORDER_TYPE_SHOP)).Sum(s => Convert.ToDecimal(s.Paid))
-                        : 0.00m;
+                        ? lstDb.Count(s => s.PayOrderType.Equals(PubComm.ORDER_TYPE_SHOP))
+                        : 0;
                 txtTsTotalShop.Text = dTsTotalShop.ToString("0.00");
 
                 dTsTotalFastFood = lstDb.ToList().Any(s => s.PayOrderType.Equals(PubComm.ORDER_TYPE_FAST_FOOD))
-                            ? lstDb.ToList().Where(s => s.PayOrderType.Equals(PubComm.ORDER_TYPE_FAST_FOOD)).Sum(s => Convert.ToDecimal(s.Paid))
-                            : 0.00m;
+                            ? lstDb.Count(s => s.PayOrderType.Equals(PubComm.ORDER_TYPE_FAST_FOOD))
+                            : 0;
                 txtTsTotalFF.Text = dTsTotalFastFood.ToString("0.00");
 
                 dTsTotalOrder = dTsTotalDelivery + dTsTotalCollection + dTsTotalShop + dTsTotalFastFood;
@@ -287,20 +288,20 @@ namespace SuperPOS.UI.TA
                 dTsFastFood = 0.00m;
                 txtTsFastFood.Text = @"0.00";
 
-                dTsTotalOrder = 0.00m;
-                txtTsTotalOrder.Text = @"0.00";
+                dTsTotalOrder = 0;
+                txtTsTotalOrder.Text = @"0";
 
-                dTsTotalCollection = 0.00m;
-                txtTsTotalCol.Text = @"0.00";
+                dTsTotalCollection = 0;
+                txtTsTotalCol.Text = @"0";
 
-                dTsTotalDelivery = 0.00m;
-                txtTsTotalDel.Text = @"0.00";
+                dTsTotalDelivery = 0;
+                txtTsTotalDel.Text = @"0";
 
-                dTsTotalShop = 0.00m;
-                txtTsTotalShop.Text = @"0.00";
+                dTsTotalShop = 0;
+                txtTsTotalShop.Text = @"0";
 
-                dTsTotalFastFood = 0.00m;
-                txtTsTotalFF.Text = @"0.00";
+                dTsTotalFastFood = 0;
+                txtTsTotalFF.Text = @"0";
 
                 dTsTotalDc = 0.00m;
                 txtTsTotalDc.Text = @"0.00";
@@ -363,13 +364,13 @@ namespace SuperPOS.UI.TA
 
         private void btnLeft_Click(object sender, EventArgs e)
         {
-            deDay.Text = (Convert.ToDateTime(deDay.Text)).AddDays(-1).ToShortDateString();
+            deDay.Text = CommonDAL.SetDateTimeFormat(deDay.Text, -1);
             GetBindData(deDay.Text);
         }
 
         private void btnRight_Click(object sender, EventArgs e)
         {
-            deDay.Text = (Convert.ToDateTime(deDay.Text)).AddDays(1).ToShortDateString();
+            deDay.Text = CommonDAL.SetDateTimeFormat(deDay.Text, 1);
             GetBindData(deDay.Text);
         }
     }

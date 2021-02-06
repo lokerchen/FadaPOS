@@ -5,6 +5,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Diagnostics;
 using System.Drawing;
+using System.Globalization;
 using System.Text;
 using System.Linq;
 using System.Threading.Tasks;
@@ -103,7 +104,8 @@ namespace SuperPOS.UI.TA
             webBrowser2.Navigate("about:blank/");
 
             //deDay.Text = CommonDAL.GetBusDate();
-            deDay.Text = DateTime.Now.ToShortDateString();
+            //deDay.Text = DateTime.Now.ToShortDateString();
+            deDay.Text = DateTime.Now.ToString(PubComm.DATE_TIME_FORMAT, DateTimeFormatInfo.InvariantInfo);
 
             GetBindData(deDay.Text);
             
@@ -542,13 +544,13 @@ namespace SuperPOS.UI.TA
 
         private void btnRight_Click(object sender, EventArgs e)
         {
-            deDay.Text = (Convert.ToDateTime(deDay.Text)).AddDays(1).ToShortDateString();
+            deDay.Text = CommonDAL.SetDateTimeFormat(deDay.Text, 1);
             GetBindData(deDay.Text);
         }
 
         private void btnLeft_Click(object sender, EventArgs e)
         {
-            deDay.Text = (Convert.ToDateTime(deDay.Text)).AddDays(-1).ToShortDateString();
+            deDay.Text = CommonDAL.SetDateTimeFormat(deDay.Text, -1);
             GetBindData(deDay.Text);
         }
 
