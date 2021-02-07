@@ -73,7 +73,7 @@ namespace SuperPOS.UI.TA
             deDay.Text = DateTime.Now.ToString(PubComm.DATE_TIME_FORMAT, DateTimeFormatInfo.InvariantInfo);
 
             txtCurrentTime.Text = DateTime.Now.ToLongTimeString();
-            txtCurrentDate.Text = DateTime.Now.ToShortDateString();
+            txtCurrentDate.Text = DateTime.Now.ToString(PubComm.DATE_TIME_FORMAT, DateTimeFormatInfo.InvariantInfo);
 
             GetBindData(deDay.Text);
         }
