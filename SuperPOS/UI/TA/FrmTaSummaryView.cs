@@ -223,7 +223,7 @@ namespace SuperPOS.UI.TA
 
                 //dTsTotalOrder = lstDb.Count(s => s.gridBusDate.Equals(busDate));
                 dTsTotalOrder = lstDb.Count();
-                txtTsTotalOrder.Text = dTsTotalOrder.ToString("0.00");
+                txtTsTotalOrder.Text = dTsTotalOrder.ToString();
 
                 dTsTotalCollection = lstDb.ToList().Any(s => s.PayOrderType.Equals(PubComm.ORDER_TYPE_COLLECTION) && s.BusDate.Equals(busDate))
                               ? lstDb.Count(s => s.PayOrderType.Equals(PubComm.ORDER_TYPE_COLLECTION) && s.BusDate.Equals(busDate))
@@ -263,7 +263,7 @@ namespace SuperPOS.UI.TA
                                   : 0.00m;
                 txtTsDcOther.Text = dTsTotalDcOther.ToString("0.00");
 
-                txtStTotalTakings.Text = txtTsTotalOrder.Text;
+                txtStTotalTakings.Text = txtTsTotalTA.Text;
                 txtStTotalOrder.Text = lstDb.Count.ToString();
                 txtStTotalVat.Text = (CommonDAL.GetAllVAT("", "", deDay.Text)).ToString("0.00");
 
