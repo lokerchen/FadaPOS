@@ -305,7 +305,7 @@ namespace SuperPOS.UI.TA
 
         private void btnPay_Click(object sender, EventArgs e)
         {
-            TaCheckOrderInfo taCheckOrderInfo = CommonData.TaCheckOrder.FirstOrDefault(s => s.CheckCode.Equals(checkCode));
+            TaCheckOrderInfo taCheckOrderInfo = CommonData.TaCheckOrder.FirstOrDefault(s => s.CheckCode.Equals(checkCode) && s.BusDate.Equals(checkBusDate));
 
             if (checkOrderType.Equals(PubComm.ORDER_TYPE_SHOP))
             {

@@ -238,15 +238,15 @@ namespace SuperPOS.UI.TA
                 dTsTotalShop = lstDb.ToList().Any(s => s.PayOrderType.Equals(PubComm.ORDER_TYPE_SHOP) && s.BusDate.Equals(busDate))
                         ? lstDb.Count(s => s.PayOrderType.Equals(PubComm.ORDER_TYPE_SHOP) && s.BusDate.Equals(busDate))
                         : 0;
-                txtTsTotalShop.Text = dTsTotalShop.ToString("0.00");
+                txtTsTotalShop.Text = dTsTotalShop.ToString();
 
                 dTsTotalFastFood = lstDb.ToList().Any(s => s.PayOrderType.Equals(PubComm.ORDER_TYPE_FAST_FOOD) && s.BusDate.Equals(busDate))
                             ? lstDb.Count(s => s.PayOrderType.Equals(PubComm.ORDER_TYPE_FAST_FOOD) && s.BusDate.Equals(busDate))
                             : 0;
-                txtTsTotalFF.Text = dTsTotalFastFood.ToString("0.00");
+                txtTsTotalFF.Text = dTsTotalFastFood.ToString();
 
                 dTsTotalOrder = dTsTotalDelivery + dTsTotalCollection + dTsTotalShop + dTsTotalFastFood;
-                txtTsTotalOrder.Text = dTsTotalOrder.ToString("0.00");
+                txtTsTotalOrder.Text = dTsTotalOrder.ToString();
 
                 dTsTotalDc = lstDb.ToList().Any()
                             ? lstDb.ToList().Sum(s => Convert.ToDecimal(s.DeliveryFee))
@@ -264,7 +264,7 @@ namespace SuperPOS.UI.TA
                 txtTsDcOther.Text = dTsTotalDcOther.ToString("0.00");
 
                 txtStTotalTakings.Text = txtTsTotalTA.Text;
-                txtStTotalOrder.Text = lstDb.Count.ToString();
+                txtStTotalOrder.Text = lstDb.Count(s => s.BusDate.Equals(busDate)).ToString();
                 txtStTotalVat.Text = (CommonDAL.GetAllVAT("", "", deDay.Text)).ToString("0.00");
 
                 txtEsTotalEatIn.Text = @"0.00";
@@ -334,19 +334,29 @@ namespace SuperPOS.UI.TA
 
             #region 不同付款类型
             lblPayType1.Text = @"Cash";
-            txtPtOrder1.Text = (lstDb.Where(s => Convert.ToDecimal(s.PayTypePay1) > 0.0m && s.BusDate.Equals(deDay.Text)).Sum(s => Convert.ToDecimal(s.PayTypePay1))).ToString("0.00");
+            txtPtOrder1.Text = lstDb.Count(s => Convert.ToDecimal(s.PayTypePay1) > 0.0m && s.BusDate.Equals(deDay.Text)).ToString();
+            txtPtTotal1.Text = (lstDb.Where(s => Convert.ToDecimal(s.PayTypePay1) > 0.0m && s.BusDate.Equals(deDay.Text)).Sum(s => Convert.ToDecimal(s.PayTypePay1))).ToString("0.00");
+            txtPtTips1.Text = "0.00";
 
             lblPayType2.Text = @"Card";
-            txtPtOrder2.Text = (lstDb.Where(s => Convert.ToDecimal(s.PayTypePay2) > 0.0m && s.BusDate.Equals(deDay.Text)).Sum(s => Convert.ToDecimal(s.PayTypePay2))).ToString("0.00");
+            txtPtOrder2.Text = lstDb.Count(s => Convert.ToDecimal(s.PayTypePay2) > 0.0m && s.BusDate.Equals(deDay.Text)).ToString();
+            txtPtTotal2.Text = (lstDb.Where(s => Convert.ToDecimal(s.PayTypePay2) > 0.0m && s.BusDate.Equals(deDay.Text)).Sum(s => Convert.ToDecimal(s.PayTypePay2))).ToString("0.00");
+            txtPtTips2.Text = "0.00";
 
             lblPayType3.Text = @"Other";
-            txtPtOrder3.Text = (lstDb.Where(s => Convert.ToDecimal(s.PayTypePay3) > 0.0m && s.BusDate.Equals(deDay.Text)).Sum(s => Convert.ToDecimal(s.PayTypePay3))).ToString("0.00");
+            txtPtOrder3.Text = lstDb.Count(s => Convert.ToDecimal(s.PayTypePay3) > 0.0m && s.BusDate.Equals(deDay.Text)).ToString();
+            txtPtTotal3.Text = (lstDb.Where(s => Convert.ToDecimal(s.PayTypePay3) > 0.0m && s.BusDate.Equals(deDay.Text)).Sum(s => Convert.ToDecimal(s.PayTypePay3))).ToString("0.00");
+            txtPtTips3.Text = "0.00";
 
             lblPayType4.Text = @"VISA";
-            txtPtOrder4.Text = (lstDb.Where(s => Convert.ToDecimal(s.PayTypePay4) > 0.0m && s.BusDate.Equals(deDay.Text)).Sum(s => Convert.ToDecimal(s.PayTypePay4))).ToString("0.00");
+            txtPtOrder4.Text = lstDb.Count(s => Convert.ToDecimal(s.PayTypePay4) > 0.0m && s.BusDate.Equals(deDay.Text)).ToString();
+            txtPtTotal4.Text = (lstDb.Where(s => Convert.ToDecimal(s.PayTypePay4) > 0.0m && s.BusDate.Equals(deDay.Text)).Sum(s => Convert.ToDecimal(s.PayTypePay4))).ToString("0.00");
+            txtPtTips4.Text = "0.00";
 
             lblPayType5.Text = @"PayPal";
-            txtPtOrder5.Text = (lstDb.Where(s => Convert.ToDecimal(s.PayTypePay5) > 0.0m && s.BusDate.Equals(deDay.Text)).Sum(s => Convert.ToDecimal(s.PayTypePay5))).ToString("0.00");
+            txtPtOrder5.Text = lstDb.Count(s => Convert.ToDecimal(s.PayTypePay5) > 0.0m && s.BusDate.Equals(deDay.Text)).ToString();
+            txtPtTotal5.Text = (lstDb.Where(s => Convert.ToDecimal(s.PayTypePay5) > 0.0m && s.BusDate.Equals(deDay.Text)).Sum(s => Convert.ToDecimal(s.PayTypePay5))).ToString("0.00");
+            txtPtTips5.Text = "0.00";
 
             #endregion
         }

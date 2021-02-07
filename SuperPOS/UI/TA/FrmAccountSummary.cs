@@ -77,7 +77,7 @@ namespace SuperPOS.UI.TA
         //默认语言标识状态位
         public int iLangStatusId = PubComm.MENU_LANG_DEFAULT;
 
-        private IList<AccountSummaryInfo> lstAccountSummaryInfos = CommonData.GetAccountSummaryInfos;
+        private IList<AccountSummaryInfo> lstAccountSummaryInfos = null;
 
         public FrmAccountSummary()
         {
@@ -100,6 +100,9 @@ namespace SuperPOS.UI.TA
             //sysData.GetUsrBase();
             //sysData.GetTaOrderItem();
             //sysData.GetTaPreview();
+
+            new SystemData().GetAccountSummary();
+            lstAccountSummaryInfos = CommonData.GetAccountSummaryInfos;
 
             webBrowser2.Navigate("about:blank/");
 
