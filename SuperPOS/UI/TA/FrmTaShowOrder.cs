@@ -207,7 +207,7 @@ namespace SuperPOS.UI
                             gridChange =
                             (Convert.ToDecimal(check.Paid) - Convert.ToDecimal(check.TotalAmount)) <= 0
                                 ? "0.0"
-                                : (Convert.ToDecimal(check.Paid) - Convert.ToDecimal(check.TotalAmount)).ToString(),
+                                : (Convert.ToDecimal(check.Paid) - Convert.ToDecimal(check.TotalAmount)).ToString("0.00"),
                             gridRefNo = check.RefNum,
                             gridDeliveryFee = check.DeliveryFee,
                             gridStaffId = check.StaffID,

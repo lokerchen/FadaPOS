@@ -65,6 +65,10 @@ namespace SuperPOS.UI.TA
         //营业日
         private string checkBusDate;
 
+        private string checkRefNum;
+        private string checkDeliveryFee;
+        private string checkSurcharge;
+
         private readonly EntityControl _control = new EntityControl();
 
         private AutoSizeFormClass asfc = new AutoSizeFormClass();
@@ -130,7 +134,10 @@ namespace SuperPOS.UI.TA
                             DiscountPer = string.IsNullOrEmpty(check.PayPerDiscount) ? "" : check.PayPerDiscount,
                             IsSave = check.IsSave,
                             OtherCheckCode = !check.IsSave.Equals("N") ? " ": check.CheckCode,
-                            gridBusDate = check.BusDate
+                            gridBusDate = check.BusDate,
+                            gridRefNum = check.RefNum,
+                            gridDeliveryFee = check.DeliveryFee,
+                            gridSurcharge = check.PaySurcharge
                         };
 
             var lstCheck2 = CommonData.TaCheckOrder.Where(s => !s.CustomerID.Equals("0") && !s.CustomerID.Equals("1"));
@@ -166,47 +173,16 @@ namespace SuperPOS.UI.TA
                              DiscountPer = string.IsNullOrEmpty(check.PayPerDiscount) ? "" : check.PayPerDiscount,
                              IsSave = check.IsSave,
                              OtherCheckCode = !check.IsSave.Equals("N") ? " " : check.CheckCode,
-                             gridBusDate = check.BusDate
+                             gridBusDate = check.BusDate,
+                             gridRefNum = check.RefNum,
+                             gridDeliveryFee = check.DeliveryFee,
+                             gridSurcharge = check.PaySurcharge
                          };
 
             var lstDb = lstDb1.Union(lstDb2);
 
             if (isSaveOrder)
                 lstDb = lstDb.Where(s => s.IsSave.Equals("Y"));
-
-            //if (iDriver != 0)
-            //{
-            //    lstDb = from db in lstDb
-            //            join cust in CommonData.TaCustomer
-            //                on db.CustID equals cust.ID
-            //            join driver in CommonData.TaDriver
-            //                on db.DriverID equals driver.ID
-            //            select new
-            //            {
-            //                ID = db.ID,
-            //                CheckCode = db.CheckCode,
-            //                OrderTime = db.OrderTime,
-            //                PostCode = cust.cusPostcode,
-            //                PostCodeZone = cust.cusPcZone,
-            //                Addr = cust.cusAddr,
-            //                PayOrderType = db.PayOrderType,
-            //                CustomerName = cust.cusName,
-            //                CustomerPhone = cust.cusPhone,
-            //                IsPaid = db.IsPaid,
-            //                TotalAmount = db.TotalAmount,
-            //                StaffName = db.StaffName,
-            //                Paid = db.Paid,
-            //                CustID = cust.ID,
-            //                DriverID = db.DriverID,
-            //                DriverName = driver.DriverName,
-            //                MenuAmount = db.MenuAmount,
-            //                Discount = db.Discount,
-            //                DiscountPer = db.DiscountPer,
-            //                IsSave = db.IsSave,
-            //                OtherCheckCode = !db.IsSave.Equals("N") ? " " : db.CheckCode,
-            //                gridBusDate = db.gridBusDate
-            //            };
-            //}
 
             var lstTmp = lstDb;
 
@@ -318,7 +294,14 @@ namespace SuperPOS.UI.TA
             //营业日
             checkBusDate = gvTaPendOrder.GetRowCellValue(gvTaPendOrder.FocusedRowHandle, "gridBusDate").ToString();
 
-    }
+            checkRefNum = gvTaPendOrder.GetRowCellValue(gvTaPendOrder.FocusedRowHandle, "gridRefNum") == null 
+                          ? ""
+                          : gvTaPendOrder.GetRowCellValue(gvTaPendOrder.FocusedRowHandle, "gridRefNum").ToString();
+
+            checkDeliveryFee = gvTaPendOrder.GetRowCellValue(gvTaPendOrder.FocusedRowHandle, "gridDeliveryFee").ToString();
+            checkSurcharge = gvTaPendOrder.GetRowCellValue(gvTaPendOrder.FocusedRowHandle, "gridSurcharge").ToString();
+
+        }
 
         private void btnPay_Click(object sender, EventArgs e)
         {
@@ -572,7 +555,11 @@ namespace SuperPOS.UI.TA
 
         private void btnPreview_Click(object sender, EventArgs e)
         {
-            FrmTaPendOrderPreview frmTaPendOrderPreview = new FrmTaPendOrderPreview(checkCode, checkTotalAmount, checkMenuTotal, checkUsrName, checkDiscount, checkDiscountPer, checkBusDate);
+            decimal dChange = (Convert.ToDecimal(checkPaid) - Convert.ToDecimal(checkTotalAmount)) <= 0
+                                ? 0m
+                                : (Convert.ToDecimal(checkPaid) - Convert.ToDecimal(checkPaid));
+            FrmTaPendOrderPreview frmTaPendOrderPreview = new FrmTaPendOrderPreview(checkCode, checkTotalAmount, checkMenuTotal, checkUsrName, checkDiscount, checkDiscountPer, checkBusDate, checkPaid,
+                dChange.ToString("0.00"), checkRefNum, checkDeliveryFee, checkSurcharge);
             frmTaPendOrderPreview.ShowDialog();
         }
 

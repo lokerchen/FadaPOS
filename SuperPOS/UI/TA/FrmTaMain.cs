@@ -1828,7 +1828,7 @@ namespace SuperPOS.UI.TA
 
                 if (Convert.ToDecimal(taCheckOrderInfo.PayDiscount) > 0)
                 {
-                    taCheckOrderInfo.TotalAmount = (Convert.ToDecimal(taCheckOrderInfo.TotalAmount) - Convert.ToDecimal(taCheckOrderInfo.PayDiscount)).ToString();
+                    taCheckOrderInfo.TotalAmount = (Convert.ToDecimal(taCheckOrderInfo.MenuAmount) - Convert.ToDecimal(taCheckOrderInfo.PayDiscount)).ToString();
                 }
                 
                 taCheckOrderInfo.StaffID = usrID;
@@ -1853,7 +1853,7 @@ namespace SuperPOS.UI.TA
 
                 decimal dDiscount = CommonDAL.GetTaDiscount(ORDER_TYPE, Convert.ToDecimal(taCheckOrderInfo.MenuAmount));
                 decimal dDiscountTotal = CommonDAL.GetAllDiscount(lstTaOI, dDiscount);
-                taCheckOrderInfo.TotalAmount = (Convert.ToDecimal(taCheckOrderInfo.MenuAmount) - dDiscountTotal).ToString("0.00");
+                //taCheckOrderInfo.TotalAmount = (Convert.ToDecimal(taCheckOrderInfo.MenuAmount) - dDiscountTotal).ToString("0.00");
 
                 new SystemData().GetTaDiscount();
                 //var lstDiscount = CommonData.TaDiscount.Where(s => s.TaType.Equals(ORDER_TYPE));
@@ -1872,9 +1872,9 @@ namespace SuperPOS.UI.TA
                     if (Convert.ToDecimal(taCheckOrderInfo.MenuAmount) > Convert.ToDecimal(string.IsNullOrEmpty(tdi.TaDiscThre) ? "0.00" : tdi.TaDiscThre))
                     {
                         taCheckOrderInfo.PayPerDiscount = strPayPerDiscount.Equals(@"0") ? "" : strPayPerDiscount + @"%";
-                        decimal dDiscount1 = CommonDAL.GetTaDiscount(ORDER_TYPE, Convert.ToDecimal(taCheckOrderInfo.MenuAmount));
-                        decimal dDiscountTotal1 = CommonDAL.GetAllDiscount(lstTaOI, dDiscount1);
-                        taCheckOrderInfo.PayDiscount = dDiscountTotal1.ToString("0.00");
+                        //decimal dDiscount1 = CommonDAL.GetTaDiscount(ORDER_TYPE, Convert.ToDecimal(taCheckOrderInfo.MenuAmount));
+                        //decimal dDiscountTotal1 = CommonDAL.GetAllDiscount(lstTaOI, dDiscount1);
+                        taCheckOrderInfo.PayDiscount = dDiscountTotal.ToString("0.00");
                     }
                     else
                     {
@@ -1885,10 +1885,9 @@ namespace SuperPOS.UI.TA
                 else
                     taCheckOrderInfo.PayDiscount = @"0.00";
 
-                if (Convert.ToDecimal(taCheckOrderInfo.PayDiscount) > 0)
-                {
-                    taCheckOrderInfo.TotalAmount = (Convert.ToDecimal(taCheckOrderInfo.TotalAmount) - Convert.ToDecimal(taCheckOrderInfo.PayDiscount)).ToString();
-                }
+                taCheckOrderInfo.TotalAmount = Convert.ToDecimal(taCheckOrderInfo.PayDiscount) > 0 
+                    ? (Convert.ToDecimal(taCheckOrderInfo.MenuAmount) - Convert.ToDecimal(taCheckOrderInfo.PayDiscount)).ToString("0.00") 
+                    : taCheckOrderInfo.MenuAmount;
 
                 taCheckOrderInfo.Paid = "0.00";
                 taCheckOrderInfo.IsPaid = "N";

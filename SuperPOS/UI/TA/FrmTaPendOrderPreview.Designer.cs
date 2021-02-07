@@ -30,24 +30,22 @@
         {
             this.richEditCtlPreview = new DevExpress.XtraRichEdit.RichEditControl();
             this.btnExit = new DevExpress.XtraEditors.SimpleButton();
+            this.webBrowser1 = new System.Windows.Forms.WebBrowser();
             this.SuspendLayout();
             // 
             // richEditCtlPreview
             // 
-            this.richEditCtlPreview.EnableToolTips = true;
-            this.richEditCtlPreview.Location = new System.Drawing.Point(9, 9);
+            this.richEditCtlPreview.Location = new System.Drawing.Point(451, 32);
             this.richEditCtlPreview.Margin = new System.Windows.Forms.Padding(0);
             this.richEditCtlPreview.Name = "richEditCtlPreview";
-            this.richEditCtlPreview.Options.Export.PlainText.ExportFinalParagraphMark = DevExpress.XtraRichEdit.Export.PlainText.ExportFinalParagraphMark.Never;
-            this.richEditCtlPreview.Options.Fields.UpdateFieldsInTextBoxes = false;
             this.richEditCtlPreview.Options.HorizontalRuler.ShowTabs = false;
             this.richEditCtlPreview.Options.HorizontalRuler.Visibility = DevExpress.XtraRichEdit.RichEditRulerVisibility.Hidden;
             this.richEditCtlPreview.Options.HorizontalScrollbar.Visibility = DevExpress.XtraRichEdit.RichEditScrollbarVisibility.Hidden;
             this.richEditCtlPreview.Options.VerticalRuler.Visibility = DevExpress.XtraRichEdit.RichEditRulerVisibility.Hidden;
             this.richEditCtlPreview.Options.VerticalScrollbar.Visibility = DevExpress.XtraRichEdit.RichEditScrollbarVisibility.Hidden;
-            this.richEditCtlPreview.Size = new System.Drawing.Size(490, 628);
+            this.richEditCtlPreview.Size = new System.Drawing.Size(42, 42);
             this.richEditCtlPreview.TabIndex = 4;
-            this.richEditCtlPreview.Text = "rich";
+            this.richEditCtlPreview.Visible = false;
             // 
             // btnExit
             // 
@@ -58,21 +56,32 @@
             this.btnExit.Appearance.Options.UseFont = true;
             this.btnExit.Appearance.Options.UseForeColor = true;
             this.btnExit.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
-            this.btnExit.Location = new System.Drawing.Point(9, 644);
+            this.btnExit.Location = new System.Drawing.Point(8, 501);
+            this.btnExit.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnExit.Name = "btnExit";
-            this.btnExit.Size = new System.Drawing.Size(490, 48);
+            this.btnExit.Size = new System.Drawing.Size(429, 37);
             this.btnExit.TabIndex = 49;
             this.btnExit.Text = "Exit";
             this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
             // 
+            // webBrowser1
+            // 
+            this.webBrowser1.Location = new System.Drawing.Point(8, 13);
+            this.webBrowser1.MinimumSize = new System.Drawing.Size(20, 20);
+            this.webBrowser1.Name = "webBrowser1";
+            this.webBrowser1.Size = new System.Drawing.Size(429, 483);
+            this.webBrowser1.TabIndex = 50;
+            // 
             // FrmTaPendOrderPreview
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 18F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 14F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(508, 700);
+            this.ClientSize = new System.Drawing.Size(451, 544);
+            this.Controls.Add(this.webBrowser1);
             this.Controls.Add(this.btnExit);
             this.Controls.Add(this.richEditCtlPreview);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "FrmTaPendOrderPreview";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FrmPendOrderPreview";
@@ -85,5 +94,6 @@
 
         private DevExpress.XtraRichEdit.RichEditControl richEditCtlPreview;
         private DevExpress.XtraEditors.SimpleButton btnExit;
+        private System.Windows.Forms.WebBrowser webBrowser1;
     }
 }
