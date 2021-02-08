@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Diagnostics;
 using System.Drawing;
 using System.Text;
 using System.Linq;
@@ -103,83 +104,36 @@ namespace SuperPOS.UI.TA
 
         private void GetBindData(string orderType, int iDriver, bool isSaveOrder)
         {
-            var lstCheck1 = CommonData.TaCheckOrder.Where(s => s.CustomerID.Equals("0") || s.CustomerID.Equals("1"));
-            var lstDb1 = from check in lstCheck1
-                        join user in CommonData.UsrBase
-                            on check.StaffID equals user.ID
-                         join driver in CommonData.TaDriver
-                             on check.DriverID equals driver.ID
-                         where !check.IsPaid.Equals("Y") 
-                              && !check.IsCancel.Equals("Y")
-                        select new
-                        {
-                            ID = check.ID,
-                            CheckCode = check.CheckCode,
-                            OrderTime = check.PayTime,
-                            PostCode = "",
-                            PostCodeZone = "",
-                            Addr = "",
-                            PayOrderType = check.PayOrderType,
-                            CustomerName = "",
-                            CustomerPhone = "",
-                            IsPaid = check.IsPaid,
-                            TotalAmount = check.TotalAmount,
-                            StaffName = user.UsrName,
-                            Paid = check.Paid,
-                            CustID = Convert.ToInt32(check.CustomerID),
-                            DriverID = check.DriverID,
-                            DriverName = string.IsNullOrEmpty(driver.DriverName) ? "" : driver.DriverName,
-                            MenuAmount = check.MenuAmount,
-                            Discount = string.IsNullOrEmpty(check.PayDiscount) ? "" : check.PayDiscount,
-                            DiscountPer = string.IsNullOrEmpty(check.PayPerDiscount) ? "" : check.PayPerDiscount,
-                            IsSave = check.IsSave,
-                            OtherCheckCode = !check.IsSave.Equals("N") ? " ": check.CheckCode,
-                            gridBusDate = check.BusDate,
-                            gridRefNum = check.RefNum,
-                            gridDeliveryFee = check.DeliveryFee,
-                            gridSurcharge = check.PaySurcharge
-                        };
-
-            var lstCheck2 = CommonData.TaCheckOrder.Where(s => !s.CustomerID.Equals("0") && !s.CustomerID.Equals("1"));
-            var lstDb2 = from check in lstCheck2
-                         join user in CommonData.UsrBase
-                             on check.StaffID equals user.ID
-                         join driver in CommonData.TaDriver
-                             on check.DriverID equals driver.ID
-                         join cust in CommonData.TaCustomer
-                            on check.CustomerID equals cust.ID.ToString()
-                         where !check.IsPaid.Equals("Y")
-                               && !check.IsCancel.Equals("Y")
-                         select new
-                         {
-                             ID = check.ID,
-                             CheckCode = check.CheckCode,
-                             OrderTime = check.PayTime,
-                             PostCode = cust.cusPostcode,
-                             PostCodeZone = string.IsNullOrEmpty(cust.cusPcZone) ? "" : cust.cusPcZone,
-                             Addr = string.IsNullOrEmpty(cust.cusAddr) ? "" : cust.cusAddr,
-                             PayOrderType = check.PayOrderType,
-                             CustomerName = cust.cusName,
-                             CustomerPhone = string.IsNullOrEmpty(cust.cusPhone) ? "" : cust.cusPhone,
-                             IsPaid = check.IsPaid,
-                             TotalAmount = check.TotalAmount,
-                             StaffName = user.UsrName,
-                             Paid = check.Paid,
-                             CustID = Convert.ToInt32(check.CustomerID),
-                             DriverID = check.DriverID,
-                             DriverName = string.IsNullOrEmpty(driver.DriverName) ? "" : driver.DriverName,
-                             MenuAmount = check.MenuAmount,
-                             Discount = string.IsNullOrEmpty(check.PayDiscount) ? "" : check.PayDiscount,
-                             DiscountPer = string.IsNullOrEmpty(check.PayPerDiscount) ? "" : check.PayPerDiscount,
-                             IsSave = check.IsSave,
-                             OtherCheckCode = !check.IsSave.Equals("N") ? " " : check.CheckCode,
-                             gridBusDate = check.BusDate,
-                             gridRefNum = check.RefNum,
-                             gridDeliveryFee = check.DeliveryFee,
-                             gridSurcharge = check.PaySurcharge
-                         };
-
-            var lstDb = lstDb1.Union(lstDb2);
+            var lstDb = from sPod in CommonData.GetShowAndPendOrderData
+                where !sPod.IsPaid.Equals(@"Y") && !sPod.IsCancel.Equals(@"Y")
+                select new
+                {
+                    ID = sPod.ID,
+                    CheckCode = sPod.CheckCode,
+                    OrderTime = sPod.PayTime,
+                    PostCode = sPod.CustPostCode,
+                    PostCodeZone = string.IsNullOrEmpty(sPod.CustPcZone) ? "" : sPod.CustPcZone,
+                    Addr = string.IsNullOrEmpty(sPod.CustAddr) ? "" : sPod.CustAddr,
+                    PayOrderType = sPod.PayOrderType,
+                    CustomerName = sPod.CustName,
+                    CustomerPhone = string.IsNullOrEmpty(sPod.CustPhone) ? "" : sPod.CustPhone,
+                    IsPaid = sPod.IsPaid,
+                    TotalAmount = sPod.TotalAmount,
+                    StaffName = sPod.UsrName,
+                    Paid = sPod.Paid,
+                    CustID = Convert.ToInt32(sPod.CustID),
+                    DriverID = sPod.DriverID,
+                    DriverName = string.IsNullOrEmpty(sPod.DriverName) ? "" : sPod.DriverName,
+                    MenuAmount = sPod.MenuAmount,
+                    Discount = string.IsNullOrEmpty(sPod.PayDiscount) ? "" : sPod.PayDiscount,
+                    DiscountPer = string.IsNullOrEmpty(sPod.PayPerDiscount) ? "" : sPod.PayPerDiscount,
+                    IsSave = sPod.IsSave,
+                    OtherCheckCode = !sPod.IsSave.Equals("N") ? " " : sPod.CheckCode,
+                    gridBusDate = sPod.BusDate,
+                    gridRefNum = sPod.RefNum,
+                    gridDeliveryFee = sPod.DeliveryFee,
+                    gridSurcharge = sPod.PaySurcharge
+                };
 
             if (isSaveOrder)
                 lstDb = lstDb.Where(s => s.IsSave.Equals("Y"));
@@ -228,10 +182,12 @@ namespace SuperPOS.UI.TA
         private void FrmTaPendOrder_Load(object sender, EventArgs e)
         {
             SystemData systemData = new SystemData();
-            systemData.GetTaCheckOrder();
-            systemData.GetTaCustomer();
-            systemData.GetUsrBase();
-            systemData.GetTaOrderItem();
+            //systemData.GetTaCheckOrder();
+            //systemData.GetTaCustomer();
+            //systemData.GetUsrBase();
+            //systemData.GetTaOrderItem();
+
+            systemData.GetShowAndPendOrderData("", strBusDate);
 
             GetBindData("", 0, false);
 
@@ -305,6 +261,8 @@ namespace SuperPOS.UI.TA
 
         private void btnPay_Click(object sender, EventArgs e)
         {
+            SystemData systemData = new SystemData();
+            systemData.GetTaCheckOrder();
             TaCheckOrderInfo taCheckOrderInfo = CommonData.TaCheckOrder.FirstOrDefault(s => s.CheckCode.Equals(checkCode) && s.BusDate.Equals(checkBusDate));
 
             if (checkOrderType.Equals(PubComm.ORDER_TYPE_SHOP))

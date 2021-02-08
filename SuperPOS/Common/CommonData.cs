@@ -117,5 +117,7 @@ namespace SuperPOS.Common
         public static IList<OrderItemSumForVatInfo> GetOrderItemSumForVatInfos { get; set; }
 
         public static IList<RptTotalSalesInfo> GetRptTotalSalesInfo { get; set; }
+
+        public static IList<ShowAndPendOrderDataInfo> GetShowAndPendOrderData { get; set; }
     }
 }

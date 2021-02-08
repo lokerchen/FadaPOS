@@ -550,14 +550,15 @@
             // 
             // lueDriver
             // 
-            this.lueDriver.Location = new System.Drawing.Point(207, 464);
+            this.lueDriver.Location = new System.Drawing.Point(197, 460);
             this.lueDriver.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.lueDriver.Name = "lueDriver";
             this.lueDriver.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 10F);
             this.lueDriver.Properties.Appearance.Options.UseFont = true;
+            this.lueDriver.Properties.AutoHeight = false;
             this.lueDriver.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.lueDriver.Size = new System.Drawing.Size(137, 22);
+            this.lueDriver.Size = new System.Drawing.Size(137, 31);
             this.lueDriver.TabIndex = 51;
             // 
             // labelControl1
@@ -568,10 +569,11 @@
             this.labelControl1.Appearance.Options.UseBackColor = true;
             this.labelControl1.Appearance.Options.UseFont = true;
             this.labelControl1.Appearance.Options.UseForeColor = true;
-            this.labelControl1.Location = new System.Drawing.Point(118, 467);
+            this.labelControl1.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
+            this.labelControl1.Location = new System.Drawing.Point(111, 460);
             this.labelControl1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.labelControl1.Name = "labelControl1";
-            this.labelControl1.Size = new System.Drawing.Size(75, 16);
+            this.labelControl1.Size = new System.Drawing.Size(82, 31);
             this.labelControl1.TabIndex = 52;
             this.labelControl1.Text = "Show Driver:";
             // 
@@ -747,7 +749,6 @@
             this.panelControl4.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.txtTotal.Properties)).EndInit();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 

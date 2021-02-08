@@ -502,5 +502,66 @@ namespace SuperPOS.Common
                 return result;
             }
         }
+
+        public IList<ShowAndPendOrderDataInfo> GetShowAndPendOrderData(string strOrderNum, string strBusDate)
+        {
+            using (ISession session = SessionFactory.OpenSession())
+            {
+                string sql = "SELECT CO.ID AS ID, CO.CheckCode AS CheckCode, TC.cusPostcode AS CustPostCode, TC.cusPcZone AS CustPcZone, TC.cusAddr AS CustAddr, CO.PayOrderType AS PayOrderType, " +
+                             "TC.cusName AS CustName, TC.cusPhone AS CustPhone, CO.IsPaid AS IsPaid, CO.TotalAmount AS TotalAmount, UB.UsrName AS UsrName, CO.Paid AS Paid, CO.CustomerID AS CustID, " +
+                             "CO.DriverID AS DriverID, TD.DriverName AS DriverName, CO.MenuAmount AS MenuAmount, CO.PayDiscount AS PayDiscount, CO.PayPerDiscount AS PayPerDiscount, CO.IsSave AS IsSave, " +
+                             "CO.BusDate AS BusDate, CO.RefNum AS RefNum, CO.DeliveryFee AS DeliveryFee, CO.PaySurcharge AS PaySurcharge, CO.PayPerSurcharge AS PayPerSurcharge, " +
+                             "CO.PayType1 AS PayType1, CO.PayType2 AS PayType2, CO.PayType3 AS PayType3, CO.PayType4 AS PayType4, CO.PayType5 AS PayType5, " +
+                             "CO.PayTypePay1 AS PayTypePay1, CO.PayTypePay2 AS PayTypePay2, CO.PayTypePay3 AS PayTypePay3, CO.PayTypePay4 AS PayTypePay4, CO.PayTypePay5 AS PayTypePay5, " + 
+                             "CO.IsCancel AS IsCancel, CO.PayTime AS PayTime, CO.StaffID AS StaffID " +
+                             "FROM Ta_CheckOrder CO " +
+                             "LEFT JOIN Usr_Base UB ON CO.StaffID = UB.ID LEFT JOIN Ta_Driver TD ON CO.DriverID = TD.ID " +
+                             "LEFT JOIN Ta_Customer TC ON CO.CustomerID = TC.ID WHERE CO.CheckCode IS NOT NULL";
+                if (!string.IsNullOrEmpty(strOrderNum)) sql += " AND CO.CheckCode ='" + strOrderNum + "'";
+                if (!string.IsNullOrEmpty(strBusDate)) sql += " AND CO.BusDate='" + strBusDate + "'";
+                IList<object[]> query = session.CreateSQLQuery(sql).List<object[]>();
+                IList<ShowAndPendOrderDataInfo> result = query.Select(s => new ShowAndPendOrderDataInfo(
+                                                                        s[0] == null ? 0 : Convert.ToInt32(s[0]),
+                                                                        s[1]?.ToString() ?? "",
+                                                                        s[2]?.ToString() ?? "",
+                                                                        s[3]?.ToString() ?? "",
+                                                                        s[4]?.ToString() ?? "",
+                                                                        s[5]?.ToString() ?? "",
+                                                                        s[6]?.ToString() ?? "",
+                                                                        s[7]?.ToString() ?? "",
+                                                                        s[8]?.ToString() ?? "",
+                                                                        s[9]?.ToString() ?? "",
+                                                                        s[10]?.ToString() ?? "",
+                                                                        s[11]?.ToString() ?? "",
+                                                                        s[12]?.ToString() ?? "",
+                                                                        s[13]?.ToString() ?? "",
+                                                                        s[14]?.ToString() ?? "",
+                                                                        s[15]?.ToString() ?? "",
+                                                                        s[16]?.ToString() ?? "",
+                                                                        s[17]?.ToString() ?? "",
+                                                                        s[18]?.ToString() ?? "",
+                                                                        s[19]?.ToString() ?? "",
+                                                                        s[20]?.ToString() ?? "",
+                                                                        s[21]?.ToString() ?? "",
+                                                                        s[22]?.ToString() ?? "",
+                                                                        s[23]?.ToString() ?? "",
+                                                                        s[24]?.ToString() ?? "",
+                                                                        s[25]?.ToString() ?? "",
+                                                                        s[26]?.ToString() ?? "",
+                                                                        s[27]?.ToString() ?? "",
+                                                                        s[28]?.ToString() ?? "",
+                                                                        s[29]?.ToString() ?? "",
+                                                                        s[30]?.ToString() ?? "",
+                                                                        s[31]?.ToString() ?? "",
+                                                                        s[32]?.ToString() ?? "",
+                                                                        s[33]?.ToString() ?? "",
+                                                                        s[34]?.ToString() ?? "",
+                                                                        s[35]?.ToString() ?? "",
+                                                                        s[36]?.ToString() ?? ""
+                                                                        )).ToList();
+                return result;
+            }
+        }
+
     }
 }

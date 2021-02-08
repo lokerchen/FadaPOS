@@ -89,14 +89,9 @@ namespace SuperPOS.UI
 
         private void FrmTaShowOrder_Load(object sender, EventArgs e)
         {
-            //SystemData sysData = new SystemData();
-
-            //sysData.GetTaCheckOrder();
-            ////sysData.GetTaCustomer();
-            //sysData.GetUsrBase();
-            //sysData.GetTaOrderItem();
-            ////sysData.GetTaPaymentDetail();
-            //sysData.GetTaPreview();
+            SystemData systemData = new SystemData();
+            
+            systemData.GetShowAndPendOrderData("", strBusDate);
 
             webBrowser2.Navigate("about:blank/");
             GetBindData("", true);
@@ -113,108 +108,39 @@ namespace SuperPOS.UI
         /// <param name="orderType">账单类型</param>
         private void GetBindData(string orderType, bool isNeedStaff)
         {
-            var lstCo = CommonData.TaCheckOrder.Where(s => s.IsPaid.Equals("Y") && s.BusDate.Equals(strBusDate));
-            //var lstDb = from check in lstCo
-            //            join user in CommonData.UsrBase
-            //                on check.StaffID equals user.ID
-            //            select new
-            //            {
-            //                ID = check.ID,
-            //                gridOrderNo = check.CheckCode,
-            //                gridPayType = (GetAllPayType(check.PayTypePay1, check.PayType1) + @" "
-            //                                + GetAllPayType(check.PayTypePay2, check.PayType2) + @" "
-            //                                + GetAllPayType(check.PayTypePay3, check.PayType3) + @" "
-            //                                + GetAllPayType(check.PayTypePay4, check.PayType4) + @" "
-            //                                + GetAllPayType(check.PayTypePay5, check.PayType5)).Trim(),
-            //                gridOrderType = check.PayOrderType,
-            //                gridOrderTime = check.PayTime,
-            //                gridTotal = check.TotalAmount,
-            //                //gridDriver = driver.DriverName,
-            //                gridDriver = "",
-            //                gridStaff = user.UsrName,
-            //                gridCustID = check.CustomerID,
-            //                gridDiscountPer = check.PayPerDiscount,
-            //                gridDisount = check.PayDiscount,
-            //                gridSubTotal = check.MenuAmount,
-            //                gridBusDate = check.BusDate,
-            //                gridTendered = check.Paid,
-            //                gridChange = (Convert.ToDecimal(check.Paid) - Convert.ToDecimal(check.TotalAmount)) <= 0 ? "0.0" : (Convert.ToDecimal(check.Paid) - Convert.ToDecimal(check.TotalAmount)).ToString(),
-            //                gridRefNo = check.RefNum,
-            //                gridDeliveryFee = check.DeliveryFee
-            //            };
-            var lstDb = from check in lstCo
-                        join driver in CommonData.TaDriver
-                        on check.DriverID equals driver.ID
-                        select new
-                        {
-                            ID = check.ID,
-                            gridOrderNo = check.CheckCode,
-                            gridPayType = (GetAllPayType(check.PayTypePay1, check.PayType1) + @" "
-                                           + GetAllPayType(check.PayTypePay2, check.PayType2) + @" "
-                                           + GetAllPayType(check.PayTypePay3, check.PayType3) + @" "
-                                           + GetAllPayType(check.PayTypePay4, check.PayType4) + @" "
-                                           + GetAllPayType(check.PayTypePay5, check.PayType5)).Trim(),
-                            gridOrderType = check.PayOrderType,
-                            gridOrderTime = check.PayTime,
-                            gridTotal = check.TotalAmount,
-                            gridDriver = driver.DriverName,
-                            //gridDriver = "",
-                            gridStaff = "",
-                            gridCustID = check.CustomerID,
-                            gridDiscountPer = check.PayPerDiscount,
-                            gridDisount = check.PayDiscount,
-                            gridSubTotal = check.MenuAmount,
-                            gridBusDate = check.BusDate,
-                            gridTendered = check.Paid,
-                            gridChange =
-                                (Convert.ToDecimal(check.Paid) - Convert.ToDecimal(check.TotalAmount)) <= 0
-                                    ? "0.0"
-                                    : (Convert.ToDecimal(check.Paid) - Convert.ToDecimal(check.TotalAmount)).ToString(),
-                            gridRefNo = check.RefNum,
-                            gridDeliveryFee = check.DeliveryFee,
-                            gridStaffId = check.StaffID,
-                            gridSurcharge = check.PaySurcharge
-                        };
+            var lstDb = from sPod in CommonData.GetShowAndPendOrderData
+                where sPod.IsPaid.Equals("Y")
+                select new
+                {
+                    ID = sPod.ID,
+                    gridOrderNo = sPod.CheckCode,
+                    gridPayType = (GetAllPayType(sPod.PayTypePay1, sPod.PayType1) + @" "
+                                  + GetAllPayType(sPod.PayTypePay2, sPod.PayType2) + @" "
+                                  + GetAllPayType(sPod.PayTypePay3, sPod.PayType3) + @" "
+                                  + GetAllPayType(sPod.PayTypePay4, sPod.PayType4) + @" "
+                                  + GetAllPayType(sPod.PayTypePay5, sPod.PayType5)).Trim(),
+                    gridOrderType = sPod.PayOrderType,
+                    gridOrderTime = sPod.PayTime,
+                    gridTotal = sPod.TotalAmount,
+                    gridDriver = sPod.DriverName,
+                    //gridDriver = "",
+                    gridStaff = sPod.UsrName,
+                    gridCustID = sPod.CustID,
+                    gridDiscountPer = sPod.PayPerDiscount,
+                    gridDisount = sPod.PayDiscount,
+                    gridSubTotal = sPod.MenuAmount,
+                    gridBusDate = sPod.BusDate,
+                    gridTendered = sPod.Paid,
+                    gridChange =
+                        (Convert.ToDecimal(sPod.Paid) - Convert.ToDecimal(sPod.TotalAmount)) <= 0
+                            ? "0.0"
+                            : (Convert.ToDecimal(sPod.Paid) - Convert.ToDecimal(sPod.TotalAmount)).ToString("0.00"),
+                    gridRefNo = sPod.RefNum,
+                    gridDeliveryFee = sPod.DeliveryFee,
+                    gridStaffId = sPod.StaffID,
+                    gridSurcharge = sPod.PaySurcharge
+                };
 
-            if (isNeedStaff)
-            {
-                lstDb = from check in lstCo
-                        join driver in CommonData.TaDriver
-                        on check.DriverID equals driver.ID
-                        join user in CommonData.UsrBase
-                        on check.StaffID equals user.ID
-                        select new 
-                        {
-                            ID = check.ID,
-                            gridOrderNo = check.CheckCode,
-                            gridPayType = (GetAllPayType(check.PayTypePay1, check.PayType1) + @" "
-                                       + GetAllPayType(check.PayTypePay2, check.PayType2) + @" "
-                                       + GetAllPayType(check.PayTypePay3, check.PayType3) + @" "
-                                       + GetAllPayType(check.PayTypePay4, check.PayType4) + @" "
-                                       + GetAllPayType(check.PayTypePay5, check.PayType5)).Trim(),
-                            gridOrderType = check.PayOrderType,
-                            gridOrderTime = check.PayTime,
-                            gridTotal = check.TotalAmount,
-                            gridDriver = driver.DriverName,
-                            //gridDriver = "",
-                            gridStaff = user.UsrName,
-                            gridCustID = check.CustomerID,
-                            gridDiscountPer = check.PayPerDiscount,
-                            gridDisount = check.PayDiscount,
-                            gridSubTotal = check.MenuAmount,
-                            gridBusDate = check.BusDate,
-                            gridTendered = check.Paid,
-                            gridChange =
-                            (Convert.ToDecimal(check.Paid) - Convert.ToDecimal(check.TotalAmount)) <= 0
-                                ? "0.0"
-                                : (Convert.ToDecimal(check.Paid) - Convert.ToDecimal(check.TotalAmount)).ToString("0.00"),
-                            gridRefNo = check.RefNum,
-                            gridDeliveryFee = check.DeliveryFee,
-                            gridStaffId = check.StaffID,
-                            gridSurcharge = check.PaySurcharge
-                        };
-            }
-            
 
             gridControlTaShowOrder.DataSource = !string.IsNullOrEmpty(orderType)
                                                 ? lstDb.Where(s => s.gridOrderType.Equals(orderType)).ToList()
