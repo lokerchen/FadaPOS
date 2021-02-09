@@ -249,17 +249,17 @@ namespace SuperPOS.UI.TA
                 txtTsTotalOrder.Text = dTsTotalOrder.ToString();
 
                 dTsTotalDc = lstDb.ToList().Any()
-                            ? lstDb.ToList().Sum(s => Convert.ToDecimal(s.DeliveryFee))
+                            ? lstDb.ToList().Where(s => s.BusDate.Equals(busDate)).Sum(s => Convert.ToDecimal(s.DeliveryFee))
                             : 0.00m;
                 txtTsTotalDc.Text = dTsTotalDc.ToString("0.00");
 
                 dTsTotalDcCash = lstDb.ToList().Any()
-                                ? lstDb.ToList().Sum(s => Convert.ToDecimal(s.PayTypePay1))
+                                ? lstDb.ToList().Where(s => s.BusDate.Equals(busDate) && Convert.ToDecimal(s.PayTypePay1) > 0m).Sum(s => Convert.ToDecimal(s.DeliveryFee))
                                 : 0.00m;
                 txtTsDcCash.Text = dTsTotalDcCash.ToString("0.00");
 
                 dTsTotalDcOther = lstDb.ToList().Any()
-                                  ? lstDb.ToList().Sum(s => (Convert.ToDecimal(s.PayTypePay2) + Convert.ToDecimal(s.PayTypePay3) + Convert.ToDecimal(s.PayTypePay4)))
+                                  ? lstDb.ToList().Where(s => s.BusDate.Equals(busDate) && Convert.ToDecimal(s.PayTypePay1) <= 0m).Sum(s => Convert.ToDecimal(s.DeliveryFee))
                                   : 0.00m;
                 txtTsDcOther.Text = dTsTotalDcOther.ToString("0.00");
 
