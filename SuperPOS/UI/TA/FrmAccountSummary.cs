@@ -638,7 +638,8 @@ namespace SuperPOS.UI.TA
                         else if (gvTaShowOrder.GetRowCellValue(i, "PayOrderType").Equals(PubComm.ORDER_TYPE_FAST_FOOD))
                             dShop += gvTaShowOrder.GetRowCellValue(i, "TotalAmount") == null ? 0.00m : Convert.ToDecimal(gvTaShowOrder.GetRowCellValue(i, "TotalAmount"));
 
-                        dDC += gvTaShowOrder.GetRowCellValue(i, "PayDiscount") == null ? 0.00m : Convert.ToDecimal(gvTaShowOrder.GetRowCellValue(i, "PayDiscount"));
+                        //dDC += gvTaShowOrder.GetRowCellValue(i, "PayDiscount") == null ? 0.00m : Convert.ToDecimal(gvTaShowOrder.GetRowCellValue(i, "PayDiscount"));
+                        dDC += gvTaShowOrder.GetRowCellValue(i, "DeliveryFee") == null ? 0.00m : Convert.ToDecimal(gvTaShowOrder.GetRowCellValue(i, "DeliveryFee"));
                         dSC += gvTaShowOrder.GetRowCellValue(i, "PaySurcharge") == null ? 0.00m : Convert.ToDecimal(gvTaShowOrder.GetRowCellValue(i, "PaySurcharge"));
                     }
                 }

@@ -82,6 +82,7 @@
             this.Discount = new DevExpress.XtraGrid.Columns.GridColumn();
             this.SubToal = new DevExpress.XtraGrid.Columns.GridColumn();
             this.BusDate = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.DeliveryFee = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.txtSc.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtDc.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtTotalOrder.Properties)).BeginInit();
@@ -196,6 +197,10 @@
             this.lblSc.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
             this.lblSc.Appearance.Font = new System.Drawing.Font("Tahoma", 10F);
             this.lblSc.Appearance.ForeColor = System.Drawing.Color.Black;
+            this.lblSc.Appearance.Options.UseBackColor = true;
+            this.lblSc.Appearance.Options.UseFont = true;
+            this.lblSc.Appearance.Options.UseForeColor = true;
+            this.lblSc.Appearance.Options.UseTextOptions = true;
             this.lblSc.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.lblSc.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
             this.lblSc.Location = new System.Drawing.Point(451, 460);
@@ -218,6 +223,10 @@
             this.lblDc.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
             this.lblDc.Appearance.Font = new System.Drawing.Font("Tahoma", 10F);
             this.lblDc.Appearance.ForeColor = System.Drawing.Color.Black;
+            this.lblDc.Appearance.Options.UseBackColor = true;
+            this.lblDc.Appearance.Options.UseFont = true;
+            this.lblDc.Appearance.Options.UseForeColor = true;
+            this.lblDc.Appearance.Options.UseTextOptions = true;
             this.lblDc.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.lblDc.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
             this.lblDc.Location = new System.Drawing.Point(348, 460);
@@ -240,6 +249,10 @@
             this.lblTotalOrder.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
             this.lblTotalOrder.Appearance.Font = new System.Drawing.Font("Tahoma", 10F);
             this.lblTotalOrder.Appearance.ForeColor = System.Drawing.Color.Black;
+            this.lblTotalOrder.Appearance.Options.UseBackColor = true;
+            this.lblTotalOrder.Appearance.Options.UseFont = true;
+            this.lblTotalOrder.Appearance.Options.UseForeColor = true;
+            this.lblTotalOrder.Appearance.Options.UseTextOptions = true;
             this.lblTotalOrder.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.lblTotalOrder.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
             this.lblTotalOrder.Location = new System.Drawing.Point(242, 460);
@@ -262,6 +275,10 @@
             this.lblTotalTaking.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
             this.lblTotalTaking.Appearance.Font = new System.Drawing.Font("Tahoma", 10F);
             this.lblTotalTaking.Appearance.ForeColor = System.Drawing.Color.Black;
+            this.lblTotalTaking.Appearance.Options.UseBackColor = true;
+            this.lblTotalTaking.Appearance.Options.UseFont = true;
+            this.lblTotalTaking.Appearance.Options.UseForeColor = true;
+            this.lblTotalTaking.Appearance.Options.UseTextOptions = true;
             this.lblTotalTaking.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.lblTotalTaking.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
             this.lblTotalTaking.Location = new System.Drawing.Point(124, 460);
@@ -284,6 +301,10 @@
             this.lblEatIn.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
             this.lblEatIn.Appearance.Font = new System.Drawing.Font("Tahoma", 10F);
             this.lblEatIn.Appearance.ForeColor = System.Drawing.Color.Black;
+            this.lblEatIn.Appearance.Options.UseBackColor = true;
+            this.lblEatIn.Appearance.Options.UseFont = true;
+            this.lblEatIn.Appearance.Options.UseForeColor = true;
+            this.lblEatIn.Appearance.Options.UseTextOptions = true;
             this.lblEatIn.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.lblEatIn.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
             this.lblEatIn.Location = new System.Drawing.Point(451, 408);
@@ -306,6 +327,10 @@
             this.lblFastFood.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
             this.lblFastFood.Appearance.Font = new System.Drawing.Font("Tahoma", 10F);
             this.lblFastFood.Appearance.ForeColor = System.Drawing.Color.Black;
+            this.lblFastFood.Appearance.Options.UseBackColor = true;
+            this.lblFastFood.Appearance.Options.UseFont = true;
+            this.lblFastFood.Appearance.Options.UseForeColor = true;
+            this.lblFastFood.Appearance.Options.UseTextOptions = true;
             this.lblFastFood.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.lblFastFood.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
             this.lblFastFood.Location = new System.Drawing.Point(361, 408);
@@ -328,6 +353,10 @@
             this.lblShop.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
             this.lblShop.Appearance.Font = new System.Drawing.Font("Tahoma", 10F);
             this.lblShop.Appearance.ForeColor = System.Drawing.Color.Black;
+            this.lblShop.Appearance.Options.UseBackColor = true;
+            this.lblShop.Appearance.Options.UseFont = true;
+            this.lblShop.Appearance.Options.UseForeColor = true;
+            this.lblShop.Appearance.Options.UseTextOptions = true;
             this.lblShop.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.lblShop.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
             this.lblShop.Location = new System.Drawing.Point(272, 408);
@@ -350,6 +379,10 @@
             this.lblDelivery.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
             this.lblDelivery.Appearance.Font = new System.Drawing.Font("Tahoma", 10F);
             this.lblDelivery.Appearance.ForeColor = System.Drawing.Color.Black;
+            this.lblDelivery.Appearance.Options.UseBackColor = true;
+            this.lblDelivery.Appearance.Options.UseFont = true;
+            this.lblDelivery.Appearance.Options.UseForeColor = true;
+            this.lblDelivery.Appearance.Options.UseTextOptions = true;
             this.lblDelivery.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.lblDelivery.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
             this.lblDelivery.Location = new System.Drawing.Point(183, 408);
@@ -372,6 +405,10 @@
             this.lblCollection.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
             this.lblCollection.Appearance.Font = new System.Drawing.Font("Tahoma", 10F);
             this.lblCollection.Appearance.ForeColor = System.Drawing.Color.Black;
+            this.lblCollection.Appearance.Options.UseBackColor = true;
+            this.lblCollection.Appearance.Options.UseFont = true;
+            this.lblCollection.Appearance.Options.UseForeColor = true;
+            this.lblCollection.Appearance.Options.UseTextOptions = true;
             this.lblCollection.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.lblCollection.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
             this.lblCollection.Location = new System.Drawing.Point(94, 408);
@@ -394,6 +431,10 @@
             this.lblTotalTA.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
             this.lblTotalTA.Appearance.Font = new System.Drawing.Font("Tahoma", 10F);
             this.lblTotalTA.Appearance.ForeColor = System.Drawing.Color.Black;
+            this.lblTotalTA.Appearance.Options.UseBackColor = true;
+            this.lblTotalTA.Appearance.Options.UseFont = true;
+            this.lblTotalTA.Appearance.Options.UseForeColor = true;
+            this.lblTotalTA.Appearance.Options.UseTextOptions = true;
             this.lblTotalTA.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.lblTotalTA.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
             this.lblTotalTA.Location = new System.Drawing.Point(4, 408);
@@ -584,12 +625,9 @@
             // 
             // richEditCtlPreview
             // 
-            this.richEditCtlPreview.EnableToolTips = true;
             this.richEditCtlPreview.Location = new System.Drawing.Point(578, 366);
             this.richEditCtlPreview.Margin = new System.Windows.Forms.Padding(0);
             this.richEditCtlPreview.Name = "richEditCtlPreview";
-            this.richEditCtlPreview.Options.Export.PlainText.ExportFinalParagraphMark = DevExpress.XtraRichEdit.Export.PlainText.ExportFinalParagraphMark.Never;
-            this.richEditCtlPreview.Options.Fields.UpdateFieldsInTextBoxes = false;
             this.richEditCtlPreview.Options.HorizontalRuler.ShowTabs = false;
             this.richEditCtlPreview.Options.HorizontalRuler.Visibility = DevExpress.XtraRichEdit.RichEditRulerVisibility.Hidden;
             this.richEditCtlPreview.Options.HorizontalScrollbar.Visibility = DevExpress.XtraRichEdit.RichEditScrollbarVisibility.Hidden;
@@ -597,7 +635,6 @@
             this.richEditCtlPreview.Options.VerticalScrollbar.Visibility = DevExpress.XtraRichEdit.RichEditScrollbarVisibility.Hidden;
             this.richEditCtlPreview.Size = new System.Drawing.Size(83, 27);
             this.richEditCtlPreview.TabIndex = 3;
-            this.richEditCtlPreview.Text = "rich";
             this.richEditCtlPreview.Visible = false;
             // 
             // panelControl5
@@ -727,7 +764,8 @@
             this.DiscountPer,
             this.Discount,
             this.SubToal,
-            this.BusDate});
+            this.BusDate,
+            this.DeliveryFee});
             this.gvTaShowOrder.GridControl = this.gridControlTaShowOrder;
             this.gvTaShowOrder.IndicatorWidth = 50;
             this.gvTaShowOrder.Name = "gvTaShowOrder";
@@ -866,6 +904,12 @@
             this.BusDate.FieldName = "BusDate";
             this.BusDate.Name = "BusDate";
             // 
+            // DeliveryFee
+            // 
+            this.DeliveryFee.Caption = "DeliveryFee";
+            this.DeliveryFee.FieldName = "DeliveryFee";
+            this.DeliveryFee.Name = "DeliveryFee";
+            // 
             // FrmAccountSummary
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 14F);
@@ -962,5 +1006,6 @@
         private DevExpress.XtraEditors.SimpleButton btnLeft;
         private DevExpress.XtraEditors.SimpleButton btnRight;
         private System.Windows.Forms.WebBrowser webBrowser2;
+        private DevExpress.XtraGrid.Columns.GridColumn DeliveryFee;
     }
 }
