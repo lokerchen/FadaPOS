@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Globalization;
 using System.Text;
 using System.Linq;
 using System.Threading.Tasks;
@@ -34,6 +35,10 @@ namespace SuperPOS.UI.TA
         {
             new SystemData().GetAccountSummary("", "");
             lstAccountSummaryInfos = CommonData.GetAccountSummaryInfos;
+
+            txtCurrentDate.Text = DateTime.Now.ToString(PubComm.DATE_TIME_FORMAT, DateTimeFormatInfo.InvariantInfo);
+            deDayFrom.Text = DateTime.Now.ToString(PubComm.DATE_TIME_FORMAT + " HH:mm", DateTimeFormatInfo.InvariantInfo);
+            deDayTo.Text = DateTime.Now.ToString(PubComm.DATE_TIME_FORMAT + "HH:mm", DateTimeFormatInfo.InvariantInfo);
 
             asfc.controllInitializeSize(this);
         }
