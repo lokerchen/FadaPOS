@@ -23,7 +23,8 @@ namespace SuperPOS.UI.Report
 
         private void RptTopItemSalesReport_Load(object sender, EventArgs e)
         {
-            GetBindData();
+            string strBusDate = CommonDAL.GetBusDate();
+            GetBindData(strBusDate);
             asfc.controllInitializeSize(this);
         }
 
@@ -41,10 +42,10 @@ namespace SuperPOS.UI.Report
         /// <summary>
         /// 绑定初始数据
         /// </summary>
-        /// <param name="busDate">营业日</param>
-        private void GetBindData()
+        /// <param name="strBusDate">营业日</param>
+        private void GetBindData(string strBusDate)
         {
-            new SystemData().GetRptTotalSales();
+            new SystemData().GetRptTotalSales(strBusDate);
 
             var lstDb = from rptTsi in CommonData.GetRptTotalSalesInfo
                         select new

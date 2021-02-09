@@ -481,14 +481,14 @@ namespace SuperPOS.Common
             }
         }
 
-        public IList<RptTotalSalesInfo> GetRptTotalSales()
+        public IList<RptTotalSalesInfo> GetRptTotalSales(string strBusDate)
         {
             using (ISession session = SessionFactory.OpenSession())
             {
                 string sql = "SELECT OI.ItemCode AS ItemCode, OI.ItemDishName AS ItemDishName, OI.ItemDishOtherName AS ItemDishOtherName, " +
                              "SUM(OI.ItemQty) AS ItemQty, SUM(OI.ItemTotalPrice)AS ItemTotalPrice " +
-                             "FROM Ta_OrderItem OI LEFT JOIN Ta_CheckOrder CO ON OI.CheckCode = CO.CheckCode AND OI.BusDate = CO.BusDate " + 
-                             "WHERE CO.IsPaid = 'Y' AND OI.ItemType = '1' " + 
+                             "FROM Ta_OrderItem OI LEFT JOIN Ta_CheckOrder CO ON OI.CheckCode = CO.CheckCode AND OI.BusDate = CO.BusDate " +
+                             "WHERE CO.IsPaid = 'Y' AND OI.ItemType = '1' AND CO.BusDate = '" + strBusDate + "'" + 
                              "GROUP BY OI.ItemCode, OI.ItemDishName, OI.ItemDishOtherName " + 
                              "ORDER BY ItemQty DESC, ItemTotalPrice DESC";
                 IList<object[]> query = session.CreateSQLQuery(sql).List<object[]>();

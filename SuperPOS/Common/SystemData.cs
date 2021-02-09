@@ -118,7 +118,7 @@ namespace SuperPOS.Common
 
         public void GetOrderItemSumForVatInfos(string strOrderNum, string strBusDate) { CommonData.GetOrderItemSumForVatInfos = _control.GetOrderItemSumForVatInfos(strOrderNum, strBusDate); }
 
-        public void GetRptTotalSales() { CommonData.GetRptTotalSalesInfo = _control.GetRptTotalSales(); }
+        public void GetRptTotalSales(string strBusDate) { CommonData.GetRptTotalSalesInfo = _control.GetRptTotalSales(strBusDate); }
 
         public void GetShowAndPendOrderData(string strOrderNum, string strBusDate) { CommonData.GetShowAndPendOrderData = _control.GetShowAndPendOrderData(strOrderNum, strBusDate); }
     }
