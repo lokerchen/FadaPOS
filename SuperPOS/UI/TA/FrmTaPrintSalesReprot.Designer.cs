@@ -28,323 +28,61 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmTaPrintSalesReprot));
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.btnPrintSummary = new DevExpress.XtraEditors.SimpleButton();
+            this.btnExit = new DevExpress.XtraEditors.SimpleButton();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.txtCurrentDate = new DevExpress.XtraEditors.TextEdit();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.txtCurrentTime = new DevExpress.XtraEditors.TextEdit();
-            this.dateNavigator1 = new DevExpress.XtraScheduler.DateNavigator();
-            this.label1 = new System.Windows.Forms.Label();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
-            this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
-            this.label2 = new System.Windows.Forms.Label();
-            this.textEdit6 = new DevExpress.XtraEditors.TextEdit();
-            this.label5 = new System.Windows.Forms.Label();
-            this.btnDateLeft = new DevExpress.XtraEditors.SimpleButton();
-            this.btnDateRight = new DevExpress.XtraEditors.SimpleButton();
-            this.textEdit1 = new DevExpress.XtraEditors.TextEdit();
-            this.label3 = new System.Windows.Forms.Label();
-            this.simpleButton1 = new DevExpress.XtraEditors.SimpleButton();
-            this.simpleButton2 = new DevExpress.XtraEditors.SimpleButton();
-            this.btnExit = new DevExpress.XtraEditors.SimpleButton();
-            this.btnLanguage = new DevExpress.XtraEditors.SimpleButton();
-            this.btnPrintSummary = new DevExpress.XtraEditors.SimpleButton();
-            this.btnViewSummaryOnly = new DevExpress.XtraEditors.SimpleButton();
-            this.btnExprotSalesToCSV = new DevExpress.XtraEditors.SimpleButton();
+            this.deDayFrom = new DevExpress.XtraEditors.TimeEdit();
+            this.deDayTo = new DevExpress.XtraEditors.TimeEdit();
+            this.gridControlTaShowOrder = new DevExpress.XtraGrid.GridControl();
+            this.gvTaShowOrder = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.ID = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.CheckCode = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.OrderTime = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.Payment = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.PayOrderType = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.TotalAmount = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.StaffName = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.DriverName = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.CustomerID = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.DiscountPer = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.Discount = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.SubToal = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.BusDate = new DevExpress.XtraGrid.Columns.GridColumn();
             this.groupBox1.SuspendLayout();
             this.panel1.SuspendLayout();
             this.groupBox3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.txtCurrentDate.Properties)).BeginInit();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.txtCurrentTime.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dateNavigator1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dateNavigator1.CalendarTimeProperties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit6.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit1.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.deDayFrom.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.deDayTo.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridControlTaShowOrder)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gvTaShowOrder)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.btnExprotSalesToCSV);
-            this.groupBox1.Controls.Add(this.btnViewSummaryOnly);
             this.groupBox1.Controls.Add(this.btnPrintSummary);
             this.groupBox1.Controls.Add(this.btnExit);
-            this.groupBox1.Controls.Add(this.btnLanguage);
             this.groupBox1.Controls.Add(this.panel1);
             this.groupBox1.Controls.Add(this.groupBox3);
             this.groupBox1.Controls.Add(this.groupBox2);
-            this.groupBox1.Controls.Add(this.dateNavigator1);
             this.groupBox1.Font = new System.Drawing.Font("Tahoma", 12F);
-            this.groupBox1.Location = new System.Drawing.Point(10, 10);
+            this.groupBox1.Location = new System.Drawing.Point(9, 8);
+            this.groupBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(826, 656);
+            this.groupBox1.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.groupBox1.Size = new System.Drawing.Size(380, 400);
             this.groupBox1.TabIndex = 3;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Print Sales Report";
-            // 
-            // panel1
-            // 
-            this.panel1.Controls.Add(this.textEdit1);
-            this.panel1.Controls.Add(this.label3);
-            this.panel1.Controls.Add(this.simpleButton1);
-            this.panel1.Controls.Add(this.simpleButton2);
-            this.panel1.Controls.Add(this.textEdit6);
-            this.panel1.Controls.Add(this.label5);
-            this.panel1.Controls.Add(this.btnDateLeft);
-            this.panel1.Controls.Add(this.btnDateRight);
-            this.panel1.Controls.Add(this.dateTimePicker2);
-            this.panel1.Controls.Add(this.label2);
-            this.panel1.Controls.Add(this.dateTimePicker1);
-            this.panel1.Controls.Add(this.label1);
-            this.panel1.Location = new System.Drawing.Point(6, 133);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(416, 331);
-            this.panel1.TabIndex = 72;
-            // 
-            // groupBox3
-            // 
-            this.groupBox3.Controls.Add(this.txtCurrentDate);
-            this.groupBox3.Location = new System.Drawing.Point(600, 30);
-            this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(177, 100);
-            this.groupBox3.TabIndex = 71;
-            this.groupBox3.TabStop = false;
-            this.groupBox3.Text = "Current Date";
-            // 
-            // txtCurrentDate
-            // 
-            this.txtCurrentDate.EditValue = "2020-09-26";
-            this.txtCurrentDate.Location = new System.Drawing.Point(16, 50);
-            this.txtCurrentDate.Name = "txtCurrentDate";
-            this.txtCurrentDate.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 14F);
-            this.txtCurrentDate.Properties.Appearance.Options.UseFont = true;
-            this.txtCurrentDate.Properties.Appearance.Options.UseTextOptions = true;
-            this.txtCurrentDate.Properties.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.txtCurrentDate.Size = new System.Drawing.Size(147, 34);
-            this.txtCurrentDate.TabIndex = 0;
-            // 
-            // groupBox2
-            // 
-            this.groupBox2.Controls.Add(this.txtCurrentTime);
-            this.groupBox2.Location = new System.Drawing.Point(400, 30);
-            this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(177, 100);
-            this.groupBox2.TabIndex = 70;
-            this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "Current Time";
-            // 
-            // txtCurrentTime
-            // 
-            this.txtCurrentTime.EditValue = "18:35:36";
-            this.txtCurrentTime.Location = new System.Drawing.Point(16, 50);
-            this.txtCurrentTime.Name = "txtCurrentTime";
-            this.txtCurrentTime.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 14F);
-            this.txtCurrentTime.Properties.Appearance.Options.UseFont = true;
-            this.txtCurrentTime.Properties.Appearance.Options.UseTextOptions = true;
-            this.txtCurrentTime.Properties.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.txtCurrentTime.Size = new System.Drawing.Size(147, 34);
-            this.txtCurrentTime.TabIndex = 0;
-            // 
-            // dateNavigator1
-            // 
-            this.dateNavigator1.Appearance.Font = new System.Drawing.Font("Tahoma", 12F);
-            this.dateNavigator1.Appearance.Options.UseFont = true;
-            this.dateNavigator1.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
-            this.dateNavigator1.ButtonsStyle = DevExpress.XtraEditors.Controls.BorderStyles.Office2003;
-            this.dateNavigator1.CalendarAppearance.DayCellSpecial.FontStyleDelta = System.Drawing.FontStyle.Bold;
-            this.dateNavigator1.CalendarAppearance.DayCellSpecial.Options.UseFont = true;
-            this.dateNavigator1.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.dateNavigator1.FirstDayOfWeek = System.DayOfWeek.Monday;
-            this.dateNavigator1.Location = new System.Drawing.Point(428, 133);
-            this.dateNavigator1.Name = "dateNavigator1";
-            this.dateNavigator1.ShowClearButton = true;
-            this.dateNavigator1.ShowHeader = false;
-            this.dateNavigator1.ShowWeekNumbers = false;
-            this.dateNavigator1.Size = new System.Drawing.Size(349, 331);
-            this.dateNavigator1.TabIndex = 3;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(17, 40);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(104, 24);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "From Date";
-            // 
-            // dateTimePicker1
-            // 
-            this.dateTimePicker1.Location = new System.Drawing.Point(127, 34);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(200, 32);
-            this.dateTimePicker1.TabIndex = 1;
-            // 
-            // dateTimePicker2
-            // 
-            this.dateTimePicker2.Location = new System.Drawing.Point(127, 92);
-            this.dateTimePicker2.Name = "dateTimePicker2";
-            this.dateTimePicker2.Size = new System.Drawing.Size(200, 32);
-            this.dateTimePicker2.TabIndex = 3;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(17, 98);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(82, 24);
-            this.label2.TabIndex = 2;
-            this.label2.Text = "To Date";
-            // 
-            // textEdit6
-            // 
-            this.textEdit6.EditValue = "10:00";
-            this.textEdit6.Location = new System.Drawing.Point(208, 151);
-            this.textEdit6.Name = "textEdit6";
-            this.textEdit6.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 12F);
-            this.textEdit6.Properties.Appearance.Options.UseFont = true;
-            this.textEdit6.Properties.Appearance.Options.UseTextOptions = true;
-            this.textEdit6.Properties.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.textEdit6.Size = new System.Drawing.Size(82, 30);
-            this.textEdit6.TabIndex = 87;
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(96, 154);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(106, 24);
-            this.label5.TabIndex = 84;
-            this.label5.Text = "From Time";
-            // 
-            // btnDateLeft
-            // 
-            this.btnDateLeft.Appearance.BackColor = System.Drawing.Color.Red;
-            this.btnDateLeft.Appearance.ForeColor = System.Drawing.Color.White;
-            this.btnDateLeft.Appearance.Options.UseBackColor = true;
-            this.btnDateLeft.Appearance.Options.UseForeColor = true;
-            this.btnDateLeft.Appearance.Options.UseTextOptions = true;
-            this.btnDateLeft.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.btnDateLeft.Appearance.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
-            this.btnDateLeft.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
-            this.btnDateLeft.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
-            this.btnDateLeft.Image = ((System.Drawing.Image)(resources.GetObject("btnDateLeft.Image")));
-            this.btnDateLeft.ImageLocation = DevExpress.XtraEditors.ImageLocation.MiddleCenter;
-            this.btnDateLeft.Location = new System.Drawing.Point(18, 150);
-            this.btnDateLeft.Name = "btnDateLeft";
-            this.btnDateLeft.Size = new System.Drawing.Size(60, 35);
-            this.btnDateLeft.TabIndex = 85;
-            // 
-            // btnDateRight
-            // 
-            this.btnDateRight.Appearance.BackColor = System.Drawing.Color.Red;
-            this.btnDateRight.Appearance.ForeColor = System.Drawing.Color.White;
-            this.btnDateRight.Appearance.Options.UseBackColor = true;
-            this.btnDateRight.Appearance.Options.UseForeColor = true;
-            this.btnDateRight.Appearance.Options.UseTextOptions = true;
-            this.btnDateRight.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.btnDateRight.Appearance.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
-            this.btnDateRight.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
-            this.btnDateRight.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
-            this.btnDateRight.Image = ((System.Drawing.Image)(resources.GetObject("btnDateRight.Image")));
-            this.btnDateRight.ImageLocation = DevExpress.XtraEditors.ImageLocation.MiddleCenter;
-            this.btnDateRight.Location = new System.Drawing.Point(307, 150);
-            this.btnDateRight.Name = "btnDateRight";
-            this.btnDateRight.Size = new System.Drawing.Size(60, 35);
-            this.btnDateRight.TabIndex = 86;
-            // 
-            // textEdit1
-            // 
-            this.textEdit1.EditValue = "10:00";
-            this.textEdit1.Location = new System.Drawing.Point(208, 205);
-            this.textEdit1.Name = "textEdit1";
-            this.textEdit1.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 12F);
-            this.textEdit1.Properties.Appearance.Options.UseFont = true;
-            this.textEdit1.Properties.Appearance.Options.UseTextOptions = true;
-            this.textEdit1.Properties.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.textEdit1.Size = new System.Drawing.Size(82, 30);
-            this.textEdit1.TabIndex = 91;
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(96, 208);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(84, 24);
-            this.label3.TabIndex = 88;
-            this.label3.Text = "To Time";
-            // 
-            // simpleButton1
-            // 
-            this.simpleButton1.Appearance.BackColor = System.Drawing.Color.Red;
-            this.simpleButton1.Appearance.ForeColor = System.Drawing.Color.White;
-            this.simpleButton1.Appearance.Options.UseBackColor = true;
-            this.simpleButton1.Appearance.Options.UseForeColor = true;
-            this.simpleButton1.Appearance.Options.UseTextOptions = true;
-            this.simpleButton1.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.simpleButton1.Appearance.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
-            this.simpleButton1.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
-            this.simpleButton1.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
-            this.simpleButton1.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton1.Image")));
-            this.simpleButton1.ImageLocation = DevExpress.XtraEditors.ImageLocation.MiddleCenter;
-            this.simpleButton1.Location = new System.Drawing.Point(18, 204);
-            this.simpleButton1.Name = "simpleButton1";
-            this.simpleButton1.Size = new System.Drawing.Size(60, 35);
-            this.simpleButton1.TabIndex = 89;
-            // 
-            // simpleButton2
-            // 
-            this.simpleButton2.Appearance.BackColor = System.Drawing.Color.Red;
-            this.simpleButton2.Appearance.ForeColor = System.Drawing.Color.White;
-            this.simpleButton2.Appearance.Options.UseBackColor = true;
-            this.simpleButton2.Appearance.Options.UseForeColor = true;
-            this.simpleButton2.Appearance.Options.UseTextOptions = true;
-            this.simpleButton2.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.simpleButton2.Appearance.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
-            this.simpleButton2.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
-            this.simpleButton2.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
-            this.simpleButton2.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton2.Image")));
-            this.simpleButton2.ImageLocation = DevExpress.XtraEditors.ImageLocation.MiddleCenter;
-            this.simpleButton2.Location = new System.Drawing.Point(307, 204);
-            this.simpleButton2.Name = "simpleButton2";
-            this.simpleButton2.Size = new System.Drawing.Size(60, 35);
-            this.simpleButton2.TabIndex = 90;
-            // 
-            // btnExit
-            // 
-            this.btnExit.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
-            this.btnExit.Appearance.Font = new System.Drawing.Font("Tahoma", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnExit.Appearance.ForeColor = System.Drawing.Color.White;
-            this.btnExit.Appearance.Options.UseBackColor = true;
-            this.btnExit.Appearance.Options.UseFont = true;
-            this.btnExit.Appearance.Options.UseForeColor = true;
-            this.btnExit.Appearance.Options.UseTextOptions = true;
-            this.btnExit.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
-            this.btnExit.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
-            this.btnExit.Location = new System.Drawing.Point(667, 582);
-            this.btnExit.Name = "btnExit";
-            this.btnExit.Size = new System.Drawing.Size(108, 68);
-            this.btnExit.TabIndex = 87;
-            this.btnExit.Text = "Exit";
-            // 
-            // btnLanguage
-            // 
-            this.btnLanguage.Appearance.BackColor = System.Drawing.Color.LimeGreen;
-            this.btnLanguage.Appearance.Font = new System.Drawing.Font("Tahoma", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnLanguage.Appearance.ForeColor = System.Drawing.Color.White;
-            this.btnLanguage.Appearance.Options.UseBackColor = true;
-            this.btnLanguage.Appearance.Options.UseFont = true;
-            this.btnLanguage.Appearance.Options.UseForeColor = true;
-            this.btnLanguage.Appearance.Options.UseTextOptions = true;
-            this.btnLanguage.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
-            this.btnLanguage.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
-            this.btnLanguage.Location = new System.Drawing.Point(445, 608);
-            this.btnLanguage.Name = "btnLanguage";
-            this.btnLanguage.Size = new System.Drawing.Size(162, 42);
-            this.btnLanguage.TabIndex = 86;
-            this.btnLanguage.Text = "LANGUAGE";
             // 
             // btnPrintSummary
             // 
@@ -359,57 +97,337 @@
             this.btnPrintSummary.Appearance.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
             this.btnPrintSummary.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
             this.btnPrintSummary.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
-            this.btnPrintSummary.Location = new System.Drawing.Point(64, 544);
+            this.btnPrintSummary.Location = new System.Drawing.Point(8, 227);
+            this.btnPrintSummary.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnPrintSummary.Name = "btnPrintSummary";
-            this.btnPrintSummary.Size = new System.Drawing.Size(109, 97);
+            this.btnPrintSummary.Size = new System.Drawing.Size(364, 75);
             this.btnPrintSummary.TabIndex = 88;
             this.btnPrintSummary.Text = "Print Summary";
+            this.btnPrintSummary.Click += new System.EventHandler(this.btnPrintSummary_Click);
             // 
-            // btnViewSummaryOnly
+            // btnExit
             // 
-            this.btnViewSummaryOnly.Appearance.BackColor = System.Drawing.Color.RoyalBlue;
-            this.btnViewSummaryOnly.Appearance.Font = new System.Drawing.Font("Tahoma", 10F);
-            this.btnViewSummaryOnly.Appearance.ForeColor = System.Drawing.Color.White;
-            this.btnViewSummaryOnly.Appearance.Options.UseBackColor = true;
-            this.btnViewSummaryOnly.Appearance.Options.UseFont = true;
-            this.btnViewSummaryOnly.Appearance.Options.UseForeColor = true;
-            this.btnViewSummaryOnly.Appearance.Options.UseTextOptions = true;
-            this.btnViewSummaryOnly.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.btnViewSummaryOnly.Appearance.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
-            this.btnViewSummaryOnly.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
-            this.btnViewSummaryOnly.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
-            this.btnViewSummaryOnly.Location = new System.Drawing.Point(179, 544);
-            this.btnViewSummaryOnly.Name = "btnViewSummaryOnly";
-            this.btnViewSummaryOnly.Size = new System.Drawing.Size(109, 97);
-            this.btnViewSummaryOnly.TabIndex = 89;
-            this.btnViewSummaryOnly.Text = "View Summary Only";
+            this.btnExit.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
+            this.btnExit.Appearance.Font = new System.Drawing.Font("Tahoma", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnExit.Appearance.ForeColor = System.Drawing.Color.White;
+            this.btnExit.Appearance.Options.UseBackColor = true;
+            this.btnExit.Appearance.Options.UseFont = true;
+            this.btnExit.Appearance.Options.UseForeColor = true;
+            this.btnExit.Appearance.Options.UseTextOptions = true;
+            this.btnExit.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
+            this.btnExit.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
+            this.btnExit.Location = new System.Drawing.Point(8, 311);
+            this.btnExit.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnExit.Name = "btnExit";
+            this.btnExit.Size = new System.Drawing.Size(366, 75);
+            this.btnExit.TabIndex = 87;
+            this.btnExit.Text = "Exit";
+            this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
             // 
-            // btnExprotSalesToCSV
+            // panel1
             // 
-            this.btnExprotSalesToCSV.Appearance.BackColor = System.Drawing.Color.RoyalBlue;
-            this.btnExprotSalesToCSV.Appearance.Font = new System.Drawing.Font("Tahoma", 10F);
-            this.btnExprotSalesToCSV.Appearance.ForeColor = System.Drawing.Color.White;
-            this.btnExprotSalesToCSV.Appearance.Options.UseBackColor = true;
-            this.btnExprotSalesToCSV.Appearance.Options.UseFont = true;
-            this.btnExprotSalesToCSV.Appearance.Options.UseForeColor = true;
-            this.btnExprotSalesToCSV.Appearance.Options.UseTextOptions = true;
-            this.btnExprotSalesToCSV.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.btnExprotSalesToCSV.Appearance.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
-            this.btnExprotSalesToCSV.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
-            this.btnExprotSalesToCSV.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
-            this.btnExprotSalesToCSV.Location = new System.Drawing.Point(294, 544);
-            this.btnExprotSalesToCSV.Name = "btnExprotSalesToCSV";
-            this.btnExprotSalesToCSV.Size = new System.Drawing.Size(109, 97);
-            this.btnExprotSalesToCSV.TabIndex = 90;
-            this.btnExprotSalesToCSV.Text = "Export Sales To CSV";
+            this.panel1.Controls.Add(this.deDayTo);
+            this.panel1.Controls.Add(this.label2);
+            this.panel1.Controls.Add(this.label1);
+            this.panel1.Controls.Add(this.deDayFrom);
+            this.panel1.Location = new System.Drawing.Point(8, 103);
+            this.panel1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(364, 106);
+            this.panel1.TabIndex = 72;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(15, 76);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(101, 19);
+            this.label2.TabIndex = 2;
+            this.label2.Text = "To DateTime";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(15, 31);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(119, 19);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "From DateTime";
+            // 
+            // groupBox3
+            // 
+            this.groupBox3.Controls.Add(this.txtCurrentDate);
+            this.groupBox3.Location = new System.Drawing.Point(200, 21);
+            this.groupBox3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.groupBox3.Name = "groupBox3";
+            this.groupBox3.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.groupBox3.Size = new System.Drawing.Size(155, 78);
+            this.groupBox3.TabIndex = 71;
+            this.groupBox3.TabStop = false;
+            this.groupBox3.Text = "Current Date";
+            // 
+            // txtCurrentDate
+            // 
+            this.txtCurrentDate.EditValue = "2020-09-26";
+            this.txtCurrentDate.Location = new System.Drawing.Point(14, 39);
+            this.txtCurrentDate.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txtCurrentDate.Name = "txtCurrentDate";
+            this.txtCurrentDate.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 14F);
+            this.txtCurrentDate.Properties.Appearance.Options.UseFont = true;
+            this.txtCurrentDate.Properties.Appearance.Options.UseTextOptions = true;
+            this.txtCurrentDate.Properties.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.txtCurrentDate.Size = new System.Drawing.Size(129, 30);
+            this.txtCurrentDate.TabIndex = 0;
+            // 
+            // groupBox2
+            // 
+            this.groupBox2.Controls.Add(this.txtCurrentTime);
+            this.groupBox2.Location = new System.Drawing.Point(25, 21);
+            this.groupBox2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.groupBox2.Size = new System.Drawing.Size(155, 78);
+            this.groupBox2.TabIndex = 70;
+            this.groupBox2.TabStop = false;
+            this.groupBox2.Text = "Current Time";
+            // 
+            // txtCurrentTime
+            // 
+            this.txtCurrentTime.EditValue = "18:35:36";
+            this.txtCurrentTime.Location = new System.Drawing.Point(14, 39);
+            this.txtCurrentTime.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txtCurrentTime.Name = "txtCurrentTime";
+            this.txtCurrentTime.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 14F);
+            this.txtCurrentTime.Properties.Appearance.Options.UseFont = true;
+            this.txtCurrentTime.Properties.Appearance.Options.UseTextOptions = true;
+            this.txtCurrentTime.Properties.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.txtCurrentTime.Size = new System.Drawing.Size(129, 30);
+            this.txtCurrentTime.TabIndex = 0;
+            // 
+            // deDayFrom
+            // 
+            this.deDayFrom.EditValue = new System.DateTime(2021, 2, 9, 20, 50, 20, 0);
+            this.deDayFrom.Location = new System.Drawing.Point(152, 27);
+            this.deDayFrom.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.deDayFrom.Name = "deDayFrom";
+            this.deDayFrom.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 12F);
+            this.deDayFrom.Properties.Appearance.Options.UseFont = true;
+            this.deDayFrom.Properties.AutoHeight = false;
+            this.deDayFrom.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.deDayFrom.Properties.DisplayFormat.FormatString = "dd/MM/yyyy HH:mm";
+            this.deDayFrom.Properties.DisplayFormat.FormatType = DevExpress.Utils.FormatType.DateTime;
+            this.deDayFrom.Properties.EditFormat.FormatString = "dd/MM/yyyy HH:mm";
+            this.deDayFrom.Properties.EditFormat.FormatType = DevExpress.Utils.FormatType.DateTime;
+            this.deDayFrom.Properties.EditValueChangedFiringMode = DevExpress.XtraEditors.Controls.EditValueChangedFiringMode.Default;
+            this.deDayFrom.Properties.Mask.EditMask = "dd/MM/yyyy HH:mm";
+            this.deDayFrom.Properties.Mask.UseMaskAsDisplayFormat = true;
+            this.deDayFrom.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.DisableTextEditor;
+            this.deDayFrom.Properties.TimeEditStyle = DevExpress.XtraEditors.Repository.TimeEditStyle.TouchUI;
+            this.deDayFrom.Size = new System.Drawing.Size(164, 23);
+            this.deDayFrom.TabIndex = 92;
+            // 
+            // deDayTo
+            // 
+            this.deDayTo.EditValue = new System.DateTime(2021, 2, 9, 20, 50, 20, 0);
+            this.deDayTo.Location = new System.Drawing.Point(152, 73);
+            this.deDayTo.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.deDayTo.Name = "deDayTo";
+            this.deDayTo.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 12F);
+            this.deDayTo.Properties.Appearance.Options.UseFont = true;
+            this.deDayTo.Properties.AutoHeight = false;
+            this.deDayTo.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.deDayTo.Properties.DisplayFormat.FormatString = "dd/MM/yyyy HH:mm";
+            this.deDayTo.Properties.DisplayFormat.FormatType = DevExpress.Utils.FormatType.DateTime;
+            this.deDayTo.Properties.EditFormat.FormatString = "dd/MM/yyyy HH:mm";
+            this.deDayTo.Properties.EditFormat.FormatType = DevExpress.Utils.FormatType.DateTime;
+            this.deDayTo.Properties.EditValueChangedFiringMode = DevExpress.XtraEditors.Controls.EditValueChangedFiringMode.Default;
+            this.deDayTo.Properties.Mask.EditMask = "dd/MM/yyyy HH:mm";
+            this.deDayTo.Properties.Mask.UseMaskAsDisplayFormat = true;
+            this.deDayTo.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.DisableTextEditor;
+            this.deDayTo.Properties.TimeEditStyle = DevExpress.XtraEditors.Repository.TimeEditStyle.TouchUI;
+            this.deDayTo.Size = new System.Drawing.Size(164, 23);
+            this.deDayTo.TabIndex = 93;
+            // 
+            // gridControlTaShowOrder
+            // 
+            this.gridControlTaShowOrder.EmbeddedNavigator.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.gridControlTaShowOrder.Location = new System.Drawing.Point(394, 12);
+            this.gridControlTaShowOrder.MainView = this.gvTaShowOrder;
+            this.gridControlTaShowOrder.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.gridControlTaShowOrder.Name = "gridControlTaShowOrder";
+            this.gridControlTaShowOrder.Size = new System.Drawing.Size(552, 355);
+            this.gridControlTaShowOrder.TabIndex = 66;
+            this.gridControlTaShowOrder.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
+            this.gvTaShowOrder});
+            this.gridControlTaShowOrder.Visible = false;
+            // 
+            // gvTaShowOrder
+            // 
+            this.gvTaShowOrder.Appearance.EvenRow.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
+            this.gvTaShowOrder.Appearance.EvenRow.Options.UseBackColor = true;
+            this.gvTaShowOrder.Appearance.HeaderPanel.Options.UseTextOptions = true;
+            this.gvTaShowOrder.Appearance.HeaderPanel.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.gvTaShowOrder.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
+            this.ID,
+            this.CheckCode,
+            this.OrderTime,
+            this.Payment,
+            this.PayOrderType,
+            this.TotalAmount,
+            this.StaffName,
+            this.DriverName,
+            this.CustomerID,
+            this.DiscountPer,
+            this.Discount,
+            this.SubToal,
+            this.BusDate});
+            this.gvTaShowOrder.GridControl = this.gridControlTaShowOrder;
+            this.gvTaShowOrder.IndicatorWidth = 50;
+            this.gvTaShowOrder.Name = "gvTaShowOrder";
+            this.gvTaShowOrder.OptionsBehavior.Editable = false;
+            this.gvTaShowOrder.OptionsMenu.EnableColumnMenu = false;
+            this.gvTaShowOrder.OptionsSelection.EnableAppearanceFocusedCell = false;
+            this.gvTaShowOrder.OptionsView.EnableAppearanceEvenRow = true;
+            this.gvTaShowOrder.OptionsView.EnableAppearanceOddRow = true;
+            this.gvTaShowOrder.OptionsView.ShowGroupPanel = false;
+            // 
+            // ID
+            // 
+            this.ID.AppearanceCell.Font = new System.Drawing.Font("Tahoma", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ID.AppearanceCell.Options.UseFont = true;
+            this.ID.Caption = "ID";
+            this.ID.FieldName = "ID";
+            this.ID.Name = "ID";
+            // 
+            // CheckCode
+            // 
+            this.CheckCode.AppearanceCell.Font = new System.Drawing.Font("Tahoma", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.CheckCode.AppearanceCell.Options.UseFont = true;
+            this.CheckCode.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.CheckCode.AppearanceHeader.Options.UseFont = true;
+            this.CheckCode.Caption = "Order No.";
+            this.CheckCode.FieldName = "CheckCode";
+            this.CheckCode.Name = "CheckCode";
+            this.CheckCode.Visible = true;
+            this.CheckCode.VisibleIndex = 0;
+            // 
+            // OrderTime
+            // 
+            this.OrderTime.AppearanceCell.Font = new System.Drawing.Font("Tahoma", 10F);
+            this.OrderTime.AppearanceCell.Options.UseFont = true;
+            this.OrderTime.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.OrderTime.AppearanceHeader.Options.UseFont = true;
+            this.OrderTime.Caption = "Order Time";
+            this.OrderTime.FieldName = "PayTime";
+            this.OrderTime.Name = "OrderTime";
+            this.OrderTime.Visible = true;
+            this.OrderTime.VisibleIndex = 2;
+            // 
+            // Payment
+            // 
+            this.Payment.AppearanceCell.Font = new System.Drawing.Font("Tahoma", 10F);
+            this.Payment.AppearanceCell.Options.UseFont = true;
+            this.Payment.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Payment.AppearanceHeader.Options.UseFont = true;
+            this.Payment.Caption = "Payment";
+            this.Payment.FieldName = "Paid";
+            this.Payment.Name = "Payment";
+            this.Payment.Visible = true;
+            this.Payment.VisibleIndex = 3;
+            // 
+            // PayOrderType
+            // 
+            this.PayOrderType.AppearanceCell.Font = new System.Drawing.Font("Tahoma", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.PayOrderType.AppearanceCell.Options.UseFont = true;
+            this.PayOrderType.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.PayOrderType.AppearanceHeader.Options.UseFont = true;
+            this.PayOrderType.Caption = "Type";
+            this.PayOrderType.FieldName = "PayOrderType";
+            this.PayOrderType.Name = "PayOrderType";
+            this.PayOrderType.Visible = true;
+            this.PayOrderType.VisibleIndex = 1;
+            // 
+            // TotalAmount
+            // 
+            this.TotalAmount.AppearanceCell.Font = new System.Drawing.Font("Tahoma", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TotalAmount.AppearanceCell.Options.UseFont = true;
+            this.TotalAmount.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TotalAmount.AppearanceHeader.Options.UseFont = true;
+            this.TotalAmount.Caption = "Total";
+            this.TotalAmount.FieldName = "TotalAmount";
+            this.TotalAmount.Name = "TotalAmount";
+            this.TotalAmount.Visible = true;
+            this.TotalAmount.VisibleIndex = 4;
+            // 
+            // StaffName
+            // 
+            this.StaffName.AppearanceCell.Font = new System.Drawing.Font("Tahoma", 10F);
+            this.StaffName.AppearanceCell.Options.UseFont = true;
+            this.StaffName.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.StaffName.AppearanceHeader.Options.UseFont = true;
+            this.StaffName.Caption = "Staff";
+            this.StaffName.FieldName = "UsrName";
+            this.StaffName.Name = "StaffName";
+            this.StaffName.Visible = true;
+            this.StaffName.VisibleIndex = 6;
+            // 
+            // DriverName
+            // 
+            this.DriverName.AppearanceCell.Font = new System.Drawing.Font("Tahoma", 10F);
+            this.DriverName.AppearanceCell.Options.UseFont = true;
+            this.DriverName.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.DriverName.AppearanceHeader.Options.UseFont = true;
+            this.DriverName.Caption = "Driver";
+            this.DriverName.FieldName = "DriverName";
+            this.DriverName.Name = "DriverName";
+            this.DriverName.Visible = true;
+            this.DriverName.VisibleIndex = 5;
+            // 
+            // CustomerID
+            // 
+            this.CustomerID.AppearanceCell.Font = new System.Drawing.Font("Tahoma", 10F);
+            this.CustomerID.AppearanceCell.Options.UseFont = true;
+            this.CustomerID.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.CustomerID.AppearanceHeader.Options.UseFont = true;
+            this.CustomerID.Caption = "CustomerID";
+            this.CustomerID.FieldName = "CustomerID";
+            this.CustomerID.Name = "CustomerID";
+            // 
+            // DiscountPer
+            // 
+            this.DiscountPer.Caption = "Discount Per";
+            this.DiscountPer.FieldName = "PayPerDiscount";
+            this.DiscountPer.Name = "DiscountPer";
+            // 
+            // Discount
+            // 
+            this.Discount.Caption = "Discount";
+            this.Discount.FieldName = "PayDiscount";
+            this.Discount.Name = "Discount";
+            // 
+            // SubToal
+            // 
+            this.SubToal.Caption = "SubTotal";
+            this.SubToal.FieldName = "MenuAmount";
+            this.SubToal.Name = "SubToal";
+            // 
+            // BusDate
+            // 
+            this.BusDate.Caption = "BusDate";
+            this.BusDate.FieldName = "BusDate";
+            this.BusDate.Name = "BusDate";
             // 
             // FrmTaPrintSalesReprot
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 18F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 14F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(848, 687);
+            this.ClientSize = new System.Drawing.Size(394, 422);
+            this.Controls.Add(this.gridControlTaShowOrder);
             this.Controls.Add(this.groupBox1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "FrmTaPrintSalesReprot";
             this.Text = "FrmTaPrintSalesReprot";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
@@ -422,38 +440,41 @@
             ((System.ComponentModel.ISupportInitialize)(this.txtCurrentDate.Properties)).EndInit();
             this.groupBox2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.txtCurrentTime.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dateNavigator1.CalendarTimeProperties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dateNavigator1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit6.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit1.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.deDayFrom.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.deDayTo.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridControlTaShowOrder)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gvTaShowOrder)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
         private System.Windows.Forms.GroupBox groupBox1;
-        private DevExpress.XtraScheduler.DateNavigator dateNavigator1;
         private System.Windows.Forms.GroupBox groupBox3;
         private DevExpress.XtraEditors.TextEdit txtCurrentDate;
         private System.Windows.Forms.GroupBox groupBox2;
         private DevExpress.XtraEditors.TextEdit txtCurrentTime;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.DateTimePicker dateTimePicker2;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
         private System.Windows.Forms.Label label1;
-        private DevExpress.XtraEditors.TextEdit textEdit6;
-        private System.Windows.Forms.Label label5;
-        private DevExpress.XtraEditors.SimpleButton btnDateLeft;
-        private DevExpress.XtraEditors.SimpleButton btnDateRight;
-        private DevExpress.XtraEditors.TextEdit textEdit1;
-        private System.Windows.Forms.Label label3;
-        private DevExpress.XtraEditors.SimpleButton simpleButton1;
-        private DevExpress.XtraEditors.SimpleButton simpleButton2;
         private DevExpress.XtraEditors.SimpleButton btnExit;
-        private DevExpress.XtraEditors.SimpleButton btnLanguage;
-        private DevExpress.XtraEditors.SimpleButton btnExprotSalesToCSV;
-        private DevExpress.XtraEditors.SimpleButton btnViewSummaryOnly;
         private DevExpress.XtraEditors.SimpleButton btnPrintSummary;
+        private DevExpress.XtraEditors.TimeEdit deDayFrom;
+        private DevExpress.XtraEditors.TimeEdit deDayTo;
+        private DevExpress.XtraGrid.GridControl gridControlTaShowOrder;
+        private DevExpress.XtraGrid.Views.Grid.GridView gvTaShowOrder;
+        private DevExpress.XtraGrid.Columns.GridColumn ID;
+        private DevExpress.XtraGrid.Columns.GridColumn CheckCode;
+        private DevExpress.XtraGrid.Columns.GridColumn OrderTime;
+        private DevExpress.XtraGrid.Columns.GridColumn Payment;
+        private DevExpress.XtraGrid.Columns.GridColumn PayOrderType;
+        private DevExpress.XtraGrid.Columns.GridColumn TotalAmount;
+        private DevExpress.XtraGrid.Columns.GridColumn StaffName;
+        private DevExpress.XtraGrid.Columns.GridColumn DriverName;
+        private DevExpress.XtraGrid.Columns.GridColumn CustomerID;
+        private DevExpress.XtraGrid.Columns.GridColumn DiscountPer;
+        private DevExpress.XtraGrid.Columns.GridColumn Discount;
+        private DevExpress.XtraGrid.Columns.GridColumn SubToal;
+        private DevExpress.XtraGrid.Columns.GridColumn BusDate;
     }
 }

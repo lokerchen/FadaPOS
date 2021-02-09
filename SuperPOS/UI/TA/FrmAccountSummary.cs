@@ -101,7 +101,7 @@ namespace SuperPOS.UI.TA
             //sysData.GetTaOrderItem();
             //sysData.GetTaPreview();
 
-            new SystemData().GetAccountSummary();
+            new SystemData().GetAccountSummary("", "");
             lstAccountSummaryInfos = CommonData.GetAccountSummaryInfos;
 
             webBrowser2.Navigate("about:blank/");
@@ -816,7 +816,7 @@ namespace SuperPOS.UI.TA
         
         private void btnPrtSalesRpt_Click(object sender, EventArgs e)
         {
-            FrmTaPrintSalesReprot frmTaPrintSalesReprot = new FrmTaPrintSalesReprot();
+            FrmTaPrintSalesReprot frmTaPrintSalesReprot = new FrmTaPrintSalesReprot(lstAccountSummaryInfos);
             frmTaPrintSalesReprot.ShowDialog();
         }
     }

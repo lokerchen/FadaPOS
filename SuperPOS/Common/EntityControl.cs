@@ -337,7 +337,7 @@ namespace SuperPOS.Common
         }
         #endregion
 
-        public IList<AccountSummaryInfo> GetAccountSummary()
+        public IList<AccountSummaryInfo> GetAccountSummary(string strDateTimeFrom, string strDateTimeTo)
         {
             using (ISession session = SessionFactory.OpenSession())
             {
@@ -374,6 +374,10 @@ namespace SuperPOS.Common
                              "LEFT JOIN Ta_Driver TD ON CO.DriverID = TD.ID " +
                              "WHERE CO.IsPaid = 'Y'";
                 //return session.CreateSQLQuery(sql).List<AccountSummaryInfo>();
+                if (!string.IsNullOrEmpty(strDateTimeFrom) && !string.IsNullOrEmpty(strDateTimeTo))
+                {
+                    sql += "AND CO.PayTime BETWEEN '" + strDateTimeFrom + "' AND '" + strDateTimeTo + "'";
+                }
                 IList<object[]> query = session.CreateSQLQuery(sql).List<object[]>();
                 IList<AccountSummaryInfo> result = query.Select(s => new AccountSummaryInfo(
                                                    s[0] == null ? 0 : Convert.ToInt32(s[0]),

@@ -152,7 +152,7 @@ namespace SuperPOS.Common
             systemData.GetTaSysPrtSetKitchen();
             #endregion
 
-            systemData.GetAccountSummary();
+            systemData.GetAccountSummary("", "");
 
             //systemData.GetPrtAccountSummary("", "");
 

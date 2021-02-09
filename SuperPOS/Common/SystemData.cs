@@ -112,7 +112,7 @@ namespace SuperPOS.Common
 
         public void GetComePhoneInfo() { CommonData.TaComePhoneInfo = _control.SelectAll<TaComePhoneInfo>(); }
 
-        public void GetAccountSummary() { CommonData.GetAccountSummaryInfos = _control.GetAccountSummary(); }
+        public void GetAccountSummary(string strDateTimeFrom, string strDateTimeTo) { CommonData.GetAccountSummaryInfos = _control.GetAccountSummary(strDateTimeFrom, strDateTimeTo); }
 
         public void GetPrtAccountSummary(string strOrderNum, string strBusDate) { CommonData.GetPrtAccountSummaryInfos = _control.GetPrtAccountSummary(strOrderNum, strBusDate); }
 
