@@ -566,12 +566,12 @@ namespace SuperPOS.UI.TA
         private void btnChangePayment_Click(object sender, EventArgs e)
         {
             new SystemData().GetTaOrderItem();
-            TaCheckOrderInfo taCheckOrderInfo = CommonData.TaCheckOrder.FirstOrDefault(s => s.CheckCode.Equals(strChkOrder) && s.BusDate.Equals(strBusDate));
+            TaCheckOrderInfo taCheckOrderInfo = CommonData.TaCheckOrder.FirstOrDefault(s => s.CheckCode.Equals(strChkOrder) && s.BusDate.Equals(checkBusDate));
             FrmTaPaymentShop frmTaPaymentShop = new FrmTaPaymentShop(usrID, 
                                                                      strChkOrder, 
                                                                      sOrderType, 
                                                                      SetPrtInfo(CommonData.TaOrderItem.Where(s => s.CheckCode.Equals(strChkOrder) && s.BusDate.Equals(deDay.Text)).ToList()),
-                                                                     strBusDate,
+                                                                     checkBusDate,
                                                                      taCheckOrderInfo);
             frmTaPaymentShop.Location = panelControl4.Location;
             frmTaPaymentShop.Size = panelControl4.Size;
