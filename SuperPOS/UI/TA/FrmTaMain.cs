@@ -1594,7 +1594,7 @@ namespace SuperPOS.UI.TA
                     taOrderItemInfo.BusDate = strBusDate;
                     taOrderItemInfo.MenuItemID = Convert.ToInt32(childNode["MenuItemID"]);
 
-                    taOrderItemInfo.IsDiscount = childNode["IsDiscount"].ToString();
+                    taOrderItemInfo.IsDiscount = childNode["IsDiscount"]?.ToString() ?? "";
 
                     lstTaOI.Add(taOrderItemInfo);
                 }
