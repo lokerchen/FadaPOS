@@ -9,12 +9,14 @@ using System.Runtime.InteropServices;
 using System.Text;
 using System.Windows.Forms;
 using DevExpress.XtraPrinting;
+using DevExpress.XtraSplashScreen;
 using SuperPOS.Domain.Entities;
 using SuperPOS.Print;
 using Microsoft.Office.Interop.Excel;
 using NPOI.HSSF.UserModel;
 using NPOI.SS.UserModel;
 using NPOI.XSSF.UserModel;
+using SuperPOS.UI.TA;
 
 namespace SuperPOS.Common
 {
@@ -1558,5 +1560,47 @@ namespace SuperPOS.Common
 
             return (Convert.ToDateTime(strDt, dtFormat)).AddDays(iAddOrReduce).ToString(PubComm.DATE_TIME_FORMAT, DateTimeFormatInfo.InvariantInfo);
         }
+
+        #region 闪屏等待窗口
+        private static SplashScreenManager _loadForm;
+        private static Form tmpForm = null;
+
+        private static SplashScreenManager LoadForm
+        {
+            get
+            {
+                if (_loadForm == null)
+                {
+                    _loadForm = new SplashScreenManager(tmpForm, typeof(FrmWaitForm), true, true);
+                    _loadForm.ClosingDelay = 0;
+                }
+
+                return _loadForm;
+            }
+        }
+
+        public static void ShowMessage(Form frm)
+        {
+            bool flag = !LoadForm.IsSplashFormVisible;
+            tmpForm = frm;
+
+            if (flag)
+            {
+                LoadForm.ShowWaitForm();
+            }
+        }
+
+        public static void HideMessage(Form frm)
+        {
+            bool isSplashFormVisible = LoadForm.IsSplashFormVisible;
+
+            tmpForm = frm;
+
+            if (isSplashFormVisible)
+            {
+                LoadForm.CloseWaitForm();
+            }
+        }
+        #endregion
     }
 }

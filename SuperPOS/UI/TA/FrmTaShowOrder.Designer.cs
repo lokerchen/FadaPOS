@@ -125,12 +125,9 @@
             // 
             // richEditCtlPreview
             // 
-            this.richEditCtlPreview.EnableToolTips = true;
             this.richEditCtlPreview.Location = new System.Drawing.Point(604, 414);
             this.richEditCtlPreview.Margin = new System.Windows.Forms.Padding(0);
             this.richEditCtlPreview.Name = "richEditCtlPreview";
-            this.richEditCtlPreview.Options.Export.PlainText.ExportFinalParagraphMark = DevExpress.XtraRichEdit.Export.PlainText.ExportFinalParagraphMark.Never;
-            this.richEditCtlPreview.Options.Fields.UpdateFieldsInTextBoxes = false;
             this.richEditCtlPreview.Options.HorizontalRuler.ShowTabs = false;
             this.richEditCtlPreview.Options.HorizontalRuler.Visibility = DevExpress.XtraRichEdit.RichEditRulerVisibility.Hidden;
             this.richEditCtlPreview.Options.HorizontalScrollbar.Visibility = DevExpress.XtraRichEdit.RichEditScrollbarVisibility.Hidden;
@@ -138,7 +135,6 @@
             this.richEditCtlPreview.Options.VerticalScrollbar.Visibility = DevExpress.XtraRichEdit.RichEditScrollbarVisibility.Hidden;
             this.richEditCtlPreview.Size = new System.Drawing.Size(50, 30);
             this.richEditCtlPreview.TabIndex = 3;
-            this.richEditCtlPreview.Text = "rich";
             this.richEditCtlPreview.Visible = false;
             // 
             // panelControl5

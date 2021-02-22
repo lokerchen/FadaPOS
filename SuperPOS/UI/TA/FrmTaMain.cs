@@ -2039,6 +2039,8 @@ namespace SuperPOS.UI.TA
             }
             //BriSDKLib.QNV_CloseDevice(BriSDKLib.ODT_ALL, 0);
             //this.Close();
+
+            new SystemData().GetTaOrderItem();
         }
 
         #region 对Node子节点操作中英文显示

@@ -636,6 +636,12 @@
     <Compile Include="UI\TA\FrmTaSummaryView.Designer.cs">
       <DependentUpon>FrmTaSummaryView.cs</DependentUpon>
     </Compile>
+    <Compile Include="UI\TA\FrmWaitForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\TA\FrmWaitForm.Designer.cs">
+      <DependentUpon>FrmWaitForm.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="Properties\licenses.licx" />
     <EmbeddedResource Include="UI\FrmDesktopArea.resx">
       <DependentUpon>FrmDesktopArea.cs</DependentUpon>
@@ -885,6 +891,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UI\TA\FrmTaSummaryView.resx">
       <DependentUpon>FrmTaSummaryView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\TA\FrmWaitForm.resx">
+      <DependentUpon>FrmWaitForm.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="LinqToDB.Templates\!ReadMe.LinqToDB.md" />
     <None Include="LinqToDB.Templates\DataAnnotations.ttinclude" />

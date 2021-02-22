@@ -46,6 +46,10 @@ namespace SuperPOS.Domain.Entities
         public virtual string IsCancel { get; set; }
         public virtual string PayTime { get; set; }
         public virtual string StaffID { get; set; }
+
+        public virtual string PayType { get; set; }
+
+        public virtual string Change { get; set; }
         
 
         public ShowAndPendOrderDataInfo()
@@ -128,6 +132,15 @@ namespace SuperPOS.Domain.Entities
             this.IsCancel = strIsCancel;
             this.PayTime = strPayTime;
             this.StaffID = strStaffID;
+
+            this.PayType = (Convert.ToDecimal(strPayTypePay1) > 0.00m ? strPayType1 : "") + @" " + 
+                            (Convert.ToDecimal(strPayTypePay2) > 0.00m ? strPayType2 : "") + @" " +
+                            (Convert.ToDecimal(strPayTypePay3) > 0.00m ? strPayType3 : "") + @" " + 
+                            (Convert.ToDecimal(strPayTypePay4) > 0.00m ? strPayType4 : "") + @" " +
+                            (Convert.ToDecimal(strPayTypePay5) > 0.00m ? strPayType5 : "") + @" ";
+            this.Change = (Convert.ToDecimal(strPaid) - Convert.ToDecimal(strTotalAmount)) <= 0
+                            ? "0.0"
+                            : (Convert.ToDecimal(strPaid) - Convert.ToDecimal(strTotalAmount)).ToString("0.00");
         }
     }
 }
