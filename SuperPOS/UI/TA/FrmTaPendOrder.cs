@@ -181,6 +181,8 @@ namespace SuperPOS.UI.TA
 
         private void FrmTaPendOrder_Load(object sender, EventArgs e)
         {
+            CommonDAL.ShowMessage(this);
+
             SystemData systemData = new SystemData();
             //systemData.GetTaCheckOrder();
             //systemData.GetTaCustomer();
@@ -194,6 +196,8 @@ namespace SuperPOS.UI.TA
             BinLueDriver();
 
             asfc.controllInitializeSize(this);
+
+            CommonDAL.HideMessage(this);
         }
 
         private void gvTaPendOrder_CustomDrawRowIndicator(object sender, DevExpress.XtraGrid.Views.Grid.RowIndicatorCustomDrawEventArgs e)
