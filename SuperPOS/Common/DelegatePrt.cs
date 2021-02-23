@@ -4,6 +4,7 @@ using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using DevExpress.DataProcessing.InMemoryDataProcessor;
 using SuperPOS.Domain.Entities;
 using SuperPOS.Print;
 
@@ -13,6 +14,7 @@ namespace SuperPOS.Common
 
     public delegate void DelegateOrder(string strCheckId, string strBusDate, List<TaOrderItemInfo> lstOi);
 
+    public delegate void DelegateSaveCheckOrder(TaCheckOrderInfo taCheckOrderInfo);
     public class DelegatePrt
     {
         private static EntityControl _control = new EntityControl();
@@ -111,5 +113,15 @@ namespace SuperPOS.Common
             }
         }
         #endregion
+    }
+
+    public class DelegateMy
+    {
+        private static EntityControl _control = new EntityControl();
+
+        public static void SaveCheckOrder(TaCheckOrderInfo taCheckOrderInfo)
+        {
+            _control.AddEntity(taCheckOrderInfo);
+        }
     }
 }

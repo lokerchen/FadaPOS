@@ -793,7 +793,7 @@ namespace SuperPOS.UI.TA
             //Console.WriteLine(treeListOrder.Columns["ItemTotalPrice"].SummaryFooter.ToString());
             SaveCheckOrder(lstTaOI, false);
             #endregion
-            
+
             ht = SetPrtInfo(lstTaOI);
             
             if (ORDER_TYPE.Equals(PubComm.ORDER_TYPE_SHOP))
@@ -1789,12 +1789,15 @@ namespace SuperPOS.UI.TA
 
         private void SaveCheckOrder(List<TaOrderItemInfo> lstTaOI, bool isSave)
         {
-            new SystemData().GetTaCheckOrder();
-            TaCheckOrderInfo taCheckOrderInfo = new TaCheckOrderInfo();
-            var lstChk = CommonData.TaCheckOrder.Where(s => s.CheckCode.Equals(checkID) && s.BusDate.Equals(strBusDate));
-            if (lstChk.Any())
+            //new SystemData().GetTaCheckOrder();
+            //TaCheckOrderInfo taCheckOrderInfo = new TaCheckOrderInfo();
+            //var lstChk = CommonData.TaCheckOrder.Where(s => s.CheckCode.Equals(checkID) && s.BusDate.Equals(strBusDate));
+            //new SystemData().GetTaCheckOrder();
+            TaCheckOrderInfo taCheckOrderInfo = CommonData.TaCheckOrder.FirstOrDefault(s => s.CheckCode.Equals(checkID) && s.BusDate.Equals(strBusDate));
+
+            if (taCheckOrderInfo != null)
             {
-                taCheckOrderInfo = lstChk.FirstOrDefault();
+                //taCheckOrderInfo = lstChk.FirstOrDefault();
                 //taCheckOrderInfo = lstChk.FirstOrDefault();
                 taCheckOrderInfo.PayOrderType = ORDER_TYPE;
                 //taCheckOrderInfo.MenuAmount = lstTaOI.Sum(s => Convert.ToDecimal(string.IsNullOrEmpty(s.ItemTotalPrice) ? "0.00" : s.ItemTotalPrice)).ToString();
@@ -1842,11 +1845,13 @@ namespace SuperPOS.UI.TA
             }
             else
             {
+                taCheckOrderInfo = new TaCheckOrderInfo();
                 taCheckOrderInfo.CheckCode = checkID;
                 taCheckOrderInfo.PayOrderType = ORDER_TYPE;
                 taCheckOrderInfo.PayDelivery = "0.00";
 
                 
+
                 //taCheckOrderInfo.MenuAmount = lstTaOI.Sum(s => Convert.ToDecimal(string.IsNullOrEmpty(s.ItemTotalPrice) ? "0.00" : s.ItemTotalPrice)).ToString();
                 taCheckOrderInfo.MenuAmount = treeListOrder.Nodes.Count > 0 ? treeListOrder.GetSummaryValue(treeListOrder.Columns[7]).ToString() : "0.00";
                 //taCheckOrderInfo.PayDiscount = CommonDAL.GetTaDiscount(ORDER_TYPE, Convert.ToDecimal(taCheckOrderInfo.MenuAmount)).ToString();
@@ -1855,7 +1860,7 @@ namespace SuperPOS.UI.TA
                 decimal dDiscountTotal = CommonDAL.GetAllDiscount(lstTaOI, dDiscount);
                 //taCheckOrderInfo.TotalAmount = (Convert.ToDecimal(taCheckOrderInfo.MenuAmount) - dDiscountTotal).ToString("0.00");
 
-                new SystemData().GetTaDiscount();
+                //new SystemData().GetTaDiscount();
                 //var lstDiscount = CommonData.TaDiscount.Where(s => s.TaType.Equals(ORDER_TYPE));
                 //if (lstDiscount.Any())
                 //{
@@ -1933,7 +1938,16 @@ namespace SuperPOS.UI.TA
 
                 saveTaCheckOrderInfo = taCheckOrderInfo;
 
-                _control.AddEntity(taCheckOrderInfo);
+                //_control.AddEntity(taCheckOrderInfo);
+                DelegateSaveCheckOrder handler = DelegateMy.SaveCheckOrder;
+                IAsyncResult result = handler.BeginInvoke(taCheckOrderInfo, null, null);
+                //handler.EndInvoke(result);
+
+                //DelegateSaveCheckOrder dSaveCheckOrder;
+
+                //dSaveCheckOrder = DelegateMy.SaveCheckOrder;
+
+                //dSaveCheckOrder(taCheckOrderInfo);
             }
         }
         #endregion

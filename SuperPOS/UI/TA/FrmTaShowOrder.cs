@@ -196,13 +196,13 @@ namespace SuperPOS.UI
             
             sItemCount = GetItemCount(strChkOrder);
 
-            Stopwatch st1 = new Stopwatch();//实例化类
-            st1.Start();//开始计时
+            //Stopwatch st1 = new Stopwatch();//实例化类
+            //st1.Start();//开始计时
 
             RefreshPrtInfo();
 
-            st1.Stop();//终止计时
-            Console.WriteLine(@"Time2:" + st1.ElapsedMilliseconds.ToString());//输出时间。
+            //st1.Stop();//终止计时
+            //Console.WriteLine(@"Time2:" + st1.ElapsedMilliseconds.ToString());//输出时间。
         }
 
         private void btnExit_Click(object sender, EventArgs e)
