@@ -46,6 +46,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Entities\OrderItemMatchVatInfo.cs" />
     <Compile Include="Entities\ShowAndPendOrderDataInfo.cs" />
     <Compile Include="Entities\RptTotalSalesInfo.cs" />
     <Compile Include="Entities\OrderItemSumForVatInfo.cs" />

@@ -567,5 +567,22 @@ namespace SuperPOS.Common
             }
         }
 
+        public IList<OrderItemMatchVatInfo> GetOrderItemMatchVat(string strOrderNum, string strBusDate)
+        {
+            using (ISession session = SessionFactory.OpenSession())
+            {
+                string sql = "SELECT MI.MiRmk AS VatInfo, OI.ItemTotalPrice AS ItemTotalPrice " +
+                             "FROM Ta_OrderItem OI LEFT JOIN Ta_MenuItem MI ON OI.ItemCode = MI.MiDishCode " +
+                             "WHERE OI.CheckCode IS NOT NULL";
+                if (!string.IsNullOrEmpty(strOrderNum)) sql += " AND OI.CheckCode ='" + strOrderNum + "'";
+                if (!string.IsNullOrEmpty(strBusDate)) sql += " AND OI.BusDate='" + strBusDate + "'";
+                IList<object[]> query = session.CreateSQLQuery(sql).List<object[]>();
+                IList<OrderItemMatchVatInfo> result = query.Select(s => new OrderItemMatchVatInfo(
+                                                                        s[0]?.ToString() ?? "",
+                                                                        s[1] == null ? 0.00m : Convert.ToDecimal(s[1]))).ToList();
+                return result;
+            }
+        }
+
     }
 }

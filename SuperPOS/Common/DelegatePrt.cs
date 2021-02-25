@@ -4,6 +4,7 @@ using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 using DevExpress.DataProcessing.InMemoryDataProcessor;
 using SuperPOS.Domain.Entities;
 using SuperPOS.Print;
@@ -15,6 +16,8 @@ namespace SuperPOS.Common
     public delegate void DelegateOrder(string strCheckId, string strBusDate, List<TaOrderItemInfo> lstOi);
 
     public delegate void DelegateSaveCheckOrder(TaCheckOrderInfo taCheckOrderInfo);
+
+    public delegate void DelegatePrintHtml(string checkID, string strBusDate, WebBrowser webBrowser, string strType, WbPrtTemplataTa wbPrtTemplataTa, string strOrderType);
     public class DelegatePrt
     {
         private static EntityControl _control = new EntityControl();
@@ -79,6 +82,14 @@ namespace SuperPOS.Common
             catch (Exception ex) { LogHelper.Error(@"CommonDAL", ex); }
         }
         #endregion
+
+        public static void PrtHtml(string checkID, string strBusDate, WebBrowser webBrowser, string strType, WbPrtTemplataTa wbPrtTemplataTa, string strOrderType)
+        {
+            new SystemData().GetTaOrderItem();
+            var lstOI = CommonData.TaOrderItem.Where(s => s.CheckCode.Equals(checkID) && s.BusDate.Equals(strBusDate)).ToList();
+
+            WbPrtPrint.PrintHtml(webBrowser, strType, lstOI, wbPrtTemplataTa, PubComm.ORDER_TYPE_SHOP);
+        }
     }
 
     public class DelegateOrderOpt
@@ -122,6 +133,8 @@ namespace SuperPOS.Common
         public static void SaveCheckOrder(TaCheckOrderInfo taCheckOrderInfo)
         {
             _control.AddEntity(taCheckOrderInfo);
+
+            new SystemData().GetTaCheckOrder();
         }
     }
 }
