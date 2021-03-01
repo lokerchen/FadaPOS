@@ -1803,7 +1803,7 @@ namespace SuperPOS.UI.TA
                 //taCheckOrderInfo.MenuAmount = lstTaOI.Sum(s => Convert.ToDecimal(string.IsNullOrEmpty(s.ItemTotalPrice) ? "0.00" : s.ItemTotalPrice)).ToString();
                 taCheckOrderInfo.MenuAmount = treeListOrder.Nodes.Count > 0 ? treeListOrder.GetSummaryValue(treeListOrder.Columns[7]).ToString() : "0.00";
                 //taCheckOrderInfo.PayDiscount = CommonDAL.GetTaDiscount(ORDER_TYPE, Convert.ToDecimal(taCheckOrderInfo.MenuAmount)).ToString();
-
+                
                 TaDiscountInfo tdi = CommonData.TaDiscount.FirstOrDefault(s => s.TaType.Equals(ORDER_TYPE));
                 if (tdi != null)
                 {
@@ -1841,7 +1841,9 @@ namespace SuperPOS.UI.TA
 
                 saveTaCheckOrderInfo = taCheckOrderInfo;
 
-                _control.UpdateEntity(taCheckOrderInfo);
+                //_control.UpdateEntity(taCheckOrderInfo);
+                DelegateSaveCheckOrder handler = DelegateMy.UpdateCheckOrder;
+                IAsyncResult result = handler.BeginInvoke(taCheckOrderInfo, null, null);
             }
             else
             {

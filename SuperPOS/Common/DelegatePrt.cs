@@ -136,5 +136,12 @@ namespace SuperPOS.Common
 
             new SystemData().GetTaCheckOrder();
         }
+
+        public static void UpdateCheckOrder(TaCheckOrderInfo taCheckOrderInfo)
+        {
+            _control.UpdateEntity(taCheckOrderInfo);
+
+            new SystemData().GetTaCheckOrder();
+        }
     }
 }
