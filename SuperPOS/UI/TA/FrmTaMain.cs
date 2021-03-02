@@ -318,10 +318,8 @@ namespace SuperPOS.UI.TA
         {
             //展开所有TreeList
             treeListOrder.ExpandAll();
-
+            
             if (string.IsNullOrEmpty(strBusDate)) strBusDate = CommonDAL.GetBusDate();
-
-            //new SystemData().GetTaMenuCate();
 
             TaMenuCateInfo taMenuCate = CommonData.TaMenuCate.OrderBy(s => s.ID).FirstOrDefault();
 
@@ -363,7 +361,6 @@ namespace SuperPOS.UI.TA
                 //new SystemData().GetTaOrderItem();
                 //new SystemData().GetTaCheckOrder();
 
-                //TO DO something
                 lblCheck.Text = checkID;
 
                 var lstTaCO = CommonData.TaCheckOrder.Where(s => s.CheckCode.Equals(checkID) && s.BusDate.Equals(strBusDate));
@@ -391,28 +388,19 @@ namespace SuperPOS.UI.TA
 
             GetCustInfo(CustID);
 
-            #region Payment相关
-            //ReloadParam(false);
-            //PaymentPubLoad();
-            //QueryPayment();
-            #endregion
-
             SetBtnLang(iLangStatusId);
             
             asfc.controllInitializeSize(this);
 
             #region 提示打开来电设备失败
-            //if (isNew)
-            //{
             if (!opendev())
+            {
+                if (CommonTool.ConfirmMessage("Failed to open device, continue to order meal?") == DialogResult.Cancel)
                 {
-                    if (CommonTool.ConfirmMessage("Failed to open device, continue to order meal?") == DialogResult.Cancel)
-                    {
-                        //无来电设备连接时，取消打开
-                        Close();
-                    }
+                    //无来电设备连接时，取消打开
+                    Close();
                 }
-            //}
+            }
             #endregion
         }
         #endregion
@@ -2025,8 +2013,10 @@ namespace SuperPOS.UI.TA
                     {
                         TaCheckOrderInfo taCheck = lstChk.FirstOrDefault();
                         taCheck.IsCancel = "Y";
-                        _control.UpdateEntity(taCheck);
                         treeListOrder.Nodes.Clear();
+
+                        DelegateSaveCheckOrder handler = DelegateMy.UpdateCheckOrder;
+                        IAsyncResult result = handler.BeginInvoke(taCheck, null, null);
                     }
                     else
                     {
@@ -2052,7 +2042,9 @@ namespace SuperPOS.UI.TA
             //BriSDKLib.QNV_CloseDevice(BriSDKLib.ODT_ALL, 0);
             //this.Close();
 
-            new SystemData().GetTaOrderItem();
+            //new SystemData().GetTaOrderItem();
+            DelegateRefresh hd = DelegateMy.RefreshSomeInfo;
+            IAsyncResult rlt = hd.BeginInvoke(null, null);
         }
 
         #region 对Node子节点操作中英文显示
