@@ -18,6 +18,9 @@ namespace SuperPOS.Common
     public delegate void DelegateSaveCheckOrder(TaCheckOrderInfo taCheckOrderInfo);
 
     public delegate void DelegatePrintHtml(string checkID, string strBusDate, WebBrowser webBrowser, string strType, WbPrtTemplataTa wbPrtTemplataTa, string strOrderType);
+
+    public delegate void DelegateRefresh();
+
     public class DelegatePrt
     {
         private static EntityControl _control = new EntityControl();
@@ -142,6 +145,16 @@ namespace SuperPOS.Common
             _control.UpdateEntity(taCheckOrderInfo);
 
             new SystemData().GetTaCheckOrder();
+        }
+
+        public static void RefreshSomeInfo()
+        {
+            SystemData systemData = new SystemData();
+            systemData.GetTaCheckOrder();
+            systemData.GetTaOrderItem();
+            systemData.GetTaMenuItem();
+            systemData.GetTaMenuCate();
+            systemData.GetTaCustomer();
         }
     }
 }

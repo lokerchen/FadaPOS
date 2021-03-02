@@ -104,6 +104,9 @@ namespace SuperPOS.UI
 
             //frmTaMain.ShowDialog();
 
+            DelegateRefresh handler = DelegateMy.RefreshSomeInfo;
+            IAsyncResult result = handler.BeginInvoke(null, null);
+
             if (frmTaMain == null)
             {
                 frmTaMain = new FrmTaMain(usrID, PubComm.MENU_LANG_DEFAULT);

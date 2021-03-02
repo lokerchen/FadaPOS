@@ -321,19 +321,17 @@ namespace SuperPOS.UI.TA
 
             if (string.IsNullOrEmpty(strBusDate)) strBusDate = CommonDAL.GetBusDate();
 
-            new SystemData().GetTaMenuCate();
+            //new SystemData().GetTaMenuCate();
 
-            if (CommonData.TaMenuCate.Any())
+            TaMenuCateInfo taMenuCate = CommonData.TaMenuCate.OrderBy(s => s.ID).FirstOrDefault();
+
+            if (taMenuCate != null)
             {
-                iMenuSetId = CommonData.TaMenuCate.OrderBy(s => s.ID).FirstOrDefault().MenuSetID;
+                iMenuSetId = taMenuCate.MenuSetID;
             }
 
-            TaConfMenuDisplayFontInfo taSysFontInfo = new TaConfMenuDisplayFontInfo();
-            if (CommonData.TaConfMenuDisplayFont.Any())
-            {
-                taSysFontInfo = CommonData.TaConfMenuDisplayFont.FirstOrDefault();
-            }
-            else
+            TaConfMenuDisplayFontInfo taSysFontInfo = CommonData.TaConfMenuDisplayFont.FirstOrDefault();
+            if (taSysFontInfo == null)
             {
                 taSysFontInfo.MenuDisplayBtnFontSize = "12";
                 taSysFontInfo.OtherMenuDisplayBtnFontSize = "12";
@@ -352,7 +350,7 @@ namespace SuperPOS.UI.TA
 
             //默认订单类型
             lblType.Text = PubComm.ORDER_TYPE_SHOP;
-
+            
             if (string.IsNullOrEmpty(checkID))
             {
                 //获得账单号
@@ -362,16 +360,18 @@ namespace SuperPOS.UI.TA
             }
             else
             {
-                new SystemData().GetTaOrderItem();
-                new SystemData().GetTaCheckOrder();
+                //new SystemData().GetTaOrderItem();
+                //new SystemData().GetTaCheckOrder();
+
                 //TO DO something
                 lblCheck.Text = checkID;
 
                 var lstTaCO = CommonData.TaCheckOrder.Where(s => s.CheckCode.Equals(checkID) && s.BusDate.Equals(strBusDate));
 
-                if (lstTaCO.Any())
+                TaCheckOrderInfo taCheck = lstTaCO.FirstOrDefault();
+
+                if (taCheck != null)
                 {
-                    TaCheckOrderInfo taCheck = lstTaCO.FirstOrDefault();
                     ORDER_TYPE = lblType.Text = taCheck.PayOrderType;
                 }
                 //BindData(checkID);
@@ -404,7 +404,7 @@ namespace SuperPOS.UI.TA
             #region 提示打开来电设备失败
             //if (isNew)
             //{
-                if (!opendev())
+            if (!opendev())
                 {
                     if (CommonTool.ConfirmMessage("Failed to open device, continue to order meal?") == DialogResult.Cancel)
                     {
@@ -1125,12 +1125,8 @@ namespace SuperPOS.UI.TA
         {
             int i = 0;
 
-            TaConfMenuDisplayFontInfo taSysFontInfo = new TaConfMenuDisplayFontInfo();
-            if (CommonData.TaConfMenuDisplayFont.Any())
-            {
-                taSysFontInfo = CommonData.TaConfMenuDisplayFont.FirstOrDefault();
-            }
-            else
+            TaConfMenuDisplayFontInfo taSysFontInfo = CommonData.TaConfMenuDisplayFont.FirstOrDefault();
+            if (taSysFontInfo == null)
             {
                 taSysFontInfo.MenuDisplayBtnFontSize = "12";
                 taSysFontInfo.OtherMenuDisplayBtnFontSize = "12";
@@ -2458,7 +2454,7 @@ namespace SuperPOS.UI.TA
             }
             else
             {
-                new SystemData().GetTaCustomer();
+                //new SystemData().GetTaCustomer();
 
                 var lstCust = CommonData.TaCustomer.Where(s => s.ID == cID);
 

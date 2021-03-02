@@ -297,7 +297,7 @@ namespace SuperPOS.Common
         /// <returns></returns>
         public static List<TaMenuItemInfo> GetListQueryPageMenuItem(int iPageNum, int iMenuCateId, int iMenuSetId)
         {
-            new SystemData().GetTaMenuItem();
+            //new SystemData().GetTaMenuItem();
 
             if (iMenuSetId == 0)
             {
@@ -340,7 +340,7 @@ namespace SuperPOS.Common
         /// <returns></returns>
         public static List<TaMenuCateInfo> GetListQueryPageMenuCate(int iPageNum, int msId)
         {
-            new SystemData().GetTaMenuCate();
+            //new SystemData().GetTaMenuCate();
 
             return msId == 0
                 ? CommonData.TaMenuCate.OrderBy(s => Convert.ToInt32(s.CatePosition)).Skip(PAGESIZE_MENUCATE*(iPageNum - 1)).Take(PAGESIZE_MENUCATE).ToList()
@@ -434,7 +434,7 @@ namespace SuperPOS.Common
             string strBusDate = GetBusDate();
 
             new SystemData().GetTaCheckOrder();
-            
+
             //当前营业日期内是否存在订单
             var lstCheck = CommonData.TaCheckOrder.Where(s => s.BusDate.Equals(strBusDate)).OrderByDescending(s => s.ID).Take(1);
 
