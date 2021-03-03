@@ -1034,7 +1034,7 @@ namespace SuperPOS.UI.TA
 
             if (taMenuCateInfo != null && taMenuCateInfo.IsHotKey.Equals("Y"))
             {
-                new SystemData().GetTaMenuItem();
+                //new SystemData().GetTaMenuItem();
 
                 TaMenuItemInfo taMenuItemInfo = CommonData.TaMenuItem.FirstOrDefault(s => s.MiDishCode.Equals(taMenuCateInfo.HotKeyDishCode));
 
