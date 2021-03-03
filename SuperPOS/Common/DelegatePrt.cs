@@ -155,6 +155,7 @@ namespace SuperPOS.Common
             systemData.GetTaMenuItem();
             systemData.GetTaMenuCate();
             systemData.GetTaCustomer();
+            systemData.GetTaDriver();
         }
     }
 }

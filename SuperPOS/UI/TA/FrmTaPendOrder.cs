@@ -80,6 +80,8 @@ namespace SuperPOS.UI.TA
 
         //语言状态位
         private int iLang = PubComm.MENU_LANG_DEFAULT;
+
+        private bool isConnectPhone = false;
         #endregion
 
         public FrmTaPendOrder()
@@ -87,11 +89,12 @@ namespace SuperPOS.UI.TA
             InitializeComponent();
         }
 
-        public FrmTaPendOrder(int uID, int iLanguage)
+        public FrmTaPendOrder(int uID, int iLanguage, bool isFrmConnectPhone)
         {
             InitializeComponent();
             usrID = uID;
             iLang = iLanguage;
+            isConnectPhone = isFrmConnectPhone;
         }
 
         public FrmTaPendOrder(string sOrderNo, string sBusDate, string sCustPhone)
@@ -188,6 +191,8 @@ namespace SuperPOS.UI.TA
             //systemData.GetTaCustomer();
             //systemData.GetUsrBase();
             //systemData.GetTaOrderItem();
+            Stopwatch st = new Stopwatch();//实例化类
+            st.Start();//开始计时
 
             systemData.GetShowAndPendOrderData("", strBusDate);
 
@@ -437,8 +442,8 @@ namespace SuperPOS.UI.TA
 
         private void btnExit_Click(object sender, EventArgs e)
         {
-            Hide();
-            FrmTaMain frmTaMain = new FrmTaMain(usrID, iLang);
+            Close();
+            FrmTaMain frmTaMain = new FrmTaMain(usrID, iLang, isConnectPhone);
             frmTaMain.ShowDialog();
         }
 
@@ -492,7 +497,7 @@ namespace SuperPOS.UI.TA
 
         private void BinLueDriver()
         {
-            new SystemData().GetTaDriver();
+            //new SystemData().GetTaDriver();
 
             var lstDriver = from td in CommonData.TaDriver.Where(s => !string.IsNullOrEmpty(s.DriverName))
                                 select new

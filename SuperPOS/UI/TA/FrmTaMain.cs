@@ -125,6 +125,9 @@ namespace SuperPOS.UI.TA
         //是否已在接听电话
         public bool isGetPhone = false;
 
+        //是否已检测过电话线
+        public bool isConnectPhone = false;
+
         [StructLayout(LayoutKind.Sequential)]
         public struct tag_pstn_Data
         {
@@ -149,6 +152,14 @@ namespace SuperPOS.UI.TA
             InitializeComponent();
             usrID = id;
             iLangStatusId = iLanguage;
+        }
+
+        public FrmTaMain(int id, int iLanguage, bool isCalling)
+        {
+            InitializeComponent();
+            usrID = id;
+            iLangStatusId = iLanguage;
+            isConnectPhone = isCalling;
         }
 
         public FrmTaMain(string cId, int id, int cusId)
@@ -334,10 +345,10 @@ namespace SuperPOS.UI.TA
                 taSysFontInfo.MenuDisplayBtnFontSize = "12";
                 taSysFontInfo.OtherMenuDisplayBtnFontSize = "12";
             }
-            
+
             SetMenuItemBtn(taSysFontInfo);
             SetMenuCateBtn(taSysFontInfo);
-
+            
             //加载MenuCate
             SetMenuCate(iCatePageNum, iMenuSetId);
             //加载MenuItem
@@ -360,12 +371,10 @@ namespace SuperPOS.UI.TA
             {
                 //new SystemData().GetTaOrderItem();
                 //new SystemData().GetTaCheckOrder();
-
+                
                 lblCheck.Text = checkID;
 
-                var lstTaCO = CommonData.TaCheckOrder.Where(s => s.CheckCode.Equals(checkID) && s.BusDate.Equals(strBusDate));
-
-                TaCheckOrderInfo taCheck = lstTaCO.FirstOrDefault();
+                TaCheckOrderInfo taCheck = CommonData.TaCheckOrder.FirstOrDefault(s => s.CheckCode.Equals(checkID) && s.BusDate.Equals(strBusDate));
 
                 if (taCheck != null)
                 {
@@ -393,12 +402,15 @@ namespace SuperPOS.UI.TA
             asfc.controllInitializeSize(this);
 
             #region 提示打开来电设备失败
-            if (!opendev())
+            if (!isConnectPhone) //没有检测过
             {
-                if (CommonTool.ConfirmMessage("Failed to open device, continue to order meal?") == DialogResult.Cancel)
+                if (!opendev())
                 {
-                    //无来电设备连接时，取消打开
-                    Close();
+                    if (CommonTool.ConfirmMessage("Failed to open device, continue to order meal?") == DialogResult.Cancel)
+                    {
+                        //无来电设备连接时，取消打开
+                        Close();
+                    }
                 }
             }
             #endregion
@@ -884,7 +896,7 @@ namespace SuperPOS.UI.TA
 
                     treeListOrder.Nodes.Clear();
 
-                    FrmTaPendOrder frmTaPendOrder = new FrmTaPendOrder(usrID, iLangStatusId);
+                    FrmTaPendOrder frmTaPendOrder = new FrmTaPendOrder(usrID, iLangStatusId, isConnectPhone);
                     this.Hide();
                     frmTaPendOrder.ShowDialog();
                     isGetPhone = false;
@@ -892,7 +904,7 @@ namespace SuperPOS.UI.TA
             }
             else
             {
-                FrmTaPendOrder frmTaPendOrder = new FrmTaPendOrder(usrID, iLangStatusId);
+                FrmTaPendOrder frmTaPendOrder = new FrmTaPendOrder(usrID, iLangStatusId, isConnectPhone);
                 this.Hide();
                 frmTaPendOrder.ShowDialog();
                 isGetPhone = false;
@@ -1734,6 +1746,8 @@ namespace SuperPOS.UI.TA
         {
             try
             {
+                isConnectPhone = true;
+
                 if (BriSDKLib.QNV_OpenDevice(BriSDKLib.ODT_LBRIDGE, 0, "") <= 0 || BriSDKLib.QNV_DevInfo(0, BriSDKLib.QNV_DEVINFO_GETCHANNELS) <= 0)
                 {
                     AppendStatus("打开设备失败");
@@ -1754,13 +1768,14 @@ namespace SuperPOS.UI.TA
 
                     BriSDKLib.QNV_SetParam(i, BriSDKLib.QNV_PARAM_AM_LINEIN, 5);  //设置线路增益              
                 }
-                
+
                 //AppendStatus("打开设备成功");
                 return true;
             }
             catch (Exception ex)
             {
                 LogHelper.Error("opendev:" + ex.Message);
+                isConnectPhone = true;
                 return false;
             }
         }
