@@ -198,8 +198,12 @@ namespace SuperPOS.UI.TA
 
             BinLueDriver();
 
+            //异步刷新CheckOrder和OrderItem
+            DelegateRefresh hd = DelegateMy.RefreshSomeInfo;
+            IAsyncResult rt = hd.BeginInvoke("3", strBusDate, "", null, null);
+
             asfc.controllInitializeSize(this);
-            
+
             CommonDAL.HideMessage(this);
         }
 
@@ -268,8 +272,8 @@ namespace SuperPOS.UI.TA
 
         private void btnPay_Click(object sender, EventArgs e)
         {
-            SystemData systemData = new SystemData();
-            systemData.GetTaCheckOrder();
+            //SystemData systemData = new SystemData();
+            //systemData.GetTaCheckOrder();
             TaCheckOrderInfo taCheckOrderInfo = CommonData.TaCheckOrder.FirstOrDefault(s => s.CheckCode.Equals(checkCode) && s.BusDate.Equals(checkBusDate));
 
             if (checkOrderType.Equals(PubComm.ORDER_TYPE_SHOP))
@@ -359,7 +363,7 @@ namespace SuperPOS.UI.TA
 
             ht["Change"] = "0.00";
 
-            new SystemData().GetTaOrderItem();
+            //new SystemData().GetTaOrderItem();
             var lstOi = CommonData.TaOrderItem.Where(s => s.CheckCode.Equals(checkCode) && s.BusDate.Equals(checkBusDate)).ToList();
 
             #region VAT计算
@@ -421,7 +425,7 @@ namespace SuperPOS.UI.TA
 
             ht["Change"] = "0.00";
 
-            new SystemData().GetTaOrderItem();
+            //new SystemData().GetTaOrderItem();
             var lstOi = CommonData.TaOrderItem.Where(s => s.CheckCode.Equals(checkCode) && s.BusDate.Equals(checkBusDate)).ToList();
 
             PrtPrint.PrtBillBilingual(lstOi, ht);
@@ -432,7 +436,7 @@ namespace SuperPOS.UI.TA
             Hashtable ht = SetPrtInfo();
             ht["ChkNum"] = checkCode;
 
-            new SystemData().GetTaOrderItem();
+            //new SystemData().GetTaOrderItem();
             var lstOi = CommonData.TaOrderItem.Where(s => s.CheckCode.Equals(checkCode) && s.BusDate.Equals(checkBusDate)).ToList();
 
             PrtPrint.PrtKitchen(lstOi, ht);
@@ -476,7 +480,7 @@ namespace SuperPOS.UI.TA
         {
             if (gvTaPendOrder.FocusedRowHandle < 0) return;
 
-            new SystemData().GetTaCheckOrder();
+            //new SystemData().GetTaCheckOrder();
             var lstRec = CommonData.TaCheckOrder.Where(s => s.ID == Convert.ToInt32(gvTaPendOrder.GetRowCellValue(gvTaPendOrder.FocusedRowHandle, "ID").ToString()) && s.BusDate.Equals(checkBusDate));
 
             if (lstRec.Any())
@@ -484,8 +488,11 @@ namespace SuperPOS.UI.TA
                 TaCheckOrderInfo taCheckOrderInfo = lstRec.FirstOrDefault();
 
                 taCheckOrderInfo.DriverID = Convert.ToInt32(lueDriver.EditValue);
-                
-                _control.UpdateEntity(taCheckOrderInfo);
+
+                DelegateSaveCheckOrder handler = DelegateMy.UpdateCheckOrder;
+                IAsyncResult result = handler.BeginInvoke(taCheckOrderInfo, null, null);
+
+                //_control.UpdateEntity(taCheckOrderInfo);
             }
 
             GetBindData("", 0, false);
