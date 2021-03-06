@@ -191,17 +191,15 @@ namespace SuperPOS.UI.TA
             //systemData.GetTaCustomer();
             //systemData.GetUsrBase();
             //systemData.GetTaOrderItem();
-            Stopwatch st = new Stopwatch();//实例化类
-            st.Start();//开始计时
-
-            systemData.GetShowAndPendOrderData("", strBusDate);
+            
+            //systemData.GetShowAndPendOrderData("", strBusDate);
 
             GetBindData("", 0, false);
 
             BinLueDriver();
 
             asfc.controllInitializeSize(this);
-
+            
             CommonDAL.HideMessage(this);
         }
 

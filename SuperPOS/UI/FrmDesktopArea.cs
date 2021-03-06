@@ -93,6 +93,9 @@ namespace SuperPOS.UI
 
         private void btnShowOrder_Click(object sender, EventArgs e)
         {
+            DelegateRefresh hd = DelegateMy.RefreshSomeInfo;
+            IAsyncResult rt = hd.BeginInvoke("8", strBusDate, "", null, null);
+
             FrmTaShowOrder frmTaShowOrder = new FrmTaShowOrder(usrID, strBusDate);
             frmTaShowOrder.ShowDialog();
         }

@@ -409,6 +409,9 @@ namespace SuperPOS.UI.TA
             
             asfc.controllInitializeSize(this);
 
+            DelegateRefresh hd = DelegateMy.RefreshSomeInfo;
+            IAsyncResult rt = hd.BeginInvoke("8", strBusDate, "", null, null);
+
             #region 提示打开来电设备失败
             if (!isConnectPhone) //没有检测过
             {

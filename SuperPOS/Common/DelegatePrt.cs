@@ -176,6 +176,9 @@ namespace SuperPOS.Common
                 case "7":
                     systemData.GetTaMenuItem();
                     break;
+                case "8":
+                    systemData.GetShowAndPendOrderData(strBusDate, strCheckId);
+                    break;
                 default:
                     systemData.GetTaCheckOrder();
                     systemData.GetTaOrderItem();
