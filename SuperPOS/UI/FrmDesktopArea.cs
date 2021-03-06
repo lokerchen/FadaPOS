@@ -105,7 +105,7 @@ namespace SuperPOS.UI
             //frmTaMain.ShowDialog();
 
             DelegateRefresh handler = DelegateMy.RefreshSomeInfo;
-            IAsyncResult result = handler.BeginInvoke(null, null);
+            IAsyncResult result = handler.BeginInvoke("0", "", "", null, null);
 
             if (frmTaMain == null)
             {

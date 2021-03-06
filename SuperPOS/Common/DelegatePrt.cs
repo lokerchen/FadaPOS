@@ -19,7 +19,7 @@ namespace SuperPOS.Common
 
     public delegate void DelegatePrintHtml(string checkID, string strBusDate, WebBrowser webBrowser, string strType, WbPrtTemplataTa wbPrtTemplataTa, string strOrderType);
 
-    public delegate void DelegateRefresh();
+    public delegate void DelegateRefresh(string iStatus, string strBusDate, string strCheckId);
 
     public class DelegatePrt
     {
@@ -147,15 +147,46 @@ namespace SuperPOS.Common
             new SystemData().GetTaCheckOrder();
         }
 
-        public static void RefreshSomeInfo()
+        #region 后台刷新数据库内容
+        public static void RefreshSomeInfo(string iStatus, string strBusDate, string strCheckId)
         {
             SystemData systemData = new SystemData();
-            systemData.GetTaCheckOrder();
-            systemData.GetTaOrderItem();
-            systemData.GetTaMenuItem();
-            systemData.GetTaMenuCate();
-            systemData.GetTaCustomer();
-            systemData.GetTaDriver();
+
+            switch (iStatus)
+            {
+                case "1":
+                    systemData.GetTaCheckOrder();
+                    break;
+                case "2":
+                    systemData.GetTaOrderItem();
+                    break;
+                case "3":
+                    systemData.GetTaCheckOrder();
+                    systemData.GetTaOrderItem();
+                    break;
+                case "4":
+                    systemData.GetTaMenuCate();
+                    break;
+                case "5":
+                    systemData.GetTaCustomer();
+                    break;
+                case "6":
+                    systemData.GetTaDriver();
+                    break;
+                case "7":
+                    systemData.GetTaMenuItem();
+                    break;
+                default:
+                    systemData.GetTaCheckOrder();
+                    systemData.GetTaOrderItem();
+                    systemData.GetTaMenuItem();
+                    systemData.GetTaMenuCate();
+                    systemData.GetTaCustomer();
+                    systemData.GetTaDriver();
+                    break;
+            }
         }
+        #endregion
+
     }
 }

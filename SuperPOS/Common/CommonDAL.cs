@@ -433,7 +433,7 @@ namespace SuperPOS.Common
             //获得当前营业日
             string strBusDate = GetBusDate();
 
-            new SystemData().GetTaCheckOrder();
+            //new SystemData().GetTaCheckOrder();
 
             //当前营业日期内是否存在订单
             var lstCheck = CommonData.TaCheckOrder.Where(s => s.BusDate.Equals(strBusDate)).OrderByDescending(s => s.ID).Take(1);

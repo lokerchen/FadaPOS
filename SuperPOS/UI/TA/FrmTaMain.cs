@@ -247,6 +247,9 @@ namespace SuperPOS.UI.TA
                 SaveCheckOrder(lstTaOI, true);
                 #endregion
 
+                DelegateRefresh hd = DelegateMy.RefreshSomeInfo;
+                IAsyncResult rt = hd.BeginInvoke("1", "", "", null, null);
+
                 //如果是来电显示的，保存后直接关闭当前窗口
                 if (isCalling)
                 {
@@ -261,6 +264,8 @@ namespace SuperPOS.UI.TA
                 ORDER_TYPE = PubComm.ORDER_TYPE_SHOP;
                 #endregion
 
+                
+
                 checkID = CommonDAL.GetCheckCode();
                 LogHelper.Info("#checkID:" + checkID + "#btnSaveOrder_Click");
                 lblCheck.Text = checkID;
@@ -269,7 +274,7 @@ namespace SuperPOS.UI.TA
                 ORDER_TYPE = PubComm.ORDER_TYPE_SHOP;
                 btnType.Appearance.BackColor = Color.HotPink;
                 btnType.Text = PubComm.ORDER_TYPE_SHOP;
-
+                
                 //handler.EndInvoke(result);
             }
             catch (Exception ex) { LogHelper.Error(this.Name, ex); }
@@ -292,8 +297,11 @@ namespace SuperPOS.UI.TA
                     if (lstChk.Any())
                     {
                         TaCheckOrderInfo taCheck = lstChk.FirstOrDefault();
-                        taCheck.IsCancel = "Y";
+                        //taCheck.IsCancel = "Y";
                         _control.UpdateEntity(taCheck);
+                        DelegateSaveCheckOrder handler = DelegateMy.UpdateCheckOrder;
+                        IAsyncResult result = handler.BeginInvoke(taCheck, null, null);
+
                         treeListOrder.Nodes.Clear();
 
                         checkID = CommonDAL.GetCheckCode();
@@ -858,6 +866,9 @@ namespace SuperPOS.UI.TA
 
                 if (frmTaPayment.ShowDialog() == DialogResult.OK)
                 {
+                    DelegateRefresh hd = DelegateMy.RefreshSomeInfo;
+                    IAsyncResult rt = hd.BeginInvoke("1", "", "", null, null);
+
                     if (frmTaPayment.returnPaid) treeListOrder.Nodes.Clear();
 
                     checkID = CommonDAL.GetCheckCode();
@@ -2059,7 +2070,7 @@ namespace SuperPOS.UI.TA
 
             //new SystemData().GetTaOrderItem();
             DelegateRefresh hd = DelegateMy.RefreshSomeInfo;
-            IAsyncResult rlt = hd.BeginInvoke(null, null);
+            IAsyncResult rlt = hd.BeginInvoke("0", "", "", null, null);
         }
 
         #region 对Node子节点操作中英文显示
@@ -2932,6 +2943,9 @@ namespace SuperPOS.UI.TA
                     taCustomerInfo = frmCaller.TaCustomer;
                     string strReadTime = frmCaller.ReadyTime;
 
+                    DelegateRefresh hd = DelegateMy.RefreshSomeInfo;
+                    IAsyncResult rt = hd.BeginInvoke("1", "", "", null, null);
+
                     if (taCustomerInfo == null)
                     {
                         SetCustInfo(true, true, null);
@@ -3289,6 +3303,9 @@ namespace SuperPOS.UI.TA
 
                     if (frmCaller.ShowDialog() == DialogResult.OK)
                     {
+                        DelegateRefresh hd = DelegateMy.RefreshSomeInfo;
+                        IAsyncResult rt = hd.BeginInvoke("1", "", "", null, null);
+
                         TaCustomerInfo taCustomerInfo = new TaCustomerInfo();
 
                         ORDER_TYPE = frmCaller.OrderType;
