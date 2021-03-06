@@ -118,6 +118,9 @@ namespace SuperPOS.UI.TA
 
         private void FrmTaPaymentShop_Load(object sender, EventArgs e)
         {
+            DelegateRefresh hd = DelegateMy.RefreshSomeInfo;
+            IAsyncResult rt = hd.BeginInvoke("5", strBusDate, "", null, null);
+
             //订单类型
             lblTypeName.Text = PubComm.ORDER_TYPE_SHOP;
 
@@ -158,7 +161,7 @@ namespace SuperPOS.UI.TA
             objName = @"txtPayTypePay1";
 
             txtReadyTime.Text = strReadyTime;
-
+            
             asfc.controllInitializeSize(this);
         }
 
@@ -811,7 +814,9 @@ namespace SuperPOS.UI.TA
 
                 taCheckOrder.DeliveryFee = @"0.00";
 
-                _control.UpdateEntity(taCheckOrder);
+                //_control.UpdateEntity(taCheckOrder);
+                DelegateSaveCheckOrder handler = DelegateMy.UpdateCheckOrder;
+                IAsyncResult result = handler.BeginInvoke(taCheckOrder, null, null);
             }
 
             bool isOpenCashDrawSuccess = CommonDAL.OpenCashDraw(false, "");
@@ -884,7 +889,9 @@ namespace SuperPOS.UI.TA
 
                 taCheckOrder.DeliveryFee = @"0.00";
 
-                _control.UpdateEntity(taCheckOrder);
+                //_control.UpdateEntity(taCheckOrder);
+                DelegateSaveCheckOrder handler = DelegateMy.UpdateCheckOrder;
+                IAsyncResult result = handler.BeginInvoke(taCheckOrder, null, null);
             }
 
             returnPaid = true;
@@ -1089,7 +1096,7 @@ namespace SuperPOS.UI.TA
 
             if (!string.IsNullOrEmpty(callerID))
             {
-                new SystemData().GetTaCustomer();
+                //new SystemData().GetTaCustomer();
                 var lstCust = CommonData.TaCustomer.Where(s => s.ID.ToString().Equals(callerID));
                 if (lstCust.Any())
                 {
