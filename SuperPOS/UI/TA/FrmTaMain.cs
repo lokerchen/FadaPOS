@@ -905,7 +905,9 @@ namespace SuperPOS.UI.TA
                     {
                         TaCheckOrderInfo taCheck = lstChk.FirstOrDefault();
                         taCheck.IsCancel = "Y";
-                        _control.UpdateEntity(taCheck);
+                        //_control.UpdateEntity(taCheck);
+                        DelegateSaveCheckOrder handler = DelegateMy.UpdateCheckOrder;
+                        IAsyncResult result = handler.BeginInvoke(taCheck, null, null);
                     }
 
                     treeListOrder.Nodes.Clear();
@@ -971,9 +973,21 @@ namespace SuperPOS.UI.TA
         {
             SimpleButton btn = sender as SimpleButton;
 
+            //Stopwatch st1 = new Stopwatch();//实例化类
+            //st1.Start();//开始计时
+
             TaMenuItemInfo taMenuItemInfo = GetMenuItemInfo(btn.Text, iMenuCateId, iMenuSetId, false);
 
+            //st1.Stop();//终止计时
+            //Console.WriteLine("Time1: " + st1.ElapsedMilliseconds.ToString());//输出时间。
+
+            //Stopwatch st2 = new Stopwatch();//实例化类
+            //st2.Start();//开始计时
+
             SetMenuItem(taMenuItemInfo);
+
+            //st2.Stop();//终止计时
+            //Console.WriteLine("Time2: " + st2.ElapsedMilliseconds.ToString());//输出时间。
         }
         #endregion
 
@@ -1378,7 +1392,7 @@ namespace SuperPOS.UI.TA
         /// <param name="node"></param>
         private void GetNotAppendOtherChoice(int mId, string mQty, string mCheckCode, string itemId, TreeListNode mNode, bool isSubMenu)
         {
-            new SystemData().GetTaMenuItemOtherChoice();
+            //new SystemData().GetTaMenuItemOtherChoice();
 
             var lstOther = CommonData.TaMenuItemOtherChoice.Where(s => s.MiID == mId && s.IsEnableChoice.Equals("Y"));
 

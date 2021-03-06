@@ -186,6 +186,7 @@ namespace SuperPOS.Common
                     systemData.GetTaMenuCate();
                     systemData.GetTaCustomer();
                     systemData.GetTaDriver();
+                    systemData.GetTaMenuItemOtherChoice();
                     break;
             }
         }
