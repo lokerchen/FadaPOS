@@ -881,7 +881,7 @@ namespace SuperPOS.UI.TA
                 }
             }
 
-            handler.EndInvoke(result);
+            //handler.EndInvoke(result);
         }
         #endregion
 
