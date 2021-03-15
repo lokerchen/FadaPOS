@@ -33,7 +33,7 @@ namespace SuperPOS
             //打印模板
             new SystemData().GetTaPreview();
 
-            DelegatePreview handler = DelegatePrt.SaveShowOrderModelPreview;
+            DelegatePreview handler = DelegateMy.SaveShowOrderModelPreview;
             IAsyncResult result = handler.BeginInvoke(null, null);
 
             //加载系统数据

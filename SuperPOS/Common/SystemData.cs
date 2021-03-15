@@ -1,4 +1,5 @@
-﻿using SuperPOS.Domain.Entities;
+﻿using System.Collections;
+using SuperPOS.Domain.Entities;
 
 namespace SuperPOS.Common
 {
@@ -43,6 +44,8 @@ namespace SuperPOS.Common
         public void GetTaOrderItem() { CommonData.TaOrderItem = _control.SelectAll<TaOrderItemInfo>(); }
 
         public void GetTaCheckOrder() { CommonData.TaCheckOrder = _control.SelectAll<TaCheckOrderInfo>(); }
+
+        public void GetTaCheckOrderByCheckCodeAndBusDate(string strOrderNum, string strBusDate) { CommonData.TaCheckOrderByCheckCodeAndBusDate = _control.GeTaCheckOrderInfos(strOrderNum, strBusDate); } 
 
         public void GetSysValue() { CommonData.SysValue = _control.SelectAll<SysValueInfo>(); }
 

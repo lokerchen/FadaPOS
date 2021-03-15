@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmTaMain));
             this.treeListOrder = new DevExpress.XtraTreeList.TreeList();
             this.ID = new DevExpress.XtraTreeList.Columns.TreeListColumn();
             this.ItemQty = new DevExpress.XtraTreeList.Columns.TreeListColumn();
@@ -46,6 +45,7 @@
             this.OrderStaff = new DevExpress.XtraTreeList.Columns.TreeListColumn();
             this.BusDate = new DevExpress.XtraTreeList.Columns.TreeListColumn();
             this.MenuItemID = new DevExpress.XtraTreeList.Columns.TreeListColumn();
+            this.IsDiscount = new DevExpress.XtraTreeList.Columns.TreeListColumn();
             this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
             this.btnOnlineOrder = new DevExpress.XtraEditors.SimpleButton();
             this.btnType = new DevExpress.XtraEditors.SimpleButton();
@@ -156,7 +156,6 @@
             this.lblCheck = new DevExpress.XtraEditors.LabelControl();
             this.btnCustInfo = new DevExpress.XtraEditors.SimpleButton();
             this.btnSearchMeal = new DevExpress.XtraEditors.SimpleButton();
-            this.IsDiscount = new DevExpress.XtraTreeList.Columns.TreeListColumn();
             ((System.ComponentModel.ISupportInitialize)(this.treeListOrder)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemMemoEdit1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
@@ -343,6 +342,12 @@
             this.MenuItemID.FieldName = "MenuItemID";
             this.MenuItemID.Name = "MenuItemID";
             // 
+            // IsDiscount
+            // 
+            this.IsDiscount.Caption = "IsDiscount";
+            this.IsDiscount.FieldName = "IsDiscount";
+            this.IsDiscount.Name = "IsDiscount";
+            // 
             // panelControl1
             // 
             this.panelControl1.Controls.Add(this.btnOnlineOrder);
@@ -429,6 +434,7 @@
             // lblReadyTime
             // 
             this.lblReadyTime.Appearance.ForeColor = System.Drawing.Color.Red;
+            this.lblReadyTime.Appearance.Options.UseForeColor = true;
             this.lblReadyTime.Location = new System.Drawing.Point(275, 78);
             this.lblReadyTime.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.lblReadyTime.Name = "lblReadyTime";
@@ -438,6 +444,7 @@
             // 
             // lblCustReadyTime
             // 
+            this.lblCustReadyTime.Appearance.Options.UseTextOptions = true;
             this.lblCustReadyTime.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
             this.lblCustReadyTime.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
             this.lblCustReadyTime.Location = new System.Drawing.Point(198, 78);
@@ -451,6 +458,7 @@
             // lblDeliveryFee
             // 
             this.lblDeliveryFee.Appearance.ForeColor = System.Drawing.Color.Red;
+            this.lblDeliveryFee.Appearance.Options.UseForeColor = true;
             this.lblDeliveryFee.Location = new System.Drawing.Point(81, 79);
             this.lblDeliveryFee.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.lblDeliveryFee.Name = "lblDeliveryFee";
@@ -461,6 +469,7 @@
             // lblDistance
             // 
             this.lblDistance.Appearance.ForeColor = System.Drawing.Color.Red;
+            this.lblDistance.Appearance.Options.UseForeColor = true;
             this.lblDistance.Location = new System.Drawing.Point(81, 64);
             this.lblDistance.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.lblDistance.Name = "lblDistance";
@@ -471,6 +480,7 @@
             // lblPostcode
             // 
             this.lblPostcode.Appearance.ForeColor = System.Drawing.Color.Red;
+            this.lblPostcode.Appearance.Options.UseForeColor = true;
             this.lblPostcode.Location = new System.Drawing.Point(81, 48);
             this.lblPostcode.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.lblPostcode.Name = "lblPostcode";
@@ -481,6 +491,7 @@
             // lblAddress
             // 
             this.lblAddress.Appearance.ForeColor = System.Drawing.Color.Red;
+            this.lblAddress.Appearance.Options.UseForeColor = true;
             this.lblAddress.Location = new System.Drawing.Point(81, 33);
             this.lblAddress.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.lblAddress.Name = "lblAddress";
@@ -491,6 +502,7 @@
             // lblPhone
             // 
             this.lblPhone.Appearance.ForeColor = System.Drawing.Color.Red;
+            this.lblPhone.Appearance.Options.UseForeColor = true;
             this.lblPhone.Location = new System.Drawing.Point(81, 19);
             this.lblPhone.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.lblPhone.Name = "lblPhone";
@@ -501,6 +513,7 @@
             // lblName
             // 
             this.lblName.Appearance.ForeColor = System.Drawing.Color.Red;
+            this.lblName.Appearance.Options.UseForeColor = true;
             this.lblName.Location = new System.Drawing.Point(81, 4);
             this.lblName.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.lblName.Name = "lblName";
@@ -510,6 +523,7 @@
             // 
             // lblCustDeliveryFee
             // 
+            this.lblCustDeliveryFee.Appearance.Options.UseTextOptions = true;
             this.lblCustDeliveryFee.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
             this.lblCustDeliveryFee.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
             this.lblCustDeliveryFee.Location = new System.Drawing.Point(4, 79);
@@ -522,6 +536,7 @@
             // 
             // lblCustDistance
             // 
+            this.lblCustDistance.Appearance.Options.UseTextOptions = true;
             this.lblCustDistance.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
             this.lblCustDistance.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
             this.lblCustDistance.Location = new System.Drawing.Point(4, 63);
@@ -534,6 +549,7 @@
             // 
             // lblCustPostcode
             // 
+            this.lblCustPostcode.Appearance.Options.UseTextOptions = true;
             this.lblCustPostcode.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
             this.lblCustPostcode.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
             this.lblCustPostcode.Location = new System.Drawing.Point(4, 48);
@@ -546,6 +562,7 @@
             // 
             // lblCustAddress
             // 
+            this.lblCustAddress.Appearance.Options.UseTextOptions = true;
             this.lblCustAddress.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
             this.lblCustAddress.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
             this.lblCustAddress.Location = new System.Drawing.Point(4, 33);
@@ -558,6 +575,7 @@
             // 
             // lblCustPhone
             // 
+            this.lblCustPhone.Appearance.Options.UseTextOptions = true;
             this.lblCustPhone.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
             this.lblCustPhone.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
             this.lblCustPhone.Location = new System.Drawing.Point(4, 19);
@@ -570,6 +588,7 @@
             // 
             // lblCustName
             // 
+            this.lblCustName.Appearance.Options.UseTextOptions = true;
             this.lblCustName.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
             this.lblCustName.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
             this.lblCustName.Location = new System.Drawing.Point(4, 4);
@@ -939,13 +958,13 @@
             this.btnMcLeft.Appearance.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
             this.btnMcLeft.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
             this.btnMcLeft.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
-            this.btnMcLeft.Image = ((System.Drawing.Image)(resources.GetObject("btnMcLeft.Image")));
-            this.btnMcLeft.ImageLocation = DevExpress.XtraEditors.ImageLocation.MiddleCenter;
+            this.btnMcLeft.ImageOptions.Location = DevExpress.XtraEditors.ImageLocation.MiddleCenter;
             this.btnMcLeft.Location = new System.Drawing.Point(6, 303);
             this.btnMcLeft.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnMcLeft.Name = "btnMcLeft";
             this.btnMcLeft.Size = new System.Drawing.Size(71, 27);
             this.btnMcLeft.TabIndex = 17;
+            this.btnMcLeft.Text = "<<";
             this.btnMcLeft.Click += new System.EventHandler(this.btnMcLeft_Click);
             // 
             // btnMcRight
@@ -959,13 +978,13 @@
             this.btnMcRight.Appearance.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
             this.btnMcRight.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
             this.btnMcRight.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
-            this.btnMcRight.Image = ((System.Drawing.Image)(resources.GetObject("btnMcRight.Image")));
-            this.btnMcRight.ImageLocation = DevExpress.XtraEditors.ImageLocation.MiddleCenter;
+            this.btnMcRight.ImageOptions.Location = DevExpress.XtraEditors.ImageLocation.MiddleCenter;
             this.btnMcRight.Location = new System.Drawing.Point(77, 303);
             this.btnMcRight.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnMcRight.Name = "btnMcRight";
             this.btnMcRight.Size = new System.Drawing.Size(71, 27);
             this.btnMcRight.TabIndex = 18;
+            this.btnMcRight.Text = ">>";
             this.btnMcRight.Click += new System.EventHandler(this.btnMcRight_Click);
             // 
             // btnCid
@@ -1826,8 +1845,7 @@
             this.btnMiRight.Appearance.Options.UseTextOptions = true;
             this.btnMiRight.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
             this.btnMiRight.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
-            this.btnMiRight.Image = ((System.Drawing.Image)(resources.GetObject("btnMiRight.Image")));
-            this.btnMiRight.ImageLocation = DevExpress.XtraEditors.ImageLocation.MiddleCenter;
+            this.btnMiRight.ImageOptions.Location = DevExpress.XtraEditors.ImageLocation.MiddleCenter;
             this.btnMiRight.Location = new System.Drawing.Point(798, 6);
             this.btnMiRight.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnMiRight.Name = "btnMiRight";
@@ -1892,8 +1910,7 @@
             this.btnMiLeft.Appearance.Options.UseTextOptions = true;
             this.btnMiLeft.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
             this.btnMiLeft.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
-            this.btnMiLeft.Image = ((System.Drawing.Image)(resources.GetObject("btnMiLeft.Image")));
-            this.btnMiLeft.ImageLocation = DevExpress.XtraEditors.ImageLocation.MiddleCenter;
+            this.btnMiLeft.ImageOptions.Location = DevExpress.XtraEditors.ImageLocation.MiddleCenter;
             this.btnMiLeft.Location = new System.Drawing.Point(798, 98);
             this.btnMiLeft.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnMiLeft.Name = "btnMiLeft";
@@ -2025,6 +2042,7 @@
             // lblType
             // 
             this.lblType.Appearance.Font = new System.Drawing.Font("Tahoma", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblType.Appearance.Options.UseFont = true;
             this.lblType.Location = new System.Drawing.Point(4, 4);
             this.lblType.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.lblType.Name = "lblType";
@@ -2036,6 +2054,8 @@
             // lblCheck
             // 
             this.lblCheck.Appearance.Font = new System.Drawing.Font("Tahoma", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCheck.Appearance.Options.UseFont = true;
+            this.lblCheck.Appearance.Options.UseTextOptions = true;
             this.lblCheck.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
             this.lblCheck.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
             this.lblCheck.Location = new System.Drawing.Point(239, 4);
@@ -2077,12 +2097,6 @@
             this.btnSearchMeal.Text = "Search Meal";
             this.btnSearchMeal.Visible = false;
             this.btnSearchMeal.Click += new System.EventHandler(this.btnSearchMeal_Click);
-            // 
-            // IsDiscount
-            // 
-            this.IsDiscount.Caption = "IsDiscount";
-            this.IsDiscount.FieldName = "IsDiscount";
-            this.IsDiscount.Name = "IsDiscount";
             // 
             // FrmTaMain
             // 

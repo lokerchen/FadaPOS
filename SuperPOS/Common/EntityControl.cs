@@ -584,5 +584,55 @@ namespace SuperPOS.Common
             }
         }
 
+        public TaCheckOrderInfo GeTaCheckOrderInfos(string strOrderNum, string strBusDate)
+        {
+            using (ISession session = SessionFactory.OpenSession())
+            {
+                string sql = "SELECT ID, CheckCode, PayOrderType, PayDelivery, PayPerDiscount, PayDiscount, PayPerSurcharge, PaySurcharge, " +
+                             "MenuAmount, TotalAmount, Paid, IsPaid, CustomerID, CustomerNote, DriverID, StaffID, PayTime, PayType1, PayTypePay1, PayType2, PayTypePay2, " +
+                             "PayType3, PayTypePay3, PayType4, PayTypePay4, PayType5, PayTypePay5, IsCancel, IsSave, BusDate, RefNum, DeliveryFee FROM Ta_CheckOrder WHERE CheckCode IS NOT NULL";
+                if (!string.IsNullOrEmpty(strOrderNum)) sql += " AND CheckCode ='" + strOrderNum + "'";
+                if (!string.IsNullOrEmpty(strBusDate)) sql += " AND BusDate='" + strBusDate + "'";
+                sql += " LIMIT 1";
+                IList<object[]> query = session.CreateSQLQuery(sql).List<object[]>();
+                IList<TaCheckOrderInfo> result = query.Select(s => new TaCheckOrderInfo(
+                                                                        s[0] == null ? 0 : Convert.ToInt32(s[0]),
+                                                                        s[1] == null ? "" : s[1].ToString(),
+                                                                        s[2] == null ? "" : s[2].ToString(),
+                                                                        s[3] == null ? "" : s[3].ToString(),
+                                                                        s[4] == null ? "" : s[4].ToString(),
+                                                                        s[5] == null ? "" : s[5].ToString(),
+                                                                        s[6] == null ? "" : s[6].ToString(),
+                                                                        s[7] == null ? "" : s[7].ToString(),
+                                                                        s[8] == null ? "" : s[8].ToString(),
+                                                                        s[9] == null ? "" : s[9].ToString(),
+                                                                        s[10] == null ? "" : s[10].ToString(),
+                                                                        s[11] == null ? "" : s[11].ToString(),
+                                                                        s[12] == null ? "" : s[12].ToString(),
+                                                                        s[13] == null ? "" : s[13].ToString(),
+                                                                        s[14] == null ?  0 : Convert.ToInt32(s[14]),
+                                                                        s[15] == null ? 0 : (string.IsNullOrEmpty(s[15].ToString()) ? 0 : Convert.ToInt32(s[15])),
+                                                                        s[16] == null ? "" : s[16].ToString(),
+                                                                        s[17] == null ? "" : s[17].ToString(),
+                                                                        s[18] == null ? "" : s[18].ToString(),
+                                                                        s[19] == null ? "" : s[19].ToString(),
+                                                                        s[20] == null ? "" : s[20].ToString(),
+                                                                        s[21] == null ? "" : s[21].ToString(),
+                                                                        s[22] == null ? "" : s[22].ToString(),
+                                                                        s[23] == null ? "" : s[23].ToString(),
+                                                                        s[24] == null ? "" : s[24].ToString(),
+                                                                        s[25] == null ? "" : s[25].ToString(),
+                                                                        s[26] == null ? "" : s[26].ToString(),
+                                                                        s[27] == null ? "" : s[27].ToString(),
+                                                                        s[28] == null ? "" : s[28].ToString(),
+                                                                        s[29] == null ? "" : s[29].ToString(),
+                                                                        s[30] == null ? "" : s[30].ToString(),
+                                                                        s[31] == null ? "" : s[31].ToString()
+                                                                    )).ToList();
+
+                return result.FirstOrDefault();
+            }
+        }
+
     }
 }

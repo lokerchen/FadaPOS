@@ -489,7 +489,7 @@ namespace SuperPOS.UI.TA
 
                 taCheckOrderInfo.DriverID = Convert.ToInt32(lueDriver.EditValue);
 
-                DelegateSaveCheckOrder handler = DelegateMy.UpdateCheckOrder;
+                DelegateSaveCheckOrder handler = DelegateMy.SaveCheckOrder;
                 IAsyncResult result = handler.BeginInvoke(taCheckOrderInfo, null, null);
 
                 //_control.UpdateEntity(taCheckOrderInfo);

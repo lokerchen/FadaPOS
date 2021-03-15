@@ -95,7 +95,7 @@ namespace SuperPOS.UI
         {
             DelegateRefresh hd = DelegateMy.RefreshSomeInfo;
             IAsyncResult rt = hd.BeginInvoke("8", strBusDate, "", null, null);
-
+            
             FrmTaShowOrder frmTaShowOrder = new FrmTaShowOrder(usrID, strBusDate);
             frmTaShowOrder.ShowDialog();
         }

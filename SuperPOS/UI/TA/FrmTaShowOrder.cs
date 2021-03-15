@@ -225,7 +225,7 @@ namespace SuperPOS.UI
 
             wbPrtTemplataTa = GetAllPrtInfo();
 
-            WbPrtPrint.PrintHtml(webBrowser1, WbPrtStatic.PRT_CLASS_RECEIPT, lstOI, wbPrtTemplataTa, sOrderType);
+            WbPrtPrint.PrintHtml(WbPrtStatic.PRT_CLASS_RECEIPT, lstOI, wbPrtTemplataTa, sOrderType);
         }
 
         private void btnPrtBill_Click(object sender, EventArgs e)
@@ -237,7 +237,7 @@ namespace SuperPOS.UI
 
             wbPrtTemplataTa = GetAllPrtInfo();
 
-            WbPrtPrint.PrintHtml(webBrowser1, WbPrtStatic.PRT_CLASS_BILL, lstOI, wbPrtTemplataTa, sOrderType);
+            WbPrtPrint.PrintHtml( WbPrtStatic.PRT_CLASS_BILL, lstOI, wbPrtTemplataTa, sOrderType);
         }
 
         private void btnPrtKit_Click(object sender, EventArgs e)
@@ -249,7 +249,7 @@ namespace SuperPOS.UI
 
             wbPrtTemplataTa = GetAllPrtInfo();
 
-            WbPrtPrint.PrintHtml(webBrowser1, WbPrtStatic.PRT_CLASS_KITCHEN, lstOI, wbPrtTemplataTa, sOrderType);
+            WbPrtPrint.PrintHtml( WbPrtStatic.PRT_CLASS_KITCHEN, lstOI, wbPrtTemplataTa, sOrderType);
         }
 
         private void btnAccount_Click(object sender, EventArgs e)
@@ -436,55 +436,6 @@ namespace SuperPOS.UI
 
             wbPrtTemplataTa.Discount = sDiscount;
             wbPrtTemplataTa.Surcharge = sSurcharge;
-
-            #region VAT计算
-            if (CommonData.GenSet.Any())
-            {
-                wbPrtTemplataTa.Rate1 = CommonData.GenSet.FirstOrDefault().VATPer + @"%";
-
-                var lstVAT = from oi in CommonData.TaOrderItem.Where(s => s.CheckCode.Equals(strChkOrder) && s.BusDate.Equals(checkBusDate))
-                             join mi in CommonData.TaMenuItem on oi.ItemCode equals mi.MiDishCode
-                             where !string.IsNullOrEmpty(mi.MiRmk) && mi.MiRmk.Contains(@"Without VAT")
-                             select new
-                             {
-                                 itemTotalPrice = oi.ItemTotalPrice
-                             };
-
-                decimal dTotal = 0;
-                decimal dVatTmp = 0;
-                decimal dVat = 0;
-
-                if (lstVAT.Any())
-                {
-                    dTotal = lstVAT.ToList().Sum(vat => Convert.ToDecimal(vat.itemTotalPrice));
-                    //交税
-                    dVatTmp = (Convert.ToDecimal(CommonData.GenSet.FirstOrDefault().VATPer) / 100) * dTotal;
-
-                    dVat = Math.Round(dVatTmp, 2, MidpointRounding.AwayFromZero);
-                }
-
-                wbPrtTemplataTa.VatA = dVat.ToString();
-                //税前
-                wbPrtTemplataTa.Net1 = dTotal.ToString();
-                //总价
-                wbPrtTemplataTa.Gross1 = (dTotal - dVat).ToString();
-                wbPrtTemplataTa.Rate2 = "0.00%";
-                wbPrtTemplataTa.Net2 = (Convert.ToDecimal(sSubTotal) - dTotal).ToString();
-                wbPrtTemplataTa.VatB = "0.00";
-                wbPrtTemplataTa.Gross2 = (Convert.ToDecimal(sSubTotal) - dTotal).ToString();
-            }
-            else
-            {
-                wbPrtTemplataTa.Rate1 = "0.00%";
-                wbPrtTemplataTa.Net1 = "0.00";
-                wbPrtTemplataTa.VatA = "0.00";
-                wbPrtTemplataTa.Gross1 = "0.00";
-                wbPrtTemplataTa.Rate2 = "0.00%";
-                wbPrtTemplataTa.Net2 = "0.00";
-                wbPrtTemplataTa.VatB = "0.00";
-                wbPrtTemplataTa.Gross2 = "0.00";
-            }
-            #endregion
 
             return wbPrtTemplataTa;
         }

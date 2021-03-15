@@ -238,7 +238,7 @@ namespace SuperPOS.UI.TA
                 //    }
                 //}
 
-                DelegateOrder handler = DelegateOrderOpt.SaveOrder;
+                DelegateOrder handler = DelegateMy.SaveOrder;
                 IAsyncResult result = handler.BeginInvoke(checkID, strBusDate, lstTaOI, null, null);
                 #endregion
 
@@ -299,7 +299,7 @@ namespace SuperPOS.UI.TA
                         TaCheckOrderInfo taCheck = lstChk.FirstOrDefault();
                         //taCheck.IsCancel = "Y";
                         _control.UpdateEntity(taCheck);
-                        DelegateSaveCheckOrder handler = DelegateMy.UpdateCheckOrder;
+                        DelegateSaveCheckOrder handler = DelegateMy.SaveCheckOrder;
                         IAsyncResult result = handler.BeginInvoke(taCheck, null, null);
 
                         treeListOrder.Nodes.Clear();
@@ -795,21 +795,25 @@ namespace SuperPOS.UI.TA
             //    }
             //}
 
-            DelegateOrder handler = DelegateOrderOpt.SaveOrder;
+            DelegateOrder handler = DelegateMy.SaveOrder;
             IAsyncResult result = handler.BeginInvoke(checkID, strBusDate, lstTaOI, null, null);
 
             #endregion
 
             #region 保存账单
             //Console.WriteLine(treeListOrder.Columns["ItemTotalPrice"].SummaryFooter.ToString());
-            SaveCheckOrder(lstTaOI, false);
+            //SaveCheckOrder(lstTaOI, false);
+            saveTaCheckOrderInfo = CreateCheckOrderInfo(lstTaOI, false);
             #endregion
+
+            //DelegateRefresh hd1 = DelegateMy.RefreshSomeInfo;
+            //hd1.BeginInvoke("3", "", "", null, null);
 
             ht = SetPrtInfo(lstTaOI);
             
             if (ORDER_TYPE.Equals(PubComm.ORDER_TYPE_SHOP))
             {
-                FrmTaPaymentShop frmTaPaymentShop = new FrmTaPaymentShop(usrID, checkID, ORDER_TYPE, CustID.ToString(), ht, strBusDate, saveTaCheckOrderInfo, lblReadyTime.Visible ? lblReadyTime.Text : "");
+                FrmTaPaymentShop frmTaPaymentShop = new FrmTaPaymentShop(lstTaOI, usrID, checkID, ORDER_TYPE, CustID.ToString(), ht, strBusDate, saveTaCheckOrderInfo, lblReadyTime.Visible ? lblReadyTime.Text : "");
                 frmTaPaymentShop.Location = pcMain.Location;
                 frmTaPaymentShop.Size = pcMain.Size;
                 
@@ -825,7 +829,7 @@ namespace SuperPOS.UI.TA
             }
             else if (ORDER_TYPE.Equals(PubComm.ORDER_TYPE_DELIVERY))
             {
-                FrmTaPaymentDelivery frmTaPaymentDelivery = new FrmTaPaymentDelivery(usrID, checkID, ORDER_TYPE, CustID.ToString(), ht, strBusDate, saveTaCheckOrderInfo, lblReadyTime.Visible ? lblReadyTime.Text : "");
+                FrmTaPaymentDelivery frmTaPaymentDelivery = new FrmTaPaymentDelivery(lstTaOI, usrID, checkID, ORDER_TYPE, CustID.ToString(), ht, strBusDate, saveTaCheckOrderInfo, lblReadyTime.Visible ? lblReadyTime.Text : "");
                 frmTaPaymentDelivery.Location = pcMain.Location;
                 frmTaPaymentDelivery.Size = pcMain.Size;
 
@@ -844,7 +848,7 @@ namespace SuperPOS.UI.TA
             }
             else if (ORDER_TYPE.Equals(PubComm.ORDER_TYPE_COLLECTION))
             {
-                FrmTaPaymentCollection frmTaPaymentCollection = new FrmTaPaymentCollection(usrID, checkID, ORDER_TYPE, CustID.ToString(), ht, strBusDate, saveTaCheckOrderInfo, lblReadyTime.Visible ? lblReadyTime.Text : "");
+                FrmTaPaymentCollection frmTaPaymentCollection = new FrmTaPaymentCollection(lstTaOI, usrID, checkID, ORDER_TYPE, CustID.ToString(), ht, strBusDate, saveTaCheckOrderInfo, lblReadyTime.Visible ? lblReadyTime.Text : "");
                 frmTaPaymentCollection.Location = pcMain.Location;
                 frmTaPaymentCollection.Size = pcMain.Size;
 
@@ -906,7 +910,7 @@ namespace SuperPOS.UI.TA
                         TaCheckOrderInfo taCheck = lstChk.FirstOrDefault();
                         taCheck.IsCancel = "Y";
                         //_control.UpdateEntity(taCheck);
-                        DelegateSaveCheckOrder handler = DelegateMy.UpdateCheckOrder;
+                        DelegateSaveCheckOrder handler = DelegateMy.SaveCheckOrder;
                         IAsyncResult result = handler.BeginInvoke(taCheck, null, null);
                     }
 
@@ -1807,9 +1811,96 @@ namespace SuperPOS.UI.TA
                 return false;
             }
         }
-        
+
         #endregion
-        
+
+        #endregion
+
+        #region 生成账单
+
+        private TaCheckOrderInfo CreateCheckOrderInfo(List<TaOrderItemInfo> lstTaOI, bool isSave)
+        {
+            TaCheckOrderInfo taCheckOrderInfo = new TaCheckOrderInfo();
+
+            taCheckOrderInfo.CheckCode = checkID;
+            taCheckOrderInfo.PayOrderType = ORDER_TYPE;
+            taCheckOrderInfo.PayDelivery = "0.00";
+
+            taCheckOrderInfo.MenuAmount = treeListOrder.Nodes.Count > 0 ? treeListOrder.GetSummaryValue(treeListOrder.Columns[7]).ToString() : "0.00";
+            
+            decimal dDiscount = CommonDAL.GetTaDiscount(ORDER_TYPE, Convert.ToDecimal(taCheckOrderInfo.MenuAmount));
+            decimal dDiscountTotal = CommonDAL.GetAllDiscount(lstTaOI, dDiscount);
+            
+            TaDiscountInfo tdi = CommonData.TaDiscount.FirstOrDefault(s => s.TaType.Equals(ORDER_TYPE));
+            if (tdi != null)
+            {
+                string strPayPerDiscount = tdi.TaDiscount;
+
+                if (Convert.ToDecimal(taCheckOrderInfo.MenuAmount) > Convert.ToDecimal(string.IsNullOrEmpty(tdi.TaDiscThre) ? "0.00" : tdi.TaDiscThre))
+                {
+                    taCheckOrderInfo.PayPerDiscount = strPayPerDiscount.Equals(@"0") ? "" : strPayPerDiscount + @"%";
+                    //decimal dDiscount1 = CommonDAL.GetTaDiscount(ORDER_TYPE, Convert.ToDecimal(taCheckOrderInfo.MenuAmount));
+                    //decimal dDiscountTotal1 = CommonDAL.GetAllDiscount(lstTaOI, dDiscount1);
+                    taCheckOrderInfo.PayDiscount = dDiscountTotal.ToString("0.00");
+                }
+                else
+                {
+                    taCheckOrderInfo.PayPerDiscount = "";
+                    taCheckOrderInfo.PayDiscount = @"0.00";
+                }
+            }
+            else
+                taCheckOrderInfo.PayDiscount = @"0.00";
+
+            taCheckOrderInfo.TotalAmount = Convert.ToDecimal(taCheckOrderInfo.PayDiscount) > 0
+                ? (Convert.ToDecimal(taCheckOrderInfo.MenuAmount) - Convert.ToDecimal(taCheckOrderInfo.PayDiscount)).ToString("0.00")
+                : taCheckOrderInfo.MenuAmount;
+
+            taCheckOrderInfo.Paid = "0.00";
+            taCheckOrderInfo.IsPaid = "N";
+            taCheckOrderInfo.CustomerID = string.IsNullOrEmpty(CustID.ToString()) ? "1" : CustID.ToString();
+            taCheckOrderInfo.CustomerNote = "";
+            taCheckOrderInfo.StaffID = usrID;
+            taCheckOrderInfo.PayTime = DateTime.Now.ToString();
+
+            //taCheckOrderInfo.PayPerDiscount = "";
+            //taCheckOrderInfo.PayDiscount = @"0.00";
+            if (ORDER_TYPE.Equals(PubComm.ORDER_TYPE_DELIVERY))
+            {
+                decimal dSurcharge = CommonDAL.GetTaDeliverySurcharge(Convert.ToDecimal(taCheckOrderInfo.MenuAmount));
+                taCheckOrderInfo.PayPerSurcharge = "";
+                taCheckOrderInfo.PaySurcharge = dSurcharge.ToString("0.00");
+            }
+            else
+            {
+                taCheckOrderInfo.PayPerSurcharge = "";
+                taCheckOrderInfo.PaySurcharge = @"0.00";
+            }
+            taCheckOrderInfo.PayType1 = "";
+            taCheckOrderInfo.PayTypePay1 = @"0.00";
+            taCheckOrderInfo.PayType2 = "";
+            taCheckOrderInfo.PayTypePay2 = @"0.00";
+            taCheckOrderInfo.PayType3 = "";
+            taCheckOrderInfo.PayTypePay3 = @"0.00";
+            taCheckOrderInfo.PayType4 = "";
+            taCheckOrderInfo.PayTypePay4 = @"0.00";
+            taCheckOrderInfo.PayType5 = "";
+            taCheckOrderInfo.PayTypePay5 = @"0.00";
+
+            //默认DriverID为1
+            taCheckOrderInfo.DriverID = 1;
+
+            taCheckOrderInfo.IsCancel = "N";
+
+            taCheckOrderInfo.IsSave = isSave ? "Y" : "N";
+
+            taCheckOrderInfo.BusDate = string.IsNullOrEmpty(strBusDate) ? CommonDAL.GetBusDate() : strBusDate;
+
+            taCheckOrderInfo.DeliveryFee = (CustID >= 1 && ORDER_TYPE.Equals(PubComm.ORDER_TYPE_DELIVERY)) ? lblDeliveryFee.Text : @"0.00";
+
+            return taCheckOrderInfo;
+        }
+
         #endregion
 
         #region 保存账单
@@ -1869,101 +1960,14 @@ namespace SuperPOS.UI.TA
                 saveTaCheckOrderInfo = taCheckOrderInfo;
 
                 //_control.UpdateEntity(taCheckOrderInfo);
-                DelegateSaveCheckOrder handler = DelegateMy.UpdateCheckOrder;
+                DelegateSaveCheckOrder handler = DelegateMy.SaveCheckOrder;
                 IAsyncResult result = handler.BeginInvoke(taCheckOrderInfo, null, null);
             }
             else
             {
-                taCheckOrderInfo = new TaCheckOrderInfo();
-                taCheckOrderInfo.CheckCode = checkID;
-                taCheckOrderInfo.PayOrderType = ORDER_TYPE;
-                taCheckOrderInfo.PayDelivery = "0.00";
+                //taCheckOrderInfo = new TaCheckOrderInfo();
 
-                
-
-                //taCheckOrderInfo.MenuAmount = lstTaOI.Sum(s => Convert.ToDecimal(string.IsNullOrEmpty(s.ItemTotalPrice) ? "0.00" : s.ItemTotalPrice)).ToString();
-                taCheckOrderInfo.MenuAmount = treeListOrder.Nodes.Count > 0 ? treeListOrder.GetSummaryValue(treeListOrder.Columns[7]).ToString() : "0.00";
-                //taCheckOrderInfo.PayDiscount = CommonDAL.GetTaDiscount(ORDER_TYPE, Convert.ToDecimal(taCheckOrderInfo.MenuAmount)).ToString();
-
-                decimal dDiscount = CommonDAL.GetTaDiscount(ORDER_TYPE, Convert.ToDecimal(taCheckOrderInfo.MenuAmount));
-                decimal dDiscountTotal = CommonDAL.GetAllDiscount(lstTaOI, dDiscount);
-                //taCheckOrderInfo.TotalAmount = (Convert.ToDecimal(taCheckOrderInfo.MenuAmount) - dDiscountTotal).ToString("0.00");
-
-                //new SystemData().GetTaDiscount();
-                //var lstDiscount = CommonData.TaDiscount.Where(s => s.TaType.Equals(ORDER_TYPE));
-                //if (lstDiscount.Any())
-                //{
-                //    string strPayPerDiscount = lstDiscount.FirstOrDefault().TaDiscount;
-                //    taCheckOrderInfo.PayPerDiscount = strPayPerDiscount.Equals(@"0") ? "" : strPayPerDiscount + @"%";
-                //    taCheckOrderInfo.PayDiscount = (Convert.ToDecimal(taCheckOrderInfo.TotalAmount) 
-                //                                   * Convert.ToDecimal(lstDiscount.FirstOrDefault().TaDiscount) / 100).ToString("0.00");
-                //}
-                TaDiscountInfo tdi = CommonData.TaDiscount.FirstOrDefault(s => s.TaType.Equals(ORDER_TYPE));
-                if (tdi != null)
-                {
-                    string strPayPerDiscount = tdi.TaDiscount;
-
-                    if (Convert.ToDecimal(taCheckOrderInfo.MenuAmount) > Convert.ToDecimal(string.IsNullOrEmpty(tdi.TaDiscThre) ? "0.00" : tdi.TaDiscThre))
-                    {
-                        taCheckOrderInfo.PayPerDiscount = strPayPerDiscount.Equals(@"0") ? "" : strPayPerDiscount + @"%";
-                        //decimal dDiscount1 = CommonDAL.GetTaDiscount(ORDER_TYPE, Convert.ToDecimal(taCheckOrderInfo.MenuAmount));
-                        //decimal dDiscountTotal1 = CommonDAL.GetAllDiscount(lstTaOI, dDiscount1);
-                        taCheckOrderInfo.PayDiscount = dDiscountTotal.ToString("0.00");
-                    }
-                    else
-                    {
-                        taCheckOrderInfo.PayPerDiscount = "";
-                        taCheckOrderInfo.PayDiscount = @"0.00";
-                    }
-                }
-                else
-                    taCheckOrderInfo.PayDiscount = @"0.00";
-
-                taCheckOrderInfo.TotalAmount = Convert.ToDecimal(taCheckOrderInfo.PayDiscount) > 0 
-                    ? (Convert.ToDecimal(taCheckOrderInfo.MenuAmount) - Convert.ToDecimal(taCheckOrderInfo.PayDiscount)).ToString("0.00") 
-                    : taCheckOrderInfo.MenuAmount;
-
-                taCheckOrderInfo.Paid = "0.00";
-                taCheckOrderInfo.IsPaid = "N";
-                taCheckOrderInfo.CustomerID = string.IsNullOrEmpty(CustID.ToString()) ? "1" : CustID.ToString();
-                taCheckOrderInfo.CustomerNote = "";
-                taCheckOrderInfo.StaffID = usrID;
-                taCheckOrderInfo.PayTime = DateTime.Now.ToString();
-
-                //taCheckOrderInfo.PayPerDiscount = "";
-                //taCheckOrderInfo.PayDiscount = @"0.00";
-                if (ORDER_TYPE.Equals(PubComm.ORDER_TYPE_DELIVERY))
-                {
-                    decimal dSurcharge = CommonDAL.GetTaDeliverySurcharge(Convert.ToDecimal(taCheckOrderInfo.MenuAmount));
-                    taCheckOrderInfo.PayPerSurcharge = "";
-                    taCheckOrderInfo.PaySurcharge = dSurcharge.ToString("0.00");
-                }
-                else
-                {
-                    taCheckOrderInfo.PayPerSurcharge = "";
-                    taCheckOrderInfo.PaySurcharge = @"0.00";
-                }
-                taCheckOrderInfo.PayType1 = "";
-                taCheckOrderInfo.PayTypePay1 = @"0.00";
-                taCheckOrderInfo.PayType2 = "";
-                taCheckOrderInfo.PayTypePay2 = @"0.00";
-                taCheckOrderInfo.PayType3 = "";
-                taCheckOrderInfo.PayTypePay3 = @"0.00";
-                taCheckOrderInfo.PayType4 = "";
-                taCheckOrderInfo.PayTypePay4 = @"0.00";
-                taCheckOrderInfo.PayType5 = "";
-                taCheckOrderInfo.PayTypePay5 = @"0.00";
-
-                //默认DriverID为1
-                taCheckOrderInfo.DriverID = 1;
-
-                taCheckOrderInfo.IsCancel = "N";
-
-                taCheckOrderInfo.IsSave = isSave ? "Y" : "N";
-
-                taCheckOrderInfo.BusDate = string.IsNullOrEmpty(strBusDate) ? CommonDAL.GetBusDate() : strBusDate;
-
-                taCheckOrderInfo.DeliveryFee = (CustID >= 1 && ORDER_TYPE.Equals(PubComm.ORDER_TYPE_DELIVERY)) ? lblDeliveryFee.Text : @"0.00";
+                taCheckOrderInfo = CreateCheckOrderInfo(lstTaOI, isSave);
 
                 saveTaCheckOrderInfo = taCheckOrderInfo;
 
@@ -2058,7 +2062,7 @@ namespace SuperPOS.UI.TA
                         taCheck.IsCancel = "Y";
                         treeListOrder.Nodes.Clear();
 
-                        DelegateSaveCheckOrder handler = DelegateMy.UpdateCheckOrder;
+                        DelegateSaveCheckOrder handler = DelegateMy.SaveCheckOrder;
                         IAsyncResult result = handler.BeginInvoke(taCheck, null, null);
                     }
                     else
@@ -2937,7 +2941,7 @@ namespace SuperPOS.UI.TA
                     //        _control.AddEntity(taOrderItemInfo);
                     //    }
                     //}
-                    handler = DelegateOrderOpt.SaveOrder;
+                    handler = DelegateMy.SaveOrder;
                     result = handler.BeginInvoke(checkID, strBusDate, lstTaOI, null, null);
                     #endregion
 
@@ -3299,7 +3303,7 @@ namespace SuperPOS.UI.TA
 
                         lstTaOI = TreeListToOrderItem(isNew);
 
-                        handler = DelegateOrderOpt.SaveOrder;
+                        handler = DelegateMy.SaveOrder;
                         result = handler.BeginInvoke(checkID, strBusDate, lstTaOI, null, null);
 
                         #endregion

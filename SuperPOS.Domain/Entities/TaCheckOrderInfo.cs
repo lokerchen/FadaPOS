@@ -128,5 +128,77 @@ namespace SuperPOS.Domain.Entities
 
         [XmlElement(ElementName = "DeliveryFee")]
         public virtual string DeliveryFee { get; set; }
+
+        public TaCheckOrderInfo()
+        {
+
+        }
+
+        public TaCheckOrderInfo(int iID,
+                                string strCheckCode,
+                                string strPayOrderType,
+                                string strPayDelivery,
+                                string strPayPerDiscount,
+                                string strPayDiscount,
+                                string strPayPerSurcharge,
+                                string strPaySurcharge,
+                                string strMenuAmount,
+                                string strTotalAmount,
+                                string strPaid,
+                                string strIsPaid,
+                                string strCustomerID,
+                                string strCustomerNote,
+                                int iDriverID,
+                                int iStaffID,
+                                string strPayTime,
+                                string strPayType1,
+                                string strPayTypePay1,
+                                string strPayType2,
+                                string strPayTypePay2,
+                                string strPayType3,
+                                string strPayTypePay3,
+                                string strPayType4,
+                                string strPayTypePay4,
+                                string strPayType5,
+                                string strPayTypePay5,
+                                string strIsCancel,
+                                string strIsSave,
+                                string strBusDate,
+                                string strRefNum,
+                                string strDeliveryFee)
+        {
+            this.ID = iID;
+            this.CheckCode = strCheckCode;
+            this.PayOrderType= strPayOrderType;
+            this.PayDelivery = strPayDelivery;
+            this.PayDiscount = strPayDiscount;
+            this.PaySurcharge = strPaySurcharge;
+            this.MenuAmount = strMenuAmount;
+            this.TotalAmount = strTotalAmount;
+            this.Paid = strPaid;
+            this.IsPaid = strIsPaid;
+            this.CustomerID = strCustomerID;
+            this.CustomerNote = strCustomerNote;
+            this.DriverID = iDriverID;
+            this.StaffID = iStaffID;
+            this.PayTime = strPayTime;
+            this.PayType1 = strPayType1;
+            this.PayTypePay1 = strPayTypePay1;
+            this.PayType2 = strPayType2;
+            this.PayTypePay2 = strPayTypePay2;
+            this.PayType3 = strPayType3;
+            this.PayTypePay3 = strPayTypePay3;
+            this.PayType4 = strPayType4;
+            this.PayTypePay4 = strPayTypePay4;
+            this.PayType5 = strPayType5;
+            this.PayTypePay5 = strPayTypePay5;
+            this.PayPerDiscount = strPayPerDiscount;
+            this.PayPerSurcharge = strPayPerSurcharge;
+            this.IsCancel = strIsCancel;
+            this.IsSave = strIsSave;
+            this.BusDate = strBusDate;
+            this.RefNum = strRefNum;
+            this.DeliveryFee = strDeliveryFee;
+        }
     }
 }

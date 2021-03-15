@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections;
+using System.Collections.Generic;
 using System.Drawing;
 using System.Linq;
 using System.Windows.Forms;
@@ -69,6 +70,8 @@ namespace SuperPOS.UI.TA
         //在Main中被保存的账单
         private TaCheckOrderInfo saveTaCheckOrderInfo = new TaCheckOrderInfo();
 
+        private List<TaOrderItemInfo> lstOrderItemInfos = null;
+
         public FrmTaPaymentCollection()
         {
             InitializeComponent();
@@ -97,6 +100,21 @@ namespace SuperPOS.UI.TA
             strBusDate = sBusDate;
             saveTaCheckOrderInfo = taCheckOrder;
             strReadyTime = sReadyTime;
+        }
+
+        public FrmTaPaymentCollection(List<TaOrderItemInfo> lsOi, int id, string chkId, string type, string caller, Hashtable ht, string sBusDate, TaCheckOrderInfo taCheckOrder, string sReadyTime)
+        {
+            InitializeComponent();
+
+            usrID = id;
+            checkID = chkId;
+            orderType = type;
+            callerID = caller;
+            htDetail = ht;
+            strBusDate = sBusDate;
+            saveTaCheckOrderInfo = taCheckOrder;
+            strReadyTime = sReadyTime;
+            lstOrderItemInfos = lsOi;
         }
 
         public FrmTaPaymentCollection(int id, string chkId, string type, Hashtable ht)
@@ -812,11 +830,14 @@ namespace SuperPOS.UI.TA
             }
 
             //new SystemData().GetTaCheckOrder();
-            var lstChk = CommonData.TaCheckOrder.Where(s => s.CheckCode.Equals(checkID) && s.BusDate.Equals(strBusDate));
+            //var lstChk = CommonData.TaCheckOrder.Where(s => s.CheckCode.Equals(checkID) && s.BusDate.Equals(strBusDate));
 
-            if (lstChk.Any())
+            //if (lstChk.Any())
+            //{
+            //    TaCheckOrderInfo taCheckOrder = lstChk.FirstOrDefault();
+            if (saveTaCheckOrderInfo != null)
             {
-                TaCheckOrderInfo taCheckOrder = lstChk.FirstOrDefault();
+                TaCheckOrderInfo taCheckOrder = saveTaCheckOrderInfo;
 
                 taCheckOrder.PayTime = DateTime.Now.ToString();
                 taCheckOrder.PayPerDiscount = txtPercentDiscount.Text;
@@ -845,7 +866,13 @@ namespace SuperPOS.UI.TA
 
                 taCheckOrder.DeliveryFee = @"0.00";
 
-                _control.UpdateEntity(taCheckOrder);
+                taCheckOrder.RefNum = "";
+
+                saveTaCheckOrderInfo = taCheckOrder;
+
+                //_control.UpdateEntity(taCheckOrder);
+                DelegateSaveCheckOrder handler = DelegateMy.SaveCheckOrder;
+                IAsyncResult result = handler.BeginInvoke(taCheckOrder, null, null);
             }
 
             bool isOpenCashDrawSuccess = CommonDAL.OpenCashDraw(false, "");
@@ -889,11 +916,14 @@ namespace SuperPOS.UI.TA
             }
 
             //new SystemData().GetTaCheckOrder();
-            var lstChk = CommonData.TaCheckOrder.Where(s => s.CheckCode.Equals(checkID) && s.BusDate.Equals(strBusDate));
+            //var lstChk = CommonData.TaCheckOrder.Where(s => s.CheckCode.Equals(checkID) && s.BusDate.Equals(strBusDate));
 
-            if (lstChk.Any())
+            //if (lstChk.Any())
+            //{
+            //    TaCheckOrderInfo taCheckOrder = lstChk.FirstOrDefault();
+            if (saveTaCheckOrderInfo != null)
             {
-                TaCheckOrderInfo taCheckOrder = lstChk.FirstOrDefault();
+                TaCheckOrderInfo taCheckOrder = saveTaCheckOrderInfo;
 
                 taCheckOrder.PayTime = DateTime.Now.ToString();
                 taCheckOrder.PayPerDiscount = txtPercentDiscount.Text;
@@ -922,7 +952,13 @@ namespace SuperPOS.UI.TA
 
                 taCheckOrder.DeliveryFee = @"0.00";
 
-                _control.UpdateEntity(taCheckOrder);
+                taCheckOrder.RefNum = "";
+
+                saveTaCheckOrderInfo = taCheckOrder;
+
+                //_control.UpdateEntity(taCheckOrder);
+                DelegateSaveCheckOrder handler = DelegateMy.SaveCheckOrder;
+                IAsyncResult result = handler.BeginInvoke(taCheckOrder, null, null);
             }
 
             returnPaid = true;
@@ -966,48 +1002,8 @@ namespace SuperPOS.UI.TA
 
             //WbPrtPrint.PrintHtml(webBrowser1, WbPrtStatic.PRT_CLASS_ALL, lstOI, wbPrtTemplataTa, PubComm.ORDER_TYPE_SHOP);
 
-            DelegatePrintHtml handler = DelegatePrt.PrtHtml;
-            IAsyncResult result = handler.BeginInvoke(checkID, strBusDate, webBrowser1, WbPrtStatic.PRT_CLASS_ALL, wbPrtTemplataTa, PubComm.ORDER_TYPE_COLLECTION, null, null);
-        }
-
-        private string GetPayType()
-        {
-            //new SystemData().GetTaCheckOrder();
-            var lstChk = CommonData.TaCheckOrder.Where(s => s.CheckCode.Equals(checkID) && s.BusDate.Equals(strBusDate));
-
-            string strPt = "Paid By ";
-
-            if (lstChk.Any())
-            {
-                TaCheckOrderInfo taCheckOrder = lstChk.FirstOrDefault();
-
-                if (Convert.ToDecimal(taCheckOrder.PayTypePay1) > 0)
-                {
-                    strPt += taCheckOrder.PayType1 + " ";
-                }
-
-                if (Convert.ToDecimal(taCheckOrder.PayTypePay2) > 0)
-                {
-                    strPt += taCheckOrder.PayType2 + " ";
-                }
-
-                if (Convert.ToDecimal(taCheckOrder.PayTypePay3) > 0)
-                {
-                    strPt += taCheckOrder.PayType3 + " ";
-                }
-
-                if (Convert.ToDecimal(taCheckOrder.PayTypePay4) > 0)
-                {
-                    strPt += taCheckOrder.PayType4 + " ";
-                }
-
-                if (Convert.ToDecimal(taCheckOrder.PayTypePay5) > 0)
-                {
-                    strPt += taCheckOrder.PayType5 + " ";
-                }
-            }
-
-            return strPt.Trim();
+            DelegatePrintHtml handler = DelegateMy.PrtHtml;
+            IAsyncResult result = handler.BeginInvoke(checkID, strBusDate, lstOrderItemInfos, WbPrtStatic.PRT_CLASS_ALL, wbPrtTemplataTa, PubComm.ORDER_TYPE_COLLECTION, null, null);
         }
 
         private void btnPrtAllReceipt_Click(object sender, EventArgs e)
@@ -1032,8 +1028,8 @@ namespace SuperPOS.UI.TA
 
             //WbPrtPrint.PrintHtml(webBrowser1, WbPrtStatic.PRT_CLASS_ALL, lstOI, wbPrtTemplataTa, PubComm.ORDER_TYPE_SHOP);
 
-            DelegatePrintHtml handler = DelegatePrt.PrtHtml;
-            IAsyncResult result = handler.BeginInvoke(checkID, strBusDate, webBrowser1, WbPrtStatic.PRT_CLASS_ALL_AND_RECEIPT, wbPrtTemplataTa, PubComm.ORDER_TYPE_COLLECTION, null, null);
+            DelegatePrintHtml handler = DelegateMy.PrtHtml;
+            IAsyncResult result = handler.BeginInvoke(checkID, strBusDate, lstOrderItemInfos, WbPrtStatic.PRT_CLASS_ALL_AND_RECEIPT, wbPrtTemplataTa, PubComm.ORDER_TYPE_COLLECTION, null, null);
         }
 
         private void btnPrtBillOnly_Click(object sender, EventArgs e)
@@ -1058,8 +1054,8 @@ namespace SuperPOS.UI.TA
 
             //WbPrtPrint.PrintHtml(webBrowser1, WbPrtStatic.PRT_CLASS_ALL, lstOI, wbPrtTemplataTa, PubComm.ORDER_TYPE_SHOP);
 
-            DelegatePrintHtml handler = DelegatePrt.PrtHtml;
-            IAsyncResult result = handler.BeginInvoke(checkID, strBusDate, webBrowser1, WbPrtStatic.PRT_CLASS_BILL, wbPrtTemplataTa, PubComm.ORDER_TYPE_COLLECTION, null, null);
+            DelegatePrintHtml handler = DelegateMy.PrtHtml;
+            IAsyncResult result = handler.BeginInvoke(checkID, strBusDate, lstOrderItemInfos, WbPrtStatic.PRT_CLASS_BILL, wbPrtTemplataTa, PubComm.ORDER_TYPE_COLLECTION, null, null);
         }
 
         private void btnPrtKitOnly_Click(object sender, EventArgs e)
@@ -1084,9 +1080,9 @@ namespace SuperPOS.UI.TA
 
             //WbPrtPrint.PrintHtml(webBrowser1, WbPrtStatic.PRT_CLASS_ALL, lstOI, wbPrtTemplataTa, PubComm.ORDER_TYPE_SHOP);
 
-            DelegatePrintHtml handler = DelegatePrt.PrtHtml;
+            DelegatePrintHtml handler = DelegateMy.PrtHtml;
 
-            IAsyncResult result = handler.BeginInvoke(checkID, strBusDate, webBrowser1, WbPrtStatic.PRT_CLASS_KITCHEN, wbPrtTemplataTa, PubComm.ORDER_TYPE_COLLECTION, null, null);
+            IAsyncResult result = handler.BeginInvoke(checkID, strBusDate, lstOrderItemInfos, WbPrtStatic.PRT_CLASS_KITCHEN, wbPrtTemplataTa, PubComm.ORDER_TYPE_COLLECTION, null, null);
         }
 
         private void btnNotPaid_Click(object sender, EventArgs e)
@@ -1157,7 +1153,7 @@ namespace SuperPOS.UI.TA
             wbPrtTemplataTa.ItemCount = htDetail["ItemQty"].ToString();
             wbPrtTemplataTa.SubTotal = htDetail["SubTotal"].ToString();
             wbPrtTemplataTa.Total = txtToPay.Text;
-            wbPrtTemplataTa.PayType = IsNotPaid ? @"NOT PAID" : GetPayType();
+            wbPrtTemplataTa.PayType = IsNotPaid ? @"NOT PAID" : CommonDAL.GetPayType(saveTaCheckOrderInfo); 
             wbPrtTemplataTa.Tendered = txtTendered.Text;
             wbPrtTemplataTa.Change = txtChange.Text;
             wbPrtTemplataTa.OrderType = orderType;
@@ -1165,55 +1161,6 @@ namespace SuperPOS.UI.TA
 
             wbPrtTemplataTa.Discount = txtDiscount.Text;
             wbPrtTemplataTa.Surcharge = txtSurcharge.Text;
-
-            #region VAT计算
-            GenSetInfo gsi = CommonData.GenSet.FirstOrDefault();
-
-            if (gsi != null)
-            {
-                new SystemData().GetOrderItemMatchVat(checkID, strBusDate);
-                var lstVAT = CommonData.GetOrderItemMatchVat;
-
-                decimal dTotal = 0;
-                decimal dVatTmp = 0;
-                decimal dVat = 0;
-
-                if (lstVAT.Any())
-                {
-                    //VAT1
-                    wbPrtTemplataTa.Rate1 = gsi.VATPer + @"%";
-
-                    dTotal = lstVAT.Where(s => !s.VatInfo.Contains("Without VAT")).ToList().Sum(vat => vat.ItemTotalPrice);
-                    //交税
-                    dVatTmp = dTotal / ((100 + Convert.ToDecimal(gsi.VATPer)) / 100);
-                    dVat = Math.Round(dVatTmp, 2, MidpointRounding.AwayFromZero);
-                    //
-                    wbPrtTemplataTa.Net1 = dVat.ToString("0.00");
-
-                    wbPrtTemplataTa.VatA = (dTotal - dVat).ToString("0.00");
-
-                    wbPrtTemplataTa.Gross1 = dTotal.ToString("0.00");
-
-                    //VAT2
-                    dTotal = lstVAT.Where(s => s.VatInfo.Contains("Without VAT")).ToList().Sum(vat => vat.ItemTotalPrice);
-                    wbPrtTemplataTa.Rate2 = @"0.0%";
-                    wbPrtTemplataTa.Net2 = dTotal.ToString("0.00");
-                    wbPrtTemplataTa.VatB = @"0.00";
-                    wbPrtTemplataTa.Gross2 = dTotal.ToString("0.00");
-                }
-            }
-            else
-            {
-                wbPrtTemplataTa.Rate1 = "0.00%";
-                wbPrtTemplataTa.Net1 = "0.00";
-                wbPrtTemplataTa.VatA = "0.00";
-                wbPrtTemplataTa.Gross1 = "0.00";
-                wbPrtTemplataTa.Rate2 = "0.00%";
-                wbPrtTemplataTa.Net2 = "0.00";
-                wbPrtTemplataTa.VatB = "0.00";
-                wbPrtTemplataTa.Gross2 = "0.00";
-            }
-            #endregion
 
             return wbPrtTemplataTa;
         }

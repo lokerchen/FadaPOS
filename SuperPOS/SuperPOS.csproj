@@ -149,6 +149,7 @@
     <Compile Include="Print\PrtTemplataTa.cs" />
     <Compile Include="Print\PrtTemplate.cs" />
     <Compile Include="Print\WbPrtCommon.cs" />
+    <Compile Include="Print\WbPrtPrintTest.cs" />
     <Compile Include="Print\WbPrtPrint.cs" />
     <Compile Include="Print\WbPrtStatic.cs" />
     <Compile Include="Print\WbPrtTemplataTa.cs" />
@@ -840,6 +841,7 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UI\TA\FrmTaMain.resx">
       <DependentUpon>FrmTaMain.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="UI\TA\FrmTaMenuCate.resx">
       <DependentUpon>FrmTaMenuCate.cs</DependentUpon>

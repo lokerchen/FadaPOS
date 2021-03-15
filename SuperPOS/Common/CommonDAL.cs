@@ -6,6 +6,7 @@ using System.IO;
 using System.Linq;
 using System.Management;
 using System.Runtime.InteropServices;
+using System.Runtime.Remoting.Messaging;
 using System.Text;
 using System.Windows.Forms;
 using DevExpress.XtraPrinting;
@@ -1602,5 +1603,55 @@ namespace SuperPOS.Common
             }
         }
         #endregion
+
+        #region 获得订单付款类型拼接字符串
+        public static string GetPayType(TaCheckOrderInfo taCheckOrder)
+        {
+            string strPt = "Paid By ";
+
+            if (taCheckOrder != null)
+            {
+                if (Convert.ToDecimal(taCheckOrder.PayTypePay1) > 0)
+                {
+                    strPt += taCheckOrder.PayType1 + " ";
+                }
+
+                if (Convert.ToDecimal(taCheckOrder.PayTypePay2) > 0)
+                {
+                    strPt += taCheckOrder.PayType2 + " ";
+                }
+
+                if (Convert.ToDecimal(taCheckOrder.PayTypePay3) > 0)
+                {
+                    strPt += taCheckOrder.PayType3 + " ";
+                }
+
+                if (Convert.ToDecimal(taCheckOrder.PayTypePay4) > 0)
+                {
+                    strPt += taCheckOrder.PayType4 + " ";
+                }
+
+                if (Convert.ToDecimal(taCheckOrder.PayTypePay5) > 0)
+                {
+                    strPt += taCheckOrder.PayType5 + " ";
+                }
+            }
+
+            return strPt.Trim();
+        }
+
+        #endregion
+
+        #region 结束Delegate回调
+
+        public static void CallWhenDone(IAsyncResult iar)
+        {
+            AsyncResult ar = (AsyncResult) iar;
+            DelegateSaveCheckOrder delegateMy = (DelegateSaveCheckOrder)ar.AsyncDelegate;
+            delegateMy.EndInvoke(iar);
+        }
+
+        #endregion
+
     }
 }

@@ -17,20 +17,14 @@ namespace SuperPOS.Common
 
     public delegate void DelegateSaveCheckOrder(TaCheckOrderInfo taCheckOrderInfo);
 
-    public delegate void DelegatePrintHtml(string checkID, string strBusDate, WebBrowser webBrowser, string strType, WbPrtTemplataTa wbPrtTemplataTa, string strOrderType);
-
+    public delegate void DelegatePrintHtml(string checkID, string strBusDate, List<TaOrderItemInfo> lstOI, string strType, WbPrtTemplataTa wbPrtTemplataTa, string strOrderType);
+    
     public delegate void DelegateRefresh(string iStatus, string strBusDate, string strCheckId);
 
-    public class DelegatePrt
+    public class DelegateMy
     {
         private static EntityControl _control = new EntityControl();
-        //private Action saveShowOrderModelPreview;
-
-        //public DelegatePrt(Action saveShowOrderModelPreview)
-        //{
-        //    this.saveShowOrderModelPreview = saveShowOrderModelPreview;
-        //}
-
+        
         #region Show Order模板
         public static void SaveShowOrderModelPreview()
         {
@@ -86,19 +80,14 @@ namespace SuperPOS.Common
         }
         #endregion
 
-        public static void PrtHtml(string checkID, string strBusDate, WebBrowser webBrowser, string strType, WbPrtTemplataTa wbPrtTemplataTa, string strOrderType)
+        #region 打印
+        public static void PrtHtml(string checkID, string strBusDate, List<TaOrderItemInfo> lstOI, string strType, WbPrtTemplataTa wbPrtTemplataTa, string strOrderType)
         {
-            new SystemData().GetTaOrderItem();
-            var lstOI = CommonData.TaOrderItem.Where(s => s.CheckCode.Equals(checkID) && s.BusDate.Equals(strBusDate)).ToList();
-
-            WbPrtPrint.PrintHtml(webBrowser, strType, lstOI, wbPrtTemplataTa, PubComm.ORDER_TYPE_SHOP);
+            WbPrtPrint.PrintHtml(strType, lstOI, wbPrtTemplataTa, PubComm.ORDER_TYPE_SHOP);
         }
-    }
 
-    public class DelegateOrderOpt
-    {
-        private static EntityControl _control = new EntityControl();
-
+        #endregion
+        
         #region 存储OrderItem到数据库
         public static void SaveOrder(string strCheckId, string strBusDate, List<TaOrderItemInfo> lstOi)
         {
@@ -127,25 +116,112 @@ namespace SuperPOS.Common
             }
         }
         #endregion
-    }
 
-    public class DelegateMy
-    {
-        private static EntityControl _control = new EntityControl();
-
+        #region 保存CheckOrder
         public static void SaveCheckOrder(TaCheckOrderInfo taCheckOrderInfo)
         {
-            _control.AddEntity(taCheckOrderInfo);
+            if (string.IsNullOrEmpty(taCheckOrderInfo.CheckCode) && string.IsNullOrEmpty(taCheckOrderInfo.BusDate))
+            {
+                _control.AddEntity(taCheckOrderInfo);
+            }
+            else
+            {
+                new SystemData().GetTaCheckOrderByCheckCodeAndBusDate(taCheckOrderInfo.CheckCode, taCheckOrderInfo.BusDate);
 
-            new SystemData().GetTaCheckOrder();
+                TaCheckOrderInfo taCheck = CommonData.TaCheckOrderByCheckCodeAndBusDate;
+
+                //new SystemData().GetTaCheckOrder();
+                //TaCheckOrderInfo taCheck = CommonData.TaCheckOrder.FirstOrDefault(s =>
+                //    s.CheckCode.Equals(taCheckOrderInfo.CheckCode) && s.BusDate.Equals(taCheckOrderInfo.BusDate));
+
+                string strSql = "";
+
+                if (taCheck != null)
+                {
+                    //_control.UpdateEntity(taCheckOrderInfo);
+                    strSql = "UPDATE Ta_CheckOrder SET ";
+                    strSql += "CheckCode='" + taCheckOrderInfo.CheckCode + "', ";
+                    strSql += "PayOrderType='" + taCheckOrderInfo.PayOrderType + "', ";
+                    strSql += "PayDelivery='" + taCheckOrderInfo.PayDelivery + "', ";
+                    strSql += "PayPerDiscount='" + taCheckOrderInfo.PayPerDiscount + "', ";
+                    strSql += "PayDiscount='" + taCheckOrderInfo.PayDiscount + "', ";
+                    strSql += "PayPerSurcharge='" + taCheckOrderInfo.PayPerSurcharge + "', ";
+                    strSql += "PaySurcharge='" + taCheckOrderInfo.PaySurcharge + "', ";
+                    strSql += "MenuAmount='" + taCheckOrderInfo.MenuAmount + "', ";
+                    strSql += "TotalAmount='" + taCheckOrderInfo.TotalAmount + "', ";
+                    strSql += "Paid='" + taCheckOrderInfo.Paid + "', ";
+                    strSql += "IsPaid='" + taCheckOrderInfo.IsPaid + "', ";
+                    strSql += "CustomerID='" + taCheckOrderInfo.CustomerID + "', ";
+                    strSql += "CustomerNote='" + taCheckOrderInfo.CustomerNote + "', ";
+                    strSql += "DriverID='" + taCheckOrderInfo.DriverID + "', ";
+                    strSql += "StaffID='" + taCheckOrderInfo.StaffID + "', ";
+                    strSql += "PayTime='" + taCheckOrderInfo.PayTime + "', ";
+                    strSql += "PayType1='" + taCheckOrderInfo.PayType1 + "', ";
+                    strSql += "PayTypePay1='" + taCheckOrderInfo.PayTypePay1 + "', ";
+                    strSql += "PayType2='" + taCheckOrderInfo.PayType2 + "', ";
+                    strSql += "PayTypePay2='" + taCheckOrderInfo.PayTypePay2 + "', ";
+                    strSql += "PayType3='" + taCheckOrderInfo.PayType3 + "', ";
+                    strSql += "PayTypePay3='" + taCheckOrderInfo.PayTypePay3 + "', ";
+                    strSql += "PayType4='" + taCheckOrderInfo.PayType4 + "', ";
+                    strSql += "PayTypePay4='" + taCheckOrderInfo.PayTypePay4 + "', ";
+                    strSql += "PayType5='" + taCheckOrderInfo.PayType5 + "', ";
+                    strSql += "PayTypePay5='" + taCheckOrderInfo.PayTypePay5 + "', ";
+                    strSql += "IsCancel='" + taCheckOrderInfo.IsCancel + "', ";
+                    strSql += "IsSave='" + taCheckOrderInfo.IsSave + "', ";
+                    strSql += "BusDate='" + taCheckOrderInfo.BusDate + "', ";
+                    strSql += "RefNum='" + taCheckOrderInfo.RefNum + "', ";
+                    strSql += "DeliveryFee='" + taCheckOrderInfo.DeliveryFee + "'";
+                    strSql += " WHERE ID = " + taCheck.ID;
+                }
+                else
+                {
+                    //_control.AddEntity(taCheckOrderInfo);
+                    strSql = "INSERT INTO Ta_CheckOrder (CheckCode, PayOrderType, PayDelivery, PayPerDiscount, PayDiscount, PayPerSurcharge, PaySurcharge, " + 
+                             "MenuAmount, TotalAmount, Paid, IsPaid, CustomerID, CustomerNote, DriverID, StaffID, PayTime, PayType1, PayTypePay1, PayType2, PayTypePay2, " +
+                             "PayType3, PayTypePay3, PayType4, PayTypePay4, PayType5, PayTypePay5, IsCancel, IsSave, BusDate, RefNum, DeliveryFee) VALUES (";
+                    strSql += "'" + taCheckOrderInfo.CheckCode + "', ";
+                    strSql += "'" + taCheckOrderInfo.PayOrderType + "', ";
+                    strSql += "'" + taCheckOrderInfo.PayDelivery + "', ";
+                    strSql += "'" + taCheckOrderInfo.PayPerDiscount + "', ";
+                    strSql += "'" + taCheckOrderInfo.PayDiscount + "', ";
+                    strSql += "'" + taCheckOrderInfo.PayPerSurcharge + "', ";
+                    strSql += "'" + taCheckOrderInfo.PaySurcharge + "', ";
+                    strSql += "'" + taCheckOrderInfo.MenuAmount + "', ";
+                    strSql += "'" + taCheckOrderInfo.TotalAmount + "', ";
+                    strSql += "'" + taCheckOrderInfo.Paid + "', ";
+                    strSql += "'" + taCheckOrderInfo.IsPaid + "', ";
+                    strSql += "'" + taCheckOrderInfo.CustomerID + "', ";
+                    strSql += "'" + taCheckOrderInfo.CustomerNote + "', ";
+                    strSql += "'" + taCheckOrderInfo.DriverID + "', ";
+                    strSql += "'" + taCheckOrderInfo.StaffID + "', ";
+                    strSql += "'" + taCheckOrderInfo.PayTime + "', ";
+                    strSql += "'" + taCheckOrderInfo.PayType1 + "', ";
+                    strSql += "'" + taCheckOrderInfo.PayTypePay1 + "', ";
+                    strSql += "'" + taCheckOrderInfo.PayType2 + "', ";
+                    strSql += "'" + taCheckOrderInfo.PayTypePay2 + "', ";
+                    strSql += "'" + taCheckOrderInfo.PayType3 + "', ";
+                    strSql += "'" + taCheckOrderInfo.PayTypePay3 + "', ";
+                    strSql += "'" + taCheckOrderInfo.PayType4 + "', ";
+                    strSql += "'" + taCheckOrderInfo.PayTypePay4 + "', ";
+                    strSql += "'" + taCheckOrderInfo.PayType5 + "', ";
+                    strSql += "'" + taCheckOrderInfo.PayTypePay5 + "', ";
+                    strSql += "'" + taCheckOrderInfo.IsCancel + "', ";
+                    strSql += "'" + taCheckOrderInfo.IsSave + "', ";
+                    strSql += "'" + taCheckOrderInfo.BusDate + "', ";
+                    strSql += "'" + taCheckOrderInfo.RefNum + "', ";
+                    strSql += "'" + taCheckOrderInfo.DeliveryFee + "'";
+                    strSql += ")";
+                }
+                
+                _control.ExecuteSql(strSql);
+
+                RefreshSomeInfo("1", "", "");
+
+            }
+
+            //new SystemData().GetTaCheckOrder();
         }
-
-        public static void UpdateCheckOrder(TaCheckOrderInfo taCheckOrderInfo)
-        {
-            _control.UpdateEntity(taCheckOrderInfo);
-
-            new SystemData().GetTaCheckOrder();
-        }
+        #endregion
 
         #region 后台刷新数据库内容
         public static void RefreshSomeInfo(string iStatus, string strBusDate, string strCheckId)
@@ -177,7 +253,12 @@ namespace SuperPOS.Common
                     systemData.GetTaMenuItem();
                     break;
                 case "8":
-                    systemData.GetShowAndPendOrderData(strBusDate, strCheckId);
+                    systemData.GetShowAndPendOrderData(strCheckId, strBusDate);
+                    break;
+                case "9":
+                    systemData.GetShowAndPendOrderData(strCheckId, strBusDate);
+                    systemData.GetTaCheckOrder();
+                    systemData.GetTaOrderItem();
                     break;
                 default:
                     systemData.GetTaCheckOrder();
@@ -187,10 +268,12 @@ namespace SuperPOS.Common
                     systemData.GetTaCustomer();
                     systemData.GetTaDriver();
                     systemData.GetTaMenuItemOtherChoice();
+                    systemData.GetShowAndPendOrderData(strCheckId, strBusDate);
                     break;
             }
         }
         #endregion
+
 
     }
 }

@@ -391,7 +391,7 @@ namespace SuperPOS.UI.TA
 
             wbPrtTemplataTa = GetAllPrtInfo();
 
-            WbPrtPrint.PrintHtml(webBrowser2, WbPrtStatic.PRT_CLASS_RECEIPT, lstOI, wbPrtTemplataTa, sOrderType);
+            WbPrtPrint.PrintHtml( WbPrtStatic.PRT_CLASS_RECEIPT, lstOI, wbPrtTemplataTa, sOrderType);
         }
 
         private void btnPrtBill_Click(object sender, EventArgs e)
@@ -425,7 +425,7 @@ namespace SuperPOS.UI.TA
 
             wbPrtTemplataTa = GetAllPrtInfo();
 
-            WbPrtPrint.PrintHtml(webBrowser2, WbPrtStatic.PRT_CLASS_BILL, lstOI, wbPrtTemplataTa, sOrderType);
+            WbPrtPrint.PrintHtml( WbPrtStatic.PRT_CLASS_BILL, lstOI, wbPrtTemplataTa, sOrderType);
         }
 
         private void btnPrtKit_Click(object sender, EventArgs e)
@@ -459,7 +459,7 @@ namespace SuperPOS.UI.TA
 
             wbPrtTemplataTa = GetAllPrtInfo();
 
-            WbPrtPrint.PrintHtml(webBrowser2, WbPrtStatic.PRT_CLASS_KITCHEN, lstOI, wbPrtTemplataTa, sOrderType);
+            WbPrtPrint.PrintHtml( WbPrtStatic.PRT_CLASS_KITCHEN, lstOI, wbPrtTemplataTa, sOrderType);
         }
 
         private void btnAccount_Click(object sender, EventArgs e)

@@ -22,7 +22,7 @@ using HtmlDocument = HtmlAgilityPack.HtmlDocument;
 
 namespace SuperPOS.Print
 {
-    public class WbPrtPrint
+    public class WbPrtPrintTest
     {
         private static System.Threading.AutoResetEvent obj = new System.Threading.AutoResetEvent(false);
 
@@ -33,6 +33,8 @@ namespace SuperPOS.Print
         public const int LOCALE_SLONGDATE = 0x20;
         public const int LOCALE_SSHORTDATE = 0x1F;
         public const int LOCALE_STIME = 0x1003;
+
+        //public static WebBrowser wb = new WebBrowser();
 
         private static int iOffset = 0;
 
@@ -49,7 +51,12 @@ namespace SuperPOS.Print
         private static bool isPrintDriverCopy = false;
         private static string strDriverCopyFont = "12";
         private static string countPrintDriverCopy = "0";
-        
+
+        private static void Window_Error(object sender, HtmlElementErrorEventArgs e)
+        {
+            e.Handled = true;
+        }
+
         #region 替代HtmlText中模板的关键字
         /// <summary>
         /// 替代HtmlText中模板的关键字
@@ -119,22 +126,13 @@ namespace SuperPOS.Print
         }
         #endregion
 
-        #region 打印Html主体方法
-        /// <summary>
-        /// 打印Html主体方法
-        /// </summary>
-        /// <param name="strType">打印类型</param>
-        /// <param name="lsTaOrderItemInfos">OrderItem信息</param>
-        /// <param name="wbPrtTemplataTa">打印模板类内容</param>
-        /// <param name="isPrintFF">是否需要打印Fast Food</param>
-        /// <param name="strOrderType">订单类型</param>
+        
+
         public static void PrintHtml(string strType, List<TaOrderItemInfo> lsTaOrderItemInfos, WbPrtTemplataTa wbPrtTemplataTa, string strOrderType)
         {
             try
             {
                 strDefaultPrintName = GetDefaultPrintName();
-
-                string strContentText = "";
 
                 if (string.IsNullOrEmpty(strDefaultPrintName))
                 {
@@ -142,48 +140,12 @@ namespace SuperPOS.Print
                     return;
                 }
 
-                if (strType.Equals(WbPrtStatic.PRT_CLASS_BILL))
+                if (strType.Equals(WbPrtStatic.PRT_CLASS_KITCHEN))
                 {
-                    strContentText = PrintOnlyBill(strOrderType, lsTaOrderItemInfos, wbPrtTemplataTa);
-                    PrintContent(strType, strContentText);
-                }
-                else if (strType.Equals(WbPrtStatic.PRT_CLASS_KITCHEN))
-                {
-                    strContentText = PrintOnlyKitchen(strOrderType, lsTaOrderItemInfos, wbPrtTemplataTa);
-                    PrintContent(strType, strContentText);
-                }
-                else if (strType.Equals(WbPrtStatic.PRT_CLASS_RECEIPT))
-                {
-                    strContentText = PrintOnlyKitchen(strOrderType, lsTaOrderItemInfos, wbPrtTemplataTa);
-                    PrintContent(strType, strContentText);
-                }
-                else if (strType.Equals(WbPrtStatic.PRT_CLASS_ALL))
-                {
-                    //Bill
-                    strContentText = PrintOnlyBill(strOrderType, lsTaOrderItemInfos, wbPrtTemplataTa);
-                    PrintContent(WbPrtStatic.PRT_CLASS_BILL, strContentText);
-                    //Kitchen
-                    strContentText = PrintOnlyKitchen(strOrderType, lsTaOrderItemInfos, wbPrtTemplataTa);
-                    PrintContent(WbPrtStatic.PRT_CLASS_KITCHEN, strContentText);
-                }
-                else if (strType.Equals(WbPrtStatic.PRT_CLASS_ALL_AND_RECEIPT))
-                {
-                    //Bill
-                    strContentText = PrintOnlyBill(strOrderType, lsTaOrderItemInfos, wbPrtTemplataTa);
-                    PrintContent(WbPrtStatic.PRT_CLASS_BILL, strContentText);
-                    //Kitchen
-                    strContentText = PrintOnlyKitchen(strOrderType, lsTaOrderItemInfos, wbPrtTemplataTa);
-                    PrintContent(WbPrtStatic.PRT_CLASS_KITCHEN, strContentText);
-                    //Receipt
-                    strContentText = PrintOnlyReceipt(lsTaOrderItemInfos, wbPrtTemplataTa);
-                    PrintContent(WbPrtStatic.PRT_CLASS_RECEIPT, strContentText);
+                    PrintOnlyKitchen(strOrderType, lsTaOrderItemInfos, wbPrtTemplataTa);
 
-                    if (isPrintFF)
-                    {
-                        strContentText = PrintShopFF(WbPrtStatic.PRT_TEMPLATE_FILE_NAME_SHOP_FF, wbPrtTemplataTa);
-                        PrintContent(WbPrtStatic.PRT_TEMPLATE_FILE_NAME_SHOP_FF, strContentText);
-                    }
                 }
+                
             }
             catch (Exception ex)
             {
@@ -191,7 +153,52 @@ namespace SuperPOS.Print
                 return;
             }
         }
-        #endregion
+
+        public static void SetPrintPreview(IPrintable panel)
+        {
+            try
+            {
+                PrintingSystem ps = new PrintingSystem();
+                PrintableComponentLink link = new PrintableComponentLink();
+                ps.Links.Add(link);
+                link.Component = panel;
+                link.PaperKind = ps.PageSettings.PaperKind;
+                //link.PaperKind = PaperKind.Custom;
+                //link.CustomPaperSize = new PaperSize("自定义纸张", (textList.Count * (int)(58 / 25.4 * 100)), PRT_BILL_SHUANGYU_ROW_COUNT * 20 + 475);
+                link.CustomPaperSize = new Size(Convert.ToInt32(ps.PageSettings.UsablePageSizeInPixels.Width), Convert.ToInt32(ps.PageSettings.UsablePageSizeInPixels.Height));
+
+                link.MinMargins = new Margins(0, 0, 0, 0);
+
+                //ps.PageSettings.UsablePageSize = 
+                LogHelper.Info("MinMargins:" + ps.PageSettings.MinMargins.ToString()
+                                                                                      + "PaperKind:" + ps.PageSettings.PaperKind.ToString() 
+                                                                                      + " Width:" + ps.PageSettings.UsablePageSizeInPixels.Width.ToString() 
+                                                                                      + " Height:" + ps.PageSettings.UsablePageSizeInPixels.Height.ToString());
+                //link.CustomPaperSize = new Size(80, 297);
+                //link.Margins = new Margins(1, 1, 1, 1);
+                
+                //link.CreateMarginalHeaderArea += Link_CreateMarginalHeaderArea;
+                //ps.PreviewFormEx.PrintControl.PrintingSystem.SetCommandVisibility(
+                //    new[]
+                //    {
+                //        PrintingSystemCommand.Save,
+                //        PrintingSystemCommand.Print,
+                //        PrintingSystemCommand.ExportXls,
+                //        PrintingSystemCommand.ClosePreview,
+                //        PrintingSystemCommand.ShowFirstPage,
+                //        PrintingSystemCommand.ShowLastPage,
+                //    }, CommandVisibility.Toolbar);
+
+                link.CreateDocument();
+                link.PrintingSystem.ShowMarginsWarning = false;
+                ps.PreviewFormEx.Show();
+                //ps.Print();
+            }
+            catch (Exception ex)
+            {
+                LogHelper.Error("CommonDAL/SetPrintPreview", ex.InnerException);
+            }
+        }
 
         #region 打印Shop
         /// <summary>
@@ -751,7 +758,15 @@ namespace SuperPOS.Print
 
             string strTr = strHtmlText.Substring(strHtmlText.IndexOf(WbPrtStatic.PRT_PRINT_ORDER_ITEM), node.OuterLength + iOffset);
             string strTrTemp = strTr;
-            
+            //for (int i = 0; i < lsTaOrderItemInfos.Count; i++)
+            //{
+            //    strTr.Replace("{MiCode}", lsTaOrderItemInfos[i].ItemCode);
+            //    strTr.Replace("{MiQty}", lsTaOrderItemInfos[i].ItemQty);
+            //    strTr.Replace("{MiEngName}", lsTaOrderItemInfos[i].ItemDishName);
+            //    strTr.Replace("{MiOtherName}", lsTaOrderItemInfos[i].ItemDishOtherName);
+            //    strTr.Replace("{MiPrice}", lsTaOrderItemInfos[i].ItemTotalPrice);
+            //}
+
             int i = 0;
             int j = 0;
             foreach (var oi in lsTaOrderItemInfos)
@@ -858,79 +873,6 @@ namespace SuperPOS.Print
 
             return strHtmlText.Replace(strTrTemp, strTr);
         }
-        #endregion
-
-        #region 打印内容
-        /// <summary>
-        /// 打印内容
-        /// </summary>
-        /// <param name="strFileName">模板文件名</param>
-        /// <param name="strText">Html源代码文本</param>
-        private static void PrintContent(string strFileName, string strText)
-        {
-            RichEditDocumentServer server = new RichEditDocumentServer();
-            server.LoadDocument(WbPrtStatic.PRT_TEMPLATE_FILE_PATH + strFileName + WbPrtStatic.PRT_TEMPLATE_FILE_NAME_SUFFIX, DocumentFormat.Html);
-            server.BeginUpdate();
-            server.Document.HtmlText = strText;
-
-            //PrintableComponentLink link = new PrintableComponentLink();
-            //PrintingSystem ps = new PrintingSystem();
-            //ps.Links.Add(link);
-
-            server.Document.Unit = DocumentUnit.Point;
-
-            foreach (Section section in server.Document.Sections)
-            {
-                //section.Page.PaperKind = PaperKind.Custom;
-                section.Page.Landscape = false;
-                section.Page.Width = 200;
-                section.Margins.Left = 1f;
-                section.Margins.Right = 1f;
-                section.Margins.Top = 0f;
-                section.Margins.Bottom = 0f;
-            }
-
-            server.Document.DefaultParagraphProperties.Alignment = ParagraphAlignment.Center;
-
-            PrintableComponentLink link = new PrintableComponentLink();
-            PrintingSystem ps = new PrintingSystem();
-            ps.Links.Add(link);
-            link.Component = server;
-            link.PrintingSystem.ShowMarginsWarning = false;
-            link.PrintingSystem.ShowPrintStatusDialog = false;
-
-            //link.PaperKind = PaperKind.Custom;
-            //link.CustomPaperSize = new Size(Convert.ToInt32(ps.PageSettings.UsablePageSizeInPixels.Width), Convert.ToInt32(ps.PageSettings.UsablePageSizeInPixels.Height));
-            //link.Margins = new Margins(0, 0, 0, 0);
-            ////server.Print();
-            //link.Print();
-            //ps.PreviewFormEx.PrintControl.PrintingSystem.SetCommandVisibility(
-            //    new[]
-            //    {
-            //        PrintingSystemCommand.Save,
-            //        PrintingSystemCommand.Print,
-            //        PrintingSystemCommand.ExportXls,
-            //        PrintingSystemCommand.ClosePreview,
-            //        PrintingSystemCommand.ShowFirstPage,
-            //        PrintingSystemCommand.ShowLastPage,
-            //    }, CommandVisibility.Toolbar);
-
-            link.CreateDocument();
-
-            PrinterSettings pSet = new PrinterSettings();
-            if (strFileName.Equals(WbPrtStatic.PRT_CLASS_BILL) || strFileName.Equals(WbPrtStatic.PRT_CLASS_RECEIPT))
-                isPrintDriverCopy = false;
-            pSet.Copies = isPrintDriverCopy ? Convert.ToInt16(ShopOrderPrintNum) : (short) 1;
-            //pSet.PrinterName = strDefaultPrintName;
-            //ps.PreviewFormEx.Show();
-            //link.ShowPreview();
-            server.Print(pSet);
-            //ps.PreviewFormEx.Show();
-            //link.ShowPreview();
-            //link.Print();
-            //ps.Print();
-        }
-
         #endregion
 
 
@@ -1172,37 +1114,6 @@ namespace SuperPOS.Print
         }
         #endregion
 
-        #region 打印Bill
-        /// <summary>
-        /// 打印Bill
-        /// </summary>
-        /// <param name="strOrderType">订单类型</param>
-        /// <param name="lsTaOrderItemInfos">菜品清单</param>
-        /// <param name="wbPrtTemplataTa">模板参数</param>
-        private static string PrintOnlyBill(string strOrderType, List<TaOrderItemInfo> lsTaOrderItemInfos, WbPrtTemplataTa wbPrtTemplataTa)
-        {
-            if (strOrderType.Equals(PubComm.ORDER_TYPE_SHOP))
-            {
-                return PrintBill(WbPrtStatic.PRT_TEMPLATE_FILE_NAME_SHOP, lsTaOrderItemInfos, wbPrtTemplataTa);
-            }
-            else if (strOrderType.Equals(PubComm.ORDER_TYPE_COLLECTION))
-            {
-                return PrintBill(WbPrtStatic.PRT_TEMPLATE_FILE_NAME_COLLECTION, lsTaOrderItemInfos, wbPrtTemplataTa);
-            }
-            else if (strOrderType.Equals(PubComm.ORDER_TYPE_DELIVERY))
-            {
-                return PrintBill(WbPrtStatic.PRT_TEMPLATE_FILE_NAME_DELIVERY, lsTaOrderItemInfos, wbPrtTemplataTa);
-            }
-            else if (strOrderType.Equals(PubComm.ORDER_TYPE_FAST_FOOD))
-            {
-                return PrintShopFastFood(WbPrtStatic.PRT_TEMPLATE_FILE_NAME_SHOP_FASTFOOD, lsTaOrderItemInfos, wbPrtTemplataTa);
-            }
-            else
-            {
-                return PrintBill(WbPrtStatic.PRT_TEMPLATE_FILE_NAME_SHOP, lsTaOrderItemInfos, wbPrtTemplataTa);
-            }
-        }
-        #endregion
 
         #region 打印Kitchen
         /// <summary>
@@ -1211,40 +1122,83 @@ namespace SuperPOS.Print
         /// <param name="strOrderType">订单类型</param>
         /// <param name="lsTaOrderItemInfos">菜品清单</param>
         /// <param name="wbPrtTemplataTa">模板参数</param>
-        private static string PrintOnlyKitchen(string strOrderType, List<TaOrderItemInfo> lsTaOrderItemInfos, WbPrtTemplataTa wbPrtTemplataTa)
+        private static void PrintOnlyKitchen(string strOrderType, List<TaOrderItemInfo> lsTaOrderItemInfos, WbPrtTemplataTa wbPrtTemplataTa)
         {
+            string strText = "";
             if (strOrderType.Equals(PubComm.ORDER_TYPE_SHOP))
             {
-                return PrintKitchen(WbPrtStatic.PRT_TEMPLATE_FILE_NAME_KITCHEN_SHOP, lsTaOrderItemInfos, wbPrtTemplataTa, strOrderType);
+                strText = PrintKitchen(WbPrtStatic.PRT_TEMPLATE_FILE_NAME_KITCHEN_SHOP, lsTaOrderItemInfos, wbPrtTemplataTa, strOrderType);
             }
-            else if (strOrderType.Equals(PubComm.ORDER_TYPE_FAST_FOOD))
-            {
-                return PrintKitchen(WbPrtStatic.PRT_TEMPLATE_FILE_NAME_KITCHEN_FASTFOOD, lsTaOrderItemInfos, wbPrtTemplataTa, strOrderType);
-            }
-            else if (strOrderType.Equals(PubComm.ORDER_TYPE_COLLECTION))
-            {
-                return PrintKitchen(WbPrtStatic.PRT_TEMPLATE_FILE_NAME_KITCHEN_COLLECTION, lsTaOrderItemInfos, wbPrtTemplataTa, strOrderType);
-            }
-            else if (strOrderType.Equals(PubComm.ORDER_TYPE_DELIVERY))
-            {
-                return PrintKitchen(WbPrtStatic.PRT_TEMPLATE_FILE_NAME_KITCHEN_DELIVERY, lsTaOrderItemInfos, wbPrtTemplataTa, strOrderType);
-            }
-            else
-                return PrintKitchen(WbPrtStatic.PRT_TEMPLATE_FILE_NAME_KITCHEN_SHOP, lsTaOrderItemInfos, wbPrtTemplataTa, strOrderType);
+           
+
+            //PrintContent();
+            PrtRichEditDocumentServer(WbPrtStatic.PRT_TEMPLATE_FILE_PATH + WbPrtStatic.PRT_TEMPLATE_FILE_NAME_KITCHEN_SHOP + WbPrtStatic.PRT_TEMPLATE_FILE_NAME_SUFFIX,
+                                     strText);
         }
         #endregion
 
-        #region 打印Receipt
-        /// <summary>
-        /// 打印Receipt
-        /// </summary>
-        /// <param name="strOrderType">订单类型</param>
-        /// <param name="lsTaOrderItemInfos">菜品清单</param>
-        /// <param name="wbPrtTemplataTa">模板参数</param>
-        private static string PrintOnlyReceipt(List<TaOrderItemInfo> lsTaOrderItemInfos, WbPrtTemplataTa wbPrtTemplataTa)
+        private static void PrtRichEditDocumentServer(string strFileName, string strText)
         {
-            return PrintReceipt(WbPrtStatic.PRT_TEMPLATE_FILE_NAME_RECEIPT, lsTaOrderItemInfos, wbPrtTemplataTa);
+            RichEditDocumentServer server = new RichEditDocumentServer();
+            server.LoadDocument(strFileName, DocumentFormat.Html);
+            server.BeginUpdate();
+            server.Document.HtmlText = strText;
+
+            //PrintableComponentLink link = new PrintableComponentLink();
+            //PrintingSystem ps = new PrintingSystem();
+            //ps.Links.Add(link);
+
+            server.Document.Unit = DocumentUnit.Point;
+
+            foreach (Section section in server.Document.Sections)
+            {
+                //section.Page.PaperKind = PaperKind.Custom;
+                section.Page.Landscape = false;
+                section.Page.Width = 200;
+                section.Margins.Left = 1f;
+                section.Margins.Right = 1f;
+                section.Margins.Top = 0f;
+                section.Margins.Bottom = 0f;
+            }
+
+            server.Document.DefaultParagraphProperties.Alignment = ParagraphAlignment.Center;
+
+            PrintableComponentLink link = new PrintableComponentLink();
+            PrintingSystem ps = new PrintingSystem();
+            ps.Links.Add(link);
+            link.Component = server;
+            link.PrintingSystem.ShowMarginsWarning = false;
+            link.PrintingSystem.ShowPrintStatusDialog = false;
+            
+            //link.PaperKind = PaperKind.Custom;
+            //link.CustomPaperSize = new Size(Convert.ToInt32(ps.PageSettings.UsablePageSizeInPixels.Width), Convert.ToInt32(ps.PageSettings.UsablePageSizeInPixels.Height));
+            //link.Margins = new Margins(0, 0, 0, 0);
+            ////server.Print();
+            //link.Print();
+            //ps.PreviewFormEx.PrintControl.PrintingSystem.SetCommandVisibility(
+            //    new[]
+            //    {
+            //        PrintingSystemCommand.Save,
+            //        PrintingSystemCommand.Print,
+            //        PrintingSystemCommand.ExportXls,
+            //        PrintingSystemCommand.ClosePreview,
+            //        PrintingSystemCommand.ShowFirstPage,
+            //        PrintingSystemCommand.ShowLastPage,
+            //    }, CommandVisibility.Toolbar);
+
+            link.CreateDocument();
+
+            PrinterSettings pSet = new PrinterSettings();
+            pSet.Copies = 2;
+            //pSet.PrinterName = strDefaultPrintName;
+            //ps.PreviewFormEx.Show();
+            //link.ShowPreview();
+            server.Print(pSet);
+            //ps.PreviewFormEx.Show();
+            //link.ShowPreview();
+            //link.Print();
+            //ps.Print();
+            LogHelper.Info("########");
         }
-        #endregion
     }
 }
