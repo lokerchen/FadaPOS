@@ -1103,14 +1103,14 @@ namespace SuperPOS.UI.TA
         private WbPrtTemplataTa GetAllPrtInfo()
         {
             WbPrtTemplataTa wbPrtTemplataTa = new WbPrtTemplataTa();
-            new SystemData().GetTaSysPrtSetGeneral();
-            var lstGen = CommonData.TaSysPrtSetGeneral;
-            if (lstGen.Any())
+            //new SystemData().GetTaSysPrtSetGeneral();
+            TaSysPrtSetGeneralInfo taSysPrtSetGeneralInfo = CommonData.TaSysPrtSetGeneral.FirstOrDefault(); ;
+
+            if (taSysPrtSetGeneralInfo != null)
             {
-                TaSysPrtSetGeneralInfo taSysPrtSetGeneralInfo = lstGen.FirstOrDefault();
 
                 //wbPrtTemplataTa.PrintAddress = taSysPrtSetGeneralInfo.IsPrtAddr;
-                new SystemData().GetTaSysCtrl();
+                //new SystemData().GetTaSysCtrl();
                 var lstTaSysCtrl = CommonData.TaSysCtrl;
 
                 if (lstTaSysCtrl.Any())
@@ -1128,7 +1128,7 @@ namespace SuperPOS.UI.TA
 
             if (!string.IsNullOrEmpty(callerID))
             {
-                new SystemData().GetTaCustomer();
+                //new SystemData().GetTaCustomer();
                 var lstCust = CommonData.TaCustomer.Where(s => s.ID.ToString().Equals(callerID));
                 if (lstCust.Any())
                 {

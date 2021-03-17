@@ -962,7 +962,7 @@ namespace SuperPOS.Common
         {
             try
             {
-                new SystemData().GetTaCashDrawSet();
+                //new SystemData().GetTaCashDrawSet();
                 TaCashDrawSetInfo taCashDrawSetInfo = CommonData.TaCashDrawSet.FirstOrDefault();
 
                 if (taCashDrawSetInfo != null)

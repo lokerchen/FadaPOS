@@ -1043,7 +1043,7 @@ namespace SuperPOS.UI.TA
             WbPrtTemplataTa wbPrtTemplataTa = new WbPrtTemplataTa();
 
             wbPrtTemplataTa = GetAllPrtInfo();
-
+            
             //WbPrtPrint.PrintHtml(webBrowser1,
             //    string.IsNullOrEmpty(RefNum)
             //        ? WbPrtStatic.PRT_TEMPLATE_FILE_ALL_SHOP
@@ -1076,14 +1076,13 @@ namespace SuperPOS.UI.TA
         private WbPrtTemplataTa GetAllPrtInfo()
         {
             WbPrtTemplataTa wbPrtTemplataTa = new WbPrtTemplataTa();
-            new SystemData().GetTaSysPrtSetGeneral();
-            var lstGen = CommonData.TaSysPrtSetGeneral;
-            if (lstGen.Any())
+            //new SystemData().GetTaSysPrtSetGeneral();
+            TaSysPrtSetGeneralInfo taSysPrtSetGeneralInfo = CommonData.TaSysPrtSetGeneral.FirstOrDefault(); ;
+            
+            if (taSysPrtSetGeneralInfo != null)
             {
-                TaSysPrtSetGeneralInfo taSysPrtSetGeneralInfo = lstGen.FirstOrDefault();
-
                 //wbPrtTemplataTa.PrintAddress = taSysPrtSetGeneralInfo.IsPrtAddr;
-                new SystemData().GetTaSysCtrl();
+                //new SystemData().GetTaSysCtrl();
                 var lstTaSysCtrl = CommonData.TaSysCtrl;
 
                 if (lstTaSysCtrl.Any())
@@ -1117,6 +1116,8 @@ namespace SuperPOS.UI.TA
                 }
             }
             
+
+
             wbPrtTemplataTa.ShopTime = string.IsNullOrEmpty(txtReadyTime.Text) ? "ASAP" : txtReadyTime.Text;
 
             wbPrtTemplataTa.OrderDate = DateTime.Now.ToShortDateString();

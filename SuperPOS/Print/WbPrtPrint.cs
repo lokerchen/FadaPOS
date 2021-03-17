@@ -898,7 +898,7 @@ namespace SuperPOS.Print
             link.Component = server;
             link.PrintingSystem.ShowMarginsWarning = false;
             link.PrintingSystem.ShowPrintStatusDialog = false;
-
+            
             //link.PaperKind = PaperKind.Custom;
             //link.CustomPaperSize = new Size(Convert.ToInt32(ps.PageSettings.UsablePageSizeInPixels.Width), Convert.ToInt32(ps.PageSettings.UsablePageSizeInPixels.Height));
             //link.Margins = new Margins(0, 0, 0, 0);
@@ -1165,7 +1165,7 @@ namespace SuperPOS.Print
 
         private static string GetDefaultPrintName()
         {
-            new SystemData().GetSysValue();
+            //new SystemData().GetSysValue();
             var lstSv = CommonData.SysValue.Where(s => s.ValueID.Equals(PubComm.SYS_VALUE_DEFAULT_PRINT_NAME));
             
             return lstSv.Any() ? lstSv.FirstOrDefault().ValueResult : "";
