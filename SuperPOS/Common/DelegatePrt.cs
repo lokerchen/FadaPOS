@@ -15,7 +15,9 @@ namespace SuperPOS.Common
 
     public delegate void DelegateOrder(string strCheckId, string strBusDate, List<TaOrderItemInfo> lstOi);
 
-    public delegate void DelegateSaveCheckOrder(TaCheckOrderInfo taCheckOrderInfo);
+    public delegate void DelegateSaveCheckOrder(TaCheckOrderInfo taCheckOrderInfo, bool isRefreshData);
+
+    public delegate void DelegateSaveCheckOrderAndPrint(TaCheckOrderInfo taCheckOrderInfo, string strPrintType, List<TaOrderItemInfo> lstOI, WbPrtTemplataTa wbPrtTemplataTa, string strOrderType);
 
     public delegate void DelegatePrintHtml(string checkID, string strBusDate, List<TaOrderItemInfo> lstOI, string strType, WbPrtTemplataTa wbPrtTemplataTa, string strOrderType);
     
@@ -81,9 +83,9 @@ namespace SuperPOS.Common
         #endregion
 
         #region 打印
-        public static void PrtHtml(string checkID, string strBusDate, List<TaOrderItemInfo> lstOI, string strType, WbPrtTemplataTa wbPrtTemplataTa, string strOrderType)
+        public static void PrtHtml(string checkID, string strBusDate, List<TaOrderItemInfo> lstOI, string strPrintType, WbPrtTemplataTa wbPrtTemplataTa, string strOrderType)
         {
-            WbPrtPrint.PrintHtml(strType, lstOI, wbPrtTemplataTa, PubComm.ORDER_TYPE_SHOP);
+            WbPrtPrint.PrintHtml(strPrintType, lstOI, wbPrtTemplataTa, strOrderType);
         }
 
         #endregion
@@ -118,7 +120,7 @@ namespace SuperPOS.Common
         #endregion
 
         #region 保存CheckOrder
-        public static void SaveCheckOrder(TaCheckOrderInfo taCheckOrderInfo)
+        public static void SaveCheckOrder(TaCheckOrderInfo taCheckOrderInfo, bool isRefreshData)
         {
             if (string.IsNullOrEmpty(taCheckOrderInfo.CheckCode) && string.IsNullOrEmpty(taCheckOrderInfo.BusDate))
             {
@@ -215,7 +217,7 @@ namespace SuperPOS.Common
                 
                 _control.ExecuteSql(strSql);
 
-                RefreshSomeInfo("1", "", "");
+                if (isRefreshData) RefreshSomeInfo("1", "", "");
 
             }
 
@@ -274,6 +276,16 @@ namespace SuperPOS.Common
         }
         #endregion
 
+        #region 保存CheckOrder并打印
+
+        public static void CheckOrderSaveAndPrint(TaCheckOrderInfo taCheckOrderInfo, string strPrintType, List<TaOrderItemInfo> lstOI, WbPrtTemplataTa wbPrtTemplataTa, string strOrderType)
+        {
+            SaveCheckOrder(taCheckOrderInfo, false);
+
+            WbPrtPrint.PrintHtml(strPrintType, lstOI, wbPrtTemplataTa, strOrderType);
+        }
+
+        #endregion
 
     }
 }

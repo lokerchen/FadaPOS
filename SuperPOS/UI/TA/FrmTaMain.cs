@@ -300,7 +300,7 @@ namespace SuperPOS.UI.TA
                         //taCheck.IsCancel = "Y";
                         _control.UpdateEntity(taCheck);
                         DelegateSaveCheckOrder handler = DelegateMy.SaveCheckOrder;
-                        IAsyncResult result = handler.BeginInvoke(taCheck, null, null);
+                        IAsyncResult result = handler.BeginInvoke(taCheck, true, null, null);
 
                         treeListOrder.Nodes.Clear();
 
@@ -911,7 +911,7 @@ namespace SuperPOS.UI.TA
                         taCheck.IsCancel = "Y";
                         //_control.UpdateEntity(taCheck);
                         DelegateSaveCheckOrder handler = DelegateMy.SaveCheckOrder;
-                        IAsyncResult result = handler.BeginInvoke(taCheck, null, null);
+                        IAsyncResult result = handler.BeginInvoke(taCheck, true,null, null);
                     }
 
                     treeListOrder.Nodes.Clear();
@@ -1961,7 +1961,7 @@ namespace SuperPOS.UI.TA
 
                 //_control.UpdateEntity(taCheckOrderInfo);
                 DelegateSaveCheckOrder handler = DelegateMy.SaveCheckOrder;
-                IAsyncResult result = handler.BeginInvoke(taCheckOrderInfo, null, null);
+                IAsyncResult result = handler.BeginInvoke(taCheckOrderInfo, true,null, null);
             }
             else
             {
@@ -1973,7 +1973,7 @@ namespace SuperPOS.UI.TA
 
                 //_control.AddEntity(taCheckOrderInfo);
                 DelegateSaveCheckOrder handler = DelegateMy.SaveCheckOrder;
-                IAsyncResult result = handler.BeginInvoke(taCheckOrderInfo, null, null);
+                IAsyncResult result = handler.BeginInvoke(taCheckOrderInfo, true, null, null);
                 //handler.EndInvoke(result);
 
                 //DelegateSaveCheckOrder dSaveCheckOrder;
@@ -2063,7 +2063,7 @@ namespace SuperPOS.UI.TA
                         treeListOrder.Nodes.Clear();
 
                         DelegateSaveCheckOrder handler = DelegateMy.SaveCheckOrder;
-                        IAsyncResult result = handler.BeginInvoke(taCheck, null, null);
+                        IAsyncResult result = handler.BeginInvoke(taCheck, true, null, null);
                     }
                     else
                     {

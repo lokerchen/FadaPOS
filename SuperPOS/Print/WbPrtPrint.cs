@@ -123,12 +123,12 @@ namespace SuperPOS.Print
         /// <summary>
         /// 打印Html主体方法
         /// </summary>
-        /// <param name="strType">打印类型</param>
+        /// <param name="strPrintType">打印类型</param>
         /// <param name="lsTaOrderItemInfos">OrderItem信息</param>
         /// <param name="wbPrtTemplataTa">打印模板类内容</param>
         /// <param name="isPrintFF">是否需要打印Fast Food</param>
         /// <param name="strOrderType">订单类型</param>
-        public static void PrintHtml(string strType, List<TaOrderItemInfo> lsTaOrderItemInfos, WbPrtTemplataTa wbPrtTemplataTa, string strOrderType)
+        public static void PrintHtml(string strPrintType, List<TaOrderItemInfo> lsTaOrderItemInfos, WbPrtTemplataTa wbPrtTemplataTa, string strOrderType)
         {
             try
             {
@@ -142,22 +142,22 @@ namespace SuperPOS.Print
                     return;
                 }
 
-                if (strType.Equals(WbPrtStatic.PRT_CLASS_BILL))
+                if (strPrintType.Equals(WbPrtStatic.PRT_CLASS_BILL))
                 {
                     strContentText = PrintOnlyBill(strOrderType, lsTaOrderItemInfos, wbPrtTemplataTa);
-                    PrintContent(strType, strContentText);
+                    PrintContent(strPrintType, strContentText);
                 }
-                else if (strType.Equals(WbPrtStatic.PRT_CLASS_KITCHEN))
+                else if (strPrintType.Equals(WbPrtStatic.PRT_CLASS_KITCHEN))
                 {
                     strContentText = PrintOnlyKitchen(strOrderType, lsTaOrderItemInfos, wbPrtTemplataTa);
-                    PrintContent(strType, strContentText);
+                    PrintContent(strPrintType, strContentText);
                 }
-                else if (strType.Equals(WbPrtStatic.PRT_CLASS_RECEIPT))
+                else if (strPrintType.Equals(WbPrtStatic.PRT_CLASS_RECEIPT))
                 {
                     strContentText = PrintOnlyKitchen(strOrderType, lsTaOrderItemInfos, wbPrtTemplataTa);
-                    PrintContent(strType, strContentText);
+                    PrintContent(strPrintType, strContentText);
                 }
-                else if (strType.Equals(WbPrtStatic.PRT_CLASS_ALL))
+                else if (strPrintType.Equals(WbPrtStatic.PRT_CLASS_ALL))
                 {
                     //Bill
                     strContentText = PrintOnlyBill(strOrderType, lsTaOrderItemInfos, wbPrtTemplataTa);
@@ -166,7 +166,7 @@ namespace SuperPOS.Print
                     strContentText = PrintOnlyKitchen(strOrderType, lsTaOrderItemInfos, wbPrtTemplataTa);
                     PrintContent(WbPrtStatic.PRT_CLASS_KITCHEN, strContentText);
                 }
-                else if (strType.Equals(WbPrtStatic.PRT_CLASS_ALL_AND_RECEIPT))
+                else if (strPrintType.Equals(WbPrtStatic.PRT_CLASS_ALL_AND_RECEIPT))
                 {
                     //Bill
                     strContentText = PrintOnlyBill(strOrderType, lsTaOrderItemInfos, wbPrtTemplataTa);

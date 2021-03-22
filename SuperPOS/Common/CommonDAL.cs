@@ -1653,5 +1653,43 @@ namespace SuperPOS.Common
 
         #endregion
 
+        #region 读取Html模板并更新
+
+        public static void ReadTemplateAndUpdate(string strFileName, string strText)
+        {
+            try
+            {
+                Stream myStream = new FileStream(WbPrtStatic.PRT_TEMPLATE_FILE_PATH + strFileName, FileMode.Open);
+                Encoding encode = Encoding.GetEncoding("UTF-8");
+                StreamReader myStreamReader = new StreamReader(myStream, encode);
+                string strHtml = myStreamReader.ReadToEnd();
+                string strOutput = strHtml.Replace("XXX", "要替换的内容");
+                myStream.Seek(0, SeekOrigin.Begin);
+                myStream.SetLength(0);
+                StreamWriter sw = new StreamWriter(myStream, encode);
+                sw.Write(strOutput);
+                sw.Flush();
+                sw.Close();
+                myStream.Close();
+
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e);
+                throw;
+            }
+        }
+
+        #endregion
+
+        #region 替换打印模板中的用户自定义参数
+
+        public static string ReplaceTemplateParam(string strHtml)
+        {
+            return "";
+        }
+
+        #endregion
+
     }
 }
