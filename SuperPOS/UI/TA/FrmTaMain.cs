@@ -980,6 +980,8 @@ namespace SuperPOS.UI.TA
             //Stopwatch st1 = new Stopwatch();//实例化类
             //st1.Start();//开始计时
 
+            if (string.IsNullOrEmpty(btn.Text)) return;
+
             TaMenuItemInfo taMenuItemInfo = GetMenuItemInfo(btn.Text, iMenuCateId, iMenuSetId, false);
 
             //st1.Stop();//终止计时
