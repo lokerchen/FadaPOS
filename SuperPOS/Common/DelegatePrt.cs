@@ -13,11 +13,15 @@ namespace SuperPOS.Common
 {
     public delegate void DelegatePreview();
 
-    public delegate void DelegateOrder(string strCheckId, string strBusDate, List<TaOrderItemInfo> lstOi);
+    public delegate void DelegateOrderItemSave(string strCheckId, string strBusDate, List<TaOrderItemInfo> lstOi);
+
+    public delegate void DelegateOrderItemSaveAndDeleteOld(string strCheckId, string strBusDate, List<TaOrderItemInfo> lstOi);
 
     public delegate void DelegateSaveCheckOrder(TaCheckOrderInfo taCheckOrderInfo, bool isRefreshData);
-
+    
     public delegate void DelegateSaveCheckOrderAndPrint(TaCheckOrderInfo taCheckOrderInfo, string strPrintType, List<TaOrderItemInfo> lstOI, WbPrtTemplataTa wbPrtTemplataTa, string strOrderType);
+
+    public delegate void DelegateSaveOrderItemAndCheckOrder(string strCheckId, string strBusDate, List<TaOrderItemInfo> lstOi, TaCheckOrderInfo taCheckOrderInfo, bool isRefreshData);
 
     public delegate void DelegatePrintHtml(string checkID, string strBusDate, List<TaOrderItemInfo> lstOI, string strType, WbPrtTemplataTa wbPrtTemplataTa, string strOrderType);
     
@@ -91,7 +95,7 @@ namespace SuperPOS.Common
         #endregion
         
         #region 存储OrderItem到数据库
-        public static void SaveOrder(string strCheckId, string strBusDate, List<TaOrderItemInfo> lstOi)
+        public static void SaveOrderItem(string strCheckId, string strBusDate, List<TaOrderItemInfo> lstOi)
         {
             new SystemData().GetTaOrderItem();
 
@@ -118,6 +122,20 @@ namespace SuperPOS.Common
             }
         }
         #endregion
+
+        public static void SaveOrderItemAndDeleteOld(string strCheckId, string strBusDate, List<TaOrderItemInfo> lstOi)
+        {
+            string strSql = "";
+
+            strSql = "DELETE FROM Ta_OrderItem WHERE BusDate = '" + strBusDate + "' AND CheckCode = '" + strCheckId + "'";
+
+            _control.ExecuteSql(strSql);
+
+            foreach (var taOrderItemInfo in lstOi)
+            {
+                _control.AddEntity(taOrderItemInfo);
+            }
+        }
 
         #region 保存CheckOrder
         public static void SaveCheckOrder(TaCheckOrderInfo taCheckOrderInfo, bool isRefreshData)
@@ -223,6 +241,18 @@ namespace SuperPOS.Common
 
             //new SystemData().GetTaCheckOrder();
         }
+        #endregion
+
+        #region 保存OrderItem和CheckOrder
+
+        public static void SaveOrderItemAndCheckOrder(string strCheckId, string strBusDate, List<TaOrderItemInfo> lstOi,
+            TaCheckOrderInfo taCheckOrderInfo, bool isRefreshData)
+        {
+            SaveOrderItemAndDeleteOld(strCheckId, strBusDate, lstOi);
+
+            SaveCheckOrder(taCheckOrderInfo, isRefreshData);
+        }
+
         #endregion
 
         #region 后台刷新数据库内容

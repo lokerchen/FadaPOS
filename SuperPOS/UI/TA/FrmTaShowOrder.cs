@@ -97,7 +97,7 @@ namespace SuperPOS.UI
             CommonDAL.ShowMessage(this);
 
             //new SystemData().GetTaOrderItem();
-            new SystemData().GetShowAndPendOrderData("", strBusDate);
+            //new SystemData().GetShowAndPendOrderData("", strBusDate);
 
             webBrowser2.Navigate("about:blank/");
             GetBindData("", true);
@@ -114,6 +114,7 @@ namespace SuperPOS.UI
         /// <param name="orderType">账单类型</param>
         private void GetBindData(string orderType, bool isNeedStaff)
         {
+            new SystemData().GetShowAndPendOrderData("", strBusDate);
             var lstTmp = CommonData.GetShowAndPendOrderData.Where(s => s.IsPaid.Equals(@"Y"));
             var lstDb = from sPod in lstTmp
                         select new

@@ -238,17 +238,14 @@ namespace SuperPOS.UI.TA
                 //    }
                 //}
 
-                DelegateOrder handler = DelegateMy.SaveOrder;
-                IAsyncResult result = handler.BeginInvoke(checkID, strBusDate, lstTaOI, null, null);
+                //DelegateOrderItemSave handler = DelegateMy.SaveOrderItem;
+                //IAsyncResult result = handler.BeginInvoke(checkID, strBusDate, lstTaOI, null, null);
                 #endregion
 
                 #region 保存账单
                 //Console.WriteLine(treeListOrder.Columns["ItemTotalPrice"].SummaryFooter.ToString());
                 SaveCheckOrder(lstTaOI, true);
                 #endregion
-
-                DelegateRefresh hd = DelegateMy.RefreshSomeInfo;
-                IAsyncResult rt = hd.BeginInvoke("1", "", "", null, null);
 
                 //如果是来电显示的，保存后直接关闭当前窗口
                 if (isCalling)
@@ -264,9 +261,10 @@ namespace SuperPOS.UI.TA
                 ORDER_TYPE = PubComm.ORDER_TYPE_SHOP;
                 #endregion
 
-                
 
-                checkID = CommonDAL.GetCheckCode();
+
+                //checkID = CommonDAL.GetCheckCode();
+                checkID = (Convert.ToInt32(checkID) + 1).ToString();
                 LogHelper.Info("#checkID:" + checkID + "#btnSaveOrder_Click");
                 lblCheck.Text = checkID;
 
@@ -274,7 +272,10 @@ namespace SuperPOS.UI.TA
                 ORDER_TYPE = PubComm.ORDER_TYPE_SHOP;
                 btnType.Appearance.BackColor = Color.HotPink;
                 btnType.Text = PubComm.ORDER_TYPE_SHOP;
-                
+
+                //DelegateRefresh hd = DelegateMy.RefreshSomeInfo;
+                //IAsyncResult rt = hd.BeginInvoke("1", "", "", null, null);
+
                 //handler.EndInvoke(result);
             }
             catch (Exception ex) { LogHelper.Error(this.Name, ex); }
@@ -777,7 +778,7 @@ namespace SuperPOS.UI.TA
             List<TaOrderItemInfo> lstTaOI = new List<TaOrderItemInfo>();
             
             lstTaOI = TreeListToOrderItem(isNew);
-            
+
             //代码
             //new SystemData().GetTaOrderItem();
 
@@ -795,7 +796,7 @@ namespace SuperPOS.UI.TA
             //    }
             //}
 
-            DelegateOrder handler = DelegateMy.SaveOrder;
+            DelegateOrderItemSaveAndDeleteOld handler = DelegateMy.SaveOrderItemAndDeleteOld;
             IAsyncResult result = handler.BeginInvoke(checkID, strBusDate, lstTaOI, null, null);
 
             #endregion
@@ -917,17 +918,33 @@ namespace SuperPOS.UI.TA
                     treeListOrder.Nodes.Clear();
 
                     FrmTaPendOrder frmTaPendOrder = new FrmTaPendOrder(usrID, iLangStatusId, isConnectPhone);
-                    this.Hide();
-                    frmTaPendOrder.ShowDialog();
-                    isGetPhone = false;
+                    //this.Hide();
+                    if (frmTaPendOrder.ShowDialog() == DialogResult.OK)
+                    {
+                        checkID = frmTaPendOrder.rCheckCode;
+                        strBusDate = frmTaPendOrder.rCheckBusDate;
+                        CustID = frmTaPendOrder.rCheckCustID;
+                        iLangStatusId = frmTaPendOrder.rLang;
+                        usrID = frmTaPendOrder.rUserID;
+                        isGetPhone = false;
+                        SetSomeInfo();
+                    }
                 }
             }
             else
             {
                 FrmTaPendOrder frmTaPendOrder = new FrmTaPendOrder(usrID, iLangStatusId, isConnectPhone);
-                this.Hide();
-                frmTaPendOrder.ShowDialog();
-                isGetPhone = false;
+                //this.Hide();
+                if (frmTaPendOrder.ShowDialog() == DialogResult.OK)
+                {
+                    checkID = frmTaPendOrder.rCheckCode;
+                    strBusDate = frmTaPendOrder.rCheckBusDate;
+                    CustID = frmTaPendOrder.rCheckCustID;
+                    iLangStatusId = frmTaPendOrder.rLang;
+                    usrID = frmTaPendOrder.rUserID;
+                    isGetPhone = false;
+                    SetSomeInfo();
+                }
             }
         }
         #endregion
@@ -1962,8 +1979,8 @@ namespace SuperPOS.UI.TA
                 saveTaCheckOrderInfo = taCheckOrderInfo;
 
                 //_control.UpdateEntity(taCheckOrderInfo);
-                DelegateSaveCheckOrder handler = DelegateMy.SaveCheckOrder;
-                IAsyncResult result = handler.BeginInvoke(taCheckOrderInfo, true,null, null);
+                DelegateSaveOrderItemAndCheckOrder handler = DelegateMy.SaveOrderItemAndCheckOrder;
+                IAsyncResult result = handler.BeginInvoke(checkID, strBusDate, lstTaOI, taCheckOrderInfo, true, null, null);
             }
             else
             {
@@ -1974,8 +1991,8 @@ namespace SuperPOS.UI.TA
                 saveTaCheckOrderInfo = taCheckOrderInfo;
 
                 //_control.AddEntity(taCheckOrderInfo);
-                DelegateSaveCheckOrder handler = DelegateMy.SaveCheckOrder;
-                IAsyncResult result = handler.BeginInvoke(taCheckOrderInfo, true, null, null);
+                DelegateSaveOrderItemAndCheckOrder handler = DelegateMy.SaveOrderItemAndCheckOrder;
+                IAsyncResult result = handler.BeginInvoke(checkID, strBusDate,lstTaOI, taCheckOrderInfo, true, null, null);
                 //handler.EndInvoke(result);
 
                 //DelegateSaveCheckOrder dSaveCheckOrder;
@@ -2911,8 +2928,8 @@ namespace SuperPOS.UI.TA
                 _control.AddEntity(taComePhoneInfo);
                 #endregion
 
-                IAsyncResult result = null;
-                DelegateOrder handler = null;
+                //IAsyncResult result = null;
+                //DelegateOrderItemSave handler = null;
 
                 if (treeListOrder.Nodes.Count > 0)
                 {
@@ -2943,8 +2960,8 @@ namespace SuperPOS.UI.TA
                     //        _control.AddEntity(taOrderItemInfo);
                     //    }
                     //}
-                    handler = DelegateMy.SaveOrder;
-                    result = handler.BeginInvoke(checkID, strBusDate, lstTaOI, null, null);
+                    //handler = DelegateMy.SaveOrderItem;
+                    //result = handler.BeginInvoke(checkID, strBusDate, lstTaOI, null, null);
                     #endregion
 
                     #region 保存账单
@@ -2985,7 +3002,7 @@ namespace SuperPOS.UI.TA
                     isGetPhone = false;
                 }
 
-                if (treeListOrder.Nodes.Count > 0) handler.EndInvoke(result);
+                //if (treeListOrder.Nodes.Count > 0) handler.EndInvoke(result);
             }
         }
 
@@ -3275,8 +3292,8 @@ namespace SuperPOS.UI.TA
         {
             try
             {
-                DelegateOrder handler = null;
-                IAsyncResult result = null;
+                //DelegateOrderItemSave handler = null;
+                //IAsyncResult result = null;
 
                 if (!string.IsNullOrEmpty(CallerPhone.Trim()))
                 {
@@ -3305,8 +3322,8 @@ namespace SuperPOS.UI.TA
 
                         lstTaOI = TreeListToOrderItem(isNew);
 
-                        handler = DelegateMy.SaveOrder;
-                        result = handler.BeginInvoke(checkID, strBusDate, lstTaOI, null, null);
+                        //handler = DelegateMy.SaveOrderItem;
+                        //result = handler.BeginInvoke(checkID, strBusDate, lstTaOI, null, null);
 
                         #endregion
 
@@ -3352,7 +3369,7 @@ namespace SuperPOS.UI.TA
                         strTranPhoneNum = "";
                     }
 
-                    if (!string.IsNullOrEmpty(CallerPhone.Trim())) handler.EndInvoke(result);
+                    //if (!string.IsNullOrEmpty(CallerPhone.Trim())) handler.EndInvoke(result);
                 }
             }
             catch (Exception ex) { LogHelper.Error("ShowCallIdWindow", ex); }
@@ -3474,6 +3491,38 @@ namespace SuperPOS.UI.TA
 
                 treeListOrder.SetFocusedNode(treeListOrder.Nodes[treeListOrder.Nodes.Count - 1]);
             }
+        }
+
+        private void SetSomeInfo()
+        {
+            lblCheck.Text = checkID;
+
+            TaCheckOrderInfo taCheck = CommonData.TaCheckOrder.FirstOrDefault(s => s.CheckCode.Equals(checkID) && s.BusDate.Equals(strBusDate));
+
+            if (taCheck != null)
+            {
+                ORDER_TYPE = lblType.Text = taCheck.PayOrderType;
+            }
+            //BindData(checkID);
+
+            ChangeOrderBtnColor(ORDER_TYPE);
+
+            InitGrid(CommonData.TaOrderItem.Where(s => s.CheckCode.Equals(checkID) && s.BusDate.Equals(strBusDate)).ToList());
+
+            treeListOrder.ExpandAll();
+
+            if (treeListOrder.Nodes.Count > 0) treeListOrder.SetFocusedNode(treeListOrder.Nodes[treeListOrder.Nodes.Count - 1]);
+
+            isNew = false;
+
+            GetCustInfo(CustID);
+
+            SetBtnLang(iLangStatusId);
+
+            asfc.controllInitializeSize(this);
+
+            DelegateRefresh hd = DelegateMy.RefreshSomeInfo;
+            IAsyncResult rt = hd.BeginInvoke("8", strBusDate, "", null, null);
         }
     }
 }

@@ -82,6 +82,36 @@ namespace SuperPOS.UI.TA
         private int iLang = PubComm.MENU_LANG_DEFAULT;
 
         private bool isConnectPhone = false;
+
+        public string rCheckCode
+        {
+            get { return checkCode; }
+            set { rCheckCode = value; }
+        }
+
+        public int rUserID
+        {
+            get { return usrID; }
+            set { rUserID = value; }
+        }
+
+        public int rCheckCustID
+        {
+            get { return checkCustID; }
+            set { rCheckCustID = value; }
+        }
+
+        public string rCheckBusDate
+        {
+            get { return checkBusDate; }
+            set { rCheckBusDate = value; }
+        }
+
+        public int rLang
+        {
+            get { return iLang; }
+            set { rLang = value; }
+        }
         #endregion
 
         public FrmTaPendOrder()
@@ -107,6 +137,10 @@ namespace SuperPOS.UI.TA
 
         private void GetBindData(string orderType, int iDriver, bool isSaveOrder)
         {
+            CommonDAL.ShowMessage(this);
+
+            SystemData systemData = new SystemData();
+            systemData.GetShowAndPendOrderData("", strBusDate);
             var lstDb = from sPod in CommonData.GetShowAndPendOrderData
                 where !sPod.IsPaid.Equals(@"Y") && !sPod.IsCancel.Equals(@"Y")
                 select new
@@ -180,11 +214,13 @@ namespace SuperPOS.UI.TA
                     }
                 }
             }
+
+            CommonDAL.HideMessage(this);
         }
 
         private void FrmTaPendOrder_Load(object sender, EventArgs e)
         {
-            CommonDAL.ShowMessage(this);
+            //CommonDAL.ShowMessage(this);
 
             SystemData systemData = new SystemData();
             //systemData.GetTaCheckOrder();
@@ -204,7 +240,7 @@ namespace SuperPOS.UI.TA
 
             asfc.controllInitializeSize(this);
 
-            CommonDAL.HideMessage(this);
+            //CommonDAL.HideMessage(this);
         }
 
         private void gvTaPendOrder_CustomDrawRowIndicator(object sender, DevExpress.XtraGrid.Views.Grid.RowIndicatorCustomDrawEventArgs e)
@@ -445,15 +481,16 @@ namespace SuperPOS.UI.TA
         private void btnExit_Click(object sender, EventArgs e)
         {
             Close();
-            FrmTaMain frmTaMain = new FrmTaMain(usrID, iLang, isConnectPhone);
-            frmTaMain.ShowDialog();
+            //FrmTaMain frmTaMain = new FrmTaMain(usrID, iLang, isConnectPhone);
+            //frmTaMain.ShowDialog();
         }
 
         private void gvTaPendOrder_DoubleClick(object sender, EventArgs e)
         {
             Hide();
-            FrmTaMain frmTaMain = new FrmTaMain(checkCode, usrID, checkCustID, checkBusDate, iLang);
-            frmTaMain.ShowDialog();
+            //FrmTaMain frmTaMain = new FrmTaMain(checkCode, usrID, checkCustID, checkBusDate, iLang);
+            //frmTaMain.ShowDialog();
+            this.DialogResult = DialogResult.OK;
         }
 
         private void FrmTaPendOrder_SizeChanged(object sender, EventArgs e)
@@ -521,8 +558,9 @@ namespace SuperPOS.UI.TA
         private void btnOpen_Click(object sender, EventArgs e)
         {
             Hide();
-            FrmTaMain frmTaMain = new FrmTaMain(checkCode, usrID, checkCustID, checkBusDate, iLang);
-            frmTaMain.ShowDialog();
+            //FrmTaMain frmTaMain = new FrmTaMain(checkCode, usrID, checkCustID, checkBusDate, iLang);
+            //frmTaMain.ShowDialog();
+            this.DialogResult = DialogResult.OK;
         }
 
         private void btnPreview_Click(object sender, EventArgs e)
