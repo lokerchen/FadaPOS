@@ -139,8 +139,6 @@ namespace SuperPOS.UI.TA
         {
             CommonDAL.ShowMessage(this);
 
-            SystemData systemData = new SystemData();
-            systemData.GetShowAndPendOrderData("", strBusDate);
             var lstDb = from sPod in CommonData.GetShowAndPendOrderData
                 where !sPod.IsPaid.Equals(@"Y") && !sPod.IsCancel.Equals(@"Y")
                 select new
@@ -227,8 +225,9 @@ namespace SuperPOS.UI.TA
             //systemData.GetTaCustomer();
             //systemData.GetUsrBase();
             //systemData.GetTaOrderItem();
-            
+
             //systemData.GetShowAndPendOrderData("", strBusDate);
+            new SystemData().GetShowAndPendOrderData("", strBusDate);
 
             GetBindData("", 0, false);
 
@@ -318,7 +317,11 @@ namespace SuperPOS.UI.TA
 
                 if (frmTaPaymentShop.ShowDialog() == DialogResult.OK)
                 {
-                    if (frmTaPaymentShop.returnPaid) GetBindData("", 0, false);
+                    if (frmTaPaymentShop.returnPaid)
+                    {
+                        new SystemData().GetShowAndPendOrderData("", strBusDate);
+                        GetBindData("", 0, false);
+                    }
                 }
             }
             else if (checkOrderType.Equals(PubComm.ORDER_TYPE_DELIVERY))
@@ -327,7 +330,11 @@ namespace SuperPOS.UI.TA
 
                 if (frmTaPaymentDelivery.ShowDialog() == DialogResult.OK)
                 {
-                    if (frmTaPaymentDelivery.returnPaid) GetBindData("", 0, false);
+                    if (frmTaPaymentDelivery.returnPaid)
+                    {
+                        new SystemData().GetShowAndPendOrderData("", strBusDate);
+                        GetBindData("", 0, false);
+                    }
                 }
             }
             else if (checkOrderType.Equals(PubComm.ORDER_TYPE_COLLECTION))
@@ -336,7 +343,11 @@ namespace SuperPOS.UI.TA
 
                 if (frmTaPaymentCollection.ShowDialog() == DialogResult.OK)
                 {
-                    if (frmTaPaymentCollection.returnPaid) GetBindData("", 0, false);
+                    if (frmTaPaymentCollection.returnPaid)
+                    {
+                        new SystemData().GetShowAndPendOrderData("", strBusDate);
+                        GetBindData("", 0, false);
+                    }
                 }
             }
             else
@@ -345,7 +356,11 @@ namespace SuperPOS.UI.TA
 
                 if (frmTaPayment.ShowDialog() == DialogResult.OK)
                 {
-                    if (frmTaPayment.returnPaid) GetBindData("", 0, false);
+                    if (frmTaPayment.returnPaid)
+                    {
+                        new SystemData().GetShowAndPendOrderData("", strBusDate);
+                        GetBindData("", 0, false);
+                    }
                 }
             }
         }
