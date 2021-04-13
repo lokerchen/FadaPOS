@@ -46,6 +46,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Entities\VIEW_OrderItemMatchVatInfo.cs" />
     <Compile Include="Entities\OrderItemMatchVatInfo.cs" />
     <Compile Include="Entities\ShowAndPendOrderDataInfo.cs" />
     <Compile Include="Entities\RptTotalSalesInfo.cs" />
@@ -177,6 +178,7 @@
     <EmbeddedResource Include="Mappings\TaFreeFoodAddInfo.hbm.xml" />
     <EmbeddedResource Include="Mappings\TaSysPrtSetGeneralInfo.hbm.xml" />
     <EmbeddedResource Include="Mappings\TaComePhoneInfo.hbm.xml" />
+    <EmbeddedResource Include="Mappings\VIEW_OrderItemMatchVatInfo.hbm.xml" />
     <Content Include="Mappings\TaPaymentInfo.hbm.xml" />
     <EmbeddedResource Include="Mappings\TaPostcodeChargeInfo.hbm.xml" />
     <EmbeddedResource Include="Mappings\TaPostcodeZoneInfo.hbm.xml" />

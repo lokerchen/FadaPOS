@@ -287,6 +287,43 @@ namespace SuperPOS.Common
         }
         #endregion
 
+        #region 查询所有
+        /// <summary>
+        /// 查询所有
+        /// </summary>
+        /// <returns>IList</returns>
+        public IList<T> SelectAll<T>(string strOrderNum, string strBusDate)
+        {
+            ISession session = SessionFactory.OpenSession();
+            try
+            {
+                ICriteria ctRet = session.CreateCriteria(typeof(T));
+                
+                if (!string.IsNullOrEmpty(strOrderNum))
+                {
+                    ctRet = ctRet.Add(Restrictions.Eq("CheckCode", strOrderNum));
+                }
+
+                if (!string.IsNullOrEmpty(strBusDate))
+                {
+                    ctRet = ctRet.Add(Restrictions.Eq("BusDate", strBusDate));
+                }
+                
+                IList<T> list = ctRet.List<T>();
+                return list;
+            }
+            catch (Exception ex)
+            {
+                LogHelper.Error(ex.Message, ex);
+                throw;
+            }
+            finally
+            {
+                session.Close();
+            }
+        }
+        #endregion
+
         #region MyRegion
         /// <summary>
         /// 查询过滤

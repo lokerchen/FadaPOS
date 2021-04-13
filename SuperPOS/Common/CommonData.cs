@@ -122,6 +122,6 @@ namespace SuperPOS.Common
 
         public static IList<ShowAndPendOrderDataInfo> GetShowAndPendOrderData { get; set; }
 
-        public static IList<OrderItemMatchVatInfo> GetOrderItemMatchVat { get; set; }
+        public static IList<VIEW_OrderItemMatchVatInfo> GetViewOrderItemMatchVat { get; set; }
     }
 }

@@ -158,7 +158,8 @@ namespace SuperPOS.Common
             systemData.GetAccountSummary("", "");
 
             //systemData.GetPrtAccountSummary("", "");
-
+            systemData.GetViewOrderItemMatchVat("", "");
+            
             #region 存储默认打印机名，打印时需要用到
             new SystemData().GetSysValue();
             var lstSv = CommonData.SysValue.Where(s => s.ValueID.Equals(PubComm.SYS_VALUE_DEFAULT_PRINT_NAME));

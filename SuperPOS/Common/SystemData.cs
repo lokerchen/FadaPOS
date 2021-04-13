@@ -125,6 +125,6 @@ namespace SuperPOS.Common
 
         public void GetShowAndPendOrderData(string strOrderNum, string strBusDate) { CommonData.GetShowAndPendOrderData = _control.GetShowAndPendOrderData(strOrderNum, strBusDate); }
 
-        public void GetOrderItemMatchVat(string strOrderNum, string strBusDate) { CommonData.GetOrderItemMatchVat = _control.GetOrderItemMatchVat(strOrderNum, strBusDate); }
+        public void GetViewOrderItemMatchVat(string strOrderNum, string strBusDate) { CommonData.GetViewOrderItemMatchVat = _control.SelectAll<VIEW_OrderItemMatchVatInfo>(strOrderNum, strBusDate); }
     }
 }
