@@ -292,6 +292,13 @@ namespace SuperPOS.Common
                     systemData.GetTaCheckOrder();
                     systemData.GetTaOrderItem();
                     break;
+                case "10":
+                    systemData.GetTaCheckOrder();
+                    systemData.GetTaOrderItem();
+                    systemData.GetTaCustomer();
+                    systemData.GetTaDriver();
+                    systemData.GetShowAndPendOrderData(strCheckId, strBusDate);
+                    break;
                 default:
                     systemData.GetTaCheckOrder();
                     systemData.GetTaOrderItem();

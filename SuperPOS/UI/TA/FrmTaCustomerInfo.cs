@@ -169,7 +169,7 @@ namespace SuperPOS.UI.TA
 
         private void BindData(string sPhone)
         {
-            new SystemData().GetTaCustomer();
+            //new SystemData().GetTaCustomer();
 
             gridControlCustomer.DataSource = string.IsNullOrEmpty(sPhone) ? CommonData.TaCustomer.Where(s => !string.IsNullOrEmpty(s.cusPhone)).ToList() 
                                                                           : CommonData.TaCustomer.Where(s => s.cusPhone.Equals(sPhone) && !string.IsNullOrEmpty(s.cusPhone)).ToList();

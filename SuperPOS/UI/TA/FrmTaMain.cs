@@ -2110,7 +2110,7 @@ namespace SuperPOS.UI.TA
 
             //new SystemData().GetTaOrderItem();
             DelegateRefresh hd = DelegateMy.RefreshSomeInfo;
-            IAsyncResult rlt = hd.BeginInvoke("0", "", "", null, null);
+            IAsyncResult rlt = hd.BeginInvoke("10", "", "", null, null);
         }
 
         #region 对Node子节点操作中英文显示
@@ -2533,7 +2533,7 @@ namespace SuperPOS.UI.TA
         {
             //if (CustID <= 0)
             //{
-            
+
             string sFoot = treeListOrder.Nodes.Count > 0 ? treeListOrder.GetSummaryValue(treeListOrder.Columns[7]).ToString() : "0.00";
             FrmTaCustomerInfo frmTaCustomerInfo = new FrmTaCustomerInfo(CustID, sFoot);
 
@@ -2556,6 +2556,7 @@ namespace SuperPOS.UI.TA
                 }
                     
             }
+
             //}
         }
 
