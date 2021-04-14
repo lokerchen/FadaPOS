@@ -46,6 +46,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Entities\VIEW_ShowAndPendOrderInfo.cs" />
     <Compile Include="Entities\VIEW_OrderItemMatchVatInfo.cs" />
     <Compile Include="Entities\OrderItemMatchVatInfo.cs" />
     <Compile Include="Entities\ShowAndPendOrderDataInfo.cs" />
@@ -140,6 +141,7 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="Mappings\VIEW_ShowAndPendOrderInfo.hbm.xml" />
     <EmbeddedResource Include="Mappings\UsrAuthDetailInfo.hbm.xml" />
     <EmbeddedResource Include="Mappings\UsrAuthRuleInfo.hbm.xml" />
     <EmbeddedResource Include="Mappings\UsrAuthAccessInfo.hbm.xml" />

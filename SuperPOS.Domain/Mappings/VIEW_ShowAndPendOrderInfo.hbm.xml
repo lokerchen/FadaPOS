@@ -1,0 +1,50 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2"
+                   assembly="SuperPOS"
+                   namespace="SuperPOS.Domain">
+
+  <class name="SuperPOS.Domain.Entities.VIEW_ShowAndPendOrderInfo, SuperPOS.Domain" table="VIEW_ShowAndPendOrder" mutable="false">
+    <id name="ID" column="ID" type="System.Int32" unsaved-value="0">
+      <generator class="native" />
+    </id>
+    <property name="CheckCode" column="CheckCode" type="System.String" />
+    <property name="CustPostCode" column="CustPostCode" type="System.String" />
+    <property name="CustPcZone" column="CustPcZone" type="System.String" />
+    <property name="CustAddr" column="CustAddr" type="System.String" />
+    <property name="PayOrderType" column="PayOrderType" type="System.String" />
+    <property name="CustName" column="CustName" type="System.String" />
+    <property name="CustPhone" column="CustPhone" type="System.String" />
+    <property name="IsPaid" column="IsPaid" type="System.String" />
+    <property name="TotalAmount" column="TotalAmount" type="System.String" />
+    <property name="UsrName" column="UsrName" type="System.String" />
+    <property name="Paid" column="Paid" type="System.String" />
+    <property name="CustID" column="CustID" type="System.String" />
+    <property name="DriverID" column="DriverID" type="System.String" />
+    <property name="DriverName" column="DriverName" type="System.String" />
+    <property name="MenuAmount" column="MenuAmount" type="System.String" />
+    <property name="PayDiscount" column="PayDiscount" type="System.String" />
+    <property name="PayPerDiscount" column="PayPerDiscount" type="System.String" />
+    <property name="IsSave" column="IsSave" type="System.String" />
+    <property name="BusDate" column="BusDate" type="System.String" />
+    <property name="RefNum" column="RefNum" type="System.String" />
+    <property name="DeliveryFee" column="DeliveryFee" type="System.String" />
+    <property name="PaySurcharge" column="PaySurcharge" type="System.String" />
+    <property name="PayPerSurcharge" column="PayPerSurcharge" type="System.String" />
+    <property name="PayType1" column="PayType1" type="System.String" />
+    <property name="PayType2" column="PayType2" type="System.String" />
+    <property name="PayType3" column="PayType3" type="System.String" />
+    <property name="PayType4" column="PayType4" type="System.String" />
+    <property name="PayType5" column="PayType5" type="System.String" />
+    <property name="PayTypePay1" column="PayTypePay1" type="System.String" />
+    <property name="PayTypePay2" column="PayTypePay2" type="System.String" />
+    <property name="PayTypePay3" column="PayTypePay3" type="System.String" />
+    <property name="PayTypePay4" column="PayTypePay4" type="System.String" />
+    <property name="PayTypePay5" column="PayTypePay5" type="System.String" />
+    <property name="IsCancel" column="IsCancel" type="System.String" />
+    <property name="PayTime" column="PayTime" type="System.String" />
+    <property name="StaffID" column="StaffID" type="System.String" />
+    <property name="PayType" column="PayType" type="System.String" />
+    <property name="Change" column="Change" type="System.String" />
+  </class>
+
+</hibernate-mapping>
