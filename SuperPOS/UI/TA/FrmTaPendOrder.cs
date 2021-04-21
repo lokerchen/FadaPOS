@@ -137,6 +137,9 @@ namespace SuperPOS.UI.TA
 
         private void GetBindData(string orderType, int iDriver, bool isSaveOrder)
         {
+            System.Diagnostics.Stopwatch sw = new System.Diagnostics.Stopwatch();
+            sw.Start();
+
             CommonDAL.ShowMessage(this);
 
             var lstDb = from sPod in CommonData.GetShowAndPendOrderData
@@ -213,6 +216,10 @@ namespace SuperPOS.UI.TA
                 }
             }
 
+            sw.Stop();
+            TimeSpan ts = sw.Elapsed;
+            LogHelper.Info(@"FrmTaPendOrder GetBindData Time " + ts.TotalMilliseconds);
+
             CommonDAL.HideMessage(this);
         }
 
@@ -220,22 +227,29 @@ namespace SuperPOS.UI.TA
         {
             //CommonDAL.ShowMessage(this);
 
-            SystemData systemData = new SystemData();
+            //SystemData systemData = new SystemData();
             //systemData.GetTaCheckOrder();
             //systemData.GetTaCustomer();
             //systemData.GetUsrBase();
             //systemData.GetTaOrderItem();
 
             //systemData.GetShowAndPendOrderData("", strBusDate);
+            System.Diagnostics.Stopwatch sw = new System.Diagnostics.Stopwatch();
+            sw.Start();
+
             new SystemData().GetShowAndPendOrderData("", strBusDate);
 
             GetBindData("", 0, false);
 
+            sw.Stop();
+            TimeSpan ts = sw.Elapsed;
+            LogHelper.Info(@"FrmTaPendOrder_Load Time " + ts.TotalMilliseconds);
+
             BinLueDriver();
 
             //异步刷新CheckOrder和OrderItem
-            DelegateRefresh hd = DelegateMy.RefreshSomeInfo;
-            IAsyncResult rt = hd.BeginInvoke("3", strBusDate, "", null, null);
+            //DelegateRefresh hd = DelegateMy.RefreshSomeInfo;
+            //IAsyncResult rt = hd.BeginInvoke("3", strBusDate, "", null, null);
 
             asfc.controllInitializeSize(this);
 

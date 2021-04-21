@@ -46,6 +46,9 @@ namespace SuperPOS.UI
 
         private void btnCtlPanel_Click(object sender, EventArgs e)
         {
+            DelegateRefresh hd = DelegateMy.RefreshSomeInfo;
+            IAsyncResult rt = hd.BeginInvoke("9", strBusDate, "", null, null);
+
             FrmTaAdmin frmTaAdminMain = new FrmTaAdmin(usrID, usrName);
             frmTaAdminMain.ShowDialog();
         }

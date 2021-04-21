@@ -378,43 +378,51 @@ namespace SuperPOS.Common
         {
             using (ISession session = SessionFactory.OpenSession())
             {
-                string sql = "SELECT " +
-                             "CO.ID AS ID," +
-                             "CO.CheckCode AS CheckCode," +
-                             "CO.PayType1 AS PayType1," +
-                             "CO.PayType2 AS PayType2," +
-                             "CO.PayType3 AS PayType3," +
-                             "CO.PayType4 AS PayType4," +
-                             "CO.PayType5 AS PayType5," +
-                             "CO.PayOrderType AS PayOrderType," +
-                             "CO.PayTime AS PayTime," +
-                             "CO.TotalAmount AS TotalAmount," +
-                             "TD.DriverName AS DriverName," +
-                             "UB.UsrName AS UsrName," +
-                             "CO.CustomerID AS CustomerID," +
-                             "CO.PayPerDiscount AS PayPerDiscount," +
-                             "CO.PayDiscount AS PayDiscount," +
-                             "CO.MenuAmount AS MenuAmount," +
-                             "CO.BusDate AS BusDate," +
-                             "CO.Paid AS Paid," +
-                             "CO.RefNum AS RefNum," +
-                             "CO.DeliveryFee AS DeliveryFee," +
-                             "CO.StaffID AS StaffID," +
-                             "CO.PaySurcharge AS PaySurcharge," +
-                             "CO.PayTypePay1 AS PayTypePay1," +
-                             "CO.PayTypePay2 AS PayTypePay2," +
-                             "CO.PayTypePay3 AS PayTypePay3," +
-                             "CO.PayTypePay4 AS PayTypePay4," +
-                             "CO.PayTypePay5 AS PayTypePay5 " +
-                             "FROM Ta_CheckOrder CO " +
-                             "LEFT JOIN Usr_Base UB ON CO.StaffID = UB.ID " +
-                             "LEFT JOIN Ta_Driver TD ON CO.DriverID = TD.ID " +
-                             "WHERE CO.IsPaid = 'Y'";
-                //return session.CreateSQLQuery(sql).List<AccountSummaryInfo>();
+                //string sql = "SELECT " +
+                //             "CO.ID AS ID," +
+                //             "CO.CheckCode AS CheckCode," +
+                //             "CO.PayType1 AS PayType1," +
+                //             "CO.PayType2 AS PayType2," +
+                //             "CO.PayType3 AS PayType3," +
+                //             "CO.PayType4 AS PayType4," +
+                //             "CO.PayType5 AS PayType5," +
+                //             "CO.PayOrderType AS PayOrderType," +
+                //             "CO.PayTime AS PayTime," +
+                //             "CO.TotalAmount AS TotalAmount," +
+                //             "TD.DriverName AS DriverName," +
+                //             "UB.UsrName AS UsrName," +
+                //             "CO.CustomerID AS CustomerID," +
+                //             "CO.PayPerDiscount AS PayPerDiscount," +
+                //             "CO.PayDiscount AS PayDiscount," +
+                //             "CO.MenuAmount AS MenuAmount," +
+                //             "CO.BusDate AS BusDate," +
+                //             "CO.Paid AS Paid," +
+                //             "CO.RefNum AS RefNum," +
+                //             "CO.DeliveryFee AS DeliveryFee," +
+                //             "CO.StaffID AS StaffID," +
+                //             "CO.PaySurcharge AS PaySurcharge," +
+                //             "CO.PayTypePay1 AS PayTypePay1," +
+                //             "CO.PayTypePay2 AS PayTypePay2," +
+                //             "CO.PayTypePay3 AS PayTypePay3," +
+                //             "CO.PayTypePay4 AS PayTypePay4," +
+                //             "CO.PayTypePay5 AS PayTypePay5 " +
+                //             "FROM Ta_CheckOrder CO " +
+                //             "LEFT JOIN Usr_Base UB ON CO.StaffID = UB.ID " +
+                //             "LEFT JOIN Ta_Driver TD ON CO.DriverID = TD.ID " +
+                //             "WHERE CO.IsPaid = 'Y'";
+                //if (!string.IsNullOrEmpty(strDateTimeFrom) && !string.IsNullOrEmpty(strDateTimeTo))
+                //{
+                //    sql += "AND CO.PayTime BETWEEN '" + strDateTimeFrom + "' AND '" + strDateTimeTo + "'";
+                //}
+
+                string sql = "SELECT * FROM VIEW_AccountSummary WHERE ID != ''";
                 if (!string.IsNullOrEmpty(strDateTimeFrom) && !string.IsNullOrEmpty(strDateTimeTo))
                 {
-                    sql += "AND CO.PayTime BETWEEN '" + strDateTimeFrom + "' AND '" + strDateTimeTo + "'";
+                    sql += "AND PayTime BETWEEN '" + strDateTimeFrom + "' AND '" + strDateTimeTo + "'";
                 }
+
+                //return session.CreateSQLQuery(sql).List<AccountSummaryInfo>();
+
                 IList<object[]> query = session.CreateSQLQuery(sql).List<object[]>();
                 IList<AccountSummaryInfo> result = query.Select(s => new AccountSummaryInfo(
                                                    s[0] == null ? 0 : Convert.ToInt32(s[0]),
@@ -548,19 +556,24 @@ namespace SuperPOS.Common
         {
             using (ISession session = SessionFactory.OpenSession())
             {
-                string sql = "SELECT CO.ID AS ID, CO.CheckCode AS CheckCode, TC.cusPostcode AS CustPostCode, TC.cusPcZone AS CustPcZone, TC.cusAddr AS CustAddr, CO.PayOrderType AS PayOrderType, " +
-                             "TC.cusName AS CustName, TC.cusPhone AS CustPhone, CO.IsPaid AS IsPaid, CO.TotalAmount AS TotalAmount, UB.UsrName AS UsrName, CO.Paid AS Paid, CO.CustomerID AS CustID, " +
-                             "CO.DriverID AS DriverID, TD.DriverName AS DriverName, CO.MenuAmount AS MenuAmount, CO.PayDiscount AS PayDiscount, CO.PayPerDiscount AS PayPerDiscount, CO.IsSave AS IsSave, " +
-                             "CO.BusDate AS BusDate, CO.RefNum AS RefNum, CO.DeliveryFee AS DeliveryFee, CO.PaySurcharge AS PaySurcharge, CO.PayPerSurcharge AS PayPerSurcharge, " +
-                             "CO.PayType1 AS PayType1, CO.PayType2 AS PayType2, CO.PayType3 AS PayType3, CO.PayType4 AS PayType4, CO.PayType5 AS PayType5, " +
-                             "CO.PayTypePay1 AS PayTypePay1, CO.PayTypePay2 AS PayTypePay2, CO.PayTypePay3 AS PayTypePay3, CO.PayTypePay4 AS PayTypePay4, CO.PayTypePay5 AS PayTypePay5, " + 
-                             "CO.IsCancel AS IsCancel, CO.PayTime AS PayTime, CO.StaffID AS StaffID " +
-                             "FROM Ta_CheckOrder CO " +
-                             "LEFT JOIN Usr_Base UB ON CO.StaffID = UB.ID LEFT JOIN Ta_Driver TD ON CO.DriverID = TD.ID " +
-                             "LEFT JOIN Ta_Customer TC ON CO.CustomerID = TC.ID WHERE CO.CheckCode IS NOT NULL";
-                if (!string.IsNullOrEmpty(strOrderNum)) sql += " AND CO.CheckCode ='" + strOrderNum + "'";
-                if (!string.IsNullOrEmpty(strBusDate)) sql += " AND CO.BusDate='" + strBusDate + "'";
+                //string sql = "SELECT CO.ID AS ID, CO.CheckCode AS CheckCode, TC.cusPostcode AS CustPostCode, TC.cusPcZone AS CustPcZone, TC.cusAddr AS CustAddr, CO.PayOrderType AS PayOrderType, " +
+                //             "TC.cusName AS CustName, TC.cusPhone AS CustPhone, CO.IsPaid AS IsPaid, CO.TotalAmount AS TotalAmount, UB.UsrName AS UsrName, CO.Paid AS Paid, CO.CustomerID AS CustID, " +
+                //             "CO.DriverID AS DriverID, TD.DriverName AS DriverName, CO.MenuAmount AS MenuAmount, CO.PayDiscount AS PayDiscount, CO.PayPerDiscount AS PayPerDiscount, CO.IsSave AS IsSave, " +
+                //             "CO.BusDate AS BusDate, CO.RefNum AS RefNum, CO.DeliveryFee AS DeliveryFee, CO.PaySurcharge AS PaySurcharge, CO.PayPerSurcharge AS PayPerSurcharge, " +
+                //             "CO.PayType1 AS PayType1, CO.PayType2 AS PayType2, CO.PayType3 AS PayType3, CO.PayType4 AS PayType4, CO.PayType5 AS PayType5, " +
+                //             "CO.PayTypePay1 AS PayTypePay1, CO.PayTypePay2 AS PayTypePay2, CO.PayTypePay3 AS PayTypePay3, CO.PayTypePay4 AS PayTypePay4, CO.PayTypePay5 AS PayTypePay5, " + 
+                //             "CO.IsCancel AS IsCancel, CO.PayTime AS PayTime, CO.StaffID AS StaffID " +
+                //             "FROM Ta_CheckOrder CO " +
+                //             "LEFT JOIN Usr_Base UB ON CO.StaffID = UB.ID LEFT JOIN Ta_Driver TD ON CO.DriverID = TD.ID " +
+                //             "LEFT JOIN Ta_Customer TC ON CO.CustomerID = TC.ID WHERE CO.CheckCode IS NOT NULL";
+                //if (!string.IsNullOrEmpty(strOrderNum)) sql += " AND CO.CheckCode ='" + strOrderNum + "'";
+                //if (!string.IsNullOrEmpty(strBusDate)) sql += " AND CO.BusDate='" + strBusDate + "'";
+                string sql = "SELECT * FROM VIEW_ShowAndPendOrder WHERE ID != '' ";
+                if (!string.IsNullOrEmpty(strOrderNum)) sql += " AND CheckCode ='" + strOrderNum + "'";
+                if (!string.IsNullOrEmpty(strBusDate)) sql += " AND BusDate='" + strBusDate + "'";
+
                 IList<object[]> query = session.CreateSQLQuery(sql).List<object[]>();
+
                 IList<ShowAndPendOrderDataInfo> result = query.Select(s => new ShowAndPendOrderDataInfo(
                                                                         s[0] == null ? 0 : Convert.ToInt32(s[0]),
                                                                         s[1]?.ToString() ?? "",

@@ -101,6 +101,9 @@ namespace SuperPOS.UI.TA
             //sysData.GetTaOrderItem();
             //sysData.GetTaPreview();
 
+            System.Diagnostics.Stopwatch sw = new System.Diagnostics.Stopwatch();
+            sw.Start();
+
             new SystemData().GetAccountSummary("", "");
             lstAccountSummaryInfos = CommonData.GetAccountSummaryInfos;
 
@@ -111,7 +114,11 @@ namespace SuperPOS.UI.TA
             deDay.Text = DateTime.Now.ToString(PubComm.DATE_TIME_FORMAT, DateTimeFormatInfo.InvariantInfo);
 
             GetBindData(deDay.Text);
-            
+
+            sw.Stop();
+            TimeSpan ts = sw.Elapsed;
+            LogHelper.Info(@"FrmAccountSummary_Load Time " + ts.TotalMilliseconds);
+
             //richEditCtlPreview.Font = new Font(@"Courier New", 10f);
 
             //if (CommonData.TaPreview.Any())
@@ -134,7 +141,7 @@ namespace SuperPOS.UI.TA
 
             asfc.controllInitializeSize(this);
 
-            sysData.GetTaOrderItem();
+            //sysData.GetTaOrderItem();
         }
 
         #region 窗口大小自动改变
@@ -156,6 +163,10 @@ namespace SuperPOS.UI.TA
         /// <param name="busDate">营业日</param>
         private void GetBindData(string busDate)
         {
+
+            System.Diagnostics.Stopwatch sw = new System.Diagnostics.Stopwatch();
+            sw.Start();
+
             var lstDb = lstAccountSummaryInfos;
 
             gridControlTaShowOrder.DataSource = !string.IsNullOrEmpty(busDate)
@@ -165,6 +176,10 @@ namespace SuperPOS.UI.TA
             gvTaShowOrder.FocusedRowHandle = gvTaShowOrder.RowCount - 1;
 
             SetTxtContent(busDate);
+
+            sw.Stop();
+            TimeSpan ts = sw.Elapsed;
+            LogHelper.Info(@"FrmAccountSummary GetBindData Time " + ts.TotalMilliseconds);
         }
         #endregion
 
