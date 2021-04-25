@@ -126,7 +126,7 @@ namespace SuperPOS.UI.TA
                 string strSqlWhere = "";
                 DynamicParameters dynamicParams = new DynamicParameters();
 
-                strSqlWhere = "WHERE CheckCode=@CheckCode AND BusDate=@BusDate";
+                strSqlWhere = " CheckCode=@CheckCode AND BusDate=@BusDate";
 
                 dynamicParams.Add("BusDate", checkID);
                 dynamicParams.Add("CheckCode", strBusDate);

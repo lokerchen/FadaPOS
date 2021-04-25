@@ -424,15 +424,22 @@ namespace SuperPOS.UI.TA
 
         private void btnPay_Click(object sender, EventArgs e)
         {
+            Stopwatch sw = new Stopwatch();
+            sw.Start();
+
             string strSqlWhere = "";
             DynamicParameters dynamicParams = new DynamicParameters();
 
-            strSqlWhere = "WHERE CheckCode=@CheckCode AND BusDate=@BusDate";
+            strSqlWhere = "CheckCode=@CheckCode AND BusDate=@BusDate";
 
             dynamicParams.Add("BusDate", checkBusDate);
             dynamicParams.Add("CheckCode", checkCode);
             
             List<TaOrderItemInfo> lstOi = new SQLiteDbHelper().QueryMultiByWhere<TaOrderItemInfo>("Ta_OrderItem", strSqlWhere, dynamicParams);
+
+            sw.Stop();
+            TimeSpan ts = sw.Elapsed;
+            Console.WriteLine("Time {0}", ts.TotalMilliseconds);
 
             //SystemData systemData = new SystemData();
             //systemData.GetTaCheckOrder();

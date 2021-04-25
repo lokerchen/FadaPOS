@@ -10,11 +10,13 @@ using System.Linq;
 using System.Runtime.InteropServices;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Dapper;
 using DevExpress.XtraEditors;
 using DevExpress.XtraGrid.Views.Grid.ViewInfo;
 using DevExpress.XtraTreeList;
 using DevExpress.XtraTreeList.Nodes;
 using SuperPOS.Common;
+using SuperPOS.Dapper;
 using SuperPOS.Domain.Entities;
 using SuperPOS.Print;
 
@@ -796,8 +798,10 @@ namespace SuperPOS.UI.TA
             //    }
             //}
 
-            DelegateOrderItemSaveAndDeleteOld handler = DelegateMy.SaveOrderItemAndDeleteOld;
-            IAsyncResult result = handler.BeginInvoke(checkID, strBusDate, lstTaOI, null, null);
+            OrderItemDeleteAndInsert(lstTaOI);
+            
+            //DelegateOrderItemSaveAndDeleteOld handler = DelegateMy.SaveOrderItemAndDeleteOld;
+            //IAsyncResult result = handler.BeginInvoke(checkID, strBusDate, lstTaOI, null, null);
 
             #endregion
 
@@ -2863,46 +2867,6 @@ namespace SuperPOS.UI.TA
         }
         #endregion
 
-        private string GetPayType()
-        {
-            new SystemData().GetTaCheckOrder();
-            var lstChk = CommonData.TaCheckOrder.Where(s => s.CheckCode.Equals(checkID) && s.BusDate.Equals(strBusDate));
-
-            string strPt = "Paid By ";
-
-            if (lstChk.Any())
-            {
-                TaCheckOrderInfo taCheckOrder = lstChk.FirstOrDefault();
-
-                if (Convert.ToDecimal(taCheckOrder.PayTypePay1) > 0)
-                {
-                    strPt += taCheckOrder.PayType1 + " ";
-                }
-
-                if (Convert.ToDecimal(taCheckOrder.PayTypePay2) > 0)
-                {
-                    strPt += taCheckOrder.PayType2 + " ";
-                }
-
-                if (Convert.ToDecimal(taCheckOrder.PayTypePay3) > 0)
-                {
-                    strPt += taCheckOrder.PayType3 + " ";
-                }
-
-                if (Convert.ToDecimal(taCheckOrder.PayTypePay4) > 0)
-                {
-                    strPt += taCheckOrder.PayType4 + " ";
-                }
-
-                if (Convert.ToDecimal(taCheckOrder.PayTypePay5) > 0)
-                {
-                    strPt += taCheckOrder.PayType5 + " ";
-                }
-            }
-
-            return strPt;
-        }
-
         private void SetCustClear()
         {
             SetCustInfo(true, false, null);
@@ -3508,7 +3472,17 @@ namespace SuperPOS.UI.TA
 
             ChangeOrderBtnColor(ORDER_TYPE);
 
-            InitGrid(CommonData.TaOrderItem.Where(s => s.CheckCode.Equals(checkID) && s.BusDate.Equals(strBusDate)).ToList());
+            string strSqlWhere = "";
+            DynamicParameters dynamicParams = new DynamicParameters();
+
+            strSqlWhere = "CheckCode=@CheckCode AND BusDate=@BusDate";
+
+            dynamicParams.Add("BusDate", strBusDate);
+            dynamicParams.Add("CheckCode", checkID);
+
+            List<TaOrderItemInfo> lstOi = new SQLiteDbHelper().QueryMultiByWhere<TaOrderItemInfo>("Ta_OrderItem", strSqlWhere, dynamicParams);
+
+            InitGrid(lstOi);
 
             treeListOrder.ExpandAll();
 
@@ -3524,6 +3498,38 @@ namespace SuperPOS.UI.TA
 
             DelegateRefresh hd = DelegateMy.RefreshSomeInfo;
             IAsyncResult rt = hd.BeginInvoke("8", strBusDate, "", null, null);
+        }
+
+        private void OrderItemDeleteAndInsert(List<TaOrderItemInfo> lstOi)
+        {
+            Stopwatch sw = new Stopwatch();
+            sw.Start();
+
+            string strSqlWhere = "";
+            DynamicParameters dynamicParams = new DynamicParameters();
+
+            strSqlWhere = "CheckCode=@CheckCode AND BusDate=@BusDate";
+
+            dynamicParams.Add("BusDate", strBusDate);
+            dynamicParams.Add("CheckCode", checkID);
+
+            new SQLiteDbHelper().Delete<TaOrderItemInfo>("Ta_OrderItem", strSqlWhere, dynamicParams);
+
+            sw.Stop();
+            TimeSpan ts = sw.Elapsed;
+            Console.WriteLine("Time {0}", ts.TotalMilliseconds);
+
+            Stopwatch sw1 = new Stopwatch();
+            sw1.Start();
+
+            strSqlWhere = "INSERT INTO Ta_OrderItem (ItemID, ItemCode, ItemDishName, ItemDishOtherName, ItemQty, ItemPrice, ItemTotalPrice, CheckCode, ItemType, ItemParent, " +
+                          "OrderTime, OrderStaff, IsCancel, BusDate, MenuItemID, IsDiscount) VALUES(@ItemID, @ItemCode, @ItemDishName, @ItemDishOtherName, @ItemQty, @ItemPrice, " +
+                          "@ItemTotalPrice, @CheckCode, @ItemType, @ItemParent, @OrderTime, @OrderStaff, @IsCancel, @BusDate, @MenuItemID, @IsDiscount);";
+            bool isSucess = new SQLiteDbHelper().InsertMulti(strSqlWhere, lstOi);
+
+            sw1.Stop();
+            TimeSpan ts1 = sw1.Elapsed;
+            Console.WriteLine("Time1 {0}", ts1.TotalMilliseconds);
         }
     }
 }

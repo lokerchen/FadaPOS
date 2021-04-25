@@ -66,5 +66,8 @@ namespace SuperPOS.Domain.Entities
         //是否折扣
         [XmlElement(ElementName = "IsDiscount")]
         public virtual string IsDiscount { get; set; }
+
+        [XmlElement(ElementName = "IsCancel")]
+        public virtual string IsCancel { get; set; }
     }
 }

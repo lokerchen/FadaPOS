@@ -23,6 +23,7 @@
     <property name="BusDate" column="BusDate" type="System.String" />
     <property name="MenuItemID" column="MenuItemID" type="System.Int32" />
     <property name="IsDiscount" column="IsDiscount" type="System.String" />
+    <property name="IsCancel" column="IsCancel" type="System.String" />
   </class>
 
 </hibernate-mapping>
