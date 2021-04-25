@@ -338,12 +338,8 @@ namespace SuperPOS.UI.TA
 
             System.Diagnostics.Stopwatch sw1 = new System.Diagnostics.Stopwatch();
             sw1.Start();
-
-            string strSqlWhere = "";
-            DynamicParameters dynamicParams = new DynamicParameters();
-
             
-            List<ShowAndPendOrderDataInfo> lstTmp = new SQLiteDbHelper().QueryMultiByWhere<ShowAndPendOrderDataInfo>("VIEW_ShowAndPendOrder", strSqlWhere, null);
+            List<ShowAndPendOrderDataInfo> lstTmp = new SQLiteDbHelper().QueryMultiByWhere<ShowAndPendOrderDataInfo>("VIEW_ShowAndPendOrder", "", null);
 
             GetBindData(lstTmp, "", 0, false);
 
@@ -428,13 +424,23 @@ namespace SuperPOS.UI.TA
 
         private void btnPay_Click(object sender, EventArgs e)
         {
+            string strSqlWhere = "";
+            DynamicParameters dynamicParams = new DynamicParameters();
+
+            strSqlWhere = "WHERE CheckCode=@CheckCode AND BusDate=@BusDate";
+
+            dynamicParams.Add("BusDate", checkBusDate);
+            dynamicParams.Add("CheckCode", checkCode);
+            
+            List<TaOrderItemInfo> lstOi = new SQLiteDbHelper().QueryMultiByWhere<TaOrderItemInfo>("Ta_OrderItem", strSqlWhere, dynamicParams);
+
             //SystemData systemData = new SystemData();
             //systemData.GetTaCheckOrder();
             TaCheckOrderInfo taCheckOrderInfo = CommonData.TaCheckOrder.FirstOrDefault(s => s.CheckCode.Equals(checkCode) && s.BusDate.Equals(checkBusDate));
 
             if (checkOrderType.Equals(PubComm.ORDER_TYPE_SHOP))
             {
-                FrmTaPaymentShop frmTaPaymentShop = new FrmTaPaymentShop(usrID, checkCode, checkOrderType, checkCustID.ToString(), SetPrtInfo(), checkBusDate, taCheckOrderInfo, "");
+                FrmTaPaymentShop frmTaPaymentShop = new FrmTaPaymentShop(lstOi, usrID, checkCode, checkOrderType, checkCustID.ToString(), SetPrtInfo(), checkBusDate, taCheckOrderInfo, "");
 
                 if (frmTaPaymentShop.ShowDialog() == DialogResult.OK)
                 {
@@ -450,7 +456,7 @@ namespace SuperPOS.UI.TA
             }
             else if (checkOrderType.Equals(PubComm.ORDER_TYPE_DELIVERY))
             {
-                FrmTaPaymentDelivery frmTaPaymentDelivery = new FrmTaPaymentDelivery(usrID, checkCode, checkOrderType, checkCustID.ToString(), SetPrtInfo(), checkBusDate, taCheckOrderInfo, "");
+                FrmTaPaymentDelivery frmTaPaymentDelivery = new FrmTaPaymentDelivery(lstOi, usrID, checkCode, checkOrderType, checkCustID.ToString(), SetPrtInfo(), checkBusDate, taCheckOrderInfo, "");
 
                 if (frmTaPaymentDelivery.ShowDialog() == DialogResult.OK)
                 {
@@ -467,7 +473,7 @@ namespace SuperPOS.UI.TA
             }
             else if (checkOrderType.Equals(PubComm.ORDER_TYPE_COLLECTION))
             {
-                FrmTaPaymentCollection frmTaPaymentCollection = new FrmTaPaymentCollection(usrID, checkCode, checkOrderType, checkCustID.ToString(), SetPrtInfo(), checkBusDate, taCheckOrderInfo, "");
+                FrmTaPaymentCollection frmTaPaymentCollection = new FrmTaPaymentCollection(lstOi, usrID, checkCode, checkOrderType, checkCustID.ToString(), SetPrtInfo(), checkBusDate, taCheckOrderInfo, "");
 
                 if (frmTaPaymentCollection.ShowDialog() == DialogResult.OK)
                 {
@@ -476,22 +482,6 @@ namespace SuperPOS.UI.TA
                         //new SystemData().GetShowAndPendOrderData("", strBusDate);
                         //GetBindData("", 0, false);
 
-                        List<ShowAndPendOrderDataInfo> lstTmp = new SQLiteDbHelper().QueryMultiByWhere<ShowAndPendOrderDataInfo>("VIEW_ShowAndPendOrder", "", null);
-
-                        GetBindData(lstTmp, "", 0, false);
-                    }
-                }
-            }
-            else
-            {
-                FrmTaPayment frmTaPayment = new FrmTaPayment(usrID, checkCode, checkOrderType, checkCustID.ToString(), SetPrtInfo(), checkBusDate);
-
-                if (frmTaPayment.ShowDialog() == DialogResult.OK)
-                {
-                    if (frmTaPayment.returnPaid)
-                    {
-                        //new SystemData().GetShowAndPendOrderData("", strBusDate);
-                        //GetBindData("", 0, false);
                         List<ShowAndPendOrderDataInfo> lstTmp = new SQLiteDbHelper().QueryMultiByWhere<ShowAndPendOrderDataInfo>("VIEW_ShowAndPendOrder", "", null);
 
                         GetBindData(lstTmp, "", 0, false);

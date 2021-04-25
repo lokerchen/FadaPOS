@@ -5,8 +5,10 @@ using System.Diagnostics;
 using System.Drawing;
 using System.Linq;
 using System.Windows.Forms;
+using Dapper;
 using DevExpress.XtraEditors;
 using SuperPOS.Common;
+using SuperPOS.Dapper;
 using SuperPOS.Domain.Entities;
 using SuperPOS.Print;
 
@@ -82,21 +84,7 @@ namespace SuperPOS.UI.TA
             callerID = caller;
             htDetail = ht;
         }
-
-        public FrmTaPaymentShop(int id, string chkId, string type, string caller, Hashtable ht, string sBusDate, TaCheckOrderInfo taCheckOrder, string sReadyTime)
-        {
-            InitializeComponent();
-
-            usrID = id;
-            checkID = chkId;
-            orderType = type;
-            callerID = caller;
-            htDetail = ht;
-            strBusDate = sBusDate;
-            saveTaCheckOrderInfo = taCheckOrder;
-            strReadyTime = sReadyTime;
-        }
-
+        
         public FrmTaPaymentShop(List<TaOrderItemInfo> lsOi, int id, string chkId, string type, string caller, Hashtable ht, string sBusDate, TaCheckOrderInfo taCheckOrder, string sReadyTime)
         {
             InitializeComponent();
@@ -110,16 +98,6 @@ namespace SuperPOS.UI.TA
             saveTaCheckOrderInfo = taCheckOrder;
             strReadyTime = sReadyTime;
             lstOrderItemInfos = lsOi;
-        }
-
-        public FrmTaPaymentShop(int id, string chkId, string type, Hashtable ht)
-        {
-            InitializeComponent();
-
-            usrID = id;
-            checkID = chkId;
-            orderType = type;
-            htDetail = ht;
         }
 
         public FrmTaPaymentShop(int id, string chkId, string type, Hashtable ht, string sBusDate, TaCheckOrderInfo taCheckOrder)
@@ -142,6 +120,19 @@ namespace SuperPOS.UI.TA
 
             //订单类型
             lblTypeName.Text = PubComm.ORDER_TYPE_SHOP;
+
+            if (lstOrderItemInfos == null)
+            {
+                string strSqlWhere = "";
+                DynamicParameters dynamicParams = new DynamicParameters();
+
+                strSqlWhere = "WHERE CheckCode=@CheckCode AND BusDate=@BusDate";
+
+                dynamicParams.Add("BusDate", checkID);
+                dynamicParams.Add("CheckCode", strBusDate);
+
+                lstOrderItemInfos = new SQLiteDbHelper().QueryMultiByWhere<TaOrderItemInfo>("Ta_OrderItem", strSqlWhere, dynamicParams);
+            }
 
             SetPayType();
 
