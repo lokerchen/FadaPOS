@@ -9,8 +9,10 @@ using System.Text;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Dapper;
 using DevExpress.XtraEditors;
 using SuperPOS.Common;
+using SuperPOS.Dapper;
 using SuperPOS.Domain.Entities;
 using SuperPOS.Print;
 
@@ -119,12 +121,13 @@ namespace SuperPOS.UI.TA
             InitializeComponent();
         }
 
-        public FrmTaPendOrder(int uID, int iLanguage, bool isFrmConnectPhone)
+        public FrmTaPendOrder(int uID, int iLanguage, bool isFrmConnectPhone, string sBusDate)
         {
             InitializeComponent();
             usrID = uID;
             iLang = iLanguage;
             isConnectPhone = isFrmConnectPhone;
+            //strBusDate = sBusDate;
         }
 
         public FrmTaPendOrder(string sOrderNo, string sBusDate, string sCustPhone)
@@ -223,6 +226,94 @@ namespace SuperPOS.UI.TA
             CommonDAL.HideMessage(this);
         }
 
+        private void GetBindData(List<ShowAndPendOrderDataInfo> lstShowAndPendOrderDataInfos, string orderType, int iDriver, bool isSaveOrder)
+        {
+            System.Diagnostics.Stopwatch sw = new System.Diagnostics.Stopwatch();
+            sw.Start();
+
+            CommonDAL.ShowMessage(this);
+
+            var lstDb = from sPod in lstShowAndPendOrderDataInfos
+                        where !sPod.IsPaid.Equals(@"Y") && !sPod.IsCancel.Equals(@"Y")
+                        select new
+                        {
+                            ID = sPod.ID,
+                            CheckCode = sPod.CheckCode,
+                            OrderTime = sPod.PayTime,
+                            PostCode = string.IsNullOrEmpty(sPod.CustPostCode) ? "" : sPod.CustPostCode,
+                            PostCodeZone = string.IsNullOrEmpty(sPod.CustPcZone) ? "" : sPod.CustPcZone,
+                            Addr = string.IsNullOrEmpty(sPod.CustAddr) ? "" : sPod.CustAddr,
+                            PayOrderType = sPod.PayOrderType,
+                            CustomerName = string.IsNullOrEmpty(sPod.CustName) ? "" : sPod.CustName,
+                            CustomerPhone = string.IsNullOrEmpty(sPod.CustPhone) ? "" : sPod.CustPhone,
+                            IsPaid = sPod.IsPaid,
+                            TotalAmount = sPod.TotalAmount,
+                            StaffName = string.IsNullOrEmpty(sPod.UsrName) ? "" : sPod.UsrName,
+                            Paid = string.IsNullOrEmpty(sPod.Paid) ? "" : sPod.Paid,
+                            CustID = Convert.ToInt32(sPod.CustID),
+                            DriverID = sPod.DriverID,
+                            DriverName = string.IsNullOrEmpty(sPod.DriverName) ? "" : sPod.DriverName,
+                            MenuAmount = sPod.MenuAmount,
+                            Discount = string.IsNullOrEmpty(sPod.PayDiscount) ? "" : sPod.PayDiscount,
+                            DiscountPer = string.IsNullOrEmpty(sPod.PayPerDiscount) ? "" : sPod.PayPerDiscount,
+                            IsSave = string.IsNullOrEmpty(sPod.IsSave) ? "" : sPod.IsSave,
+                            OtherCheckCode = !sPod.IsSave.Equals("N") ? " " : sPod.CheckCode,
+                            gridBusDate = sPod.BusDate,
+                            gridRefNum = string.IsNullOrEmpty(sPod.RefNum) ? "" : sPod.RefNum,
+                            gridDeliveryFee = string.IsNullOrEmpty(sPod.DeliveryFee) ? "" : sPod.DeliveryFee,
+                            gridSurcharge = string.IsNullOrEmpty(sPod.PaySurcharge) ? "" : sPod.PaySurcharge
+                        };
+
+            if (isSaveOrder)
+                lstDb = lstDb.Where(s => s.IsSave.Equals("Y"));
+
+            var lstTmp = lstDb;
+
+            switch (iDriver)
+            {
+                case 1:
+                    lstTmp = lstDb.Where(s => !string.IsNullOrEmpty(s.DriverName));
+                    break;
+                case 2:
+                    lstTmp = lstDb.Where(s => string.IsNullOrEmpty(s.DriverName));
+                    break;
+                default:
+                    lstTmp = lstDb;
+                    break;
+            }
+
+            gridControlTaPendOrder.DataSource = !string.IsNullOrEmpty(orderType)
+                                                ? lstTmp.Where(s => s.PayOrderType.Equals(orderType) && string.IsNullOrEmpty(s.DriverName)).ToList()
+                                                : lstTmp.ToList();
+            gvTaPendOrder.FocusedRowHandle = gvTaPendOrder.RowCount - 1;
+            gvTaPendOrder.Columns["OrderTime"].BestFit();
+
+            txtTotal.Text = lstTmp.Sum(s => Convert.ToDecimal(string.IsNullOrEmpty(s.TotalAmount) ? "0.00" : s.TotalAmount)).ToString();
+
+            if (!string.IsNullOrEmpty(strOrderNo) && !string.IsNullOrEmpty(strBusDate) && !string.IsNullOrEmpty(strCustPhone))
+            {
+                if (gvTaPendOrder.FocusedRowHandle >= 0)
+                {
+                    for (int i = 0; i < gvTaPendOrder.RowCount; i++)
+                    {
+                        string colValue = gvTaPendOrder.GetRowCellValue(i, "CheckCode").ToString();
+
+                        if (colValue.Equals(strCustPhone))
+                        {
+                            gvTaPendOrder.FocusedRowHandle = i;
+                            break;
+                        }
+                    }
+                }
+            }
+
+            sw.Stop();
+            TimeSpan ts = sw.Elapsed;
+            LogHelper.Info(@"FrmTaPendOrder GetBindData Time " + ts.TotalMilliseconds);
+
+            CommonDAL.HideMessage(this);
+        }
+
         private void FrmTaPendOrder_Load(object sender, EventArgs e)
         {
             //CommonDAL.ShowMessage(this);
@@ -234,17 +325,33 @@ namespace SuperPOS.UI.TA
             //systemData.GetTaOrderItem();
 
             //systemData.GetShowAndPendOrderData("", strBusDate);
-            System.Diagnostics.Stopwatch sw = new System.Diagnostics.Stopwatch();
-            sw.Start();
+            //System.Diagnostics.Stopwatch sw = new System.Diagnostics.Stopwatch();
+            //sw.Start();
 
-            new SystemData().GetShowAndPendOrderData("", strBusDate);
+            //new SystemData().GetShowAndPendOrderData("", strBusDate);
+            //GetBindData("", 0, false);
 
-            GetBindData("", 0, false);
+            //sw.Stop();
+            //TimeSpan ts = sw.Elapsed;
+            //Console.WriteLine(@"FrmTaPendOrder_Load Time " + ts.TotalMilliseconds);
 
-            sw.Stop();
-            TimeSpan ts = sw.Elapsed;
-            LogHelper.Info(@"FrmTaPendOrder_Load Time " + ts.TotalMilliseconds);
 
+            System.Diagnostics.Stopwatch sw1 = new System.Diagnostics.Stopwatch();
+            sw1.Start();
+
+            string strSqlWhere = "";
+            DynamicParameters dynamicParams = new DynamicParameters();
+
+            
+            List<ShowAndPendOrderDataInfo> lstTmp = new SQLiteDbHelper().QueryMultiByWhere<ShowAndPendOrderDataInfo>("VIEW_ShowAndPendOrder", strSqlWhere, null);
+
+            GetBindData(lstTmp, "", 0, false);
+
+            sw1.Stop();
+            TimeSpan ts1 = sw1.Elapsed;
+            Console.WriteLine(@"FrmTaPendOrder_Load Time1:" + ts1.TotalMilliseconds);
+            LogHelper.Info(@"FrmTaPendOrder_Load Time1:" + ts1.TotalMilliseconds);
+            
             BinLueDriver();
 
             //异步刷新CheckOrder和OrderItem
@@ -333,8 +440,11 @@ namespace SuperPOS.UI.TA
                 {
                     if (frmTaPaymentShop.returnPaid)
                     {
-                        new SystemData().GetShowAndPendOrderData("", strBusDate);
-                        GetBindData("", 0, false);
+                        //new SystemData().GetShowAndPendOrderData("", strBusDate);
+                        //GetBindData("", 0, false);
+                        List<ShowAndPendOrderDataInfo> lstTmp = new SQLiteDbHelper().QueryMultiByWhere<ShowAndPendOrderDataInfo>("VIEW_ShowAndPendOrder", "", null);
+
+                        GetBindData(lstTmp, "", 0, false);
                     }
                 }
             }
@@ -346,8 +456,12 @@ namespace SuperPOS.UI.TA
                 {
                     if (frmTaPaymentDelivery.returnPaid)
                     {
-                        new SystemData().GetShowAndPendOrderData("", strBusDate);
-                        GetBindData("", 0, false);
+                        //new SystemData().GetShowAndPendOrderData("", strBusDate);
+                        //GetBindData("", 0, false);
+
+                        List<ShowAndPendOrderDataInfo> lstTmp = new SQLiteDbHelper().QueryMultiByWhere<ShowAndPendOrderDataInfo>("VIEW_ShowAndPendOrder", "", null);
+
+                        GetBindData(lstTmp, "", 0, false);
                     }
                 }
             }
@@ -359,8 +473,12 @@ namespace SuperPOS.UI.TA
                 {
                     if (frmTaPaymentCollection.returnPaid)
                     {
-                        new SystemData().GetShowAndPendOrderData("", strBusDate);
-                        GetBindData("", 0, false);
+                        //new SystemData().GetShowAndPendOrderData("", strBusDate);
+                        //GetBindData("", 0, false);
+
+                        List<ShowAndPendOrderDataInfo> lstTmp = new SQLiteDbHelper().QueryMultiByWhere<ShowAndPendOrderDataInfo>("VIEW_ShowAndPendOrder", "", null);
+
+                        GetBindData(lstTmp, "", 0, false);
                     }
                 }
             }
@@ -372,8 +490,11 @@ namespace SuperPOS.UI.TA
                 {
                     if (frmTaPayment.returnPaid)
                     {
-                        new SystemData().GetShowAndPendOrderData("", strBusDate);
-                        GetBindData("", 0, false);
+                        //new SystemData().GetShowAndPendOrderData("", strBusDate);
+                        //GetBindData("", 0, false);
+                        List<ShowAndPendOrderDataInfo> lstTmp = new SQLiteDbHelper().QueryMultiByWhere<ShowAndPendOrderDataInfo>("VIEW_ShowAndPendOrder", "", null);
+
+                        GetBindData(lstTmp, "", 0, false);
                     }
                 }
             }
@@ -381,22 +502,30 @@ namespace SuperPOS.UI.TA
 
         private void btnDelivery_Click(object sender, EventArgs e)
         {
-            GetBindData(PubComm.ORDER_TYPE_DELIVERY, 0, false);
+            List<ShowAndPendOrderDataInfo> lstTmp = new SQLiteDbHelper().QueryMultiByWhere<ShowAndPendOrderDataInfo>("VIEW_ShowAndPendOrder", "", null);
+
+            GetBindData(lstTmp, PubComm.ORDER_TYPE_DELIVERY, 0, false);
         }
 
         private void btnCollection_Click(object sender, EventArgs e)
         {
-            GetBindData(PubComm.ORDER_TYPE_COLLECTION, 0, false);
+            List<ShowAndPendOrderDataInfo> lstTmp = new SQLiteDbHelper().QueryMultiByWhere<ShowAndPendOrderDataInfo>("VIEW_ShowAndPendOrder", "", null);
+
+            GetBindData(lstTmp, PubComm.ORDER_TYPE_COLLECTION, 0, false);
         }
 
         private void btnShop_Click(object sender, EventArgs e)
         {
-            GetBindData(PubComm.ORDER_TYPE_SHOP, 0, false);
+            List<ShowAndPendOrderDataInfo> lstTmp = new SQLiteDbHelper().QueryMultiByWhere<ShowAndPendOrderDataInfo>("VIEW_ShowAndPendOrder", "", null);
+
+            GetBindData(lstTmp, PubComm.ORDER_TYPE_SHOP, 0, false);
         }
 
         private void btnAll_Click(object sender, EventArgs e)
         {
-            GetBindData("", 0, false);
+            List<ShowAndPendOrderDataInfo> lstTmp = new SQLiteDbHelper().QueryMultiByWhere<ShowAndPendOrderDataInfo>("VIEW_ShowAndPendOrder", "", null);
+
+            GetBindData(lstTmp, "", 0, false);
         }
 
         #region 设置打印相关信息
@@ -529,17 +658,23 @@ namespace SuperPOS.UI.TA
 
         private void btnShowAll_Click(object sender, EventArgs e)
         {
-            GetBindData("", 0, false);
+            List<ShowAndPendOrderDataInfo> lstTmp = new SQLiteDbHelper().QueryMultiByWhere<ShowAndPendOrderDataInfo>("VIEW_ShowAndPendOrder", "", null);
+
+            GetBindData(lstTmp, "", 0, false);
         }
 
         private void btnShowAssigned_Click(object sender, EventArgs e)
         {
-            GetBindData("", 1, false);
+            List<ShowAndPendOrderDataInfo> lstTmp = new SQLiteDbHelper().QueryMultiByWhere<ShowAndPendOrderDataInfo>("VIEW_ShowAndPendOrder", "", null);
+
+            GetBindData(lstTmp, "", 1, false);
         }
 
         private void btnShowUnAssigned_Click(object sender, EventArgs e)
         {
-            GetBindData("", 2, false);
+            List<ShowAndPendOrderDataInfo> lstTmp = new SQLiteDbHelper().QueryMultiByWhere<ShowAndPendOrderDataInfo>("VIEW_ShowAndPendOrder", "", null);
+
+            GetBindData(lstTmp, "", 2, false);
         }
 
         private void btnAssignDriver_Click(object sender, EventArgs e)
@@ -561,7 +696,9 @@ namespace SuperPOS.UI.TA
                 //_control.UpdateEntity(taCheckOrderInfo);
             }
 
-            GetBindData("", 0, false);
+            List<ShowAndPendOrderDataInfo> lstTmp = new SQLiteDbHelper().QueryMultiByWhere<ShowAndPendOrderDataInfo>("VIEW_ShowAndPendOrder", "", null);
+
+            GetBindData(lstTmp, "", 0, false);
         }
 
         #region 绑定Driver
@@ -604,12 +741,16 @@ namespace SuperPOS.UI.TA
 
         private void btnSaveOrder_Click(object sender, EventArgs e)
         {
-            GetBindData("", 0, true);
+            List<ShowAndPendOrderDataInfo> lstTmp = new SQLiteDbHelper().QueryMultiByWhere<ShowAndPendOrderDataInfo>("VIEW_ShowAndPendOrder", "", null);
+
+            GetBindData(lstTmp, "", 0, false);
         }
 
         private void btnNotPaid_Click(object sender, EventArgs e)
         {
-            GetBindData("", 0, false);
+            List<ShowAndPendOrderDataInfo> lstTmp = new SQLiteDbHelper().QueryMultiByWhere<ShowAndPendOrderDataInfo>("VIEW_ShowAndPendOrder", "", null);
+
+            GetBindData(lstTmp, "", 0, false);
         }
     }
 }

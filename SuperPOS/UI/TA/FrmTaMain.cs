@@ -917,7 +917,7 @@ namespace SuperPOS.UI.TA
 
                     treeListOrder.Nodes.Clear();
 
-                    FrmTaPendOrder frmTaPendOrder = new FrmTaPendOrder(usrID, iLangStatusId, isConnectPhone);
+                    FrmTaPendOrder frmTaPendOrder = new FrmTaPendOrder(usrID, iLangStatusId, isConnectPhone, strBusDate);
                     //this.Hide();
                     if (frmTaPendOrder.ShowDialog() == DialogResult.OK)
                     {
@@ -933,7 +933,7 @@ namespace SuperPOS.UI.TA
             }
             else
             {
-                FrmTaPendOrder frmTaPendOrder = new FrmTaPendOrder(usrID, iLangStatusId, isConnectPhone);
+                FrmTaPendOrder frmTaPendOrder = new FrmTaPendOrder(usrID, iLangStatusId, isConnectPhone, strBusDate);
                 //this.Hide();
                 if (frmTaPendOrder.ShowDialog() == DialogResult.OK)
                 {
