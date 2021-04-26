@@ -12,10 +12,12 @@ namespace SuperPOS.Dapper
 {
     public class SQLiteDbHelper : IDisposable
     {
-        private const string QUERY_ITEM_WHERE = "SELECT {0} FROM {1} WHERE {2}";
-        private const string QUERY_ITEM = "SELECT {0} FROM {1} ";
-        private const string DELETE_ITEM = "DELETE {0} FROM {1} ";
-        private const string DELETE_ITEM_WHERE = "DELETE {0} FROM {1} WHERE {2}";
+        private const string QUERY_ITEM_WHERE = @"SELECT {0} FROM {1} WHERE {2}";
+        private const string QUERY_ITEM = @"SELECT {0} FROM {1} ";
+        private const string DELETE_ITEM = @"DELETE FROM {0} ";
+        private const string DELETE_ITEM_WHERE = @"DELETE FROM {0} WHERE {1}";
+        private const string UPDATE_ITEM = @"UPDATE {0} SET {0}";
+        private const string UPDATE_ITEM_WHERE = @"UPDATE {0} SET {1} WHERE {2}";
 
         private static SQLiteConnection strConn;
 
@@ -42,7 +44,7 @@ namespace SuperPOS.Dapper
         }
         #endregion
 
-        #region 查询
+        #region 查询多个实体对象
         /// <summary>
         /// 查询
         /// </summary>
@@ -86,14 +88,121 @@ namespace SuperPOS.Dapper
         }
         #endregion
 
-        public bool InsertMulti<T>(string strSql, List<T> lst)
+        #region 查询单个实体对象
+
+        /// <summary>
+        /// 查询
+        /// </summary>
+        /// <typeparam name="T">实体对象类</typeparam>
+        /// <param name="strTblName">表名称</param>
+        /// <param name="strWhere">WHERE语句</param>
+        /// <param name="dynamicParams">参数内容</param>
+        /// <returns></returns>
+        public T QueryFirstByWhere<T>(string strTblName, string strWhere, DynamicParameters dynamicParams)
         {
-            int result = strConn.Execute(strSql, lst);
-            return result >= 1;
+            try
+            {
+                try
+                {
+                    //Type type = typeof(T);
+                    string strSql = "";
+
+                    if (dynamicParams == null)
+                    {
+                        //strSql = string.Format(QUERY_ITEM, "*", type.Name);
+                        strSql = string.Format(QUERY_ITEM, "*", strTblName);
+                        return strConn.QueryFirstOrDefault<T>(strSql);
+                    }
+                    else
+                    {
+                        strSql = string.Format(QUERY_ITEM_WHERE, "*", strTblName, strWhere);
+                        return strConn.QueryFirstOrDefault<T>(strSql, dynamicParams);
+                    }
+                }
+                catch (Exception e)
+                {
+                    LogHelper.Error("SQLiteDbHelper.QueryMultiByWhere.Error:" + e.InnerException);
+                    return default(T);
+                }
+            }
+            finally
+            {
+                Dispose();
+            }
+
         }
 
-        #region 删除
+        #endregion
 
+        #region 插入列表
+        /// <summary>
+        /// 插入列表
+        /// </summary>
+        /// <typeparam name="T">实体对象</typeparam>
+        /// <param name="strSql">SQL语句</param>
+        /// <param name="lst">实体对象列表</param>
+        /// <returns></returns>
+        public bool InsertMulti<T>(string strSql, List<T> lst)
+        {
+            try
+            {
+                try
+                {
+                    int result = strConn.Execute(strSql, lst);
+                    return result >= 1;
+                }
+                catch (Exception e)
+                {
+                    LogHelper.Error("SQLiteDbHelper.InsertMulti.Error:" + e.InnerException);
+                    return false;
+                }
+            }
+            finally
+            {
+                Dispose();
+            }
+        }
+        #endregion
+        
+        #region 插入单个对象
+        /// <summary>
+        /// 插入单个对象
+        /// </summary>
+        /// <typeparam name="T">实体对象</typeparam>
+        /// <param name="strSql">SQL语句</param>
+        /// <param name="t">实体对象</param>
+        /// <returns></returns>
+        public bool Insert<T>(string strSql, T t)
+        {
+            try
+            {
+                try
+                {
+                    int result = strConn.Execute(strSql, t);
+                    return result >= 1;
+                }
+                catch (Exception e)
+                {
+                    LogHelper.Error("SQLiteDbHelper.Insert.Error:" + e.InnerException);
+                    return false;
+                }
+            }
+            finally
+            {
+                Dispose();
+            }
+        }
+        #endregion
+        
+        #region 删除
+        /// <summary>
+        /// 删除
+        /// </summary>
+        /// <typeparam name="T">实体对象</typeparam>
+        /// <param name="strTblName">表名称</param>
+        /// <param name="strWhere">SQL子句</param>
+        /// <param name="dynamicParams">参数内容</param>
+        /// <returns></returns>
         public bool Delete<T>(string strTblName, string strWhere, DynamicParameters dynamicParams)
         {
             try
@@ -106,18 +215,18 @@ namespace SuperPOS.Dapper
                     if (dynamicParams == null)
                     {
                         //strSql = string.Format(QUERY_ITEM, "*", type.Name);
-                        strSql = string.Format(DELETE_ITEM, "*", strTblName);
+                        strSql = string.Format(DELETE_ITEM, strTblName);
                         return strConn.Execute(strSql) >= 1;
                     }
                     else
                     {
-                        strSql = string.Format(DELETE_ITEM_WHERE, "*", strTblName, strWhere);
+                        strSql = string.Format(DELETE_ITEM_WHERE, strTblName, strWhere);
                         return strConn.Execute(strSql, dynamicParams) >= 1;
                     }
                 }
                 catch (Exception e)
                 {
-                    LogHelper.Error("SQLiteDbHelper.QueryMultiByWhere.Error:" + e.InnerException);
+                    LogHelper.Error("SQLiteDbHelper.Delete.Error:" + e.InnerException);
                     return false;
                 }
             }
@@ -127,6 +236,49 @@ namespace SuperPOS.Dapper
             }
         }
 
+        #endregion
+
+        #region 更新
+        /// <summary>
+        /// 更新
+        /// </summary>
+        /// <typeparam name="T">实体对象</typeparam>
+        /// <param name="strTblName">表名称</param>
+        /// <param name="strWhere">WHERE子句</param>
+        /// <param name="t">实体对象</param>
+        /// <returns></returns>
+        public bool Update<T>(string strTblName, string strWhere, T t)
+        {
+            try
+            {
+                try
+                {
+                    //Type type = typeof(T);
+                    string strSql = "";
+
+                    if (string.IsNullOrEmpty(strWhere))
+                    {
+                        //strSql = string.Format(QUERY_ITEM, "*", type.Name);
+                        strSql = string.Format(UPDATE_ITEM, "*", strTblName);
+                        return strConn.Execute(strSql) >= 1;
+                    }
+                    else
+                    {
+                        strSql = string.Format(UPDATE_ITEM_WHERE, "*", strTblName, strWhere);
+                        return strConn.Execute(strSql, t) >= 1;
+                    }
+                }
+                catch (Exception e)
+                {
+                    LogHelper.Error("#Error#SQLiteDbHelper.Update:" + e.InnerException);
+                    return false;
+                }
+            }
+            finally
+            {
+                Dispose();
+            }
+        }
         #endregion
 
         #region 释放连接
