@@ -300,10 +300,11 @@ namespace SuperPOS.UI.TA
                     if (lstChk.Any())
                     {
                         TaCheckOrderInfo taCheck = lstChk.FirstOrDefault();
-                        //taCheck.IsCancel = "Y";
-                        _control.UpdateEntity(taCheck);
-                        DelegateSaveCheckOrder handler = DelegateMy.SaveCheckOrder;
-                        IAsyncResult result = handler.BeginInvoke(taCheck, true, null, null);
+                        taCheck.IsCancel = "Y";
+                        //_control.UpdateEntity(taCheck);
+                        //DelegateSaveCheckOrder handler = DelegateMy.SaveCheckOrder;
+                        //IAsyncResult result = handler.BeginInvoke(taCheck, true, null, null);
+                        SaveOrUpdateCheckOrder(taCheck);
 
                         treeListOrder.Nodes.Clear();
 
@@ -915,8 +916,9 @@ namespace SuperPOS.UI.TA
                         TaCheckOrderInfo taCheck = lstChk.FirstOrDefault();
                         taCheck.IsCancel = "Y";
                         //_control.UpdateEntity(taCheck);
-                        DelegateSaveCheckOrder handler = DelegateMy.SaveCheckOrder;
-                        IAsyncResult result = handler.BeginInvoke(taCheck, true,null, null);
+                        //DelegateSaveCheckOrder handler = DelegateMy.SaveCheckOrder;
+                        //IAsyncResult result = handler.BeginInvoke(taCheck, true,null, null);
+                        SaveOrUpdateCheckOrder(taCheck);
                     }
 
                     treeListOrder.Nodes.Clear();
@@ -1970,11 +1972,10 @@ namespace SuperPOS.UI.TA
                 else
                     taCheckOrderInfo.PayDiscount = @"0.00";
 
-                if (Convert.ToDecimal(taCheckOrderInfo.PayDiscount) > 0)
-                {
-                    taCheckOrderInfo.TotalAmount = (Convert.ToDecimal(taCheckOrderInfo.MenuAmount) - Convert.ToDecimal(taCheckOrderInfo.PayDiscount)).ToString();
-                }
-                
+                taCheckOrderInfo.TotalAmount = Convert.ToDecimal(taCheckOrderInfo.PayDiscount) > 0
+                    ? (Convert.ToDecimal(taCheckOrderInfo.MenuAmount) - Convert.ToDecimal(taCheckOrderInfo.PayDiscount)).ToString("0.00")
+                    : taCheckOrderInfo.MenuAmount;
+
                 taCheckOrderInfo.StaffID = usrID;
                 taCheckOrderInfo.PayTime = DateTime.Now.ToString();
                 taCheckOrderInfo.IsSave = isSave ? "Y" : "N";
@@ -2007,7 +2008,7 @@ namespace SuperPOS.UI.TA
             }
 
             OrderItemDeleteAndInsert(lstTaOI);
-            UpdateCheckOrder(taCheckOrderInfo);
+            SaveOrUpdateCheckOrder(taCheckOrderInfo);
         }
         #endregion
 
@@ -2086,10 +2087,13 @@ namespace SuperPOS.UI.TA
                     {
                         TaCheckOrderInfo taCheck = lstChk.FirstOrDefault();
                         taCheck.IsCancel = "Y";
+
+                        SaveOrUpdateCheckOrder(taCheck);
+
                         treeListOrder.Nodes.Clear();
 
-                        DelegateSaveCheckOrder handler = DelegateMy.SaveCheckOrder;
-                        IAsyncResult result = handler.BeginInvoke(taCheck, true, null, null);
+                        //DelegateSaveCheckOrder handler = DelegateMy.SaveCheckOrder;
+                        //IAsyncResult result = handler.BeginInvoke(taCheck, true, null, null);
                     }
                     else
                     {
@@ -3522,7 +3526,7 @@ namespace SuperPOS.UI.TA
 
         }
 
-        private void UpdateCheckOrder(TaCheckOrderInfo taCheckOrderInfo)
+        private void SaveOrUpdateCheckOrder(TaCheckOrderInfo taCheckOrderInfo)
         {
             string strSqlWhere = "";
             DynamicParameters dynamicParams = new DynamicParameters();

@@ -6,6 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Dapper;
+using DevExpress.Utils.Extensions;
 using SuperPOS.Common;
 
 namespace SuperPOS.Dapper
@@ -264,7 +265,9 @@ namespace SuperPOS.Dapper
                     }
                     else
                     {
-                        strSql = string.Format(UPDATE_ITEM_WHERE, "*", strTblName, strWhere);
+                        //strSql = string.Format(UPDATE_ITEM_WHERE, strTblName, t, strWhere);
+                        strSql = GetUpdateSql(strTblName, strWhere, t);
+
                         return strConn.Execute(strSql, t) >= 1;
                     }
                 }
@@ -278,6 +281,21 @@ namespace SuperPOS.Dapper
             {
                 Dispose();
             }
+        }
+
+        private string GetUpdateSql<T>(string strTblName, string strWhere, T tClass)
+        {
+            Type t = typeof(T);
+            var propertyInfo = t.GetProperties();
+
+            //var updateInfo = propertyInfo.Select(s => s.Name.Equals(@"ID") ? "" : $"{s.Name} = {"@" + s.Name}").ToArray();
+            //var updateInfo = propertyInfo.Select(s => s.Name.Equals(@"ID") ? "" : $"{s.Name} = {"@" + s.Name}").ToArray();
+            var updateInfo = propertyInfo.Select(s =>$"{s.Name} = {"@" + s.Name}").ToArray();
+            
+            var setStr = string.Join(",", updateInfo);
+            var sql = string.Format(UPDATE_ITEM_WHERE, strTblName, setStr, strWhere);
+
+            return sql;
         }
         #endregion
 
