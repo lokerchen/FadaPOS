@@ -413,8 +413,9 @@ namespace SuperPOS.UI.TA
             
             asfc.controllInitializeSize(this);
 
-            DelegateRefresh hd = DelegateMy.RefreshSomeInfo;
-            IAsyncResult rt = hd.BeginInvoke("8", strBusDate, "", null, null);
+            //DelegateRefresh hd = DelegateMy.RefreshSomeInfo;
+            //IAsyncResult rt = hd.BeginInvoke("8", strBusDate, "", null, null);
+            CommonDAL.RefreshSomeInfo("8", strBusDate, "");
 
             #region 提示打开来电设备失败
             if (!isConnectPhone) //没有检测过
@@ -879,8 +880,9 @@ namespace SuperPOS.UI.TA
 
                 if (frmTaPayment.ShowDialog() == DialogResult.OK)
                 {
-                    DelegateRefresh hd = DelegateMy.RefreshSomeInfo;
-                    IAsyncResult rt = hd.BeginInvoke("1", "", "", null, null);
+                    //DelegateRefresh hd = DelegateMy.RefreshSomeInfo;
+                    //IAsyncResult rt = hd.BeginInvoke("1", "", "", null, null);
+                    CommonDAL.RefreshSomeInfo("1", "", "");
 
                     if (frmTaPayment.returnPaid) treeListOrder.Nodes.Clear();
 
@@ -2120,8 +2122,9 @@ namespace SuperPOS.UI.TA
             //this.Close();
 
             //new SystemData().GetTaOrderItem();
-            DelegateRefresh hd = DelegateMy.RefreshSomeInfo;
-            IAsyncResult rlt = hd.BeginInvoke("10", "", "", null, null);
+            //DelegateRefresh hd = DelegateMy.RefreshSomeInfo;
+            //IAsyncResult rlt = hd.BeginInvoke("10", "", "", null, null);
+            CommonDAL.RefreshSomeInfo("10", "", "");
         }
 
         #region 对Node子节点操作中英文显示
@@ -2955,8 +2958,9 @@ namespace SuperPOS.UI.TA
                     taCustomerInfo = frmCaller.TaCustomer;
                     string strReadTime = frmCaller.ReadyTime;
 
-                    DelegateRefresh hd = DelegateMy.RefreshSomeInfo;
-                    IAsyncResult rt = hd.BeginInvoke("1", "", "", null, null);
+                    //DelegateRefresh hd = DelegateMy.RefreshSomeInfo;
+                    //IAsyncResult rt = hd.BeginInvoke("1", "", "", null, null);
+                    CommonDAL.RefreshSomeInfo("1", "", "");
 
                     if (taCustomerInfo == null)
                     {
@@ -3315,8 +3319,9 @@ namespace SuperPOS.UI.TA
 
                     if (frmCaller.ShowDialog() == DialogResult.OK)
                     {
-                        DelegateRefresh hd = DelegateMy.RefreshSomeInfo;
-                        IAsyncResult rt = hd.BeginInvoke("1", "", "", null, null);
+                        //DelegateRefresh hd = DelegateMy.RefreshSomeInfo;
+                        //IAsyncResult rt = hd.BeginInvoke("1", "", "", null, null);
+                        CommonDAL.RefreshSomeInfo("1", "", "");
 
                         TaCustomerInfo taCustomerInfo = new TaCustomerInfo();
 
@@ -3503,8 +3508,9 @@ namespace SuperPOS.UI.TA
 
             asfc.controllInitializeSize(this);
 
-            DelegateRefresh hd = DelegateMy.RefreshSomeInfo;
-            IAsyncResult rt = hd.BeginInvoke("8", strBusDate, "", null, null);
+            //DelegateRefresh hd = DelegateMy.RefreshSomeInfo;
+            //IAsyncResult rt = hd.BeginInvoke("8", strBusDate, "", null, null);
+            CommonDAL.RefreshSomeInfo("8", strBusDate, "");
         }
     }
 }

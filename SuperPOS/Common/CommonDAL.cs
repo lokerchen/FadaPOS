@@ -1699,6 +1699,9 @@ namespace SuperPOS.Common
 
         public static void SaveOrUpdateCheckOrder(TaCheckOrderInfo taCheckOrderInfo)
         {
+            Stopwatch sw = new Stopwatch();
+            sw.Start();
+
             string strSqlWhere = "";
             DynamicParameters dynamicParams = new DynamicParameters();
 
@@ -1726,6 +1729,11 @@ namespace SuperPOS.Common
             }
 
             CommonData.TaCheckOrder = new SQLiteDbHelper().QueryMultiByWhere<TaCheckOrderInfo>("Ta_CheckOrder", "", null);
+
+            sw.Stop();
+            TimeSpan ts = sw.Elapsed;
+            Console.WriteLine(@"SaveOrUpdateCheckOrder Time:{0}", ts.TotalMilliseconds);
+            LogHelper.Info(@"SaveOrUpdateCheckOrder Time: " + ts.TotalMilliseconds);
         }
 
         #endregion
@@ -1734,6 +1742,9 @@ namespace SuperPOS.Common
 
         public static void OrderItemDeleteAndInsert(List<TaOrderItemInfo> lstOi, string strBusDate, string checkID)
         {
+            Stopwatch sw = new Stopwatch();
+            sw.Start();
+
             string strSqlWhere = "";
             DynamicParameters dynamicParams = new DynamicParameters();
 
@@ -1751,9 +1762,205 @@ namespace SuperPOS.Common
             isSuccess = new SQLiteDbHelper().InsertMulti(strSqlWhere, lstOi);
             
             CommonData.TaOrderItem = new SQLiteDbHelper().QueryMultiByWhere<TaOrderItemInfo>("Ta_OrderItem", "", null);
+
+            sw.Stop();
+            TimeSpan ts = sw.Elapsed;
+            Console.WriteLine(@"OrderItemDeleteAndInsert Time:{0}", ts.TotalMilliseconds);
+            LogHelper.Info(@"OrderItemDeleteAndInsert #strBusDate=" + strBusDate + "checkID=" + checkID + "#Time: " + ts.TotalMilliseconds);
         }
 
         #endregion
 
+        #region 后台刷新数据库内容
+        public static void RefreshSomeInfo(string iStatus, string strBusDate, string strCheckId)
+        {
+            Stopwatch sw = new Stopwatch();
+            sw.Start();
+            
+            string strSqlWhere = "";
+            DynamicParameters dynamicParams = new DynamicParameters();
+
+            switch (iStatus)
+            {
+                case "1":
+                    CommonData.TaCheckOrder = new SQLiteDbHelper().QueryMultiByWhere<TaCheckOrderInfo>("Ta_CheckOrder", "", null);
+                    break;
+                case "2":
+                    CommonData.TaOrderItem = new SQLiteDbHelper().QueryMultiByWhere<TaOrderItemInfo>("Ta_OrderItem", "", null);
+                    break;
+                case "3":
+                    CommonData.TaCheckOrder = new SQLiteDbHelper().QueryMultiByWhere<TaCheckOrderInfo>("Ta_CheckOrder", "", null);
+                    CommonData.TaOrderItem = new SQLiteDbHelper().QueryMultiByWhere<TaOrderItemInfo>("Ta_OrderItem", "", null);
+                    break;
+                case "4":
+                    CommonData.TaMenuCate = new SQLiteDbHelper().QueryMultiByWhere<TaMenuCateInfo>("Ta_MenuCate", "", null);
+                    break;
+                case "5":
+                    CommonData.TaCustomer = new SQLiteDbHelper().QueryMultiByWhere<TaCustomerInfo>("Ta_Customer", "", null);
+                    break;
+                case "6":
+                    CommonData.TaDriver = new SQLiteDbHelper().QueryMultiByWhere<TaDriverInfo>("Ta_Driver", "", null);
+                    break;
+                case "7":
+                    CommonData.TaMenuItem = new SQLiteDbHelper().QueryMultiByWhere<TaMenuItemInfo>("Ta_MenuItem", "", null);
+                    break;
+                case "8":
+                    strSqlWhere = "";
+                    dynamicParams = new DynamicParameters();
+
+                    if (string.IsNullOrEmpty(strBusDate))
+                    {
+                        if (string.IsNullOrEmpty(strCheckId))
+                        {
+                            strSqlWhere = "";
+                            dynamicParams = null;
+                        }
+                        else
+                        {
+                            strSqlWhere = "CheckCode=@CheckCode";
+                            dynamicParams.Add("CheckCode", strCheckId);
+                        }
+                    }
+                    else
+                    {
+                        if (string.IsNullOrEmpty(strCheckId))
+                        {
+                            strSqlWhere = "BusDate=@BusDate";
+                            dynamicParams.Add("BusDate", strBusDate);
+                        }
+                        else
+                        {
+                            strSqlWhere = "CheckCode=@CheckCode AND BusDate=@BusDate";
+                            dynamicParams.Add("BusDate", strBusDate);
+                            dynamicParams.Add("CheckCode", strCheckId);
+                        }
+                    }
+                    
+                    CommonData.GetViewShowAndPendOrder = new SQLiteDbHelper().QueryMultiByWhere<VIEW_ShowAndPendOrderInfo>("VIEW_ShowAndPendOrder", strSqlWhere, dynamicParams);
+                    break;
+                case "9":
+                    strSqlWhere = "";
+                    dynamicParams = new DynamicParameters();
+
+                    if (string.IsNullOrEmpty(strBusDate))
+                    {
+                        if (string.IsNullOrEmpty(strCheckId))
+                        {
+                            strSqlWhere = "";
+                            dynamicParams = null;
+                        }
+                        else
+                        {
+                            strSqlWhere = "CheckCode=@CheckCode";
+                            dynamicParams.Add("CheckCode", strCheckId);
+                        }
+                    }
+                    else
+                    {
+                        if (string.IsNullOrEmpty(strCheckId))
+                        {
+                            strSqlWhere = "BusDate=@BusDate";
+                            dynamicParams.Add("BusDate", strBusDate);
+                        }
+                        else
+                        {
+                            strSqlWhere = "CheckCode=@CheckCode AND BusDate=@BusDate";
+                            dynamicParams.Add("BusDate", strBusDate);
+                            dynamicParams.Add("CheckCode", strCheckId);
+                        }
+                    }
+                    CommonData.GetViewShowAndPendOrder = new SQLiteDbHelper().QueryMultiByWhere<VIEW_ShowAndPendOrderInfo>("VIEW_ShowAndPendOrder", strSqlWhere, dynamicParams);
+                    
+                    CommonData.TaCheckOrder = new SQLiteDbHelper().QueryMultiByWhere<TaCheckOrderInfo>("Ta_CheckOrder", "", null);
+                    CommonData.TaOrderItem = new SQLiteDbHelper().QueryMultiByWhere<TaOrderItemInfo>("Ta_OrderItem", "", null);
+                    break;
+                case "10":
+                    CommonData.TaCheckOrder = new SQLiteDbHelper().QueryMultiByWhere<TaCheckOrderInfo>("Ta_CheckOrder", "", null);
+                    CommonData.TaOrderItem = new SQLiteDbHelper().QueryMultiByWhere<TaOrderItemInfo>("Ta_OrderItem", "", null);
+                    CommonData.TaCustomer = new SQLiteDbHelper().QueryMultiByWhere<TaCustomerInfo>("Ta_Customer", "", null);
+                    CommonData.TaDriver = new SQLiteDbHelper().QueryMultiByWhere<TaDriverInfo>("Ta_Driver", "", null);
+
+                    strSqlWhere = "";
+                    dynamicParams = new DynamicParameters();
+
+                    if (string.IsNullOrEmpty(strBusDate))
+                    {
+                        if (string.IsNullOrEmpty(strCheckId))
+                        {
+                            strSqlWhere = "";
+                            dynamicParams = null;
+                        }
+                        else
+                        {
+                            strSqlWhere = "CheckCode=@CheckCode";
+                            dynamicParams.Add("CheckCode", strCheckId);
+                        }
+                    }
+                    else
+                    {
+                        if (string.IsNullOrEmpty(strCheckId))
+                        {
+                            strSqlWhere = "BusDate=@BusDate";
+                            dynamicParams.Add("BusDate", strBusDate);
+                        }
+                        else
+                        {
+                            strSqlWhere = "CheckCode=@CheckCode AND BusDate=@BusDate";
+                            dynamicParams.Add("BusDate", strBusDate);
+                            dynamicParams.Add("CheckCode", strCheckId);
+                        }
+                    }
+                    CommonData.GetViewShowAndPendOrder = new SQLiteDbHelper().QueryMultiByWhere<VIEW_ShowAndPendOrderInfo>("VIEW_ShowAndPendOrder", strSqlWhere, dynamicParams);
+                    break;
+                default:
+                    CommonData.TaCheckOrder = new SQLiteDbHelper().QueryMultiByWhere<TaCheckOrderInfo>("Ta_CheckOrder", "", null);
+                    CommonData.TaOrderItem = new SQLiteDbHelper().QueryMultiByWhere<TaOrderItemInfo>("Ta_OrderItem", "", null);
+                    CommonData.TaMenuItem = new SQLiteDbHelper().QueryMultiByWhere<TaMenuItemInfo>("Ta_MenuItem", "", null);
+                    CommonData.TaMenuCate = new SQLiteDbHelper().QueryMultiByWhere<TaMenuCateInfo>("Ta_MenuCate", "", null);
+                    CommonData.TaCustomer = new SQLiteDbHelper().QueryMultiByWhere<TaCustomerInfo>("Ta_Customer", "", null);
+                    CommonData.TaDriver = new SQLiteDbHelper().QueryMultiByWhere<TaDriverInfo>("Ta_Driver", "", null);
+                    CommonData.TaMenuItemOtherChoice = new SQLiteDbHelper().QueryMultiByWhere<TaMenuItemOtherChoiceInfo>("Ta_OtherChoice", "", null);
+
+                    strSqlWhere = "";
+                    dynamicParams = new DynamicParameters();
+
+                    if (string.IsNullOrEmpty(strBusDate))
+                    {
+                        if (string.IsNullOrEmpty(strCheckId))
+                        {
+                            strSqlWhere = "";
+                            dynamicParams = null;
+                        }
+                        else
+                        {
+                            strSqlWhere = "CheckCode=@CheckCode";
+                            dynamicParams.Add("CheckCode", strCheckId);
+                        }
+                    }
+                    else
+                    {
+                        if (string.IsNullOrEmpty(strCheckId))
+                        {
+                            strSqlWhere = "BusDate=@BusDate";
+                            dynamicParams.Add("BusDate", strBusDate);
+                        }
+                        else
+                        {
+                            strSqlWhere = "CheckCode=@CheckCode AND BusDate=@BusDate";
+                            dynamicParams.Add("BusDate", strBusDate);
+                            dynamicParams.Add("CheckCode", strCheckId);
+                        }
+                    }
+
+                    CommonData.GetViewShowAndPendOrder = new SQLiteDbHelper().QueryMultiByWhere<VIEW_ShowAndPendOrderInfo>("VIEW_ShowAndPendOrder", strSqlWhere, dynamicParams);
+                    break;
+            }
+
+            sw.Stop();
+            TimeSpan ts = sw.Elapsed;
+            Console.WriteLine(@"RefreshSomeInfo Time:{0}", ts.TotalMilliseconds);
+            LogHelper.Info(@"RefreshSomeInfo #iStatus=" + iStatus+ "strBusDate=" + strBusDate + "strCheckId=" + strCheckId + "#Time: " + ts.TotalMilliseconds);
+        }
+        #endregion
     }
 }

@@ -957,8 +957,9 @@ namespace SuperPOS.UI.TA
                 taCheckOrder.RefNum = "";
 
                 //_control.UpdateEntity(taCheckOrder);
-                DelegateSaveCheckOrder handler = DelegateMy.SaveCheckOrder;
-                IAsyncResult result = handler.BeginInvoke(taCheckOrder, true,null, null);
+                //DelegateSaveCheckOrder handler = DelegateMy.SaveCheckOrder;
+                //IAsyncResult result = handler.BeginInvoke(taCheckOrder, true,null, null);
+                CommonDAL.SaveOrUpdateCheckOrder(taCheckOrder);
             }
 
             bool isOpenCashDrawSuccess = CommonDAL.OpenCashDraw(false, "");
@@ -1042,8 +1043,9 @@ namespace SuperPOS.UI.TA
 
                 //_control.UpdateEntity(taCheckOrder);
 
-                DelegateSaveCheckOrder handler = DelegateMy.SaveCheckOrder;
-                IAsyncResult result = handler.BeginInvoke(taCheckOrder, true,null, null);
+                //DelegateSaveCheckOrder handler = DelegateMy.SaveCheckOrder;
+                //IAsyncResult result = handler.BeginInvoke(taCheckOrder, true,null, null);
+                CommonDAL.SaveOrUpdateCheckOrder(taCheckOrder);
             }
 
             returnPaid = true;

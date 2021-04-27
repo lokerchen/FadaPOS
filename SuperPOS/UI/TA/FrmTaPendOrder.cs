@@ -687,8 +687,9 @@ namespace SuperPOS.UI.TA
 
                 taCheckOrderInfo.DriverID = Convert.ToInt32(lueDriver.EditValue);
 
-                DelegateSaveCheckOrder handler = DelegateMy.SaveCheckOrder;
-                IAsyncResult result = handler.BeginInvoke(taCheckOrderInfo, true,null, null);
+                //DelegateSaveCheckOrder handler = DelegateMy.SaveCheckOrder;
+                //IAsyncResult result = handler.BeginInvoke(taCheckOrderInfo, true,null, null);
+                CommonDAL.SaveOrUpdateCheckOrder(taCheckOrderInfo);
 
                 //_control.UpdateEntity(taCheckOrderInfo);
             }

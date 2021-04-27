@@ -114,9 +114,11 @@ namespace SuperPOS.UI.TA
 
         private void FrmTaPaymentShop_Load(object sender, EventArgs e)
         {
-            DelegateRefresh hd = DelegateMy.RefreshSomeInfo;
-            hd.BeginInvoke("5", strBusDate, "", null, null);
-            hd.BeginInvoke("1", strBusDate, "", null, null);
+            //DelegateRefresh hd = DelegateMy.RefreshSomeInfo;
+            //hd.BeginInvoke("5", strBusDate, "", null, null);
+            //hd.BeginInvoke("1", strBusDate, "", null, null);
+            CommonDAL.RefreshSomeInfo("5", "", "");
+            CommonDAL.RefreshSomeInfo("1", "", "");
 
             //订单类型
             lblTypeName.Text = PubComm.ORDER_TYPE_SHOP;
@@ -834,8 +836,9 @@ namespace SuperPOS.UI.TA
                 taCheckOrder.DeliveryFee = @"0.00";
 
                 //_control.UpdateEntity(taCheckOrder);
-                DelegateSaveCheckOrder handler = DelegateMy.SaveCheckOrder;
-                IAsyncResult result = handler.BeginInvoke(taCheckOrder, true,null, null);
+                //DelegateSaveCheckOrder handler = DelegateMy.SaveCheckOrder;
+                //IAsyncResult result = handler.BeginInvoke(taCheckOrder, true,null, null);
+                CommonDAL.SaveOrUpdateCheckOrder(taCheckOrder);
             }
 
             bool isOpenCashDrawSuccess = CommonDAL.OpenCashDraw(false, "");
@@ -919,8 +922,9 @@ namespace SuperPOS.UI.TA
                 saveTaCheckOrderInfo = taCheckOrder;
 
                 //_control.UpdateEntity(taCheckOrder);
-                DelegateSaveCheckOrder handler = DelegateMy.SaveCheckOrder;
-                IAsyncResult result = handler.BeginInvoke(taCheckOrder, true,null, null);
+                //DelegateSaveCheckOrder handler = DelegateMy.SaveCheckOrder;
+                //IAsyncResult result = handler.BeginInvoke(taCheckOrder, true,null, null);
+                CommonDAL.SaveOrUpdateCheckOrder(taCheckOrder);
             }
 
             returnPaid = true;
@@ -1057,8 +1061,9 @@ namespace SuperPOS.UI.TA
 
         private void btnNotPaid_Click(object sender, EventArgs e)
         {
-            DelegateRefresh hd = DelegateMy.RefreshSomeInfo;
-            IAsyncResult rt = hd.BeginInvoke("1", "", "", null, null);
+            //DelegateRefresh hd = DelegateMy.RefreshSomeInfo;
+            //IAsyncResult rt = hd.BeginInvoke("1", "", "", null, null);
+            CommonDAL.RefreshSomeInfo("1", "", "");
 
             SaveOrder(false);
 

@@ -46,8 +46,9 @@ namespace SuperPOS.UI
 
         private void btnCtlPanel_Click(object sender, EventArgs e)
         {
-            DelegateRefresh hd = DelegateMy.RefreshSomeInfo;
-            IAsyncResult rt = hd.BeginInvoke("9", strBusDate, "", null, null);
+            //DelegateRefresh hd = DelegateMy.RefreshSomeInfo;
+            //IAsyncResult rt = hd.BeginInvoke("9", strBusDate, "", null, null);
+            CommonDAL.RefreshSomeInfo("9", strBusDate, "");
 
             FrmTaAdmin frmTaAdminMain = new FrmTaAdmin(usrID, usrName);
             frmTaAdminMain.ShowDialog();
@@ -96,9 +97,10 @@ namespace SuperPOS.UI
 
         private void btnShowOrder_Click(object sender, EventArgs e)
         {
-            DelegateRefresh hd = DelegateMy.RefreshSomeInfo;
-            IAsyncResult rt = hd.BeginInvoke("8", strBusDate, "", null, null);
-            
+            //DelegateRefresh hd = DelegateMy.RefreshSomeInfo;
+            //IAsyncResult rt = hd.BeginInvoke("8", strBusDate, "", null, null);
+            CommonDAL.RefreshSomeInfo("8", strBusDate, "");
+
             FrmTaShowOrder frmTaShowOrder = new FrmTaShowOrder(usrID, strBusDate);
             frmTaShowOrder.ShowDialog();
         }
@@ -110,8 +112,9 @@ namespace SuperPOS.UI
 
             //frmTaMain.ShowDialog();
 
-            DelegateRefresh handler = DelegateMy.RefreshSomeInfo;
-            IAsyncResult result = handler.BeginInvoke("10", "", "", null, null);
+            //DelegateRefresh handler = DelegateMy.RefreshSomeInfo;
+            //IAsyncResult result = handler.BeginInvoke("10", "", "", null, null);
+            CommonDAL.RefreshSomeInfo("10", "", "");
 
             if (frmTaMain == null)
             {

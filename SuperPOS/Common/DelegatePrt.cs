@@ -87,55 +87,55 @@ namespace SuperPOS.Common
         #endregion
 
         #region 打印
-        public static void PrtHtml(string checkID, string strBusDate, List<TaOrderItemInfo> lstOI, string strPrintType, WbPrtTemplataTa wbPrtTemplataTa, string strOrderType)
-        {
-            WbPrtPrint.PrintHtml(strPrintType, lstOI, wbPrtTemplataTa, strOrderType);
-        }
+        //public static void PrtHtml(string checkID, string strBusDate, List<TaOrderItemInfo> lstOI, string strPrintType, WbPrtTemplataTa wbPrtTemplataTa, string strOrderType)
+        //{
+        //    WbPrtPrint.PrintHtml(strPrintType, lstOI, wbPrtTemplataTa, strOrderType);
+        //}
 
         #endregion
         
         #region 存储OrderItem到数据库
-        public static void SaveOrderItem(string strCheckId, string strBusDate, List<TaOrderItemInfo> lstOi)
-        {
-            new SystemData().GetTaOrderItem();
+        //public static void SaveOrderItem(string strCheckId, string strBusDate, List<TaOrderItemInfo> lstOi)
+        //{
+        //    new SystemData().GetTaOrderItem();
 
-            var lstDelOi = CommonData.TaOrderItem.Where(s => s.CheckCode.Equals(strCheckId) && s.BusDate.Equals(strBusDate));
-            //删除原始数据
-            foreach (var taOrderItemInfo in lstDelOi)
-            {
-                _control.DeleteEntity(taOrderItemInfo);
-            }
+        //    var lstDelOi = CommonData.TaOrderItem.Where(s => s.CheckCode.Equals(strCheckId) && s.BusDate.Equals(strBusDate));
+        //    //删除原始数据
+        //    foreach (var taOrderItemInfo in lstDelOi)
+        //    {
+        //        _control.DeleteEntity(taOrderItemInfo);
+        //    }
 
-            foreach (var taOrderItemInfo in lstOi)
-            {
-                //TaOrderItemInfo taOi = CommonData.TaOrderItem.FirstOrDefault(s => s.ID == taOrderItemInfo.ID);
+        //    foreach (var taOrderItemInfo in lstOi)
+        //    {
+        //        //TaOrderItemInfo taOi = CommonData.TaOrderItem.FirstOrDefault(s => s.ID == taOrderItemInfo.ID);
 
-                //if (taOi != null)
-                //{
-                //    _control.UpdateEntity(taOrderItemInfo);
-                //}
-                //else
-                //{
-                //    _control.AddEntity(taOrderItemInfo);
-                //}
-                _control.AddEntity(taOrderItemInfo);
-            }
-        }
+        //        //if (taOi != null)
+        //        //{
+        //        //    _control.UpdateEntity(taOrderItemInfo);
+        //        //}
+        //        //else
+        //        //{
+        //        //    _control.AddEntity(taOrderItemInfo);
+        //        //}
+        //        _control.AddEntity(taOrderItemInfo);
+        //    }
+        //}
         #endregion
 
-        public static void SaveOrderItemAndDeleteOld(string strCheckId, string strBusDate, List<TaOrderItemInfo> lstOi)
-        {
-            string strSql = "";
+        //public static void SaveOrderItemAndDeleteOld(string strCheckId, string strBusDate, List<TaOrderItemInfo> lstOi)
+        //{
+        //    string strSql = "";
 
-            strSql = "DELETE FROM Ta_OrderItem WHERE BusDate = '" + strBusDate + "' AND CheckCode = '" + strCheckId + "'";
+        //    strSql = "DELETE FROM Ta_OrderItem WHERE BusDate = '" + strBusDate + "' AND CheckCode = '" + strCheckId + "'";
 
-            _control.ExecuteSql(strSql);
+        //    _control.ExecuteSql(strSql);
 
-            foreach (var taOrderItemInfo in lstOi)
-            {
-                _control.AddEntity(taOrderItemInfo);
-            }
-        }
+        //    foreach (var taOrderItemInfo in lstOi)
+        //    {
+        //        _control.AddEntity(taOrderItemInfo);
+        //    }
+        //}
 
         #region 保存CheckOrder
         public static void SaveCheckOrder(TaCheckOrderInfo taCheckOrderInfo, bool isRefreshData)
@@ -235,7 +235,7 @@ namespace SuperPOS.Common
                 
                 _control.ExecuteSql(strSql);
 
-                if (isRefreshData) RefreshSomeInfo("1", "", "");
+                if (isRefreshData) CommonDAL.RefreshSomeInfo("1", "", "");
 
             }
 
@@ -245,72 +245,72 @@ namespace SuperPOS.Common
 
         #region 保存OrderItem和CheckOrder
 
-        public static void SaveOrderItemAndCheckOrder(string strCheckId, string strBusDate, List<TaOrderItemInfo> lstOi,
-            TaCheckOrderInfo taCheckOrderInfo, bool isRefreshData)
-        {
-            SaveOrderItemAndDeleteOld(strCheckId, strBusDate, lstOi);
+        //public static void SaveOrderItemAndCheckOrder(string strCheckId, string strBusDate, List<TaOrderItemInfo> lstOi,
+        //    TaCheckOrderInfo taCheckOrderInfo, bool isRefreshData)
+        //{
+        //    SaveOrderItemAndDeleteOld(strCheckId, strBusDate, lstOi);
 
-            SaveCheckOrder(taCheckOrderInfo, isRefreshData);
-        }
+        //    SaveCheckOrder(taCheckOrderInfo, isRefreshData);
+        //}
 
         #endregion
 
         #region 后台刷新数据库内容
-        public static void RefreshSomeInfo(string iStatus, string strBusDate, string strCheckId)
-        {
-            SystemData systemData = new SystemData();
+        //public static void RefreshSomeInfo(string iStatus, string strBusDate, string strCheckId)
+        //{
+        //    SystemData systemData = new SystemData();
 
-            switch (iStatus)
-            {
-                case "1":
-                    systemData.GetTaCheckOrder();
-                    break;
-                case "2":
-                    systemData.GetTaOrderItem();
-                    break;
-                case "3":
-                    systemData.GetTaCheckOrder();
-                    systemData.GetTaOrderItem();
-                    break;
-                case "4":
-                    systemData.GetTaMenuCate();
-                    break;
-                case "5":
-                    systemData.GetTaCustomer();
-                    break;
-                case "6":
-                    systemData.GetTaDriver();
-                    break;
-                case "7":
-                    systemData.GetTaMenuItem();
-                    break;
-                case "8":
-                    systemData.GetShowAndPendOrderData(strCheckId, strBusDate);
-                    break;
-                case "9":
-                    systemData.GetShowAndPendOrderData(strCheckId, strBusDate);
-                    systemData.GetTaCheckOrder();
-                    systemData.GetTaOrderItem();
-                    break;
-                case "10":
-                    systemData.GetTaCheckOrder();
-                    systemData.GetTaOrderItem();
-                    systemData.GetTaCustomer();
-                    systemData.GetTaDriver();
-                    systemData.GetShowAndPendOrderData(strCheckId, strBusDate);
-                    break;
-                default:
-                    systemData.GetTaCheckOrder();
-                    systemData.GetTaOrderItem();
-                    systemData.GetTaMenuItem();
-                    systemData.GetTaMenuCate();
-                    systemData.GetTaCustomer();
-                    systemData.GetTaDriver();
-                    systemData.GetTaMenuItemOtherChoice();
-                    systemData.GetShowAndPendOrderData(strCheckId, strBusDate);
-                    break;
-            }
-        }
+        //    switch (iStatus)
+        //    {
+        //        case "1":
+        //            systemData.GetTaCheckOrder();
+        //            break;
+        //        case "2":
+        //            systemData.GetTaOrderItem();
+        //            break;
+        //        case "3":
+        //            systemData.GetTaCheckOrder();
+        //            systemData.GetTaOrderItem();
+        //            break;
+        //        case "4":
+        //            systemData.GetTaMenuCate();
+        //            break;
+        //        case "5":
+        //            systemData.GetTaCustomer();
+        //            break;
+        //        case "6":
+        //            systemData.GetTaDriver();
+        //            break;
+        //        case "7":
+        //            systemData.GetTaMenuItem();
+        //            break;
+        //        case "8":
+        //            systemData.GetShowAndPendOrderData(strCheckId, strBusDate);
+        //            break;
+        //        case "9":
+        //            systemData.GetShowAndPendOrderData(strCheckId, strBusDate);
+        //            systemData.GetTaCheckOrder();
+        //            systemData.GetTaOrderItem();
+        //            break;
+        //        case "10":
+        //            systemData.GetTaCheckOrder();
+        //            systemData.GetTaOrderItem();
+        //            systemData.GetTaCustomer();
+        //            systemData.GetTaDriver();
+        //            systemData.GetShowAndPendOrderData(strCheckId, strBusDate);
+        //            break;
+        //        default:
+        //            systemData.GetTaCheckOrder();
+        //            systemData.GetTaOrderItem();
+        //            systemData.GetTaMenuItem();
+        //            systemData.GetTaMenuCate();
+        //            systemData.GetTaCustomer();
+        //            systemData.GetTaDriver();
+        //            systemData.GetTaMenuItemOtherChoice();
+        //            systemData.GetShowAndPendOrderData(strCheckId, strBusDate);
+        //            break;
+        //    }
+        //}
         #endregion
 
         #region 保存CheckOrder并打印

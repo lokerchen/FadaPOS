@@ -15,6 +15,7 @@ using DevExpress.XtraSplashScreen;
 using DevExpress.XtraTreeList.Nodes;
 using HtmlAgilityPack;
 using SuperPOS.Common;
+using SuperPOS.Dapper;
 using SuperPOS.Domain.Entities;
 using SuperPOS.Print;
 using SuperPOS.UI.TA;
@@ -114,8 +115,9 @@ namespace SuperPOS.UI
         /// <param name="orderType">账单类型</param>
         private void GetBindData(string orderType, bool isNeedStaff)
         {
-            new SystemData().GetShowAndPendOrderData("", strBusDate);
-            var lstTmp = CommonData.GetShowAndPendOrderData.Where(s => s.IsPaid.Equals(@"Y"));
+            //new SystemData().GetShowAndPendOrderData("", strBusDate);
+            List<ShowAndPendOrderDataInfo> lst = new SQLiteDbHelper().QueryMultiByWhere<ShowAndPendOrderDataInfo>("VIEW_ShowAndPendOrder", "", null);
+            var lstTmp = lst.Where(s => s.IsPaid.Equals(@"Y"));
             var lstDb = from sPod in lstTmp
                         select new
                         {
