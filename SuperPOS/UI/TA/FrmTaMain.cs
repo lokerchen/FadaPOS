@@ -304,7 +304,7 @@ namespace SuperPOS.UI.TA
                         //_control.UpdateEntity(taCheck);
                         //DelegateSaveCheckOrder handler = DelegateMy.SaveCheckOrder;
                         //IAsyncResult result = handler.BeginInvoke(taCheck, true, null, null);
-                        SaveOrUpdateCheckOrder(taCheck);
+                        CommonDAL.SaveOrUpdateCheckOrder(taCheck);
 
                         treeListOrder.Nodes.Clear();
 
@@ -799,7 +799,7 @@ namespace SuperPOS.UI.TA
             //    }
             //}
 
-            OrderItemDeleteAndInsert(lstTaOI);
+            CommonDAL.OrderItemDeleteAndInsert(lstTaOI, strBusDate, checkID);
             
             //DelegateOrderItemSaveAndDeleteOld handler = DelegateMy.SaveOrderItemAndDeleteOld;
             //IAsyncResult result = handler.BeginInvoke(checkID, strBusDate, lstTaOI, null, null);
@@ -918,7 +918,7 @@ namespace SuperPOS.UI.TA
                         //_control.UpdateEntity(taCheck);
                         //DelegateSaveCheckOrder handler = DelegateMy.SaveCheckOrder;
                         //IAsyncResult result = handler.BeginInvoke(taCheck, true,null, null);
-                        SaveOrUpdateCheckOrder(taCheck);
+                        CommonDAL.SaveOrUpdateCheckOrder(taCheck);
                     }
 
                     treeListOrder.Nodes.Clear();
@@ -2007,8 +2007,8 @@ namespace SuperPOS.UI.TA
                 //dSaveCheckOrder(taCheckOrderInfo);
             }
 
-            OrderItemDeleteAndInsert(lstTaOI);
-            SaveOrUpdateCheckOrder(taCheckOrderInfo);
+            CommonDAL.OrderItemDeleteAndInsert(lstTaOI, taCheckOrderInfo.BusDate, taCheckOrderInfo.CheckCode);
+            CommonDAL.SaveOrUpdateCheckOrder(taCheckOrderInfo);
         }
         #endregion
 
@@ -2088,7 +2088,7 @@ namespace SuperPOS.UI.TA
                         TaCheckOrderInfo taCheck = lstChk.FirstOrDefault();
                         taCheck.IsCancel = "Y";
 
-                        SaveOrUpdateCheckOrder(taCheck);
+                        CommonDAL.SaveOrUpdateCheckOrder(taCheck);
 
                         treeListOrder.Nodes.Clear();
 
@@ -3505,56 +3505,6 @@ namespace SuperPOS.UI.TA
 
             DelegateRefresh hd = DelegateMy.RefreshSomeInfo;
             IAsyncResult rt = hd.BeginInvoke("8", strBusDate, "", null, null);
-        }
-
-        private void OrderItemDeleteAndInsert(List<TaOrderItemInfo> lstOi)
-        {
-            string strSqlWhere = "";
-            DynamicParameters dynamicParams = new DynamicParameters();
-
-            strSqlWhere = "CheckCode=@CheckCode AND BusDate=@BusDate";
-
-            dynamicParams.Add("BusDate", strBusDate);
-            dynamicParams.Add("CheckCode", checkID);
-            
-            new SQLiteDbHelper().Delete<TaOrderItemInfo>("Ta_OrderItem", strSqlWhere, dynamicParams);
-
-            strSqlWhere = "INSERT INTO Ta_OrderItem (ItemID, ItemCode, ItemDishName, ItemDishOtherName, ItemQty, ItemPrice, ItemTotalPrice, CheckCode, ItemType, ItemParent, " +
-                          "OrderTime, OrderStaff, IsCancel, BusDate, MenuItemID, IsDiscount) VALUES(@ItemID, @ItemCode, @ItemDishName, @ItemDishOtherName, @ItemQty, @ItemPrice, " +
-                          "@ItemTotalPrice, @CheckCode, @ItemType, @ItemParent, @OrderTime, @OrderStaff, @IsCancel, @BusDate, @MenuItemID, @IsDiscount);";
-            bool isSucess = new SQLiteDbHelper().InsertMulti(strSqlWhere, lstOi);
-
-        }
-
-        private void SaveOrUpdateCheckOrder(TaCheckOrderInfo taCheckOrderInfo)
-        {
-            string strSqlWhere = "";
-            DynamicParameters dynamicParams = new DynamicParameters();
-
-            strSqlWhere = "CheckCode=@CheckCode AND BusDate=@BusDate";
-
-            dynamicParams.Add("BusDate", taCheckOrderInfo.BusDate);
-            dynamicParams.Add("CheckCode", taCheckOrderInfo.CheckCode);
-
-            TaCheckOrderInfo tcTmp = new SQLiteDbHelper().QueryFirstByWhere<TaCheckOrderInfo>("Ta_CheckOrder", strSqlWhere, dynamicParams);
-
-            if (tcTmp != null)
-            {
-                strSqlWhere = "ID=@ID";
-
-                new SQLiteDbHelper().Update<TaCheckOrderInfo>(@"Ta_CheckOrder", strSqlWhere, taCheckOrderInfo);
-            }
-            else
-            {
-                strSqlWhere = "INSERT INTO Ta_CheckOrder (CheckCode, PayOrderType, PayDelivery, PayPerDiscount, PayDiscount, PayPerSurcharge, PaySurcharge, MenuAmount, TotalAmount, Paid, " +
-                              "IsPaid, CustomerID, CustomerNote, DriverID, StaffID, PayTime, PayType1, PayTypePay1, PayType2, PayTypePay2, PayType3, PayTypePay3, PayType4, PayTypePay4, " +
-                              "PayType5, PayTypePay5, IsCancel, IsSave, BusDate, RefNum, DeliveryFee) VALUES (@CheckCode, @PayOrderType, @PayDelivery, @PayPerDiscount, @PayDiscount, " +
-                              "@PayPerSurcharge, @PaySurcharge, @MenuAmount, @TotalAmount, @Paid, @IsPaid, @CustomerID, @CustomerNote, @DriverID, @StaffID, @PayTime, @PayType1, " +
-                              "@PayTypePay1, @PayType2, @PayTypePay2, @PayType3, @PayTypePay3, @PayType4, @PayTypePay4, @PayType5, @PayTypePay5, @IsCancel, @IsSave, @BusDate, @RefNum, @DeliveryFee)";
-                bool isSucess = new SQLiteDbHelper().Insert(strSqlWhere, taCheckOrderInfo);
-            }
-
-            CommonData.TaCheckOrder = new SQLiteDbHelper().QueryMultiByWhere<TaCheckOrderInfo>("Ta_CheckOrder", "", null);
         }
     }
 }

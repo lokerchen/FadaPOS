@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Drawing.Printing;
 using System.Globalization;
 using System.IO;
@@ -9,6 +10,7 @@ using System.Runtime.InteropServices;
 using System.Runtime.Remoting.Messaging;
 using System.Text;
 using System.Windows.Forms;
+using Dapper;
 using DevExpress.XtraPrinting;
 using DevExpress.XtraSplashScreen;
 using SuperPOS.Domain.Entities;
@@ -17,6 +19,7 @@ using Microsoft.Office.Interop.Excel;
 using NPOI.HSSF.UserModel;
 using NPOI.SS.UserModel;
 using NPOI.XSSF.UserModel;
+using SuperPOS.Dapper;
 using SuperPOS.UI.TA;
 
 namespace SuperPOS.Common
@@ -1688,6 +1691,66 @@ namespace SuperPOS.Common
         public static string ReplaceTemplateParam(string strHtml)
         {
             return "";
+        }
+
+        #endregion
+
+        #region 保存/更新 CheckOrder
+
+        public static void SaveOrUpdateCheckOrder(TaCheckOrderInfo taCheckOrderInfo)
+        {
+            string strSqlWhere = "";
+            DynamicParameters dynamicParams = new DynamicParameters();
+
+            strSqlWhere = "CheckCode=@CheckCode AND BusDate=@BusDate";
+
+            dynamicParams.Add("BusDate", taCheckOrderInfo.BusDate);
+            dynamicParams.Add("CheckCode", taCheckOrderInfo.CheckCode);
+
+            TaCheckOrderInfo tcTmp = new SQLiteDbHelper().QueryFirstByWhere<TaCheckOrderInfo>("Ta_CheckOrder", strSqlWhere, dynamicParams);
+
+            if (tcTmp != null)
+            {
+                strSqlWhere = "ID=@ID";
+
+                new SQLiteDbHelper().Update<TaCheckOrderInfo>(@"Ta_CheckOrder", strSqlWhere, taCheckOrderInfo);
+            }
+            else
+            {
+                strSqlWhere = "INSERT INTO Ta_CheckOrder (CheckCode, PayOrderType, PayDelivery, PayPerDiscount, PayDiscount, PayPerSurcharge, PaySurcharge, MenuAmount, TotalAmount, Paid, " +
+                              "IsPaid, CustomerID, CustomerNote, DriverID, StaffID, PayTime, PayType1, PayTypePay1, PayType2, PayTypePay2, PayType3, PayTypePay3, PayType4, PayTypePay4, " +
+                              "PayType5, PayTypePay5, IsCancel, IsSave, BusDate, RefNum, DeliveryFee) VALUES (@CheckCode, @PayOrderType, @PayDelivery, @PayPerDiscount, @PayDiscount, " +
+                              "@PayPerSurcharge, @PaySurcharge, @MenuAmount, @TotalAmount, @Paid, @IsPaid, @CustomerID, @CustomerNote, @DriverID, @StaffID, @PayTime, @PayType1, " +
+                              "@PayTypePay1, @PayType2, @PayTypePay2, @PayType3, @PayTypePay3, @PayType4, @PayTypePay4, @PayType5, @PayTypePay5, @IsCancel, @IsSave, @BusDate, @RefNum, @DeliveryFee)";
+                bool isSucess = new SQLiteDbHelper().Insert(strSqlWhere, taCheckOrderInfo);
+            }
+
+            CommonData.TaCheckOrder = new SQLiteDbHelper().QueryMultiByWhere<TaCheckOrderInfo>("Ta_CheckOrder", "", null);
+        }
+
+        #endregion
+
+        #region 保存OrderItem
+
+        public static void OrderItemDeleteAndInsert(List<TaOrderItemInfo> lstOi, string strBusDate, string checkID)
+        {
+            string strSqlWhere = "";
+            DynamicParameters dynamicParams = new DynamicParameters();
+
+            strSqlWhere = "CheckCode=@CheckCode AND BusDate=@BusDate";
+
+            dynamicParams.Add("BusDate", strBusDate);
+            dynamicParams.Add("CheckCode", checkID);
+
+            bool isSuccess = new SQLiteDbHelper().Delete<TaOrderItemInfo>("Ta_OrderItem", strSqlWhere, dynamicParams);
+
+            strSqlWhere =
+                "INSERT INTO Ta_OrderItem (ItemID, ItemCode, ItemDishName, ItemDishOtherName, ItemQty, ItemPrice, ItemTotalPrice, CheckCode, ItemType, ItemParent, " +
+                "OrderTime, OrderStaff, IsCancel, BusDate, MenuItemID, IsDiscount) VALUES(@ItemID, @ItemCode, @ItemDishName, @ItemDishOtherName, @ItemQty, @ItemPrice, " +
+                "@ItemTotalPrice, @CheckCode, @ItemType, @ItemParent, @OrderTime, @OrderStaff, @IsCancel, @BusDate, @MenuItemID, @IsDiscount);";
+            isSuccess = new SQLiteDbHelper().InsertMulti(strSqlWhere, lstOi);
+            
+            CommonData.TaOrderItem = new SQLiteDbHelper().QueryMultiByWhere<TaOrderItemInfo>("Ta_OrderItem", "", null);
         }
 
         #endregion
