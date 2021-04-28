@@ -20,6 +20,7 @@ using SuperPOS.Domain.Entities;
 using SuperPOS.Print;
 using SuperPOS.UI.TA;
 using HtmlDocument = System.Windows.Forms.HtmlDocument;
+using Dapper;
 
 namespace SuperPOS.UI
 {
@@ -115,49 +116,65 @@ namespace SuperPOS.UI
         /// <param name="orderType">账单类型</param>
         private void GetBindData(string orderType, bool isNeedStaff)
         {
+            Stopwatch sw = new Stopwatch();
+            sw.Start();
+
             //new SystemData().GetShowAndPendOrderData("", strBusDate);
-            List<ShowAndPendOrderDataInfo> lst = new SQLiteDbHelper().QueryMultiByWhere<ShowAndPendOrderDataInfo>("VIEW_ShowAndPendOrder", "", null);
-            var lstTmp = lst.Where(s => s.IsPaid.Equals(@"Y"));
-            var lstDb = from sPod in lstTmp
-                        select new
-                        {
-                            ID = sPod.ID,
-                            gridOrderNo = sPod.CheckCode,
-                            gridPayType = sPod.PayType.Trim(),
-                            gridOrderType = sPod.PayOrderType,
-                            gridOrderTime = sPod.PayTime,
-                            gridTotal = sPod.TotalAmount,
-                            gridDriver = sPod.DriverName,
-                            //gridDriver = "",
-                            gridStaff = sPod.UsrName,
-                            gridCustID = sPod.CustID,
-                            gridDiscountPer = sPod.PayPerDiscount,
-                            gridDisount = sPod.PayDiscount,
-                            gridSubTotal = sPod.MenuAmount,
-                            gridBusDate = sPod.BusDate,
-                            gridTendered = sPod.Paid,
-                            gridChange = sPod.Change,
-                            gridRefNo = sPod.RefNum,
-                            gridDeliveryFee = sPod.DeliveryFee,
-                            gridStaffId = sPod.StaffID,
-                            gridSurcharge = sPod.PaySurcharge
-                        };
-            
-            gridControlTaShowOrder.DataSource = !string.IsNullOrEmpty(orderType)
-                                                ? lstDb.Where(s => s.gridOrderType.Equals(orderType)).ToList()
-                                                : lstDb.ToList();
-            
-            gvTaShowOrder.Columns["gridOrderTime"].BestFit();
+            string strSqlWhere = "";
+            DynamicParameters dynamicParams = new DynamicParameters();
+
+            strSqlWhere = "IsPaid=@IsPaid AND BusDate=@BusDate";
+            //strSqlWhere = "IsPaid=@IsPaid";
+
+            dynamicParams.Add("IsPaid", "Y");
+            dynamicParams.Add("BusDate", strBusDate);
+
+            if (!string.IsNullOrEmpty(orderType))
+            {
+                strSqlWhere += " AND PayOrderType=@PayOrderType";
+                dynamicParams.Add("PayOrderType", orderType);
+            }
+
+            List<ShowAndPendOrderDataInfo> lst = new SQLiteDbHelper().QueryMultiByWhere<ShowAndPendOrderDataInfo>("VIEW_ShowAndPendOrder", strSqlWhere, dynamicParams);
+
+            //var lstTmp = lst.Where(s => s.IsPaid.Equals(@"Y"));
+            //var lstDb = from sPod in lst
+            //            select new
+            //            {
+            //                ID = sPod.ID,
+            //                gridOrderNo = sPod.CheckCode,
+            //                gridPayType = sPod.PayType.Trim(),
+            //                gridOrderType = sPod.PayOrderType,
+            //                gridOrderTime = sPod.PayTime,
+            //                gridTotal = sPod.TotalAmount,
+            //                gridDriver = sPod.DriverName,
+            //                //gridDriver = "",
+            //                gridStaff = sPod.UsrName,
+            //                gridCustID = sPod.CustID,
+            //                gridDiscountPer = sPod.PayPerDiscount,
+            //                gridDisount = sPod.PayDiscount,
+            //                gridSubTotal = sPod.MenuAmount,
+            //                gridBusDate = sPod.BusDate,
+            //                gridTendered = sPod.Paid,
+            //                gridChange = sPod.Change,
+            //                gridRefNo = sPod.RefNum,
+            //                gridDeliveryFee = sPod.DeliveryFee,
+            //                gridStaffId = sPod.StaffID,
+            //                gridSurcharge = sPod.PaySurcharge
+            //            };
+
+            gridControlTaShowOrder.DataSource = lst;
+
+            sw.Stop();
+            TimeSpan ts = sw.Elapsed;
+            Console.WriteLine(@"FrmTaShowOrder/GetBindData Time {0}", ts.TotalMilliseconds);
+
+            gvTaShowOrder.Columns["PayTime"].BestFit();
             gvTaShowOrder.FocusedRowHandle = gvTaShowOrder.RowCount - 1;
 
             
         }
         #endregion
-
-        private string GetAllPayType(string s1, string s2)
-        {
-            return Convert.ToDecimal(s1) > 0.00m ? s2 : "";
-        }
 
         private void gvTaShowOrder_CustomDrawRowIndicator(object sender, DevExpress.XtraGrid.Views.Grid.RowIndicatorCustomDrawEventArgs e)
         {
@@ -176,33 +193,33 @@ namespace SuperPOS.UI
             }
 
             intChkID = Convert.ToInt32(gvTaShowOrder.GetRowCellValue(gvTaShowOrder.FocusedRowHandle, "ID").ToString());
-            strChkOrder = gvTaShowOrder.GetRowCellValue(gvTaShowOrder.FocusedRowHandle, "gridOrderNo").ToString();
-            intCusID = Convert.ToInt32(gvTaShowOrder.GetRowCellValue(gvTaShowOrder.FocusedRowHandle, "gridCustID").ToString());
-            sTotalAmount = gvTaShowOrder.GetRowCellValue(gvTaShowOrder.FocusedRowHandle, "gridTotal").ToString();
-            sStaff = gvTaShowOrder.GetRowCellValue(gvTaShowOrder.FocusedRowHandle, "gridStaff").ToString();
-            sDiscountPer = gvTaShowOrder.GetRowCellValue(gvTaShowOrder.FocusedRowHandle, "gridDiscountPer").ToString();
-            sDiscount = gvTaShowOrder.GetRowCellValue(gvTaShowOrder.FocusedRowHandle, "gridDisount").ToString();
-            sSubTotal = gvTaShowOrder.GetRowCellValue(gvTaShowOrder.FocusedRowHandle, "gridSubTotal").ToString();
-            sOrderType = gvTaShowOrder.GetRowCellValue(gvTaShowOrder.FocusedRowHandle, "gridOrderType").ToString();
-            checkBusDate = gvTaShowOrder.GetRowCellValue(gvTaShowOrder.FocusedRowHandle, "gridBusDate").ToString();
+            strChkOrder = gvTaShowOrder.GetRowCellValue(gvTaShowOrder.FocusedRowHandle, "CheckCode").ToString();
+            intCusID = Convert.ToInt32(gvTaShowOrder.GetRowCellValue(gvTaShowOrder.FocusedRowHandle, "CustID").ToString());
+            sTotalAmount = gvTaShowOrder.GetRowCellValue(gvTaShowOrder.FocusedRowHandle, "TotalAmount").ToString();
+            sStaff = gvTaShowOrder.GetRowCellValue(gvTaShowOrder.FocusedRowHandle, "UsrName").ToString();
+            sDiscountPer = gvTaShowOrder.GetRowCellValue(gvTaShowOrder.FocusedRowHandle, "PayPerDiscount").ToString();
+            sDiscount = gvTaShowOrder.GetRowCellValue(gvTaShowOrder.FocusedRowHandle, "PayDiscount").ToString();
+            sSubTotal = gvTaShowOrder.GetRowCellValue(gvTaShowOrder.FocusedRowHandle, "MenuAmount").ToString();
+            sOrderType = gvTaShowOrder.GetRowCellValue(gvTaShowOrder.FocusedRowHandle, "PayOrderType").ToString();
+            checkBusDate = gvTaShowOrder.GetRowCellValue(gvTaShowOrder.FocusedRowHandle, "BusDate").ToString();
 
-            sTendered = gvTaShowOrder.GetRowCellValue(gvTaShowOrder.FocusedRowHandle, "gridTendered").ToString();
-            sChange = gvTaShowOrder.GetRowCellValue(gvTaShowOrder.FocusedRowHandle, "gridChange").ToString();
-            sRefNo = gvTaShowOrder.GetRowCellValue(gvTaShowOrder.FocusedRowHandle, "gridRefNo") == null ? "" : gvTaShowOrder.GetRowCellValue(gvTaShowOrder.FocusedRowHandle, "gridRefNo").ToString();
-            sDeliveryFee = gvTaShowOrder.GetRowCellValue(gvTaShowOrder.FocusedRowHandle, "gridDeliveryFee") == null ? "" : gvTaShowOrder.GetRowCellValue(gvTaShowOrder.FocusedRowHandle, "gridDeliveryFee").ToString();
+            sTendered = gvTaShowOrder.GetRowCellValue(gvTaShowOrder.FocusedRowHandle, "Paid").ToString();
+            sChange = gvTaShowOrder.GetRowCellValue(gvTaShowOrder.FocusedRowHandle, "Change").ToString();
+            sRefNo = gvTaShowOrder.GetRowCellValue(gvTaShowOrder.FocusedRowHandle, "RefNum") == null ? "" : gvTaShowOrder.GetRowCellValue(gvTaShowOrder.FocusedRowHandle, "RefNum").ToString();
+            sDeliveryFee = gvTaShowOrder.GetRowCellValue(gvTaShowOrder.FocusedRowHandle, "DeliveryFee") == null ? "" : gvTaShowOrder.GetRowCellValue(gvTaShowOrder.FocusedRowHandle, "DeliveryFee").ToString();
 
-            intStaffID = Convert.ToInt32(gvTaShowOrder.GetRowCellValue(gvTaShowOrder.FocusedRowHandle, "gridStaffId").ToString());
+            intStaffID = Convert.ToInt32(gvTaShowOrder.GetRowCellValue(gvTaShowOrder.FocusedRowHandle, "StaffID").ToString());
 
-            sSurcharge = gvTaShowOrder.GetRowCellValue(gvTaShowOrder.FocusedRowHandle, "gridSurcharge") == null ? "0.00" : gvTaShowOrder.GetRowCellValue(gvTaShowOrder.FocusedRowHandle, "gridSurcharge").ToString();
+            sSurcharge = gvTaShowOrder.GetRowCellValue(gvTaShowOrder.FocusedRowHandle, "PaySurcharge") == null ? "0.00" : gvTaShowOrder.GetRowCellValue(gvTaShowOrder.FocusedRowHandle, "PaySurcharge").ToString();
 
-            sPayType = gvTaShowOrder.GetRowCellValue(gvTaShowOrder.FocusedRowHandle, "gridPayType") == null ? "" : gvTaShowOrder.GetRowCellValue(gvTaShowOrder.FocusedRowHandle, "gridPayType").ToString();
+            sPayType = gvTaShowOrder.GetRowCellValue(gvTaShowOrder.FocusedRowHandle, "PayType") == null ? "" : gvTaShowOrder.GetRowCellValue(gvTaShowOrder.FocusedRowHandle, "PayType").ToString().Trim();
+
+            sItemCount = GetItemCount(checkBusDate, strChkOrder);
             
-            sItemCount = GetItemCount(strChkOrder);
-
             //Stopwatch st1 = new Stopwatch();//实例化类
             //st1.Start();//开始计时
 
-            RefreshPrtInfo();
+            RefreshPrtInfo(checkBusDate, strChkOrder);
 
             //st1.Stop();//终止计时
             //Console.WriteLine(@"Time2:" + st1.ElapsedMilliseconds.ToString());//输出时间。
@@ -282,51 +299,25 @@ namespace SuperPOS.UI
             GetBindData(PubComm.ORDER_TYPE_SHOP, true);
         }
         #endregion
-
-        private string GetPayType(string sChkId)
+        private int GetItemCount(string sBusDate, string sCheckCode)
         {
-            new SystemData().GetTaCheckOrder();
-            var lstChk = CommonData.TaCheckOrder.Where(s => s.CheckCode.Equals(sChkId) && s.BusDate.Equals(checkBusDate));
+            
+            ////return CommonData.TaOrderItem.Count(s => s.CheckCode.Equals(chkCode) && s.ItemType == 1 && s.BusDate.Equals(checkBusDate));
+            //string strSqlWhere = "";
+            //DynamicParameters dynamicParams = new DynamicParameters();
 
-            string strPt = "Paid By ";
+            //strSqlWhere = "CheckCode=@CheckCode AND BusDate=@BusDate AND ItemType=@ItemType";
 
-            if (lstChk.Any())
-            {
-                TaCheckOrderInfo taCheckOrder = lstChk.FirstOrDefault();
+            //dynamicParams.Add("BusDate", sBusDate);
+            //dynamicParams.Add("CheckCode", sCheckCode);
+            //dynamicParams.Add("ItemType", "1");
 
-                if (Convert.ToDecimal(taCheckOrder.PayTypePay1) > 0)
-                {
-                    strPt += taCheckOrder.PayType1 + " ";
-                }
+            ////var lstOI = CommonData.TaOrderItem.Where(s => s.CheckCode.Equals(strChkOrder) && s.BusDate.Equals(checkBusDate)).ToList();
+            //var lsOI = new SQLiteDbHelper().QueryMultiByWhere<TaOrderItemInfo>("Ta_OrderItem", strSqlWhere, dynamicParams);
 
-                if (Convert.ToDecimal(taCheckOrder.PayTypePay2) > 0)
-                {
-                    strPt += taCheckOrder.PayType2 + " ";
-                }
+            //return lsOI.Sum(s => int.Parse(s.ItemQty));
 
-                if (Convert.ToDecimal(taCheckOrder.PayTypePay3) > 0)
-                {
-                    strPt += taCheckOrder.PayType3 + " ";
-                }
-
-                if (Convert.ToDecimal(taCheckOrder.PayTypePay4) > 0)
-                {
-                    strPt += taCheckOrder.PayType4 + " ";
-                }
-
-                if (Convert.ToDecimal(taCheckOrder.PayTypePay5) > 0)
-                {
-                    strPt += taCheckOrder.PayType5 + " ";
-                }
-            }
-
-            return strPt;
-        }
-
-        private int GetItemCount(string chkCode)
-        {
-            //return CommonData.TaOrderItem.Count(s => s.CheckCode.Equals(chkCode) && s.ItemType == 1 && s.BusDate.Equals(checkBusDate));
-            return CommonData.TaOrderItem.Where(s => s.CheckCode.Equals(chkCode) && s.ItemType == 1 && s.BusDate.Equals(checkBusDate)).Sum(s => int.Parse(s.ItemQty));
+            return CommonData.TaOrderItem.Where(s => s.CheckCode.Equals(sCheckCode) && s.ItemType == 1 && s.BusDate.Equals(sBusDate)).Sum(s => int.Parse(s.ItemQty));
         }
 
         #region 设置打印相关信息
@@ -335,7 +326,7 @@ namespace SuperPOS.UI
         {
             Hashtable htDetail = new Hashtable();
 
-            new SystemData().GetUsrBase();
+            //new SystemData().GetUsrBase();
 
             htDetail["Staff"] = sStaff;
 
@@ -443,13 +434,25 @@ namespace SuperPOS.UI
             return wbPrtTemplataTa;
         }
 
-        private void RefreshPrtInfo()
+        private void RefreshPrtInfo(string sBusDate, string sCheckCode)
         {
-            if(string.IsNullOrEmpty(strChkOrder)) return;
+            Stopwatch sw = new Stopwatch();
+            sw.Start();
+
+            if (string.IsNullOrEmpty(sCheckCode)) return;
 
             if (doc == null) doc = new HtmlWeb().Load(WbPrtStatic.PRT_TEMPLATE_FILE_PATH + @"so" + WbPrtStatic.PRT_TEMPLATE_FILE_NAME_SUFFIX);
 
-            var lstOI = CommonData.TaOrderItem.Where(s => s.CheckCode.Equals(strChkOrder) && s.BusDate.Equals(checkBusDate)).ToList();
+            string strSqlWhere = "";
+            DynamicParameters dynamicParams = new DynamicParameters();
+
+            strSqlWhere = "CheckCode=@CheckCode AND BusDate=@BusDate";
+
+            dynamicParams.Add("BusDate", sBusDate);
+            dynamicParams.Add("CheckCode", sCheckCode);
+
+            //var lstOI = CommonData.TaOrderItem.Where(s => s.CheckCode.Equals(strChkOrder) && s.BusDate.Equals(checkBusDate)).ToList();
+            var lstOI = new SQLiteDbHelper().QueryMultiByWhere<TaOrderItemInfo>("Ta_OrderItem", strSqlWhere, dynamicParams);
 
             string htmlText = doc.Text;
 
@@ -460,7 +463,11 @@ namespace SuperPOS.UI
             htmlText = WbPrtPrint.ReplaceHtmlPrtKeysShop(htmlText, wbPtl);
             htmlText = WbPrtPrint.GetOrderItemInfo(doc, htmlText, lstOI, false);
             webBrowser2.DocumentText = htmlText;
-            
+
+            sw.Stop();
+            TimeSpan ts = sw.Elapsed;
+            Console.WriteLine(@"FrmTaShowOrder/RefreshPrtInfo Time:{0}", ts.TotalMilliseconds);
+
             //webBrowser2.Refresh();
         }
 
