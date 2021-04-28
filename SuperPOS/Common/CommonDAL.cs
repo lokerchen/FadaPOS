@@ -1042,8 +1042,12 @@ namespace SuperPOS.Common
                                               string sDeliveryFee,
                                               string sDiscount,
                                               string sSurcharge,
-                                              string checkBusDate)
+                                              string checkBusDate,
+                                              string sOrderType)
         {
+            Stopwatch sw = new Stopwatch();
+            sw.Start();
+
             WbPrtTemplataTa wbPrtTemplataTa = new WbPrtTemplataTa();
             new SystemData().GetTaSysPrtSetGeneral();
             var lstGen = CommonData.TaSysPrtSetGeneral;
@@ -1096,7 +1100,7 @@ namespace SuperPOS.Common
             wbPrtTemplataTa.PayType = GetPayType(strChkOrder, checkBusDate);
             wbPrtTemplataTa.Tendered = sTendered;
             wbPrtTemplataTa.Change = sChange;
-            wbPrtTemplataTa.OrderType = GetPayType(strChkOrder, checkBusDate);
+            wbPrtTemplataTa.OrderType = sOrderType;
             wbPrtTemplataTa.RefNo = sRefNo;
             wbPrtTemplataTa.DeliveryFee = sDeliveryFee;
 
@@ -1108,7 +1112,24 @@ namespace SuperPOS.Common
             {
                 wbPrtTemplataTa.Rate1 = CommonData.GenSet.FirstOrDefault().VATPer + @"%";
 
-                var lstVAT = from oi in CommonData.TaOrderItem.Where(s => s.CheckCode.Equals(strChkOrder) && s.BusDate.Equals(checkBusDate))
+                //var lstVAT = from oi in CommonData.TaOrderItem.Where(s => s.CheckCode.Equals(strChkOrder) && s.BusDate.Equals(checkBusDate))
+                //             join mi in CommonData.TaMenuItem on oi.ItemCode equals mi.MiDishCode
+                //             where !string.IsNullOrEmpty(mi.MiRmk) && mi.MiRmk.Contains(@"Without VAT")
+                //             select new
+                //             {
+                //                 itemTotalPrice = oi.ItemTotalPrice
+                //             };
+                string strSqlWhere = "";
+                DynamicParameters dynamicParams = new DynamicParameters();
+
+                strSqlWhere = "CheckCode=@CheckCode AND BusDate=@BusDate";
+
+                dynamicParams.Add("CheckCode", strChkOrder);
+                dynamicParams.Add("BusDate", checkBusDate);
+
+                var lstOI = new SQLiteDbHelper().QueryMultiByWhere<TaOrderItemInfo>("Ta_OrderItem", strSqlWhere, dynamicParams);
+
+                var lstVAT = from oi in lstOI
                              join mi in CommonData.TaMenuItem on oi.ItemCode equals mi.MiDishCode
                              where !string.IsNullOrEmpty(mi.MiRmk) && mi.MiRmk.Contains(@"Without VAT")
                              select new
@@ -1152,14 +1173,27 @@ namespace SuperPOS.Common
             }
             #endregion
 
+            sw.Stop();
+            TimeSpan ts = sw.Elapsed;
+            Console.WriteLine(@"#CommonDAL.GetAllPrtInfo# Time:{0}", ts.TotalMilliseconds);
+
             return wbPrtTemplataTa;
         }
         #endregion
 
         public static string GetPayType(string sChkId, string checkBusDate)
         {
-            new SystemData().GetTaCheckOrder();
-            var lstChk = CommonData.TaCheckOrder.Where(s => s.CheckCode.Equals(sChkId) && s.BusDate.Equals(checkBusDate));
+            //new SystemData().GetTaCheckOrder();
+            //var lstChk = CommonData.TaCheckOrder.Where(s => s.CheckCode.Equals(sChkId) && s.BusDate.Equals(checkBusDate));
+            string strSqlWhere = "";
+            DynamicParameters dynamicParams = new DynamicParameters();
+
+            strSqlWhere = "CheckCode=@CheckCode AND BusDate=@BusDate";
+
+            dynamicParams.Add("CheckCode", sChkId);
+            dynamicParams.Add("BusDate", checkBusDate);
+
+            var lstChk = new SQLiteDbHelper().QueryMultiByWhere<TaCheckOrderInfo>("Ta_CheckOrder", strSqlWhere, dynamicParams);
 
             string strPt = "Paid By ";
 

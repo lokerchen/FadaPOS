@@ -10,13 +10,16 @@ using System.Text;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Dapper;
 using DevExpress.XtraEditors;
+using DevExpress.XtraRichEdit.Painters;
 using LinqToDB;
 using SuperPOS.Common;
 using SuperPOS.Domain.Entities;
 using SuperPOS.Print;
 using HtmlAgilityPack;
 using Microsoft.Office.Interop.Excel;
+using SuperPOS.Dapper;
 
 namespace SuperPOS.UI.TA
 {
@@ -104,8 +107,17 @@ namespace SuperPOS.UI.TA
             System.Diagnostics.Stopwatch sw = new System.Diagnostics.Stopwatch();
             sw.Start();
 
-            new SystemData().GetAccountSummary("", "");
-            lstAccountSummaryInfos = CommonData.GetAccountSummaryInfos;
+            //string strSqlWhere = "";
+            //DynamicParameters dynamicParams = new DynamicParameters();
+
+            //strSqlWhere = "BusDate=@BusDate";
+
+            //dynamicParams.Add("BusDate", strBusDate);
+
+            lstAccountSummaryInfos = CommonData.GetAccountSummaryInfos = new SQLiteDbHelper().QueryMultiByWhere<AccountSummaryInfo>("VIEW_AccountSummary", "", null);
+
+            //new SystemData().GetAccountSummary("", "");
+            //lstAccountSummaryInfos = CommonData.GetAccountSummaryInfos;
 
             webBrowser2.Navigate("about:blank/");
 
@@ -114,10 +126,6 @@ namespace SuperPOS.UI.TA
             deDay.Text = DateTime.Now.ToString(PubComm.DATE_TIME_FORMAT, DateTimeFormatInfo.InvariantInfo);
 
             GetBindData(deDay.Text);
-
-            sw.Stop();
-            TimeSpan ts = sw.Elapsed;
-            LogHelper.Info(@"FrmAccountSummary_Load Time " + ts.TotalMilliseconds);
 
             //richEditCtlPreview.Font = new Font(@"Courier New", 10f);
 
@@ -141,6 +149,11 @@ namespace SuperPOS.UI.TA
 
             asfc.controllInitializeSize(this);
 
+            sw.Stop();
+            TimeSpan ts = sw.Elapsed;
+            Console.WriteLine(@"FrmAccountSummary_Load Time:{0}", ts.TotalMilliseconds);
+            LogHelper.Info(@"FrmAccountSummary_Load Time " + ts.TotalMilliseconds);
+
             //sysData.GetTaOrderItem();
         }
 
@@ -163,15 +176,31 @@ namespace SuperPOS.UI.TA
         /// <param name="busDate">营业日</param>
         private void GetBindData(string busDate)
         {
-
             System.Diagnostics.Stopwatch sw = new System.Diagnostics.Stopwatch();
             sw.Start();
 
-            var lstDb = lstAccountSummaryInfos;
+            List<AccountSummaryInfo> lstDb = null;
 
-            gridControlTaShowOrder.DataSource = !string.IsNullOrEmpty(busDate)
-                                                ? lstDb.Where(s => s.BusDate.Equals(busDate)).ToList()
-                                                : lstDb.ToList();
+            if (!string.IsNullOrEmpty(busDate))
+            {
+                string strSqlWhere = "";
+                DynamicParameters dynamicParams = new DynamicParameters();
+
+                strSqlWhere = "BusDate=@BusDate";
+
+                dynamicParams.Add("BusDate", busDate);
+
+                lstDb = new SQLiteDbHelper().QueryMultiByWhere<AccountSummaryInfo>("VIEW_AccountSummary", strSqlWhere, dynamicParams);
+            }
+            else
+            {
+                lstDb = new SQLiteDbHelper().QueryMultiByWhere<AccountSummaryInfo>("VIEW_AccountSummary", "", null);
+            }
+
+
+            //var lstDb = lstAccountSummaryInfos;
+
+            gridControlTaShowOrder.DataSource = lstDb.ToList();
             gvTaShowOrder.Columns["PayTime"].BestFit();
             gvTaShowOrder.FocusedRowHandle = gvTaShowOrder.RowCount - 1;
 
@@ -179,7 +208,8 @@ namespace SuperPOS.UI.TA
 
             sw.Stop();
             TimeSpan ts = sw.Elapsed;
-            LogHelper.Info(@"FrmAccountSummary GetBindData Time " + ts.TotalMilliseconds);
+            Console.WriteLine(@"FrmAccountSummary GetBindData Time:{0}", ts.TotalMilliseconds);
+            LogHelper.Info(@"FrmAccountSummary GetBindData Time：" + ts.TotalMilliseconds);
         }
         #endregion
 
@@ -230,7 +260,7 @@ namespace SuperPOS.UI.TA
             //    richEditCtlPreview.Text = SetPreviewInfo(CommonData.TaPreview.FirstOrDefault().PreviewContent);
             //}
             //richEditCtlPreview.Text = SetPreviewInfo(PreviewContent);
-            RefreshPrtInfo();
+            RefreshPrtInfo(strChkOrder, checkBusDate);
 
 
             //richEditCtlPreview.Font = new Font(@"Courier New", 10f);
@@ -238,20 +268,31 @@ namespace SuperPOS.UI.TA
             //richEditCtlPreview.Text = SetPreviewInfo(PreviewContent);
         }
 
-        private void RefreshPrtInfo()
+        private void RefreshPrtInfo(string sCheckOrder, string sBusDate)
         {
-            if (string.IsNullOrEmpty(strChkOrder)) return;
+            System.Diagnostics.Stopwatch sw = new System.Diagnostics.Stopwatch();
+            sw.Start();
+
+            if (string.IsNullOrEmpty(sCheckOrder)) return;
 
             if (doc == null) doc = new HtmlWeb().Load(WbPrtStatic.PRT_TEMPLATE_FILE_PATH + @"so" + WbPrtStatic.PRT_TEMPLATE_FILE_NAME_SUFFIX);
 
-            new SystemData().GetTaOrderItem();
-            var lstOI = CommonData.TaOrderItem.Where(s => s.CheckCode.Equals(strChkOrder) && s.BusDate.Equals(checkBusDate)).ToList();
+            string strSqlWhere = "";
+            DynamicParameters dynamicParams = new DynamicParameters();
+
+            strSqlWhere = "CheckCode=@CheckCode AND BusDate=@BusDate";
+
+            dynamicParams.Add("CheckCode", sCheckOrder);
+            dynamicParams.Add("BusDate", sBusDate);
+
+            var lstOI = new SQLiteDbHelper().QueryMultiByWhere<TaOrderItemInfo>("Ta_OrderItem", strSqlWhere, dynamicParams);
+            //var lstOI = CommonData.TaOrderItem.Where(s => s.CheckCode.Equals(strChkOrder) && s.BusDate.Equals(checkBusDate)).ToList();
 
             WbPrtTemplataTa wbPrtTemplataTa = new WbPrtTemplataTa();
             wbPrtTemplataTa = CommonDAL.GetAllPrtInfo(intCusID <= 0 ? "" : intCusID.ToString(),
                                                       sStaff,
                                                       intStaffID.ToString(),
-                                                      strChkOrder,
+                                                      sCheckOrder,
                                                       sItemCount,
                                                       sSubTotal,
                                                       sTotalAmount,
@@ -261,7 +302,8 @@ namespace SuperPOS.UI.TA
                                                       sDeliveryFee,
                                                       sDiscount,
                                                       sSurcharge,
-                                                      checkBusDate);
+                                                      sBusDate,
+                                                      sOrderType);
 
             string htmlText = doc.Text;
 
@@ -273,6 +315,11 @@ namespace SuperPOS.UI.TA
 
             webBrowser2.DocumentText = htmlText;
 
+            sw.Stop();
+            TimeSpan ts = sw.Elapsed;
+            Console.WriteLine(@"FrmAccountSummary RefreshPrtInfo Time:{0}", ts.TotalMilliseconds);
+            LogHelper.Info(@"FrmAccountSummary RefreshPrtInfo Time：" + ts.TotalMilliseconds);
+
             //webBrowser2.Refresh();
         }
 
@@ -281,10 +328,19 @@ namespace SuperPOS.UI.TA
             return CommonData.TaOrderItem.Count(s => s.CheckCode.Equals(chkCode) && s.ItemType == 1 && s.BusDate.Equals(deDay.Text));
         }
 
-        private string GetPayType(string sChkId)
+        private string GetPayType(string sCheckOrder, string sBusDate)
         {
-            new SystemData().GetTaCheckOrder();
-            var lstChk = CommonData.TaCheckOrder.Where(s => s.CheckCode.Equals(sChkId) && s.BusDate.Equals(deDay.Text));
+            //new SystemData().GetTaCheckOrder();
+            //var lstChk = CommonData.TaCheckOrder.Where(s => s.CheckCode.Equals(sChkId) && s.BusDate.Equals(deDay.Text));
+            string strSqlWhere = "";
+            DynamicParameters dynamicParams = new DynamicParameters();
+
+            strSqlWhere = "CheckCode=@CheckCode AND BusDate=@BusDate";
+
+            dynamicParams.Add("CheckCode", sCheckOrder);
+            dynamicParams.Add("BusDate", sBusDate);
+
+            var lstChk = new SQLiteDbHelper().QueryMultiByWhere<TaCheckOrderInfo>("Ta_CheckOrder", strSqlWhere, dynamicParams);
 
             string strPt = "Paid By ";
 
@@ -399,8 +455,18 @@ namespace SuperPOS.UI.TA
             //PrtTemplate.PrtTa(prtTemplataTa, lstOI, PrtStatic.PRT_TEMPLATE_TA_RECEIPT_TYPE);
             #endregion
 
-            new SystemData().GetTaOrderItem();
-            var lstOI = CommonData.TaOrderItem.Where(s => s.CheckCode.Equals(strChkOrder) && s.BusDate.Equals(checkBusDate)).ToList();
+            string strSqlWhere = "";
+            DynamicParameters dynamicParams = new DynamicParameters();
+
+            strSqlWhere = "CheckCode=@CheckCode AND BusDate=@BusDate";
+
+            dynamicParams.Add("CheckCode", strChkOrder);
+            dynamicParams.Add("BusDate", checkBusDate);
+
+            var lstOI = new SQLiteDbHelper().QueryMultiByWhere<TaOrderItemInfo>("Ta_OrderItem", strSqlWhere, dynamicParams);
+
+            //new SystemData().GetTaOrderItem();
+            //var lstOI = CommonData.TaOrderItem.Where(s => s.CheckCode.Equals(strChkOrder) && s.BusDate.Equals(checkBusDate)).ToList();
 
             WbPrtTemplataTa wbPrtTemplataTa = new WbPrtTemplataTa();
 
@@ -433,8 +499,17 @@ namespace SuperPOS.UI.TA
             //PrtTemplate.PrtTa(prtTemplataTa, lstOI, PrtStatic.PRT_TEMPLATE_TA_BILL_TYPE);
             #endregion
 
-            new SystemData().GetTaOrderItem();
-            var lstOI = CommonData.TaOrderItem.Where(s => s.CheckCode.Equals(strChkOrder) && s.BusDate.Equals(checkBusDate)).ToList();
+            //new SystemData().GetTaOrderItem();
+            //var lstOI = CommonData.TaOrderItem.Where(s => s.CheckCode.Equals(strChkOrder) && s.BusDate.Equals(checkBusDate)).ToList();
+            string strSqlWhere = "";
+            DynamicParameters dynamicParams = new DynamicParameters();
+
+            strSqlWhere = "CheckCode=@CheckCode AND BusDate=@BusDate";
+
+            dynamicParams.Add("CheckCode", strChkOrder);
+            dynamicParams.Add("BusDate", checkBusDate);
+
+            var lstOI = new SQLiteDbHelper().QueryMultiByWhere<TaOrderItemInfo>("Ta_OrderItem", strSqlWhere, dynamicParams);
 
             WbPrtTemplataTa wbPrtTemplataTa = new WbPrtTemplataTa();
 
@@ -467,8 +542,17 @@ namespace SuperPOS.UI.TA
             //PrtTemplate.PrtTa(prtTemplataTa, lstOI, PrtStatic.PRT_TEMPLATE_TA_KITCHEN_TYPE);
             #endregion
 
-            new SystemData().GetTaOrderItem();
-            var lstOI = CommonData.TaOrderItem.Where(s => s.CheckCode.Equals(strChkOrder) && s.BusDate.Equals(checkBusDate)).ToList();
+            //new SystemData().GetTaOrderItem();
+            //var lstOI = CommonData.TaOrderItem.Where(s => s.CheckCode.Equals(strChkOrder) && s.BusDate.Equals(checkBusDate)).ToList();
+            string strSqlWhere = "";
+            DynamicParameters dynamicParams = new DynamicParameters();
+
+            strSqlWhere = "CheckCode=@CheckCode AND BusDate=@BusDate";
+
+            dynamicParams.Add("CheckCode", strChkOrder);
+            dynamicParams.Add("BusDate", checkBusDate);
+
+            var lstOI = new SQLiteDbHelper().QueryMultiByWhere<TaOrderItemInfo>("Ta_OrderItem", strSqlWhere, dynamicParams);
 
             WbPrtTemplataTa wbPrtTemplataTa = new WbPrtTemplataTa();
 
@@ -768,10 +852,10 @@ namespace SuperPOS.UI.TA
             wbPrtTemplataTa.ItemCount = sItemCount >= 1 ? sItemCount.ToString() : "0";
             wbPrtTemplataTa.SubTotal = sSubTotal;
             wbPrtTemplataTa.Total = sTotalAmount;
-            wbPrtTemplataTa.PayType = GetPayType(strChkOrder);
+            wbPrtTemplataTa.PayType = GetPayType(strChkOrder, deDay.Text);
             wbPrtTemplataTa.Tendered = sTendered;
             wbPrtTemplataTa.Change = sChange;
-            wbPrtTemplataTa.OrderType = GetPayType(strChkOrder);
+            wbPrtTemplataTa.OrderType = sOrderType;
             wbPrtTemplataTa.RefNo = sRefNo;
             wbPrtTemplataTa.DeliveryFee = sDeliveryFee;
 
@@ -782,14 +866,31 @@ namespace SuperPOS.UI.TA
             if (CommonData.GenSet.Any())
             {
                 wbPrtTemplataTa.Rate1 = CommonData.GenSet.FirstOrDefault().VATPer + @"%";
-                
-                var lstVAT = from oi in CommonData.TaOrderItem.Where(s => s.CheckCode.Equals(strChkOrder) && s.BusDate.Equals(checkBusDate))
-                             join mi in CommonData.TaMenuItem on oi.ItemCode equals mi.MiDishCode
-                             where !string.IsNullOrEmpty(mi.MiRmk) && mi.MiRmk.Contains(@"Without VAT")
-                             select new
-                             {
-                                 itemTotalPrice = oi.ItemTotalPrice
-                             };
+
+                //var lstVAT = from oi in CommonData.TaOrderItem.Where(s => s.CheckCode.Equals(strChkOrder) && s.BusDate.Equals(checkBusDate))
+                //             join mi in CommonData.TaMenuItem on oi.ItemCode equals mi.MiDishCode
+                //             where !string.IsNullOrEmpty(mi.MiRmk) && mi.MiRmk.Contains(@"Without VAT")
+                //             select new
+                //             {
+                //                 itemTotalPrice = oi.ItemTotalPrice
+                //             };
+                string strSqlWhere = "";
+                DynamicParameters dynamicParams = new DynamicParameters();
+
+                strSqlWhere = "CheckCode=@CheckCode AND BusDate=@BusDate";
+
+                dynamicParams.Add("CheckCode", strChkOrder);
+                dynamicParams.Add("BusDate", checkBusDate);
+
+                var lstOI = new SQLiteDbHelper().QueryMultiByWhere<TaOrderItemInfo>("Ta_OrderItem", strSqlWhere, dynamicParams);
+
+                var lstVAT = from oi in lstOI
+                    join mi in CommonData.TaMenuItem on oi.ItemCode equals mi.MiDishCode
+                    where !string.IsNullOrEmpty(mi.MiRmk) && mi.MiRmk.Contains(@"Without VAT")
+                    select new
+                    {
+                        itemTotalPrice = oi.ItemTotalPrice
+                    };
 
                 decimal dTotal = 0;
                 decimal dVatTmp = 0;
