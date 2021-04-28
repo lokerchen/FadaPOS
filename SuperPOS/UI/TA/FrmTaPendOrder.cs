@@ -127,7 +127,7 @@ namespace SuperPOS.UI.TA
             usrID = uID;
             iLang = iLanguage;
             isConnectPhone = isFrmConnectPhone;
-            //strBusDate = sBusDate;
+            strBusDate = sBusDate;
         }
 
         public FrmTaPendOrder(string sOrderNo, string sBusDate, string sCustPhone)
@@ -338,8 +338,15 @@ namespace SuperPOS.UI.TA
 
             System.Diagnostics.Stopwatch sw1 = new System.Diagnostics.Stopwatch();
             sw1.Start();
-            
-            List<ShowAndPendOrderDataInfo> lstTmp = new SQLiteDbHelper().QueryMultiByWhere<ShowAndPendOrderDataInfo>("VIEW_ShowAndPendOrder", "", null);
+
+            string strSqlWhere = "";
+            DynamicParameters dynamicParams = new DynamicParameters();
+
+            strSqlWhere = "BusDate=@BusDate";
+
+            dynamicParams.Add("BusDate", strBusDate);
+
+            List<ShowAndPendOrderDataInfo> lstTmp = new SQLiteDbHelper().QueryMultiByWhere<ShowAndPendOrderDataInfo>("VIEW_ShowAndPendOrder", strSqlWhere, dynamicParams);
 
             GetBindData(lstTmp, "", 0, false);
 
@@ -445,6 +452,13 @@ namespace SuperPOS.UI.TA
             //systemData.GetTaCheckOrder();
             TaCheckOrderInfo taCheckOrderInfo = CommonData.TaCheckOrder.FirstOrDefault(s => s.CheckCode.Equals(checkCode) && s.BusDate.Equals(checkBusDate));
 
+            strSqlWhere = "";
+            dynamicParams = new DynamicParameters();
+
+            strSqlWhere = "BusDate=@BusDate";
+
+            dynamicParams.Add("BusDate", checkBusDate);
+
             if (checkOrderType.Equals(PubComm.ORDER_TYPE_SHOP))
             {
                 FrmTaPaymentShop frmTaPaymentShop = new FrmTaPaymentShop(lstOi, usrID, checkCode, checkOrderType, checkCustID.ToString(), SetPrtInfo(), checkBusDate, taCheckOrderInfo, "");
@@ -455,7 +469,7 @@ namespace SuperPOS.UI.TA
                     {
                         //new SystemData().GetShowAndPendOrderData("", strBusDate);
                         //GetBindData("", 0, false);
-                        List<ShowAndPendOrderDataInfo> lstTmp = new SQLiteDbHelper().QueryMultiByWhere<ShowAndPendOrderDataInfo>("VIEW_ShowAndPendOrder", "", null);
+                        List<ShowAndPendOrderDataInfo> lstTmp = new SQLiteDbHelper().QueryMultiByWhere<ShowAndPendOrderDataInfo>("VIEW_ShowAndPendOrder", strSqlWhere, dynamicParams);
 
                         GetBindData(lstTmp, "", 0, false);
                     }
@@ -472,7 +486,7 @@ namespace SuperPOS.UI.TA
                         //new SystemData().GetShowAndPendOrderData("", strBusDate);
                         //GetBindData("", 0, false);
 
-                        List<ShowAndPendOrderDataInfo> lstTmp = new SQLiteDbHelper().QueryMultiByWhere<ShowAndPendOrderDataInfo>("VIEW_ShowAndPendOrder", "", null);
+                        List<ShowAndPendOrderDataInfo> lstTmp = new SQLiteDbHelper().QueryMultiByWhere<ShowAndPendOrderDataInfo>("VIEW_ShowAndPendOrder", strSqlWhere, dynamicParams);
 
                         GetBindData(lstTmp, "", 0, false);
                     }
@@ -489,7 +503,7 @@ namespace SuperPOS.UI.TA
                         //new SystemData().GetShowAndPendOrderData("", strBusDate);
                         //GetBindData("", 0, false);
 
-                        List<ShowAndPendOrderDataInfo> lstTmp = new SQLiteDbHelper().QueryMultiByWhere<ShowAndPendOrderDataInfo>("VIEW_ShowAndPendOrder", "", null);
+                        List<ShowAndPendOrderDataInfo> lstTmp = new SQLiteDbHelper().QueryMultiByWhere<ShowAndPendOrderDataInfo>("VIEW_ShowAndPendOrder", strSqlWhere, dynamicParams);
 
                         GetBindData(lstTmp, "", 0, false);
                     }
@@ -499,28 +513,56 @@ namespace SuperPOS.UI.TA
 
         private void btnDelivery_Click(object sender, EventArgs e)
         {
-            List<ShowAndPendOrderDataInfo> lstTmp = new SQLiteDbHelper().QueryMultiByWhere<ShowAndPendOrderDataInfo>("VIEW_ShowAndPendOrder", "", null);
+            string strSqlWhere = "";
+            DynamicParameters dynamicParams = new DynamicParameters();
+
+            strSqlWhere = "BusDate=@BusDate";
+
+            dynamicParams.Add("BusDate", checkBusDate);
+
+            List<ShowAndPendOrderDataInfo> lstTmp = new SQLiteDbHelper().QueryMultiByWhere<ShowAndPendOrderDataInfo>("VIEW_ShowAndPendOrder", strSqlWhere, dynamicParams);
 
             GetBindData(lstTmp, PubComm.ORDER_TYPE_DELIVERY, 0, false);
         }
 
         private void btnCollection_Click(object sender, EventArgs e)
         {
-            List<ShowAndPendOrderDataInfo> lstTmp = new SQLiteDbHelper().QueryMultiByWhere<ShowAndPendOrderDataInfo>("VIEW_ShowAndPendOrder", "", null);
+            string strSqlWhere = "";
+            DynamicParameters dynamicParams = new DynamicParameters();
+
+            strSqlWhere = "BusDate=@BusDate";
+
+            dynamicParams.Add("BusDate", checkBusDate);
+
+            List<ShowAndPendOrderDataInfo> lstTmp = new SQLiteDbHelper().QueryMultiByWhere<ShowAndPendOrderDataInfo>("VIEW_ShowAndPendOrder", strSqlWhere, dynamicParams);
 
             GetBindData(lstTmp, PubComm.ORDER_TYPE_COLLECTION, 0, false);
         }
 
         private void btnShop_Click(object sender, EventArgs e)
         {
-            List<ShowAndPendOrderDataInfo> lstTmp = new SQLiteDbHelper().QueryMultiByWhere<ShowAndPendOrderDataInfo>("VIEW_ShowAndPendOrder", "", null);
+            string strSqlWhere = "";
+            DynamicParameters dynamicParams = new DynamicParameters();
+
+            strSqlWhere = "BusDate=@BusDate";
+
+            dynamicParams.Add("BusDate", checkBusDate);
+
+            List<ShowAndPendOrderDataInfo> lstTmp = new SQLiteDbHelper().QueryMultiByWhere<ShowAndPendOrderDataInfo>("VIEW_ShowAndPendOrder", strSqlWhere, dynamicParams);
 
             GetBindData(lstTmp, PubComm.ORDER_TYPE_SHOP, 0, false);
         }
 
         private void btnAll_Click(object sender, EventArgs e)
         {
-            List<ShowAndPendOrderDataInfo> lstTmp = new SQLiteDbHelper().QueryMultiByWhere<ShowAndPendOrderDataInfo>("VIEW_ShowAndPendOrder", "", null);
+            string strSqlWhere = "";
+            DynamicParameters dynamicParams = new DynamicParameters();
+
+            strSqlWhere = "BusDate=@BusDate";
+
+            dynamicParams.Add("BusDate", checkBusDate);
+
+            List<ShowAndPendOrderDataInfo> lstTmp = new SQLiteDbHelper().QueryMultiByWhere<ShowAndPendOrderDataInfo>("VIEW_ShowAndPendOrder", strSqlWhere, dynamicParams);
 
             GetBindData(lstTmp, "", 0, false);
         }
@@ -655,21 +697,42 @@ namespace SuperPOS.UI.TA
 
         private void btnShowAll_Click(object sender, EventArgs e)
         {
-            List<ShowAndPendOrderDataInfo> lstTmp = new SQLiteDbHelper().QueryMultiByWhere<ShowAndPendOrderDataInfo>("VIEW_ShowAndPendOrder", "", null);
+            string strSqlWhere = "";
+            DynamicParameters dynamicParams = new DynamicParameters();
+
+            strSqlWhere = "BusDate=@BusDate";
+
+            dynamicParams.Add("BusDate", checkBusDate);
+
+            List<ShowAndPendOrderDataInfo> lstTmp = new SQLiteDbHelper().QueryMultiByWhere<ShowAndPendOrderDataInfo>("VIEW_ShowAndPendOrder", strSqlWhere, dynamicParams);
 
             GetBindData(lstTmp, "", 0, false);
         }
 
         private void btnShowAssigned_Click(object sender, EventArgs e)
         {
-            List<ShowAndPendOrderDataInfo> lstTmp = new SQLiteDbHelper().QueryMultiByWhere<ShowAndPendOrderDataInfo>("VIEW_ShowAndPendOrder", "", null);
+            string strSqlWhere = "";
+            DynamicParameters dynamicParams = new DynamicParameters();
+
+            strSqlWhere = "BusDate=@BusDate";
+
+            dynamicParams.Add("BusDate", checkBusDate);
+
+            List<ShowAndPendOrderDataInfo> lstTmp = new SQLiteDbHelper().QueryMultiByWhere<ShowAndPendOrderDataInfo>("VIEW_ShowAndPendOrder", strSqlWhere, dynamicParams);
 
             GetBindData(lstTmp, "", 1, false);
         }
 
         private void btnShowUnAssigned_Click(object sender, EventArgs e)
         {
-            List<ShowAndPendOrderDataInfo> lstTmp = new SQLiteDbHelper().QueryMultiByWhere<ShowAndPendOrderDataInfo>("VIEW_ShowAndPendOrder", "", null);
+            string strSqlWhere = "";
+            DynamicParameters dynamicParams = new DynamicParameters();
+
+            strSqlWhere = "BusDate=@BusDate";
+
+            dynamicParams.Add("BusDate", checkBusDate);
+
+            List<ShowAndPendOrderDataInfo> lstTmp = new SQLiteDbHelper().QueryMultiByWhere<ShowAndPendOrderDataInfo>("VIEW_ShowAndPendOrder", strSqlWhere, dynamicParams);
 
             GetBindData(lstTmp, "", 2, false);
         }
@@ -694,7 +757,14 @@ namespace SuperPOS.UI.TA
                 //_control.UpdateEntity(taCheckOrderInfo);
             }
 
-            List<ShowAndPendOrderDataInfo> lstTmp = new SQLiteDbHelper().QueryMultiByWhere<ShowAndPendOrderDataInfo>("VIEW_ShowAndPendOrder", "", null);
+            string strSqlWhere = "";
+            DynamicParameters dynamicParams = new DynamicParameters();
+
+            strSqlWhere = "BusDate=@BusDate";
+
+            dynamicParams.Add("BusDate", checkBusDate);
+
+            List<ShowAndPendOrderDataInfo> lstTmp = new SQLiteDbHelper().QueryMultiByWhere<ShowAndPendOrderDataInfo>("VIEW_ShowAndPendOrder", strSqlWhere, dynamicParams);
 
             GetBindData(lstTmp, "", 0, false);
         }
@@ -739,14 +809,28 @@ namespace SuperPOS.UI.TA
 
         private void btnSaveOrder_Click(object sender, EventArgs e)
         {
-            List<ShowAndPendOrderDataInfo> lstTmp = new SQLiteDbHelper().QueryMultiByWhere<ShowAndPendOrderDataInfo>("VIEW_ShowAndPendOrder", "", null);
+            string strSqlWhere = "";
+            DynamicParameters dynamicParams = new DynamicParameters();
+
+            strSqlWhere = "BusDate=@BusDate";
+
+            dynamicParams.Add("BusDate", checkBusDate);
+
+            List<ShowAndPendOrderDataInfo> lstTmp = new SQLiteDbHelper().QueryMultiByWhere<ShowAndPendOrderDataInfo>("VIEW_ShowAndPendOrder", strSqlWhere, dynamicParams);
 
             GetBindData(lstTmp, "", 0, false);
         }
 
         private void btnNotPaid_Click(object sender, EventArgs e)
         {
-            List<ShowAndPendOrderDataInfo> lstTmp = new SQLiteDbHelper().QueryMultiByWhere<ShowAndPendOrderDataInfo>("VIEW_ShowAndPendOrder", "", null);
+            string strSqlWhere = "";
+            DynamicParameters dynamicParams = new DynamicParameters();
+
+            strSqlWhere = "BusDate=@BusDate";
+
+            dynamicParams.Add("BusDate", checkBusDate);
+
+            List<ShowAndPendOrderDataInfo> lstTmp = new SQLiteDbHelper().QueryMultiByWhere<ShowAndPendOrderDataInfo>("VIEW_ShowAndPendOrder", strSqlWhere, dynamicParams);
 
             GetBindData(lstTmp, "", 0, false);
         }

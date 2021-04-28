@@ -1714,6 +1714,8 @@ namespace SuperPOS.Common
 
             if (tcTmp != null)
             {
+                taCheckOrderInfo.ID = tcTmp.ID;
+
                 strSqlWhere = "ID=@ID";
 
                 new SQLiteDbHelper().Update<TaCheckOrderInfo>(@"Ta_CheckOrder", strSqlWhere, taCheckOrderInfo);
