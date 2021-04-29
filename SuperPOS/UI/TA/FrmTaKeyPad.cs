@@ -150,7 +150,7 @@ namespace SuperPOS.UI.TA
                     //string sWord = fTaMain.iLangStatusId == PubComm.MENU_LANG_DEFAULT
                     //    ? CommonData.TaMenuItem.FirstOrDefault(s => s.MiDishCode.Equals(txtDishCode.Text)).MiEngName
                     //    : CommonData.TaMenuItem.FirstOrDefault(s => s.MiDishCode.Equals(txtDishCode.Text)).MiOtherName;
-                    TaMenuItemInfo taMenuItemInfo = fTaMain.GetMenuItemInfo(txtDishCode.Text, fTaMain.iMenuCateId, fTaMain.iMenuSetId, true);
+                    TaMenuItemInfo taMenuItemInfo = fTaMain.GetMenuItemInfo(txtDishCode.Text, 0, fTaMain.iMenuSetId, true);
 
                     if (taMenuItemInfo != null)
                     {
