@@ -2110,11 +2110,16 @@ namespace SuperPOS.UI.TA
                     }
 
                     isGetPhone = true;
+
+                    frmTaKeyPad?.Close();
+
                     this.Hide();
                 }
             }
             else
             {
+                frmTaKeyPad?.Close();
+
                 isGetPhone = true;
                 this.Hide();
             }
