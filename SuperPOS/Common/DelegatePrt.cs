@@ -27,6 +27,8 @@ namespace SuperPOS.Common
     
     public delegate void DelegateRefresh(string iStatus, string strBusDate, string strCheckId);
 
+    public delegate void DelegatePrtHtml(string strPrintType, List<TaOrderItemInfo> lstOI, WbPrtTemplataTa wbPrtTemplataTa, string strOrderType);
+
     public class DelegateMy
     {
         private static EntityControl _control = new EntityControl();
@@ -91,9 +93,12 @@ namespace SuperPOS.Common
         //{
         //    WbPrtPrint.PrintHtml(strPrintType, lstOI, wbPrtTemplataTa, strOrderType);
         //}
-
+        public static void PrtHtml(string strPrintType, List<TaOrderItemInfo> lstOI, WbPrtTemplataTa wbPrtTemplataTa, string strOrderType)
+        {
+            WbPrtPrint.PrintHtml(strPrintType, lstOI, wbPrtTemplataTa, strOrderType);
+        }
         #endregion
-        
+
         #region 存储OrderItem到数据库
         //public static void SaveOrderItem(string strCheckId, string strBusDate, List<TaOrderItemInfo> lstOi)
         //{
