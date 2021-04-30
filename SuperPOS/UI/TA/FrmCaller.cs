@@ -7,8 +7,10 @@ using System.Text;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Dapper;
 using DevExpress.XtraEditors;
 using SuperPOS.Common;
+using SuperPOS.Dapper;
 using SuperPOS.Domain.Entities;
 
 namespace SuperPOS.UI.TA
@@ -232,9 +234,17 @@ namespace SuperPOS.UI.TA
 
         private TaCustomerInfo GetCustInfo(string custPhone)
         {
-            new SystemData().GetTaCustomer();
+            //new SystemData().GetTaCustomer();
 
-            var lstCust = CommonData.TaCustomer.Where(s => s.cusPhone.Equals(custPhone));
+            //var lstCust = CommonData.TaCustomer.Where(s => s.cusPhone.Equals(custPhone));
+            string strSqlWhere = "";
+            DynamicParameters dynamicParams = new DynamicParameters();
+
+            strSqlWhere = "cusPhone=@cusPhone";
+
+            dynamicParams.Add("cusPhone", custPhone);
+
+            List<TaCustomerInfo> lstCust = new SQLiteDbHelper().QueryMultiByWhere<TaCustomerInfo>("Ta_Customer", strSqlWhere, dynamicParams);
 
             return lstCust.Any() ? lstCust.FirstOrDefault() : null;
         }
@@ -383,10 +393,20 @@ namespace SuperPOS.UI.TA
             lblCustPhone7.Click += btnPanelCustPhone_Click;
             lblCustPhone8.Click += btnPanelCustPhone_Click;
 
-            new SystemData().GetComePhoneInfo();
+            string strSqlWhere = "";
+            DynamicParameters dynamicParams = new DynamicParameters();
+
+            strSqlWhere = "BusDate=@BusDate";
+
+            dynamicParams.Add("BusDate", strBustDate);
+
+            List<TaComePhoneInfo> lstCp = new SQLiteDbHelper().QueryMultiByWhere<TaComePhoneInfo>("Ta_ComePhone", strSqlWhere, dynamicParams);
 
             int i = 0;
-            foreach (var tcpi in CommonData.TaComePhoneInfo.Where(s => s.BusDate.Equals(strBustDate)).OrderByDescending(s => s.ID).Take(8))
+
+            //new SystemData().GetComePhoneInfo();
+            //foreach (var tcpi in CommonData.TaComePhoneInfo.Where(s => s.BusDate.Equals(strBustDate)).OrderByDescending(s => s.ID).Take(8))
+            foreach (var tcpi in lstCp.OrderByDescending(s => s.ID).Take(8))
             {
                 pcCust[i].Visible = true;
                 lblCustInfo[i].Text = tcpi.ComePhoneTime;
@@ -435,8 +455,17 @@ namespace SuperPOS.UI.TA
 
             int iNum = Convert.ToInt32(btn.Name.Replace("lblOrderNo", ""));
 
-            new SystemData().GetTaCheckOrder();
-            var lstCo = CommonData.TaCheckOrder.Where(s => s.CheckCode.Equals(lblOderNo[iNum - 1].Text));
+            //new SystemData().GetTaCheckOrder();
+            //var lstCo = CommonData.TaCheckOrder.Where(s => s.CheckCode.Equals(lblOderNo[iNum - 1].Text));
+            string strSqlWhere = "";
+            DynamicParameters dynamicParams = new DynamicParameters();
+
+            strSqlWhere = " CheckCode=@CheckCode AND BusDate=@BusDate";
+
+            dynamicParams.Add("BusDate", strBustDate);
+            dynamicParams.Add("CheckCode", lblOderNo[iNum - 1].Text);
+
+            var lstCo = new SQLiteDbHelper().QueryMultiByWhere<TaCheckOrderInfo>("Ta_CheckOrder", strSqlWhere, dynamicParams);
 
             if (lstCo.Any())
             {
@@ -458,10 +487,21 @@ namespace SuperPOS.UI.TA
         {
             if (!string.IsNullOrEmpty(txtTelNum.Text))
             {
-                new SystemData().GetTaCustomer();
-                TaCustomerInfo taCustomerInfo = new TaCustomerInfo();
+                //new SystemData().GetTaCustomer();
+                //TaCustomerInfo taCustomerInfo = new TaCustomerInfo();
 
-                var lstCust = CommonData.TaCustomer.Where(s => s.cusPhone.Equals(txtTelNum.Text));
+                //var lstCust = CommonData.TaCustomer.Where(s => s.cusPhone.Equals(txtTelNum.Text));
+
+                string strSqlWhere = "";
+                DynamicParameters dynamicParams = new DynamicParameters();
+
+                strSqlWhere = "cusPhone=@cusPhone";
+
+                dynamicParams.Add("cusPhone", txtTelNum.Text.Trim());
+
+                List<TaCustomerInfo> lstCust = new SQLiteDbHelper().QueryMultiByWhere<TaCustomerInfo>("Ta_Customer", strSqlWhere, dynamicParams);
+
+                TaCustomerInfo taCustomerInfo = new TaCustomerInfo();
 
                 string strReadyTime = (!string.IsNullOrEmpty(txtHour.Text) && !string.IsNullOrEmpty(txtMinute.Text))
                     ? txtHour.Text + @":" + txtMinute.Text
@@ -509,12 +549,23 @@ namespace SuperPOS.UI.TA
 
             if (!string.IsNullOrEmpty(sCallPhone))
             {
+                string strSqlWhere = "";
+                DynamicParameters dynamicParams = new DynamicParameters();
+
+                strSqlWhere = "BusDate=@BusDate AND CustPhoneNo=@CustPhoneNo";
+
+                dynamicParams.Add("BusDate", strBustDate);
+                dynamicParams.Add("CustPhoneNo", txtTelNum.Text.Trim());
+
+                List<TaComePhoneInfo> lstCpTmp = new SQLiteDbHelper().QueryMultiByWhere<TaComePhoneInfo>("Ta_ComePhone", strSqlWhere, dynamicParams);
+
                 new SystemData().GetComePhoneInfo();
-                var lstCp =
-                    CommonData.TaComePhoneInfo.Where(
-                        s => s.CustPhoneNo.Equals(txtTelNum.Text.Trim()) && s.BusDate.Equals(strBustDate))
-                        .OrderByDescending(s => Convert.ToDateTime(s.ComePhoneTime))
-                        .Take(8);
+                var lstCp = lstCpTmp.OrderByDescending(s => Convert.ToDateTime(s.ComePhoneTime)).Take(8);
+
+                //new SystemData().GetComePhoneInfo();
+                //var lstCp = CommonData.TaComePhoneInfo.Where(s => s.CustPhoneNo.Equals(txtTelNum.Text.Trim()) && s.BusDate.Equals(strBustDate))
+                //        .OrderByDescending(s => Convert.ToDateTime(s.ComePhoneTime))
+                //        .Take(8);
 
                 if (lstCp.Any())
                 {
@@ -530,10 +581,18 @@ namespace SuperPOS.UI.TA
                     }
                 }
 
-                new SystemData().GetTaCustomer();
-                TaCustomerInfo taCustomerInfo = new TaCustomerInfo();
+                //new SystemData().GetTaCustomer();
+                //TaCustomerInfo taCustomerInfo = new TaCustomerInfo();
+                //var lstCust = CommonData.TaCustomer.Where(s => s.cusPhone.Equals(txtTelNum.Text.Trim()));
+                strSqlWhere = "";
+                dynamicParams = new DynamicParameters();
 
-                var lstCust = CommonData.TaCustomer.Where(s => s.cusPhone.Equals(txtTelNum.Text.Trim()));
+                strSqlWhere = "cusPhone=@cusPhone";
+
+                dynamicParams.Add("cusPhone", txtTelNum.Text.Trim());
+
+                List<TaCustomerInfo> lstCust = new SQLiteDbHelper().QueryMultiByWhere<TaCustomerInfo>("Ta_Customer", strSqlWhere, dynamicParams);
+
                 if (!lstCust.Any())
                 {
                     //taCustomerInfo = lstCust.FirstOrDefault();
@@ -551,9 +610,20 @@ namespace SuperPOS.UI.TA
 
                 if (iCustID > 0)
                 {
-                    new SystemData().GetTaCheckOrder();
+                    //new SystemData().GetTaCheckOrder();
 
-                    var lstCo = CommonData.TaCheckOrder.Where(s => s.BusDate.Equals(strBustDate) && !s.IsPaid.Equals("Y")).OrderByDescending(s => Convert.ToDateTime(s.PayTime)).Take(5);
+                    //var lstCo = CommonData.TaCheckOrder.Where(s => s.BusDate.Equals(strBustDate) && !s.IsPaid.Equals("Y")).OrderByDescending(s => Convert.ToDateTime(s.PayTime)).Take(5);
+                    strSqlWhere = "";
+                    dynamicParams = new DynamicParameters();
+
+                    strSqlWhere = " CheckCode=@CheckCode AND IsPaid!=@IsPaid";
+
+                    dynamicParams.Add("BusDate", strBustDate);
+                    dynamicParams.Add("IsPaid", "Y");
+
+                    var lstCoTmp = new SQLiteDbHelper().QueryMultiByWhere<TaCheckOrderInfo>("Ta_CheckOrder", strSqlWhere, dynamicParams);
+
+                    var lstCo = lstCoTmp.OrderByDescending(s => Convert.ToDateTime(s.PayTime)).Take(5);
 
                     if (lstCo.Any())
                     {
