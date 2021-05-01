@@ -892,13 +892,15 @@ namespace SuperPOS.Print
 
             server.Document.DefaultParagraphProperties.Alignment = ParagraphAlignment.Center;
 
+            server.EndUpdate();
+
             PrintableComponentLink link = new PrintableComponentLink();
             PrintingSystem ps = new PrintingSystem();
             ps.Links.Add(link);
             link.Component = server;
             link.PrintingSystem.ShowMarginsWarning = false;
             link.PrintingSystem.ShowPrintStatusDialog = false;
-            
+
             //link.PaperKind = PaperKind.Custom;
             //link.CustomPaperSize = new Size(Convert.ToInt32(ps.PageSettings.UsablePageSizeInPixels.Width), Convert.ToInt32(ps.PageSettings.UsablePageSizeInPixels.Height));
             //link.Margins = new Margins(0, 0, 0, 0);
@@ -918,9 +920,15 @@ namespace SuperPOS.Print
             link.CreateDocument();
 
             PrinterSettings pSet = new PrinterSettings();
+
             if (strFileName.Equals(WbPrtStatic.PRT_CLASS_BILL) || strFileName.Equals(WbPrtStatic.PRT_CLASS_RECEIPT))
                 isPrintDriverCopy = false;
             pSet.Copies = isPrintDriverCopy ? Convert.ToInt16(ShopOrderPrintNum) : (short) 1;
+
+            //pSet.DefaultPageSettings.PaperSize = new PaperSize("自定义纸张", Convert.ToInt32(ps.PageSettings.UsablePageSizeInPixels.Width), Convert.ToInt32(ps.PageSettings.UsablePageSizeInPixels.Height));
+
+            //pSet.DefaultPageSettings.PrintableArea.Bottom = Single.PositiveInfinity;
+
             //pSet.PrinterName = strDefaultPrintName;
             //ps.PreviewFormEx.Show();
             //link.ShowPreview();

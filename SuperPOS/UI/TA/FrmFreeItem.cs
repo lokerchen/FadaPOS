@@ -25,6 +25,8 @@ namespace SuperPOS.UI.TA
 
         private TaMenuItemInfo taMiFree = null;
 
+        private int iMenuSetID = 0;
+
         public TaMenuItemInfo TaMiFreeMi
         {
             get { return taMiFree; }
@@ -36,11 +38,13 @@ namespace SuperPOS.UI.TA
             InitializeComponent();
         }
 
-        public FrmFreeItem(int iLang)
+        public FrmFreeItem(int iLang, int iMsID)
         {
             InitializeComponent();
 
             iLangeStatus = iLang;
+
+            iMenuSetID = iMsID;
         }
 
         private void btnCancel_Click(object sender, EventArgs e)
@@ -79,6 +83,7 @@ namespace SuperPOS.UI.TA
             var lstFree = from fi in lstFreeId
                           join mi in CommonData.TaMenuItem
                           on fi.DishCode equals mi.MiDishCode
+                          where mi.MiMenuSetID == iMenuSetID
                           select new
                           {
                               ID = mi.ID,

@@ -3212,7 +3212,7 @@ namespace SuperPOS.UI.TA
 
                             if (!isContainFreeItem)
                             {
-                                FrmFreeItem frmTaFreeItem = new FrmFreeItem(iLangStatusId);
+                                FrmFreeItem frmTaFreeItem = new FrmFreeItem(iLangStatusId, iMenuSetId);
                                 frmTaFreeItem.Location = panelControl3.PointToScreen(panelControl1.Location);
                                 frmTaFreeItem.Size = panelControl3.Size;
 
