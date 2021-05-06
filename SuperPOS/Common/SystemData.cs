@@ -99,7 +99,7 @@ namespace SuperPOS.Common
 
         public void GetTaPrtSetupGetSet1() { CommonData.TaPrtSetupGeneralSet1 = _control.SelectAll<TaPrtSetupGeneralSet1Info>(); }
 
-        public void GetTaPreview() { CommonData.TaPreview = _control.SelectAll<TaPreviewInfo>(); }
+        //public void GetTaPreview() { CommonData.TaPreview = _control.SelectAll<TaPreviewInfo>(); }
 
         public void GetTaSysCtrl() { CommonData.TaSysCtrl = _control.SelectAll<TaSysCtrlInfo>(); }
 
