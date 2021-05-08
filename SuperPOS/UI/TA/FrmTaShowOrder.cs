@@ -238,38 +238,74 @@ namespace SuperPOS.UI
         #region 打印
         private void btnPrtReceipt_Click(object sender, EventArgs e)
         {
-            new SystemData().GetTaOrderItem();
-            var lstOI = CommonData.TaOrderItem.Where(s => s.CheckCode.Equals(strChkOrder) && s.BusDate.Equals(checkBusDate)).ToList();
+            string strSqlWhere = "";
+            DynamicParameters dynamicParams = new DynamicParameters();
+
+            strSqlWhere = "CheckCode=@CheckCode AND BusDate=@BusDate";
+
+            dynamicParams.Add("CheckCode", strChkOrder);
+            dynamicParams.Add("BusDate", checkBusDate);
+
+            var lstOI = new SQLiteDbHelper().QueryMultiByWhere<TaOrderItemInfo>("Ta_OrderItem", strSqlWhere, dynamicParams);
+
+            //new SystemData().GetTaOrderItem();
+            //var lstOI = CommonData.TaOrderItem.Where(s => s.CheckCode.Equals(strChkOrder) && s.BusDate.Equals(checkBusDate)).ToList();
 
             WbPrtTemplataTa wbPrtTemplataTa = new WbPrtTemplataTa();
 
             wbPrtTemplataTa = GetAllPrtInfo();
 
-            WbPrtPrint.PrintHtml(WbPrtStatic.PRT_CLASS_RECEIPT, lstOI, wbPrtTemplataTa, sOrderType);
+            //WbPrtPrint.PrintHtml(WbPrtStatic.PRT_CLASS_RECEIPT, lstOI, wbPrtTemplataTa, sOrderType);
+            DelegatePrtHtml handler = DelegateMy.PrtHtml;
+            IAsyncResult result = handler.BeginInvoke(WbPrtStatic.PRT_CLASS_RECEIPT, lstOI, wbPrtTemplataTa, sOrderType, null, null);
         }
 
         private void btnPrtBill_Click(object sender, EventArgs e)
         {
-            new SystemData().GetTaOrderItem();
-            var lstOI = CommonData.TaOrderItem.Where(s => s.CheckCode.Equals(strChkOrder) && s.BusDate.Equals(checkBusDate)).ToList();
+            string strSqlWhere = "";
+            DynamicParameters dynamicParams = new DynamicParameters();
+
+            strSqlWhere = "CheckCode=@CheckCode AND BusDate=@BusDate";
+
+            dynamicParams.Add("CheckCode", strChkOrder);
+            dynamicParams.Add("BusDate", checkBusDate);
+
+            var lstOI = new SQLiteDbHelper().QueryMultiByWhere<TaOrderItemInfo>("Ta_OrderItem", strSqlWhere, dynamicParams);
+
+            //new SystemData().GetTaOrderItem();
+            //var lstOI = CommonData.TaOrderItem.Where(s => s.CheckCode.Equals(strChkOrder) && s.BusDate.Equals(checkBusDate)).ToList();
 
             WbPrtTemplataTa wbPrtTemplataTa = new WbPrtTemplataTa();
 
             wbPrtTemplataTa = GetAllPrtInfo();
 
-            WbPrtPrint.PrintHtml( WbPrtStatic.PRT_CLASS_BILL, lstOI, wbPrtTemplataTa, sOrderType);
+            //WbPrtPrint.PrintHtml( WbPrtStatic.PRT_CLASS_BILL, lstOI, wbPrtTemplataTa, sOrderType);
+            DelegatePrtHtml handler = DelegateMy.PrtHtml;
+            IAsyncResult result = handler.BeginInvoke(WbPrtStatic.PRT_CLASS_BILL, lstOI, wbPrtTemplataTa, sOrderType, null, null);
         }
 
         private void btnPrtKit_Click(object sender, EventArgs e)
         {
-            new SystemData().GetTaOrderItem();
-            var lstOI = CommonData.TaOrderItem.Where(s => s.CheckCode.Equals(strChkOrder) && s.BusDate.Equals(checkBusDate)).ToList();
+            string strSqlWhere = "";
+            DynamicParameters dynamicParams = new DynamicParameters();
+
+            strSqlWhere = "CheckCode=@CheckCode AND BusDate=@BusDate";
+
+            dynamicParams.Add("CheckCode", strChkOrder);
+            dynamicParams.Add("BusDate", checkBusDate);
+
+            var lstOI = new SQLiteDbHelper().QueryMultiByWhere<TaOrderItemInfo>("Ta_OrderItem", strSqlWhere, dynamicParams);
+
+            //new SystemData().GetTaOrderItem();
+            //var lstOI = CommonData.TaOrderItem.Where(s => s.CheckCode.Equals(strChkOrder) && s.BusDate.Equals(checkBusDate)).ToList();
 
             WbPrtTemplataTa wbPrtTemplataTa = new WbPrtTemplataTa();
 
             wbPrtTemplataTa = GetAllPrtInfo();
 
-            WbPrtPrint.PrintHtml( WbPrtStatic.PRT_CLASS_KITCHEN, lstOI, wbPrtTemplataTa, sOrderType);
+            //WbPrtPrint.PrintHtml( WbPrtStatic.PRT_CLASS_KITCHEN, lstOI, wbPrtTemplataTa, sOrderType);
+            DelegatePrtHtml handler = DelegateMy.PrtHtml;
+            IAsyncResult result = handler.BeginInvoke(WbPrtStatic.PRT_CLASS_KITCHEN, lstOI, wbPrtTemplataTa, sOrderType, null, null);
         }
 
         private void btnAccount_Click(object sender, EventArgs e)
@@ -398,7 +434,7 @@ namespace SuperPOS.UI
 
             if (!string.IsNullOrEmpty(intCusID.ToString()))
             {
-                new SystemData().GetTaCustomer();
+                //new SystemData().GetTaCustomer();
                 var lstCust = CommonData.TaCustomer.Where(s => s.ID == intCusID);
                 if (lstCust.Any())
                 {
