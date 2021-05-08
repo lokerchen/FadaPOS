@@ -7,8 +7,10 @@ using System.Text;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Dapper;
 using DevExpress.XtraEditors;
 using SuperPOS.Common;
+using SuperPOS.Dapper;
 using SuperPOS.Domain.Entities;
 
 namespace SuperPOS.UI.TA
@@ -49,9 +51,10 @@ namespace SuperPOS.UI.TA
 
             try
             {
-                new SystemData().GetTaCheckOrder();
-
-                var lstCo = CommonData.TaCheckOrder.Where(s => s.CheckCode.Equals(checkOrderId) && s.BusDate.Equals(strBusDate));
+                //new SystemData().GetTaCheckOrder();
+                //var lstCo = CommonData.TaCheckOrder.Where(s => s.CheckCode.Equals(checkOrderId) && s.BusDate.Equals(strBusDate));
+                
+                var lstCo = GetCheckOrderInfos(checkOrderId, strBusDate);
 
                 if (lstCo.Any())
                 {
@@ -135,22 +138,44 @@ namespace SuperPOS.UI.TA
 
             try
             {
-                new SystemData().GetTaCheckOrder();
+                //new SystemData().GetTaCheckOrder();
 
-                var lstCo = CommonData.TaCheckOrder.Where(s => s.CheckCode.Equals(checkOrderId) && s.BusDate.Equals(strBusDate));
+                //var lstCo = CommonData.TaCheckOrder.Where(s => s.CheckCode.Equals(checkOrderId) && s.BusDate.Equals(strBusDate));
+                var lstCo = GetCheckOrderInfos(checkOrderId, strBusDate);
 
                 if (lstCo.Any())
                 {
                     TaCheckOrderInfo taCheckOrderInfo = lstCo.FirstOrDefault();
-                    taCheckOrderInfo.RefNum = txtRefNum.Text;
 
-                    _control.UpdateEntity(taCheckOrderInfo);
+                    string strSqlWhere = "";
+                    DynamicParameters dynamicParams = new DynamicParameters();
+
+                    taCheckOrderInfo.RefNum = txtRefNum.Text;
+                    
+                    strSqlWhere = "ID=@ID";
+
+                    bool isUpdate = new SQLiteDbHelper().Update<TaCheckOrderInfo>(@"Ta_CheckOrder", strSqlWhere, taCheckOrderInfo);
+
+                    //_control.UpdateEntity(taCheckOrderInfo);
 
                     DialogResult = DialogResult.OK;
                     Hide();
                 }
             }
             catch (Exception ex) { LogHelper.Error(this.Name, ex); }
+        }
+
+        private List<TaCheckOrderInfo> GetCheckOrderInfos(string strCheckCode, string strBusDate)
+        {
+            string strSqlWhere = "";
+            DynamicParameters dynamicParams = new DynamicParameters();
+
+            strSqlWhere = " CheckCode=@CheckCode AND BusDate=@BusDate";
+
+            dynamicParams.Add("BusDate", strBusDate);
+            dynamicParams.Add("CheckCode", strCheckCode);
+
+            return new SQLiteDbHelper().QueryMultiByWhere<TaCheckOrderInfo>("Ta_CheckOrder", strSqlWhere, dynamicParams);
         }
     }
 }

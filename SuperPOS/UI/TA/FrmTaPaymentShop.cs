@@ -1201,6 +1201,8 @@ namespace SuperPOS.UI.TA
 
         private void btnFastFood_Click(object sender, EventArgs e)
         {
+            SaveOrder(false);
+
             FrmTaPaymentShopFastFood frmTaPaymentShopFastFood = new FrmTaPaymentShopFastFood(checkID, strBusDate);
             frmTaPaymentShopFastFood.Location = groupBox1.PointToScreen(groupBox1.Location);
             frmTaPaymentShopFastFood.Size = this.Size;
