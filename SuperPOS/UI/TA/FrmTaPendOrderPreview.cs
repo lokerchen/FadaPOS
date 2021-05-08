@@ -2,14 +2,17 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Diagnostics;
 using System.Drawing;
 using System.Text;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Dapper;
 using DevExpress.XtraEditors;
 using HtmlAgilityPack;
 using SuperPOS.Common;
+using SuperPOS.Dapper;
 using SuperPOS.Domain.Entities;
 using SuperPOS.Print;
 
@@ -112,113 +115,7 @@ namespace SuperPOS.UI.TA
             //richEditCtlPreview.Text = SetPreviewInfo(PreviewContent);    
         }
 
-        private string SetPreviewInfo(string content)
-        {
-            new SystemData().GetTaOrderItem();
-            var lstOI = CommonData.TaOrderItem.Where(s => s.CheckCode.Equals(strChkOrder) && s.BusDate.Equals(strBusDate)).ToList();
-
-            PrtTemplataTa prtTemplataTa = new PrtTemplataTa();
-            prtTemplataTa.OrderNo = strChkOrder;
-            prtTemplataTa.PayType = GetPayType(strChkOrder);
-            prtTemplataTa.TotalAmount = sTotalAmount;
-            prtTemplataTa.SubTotal = sSubTotal;
-            prtTemplataTa.StaffName = sStaff;
-            prtTemplataTa.ItemCount = sItemCount >= 1 ? sItemCount.ToString() : "0";
-            prtTemplataTa.Discount = sDiscount + sDiscountPer;
-
-            #region VAT计算
-            if (CommonData.GenSet.Any())
-            {
-                prtTemplataTa.Rete1 = CommonData.GenSet.FirstOrDefault().VATPer + @"%";
-
-                var lstVAT = from oi in CommonData.TaOrderItem.Where(s => s.CheckCode.Equals(strChkOrder) && s.BusDate.Equals(strBusDate))
-                             join mi in CommonData.TaMenuItem on oi.ItemCode equals mi.MiDishCode
-                             where !string.IsNullOrEmpty(mi.MiRmk) && mi.MiRmk.Contains(@"Without VAT")
-                             select new
-                             {
-                                 itemTotalPrice = oi.ItemTotalPrice
-                             };
-
-                decimal dTotal = 0;
-                decimal dVatTmp = 0;
-                decimal dVat = 0;
-
-                if (lstVAT.Any())
-                {
-                    dTotal = lstVAT.ToList().Sum(vat => Convert.ToDecimal(vat.itemTotalPrice));
-                    //交税
-                    dVatTmp = (Convert.ToDecimal(CommonData.GenSet.FirstOrDefault().VATPer) / 100) * dTotal;
-
-                    dVat = Math.Round(dVatTmp, 2, MidpointRounding.AwayFromZero);
-                }
-
-                prtTemplataTa.VatA = dVat.ToString();
-                //税前
-                prtTemplataTa.Net1 = dTotal.ToString();
-                //总价
-                prtTemplataTa.Gross1 = (dTotal - dVat).ToString();
-                prtTemplataTa.Rate2 = "0.00%";
-                prtTemplataTa.Net2 = (Convert.ToDecimal(sSubTotal) - dTotal).ToString();
-                prtTemplataTa.VatB = "0.00";
-                prtTemplataTa.Gross2 = (Convert.ToDecimal(sSubTotal) - dTotal).ToString();
-            }
-            else
-            {
-                prtTemplataTa.Rete1 = "0.00%";
-                prtTemplataTa.Net1 = "0.00";
-                prtTemplataTa.VatA = "0.00";
-                prtTemplataTa.Gross1 = "0.00";
-                prtTemplataTa.Rate2 = "0.00%";
-                prtTemplataTa.Net2 = "0.00";
-                prtTemplataTa.VatB = "0.00";
-                prtTemplataTa.Gross2 = "0.00";
-            }
-            #endregion
-
-            return PrtTemplate.ReplacePrtKeysPreviewContent(content, prtTemplataTa, lstOI, PrtLang);
-        }
-
-        private string GetPayType(string sChkId)
-        {
-            new SystemData().GetTaCheckOrder();
-            var lstChk = CommonData.TaCheckOrder.Where(s => s.CheckCode.Equals(sChkId) && s.BusDate.Equals(strBusDate));
-
-            string strPt = "Paid By ";
-
-            if (lstChk.Any())
-            {
-                TaCheckOrderInfo taCheckOrder = lstChk.FirstOrDefault();
-
-                if (Convert.ToDecimal(taCheckOrder.PayTypePay1) > 0)
-                {
-                    strPt += taCheckOrder.PayType1 + " ";
-                }
-
-                if (Convert.ToDecimal(taCheckOrder.PayTypePay2) > 0)
-                {
-                    strPt += taCheckOrder.PayType2 + " ";
-                }
-
-                if (Convert.ToDecimal(taCheckOrder.PayTypePay3) > 0)
-                {
-                    strPt += taCheckOrder.PayType3 + " ";
-                }
-
-                if (Convert.ToDecimal(taCheckOrder.PayTypePay4) > 0)
-                {
-                    strPt += taCheckOrder.PayType4 + " ";
-                }
-
-                if (Convert.ToDecimal(taCheckOrder.PayTypePay5) > 0)
-                {
-                    strPt += taCheckOrder.PayType5 + " ";
-                }
-            }
-
-            return strPt;
-        }
-
-        private int GetItemCount(string checkOrderID)
+       private int GetItemCount(string checkOrderID)
         {
             return CommonData.TaOrderItem.Count(s => s.CheckCode.Equals(checkOrderID) && s.ItemType == 1 && s.BusDate.Equals(strBusDate));
         }
@@ -229,12 +126,21 @@ namespace SuperPOS.UI.TA
 
             if (doc == null) doc = new HtmlWeb().Load(WbPrtStatic.PRT_TEMPLATE_FILE_PATH + @"so" + WbPrtStatic.PRT_TEMPLATE_FILE_NAME_SUFFIX);
 
-            new SystemData().GetTaOrderItem();
-            var lstOI = CommonData.TaOrderItem.Where(s => s.CheckCode.Equals(strChkOrder) && s.BusDate.Equals(strBusDate)).ToList();
+            string strSqlWhere = "";
+            DynamicParameters dynamicParams = new DynamicParameters();
+
+            strSqlWhere = "CheckCode=@CheckCode AND BusDate=@BusDate";
+
+            dynamicParams.Add("CheckCode", strChkOrder);
+            dynamicParams.Add("BusDate", strBusDate);
+
+            var lstOI = new SQLiteDbHelper().QueryMultiByWhere<TaOrderItemInfo>("Ta_OrderItem", strSqlWhere, dynamicParams);
+            //new SystemData().GetTaOrderItem();
+            //var lstOI = CommonData.TaOrderItem.Where(s => s.CheckCode.Equals(strChkOrder) && s.BusDate.Equals(strBusDate)).ToList();
 
             WbPrtTemplataTa wbPrtTemplataTa = new WbPrtTemplataTa();
             wbPrtTemplataTa = GetAllPrtInfo();
-
+            
             string htmlText = doc.Text;
 
             if (string.IsNullOrEmpty(htmlText)) webBrowser1.DocumentText = "";
@@ -299,22 +205,33 @@ namespace SuperPOS.UI.TA
             wbPrtTemplataTa.ItemCount = sItemCount >= 1 ? sItemCount.ToString() : "0";
             wbPrtTemplataTa.SubTotal = sSubTotal;
             wbPrtTemplataTa.Total = sTotalAmount;
-            wbPrtTemplataTa.PayType = GetPayType(strChkOrder);
+            string sPayType = CommonDAL.GetPayType(strChkOrder, strBusDate);
+            wbPrtTemplataTa.PayType = sPayType;
             wbPrtTemplataTa.Tendered = sTendered;
             wbPrtTemplataTa.Change = sChange;
-            wbPrtTemplataTa.OrderType = GetPayType(strChkOrder);
+            wbPrtTemplataTa.OrderType = sPayType;
             wbPrtTemplataTa.RefNo = sRefNo;
             wbPrtTemplataTa.DeliveryFee = sDeliveryFee;
 
             wbPrtTemplataTa.Discount = sDiscount;
             wbPrtTemplataTa.Surcharge = sSurcharge;
 
+            string strSqlWhere = "";
+            DynamicParameters dynamicParams = new DynamicParameters();
+
+            strSqlWhere = " CheckCode=@CheckCode AND BusDate=@BusDate";
+
+            dynamicParams.Add("BusDate", strBusDate);
+            dynamicParams.Add("CheckCode", strChkOrder);
+
+            var lstOi = new SQLiteDbHelper().QueryMultiByWhere<TaOrderItemInfo>("Ta_OrderItem", strSqlWhere, dynamicParams);
+
             #region VAT计算
             if (CommonData.GenSet.Any())
             {
                 wbPrtTemplataTa.Rate1 = CommonData.GenSet.FirstOrDefault().VATPer + @"%";
 
-                var lstVAT = from oi in CommonData.TaOrderItem.Where(s => s.CheckCode.Equals(strChkOrder) && s.BusDate.Equals(strBusDate))
+                var lstVAT = from oi in lstOi
                              join mi in CommonData.TaMenuItem on oi.ItemCode equals mi.MiDishCode
                              where !string.IsNullOrEmpty(mi.MiRmk) && mi.MiRmk.Contains(@"Without VAT")
                              select new

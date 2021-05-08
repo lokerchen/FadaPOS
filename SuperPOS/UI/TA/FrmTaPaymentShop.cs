@@ -130,8 +130,8 @@ namespace SuperPOS.UI.TA
 
                 strSqlWhere = " CheckCode=@CheckCode AND BusDate=@BusDate";
 
-                dynamicParams.Add("BusDate", checkID);
-                dynamicParams.Add("CheckCode", strBusDate);
+                dynamicParams.Add("BusDate", strBusDate);
+                dynamicParams.Add("CheckCode", checkID);
 
                 lstOrderItemInfos = new SQLiteDbHelper().QueryMultiByWhere<TaOrderItemInfo>("Ta_OrderItem", strSqlWhere, dynamicParams);
             }

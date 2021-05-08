@@ -1226,6 +1226,10 @@ namespace SuperPOS.Common
                     strPt += taCheckOrder.PayType5 + " ";
                 }
             }
+            else
+            {
+                strPt = "NOT PAID";
+            }
 
             return strPt;
         }
