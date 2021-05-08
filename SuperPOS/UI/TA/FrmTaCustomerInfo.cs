@@ -2,14 +2,17 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Diagnostics;
 using System.Drawing;
 using System.Text;
 using System.Linq;
 using System.Runtime.InteropServices;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Dapper;
 using DevExpress.XtraEditors;
 using SuperPOS.Common;
+using SuperPOS.Dapper;
 using SuperPOS.Domain.Entities;
 
 namespace SuperPOS.UI.TA
@@ -472,10 +475,19 @@ namespace SuperPOS.UI.TA
         {
             if (!string.IsNullOrEmpty(luePostcode.Text))
             {
-                new SystemData().GetTaPostcodeSet();
+                //new SystemData().GetTaPostcodeSet();
 
-                var lstPcs = CommonData.TaPostcodeSet.Where(s => s.PostCode.Equals(luePostcode.EditValue));
+                //var lstPcs = CommonData.TaPostcodeSet.Where(s => s.PostCode.Equals(luePostcode.EditValue));
 
+                string strSqlWhere = "";
+                DynamicParameters dynamicParams = new DynamicParameters();
+
+                strSqlWhere = " PostCode=@PostCode";
+
+                dynamicParams.Add("PostCode", luePostcode.EditValue);
+
+                var lstPcs = new SQLiteDbHelper().QueryMultiByWhere<TaPostcodeSetInfo>("Ta_Postcode_Set", strSqlWhere, dynamicParams);
+                
                 if (lstPcs.Any())
                 {
                     TaPostcodeSetInfo taPostcodeSetInfo = lstPcs.FirstOrDefault();
