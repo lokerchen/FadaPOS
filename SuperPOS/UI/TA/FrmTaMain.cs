@@ -275,6 +275,8 @@ namespace SuperPOS.UI.TA
                 btnType.Appearance.BackColor = Color.HotPink;
                 btnType.Text = PubComm.ORDER_TYPE_SHOP;
 
+                isGetPhone = false;
+
                 //DelegateRefresh hd = DelegateMy.RefreshSomeInfo;
                 //IAsyncResult rt = hd.BeginInvoke("1", "", "", null, null);
 
@@ -892,6 +894,8 @@ namespace SuperPOS.UI.TA
                     SetCustClear();
                 }
             }
+
+            isGetPhone = false;
 
             //handler.EndInvoke(result);
         }

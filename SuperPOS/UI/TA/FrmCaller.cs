@@ -649,7 +649,8 @@ namespace SuperPOS.UI.TA
                             pcOrder[j].Visible = true;
                             lblOderNo[j].Text = taCheckOrderInfo.CheckCode;
                             //按了SaveOrder保存的订单不显示单号
-                            lblOderNo[j].Visible = taCheckOrderInfo.IsSave.Equals("Y");
+                            //lblOderNo[j].Visible = taCheckOrderInfo.IsSave.Equals("Y");
+                            lblOderNo[j].Visible = true;
                             lblOrderTime[j].Text = taCheckOrderInfo.PayTime;
 
                             if (taCheckOrderInfo.PayOrderType.Equals(PubComm.ORDER_TYPE_DELIVERY))
