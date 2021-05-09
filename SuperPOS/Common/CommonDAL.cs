@@ -2019,6 +2019,41 @@ namespace SuperPOS.Common
             }
         }
 
+        public static void PrtAccountSummary(string strBusDate)
+        {
+            Stopwatch sw = new Stopwatch();
+            sw.Start();
+
+            string strSqlWhere = "";
+            DynamicParameters dynamicParams = new DynamicParameters();
+
+            new SystemData().GetPrtAccountSummary("", strBusDate);
+            PrtAccountSummaryInfo prtAsi = CommonData.GetPrtAccountSummaryInfos;
+
+            prtAsi.TotalVAT = (CommonDAL.GetAllVAT("", "", strBusDate)).ToString("0.00");
+
+            strSqlWhere = "IsPaid!=@IsPaid AND IsCancel!=@IsCancel";
+
+            dynamicParams.Add("IsPaid", "Y");
+            dynamicParams.Add("IsCancel", "Y");
+
+            var lstCO = new SQLiteDbHelper().QueryMultiByWhere<TaCheckOrderInfo>("Ta_CheckOrder", strSqlWhere, dynamicParams);
+
+            prtAsi.NotPaid = lstCO.Sum(s => Convert.ToDecimal(s.TotalAmount)).ToString("0.00");
+
+            prtAsi.PayType1 = "Cash";
+            prtAsi.PayType2 = "Card";
+            prtAsi.PayType3 = "Other";
+            prtAsi.PayType4 = "VISA";
+            prtAsi.PayType5 = "PayPal";
+
+            ExportToExcel(prtAsi);
+
+            sw.Stop();
+            TimeSpan ts = sw.Elapsed;
+            Console.WriteLine(@"#PrtAccountSummary# Time:{0}", ts.TotalMilliseconds);
+        }
+
         #endregion
     }
 }

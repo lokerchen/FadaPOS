@@ -310,7 +310,7 @@ namespace SuperPOS.UI
 
         private void btnAccount_Click(object sender, EventArgs e)
         {
-
+            CommonDAL.PrtAccountSummary(checkBusDate);
         }
         #endregion
 
