@@ -217,6 +217,9 @@ namespace SuperPOS.UI.TA
             if ((txtHour.Text.Length + txtMinute.Text.Length) < 4) return;
             strOrderType = PubComm.ORDER_TYPE_DELIVERY;
             taCust = GetCustInfo(txtTelNum.Text.Trim());
+            taCust.cusReadyTime = (!string.IsNullOrEmpty(txtHour.Text) && !string.IsNullOrEmpty(txtMinute.Text))
+                ? CommonDAL.SetAddZeroFront(txtHour.Text) + @":" + CommonDAL.SetAddZeroFront(txtMinute.Text)
+                : " ";
             SetReadyTime();
             DialogResult = DialogResult.OK;
             Close();
@@ -227,6 +230,9 @@ namespace SuperPOS.UI.TA
             if((txtHour.Text.Length +txtMinute.Text.Length) < 4) return;
             strOrderType = PubComm.ORDER_TYPE_COLLECTION;
             taCust = GetCustInfo(txtTelNum.Text.Trim());
+            taCust.cusReadyTime = (!string.IsNullOrEmpty(txtHour.Text) && !string.IsNullOrEmpty(txtMinute.Text))
+                ? CommonDAL.SetAddZeroFront(txtHour.Text) + @":" + CommonDAL.SetAddZeroFront(txtMinute.Text)
+                : " ";
             SetReadyTime();
             DialogResult = DialogResult.OK;
             Close();
