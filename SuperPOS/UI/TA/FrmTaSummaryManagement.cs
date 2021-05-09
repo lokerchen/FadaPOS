@@ -2,13 +2,17 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Diagnostics;
 using System.Drawing;
+using System.Globalization;
 using System.Text;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Dapper;
 using DevExpress.XtraEditors;
 using SuperPOS.Common;
+using SuperPOS.Dapper;
 using SuperPOS.Domain.Entities;
 
 namespace SuperPOS.UI.TA
@@ -32,23 +36,28 @@ namespace SuperPOS.UI.TA
 
         private void FrmTaSummaryManagement_Load(object sender, EventArgs e)
         {
-            SystemData sysData = new SystemData();
-
             //sysData.GetTaCheckOrder();
             //sysData.GetUsrBase();
             //sysData.GetTaPreview();
+
+            Stopwatch sw = new Stopwatch();
+            sw.Start();
 
             txtCurrentDate.Text = DateTime.Now.ToShortDateString();
 
             deDay.Text = CommonDAL.GetBusDate();
 
             GetBindData(deDay.Text);
-
+            
             gvTaShowOrder.FocusedRowHandle = gvTaShowOrder.RowCount - 1;
 
             asfc.controllInitializeSize(this);
 
-            sysData.GetTaOrderItem();
+            sw.Stop();
+            TimeSpan ts = sw.Elapsed;
+            Console.WriteLine(@"#FrmTaSummaryManagement_Load# Time {0}", ts.TotalMilliseconds);
+
+            //sysData.GetTaOrderItem();
         }
 
         private void FrmTaSummaryManagement_SizeChanged(object sender, EventArgs e)
@@ -84,13 +93,13 @@ namespace SuperPOS.UI.TA
 
         private void btnDateLeft_Click(object sender, EventArgs e)
         {
-            deDay.Text = (Convert.ToDateTime(deDay.Text)).AddDays(-1).ToShortDateString();
+            deDay.Text = CommonDAL.SetDateTimeFormat(deDay.Text, -1);
             GetBindData(deDay.Text);
         }
 
         private void btnDateRight_Click(object sender, EventArgs e)
         {
-            deDay.Text = (Convert.ToDateTime(deDay.Text)).AddDays(1).ToShortDateString();
+            deDay.Text = CommonDAL.SetDateTimeFormat(deDay.Text, 1);
             GetBindData(deDay.Text);
         }
 
@@ -192,7 +201,7 @@ namespace SuperPOS.UI.TA
                         : "'" + gvTaShowOrder.GetRowCellValue(i, "CheckCode") + "',";
                 }
             }
-            
+
             new SystemData().GetPrtAccountSummary(strOrder, deDay.Text);
             PrtAccountSummaryInfo prtAsi = CommonData.GetPrtAccountSummaryInfos;
 
