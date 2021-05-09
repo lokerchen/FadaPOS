@@ -111,8 +111,8 @@ namespace SuperPOS.UI.TA
             string strDt = string.IsNullOrEmpty(strReadyTime) ? DateTime.Now.ToShortTimeString() : strReadyTime;
 
             string[] sRt = strDt.Split(':');
-            txtHour.Text = SetAddZeroFront(sRt[0]);
-            txtMinute.Text = SetAddZeroFront(sRt[1]);
+            txtHour.Text = CommonDAL.SetAddZeroFront(sRt[0]);
+            txtMinute.Text = CommonDAL.SetAddZeroFront(sRt[1]);
             #region 设置Panel
 
             #region 控件赋值
@@ -203,8 +203,8 @@ namespace SuperPOS.UI.TA
                     if (!string.IsNullOrEmpty(frmTaCustomerInfo.strReadyTime))
                     {
                         string[] sRt = frmTaCustomerInfo.strReadyTime.Split(':');
-                        txtHour.Text = SetAddZeroFront(sRt[0]);
-                        txtMinute.Text = SetAddZeroFront(sRt[1]);
+                        txtHour.Text = CommonDAL.SetAddZeroFront(sRt[0]);
+                        txtMinute.Text = CommonDAL.SetAddZeroFront(sRt[1]);
                     }
                 }
 
@@ -263,7 +263,7 @@ namespace SuperPOS.UI.TA
 
                     if (Convert.ToInt32(txtHour.Text) >= 24)
                     {
-                        txtHour.Text = btn.Text;
+                        txtHour.Text = CommonDAL.SetAddZeroFront(btn.Text);
                     }
                     else
                     {
@@ -273,6 +273,8 @@ namespace SuperPOS.UI.TA
                 else
                 {
                     txtHour.Text += btn.Text;
+
+                    txtHour.Text = CommonDAL.SetAddZeroFront(txtHour.Text);
 
                     if (txtHour.Text.Length >= 2) objName = "txtMinute";
                 }
@@ -285,9 +287,14 @@ namespace SuperPOS.UI.TA
                     txtMinute.Text = txtMinute.Text.Substring(1, txtMinute.Text.Length - 1) + btn.Text;
 
                     if (Convert.ToInt32(txtMinute.Text) >= 60) txtMinute.Text = btn.Text;
+
+                    txtMinute.Text = CommonDAL.SetAddZeroFront(txtMinute.Text);
                 }
                 else
+                {
                     txtMinute.Text += btn.Text;
+                    txtMinute.Text = CommonDAL.SetAddZeroFront(txtMinute.Text);
+                }
             }
             else if (objName.Equals("txtTelNum"))
             {
@@ -308,8 +315,8 @@ namespace SuperPOS.UI.TA
                           : Convert.ToDateTime(DateTime.Now.ToShortDateString() + " " + strReadyTime);
             DateTime dtAdd = dt.AddMinutes(Convert.ToDouble(btn.Text.Replace("+", "")));
 
-            txtHour.Text = dtAdd.Hour.ToString();
-            txtMinute.Text = dtAdd.Minute.ToString();
+            txtHour.Text = CommonDAL.SetAddZeroFront(dtAdd.Hour.ToString());
+            txtMinute.Text = CommonDAL.SetAddZeroFront(dtAdd.Minute.ToString());
         }
 
         #endregion
@@ -504,7 +511,7 @@ namespace SuperPOS.UI.TA
                 TaCustomerInfo taCustomerInfo = new TaCustomerInfo();
 
                 string strReadyTime = (!string.IsNullOrEmpty(txtHour.Text) && !string.IsNullOrEmpty(txtMinute.Text))
-                    ? txtHour.Text + @":" + txtMinute.Text
+                    ? CommonDAL.SetAddZeroFront(txtHour.Text) + @":" + CommonDAL.SetAddZeroFront(txtMinute.Text)
                     : " ";
 
                 if (lstCust.Any())
@@ -656,26 +663,6 @@ namespace SuperPOS.UI.TA
                         }
                     }
                 }
-            }
-        }
-
-        private string SetAddZeroFront(string strHour)
-        {
-            try
-            {
-                int iTime = Convert.ToInt32(strHour);
-
-                if (iTime < 10)
-                {
-                    return @"0" + iTime.ToString();
-                }
-                else
-                    return iTime.ToString();
-            }
-            catch (Exception ex)
-            {
-                LogHelper.Error(ex.Message, ex);
-                return "00";
             }
         }
     }

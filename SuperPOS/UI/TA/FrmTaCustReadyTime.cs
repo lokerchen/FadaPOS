@@ -48,8 +48,8 @@ namespace SuperPOS.UI.TA
             string strDt = DateTime.Now.ToShortTimeString();
 
             string[] sRt = strDt.Split(':');
-            txtHour.Text = SetAddZeroFront(sRt[0]);
-            txtMinute.Text = SetAddZeroFront(sRt[1]);
+            txtHour.Text = CommonDAL.SetAddZeroFront(sRt[0]);
+            txtMinute.Text = CommonDAL.SetAddZeroFront(sRt[1]);
 
             asfc.controllInitializeSize(this);
         }
@@ -108,8 +108,8 @@ namespace SuperPOS.UI.TA
 
             DateTime dtAdd = dt.AddMinutes(Convert.ToDouble(btn.Text.Replace("+", "")));
 
-            txtHour.Text = dtAdd.Hour.ToString();
-            txtMinute.Text = dtAdd.Minute.ToString();
+            txtHour.Text = CommonDAL.SetAddZeroFront(dtAdd.Hour.ToString());
+            txtMinute.Text = CommonDAL.SetAddZeroFront(dtAdd.Minute.ToString());
         }
         #endregion
 
@@ -173,21 +173,6 @@ namespace SuperPOS.UI.TA
             sShopTime = txtHour.Text + @":" + txtMinute.Text;
             this.DialogResult = DialogResult.OK;
             Close();
-        }
-
-        private string SetAddZeroFront(string strHour)
-        {
-            try
-            {
-                int iTime = Convert.ToInt32(strHour);
-
-                return iTime < 10 ? @"0" + iTime.ToString() : iTime.ToString();
-            }
-            catch (Exception ex)
-            {
-                LogHelper.Error(ex.Message, ex);
-                return "00";
-            }
         }
     }
 }

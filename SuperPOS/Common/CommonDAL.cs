@@ -2002,5 +2002,23 @@ namespace SuperPOS.Common
             LogHelper.Info(@"RefreshSomeInfo #iStatus=" + iStatus+ "strBusDate=" + strBusDate + "strCheckId=" + strCheckId + "#Time: " + ts.TotalMilliseconds);
         }
         #endregion
+
+        #region 时间格式化
+        public static string SetAddZeroFront(string strHour)
+        {
+            try
+            {
+                int iTime = Convert.ToInt32(strHour);
+
+                return iTime < 10 ? @"0" + iTime.ToString() : iTime.ToString();
+            }
+            catch (Exception ex)
+            {
+                LogHelper.Error(ex.Message, ex);
+                return "00";
+            }
+        }
+
+        #endregion
     }
 }
