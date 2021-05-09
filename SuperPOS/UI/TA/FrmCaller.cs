@@ -566,7 +566,7 @@ namespace SuperPOS.UI.TA
 
                 List<TaComePhoneInfo> lstCpTmp = new SQLiteDbHelper().QueryMultiByWhere<TaComePhoneInfo>("Ta_ComePhone", strSqlWhere, dynamicParams);
 
-                new SystemData().GetComePhoneInfo();
+                //new SystemData().GetComePhoneInfo();
                 var lstCp = lstCpTmp.OrderByDescending(s => Convert.ToDateTime(s.ComePhoneTime)).Take(8);
 
                 //new SystemData().GetComePhoneInfo();
