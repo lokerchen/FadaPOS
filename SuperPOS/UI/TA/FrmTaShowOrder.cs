@@ -376,8 +376,18 @@ namespace SuperPOS.UI
 
         private void btnChangePayment_Click(object sender, EventArgs e)
         {
-            new SystemData().GetTaOrderItem();
-            TaCheckOrderInfo taCheckOrderInfo = CommonData.TaCheckOrder.FirstOrDefault(s => s.CheckCode.Equals(strChkOrder) && s.BusDate.Equals(checkBusDate));
+            //new SystemData().GetTaOrderItem();
+            //TaCheckOrderInfo taCheckOrderInfo = CommonData.TaCheckOrder.FirstOrDefault(s => s.CheckCode.Equals(strChkOrder) && s.BusDate.Equals(checkBusDate));
+            string strSqlWhere = "";
+            DynamicParameters dynamicParams = new DynamicParameters();
+
+            strSqlWhere = "CheckCode=@CheckCode AND BusDate=@BusDate";
+
+            dynamicParams.Add("CheckCode", strChkOrder);
+            dynamicParams.Add("BusDate", checkBusDate);
+
+            TaCheckOrderInfo taCheckOrderInfo = new SQLiteDbHelper().QueryFirstByWhere<TaCheckOrderInfo>("Ta_CheckOrder", strSqlWhere, dynamicParams);
+
             FrmTaPaymentShop frmTaPaymentShop = new FrmTaPaymentShop(usrID, 
                                                                      strChkOrder, 
                                                                      sOrderType, 
