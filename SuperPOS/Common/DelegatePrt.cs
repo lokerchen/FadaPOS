@@ -5,7 +5,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Dapper;
 using DevExpress.DataProcessing.InMemoryDataProcessor;
+using SuperPOS.Dapper;
 using SuperPOS.Domain.Entities;
 using SuperPOS.Print;
 
@@ -151,9 +153,18 @@ namespace SuperPOS.Common
             }
             else
             {
-                new SystemData().GetTaCheckOrderByCheckCodeAndBusDate(taCheckOrderInfo.CheckCode, taCheckOrderInfo.BusDate);
+                string strSqlWhere = "";
+                DynamicParameters dynamicParams = new DynamicParameters();
 
-                TaCheckOrderInfo taCheck = CommonData.TaCheckOrderByCheckCodeAndBusDate;
+                //new SystemData().GetTaCheckOrderByCheckCodeAndBusDate(taCheckOrderInfo.CheckCode, taCheckOrderInfo.BusDate);
+
+                //TaCheckOrderInfo taCheck = CommonData.TaCheckOrderByCheckCodeAndBusDate;
+                strSqlWhere = "CheckCode=@CheckCode AND BusDate=@BusDate";
+
+                dynamicParams.Add("CheckCode", taCheckOrderInfo.CheckCode);
+                dynamicParams.Add("BusDate", taCheckOrderInfo.BusDate);
+
+                var taCheck = new SQLiteDbHelper().QueryFirstByWhere<TaCheckOrderInfo>("Ta_CheckOrder", strSqlWhere, dynamicParams);
 
                 //new SystemData().GetTaCheckOrder();
                 //TaCheckOrderInfo taCheck = CommonData.TaCheckOrder.FirstOrDefault(s =>
@@ -161,84 +172,96 @@ namespace SuperPOS.Common
 
                 string strSql = "";
 
+                
                 if (taCheck != null)
                 {
                     //_control.UpdateEntity(taCheckOrderInfo);
-                    strSql = "UPDATE Ta_CheckOrder SET ";
-                    strSql += "CheckCode='" + taCheckOrderInfo.CheckCode + "', ";
-                    strSql += "PayOrderType='" + taCheckOrderInfo.PayOrderType + "', ";
-                    strSql += "PayDelivery='" + taCheckOrderInfo.PayDelivery + "', ";
-                    strSql += "PayPerDiscount='" + taCheckOrderInfo.PayPerDiscount + "', ";
-                    strSql += "PayDiscount='" + taCheckOrderInfo.PayDiscount + "', ";
-                    strSql += "PayPerSurcharge='" + taCheckOrderInfo.PayPerSurcharge + "', ";
-                    strSql += "PaySurcharge='" + taCheckOrderInfo.PaySurcharge + "', ";
-                    strSql += "MenuAmount='" + taCheckOrderInfo.MenuAmount + "', ";
-                    strSql += "TotalAmount='" + taCheckOrderInfo.TotalAmount + "', ";
-                    strSql += "Paid='" + taCheckOrderInfo.Paid + "', ";
-                    strSql += "IsPaid='" + taCheckOrderInfo.IsPaid + "', ";
-                    strSql += "CustomerID='" + taCheckOrderInfo.CustomerID + "', ";
-                    strSql += "CustomerNote='" + taCheckOrderInfo.CustomerNote + "', ";
-                    strSql += "DriverID='" + taCheckOrderInfo.DriverID + "', ";
-                    strSql += "StaffID='" + taCheckOrderInfo.StaffID + "', ";
-                    strSql += "PayTime='" + taCheckOrderInfo.PayTime + "', ";
-                    strSql += "PayType1='" + taCheckOrderInfo.PayType1 + "', ";
-                    strSql += "PayTypePay1='" + taCheckOrderInfo.PayTypePay1 + "', ";
-                    strSql += "PayType2='" + taCheckOrderInfo.PayType2 + "', ";
-                    strSql += "PayTypePay2='" + taCheckOrderInfo.PayTypePay2 + "', ";
-                    strSql += "PayType3='" + taCheckOrderInfo.PayType3 + "', ";
-                    strSql += "PayTypePay3='" + taCheckOrderInfo.PayTypePay3 + "', ";
-                    strSql += "PayType4='" + taCheckOrderInfo.PayType4 + "', ";
-                    strSql += "PayTypePay4='" + taCheckOrderInfo.PayTypePay4 + "', ";
-                    strSql += "PayType5='" + taCheckOrderInfo.PayType5 + "', ";
-                    strSql += "PayTypePay5='" + taCheckOrderInfo.PayTypePay5 + "', ";
-                    strSql += "IsCancel='" + taCheckOrderInfo.IsCancel + "', ";
-                    strSql += "IsSave='" + taCheckOrderInfo.IsSave + "', ";
-                    strSql += "BusDate='" + taCheckOrderInfo.BusDate + "', ";
-                    strSql += "RefNum='" + taCheckOrderInfo.RefNum + "', ";
-                    strSql += "DeliveryFee='" + taCheckOrderInfo.DeliveryFee + "'";
-                    strSql += " WHERE ID = " + taCheck.ID;
+                    //strSql = "UPDATE Ta_CheckOrder SET ";
+                    //strSql += "CheckCode='" + taCheckOrderInfo.CheckCode + "', ";
+                    //strSql += "PayOrderType='" + taCheckOrderInfo.PayOrderType + "', ";
+                    //strSql += "PayDelivery='" + taCheckOrderInfo.PayDelivery + "', ";
+                    //strSql += "PayPerDiscount='" + taCheckOrderInfo.PayPerDiscount + "', ";
+                    //strSql += "PayDiscount='" + taCheckOrderInfo.PayDiscount + "', ";
+                    //strSql += "PayPerSurcharge='" + taCheckOrderInfo.PayPerSurcharge + "', ";
+                    //strSql += "PaySurcharge='" + taCheckOrderInfo.PaySurcharge + "', ";
+                    //strSql += "MenuAmount='" + taCheckOrderInfo.MenuAmount + "', ";
+                    //strSql += "TotalAmount='" + taCheckOrderInfo.TotalAmount + "', ";
+                    //strSql += "Paid='" + taCheckOrderInfo.Paid + "', ";
+                    //strSql += "IsPaid='" + taCheckOrderInfo.IsPaid + "', ";
+                    //strSql += "CustomerID='" + taCheckOrderInfo.CustomerID + "', ";
+                    //strSql += "CustomerNote='" + taCheckOrderInfo.CustomerNote + "', ";
+                    //strSql += "DriverID='" + taCheckOrderInfo.DriverID + "', ";
+                    //strSql += "StaffID='" + taCheckOrderInfo.StaffID + "', ";
+                    //strSql += "PayTime='" + taCheckOrderInfo.PayTime + "', ";
+                    //strSql += "PayType1='" + taCheckOrderInfo.PayType1 + "', ";
+                    //strSql += "PayTypePay1='" + taCheckOrderInfo.PayTypePay1 + "', ";
+                    //strSql += "PayType2='" + taCheckOrderInfo.PayType2 + "', ";
+                    //strSql += "PayTypePay2='" + taCheckOrderInfo.PayTypePay2 + "', ";
+                    //strSql += "PayType3='" + taCheckOrderInfo.PayType3 + "', ";
+                    //strSql += "PayTypePay3='" + taCheckOrderInfo.PayTypePay3 + "', ";
+                    //strSql += "PayType4='" + taCheckOrderInfo.PayType4 + "', ";
+                    //strSql += "PayTypePay4='" + taCheckOrderInfo.PayTypePay4 + "', ";
+                    //strSql += "PayType5='" + taCheckOrderInfo.PayType5 + "', ";
+                    //strSql += "PayTypePay5='" + taCheckOrderInfo.PayTypePay5 + "', ";
+                    //strSql += "IsCancel='" + taCheckOrderInfo.IsCancel + "', ";
+                    //strSql += "IsSave='" + taCheckOrderInfo.IsSave + "', ";
+                    //strSql += "BusDate='" + taCheckOrderInfo.BusDate + "', ";
+                    //strSql += "RefNum='" + taCheckOrderInfo.RefNum + "', ";
+                    //strSql += "DeliveryFee='" + taCheckOrderInfo.DeliveryFee + "'";
+                    //strSql += " WHERE ID = " + taCheck.ID;
+                    taCheckOrderInfo.ID = taCheck.ID;
+
+                    strSqlWhere = "ID=@ID";
+
+                    new SQLiteDbHelper().Update<TaCheckOrderInfo>(@"Ta_CheckOrder", strSqlWhere, taCheckOrderInfo);
                 }
                 else
                 {
                     //_control.AddEntity(taCheckOrderInfo);
-                    strSql = "INSERT INTO Ta_CheckOrder (CheckCode, PayOrderType, PayDelivery, PayPerDiscount, PayDiscount, PayPerSurcharge, PaySurcharge, " + 
-                             "MenuAmount, TotalAmount, Paid, IsPaid, CustomerID, CustomerNote, DriverID, StaffID, PayTime, PayType1, PayTypePay1, PayType2, PayTypePay2, " +
-                             "PayType3, PayTypePay3, PayType4, PayTypePay4, PayType5, PayTypePay5, IsCancel, IsSave, BusDate, RefNum, DeliveryFee) VALUES (";
-                    strSql += "'" + taCheckOrderInfo.CheckCode + "', ";
-                    strSql += "'" + taCheckOrderInfo.PayOrderType + "', ";
-                    strSql += "'" + taCheckOrderInfo.PayDelivery + "', ";
-                    strSql += "'" + taCheckOrderInfo.PayPerDiscount + "', ";
-                    strSql += "'" + taCheckOrderInfo.PayDiscount + "', ";
-                    strSql += "'" + taCheckOrderInfo.PayPerSurcharge + "', ";
-                    strSql += "'" + taCheckOrderInfo.PaySurcharge + "', ";
-                    strSql += "'" + taCheckOrderInfo.MenuAmount + "', ";
-                    strSql += "'" + taCheckOrderInfo.TotalAmount + "', ";
-                    strSql += "'" + taCheckOrderInfo.Paid + "', ";
-                    strSql += "'" + taCheckOrderInfo.IsPaid + "', ";
-                    strSql += "'" + taCheckOrderInfo.CustomerID + "', ";
-                    strSql += "'" + taCheckOrderInfo.CustomerNote + "', ";
-                    strSql += "'" + taCheckOrderInfo.DriverID + "', ";
-                    strSql += "'" + taCheckOrderInfo.StaffID + "', ";
-                    strSql += "'" + taCheckOrderInfo.PayTime + "', ";
-                    strSql += "'" + taCheckOrderInfo.PayType1 + "', ";
-                    strSql += "'" + taCheckOrderInfo.PayTypePay1 + "', ";
-                    strSql += "'" + taCheckOrderInfo.PayType2 + "', ";
-                    strSql += "'" + taCheckOrderInfo.PayTypePay2 + "', ";
-                    strSql += "'" + taCheckOrderInfo.PayType3 + "', ";
-                    strSql += "'" + taCheckOrderInfo.PayTypePay3 + "', ";
-                    strSql += "'" + taCheckOrderInfo.PayType4 + "', ";
-                    strSql += "'" + taCheckOrderInfo.PayTypePay4 + "', ";
-                    strSql += "'" + taCheckOrderInfo.PayType5 + "', ";
-                    strSql += "'" + taCheckOrderInfo.PayTypePay5 + "', ";
-                    strSql += "'" + taCheckOrderInfo.IsCancel + "', ";
-                    strSql += "'" + taCheckOrderInfo.IsSave + "', ";
-                    strSql += "'" + taCheckOrderInfo.BusDate + "', ";
-                    strSql += "'" + taCheckOrderInfo.RefNum + "', ";
-                    strSql += "'" + taCheckOrderInfo.DeliveryFee + "'";
-                    strSql += ")";
+                    //strSql = "INSERT INTO Ta_CheckOrder (CheckCode, PayOrderType, PayDelivery, PayPerDiscount, PayDiscount, PayPerSurcharge, PaySurcharge, " + 
+                    //         "MenuAmount, TotalAmount, Paid, IsPaid, CustomerID, CustomerNote, DriverID, StaffID, PayTime, PayType1, PayTypePay1, PayType2, PayTypePay2, " +
+                    //         "PayType3, PayTypePay3, PayType4, PayTypePay4, PayType5, PayTypePay5, IsCancel, IsSave, BusDate, RefNum, DeliveryFee) VALUES (";
+                    //strSql += "'" + taCheckOrderInfo.CheckCode + "', ";
+                    //strSql += "'" + taCheckOrderInfo.PayOrderType + "', ";
+                    //strSql += "'" + taCheckOrderInfo.PayDelivery + "', ";
+                    //strSql += "'" + taCheckOrderInfo.PayPerDiscount + "', ";
+                    //strSql += "'" + taCheckOrderInfo.PayDiscount + "', ";
+                    //strSql += "'" + taCheckOrderInfo.PayPerSurcharge + "', ";
+                    //strSql += "'" + taCheckOrderInfo.PaySurcharge + "', ";
+                    //strSql += "'" + taCheckOrderInfo.MenuAmount + "', ";
+                    //strSql += "'" + taCheckOrderInfo.TotalAmount + "', ";
+                    //strSql += "'" + taCheckOrderInfo.Paid + "', ";
+                    //strSql += "'" + taCheckOrderInfo.IsPaid + "', ";
+                    //strSql += "'" + taCheckOrderInfo.CustomerID + "', ";
+                    //strSql += "'" + taCheckOrderInfo.CustomerNote + "', ";
+                    //strSql += "'" + taCheckOrderInfo.DriverID + "', ";
+                    //strSql += "'" + taCheckOrderInfo.StaffID + "', ";
+                    //strSql += "'" + taCheckOrderInfo.PayTime + "', ";
+                    //strSql += "'" + taCheckOrderInfo.PayType1 + "', ";
+                    //strSql += "'" + taCheckOrderInfo.PayTypePay1 + "', ";
+                    //strSql += "'" + taCheckOrderInfo.PayType2 + "', ";
+                    //strSql += "'" + taCheckOrderInfo.PayTypePay2 + "', ";
+                    //strSql += "'" + taCheckOrderInfo.PayType3 + "', ";
+                    //strSql += "'" + taCheckOrderInfo.PayTypePay3 + "', ";
+                    //strSql += "'" + taCheckOrderInfo.PayType4 + "', ";
+                    //strSql += "'" + taCheckOrderInfo.PayTypePay4 + "', ";
+                    //strSql += "'" + taCheckOrderInfo.PayType5 + "', ";
+                    //strSql += "'" + taCheckOrderInfo.PayTypePay5 + "', ";
+                    //strSql += "'" + taCheckOrderInfo.IsCancel + "', ";
+                    //strSql += "'" + taCheckOrderInfo.IsSave + "', ";
+                    //strSql += "'" + taCheckOrderInfo.BusDate + "', ";
+                    //strSql += "'" + taCheckOrderInfo.RefNum + "', ";
+                    //strSql += "'" + taCheckOrderInfo.DeliveryFee + "'";
+                    //strSql += ")";
+                    strSqlWhere = "INSERT INTO Ta_CheckOrder (CheckCode, PayOrderType, PayDelivery, PayPerDiscount, PayDiscount, PayPerSurcharge, PaySurcharge, MenuAmount, TotalAmount, Paid, " +
+                                  "IsPaid, CustomerID, CustomerNote, DriverID, StaffID, PayTime, PayType1, PayTypePay1, PayType2, PayTypePay2, PayType3, PayTypePay3, PayType4, PayTypePay4, " +
+                                  "PayType5, PayTypePay5, IsCancel, IsSave, BusDate, RefNum, DeliveryFee) VALUES (@CheckCode, @PayOrderType, @PayDelivery, @PayPerDiscount, @PayDiscount, " +
+                                  "@PayPerSurcharge, @PaySurcharge, @MenuAmount, @TotalAmount, @Paid, @IsPaid, @CustomerID, @CustomerNote, @DriverID, @StaffID, @PayTime, @PayType1, " +
+                                  "@PayTypePay1, @PayType2, @PayTypePay2, @PayType3, @PayTypePay3, @PayType4, @PayTypePay4, @PayType5, @PayTypePay5, @IsCancel, @IsSave, @BusDate, @RefNum, @DeliveryFee)";
+                    bool isSucess = new SQLiteDbHelper().Insert(strSqlWhere, taCheckOrderInfo);
                 }
                 
-                _control.ExecuteSql(strSql);
+                //_control.ExecuteSql(strSql);
 
                 if (isRefreshData) CommonDAL.RefreshSomeInfo("1", "", "");
 
