@@ -2568,6 +2568,7 @@ namespace SuperPOS.UI.TA
                 if (taCustomerInfo == null)
                 {
                     SetCustInfo(true, true, null);
+                    isGetPhone = false;
                 }
                 else
                 {
