@@ -520,9 +520,17 @@ namespace SuperPOS.Common
 
         public static decimal GetTaDiscount(string sType, decimal MenuAmount)
         {
-            new SystemData().GetTaDiscount();
+            //new SystemData().GetTaDiscount();
 
-            var lstDiscount = CommonData.TaDiscount.Where(s => s.TaType.Equals(sType.ToUpper()));
+            //var lstDiscount = CommonData.TaDiscount.Where(s => s.TaType.Equals(sType.ToUpper()));
+            string strSqlWhere = "";
+            DynamicParameters dynamicParams = new DynamicParameters();
+
+            strSqlWhere = "TaType=@TaType";
+
+            dynamicParams.Add("TaType", sType);
+
+            var lstDiscount = new SQLiteDbHelper().QueryMultiByWhere<TaDiscountInfo>("Ta_Discount", strSqlWhere, dynamicParams);
 
             TaDiscountInfo tdi = lstDiscount.FirstOrDefault();
 
@@ -538,9 +546,9 @@ namespace SuperPOS.Common
 
         public static decimal GetTaDeliverySurcharge(decimal dMenuAmount)
         {
-            new SystemData().GetTaDeliverySet();
+            //new SystemData().GetTaDeliverySet();
 
-            var lstDs = CommonData.TaDeliverySet;
+            var lstDs = CommonData.TaDeliverySet = new SQLiteDbHelper().QueryMultiByWhere<TaDeliverySetInfo>("Ta_DeliverySet", "", null);
 
             TaDeliverySetInfo tds = lstDs.FirstOrDefault();
 

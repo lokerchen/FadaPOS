@@ -782,7 +782,7 @@ namespace SuperPOS.UI.TA
             AddFreeOrAutomatic();
 
             List<TaOrderItemInfo> lstTaOI = new List<TaOrderItemInfo>();
-            
+
             lstTaOI = TreeListToOrderItem(isNew);
 
             //代码
@@ -803,23 +803,22 @@ namespace SuperPOS.UI.TA
             //}
 
             CommonDAL.OrderItemDeleteAndInsert(lstTaOI, strBusDate, checkID);
-            
+
             //DelegateOrderItemSaveAndDeleteOld handler = DelegateMy.SaveOrderItemAndDeleteOld;
             //IAsyncResult result = handler.BeginInvoke(checkID, strBusDate, lstTaOI, null, null);
 
             #endregion
 
-            #region 保存账单
+            //保存账单
             //Console.WriteLine(treeListOrder.Columns["ItemTotalPrice"].SummaryFooter.ToString());
             //SaveCheckOrder(lstTaOI, false);
             saveTaCheckOrderInfo = CreateCheckOrderInfo(lstTaOI, false);
-            #endregion
-
+            
             //DelegateRefresh hd1 = DelegateMy.RefreshSomeInfo;
             //hd1.BeginInvoke("3", "", "", null, null);
 
             ht = SetPrtInfo(lstTaOI);
-            
+
             if (ORDER_TYPE.Equals(PubComm.ORDER_TYPE_SHOP))
             {
                 FrmTaPaymentShop frmTaPaymentShop = new FrmTaPaymentShop(lstTaOI, usrID, checkID, ORDER_TYPE, CustID.ToString(), ht, strBusDate, saveTaCheckOrderInfo, lblReadyTime.Visible ? lblReadyTime.Text : "");
@@ -2024,7 +2023,16 @@ namespace SuperPOS.UI.TA
         {
             Hashtable htDetail = new Hashtable();
 
-            new SystemData().GetUsrBase();
+            string strSqlWhere = "";
+            DynamicParameters dynamicParams = new DynamicParameters();
+
+            strSqlWhere = "ID=@ID";
+
+            dynamicParams.Add("ID", usrID);
+
+            CommonData.UsrBase = new SQLiteDbHelper().QueryMultiByWhere<UsrBaseInfo>("Usr_Base", strSqlWhere, dynamicParams);
+
+            //new SystemData().GetUsrBase();
 
             UsrBaseInfo ubi = CommonData.UsrBase.FirstOrDefault(s => s.ID == usrID);
 
@@ -2045,8 +2053,9 @@ namespace SuperPOS.UI.TA
             htDetail["ItemQty"] = iItemCount.ToString();
             //htDetail["SubTotal"] = lstOi.Sum(s => Convert.ToDecimal(string.IsNullOrEmpty(s.ItemTotalPrice) ? "0.00" : s.ItemTotalPrice)).ToString();
             //htDetail["Total"] = lstOi.Sum(s => Convert.ToDecimal(string.IsNullOrEmpty(s.ItemTotalPrice) ? "0.00" : s.ItemTotalPrice)).ToString();
-            htDetail["SubTotal"] = treeListOrder.Nodes.Count > 0 ? treeListOrder.GetSummaryValue(treeListOrder.Columns[7]).ToString() : "0.00";
-            htDetail["Total"] = treeListOrder.Nodes.Count > 0 ? treeListOrder.GetSummaryValue(treeListOrder.Columns[7]).ToString() : "0.00";
+            string strTotal = treeListOrder.GetSummaryValue(treeListOrder.Columns[7]).ToString();
+            htDetail["SubTotal"] = treeListOrder.Nodes.Count > 0 ? strTotal : "0.00";
+            htDetail["Total"] = treeListOrder.Nodes.Count > 0 ? strTotal : "0.00";
 
             return htDetail;
         }
