@@ -2983,7 +2983,7 @@ namespace SuperPOS.UI.TA
 
                     if (taCustomerInfo == null)
                     {
-                        SetCustInfo(true, true, null);
+                        if (CustID <= 0) SetCustInfo(true, true, null);
                     }
                     else
                     {
@@ -3350,7 +3350,7 @@ namespace SuperPOS.UI.TA
 
                         if (taCustomerInfo == null)
                         {
-                            SetCustInfo(true, true, null);
+                            if (CustID <= 0) SetCustInfo(true, true, null);
                         }
                         else
                         {
