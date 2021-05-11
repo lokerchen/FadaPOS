@@ -102,7 +102,7 @@ namespace SuperPOS.UI
             //new SystemData().GetShowAndPendOrderData("", strBusDate);
 
             webBrowser2.Navigate("about:blank/");
-            GetBindData("", true);
+            GetBindData("", true, false);
 
             asfc.controllInitializeSize(this);
 
@@ -114,7 +114,7 @@ namespace SuperPOS.UI
         /// 绑定初始数据
         /// </summary>
         /// <param name="orderType">账单类型</param>
-        private void GetBindData(string orderType, bool isNeedStaff)
+        private void GetBindData(string orderType, bool isNeedStaff, bool isShowRefNum)
         {
             Stopwatch sw = new Stopwatch();
             sw.Start();
@@ -133,6 +133,12 @@ namespace SuperPOS.UI
             {
                 strSqlWhere += " AND PayOrderType=@PayOrderType";
                 dynamicParams.Add("PayOrderType", orderType);
+            }
+
+            if (isShowRefNum)
+            {
+                strSqlWhere += " AND RefNum!=@RefNum";
+                dynamicParams.Add("RefNum", "");
             }
 
             List<ShowAndPendOrderDataInfo> lst = new SQLiteDbHelper().QueryMultiByWhere<ShowAndPendOrderDataInfo>("VIEW_ShowAndPendOrder", strSqlWhere, dynamicParams);
@@ -317,22 +323,22 @@ namespace SuperPOS.UI
         #region 列表过滤
         private void btnAll_Click(object sender, EventArgs e)
         {
-            GetBindData("", true);
+            GetBindData("", true, false);
         }
 
         private void btnCollection_Click(object sender, EventArgs e)
         {
-            GetBindData(PubComm.ORDER_TYPE_COLLECTION, true);
+            GetBindData(PubComm.ORDER_TYPE_COLLECTION, true, false);
         }
 
         private void btnDelivery_Click(object sender, EventArgs e)
         {
-            GetBindData(PubComm.ORDER_TYPE_DELIVERY, true);
+            GetBindData(PubComm.ORDER_TYPE_DELIVERY, true, false);
         }
 
         private void btnShop_Click(object sender, EventArgs e)
         {
-            GetBindData(PubComm.ORDER_TYPE_SHOP, true);
+            GetBindData(PubComm.ORDER_TYPE_SHOP, true, false);
         }
         #endregion
         private int GetItemCount(string sBusDate, string sCheckCode)
@@ -397,7 +403,7 @@ namespace SuperPOS.UI
 
             frmTaPaymentShop.ShowDialog();
 
-            GetBindData("", true);
+            GetBindData("", true, false);
         }
 
         private void btnEditOrder_Click(object sender, EventArgs e)
@@ -517,6 +523,9 @@ namespace SuperPOS.UI
             //webBrowser2.Refresh();
         }
 
-        
+        private void btnFastFood_Click(object sender, EventArgs e)
+        {
+            GetBindData(PubComm.ORDER_TYPE_SHOP, true, true);
+        }
     }
 }

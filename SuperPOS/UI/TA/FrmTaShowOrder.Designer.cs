@@ -361,6 +361,7 @@
             this.btnFastFood.Size = new System.Drawing.Size(79, 51);
             this.btnFastFood.TabIndex = 60;
             this.btnFastFood.Text = "Fast Food";
+            this.btnFastFood.Click += new System.EventHandler(this.btnFastFood_Click);
             // 
             // btnAll
             // 
