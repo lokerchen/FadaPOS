@@ -409,7 +409,7 @@ namespace SuperPOS.UI
 
         private void btnShowDriver_Click(object sender, EventArgs e)
         {
-            FrmTaShowOrderDriver frmTaShowOrderDriver = new FrmTaShowOrderDriver();
+            FrmTaShowOrderDriver frmTaShowOrderDriver = new FrmTaShowOrderDriver(strBusDate);
             frmTaShowOrderDriver.Location = panelControl4.Location;
             frmTaShowOrderDriver.Width = panelControl4.Width;
             frmTaShowOrderDriver.Height = panelControl4.Height - panelControl6.Height;

@@ -7,8 +7,11 @@ using System.Text;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Dapper;
 using DevExpress.XtraEditors;
 using SuperPOS.Common;
+using SuperPOS.Dapper;
+using SuperPOS.Domain.Entities;
 
 namespace SuperPOS.UI.TA
 {
@@ -16,8 +19,15 @@ namespace SuperPOS.UI.TA
     {
         private AutoSizeFormClass asfc = new AutoSizeFormClass();
 
+        private string strBusDate = "";
         public FrmTaShowOrderDriver()
         {
+            InitializeComponent();
+        }
+
+        public FrmTaShowOrderDriver(string sBusDate)
+        {
+            strBusDate = sBusDate;
             InitializeComponent();
         }
 
@@ -28,6 +38,8 @@ namespace SuperPOS.UI.TA
 
         private void FrmTaShowOrderDriver_Load(object sender, EventArgs e)
         {
+            CommonData.TaDriver = new SQLiteDbHelper().QueryMultiByWhere<TaDriverInfo>("Ta_Driver", "", null);
+
             BinLueDriver();
 
             asfc.controllInitializeSize(this);
@@ -42,8 +54,7 @@ namespace SuperPOS.UI.TA
 
         private void BinLueDriver()
         {
-            new SystemData().GetTaDriver();
-
+            //new SystemData().GetTaDriver();
             var lstDriver = from td in CommonData.TaDriver.Where(s => !string.IsNullOrEmpty(s.DriverName))
                             select new
                             {
@@ -61,7 +72,17 @@ namespace SuperPOS.UI.TA
         #region 数据绑定
         private void GetBindData(int iDriver)
         {
-            var lstCheck = CommonData.TaCheckOrder.Where(s => s.PayOrderType.Equals(PubComm.ORDER_TYPE_DELIVERY));
+            string strSqlWhere = "";
+            DynamicParameters dynamicParams = new DynamicParameters();
+
+            strSqlWhere = "PayOrderType=@PayOrderType AND BusDate=@BusDate";
+
+            dynamicParams.Add("PayOrderType", PubComm.ORDER_TYPE_DELIVERY);
+            dynamicParams.Add("BusDate", strBusDate);
+
+            var lstCheck = new SQLiteDbHelper().QueryMultiByWhere<TaCheckOrderInfo>("Ta_CheckOrder", strSqlWhere, dynamicParams);
+
+            //var lstCheck = CommonData.TaCheckOrder.Where(s => s.PayOrderType.Equals(PubComm.ORDER_TYPE_DELIVERY));
 
             var lstDb = from check in lstCheck
                 join driver in CommonData.TaDriver
