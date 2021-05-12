@@ -46,7 +46,7 @@ namespace SuperPOS.UI
         private string sRefNo = @" ";
         private string sDeliveryFee = @"0.00";
         private string sSurcharge = @"0.00";
-
+        
         private string sPayType = @"";
         
         private PrtTemplataTa ptl = new PrtTemplataTa();
