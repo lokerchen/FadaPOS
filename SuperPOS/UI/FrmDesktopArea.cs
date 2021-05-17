@@ -81,6 +81,8 @@ namespace SuperPOS.UI
 
             strBusDate = CommonDAL.GetBusDate();
 
+            this.TopMost = true;
+
             asfc.controllInitializeSize(this);
         }
 
@@ -101,12 +103,16 @@ namespace SuperPOS.UI
             //IAsyncResult rt = hd.BeginInvoke("8", strBusDate, "", null, null);
             CommonDAL.RefreshSomeInfo("8", strBusDate, "");
 
+            this.TopMost = false;
+
             FrmTaShowOrder frmTaShowOrder = new FrmTaShowOrder(usrID, strBusDate);
             frmTaShowOrder.ShowDialog();
         }
 
         private void btnOrderScreen_Click(object sender, EventArgs e)
         {
+            this.TopMost = false;
+
             ////显示订餐界面
             //FrmTaMain frmTaMain = new FrmTaMain(usrID, PubComm.MENU_LANG_DEFAULT);
 
