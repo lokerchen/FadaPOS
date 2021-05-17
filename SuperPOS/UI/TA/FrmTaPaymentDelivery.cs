@@ -1372,7 +1372,7 @@ namespace SuperPOS.UI.TA
 
                 taCheckOrder.RefNum = "";
 
-                taCheckOrder.DeliveryFee = @"0.00";
+                taCheckOrder.DeliveryFee = saveTaCheckOrderInfo.DeliveryFee;
 
                 WbPrtTemplataTa wbPrtTemplataTa = new WbPrtTemplataTa();
 
