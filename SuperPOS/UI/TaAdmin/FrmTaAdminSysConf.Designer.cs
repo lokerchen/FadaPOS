@@ -29,6 +29,11 @@
         private void InitializeComponent()
         {
             this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.labelControl5 = new DevExpress.XtraEditors.LabelControl();
+            this.chkDevice1 = new DevExpress.XtraEditors.CheckEdit();
+            this.chkDevice2 = new DevExpress.XtraEditors.CheckEdit();
+            this.chkTestMode = new DevExpress.XtraEditors.CheckEdit();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.txtPayType5 = new DevExpress.XtraEditors.TextEdit();
             this.txtPayType4 = new DevExpress.XtraEditors.TextEdit();
@@ -37,8 +42,6 @@
             this.txtPayType1 = new DevExpress.XtraEditors.TextEdit();
             this.btnExit = new DevExpress.XtraEditors.SimpleButton();
             this.btnSave = new DevExpress.XtraEditors.SimpleButton();
-            this.groupControl7 = new DevExpress.XtraEditors.GroupControl();
-            this.chkTestMode = new DevExpress.XtraEditors.CheckEdit();
             this.groupControl6 = new DevExpress.XtraEditors.GroupControl();
             this.txtPrtOpRoundUpDecimal = new DevExpress.XtraEditors.TextEdit();
             this.labelControl9 = new DevExpress.XtraEditors.LabelControl();
@@ -71,9 +74,6 @@
             this.chkCashDrawSet = new DevExpress.XtraEditors.CheckEdit();
             this.txtPwd = new DevExpress.XtraEditors.TextEdit();
             this.labelControl10 = new DevExpress.XtraEditors.LabelControl();
-            this.groupControl3 = new DevExpress.XtraEditors.GroupControl();
-            this.chkDevice2 = new DevExpress.XtraEditors.CheckEdit();
-            this.chkDevice1 = new DevExpress.XtraEditors.CheckEdit();
             this.groupControl2 = new DevExpress.XtraEditors.GroupControl();
             this.lueBackUpDriver = new DevExpress.XtraEditors.LookUpEdit();
             this.chkIsBackup = new DevExpress.XtraEditors.CheckEdit();
@@ -88,17 +88,19 @@
             this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
             this.txtShopName = new DevExpress.XtraEditors.TextEdit();
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
+            this.label1 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
             this.panelControl1.SuspendLayout();
+            this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.chkDevice1.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.chkDevice2.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.chkTestMode.Properties)).BeginInit();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.txtPayType5.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtPayType4.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtPayType3.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtPayType2.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtPayType1.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.groupControl7)).BeginInit();
-            this.groupControl7.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.chkTestMode.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl6)).BeginInit();
             this.groupControl6.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.txtPrtOpRoundUpDecimal.Properties)).BeginInit();
@@ -120,10 +122,6 @@
             this.groupControl4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.chkCashDrawSet.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtPwd.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.groupControl3)).BeginInit();
-            this.groupControl3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.chkDevice2.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.chkDevice1.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl2)).BeginInit();
             this.groupControl2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.lueBackUpDriver.Properties)).BeginInit();
@@ -138,21 +136,72 @@
             // 
             // panelControl1
             // 
+            this.panelControl1.Controls.Add(this.label1);
+            this.panelControl1.Controls.Add(this.panel1);
+            this.panelControl1.Controls.Add(this.chkTestMode);
             this.panelControl1.Controls.Add(this.groupBox2);
             this.panelControl1.Controls.Add(this.btnExit);
             this.panelControl1.Controls.Add(this.btnSave);
-            this.panelControl1.Controls.Add(this.groupControl7);
             this.panelControl1.Controls.Add(this.groupControl6);
             this.panelControl1.Controls.Add(this.groupControl5);
             this.panelControl1.Controls.Add(this.groupControl4);
-            this.panelControl1.Controls.Add(this.groupControl3);
             this.panelControl1.Controls.Add(this.groupControl2);
             this.panelControl1.Controls.Add(this.groupControl1);
             this.panelControl1.Location = new System.Drawing.Point(7, 8);
             this.panelControl1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panelControl1.Name = "panelControl1";
-            this.panelControl1.Size = new System.Drawing.Size(696, 547);
+            this.panelControl1.Size = new System.Drawing.Size(696, 508);
             this.panelControl1.TabIndex = 2;
+            // 
+            // panel1
+            // 
+            this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel1.Controls.Add(this.labelControl5);
+            this.panel1.Controls.Add(this.chkDevice1);
+            this.panel1.Controls.Add(this.chkDevice2);
+            this.panel1.Location = new System.Drawing.Point(359, 9);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(331, 30);
+            this.panel1.TabIndex = 21;
+            // 
+            // labelControl5
+            // 
+            this.labelControl5.Appearance.Font = new System.Drawing.Font("Tahoma", 12F);
+            this.labelControl5.Appearance.Options.UseFont = true;
+            this.labelControl5.Location = new System.Drawing.Point(3, 5);
+            this.labelControl5.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.labelControl5.Name = "labelControl5";
+            this.labelControl5.Size = new System.Drawing.Size(93, 19);
+            this.labelControl5.TabIndex = 9;
+            this.labelControl5.Text = "Caller ID Box";
+            // 
+            // chkDevice1
+            // 
+            this.chkDevice1.Location = new System.Drawing.Point(153, 4);
+            this.chkDevice1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.chkDevice1.Name = "chkDevice1";
+            this.chkDevice1.Properties.Caption = "Device #1";
+            this.chkDevice1.Size = new System.Drawing.Size(85, 20);
+            this.chkDevice1.TabIndex = 15;
+            // 
+            // chkDevice2
+            // 
+            this.chkDevice2.Location = new System.Drawing.Point(244, 4);
+            this.chkDevice2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.chkDevice2.Name = "chkDevice2";
+            this.chkDevice2.Properties.Caption = "Device #2";
+            this.chkDevice2.Size = new System.Drawing.Size(82, 20);
+            this.chkDevice2.TabIndex = 16;
+            // 
+            // chkTestMode
+            // 
+            this.chkTestMode.Location = new System.Drawing.Point(253, 15);
+            this.chkTestMode.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.chkTestMode.Name = "chkTestMode";
+            this.chkTestMode.Properties.Caption = "Test Mode";
+            this.chkTestMode.Properties.GlyphAlignment = DevExpress.Utils.HorzAlignment.Far;
+            this.chkTestMode.Size = new System.Drawing.Size(83, 20);
+            this.chkTestMode.TabIndex = 16;
             // 
             // groupBox2
             // 
@@ -162,11 +211,11 @@
             this.groupBox2.Controls.Add(this.txtPayType2);
             this.groupBox2.Controls.Add(this.txtPayType1);
             this.groupBox2.Font = new System.Drawing.Font("Tahoma", 12F);
-            this.groupBox2.Location = new System.Drawing.Point(516, 173);
+            this.groupBox2.Location = new System.Drawing.Point(516, 180);
             this.groupBox2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.groupBox2.Size = new System.Drawing.Size(174, 184);
+            this.groupBox2.Size = new System.Drawing.Size(174, 258);
             this.groupBox2.TabIndex = 20;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Payment Type";
@@ -174,7 +223,7 @@
             // txtPayType5
             // 
             this.txtPayType5.EditValue = "";
-            this.txtPayType5.Location = new System.Drawing.Point(12, 140);
+            this.txtPayType5.Location = new System.Drawing.Point(12, 211);
             this.txtPayType5.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtPayType5.Name = "txtPayType5";
             this.txtPayType5.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 11F);
@@ -185,7 +234,7 @@
             // txtPayType4
             // 
             this.txtPayType4.EditValue = "";
-            this.txtPayType4.Location = new System.Drawing.Point(12, 114);
+            this.txtPayType4.Location = new System.Drawing.Point(12, 171);
             this.txtPayType4.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtPayType4.Name = "txtPayType4";
             this.txtPayType4.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 11F);
@@ -196,7 +245,7 @@
             // txtPayType3
             // 
             this.txtPayType3.EditValue = "";
-            this.txtPayType3.Location = new System.Drawing.Point(12, 87);
+            this.txtPayType3.Location = new System.Drawing.Point(12, 131);
             this.txtPayType3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtPayType3.Name = "txtPayType3";
             this.txtPayType3.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 11F);
@@ -207,7 +256,7 @@
             // txtPayType2
             // 
             this.txtPayType2.EditValue = "";
-            this.txtPayType2.Location = new System.Drawing.Point(12, 61);
+            this.txtPayType2.Location = new System.Drawing.Point(12, 91);
             this.txtPayType2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtPayType2.Name = "txtPayType2";
             this.txtPayType2.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 11F);
@@ -218,7 +267,7 @@
             // txtPayType1
             // 
             this.txtPayType1.EditValue = "";
-            this.txtPayType1.Location = new System.Drawing.Point(12, 34);
+            this.txtPayType1.Location = new System.Drawing.Point(12, 51);
             this.txtPayType1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtPayType1.Name = "txtPayType1";
             this.txtPayType1.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 11F);
@@ -237,7 +286,7 @@
             this.btnExit.Appearance.Options.UseTextOptions = true;
             this.btnExit.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
             this.btnExit.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
-            this.btnExit.Location = new System.Drawing.Point(604, 436);
+            this.btnExit.Location = new System.Drawing.Point(604, 453);
             this.btnExit.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnExit.Name = "btnExit";
             this.btnExit.Size = new System.Drawing.Size(80, 39);
@@ -256,32 +305,13 @@
             this.btnSave.Appearance.Options.UseTextOptions = true;
             this.btnSave.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
             this.btnSave.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
-            this.btnSave.Location = new System.Drawing.Point(518, 436);
+            this.btnSave.Location = new System.Drawing.Point(518, 453);
             this.btnSave.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(80, 39);
             this.btnSave.TabIndex = 18;
             this.btnSave.Text = "Save";
             this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
-            // 
-            // groupControl7
-            // 
-            this.groupControl7.Controls.Add(this.chkTestMode);
-            this.groupControl7.Location = new System.Drawing.Point(525, 4);
-            this.groupControl7.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.groupControl7.Name = "groupControl7";
-            this.groupControl7.Size = new System.Drawing.Size(165, 78);
-            this.groupControl7.TabIndex = 17;
-            this.groupControl7.Text = "Test Mode";
-            // 
-            // chkTestMode
-            // 
-            this.chkTestMode.Location = new System.Drawing.Point(17, 37);
-            this.chkTestMode.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.chkTestMode.Name = "chkTestMode";
-            this.chkTestMode.Properties.Caption = "Enable Test Mode";
-            this.chkTestMode.Size = new System.Drawing.Size(113, 20);
-            this.chkTestMode.TabIndex = 16;
             // 
             // groupControl6
             // 
@@ -291,16 +321,16 @@
             this.groupControl6.Controls.Add(this.labelControl8);
             this.groupControl6.Controls.Add(this.luePrtOpRptPrt);
             this.groupControl6.Controls.Add(this.labelControl7);
-            this.groupControl6.Location = new System.Drawing.Point(4, 317);
+            this.groupControl6.Location = new System.Drawing.Point(4, 367);
             this.groupControl6.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.groupControl6.Name = "groupControl6";
-            this.groupControl6.Size = new System.Drawing.Size(294, 97);
+            this.groupControl6.Size = new System.Drawing.Size(344, 135);
             this.groupControl6.TabIndex = 6;
             this.groupControl6.Text = "Print Options";
             // 
             // txtPrtOpRoundUpDecimal
             // 
-            this.txtPrtOpRoundUpDecimal.Location = new System.Drawing.Point(122, 72);
+            this.txtPrtOpRoundUpDecimal.Location = new System.Drawing.Point(134, 103);
             this.txtPrtOpRoundUpDecimal.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtPrtOpRoundUpDecimal.Name = "txtPrtOpRoundUpDecimal";
             this.txtPrtOpRoundUpDecimal.Properties.Mask.EditMask = "f0";
@@ -310,7 +340,7 @@
             // 
             // labelControl9
             // 
-            this.labelControl9.Location = new System.Drawing.Point(4, 74);
+            this.labelControl9.Location = new System.Drawing.Point(16, 105);
             this.labelControl9.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.labelControl9.Name = "labelControl9";
             this.labelControl9.Size = new System.Drawing.Size(99, 14);
@@ -319,7 +349,7 @@
             // 
             // luePrtOpA4
             // 
-            this.luePrtOpA4.Location = new System.Drawing.Point(122, 48);
+            this.luePrtOpA4.Location = new System.Drawing.Point(134, 69);
             this.luePrtOpA4.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.luePrtOpA4.Name = "luePrtOpA4";
             this.luePrtOpA4.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
@@ -329,7 +359,7 @@
             // 
             // labelControl8
             // 
-            this.labelControl8.Location = new System.Drawing.Point(11, 51);
+            this.labelControl8.Location = new System.Drawing.Point(23, 72);
             this.labelControl8.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.labelControl8.Name = "labelControl8";
             this.labelControl8.Size = new System.Drawing.Size(96, 14);
@@ -338,7 +368,7 @@
             // 
             // luePrtOpRptPrt
             // 
-            this.luePrtOpRptPrt.Location = new System.Drawing.Point(122, 24);
+            this.luePrtOpRptPrt.Location = new System.Drawing.Point(134, 35);
             this.luePrtOpRptPrt.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.luePrtOpRptPrt.Name = "luePrtOpRptPrt";
             this.luePrtOpRptPrt.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
@@ -348,7 +378,7 @@
             // 
             // labelControl7
             // 
-            this.labelControl7.Location = new System.Drawing.Point(11, 26);
+            this.labelControl7.Location = new System.Drawing.Point(23, 37);
             this.labelControl7.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.labelControl7.Name = "labelControl7";
             this.labelControl7.Size = new System.Drawing.Size(77, 14);
@@ -377,7 +407,7 @@
             this.groupControl5.Controls.Add(this.labelControl12);
             this.groupControl5.Controls.Add(this.txtKeySet1);
             this.groupControl5.Controls.Add(this.labelControl11);
-            this.groupControl5.Location = new System.Drawing.Point(354, 173);
+            this.groupControl5.Location = new System.Drawing.Point(354, 185);
             this.groupControl5.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.groupControl5.Name = "groupControl5";
             this.groupControl5.Size = new System.Drawing.Size(156, 317);
@@ -559,27 +589,27 @@
             this.groupControl4.Controls.Add(this.chkCashDrawSet);
             this.groupControl4.Controls.Add(this.txtPwd);
             this.groupControl4.Controls.Add(this.labelControl10);
-            this.groupControl4.Location = new System.Drawing.Point(354, 86);
+            this.groupControl4.Location = new System.Drawing.Point(355, 54);
             this.groupControl4.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.groupControl4.Name = "groupControl4";
-            this.groupControl4.Size = new System.Drawing.Size(336, 82);
+            this.groupControl4.Size = new System.Drawing.Size(336, 107);
             this.groupControl4.TabIndex = 4;
             this.groupControl4.Text = "Cash Drawer Setting";
             // 
             // chkCashDrawSet
             // 
-            this.chkCashDrawSet.Location = new System.Drawing.Point(6, 26);
+            this.chkCashDrawSet.Location = new System.Drawing.Point(11, 35);
             this.chkCashDrawSet.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.chkCashDrawSet.Name = "chkCashDrawSet";
             this.chkCashDrawSet.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.chkCashDrawSet.Properties.Appearance.Options.UseFont = true;
-            this.chkCashDrawSet.Properties.Caption = "Use Cash Draw";
+            this.chkCashDrawSet.Properties.Caption = "Enable Password";
             this.chkCashDrawSet.Size = new System.Drawing.Size(169, 20);
             this.chkCashDrawSet.TabIndex = 7;
             // 
             // txtPwd
             // 
-            this.txtPwd.Location = new System.Drawing.Point(135, 54);
+            this.txtPwd.Location = new System.Drawing.Point(140, 67);
             this.txtPwd.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtPwd.Name = "txtPwd";
             this.txtPwd.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -591,41 +621,12 @@
             // 
             this.labelControl10.Appearance.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelControl10.Appearance.Options.UseFont = true;
-            this.labelControl10.Location = new System.Drawing.Point(6, 59);
+            this.labelControl10.Location = new System.Drawing.Point(11, 72);
             this.labelControl10.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.labelControl10.Name = "labelControl10";
-            this.labelControl10.Size = new System.Drawing.Size(116, 14);
+            this.labelControl10.Size = new System.Drawing.Size(123, 14);
             this.labelControl10.TabIndex = 5;
-            this.labelControl10.Text = "Cash Draw Password:";
-            // 
-            // groupControl3
-            // 
-            this.groupControl3.Controls.Add(this.chkDevice2);
-            this.groupControl3.Controls.Add(this.chkDevice1);
-            this.groupControl3.Location = new System.Drawing.Point(354, 4);
-            this.groupControl3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.groupControl3.Name = "groupControl3";
-            this.groupControl3.Size = new System.Drawing.Size(165, 78);
-            this.groupControl3.TabIndex = 4;
-            this.groupControl3.Text = "Caller ID Port Setting";
-            // 
-            // chkDevice2
-            // 
-            this.chkDevice2.Location = new System.Drawing.Point(17, 51);
-            this.chkDevice2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.chkDevice2.Name = "chkDevice2";
-            this.chkDevice2.Properties.Caption = "Device #2";
-            this.chkDevice2.Size = new System.Drawing.Size(113, 20);
-            this.chkDevice2.TabIndex = 16;
-            // 
-            // chkDevice1
-            // 
-            this.chkDevice1.Location = new System.Drawing.Point(17, 29);
-            this.chkDevice1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.chkDevice1.Name = "chkDevice1";
-            this.chkDevice1.Properties.Caption = "Device #1";
-            this.chkDevice1.Size = new System.Drawing.Size(113, 20);
-            this.chkDevice1.TabIndex = 15;
+            this.labelControl10.Text = "Cash Drawer Password";
             // 
             // groupControl2
             // 
@@ -637,10 +638,10 @@
             this.groupControl2.Controls.Add(this.labelControl4);
             this.groupControl2.Controls.Add(this.labelControl6);
             this.groupControl2.Controls.Add(this.chkDisplayCode);
-            this.groupControl2.Location = new System.Drawing.Point(4, 139);
+            this.groupControl2.Location = new System.Drawing.Point(4, 189);
             this.groupControl2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.groupControl2.Name = "groupControl2";
-            this.groupControl2.Size = new System.Drawing.Size(294, 173);
+            this.groupControl2.Size = new System.Drawing.Size(344, 173);
             this.groupControl2.TabIndex = 3;
             this.groupControl2.Text = "General Setting";
             // 
@@ -728,7 +729,7 @@
             this.groupControl1.Controls.Add(this.labelControl2);
             this.groupControl1.Controls.Add(this.txtShopName);
             this.groupControl1.Controls.Add(this.labelControl1);
-            this.groupControl1.Location = new System.Drawing.Point(4, 4);
+            this.groupControl1.Location = new System.Drawing.Point(4, 54);
             this.groupControl1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.groupControl1.Name = "groupControl1";
             this.groupControl1.Size = new System.Drawing.Size(345, 131);
@@ -770,11 +771,21 @@
             this.labelControl1.TabIndex = 5;
             this.labelControl1.Text = "Shop Name:";
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Tahoma", 14F, System.Drawing.FontStyle.Bold);
+            this.label1.Location = new System.Drawing.Point(13, 13);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(217, 23);
+            this.label1.TabIndex = 22;
+            this.label1.Text = "System Configuration";
+            // 
             // FrmTaAdminSysConf
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 14F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(709, 564);
+            this.ClientSize = new System.Drawing.Size(709, 521);
             this.Controls.Add(this.panelControl1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -786,15 +797,18 @@
             this.SizeChanged += new System.EventHandler(this.FrmTaAdminSysConf_SizeChanged);
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).EndInit();
             this.panelControl1.ResumeLayout(false);
+            this.panelControl1.PerformLayout();
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.chkDevice1.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.chkDevice2.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.chkTestMode.Properties)).EndInit();
             this.groupBox2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.txtPayType5.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtPayType4.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtPayType3.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtPayType2.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtPayType1.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.groupControl7)).EndInit();
-            this.groupControl7.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.chkTestMode.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl6)).EndInit();
             this.groupControl6.ResumeLayout(false);
             this.groupControl6.PerformLayout();
@@ -819,10 +833,6 @@
             this.groupControl4.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.chkCashDrawSet.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtPwd.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.groupControl3)).EndInit();
-            this.groupControl3.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.chkDevice2.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.chkDevice1.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl2)).EndInit();
             this.groupControl2.ResumeLayout(false);
             this.groupControl2.PerformLayout();
@@ -851,7 +861,6 @@
         private DevExpress.XtraEditors.GroupControl groupControl6;
         private DevExpress.XtraEditors.GroupControl groupControl5;
         private DevExpress.XtraEditors.GroupControl groupControl4;
-        private DevExpress.XtraEditors.GroupControl groupControl3;
         private DevExpress.XtraEditors.LookUpEdit lueBackUpDriver;
         private DevExpress.XtraEditors.CheckEdit chkIsBackup;
         private DevExpress.XtraEditors.LabelControl labelControl3;
@@ -868,7 +877,6 @@
         private DevExpress.XtraEditors.LabelControl labelControl7;
         private DevExpress.XtraEditors.CheckEdit chkDevice2;
         private DevExpress.XtraEditors.CheckEdit chkDevice1;
-        private DevExpress.XtraEditors.GroupControl groupControl7;
         private DevExpress.XtraEditors.CheckEdit chkTestMode;
         private DevExpress.XtraEditors.TextEdit txtKeySet10;
         private DevExpress.XtraEditors.LabelControl labelControl19;
@@ -901,5 +909,8 @@
         private DevExpress.XtraEditors.TextEdit txtPayType3;
         private DevExpress.XtraEditors.TextEdit txtPayType2;
         private DevExpress.XtraEditors.TextEdit txtPayType1;
+        private System.Windows.Forms.Panel panel1;
+        private DevExpress.XtraEditors.LabelControl labelControl5;
+        private System.Windows.Forms.Label label1;
     }
 }
