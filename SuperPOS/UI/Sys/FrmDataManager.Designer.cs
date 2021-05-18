@@ -41,66 +41,79 @@
             // 
             // btnBackup
             // 
-            this.btnBackup.Location = new System.Drawing.Point(481, 19);
+            this.btnBackup.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
+            this.btnBackup.Appearance.Options.UseBackColor = true;
+            this.btnBackup.Location = new System.Drawing.Point(421, 15);
+            this.btnBackup.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnBackup.Name = "btnBackup";
-            this.btnBackup.Size = new System.Drawing.Size(148, 47);
+            this.btnBackup.Size = new System.Drawing.Size(130, 37);
             this.btnBackup.TabIndex = 0;
             this.btnBackup.Text = "Backup Data";
             this.btnBackup.Click += new System.EventHandler(this.btnBackup_Click);
             // 
             // labelControl1
             // 
-            this.labelControl1.Location = new System.Drawing.Point(14, 19);
+            this.labelControl1.Location = new System.Drawing.Point(12, 15);
+            this.labelControl1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.labelControl1.Name = "labelControl1";
-            this.labelControl1.Size = new System.Drawing.Size(171, 18);
+            this.labelControl1.Size = new System.Drawing.Size(143, 14);
             this.labelControl1.TabIndex = 1;
             this.labelControl1.Text = "Backup Data File Location:";
             // 
             // txtBackup
             // 
-            this.txtBackup.Location = new System.Drawing.Point(14, 43);
+            this.txtBackup.Location = new System.Drawing.Point(12, 33);
+            this.txtBackup.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtBackup.Name = "txtBackup";
-            this.txtBackup.Size = new System.Drawing.Size(437, 24);
+            this.txtBackup.Size = new System.Drawing.Size(382, 20);
             this.txtBackup.TabIndex = 2;
             // 
             // txtRestore
             // 
-            this.txtRestore.Location = new System.Drawing.Point(14, 141);
+            this.txtRestore.Location = new System.Drawing.Point(12, 110);
+            this.txtRestore.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtRestore.Name = "txtRestore";
-            this.txtRestore.Size = new System.Drawing.Size(437, 24);
+            this.txtRestore.Size = new System.Drawing.Size(382, 20);
             this.txtRestore.TabIndex = 5;
             // 
             // labelControl2
             // 
-            this.labelControl2.Location = new System.Drawing.Point(14, 117);
+            this.labelControl2.Location = new System.Drawing.Point(12, 91);
+            this.labelControl2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.labelControl2.Name = "labelControl2";
-            this.labelControl2.Size = new System.Drawing.Size(174, 18);
+            this.labelControl2.Size = new System.Drawing.Size(146, 14);
             this.labelControl2.TabIndex = 4;
             this.labelControl2.Text = "Restore Data File Location:";
             // 
             // btnRestore
             // 
-            this.btnRestore.Location = new System.Drawing.Point(481, 74);
+            this.btnRestore.Appearance.BackColor = System.Drawing.Color.Teal;
+            this.btnRestore.Appearance.Options.UseBackColor = true;
+            this.btnRestore.Location = new System.Drawing.Point(421, 58);
+            this.btnRestore.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnRestore.Name = "btnRestore";
-            this.btnRestore.Size = new System.Drawing.Size(148, 47);
+            this.btnRestore.Size = new System.Drawing.Size(130, 37);
             this.btnRestore.TabIndex = 3;
             this.btnRestore.Text = "Restore Data";
             this.btnRestore.Click += new System.EventHandler(this.btnRestore_Click);
             // 
             // btnExit
             // 
-            this.btnExit.Location = new System.Drawing.Point(481, 129);
+            this.btnExit.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.btnExit.Appearance.Options.UseBackColor = true;
+            this.btnExit.Location = new System.Drawing.Point(421, 100);
+            this.btnExit.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnExit.Name = "btnExit";
-            this.btnExit.Size = new System.Drawing.Size(148, 47);
+            this.btnExit.Size = new System.Drawing.Size(130, 37);
             this.btnExit.TabIndex = 6;
             this.btnExit.Text = "Exit";
             this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
             // 
             // FrmDataManager
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 18F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 14F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(649, 191);
+            this.ClientSize = new System.Drawing.Size(568, 149);
             this.Controls.Add(this.btnExit);
             this.Controls.Add(this.txtRestore);
             this.Controls.Add(this.labelControl2);
@@ -109,6 +122,7 @@
             this.Controls.Add(this.labelControl1);
             this.Controls.Add(this.btnBackup);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "FrmDataManager";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "FrmDataManager";
