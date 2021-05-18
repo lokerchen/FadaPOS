@@ -46,6 +46,7 @@ namespace SuperPOS.UI
 
         private void btnCtlPanel_Click(object sender, EventArgs e)
         {
+            this.TopMost = false;
             //DelegateRefresh hd = DelegateMy.RefreshSomeInfo;
             //IAsyncResult rt = hd.BeginInvoke("9", strBusDate, "", null, null);
             CommonDAL.RefreshSomeInfo("9", strBusDate, "");
