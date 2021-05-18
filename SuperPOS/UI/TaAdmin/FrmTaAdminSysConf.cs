@@ -151,7 +151,7 @@ namespace SuperPOS.UI.TaAdmin
                     GenSetInfo genSetInfo = new GenSetInfo();
                     genSetInfo = CommonData.GenSet.FirstOrDefault();
                     txtTillNum.Text = genSetInfo.TillNum;
-                    txtCheckCurrency.Text = "";
+                    //txtCheckCurrency.Text = "";
                     txtVatPer.Text = genSetInfo.VATPer;
                     chkDisplayCode.Checked = genSetInfo.IsShowItemCode.Equals("Y");
                     if (string.IsNullOrEmpty(genSetInfo.IsBackup))
@@ -171,7 +171,7 @@ namespace SuperPOS.UI.TaAdmin
                 else
                 {
                     txtTillNum.Text = "";
-                    txtCheckCurrency.Text = "";
+                    //txtCheckCurrency.Text = "";
                     txtVatPer.Text = "";
                     chkDisplayCode.Checked = false;
                     chkIsBackup.Checked = false;
