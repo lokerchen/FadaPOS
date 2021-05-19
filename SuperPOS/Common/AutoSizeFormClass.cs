@@ -17,6 +17,8 @@ namespace SuperPOS.Common
             public int Top;
             public int Width;
             public int Height;
+            public float FontSize;
+            public FontFamily FontFamily;
         }
         //(2).声明 1个对象
         //注意这里不能使用控件列表记录 List nCtrl;，因为控件的关联性，记录的始终是当前的大小。
@@ -29,6 +31,8 @@ namespace SuperPOS.Common
         {
             controlRect cR;
             cR.Left = mForm.Left; cR.Top = mForm.Top; cR.Width = mForm.Width; cR.Height = mForm.Height;
+            cR.FontSize = mForm.Font.Size;
+            cR.FontFamily = mForm.Font.FontFamily;
             oldCtrl.Add(cR);//第一个为"窗体本身",只加入一次即可
             AddControl(mForm);//窗体内其余控件还可能嵌套控件(比如panel),要单独抽出,因为要递归调用
                               //this.WindowState = (System.Windows.Forms.FormWindowState)(2);//记录完控件的初始位置和大小后，再最大化
@@ -42,6 +46,8 @@ namespace SuperPOS.Common
                //    AddControl(c);//窗体内其余控件还可能嵌套控件(比如panel),要单独抽出,因为要递归调用
                 controlRect objCtrl;
                 objCtrl.Left = c.Left; objCtrl.Top = c.Top; objCtrl.Width = c.Width; objCtrl.Height = c.Height;
+                objCtrl.FontSize = c.Font.Size;
+                objCtrl.FontFamily = c.Font.FontFamily;
                 oldCtrl.Add(objCtrl);
                 //**放在这里，是先记录控件本身，后记录控件的子控件
                 if (c.Controls.Count > 0)
@@ -57,18 +63,23 @@ namespace SuperPOS.Common
                 controlRect cR;
                 //  cR.Left = mForm.Left; cR.Top = mForm.Top; cR.Width = mForm.Width; cR.Height = mForm.Height;
                 cR.Left = 0; cR.Top = 0; cR.Width = mForm.PreferredSize.Width; cR.Height = mForm.PreferredSize.Height;
-
+                cR.FontSize = mForm.Font.Size;
+                cR.FontFamily = mForm.Font.FontFamily;
                 oldCtrl.Add(cR);//第一个为"窗体本身",只加入一次即可
                 AddControl(mForm);//窗体内其余控件可能嵌套其它控件(比如panel),故单独抽出以便递归调用
             }
             float wScale = (float)mForm.Width / (float)oldCtrl[0].Width;//新旧窗体之间的比例，与最早的旧窗体
             float hScale = (float)mForm.Height / (float)oldCtrl[0].Height;//.Height;
+            //float fontSizeScale = (float) mForm.Font.Size / (float) oldCtrl[0].FontSize;
+            float fontSizeScale = Math.Min(wScale, hScale);
             ctrlNo = 1;//进入=1，第0个为窗体本身,窗体内的控件,从序号1开始
-            AutoScaleControl(mForm, wScale, hScale);//窗体内其余控件还可能嵌套控件(比如panel),要单独抽出,因为要递归调用
+            AutoScaleControl(mForm, wScale, hScale, fontSizeScale);//窗体内其余控件还可能嵌套控件(比如panel),要单独抽出,因为要递归调用
         }
-        private void AutoScaleControl(Control ctl, float wScale, float hScale)
+        private void AutoScaleControl(Control ctl, float wScale, float hScale, float fsScale)
         {
             int ctrLeft0, ctrTop0, ctrWidth0, ctrHeight0;
+            float fontSize;
+            FontFamily fontFamily;
             //int ctrlNo = 1;//第1个是窗体自身的 Left,Top,Width,Height，所以窗体控件从ctrlNo=1开始
             foreach (Control c in ctl.Controls)
             { //**放在这里，是先缩放控件的子控件，后缩放控件本身
@@ -78,16 +89,19 @@ namespace SuperPOS.Common
                 ctrTop0 = oldCtrl[ctrlNo].Top;
                 ctrWidth0 = oldCtrl[ctrlNo].Width;
                 ctrHeight0 = oldCtrl[ctrlNo].Height;
+                fontSize = oldCtrl[ctrlNo].FontSize;
+                fontFamily = oldCtrl[ctrlNo].FontFamily;
                 //c.Left = (int)((ctrLeft0 - wLeft0) * wScale) + wLeft1;//新旧控件之间的线性比例
                 //c.Top = (int)((ctrTop0 - wTop0) * h) + wTop1;
                 c.Left = (int)((ctrLeft0) * wScale);//新旧控件之间的线性比例。控件位置只相对于窗体，所以不能加 + wLeft1
                 c.Top = (int)((ctrTop0) * hScale);//
                 c.Width = (int)(ctrWidth0 * wScale);//只与最初的大小相关，所以不能与现在的宽度相乘 (int)(c.Width * w);
                 c.Height = (int)(ctrHeight0 * hScale);//
+                c.Font = new Font(fontFamily, fontSize * fsScale);
                 ctrlNo++;//累加序号
                 //**放在这里，是先缩放控件本身，后缩放控件的子控件
                 if (c.Controls.Count > 0)
-                    AutoScaleControl(c, wScale, hScale);//窗体内其余控件还可能嵌套控件(比如panel),要单独抽出,因为要递归调用
+                    AutoScaleControl(c, wScale, hScale, fsScale);//窗体内其余控件还可能嵌套控件(比如panel),要单独抽出,因为要递归调用
 
                 if (ctl is DataGridView)
                 {
