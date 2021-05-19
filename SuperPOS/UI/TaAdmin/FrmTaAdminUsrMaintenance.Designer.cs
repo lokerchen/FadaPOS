@@ -75,10 +75,10 @@
             this.chkGaSysConf = new DevExpress.XtraEditors.CheckEdit();
             this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
             this.btnAddUpdateUser = new DevExpress.XtraEditors.SimpleButton();
-            this.btnSave = new DevExpress.XtraEditors.SimpleButton();
-            this.btnExit = new DevExpress.XtraEditors.SimpleButton();
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
             this.lueUsrName = new DevExpress.XtraEditors.LookUpEdit();
+            this.btnSave = new DevExpress.XtraEditors.SimpleButton();
+            this.btnExit = new DevExpress.XtraEditors.SimpleButton();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).BeginInit();
             this.groupControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.xtpUsrAccess)).BeginInit();
@@ -147,6 +147,10 @@
             // 
             // xtpUsrAccess
             // 
+            this.xtpUsrAccess.Appearance.Font = new System.Drawing.Font("Calibri", 16F);
+            this.xtpUsrAccess.Appearance.Options.UseFont = true;
+            this.xtpUsrAccess.AppearancePage.Header.Font = new System.Drawing.Font("Calibri", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.xtpUsrAccess.AppearancePage.Header.Options.UseFont = true;
             this.xtpUsrAccess.Location = new System.Drawing.Point(6, 91);
             this.xtpUsrAccess.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.xtpUsrAccess.Name = "xtpUsrAccess";
@@ -165,7 +169,7 @@
             this.xtpTa.Controls.Add(this.panelControl2);
             this.xtpTa.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.xtpTa.Name = "xtpTa";
-            this.xtpTa.Size = new System.Drawing.Size(498, 277);
+            this.xtpTa.Size = new System.Drawing.Size(498, 268);
             this.xtpTa.Text = "Takeaway Access";
             // 
             // panelControl2
@@ -608,6 +612,30 @@
             this.btnAddUpdateUser.Text = "Add/Update User";
             this.btnAddUpdateUser.Click += new System.EventHandler(this.btnAddUpdateUser_Click);
             // 
+            // labelControl1
+            // 
+            this.labelControl1.Appearance.Font = new System.Drawing.Font("Tahoma", 10F);
+            this.labelControl1.Appearance.Options.UseFont = true;
+            this.labelControl1.Location = new System.Drawing.Point(7, 22);
+            this.labelControl1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.labelControl1.Name = "labelControl1";
+            this.labelControl1.Size = new System.Drawing.Size(63, 16);
+            this.labelControl1.TabIndex = 1;
+            this.labelControl1.Text = "User Name";
+            // 
+            // lueUsrName
+            // 
+            this.lueUsrName.Location = new System.Drawing.Point(87, 19);
+            this.lueUsrName.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.lueUsrName.Name = "lueUsrName";
+            this.lueUsrName.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 10F);
+            this.lueUsrName.Properties.Appearance.Options.UseFont = true;
+            this.lueUsrName.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.lueUsrName.Size = new System.Drawing.Size(130, 22);
+            this.lueUsrName.TabIndex = 0;
+            this.lueUsrName.EditValueChanged += new System.EventHandler(this.lueUsrName_EditValueChanged);
+            // 
             // btnSave
             // 
             this.btnSave.Appearance.BackColor = System.Drawing.Color.Green;
@@ -641,30 +669,6 @@
             this.btnExit.TabIndex = 4;
             this.btnExit.Text = "Exit";
             this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
-            // 
-            // labelControl1
-            // 
-            this.labelControl1.Appearance.Font = new System.Drawing.Font("Tahoma", 10F);
-            this.labelControl1.Appearance.Options.UseFont = true;
-            this.labelControl1.Location = new System.Drawing.Point(7, 22);
-            this.labelControl1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.labelControl1.Name = "labelControl1";
-            this.labelControl1.Size = new System.Drawing.Size(63, 16);
-            this.labelControl1.TabIndex = 1;
-            this.labelControl1.Text = "User Name";
-            // 
-            // lueUsrName
-            // 
-            this.lueUsrName.Location = new System.Drawing.Point(87, 19);
-            this.lueUsrName.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.lueUsrName.Name = "lueUsrName";
-            this.lueUsrName.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 10F);
-            this.lueUsrName.Properties.Appearance.Options.UseFont = true;
-            this.lueUsrName.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.lueUsrName.Size = new System.Drawing.Size(130, 22);
-            this.lueUsrName.TabIndex = 0;
-            this.lueUsrName.EditValueChanged += new System.EventHandler(this.lueUsrName_EditValueChanged);
             // 
             // FrmTaAdminUsrMaintenance
             // 

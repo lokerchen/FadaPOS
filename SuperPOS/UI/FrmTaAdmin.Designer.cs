@@ -87,14 +87,14 @@
             this.panelControl3.Location = new System.Drawing.Point(5, 7);
             this.panelControl3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panelControl3.Name = "panelControl3";
-            this.panelControl3.Size = new System.Drawing.Size(820, 453);
+            this.panelControl3.Size = new System.Drawing.Size(820, 509);
             this.panelControl3.TabIndex = 2;
             // 
             // labelControl1
             // 
             this.labelControl1.Appearance.Font = new System.Drawing.Font("Tahoma", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelControl1.Appearance.Options.UseFont = true;
-            this.labelControl1.Location = new System.Drawing.Point(265, 7);
+            this.labelControl1.Location = new System.Drawing.Point(316, 7);
             this.labelControl1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.labelControl1.Name = "labelControl1";
             this.labelControl1.Size = new System.Drawing.Size(161, 29);
@@ -116,13 +116,13 @@
             this.panelControl1.Location = new System.Drawing.Point(6, 40);
             this.panelControl1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panelControl1.Name = "panelControl1";
-            this.panelControl1.Size = new System.Drawing.Size(804, 408);
+            this.panelControl1.Size = new System.Drawing.Size(804, 465);
             this.panelControl1.TabIndex = 2;
             // 
             // btnExit
             // 
-            this.btnExit.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
-            this.btnExit.Appearance.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnExit.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.btnExit.Appearance.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnExit.Appearance.ForeColor = System.Drawing.Color.White;
             this.btnExit.Appearance.Options.UseBackColor = true;
             this.btnExit.Appearance.Options.UseFont = true;
@@ -130,7 +130,7 @@
             this.btnExit.Appearance.Options.UseTextOptions = true;
             this.btnExit.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
             this.btnExit.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
-            this.btnExit.Location = new System.Drawing.Point(705, 359);
+            this.btnExit.Location = new System.Drawing.Point(705, 411);
             this.btnExit.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnExit.Name = "btnExit";
             this.btnExit.Size = new System.Drawing.Size(87, 39);
@@ -149,7 +149,7 @@
             this.btnSysCtrl.Appearance.Options.UseTextOptions = true;
             this.btnSysCtrl.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
             this.btnSysCtrl.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
-            this.btnSysCtrl.Location = new System.Drawing.Point(494, 359);
+            this.btnSysCtrl.Location = new System.Drawing.Point(494, 411);
             this.btnSysCtrl.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnSysCtrl.Name = "btnSysCtrl";
             this.btnSysCtrl.Size = new System.Drawing.Size(127, 39);
@@ -161,7 +161,7 @@
             // 
             this.panelControl6.Controls.Add(this.btnRepReport);
             this.panelControl6.Controls.Add(this.btnRepAccountSum);
-            this.panelControl6.Location = new System.Drawing.Point(4, 354);
+            this.panelControl6.Location = new System.Drawing.Point(4, 406);
             this.panelControl6.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panelControl6.Name = "panelControl6";
             this.panelControl6.Size = new System.Drawing.Size(267, 50);
@@ -209,7 +209,7 @@
             // 
             this.labelControl5.Appearance.Font = new System.Drawing.Font("Calibri", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelControl5.Appearance.Options.UseFont = true;
-            this.labelControl5.Location = new System.Drawing.Point(4, 328);
+            this.labelControl5.Location = new System.Drawing.Point(4, 380);
             this.labelControl5.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.labelControl5.Name = "labelControl5";
             this.labelControl5.Size = new System.Drawing.Size(79, 23);
@@ -228,7 +228,7 @@
             this.panelControl5.Controls.Add(this.btnEiMenuItem);
             this.panelControl5.Controls.Add(this.btnEiMenuCategory);
             this.panelControl5.Controls.Add(this.btnEiConf);
-            this.panelControl5.Location = new System.Drawing.Point(4, 232);
+            this.panelControl5.Location = new System.Drawing.Point(4, 265);
             this.panelControl5.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panelControl5.Name = "panelControl5";
             this.panelControl5.Size = new System.Drawing.Size(792, 92);
@@ -428,7 +428,7 @@
             // 
             this.labelControl4.Appearance.Font = new System.Drawing.Font("Calibri", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelControl4.Appearance.Options.UseFont = true;
-            this.labelControl4.Location = new System.Drawing.Point(4, 206);
+            this.labelControl4.Location = new System.Drawing.Point(4, 239);
             this.labelControl4.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.labelControl4.Name = "labelControl4";
             this.labelControl4.Size = new System.Drawing.Size(105, 23);
@@ -444,7 +444,7 @@
             this.panelControl4.Controls.Add(this.btnTaMenuItem);
             this.panelControl4.Controls.Add(this.btnTaMenuCategory);
             this.panelControl4.Controls.Add(this.btnTaConf);
-            this.panelControl4.Location = new System.Drawing.Point(4, 110);
+            this.panelControl4.Location = new System.Drawing.Point(4, 126);
             this.panelControl4.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panelControl4.Name = "panelControl4";
             this.panelControl4.Size = new System.Drawing.Size(792, 91);
@@ -461,7 +461,7 @@
             this.btnTaDriverSetup.Appearance.Options.UseTextOptions = true;
             this.btnTaDriverSetup.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
             this.btnTaDriverSetup.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
-            this.btnTaDriverSetup.Location = new System.Drawing.Point(4, 48);
+            this.btnTaDriverSetup.Location = new System.Drawing.Point(661, 5);
             this.btnTaDriverSetup.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnTaDriverSetup.Name = "btnTaDriverSetup";
             this.btnTaDriverSetup.Size = new System.Drawing.Size(127, 39);
@@ -480,7 +480,7 @@
             this.btnTaPrtSetup.Appearance.Options.UseTextOptions = true;
             this.btnTaPrtSetup.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
             this.btnTaPrtSetup.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
-            this.btnTaPrtSetup.Location = new System.Drawing.Point(136, 48);
+            this.btnTaPrtSetup.Location = new System.Drawing.Point(5, 48);
             this.btnTaPrtSetup.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnTaPrtSetup.Name = "btnTaPrtSetup";
             this.btnTaPrtSetup.Size = new System.Drawing.Size(127, 39);
@@ -587,7 +587,7 @@
             // 
             this.labelControl3.Appearance.Font = new System.Drawing.Font("Calibri", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelControl3.Appearance.Options.UseFont = true;
-            this.labelControl3.Location = new System.Drawing.Point(4, 85);
+            this.labelControl3.Location = new System.Drawing.Point(4, 101);
             this.labelControl3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.labelControl3.Name = "labelControl3";
             this.labelControl3.Size = new System.Drawing.Size(276, 23);
@@ -737,7 +737,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 14F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(832, 464);
+            this.ClientSize = new System.Drawing.Size(832, 527);
             this.Controls.Add(this.panelControl3);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);

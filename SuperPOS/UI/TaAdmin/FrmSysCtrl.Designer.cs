@@ -32,16 +32,16 @@
             this.btnSave = new DevExpress.XtraEditors.SimpleButton();
             this.btnExit = new DevExpress.XtraEditors.SimpleButton();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.chkShopDetailReadOnly = new DevExpress.XtraEditors.CheckEdit();
             this.txtShopAddress = new DevExpress.XtraEditors.TextEdit();
             this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
             this.txtShopName = new DevExpress.XtraEditors.TextEdit();
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
+            this.chkShopDetailReadOnly = new DevExpress.XtraEditors.CheckEdit();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.chkShopDetailReadOnly.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtShopAddress.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtShopName.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.chkShopDetailReadOnly.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox1
@@ -49,26 +49,26 @@
             this.groupBox1.Controls.Add(this.btnSave);
             this.groupBox1.Controls.Add(this.btnExit);
             this.groupBox1.Controls.Add(this.groupBox2);
-            this.groupBox1.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold);
+            this.groupBox1.Font = new System.Drawing.Font("Calibri", 16F, System.Drawing.FontStyle.Bold);
             this.groupBox1.Location = new System.Drawing.Point(8, 8);
             this.groupBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.groupBox1.Size = new System.Drawing.Size(543, 368);
+            this.groupBox1.Size = new System.Drawing.Size(543, 231);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "System Control";
             // 
             // btnSave
             // 
-            this.btnSave.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
-            this.btnSave.Appearance.Font = new System.Drawing.Font("Tahoma", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSave.Appearance.BackColor = System.Drawing.Color.Green;
+            this.btnSave.Appearance.Font = new System.Drawing.Font("Calibri", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSave.Appearance.ForeColor = System.Drawing.Color.White;
             this.btnSave.Appearance.Options.UseBackColor = true;
             this.btnSave.Appearance.Options.UseFont = true;
             this.btnSave.Appearance.Options.UseForeColor = true;
             this.btnSave.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
-            this.btnSave.Location = new System.Drawing.Point(380, 313);
+            this.btnSave.Location = new System.Drawing.Point(373, 178);
             this.btnSave.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(68, 43);
@@ -78,14 +78,14 @@
             // 
             // btnExit
             // 
-            this.btnExit.Appearance.BackColor = System.Drawing.Color.Olive;
-            this.btnExit.Appearance.Font = new System.Drawing.Font("Tahoma", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnExit.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.btnExit.Appearance.Font = new System.Drawing.Font("Calibri", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnExit.Appearance.ForeColor = System.Drawing.Color.White;
             this.btnExit.Appearance.Options.UseBackColor = true;
             this.btnExit.Appearance.Options.UseFont = true;
             this.btnExit.Appearance.Options.UseForeColor = true;
             this.btnExit.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
-            this.btnExit.Location = new System.Drawing.Point(466, 313);
+            this.btnExit.Location = new System.Drawing.Point(450, 178);
             this.btnExit.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnExit.Name = "btnExit";
             this.btnExit.Size = new System.Drawing.Size(68, 43);
@@ -100,7 +100,7 @@
             this.groupBox2.Controls.Add(this.labelControl2);
             this.groupBox2.Controls.Add(this.txtShopName);
             this.groupBox2.Controls.Add(this.labelControl1);
-            this.groupBox2.Font = new System.Drawing.Font("Tahoma", 10F);
+            this.groupBox2.Font = new System.Drawing.Font("Calibri", 14F);
             this.groupBox2.Location = new System.Drawing.Point(13, 42);
             this.groupBox2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.groupBox2.Name = "groupBox2";
@@ -110,21 +110,13 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Shop Details";
             // 
-            // chkShopDetailReadOnly
-            // 
-            this.chkShopDetailReadOnly.Location = new System.Drawing.Point(6, 76);
-            this.chkShopDetailReadOnly.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.chkShopDetailReadOnly.Name = "chkShopDetailReadOnly";
-            this.chkShopDetailReadOnly.Properties.Caption = "Shop Details Read Only";
-            this.chkShopDetailReadOnly.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.chkShopDetailReadOnly.Size = new System.Drawing.Size(163, 19);
-            this.chkShopDetailReadOnly.TabIndex = 12;
-            // 
             // txtShopAddress
             // 
-            this.txtShopAddress.Location = new System.Drawing.Point(110, 47);
+            this.txtShopAddress.Location = new System.Drawing.Point(110, 53);
             this.txtShopAddress.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtShopAddress.Name = "txtShopAddress";
+            this.txtShopAddress.Properties.Appearance.Font = new System.Drawing.Font("Calibri", 10F);
+            this.txtShopAddress.Properties.Appearance.Options.UseFont = true;
             this.txtShopAddress.Properties.Appearance.Options.UseTextOptions = true;
             this.txtShopAddress.Properties.Appearance.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
             this.txtShopAddress.Properties.AutoHeight = false;
@@ -133,9 +125,12 @@
             // 
             // labelControl2
             // 
+            this.labelControl2.Appearance.Font = new System.Drawing.Font("Calibri", 10F);
+            this.labelControl2.Appearance.Options.UseFont = true;
+            this.labelControl2.Appearance.Options.UseTextOptions = true;
             this.labelControl2.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
             this.labelControl2.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
-            this.labelControl2.Location = new System.Drawing.Point(6, 53);
+            this.labelControl2.Location = new System.Drawing.Point(6, 59);
             this.labelControl2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.labelControl2.Name = "labelControl2";
             this.labelControl2.Size = new System.Drawing.Size(83, 14);
@@ -147,6 +142,8 @@
             this.txtShopName.Location = new System.Drawing.Point(110, 24);
             this.txtShopName.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtShopName.Name = "txtShopName";
+            this.txtShopName.Properties.Appearance.Font = new System.Drawing.Font("Calibri", 10F);
+            this.txtShopName.Properties.Appearance.Options.UseFont = true;
             this.txtShopName.Properties.Appearance.Options.UseTextOptions = true;
             this.txtShopName.Properties.Appearance.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
             this.txtShopName.Properties.AutoHeight = false;
@@ -155,6 +152,9 @@
             // 
             // labelControl1
             // 
+            this.labelControl1.Appearance.Font = new System.Drawing.Font("Calibri", 10F);
+            this.labelControl1.Appearance.Options.UseFont = true;
+            this.labelControl1.Appearance.Options.UseTextOptions = true;
             this.labelControl1.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
             this.labelControl1.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
             this.labelControl1.Location = new System.Drawing.Point(6, 29);
@@ -164,11 +164,25 @@
             this.labelControl1.TabIndex = 8;
             this.labelControl1.Text = "Shop Name";
             // 
+            // chkShopDetailReadOnly
+            // 
+            this.chkShopDetailReadOnly.Location = new System.Drawing.Point(16, 84);
+            this.chkShopDetailReadOnly.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.chkShopDetailReadOnly.Name = "chkShopDetailReadOnly";
+            this.chkShopDetailReadOnly.Properties.Appearance.Font = new System.Drawing.Font("Calibri", 10F);
+            this.chkShopDetailReadOnly.Properties.Appearance.Options.UseFont = true;
+            this.chkShopDetailReadOnly.Properties.AutoWidth = true;
+            this.chkShopDetailReadOnly.Properties.Caption = "Shop Details Read Only";
+            this.chkShopDetailReadOnly.Properties.CheckBoxOptions.Style = DevExpress.XtraEditors.Controls.CheckBoxStyle.SvgCheckBox1;
+            this.chkShopDetailReadOnly.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.chkShopDetailReadOnly.Size = new System.Drawing.Size(156, 22);
+            this.chkShopDetailReadOnly.TabIndex = 12;
+            // 
             // FrmSysCtrl
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 14F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(558, 383);
+            this.ClientSize = new System.Drawing.Size(558, 245);
             this.Controls.Add(this.groupBox1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -180,9 +194,10 @@
             this.SizeChanged += new System.EventHandler(this.FrmSysCtrl_SizeChanged);
             this.groupBox1.ResumeLayout(false);
             this.groupBox2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.chkShopDetailReadOnly.Properties)).EndInit();
+            this.groupBox2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.txtShopAddress.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtShopName.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.chkShopDetailReadOnly.Properties)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -195,8 +210,8 @@
         private DevExpress.XtraEditors.LabelControl labelControl2;
         private DevExpress.XtraEditors.TextEdit txtShopName;
         private DevExpress.XtraEditors.LabelControl labelControl1;
-        private DevExpress.XtraEditors.CheckEdit chkShopDetailReadOnly;
         private DevExpress.XtraEditors.SimpleButton btnSave;
         private DevExpress.XtraEditors.SimpleButton btnExit;
+        private DevExpress.XtraEditors.CheckEdit chkShopDetailReadOnly;
     }
 }

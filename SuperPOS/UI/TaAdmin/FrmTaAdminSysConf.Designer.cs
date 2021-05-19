@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
+            this.label1 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.labelControl5 = new DevExpress.XtraEditors.LabelControl();
             this.chkDevice1 = new DevExpress.XtraEditors.CheckEdit();
@@ -88,7 +89,6 @@
             this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
             this.txtShopName = new DevExpress.XtraEditors.TextEdit();
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
-            this.label1 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
             this.panelControl1.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -153,6 +153,16 @@
             this.panelControl1.Size = new System.Drawing.Size(696, 508);
             this.panelControl1.TabIndex = 2;
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Calibri", 14F, System.Drawing.FontStyle.Bold);
+            this.label1.Location = new System.Drawing.Point(13, 13);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(179, 23);
+            this.label1.TabIndex = 22;
+            this.label1.Text = "System Configuration";
+            // 
             // panel1
             // 
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
@@ -166,12 +176,12 @@
             // 
             // labelControl5
             // 
-            this.labelControl5.Appearance.Font = new System.Drawing.Font("Tahoma", 12F);
+            this.labelControl5.Appearance.Font = new System.Drawing.Font("Calibri", 12F);
             this.labelControl5.Appearance.Options.UseFont = true;
             this.labelControl5.Location = new System.Drawing.Point(3, 5);
             this.labelControl5.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.labelControl5.Name = "labelControl5";
-            this.labelControl5.Size = new System.Drawing.Size(93, 19);
+            this.labelControl5.Size = new System.Drawing.Size(84, 19);
             this.labelControl5.TabIndex = 9;
             this.labelControl5.Text = "Caller ID Box";
             // 
@@ -180,6 +190,8 @@
             this.chkDevice1.Location = new System.Drawing.Point(153, 4);
             this.chkDevice1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.chkDevice1.Name = "chkDevice1";
+            this.chkDevice1.Properties.Appearance.Font = new System.Drawing.Font("Calibri", 9F);
+            this.chkDevice1.Properties.Appearance.Options.UseFont = true;
             this.chkDevice1.Properties.Caption = "Device #1";
             this.chkDevice1.Size = new System.Drawing.Size(85, 20);
             this.chkDevice1.TabIndex = 15;
@@ -189,18 +201,22 @@
             this.chkDevice2.Location = new System.Drawing.Point(244, 4);
             this.chkDevice2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.chkDevice2.Name = "chkDevice2";
+            this.chkDevice2.Properties.Appearance.Font = new System.Drawing.Font("Calibri", 9F);
+            this.chkDevice2.Properties.Appearance.Options.UseFont = true;
             this.chkDevice2.Properties.Caption = "Device #2";
             this.chkDevice2.Size = new System.Drawing.Size(82, 20);
             this.chkDevice2.TabIndex = 16;
             // 
             // chkTestMode
             // 
-            this.chkTestMode.Location = new System.Drawing.Point(253, 15);
+            this.chkTestMode.Location = new System.Drawing.Point(254, 15);
             this.chkTestMode.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.chkTestMode.Name = "chkTestMode";
+            this.chkTestMode.Properties.Appearance.Font = new System.Drawing.Font("Calibri", 9F);
+            this.chkTestMode.Properties.Appearance.Options.UseFont = true;
             this.chkTestMode.Properties.Caption = "Test Mode";
             this.chkTestMode.Properties.GlyphAlignment = DevExpress.Utils.HorzAlignment.Far;
-            this.chkTestMode.Size = new System.Drawing.Size(83, 20);
+            this.chkTestMode.Size = new System.Drawing.Size(82, 20);
             this.chkTestMode.TabIndex = 16;
             // 
             // groupBox2
@@ -210,7 +226,7 @@
             this.groupBox2.Controls.Add(this.txtPayType3);
             this.groupBox2.Controls.Add(this.txtPayType2);
             this.groupBox2.Controls.Add(this.txtPayType1);
-            this.groupBox2.Font = new System.Drawing.Font("Tahoma", 12F);
+            this.groupBox2.Font = new System.Drawing.Font("Calibri", 14F);
             this.groupBox2.Location = new System.Drawing.Point(516, 180);
             this.groupBox2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.groupBox2.Name = "groupBox2";
@@ -226,7 +242,7 @@
             this.txtPayType5.Location = new System.Drawing.Point(12, 211);
             this.txtPayType5.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtPayType5.Name = "txtPayType5";
-            this.txtPayType5.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 11F);
+            this.txtPayType5.Properties.Appearance.Font = new System.Drawing.Font("Calibri", 11F);
             this.txtPayType5.Properties.Appearance.Options.UseFont = true;
             this.txtPayType5.Size = new System.Drawing.Size(145, 24);
             this.txtPayType5.TabIndex = 5;
@@ -237,7 +253,7 @@
             this.txtPayType4.Location = new System.Drawing.Point(12, 171);
             this.txtPayType4.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtPayType4.Name = "txtPayType4";
-            this.txtPayType4.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 11F);
+            this.txtPayType4.Properties.Appearance.Font = new System.Drawing.Font("Calibri", 11F);
             this.txtPayType4.Properties.Appearance.Options.UseFont = true;
             this.txtPayType4.Size = new System.Drawing.Size(145, 24);
             this.txtPayType4.TabIndex = 4;
@@ -248,7 +264,7 @@
             this.txtPayType3.Location = new System.Drawing.Point(12, 131);
             this.txtPayType3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtPayType3.Name = "txtPayType3";
-            this.txtPayType3.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 11F);
+            this.txtPayType3.Properties.Appearance.Font = new System.Drawing.Font("Calibri", 11F);
             this.txtPayType3.Properties.Appearance.Options.UseFont = true;
             this.txtPayType3.Size = new System.Drawing.Size(145, 24);
             this.txtPayType3.TabIndex = 3;
@@ -259,7 +275,7 @@
             this.txtPayType2.Location = new System.Drawing.Point(12, 91);
             this.txtPayType2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtPayType2.Name = "txtPayType2";
-            this.txtPayType2.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 11F);
+            this.txtPayType2.Properties.Appearance.Font = new System.Drawing.Font("Calibri", 11F);
             this.txtPayType2.Properties.Appearance.Options.UseFont = true;
             this.txtPayType2.Size = new System.Drawing.Size(145, 24);
             this.txtPayType2.TabIndex = 2;
@@ -270,7 +286,7 @@
             this.txtPayType1.Location = new System.Drawing.Point(12, 51);
             this.txtPayType1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtPayType1.Name = "txtPayType1";
-            this.txtPayType1.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 11F);
+            this.txtPayType1.Properties.Appearance.Font = new System.Drawing.Font("Calibri", 11F);
             this.txtPayType1.Properties.Appearance.Options.UseFont = true;
             this.txtPayType1.Size = new System.Drawing.Size(145, 24);
             this.txtPayType1.TabIndex = 1;
@@ -278,7 +294,7 @@
             // btnExit
             // 
             this.btnExit.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.btnExit.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold);
+            this.btnExit.Appearance.Font = new System.Drawing.Font("Calibri", 16F, System.Drawing.FontStyle.Bold);
             this.btnExit.Appearance.ForeColor = System.Drawing.Color.White;
             this.btnExit.Appearance.Options.UseBackColor = true;
             this.btnExit.Appearance.Options.UseFont = true;
@@ -297,7 +313,7 @@
             // btnSave
             // 
             this.btnSave.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
-            this.btnSave.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold);
+            this.btnSave.Appearance.Font = new System.Drawing.Font("Calibri", 16F, System.Drawing.FontStyle.Bold);
             this.btnSave.Appearance.ForeColor = System.Drawing.Color.White;
             this.btnSave.Appearance.Options.UseBackColor = true;
             this.btnSave.Appearance.Options.UseFont = true;
@@ -315,6 +331,8 @@
             // 
             // groupControl6
             // 
+            this.groupControl6.AppearanceCaption.Font = new System.Drawing.Font("Calibri", 14F);
+            this.groupControl6.AppearanceCaption.Options.UseFont = true;
             this.groupControl6.Controls.Add(this.txtPrtOpRoundUpDecimal);
             this.groupControl6.Controls.Add(this.labelControl9);
             this.groupControl6.Controls.Add(this.luePrtOpA4);
@@ -340,10 +358,12 @@
             // 
             // labelControl9
             // 
-            this.labelControl9.Location = new System.Drawing.Point(16, 105);
+            this.labelControl9.Appearance.Font = new System.Drawing.Font("Calibri", 9F);
+            this.labelControl9.Appearance.Options.UseFont = true;
+            this.labelControl9.Location = new System.Drawing.Point(16, 110);
             this.labelControl9.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.labelControl9.Name = "labelControl9";
-            this.labelControl9.Size = new System.Drawing.Size(99, 14);
+            this.labelControl9.Size = new System.Drawing.Size(101, 14);
             this.labelControl9.TabIndex = 24;
             this.labelControl9.Text = "Round Up Decimal";
             // 
@@ -359,10 +379,12 @@
             // 
             // labelControl8
             // 
-            this.labelControl8.Location = new System.Drawing.Point(23, 72);
+            this.labelControl8.Appearance.Font = new System.Drawing.Font("Calibri", 9F);
+            this.labelControl8.Appearance.Options.UseFont = true;
+            this.labelControl8.Location = new System.Drawing.Point(26, 73);
             this.labelControl8.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.labelControl8.Name = "labelControl8";
-            this.labelControl8.Size = new System.Drawing.Size(96, 14);
+            this.labelControl8.Size = new System.Drawing.Size(91, 14);
             this.labelControl8.TabIndex = 26;
             this.labelControl8.Text = "A4 Report Printer";
             // 
@@ -378,15 +400,19 @@
             // 
             // labelControl7
             // 
-            this.labelControl7.Location = new System.Drawing.Point(23, 37);
+            this.labelControl7.Appearance.Font = new System.Drawing.Font("Calibri", 9F);
+            this.labelControl7.Appearance.Options.UseFont = true;
+            this.labelControl7.Location = new System.Drawing.Point(42, 39);
             this.labelControl7.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.labelControl7.Name = "labelControl7";
-            this.labelControl7.Size = new System.Drawing.Size(77, 14);
+            this.labelControl7.Size = new System.Drawing.Size(75, 14);
             this.labelControl7.TabIndex = 24;
             this.labelControl7.Text = "Report Printer";
             // 
             // groupControl5
             // 
+            this.groupControl5.AppearanceCaption.Font = new System.Drawing.Font("Calibri", 14F);
+            this.groupControl5.AppearanceCaption.Options.UseFont = true;
             this.groupControl5.Controls.Add(this.txtKeySet10);
             this.groupControl5.Controls.Add(this.labelControl19);
             this.groupControl5.Controls.Add(this.txtKeySet5);
@@ -424,7 +450,7 @@
             // 
             // labelControl19
             // 
-            this.labelControl19.Location = new System.Drawing.Point(11, 288);
+            this.labelControl19.Location = new System.Drawing.Point(11, 289);
             this.labelControl19.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.labelControl19.Name = "labelControl19";
             this.labelControl19.Size = new System.Drawing.Size(34, 14);
@@ -441,7 +467,7 @@
             // 
             // labelControl20
             // 
-            this.labelControl20.Location = new System.Drawing.Point(17, 147);
+            this.labelControl20.Location = new System.Drawing.Point(17, 148);
             this.labelControl20.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.labelControl20.Name = "labelControl20";
             this.labelControl20.Size = new System.Drawing.Size(27, 14);
@@ -458,7 +484,7 @@
             // 
             // labelControl15
             // 
-            this.labelControl15.Location = new System.Drawing.Point(17, 262);
+            this.labelControl15.Location = new System.Drawing.Point(17, 263);
             this.labelControl15.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.labelControl15.Name = "labelControl15";
             this.labelControl15.Size = new System.Drawing.Size(27, 14);
@@ -475,7 +501,7 @@
             // 
             // labelControl16
             // 
-            this.labelControl16.Location = new System.Drawing.Point(17, 121);
+            this.labelControl16.Location = new System.Drawing.Point(17, 122);
             this.labelControl16.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.labelControl16.Name = "labelControl16";
             this.labelControl16.Size = new System.Drawing.Size(27, 14);
@@ -492,7 +518,7 @@
             // 
             // labelControl17
             // 
-            this.labelControl17.Location = new System.Drawing.Point(17, 233);
+            this.labelControl17.Location = new System.Drawing.Point(17, 234);
             this.labelControl17.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.labelControl17.Name = "labelControl17";
             this.labelControl17.Size = new System.Drawing.Size(27, 14);
@@ -509,7 +535,7 @@
             // 
             // labelControl18
             // 
-            this.labelControl18.Location = new System.Drawing.Point(17, 92);
+            this.labelControl18.Location = new System.Drawing.Point(17, 93);
             this.labelControl18.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.labelControl18.Name = "labelControl18";
             this.labelControl18.Size = new System.Drawing.Size(27, 14);
@@ -526,7 +552,7 @@
             // 
             // labelControl13
             // 
-            this.labelControl13.Location = new System.Drawing.Point(17, 202);
+            this.labelControl13.Location = new System.Drawing.Point(17, 203);
             this.labelControl13.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.labelControl13.Name = "labelControl13";
             this.labelControl13.Size = new System.Drawing.Size(27, 14);
@@ -543,7 +569,7 @@
             // 
             // labelControl14
             // 
-            this.labelControl14.Location = new System.Drawing.Point(17, 61);
+            this.labelControl14.Location = new System.Drawing.Point(17, 62);
             this.labelControl14.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.labelControl14.Name = "labelControl14";
             this.labelControl14.Size = new System.Drawing.Size(27, 14);
@@ -560,7 +586,7 @@
             // 
             // labelControl12
             // 
-            this.labelControl12.Location = new System.Drawing.Point(17, 174);
+            this.labelControl12.Location = new System.Drawing.Point(17, 175);
             this.labelControl12.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.labelControl12.Name = "labelControl12";
             this.labelControl12.Size = new System.Drawing.Size(27, 14);
@@ -577,7 +603,7 @@
             // 
             // labelControl11
             // 
-            this.labelControl11.Location = new System.Drawing.Point(17, 33);
+            this.labelControl11.Location = new System.Drawing.Point(17, 34);
             this.labelControl11.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.labelControl11.Name = "labelControl11";
             this.labelControl11.Size = new System.Drawing.Size(27, 14);
@@ -586,6 +612,10 @@
             // 
             // groupControl4
             // 
+            this.groupControl4.Appearance.Font = new System.Drawing.Font("Calibri", 9F);
+            this.groupControl4.Appearance.Options.UseFont = true;
+            this.groupControl4.AppearanceCaption.Font = new System.Drawing.Font("Calibri", 14F);
+            this.groupControl4.AppearanceCaption.Options.UseFont = true;
             this.groupControl4.Controls.Add(this.chkCashDrawSet);
             this.groupControl4.Controls.Add(this.txtPwd);
             this.groupControl4.Controls.Add(this.labelControl10);
@@ -601,7 +631,7 @@
             this.chkCashDrawSet.Location = new System.Drawing.Point(11, 35);
             this.chkCashDrawSet.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.chkCashDrawSet.Name = "chkCashDrawSet";
-            this.chkCashDrawSet.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.chkCashDrawSet.Properties.Appearance.Font = new System.Drawing.Font("Calibri", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.chkCashDrawSet.Properties.Appearance.Options.UseFont = true;
             this.chkCashDrawSet.Properties.Caption = "Enable Password";
             this.chkCashDrawSet.Size = new System.Drawing.Size(169, 20);
@@ -612,16 +642,16 @@
             this.txtPwd.Location = new System.Drawing.Point(140, 67);
             this.txtPwd.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtPwd.Name = "txtPwd";
-            this.txtPwd.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtPwd.Properties.Appearance.Font = new System.Drawing.Font("Calibri", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtPwd.Properties.Appearance.Options.UseFont = true;
             this.txtPwd.Size = new System.Drawing.Size(172, 20);
             this.txtPwd.TabIndex = 6;
             // 
             // labelControl10
             // 
-            this.labelControl10.Appearance.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelControl10.Appearance.Font = new System.Drawing.Font("Calibri", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelControl10.Appearance.Options.UseFont = true;
-            this.labelControl10.Location = new System.Drawing.Point(11, 72);
+            this.labelControl10.Location = new System.Drawing.Point(11, 73);
             this.labelControl10.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.labelControl10.Name = "labelControl10";
             this.labelControl10.Size = new System.Drawing.Size(123, 14);
@@ -630,6 +660,8 @@
             // 
             // groupControl2
             // 
+            this.groupControl2.AppearanceCaption.Font = new System.Drawing.Font("Calibri", 14F);
+            this.groupControl2.AppearanceCaption.Options.UseFont = true;
             this.groupControl2.Controls.Add(this.lueBackUpDriver);
             this.groupControl2.Controls.Add(this.chkIsBackup);
             this.groupControl2.Controls.Add(this.labelControl3);
@@ -660,6 +692,8 @@
             this.chkIsBackup.Location = new System.Drawing.Point(18, 54);
             this.chkIsBackup.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.chkIsBackup.Name = "chkIsBackup";
+            this.chkIsBackup.Properties.Appearance.Font = new System.Drawing.Font("Calibri", 9F);
+            this.chkIsBackup.Properties.Appearance.Options.UseFont = true;
             this.chkIsBackup.Properties.Caption = "Back Up When Exit";
             this.chkIsBackup.Properties.GlyphAlignment = DevExpress.Utils.HorzAlignment.Far;
             this.chkIsBackup.Size = new System.Drawing.Size(198, 20);
@@ -668,10 +702,12 @@
             // 
             // labelControl3
             // 
-            this.labelControl3.Location = new System.Drawing.Point(18, 89);
+            this.labelControl3.Appearance.Font = new System.Drawing.Font("Calibri", 9F);
+            this.labelControl3.Appearance.Options.UseFont = true;
+            this.labelControl3.Location = new System.Drawing.Point(18, 90);
             this.labelControl3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.labelControl3.Name = "labelControl3";
-            this.labelControl3.Size = new System.Drawing.Size(83, 14);
+            this.labelControl3.Size = new System.Drawing.Size(81, 14);
             this.labelControl3.TabIndex = 21;
             this.labelControl3.Text = "Back Up Driver:";
             // 
@@ -697,19 +733,23 @@
             // 
             // labelControl4
             // 
-            this.labelControl4.Location = new System.Drawing.Point(18, 147);
+            this.labelControl4.Appearance.Font = new System.Drawing.Font("Calibri", 9F);
+            this.labelControl4.Appearance.Options.UseFont = true;
+            this.labelControl4.Location = new System.Drawing.Point(18, 148);
             this.labelControl4.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.labelControl4.Name = "labelControl4";
-            this.labelControl4.Size = new System.Drawing.Size(95, 14);
+            this.labelControl4.Size = new System.Drawing.Size(86, 14);
             this.labelControl4.TabIndex = 17;
             this.labelControl4.Text = "VAT Percentage:";
             // 
             // labelControl6
             // 
-            this.labelControl6.Location = new System.Drawing.Point(18, 121);
+            this.labelControl6.Appearance.Font = new System.Drawing.Font("Calibri", 9F);
+            this.labelControl6.Appearance.Options.UseFont = true;
+            this.labelControl6.Location = new System.Drawing.Point(18, 122);
             this.labelControl6.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.labelControl6.Name = "labelControl6";
-            this.labelControl6.Size = new System.Drawing.Size(65, 14);
+            this.labelControl6.Size = new System.Drawing.Size(67, 14);
             this.labelControl6.TabIndex = 15;
             this.labelControl6.Text = "Till Number:";
             // 
@@ -718,6 +758,8 @@
             this.chkDisplayCode.Location = new System.Drawing.Point(18, 26);
             this.chkDisplayCode.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.chkDisplayCode.Name = "chkDisplayCode";
+            this.chkDisplayCode.Properties.Appearance.Font = new System.Drawing.Font("Calibri", 9F);
+            this.chkDisplayCode.Properties.Appearance.Options.UseFont = true;
             this.chkDisplayCode.Properties.Caption = "Display Item Code Select";
             this.chkDisplayCode.Properties.GlyphAlignment = DevExpress.Utils.HorzAlignment.Far;
             this.chkDisplayCode.Size = new System.Drawing.Size(198, 20);
@@ -725,6 +767,10 @@
             // 
             // groupControl1
             // 
+            this.groupControl1.Appearance.Font = new System.Drawing.Font("Calibri", 9F);
+            this.groupControl1.Appearance.Options.UseFont = true;
+            this.groupControl1.AppearanceCaption.Font = new System.Drawing.Font("Calibri", 14F);
+            this.groupControl1.AppearanceCaption.Options.UseFont = true;
             this.groupControl1.Controls.Add(this.txtShopAddr);
             this.groupControl1.Controls.Add(this.labelControl2);
             this.groupControl1.Controls.Add(this.txtShopName);
@@ -738,19 +784,22 @@
             // 
             // txtShopAddr
             // 
+            this.txtShopAddr.Font = new System.Drawing.Font("Calibri", 10F);
             this.txtShopAddr.Location = new System.Drawing.Point(100, 51);
             this.txtShopAddr.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtShopAddr.Name = "txtShopAddr";
-            this.txtShopAddr.Size = new System.Drawing.Size(237, 76);
+            this.txtShopAddr.Size = new System.Drawing.Size(237, 65);
             this.txtShopAddr.TabIndex = 8;
             this.txtShopAddr.Text = "";
             // 
             // labelControl2
             // 
-            this.labelControl2.Location = new System.Drawing.Point(4, 51);
+            this.labelControl2.Appearance.Font = new System.Drawing.Font("Calibri", 9F);
+            this.labelControl2.Appearance.Options.UseFont = true;
+            this.labelControl2.Location = new System.Drawing.Point(4, 52);
             this.labelControl2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.labelControl2.Name = "labelControl2";
-            this.labelControl2.Size = new System.Drawing.Size(79, 14);
+            this.labelControl2.Size = new System.Drawing.Size(77, 14);
             this.labelControl2.TabIndex = 7;
             this.labelControl2.Text = "Shop Address:";
             // 
@@ -759,33 +808,27 @@
             this.txtShopName.Location = new System.Drawing.Point(100, 26);
             this.txtShopName.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtShopName.Name = "txtShopName";
-            this.txtShopName.Size = new System.Drawing.Size(236, 20);
+            this.txtShopName.Properties.Appearance.Font = new System.Drawing.Font("Calibri", 10F);
+            this.txtShopName.Properties.Appearance.Options.UseFont = true;
+            this.txtShopName.Size = new System.Drawing.Size(236, 22);
             this.txtShopName.TabIndex = 6;
             // 
             // labelControl1
             // 
-            this.labelControl1.Location = new System.Drawing.Point(15, 30);
+            this.labelControl1.Appearance.Font = new System.Drawing.Font("Calibri", 9F);
+            this.labelControl1.Appearance.Options.UseFont = true;
+            this.labelControl1.Location = new System.Drawing.Point(15, 31);
             this.labelControl1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.labelControl1.Name = "labelControl1";
-            this.labelControl1.Size = new System.Drawing.Size(67, 14);
+            this.labelControl1.Size = new System.Drawing.Size(65, 14);
             this.labelControl1.TabIndex = 5;
             this.labelControl1.Text = "Shop Name:";
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Tahoma", 14F, System.Drawing.FontStyle.Bold);
-            this.label1.Location = new System.Drawing.Point(13, 13);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(217, 23);
-            this.label1.TabIndex = 22;
-            this.label1.Text = "System Configuration";
             // 
             // FrmTaAdminSysConf
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 14F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(709, 521);
+            this.ClientSize = new System.Drawing.Size(708, 521);
             this.Controls.Add(this.panelControl1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);

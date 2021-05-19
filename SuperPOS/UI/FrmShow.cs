@@ -14,6 +14,8 @@ namespace SuperPOS.UI
 {
     public partial class FrmShow : DevExpress.XtraEditors.XtraForm
     {
+        private AutoSizeFormClass asfc = new AutoSizeFormClass();
+
         public FrmShow()
         {
             InitializeComponent();
@@ -30,6 +32,16 @@ namespace SuperPOS.UI
         {
             CommonDAL.IsBackupSysData();
             Close();
+        }
+
+        private void FrmShow_Load(object sender, EventArgs e)
+        {
+            asfc.controllInitializeSize(this);
+        }
+
+        private void FrmShow_SizeChanged(object sender, EventArgs e)
+        {
+            asfc.controlAutoSize(this);
         }
     }
 }

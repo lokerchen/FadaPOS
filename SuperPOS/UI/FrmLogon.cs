@@ -17,6 +17,7 @@ namespace SuperPOS.UI
 {
     public partial class FrmLogon : DevExpress.XtraEditors.XtraForm
     {
+        private AutoSizeFormClass asfc = new AutoSizeFormClass();
         public FrmLogon()
         {
             InitializeComponent();
@@ -47,6 +48,8 @@ namespace SuperPOS.UI
             lblTime.Text = DateTime.Now.ToShortTimeString();
             //获得Session
             lblSession.Text = CommonDAL.GetSession();
+
+            asfc.controllInitializeSize(this);
         }
 
         #region Timer控件
@@ -125,5 +128,9 @@ namespace SuperPOS.UI
         }
         #endregion
 
+        private void FrmLogon_SizeChanged(object sender, EventArgs e)
+        {
+            asfc.controlAutoSize(this);
+        }
     }
 }

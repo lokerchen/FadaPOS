@@ -174,6 +174,9 @@ namespace SuperPOS.UI.TaAdmin
 
                 if (sPayName.Equals("xtpTa"))
                 {
+                    xtpUsrAccess.TabPages[0].Appearance.Header.BackColor = Color.BurlyWood;
+                    xtpUsrAccess.TabPages[1].Appearance.Header.BackColor = new Color();
+                    xtpUsrAccess.TabPages[2].Appearance.Header.BackColor = new Color();
                     chkTaControlPanel.Checked = YesOrNoToBool(usrMaintenance.TaControlPanel);
                     chkTaChangePrice.Checked = YesOrNoToBool(usrMaintenance.TaChangePrice);
                     chkTaPriceOff.Checked = YesOrNoToBool(usrMaintenance.TaPriceOff);
@@ -185,6 +188,9 @@ namespace SuperPOS.UI.TaAdmin
                 }
                 else if (sPayName.Equals("xtpEi"))
                 {
+                    xtpUsrAccess.TabPages[0].Appearance.Header.BackColor = new Color();
+                    xtpUsrAccess.TabPages[1].Appearance.Header.BackColor = Color.BurlyWood;
+                    xtpUsrAccess.TabPages[2].Appearance.Header.BackColor = new Color();
                     chkEiControlPanel.Checked = YesOrNoToBool(usrMaintenance.EiControlPanel);
                     chkEiChangePrice.Checked = YesOrNoToBool(usrMaintenance.EiChangePrice);
                     chkEiPriceOff.Checked = YesOrNoToBool(usrMaintenance.EiPriceOff);
@@ -199,6 +205,9 @@ namespace SuperPOS.UI.TaAdmin
                 }
                 else if (sPayName.Equals("xtpGa"))
                 {
+                    xtpUsrAccess.TabPages[0].Appearance.Header.BackColor = new Color();
+                    xtpUsrAccess.TabPages[1].Appearance.Header.BackColor = new Color();
+                    xtpUsrAccess.TabPages[2].Appearance.Header.BackColor = Color.BurlyWood;
                     chkGaSysConf.Checked = YesOrNoToBool(usrMaintenance.GaSysConf);
                     chkGaSysUsrMaint.Checked = YesOrNoToBool(usrMaintenance.GaSysUsrMaint);
                     chkGaSysDataManager.Checked = YesOrNoToBool(usrMaintenance.GaSysDataManager);
