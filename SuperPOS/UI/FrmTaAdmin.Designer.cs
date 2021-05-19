@@ -84,17 +84,20 @@
             // 
             this.panelControl3.Controls.Add(this.labelControl1);
             this.panelControl3.Controls.Add(this.panelControl1);
-            this.panelControl3.Location = new System.Drawing.Point(6, 9);
+            this.panelControl3.Location = new System.Drawing.Point(5, 7);
+            this.panelControl3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panelControl3.Name = "panelControl3";
-            this.panelControl3.Size = new System.Drawing.Size(937, 582);
+            this.panelControl3.Size = new System.Drawing.Size(820, 453);
             this.panelControl3.TabIndex = 2;
             // 
             // labelControl1
             // 
             this.labelControl1.Appearance.Font = new System.Drawing.Font("Tahoma", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelControl1.Location = new System.Drawing.Point(303, 9);
+            this.labelControl1.Appearance.Options.UseFont = true;
+            this.labelControl1.Location = new System.Drawing.Point(265, 7);
+            this.labelControl1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.labelControl1.Name = "labelControl1";
-            this.labelControl1.Size = new System.Drawing.Size(204, 36);
+            this.labelControl1.Size = new System.Drawing.Size(161, 29);
             this.labelControl1.TabIndex = 3;
             this.labelControl1.Text = "Control Panel";
             // 
@@ -110,15 +113,16 @@
             this.panelControl1.Controls.Add(this.labelControl3);
             this.panelControl1.Controls.Add(this.panelControl2);
             this.panelControl1.Controls.Add(this.labelControl2);
-            this.panelControl1.Location = new System.Drawing.Point(7, 51);
+            this.panelControl1.Location = new System.Drawing.Point(6, 40);
+            this.panelControl1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panelControl1.Name = "panelControl1";
-            this.panelControl1.Size = new System.Drawing.Size(919, 525);
+            this.panelControl1.Size = new System.Drawing.Size(804, 408);
             this.panelControl1.TabIndex = 2;
             // 
             // btnExit
             // 
             this.btnExit.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
-            this.btnExit.Appearance.Font = new System.Drawing.Font("Tahoma", 10F);
+            this.btnExit.Appearance.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnExit.Appearance.ForeColor = System.Drawing.Color.White;
             this.btnExit.Appearance.Options.UseBackColor = true;
             this.btnExit.Appearance.Options.UseFont = true;
@@ -126,9 +130,10 @@
             this.btnExit.Appearance.Options.UseTextOptions = true;
             this.btnExit.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
             this.btnExit.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
-            this.btnExit.Location = new System.Drawing.Point(806, 461);
+            this.btnExit.Location = new System.Drawing.Point(705, 359);
+            this.btnExit.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnExit.Name = "btnExit";
-            this.btnExit.Size = new System.Drawing.Size(99, 50);
+            this.btnExit.Size = new System.Drawing.Size(87, 39);
             this.btnExit.TabIndex = 8;
             this.btnExit.Text = "Exit";
             this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
@@ -136,7 +141,7 @@
             // btnSysCtrl
             // 
             this.btnSysCtrl.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
-            this.btnSysCtrl.Appearance.Font = new System.Drawing.Font("Tahoma", 10F);
+            this.btnSysCtrl.Appearance.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSysCtrl.Appearance.ForeColor = System.Drawing.Color.White;
             this.btnSysCtrl.Appearance.Options.UseBackColor = true;
             this.btnSysCtrl.Appearance.Options.UseFont = true;
@@ -144,9 +149,10 @@
             this.btnSysCtrl.Appearance.Options.UseTextOptions = true;
             this.btnSysCtrl.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
             this.btnSysCtrl.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
-            this.btnSysCtrl.Location = new System.Drawing.Point(565, 461);
+            this.btnSysCtrl.Location = new System.Drawing.Point(494, 359);
+            this.btnSysCtrl.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnSysCtrl.Name = "btnSysCtrl";
-            this.btnSysCtrl.Size = new System.Drawing.Size(145, 50);
+            this.btnSysCtrl.Size = new System.Drawing.Size(127, 39);
             this.btnSysCtrl.TabIndex = 2;
             this.btnSysCtrl.Text = "System Control";
             this.btnSysCtrl.Click += new System.EventHandler(this.btnSysCtrl_Click);
@@ -155,15 +161,16 @@
             // 
             this.panelControl6.Controls.Add(this.btnRepReport);
             this.panelControl6.Controls.Add(this.btnRepAccountSum);
-            this.panelControl6.Location = new System.Drawing.Point(5, 455);
+            this.panelControl6.Location = new System.Drawing.Point(4, 354);
+            this.panelControl6.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panelControl6.Name = "panelControl6";
-            this.panelControl6.Size = new System.Drawing.Size(305, 64);
+            this.panelControl6.Size = new System.Drawing.Size(267, 50);
             this.panelControl6.TabIndex = 7;
             // 
             // btnRepReport
             // 
             this.btnRepReport.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
-            this.btnRepReport.Appearance.Font = new System.Drawing.Font("Tahoma", 10F);
+            this.btnRepReport.Appearance.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnRepReport.Appearance.ForeColor = System.Drawing.Color.White;
             this.btnRepReport.Appearance.Options.UseBackColor = true;
             this.btnRepReport.Appearance.Options.UseFont = true;
@@ -171,9 +178,10 @@
             this.btnRepReport.Appearance.Options.UseTextOptions = true;
             this.btnRepReport.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
             this.btnRepReport.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
-            this.btnRepReport.Location = new System.Drawing.Point(155, 6);
+            this.btnRepReport.Location = new System.Drawing.Point(136, 5);
+            this.btnRepReport.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnRepReport.Name = "btnRepReport";
-            this.btnRepReport.Size = new System.Drawing.Size(145, 50);
+            this.btnRepReport.Size = new System.Drawing.Size(127, 39);
             this.btnRepReport.TabIndex = 1;
             this.btnRepReport.Text = "Reports";
             this.btnRepReport.Click += new System.EventHandler(this.btnRepReport_Click);
@@ -181,7 +189,7 @@
             // btnRepAccountSum
             // 
             this.btnRepAccountSum.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
-            this.btnRepAccountSum.Appearance.Font = new System.Drawing.Font("Tahoma", 10F);
+            this.btnRepAccountSum.Appearance.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnRepAccountSum.Appearance.ForeColor = System.Drawing.Color.White;
             this.btnRepAccountSum.Appearance.Options.UseBackColor = true;
             this.btnRepAccountSum.Appearance.Options.UseFont = true;
@@ -189,19 +197,22 @@
             this.btnRepAccountSum.Appearance.Options.UseTextOptions = true;
             this.btnRepAccountSum.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
             this.btnRepAccountSum.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
-            this.btnRepAccountSum.Location = new System.Drawing.Point(5, 6);
+            this.btnRepAccountSum.Location = new System.Drawing.Point(4, 5);
+            this.btnRepAccountSum.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnRepAccountSum.Name = "btnRepAccountSum";
-            this.btnRepAccountSum.Size = new System.Drawing.Size(145, 50);
+            this.btnRepAccountSum.Size = new System.Drawing.Size(127, 39);
             this.btnRepAccountSum.TabIndex = 0;
             this.btnRepAccountSum.Text = "Account Summary";
             this.btnRepAccountSum.Click += new System.EventHandler(this.btnRepAccountSum_Click);
             // 
             // labelControl5
             // 
-            this.labelControl5.Appearance.Font = new System.Drawing.Font("Tahoma", 14F, System.Drawing.FontStyle.Bold);
-            this.labelControl5.Location = new System.Drawing.Point(5, 422);
+            this.labelControl5.Appearance.Font = new System.Drawing.Font("Calibri", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelControl5.Appearance.Options.UseFont = true;
+            this.labelControl5.Location = new System.Drawing.Point(4, 328);
+            this.labelControl5.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.labelControl5.Name = "labelControl5";
-            this.labelControl5.Size = new System.Drawing.Size(115, 28);
+            this.labelControl5.Size = new System.Drawing.Size(79, 23);
             this.labelControl5.TabIndex = 6;
             this.labelControl5.Text = "Reporting";
             // 
@@ -217,15 +228,16 @@
             this.panelControl5.Controls.Add(this.btnEiMenuItem);
             this.panelControl5.Controls.Add(this.btnEiMenuCategory);
             this.panelControl5.Controls.Add(this.btnEiConf);
-            this.panelControl5.Location = new System.Drawing.Point(5, 298);
+            this.panelControl5.Location = new System.Drawing.Point(4, 232);
+            this.panelControl5.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panelControl5.Name = "panelControl5";
-            this.panelControl5.Size = new System.Drawing.Size(905, 118);
+            this.panelControl5.Size = new System.Drawing.Size(792, 92);
             this.panelControl5.TabIndex = 5;
             // 
             // btnEiPrtSetup
             // 
             this.btnEiPrtSetup.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
-            this.btnEiPrtSetup.Appearance.Font = new System.Drawing.Font("Tahoma", 10F);
+            this.btnEiPrtSetup.Appearance.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnEiPrtSetup.Appearance.ForeColor = System.Drawing.Color.White;
             this.btnEiPrtSetup.Appearance.Options.UseBackColor = true;
             this.btnEiPrtSetup.Appearance.Options.UseFont = true;
@@ -233,9 +245,10 @@
             this.btnEiPrtSetup.Appearance.Options.UseTextOptions = true;
             this.btnEiPrtSetup.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
             this.btnEiPrtSetup.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
-            this.btnEiPrtSetup.Location = new System.Drawing.Point(455, 62);
+            this.btnEiPrtSetup.Location = new System.Drawing.Point(398, 48);
+            this.btnEiPrtSetup.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnEiPrtSetup.Name = "btnEiPrtSetup";
-            this.btnEiPrtSetup.Size = new System.Drawing.Size(145, 50);
+            this.btnEiPrtSetup.Size = new System.Drawing.Size(127, 39);
             this.btnEiPrtSetup.TabIndex = 9;
             this.btnEiPrtSetup.Text = "Printer Setup";
             this.btnEiPrtSetup.Click += new System.EventHandler(this.btnEiPrtSetup_Click);
@@ -243,7 +256,7 @@
             // btnEiPrtOrderEntry
             // 
             this.btnEiPrtOrderEntry.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
-            this.btnEiPrtOrderEntry.Appearance.Font = new System.Drawing.Font("Tahoma", 10F);
+            this.btnEiPrtOrderEntry.Appearance.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnEiPrtOrderEntry.Appearance.ForeColor = System.Drawing.Color.White;
             this.btnEiPrtOrderEntry.Appearance.Options.UseBackColor = true;
             this.btnEiPrtOrderEntry.Appearance.Options.UseFont = true;
@@ -251,9 +264,10 @@
             this.btnEiPrtOrderEntry.Appearance.Options.UseTextOptions = true;
             this.btnEiPrtOrderEntry.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
             this.btnEiPrtOrderEntry.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
-            this.btnEiPrtOrderEntry.Location = new System.Drawing.Point(305, 62);
+            this.btnEiPrtOrderEntry.Location = new System.Drawing.Point(267, 48);
+            this.btnEiPrtOrderEntry.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnEiPrtOrderEntry.Name = "btnEiPrtOrderEntry";
-            this.btnEiPrtOrderEntry.Size = new System.Drawing.Size(145, 50);
+            this.btnEiPrtOrderEntry.Size = new System.Drawing.Size(127, 39);
             this.btnEiPrtOrderEntry.TabIndex = 8;
             this.btnEiPrtOrderEntry.Text = "Print Order Entry";
             this.btnEiPrtOrderEntry.Click += new System.EventHandler(this.btnEiPrtOrderEntry_Click);
@@ -261,7 +275,7 @@
             // btnEiTblSetup
             // 
             this.btnEiTblSetup.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
-            this.btnEiTblSetup.Appearance.Font = new System.Drawing.Font("Tahoma", 10F);
+            this.btnEiTblSetup.Appearance.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnEiTblSetup.Appearance.ForeColor = System.Drawing.Color.White;
             this.btnEiTblSetup.Appearance.Options.UseBackColor = true;
             this.btnEiTblSetup.Appearance.Options.UseFont = true;
@@ -269,9 +283,10 @@
             this.btnEiTblSetup.Appearance.Options.UseTextOptions = true;
             this.btnEiTblSetup.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
             this.btnEiTblSetup.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
-            this.btnEiTblSetup.Location = new System.Drawing.Point(155, 62);
+            this.btnEiTblSetup.Location = new System.Drawing.Point(136, 48);
+            this.btnEiTblSetup.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnEiTblSetup.Name = "btnEiTblSetup";
-            this.btnEiTblSetup.Size = new System.Drawing.Size(145, 50);
+            this.btnEiTblSetup.Size = new System.Drawing.Size(127, 39);
             this.btnEiTblSetup.TabIndex = 7;
             this.btnEiTblSetup.Text = "Table Setup";
             this.btnEiTblSetup.Click += new System.EventHandler(this.btnEiTblSetup_Click);
@@ -279,7 +294,7 @@
             // btnEiDeptCode
             // 
             this.btnEiDeptCode.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
-            this.btnEiDeptCode.Appearance.Font = new System.Drawing.Font("Tahoma", 10F);
+            this.btnEiDeptCode.Appearance.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnEiDeptCode.Appearance.ForeColor = System.Drawing.Color.White;
             this.btnEiDeptCode.Appearance.Options.UseBackColor = true;
             this.btnEiDeptCode.Appearance.Options.UseFont = true;
@@ -287,9 +302,10 @@
             this.btnEiDeptCode.Appearance.Options.UseTextOptions = true;
             this.btnEiDeptCode.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
             this.btnEiDeptCode.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
-            this.btnEiDeptCode.Location = new System.Drawing.Point(5, 62);
+            this.btnEiDeptCode.Location = new System.Drawing.Point(4, 48);
+            this.btnEiDeptCode.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnEiDeptCode.Name = "btnEiDeptCode";
-            this.btnEiDeptCode.Size = new System.Drawing.Size(145, 50);
+            this.btnEiDeptCode.Size = new System.Drawing.Size(127, 39);
             this.btnEiDeptCode.TabIndex = 6;
             this.btnEiDeptCode.Text = "Department Code";
             this.btnEiDeptCode.Click += new System.EventHandler(this.btnEiDeptCode_Click);
@@ -297,7 +313,7 @@
             // btnEiOrderCtrl
             // 
             this.btnEiOrderCtrl.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
-            this.btnEiOrderCtrl.Appearance.Font = new System.Drawing.Font("Tahoma", 10F);
+            this.btnEiOrderCtrl.Appearance.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnEiOrderCtrl.Appearance.ForeColor = System.Drawing.Color.White;
             this.btnEiOrderCtrl.Appearance.Options.UseBackColor = true;
             this.btnEiOrderCtrl.Appearance.Options.UseFont = true;
@@ -305,9 +321,10 @@
             this.btnEiOrderCtrl.Appearance.Options.UseTextOptions = true;
             this.btnEiOrderCtrl.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
             this.btnEiOrderCtrl.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
-            this.btnEiOrderCtrl.Location = new System.Drawing.Point(755, 6);
+            this.btnEiOrderCtrl.Location = new System.Drawing.Point(661, 5);
+            this.btnEiOrderCtrl.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnEiOrderCtrl.Name = "btnEiOrderCtrl";
-            this.btnEiOrderCtrl.Size = new System.Drawing.Size(145, 50);
+            this.btnEiOrderCtrl.Size = new System.Drawing.Size(127, 39);
             this.btnEiOrderCtrl.TabIndex = 5;
             this.btnEiOrderCtrl.Text = "Order Control";
             this.btnEiOrderCtrl.Click += new System.EventHandler(this.btnEiOrderCtrl_Click);
@@ -315,7 +332,7 @@
             // btnEiExtraMenuEdit
             // 
             this.btnEiExtraMenuEdit.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
-            this.btnEiExtraMenuEdit.Appearance.Font = new System.Drawing.Font("Tahoma", 10F);
+            this.btnEiExtraMenuEdit.Appearance.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnEiExtraMenuEdit.Appearance.ForeColor = System.Drawing.Color.White;
             this.btnEiExtraMenuEdit.Appearance.Options.UseBackColor = true;
             this.btnEiExtraMenuEdit.Appearance.Options.UseFont = true;
@@ -323,9 +340,10 @@
             this.btnEiExtraMenuEdit.Appearance.Options.UseTextOptions = true;
             this.btnEiExtraMenuEdit.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
             this.btnEiExtraMenuEdit.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
-            this.btnEiExtraMenuEdit.Location = new System.Drawing.Point(605, 6);
+            this.btnEiExtraMenuEdit.Location = new System.Drawing.Point(529, 5);
+            this.btnEiExtraMenuEdit.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnEiExtraMenuEdit.Name = "btnEiExtraMenuEdit";
-            this.btnEiExtraMenuEdit.Size = new System.Drawing.Size(145, 50);
+            this.btnEiExtraMenuEdit.Size = new System.Drawing.Size(127, 39);
             this.btnEiExtraMenuEdit.TabIndex = 4;
             this.btnEiExtraMenuEdit.Text = "Extra Menu Edit";
             this.btnEiExtraMenuEdit.Click += new System.EventHandler(this.btnEiExtraMenuEdit_Click);
@@ -333,7 +351,7 @@
             // btnEiManageMenuSet
             // 
             this.btnEiManageMenuSet.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
-            this.btnEiManageMenuSet.Appearance.Font = new System.Drawing.Font("Tahoma", 10F);
+            this.btnEiManageMenuSet.Appearance.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnEiManageMenuSet.Appearance.ForeColor = System.Drawing.Color.White;
             this.btnEiManageMenuSet.Appearance.Options.UseBackColor = true;
             this.btnEiManageMenuSet.Appearance.Options.UseFont = true;
@@ -341,9 +359,10 @@
             this.btnEiManageMenuSet.Appearance.Options.UseTextOptions = true;
             this.btnEiManageMenuSet.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
             this.btnEiManageMenuSet.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
-            this.btnEiManageMenuSet.Location = new System.Drawing.Point(455, 6);
+            this.btnEiManageMenuSet.Location = new System.Drawing.Point(398, 5);
+            this.btnEiManageMenuSet.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnEiManageMenuSet.Name = "btnEiManageMenuSet";
-            this.btnEiManageMenuSet.Size = new System.Drawing.Size(145, 50);
+            this.btnEiManageMenuSet.Size = new System.Drawing.Size(127, 39);
             this.btnEiManageMenuSet.TabIndex = 3;
             this.btnEiManageMenuSet.Text = "Manage Menu Set";
             this.btnEiManageMenuSet.Click += new System.EventHandler(this.btnEiManageMenuSet_Click);
@@ -351,7 +370,7 @@
             // btnEiMenuItem
             // 
             this.btnEiMenuItem.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
-            this.btnEiMenuItem.Appearance.Font = new System.Drawing.Font("Tahoma", 10F);
+            this.btnEiMenuItem.Appearance.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnEiMenuItem.Appearance.ForeColor = System.Drawing.Color.White;
             this.btnEiMenuItem.Appearance.Options.UseBackColor = true;
             this.btnEiMenuItem.Appearance.Options.UseFont = true;
@@ -359,9 +378,10 @@
             this.btnEiMenuItem.Appearance.Options.UseTextOptions = true;
             this.btnEiMenuItem.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
             this.btnEiMenuItem.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
-            this.btnEiMenuItem.Location = new System.Drawing.Point(305, 6);
+            this.btnEiMenuItem.Location = new System.Drawing.Point(267, 5);
+            this.btnEiMenuItem.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnEiMenuItem.Name = "btnEiMenuItem";
-            this.btnEiMenuItem.Size = new System.Drawing.Size(145, 50);
+            this.btnEiMenuItem.Size = new System.Drawing.Size(127, 39);
             this.btnEiMenuItem.TabIndex = 2;
             this.btnEiMenuItem.Text = "Menu Item";
             this.btnEiMenuItem.Click += new System.EventHandler(this.btnEiMenuItem_Click);
@@ -369,7 +389,7 @@
             // btnEiMenuCategory
             // 
             this.btnEiMenuCategory.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
-            this.btnEiMenuCategory.Appearance.Font = new System.Drawing.Font("Tahoma", 10F);
+            this.btnEiMenuCategory.Appearance.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnEiMenuCategory.Appearance.ForeColor = System.Drawing.Color.White;
             this.btnEiMenuCategory.Appearance.Options.UseBackColor = true;
             this.btnEiMenuCategory.Appearance.Options.UseFont = true;
@@ -377,9 +397,10 @@
             this.btnEiMenuCategory.Appearance.Options.UseTextOptions = true;
             this.btnEiMenuCategory.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
             this.btnEiMenuCategory.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
-            this.btnEiMenuCategory.Location = new System.Drawing.Point(155, 6);
+            this.btnEiMenuCategory.Location = new System.Drawing.Point(136, 5);
+            this.btnEiMenuCategory.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnEiMenuCategory.Name = "btnEiMenuCategory";
-            this.btnEiMenuCategory.Size = new System.Drawing.Size(145, 50);
+            this.btnEiMenuCategory.Size = new System.Drawing.Size(127, 39);
             this.btnEiMenuCategory.TabIndex = 1;
             this.btnEiMenuCategory.Text = "Menu Category";
             this.btnEiMenuCategory.Click += new System.EventHandler(this.btnEiMenuCategory_Click);
@@ -387,7 +408,7 @@
             // btnEiConf
             // 
             this.btnEiConf.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
-            this.btnEiConf.Appearance.Font = new System.Drawing.Font("Tahoma", 10F);
+            this.btnEiConf.Appearance.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnEiConf.Appearance.ForeColor = System.Drawing.Color.White;
             this.btnEiConf.Appearance.Options.UseBackColor = true;
             this.btnEiConf.Appearance.Options.UseFont = true;
@@ -395,19 +416,22 @@
             this.btnEiConf.Appearance.Options.UseTextOptions = true;
             this.btnEiConf.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
             this.btnEiConf.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
-            this.btnEiConf.Location = new System.Drawing.Point(5, 6);
+            this.btnEiConf.Location = new System.Drawing.Point(4, 5);
+            this.btnEiConf.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnEiConf.Name = "btnEiConf";
-            this.btnEiConf.Size = new System.Drawing.Size(145, 50);
+            this.btnEiConf.Size = new System.Drawing.Size(127, 39);
             this.btnEiConf.TabIndex = 0;
             this.btnEiConf.Text = "Eat-In Configuration";
             this.btnEiConf.Click += new System.EventHandler(this.btnEiConf_Click);
             // 
             // labelControl4
             // 
-            this.labelControl4.Appearance.Font = new System.Drawing.Font("Tahoma", 14F, System.Drawing.FontStyle.Bold);
-            this.labelControl4.Location = new System.Drawing.Point(5, 265);
+            this.labelControl4.Appearance.Font = new System.Drawing.Font("Calibri", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelControl4.Appearance.Options.UseFont = true;
+            this.labelControl4.Location = new System.Drawing.Point(4, 206);
+            this.labelControl4.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.labelControl4.Name = "labelControl4";
-            this.labelControl4.Size = new System.Drawing.Size(163, 28);
+            this.labelControl4.Size = new System.Drawing.Size(105, 23);
             this.labelControl4.TabIndex = 4;
             this.labelControl4.Text = "Eat In Setting";
             // 
@@ -420,15 +444,16 @@
             this.panelControl4.Controls.Add(this.btnTaMenuItem);
             this.panelControl4.Controls.Add(this.btnTaMenuCategory);
             this.panelControl4.Controls.Add(this.btnTaConf);
-            this.panelControl4.Location = new System.Drawing.Point(5, 142);
+            this.panelControl4.Location = new System.Drawing.Point(4, 110);
+            this.panelControl4.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panelControl4.Name = "panelControl4";
-            this.panelControl4.Size = new System.Drawing.Size(905, 117);
+            this.panelControl4.Size = new System.Drawing.Size(792, 91);
             this.panelControl4.TabIndex = 3;
             // 
             // btnTaDriverSetup
             // 
             this.btnTaDriverSetup.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
-            this.btnTaDriverSetup.Appearance.Font = new System.Drawing.Font("Tahoma", 10F);
+            this.btnTaDriverSetup.Appearance.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnTaDriverSetup.Appearance.ForeColor = System.Drawing.Color.White;
             this.btnTaDriverSetup.Appearance.Options.UseBackColor = true;
             this.btnTaDriverSetup.Appearance.Options.UseFont = true;
@@ -436,9 +461,10 @@
             this.btnTaDriverSetup.Appearance.Options.UseTextOptions = true;
             this.btnTaDriverSetup.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
             this.btnTaDriverSetup.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
-            this.btnTaDriverSetup.Location = new System.Drawing.Point(5, 62);
+            this.btnTaDriverSetup.Location = new System.Drawing.Point(4, 48);
+            this.btnTaDriverSetup.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnTaDriverSetup.Name = "btnTaDriverSetup";
-            this.btnTaDriverSetup.Size = new System.Drawing.Size(145, 50);
+            this.btnTaDriverSetup.Size = new System.Drawing.Size(127, 39);
             this.btnTaDriverSetup.TabIndex = 7;
             this.btnTaDriverSetup.Text = "Driver Setup";
             this.btnTaDriverSetup.Click += new System.EventHandler(this.btnTaDriverSetup_Click);
@@ -446,7 +472,7 @@
             // btnTaPrtSetup
             // 
             this.btnTaPrtSetup.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
-            this.btnTaPrtSetup.Appearance.Font = new System.Drawing.Font("Tahoma", 10F);
+            this.btnTaPrtSetup.Appearance.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnTaPrtSetup.Appearance.ForeColor = System.Drawing.Color.White;
             this.btnTaPrtSetup.Appearance.Options.UseBackColor = true;
             this.btnTaPrtSetup.Appearance.Options.UseFont = true;
@@ -454,9 +480,10 @@
             this.btnTaPrtSetup.Appearance.Options.UseTextOptions = true;
             this.btnTaPrtSetup.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
             this.btnTaPrtSetup.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
-            this.btnTaPrtSetup.Location = new System.Drawing.Point(155, 62);
+            this.btnTaPrtSetup.Location = new System.Drawing.Point(136, 48);
+            this.btnTaPrtSetup.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnTaPrtSetup.Name = "btnTaPrtSetup";
-            this.btnTaPrtSetup.Size = new System.Drawing.Size(145, 50);
+            this.btnTaPrtSetup.Size = new System.Drawing.Size(127, 39);
             this.btnTaPrtSetup.TabIndex = 6;
             this.btnTaPrtSetup.Text = "Printer Setup";
             this.btnTaPrtSetup.Click += new System.EventHandler(this.btnTaPrtSetup_Click);
@@ -464,7 +491,7 @@
             // btnTaExtraMenuEdit
             // 
             this.btnTaExtraMenuEdit.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
-            this.btnTaExtraMenuEdit.Appearance.Font = new System.Drawing.Font("Tahoma", 10F);
+            this.btnTaExtraMenuEdit.Appearance.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnTaExtraMenuEdit.Appearance.ForeColor = System.Drawing.Color.White;
             this.btnTaExtraMenuEdit.Appearance.Options.UseBackColor = true;
             this.btnTaExtraMenuEdit.Appearance.Options.UseFont = true;
@@ -472,9 +499,10 @@
             this.btnTaExtraMenuEdit.Appearance.Options.UseTextOptions = true;
             this.btnTaExtraMenuEdit.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
             this.btnTaExtraMenuEdit.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
-            this.btnTaExtraMenuEdit.Location = new System.Drawing.Point(605, 6);
+            this.btnTaExtraMenuEdit.Location = new System.Drawing.Point(529, 5);
+            this.btnTaExtraMenuEdit.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnTaExtraMenuEdit.Name = "btnTaExtraMenuEdit";
-            this.btnTaExtraMenuEdit.Size = new System.Drawing.Size(145, 50);
+            this.btnTaExtraMenuEdit.Size = new System.Drawing.Size(127, 39);
             this.btnTaExtraMenuEdit.TabIndex = 4;
             this.btnTaExtraMenuEdit.Text = "Extra Menu Edit";
             this.btnTaExtraMenuEdit.Click += new System.EventHandler(this.btnTaExtraMenuEdit_Click);
@@ -482,7 +510,7 @@
             // btnTaManageMenuSet
             // 
             this.btnTaManageMenuSet.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
-            this.btnTaManageMenuSet.Appearance.Font = new System.Drawing.Font("Tahoma", 10F);
+            this.btnTaManageMenuSet.Appearance.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnTaManageMenuSet.Appearance.ForeColor = System.Drawing.Color.White;
             this.btnTaManageMenuSet.Appearance.Options.UseBackColor = true;
             this.btnTaManageMenuSet.Appearance.Options.UseFont = true;
@@ -490,9 +518,10 @@
             this.btnTaManageMenuSet.Appearance.Options.UseTextOptions = true;
             this.btnTaManageMenuSet.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
             this.btnTaManageMenuSet.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
-            this.btnTaManageMenuSet.Location = new System.Drawing.Point(455, 6);
+            this.btnTaManageMenuSet.Location = new System.Drawing.Point(398, 5);
+            this.btnTaManageMenuSet.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnTaManageMenuSet.Name = "btnTaManageMenuSet";
-            this.btnTaManageMenuSet.Size = new System.Drawing.Size(145, 50);
+            this.btnTaManageMenuSet.Size = new System.Drawing.Size(127, 39);
             this.btnTaManageMenuSet.TabIndex = 3;
             this.btnTaManageMenuSet.Text = "Manage Menu Set";
             this.btnTaManageMenuSet.Click += new System.EventHandler(this.btnTaManageMenuSet_Click);
@@ -500,7 +529,7 @@
             // btnTaMenuItem
             // 
             this.btnTaMenuItem.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
-            this.btnTaMenuItem.Appearance.Font = new System.Drawing.Font("Tahoma", 10F);
+            this.btnTaMenuItem.Appearance.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnTaMenuItem.Appearance.ForeColor = System.Drawing.Color.White;
             this.btnTaMenuItem.Appearance.Options.UseBackColor = true;
             this.btnTaMenuItem.Appearance.Options.UseFont = true;
@@ -508,9 +537,10 @@
             this.btnTaMenuItem.Appearance.Options.UseTextOptions = true;
             this.btnTaMenuItem.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
             this.btnTaMenuItem.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
-            this.btnTaMenuItem.Location = new System.Drawing.Point(305, 6);
+            this.btnTaMenuItem.Location = new System.Drawing.Point(267, 5);
+            this.btnTaMenuItem.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnTaMenuItem.Name = "btnTaMenuItem";
-            this.btnTaMenuItem.Size = new System.Drawing.Size(145, 50);
+            this.btnTaMenuItem.Size = new System.Drawing.Size(127, 39);
             this.btnTaMenuItem.TabIndex = 2;
             this.btnTaMenuItem.Text = "Menu Item";
             this.btnTaMenuItem.Click += new System.EventHandler(this.btnTaMenuItem_Click);
@@ -518,7 +548,7 @@
             // btnTaMenuCategory
             // 
             this.btnTaMenuCategory.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
-            this.btnTaMenuCategory.Appearance.Font = new System.Drawing.Font("Tahoma", 10F);
+            this.btnTaMenuCategory.Appearance.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnTaMenuCategory.Appearance.ForeColor = System.Drawing.Color.White;
             this.btnTaMenuCategory.Appearance.Options.UseBackColor = true;
             this.btnTaMenuCategory.Appearance.Options.UseFont = true;
@@ -526,9 +556,10 @@
             this.btnTaMenuCategory.Appearance.Options.UseTextOptions = true;
             this.btnTaMenuCategory.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
             this.btnTaMenuCategory.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
-            this.btnTaMenuCategory.Location = new System.Drawing.Point(155, 6);
+            this.btnTaMenuCategory.Location = new System.Drawing.Point(136, 5);
+            this.btnTaMenuCategory.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnTaMenuCategory.Name = "btnTaMenuCategory";
-            this.btnTaMenuCategory.Size = new System.Drawing.Size(145, 50);
+            this.btnTaMenuCategory.Size = new System.Drawing.Size(127, 39);
             this.btnTaMenuCategory.TabIndex = 1;
             this.btnTaMenuCategory.Text = "Menu Category";
             this.btnTaMenuCategory.Click += new System.EventHandler(this.btnTaMenuCategory_Click);
@@ -536,7 +567,7 @@
             // btnTaConf
             // 
             this.btnTaConf.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
-            this.btnTaConf.Appearance.Font = new System.Drawing.Font("Tahoma", 10F);
+            this.btnTaConf.Appearance.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnTaConf.Appearance.ForeColor = System.Drawing.Color.White;
             this.btnTaConf.Appearance.Options.UseBackColor = true;
             this.btnTaConf.Appearance.Options.UseFont = true;
@@ -544,21 +575,24 @@
             this.btnTaConf.Appearance.Options.UseTextOptions = true;
             this.btnTaConf.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
             this.btnTaConf.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
-            this.btnTaConf.Location = new System.Drawing.Point(5, 6);
+            this.btnTaConf.Location = new System.Drawing.Point(4, 5);
+            this.btnTaConf.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnTaConf.Name = "btnTaConf";
-            this.btnTaConf.Size = new System.Drawing.Size(145, 50);
+            this.btnTaConf.Size = new System.Drawing.Size(127, 39);
             this.btnTaConf.TabIndex = 0;
             this.btnTaConf.Text = "Takeaway Configuration";
             this.btnTaConf.Click += new System.EventHandler(this.btnTaTaConf_Click);
             // 
             // labelControl3
             // 
-            this.labelControl3.Appearance.Font = new System.Drawing.Font("Tahoma", 14F, System.Drawing.FontStyle.Bold);
-            this.labelControl3.Location = new System.Drawing.Point(5, 109);
+            this.labelControl3.Appearance.Font = new System.Drawing.Font("Calibri", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelControl3.Appearance.Options.UseFont = true;
+            this.labelControl3.Location = new System.Drawing.Point(4, 85);
+            this.labelControl3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.labelControl3.Name = "labelControl3";
-            this.labelControl3.Size = new System.Drawing.Size(371, 28);
+            this.labelControl3.Size = new System.Drawing.Size(276, 23);
             this.labelControl3.TabIndex = 2;
-            this.labelControl3.Text = "Takeaway & Quick Dining Setting";
+            this.labelControl3.Text = "Takeaway and Quick Dining Setting";
             // 
             // panelControl2
             // 
@@ -568,15 +602,16 @@
             this.panelControl2.Controls.Add(this.btnSysDataManager);
             this.panelControl2.Controls.Add(this.btnSysSetUsrMaint);
             this.panelControl2.Controls.Add(this.btnSysSetSysConf);
-            this.panelControl2.Location = new System.Drawing.Point(5, 38);
+            this.panelControl2.Location = new System.Drawing.Point(4, 30);
+            this.panelControl2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panelControl2.Name = "panelControl2";
-            this.panelControl2.Size = new System.Drawing.Size(905, 63);
+            this.panelControl2.Size = new System.Drawing.Size(792, 49);
             this.panelControl2.TabIndex = 1;
             // 
             // btnSysSetShiftCode
             // 
             this.btnSysSetShiftCode.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
-            this.btnSysSetShiftCode.Appearance.Font = new System.Drawing.Font("Tahoma", 10F);
+            this.btnSysSetShiftCode.Appearance.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSysSetShiftCode.Appearance.ForeColor = System.Drawing.Color.White;
             this.btnSysSetShiftCode.Appearance.Options.UseBackColor = true;
             this.btnSysSetShiftCode.Appearance.Options.UseFont = true;
@@ -584,9 +619,10 @@
             this.btnSysSetShiftCode.Appearance.Options.UseTextOptions = true;
             this.btnSysSetShiftCode.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
             this.btnSysSetShiftCode.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
-            this.btnSysSetShiftCode.Location = new System.Drawing.Point(755, 6);
+            this.btnSysSetShiftCode.Location = new System.Drawing.Point(661, 5);
+            this.btnSysSetShiftCode.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnSysSetShiftCode.Name = "btnSysSetShiftCode";
-            this.btnSysSetShiftCode.Size = new System.Drawing.Size(145, 50);
+            this.btnSysSetShiftCode.Size = new System.Drawing.Size(127, 39);
             this.btnSysSetShiftCode.TabIndex = 5;
             this.btnSysSetShiftCode.Text = "Shift Code";
             this.btnSysSetShiftCode.Click += new System.EventHandler(this.btnSysSetShiftCode_Click);
@@ -594,7 +630,7 @@
             // btnSysSetComputerAddr
             // 
             this.btnSysSetComputerAddr.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
-            this.btnSysSetComputerAddr.Appearance.Font = new System.Drawing.Font("Tahoma", 10F);
+            this.btnSysSetComputerAddr.Appearance.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSysSetComputerAddr.Appearance.ForeColor = System.Drawing.Color.White;
             this.btnSysSetComputerAddr.Appearance.Options.UseBackColor = true;
             this.btnSysSetComputerAddr.Appearance.Options.UseFont = true;
@@ -602,9 +638,10 @@
             this.btnSysSetComputerAddr.Appearance.Options.UseTextOptions = true;
             this.btnSysSetComputerAddr.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
             this.btnSysSetComputerAddr.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
-            this.btnSysSetComputerAddr.Location = new System.Drawing.Point(605, 6);
+            this.btnSysSetComputerAddr.Location = new System.Drawing.Point(529, 5);
+            this.btnSysSetComputerAddr.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnSysSetComputerAddr.Name = "btnSysSetComputerAddr";
-            this.btnSysSetComputerAddr.Size = new System.Drawing.Size(145, 50);
+            this.btnSysSetComputerAddr.Size = new System.Drawing.Size(127, 39);
             this.btnSysSetComputerAddr.TabIndex = 4;
             this.btnSysSetComputerAddr.Text = "Computer Address";
             this.btnSysSetComputerAddr.Click += new System.EventHandler(this.btnSysSetComputerAddr_Click);
@@ -612,7 +649,7 @@
             // btnSysSetCompactDb
             // 
             this.btnSysSetCompactDb.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
-            this.btnSysSetCompactDb.Appearance.Font = new System.Drawing.Font("Tahoma", 10F);
+            this.btnSysSetCompactDb.Appearance.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSysSetCompactDb.Appearance.ForeColor = System.Drawing.Color.White;
             this.btnSysSetCompactDb.Appearance.Options.UseBackColor = true;
             this.btnSysSetCompactDb.Appearance.Options.UseFont = true;
@@ -620,9 +657,10 @@
             this.btnSysSetCompactDb.Appearance.Options.UseTextOptions = true;
             this.btnSysSetCompactDb.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
             this.btnSysSetCompactDb.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
-            this.btnSysSetCompactDb.Location = new System.Drawing.Point(455, 6);
+            this.btnSysSetCompactDb.Location = new System.Drawing.Point(398, 5);
+            this.btnSysSetCompactDb.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnSysSetCompactDb.Name = "btnSysSetCompactDb";
-            this.btnSysSetCompactDb.Size = new System.Drawing.Size(145, 50);
+            this.btnSysSetCompactDb.Size = new System.Drawing.Size(127, 39);
             this.btnSysSetCompactDb.TabIndex = 3;
             this.btnSysSetCompactDb.Text = "Compact Database";
             this.btnSysSetCompactDb.Click += new System.EventHandler(this.btnSysSetCompactDb_Click);
@@ -630,7 +668,7 @@
             // btnSysDataManager
             // 
             this.btnSysDataManager.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
-            this.btnSysDataManager.Appearance.Font = new System.Drawing.Font("Tahoma", 10F);
+            this.btnSysDataManager.Appearance.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSysDataManager.Appearance.ForeColor = System.Drawing.Color.White;
             this.btnSysDataManager.Appearance.Options.UseBackColor = true;
             this.btnSysDataManager.Appearance.Options.UseFont = true;
@@ -638,9 +676,10 @@
             this.btnSysDataManager.Appearance.Options.UseTextOptions = true;
             this.btnSysDataManager.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
             this.btnSysDataManager.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
-            this.btnSysDataManager.Location = new System.Drawing.Point(305, 6);
+            this.btnSysDataManager.Location = new System.Drawing.Point(267, 5);
+            this.btnSysDataManager.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnSysDataManager.Name = "btnSysDataManager";
-            this.btnSysDataManager.Size = new System.Drawing.Size(145, 50);
+            this.btnSysDataManager.Size = new System.Drawing.Size(127, 39);
             this.btnSysDataManager.TabIndex = 2;
             this.btnSysDataManager.Text = "Data Manager";
             this.btnSysDataManager.Click += new System.EventHandler(this.btnSysDataManager_Click);
@@ -648,7 +687,7 @@
             // btnSysSetUsrMaint
             // 
             this.btnSysSetUsrMaint.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
-            this.btnSysSetUsrMaint.Appearance.Font = new System.Drawing.Font("Tahoma", 10F);
+            this.btnSysSetUsrMaint.Appearance.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSysSetUsrMaint.Appearance.ForeColor = System.Drawing.Color.White;
             this.btnSysSetUsrMaint.Appearance.Options.UseBackColor = true;
             this.btnSysSetUsrMaint.Appearance.Options.UseFont = true;
@@ -656,9 +695,10 @@
             this.btnSysSetUsrMaint.Appearance.Options.UseTextOptions = true;
             this.btnSysSetUsrMaint.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
             this.btnSysSetUsrMaint.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
-            this.btnSysSetUsrMaint.Location = new System.Drawing.Point(155, 6);
+            this.btnSysSetUsrMaint.Location = new System.Drawing.Point(136, 5);
+            this.btnSysSetUsrMaint.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnSysSetUsrMaint.Name = "btnSysSetUsrMaint";
-            this.btnSysSetUsrMaint.Size = new System.Drawing.Size(145, 50);
+            this.btnSysSetUsrMaint.Size = new System.Drawing.Size(127, 39);
             this.btnSysSetUsrMaint.TabIndex = 1;
             this.btnSysSetUsrMaint.Text = "User Maintenance";
             this.btnSysSetUsrMaint.Click += new System.EventHandler(this.btnSysSetUsrMaint_Click);
@@ -666,7 +706,7 @@
             // btnSysSetSysConf
             // 
             this.btnSysSetSysConf.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
-            this.btnSysSetSysConf.Appearance.Font = new System.Drawing.Font("Tahoma", 10F);
+            this.btnSysSetSysConf.Appearance.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSysSetSysConf.Appearance.ForeColor = System.Drawing.Color.White;
             this.btnSysSetSysConf.Appearance.Options.UseBackColor = true;
             this.btnSysSetSysConf.Appearance.Options.UseFont = true;
@@ -674,29 +714,33 @@
             this.btnSysSetSysConf.Appearance.Options.UseTextOptions = true;
             this.btnSysSetSysConf.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
             this.btnSysSetSysConf.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
-            this.btnSysSetSysConf.Location = new System.Drawing.Point(5, 6);
+            this.btnSysSetSysConf.Location = new System.Drawing.Point(4, 5);
+            this.btnSysSetSysConf.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnSysSetSysConf.Name = "btnSysSetSysConf";
-            this.btnSysSetSysConf.Size = new System.Drawing.Size(145, 50);
+            this.btnSysSetSysConf.Size = new System.Drawing.Size(127, 39);
             this.btnSysSetSysConf.TabIndex = 0;
             this.btnSysSetSysConf.Text = "System Configuration";
             this.btnSysSetSysConf.Click += new System.EventHandler(this.btnSysSetSysConf_Click);
             // 
             // labelControl2
             // 
-            this.labelControl2.Appearance.Font = new System.Drawing.Font("Tahoma", 14F, System.Drawing.FontStyle.Bold);
-            this.labelControl2.Location = new System.Drawing.Point(5, 5);
+            this.labelControl2.Appearance.Font = new System.Drawing.Font("Calibri", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelControl2.Appearance.Options.UseFont = true;
+            this.labelControl2.Location = new System.Drawing.Point(4, 4);
+            this.labelControl2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.labelControl2.Name = "labelControl2";
-            this.labelControl2.Size = new System.Drawing.Size(178, 28);
+            this.labelControl2.Size = new System.Drawing.Size(119, 23);
             this.labelControl2.TabIndex = 0;
             this.labelControl2.Text = "System Setting";
             // 
             // FrmTaAdmin
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 18F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 14F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(951, 597);
+            this.ClientSize = new System.Drawing.Size(832, 464);
             this.Controls.Add(this.panelControl3);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "FrmTaAdmin";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FrmTaAdmin";
