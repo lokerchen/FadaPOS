@@ -663,6 +663,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <EmbeddedResource Include="UI\FrmLogon.resx">
       <DependentUpon>FrmLogon.cs</DependentUpon>
@@ -942,6 +943,8 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\uncheck-c -32X32.png" />
+    <None Include="Resources\check-c -32X32.png" />
     <EmbeddedResource Include="hibernate.cfg.xml" />
     <Content Include="LinqToDB.Templates\CopyMe.SQLite.tt.txt" />
   </ItemGroup>
