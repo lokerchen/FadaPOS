@@ -194,7 +194,10 @@
             this.chkTaShowOrderExportData.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.chkTaShowOrderExportData.Name = "chkTaShowOrderExportData";
             this.chkTaShowOrderExportData.Properties.Caption = "Show Order / Export Data";
-            this.chkTaShowOrderExportData.Size = new System.Drawing.Size(175, 20);
+            this.chkTaShowOrderExportData.Properties.CheckBoxOptions.Style = DevExpress.XtraEditors.Controls.CheckBoxStyle.Custom;
+            this.chkTaShowOrderExportData.Properties.ImageOptions.ImageChecked = global::SuperPOS.Properties.Resources.check_c__32X32;
+            this.chkTaShowOrderExportData.Properties.ImageOptions.ImageUnchecked = global::SuperPOS.Properties.Resources.uncheck_c__32X32;
+            this.chkTaShowOrderExportData.Size = new System.Drawing.Size(175, 36);
             this.chkTaShowOrderExportData.TabIndex = 7;
             // 
             // chkTaShowOrderPrtReceipt
@@ -203,7 +206,10 @@
             this.chkTaShowOrderPrtReceipt.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.chkTaShowOrderPrtReceipt.Name = "chkTaShowOrderPrtReceipt";
             this.chkTaShowOrderPrtReceipt.Properties.Caption = "Show Order / Print Receipt";
-            this.chkTaShowOrderPrtReceipt.Size = new System.Drawing.Size(188, 20);
+            this.chkTaShowOrderPrtReceipt.Properties.CheckBoxOptions.Style = DevExpress.XtraEditors.Controls.CheckBoxStyle.Custom;
+            this.chkTaShowOrderPrtReceipt.Properties.ImageOptions.ImageChecked = global::SuperPOS.Properties.Resources.check_c__32X32;
+            this.chkTaShowOrderPrtReceipt.Properties.ImageOptions.ImageUnchecked = global::SuperPOS.Properties.Resources.uncheck_c__32X32;
+            this.chkTaShowOrderPrtReceipt.Size = new System.Drawing.Size(188, 36);
             this.chkTaShowOrderPrtReceipt.TabIndex = 6;
             // 
             // chkTaShowOrderEditOrder
@@ -212,7 +218,10 @@
             this.chkTaShowOrderEditOrder.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.chkTaShowOrderEditOrder.Name = "chkTaShowOrderEditOrder";
             this.chkTaShowOrderEditOrder.Properties.Caption = "Show Order / Edit Order";
-            this.chkTaShowOrderEditOrder.Size = new System.Drawing.Size(210, 20);
+            this.chkTaShowOrderEditOrder.Properties.CheckBoxOptions.Style = DevExpress.XtraEditors.Controls.CheckBoxStyle.Custom;
+            this.chkTaShowOrderEditOrder.Properties.ImageOptions.ImageChecked = global::SuperPOS.Properties.Resources.check_c__32X32;
+            this.chkTaShowOrderEditOrder.Properties.ImageOptions.ImageUnchecked = global::SuperPOS.Properties.Resources.uncheck_c__32X32;
+            this.chkTaShowOrderEditOrder.Size = new System.Drawing.Size(210, 36);
             this.chkTaShowOrderEditOrder.TabIndex = 5;
             // 
             // chkTaShowOrderChangePaym
@@ -221,7 +230,10 @@
             this.chkTaShowOrderChangePaym.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.chkTaShowOrderChangePaym.Name = "chkTaShowOrderChangePaym";
             this.chkTaShowOrderChangePaym.Properties.Caption = "Show Order / Change Payment";
-            this.chkTaShowOrderChangePaym.Size = new System.Drawing.Size(210, 20);
+            this.chkTaShowOrderChangePaym.Properties.CheckBoxOptions.Style = DevExpress.XtraEditors.Controls.CheckBoxStyle.Custom;
+            this.chkTaShowOrderChangePaym.Properties.ImageOptions.ImageChecked = global::SuperPOS.Properties.Resources.check_c__32X32;
+            this.chkTaShowOrderChangePaym.Properties.ImageOptions.ImageUnchecked = global::SuperPOS.Properties.Resources.uncheck_c__32X32;
+            this.chkTaShowOrderChangePaym.Size = new System.Drawing.Size(210, 36);
             this.chkTaShowOrderChangePaym.TabIndex = 4;
             // 
             // chkTaShowOrderPrintAcctSum
@@ -230,7 +242,10 @@
             this.chkTaShowOrderPrintAcctSum.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.chkTaShowOrderPrintAcctSum.Name = "chkTaShowOrderPrintAcctSum";
             this.chkTaShowOrderPrintAcctSum.Properties.Caption = "Show Order / Print Acct Summary";
-            this.chkTaShowOrderPrintAcctSum.Size = new System.Drawing.Size(221, 20);
+            this.chkTaShowOrderPrintAcctSum.Properties.CheckBoxOptions.Style = DevExpress.XtraEditors.Controls.CheckBoxStyle.Custom;
+            this.chkTaShowOrderPrintAcctSum.Properties.ImageOptions.ImageChecked = global::SuperPOS.Properties.Resources.check_c__32X32;
+            this.chkTaShowOrderPrintAcctSum.Properties.ImageOptions.ImageUnchecked = global::SuperPOS.Properties.Resources.uncheck_c__32X32;
+            this.chkTaShowOrderPrintAcctSum.Size = new System.Drawing.Size(221, 36);
             this.chkTaShowOrderPrintAcctSum.TabIndex = 3;
             // 
             // chkTaPriceOff
@@ -239,7 +254,10 @@
             this.chkTaPriceOff.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.chkTaPriceOff.Name = "chkTaPriceOff";
             this.chkTaPriceOff.Properties.Caption = "Price Off";
-            this.chkTaPriceOff.Size = new System.Drawing.Size(104, 20);
+            this.chkTaPriceOff.Properties.CheckBoxOptions.Style = DevExpress.XtraEditors.Controls.CheckBoxStyle.Custom;
+            this.chkTaPriceOff.Properties.ImageOptions.ImageChecked = global::SuperPOS.Properties.Resources.check_c__32X32;
+            this.chkTaPriceOff.Properties.ImageOptions.ImageUnchecked = global::SuperPOS.Properties.Resources.uncheck_c__32X32;
+            this.chkTaPriceOff.Size = new System.Drawing.Size(104, 36);
             this.chkTaPriceOff.TabIndex = 2;
             // 
             // chkTaChangePrice
@@ -248,7 +266,10 @@
             this.chkTaChangePrice.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.chkTaChangePrice.Name = "chkTaChangePrice";
             this.chkTaChangePrice.Properties.Caption = "Change Price";
-            this.chkTaChangePrice.Size = new System.Drawing.Size(104, 20);
+            this.chkTaChangePrice.Properties.CheckBoxOptions.Style = DevExpress.XtraEditors.Controls.CheckBoxStyle.Custom;
+            this.chkTaChangePrice.Properties.ImageOptions.ImageChecked = global::SuperPOS.Properties.Resources.check_c__32X32;
+            this.chkTaChangePrice.Properties.ImageOptions.ImageUnchecked = global::SuperPOS.Properties.Resources.uncheck_c__32X32;
+            this.chkTaChangePrice.Size = new System.Drawing.Size(104, 36);
             this.chkTaChangePrice.TabIndex = 1;
             // 
             // chkTaControlPanel
@@ -257,7 +278,11 @@
             this.chkTaControlPanel.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.chkTaControlPanel.Name = "chkTaControlPanel";
             this.chkTaControlPanel.Properties.Caption = "Control Panel";
-            this.chkTaControlPanel.Size = new System.Drawing.Size(104, 20);
+            this.chkTaControlPanel.Properties.CheckBoxOptions.Style = DevExpress.XtraEditors.Controls.CheckBoxStyle.Custom;
+            this.chkTaControlPanel.Properties.ImageOptions.ImageChecked = global::SuperPOS.Properties.Resources.check_c__32X32;
+            this.chkTaControlPanel.Properties.ImageOptions.ImageUnchecked = global::SuperPOS.Properties.Resources.uncheck_c__32X32;
+            this.chkTaControlPanel.Properties.Name = "chkTaControlPanel";
+            this.chkTaControlPanel.Size = new System.Drawing.Size(104, 36);
             this.chkTaControlPanel.TabIndex = 0;
             // 
             // xtpEi
@@ -265,7 +290,7 @@
             this.xtpEi.Controls.Add(this.panelControl3);
             this.xtpEi.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.xtpEi.Name = "xtpEi";
-            this.xtpEi.Size = new System.Drawing.Size(498, 277);
+            this.xtpEi.Size = new System.Drawing.Size(498, 268);
             this.xtpEi.Text = "Eat In Access";
             // 
             // panelControl3
@@ -294,7 +319,10 @@
             this.chkEiPrintBillDiscount.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.chkEiPrintBillDiscount.Name = "chkEiPrintBillDiscount";
             this.chkEiPrintBillDiscount.Properties.Caption = "Print Bill / Discount";
-            this.chkEiPrintBillDiscount.Size = new System.Drawing.Size(188, 20);
+            this.chkEiPrintBillDiscount.Properties.CheckBoxOptions.Style = DevExpress.XtraEditors.Controls.CheckBoxStyle.Custom;
+            this.chkEiPrintBillDiscount.Properties.ImageOptions.ImageChecked = global::SuperPOS.Properties.Resources.check_c__32X32;
+            this.chkEiPrintBillDiscount.Properties.ImageOptions.ImageUnchecked = global::SuperPOS.Properties.Resources.uncheck_c__32X32;
+            this.chkEiPrintBillDiscount.Size = new System.Drawing.Size(188, 36);
             this.chkEiPrintBillDiscount.TabIndex = 11;
             // 
             // chkEiShowOrderPrintReceipt
@@ -303,7 +331,10 @@
             this.chkEiShowOrderPrintReceipt.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.chkEiShowOrderPrintReceipt.Name = "chkEiShowOrderPrintReceipt";
             this.chkEiShowOrderPrintReceipt.Properties.Caption = "Show Order / Print Receipt";
-            this.chkEiShowOrderPrintReceipt.Size = new System.Drawing.Size(188, 20);
+            this.chkEiShowOrderPrintReceipt.Properties.CheckBoxOptions.Style = DevExpress.XtraEditors.Controls.CheckBoxStyle.Custom;
+            this.chkEiShowOrderPrintReceipt.Properties.ImageOptions.ImageChecked = global::SuperPOS.Properties.Resources.check_c__32X32;
+            this.chkEiShowOrderPrintReceipt.Properties.ImageOptions.ImageUnchecked = global::SuperPOS.Properties.Resources.uncheck_c__32X32;
+            this.chkEiShowOrderPrintReceipt.Size = new System.Drawing.Size(188, 36);
             this.chkEiShowOrderPrintReceipt.TabIndex = 10;
             // 
             // chkEiShowOrderEditOrder
@@ -312,7 +343,10 @@
             this.chkEiShowOrderEditOrder.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.chkEiShowOrderEditOrder.Name = "chkEiShowOrderEditOrder";
             this.chkEiShowOrderEditOrder.Properties.Caption = "Show Order / Edit Order";
-            this.chkEiShowOrderEditOrder.Size = new System.Drawing.Size(210, 20);
+            this.chkEiShowOrderEditOrder.Properties.CheckBoxOptions.Style = DevExpress.XtraEditors.Controls.CheckBoxStyle.Custom;
+            this.chkEiShowOrderEditOrder.Properties.ImageOptions.ImageChecked = global::SuperPOS.Properties.Resources.check_c__32X32;
+            this.chkEiShowOrderEditOrder.Properties.ImageOptions.ImageUnchecked = global::SuperPOS.Properties.Resources.uncheck_c__32X32;
+            this.chkEiShowOrderEditOrder.Size = new System.Drawing.Size(210, 36);
             this.chkEiShowOrderEditOrder.TabIndex = 9;
             // 
             // chkEiShowOrderChangePaym
@@ -321,7 +355,10 @@
             this.chkEiShowOrderChangePaym.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.chkEiShowOrderChangePaym.Name = "chkEiShowOrderChangePaym";
             this.chkEiShowOrderChangePaym.Properties.Caption = "Show Order / Change Payment";
-            this.chkEiShowOrderChangePaym.Size = new System.Drawing.Size(210, 20);
+            this.chkEiShowOrderChangePaym.Properties.CheckBoxOptions.Style = DevExpress.XtraEditors.Controls.CheckBoxStyle.Custom;
+            this.chkEiShowOrderChangePaym.Properties.ImageOptions.ImageChecked = global::SuperPOS.Properties.Resources.check_c__32X32;
+            this.chkEiShowOrderChangePaym.Properties.ImageOptions.ImageUnchecked = global::SuperPOS.Properties.Resources.uncheck_c__32X32;
+            this.chkEiShowOrderChangePaym.Size = new System.Drawing.Size(210, 36);
             this.chkEiShowOrderChangePaym.TabIndex = 8;
             // 
             // chkEiShowOrderPrintAcctSum
@@ -330,7 +367,10 @@
             this.chkEiShowOrderPrintAcctSum.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.chkEiShowOrderPrintAcctSum.Name = "chkEiShowOrderPrintAcctSum";
             this.chkEiShowOrderPrintAcctSum.Properties.Caption = "Show Order / Print Acct Summary";
-            this.chkEiShowOrderPrintAcctSum.Size = new System.Drawing.Size(240, 20);
+            this.chkEiShowOrderPrintAcctSum.Properties.CheckBoxOptions.Style = DevExpress.XtraEditors.Controls.CheckBoxStyle.Custom;
+            this.chkEiShowOrderPrintAcctSum.Properties.ImageOptions.ImageChecked = global::SuperPOS.Properties.Resources.check_c__32X32;
+            this.chkEiShowOrderPrintAcctSum.Properties.ImageOptions.ImageUnchecked = global::SuperPOS.Properties.Resources.uncheck_c__32X32;
+            this.chkEiShowOrderPrintAcctSum.Size = new System.Drawing.Size(240, 36);
             this.chkEiShowOrderPrintAcctSum.TabIndex = 7;
             // 
             // chkEiTblBooking
@@ -339,7 +379,10 @@
             this.chkEiTblBooking.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.chkEiTblBooking.Name = "chkEiTblBooking";
             this.chkEiTblBooking.Properties.Caption = "Table Booking";
-            this.chkEiTblBooking.Size = new System.Drawing.Size(188, 20);
+            this.chkEiTblBooking.Properties.CheckBoxOptions.Style = DevExpress.XtraEditors.Controls.CheckBoxStyle.Custom;
+            this.chkEiTblBooking.Properties.ImageOptions.ImageChecked = global::SuperPOS.Properties.Resources.check_c__32X32;
+            this.chkEiTblBooking.Properties.ImageOptions.ImageUnchecked = global::SuperPOS.Properties.Resources.uncheck_c__32X32;
+            this.chkEiTblBooking.Size = new System.Drawing.Size(188, 36);
             this.chkEiTblBooking.TabIndex = 6;
             // 
             // chkEiRemoveItemAfterPrint
@@ -348,7 +391,10 @@
             this.chkEiRemoveItemAfterPrint.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.chkEiRemoveItemAfterPrint.Name = "chkEiRemoveItemAfterPrint";
             this.chkEiRemoveItemAfterPrint.Properties.Caption = "Remove Item After Printed";
-            this.chkEiRemoveItemAfterPrint.Size = new System.Drawing.Size(210, 20);
+            this.chkEiRemoveItemAfterPrint.Properties.CheckBoxOptions.Style = DevExpress.XtraEditors.Controls.CheckBoxStyle.Custom;
+            this.chkEiRemoveItemAfterPrint.Properties.ImageOptions.ImageChecked = global::SuperPOS.Properties.Resources.check_c__32X32;
+            this.chkEiRemoveItemAfterPrint.Properties.ImageOptions.ImageUnchecked = global::SuperPOS.Properties.Resources.uncheck_c__32X32;
+            this.chkEiRemoveItemAfterPrint.Size = new System.Drawing.Size(210, 36);
             this.chkEiRemoveItemAfterPrint.TabIndex = 5;
             // 
             // chkEiPrintBill
@@ -357,7 +403,10 @@
             this.chkEiPrintBill.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.chkEiPrintBill.Name = "chkEiPrintBill";
             this.chkEiPrintBill.Properties.Caption = "Print Bill";
-            this.chkEiPrintBill.Size = new System.Drawing.Size(210, 20);
+            this.chkEiPrintBill.Properties.CheckBoxOptions.Style = DevExpress.XtraEditors.Controls.CheckBoxStyle.Custom;
+            this.chkEiPrintBill.Properties.ImageOptions.ImageChecked = global::SuperPOS.Properties.Resources.check_c__32X32;
+            this.chkEiPrintBill.Properties.ImageOptions.ImageUnchecked = global::SuperPOS.Properties.Resources.uncheck_c__32X32;
+            this.chkEiPrintBill.Size = new System.Drawing.Size(210, 36);
             this.chkEiPrintBill.TabIndex = 4;
             // 
             // chkEiPay
@@ -366,7 +415,10 @@
             this.chkEiPay.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.chkEiPay.Name = "chkEiPay";
             this.chkEiPay.Properties.Caption = "Pay";
-            this.chkEiPay.Size = new System.Drawing.Size(221, 20);
+            this.chkEiPay.Properties.CheckBoxOptions.Style = DevExpress.XtraEditors.Controls.CheckBoxStyle.Custom;
+            this.chkEiPay.Properties.ImageOptions.ImageChecked = global::SuperPOS.Properties.Resources.check_c__32X32;
+            this.chkEiPay.Properties.ImageOptions.ImageUnchecked = global::SuperPOS.Properties.Resources.uncheck_c__32X32;
+            this.chkEiPay.Size = new System.Drawing.Size(221, 36);
             this.chkEiPay.TabIndex = 3;
             // 
             // chkEiPriceOff
@@ -375,7 +427,10 @@
             this.chkEiPriceOff.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.chkEiPriceOff.Name = "chkEiPriceOff";
             this.chkEiPriceOff.Properties.Caption = "Price Off";
-            this.chkEiPriceOff.Size = new System.Drawing.Size(104, 20);
+            this.chkEiPriceOff.Properties.CheckBoxOptions.Style = DevExpress.XtraEditors.Controls.CheckBoxStyle.Custom;
+            this.chkEiPriceOff.Properties.ImageOptions.ImageChecked = global::SuperPOS.Properties.Resources.check_c__32X32;
+            this.chkEiPriceOff.Properties.ImageOptions.ImageUnchecked = global::SuperPOS.Properties.Resources.uncheck_c__32X32;
+            this.chkEiPriceOff.Size = new System.Drawing.Size(104, 36);
             this.chkEiPriceOff.TabIndex = 2;
             // 
             // chkEiChangePrice
@@ -384,7 +439,10 @@
             this.chkEiChangePrice.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.chkEiChangePrice.Name = "chkEiChangePrice";
             this.chkEiChangePrice.Properties.Caption = "Change Price";
-            this.chkEiChangePrice.Size = new System.Drawing.Size(104, 20);
+            this.chkEiChangePrice.Properties.CheckBoxOptions.Style = DevExpress.XtraEditors.Controls.CheckBoxStyle.Custom;
+            this.chkEiChangePrice.Properties.ImageOptions.ImageChecked = global::SuperPOS.Properties.Resources.check_c__32X32;
+            this.chkEiChangePrice.Properties.ImageOptions.ImageUnchecked = global::SuperPOS.Properties.Resources.uncheck_c__32X32;
+            this.chkEiChangePrice.Size = new System.Drawing.Size(104, 36);
             this.chkEiChangePrice.TabIndex = 1;
             // 
             // chkEiControlPanel
@@ -393,7 +451,10 @@
             this.chkEiControlPanel.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.chkEiControlPanel.Name = "chkEiControlPanel";
             this.chkEiControlPanel.Properties.Caption = "Control Panel";
-            this.chkEiControlPanel.Size = new System.Drawing.Size(104, 20);
+            this.chkEiControlPanel.Properties.CheckBoxOptions.Style = DevExpress.XtraEditors.Controls.CheckBoxStyle.Custom;
+            this.chkEiControlPanel.Properties.ImageOptions.ImageChecked = global::SuperPOS.Properties.Resources.check_c__32X32;
+            this.chkEiControlPanel.Properties.ImageOptions.ImageUnchecked = global::SuperPOS.Properties.Resources.uncheck_c__32X32;
+            this.chkEiControlPanel.Size = new System.Drawing.Size(104, 36);
             this.chkEiControlPanel.TabIndex = 0;
             // 
             // xtpGa
@@ -401,7 +462,7 @@
             this.xtpGa.Controls.Add(this.panelControl4);
             this.xtpGa.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.xtpGa.Name = "xtpGa";
-            this.xtpGa.Size = new System.Drawing.Size(498, 277);
+            this.xtpGa.Size = new System.Drawing.Size(498, 268);
             this.xtpGa.Text = "General Access";
             // 
             // panelControl4
@@ -435,7 +496,10 @@
             this.chkGaOpenCashDrawer.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.chkGaOpenCashDrawer.Name = "chkGaOpenCashDrawer";
             this.chkGaOpenCashDrawer.Properties.Caption = "Open Cash Drawer";
-            this.chkGaOpenCashDrawer.Size = new System.Drawing.Size(240, 20);
+            this.chkGaOpenCashDrawer.Properties.CheckBoxOptions.Style = DevExpress.XtraEditors.Controls.CheckBoxStyle.Custom;
+            this.chkGaOpenCashDrawer.Properties.ImageOptions.ImageChecked = global::SuperPOS.Properties.Resources.check_c__32X32;
+            this.chkGaOpenCashDrawer.Properties.ImageOptions.ImageUnchecked = global::SuperPOS.Properties.Resources.uncheck_c__32X32;
+            this.chkGaOpenCashDrawer.Size = new System.Drawing.Size(240, 36);
             this.chkGaOpenCashDrawer.TabIndex = 16;
             // 
             // chkGaAccountSumPrintSaleRpt
@@ -444,7 +508,10 @@
             this.chkGaAccountSumPrintSaleRpt.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.chkGaAccountSumPrintSaleRpt.Name = "chkGaAccountSumPrintSaleRpt";
             this.chkGaAccountSumPrintSaleRpt.Properties.Caption = "Account Summary / Print Sales Rpt";
-            this.chkGaAccountSumPrintSaleRpt.Size = new System.Drawing.Size(242, 20);
+            this.chkGaAccountSumPrintSaleRpt.Properties.CheckBoxOptions.Style = DevExpress.XtraEditors.Controls.CheckBoxStyle.Custom;
+            this.chkGaAccountSumPrintSaleRpt.Properties.ImageOptions.ImageChecked = global::SuperPOS.Properties.Resources.check_c__32X32;
+            this.chkGaAccountSumPrintSaleRpt.Properties.ImageOptions.ImageUnchecked = global::SuperPOS.Properties.Resources.uncheck_c__32X32;
+            this.chkGaAccountSumPrintSaleRpt.Size = new System.Drawing.Size(242, 36);
             this.chkGaAccountSumPrintSaleRpt.TabIndex = 15;
             // 
             // chkGaEiPrintSetup
@@ -453,7 +520,10 @@
             this.chkGaEiPrintSetup.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.chkGaEiPrintSetup.Name = "chkGaEiPrintSetup";
             this.chkGaEiPrintSetup.Properties.Caption = "Eat-In / Print Setup";
-            this.chkGaEiPrintSetup.Size = new System.Drawing.Size(210, 20);
+            this.chkGaEiPrintSetup.Properties.CheckBoxOptions.Style = DevExpress.XtraEditors.Controls.CheckBoxStyle.Custom;
+            this.chkGaEiPrintSetup.Properties.ImageOptions.ImageChecked = global::SuperPOS.Properties.Resources.check_c__32X32;
+            this.chkGaEiPrintSetup.Properties.ImageOptions.ImageUnchecked = global::SuperPOS.Properties.Resources.uncheck_c__32X32;
+            this.chkGaEiPrintSetup.Size = new System.Drawing.Size(210, 36);
             this.chkGaEiPrintSetup.TabIndex = 14;
             // 
             // chkGaTaPrintSetup
@@ -462,7 +532,10 @@
             this.chkGaTaPrintSetup.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.chkGaTaPrintSetup.Name = "chkGaTaPrintSetup";
             this.chkGaTaPrintSetup.Properties.Caption = "Takeaway / Print Setup";
-            this.chkGaTaPrintSetup.Size = new System.Drawing.Size(210, 20);
+            this.chkGaTaPrintSetup.Properties.CheckBoxOptions.Style = DevExpress.XtraEditors.Controls.CheckBoxStyle.Custom;
+            this.chkGaTaPrintSetup.Properties.ImageOptions.ImageChecked = global::SuperPOS.Properties.Resources.check_c__32X32;
+            this.chkGaTaPrintSetup.Properties.ImageOptions.ImageUnchecked = global::SuperPOS.Properties.Resources.uncheck_c__32X32;
+            this.chkGaTaPrintSetup.Size = new System.Drawing.Size(210, 36);
             this.chkGaTaPrintSetup.TabIndex = 13;
             // 
             // chkGaEiConf
@@ -471,7 +544,10 @@
             this.chkGaEiConf.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.chkGaEiConf.Name = "chkGaEiConf";
             this.chkGaEiConf.Properties.Caption = "Eat-In Configuration";
-            this.chkGaEiConf.Size = new System.Drawing.Size(240, 20);
+            this.chkGaEiConf.Properties.CheckBoxOptions.Style = DevExpress.XtraEditors.Controls.CheckBoxStyle.Custom;
+            this.chkGaEiConf.Properties.ImageOptions.ImageChecked = global::SuperPOS.Properties.Resources.check_c__32X32;
+            this.chkGaEiConf.Properties.ImageOptions.ImageUnchecked = global::SuperPOS.Properties.Resources.uncheck_c__32X32;
+            this.chkGaEiConf.Size = new System.Drawing.Size(240, 36);
             this.chkGaEiConf.TabIndex = 12;
             // 
             // chkGaTaConf
@@ -480,7 +556,10 @@
             this.chkGaTaConf.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.chkGaTaConf.Name = "chkGaTaConf";
             this.chkGaTaConf.Properties.Caption = "Takeaway Configuration";
-            this.chkGaTaConf.Size = new System.Drawing.Size(221, 20);
+            this.chkGaTaConf.Properties.CheckBoxOptions.Style = DevExpress.XtraEditors.Controls.CheckBoxStyle.Custom;
+            this.chkGaTaConf.Properties.ImageOptions.ImageChecked = global::SuperPOS.Properties.Resources.check_c__32X32;
+            this.chkGaTaConf.Properties.ImageOptions.ImageUnchecked = global::SuperPOS.Properties.Resources.uncheck_c__32X32;
+            this.chkGaTaConf.Size = new System.Drawing.Size(221, 36);
             this.chkGaTaConf.TabIndex = 11;
             // 
             // chkGaSysShiftCode
@@ -489,7 +568,10 @@
             this.chkGaSysShiftCode.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.chkGaSysShiftCode.Name = "chkGaSysShiftCode";
             this.chkGaSysShiftCode.Properties.Caption = "System Setting / Shift Code";
-            this.chkGaSysShiftCode.Size = new System.Drawing.Size(221, 20);
+            this.chkGaSysShiftCode.Properties.CheckBoxOptions.Style = DevExpress.XtraEditors.Controls.CheckBoxStyle.Custom;
+            this.chkGaSysShiftCode.Properties.ImageOptions.ImageChecked = global::SuperPOS.Properties.Resources.check_c__32X32;
+            this.chkGaSysShiftCode.Properties.ImageOptions.ImageUnchecked = global::SuperPOS.Properties.Resources.uncheck_c__32X32;
+            this.chkGaSysShiftCode.Size = new System.Drawing.Size(221, 36);
             this.chkGaSysShiftCode.TabIndex = 10;
             // 
             // chkGaSysComputerAdd
@@ -498,7 +580,10 @@
             this.chkGaSysComputerAdd.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.chkGaSysComputerAdd.Name = "chkGaSysComputerAdd";
             this.chkGaSysComputerAdd.Properties.Caption = "System Setting / Computer Add.";
-            this.chkGaSysComputerAdd.Size = new System.Drawing.Size(246, 20);
+            this.chkGaSysComputerAdd.Properties.CheckBoxOptions.Style = DevExpress.XtraEditors.Controls.CheckBoxStyle.Custom;
+            this.chkGaSysComputerAdd.Properties.ImageOptions.ImageChecked = global::SuperPOS.Properties.Resources.check_c__32X32;
+            this.chkGaSysComputerAdd.Properties.ImageOptions.ImageUnchecked = global::SuperPOS.Properties.Resources.uncheck_c__32X32;
+            this.chkGaSysComputerAdd.Size = new System.Drawing.Size(246, 36);
             this.chkGaSysComputerAdd.TabIndex = 9;
             // 
             // chkGaWriteAndEnableInventory
@@ -507,7 +592,10 @@
             this.chkGaWriteAndEnableInventory.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.chkGaWriteAndEnableInventory.Name = "chkGaWriteAndEnableInventory";
             this.chkGaWriteAndEnableInventory.Properties.Caption = "Write And Enable Inventory";
-            this.chkGaWriteAndEnableInventory.Size = new System.Drawing.Size(210, 20);
+            this.chkGaWriteAndEnableInventory.Properties.CheckBoxOptions.Style = DevExpress.XtraEditors.Controls.CheckBoxStyle.Custom;
+            this.chkGaWriteAndEnableInventory.Properties.ImageOptions.ImageChecked = global::SuperPOS.Properties.Resources.check_c__32X32;
+            this.chkGaWriteAndEnableInventory.Properties.ImageOptions.ImageUnchecked = global::SuperPOS.Properties.Resources.uncheck_c__32X32;
+            this.chkGaWriteAndEnableInventory.Size = new System.Drawing.Size(210, 36);
             this.chkGaWriteAndEnableInventory.TabIndex = 8;
             // 
             // chkGaLogExitPos
@@ -516,7 +604,10 @@
             this.chkGaLogExitPos.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.chkGaLogExitPos.Name = "chkGaLogExitPos";
             this.chkGaLogExitPos.Properties.Caption = "Logon screen EXIT POS software";
-            this.chkGaLogExitPos.Size = new System.Drawing.Size(240, 20);
+            this.chkGaLogExitPos.Properties.CheckBoxOptions.Style = DevExpress.XtraEditors.Controls.CheckBoxStyle.Custom;
+            this.chkGaLogExitPos.Properties.ImageOptions.ImageChecked = global::SuperPOS.Properties.Resources.check_c__32X32;
+            this.chkGaLogExitPos.Properties.ImageOptions.ImageUnchecked = global::SuperPOS.Properties.Resources.uncheck_c__32X32;
+            this.chkGaLogExitPos.Size = new System.Drawing.Size(240, 36);
             this.chkGaLogExitPos.TabIndex = 7;
             // 
             // chkGaAccountSumView
@@ -525,7 +616,10 @@
             this.chkGaAccountSumView.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.chkGaAccountSumView.Name = "chkGaAccountSumView";
             this.chkGaAccountSumView.Properties.Caption = "Account Summary / Summary View";
-            this.chkGaAccountSumView.Size = new System.Drawing.Size(246, 20);
+            this.chkGaAccountSumView.Properties.CheckBoxOptions.Style = DevExpress.XtraEditors.Controls.CheckBoxStyle.Custom;
+            this.chkGaAccountSumView.Properties.ImageOptions.ImageChecked = global::SuperPOS.Properties.Resources.check_c__32X32;
+            this.chkGaAccountSumView.Properties.ImageOptions.ImageUnchecked = global::SuperPOS.Properties.Resources.uncheck_c__32X32;
+            this.chkGaAccountSumView.Size = new System.Drawing.Size(246, 36);
             this.chkGaAccountSumView.TabIndex = 6;
             // 
             // chkGaRptAccountSum
@@ -534,7 +628,10 @@
             this.chkGaRptAccountSum.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.chkGaRptAccountSum.Name = "chkGaRptAccountSum";
             this.chkGaRptAccountSum.Properties.Caption = "Reporting / Account Summary";
-            this.chkGaRptAccountSum.Size = new System.Drawing.Size(210, 20);
+            this.chkGaRptAccountSum.Properties.CheckBoxOptions.Style = DevExpress.XtraEditors.Controls.CheckBoxStyle.Custom;
+            this.chkGaRptAccountSum.Properties.ImageOptions.ImageChecked = global::SuperPOS.Properties.Resources.check_c__32X32;
+            this.chkGaRptAccountSum.Properties.ImageOptions.ImageUnchecked = global::SuperPOS.Properties.Resources.uncheck_c__32X32;
+            this.chkGaRptAccountSum.Size = new System.Drawing.Size(210, 36);
             this.chkGaRptAccountSum.TabIndex = 5;
             // 
             // chkGaRptReport
@@ -543,7 +640,10 @@
             this.chkGaRptReport.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.chkGaRptReport.Name = "chkGaRptReport";
             this.chkGaRptReport.Properties.Caption = "Reporting / Reports";
-            this.chkGaRptReport.Size = new System.Drawing.Size(210, 20);
+            this.chkGaRptReport.Properties.CheckBoxOptions.Style = DevExpress.XtraEditors.Controls.CheckBoxStyle.Custom;
+            this.chkGaRptReport.Properties.ImageOptions.ImageChecked = global::SuperPOS.Properties.Resources.check_c__32X32;
+            this.chkGaRptReport.Properties.ImageOptions.ImageUnchecked = global::SuperPOS.Properties.Resources.uncheck_c__32X32;
+            this.chkGaRptReport.Size = new System.Drawing.Size(210, 36);
             this.chkGaRptReport.TabIndex = 4;
             // 
             // chkGaSysCompactDb
@@ -552,7 +652,10 @@
             this.chkGaSysCompactDb.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.chkGaSysCompactDb.Name = "chkGaSysCompactDb";
             this.chkGaSysCompactDb.Properties.Caption = "System Setting / Compact Database";
-            this.chkGaSysCompactDb.Size = new System.Drawing.Size(240, 20);
+            this.chkGaSysCompactDb.Properties.CheckBoxOptions.Style = DevExpress.XtraEditors.Controls.CheckBoxStyle.Custom;
+            this.chkGaSysCompactDb.Properties.ImageOptions.ImageChecked = global::SuperPOS.Properties.Resources.check_c__32X32;
+            this.chkGaSysCompactDb.Properties.ImageOptions.ImageUnchecked = global::SuperPOS.Properties.Resources.uncheck_c__32X32;
+            this.chkGaSysCompactDb.Size = new System.Drawing.Size(240, 36);
             this.chkGaSysCompactDb.TabIndex = 3;
             // 
             // chkGaSysDataManager
@@ -561,7 +664,10 @@
             this.chkGaSysDataManager.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.chkGaSysDataManager.Name = "chkGaSysDataManager";
             this.chkGaSysDataManager.Properties.Caption = "System Setting / Data Manager";
-            this.chkGaSysDataManager.Size = new System.Drawing.Size(221, 20);
+            this.chkGaSysDataManager.Properties.CheckBoxOptions.Style = DevExpress.XtraEditors.Controls.CheckBoxStyle.Custom;
+            this.chkGaSysDataManager.Properties.ImageOptions.ImageChecked = global::SuperPOS.Properties.Resources.check_c__32X32;
+            this.chkGaSysDataManager.Properties.ImageOptions.ImageUnchecked = global::SuperPOS.Properties.Resources.uncheck_c__32X32;
+            this.chkGaSysDataManager.Size = new System.Drawing.Size(221, 36);
             this.chkGaSysDataManager.TabIndex = 2;
             // 
             // chkGaSysUsrMaint
@@ -570,7 +676,10 @@
             this.chkGaSysUsrMaint.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.chkGaSysUsrMaint.Name = "chkGaSysUsrMaint";
             this.chkGaSysUsrMaint.Properties.Caption = "System Setting / User Maintenance";
-            this.chkGaSysUsrMaint.Size = new System.Drawing.Size(221, 20);
+            this.chkGaSysUsrMaint.Properties.CheckBoxOptions.Style = DevExpress.XtraEditors.Controls.CheckBoxStyle.Custom;
+            this.chkGaSysUsrMaint.Properties.ImageOptions.ImageChecked = global::SuperPOS.Properties.Resources.check_c__32X32;
+            this.chkGaSysUsrMaint.Properties.ImageOptions.ImageUnchecked = global::SuperPOS.Properties.Resources.uncheck_c__32X32;
+            this.chkGaSysUsrMaint.Size = new System.Drawing.Size(221, 36);
             this.chkGaSysUsrMaint.TabIndex = 1;
             // 
             // chkGaSysConf
@@ -579,7 +688,10 @@
             this.chkGaSysConf.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.chkGaSysConf.Name = "chkGaSysConf";
             this.chkGaSysConf.Properties.Caption = "System Setting / System Config";
-            this.chkGaSysConf.Size = new System.Drawing.Size(246, 20);
+            this.chkGaSysConf.Properties.CheckBoxOptions.Style = DevExpress.XtraEditors.Controls.CheckBoxStyle.Custom;
+            this.chkGaSysConf.Properties.ImageOptions.ImageChecked = global::SuperPOS.Properties.Resources.check_c__32X32;
+            this.chkGaSysConf.Properties.ImageOptions.ImageUnchecked = global::SuperPOS.Properties.Resources.uncheck_c__32X32;
+            this.chkGaSysConf.Size = new System.Drawing.Size(246, 36);
             this.chkGaSysConf.TabIndex = 0;
             // 
             // panelControl1
