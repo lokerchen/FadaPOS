@@ -98,6 +98,9 @@
             this.chkIgnoreDelivery = new DevExpress.XtraEditors.CheckEdit();
             this.chkDeliveryChge = new DevExpress.XtraEditors.CheckEdit();
             this.groupBox7 = new System.Windows.Forms.GroupBox();
+            this.labelControl5 = new DevExpress.XtraEditors.LabelControl();
+            this.txtOverMile = new DevExpress.XtraEditors.TextEdit();
+            this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
             this.txtPerMile = new DevExpress.XtraEditors.TextEdit();
             this.labelControl6 = new DevExpress.XtraEditors.LabelControl();
             this.txtDsAmountToPay4 = new DevExpress.XtraEditors.TextEdit();
@@ -146,9 +149,6 @@
             this.label15 = new System.Windows.Forms.Label();
             this.btnExit = new DevExpress.XtraEditors.SimpleButton();
             this.btnSave = new DevExpress.XtraEditors.SimpleButton();
-            this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
-            this.txtOverMile = new DevExpress.XtraEditors.TextEdit();
-            this.labelControl5 = new DevExpress.XtraEditors.LabelControl();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.xtpTaConfig)).BeginInit();
             this.xtpTaConfig.SuspendLayout();
@@ -200,6 +200,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.chkIgnoreDelivery.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.chkDeliveryChge.Properties)).BeginInit();
             this.groupBox7.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.txtOverMile.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtPerMile.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtDsAmountToPay4.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtDsAmountToPay3.Properties)).BeginInit();
@@ -220,7 +221,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.txtIncrement.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtOtherName.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtEngName.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtOverMile.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox1
@@ -266,7 +266,7 @@
             this.xtpGs.Controls.Add(this.groupBox2);
             this.xtpGs.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.xtpGs.Name = "xtpGs";
-            this.xtpGs.Size = new System.Drawing.Size(896, 433);
+            this.xtpGs.Size = new System.Drawing.Size(900, 436);
             this.xtpGs.Text = "General Setting";
             // 
             // groupBox12
@@ -917,6 +917,7 @@
             // labelControl1
             // 
             this.labelControl1.Appearance.Font = new System.Drawing.Font("Tahoma", 11F);
+            this.labelControl1.Appearance.Options.UseFont = true;
             this.labelControl1.Location = new System.Drawing.Point(63, 26);
             this.labelControl1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.labelControl1.Name = "labelControl1";
@@ -933,7 +934,7 @@
             this.xtpDs.Controls.Add(this.groupBox7);
             this.xtpDs.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.xtpDs.Name = "xtpDs";
-            this.xtpDs.Size = new System.Drawing.Size(896, 433);
+            this.xtpDs.Size = new System.Drawing.Size(900, 436);
             this.xtpDs.Text = "Delivery Setting";
             // 
             // groupBox9
@@ -967,6 +968,7 @@
             // labelControl4
             // 
             this.labelControl4.Appearance.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelControl4.Appearance.Options.UseFont = true;
             this.labelControl4.Location = new System.Drawing.Point(284, 41);
             this.labelControl4.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.labelControl4.Name = "labelControl4";
@@ -989,6 +991,7 @@
             // labelControl3
             // 
             this.labelControl3.Appearance.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelControl3.Appearance.Options.UseFont = true;
             this.labelControl3.Location = new System.Drawing.Point(11, 41);
             this.labelControl3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.labelControl3.Name = "labelControl3";
@@ -1019,7 +1022,10 @@
             this.chkIgnoreDeliveryIfCharge.Properties.Appearance.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.chkIgnoreDeliveryIfCharge.Properties.Appearance.Options.UseFont = true;
             this.chkIgnoreDeliveryIfCharge.Properties.Caption = "Ignore Delivery Surcharge if Delivery Charge Applies";
-            this.chkIgnoreDeliveryIfCharge.Size = new System.Drawing.Size(474, 25);
+            this.chkIgnoreDeliveryIfCharge.Properties.CheckBoxOptions.Style = DevExpress.XtraEditors.Controls.CheckBoxStyle.Custom;
+            this.chkIgnoreDeliveryIfCharge.Properties.ImageOptions.ImageChecked = global::SuperPOS.Properties.Resources.check_c__32X32;
+            this.chkIgnoreDeliveryIfCharge.Properties.ImageOptions.ImageUnchecked = global::SuperPOS.Properties.Resources.uncheck_c__32X32;
+            this.chkIgnoreDeliveryIfCharge.Size = new System.Drawing.Size(474, 36);
             this.chkIgnoreDeliveryIfCharge.TabIndex = 15;
             this.chkIgnoreDeliveryIfCharge.CheckedChanged += new System.EventHandler(this.chkIgnoreDeliveryIfCharge_CheckedChanged);
             // 
@@ -1031,7 +1037,10 @@
             this.chkIgnoreDelivery.Properties.Appearance.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.chkIgnoreDelivery.Properties.Appearance.Options.UseFont = true;
             this.chkIgnoreDelivery.Properties.Caption = "Ignore Delivery Distance Charge If Surcharge Applies";
-            this.chkIgnoreDelivery.Size = new System.Drawing.Size(474, 25);
+            this.chkIgnoreDelivery.Properties.CheckBoxOptions.Style = DevExpress.XtraEditors.Controls.CheckBoxStyle.Custom;
+            this.chkIgnoreDelivery.Properties.ImageOptions.ImageChecked = global::SuperPOS.Properties.Resources.check_c__32X32;
+            this.chkIgnoreDelivery.Properties.ImageOptions.ImageUnchecked = global::SuperPOS.Properties.Resources.uncheck_c__32X32;
+            this.chkIgnoreDelivery.Size = new System.Drawing.Size(474, 36);
             this.chkIgnoreDelivery.TabIndex = 14;
             this.chkIgnoreDelivery.CheckedChanged += new System.EventHandler(this.chkIgnoreDelivery_CheckedChanged);
             // 
@@ -1043,7 +1052,10 @@
             this.chkDeliveryChge.Properties.Appearance.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.chkDeliveryChge.Properties.Appearance.Options.UseFont = true;
             this.chkDeliveryChge.Properties.Caption = "Delivery Charge Includes In Order";
-            this.chkDeliveryChge.Size = new System.Drawing.Size(319, 25);
+            this.chkDeliveryChge.Properties.CheckBoxOptions.Style = DevExpress.XtraEditors.Controls.CheckBoxStyle.Custom;
+            this.chkDeliveryChge.Properties.ImageOptions.ImageChecked = global::SuperPOS.Properties.Resources.check_c__32X32;
+            this.chkDeliveryChge.Properties.ImageOptions.ImageUnchecked = global::SuperPOS.Properties.Resources.uncheck_c__32X32;
+            this.chkDeliveryChge.Size = new System.Drawing.Size(319, 36);
             this.chkDeliveryChge.TabIndex = 13;
             // 
             // groupBox7
@@ -1078,6 +1090,40 @@
             this.groupBox7.TabStop = false;
             this.groupBox7.Text = "Delivery Distance Charge";
             // 
+            // labelControl5
+            // 
+            this.labelControl5.Appearance.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelControl5.Appearance.Options.UseFont = true;
+            this.labelControl5.Location = new System.Drawing.Point(170, 187);
+            this.labelControl5.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.labelControl5.Name = "labelControl5";
+            this.labelControl5.Size = new System.Drawing.Size(59, 21);
+            this.labelControl5.TabIndex = 19;
+            this.labelControl5.Text = "miles at";
+            // 
+            // txtOverMile
+            // 
+            this.txtOverMile.Location = new System.Drawing.Point(76, 180);
+            this.txtOverMile.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txtOverMile.Name = "txtOverMile";
+            this.txtOverMile.Properties.Appearance.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtOverMile.Properties.Appearance.Options.UseFont = true;
+            this.txtOverMile.Properties.Mask.EditMask = "f2";
+            this.txtOverMile.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Numeric;
+            this.txtOverMile.Size = new System.Drawing.Size(88, 28);
+            this.txtOverMile.TabIndex = 18;
+            // 
+            // labelControl2
+            // 
+            this.labelControl2.Appearance.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelControl2.Appearance.Options.UseFont = true;
+            this.labelControl2.Location = new System.Drawing.Point(34, 187);
+            this.labelControl2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.labelControl2.Name = "labelControl2";
+            this.labelControl2.Size = new System.Drawing.Size(36, 21);
+            this.labelControl2.TabIndex = 17;
+            this.labelControl2.Text = "Over";
+            // 
             // txtPerMile
             // 
             this.txtPerMile.Location = new System.Drawing.Point(235, 184);
@@ -1093,6 +1139,7 @@
             // labelControl6
             // 
             this.labelControl6.Appearance.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelControl6.Appearance.Options.UseFont = true;
             this.labelControl6.Location = new System.Drawing.Point(329, 187);
             this.labelControl6.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.labelControl6.Name = "labelControl6";
@@ -1255,7 +1302,7 @@
             this.xtpChangeSet.Controls.Add(this.groupBox10);
             this.xtpChangeSet.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.xtpChangeSet.Name = "xtpChangeSet";
-            this.xtpChangeSet.Size = new System.Drawing.Size(896, 433);
+            this.xtpChangeSet.Size = new System.Drawing.Size(900, 436);
             this.xtpChangeSet.Text = "Change Settings";
             // 
             // groupBox10
@@ -1726,38 +1773,6 @@
             this.btnSave.Text = "Save";
             this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
-            // labelControl2
-            // 
-            this.labelControl2.Appearance.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelControl2.Location = new System.Drawing.Point(34, 187);
-            this.labelControl2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.labelControl2.Name = "labelControl2";
-            this.labelControl2.Size = new System.Drawing.Size(36, 21);
-            this.labelControl2.TabIndex = 17;
-            this.labelControl2.Text = "Over";
-            // 
-            // txtOverMile
-            // 
-            this.txtOverMile.Location = new System.Drawing.Point(76, 180);
-            this.txtOverMile.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.txtOverMile.Name = "txtOverMile";
-            this.txtOverMile.Properties.Appearance.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtOverMile.Properties.Appearance.Options.UseFont = true;
-            this.txtOverMile.Properties.Mask.EditMask = "f2";
-            this.txtOverMile.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Numeric;
-            this.txtOverMile.Size = new System.Drawing.Size(88, 28);
-            this.txtOverMile.TabIndex = 18;
-            // 
-            // labelControl5
-            // 
-            this.labelControl5.Appearance.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelControl5.Location = new System.Drawing.Point(170, 187);
-            this.labelControl5.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.labelControl5.Name = "labelControl5";
-            this.labelControl5.Size = new System.Drawing.Size(59, 21);
-            this.labelControl5.TabIndex = 19;
-            this.labelControl5.Text = "miles at";
-            // 
             // FrmTaConf
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 14F);
@@ -1831,6 +1846,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.chkDeliveryChge.Properties)).EndInit();
             this.groupBox7.ResumeLayout(false);
             this.groupBox7.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.txtOverMile.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtPerMile.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtDsAmountToPay4.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtDsAmountToPay3.Properties)).EndInit();
@@ -1852,7 +1868,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.txtIncrement.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtOtherName.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtEngName.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtOverMile.Properties)).EndInit();
             this.ResumeLayout(false);
 
         }
