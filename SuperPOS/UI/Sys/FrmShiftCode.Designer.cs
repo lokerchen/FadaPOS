@@ -46,6 +46,7 @@
             // gcShiftCode
             // 
             this.gcShiftCode.EmbeddedNavigator.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.gcShiftCode.Font = new System.Drawing.Font("Calibri", 12F);
             this.gcShiftCode.Location = new System.Drawing.Point(11, 10);
             this.gcShiftCode.MainView = this.gvShiftCode;
             this.gcShiftCode.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -60,6 +61,10 @@
             // 
             this.gvShiftCode.Appearance.EvenRow.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
             this.gvShiftCode.Appearance.EvenRow.Options.UseBackColor = true;
+            this.gvShiftCode.Appearance.HeaderPanel.Font = new System.Drawing.Font("Calibri", 14F);
+            this.gvShiftCode.Appearance.HeaderPanel.Options.UseFont = true;
+            this.gvShiftCode.Appearance.Row.Font = new System.Drawing.Font("Calibri", 12F);
+            this.gvShiftCode.Appearance.Row.Options.UseFont = true;
             this.gvShiftCode.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
             this.ShiftCode,
             this.ShiftName,
