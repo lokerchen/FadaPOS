@@ -209,14 +209,18 @@
             // 
             // chkTestMode
             // 
-            this.chkTestMode.Location = new System.Drawing.Point(254, 15);
+            this.chkTestMode.Location = new System.Drawing.Point(240, 15);
             this.chkTestMode.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.chkTestMode.Name = "chkTestMode";
             this.chkTestMode.Properties.Appearance.Font = new System.Drawing.Font("Calibri", 9F);
             this.chkTestMode.Properties.Appearance.Options.UseFont = true;
             this.chkTestMode.Properties.Caption = "Test Mode";
+            this.chkTestMode.Properties.CheckBoxOptions.Style = DevExpress.XtraEditors.Controls.CheckBoxStyle.Custom;
             this.chkTestMode.Properties.GlyphAlignment = DevExpress.Utils.HorzAlignment.Far;
-            this.chkTestMode.Size = new System.Drawing.Size(82, 20);
+            this.chkTestMode.Properties.ImageOptions.ImageChecked = global::SuperPOS.Properties.Resources.check_c__32X32;
+            this.chkTestMode.Properties.ImageOptions.ImageUnchecked = global::SuperPOS.Properties.Resources.uncheck_c__32X32;
+            this.chkTestMode.Properties.Name = "chkTestMode";
+            this.chkTestMode.Size = new System.Drawing.Size(96, 36);
             this.chkTestMode.TabIndex = 16;
             // 
             // groupBox2
@@ -689,14 +693,17 @@
             // 
             // chkIsBackup
             // 
-            this.chkIsBackup.Location = new System.Drawing.Point(18, 54);
+            this.chkIsBackup.Location = new System.Drawing.Point(15, 59);
             this.chkIsBackup.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.chkIsBackup.Name = "chkIsBackup";
             this.chkIsBackup.Properties.Appearance.Font = new System.Drawing.Font("Calibri", 9F);
             this.chkIsBackup.Properties.Appearance.Options.UseFont = true;
             this.chkIsBackup.Properties.Caption = "Back Up When Exit";
+            this.chkIsBackup.Properties.CheckBoxOptions.Style = DevExpress.XtraEditors.Controls.CheckBoxStyle.Custom;
             this.chkIsBackup.Properties.GlyphAlignment = DevExpress.Utils.HorzAlignment.Far;
-            this.chkIsBackup.Size = new System.Drawing.Size(198, 20);
+            this.chkIsBackup.Properties.ImageOptions.ImageChecked = global::SuperPOS.Properties.Resources.check_c__32X32;
+            this.chkIsBackup.Properties.ImageOptions.ImageUnchecked = global::SuperPOS.Properties.Resources.uncheck_c__32X32;
+            this.chkIsBackup.Size = new System.Drawing.Size(203, 36);
             this.chkIsBackup.TabIndex = 22;
             this.chkIsBackup.CheckedChanged += new System.EventHandler(this.chkIsBackup_CheckedChanged);
             // 
@@ -755,14 +762,17 @@
             // 
             // chkDisplayCode
             // 
-            this.chkDisplayCode.Location = new System.Drawing.Point(18, 26);
+            this.chkDisplayCode.Location = new System.Drawing.Point(14, 26);
             this.chkDisplayCode.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.chkDisplayCode.Name = "chkDisplayCode";
             this.chkDisplayCode.Properties.Appearance.Font = new System.Drawing.Font("Calibri", 9F);
             this.chkDisplayCode.Properties.Appearance.Options.UseFont = true;
             this.chkDisplayCode.Properties.Caption = "Display Item Code Select";
+            this.chkDisplayCode.Properties.CheckBoxOptions.Style = DevExpress.XtraEditors.Controls.CheckBoxStyle.Custom;
             this.chkDisplayCode.Properties.GlyphAlignment = DevExpress.Utils.HorzAlignment.Far;
-            this.chkDisplayCode.Size = new System.Drawing.Size(198, 20);
+            this.chkDisplayCode.Properties.ImageOptions.ImageChecked = global::SuperPOS.Properties.Resources.check_c__32X32;
+            this.chkDisplayCode.Properties.ImageOptions.ImageUnchecked = global::SuperPOS.Properties.Resources.uncheck_c__32X32;
+            this.chkDisplayCode.Size = new System.Drawing.Size(204, 36);
             this.chkDisplayCode.TabIndex = 14;
             // 
             // groupControl1
