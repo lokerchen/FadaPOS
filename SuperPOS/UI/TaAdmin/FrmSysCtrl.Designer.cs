@@ -117,13 +117,12 @@
             this.chkShopDetailReadOnly.Name = "chkShopDetailReadOnly";
             this.chkShopDetailReadOnly.Properties.Appearance.Font = new System.Drawing.Font("Calibri", 10F);
             this.chkShopDetailReadOnly.Properties.Appearance.Options.UseFont = true;
-            this.chkShopDetailReadOnly.Properties.AutoWidth = true;
             this.chkShopDetailReadOnly.Properties.Caption = "Shop Details Read Only";
             this.chkShopDetailReadOnly.Properties.CheckBoxOptions.Style = DevExpress.XtraEditors.Controls.CheckBoxStyle.Custom;
+            this.chkShopDetailReadOnly.Properties.GlyphAlignment = DevExpress.Utils.HorzAlignment.Far;
             this.chkShopDetailReadOnly.Properties.ImageOptions.ImageChecked = global::SuperPOS.Properties.Resources.check_c__32X32;
             this.chkShopDetailReadOnly.Properties.ImageOptions.ImageUnchecked = global::SuperPOS.Properties.Resources.uncheck_c__32X32;
-            this.chkShopDetailReadOnly.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.chkShopDetailReadOnly.Size = new System.Drawing.Size(168, 36);
+            this.chkShopDetailReadOnly.Size = new System.Drawing.Size(193, 36);
             this.chkShopDetailReadOnly.TabIndex = 12;
             // 
             // txtShopAddress
@@ -196,7 +195,6 @@
             this.SizeChanged += new System.EventHandler(this.FrmSysCtrl_SizeChanged);
             this.groupBox1.ResumeLayout(false);
             this.groupBox2.ResumeLayout(false);
-            this.groupBox2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.chkShopDetailReadOnly.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtShopAddress.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtShopName.Properties)).EndInit();
