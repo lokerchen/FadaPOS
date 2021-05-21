@@ -178,8 +178,22 @@
             // 
             // treeListOrder
             // 
+            this.treeListOrder.Appearance.BandPanel.Font = new System.Drawing.Font("Calibri", 10F);
+            this.treeListOrder.Appearance.BandPanel.Options.UseFont = true;
+            this.treeListOrder.Appearance.EvenRow.Font = new System.Drawing.Font("Calibri", 10F);
+            this.treeListOrder.Appearance.EvenRow.Options.UseFont = true;
+            this.treeListOrder.Appearance.EvenRow.Options.UseTextOptions = true;
+            this.treeListOrder.Appearance.EvenRow.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
             this.treeListOrder.Appearance.FocusedRow.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
             this.treeListOrder.Appearance.FocusedRow.Options.UseBackColor = true;
+            this.treeListOrder.Appearance.HeaderPanel.Font = new System.Drawing.Font("Calibri", 10F);
+            this.treeListOrder.Appearance.HeaderPanel.Options.UseFont = true;
+            this.treeListOrder.Appearance.HeaderPanel.Options.UseTextOptions = true;
+            this.treeListOrder.Appearance.HeaderPanel.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
+            this.treeListOrder.Appearance.OddRow.Font = new System.Drawing.Font("Calibri", 10F);
+            this.treeListOrder.Appearance.OddRow.Options.UseFont = true;
+            this.treeListOrder.Appearance.OddRow.Options.UseTextOptions = true;
+            this.treeListOrder.Appearance.OddRow.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
             this.treeListOrder.Columns.AddRange(new DevExpress.XtraTreeList.Columns.TreeListColumn[] {
             this.ID,
             this.ItemQty,
@@ -197,7 +211,7 @@
             this.BusDate,
             this.MenuItemID,
             this.IsDiscount});
-            this.treeListOrder.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.treeListOrder.Font = new System.Drawing.Font("Calibri", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.treeListOrder.IndicatorWidth = 40;
             this.treeListOrder.Location = new System.Drawing.Point(4, 142);
             this.treeListOrder.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -227,7 +241,7 @@
             // 
             // ItemQty
             // 
-            this.ItemQty.AppearanceCell.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ItemQty.AppearanceCell.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ItemQty.AppearanceCell.Options.UseFont = true;
             this.ItemQty.Caption = "Qty";
             this.ItemQty.FieldName = "ItemQty";
@@ -241,14 +255,18 @@
             // 
             // ItemID
             // 
+            this.ItemID.AppearanceCell.Font = new System.Drawing.Font("Calibri", 10F);
+            this.ItemID.AppearanceCell.Options.UseFont = true;
             this.ItemID.Caption = "ItemID";
             this.ItemID.FieldName = "ItemID";
             this.ItemID.Name = "ItemID";
             // 
             // ItemDishName
             // 
-            this.ItemDishName.AppearanceCell.Font = new System.Drawing.Font("Tahoma", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ItemDishName.AppearanceCell.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ItemDishName.AppearanceCell.Options.UseFont = true;
+            this.ItemDishName.AppearanceCell.Options.UseTextOptions = true;
+            this.ItemDishName.AppearanceCell.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
             this.ItemDishName.Caption = "Dish Name";
             this.ItemDishName.ColumnEdit = this.repositoryItemMemoEdit1;
             this.ItemDishName.FieldName = "ItemDishName";
@@ -265,6 +283,8 @@
             // 
             // ItemCode
             // 
+            this.ItemCode.AppearanceCell.Font = new System.Drawing.Font("Calibri", 12F);
+            this.ItemCode.AppearanceCell.Options.UseFont = true;
             this.ItemCode.Caption = "Code";
             this.ItemCode.FieldName = "ItemCode";
             this.ItemCode.Name = "ItemCode";
@@ -280,6 +300,8 @@
             // 
             // ItemPrice
             // 
+            this.ItemPrice.AppearanceCell.Font = new System.Drawing.Font("Calibri", 12F);
+            this.ItemPrice.AppearanceCell.Options.UseFont = true;
             this.ItemPrice.Caption = "ItemPrice";
             this.ItemPrice.FieldName = "ItemPrice";
             this.ItemPrice.Name = "ItemPrice";
