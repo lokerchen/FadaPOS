@@ -390,24 +390,30 @@
             // 
             // chkGsCategBtnOtherFontBold
             // 
-            this.chkGsCategBtnOtherFontBold.Location = new System.Drawing.Point(5, 136);
+            this.chkGsCategBtnOtherFontBold.Location = new System.Drawing.Point(8, 130);
             this.chkGsCategBtnOtherFontBold.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.chkGsCategBtnOtherFontBold.Name = "chkGsCategBtnOtherFontBold";
             this.chkGsCategBtnOtherFontBold.Properties.Appearance.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.chkGsCategBtnOtherFontBold.Properties.Appearance.Options.UseFont = true;
             this.chkGsCategBtnOtherFontBold.Properties.Caption = "Category Button Font Bold";
-            this.chkGsCategBtnOtherFontBold.Size = new System.Drawing.Size(244, 25);
+            this.chkGsCategBtnOtherFontBold.Properties.CheckBoxOptions.Style = DevExpress.XtraEditors.Controls.CheckBoxStyle.Custom;
+            this.chkGsCategBtnOtherFontBold.Properties.ImageOptions.ImageChecked = global::SuperPOS.Properties.Resources.check_c__32X32;
+            this.chkGsCategBtnOtherFontBold.Properties.ImageOptions.ImageUnchecked = global::SuperPOS.Properties.Resources.uncheck_c__32X32;
+            this.chkGsCategBtnOtherFontBold.Size = new System.Drawing.Size(244, 36);
             this.chkGsCategBtnOtherFontBold.TabIndex = 14;
             // 
             // chkGsMenuDishCodeOtherFontBold
             // 
-            this.chkGsMenuDishCodeOtherFontBold.Location = new System.Drawing.Point(8, 65);
+            this.chkGsMenuDishCodeOtherFontBold.Location = new System.Drawing.Point(8, 60);
             this.chkGsMenuDishCodeOtherFontBold.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.chkGsMenuDishCodeOtherFontBold.Name = "chkGsMenuDishCodeOtherFontBold";
             this.chkGsMenuDishCodeOtherFontBold.Properties.Appearance.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.chkGsMenuDishCodeOtherFontBold.Properties.Appearance.Options.UseFont = true;
             this.chkGsMenuDishCodeOtherFontBold.Properties.Caption = "Menu Dish Code Font Bold";
-            this.chkGsMenuDishCodeOtherFontBold.Size = new System.Drawing.Size(244, 25);
+            this.chkGsMenuDishCodeOtherFontBold.Properties.CheckBoxOptions.Style = DevExpress.XtraEditors.Controls.CheckBoxStyle.Custom;
+            this.chkGsMenuDishCodeOtherFontBold.Properties.ImageOptions.ImageChecked = global::SuperPOS.Properties.Resources.check_c__32X32;
+            this.chkGsMenuDishCodeOtherFontBold.Properties.ImageOptions.ImageUnchecked = global::SuperPOS.Properties.Resources.uncheck_c__32X32;
+            this.chkGsMenuDishCodeOtherFontBold.Size = new System.Drawing.Size(244, 36);
             this.chkGsMenuDishCodeOtherFontBold.TabIndex = 13;
             // 
             // txtCategoryBtnOtherFontSize
@@ -575,24 +581,30 @@
             // 
             // chkGsCategBtnFontBold
             // 
-            this.chkGsCategBtnFontBold.Location = new System.Drawing.Point(5, 136);
+            this.chkGsCategBtnFontBold.Location = new System.Drawing.Point(8, 133);
             this.chkGsCategBtnFontBold.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.chkGsCategBtnFontBold.Name = "chkGsCategBtnFontBold";
             this.chkGsCategBtnFontBold.Properties.Appearance.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.chkGsCategBtnFontBold.Properties.Appearance.Options.UseFont = true;
             this.chkGsCategBtnFontBold.Properties.Caption = "Category Button Font Bold";
-            this.chkGsCategBtnFontBold.Size = new System.Drawing.Size(244, 25);
+            this.chkGsCategBtnFontBold.Properties.CheckBoxOptions.Style = DevExpress.XtraEditors.Controls.CheckBoxStyle.Custom;
+            this.chkGsCategBtnFontBold.Properties.ImageOptions.ImageChecked = global::SuperPOS.Properties.Resources.check_c__32X32;
+            this.chkGsCategBtnFontBold.Properties.ImageOptions.ImageUnchecked = global::SuperPOS.Properties.Resources.uncheck_c__32X32;
+            this.chkGsCategBtnFontBold.Size = new System.Drawing.Size(244, 36);
             this.chkGsCategBtnFontBold.TabIndex = 14;
             // 
             // chkGsMenuDishCodeFontBold
             // 
-            this.chkGsMenuDishCodeFontBold.Location = new System.Drawing.Point(8, 65);
+            this.chkGsMenuDishCodeFontBold.Location = new System.Drawing.Point(8, 63);
             this.chkGsMenuDishCodeFontBold.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.chkGsMenuDishCodeFontBold.Name = "chkGsMenuDishCodeFontBold";
             this.chkGsMenuDishCodeFontBold.Properties.Appearance.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.chkGsMenuDishCodeFontBold.Properties.Appearance.Options.UseFont = true;
             this.chkGsMenuDishCodeFontBold.Properties.Caption = "Menu Dish Code Font Bold";
-            this.chkGsMenuDishCodeFontBold.Size = new System.Drawing.Size(244, 25);
+            this.chkGsMenuDishCodeFontBold.Properties.CheckBoxOptions.Style = DevExpress.XtraEditors.Controls.CheckBoxStyle.Custom;
+            this.chkGsMenuDishCodeFontBold.Properties.ImageOptions.ImageChecked = global::SuperPOS.Properties.Resources.check_c__32X32;
+            this.chkGsMenuDishCodeFontBold.Properties.ImageOptions.ImageUnchecked = global::SuperPOS.Properties.Resources.uncheck_c__32X32;
+            this.chkGsMenuDishCodeFontBold.Size = new System.Drawing.Size(244, 36);
             this.chkGsMenuDishCodeFontBold.TabIndex = 13;
             // 
             // txtCategoryBtnFontSize
