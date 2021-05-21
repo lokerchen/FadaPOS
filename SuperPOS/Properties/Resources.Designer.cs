@@ -63,9 +63,29 @@ namespace SuperPOS.Properties {
         /// <summary>
         ///   查找 System.Drawing.Bitmap 类型的本地化资源。
         /// </summary>
+        internal static System.Drawing.Bitmap add_32X32 {
+            get {
+                object obj = ResourceManager.GetObject("add-32X32", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
+        /// </summary>
         internal static System.Drawing.Bitmap check_c__32X32 {
             get {
                 object obj = ResourceManager.GetObject("check-c -32X32", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
+        /// </summary>
+        internal static System.Drawing.Bitmap reduce_32X32 {
+            get {
+                object obj = ResourceManager.GetObject("reduce-32X32", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

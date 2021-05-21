@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmTaMain));
             this.treeListOrder = new DevExpress.XtraTreeList.TreeList();
             this.ID = new DevExpress.XtraTreeList.Columns.TreeListColumn();
             this.ItemQty = new DevExpress.XtraTreeList.Columns.TreeListColumn();
@@ -731,19 +732,20 @@
             // 
             // btnReduce
             // 
-            this.btnReduce.Appearance.BackColor = System.Drawing.Color.Gray;
+            this.btnReduce.Appearance.BackColor = System.Drawing.Color.White;
             this.btnReduce.Appearance.Font = new System.Drawing.Font("Tahoma", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnReduce.Appearance.ForeColor = System.Drawing.Color.White;
             this.btnReduce.Appearance.Options.UseBackColor = true;
             this.btnReduce.Appearance.Options.UseFont = true;
             this.btnReduce.Appearance.Options.UseForeColor = true;
             this.btnReduce.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
+            this.btnReduce.ImageOptions.Image = global::SuperPOS.Properties.Resources.reduce_32X32;
+            this.btnReduce.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.BottomCenter;
             this.btnReduce.Location = new System.Drawing.Point(216, 480);
             this.btnReduce.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnReduce.Name = "btnReduce";
             this.btnReduce.Size = new System.Drawing.Size(60, 27);
             this.btnReduce.TabIndex = 4;
-            this.btnReduce.Text = "-";
             this.btnReduce.Click += new System.EventHandler(this.btnReduce_Click);
             // 
             // btnIngredMode
@@ -767,53 +769,56 @@
             // 
             // btnAdd
             // 
-            this.btnAdd.Appearance.BackColor = System.Drawing.Color.Gray;
+            this.btnAdd.Appearance.BackColor = System.Drawing.Color.White;
             this.btnAdd.Appearance.Font = new System.Drawing.Font("Tahoma", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAdd.Appearance.ForeColor = System.Drawing.Color.White;
             this.btnAdd.Appearance.Options.UseBackColor = true;
             this.btnAdd.Appearance.Options.UseFont = true;
             this.btnAdd.Appearance.Options.UseForeColor = true;
             this.btnAdd.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
+            this.btnAdd.ImageOptions.Image = global::SuperPOS.Properties.Resources.add_32X32;
+            this.btnAdd.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.BottomCenter;
             this.btnAdd.Location = new System.Drawing.Point(146, 480);
             this.btnAdd.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Size = new System.Drawing.Size(60, 27);
             this.btnAdd.TabIndex = 3;
-            this.btnAdd.Text = "+";
             this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
             // btnDown
             // 
-            this.btnDown.Appearance.BackColor = System.Drawing.Color.Gray;
+            this.btnDown.Appearance.BackColor = System.Drawing.Color.White;
             this.btnDown.Appearance.Font = new System.Drawing.Font("Tahoma", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnDown.Appearance.ForeColor = System.Drawing.Color.White;
             this.btnDown.Appearance.Options.UseBackColor = true;
             this.btnDown.Appearance.Options.UseFont = true;
             this.btnDown.Appearance.Options.UseForeColor = true;
             this.btnDown.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
+            this.btnDown.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnDown.ImageOptions.Image")));
+            this.btnDown.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.BottomCenter;
             this.btnDown.Location = new System.Drawing.Point(76, 480);
             this.btnDown.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnDown.Name = "btnDown";
             this.btnDown.Size = new System.Drawing.Size(60, 27);
             this.btnDown.TabIndex = 2;
-            this.btnDown.Text = "↓";
             this.btnDown.Click += new System.EventHandler(this.btnDown_Click);
             // 
             // btnUp
             // 
-            this.btnUp.Appearance.BackColor = System.Drawing.Color.Gray;
+            this.btnUp.Appearance.BackColor = System.Drawing.Color.White;
             this.btnUp.Appearance.Font = new System.Drawing.Font("Tahoma", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnUp.Appearance.ForeColor = System.Drawing.Color.White;
             this.btnUp.Appearance.Options.UseBackColor = true;
             this.btnUp.Appearance.Options.UseFont = true;
             this.btnUp.Appearance.Options.UseForeColor = true;
             this.btnUp.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
+            this.btnUp.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnUp.ImageOptions.Image")));
+            this.btnUp.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.BottomCenter;
             this.btnUp.Location = new System.Drawing.Point(6, 480);
             this.btnUp.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnUp.Name = "btnUp";
             this.btnUp.Size = new System.Drawing.Size(60, 27);
             this.btnUp.TabIndex = 1;
-            this.btnUp.Text = "↑";
             this.btnUp.Click += new System.EventHandler(this.btnUp_Click);
             // 
             // btnHome
