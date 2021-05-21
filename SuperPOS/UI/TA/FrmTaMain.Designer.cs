@@ -433,168 +433,200 @@
             // 
             // lblReadyTime
             // 
+            this.lblReadyTime.Appearance.Font = new System.Drawing.Font("Calibri", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblReadyTime.Appearance.ForeColor = System.Drawing.Color.Red;
+            this.lblReadyTime.Appearance.Options.UseFont = true;
             this.lblReadyTime.Appearance.Options.UseForeColor = true;
-            this.lblReadyTime.Location = new System.Drawing.Point(275, 78);
+            this.lblReadyTime.Location = new System.Drawing.Point(264, 74);
             this.lblReadyTime.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.lblReadyTime.Name = "lblReadyTime";
-            this.lblReadyTime.Size = new System.Drawing.Size(32, 14);
+            this.lblReadyTime.Size = new System.Drawing.Size(32, 18);
             this.lblReadyTime.TabIndex = 13;
             this.lblReadyTime.Text = "00:00";
             // 
             // lblCustReadyTime
             // 
+            this.lblCustReadyTime.Appearance.Font = new System.Drawing.Font("Calibri", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCustReadyTime.Appearance.Options.UseFont = true;
             this.lblCustReadyTime.Appearance.Options.UseTextOptions = true;
             this.lblCustReadyTime.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
-            this.lblCustReadyTime.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
-            this.lblCustReadyTime.Location = new System.Drawing.Point(198, 78);
+            this.lblCustReadyTime.Location = new System.Drawing.Point(181, 74);
             this.lblCustReadyTime.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.lblCustReadyTime.Name = "lblCustReadyTime";
-            this.lblCustReadyTime.Size = new System.Drawing.Size(74, 14);
+            this.lblCustReadyTime.Size = new System.Drawing.Size(76, 18);
             this.lblCustReadyTime.TabIndex = 12;
             this.lblCustReadyTime.Text = "Ready Time:";
             this.lblCustReadyTime.Visible = false;
             // 
             // lblDeliveryFee
             // 
+            this.lblDeliveryFee.Appearance.Font = new System.Drawing.Font("Calibri", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblDeliveryFee.Appearance.ForeColor = System.Drawing.Color.Red;
+            this.lblDeliveryFee.Appearance.Options.UseFont = true;
             this.lblDeliveryFee.Appearance.Options.UseForeColor = true;
-            this.lblDeliveryFee.Location = new System.Drawing.Point(81, 79);
+            this.lblDeliveryFee.Location = new System.Drawing.Point(89, 77);
             this.lblDeliveryFee.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.lblDeliveryFee.Name = "lblDeliveryFee";
-            this.lblDeliveryFee.Size = new System.Drawing.Size(25, 14);
+            this.lblDeliveryFee.Size = new System.Drawing.Size(25, 18);
             this.lblDeliveryFee.TabIndex = 11;
             this.lblDeliveryFee.Text = "1.50";
             // 
             // lblDistance
             // 
+            this.lblDistance.Appearance.Font = new System.Drawing.Font("Calibri", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblDistance.Appearance.ForeColor = System.Drawing.Color.Red;
+            this.lblDistance.Appearance.Options.UseFont = true;
             this.lblDistance.Appearance.Options.UseForeColor = true;
-            this.lblDistance.Location = new System.Drawing.Point(81, 64);
+            this.lblDistance.Location = new System.Drawing.Point(89, 61);
             this.lblDistance.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.lblDistance.Name = "lblDistance";
-            this.lblDistance.Size = new System.Drawing.Size(25, 14);
+            this.lblDistance.Size = new System.Drawing.Size(25, 18);
             this.lblDistance.TabIndex = 10;
             this.lblDistance.Text = "3.85";
             // 
             // lblPostcode
             // 
+            this.lblPostcode.Appearance.Font = new System.Drawing.Font("Calibri", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblPostcode.Appearance.ForeColor = System.Drawing.Color.Red;
+            this.lblPostcode.Appearance.Options.UseFont = true;
             this.lblPostcode.Appearance.Options.UseForeColor = true;
-            this.lblPostcode.Location = new System.Drawing.Point(81, 48);
+            this.lblPostcode.Location = new System.Drawing.Point(89, 46);
             this.lblPostcode.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.lblPostcode.Name = "lblPostcode";
-            this.lblPostcode.Size = new System.Drawing.Size(59, 14);
+            this.lblPostcode.Size = new System.Drawing.Size(60, 18);
             this.lblPostcode.TabIndex = 9;
             this.lblPostcode.Text = "BS 168 AA";
             // 
             // lblAddress
             // 
+            this.lblAddress.Appearance.Font = new System.Drawing.Font("Calibri", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblAddress.Appearance.ForeColor = System.Drawing.Color.Red;
+            this.lblAddress.Appearance.Options.UseFont = true;
             this.lblAddress.Appearance.Options.UseForeColor = true;
-            this.lblAddress.Location = new System.Drawing.Point(81, 33);
+            this.lblAddress.Location = new System.Drawing.Point(89, 31);
             this.lblAddress.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.lblAddress.Name = "lblAddress";
-            this.lblAddress.Size = new System.Drawing.Size(119, 14);
+            this.lblAddress.Size = new System.Drawing.Size(129, 18);
             this.lblAddress.TabIndex = 8;
             this.lblAddress.Text = "123 GuangZhou Road";
             // 
             // lblPhone
             // 
+            this.lblPhone.Appearance.Font = new System.Drawing.Font("Calibri", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblPhone.Appearance.ForeColor = System.Drawing.Color.Red;
+            this.lblPhone.Appearance.Options.UseFont = true;
             this.lblPhone.Appearance.Options.UseForeColor = true;
-            this.lblPhone.Location = new System.Drawing.Point(81, 19);
+            this.lblPhone.Location = new System.Drawing.Point(89, 17);
             this.lblPhone.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.lblPhone.Name = "lblPhone";
-            this.lblPhone.Size = new System.Drawing.Size(77, 14);
+            this.lblPhone.Size = new System.Drawing.Size(77, 18);
             this.lblPhone.TabIndex = 7;
             this.lblPhone.Text = "08888888888";
             // 
             // lblName
             // 
+            this.lblName.Appearance.Font = new System.Drawing.Font("Calibri", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblName.Appearance.ForeColor = System.Drawing.Color.Red;
+            this.lblName.Appearance.Options.UseFont = true;
             this.lblName.Appearance.Options.UseForeColor = true;
-            this.lblName.Location = new System.Drawing.Point(81, 4);
+            this.lblName.Location = new System.Drawing.Point(89, 2);
             this.lblName.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.lblName.Name = "lblName";
-            this.lblName.Size = new System.Drawing.Size(44, 14);
+            this.lblName.Size = new System.Drawing.Size(51, 18);
             this.lblName.TabIndex = 6;
             this.lblName.Text = "FadaPos";
             // 
             // lblCustDeliveryFee
             // 
+            this.lblCustDeliveryFee.Appearance.Font = new System.Drawing.Font("Calibri", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCustDeliveryFee.Appearance.Options.UseFont = true;
             this.lblCustDeliveryFee.Appearance.Options.UseTextOptions = true;
             this.lblCustDeliveryFee.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
-            this.lblCustDeliveryFee.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
-            this.lblCustDeliveryFee.Location = new System.Drawing.Point(4, 79);
+            this.lblCustDeliveryFee.Appearance.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
+            this.lblCustDeliveryFee.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.Horizontal;
+            this.lblCustDeliveryFee.Location = new System.Drawing.Point(4, 77);
             this.lblCustDeliveryFee.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.lblCustDeliveryFee.Name = "lblCustDeliveryFee";
-            this.lblCustDeliveryFee.Size = new System.Drawing.Size(74, 14);
+            this.lblCustDeliveryFee.Size = new System.Drawing.Size(82, 18);
             this.lblCustDeliveryFee.TabIndex = 5;
             this.lblCustDeliveryFee.Text = "Delivery Fee:";
             this.lblCustDeliveryFee.Visible = false;
             // 
             // lblCustDistance
             // 
+            this.lblCustDistance.Appearance.Font = new System.Drawing.Font("Calibri", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCustDistance.Appearance.Options.UseFont = true;
             this.lblCustDistance.Appearance.Options.UseTextOptions = true;
             this.lblCustDistance.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
-            this.lblCustDistance.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
-            this.lblCustDistance.Location = new System.Drawing.Point(4, 63);
+            this.lblCustDistance.Appearance.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
+            this.lblCustDistance.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.Horizontal;
+            this.lblCustDistance.Location = new System.Drawing.Point(29, 61);
             this.lblCustDistance.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.lblCustDistance.Name = "lblCustDistance";
-            this.lblCustDistance.Size = new System.Drawing.Size(74, 14);
+            this.lblCustDistance.Size = new System.Drawing.Size(57, 18);
             this.lblCustDistance.TabIndex = 4;
             this.lblCustDistance.Text = "Distance:";
             this.lblCustDistance.Visible = false;
             // 
             // lblCustPostcode
             // 
+            this.lblCustPostcode.Appearance.Font = new System.Drawing.Font("Calibri", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCustPostcode.Appearance.Options.UseFont = true;
             this.lblCustPostcode.Appearance.Options.UseTextOptions = true;
             this.lblCustPostcode.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
-            this.lblCustPostcode.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
-            this.lblCustPostcode.Location = new System.Drawing.Point(4, 48);
+            this.lblCustPostcode.Appearance.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
+            this.lblCustPostcode.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.Horizontal;
+            this.lblCustPostcode.Location = new System.Drawing.Point(25, 46);
             this.lblCustPostcode.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.lblCustPostcode.Name = "lblCustPostcode";
-            this.lblCustPostcode.Size = new System.Drawing.Size(74, 14);
+            this.lblCustPostcode.Size = new System.Drawing.Size(61, 18);
             this.lblCustPostcode.TabIndex = 3;
             this.lblCustPostcode.Text = "Postcode:";
             this.lblCustPostcode.Visible = false;
             // 
             // lblCustAddress
             // 
+            this.lblCustAddress.Appearance.Font = new System.Drawing.Font("Calibri", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCustAddress.Appearance.Options.UseFont = true;
             this.lblCustAddress.Appearance.Options.UseTextOptions = true;
             this.lblCustAddress.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
-            this.lblCustAddress.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
-            this.lblCustAddress.Location = new System.Drawing.Point(4, 33);
+            this.lblCustAddress.Appearance.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
+            this.lblCustAddress.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.Horizontal;
+            this.lblCustAddress.Location = new System.Drawing.Point(32, 31);
             this.lblCustAddress.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.lblCustAddress.Name = "lblCustAddress";
-            this.lblCustAddress.Size = new System.Drawing.Size(74, 14);
+            this.lblCustAddress.Size = new System.Drawing.Size(54, 18);
             this.lblCustAddress.TabIndex = 2;
             this.lblCustAddress.Text = "Address:";
             this.lblCustAddress.Visible = false;
             // 
             // lblCustPhone
             // 
+            this.lblCustPhone.Appearance.Font = new System.Drawing.Font("Calibri", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCustPhone.Appearance.Options.UseFont = true;
             this.lblCustPhone.Appearance.Options.UseTextOptions = true;
             this.lblCustPhone.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
-            this.lblCustPhone.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
-            this.lblCustPhone.Location = new System.Drawing.Point(4, 19);
+            this.lblCustPhone.Appearance.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
+            this.lblCustPhone.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.Horizontal;
+            this.lblCustPhone.Location = new System.Drawing.Point(42, 17);
             this.lblCustPhone.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.lblCustPhone.Name = "lblCustPhone";
-            this.lblCustPhone.Size = new System.Drawing.Size(74, 14);
+            this.lblCustPhone.Size = new System.Drawing.Size(44, 18);
             this.lblCustPhone.TabIndex = 1;
             this.lblCustPhone.Text = "Phone:";
             this.lblCustPhone.Visible = false;
             // 
             // lblCustName
             // 
+            this.lblCustName.Appearance.Font = new System.Drawing.Font("Calibri", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCustName.Appearance.Options.UseFont = true;
             this.lblCustName.Appearance.Options.UseTextOptions = true;
             this.lblCustName.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
-            this.lblCustName.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
-            this.lblCustName.Location = new System.Drawing.Point(4, 4);
-            this.lblCustName.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.lblCustName.Appearance.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
+            this.lblCustName.Location = new System.Drawing.Point(45, 2);
+            this.lblCustName.Margin = new System.Windows.Forms.Padding(2, 3, 3, 2);
             this.lblCustName.Name = "lblCustName";
-            this.lblCustName.Size = new System.Drawing.Size(74, 14);
+            this.lblCustName.Size = new System.Drawing.Size(41, 18);
             this.lblCustName.TabIndex = 0;
             this.lblCustName.Text = "Name:";
             this.lblCustName.Visible = false;
