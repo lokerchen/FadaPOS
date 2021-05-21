@@ -414,7 +414,7 @@
             // btnType
             // 
             this.btnType.Appearance.BackColor = System.Drawing.Color.HotPink;
-            this.btnType.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnType.Appearance.Font = new System.Drawing.Font("Calibri", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnType.Appearance.ForeColor = System.Drawing.Color.White;
             this.btnType.Appearance.Options.UseBackColor = true;
             this.btnType.Appearance.Options.UseFont = true;
