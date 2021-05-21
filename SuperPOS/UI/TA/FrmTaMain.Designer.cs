@@ -437,7 +437,7 @@
             this.lblReadyTime.Appearance.ForeColor = System.Drawing.Color.Red;
             this.lblReadyTime.Appearance.Options.UseFont = true;
             this.lblReadyTime.Appearance.Options.UseForeColor = true;
-            this.lblReadyTime.Location = new System.Drawing.Point(264, 74);
+            this.lblReadyTime.Location = new System.Drawing.Point(262, 77);
             this.lblReadyTime.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.lblReadyTime.Name = "lblReadyTime";
             this.lblReadyTime.Size = new System.Drawing.Size(32, 18);
@@ -450,7 +450,7 @@
             this.lblCustReadyTime.Appearance.Options.UseFont = true;
             this.lblCustReadyTime.Appearance.Options.UseTextOptions = true;
             this.lblCustReadyTime.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
-            this.lblCustReadyTime.Location = new System.Drawing.Point(181, 74);
+            this.lblCustReadyTime.Location = new System.Drawing.Point(179, 77);
             this.lblCustReadyTime.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.lblCustReadyTime.Name = "lblCustReadyTime";
             this.lblCustReadyTime.Size = new System.Drawing.Size(76, 18);
