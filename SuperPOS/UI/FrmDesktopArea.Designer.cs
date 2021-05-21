@@ -89,7 +89,7 @@
             // 
             // btnOrderScreen
             // 
-            this.btnOrderScreen.Appearance.BackColor = System.Drawing.Color.Lime;
+            this.btnOrderScreen.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
             this.btnOrderScreen.Appearance.Font = new System.Drawing.Font("Calibri", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnOrderScreen.Appearance.ForeColor = System.Drawing.Color.White;
             this.btnOrderScreen.Appearance.Options.UseBackColor = true;
@@ -106,7 +106,7 @@
             // 
             // btnLogout
             // 
-            this.btnLogout.Appearance.BackColor = System.Drawing.Color.Red;
+            this.btnLogout.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.btnLogout.Appearance.Font = new System.Drawing.Font("Calibri", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnLogout.Appearance.ForeColor = System.Drawing.Color.White;
             this.btnLogout.Appearance.Options.UseBackColor = true;
@@ -134,7 +134,7 @@
             // 
             // btnCtlPanel
             // 
-            this.btnCtlPanel.Appearance.BackColor = System.Drawing.Color.Blue;
+            this.btnCtlPanel.Appearance.BackColor = System.Drawing.Color.RoyalBlue;
             this.btnCtlPanel.Appearance.Font = new System.Drawing.Font("Calibri", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCtlPanel.Appearance.ForeColor = System.Drawing.Color.White;
             this.btnCtlPanel.Appearance.Options.UseBackColor = true;
@@ -151,7 +151,7 @@
             // 
             // btnShowOrder
             // 
-            this.btnShowOrder.Appearance.BackColor = System.Drawing.Color.Blue;
+            this.btnShowOrder.Appearance.BackColor = System.Drawing.Color.MediumSlateBlue;
             this.btnShowOrder.Appearance.Font = new System.Drawing.Font("Calibri", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnShowOrder.Appearance.ForeColor = System.Drawing.Color.White;
             this.btnShowOrder.Appearance.Options.UseBackColor = true;
@@ -179,7 +179,7 @@
             // 
             // btnDrawer
             // 
-            this.btnDrawer.Appearance.BackColor = System.Drawing.Color.Blue;
+            this.btnDrawer.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
             this.btnDrawer.Appearance.Font = new System.Drawing.Font("Calibri", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnDrawer.Appearance.ForeColor = System.Drawing.Color.White;
             this.btnDrawer.Appearance.Options.UseBackColor = true;
