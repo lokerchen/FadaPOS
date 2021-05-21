@@ -772,18 +772,18 @@
             this.lblNew.AutoSize = true;
             this.lblNew.Font = new System.Drawing.Font("Calibri", 16F, System.Drawing.FontStyle.Bold);
             this.lblNew.ForeColor = System.Drawing.Color.Red;
-            this.lblNew.Location = new System.Drawing.Point(186, 42);
+            this.lblNew.Location = new System.Drawing.Point(24, 70);
             this.lblNew.Name = "lblNew";
-            this.lblNew.Size = new System.Drawing.Size(57, 27);
+            this.lblNew.Size = new System.Drawing.Size(148, 27);
             this.lblNew.TabIndex = 103;
-            this.lblNew.Text = "NEW";
+            this.lblNew.Text = "New Customer";
             this.lblNew.Visible = false;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Tahoma", 20F, System.Drawing.FontStyle.Bold);
-            this.label1.Location = new System.Drawing.Point(299, 96);
+            this.label1.Location = new System.Drawing.Point(299, 110);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(25, 33);
             this.label1.TabIndex = 102;
@@ -792,7 +792,7 @@
             // txtMinute
             // 
             this.txtMinute.EditValue = "";
-            this.txtMinute.Location = new System.Drawing.Point(327, 95);
+            this.txtMinute.Location = new System.Drawing.Point(327, 109);
             this.txtMinute.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtMinute.Name = "txtMinute";
             this.txtMinute.Properties.Appearance.Font = new System.Drawing.Font("Calibri", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -806,7 +806,7 @@
             // txtHour
             // 
             this.txtHour.EditValue = "";
-            this.txtHour.Location = new System.Drawing.Point(241, 95);
+            this.txtHour.Location = new System.Drawing.Point(241, 109);
             this.txtHour.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtHour.Name = "txtHour";
             this.txtHour.Properties.Appearance.Font = new System.Drawing.Font("Calibri", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -1212,14 +1212,14 @@
             // 
             // btnCollection
             // 
-            this.btnCollection.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.btnCollection.Appearance.BackColor = System.Drawing.Color.CornflowerBlue;
             this.btnCollection.Appearance.Font = new System.Drawing.Font("Calibri", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCollection.Appearance.ForeColor = System.Drawing.Color.White;
             this.btnCollection.Appearance.Options.UseBackColor = true;
             this.btnCollection.Appearance.Options.UseFont = true;
             this.btnCollection.Appearance.Options.UseForeColor = true;
             this.btnCollection.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
-            this.btnCollection.Location = new System.Drawing.Point(108, 89);
+            this.btnCollection.Location = new System.Drawing.Point(108, 103);
             this.btnCollection.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnCollection.Name = "btnCollection";
             this.btnCollection.Size = new System.Drawing.Size(96, 43);
@@ -1229,14 +1229,14 @@
             // 
             // btnDelivery
             // 
-            this.btnDelivery.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
+            this.btnDelivery.Appearance.BackColor = System.Drawing.Color.Green;
             this.btnDelivery.Appearance.Font = new System.Drawing.Font("Calibri", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnDelivery.Appearance.ForeColor = System.Drawing.Color.White;
             this.btnDelivery.Appearance.Options.UseBackColor = true;
             this.btnDelivery.Appearance.Options.UseFont = true;
             this.btnDelivery.Appearance.Options.UseForeColor = true;
             this.btnDelivery.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
-            this.btnDelivery.Location = new System.Drawing.Point(6, 89);
+            this.btnDelivery.Location = new System.Drawing.Point(6, 103);
             this.btnDelivery.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnDelivery.Name = "btnDelivery";
             this.btnDelivery.Size = new System.Drawing.Size(96, 43);
@@ -1281,7 +1281,7 @@
             // 
             this.labelControl14.Appearance.Font = new System.Drawing.Font("Calibri", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelControl14.Appearance.Options.UseFont = true;
-            this.labelControl14.Location = new System.Drawing.Point(20, 12);
+            this.labelControl14.Location = new System.Drawing.Point(25, 7);
             this.labelControl14.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.labelControl14.Name = "labelControl14";
             this.labelControl14.Size = new System.Drawing.Size(147, 23);
@@ -1291,7 +1291,7 @@
             // txtTelNum
             // 
             this.txtTelNum.EditValue = "07533375888";
-            this.txtTelNum.Location = new System.Drawing.Point(4, 37);
+            this.txtTelNum.Location = new System.Drawing.Point(9, 32);
             this.txtTelNum.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtTelNum.Name = "txtTelNum";
             this.txtTelNum.Properties.Appearance.Font = new System.Drawing.Font("Calibri", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
