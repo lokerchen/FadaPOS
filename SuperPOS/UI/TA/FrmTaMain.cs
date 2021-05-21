@@ -3265,21 +3265,21 @@ namespace SuperPOS.UI.TA
             {
                 return iMenuItemOrCate == 1
                     ? (string.IsNullOrEmpty(taConfMenuDisplayFontInfo.MenuDisplayBtnFontSize)
-                        ? new Font(SystemFonts.DefaultFont.FontFamily, float.Parse("12.00"))
-                        : new Font(SystemFonts.DefaultFont.FontFamily, float.Parse(taConfMenuDisplayFontInfo.MenuDisplayBtnFontSize)))
+                        ? new Font("Calibri", float.Parse("12.00"))
+                        : new Font("Calibri", float.Parse(taConfMenuDisplayFontInfo.MenuDisplayBtnFontSize)))
                     : (string.IsNullOrEmpty(taConfMenuDisplayFontInfo.CategBtnFontSize)
-                        ? new Font(SystemFonts.DefaultFont.FontFamily, float.Parse("12.00"))
-                        : new Font(SystemFonts.DefaultFont.FontFamily, float.Parse(taConfMenuDisplayFontInfo.CategBtnFontSize)));
+                        ? new Font("Calibri", float.Parse("12.00"))
+                        : new Font("Calibri", float.Parse(taConfMenuDisplayFontInfo.CategBtnFontSize)));
             }
             else
             {
                 return iMenuItemOrCate == 1
                     ? (string.IsNullOrEmpty(taConfMenuDisplayFontInfo.OtherMenuDisplayBtnFontSize)
-                        ? new Font(SystemFonts.DefaultFont.FontFamily, float.Parse("12.00"))
-                        : new Font(SystemFonts.DefaultFont.FontFamily, float.Parse(taConfMenuDisplayFontInfo.OtherMenuDisplayBtnFontSize)))
+                        ? new Font("Calibri", float.Parse("12.00"))
+                        : new Font("Calibri", float.Parse(taConfMenuDisplayFontInfo.OtherMenuDisplayBtnFontSize)))
                     : (string.IsNullOrEmpty(taConfMenuDisplayFontInfo.OtherCategBtnFontSize)
-                        ? new Font(SystemFonts.DefaultFont.FontFamily, float.Parse("12.00"))
-                        : new Font(SystemFonts.DefaultFont.FontFamily, float.Parse(taConfMenuDisplayFontInfo.OtherCategBtnFontSize)));
+                        ? new Font("Calibri", float.Parse("12.00"))
+                        : new Font("Calibri", float.Parse(taConfMenuDisplayFontInfo.OtherCategBtnFontSize)));
             }
         }
 
