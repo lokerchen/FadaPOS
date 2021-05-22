@@ -152,7 +152,7 @@
             // btnAccount
             // 
             this.btnAccount.Appearance.BackColor = System.Drawing.Color.RoyalBlue;
-            this.btnAccount.Appearance.Font = new System.Drawing.Font("Tahoma", 10F);
+            this.btnAccount.Appearance.Font = new System.Drawing.Font("Calibri", 12F);
             this.btnAccount.Appearance.ForeColor = System.Drawing.Color.White;
             this.btnAccount.Appearance.Options.UseBackColor = true;
             this.btnAccount.Appearance.Options.UseFont = true;
@@ -173,7 +173,7 @@
             // btnPrtReceipt
             // 
             this.btnPrtReceipt.Appearance.BackColor = System.Drawing.Color.RoyalBlue;
-            this.btnPrtReceipt.Appearance.Font = new System.Drawing.Font("Tahoma", 10F);
+            this.btnPrtReceipt.Appearance.Font = new System.Drawing.Font("Calibri", 12F);
             this.btnPrtReceipt.Appearance.ForeColor = System.Drawing.Color.White;
             this.btnPrtReceipt.Appearance.Options.UseBackColor = true;
             this.btnPrtReceipt.Appearance.Options.UseFont = true;
@@ -194,7 +194,7 @@
             // btnPrtKit
             // 
             this.btnPrtKit.Appearance.BackColor = System.Drawing.Color.RoyalBlue;
-            this.btnPrtKit.Appearance.Font = new System.Drawing.Font("Tahoma", 10F);
+            this.btnPrtKit.Appearance.Font = new System.Drawing.Font("Calibri", 12F);
             this.btnPrtKit.Appearance.ForeColor = System.Drawing.Color.White;
             this.btnPrtKit.Appearance.Options.UseBackColor = true;
             this.btnPrtKit.Appearance.Options.UseFont = true;
@@ -215,7 +215,7 @@
             // btnPrtBill
             // 
             this.btnPrtBill.Appearance.BackColor = System.Drawing.Color.RoyalBlue;
-            this.btnPrtBill.Appearance.Font = new System.Drawing.Font("Tahoma", 10F);
+            this.btnPrtBill.Appearance.Font = new System.Drawing.Font("Calibri", 12F);
             this.btnPrtBill.Appearance.ForeColor = System.Drawing.Color.White;
             this.btnPrtBill.Appearance.Options.UseBackColor = true;
             this.btnPrtBill.Appearance.Options.UseFont = true;
@@ -235,8 +235,8 @@
             // 
             // btnExit
             // 
-            this.btnExit.Appearance.BackColor = System.Drawing.Color.Olive;
-            this.btnExit.Appearance.Font = new System.Drawing.Font("Tahoma", 14F);
+            this.btnExit.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.btnExit.Appearance.Font = new System.Drawing.Font("Calibri", 16F, System.Drawing.FontStyle.Bold);
             this.btnExit.Appearance.ForeColor = System.Drawing.Color.White;
             this.btnExit.Appearance.Options.UseBackColor = true;
             this.btnExit.Appearance.Options.UseFont = true;
@@ -270,7 +270,7 @@
             // btnEatIn
             // 
             this.btnEatIn.Appearance.BackColor = System.Drawing.Color.RoyalBlue;
-            this.btnEatIn.Appearance.Font = new System.Drawing.Font("Tahoma", 10F);
+            this.btnEatIn.Appearance.Font = new System.Drawing.Font("Calibri", 12F);
             this.btnEatIn.Appearance.ForeColor = System.Drawing.Color.White;
             this.btnEatIn.Appearance.Options.UseBackColor = true;
             this.btnEatIn.Appearance.Options.UseFont = true;
@@ -286,7 +286,7 @@
             // btnShowDriver
             // 
             this.btnShowDriver.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
-            this.btnShowDriver.Appearance.Font = new System.Drawing.Font("Tahoma", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnShowDriver.Appearance.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnShowDriver.Appearance.ForeColor = System.Drawing.Color.White;
             this.btnShowDriver.Appearance.Options.UseBackColor = true;
             this.btnShowDriver.Appearance.Options.UseFont = true;
@@ -307,7 +307,7 @@
             // btnEditOrder
             // 
             this.btnEditOrder.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.btnEditOrder.Appearance.Font = new System.Drawing.Font("Tahoma", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEditOrder.Appearance.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnEditOrder.Appearance.ForeColor = System.Drawing.Color.White;
             this.btnEditOrder.Appearance.Options.UseBackColor = true;
             this.btnEditOrder.Appearance.Options.UseFont = true;
@@ -328,7 +328,7 @@
             // btnChangePayment
             // 
             this.btnChangePayment.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.btnChangePayment.Appearance.Font = new System.Drawing.Font("Tahoma", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnChangePayment.Appearance.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnChangePayment.Appearance.ForeColor = System.Drawing.Color.White;
             this.btnChangePayment.Appearance.Options.UseBackColor = true;
             this.btnChangePayment.Appearance.Options.UseFont = true;
@@ -349,7 +349,7 @@
             // btnFastFood
             // 
             this.btnFastFood.Appearance.BackColor = System.Drawing.Color.Olive;
-            this.btnFastFood.Appearance.Font = new System.Drawing.Font("Tahoma", 10F);
+            this.btnFastFood.Appearance.Font = new System.Drawing.Font("Calibri", 12F);
             this.btnFastFood.Appearance.ForeColor = System.Drawing.Color.White;
             this.btnFastFood.Appearance.Options.UseBackColor = true;
             this.btnFastFood.Appearance.Options.UseFont = true;
@@ -366,7 +366,7 @@
             // btnAll
             // 
             this.btnAll.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
-            this.btnAll.Appearance.Font = new System.Drawing.Font("Tahoma", 12F);
+            this.btnAll.Appearance.Font = new System.Drawing.Font("Calibri", 14F);
             this.btnAll.Appearance.ForeColor = System.Drawing.Color.White;
             this.btnAll.Appearance.Options.UseBackColor = true;
             this.btnAll.Appearance.Options.UseFont = true;
@@ -383,7 +383,7 @@
             // btnDelivery
             // 
             this.btnDelivery.Appearance.BackColor = System.Drawing.Color.Green;
-            this.btnDelivery.Appearance.Font = new System.Drawing.Font("Tahoma", 10F);
+            this.btnDelivery.Appearance.Font = new System.Drawing.Font("Calibri", 12F);
             this.btnDelivery.Appearance.ForeColor = System.Drawing.Color.White;
             this.btnDelivery.Appearance.Options.UseBackColor = true;
             this.btnDelivery.Appearance.Options.UseFont = true;
@@ -400,7 +400,7 @@
             // btnShop
             // 
             this.btnShop.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
-            this.btnShop.Appearance.Font = new System.Drawing.Font("Tahoma", 10F);
+            this.btnShop.Appearance.Font = new System.Drawing.Font("Calibri", 12F);
             this.btnShop.Appearance.ForeColor = System.Drawing.Color.White;
             this.btnShop.Appearance.Options.UseBackColor = true;
             this.btnShop.Appearance.Options.UseFont = true;
@@ -417,7 +417,7 @@
             // btnCollection
             // 
             this.btnCollection.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
-            this.btnCollection.Appearance.Font = new System.Drawing.Font("Tahoma", 10F);
+            this.btnCollection.Appearance.Font = new System.Drawing.Font("Calibri", 12F);
             this.btnCollection.Appearance.ForeColor = System.Drawing.Color.White;
             this.btnCollection.Appearance.Options.UseBackColor = true;
             this.btnCollection.Appearance.Options.UseFont = true;
@@ -434,6 +434,7 @@
             // gridControlTaShowOrder
             // 
             this.gridControlTaShowOrder.EmbeddedNavigator.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.gridControlTaShowOrder.Font = new System.Drawing.Font("Calibri", 12F);
             this.gridControlTaShowOrder.Location = new System.Drawing.Point(4, 10);
             this.gridControlTaShowOrder.MainView = this.gvTaShowOrder;
             this.gridControlTaShowOrder.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -446,9 +447,15 @@
             // gvTaShowOrder
             // 
             this.gvTaShowOrder.Appearance.EvenRow.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
+            this.gvTaShowOrder.Appearance.EvenRow.Font = new System.Drawing.Font("Calibri", 12F);
             this.gvTaShowOrder.Appearance.EvenRow.Options.UseBackColor = true;
+            this.gvTaShowOrder.Appearance.EvenRow.Options.UseFont = true;
+            this.gvTaShowOrder.Appearance.HeaderPanel.Font = new System.Drawing.Font("Calibri", 12F);
+            this.gvTaShowOrder.Appearance.HeaderPanel.Options.UseFont = true;
             this.gvTaShowOrder.Appearance.HeaderPanel.Options.UseTextOptions = true;
             this.gvTaShowOrder.Appearance.HeaderPanel.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.gvTaShowOrder.Appearance.OddRow.Font = new System.Drawing.Font("Calibri", 12F);
+            this.gvTaShowOrder.Appearance.OddRow.Options.UseFont = true;
             this.gvTaShowOrder.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
             this.ID,
             this.CheckCode,
@@ -491,7 +498,7 @@
             // 
             // CheckCode
             // 
-            this.CheckCode.AppearanceCell.Font = new System.Drawing.Font("Tahoma", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.CheckCode.AppearanceCell.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.CheckCode.AppearanceCell.Options.UseFont = true;
             this.CheckCode.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.CheckCode.AppearanceHeader.Options.UseFont = true;
@@ -503,7 +510,7 @@
             // 
             // OrderTime
             // 
-            this.OrderTime.AppearanceCell.Font = new System.Drawing.Font("Tahoma", 10F);
+            this.OrderTime.AppearanceCell.Font = new System.Drawing.Font("Calibri", 12F);
             this.OrderTime.AppearanceCell.Options.UseFont = true;
             this.OrderTime.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.OrderTime.AppearanceHeader.Options.UseFont = true;
@@ -515,7 +522,7 @@
             // 
             // Payment
             // 
-            this.Payment.AppearanceCell.Font = new System.Drawing.Font("Tahoma", 10F);
+            this.Payment.AppearanceCell.Font = new System.Drawing.Font("Calibri", 12F);
             this.Payment.AppearanceCell.Options.UseFont = true;
             this.Payment.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Payment.AppearanceHeader.Options.UseFont = true;
@@ -527,7 +534,7 @@
             // 
             // PayOrderType
             // 
-            this.PayOrderType.AppearanceCell.Font = new System.Drawing.Font("Tahoma", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.PayOrderType.AppearanceCell.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.PayOrderType.AppearanceCell.Options.UseFont = true;
             this.PayOrderType.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.PayOrderType.AppearanceHeader.Options.UseFont = true;
@@ -539,7 +546,7 @@
             // 
             // TotalAmount
             // 
-            this.TotalAmount.AppearanceCell.Font = new System.Drawing.Font("Tahoma", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TotalAmount.AppearanceCell.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.TotalAmount.AppearanceCell.Options.UseFont = true;
             this.TotalAmount.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.TotalAmount.AppearanceHeader.Options.UseFont = true;
@@ -551,7 +558,7 @@
             // 
             // StaffName
             // 
-            this.StaffName.AppearanceCell.Font = new System.Drawing.Font("Tahoma", 10F);
+            this.StaffName.AppearanceCell.Font = new System.Drawing.Font("Calibri", 12F);
             this.StaffName.AppearanceCell.Options.UseFont = true;
             this.StaffName.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.StaffName.AppearanceHeader.Options.UseFont = true;
@@ -563,7 +570,7 @@
             // 
             // DriverName
             // 
-            this.DriverName.AppearanceCell.Font = new System.Drawing.Font("Tahoma", 10F);
+            this.DriverName.AppearanceCell.Font = new System.Drawing.Font("Calibri", 12F);
             this.DriverName.AppearanceCell.Options.UseFont = true;
             this.DriverName.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.DriverName.AppearanceHeader.Options.UseFont = true;
