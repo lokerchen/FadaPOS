@@ -67,21 +67,21 @@
             // txtHour
             // 
             this.txtHour.EditValue = "";
-            this.txtHour.Location = new System.Drawing.Point(255, 21);
+            this.txtHour.Location = new System.Drawing.Point(260, 16);
             this.txtHour.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtHour.Name = "txtHour";
-            this.txtHour.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtHour.Properties.Appearance.Font = new System.Drawing.Font("Calibri", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtHour.Properties.Appearance.ForeColor = System.Drawing.Color.Red;
             this.txtHour.Properties.Appearance.Options.UseFont = true;
             this.txtHour.Properties.Appearance.Options.UseForeColor = true;
             this.txtHour.Properties.Mask.EditMask = "f0";
-            this.txtHour.Size = new System.Drawing.Size(56, 34);
+            this.txtHour.Size = new System.Drawing.Size(56, 36);
             this.txtHour.TabIndex = 47;
             // 
             // btnCollection
             // 
             this.btnCollection.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
-            this.btnCollection.Appearance.Font = new System.Drawing.Font("Tahoma", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCollection.Appearance.Font = new System.Drawing.Font("Calibri", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCollection.Appearance.ForeColor = System.Drawing.Color.White;
             this.btnCollection.Appearance.Options.UseBackColor = true;
             this.btnCollection.Appearance.Options.UseFont = true;
@@ -97,7 +97,7 @@
             // btnDelivery
             // 
             this.btnDelivery.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
-            this.btnDelivery.Appearance.Font = new System.Drawing.Font("Tahoma", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDelivery.Appearance.Font = new System.Drawing.Font("Calibri", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnDelivery.Appearance.ForeColor = System.Drawing.Color.White;
             this.btnDelivery.Appearance.Options.UseBackColor = true;
             this.btnDelivery.Appearance.Options.UseFont = true;
@@ -112,8 +112,8 @@
             // 
             // btnExit
             // 
-            this.btnExit.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
-            this.btnExit.Appearance.Font = new System.Drawing.Font("Tahoma", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnExit.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.btnExit.Appearance.Font = new System.Drawing.Font("Calibri", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnExit.Appearance.ForeColor = System.Drawing.Color.White;
             this.btnExit.Appearance.Options.UseBackColor = true;
             this.btnExit.Appearance.Options.UseFont = true;
@@ -130,20 +130,20 @@
             // txtMinute
             // 
             this.txtMinute.EditValue = "";
-            this.txtMinute.Location = new System.Drawing.Point(341, 21);
+            this.txtMinute.Location = new System.Drawing.Point(346, 16);
             this.txtMinute.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtMinute.Name = "txtMinute";
-            this.txtMinute.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtMinute.Properties.Appearance.Font = new System.Drawing.Font("Calibri", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtMinute.Properties.Appearance.ForeColor = System.Drawing.Color.Red;
             this.txtMinute.Properties.Appearance.Options.UseFont = true;
             this.txtMinute.Properties.Appearance.Options.UseForeColor = true;
-            this.txtMinute.Size = new System.Drawing.Size(56, 34);
+            this.txtMinute.Size = new System.Drawing.Size(56, 36);
             this.txtMinute.TabIndex = 97;
             // 
             // btnOK
             // 
-            this.btnOK.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
-            this.btnOK.Appearance.Font = new System.Drawing.Font("Tahoma", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnOK.Appearance.BackColor = System.Drawing.Color.Green;
+            this.btnOK.Appearance.Font = new System.Drawing.Font("Calibri", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnOK.Appearance.ForeColor = System.Drawing.Color.White;
             this.btnOK.Appearance.Options.UseBackColor = true;
             this.btnOK.Appearance.Options.UseFont = true;
@@ -160,10 +160,10 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Tahoma", 20F, System.Drawing.FontStyle.Bold);
-            this.label1.Location = new System.Drawing.Point(313, 22);
+            this.label1.Font = new System.Drawing.Font("Calibri", 22F, System.Drawing.FontStyle.Bold);
+            this.label1.Location = new System.Drawing.Point(318, 15);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(25, 33);
+            this.label1.Size = new System.Drawing.Size(25, 37);
             this.label1.TabIndex = 99;
             this.label1.Text = ":";
             // 
@@ -201,7 +201,7 @@
             // 
             this.btnAdd55.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.btnAdd55.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.btnAdd55.Appearance.Font = new System.Drawing.Font("Tahoma", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAdd55.Appearance.Font = new System.Drawing.Font("Calibri", 17F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAdd55.Appearance.ForeColor = System.Drawing.Color.White;
             this.btnAdd55.Appearance.Options.UseBackColor = true;
             this.btnAdd55.Appearance.Options.UseFont = true;
@@ -218,7 +218,7 @@
             // 
             this.btnAdd50.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.btnAdd50.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.btnAdd50.Appearance.Font = new System.Drawing.Font("Tahoma", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAdd50.Appearance.Font = new System.Drawing.Font("Calibri", 17F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAdd50.Appearance.ForeColor = System.Drawing.Color.White;
             this.btnAdd50.Appearance.Options.UseBackColor = true;
             this.btnAdd50.Appearance.Options.UseFont = true;
@@ -235,7 +235,7 @@
             // 
             this.btnAdd60.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.btnAdd60.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.btnAdd60.Appearance.Font = new System.Drawing.Font("Tahoma", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAdd60.Appearance.Font = new System.Drawing.Font("Calibri", 17F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAdd60.Appearance.ForeColor = System.Drawing.Color.White;
             this.btnAdd60.Appearance.Options.UseBackColor = true;
             this.btnAdd60.Appearance.Options.UseFont = true;
@@ -252,7 +252,7 @@
             // 
             this.btnAdd45.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.btnAdd45.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.btnAdd45.Appearance.Font = new System.Drawing.Font("Tahoma", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAdd45.Appearance.Font = new System.Drawing.Font("Calibri", 17F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAdd45.Appearance.ForeColor = System.Drawing.Color.White;
             this.btnAdd45.Appearance.Options.UseBackColor = true;
             this.btnAdd45.Appearance.Options.UseFont = true;
@@ -269,7 +269,7 @@
             // 
             this.btnAdd40.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.btnAdd40.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.btnAdd40.Appearance.Font = new System.Drawing.Font("Tahoma", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAdd40.Appearance.Font = new System.Drawing.Font("Calibri", 17F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAdd40.Appearance.ForeColor = System.Drawing.Color.White;
             this.btnAdd40.Appearance.Options.UseBackColor = true;
             this.btnAdd40.Appearance.Options.UseFont = true;
@@ -286,7 +286,7 @@
             // 
             this.btnAdd35.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.btnAdd35.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.btnAdd35.Appearance.Font = new System.Drawing.Font("Tahoma", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAdd35.Appearance.Font = new System.Drawing.Font("Calibri", 17F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAdd35.Appearance.ForeColor = System.Drawing.Color.White;
             this.btnAdd35.Appearance.Options.UseBackColor = true;
             this.btnAdd35.Appearance.Options.UseFont = true;
@@ -303,7 +303,7 @@
             // 
             this.btnAdd30.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.btnAdd30.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.btnAdd30.Appearance.Font = new System.Drawing.Font("Tahoma", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAdd30.Appearance.Font = new System.Drawing.Font("Calibri", 17F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAdd30.Appearance.ForeColor = System.Drawing.Color.White;
             this.btnAdd30.Appearance.Options.UseBackColor = true;
             this.btnAdd30.Appearance.Options.UseFont = true;
@@ -320,7 +320,7 @@
             // 
             this.btnAdd25.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.btnAdd25.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.btnAdd25.Appearance.Font = new System.Drawing.Font("Tahoma", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAdd25.Appearance.Font = new System.Drawing.Font("Calibri", 17F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAdd25.Appearance.ForeColor = System.Drawing.Color.White;
             this.btnAdd25.Appearance.Options.UseBackColor = true;
             this.btnAdd25.Appearance.Options.UseFont = true;
@@ -337,7 +337,7 @@
             // 
             this.btnAdd20.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.btnAdd20.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.btnAdd20.Appearance.Font = new System.Drawing.Font("Tahoma", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAdd20.Appearance.Font = new System.Drawing.Font("Calibri", 17F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAdd20.Appearance.ForeColor = System.Drawing.Color.White;
             this.btnAdd20.Appearance.Options.UseBackColor = true;
             this.btnAdd20.Appearance.Options.UseFont = true;
@@ -354,7 +354,7 @@
             // 
             this.btnAdd15.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.btnAdd15.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.btnAdd15.Appearance.Font = new System.Drawing.Font("Tahoma", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAdd15.Appearance.Font = new System.Drawing.Font("Calibri", 17F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAdd15.Appearance.ForeColor = System.Drawing.Color.White;
             this.btnAdd15.Appearance.Options.UseBackColor = true;
             this.btnAdd15.Appearance.Options.UseFont = true;
@@ -371,7 +371,7 @@
             // 
             this.btnAdd10.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.btnAdd10.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.btnAdd10.Appearance.Font = new System.Drawing.Font("Tahoma", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAdd10.Appearance.Font = new System.Drawing.Font("Calibri", 17F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAdd10.Appearance.ForeColor = System.Drawing.Color.White;
             this.btnAdd10.Appearance.Options.UseBackColor = true;
             this.btnAdd10.Appearance.Options.UseFont = true;
@@ -388,7 +388,7 @@
             // 
             this.btnAdd5.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.btnAdd5.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.btnAdd5.Appearance.Font = new System.Drawing.Font("Tahoma", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAdd5.Appearance.Font = new System.Drawing.Font("Calibri", 17F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAdd5.Appearance.ForeColor = System.Drawing.Color.White;
             this.btnAdd5.Appearance.Options.UseBackColor = true;
             this.btnAdd5.Appearance.Options.UseFont = true;
@@ -405,7 +405,7 @@
             // 
             this.btn0.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.btn0.Appearance.BackColor = System.Drawing.Color.Green;
-            this.btn0.Appearance.Font = new System.Drawing.Font("Tahoma", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn0.Appearance.Font = new System.Drawing.Font("Calibri", 17F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn0.Appearance.ForeColor = System.Drawing.Color.White;
             this.btn0.Appearance.Options.UseBackColor = true;
             this.btn0.Appearance.Options.UseFont = true;
@@ -422,7 +422,7 @@
             // 
             this.btnClr.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.btnClr.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
-            this.btnClr.Appearance.Font = new System.Drawing.Font("Tahoma", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnClr.Appearance.Font = new System.Drawing.Font("Calibri", 17F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnClr.Appearance.ForeColor = System.Drawing.Color.White;
             this.btnClr.Appearance.Options.UseBackColor = true;
             this.btnClr.Appearance.Options.UseFont = true;
@@ -440,7 +440,7 @@
             // 
             this.btn9.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.btn9.Appearance.BackColor = System.Drawing.Color.Green;
-            this.btn9.Appearance.Font = new System.Drawing.Font("Tahoma", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn9.Appearance.Font = new System.Drawing.Font("Calibri", 17F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn9.Appearance.ForeColor = System.Drawing.Color.White;
             this.btn9.Appearance.Options.UseBackColor = true;
             this.btn9.Appearance.Options.UseFont = true;
@@ -457,7 +457,7 @@
             // 
             this.btn8.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.btn8.Appearance.BackColor = System.Drawing.Color.Green;
-            this.btn8.Appearance.Font = new System.Drawing.Font("Tahoma", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn8.Appearance.Font = new System.Drawing.Font("Calibri", 17F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn8.Appearance.ForeColor = System.Drawing.Color.White;
             this.btn8.Appearance.Options.UseBackColor = true;
             this.btn8.Appearance.Options.UseFont = true;
@@ -474,7 +474,7 @@
             // 
             this.btn7.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.btn7.Appearance.BackColor = System.Drawing.Color.Green;
-            this.btn7.Appearance.Font = new System.Drawing.Font("Tahoma", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn7.Appearance.Font = new System.Drawing.Font("Calibri", 17F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn7.Appearance.ForeColor = System.Drawing.Color.White;
             this.btn7.Appearance.Options.UseBackColor = true;
             this.btn7.Appearance.Options.UseFont = true;
@@ -491,7 +491,7 @@
             // 
             this.btn6.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.btn6.Appearance.BackColor = System.Drawing.Color.Green;
-            this.btn6.Appearance.Font = new System.Drawing.Font("Tahoma", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn6.Appearance.Font = new System.Drawing.Font("Calibri", 17F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn6.Appearance.ForeColor = System.Drawing.Color.White;
             this.btn6.Appearance.Options.UseBackColor = true;
             this.btn6.Appearance.Options.UseFont = true;
@@ -508,7 +508,7 @@
             // 
             this.btn5.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.btn5.Appearance.BackColor = System.Drawing.Color.Green;
-            this.btn5.Appearance.Font = new System.Drawing.Font("Tahoma", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn5.Appearance.Font = new System.Drawing.Font("Calibri", 17F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn5.Appearance.ForeColor = System.Drawing.Color.White;
             this.btn5.Appearance.Options.UseBackColor = true;
             this.btn5.Appearance.Options.UseFont = true;
@@ -525,7 +525,7 @@
             // 
             this.btn4.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.btn4.Appearance.BackColor = System.Drawing.Color.Green;
-            this.btn4.Appearance.Font = new System.Drawing.Font("Tahoma", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn4.Appearance.Font = new System.Drawing.Font("Calibri", 17F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn4.Appearance.ForeColor = System.Drawing.Color.White;
             this.btn4.Appearance.Options.UseBackColor = true;
             this.btn4.Appearance.Options.UseFont = true;
@@ -542,7 +542,7 @@
             // 
             this.btn3.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.btn3.Appearance.BackColor = System.Drawing.Color.Green;
-            this.btn3.Appearance.Font = new System.Drawing.Font("Tahoma", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn3.Appearance.Font = new System.Drawing.Font("Calibri", 17F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn3.Appearance.ForeColor = System.Drawing.Color.White;
             this.btn3.Appearance.Options.UseBackColor = true;
             this.btn3.Appearance.Options.UseFont = true;
@@ -559,7 +559,7 @@
             // 
             this.btn2.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.btn2.Appearance.BackColor = System.Drawing.Color.Green;
-            this.btn2.Appearance.Font = new System.Drawing.Font("Tahoma", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn2.Appearance.Font = new System.Drawing.Font("Calibri", 17F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn2.Appearance.ForeColor = System.Drawing.Color.White;
             this.btn2.Appearance.Options.UseBackColor = true;
             this.btn2.Appearance.Options.UseFont = true;
@@ -576,7 +576,7 @@
             // 
             this.btn1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.btn1.Appearance.BackColor = System.Drawing.Color.Green;
-            this.btn1.Appearance.Font = new System.Drawing.Font("Tahoma", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn1.Appearance.Font = new System.Drawing.Font("Calibri", 17F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn1.Appearance.ForeColor = System.Drawing.Color.White;
             this.btn1.Appearance.Options.UseBackColor = true;
             this.btn1.Appearance.Options.UseFont = true;
