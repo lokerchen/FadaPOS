@@ -100,6 +100,7 @@
             // gridControlTaPendOrder
             // 
             this.gridControlTaPendOrder.EmbeddedNavigator.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.gridControlTaPendOrder.Font = new System.Drawing.Font("Calibri", 14F);
             this.gridControlTaPendOrder.Location = new System.Drawing.Point(4, 4);
             this.gridControlTaPendOrder.MainView = this.gvTaPendOrder;
             this.gridControlTaPendOrder.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -112,14 +113,14 @@
             // gvTaPendOrder
             // 
             this.gvTaPendOrder.Appearance.EvenRow.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
-            this.gvTaPendOrder.Appearance.EvenRow.Font = new System.Drawing.Font("Calibri", 12F);
+            this.gvTaPendOrder.Appearance.EvenRow.Font = new System.Drawing.Font("Calibri", 14F);
             this.gvTaPendOrder.Appearance.EvenRow.Options.UseBackColor = true;
             this.gvTaPendOrder.Appearance.EvenRow.Options.UseFont = true;
             this.gvTaPendOrder.Appearance.HeaderPanel.Font = new System.Drawing.Font("Calibri", 10F);
             this.gvTaPendOrder.Appearance.HeaderPanel.Options.UseFont = true;
             this.gvTaPendOrder.Appearance.HeaderPanel.Options.UseTextOptions = true;
             this.gvTaPendOrder.Appearance.HeaderPanel.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.gvTaPendOrder.Appearance.OddRow.Font = new System.Drawing.Font("Calibri", 12F);
+            this.gvTaPendOrder.Appearance.OddRow.Font = new System.Drawing.Font("Calibri", 14F);
             this.gvTaPendOrder.Appearance.OddRow.Options.UseFont = true;
             this.gvTaPendOrder.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
             this.ID,
@@ -170,6 +171,8 @@
             // 
             // OrderNo
             // 
+            this.OrderNo.AppearanceCell.Font = new System.Drawing.Font("Calibri", 14F);
+            this.OrderNo.AppearanceCell.Options.UseFont = true;
             this.OrderNo.Caption = "Order No";
             this.OrderNo.FieldName = "OtherCheckCode";
             this.OrderNo.MinWidth = 17;
@@ -180,7 +183,7 @@
             // 
             // CheckCode
             // 
-            this.CheckCode.AppearanceCell.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.CheckCode.AppearanceCell.Font = new System.Drawing.Font("Calibri", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.CheckCode.AppearanceCell.Options.UseFont = true;
             this.CheckCode.Caption = "Order No.";
             this.CheckCode.FieldName = "CheckCode";
@@ -190,6 +193,8 @@
             // 
             // OrderTime
             // 
+            this.OrderTime.AppearanceCell.Font = new System.Drawing.Font("Calibri", 14F);
+            this.OrderTime.AppearanceCell.Options.UseFont = true;
             this.OrderTime.Caption = "Order Time";
             this.OrderTime.FieldName = "OrderTime";
             this.OrderTime.MinWidth = 17;
@@ -199,6 +204,8 @@
             // 
             // PostCode
             // 
+            this.PostCode.AppearanceCell.Font = new System.Drawing.Font("Calibri", 14F);
+            this.PostCode.AppearanceCell.Options.UseFont = true;
             this.PostCode.Caption = "PostCode";
             this.PostCode.FieldName = "PostCode";
             this.PostCode.MinWidth = 17;
@@ -209,6 +216,8 @@
             // 
             // PostCodeZone
             // 
+            this.PostCodeZone.AppearanceCell.Font = new System.Drawing.Font("Calibri", 14F);
+            this.PostCodeZone.AppearanceCell.Options.UseFont = true;
             this.PostCodeZone.Caption = "PostCode Zone";
             this.PostCodeZone.FieldName = "PostCodeZone";
             this.PostCodeZone.MinWidth = 17;
@@ -219,6 +228,8 @@
             // 
             // Addr
             // 
+            this.Addr.AppearanceCell.Font = new System.Drawing.Font("Calibri", 14F);
+            this.Addr.AppearanceCell.Options.UseFont = true;
             this.Addr.Caption = "Address";
             this.Addr.FieldName = "Addr";
             this.Addr.MinWidth = 17;
@@ -229,7 +240,7 @@
             // 
             // PayOrderType
             // 
-            this.PayOrderType.AppearanceCell.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.PayOrderType.AppearanceCell.Font = new System.Drawing.Font("Calibri", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.PayOrderType.AppearanceCell.Options.UseFont = true;
             this.PayOrderType.Caption = "Order Type";
             this.PayOrderType.FieldName = "PayOrderType";
@@ -241,6 +252,8 @@
             // 
             // CustomerName
             // 
+            this.CustomerName.AppearanceCell.Font = new System.Drawing.Font("Calibri", 14F);
+            this.CustomerName.AppearanceCell.Options.UseFont = true;
             this.CustomerName.Caption = "Customer Name";
             this.CustomerName.FieldName = "CustomerName";
             this.CustomerName.MinWidth = 17;
@@ -251,6 +264,8 @@
             // 
             // CustomerPhone
             // 
+            this.CustomerPhone.AppearanceCell.Font = new System.Drawing.Font("Calibri", 14F);
+            this.CustomerPhone.AppearanceCell.Options.UseFont = true;
             this.CustomerPhone.Caption = "Phone Number";
             this.CustomerPhone.FieldName = "CustomerPhone";
             this.CustomerPhone.MinWidth = 17;
@@ -261,7 +276,7 @@
             // 
             // TotalAmount
             // 
-            this.TotalAmount.AppearanceCell.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TotalAmount.AppearanceCell.Font = new System.Drawing.Font("Calibri", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.TotalAmount.AppearanceCell.Options.UseFont = true;
             this.TotalAmount.Caption = "Total Amount";
             this.TotalAmount.FieldName = "TotalAmount";
@@ -273,6 +288,8 @@
             // 
             // StaffName
             // 
+            this.StaffName.AppearanceCell.Font = new System.Drawing.Font("Calibri", 14F);
+            this.StaffName.AppearanceCell.Options.UseFont = true;
             this.StaffName.Caption = "Staff Name";
             this.StaffName.FieldName = "StaffName";
             this.StaffName.MinWidth = 17;
@@ -283,6 +300,8 @@
             // 
             // DriverName
             // 
+            this.DriverName.AppearanceCell.Font = new System.Drawing.Font("Calibri", 14F);
+            this.DriverName.AppearanceCell.Options.UseFont = true;
             this.DriverName.Caption = "Driver";
             this.DriverName.FieldName = "DriverName";
             this.DriverName.MinWidth = 17;
@@ -293,7 +312,7 @@
             // 
             // IsPaid
             // 
-            this.IsPaid.AppearanceCell.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.IsPaid.AppearanceCell.Font = new System.Drawing.Font("Calibri", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.IsPaid.AppearanceCell.Options.UseFont = true;
             this.IsPaid.Caption = "Is Paid";
             this.IsPaid.FieldName = "IsPaid";
@@ -337,6 +356,8 @@
             // 
             // BusDate
             // 
+            this.BusDate.AppearanceCell.Font = new System.Drawing.Font("Calibri", 14F);
+            this.BusDate.AppearanceCell.Options.UseFont = true;
             this.BusDate.Caption = "BusDate";
             this.BusDate.FieldName = "gridBusDate";
             this.BusDate.MinWidth = 17;
