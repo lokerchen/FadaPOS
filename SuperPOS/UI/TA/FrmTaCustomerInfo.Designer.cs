@@ -324,12 +324,16 @@
             // 
             // gvCompCustomer
             // 
+            this.gvCompCustomer.Appearance.EvenRow.Font = new System.Drawing.Font("Calibri", 14F);
+            this.gvCompCustomer.Appearance.EvenRow.Options.UseFont = true;
             this.gvCompCustomer.Appearance.HeaderPanel.Font = new System.Drawing.Font("Calibri", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.gvCompCustomer.Appearance.HeaderPanel.Options.UseFont = true;
             this.gvCompCustomer.Appearance.HeaderPanel.Options.UseTextOptions = true;
             this.gvCompCustomer.Appearance.HeaderPanel.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.gvCompCustomer.Appearance.OddRow.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
+            this.gvCompCustomer.Appearance.OddRow.Font = new System.Drawing.Font("Calibri", 14F);
             this.gvCompCustomer.Appearance.OddRow.Options.UseBackColor = true;
+            this.gvCompCustomer.Appearance.OddRow.Options.UseFont = true;
             this.gvCompCustomer.Appearance.Row.Font = new System.Drawing.Font("Calibri", 11F);
             this.gvCompCustomer.Appearance.Row.Options.UseFont = true;
             this.gvCompCustomer.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
@@ -366,6 +370,8 @@
             // 
             // cusPhone
             // 
+            this.cusPhone.AppearanceCell.Font = new System.Drawing.Font("Calibri", 14F);
+            this.cusPhone.AppearanceCell.Options.UseFont = true;
             this.cusPhone.Caption = "Phone No.";
             this.cusPhone.FieldName = "cusPhone";
             this.cusPhone.Name = "cusPhone";
@@ -374,6 +380,8 @@
             // 
             // cusName
             // 
+            this.cusName.AppearanceCell.Font = new System.Drawing.Font("Calibri", 14F);
+            this.cusName.AppearanceCell.Options.UseFont = true;
             this.cusName.Caption = "Name";
             this.cusName.FieldName = "cusName";
             this.cusName.Name = "cusName";
@@ -382,6 +390,8 @@
             // 
             // cusAddr
             // 
+            this.cusAddr.AppearanceCell.Font = new System.Drawing.Font("Calibri", 14F);
+            this.cusAddr.AppearanceCell.Options.UseFont = true;
             this.cusAddr.Caption = "Address";
             this.cusAddr.FieldName = "cusAddr";
             this.cusAddr.Name = "cusAddr";
@@ -390,6 +400,8 @@
             // 
             // cusPostcode
             // 
+            this.cusPostcode.AppearanceCell.Font = new System.Drawing.Font("Calibri", 14F);
+            this.cusPostcode.AppearanceCell.Options.UseFont = true;
             this.cusPostcode.Caption = "Post Code";
             this.cusPostcode.FieldName = "cusPostcode";
             this.cusPostcode.Name = "cusPostcode";
@@ -398,6 +410,8 @@
             // 
             // cusDistance
             // 
+            this.cusDistance.AppearanceCell.Font = new System.Drawing.Font("Calibri", 14F);
+            this.cusDistance.AppearanceCell.Options.UseFont = true;
             this.cusDistance.Caption = "Distance";
             this.cusDistance.FieldName = "cusDistance";
             this.cusDistance.Name = "cusDistance";
@@ -406,6 +420,8 @@
             // 
             // cusPcZone
             // 
+            this.cusPcZone.AppearanceCell.Font = new System.Drawing.Font("Calibri", 14F);
+            this.cusPcZone.AppearanceCell.Options.UseFont = true;
             this.cusPcZone.Caption = "PC Zone";
             this.cusPcZone.FieldName = "cusPcZone";
             this.cusPcZone.Name = "cusPcZone";
@@ -414,6 +430,8 @@
             // 
             // cusIsBlack
             // 
+            this.cusIsBlack.AppearanceCell.Font = new System.Drawing.Font("Calibri", 14F);
+            this.cusIsBlack.AppearanceCell.Options.UseFont = true;
             this.cusIsBlack.Caption = "Black Listed";
             this.cusIsBlack.FieldName = "cusIsBlack";
             this.cusIsBlack.Name = "cusIsBlack";
