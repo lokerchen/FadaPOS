@@ -40,6 +40,8 @@ namespace SuperPOS.Print
         public static string PRT_CLASS_ALL = @"All";
         public static string PRT_CLASS_ALL_AND_RECEIPT = @"AllReceipt";
 
+        public static string PRT_AS = @"as";
+
         public static string PRT_TEMPLATE_FILE_NAME_SUFFIX = ".html";
         
         #region Shop模板内参数为主

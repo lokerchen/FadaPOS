@@ -316,7 +316,9 @@ namespace SuperPOS.UI
 
         private void btnAccount_Click(object sender, EventArgs e)
         {
-            CommonDAL.PrtAccountSummary(checkBusDate);
+            //CommonDAL.PrtAccountSummary(checkBusDate);
+            DelegatePrtHtmlAS handler = DelegateMy.PrtHtmlAs;
+            IAsyncResult result = handler.BeginInvoke(checkBusDate, null, null);
         }
         #endregion
 

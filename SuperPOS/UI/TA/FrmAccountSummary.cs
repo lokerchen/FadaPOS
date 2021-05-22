@@ -590,7 +590,9 @@ namespace SuperPOS.UI.TA
 
         private void btnAccount_Click(object sender, EventArgs e)
         {
-            CommonDAL.PrtAccountSummary(deDay.Text);
+            //CommonDAL.PrtAccountSummary(deDay.Text);
+            DelegatePrtHtmlAS handler = DelegateMy.PrtHtmlAs;
+            IAsyncResult result = handler.BeginInvoke(deDay.Text, null, null);
         }
 
         private void btnLanguage_Click(object sender, EventArgs e)

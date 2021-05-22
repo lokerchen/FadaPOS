@@ -8,6 +8,7 @@ using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Dapper;
 using DevExpress.Office;
 using DevExpress.XtraPrinting;
 using DevExpress.XtraPrinting.Native;
@@ -17,6 +18,7 @@ using HtmlAgilityPack;
 using Microsoft.Win32;
 using NHibernate.Linq.Functions;
 using SuperPOS.Common;
+using SuperPOS.Dapper;
 using SuperPOS.Domain.Entities;
 using HtmlDocument = HtmlAgilityPack.HtmlDocument;
 
@@ -119,6 +121,64 @@ namespace SuperPOS.Print
         }
         #endregion
 
+        #region 替换AS中的标签
+
+        public static string ReplaceHtmlPrtKeyAs(string strQtyNotPaid, string strBusDate, string strHtmlText, PrtAccountSummaryInfo prtAccountSummaryInfo)
+        {
+            strHtmlText = strHtmlText.Replace("{BusDate}", strBusDate);
+            strHtmlText = strHtmlText.Replace("{TotalVAT}", prtAccountSummaryInfo.TotalVAT);
+            strHtmlText = strHtmlText.Replace("{TotalDeliveryCharge}", prtAccountSummaryInfo.TotalDeliveryCharge.ToString("0.00"));
+            strHtmlText = strHtmlText.Replace("{Delivery}", @"Delivery");
+            strHtmlText = strHtmlText.Replace("{QtyDelivery}", prtAccountSummaryInfo.DeliveryCount.ToString());
+            strHtmlText = strHtmlText.Replace("{AmountDelivery}", prtAccountSummaryInfo.DeliveryAmount.ToString("0.00"));
+            strHtmlText = strHtmlText.Replace("{Shop}", @"Shop");
+            strHtmlText = strHtmlText.Replace("{QtyShop}", prtAccountSummaryInfo.ShopCount.ToString());
+            strHtmlText = strHtmlText.Replace("{AmountShop}", prtAccountSummaryInfo.ShopAmount.ToString("0.00"));
+            strHtmlText = strHtmlText.Replace("{Collection}", @"Collection");
+            strHtmlText = strHtmlText.Replace("{QtyCollection}", prtAccountSummaryInfo.CollectionCount.ToString());
+            strHtmlText = strHtmlText.Replace("{AmountCollection}", prtAccountSummaryInfo.CollectionAmount.ToString("0.00"));
+            strHtmlText = strHtmlText.Replace("{QuickFood}", @"Quick Food");
+            strHtmlText = strHtmlText.Replace("{QtyQuickFood}", prtAccountSummaryInfo.FastFoodCount.ToString());
+            strHtmlText = strHtmlText.Replace("{AmountQuickFood}", prtAccountSummaryInfo.FastFoodAmount.ToString("0.00"));
+            strHtmlText = strHtmlText.Replace("{EatIn}", @"Eat In");
+            strHtmlText = strHtmlText.Replace("{QtyEatIn}", prtAccountSummaryInfo.EatInCount.ToString());
+            strHtmlText = strHtmlText.Replace("{AmountEatIn}", prtAccountSummaryInfo.EatInAmount.ToString("0.00"));
+            int iAllTakeCount = prtAccountSummaryInfo.DeliveryCount + prtAccountSummaryInfo.CollectionCount + prtAccountSummaryInfo.ShopCount + prtAccountSummaryInfo.FastFoodCount;
+            decimal dAllTakeAmount = prtAccountSummaryInfo.DeliveryAmount + prtAccountSummaryInfo.CollectionAmount + prtAccountSummaryInfo.ShopAmount + prtAccountSummaryInfo.FastFoodAmount;
+            strHtmlText = strHtmlText.Replace("{TotalTakings}", @"Total Takings");
+            strHtmlText = strHtmlText.Replace("{QtyTotalTakings}", iAllTakeCount.ToString());
+            strHtmlText = strHtmlText.Replace("{AmountTotalTakings}", dAllTakeAmount.ToString("0.00"));
+            strHtmlText = strHtmlText.Replace("{Cash}", prtAccountSummaryInfo.PayType1);
+            strHtmlText = strHtmlText.Replace("{QtyCash}", prtAccountSummaryInfo.PayType1Count.ToString());
+            strHtmlText = strHtmlText.Replace("{AmountCash}", prtAccountSummaryInfo.PayType1Amount.ToString("0.00"));
+            strHtmlText = strHtmlText.Replace("{DCARD}", prtAccountSummaryInfo.PayType2);
+            strHtmlText = strHtmlText.Replace("{QtyDCARD}", prtAccountSummaryInfo.PayType2Count.ToString());
+            strHtmlText = strHtmlText.Replace("{AmountDCARD}", prtAccountSummaryInfo.PayType2Amount.ToString("0.00"));
+            strHtmlText = strHtmlText.Replace("{CARD}", prtAccountSummaryInfo.PayType3);
+            strHtmlText = strHtmlText.Replace("{QtyCARD}", prtAccountSummaryInfo.PayType3Count.ToString());
+            strHtmlText = strHtmlText.Replace("{AmountCARD}", prtAccountSummaryInfo.PayType3Amount.ToString("0.00"));
+            strHtmlText = strHtmlText.Replace("{CHEQUE}", prtAccountSummaryInfo.PayType4);
+            strHtmlText = strHtmlText.Replace("{QtyCHEQUE}", prtAccountSummaryInfo.PayType4Count.ToString());
+            strHtmlText = strHtmlText.Replace("{AmountCHEQUE}", prtAccountSummaryInfo.PayType4Amount.ToString("0.00"));
+            strHtmlText = strHtmlText.Replace("{OTHER}", prtAccountSummaryInfo.PayType5);
+            strHtmlText = strHtmlText.Replace("{QtyOTHER}", prtAccountSummaryInfo.PayType5Count.ToString());
+            strHtmlText = strHtmlText.Replace("{AmountOTHER}", prtAccountSummaryInfo.PayType5Amount.ToString("0.00"));
+
+            int iAllPayeCount = prtAccountSummaryInfo.PayType1Count + prtAccountSummaryInfo.PayType2Count + prtAccountSummaryInfo.PayType3Count + prtAccountSummaryInfo.PayType4Count + prtAccountSummaryInfo.PayType5Count;
+            decimal dAllPayAmount = prtAccountSummaryInfo.PayType1Amount + prtAccountSummaryInfo.PayType2Amount + prtAccountSummaryInfo.PayType3Amount + prtAccountSummaryInfo.PayType4Amount + prtAccountSummaryInfo.PayType5Amount;
+
+            strHtmlText = strHtmlText.Replace("{PaymentTotal}", @"Payment Total:");
+            strHtmlText = strHtmlText.Replace("{QtyPaymentTotal}", iAllPayeCount.ToString());
+            strHtmlText = strHtmlText.Replace("{AmountPaymentTotal}", dAllPayAmount.ToString("0.00"));
+            strHtmlText = strHtmlText.Replace("{NOTPAID}", @"NOT PAID");
+            strHtmlText = strHtmlText.Replace("{QtyNOTPAID}", strQtyNotPaid);
+            strHtmlText = strHtmlText.Replace("{AmountNOTPAID}", prtAccountSummaryInfo.NotPaid);
+
+            return strHtmlText;
+        }
+
+        #endregion
+
         #region 打印Html主体方法
         /// <summary>
         /// 打印Html主体方法
@@ -193,6 +253,54 @@ namespace SuperPOS.Print
         }
         #endregion
 
+        #region 打印Account Summary
+
+        public static void PrintHtmlAccountSummary(string strBusDate)
+        {
+            try
+            {
+                string strSqlWhere = "";
+                DynamicParameters dynamicParams = new DynamicParameters();
+
+                new SystemData().GetPrtAccountSummary("", strBusDate);
+                PrtAccountSummaryInfo prtAsi = CommonData.GetPrtAccountSummaryInfos;
+
+                prtAsi.TotalVAT = (CommonDAL.GetAllVAT("", "", strBusDate)).ToString("0.00");
+
+                strSqlWhere = "IsPaid!=@IsPaid AND IsCancel!=@IsCancel";
+
+                dynamicParams.Add("IsPaid", "Y");
+                dynamicParams.Add("IsCancel", "Y");
+
+                var lstCO = new SQLiteDbHelper().QueryMultiByWhere<TaCheckOrderInfo>("Ta_CheckOrder", strSqlWhere, dynamicParams);
+
+                prtAsi.NotPaid = lstCO.Sum(s => Convert.ToDecimal(s.TotalAmount)).ToString("0.00");
+
+                string strNotPaidCount = lstCO.Count.ToString();
+
+                prtAsi.PayType1 = "Cash";
+                prtAsi.PayType2 = "Card";
+                prtAsi.PayType3 = "Other";
+                prtAsi.PayType4 = "VISA";
+                prtAsi.PayType5 = "PayPal";
+
+                string strHtmlText = GetAsContent();
+
+                if (string.IsNullOrEmpty(strHtmlText)) return;
+
+                strHtmlText = ReplaceHtmlPrtKeyAs(strNotPaidCount, strBusDate, strHtmlText, prtAsi);
+
+                PrintContent(WbPrtStatic.PRT_AS, strHtmlText);
+            }
+            catch (Exception ex)
+            {
+                LogHelper.Error("WbPrtPrint.PrintHtmlAccountSummary", ex);
+                return;
+            }
+        }
+
+        #endregion
+
         #region 打印Shop
         /// <summary>
         /// 打印Shop
@@ -243,7 +351,26 @@ namespace SuperPOS.Print
             return htmlText;
         }
         #endregion
-        
+
+        #region 获得as模板内容
+
+        public static string GetAsContent()
+        {
+            HtmlWeb hw = new HtmlWeb();
+
+            HtmlDocument doc;
+
+            doc = hw.Load(WbPrtStatic.PRT_TEMPLATE_FILE_PATH + WbPrtStatic.PRT_AS + WbPrtStatic.PRT_TEMPLATE_FILE_NAME_SUFFIX);
+
+            string htmlText = doc.Text;
+
+            if (string.IsNullOrEmpty(htmlText)) return "";
+
+            return htmlText;
+        }
+
+        #endregion
+
         #region Display增加none
         /// <summary>
         /// Display增加none
