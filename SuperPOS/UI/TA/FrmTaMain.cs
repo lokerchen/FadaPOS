@@ -2435,13 +2435,13 @@ namespace SuperPOS.UI.TA
                                     }
                                     else
                                     {
-                                        treeListOrder.FocusedNode["ItemDishName"] += taChangeMenuAttrInfo.MenuAttrEnglishName;
+                                        treeListOrder.FocusedNode["ItemDishName"] += " " + taChangeMenuAttrInfo.MenuAttrEnglishName;
                                     }
 
                                 }
                                 else
                                 {
-                                    treeListOrder.FocusedNode["ItemDishName"] += taChangeMenuAttrInfo.MenuAttrEnglishName;
+                                    treeListOrder.FocusedNode["ItemDishName"] += " " + taChangeMenuAttrInfo.MenuAttrEnglishName;
                                 }
                             }
                             else
@@ -2457,16 +2457,16 @@ namespace SuperPOS.UI.TA
                                     }
                                     else
                                     {
-                                        treeListOrder.FocusedNode["ItemDishName"] += taChangeMenuAttrInfo.MenuAttrOtherName;
+                                        treeListOrder.FocusedNode["ItemDishName"] += " " + taChangeMenuAttrInfo.MenuAttrOtherName;
                                     }
                                 }
                                 else
                                 {
-                                    treeListOrder.FocusedNode["ItemDishName"] += taChangeMenuAttrInfo.MenuAttrOtherName;
+                                    treeListOrder.FocusedNode["ItemDishName"] += " " + taChangeMenuAttrInfo.MenuAttrOtherName;
                                 }
                             }
 
-                            treeListOrder.FocusedNode["ItemDishOtherName"] += taChangeMenuAttrInfo.MenuAttrOtherName;
+                            treeListOrder.FocusedNode["ItemDishOtherName"] += " " + taChangeMenuAttrInfo.MenuAttrOtherName;
                         }
                     }
                 }

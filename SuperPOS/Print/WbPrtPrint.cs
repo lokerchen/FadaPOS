@@ -214,7 +214,7 @@ namespace SuperPOS.Print
                 }
                 else if (strPrintType.Equals(WbPrtStatic.PRT_CLASS_RECEIPT))
                 {
-                    strContentText = PrintOnlyKitchen(strOrderType, lsTaOrderItemInfos, wbPrtTemplataTa);
+                    strContentText = PrintOnlyReceipt(lsTaOrderItemInfos, wbPrtTemplataTa);
                     PrintContent(strPrintType, strContentText);
                 }
                 else if (strPrintType.Equals(WbPrtStatic.PRT_CLASS_ALL))
@@ -877,8 +877,20 @@ namespace SuperPOS.Print
             node = document.DocumentNode.SelectSingleNode("//tr[@id='" + WbPrtStatic.PRT_PARAM_TBL_ORDER_TR_ORDER_ITEM + "']");
 
             string strTr = strHtmlText.Substring(strHtmlText.IndexOf(WbPrtStatic.PRT_PRINT_ORDER_ITEM), node.OuterLength + iOffset);
+
+            //HtmlNode nodeOther;
+
+            //nodeOther = document.DocumentNode.SelectSingleNode("//tr[@id='" + WbPrtStatic.PRT_PARAM_TBL_ORDER_TR_ORDER_ITEM + "']");
+
+            //string strTrOther = "";
+            //if (strHtmlText.IndexOf(WbPrtStatic.PRT_PRINT_ORDER_ITEM_OTHER) > 0)
+            //{
+            //    strTrOther = strHtmlText.Substring(strHtmlText.IndexOf(WbPrtStatic.PRT_PRINT_ORDER_ITEM_OTHER), nodeOther.OuterLength + iOffset);
+            //}
+
+            //string strTrTemp = strTr + strTrOther;
             string strTrTemp = strTr;
-            
+
             int i = 0;
             int j = 0;
             foreach (var oi in lsTaOrderItemInfos)

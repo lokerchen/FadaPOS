@@ -112,6 +112,7 @@ namespace SuperPOS.Print
         public static string PRT_PRINT_STAFF = "<td id=\"Td_Staff\" style=\"display:";
         public static string PRT_PRINT_ORDER_NO = "<td id=\"Td_OrderNo\" style=\"display:";
         public static string PRT_PRINT_ORDER_ITEM = "<tr id=\"Tr_OrderItem\"";
+        public static string PRT_PRINT_ORDER_ITEM_OTHER = "<tr id=\"Tr_OrderItem_Other\"";
         //public static string PRT_PRINT_ITEM_COUNT = "<td id=\"Td_ItemCount\"";
         //public static string PRT_PRINT_SUB_TOTAL = "<td id=\"Td_SubTotal\"";
         //public static string PRT_PRINT_TOTAL = "<td id=\"Td_Total\"";

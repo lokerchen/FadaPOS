@@ -1162,7 +1162,7 @@ namespace SuperPOS.UI.TA
             wbPrtTemplataTa.Total = txtToPay.Text;
             wbPrtTemplataTa.PayType = IsNotPaid ? @"NOT PAID" : CommonDAL.GetPayType(saveTaCheckOrderInfo);
             wbPrtTemplataTa.Tendered = txtTendered.Text;
-            wbPrtTemplataTa.Change = txtChange.Text;
+            wbPrtTemplataTa.Change = string.IsNullOrEmpty(txtChange.Text) ? "0.00" : (Convert.ToDecimal(txtChange.Text)).ToString("0.00");
             wbPrtTemplataTa.OrderType = orderType;
             wbPrtTemplataTa.RefNo = "";
             wbPrtTemplataTa.DeliveryFee = @"0.00";
