@@ -112,9 +112,15 @@
             // gvTaPendOrder
             // 
             this.gvTaPendOrder.Appearance.EvenRow.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
+            this.gvTaPendOrder.Appearance.EvenRow.Font = new System.Drawing.Font("Calibri", 12F);
             this.gvTaPendOrder.Appearance.EvenRow.Options.UseBackColor = true;
+            this.gvTaPendOrder.Appearance.EvenRow.Options.UseFont = true;
+            this.gvTaPendOrder.Appearance.HeaderPanel.Font = new System.Drawing.Font("Calibri", 10F);
+            this.gvTaPendOrder.Appearance.HeaderPanel.Options.UseFont = true;
             this.gvTaPendOrder.Appearance.HeaderPanel.Options.UseTextOptions = true;
             this.gvTaPendOrder.Appearance.HeaderPanel.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.gvTaPendOrder.Appearance.OddRow.Font = new System.Drawing.Font("Calibri", 12F);
+            this.gvTaPendOrder.Appearance.OddRow.Options.UseFont = true;
             this.gvTaPendOrder.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
             this.ID,
             this.OrderNo,
@@ -402,7 +408,7 @@
             // btnOpen
             // 
             this.btnOpen.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.btnOpen.Appearance.Font = new System.Drawing.Font("Tahoma", 12F);
+            this.btnOpen.Appearance.Font = new System.Drawing.Font("Calibri", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnOpen.Appearance.ForeColor = System.Drawing.Color.White;
             this.btnOpen.Appearance.Options.UseBackColor = true;
             this.btnOpen.Appearance.Options.UseFont = true;
@@ -419,7 +425,7 @@
             // btnDelivery
             // 
             this.btnDelivery.Appearance.BackColor = System.Drawing.Color.Red;
-            this.btnDelivery.Appearance.Font = new System.Drawing.Font("Tahoma", 10F);
+            this.btnDelivery.Appearance.Font = new System.Drawing.Font("Calibri", 12F);
             this.btnDelivery.Appearance.ForeColor = System.Drawing.Color.White;
             this.btnDelivery.Appearance.Options.UseBackColor = true;
             this.btnDelivery.Appearance.Options.UseFont = true;
@@ -436,7 +442,7 @@
             // btnCollection
             // 
             this.btnCollection.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
-            this.btnCollection.Appearance.Font = new System.Drawing.Font("Tahoma", 10F);
+            this.btnCollection.Appearance.Font = new System.Drawing.Font("Calibri", 12F);
             this.btnCollection.Appearance.ForeColor = System.Drawing.Color.White;
             this.btnCollection.Appearance.Options.UseBackColor = true;
             this.btnCollection.Appearance.Options.UseFont = true;
@@ -453,7 +459,7 @@
             // btnShop
             // 
             this.btnShop.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
-            this.btnShop.Appearance.Font = new System.Drawing.Font("Tahoma", 10F);
+            this.btnShop.Appearance.Font = new System.Drawing.Font("Calibri", 12F);
             this.btnShop.Appearance.ForeColor = System.Drawing.Color.White;
             this.btnShop.Appearance.Options.UseBackColor = true;
             this.btnShop.Appearance.Options.UseFont = true;
@@ -488,7 +494,7 @@
             // btnPay
             // 
             this.btnPay.Appearance.BackColor = System.Drawing.Color.Blue;
-            this.btnPay.Appearance.Font = new System.Drawing.Font("Tahoma", 12F);
+            this.btnPay.Appearance.Font = new System.Drawing.Font("Calibri", 14F);
             this.btnPay.Appearance.ForeColor = System.Drawing.Color.White;
             this.btnPay.Appearance.Options.UseBackColor = true;
             this.btnPay.Appearance.Options.UseFont = true;
@@ -504,8 +510,8 @@
             // 
             // btnExit
             // 
-            this.btnExit.Appearance.BackColor = System.Drawing.Color.Olive;
-            this.btnExit.Appearance.Font = new System.Drawing.Font("Tahoma", 14F);
+            this.btnExit.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.btnExit.Appearance.Font = new System.Drawing.Font("Calibri", 16F, System.Drawing.FontStyle.Bold);
             this.btnExit.Appearance.ForeColor = System.Drawing.Color.White;
             this.btnExit.Appearance.Options.UseBackColor = true;
             this.btnExit.Appearance.Options.UseFont = true;
@@ -534,7 +540,7 @@
             // btnPreview
             // 
             this.btnPreview.Appearance.BackColor = System.Drawing.Color.Blue;
-            this.btnPreview.Appearance.Font = new System.Drawing.Font("Tahoma", 12F);
+            this.btnPreview.Appearance.Font = new System.Drawing.Font("Calibri", 14F);
             this.btnPreview.Appearance.ForeColor = System.Drawing.Color.White;
             this.btnPreview.Appearance.Options.UseBackColor = true;
             this.btnPreview.Appearance.Options.UseFont = true;
@@ -564,18 +570,20 @@
             // labelControl1
             // 
             this.labelControl1.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
-            this.labelControl1.Appearance.Font = new System.Drawing.Font("Tahoma", 10F);
+            this.labelControl1.Appearance.Font = new System.Drawing.Font("Calibri", 11F);
             this.labelControl1.Appearance.ForeColor = System.Drawing.Color.White;
             this.labelControl1.Appearance.Options.UseBackColor = true;
             this.labelControl1.Appearance.Options.UseFont = true;
             this.labelControl1.Appearance.Options.UseForeColor = true;
+            this.labelControl1.Appearance.Options.UseTextOptions = true;
+            this.labelControl1.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.labelControl1.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
             this.labelControl1.Location = new System.Drawing.Point(111, 460);
             this.labelControl1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.labelControl1.Name = "labelControl1";
             this.labelControl1.Size = new System.Drawing.Size(82, 31);
             this.labelControl1.TabIndex = 52;
-            this.labelControl1.Text = "Show Driver:";
+            this.labelControl1.Text = "Show Driver";
             // 
             // panelControl4
             // 
@@ -595,7 +603,7 @@
             // btnNotPaid
             // 
             this.btnNotPaid.Appearance.BackColor = System.Drawing.Color.Red;
-            this.btnNotPaid.Appearance.Font = new System.Drawing.Font("Tahoma", 10F);
+            this.btnNotPaid.Appearance.Font = new System.Drawing.Font("Calibri", 12F);
             this.btnNotPaid.Appearance.ForeColor = System.Drawing.Color.White;
             this.btnNotPaid.Appearance.Options.UseBackColor = true;
             this.btnNotPaid.Appearance.Options.UseFont = true;
@@ -612,7 +620,7 @@
             // btnSaveOrder
             // 
             this.btnSaveOrder.Appearance.BackColor = System.Drawing.Color.Orange;
-            this.btnSaveOrder.Appearance.Font = new System.Drawing.Font("Tahoma", 10F);
+            this.btnSaveOrder.Appearance.Font = new System.Drawing.Font("Calibri", 12F);
             this.btnSaveOrder.Appearance.ForeColor = System.Drawing.Color.White;
             this.btnSaveOrder.Appearance.Options.UseBackColor = true;
             this.btnSaveOrder.Appearance.Options.UseFont = true;
@@ -633,29 +641,31 @@
             this.txtTotal.Location = new System.Drawing.Point(69, 10);
             this.txtTotal.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtTotal.Name = "txtTotal";
-            this.txtTotal.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 14F);
+            this.txtTotal.Properties.Appearance.Font = new System.Drawing.Font("Calibri", 16F);
             this.txtTotal.Properties.Appearance.Options.UseFont = true;
             this.txtTotal.Properties.Appearance.Options.UseTextOptions = true;
             this.txtTotal.Properties.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
-            this.txtTotal.Size = new System.Drawing.Size(88, 30);
+            this.txtTotal.Size = new System.Drawing.Size(88, 32);
             this.txtTotal.TabIndex = 48;
             // 
             // labelControl2
             // 
-            this.labelControl2.Appearance.Font = new System.Drawing.Font("Tahoma", 14F, System.Drawing.FontStyle.Bold);
+            this.labelControl2.Appearance.Font = new System.Drawing.Font("Calibri", 16F, System.Drawing.FontStyle.Bold);
             this.labelControl2.Appearance.Options.UseFont = true;
-            this.labelControl2.Location = new System.Drawing.Point(4, 12);
+            this.labelControl2.Location = new System.Drawing.Point(4, 13);
             this.labelControl2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.labelControl2.Name = "labelControl2";
-            this.labelControl2.Size = new System.Drawing.Size(56, 23);
+            this.labelControl2.Size = new System.Drawing.Size(49, 26);
             this.labelControl2.TabIndex = 47;
             this.labelControl2.Text = "Total:";
             // 
             // btnAssignDriver
             // 
             this.btnAssignDriver.Appearance.BackColor = System.Drawing.Color.Red;
+            this.btnAssignDriver.Appearance.Font = new System.Drawing.Font("Calibri", 10F);
             this.btnAssignDriver.Appearance.ForeColor = System.Drawing.Color.White;
             this.btnAssignDriver.Appearance.Options.UseBackColor = true;
+            this.btnAssignDriver.Appearance.Options.UseFont = true;
             this.btnAssignDriver.Appearance.Options.UseForeColor = true;
             this.btnAssignDriver.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
             this.btnAssignDriver.Location = new System.Drawing.Point(15, 460);
@@ -669,8 +679,10 @@
             // btnShowAll
             // 
             this.btnShowAll.Appearance.BackColor = System.Drawing.Color.Red;
+            this.btnShowAll.Appearance.Font = new System.Drawing.Font("Calibri", 12F);
             this.btnShowAll.Appearance.ForeColor = System.Drawing.Color.White;
             this.btnShowAll.Appearance.Options.UseBackColor = true;
+            this.btnShowAll.Appearance.Options.UseFont = true;
             this.btnShowAll.Appearance.Options.UseForeColor = true;
             this.btnShowAll.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
             this.btnShowAll.Location = new System.Drawing.Point(365, 460);
@@ -684,8 +696,10 @@
             // btnShowAssigned
             // 
             this.btnShowAssigned.Appearance.BackColor = System.Drawing.Color.Red;
+            this.btnShowAssigned.Appearance.Font = new System.Drawing.Font("Calibri", 10F);
             this.btnShowAssigned.Appearance.ForeColor = System.Drawing.Color.White;
             this.btnShowAssigned.Appearance.Options.UseBackColor = true;
+            this.btnShowAssigned.Appearance.Options.UseFont = true;
             this.btnShowAssigned.Appearance.Options.UseForeColor = true;
             this.btnShowAssigned.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
             this.btnShowAssigned.Location = new System.Drawing.Point(449, 460);
@@ -699,8 +713,10 @@
             // btnShowUnAssigned
             // 
             this.btnShowUnAssigned.Appearance.BackColor = System.Drawing.Color.Red;
+            this.btnShowUnAssigned.Appearance.Font = new System.Drawing.Font("Calibri", 11F);
             this.btnShowUnAssigned.Appearance.ForeColor = System.Drawing.Color.White;
             this.btnShowUnAssigned.Appearance.Options.UseBackColor = true;
+            this.btnShowUnAssigned.Appearance.Options.UseFont = true;
             this.btnShowUnAssigned.Appearance.Options.UseForeColor = true;
             this.btnShowUnAssigned.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
             this.btnShowUnAssigned.Location = new System.Drawing.Point(550, 460);

@@ -477,7 +477,7 @@ namespace SuperPOS.UI
             wbPrtTemplataTa.Total = sTotalAmount;
             wbPrtTemplataTa.PayType = sPayType;
             wbPrtTemplataTa.Tendered = sTendered;
-            wbPrtTemplataTa.Change = sChange;
+            wbPrtTemplataTa.Change = string.IsNullOrEmpty(sChange) ? @"0.00" : (Convert.ToDecimal(sChange)).ToString("0.00");
             wbPrtTemplataTa.OrderType = sOrderType;
             wbPrtTemplataTa.RefNo = sRefNo;
             wbPrtTemplataTa.DeliveryFee = sDeliveryFee;

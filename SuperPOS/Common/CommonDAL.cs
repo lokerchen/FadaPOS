@@ -1107,7 +1107,7 @@ namespace SuperPOS.Common
             wbPrtTemplataTa.Total = sTotalAmount;
             wbPrtTemplataTa.PayType = GetPayType(strChkOrder, checkBusDate);
             wbPrtTemplataTa.Tendered = sTendered;
-            wbPrtTemplataTa.Change = sChange;
+            wbPrtTemplataTa.Change = string.IsNullOrEmpty(sChange) ? @"0.00" : (Convert.ToDecimal(sChange)).ToString("0.00");
             wbPrtTemplataTa.OrderType = sOrderType;
             wbPrtTemplataTa.RefNo = sRefNo;
             wbPrtTemplataTa.DeliveryFee = sDeliveryFee;

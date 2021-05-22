@@ -208,7 +208,7 @@ namespace SuperPOS.UI.TA
             string sPayType = CommonDAL.GetPayType(strChkOrder, strBusDate);
             wbPrtTemplataTa.PayType = sPayType;
             wbPrtTemplataTa.Tendered = sTendered;
-            wbPrtTemplataTa.Change = sChange;
+            wbPrtTemplataTa.Change = string.IsNullOrEmpty(sChange) ? @"0.00" : (Convert.ToDecimal(sChange)).ToString("0.00");
             wbPrtTemplataTa.OrderType = sPayType;
             wbPrtTemplataTa.RefNo = sRefNo;
             wbPrtTemplataTa.DeliveryFee = sDeliveryFee;
