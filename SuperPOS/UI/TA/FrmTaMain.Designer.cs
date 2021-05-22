@@ -181,17 +181,17 @@
             // 
             this.treeListOrder.Appearance.BandPanel.Font = new System.Drawing.Font("Calibri", 10F);
             this.treeListOrder.Appearance.BandPanel.Options.UseFont = true;
-            this.treeListOrder.Appearance.EvenRow.Font = new System.Drawing.Font("Calibri", 10F);
+            this.treeListOrder.Appearance.EvenRow.Font = new System.Drawing.Font("Calibri", 12F);
             this.treeListOrder.Appearance.EvenRow.Options.UseFont = true;
             this.treeListOrder.Appearance.EvenRow.Options.UseTextOptions = true;
             this.treeListOrder.Appearance.EvenRow.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
             this.treeListOrder.Appearance.FocusedRow.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
             this.treeListOrder.Appearance.FocusedRow.Options.UseBackColor = true;
-            this.treeListOrder.Appearance.HeaderPanel.Font = new System.Drawing.Font("Calibri", 10F);
+            this.treeListOrder.Appearance.HeaderPanel.Font = new System.Drawing.Font("Calibri", 12F);
             this.treeListOrder.Appearance.HeaderPanel.Options.UseFont = true;
             this.treeListOrder.Appearance.HeaderPanel.Options.UseTextOptions = true;
             this.treeListOrder.Appearance.HeaderPanel.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
-            this.treeListOrder.Appearance.OddRow.Font = new System.Drawing.Font("Calibri", 10F);
+            this.treeListOrder.Appearance.OddRow.Font = new System.Drawing.Font("Calibri", 12F);
             this.treeListOrder.Appearance.OddRow.Options.UseFont = true;
             this.treeListOrder.Appearance.OddRow.Options.UseTextOptions = true;
             this.treeListOrder.Appearance.OddRow.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
@@ -212,7 +212,7 @@
             this.BusDate,
             this.MenuItemID,
             this.IsDiscount});
-            this.treeListOrder.Font = new System.Drawing.Font("Calibri", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.treeListOrder.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.treeListOrder.IndicatorWidth = 40;
             this.treeListOrder.Location = new System.Drawing.Point(4, 142);
             this.treeListOrder.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
