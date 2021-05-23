@@ -176,9 +176,11 @@
             // btnNotPaid
             // 
             this.btnNotPaid.Appearance.BackColor = System.Drawing.Color.Red;
-            this.btnNotPaid.Appearance.Font = new System.Drawing.Font("Tahoma", 14F);
+            this.btnNotPaid.Appearance.Font = new System.Drawing.Font("Calibri", 14F);
+            this.btnNotPaid.Appearance.ForeColor = System.Drawing.Color.White;
             this.btnNotPaid.Appearance.Options.UseBackColor = true;
             this.btnNotPaid.Appearance.Options.UseFont = true;
+            this.btnNotPaid.Appearance.Options.UseForeColor = true;
             this.btnNotPaid.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
             this.btnNotPaid.Location = new System.Drawing.Point(511, 357);
             this.btnNotPaid.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -217,9 +219,11 @@
             // btnSave
             // 
             this.btnSave.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
-            this.btnSave.Appearance.Font = new System.Drawing.Font("Tahoma", 14F);
+            this.btnSave.Appearance.Font = new System.Drawing.Font("Calibri", 14F);
+            this.btnSave.Appearance.ForeColor = System.Drawing.Color.White;
             this.btnSave.Appearance.Options.UseBackColor = true;
             this.btnSave.Appearance.Options.UseFont = true;
+            this.btnSave.Appearance.Options.UseForeColor = true;
             this.btnSave.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
             this.btnSave.Location = new System.Drawing.Point(5, 234);
             this.btnSave.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -232,7 +236,7 @@
             // btnPrtAll
             // 
             this.btnPrtAll.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
-            this.btnPrtAll.Appearance.Font = new System.Drawing.Font("Tahoma", 14F);
+            this.btnPrtAll.Appearance.Font = new System.Drawing.Font("Calibri", 14F);
             this.btnPrtAll.Appearance.Options.UseBackColor = true;
             this.btnPrtAll.Appearance.Options.UseFont = true;
             this.btnPrtAll.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
@@ -246,10 +250,12 @@
             // 
             // btnPrtKitOnly
             // 
-            this.btnPrtKitOnly.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
-            this.btnPrtKitOnly.Appearance.Font = new System.Drawing.Font("Tahoma", 10F);
+            this.btnPrtKitOnly.Appearance.BackColor = System.Drawing.Color.MediumPurple;
+            this.btnPrtKitOnly.Appearance.Font = new System.Drawing.Font("Calibri", 12F);
+            this.btnPrtKitOnly.Appearance.ForeColor = System.Drawing.Color.White;
             this.btnPrtKitOnly.Appearance.Options.UseBackColor = true;
             this.btnPrtKitOnly.Appearance.Options.UseFont = true;
+            this.btnPrtKitOnly.Appearance.Options.UseForeColor = true;
             this.btnPrtKitOnly.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
             this.btnPrtKitOnly.Location = new System.Drawing.Point(5, 176);
             this.btnPrtKitOnly.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -262,7 +268,7 @@
             // btnPrtAllReceipt
             // 
             this.btnPrtAllReceipt.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
-            this.btnPrtAllReceipt.Appearance.Font = new System.Drawing.Font("Tahoma", 10F);
+            this.btnPrtAllReceipt.Appearance.Font = new System.Drawing.Font("Calibri", 12F);
             this.btnPrtAllReceipt.Appearance.Options.UseBackColor = true;
             this.btnPrtAllReceipt.Appearance.Options.UseFont = true;
             this.btnPrtAllReceipt.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
@@ -276,10 +282,12 @@
             // 
             // btnPrtBillOnly
             // 
-            this.btnPrtBillOnly.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
-            this.btnPrtBillOnly.Appearance.Font = new System.Drawing.Font("Tahoma", 13F);
+            this.btnPrtBillOnly.Appearance.BackColor = System.Drawing.Color.MediumPurple;
+            this.btnPrtBillOnly.Appearance.Font = new System.Drawing.Font("Calibri", 12F);
+            this.btnPrtBillOnly.Appearance.ForeColor = System.Drawing.Color.White;
             this.btnPrtBillOnly.Appearance.Options.UseBackColor = true;
             this.btnPrtBillOnly.Appearance.Options.UseFont = true;
+            this.btnPrtBillOnly.Appearance.Options.UseForeColor = true;
             this.btnPrtBillOnly.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
             this.btnPrtBillOnly.Location = new System.Drawing.Point(5, 127);
             this.btnPrtBillOnly.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -950,7 +958,7 @@
             this.lblTypeName.Appearance.ForeColor = System.Drawing.Color.Red;
             this.lblTypeName.Appearance.Options.UseFont = true;
             this.lblTypeName.Appearance.Options.UseForeColor = true;
-            this.lblTypeName.Location = new System.Drawing.Point(542, 26);
+            this.lblTypeName.Location = new System.Drawing.Point(564, 26);
             this.lblTypeName.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.lblTypeName.Name = "lblTypeName";
             this.lblTypeName.Size = new System.Drawing.Size(52, 25);
