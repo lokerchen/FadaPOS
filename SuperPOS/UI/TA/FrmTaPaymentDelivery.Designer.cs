@@ -201,9 +201,11 @@
             // btnNotPaid
             // 
             this.btnNotPaid.Appearance.BackColor = System.Drawing.Color.Red;
-            this.btnNotPaid.Appearance.Font = new System.Drawing.Font("Tahoma", 14F);
+            this.btnNotPaid.Appearance.Font = new System.Drawing.Font("Calibri", 16F);
+            this.btnNotPaid.Appearance.ForeColor = System.Drawing.Color.White;
             this.btnNotPaid.Appearance.Options.UseBackColor = true;
             this.btnNotPaid.Appearance.Options.UseFont = true;
+            this.btnNotPaid.Appearance.Options.UseForeColor = true;
             this.btnNotPaid.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
             this.btnNotPaid.Location = new System.Drawing.Point(548, 331);
             this.btnNotPaid.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -242,9 +244,11 @@
             // btnSave
             // 
             this.btnSave.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
-            this.btnSave.Appearance.Font = new System.Drawing.Font("Tahoma", 14F);
+            this.btnSave.Appearance.Font = new System.Drawing.Font("Calibri", 16F);
+            this.btnSave.Appearance.ForeColor = System.Drawing.Color.White;
             this.btnSave.Appearance.Options.UseBackColor = true;
             this.btnSave.Appearance.Options.UseFont = true;
+            this.btnSave.Appearance.Options.UseForeColor = true;
             this.btnSave.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
             this.btnSave.Location = new System.Drawing.Point(5, 234);
             this.btnSave.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -257,9 +261,11 @@
             // btnPrtAll
             // 
             this.btnPrtAll.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
-            this.btnPrtAll.Appearance.Font = new System.Drawing.Font("Tahoma", 14F);
+            this.btnPrtAll.Appearance.Font = new System.Drawing.Font("Calibri", 16F);
+            this.btnPrtAll.Appearance.ForeColor = System.Drawing.Color.White;
             this.btnPrtAll.Appearance.Options.UseBackColor = true;
             this.btnPrtAll.Appearance.Options.UseFont = true;
+            this.btnPrtAll.Appearance.Options.UseForeColor = true;
             this.btnPrtAll.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
             this.btnPrtAll.Location = new System.Drawing.Point(5, 18);
             this.btnPrtAll.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -272,9 +278,11 @@
             // btnPrtKitOnly
             // 
             this.btnPrtKitOnly.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
-            this.btnPrtKitOnly.Appearance.Font = new System.Drawing.Font("Tahoma", 10F);
+            this.btnPrtKitOnly.Appearance.Font = new System.Drawing.Font("Calibri", 12F);
+            this.btnPrtKitOnly.Appearance.ForeColor = System.Drawing.Color.White;
             this.btnPrtKitOnly.Appearance.Options.UseBackColor = true;
             this.btnPrtKitOnly.Appearance.Options.UseFont = true;
+            this.btnPrtKitOnly.Appearance.Options.UseForeColor = true;
             this.btnPrtKitOnly.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
             this.btnPrtKitOnly.Location = new System.Drawing.Point(5, 176);
             this.btnPrtKitOnly.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -287,9 +295,11 @@
             // btnPrtAllReceipt
             // 
             this.btnPrtAllReceipt.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
-            this.btnPrtAllReceipt.Appearance.Font = new System.Drawing.Font("Tahoma", 10F);
+            this.btnPrtAllReceipt.Appearance.Font = new System.Drawing.Font("Calibri", 12F);
+            this.btnPrtAllReceipt.Appearance.ForeColor = System.Drawing.Color.White;
             this.btnPrtAllReceipt.Appearance.Options.UseBackColor = true;
             this.btnPrtAllReceipt.Appearance.Options.UseFont = true;
+            this.btnPrtAllReceipt.Appearance.Options.UseForeColor = true;
             this.btnPrtAllReceipt.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
             this.btnPrtAllReceipt.Location = new System.Drawing.Point(5, 73);
             this.btnPrtAllReceipt.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -302,9 +312,11 @@
             // btnPrtBillOnly
             // 
             this.btnPrtBillOnly.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
-            this.btnPrtBillOnly.Appearance.Font = new System.Drawing.Font("Tahoma", 13F);
+            this.btnPrtBillOnly.Appearance.Font = new System.Drawing.Font("Calibri", 15F);
+            this.btnPrtBillOnly.Appearance.ForeColor = System.Drawing.Color.White;
             this.btnPrtBillOnly.Appearance.Options.UseBackColor = true;
             this.btnPrtBillOnly.Appearance.Options.UseFont = true;
+            this.btnPrtBillOnly.Appearance.Options.UseForeColor = true;
             this.btnPrtBillOnly.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
             this.btnPrtBillOnly.Location = new System.Drawing.Point(5, 127);
             this.btnPrtBillOnly.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -558,7 +570,7 @@
             this.txtPayTypePay5.Location = new System.Drawing.Point(8, 173);
             this.txtPayTypePay5.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtPayTypePay5.Name = "txtPayTypePay5";
-            this.txtPayTypePay5.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 16F);
+            this.txtPayTypePay5.Properties.Appearance.Font = new System.Drawing.Font("Calibri", 16F);
             this.txtPayTypePay5.Properties.Appearance.Options.UseFont = true;
             this.txtPayTypePay5.Properties.Appearance.Options.UseTextOptions = true;
             this.txtPayTypePay5.Properties.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
@@ -572,8 +584,11 @@
             // lblPayType5
             // 
             this.lblPayType5.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
-            this.lblPayType5.Appearance.Font = new System.Drawing.Font("Tahoma", 18F);
+            this.lblPayType5.Appearance.Font = new System.Drawing.Font("Calibri", 18F);
             this.lblPayType5.Appearance.ForeColor = System.Drawing.Color.Black;
+            this.lblPayType5.Appearance.Options.UseBackColor = true;
+            this.lblPayType5.Appearance.Options.UseFont = true;
+            this.lblPayType5.Appearance.Options.UseForeColor = true;
             this.lblPayType5.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
             this.lblPayType5.Location = new System.Drawing.Point(127, 173);
             this.lblPayType5.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -589,7 +604,7 @@
             this.txtPayTypePay4.Location = new System.Drawing.Point(8, 137);
             this.txtPayTypePay4.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtPayTypePay4.Name = "txtPayTypePay4";
-            this.txtPayTypePay4.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 16F);
+            this.txtPayTypePay4.Properties.Appearance.Font = new System.Drawing.Font("Calibri", 16F);
             this.txtPayTypePay4.Properties.Appearance.Options.UseFont = true;
             this.txtPayTypePay4.Properties.Appearance.Options.UseTextOptions = true;
             this.txtPayTypePay4.Properties.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
@@ -606,7 +621,7 @@
             this.txtPayTypePay3.Location = new System.Drawing.Point(8, 97);
             this.txtPayTypePay3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtPayTypePay3.Name = "txtPayTypePay3";
-            this.txtPayTypePay3.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 16F);
+            this.txtPayTypePay3.Properties.Appearance.Font = new System.Drawing.Font("Calibri", 16F);
             this.txtPayTypePay3.Properties.Appearance.Options.UseFont = true;
             this.txtPayTypePay3.Properties.Appearance.Options.UseTextOptions = true;
             this.txtPayTypePay3.Properties.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
@@ -623,7 +638,7 @@
             this.txtPayTypePay2.Location = new System.Drawing.Point(8, 58);
             this.txtPayTypePay2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtPayTypePay2.Name = "txtPayTypePay2";
-            this.txtPayTypePay2.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 16F);
+            this.txtPayTypePay2.Properties.Appearance.Font = new System.Drawing.Font("Calibri", 16F);
             this.txtPayTypePay2.Properties.Appearance.Options.UseFont = true;
             this.txtPayTypePay2.Properties.Appearance.Options.UseTextOptions = true;
             this.txtPayTypePay2.Properties.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
@@ -640,7 +655,7 @@
             this.txtPayTypePay1.Location = new System.Drawing.Point(8, 18);
             this.txtPayTypePay1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtPayTypePay1.Name = "txtPayTypePay1";
-            this.txtPayTypePay1.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 16F);
+            this.txtPayTypePay1.Properties.Appearance.Font = new System.Drawing.Font("Calibri", 16F);
             this.txtPayTypePay1.Properties.Appearance.Options.UseFont = true;
             this.txtPayTypePay1.Properties.Appearance.Options.UseTextOptions = true;
             this.txtPayTypePay1.Properties.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
@@ -654,8 +669,11 @@
             // lblPayType4
             // 
             this.lblPayType4.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
-            this.lblPayType4.Appearance.Font = new System.Drawing.Font("Tahoma", 18F);
+            this.lblPayType4.Appearance.Font = new System.Drawing.Font("Calibri", 18F);
             this.lblPayType4.Appearance.ForeColor = System.Drawing.Color.Black;
+            this.lblPayType4.Appearance.Options.UseBackColor = true;
+            this.lblPayType4.Appearance.Options.UseFont = true;
+            this.lblPayType4.Appearance.Options.UseForeColor = true;
             this.lblPayType4.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
             this.lblPayType4.Location = new System.Drawing.Point(127, 137);
             this.lblPayType4.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -668,8 +686,11 @@
             // lblPayType3
             // 
             this.lblPayType3.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
-            this.lblPayType3.Appearance.Font = new System.Drawing.Font("Tahoma", 18F);
+            this.lblPayType3.Appearance.Font = new System.Drawing.Font("Calibri", 18F);
             this.lblPayType3.Appearance.ForeColor = System.Drawing.Color.Black;
+            this.lblPayType3.Appearance.Options.UseBackColor = true;
+            this.lblPayType3.Appearance.Options.UseFont = true;
+            this.lblPayType3.Appearance.Options.UseForeColor = true;
             this.lblPayType3.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
             this.lblPayType3.Location = new System.Drawing.Point(127, 97);
             this.lblPayType3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -682,8 +703,11 @@
             // lblPayType2
             // 
             this.lblPayType2.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
-            this.lblPayType2.Appearance.Font = new System.Drawing.Font("Tahoma", 18F);
+            this.lblPayType2.Appearance.Font = new System.Drawing.Font("Calibri", 18F);
             this.lblPayType2.Appearance.ForeColor = System.Drawing.Color.Black;
+            this.lblPayType2.Appearance.Options.UseBackColor = true;
+            this.lblPayType2.Appearance.Options.UseFont = true;
+            this.lblPayType2.Appearance.Options.UseForeColor = true;
             this.lblPayType2.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
             this.lblPayType2.Location = new System.Drawing.Point(127, 58);
             this.lblPayType2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -696,8 +720,11 @@
             // lblPayType1
             // 
             this.lblPayType1.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
-            this.lblPayType1.Appearance.Font = new System.Drawing.Font("Tahoma", 18F);
+            this.lblPayType1.Appearance.Font = new System.Drawing.Font("Calibri", 18F);
             this.lblPayType1.Appearance.ForeColor = System.Drawing.Color.Black;
+            this.lblPayType1.Appearance.Options.UseBackColor = true;
+            this.lblPayType1.Appearance.Options.UseFont = true;
+            this.lblPayType1.Appearance.Options.UseForeColor = true;
             this.lblPayType1.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
             this.lblPayType1.Location = new System.Drawing.Point(127, 18);
             this.lblPayType1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -756,6 +783,10 @@
             this.labelControl3.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
             this.labelControl3.Appearance.Font = new System.Drawing.Font("Tahoma", 12F);
             this.labelControl3.Appearance.ForeColor = System.Drawing.Color.White;
+            this.labelControl3.Appearance.Options.UseBackColor = true;
+            this.labelControl3.Appearance.Options.UseFont = true;
+            this.labelControl3.Appearance.Options.UseForeColor = true;
+            this.labelControl3.Appearance.Options.UseTextOptions = true;
             this.labelControl3.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.labelControl3.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
             this.labelControl3.Location = new System.Drawing.Point(5, 97);
@@ -784,6 +815,7 @@
             // labelControl2
             // 
             this.labelControl2.Appearance.Font = new System.Drawing.Font("Tahoma", 12F);
+            this.labelControl2.Appearance.Options.UseFont = true;
             this.labelControl2.Location = new System.Drawing.Point(197, 65);
             this.labelControl2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.labelControl2.Name = "labelControl2";
@@ -794,6 +826,7 @@
             // labelControl1
             // 
             this.labelControl1.Appearance.Font = new System.Drawing.Font("Tahoma", 12F);
+            this.labelControl1.Appearance.Options.UseFont = true;
             this.labelControl1.Location = new System.Drawing.Point(197, 30);
             this.labelControl1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.labelControl1.Name = "labelControl1";
@@ -910,6 +943,10 @@
             this.labelControl9.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
             this.labelControl9.Appearance.Font = new System.Drawing.Font("Tahoma", 12F);
             this.labelControl9.Appearance.ForeColor = System.Drawing.Color.White;
+            this.labelControl9.Appearance.Options.UseBackColor = true;
+            this.labelControl9.Appearance.Options.UseFont = true;
+            this.labelControl9.Appearance.Options.UseForeColor = true;
+            this.labelControl9.Appearance.Options.UseTextOptions = true;
             this.labelControl9.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.labelControl9.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
             this.labelControl9.Location = new System.Drawing.Point(5, 55);
@@ -924,6 +961,10 @@
             this.labelControl8.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
             this.labelControl8.Appearance.Font = new System.Drawing.Font("Tahoma", 12F);
             this.labelControl8.Appearance.ForeColor = System.Drawing.Color.White;
+            this.labelControl8.Appearance.Options.UseBackColor = true;
+            this.labelControl8.Appearance.Options.UseFont = true;
+            this.labelControl8.Appearance.Options.UseForeColor = true;
+            this.labelControl8.Appearance.Options.UseTextOptions = true;
             this.labelControl8.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.labelControl8.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
             this.labelControl8.Location = new System.Drawing.Point(5, 22);
@@ -938,6 +979,10 @@
             this.labelControl5.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
             this.labelControl5.Appearance.Font = new System.Drawing.Font("Tahoma", 12F);
             this.labelControl5.Appearance.ForeColor = System.Drawing.Color.White;
+            this.labelControl5.Appearance.Options.UseBackColor = true;
+            this.labelControl5.Appearance.Options.UseFont = true;
+            this.labelControl5.Appearance.Options.UseForeColor = true;
+            this.labelControl5.Appearance.Options.UseTextOptions = true;
             this.labelControl5.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.labelControl5.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
             this.labelControl5.Location = new System.Drawing.Point(5, 138);
@@ -952,6 +997,10 @@
             this.labelControl11.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
             this.labelControl11.Appearance.Font = new System.Drawing.Font("Tahoma", 16F, System.Drawing.FontStyle.Bold);
             this.labelControl11.Appearance.ForeColor = System.Drawing.Color.Black;
+            this.labelControl11.Appearance.Options.UseBackColor = true;
+            this.labelControl11.Appearance.Options.UseFont = true;
+            this.labelControl11.Appearance.Options.UseForeColor = true;
+            this.labelControl11.Appearance.Options.UseTextOptions = true;
             this.labelControl11.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.labelControl11.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
             this.labelControl11.Location = new System.Drawing.Point(5, 209);
@@ -966,6 +1015,10 @@
             this.labelControl10.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
             this.labelControl10.Appearance.Font = new System.Drawing.Font("Tahoma", 12F);
             this.labelControl10.Appearance.ForeColor = System.Drawing.Color.White;
+            this.labelControl10.Appearance.Options.UseBackColor = true;
+            this.labelControl10.Appearance.Options.UseFont = true;
+            this.labelControl10.Appearance.Options.UseForeColor = true;
+            this.labelControl10.Appearance.Options.UseTextOptions = true;
             this.labelControl10.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.labelControl10.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
             this.labelControl10.Location = new System.Drawing.Point(5, 176);
@@ -979,6 +1032,8 @@
             // 
             this.lblTypeName.Appearance.Font = new System.Drawing.Font("Tahoma", 16F, System.Drawing.FontStyle.Bold);
             this.lblTypeName.Appearance.ForeColor = System.Drawing.Color.Red;
+            this.lblTypeName.Appearance.Options.UseFont = true;
+            this.lblTypeName.Appearance.Options.UseForeColor = true;
             this.lblTypeName.Location = new System.Drawing.Point(542, 19);
             this.lblTypeName.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.lblTypeName.Name = "lblTypeName";
@@ -988,10 +1043,12 @@
             // 
             // btnExit
             // 
-            this.btnExit.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
-            this.btnExit.Appearance.Font = new System.Drawing.Font("Tahoma", 14F);
+            this.btnExit.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.btnExit.Appearance.Font = new System.Drawing.Font("Calibri", 16F);
+            this.btnExit.Appearance.ForeColor = System.Drawing.Color.White;
             this.btnExit.Appearance.Options.UseBackColor = true;
             this.btnExit.Appearance.Options.UseFont = true;
+            this.btnExit.Appearance.Options.UseForeColor = true;
             this.btnExit.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
             this.btnExit.Location = new System.Drawing.Point(574, 500);
             this.btnExit.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -1180,6 +1237,8 @@
             // labelControl4
             // 
             this.labelControl4.Appearance.Font = new System.Drawing.Font("Tahoma", 12F);
+            this.labelControl4.Appearance.Options.UseFont = true;
+            this.labelControl4.Appearance.Options.UseTextOptions = true;
             this.labelControl4.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
             this.labelControl4.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
             this.labelControl4.Location = new System.Drawing.Point(339, 500);
