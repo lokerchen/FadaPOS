@@ -29,6 +29,10 @@
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.lblID4 = new System.Windows.Forms.Label();
+            this.lblID3 = new System.Windows.Forms.Label();
+            this.lblID2 = new System.Windows.Forms.Label();
+            this.lblID1 = new System.Windows.Forms.Label();
             this.btnCancel = new DevExpress.XtraEditors.SimpleButton();
             this.btnOK = new DevExpress.XtraEditors.SimpleButton();
             this.btn4 = new DevExpress.XtraEditors.SimpleButton();
@@ -36,10 +40,6 @@
             this.btn2 = new DevExpress.XtraEditors.SimpleButton();
             this.btn1 = new DevExpress.XtraEditors.SimpleButton();
             this.label1 = new System.Windows.Forms.Label();
-            this.lblID1 = new System.Windows.Forms.Label();
-            this.lblID2 = new System.Windows.Forms.Label();
-            this.lblID3 = new System.Windows.Forms.Label();
-            this.lblID4 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -66,10 +66,54 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Free Items";
             // 
+            // lblID4
+            // 
+            this.lblID4.AutoSize = true;
+            this.lblID4.Font = new System.Drawing.Font("微软雅黑", 9F);
+            this.lblID4.Location = new System.Drawing.Point(407, 188);
+            this.lblID4.Name = "lblID4";
+            this.lblID4.Size = new System.Drawing.Size(43, 17);
+            this.lblID4.TabIndex = 13;
+            this.lblID4.Text = "label2";
+            this.lblID4.Visible = false;
+            // 
+            // lblID3
+            // 
+            this.lblID3.AutoSize = true;
+            this.lblID3.Font = new System.Drawing.Font("微软雅黑", 9F);
+            this.lblID3.Location = new System.Drawing.Point(23, 189);
+            this.lblID3.Name = "lblID3";
+            this.lblID3.Size = new System.Drawing.Size(43, 17);
+            this.lblID3.TabIndex = 12;
+            this.lblID3.Text = "label2";
+            this.lblID3.Visible = false;
+            // 
+            // lblID2
+            // 
+            this.lblID2.AutoSize = true;
+            this.lblID2.Font = new System.Drawing.Font("微软雅黑", 9F);
+            this.lblID2.Location = new System.Drawing.Point(405, 51);
+            this.lblID2.Name = "lblID2";
+            this.lblID2.Size = new System.Drawing.Size(43, 17);
+            this.lblID2.TabIndex = 11;
+            this.lblID2.Text = "label2";
+            this.lblID2.Visible = false;
+            // 
+            // lblID1
+            // 
+            this.lblID1.AutoSize = true;
+            this.lblID1.Font = new System.Drawing.Font("微软雅黑", 9F);
+            this.lblID1.Location = new System.Drawing.Point(24, 51);
+            this.lblID1.Name = "lblID1";
+            this.lblID1.Size = new System.Drawing.Size(43, 17);
+            this.lblID1.TabIndex = 10;
+            this.lblID1.Text = "label2";
+            this.lblID1.Visible = false;
+            // 
             // btnCancel
             // 
-            this.btnCancel.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
-            this.btnCancel.Appearance.Font = new System.Drawing.Font("Tahoma", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCancel.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.btnCancel.Appearance.Font = new System.Drawing.Font("Calibri", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCancel.Appearance.ForeColor = System.Drawing.Color.White;
             this.btnCancel.Appearance.Options.UseBackColor = true;
             this.btnCancel.Appearance.Options.UseFont = true;
@@ -85,8 +129,8 @@
             // 
             // btnOK
             // 
-            this.btnOK.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
-            this.btnOK.Appearance.Font = new System.Drawing.Font("Tahoma", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnOK.Appearance.BackColor = System.Drawing.Color.Green;
+            this.btnOK.Appearance.Font = new System.Drawing.Font("Calibri", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnOK.Appearance.ForeColor = System.Drawing.Color.White;
             this.btnOK.Appearance.Options.UseBackColor = true;
             this.btnOK.Appearance.Options.UseFont = true;
@@ -103,7 +147,7 @@
             // btn4
             // 
             this.btn4.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
-            this.btn4.Appearance.Font = new System.Drawing.Font("Tahoma", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn4.Appearance.Font = new System.Drawing.Font("Calibri", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn4.Appearance.ForeColor = System.Drawing.Color.Black;
             this.btn4.Appearance.Options.UseBackColor = true;
             this.btn4.Appearance.Options.UseFont = true;
@@ -118,7 +162,7 @@
             // btn3
             // 
             this.btn3.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
-            this.btn3.Appearance.Font = new System.Drawing.Font("Tahoma", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn3.Appearance.Font = new System.Drawing.Font("Calibri", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn3.Appearance.ForeColor = System.Drawing.Color.Black;
             this.btn3.Appearance.Options.UseBackColor = true;
             this.btn3.Appearance.Options.UseFont = true;
@@ -133,7 +177,7 @@
             // btn2
             // 
             this.btn2.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
-            this.btn2.Appearance.Font = new System.Drawing.Font("Tahoma", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn2.Appearance.Font = new System.Drawing.Font("Calibri", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn2.Appearance.ForeColor = System.Drawing.Color.Black;
             this.btn2.Appearance.Options.UseBackColor = true;
             this.btn2.Appearance.Options.UseFont = true;
@@ -148,7 +192,7 @@
             // btn1
             // 
             this.btn1.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
-            this.btn1.Appearance.Font = new System.Drawing.Font("Tahoma", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn1.Appearance.Font = new System.Drawing.Font("Calibri", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn1.Appearance.ForeColor = System.Drawing.Color.Black;
             this.btn1.Appearance.Options.UseBackColor = true;
             this.btn1.Appearance.Options.UseFont = true;
@@ -163,57 +207,13 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("微软雅黑", 14F);
+            this.label1.Font = new System.Drawing.Font("Calibri", 16F);
             this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.label1.Location = new System.Drawing.Point(19, 26);
+            this.label1.Location = new System.Drawing.Point(42, 24);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(400, 25);
+            this.label1.Size = new System.Drawing.Size(395, 27);
             this.label1.TabIndex = 0;
             this.label1.Text = "Customer eligible for the free items below";
-            // 
-            // lblID1
-            // 
-            this.lblID1.AutoSize = true;
-            this.lblID1.Font = new System.Drawing.Font("微软雅黑", 9F);
-            this.lblID1.Location = new System.Drawing.Point(24, 51);
-            this.lblID1.Name = "lblID1";
-            this.lblID1.Size = new System.Drawing.Size(43, 17);
-            this.lblID1.TabIndex = 10;
-            this.lblID1.Text = "label2";
-            this.lblID1.Visible = false;
-            // 
-            // lblID2
-            // 
-            this.lblID2.AutoSize = true;
-            this.lblID2.Font = new System.Drawing.Font("微软雅黑", 9F);
-            this.lblID2.Location = new System.Drawing.Point(405, 51);
-            this.lblID2.Name = "lblID2";
-            this.lblID2.Size = new System.Drawing.Size(43, 17);
-            this.lblID2.TabIndex = 11;
-            this.lblID2.Text = "label2";
-            this.lblID2.Visible = false;
-            // 
-            // lblID3
-            // 
-            this.lblID3.AutoSize = true;
-            this.lblID3.Font = new System.Drawing.Font("微软雅黑", 9F);
-            this.lblID3.Location = new System.Drawing.Point(23, 189);
-            this.lblID3.Name = "lblID3";
-            this.lblID3.Size = new System.Drawing.Size(43, 17);
-            this.lblID3.TabIndex = 12;
-            this.lblID3.Text = "label2";
-            this.lblID3.Visible = false;
-            // 
-            // lblID4
-            // 
-            this.lblID4.AutoSize = true;
-            this.lblID4.Font = new System.Drawing.Font("微软雅黑", 9F);
-            this.lblID4.Location = new System.Drawing.Point(407, 188);
-            this.lblID4.Name = "lblID4";
-            this.lblID4.Size = new System.Drawing.Size(43, 17);
-            this.lblID4.TabIndex = 13;
-            this.lblID4.Text = "label2";
-            this.lblID4.Visible = false;
             // 
             // FrmFreeItem
             // 
