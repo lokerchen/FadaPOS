@@ -39,52 +39,56 @@
             // btnMs3
             // 
             this.btnMs3.Appearance.BackColor = System.Drawing.Color.LightSkyBlue;
-            this.btnMs3.Appearance.Font = new System.Drawing.Font("Tahoma", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnMs3.Appearance.Font = new System.Drawing.Font("Calibri", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnMs3.Appearance.Options.UseBackColor = true;
             this.btnMs3.Appearance.Options.UseFont = true;
             this.btnMs3.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
-            this.btnMs3.Location = new System.Drawing.Point(468, 25);
+            this.btnMs3.Location = new System.Drawing.Point(410, 19);
+            this.btnMs3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnMs3.Name = "btnMs3";
-            this.btnMs3.Size = new System.Drawing.Size(148, 57);
+            this.btnMs3.Size = new System.Drawing.Size(130, 44);
             this.btnMs3.TabIndex = 3;
             this.btnMs3.Text = "4";
             // 
             // btnMs2
             // 
             this.btnMs2.Appearance.BackColor = System.Drawing.Color.LightSkyBlue;
-            this.btnMs2.Appearance.Font = new System.Drawing.Font("Tahoma", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnMs2.Appearance.Font = new System.Drawing.Font("Calibri", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnMs2.Appearance.Options.UseBackColor = true;
             this.btnMs2.Appearance.Options.UseFont = true;
             this.btnMs2.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
-            this.btnMs2.Location = new System.Drawing.Point(314, 25);
+            this.btnMs2.Location = new System.Drawing.Point(275, 19);
+            this.btnMs2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnMs2.Name = "btnMs2";
-            this.btnMs2.Size = new System.Drawing.Size(148, 57);
+            this.btnMs2.Size = new System.Drawing.Size(130, 44);
             this.btnMs2.TabIndex = 2;
             this.btnMs2.Text = "3";
             // 
             // btnMs1
             // 
             this.btnMs1.Appearance.BackColor = System.Drawing.Color.LightSkyBlue;
-            this.btnMs1.Appearance.Font = new System.Drawing.Font("Tahoma", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnMs1.Appearance.Font = new System.Drawing.Font("Calibri", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnMs1.Appearance.Options.UseBackColor = true;
             this.btnMs1.Appearance.Options.UseFont = true;
             this.btnMs1.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
-            this.btnMs1.Location = new System.Drawing.Point(160, 25);
+            this.btnMs1.Location = new System.Drawing.Point(140, 19);
+            this.btnMs1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnMs1.Name = "btnMs1";
-            this.btnMs1.Size = new System.Drawing.Size(148, 57);
+            this.btnMs1.Size = new System.Drawing.Size(130, 44);
             this.btnMs1.TabIndex = 1;
             this.btnMs1.Text = "2";
             // 
             // btnMs0
             // 
             this.btnMs0.Appearance.BackColor = System.Drawing.Color.LightSkyBlue;
-            this.btnMs0.Appearance.Font = new System.Drawing.Font("Tahoma", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnMs0.Appearance.Font = new System.Drawing.Font("Calibri", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnMs0.Appearance.Options.UseBackColor = true;
             this.btnMs0.Appearance.Options.UseFont = true;
             this.btnMs0.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
-            this.btnMs0.Location = new System.Drawing.Point(6, 25);
+            this.btnMs0.Location = new System.Drawing.Point(5, 19);
+            this.btnMs0.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnMs0.Name = "btnMs0";
-            this.btnMs0.Size = new System.Drawing.Size(148, 57);
+            this.btnMs0.Size = new System.Drawing.Size(130, 44);
             this.btnMs0.TabIndex = 0;
             this.btnMs0.Text = "1";
             // 
@@ -94,20 +98,24 @@
             this.groupBox1.Controls.Add(this.btnMs1);
             this.groupBox1.Controls.Add(this.btnMs2);
             this.groupBox1.Controls.Add(this.btnMs3);
-            this.groupBox1.Location = new System.Drawing.Point(12, 12);
+            this.groupBox1.Font = new System.Drawing.Font("Calibri", 12F);
+            this.groupBox1.Location = new System.Drawing.Point(10, 9);
+            this.groupBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(624, 94);
+            this.groupBox1.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.groupBox1.Size = new System.Drawing.Size(546, 73);
             this.groupBox1.TabIndex = 6;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Select a menu";
             // 
             // FrmTaMenuSelect
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 18F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 14F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(645, 115);
+            this.ClientSize = new System.Drawing.Size(564, 89);
             this.Controls.Add(this.groupBox1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "FrmTaMenuSelect";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "FrmTaMenuSelect";
