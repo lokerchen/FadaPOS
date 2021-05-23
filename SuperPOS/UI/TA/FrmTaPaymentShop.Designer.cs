@@ -109,6 +109,7 @@
             // 
             this.groupBox1.Controls.Add(this.btnFastFood);
             this.groupBox1.Controls.Add(this.btnPercent);
+            this.groupBox1.Controls.Add(this.webBrowser1);
             this.groupBox1.Controls.Add(this.lblCtlSurcharge);
             this.groupBox1.Controls.Add(this.btnNotPaid);
             this.groupBox1.Controls.Add(this.lblCtlDiscount);
@@ -122,7 +123,7 @@
             this.groupBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.groupBox1.Size = new System.Drawing.Size(711, 443);
+            this.groupBox1.Size = new System.Drawing.Size(676, 456);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Payment";
@@ -136,7 +137,7 @@
             this.btnFastFood.Appearance.Options.UseFont = true;
             this.btnFastFood.Appearance.Options.UseForeColor = true;
             this.btnFastFood.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
-            this.btnFastFood.Location = new System.Drawing.Point(547, 395);
+            this.btnFastFood.Location = new System.Drawing.Point(511, 412);
             this.btnFastFood.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnFastFood.Name = "btnFastFood";
             this.btnFastFood.Size = new System.Drawing.Size(144, 37);
@@ -152,7 +153,7 @@
             this.btnPercent.Appearance.Options.UseBackColor = true;
             this.btnPercent.Appearance.Options.UseFont = true;
             this.btnPercent.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
-            this.btnPercent.Location = new System.Drawing.Point(110, 131);
+            this.btnPercent.Location = new System.Drawing.Point(16, 126);
             this.btnPercent.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnPercent.Name = "btnPercent";
             this.btnPercent.Size = new System.Drawing.Size(52, 35);
@@ -164,7 +165,7 @@
             // lblCtlSurcharge
             // 
             this.lblCtlSurcharge.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
-            this.lblCtlSurcharge.Location = new System.Drawing.Point(63, 112);
+            this.lblCtlSurcharge.Location = new System.Drawing.Point(18, 93);
             this.lblCtlSurcharge.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.lblCtlSurcharge.Name = "lblCtlSurcharge";
             this.lblCtlSurcharge.Size = new System.Drawing.Size(55, 14);
@@ -179,7 +180,7 @@
             this.btnNotPaid.Appearance.Options.UseBackColor = true;
             this.btnNotPaid.Appearance.Options.UseFont = true;
             this.btnNotPaid.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
-            this.btnNotPaid.Location = new System.Drawing.Point(547, 347);
+            this.btnNotPaid.Location = new System.Drawing.Point(511, 357);
             this.btnNotPaid.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnNotPaid.Name = "btnNotPaid";
             this.btnNotPaid.Size = new System.Drawing.Size(144, 37);
@@ -190,7 +191,7 @@
             // lblCtlDiscount
             // 
             this.lblCtlDiscount.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
-            this.lblCtlDiscount.Location = new System.Drawing.Point(63, 78);
+            this.lblCtlDiscount.Location = new System.Drawing.Point(18, 46);
             this.lblCtlDiscount.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.lblCtlDiscount.Name = "lblCtlDiscount";
             this.lblCtlDiscount.Size = new System.Drawing.Size(55, 16);
@@ -205,7 +206,7 @@
             this.groupBox5.Controls.Add(this.btnPrtKitOnly);
             this.groupBox5.Controls.Add(this.btnPrtAllReceipt);
             this.groupBox5.Controls.Add(this.btnPrtBillOnly);
-            this.groupBox5.Location = new System.Drawing.Point(542, 58);
+            this.groupBox5.Location = new System.Drawing.Point(511, 55);
             this.groupBox5.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.groupBox5.Name = "groupBox5";
             this.groupBox5.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -303,7 +304,7 @@
             this.groupBox4.Controls.Add(this.btn9);
             this.groupBox4.Controls.Add(this.btn8);
             this.groupBox4.Controls.Add(this.btn7);
-            this.groupBox4.Location = new System.Drawing.Point(349, 219);
+            this.groupBox4.Location = new System.Drawing.Point(312, 231);
             this.groupBox4.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.groupBox4.Name = "groupBox4";
             this.groupBox4.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -518,11 +519,11 @@
             this.groupBox3.Controls.Add(this.lblPayType3);
             this.groupBox3.Controls.Add(this.lblPayType2);
             this.groupBox3.Controls.Add(this.lblPayType1);
-            this.groupBox3.Location = new System.Drawing.Point(178, 17);
+            this.groupBox3.Location = new System.Drawing.Point(135, 17);
             this.groupBox3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.groupBox3.Name = "groupBox3";
             this.groupBox3.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.groupBox3.Size = new System.Drawing.Size(267, 205);
+            this.groupBox3.Size = new System.Drawing.Size(365, 211);
             this.groupBox3.TabIndex = 90;
             this.groupBox3.TabStop = false;
             // 
@@ -538,7 +539,7 @@
             this.txtPayTypePay5.Properties.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
             this.txtPayTypePay5.Properties.Mask.EditMask = "f2";
             this.txtPayTypePay5.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Numeric;
-            this.txtPayTypePay5.Size = new System.Drawing.Size(114, 32);
+            this.txtPayTypePay5.Size = new System.Drawing.Size(158, 32);
             this.txtPayTypePay5.TabIndex = 98;
             this.txtPayTypePay5.EditValueChanged += new System.EventHandler(this.txtPayTypePay5_EditValueChanged);
             this.txtPayTypePay5.MouseDown += new System.Windows.Forms.MouseEventHandler(this.txtPayTypePay5_MouseDown);
@@ -546,10 +547,13 @@
             // lblPayType5
             // 
             this.lblPayType5.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
-            this.lblPayType5.Appearance.Font = new System.Drawing.Font("Tahoma", 18F);
-            this.lblPayType5.Appearance.ForeColor = System.Drawing.Color.Black;
+            this.lblPayType5.Appearance.Font = new System.Drawing.Font("Calibri", 20F);
+            this.lblPayType5.Appearance.ForeColor = System.Drawing.Color.White;
+            this.lblPayType5.Appearance.Options.UseBackColor = true;
+            this.lblPayType5.Appearance.Options.UseFont = true;
+            this.lblPayType5.Appearance.Options.UseForeColor = true;
             this.lblPayType5.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
-            this.lblPayType5.Location = new System.Drawing.Point(127, 173);
+            this.lblPayType5.Location = new System.Drawing.Point(170, 173);
             this.lblPayType5.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.lblPayType5.Name = "lblPayType5";
             this.lblPayType5.Size = new System.Drawing.Size(108, 28);
@@ -569,7 +573,7 @@
             this.txtPayTypePay4.Properties.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
             this.txtPayTypePay4.Properties.Mask.EditMask = "f2";
             this.txtPayTypePay4.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Numeric;
-            this.txtPayTypePay4.Size = new System.Drawing.Size(114, 32);
+            this.txtPayTypePay4.Size = new System.Drawing.Size(158, 32);
             this.txtPayTypePay4.TabIndex = 96;
             this.txtPayTypePay4.EditValueChanged += new System.EventHandler(this.txtPayTypePay4_EditValueChanged);
             this.txtPayTypePay4.MouseDown += new System.Windows.Forms.MouseEventHandler(this.txtPayTypePay4_MouseDown);
@@ -586,7 +590,7 @@
             this.txtPayTypePay3.Properties.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
             this.txtPayTypePay3.Properties.Mask.EditMask = "f2";
             this.txtPayTypePay3.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Numeric;
-            this.txtPayTypePay3.Size = new System.Drawing.Size(114, 32);
+            this.txtPayTypePay3.Size = new System.Drawing.Size(156, 32);
             this.txtPayTypePay3.TabIndex = 95;
             this.txtPayTypePay3.EditValueChanged += new System.EventHandler(this.txtPayTypePay3_EditValueChanged);
             this.txtPayTypePay3.MouseDown += new System.Windows.Forms.MouseEventHandler(this.txtPayTypePay3_MouseDown);
@@ -603,7 +607,7 @@
             this.txtPayTypePay2.Properties.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
             this.txtPayTypePay2.Properties.Mask.EditMask = "f2";
             this.txtPayTypePay2.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Numeric;
-            this.txtPayTypePay2.Size = new System.Drawing.Size(114, 32);
+            this.txtPayTypePay2.Size = new System.Drawing.Size(156, 32);
             this.txtPayTypePay2.TabIndex = 94;
             this.txtPayTypePay2.EditValueChanged += new System.EventHandler(this.txtPayTypePay2_EditValueChanged);
             this.txtPayTypePay2.MouseDown += new System.Windows.Forms.MouseEventHandler(this.txtPayTypePay2_MouseDown);
@@ -620,7 +624,7 @@
             this.txtPayTypePay1.Properties.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
             this.txtPayTypePay1.Properties.Mask.EditMask = "f2";
             this.txtPayTypePay1.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Numeric;
-            this.txtPayTypePay1.Size = new System.Drawing.Size(114, 32);
+            this.txtPayTypePay1.Size = new System.Drawing.Size(156, 32);
             this.txtPayTypePay1.TabIndex = 93;
             this.txtPayTypePay1.EditValueChanged += new System.EventHandler(this.txtPayTypePay1_EditValueChanged);
             this.txtPayTypePay1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.txtPayTypePay1_MouseDown);
@@ -628,10 +632,13 @@
             // lblPayType4
             // 
             this.lblPayType4.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
-            this.lblPayType4.Appearance.Font = new System.Drawing.Font("Tahoma", 18F);
-            this.lblPayType4.Appearance.ForeColor = System.Drawing.Color.Black;
+            this.lblPayType4.Appearance.Font = new System.Drawing.Font("Calibri", 20F);
+            this.lblPayType4.Appearance.ForeColor = System.Drawing.Color.White;
+            this.lblPayType4.Appearance.Options.UseBackColor = true;
+            this.lblPayType4.Appearance.Options.UseFont = true;
+            this.lblPayType4.Appearance.Options.UseForeColor = true;
             this.lblPayType4.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
-            this.lblPayType4.Location = new System.Drawing.Point(127, 137);
+            this.lblPayType4.Location = new System.Drawing.Point(170, 137);
             this.lblPayType4.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.lblPayType4.Name = "lblPayType4";
             this.lblPayType4.Size = new System.Drawing.Size(108, 28);
@@ -642,10 +649,13 @@
             // lblPayType3
             // 
             this.lblPayType3.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
-            this.lblPayType3.Appearance.Font = new System.Drawing.Font("Tahoma", 18F);
-            this.lblPayType3.Appearance.ForeColor = System.Drawing.Color.Black;
+            this.lblPayType3.Appearance.Font = new System.Drawing.Font("Calibri", 20F);
+            this.lblPayType3.Appearance.ForeColor = System.Drawing.Color.White;
+            this.lblPayType3.Appearance.Options.UseBackColor = true;
+            this.lblPayType3.Appearance.Options.UseFont = true;
+            this.lblPayType3.Appearance.Options.UseForeColor = true;
             this.lblPayType3.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
-            this.lblPayType3.Location = new System.Drawing.Point(127, 97);
+            this.lblPayType3.Location = new System.Drawing.Point(170, 97);
             this.lblPayType3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.lblPayType3.Name = "lblPayType3";
             this.lblPayType3.Size = new System.Drawing.Size(108, 28);
@@ -656,10 +666,13 @@
             // lblPayType2
             // 
             this.lblPayType2.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
-            this.lblPayType2.Appearance.Font = new System.Drawing.Font("Tahoma", 18F);
-            this.lblPayType2.Appearance.ForeColor = System.Drawing.Color.Black;
+            this.lblPayType2.Appearance.Font = new System.Drawing.Font("Calibri", 20F);
+            this.lblPayType2.Appearance.ForeColor = System.Drawing.Color.White;
+            this.lblPayType2.Appearance.Options.UseBackColor = true;
+            this.lblPayType2.Appearance.Options.UseFont = true;
+            this.lblPayType2.Appearance.Options.UseForeColor = true;
             this.lblPayType2.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
-            this.lblPayType2.Location = new System.Drawing.Point(127, 58);
+            this.lblPayType2.Location = new System.Drawing.Point(170, 58);
             this.lblPayType2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.lblPayType2.Name = "lblPayType2";
             this.lblPayType2.Size = new System.Drawing.Size(108, 28);
@@ -670,10 +683,13 @@
             // lblPayType1
             // 
             this.lblPayType1.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
-            this.lblPayType1.Appearance.Font = new System.Drawing.Font("Tahoma", 18F);
-            this.lblPayType1.Appearance.ForeColor = System.Drawing.Color.Black;
+            this.lblPayType1.Appearance.Font = new System.Drawing.Font("Calibri", 20F);
+            this.lblPayType1.Appearance.ForeColor = System.Drawing.Color.White;
+            this.lblPayType1.Appearance.Options.UseBackColor = true;
+            this.lblPayType1.Appearance.Options.UseFont = true;
+            this.lblPayType1.Appearance.Options.UseForeColor = true;
             this.lblPayType1.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
-            this.lblPayType1.Location = new System.Drawing.Point(127, 18);
+            this.lblPayType1.Location = new System.Drawing.Point(170, 18);
             this.lblPayType1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.lblPayType1.Name = "lblPayType1";
             this.lblPayType1.Size = new System.Drawing.Size(108, 28);
@@ -697,11 +713,11 @@
             this.groupBox2.Controls.Add(this.labelControl5);
             this.groupBox2.Controls.Add(this.labelControl11);
             this.groupBox2.Controls.Add(this.labelControl10);
-            this.groupBox2.Location = new System.Drawing.Point(5, 219);
+            this.groupBox2.Location = new System.Drawing.Point(5, 231);
             this.groupBox2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.groupBox2.Size = new System.Drawing.Size(339, 215);
+            this.groupBox2.Size = new System.Drawing.Size(301, 215);
             this.groupBox2.TabIndex = 89;
             this.groupBox2.TabStop = false;
             // 
@@ -715,7 +731,7 @@
             this.txtPercentDiscount.Properties.Appearance.Options.UseFont = true;
             this.txtPercentDiscount.Properties.Appearance.Options.UseTextOptions = true;
             this.txtPercentDiscount.Properties.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
-            this.txtPercentDiscount.Size = new System.Drawing.Size(62, 32);
+            this.txtPercentDiscount.Size = new System.Drawing.Size(50, 32);
             this.txtPercentDiscount.TabIndex = 103;
             this.txtPercentDiscount.EditValueChanged += new System.EventHandler(this.txtPercentDiscount_EditValueChanged);
             this.txtPercentDiscount.MouseDown += new System.Windows.Forms.MouseEventHandler(this.txtPercentDiscount_MouseDown);
@@ -723,7 +739,8 @@
             // labelControl2
             // 
             this.labelControl2.Appearance.Font = new System.Drawing.Font("Tahoma", 12F);
-            this.labelControl2.Location = new System.Drawing.Point(197, 65);
+            this.labelControl2.Appearance.Options.UseFont = true;
+            this.labelControl2.Location = new System.Drawing.Point(183, 65);
             this.labelControl2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.labelControl2.Name = "labelControl2";
             this.labelControl2.Size = new System.Drawing.Size(16, 19);
@@ -733,7 +750,8 @@
             // labelControl1
             // 
             this.labelControl1.Appearance.Font = new System.Drawing.Font("Tahoma", 12F);
-            this.labelControl1.Location = new System.Drawing.Point(197, 30);
+            this.labelControl1.Appearance.Options.UseFont = true;
+            this.labelControl1.Location = new System.Drawing.Point(183, 30);
             this.labelControl1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.labelControl1.Name = "labelControl1";
             this.labelControl1.Size = new System.Drawing.Size(16, 19);
@@ -751,7 +769,7 @@
             this.txtPercentSurcharge.Properties.Appearance.Options.UseTextOptions = true;
             this.txtPercentSurcharge.Properties.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
             this.txtPercentSurcharge.Properties.Mask.EditMask = "f2";
-            this.txtPercentSurcharge.Size = new System.Drawing.Size(62, 32);
+            this.txtPercentSurcharge.Size = new System.Drawing.Size(50, 32);
             this.txtPercentSurcharge.TabIndex = 104;
             this.txtPercentSurcharge.EditValueChanged += new System.EventHandler(this.txtPercentSurcharge_EditValueChanged);
             this.txtPercentSurcharge.MouseDown += new System.Windows.Forms.MouseEventHandler(this.txtPercentSurcharge_MouseDown);
@@ -771,7 +789,7 @@
             this.txtChange.Properties.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
             this.txtChange.Properties.Mask.EditMask = "f2";
             this.txtChange.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Numeric;
-            this.txtChange.Size = new System.Drawing.Size(200, 36);
+            this.txtChange.Size = new System.Drawing.Size(166, 36);
             this.txtChange.TabIndex = 102;
             // 
             // txtToPay
@@ -789,7 +807,7 @@
             this.txtToPay.Properties.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
             this.txtToPay.Properties.Mask.EditMask = "f2";
             this.txtToPay.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Numeric;
-            this.txtToPay.Size = new System.Drawing.Size(200, 32);
+            this.txtToPay.Size = new System.Drawing.Size(166, 32);
             this.txtToPay.TabIndex = 101;
             // 
             // txtTendered
@@ -807,13 +825,13 @@
             this.txtTendered.Properties.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
             this.txtTendered.Properties.Mask.EditMask = "f2";
             this.txtTendered.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Numeric;
-            this.txtTendered.Size = new System.Drawing.Size(200, 32);
+            this.txtTendered.Size = new System.Drawing.Size(166, 32);
             this.txtTendered.TabIndex = 100;
             // 
             // txtSurcharge
             // 
             this.txtSurcharge.EditValue = "0.00";
-            this.txtSurcharge.Location = new System.Drawing.Point(224, 52);
+            this.txtSurcharge.Location = new System.Drawing.Point(210, 52);
             this.txtSurcharge.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtSurcharge.Name = "txtSurcharge";
             this.txtSurcharge.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 16F);
@@ -822,7 +840,7 @@
             this.txtSurcharge.Properties.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
             this.txtSurcharge.Properties.Mask.EditMask = "f2";
             this.txtSurcharge.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Numeric;
-            this.txtSurcharge.Size = new System.Drawing.Size(106, 32);
+            this.txtSurcharge.Size = new System.Drawing.Size(86, 32);
             this.txtSurcharge.TabIndex = 99;
             this.txtSurcharge.EditValueChanged += new System.EventHandler(this.txtSurcharge_EditValueChanged);
             this.txtSurcharge.MouseDown += new System.Windows.Forms.MouseEventHandler(this.txtSurcharge_MouseDown);
@@ -830,7 +848,7 @@
             // txtDiscount
             // 
             this.txtDiscount.EditValue = "0.00";
-            this.txtDiscount.Location = new System.Drawing.Point(224, 19);
+            this.txtDiscount.Location = new System.Drawing.Point(210, 19);
             this.txtDiscount.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtDiscount.Name = "txtDiscount";
             this.txtDiscount.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 16F);
@@ -839,16 +857,18 @@
             this.txtDiscount.Properties.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
             this.txtDiscount.Properties.Mask.EditMask = "f2";
             this.txtDiscount.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Numeric;
-            this.txtDiscount.Size = new System.Drawing.Size(106, 32);
+            this.txtDiscount.Size = new System.Drawing.Size(86, 32);
             this.txtDiscount.TabIndex = 98;
             this.txtDiscount.EditValueChanged += new System.EventHandler(this.txtDiscount_EditValueChanged);
             this.txtDiscount.MouseDown += new System.Windows.Forms.MouseEventHandler(this.txtDiscount_MouseDown);
             // 
             // labelControl9
             // 
-            this.labelControl9.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
-            this.labelControl9.Appearance.Font = new System.Drawing.Font("Tahoma", 12F);
-            this.labelControl9.Appearance.ForeColor = System.Drawing.Color.White;
+            this.labelControl9.Appearance.Font = new System.Drawing.Font("Calibri", 14F);
+            this.labelControl9.Appearance.ForeColor = System.Drawing.Color.Black;
+            this.labelControl9.Appearance.Options.UseFont = true;
+            this.labelControl9.Appearance.Options.UseForeColor = true;
+            this.labelControl9.Appearance.Options.UseTextOptions = true;
             this.labelControl9.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.labelControl9.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
             this.labelControl9.Location = new System.Drawing.Point(5, 55);
@@ -860,9 +880,11 @@
             // 
             // labelControl8
             // 
-            this.labelControl8.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
-            this.labelControl8.Appearance.Font = new System.Drawing.Font("Tahoma", 12F);
-            this.labelControl8.Appearance.ForeColor = System.Drawing.Color.White;
+            this.labelControl8.Appearance.Font = new System.Drawing.Font("Calibri", 14F);
+            this.labelControl8.Appearance.ForeColor = System.Drawing.Color.Black;
+            this.labelControl8.Appearance.Options.UseFont = true;
+            this.labelControl8.Appearance.Options.UseForeColor = true;
+            this.labelControl8.Appearance.Options.UseTextOptions = true;
             this.labelControl8.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.labelControl8.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
             this.labelControl8.Location = new System.Drawing.Point(5, 22);
@@ -874,9 +896,11 @@
             // 
             // labelControl5
             // 
-            this.labelControl5.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
-            this.labelControl5.Appearance.Font = new System.Drawing.Font("Tahoma", 12F);
-            this.labelControl5.Appearance.ForeColor = System.Drawing.Color.White;
+            this.labelControl5.Appearance.Font = new System.Drawing.Font("Calibri", 14F);
+            this.labelControl5.Appearance.ForeColor = System.Drawing.Color.Black;
+            this.labelControl5.Appearance.Options.UseFont = true;
+            this.labelControl5.Appearance.Options.UseForeColor = true;
+            this.labelControl5.Appearance.Options.UseTextOptions = true;
             this.labelControl5.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.labelControl5.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
             this.labelControl5.Location = new System.Drawing.Point(5, 100);
@@ -889,8 +913,12 @@
             // labelControl11
             // 
             this.labelControl11.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.labelControl11.Appearance.Font = new System.Drawing.Font("Tahoma", 16F, System.Drawing.FontStyle.Bold);
+            this.labelControl11.Appearance.Font = new System.Drawing.Font("Calibri", 18F);
             this.labelControl11.Appearance.ForeColor = System.Drawing.Color.Black;
+            this.labelControl11.Appearance.Options.UseBackColor = true;
+            this.labelControl11.Appearance.Options.UseFont = true;
+            this.labelControl11.Appearance.Options.UseForeColor = true;
+            this.labelControl11.Appearance.Options.UseTextOptions = true;
             this.labelControl11.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.labelControl11.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
             this.labelControl11.Location = new System.Drawing.Point(5, 171);
@@ -902,9 +930,11 @@
             // 
             // labelControl10
             // 
-            this.labelControl10.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
-            this.labelControl10.Appearance.Font = new System.Drawing.Font("Tahoma", 12F);
-            this.labelControl10.Appearance.ForeColor = System.Drawing.Color.White;
+            this.labelControl10.Appearance.Font = new System.Drawing.Font("Calibri", 16F, System.Drawing.FontStyle.Bold);
+            this.labelControl10.Appearance.ForeColor = System.Drawing.Color.Black;
+            this.labelControl10.Appearance.Options.UseFont = true;
+            this.labelControl10.Appearance.Options.UseForeColor = true;
+            this.labelControl10.Appearance.Options.UseTextOptions = true;
             this.labelControl10.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.labelControl10.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
             this.labelControl10.Location = new System.Drawing.Point(5, 138);
@@ -918,6 +948,8 @@
             // 
             this.lblTypeName.Appearance.Font = new System.Drawing.Font("Tahoma", 16F, System.Drawing.FontStyle.Bold);
             this.lblTypeName.Appearance.ForeColor = System.Drawing.Color.Red;
+            this.lblTypeName.Appearance.Options.UseFont = true;
+            this.lblTypeName.Appearance.Options.UseForeColor = true;
             this.lblTypeName.Location = new System.Drawing.Point(542, 26);
             this.lblTypeName.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.lblTypeName.Name = "lblTypeName";
@@ -927,22 +959,24 @@
             // 
             // btnExit
             // 
-            this.btnExit.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
-            this.btnExit.Appearance.Font = new System.Drawing.Font("Tahoma", 14F);
+            this.btnExit.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.btnExit.Appearance.Font = new System.Drawing.Font("Calibri", 16F, System.Drawing.FontStyle.Bold);
+            this.btnExit.Appearance.ForeColor = System.Drawing.Color.White;
             this.btnExit.Appearance.Options.UseBackColor = true;
             this.btnExit.Appearance.Options.UseFont = true;
+            this.btnExit.Appearance.Options.UseForeColor = true;
             this.btnExit.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
-            this.btnExit.Location = new System.Drawing.Point(430, 458);
+            this.btnExit.Location = new System.Drawing.Point(518, 468);
             this.btnExit.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnExit.Name = "btnExit";
-            this.btnExit.Size = new System.Drawing.Size(132, 37);
+            this.btnExit.Size = new System.Drawing.Size(144, 37);
             this.btnExit.TabIndex = 45;
             this.btnExit.Text = "Exit";
             this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
             // 
             // webBrowser1
             // 
-            this.webBrowser1.Location = new System.Drawing.Point(615, 458);
+            this.webBrowser1.Location = new System.Drawing.Point(10, 184);
             this.webBrowser1.MinimumSize = new System.Drawing.Size(20, 20);
             this.webBrowser1.Name = "webBrowser1";
             this.webBrowser1.Size = new System.Drawing.Size(83, 36);
@@ -952,6 +986,8 @@
             // labelControl3
             // 
             this.labelControl3.Appearance.Font = new System.Drawing.Font("Tahoma", 12F);
+            this.labelControl3.Appearance.Options.UseFont = true;
+            this.labelControl3.Appearance.Options.UseTextOptions = true;
             this.labelControl3.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
             this.labelControl3.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
             this.labelControl3.Location = new System.Drawing.Point(25, 468);
@@ -979,10 +1015,9 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 14F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(731, 513);
+            this.ClientSize = new System.Drawing.Size(690, 513);
             this.Controls.Add(this.labelControl3);
             this.Controls.Add(this.txtReadyTime);
-            this.Controls.Add(this.webBrowser1);
             this.Controls.Add(this.btnExit);
             this.Controls.Add(this.groupBox1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
