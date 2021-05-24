@@ -1137,7 +1137,7 @@
             // btnMc41
             // 
             this.btnMc41.Appearance.BackColor = System.Drawing.Color.RoyalBlue;
-            this.btnMc41.Appearance.Font = new System.Drawing.Font("Calibri", 9F);
+            this.btnMc41.Appearance.Font = new System.Drawing.Font("Calibri", 10F, System.Drawing.FontStyle.Bold);
             this.btnMc41.Appearance.ForeColor = System.Drawing.Color.White;
             this.btnMc41.Appearance.Options.UseBackColor = true;
             this.btnMc41.Appearance.Options.UseFont = true;
@@ -1154,7 +1154,7 @@
             // btnMc40
             // 
             this.btnMc40.Appearance.BackColor = System.Drawing.Color.RoyalBlue;
-            this.btnMc40.Appearance.Font = new System.Drawing.Font("Calibri", 9F);
+            this.btnMc40.Appearance.Font = new System.Drawing.Font("Calibri", 10F, System.Drawing.FontStyle.Bold);
             this.btnMc40.Appearance.ForeColor = System.Drawing.Color.White;
             this.btnMc40.Appearance.Options.UseBackColor = true;
             this.btnMc40.Appearance.Options.UseFont = true;
@@ -1171,7 +1171,7 @@
             // btnMc39
             // 
             this.btnMc39.Appearance.BackColor = System.Drawing.Color.RoyalBlue;
-            this.btnMc39.Appearance.Font = new System.Drawing.Font("Calibri", 9F);
+            this.btnMc39.Appearance.Font = new System.Drawing.Font("Calibri", 10F, System.Drawing.FontStyle.Bold);
             this.btnMc39.Appearance.ForeColor = System.Drawing.Color.White;
             this.btnMc39.Appearance.Options.UseBackColor = true;
             this.btnMc39.Appearance.Options.UseFont = true;
@@ -1188,7 +1188,7 @@
             // btnMc38
             // 
             this.btnMc38.Appearance.BackColor = System.Drawing.Color.RoyalBlue;
-            this.btnMc38.Appearance.Font = new System.Drawing.Font("Calibri", 9F);
+            this.btnMc38.Appearance.Font = new System.Drawing.Font("Calibri", 10F, System.Drawing.FontStyle.Bold);
             this.btnMc38.Appearance.ForeColor = System.Drawing.Color.White;
             this.btnMc38.Appearance.Options.UseBackColor = true;
             this.btnMc38.Appearance.Options.UseFont = true;
@@ -1205,7 +1205,7 @@
             // btnMc37
             // 
             this.btnMc37.Appearance.BackColor = System.Drawing.Color.RoyalBlue;
-            this.btnMc37.Appearance.Font = new System.Drawing.Font("Calibri", 9F);
+            this.btnMc37.Appearance.Font = new System.Drawing.Font("Calibri", 10F, System.Drawing.FontStyle.Bold);
             this.btnMc37.Appearance.ForeColor = System.Drawing.Color.White;
             this.btnMc37.Appearance.Options.UseBackColor = true;
             this.btnMc37.Appearance.Options.UseFont = true;
@@ -1222,7 +1222,7 @@
             // btnMc36
             // 
             this.btnMc36.Appearance.BackColor = System.Drawing.Color.RoyalBlue;
-            this.btnMc36.Appearance.Font = new System.Drawing.Font("Calibri", 9F);
+            this.btnMc36.Appearance.Font = new System.Drawing.Font("Calibri", 10F, System.Drawing.FontStyle.Bold);
             this.btnMc36.Appearance.ForeColor = System.Drawing.Color.White;
             this.btnMc36.Appearance.Options.UseBackColor = true;
             this.btnMc36.Appearance.Options.UseFont = true;
@@ -1239,7 +1239,7 @@
             // btnMc35
             // 
             this.btnMc35.Appearance.BackColor = System.Drawing.Color.RoyalBlue;
-            this.btnMc35.Appearance.Font = new System.Drawing.Font("Calibri", 9F);
+            this.btnMc35.Appearance.Font = new System.Drawing.Font("Calibri", 10F, System.Drawing.FontStyle.Bold);
             this.btnMc35.Appearance.ForeColor = System.Drawing.Color.White;
             this.btnMc35.Appearance.Options.UseBackColor = true;
             this.btnMc35.Appearance.Options.UseFont = true;
@@ -1256,7 +1256,7 @@
             // btnMc34
             // 
             this.btnMc34.Appearance.BackColor = System.Drawing.Color.RoyalBlue;
-            this.btnMc34.Appearance.Font = new System.Drawing.Font("Calibri", 9F);
+            this.btnMc34.Appearance.Font = new System.Drawing.Font("Calibri", 10F, System.Drawing.FontStyle.Bold);
             this.btnMc34.Appearance.ForeColor = System.Drawing.Color.White;
             this.btnMc34.Appearance.Options.UseBackColor = true;
             this.btnMc34.Appearance.Options.UseFont = true;
@@ -1273,7 +1273,7 @@
             // btnMc33
             // 
             this.btnMc33.Appearance.BackColor = System.Drawing.Color.RoyalBlue;
-            this.btnMc33.Appearance.Font = new System.Drawing.Font("Calibri", 9F);
+            this.btnMc33.Appearance.Font = new System.Drawing.Font("Calibri", 10F, System.Drawing.FontStyle.Bold);
             this.btnMc33.Appearance.ForeColor = System.Drawing.Color.White;
             this.btnMc33.Appearance.Options.UseBackColor = true;
             this.btnMc33.Appearance.Options.UseFont = true;
@@ -1290,7 +1290,7 @@
             // btnMc32
             // 
             this.btnMc32.Appearance.BackColor = System.Drawing.Color.RoyalBlue;
-            this.btnMc32.Appearance.Font = new System.Drawing.Font("Calibri", 9F);
+            this.btnMc32.Appearance.Font = new System.Drawing.Font("Calibri", 10F, System.Drawing.FontStyle.Bold);
             this.btnMc32.Appearance.ForeColor = System.Drawing.Color.White;
             this.btnMc32.Appearance.Options.UseBackColor = true;
             this.btnMc32.Appearance.Options.UseFont = true;
@@ -1307,7 +1307,7 @@
             // btnMc31
             // 
             this.btnMc31.Appearance.BackColor = System.Drawing.Color.RoyalBlue;
-            this.btnMc31.Appearance.Font = new System.Drawing.Font("Calibri", 9F);
+            this.btnMc31.Appearance.Font = new System.Drawing.Font("Calibri", 10F, System.Drawing.FontStyle.Bold);
             this.btnMc31.Appearance.ForeColor = System.Drawing.Color.White;
             this.btnMc31.Appearance.Options.UseBackColor = true;
             this.btnMc31.Appearance.Options.UseFont = true;
@@ -1324,7 +1324,7 @@
             // btnMc30
             // 
             this.btnMc30.Appearance.BackColor = System.Drawing.Color.RoyalBlue;
-            this.btnMc30.Appearance.Font = new System.Drawing.Font("Calibri", 9F);
+            this.btnMc30.Appearance.Font = new System.Drawing.Font("Calibri", 10F, System.Drawing.FontStyle.Bold);
             this.btnMc30.Appearance.ForeColor = System.Drawing.Color.White;
             this.btnMc30.Appearance.Options.UseBackColor = true;
             this.btnMc30.Appearance.Options.UseFont = true;
@@ -1341,7 +1341,7 @@
             // btnMc29
             // 
             this.btnMc29.Appearance.BackColor = System.Drawing.Color.RoyalBlue;
-            this.btnMc29.Appearance.Font = new System.Drawing.Font("Calibri", 9F);
+            this.btnMc29.Appearance.Font = new System.Drawing.Font("Calibri", 10F, System.Drawing.FontStyle.Bold);
             this.btnMc29.Appearance.ForeColor = System.Drawing.Color.White;
             this.btnMc29.Appearance.Options.UseBackColor = true;
             this.btnMc29.Appearance.Options.UseFont = true;
@@ -1358,7 +1358,7 @@
             // btnMc28
             // 
             this.btnMc28.Appearance.BackColor = System.Drawing.Color.RoyalBlue;
-            this.btnMc28.Appearance.Font = new System.Drawing.Font("Calibri", 9F);
+            this.btnMc28.Appearance.Font = new System.Drawing.Font("Calibri", 10F, System.Drawing.FontStyle.Bold);
             this.btnMc28.Appearance.ForeColor = System.Drawing.Color.White;
             this.btnMc28.Appearance.Options.UseBackColor = true;
             this.btnMc28.Appearance.Options.UseFont = true;
@@ -1375,7 +1375,7 @@
             // btnMc27
             // 
             this.btnMc27.Appearance.BackColor = System.Drawing.Color.RoyalBlue;
-            this.btnMc27.Appearance.Font = new System.Drawing.Font("Calibri", 9F);
+            this.btnMc27.Appearance.Font = new System.Drawing.Font("Calibri", 10F, System.Drawing.FontStyle.Bold);
             this.btnMc27.Appearance.ForeColor = System.Drawing.Color.White;
             this.btnMc27.Appearance.Options.UseBackColor = true;
             this.btnMc27.Appearance.Options.UseFont = true;
@@ -1392,7 +1392,7 @@
             // btnMc26
             // 
             this.btnMc26.Appearance.BackColor = System.Drawing.Color.RoyalBlue;
-            this.btnMc26.Appearance.Font = new System.Drawing.Font("Calibri", 9F);
+            this.btnMc26.Appearance.Font = new System.Drawing.Font("Calibri", 10F, System.Drawing.FontStyle.Bold);
             this.btnMc26.Appearance.ForeColor = System.Drawing.Color.White;
             this.btnMc26.Appearance.Options.UseBackColor = true;
             this.btnMc26.Appearance.Options.UseFont = true;
@@ -1409,7 +1409,7 @@
             // btnMc25
             // 
             this.btnMc25.Appearance.BackColor = System.Drawing.Color.RoyalBlue;
-            this.btnMc25.Appearance.Font = new System.Drawing.Font("Calibri", 9F);
+            this.btnMc25.Appearance.Font = new System.Drawing.Font("Calibri", 10F, System.Drawing.FontStyle.Bold);
             this.btnMc25.Appearance.ForeColor = System.Drawing.Color.White;
             this.btnMc25.Appearance.Options.UseBackColor = true;
             this.btnMc25.Appearance.Options.UseFont = true;
@@ -1426,7 +1426,7 @@
             // btnMc24
             // 
             this.btnMc24.Appearance.BackColor = System.Drawing.Color.RoyalBlue;
-            this.btnMc24.Appearance.Font = new System.Drawing.Font("Calibri", 9F);
+            this.btnMc24.Appearance.Font = new System.Drawing.Font("Calibri", 10F, System.Drawing.FontStyle.Bold);
             this.btnMc24.Appearance.ForeColor = System.Drawing.Color.White;
             this.btnMc24.Appearance.Options.UseBackColor = true;
             this.btnMc24.Appearance.Options.UseFont = true;
@@ -1443,7 +1443,7 @@
             // btnMc23
             // 
             this.btnMc23.Appearance.BackColor = System.Drawing.Color.RoyalBlue;
-            this.btnMc23.Appearance.Font = new System.Drawing.Font("Calibri", 9F);
+            this.btnMc23.Appearance.Font = new System.Drawing.Font("Calibri", 10F, System.Drawing.FontStyle.Bold);
             this.btnMc23.Appearance.ForeColor = System.Drawing.Color.White;
             this.btnMc23.Appearance.Options.UseBackColor = true;
             this.btnMc23.Appearance.Options.UseFont = true;
@@ -1460,7 +1460,7 @@
             // btnMc22
             // 
             this.btnMc22.Appearance.BackColor = System.Drawing.Color.RoyalBlue;
-            this.btnMc22.Appearance.Font = new System.Drawing.Font("Calibri", 9F);
+            this.btnMc22.Appearance.Font = new System.Drawing.Font("Calibri", 10F, System.Drawing.FontStyle.Bold);
             this.btnMc22.Appearance.ForeColor = System.Drawing.Color.White;
             this.btnMc22.Appearance.Options.UseBackColor = true;
             this.btnMc22.Appearance.Options.UseFont = true;
@@ -1477,7 +1477,7 @@
             // btnMc21
             // 
             this.btnMc21.Appearance.BackColor = System.Drawing.Color.RoyalBlue;
-            this.btnMc21.Appearance.Font = new System.Drawing.Font("Calibri", 9F);
+            this.btnMc21.Appearance.Font = new System.Drawing.Font("Calibri", 10F, System.Drawing.FontStyle.Bold);
             this.btnMc21.Appearance.ForeColor = System.Drawing.Color.White;
             this.btnMc21.Appearance.Options.UseBackColor = true;
             this.btnMc21.Appearance.Options.UseFont = true;
@@ -1494,7 +1494,7 @@
             // btnMc20
             // 
             this.btnMc20.Appearance.BackColor = System.Drawing.Color.RoyalBlue;
-            this.btnMc20.Appearance.Font = new System.Drawing.Font("Calibri", 9F);
+            this.btnMc20.Appearance.Font = new System.Drawing.Font("Calibri", 10F, System.Drawing.FontStyle.Bold);
             this.btnMc20.Appearance.ForeColor = System.Drawing.Color.White;
             this.btnMc20.Appearance.Options.UseBackColor = true;
             this.btnMc20.Appearance.Options.UseFont = true;
@@ -1511,7 +1511,7 @@
             // btnMc19
             // 
             this.btnMc19.Appearance.BackColor = System.Drawing.Color.RoyalBlue;
-            this.btnMc19.Appearance.Font = new System.Drawing.Font("Calibri", 9F);
+            this.btnMc19.Appearance.Font = new System.Drawing.Font("Calibri", 10F, System.Drawing.FontStyle.Bold);
             this.btnMc19.Appearance.ForeColor = System.Drawing.Color.White;
             this.btnMc19.Appearance.Options.UseBackColor = true;
             this.btnMc19.Appearance.Options.UseFont = true;
@@ -1528,7 +1528,7 @@
             // btnMc18
             // 
             this.btnMc18.Appearance.BackColor = System.Drawing.Color.RoyalBlue;
-            this.btnMc18.Appearance.Font = new System.Drawing.Font("Calibri", 9F);
+            this.btnMc18.Appearance.Font = new System.Drawing.Font("Calibri", 10F, System.Drawing.FontStyle.Bold);
             this.btnMc18.Appearance.ForeColor = System.Drawing.Color.White;
             this.btnMc18.Appearance.Options.UseBackColor = true;
             this.btnMc18.Appearance.Options.UseFont = true;
@@ -1545,7 +1545,7 @@
             // btnMc17
             // 
             this.btnMc17.Appearance.BackColor = System.Drawing.Color.RoyalBlue;
-            this.btnMc17.Appearance.Font = new System.Drawing.Font("Calibri", 9F);
+            this.btnMc17.Appearance.Font = new System.Drawing.Font("Calibri", 10F, System.Drawing.FontStyle.Bold);
             this.btnMc17.Appearance.ForeColor = System.Drawing.Color.White;
             this.btnMc17.Appearance.Options.UseBackColor = true;
             this.btnMc17.Appearance.Options.UseFont = true;
@@ -1562,7 +1562,7 @@
             // btnMc16
             // 
             this.btnMc16.Appearance.BackColor = System.Drawing.Color.RoyalBlue;
-            this.btnMc16.Appearance.Font = new System.Drawing.Font("Calibri", 9F);
+            this.btnMc16.Appearance.Font = new System.Drawing.Font("Calibri", 10F, System.Drawing.FontStyle.Bold);
             this.btnMc16.Appearance.ForeColor = System.Drawing.Color.White;
             this.btnMc16.Appearance.Options.UseBackColor = true;
             this.btnMc16.Appearance.Options.UseFont = true;
@@ -1579,7 +1579,7 @@
             // btnMc15
             // 
             this.btnMc15.Appearance.BackColor = System.Drawing.Color.RoyalBlue;
-            this.btnMc15.Appearance.Font = new System.Drawing.Font("Calibri", 9F);
+            this.btnMc15.Appearance.Font = new System.Drawing.Font("Calibri", 10F, System.Drawing.FontStyle.Bold);
             this.btnMc15.Appearance.ForeColor = System.Drawing.Color.White;
             this.btnMc15.Appearance.Options.UseBackColor = true;
             this.btnMc15.Appearance.Options.UseFont = true;
@@ -1596,7 +1596,7 @@
             // btnMc14
             // 
             this.btnMc14.Appearance.BackColor = System.Drawing.Color.RoyalBlue;
-            this.btnMc14.Appearance.Font = new System.Drawing.Font("Calibri", 9F);
+            this.btnMc14.Appearance.Font = new System.Drawing.Font("Calibri", 10F, System.Drawing.FontStyle.Bold);
             this.btnMc14.Appearance.ForeColor = System.Drawing.Color.White;
             this.btnMc14.Appearance.Options.UseBackColor = true;
             this.btnMc14.Appearance.Options.UseFont = true;
@@ -1613,7 +1613,7 @@
             // btnMc13
             // 
             this.btnMc13.Appearance.BackColor = System.Drawing.Color.RoyalBlue;
-            this.btnMc13.Appearance.Font = new System.Drawing.Font("Calibri", 9F);
+            this.btnMc13.Appearance.Font = new System.Drawing.Font("Calibri", 10F, System.Drawing.FontStyle.Bold);
             this.btnMc13.Appearance.ForeColor = System.Drawing.Color.White;
             this.btnMc13.Appearance.Options.UseBackColor = true;
             this.btnMc13.Appearance.Options.UseFont = true;
@@ -1630,7 +1630,7 @@
             // btnMc12
             // 
             this.btnMc12.Appearance.BackColor = System.Drawing.Color.RoyalBlue;
-            this.btnMc12.Appearance.Font = new System.Drawing.Font("Calibri", 9F);
+            this.btnMc12.Appearance.Font = new System.Drawing.Font("Calibri", 10F, System.Drawing.FontStyle.Bold);
             this.btnMc12.Appearance.ForeColor = System.Drawing.Color.White;
             this.btnMc12.Appearance.Options.UseBackColor = true;
             this.btnMc12.Appearance.Options.UseFont = true;
@@ -1647,7 +1647,7 @@
             // btnMc11
             // 
             this.btnMc11.Appearance.BackColor = System.Drawing.Color.RoyalBlue;
-            this.btnMc11.Appearance.Font = new System.Drawing.Font("Calibri", 9F);
+            this.btnMc11.Appearance.Font = new System.Drawing.Font("Calibri", 10F, System.Drawing.FontStyle.Bold);
             this.btnMc11.Appearance.ForeColor = System.Drawing.Color.White;
             this.btnMc11.Appearance.Options.UseBackColor = true;
             this.btnMc11.Appearance.Options.UseFont = true;
@@ -1664,7 +1664,7 @@
             // btnMc10
             // 
             this.btnMc10.Appearance.BackColor = System.Drawing.Color.RoyalBlue;
-            this.btnMc10.Appearance.Font = new System.Drawing.Font("Calibri", 9F);
+            this.btnMc10.Appearance.Font = new System.Drawing.Font("Calibri", 10F, System.Drawing.FontStyle.Bold);
             this.btnMc10.Appearance.ForeColor = System.Drawing.Color.White;
             this.btnMc10.Appearance.Options.UseBackColor = true;
             this.btnMc10.Appearance.Options.UseFont = true;
@@ -1681,7 +1681,7 @@
             // btnMc9
             // 
             this.btnMc9.Appearance.BackColor = System.Drawing.Color.RoyalBlue;
-            this.btnMc9.Appearance.Font = new System.Drawing.Font("Calibri", 9F);
+            this.btnMc9.Appearance.Font = new System.Drawing.Font("Calibri", 10F, System.Drawing.FontStyle.Bold);
             this.btnMc9.Appearance.ForeColor = System.Drawing.Color.White;
             this.btnMc9.Appearance.Options.UseBackColor = true;
             this.btnMc9.Appearance.Options.UseFont = true;
@@ -1698,7 +1698,7 @@
             // btnMc8
             // 
             this.btnMc8.Appearance.BackColor = System.Drawing.Color.RoyalBlue;
-            this.btnMc8.Appearance.Font = new System.Drawing.Font("Calibri", 9F);
+            this.btnMc8.Appearance.Font = new System.Drawing.Font("Calibri", 10F, System.Drawing.FontStyle.Bold);
             this.btnMc8.Appearance.ForeColor = System.Drawing.Color.White;
             this.btnMc8.Appearance.Options.UseBackColor = true;
             this.btnMc8.Appearance.Options.UseFont = true;
@@ -1715,7 +1715,7 @@
             // btnMc7
             // 
             this.btnMc7.Appearance.BackColor = System.Drawing.Color.RoyalBlue;
-            this.btnMc7.Appearance.Font = new System.Drawing.Font("Calibri", 9F);
+            this.btnMc7.Appearance.Font = new System.Drawing.Font("Calibri", 10F, System.Drawing.FontStyle.Bold);
             this.btnMc7.Appearance.ForeColor = System.Drawing.Color.White;
             this.btnMc7.Appearance.Options.UseBackColor = true;
             this.btnMc7.Appearance.Options.UseFont = true;
@@ -1732,7 +1732,7 @@
             // btnMc6
             // 
             this.btnMc6.Appearance.BackColor = System.Drawing.Color.RoyalBlue;
-            this.btnMc6.Appearance.Font = new System.Drawing.Font("Calibri", 9F);
+            this.btnMc6.Appearance.Font = new System.Drawing.Font("Calibri", 10F, System.Drawing.FontStyle.Bold);
             this.btnMc6.Appearance.ForeColor = System.Drawing.Color.White;
             this.btnMc6.Appearance.Options.UseBackColor = true;
             this.btnMc6.Appearance.Options.UseFont = true;
@@ -1749,7 +1749,7 @@
             // btnMc5
             // 
             this.btnMc5.Appearance.BackColor = System.Drawing.Color.RoyalBlue;
-            this.btnMc5.Appearance.Font = new System.Drawing.Font("Calibri", 9F);
+            this.btnMc5.Appearance.Font = new System.Drawing.Font("Calibri", 10F, System.Drawing.FontStyle.Bold);
             this.btnMc5.Appearance.ForeColor = System.Drawing.Color.White;
             this.btnMc5.Appearance.Options.UseBackColor = true;
             this.btnMc5.Appearance.Options.UseFont = true;
@@ -1766,7 +1766,7 @@
             // btnMc4
             // 
             this.btnMc4.Appearance.BackColor = System.Drawing.Color.RoyalBlue;
-            this.btnMc4.Appearance.Font = new System.Drawing.Font("Calibri", 9F);
+            this.btnMc4.Appearance.Font = new System.Drawing.Font("Calibri", 10F, System.Drawing.FontStyle.Bold);
             this.btnMc4.Appearance.ForeColor = System.Drawing.Color.White;
             this.btnMc4.Appearance.Options.UseBackColor = true;
             this.btnMc4.Appearance.Options.UseFont = true;
@@ -1783,7 +1783,7 @@
             // btnMc3
             // 
             this.btnMc3.Appearance.BackColor = System.Drawing.Color.RoyalBlue;
-            this.btnMc3.Appearance.Font = new System.Drawing.Font("Calibri", 9F);
+            this.btnMc3.Appearance.Font = new System.Drawing.Font("Calibri", 10F, System.Drawing.FontStyle.Bold);
             this.btnMc3.Appearance.ForeColor = System.Drawing.Color.White;
             this.btnMc3.Appearance.Options.UseBackColor = true;
             this.btnMc3.Appearance.Options.UseFont = true;
@@ -1800,7 +1800,7 @@
             // btnMc2
             // 
             this.btnMc2.Appearance.BackColor = System.Drawing.Color.RoyalBlue;
-            this.btnMc2.Appearance.Font = new System.Drawing.Font("Calibri", 9F);
+            this.btnMc2.Appearance.Font = new System.Drawing.Font("Calibri", 10F, System.Drawing.FontStyle.Bold);
             this.btnMc2.Appearance.ForeColor = System.Drawing.Color.White;
             this.btnMc2.Appearance.Options.UseBackColor = true;
             this.btnMc2.Appearance.Options.UseFont = true;
@@ -1817,7 +1817,7 @@
             // btnMc1
             // 
             this.btnMc1.Appearance.BackColor = System.Drawing.Color.RoyalBlue;
-            this.btnMc1.Appearance.Font = new System.Drawing.Font("Calibri", 9F);
+            this.btnMc1.Appearance.Font = new System.Drawing.Font("Calibri", 10F, System.Drawing.FontStyle.Bold);
             this.btnMc1.Appearance.ForeColor = System.Drawing.Color.White;
             this.btnMc1.Appearance.Options.UseBackColor = true;
             this.btnMc1.Appearance.Options.UseFont = true;
@@ -1834,7 +1834,7 @@
             // btnMc0
             // 
             this.btnMc0.Appearance.BackColor = System.Drawing.Color.RoyalBlue;
-            this.btnMc0.Appearance.Font = new System.Drawing.Font("Calibri", 9F);
+            this.btnMc0.Appearance.Font = new System.Drawing.Font("Calibri", 10F, System.Drawing.FontStyle.Bold);
             this.btnMc0.Appearance.ForeColor = System.Drawing.Color.White;
             this.btnMc0.Appearance.Options.UseBackColor = true;
             this.btnMc0.Appearance.Options.UseFont = true;
@@ -1877,7 +1877,7 @@
             // btnMi14
             // 
             this.btnMi14.Appearance.BackColor = System.Drawing.Color.Gold;
-            this.btnMi14.Appearance.Font = new System.Drawing.Font("Calibri", 9F);
+            this.btnMi14.Appearance.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnMi14.Appearance.Options.UseBackColor = true;
             this.btnMi14.Appearance.Options.UseFont = true;
             this.btnMi14.Appearance.Options.UseTextOptions = true;
@@ -1894,7 +1894,7 @@
             // btnMi12
             // 
             this.btnMi12.Appearance.BackColor = System.Drawing.Color.Gold;
-            this.btnMi12.Appearance.Font = new System.Drawing.Font("Calibri", 9F);
+            this.btnMi12.Appearance.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnMi12.Appearance.Options.UseBackColor = true;
             this.btnMi12.Appearance.Options.UseFont = true;
             this.btnMi12.Appearance.Options.UseTextOptions = true;
@@ -1911,7 +1911,7 @@
             // btnMi13
             // 
             this.btnMi13.Appearance.BackColor = System.Drawing.Color.Gold;
-            this.btnMi13.Appearance.Font = new System.Drawing.Font("Calibri", 9F);
+            this.btnMi13.Appearance.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnMi13.Appearance.Options.UseBackColor = true;
             this.btnMi13.Appearance.Options.UseFont = true;
             this.btnMi13.Appearance.Options.UseTextOptions = true;
@@ -1928,7 +1928,7 @@
             // btnMi15
             // 
             this.btnMi15.Appearance.BackColor = System.Drawing.Color.Gold;
-            this.btnMi15.Appearance.Font = new System.Drawing.Font("Calibri", 9F);
+            this.btnMi15.Appearance.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnMi15.Appearance.Options.UseBackColor = true;
             this.btnMi15.Appearance.Options.UseFont = true;
             this.btnMi15.Appearance.Options.UseTextOptions = true;
@@ -1945,7 +1945,7 @@
             // btnMi7
             // 
             this.btnMi7.Appearance.BackColor = System.Drawing.Color.Gold;
-            this.btnMi7.Appearance.Font = new System.Drawing.Font("Calibri", 9F);
+            this.btnMi7.Appearance.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnMi7.Appearance.Options.UseBackColor = true;
             this.btnMi7.Appearance.Options.UseFont = true;
             this.btnMi7.Appearance.Options.UseTextOptions = true;
@@ -1962,7 +1962,7 @@
             // btnMi3
             // 
             this.btnMi3.Appearance.BackColor = System.Drawing.Color.Gold;
-            this.btnMi3.Appearance.Font = new System.Drawing.Font("Calibri", 9F);
+            this.btnMi3.Appearance.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnMi3.Appearance.Options.UseBackColor = true;
             this.btnMi3.Appearance.Options.UseFont = true;
             this.btnMi3.Appearance.Options.UseTextOptions = true;
@@ -1979,7 +1979,7 @@
             // btnMi6
             // 
             this.btnMi6.Appearance.BackColor = System.Drawing.Color.Gold;
-            this.btnMi6.Appearance.Font = new System.Drawing.Font("Calibri", 9F);
+            this.btnMi6.Appearance.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnMi6.Appearance.Options.UseBackColor = true;
             this.btnMi6.Appearance.Options.UseFont = true;
             this.btnMi6.Appearance.Options.UseTextOptions = true;
@@ -2016,7 +2016,7 @@
             // btnMi5
             // 
             this.btnMi5.Appearance.BackColor = System.Drawing.Color.Gold;
-            this.btnMi5.Appearance.Font = new System.Drawing.Font("Calibri", 9F);
+            this.btnMi5.Appearance.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnMi5.Appearance.Options.UseBackColor = true;
             this.btnMi5.Appearance.Options.UseFont = true;
             this.btnMi5.Appearance.Options.UseTextOptions = true;
@@ -2033,7 +2033,7 @@
             // btnMi4
             // 
             this.btnMi4.Appearance.BackColor = System.Drawing.Color.Gold;
-            this.btnMi4.Appearance.Font = new System.Drawing.Font("Calibri", 9F);
+            this.btnMi4.Appearance.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnMi4.Appearance.Options.UseBackColor = true;
             this.btnMi4.Appearance.Options.UseFont = true;
             this.btnMi4.Appearance.Options.UseTextOptions = true;
@@ -2050,7 +2050,7 @@
             // btnMi2
             // 
             this.btnMi2.Appearance.BackColor = System.Drawing.Color.Gold;
-            this.btnMi2.Appearance.Font = new System.Drawing.Font("Calibri", 9F);
+            this.btnMi2.Appearance.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnMi2.Appearance.Options.UseBackColor = true;
             this.btnMi2.Appearance.Options.UseFont = true;
             this.btnMi2.Appearance.Options.UseTextOptions = true;
@@ -2087,7 +2087,7 @@
             // btnMi1
             // 
             this.btnMi1.Appearance.BackColor = System.Drawing.Color.Gold;
-            this.btnMi1.Appearance.Font = new System.Drawing.Font("Calibri", 9F);
+            this.btnMi1.Appearance.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnMi1.Appearance.Options.UseBackColor = true;
             this.btnMi1.Appearance.Options.UseFont = true;
             this.btnMi1.Appearance.Options.UseTextOptions = true;
@@ -2104,7 +2104,7 @@
             // btnMi0
             // 
             this.btnMi0.Appearance.BackColor = System.Drawing.Color.Gold;
-            this.btnMi0.Appearance.Font = new System.Drawing.Font("Calibri", 9F);
+            this.btnMi0.Appearance.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnMi0.Appearance.Options.UseBackColor = true;
             this.btnMi0.Appearance.Options.UseFont = true;
             this.btnMi0.Appearance.Options.UseTextOptions = true;
@@ -2121,7 +2121,7 @@
             // btnMi10
             // 
             this.btnMi10.Appearance.BackColor = System.Drawing.Color.Gold;
-            this.btnMi10.Appearance.Font = new System.Drawing.Font("Calibri", 9F);
+            this.btnMi10.Appearance.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnMi10.Appearance.Options.UseBackColor = true;
             this.btnMi10.Appearance.Options.UseFont = true;
             this.btnMi10.Appearance.Options.UseTextOptions = true;
@@ -2138,7 +2138,7 @@
             // btnMi8
             // 
             this.btnMi8.Appearance.BackColor = System.Drawing.Color.Gold;
-            this.btnMi8.Appearance.Font = new System.Drawing.Font("Calibri", 9F);
+            this.btnMi8.Appearance.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnMi8.Appearance.Options.UseBackColor = true;
             this.btnMi8.Appearance.Options.UseFont = true;
             this.btnMi8.Appearance.Options.UseTextOptions = true;
@@ -2155,7 +2155,7 @@
             // btnMi9
             // 
             this.btnMi9.Appearance.BackColor = System.Drawing.Color.Gold;
-            this.btnMi9.Appearance.Font = new System.Drawing.Font("Calibri", 9F);
+            this.btnMi9.Appearance.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnMi9.Appearance.Options.UseBackColor = true;
             this.btnMi9.Appearance.Options.UseFont = true;
             this.btnMi9.Appearance.Options.UseTextOptions = true;
@@ -2172,7 +2172,7 @@
             // btnMi11
             // 
             this.btnMi11.Appearance.BackColor = System.Drawing.Color.Gold;
-            this.btnMi11.Appearance.Font = new System.Drawing.Font("Calibri", 9F);
+            this.btnMi11.Appearance.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnMi11.Appearance.Options.UseBackColor = true;
             this.btnMi11.Appearance.Options.UseFont = true;
             this.btnMi11.Appearance.Options.UseTextOptions = true;

@@ -263,7 +263,6 @@
             this.xtpGs.Controls.Add(this.groupBox5);
             this.xtpGs.Controls.Add(this.groupBox4);
             this.xtpGs.Controls.Add(this.groupBox3);
-            this.xtpGs.Controls.Add(this.groupBox2);
             this.xtpGs.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.xtpGs.Name = "xtpGs";
             this.xtpGs.Size = new System.Drawing.Size(900, 436);
@@ -275,11 +274,12 @@
             this.groupBox12.Controls.Add(this.panel2);
             this.groupBox12.Controls.Add(this.label20);
             this.groupBox12.Controls.Add(this.label21);
-            this.groupBox12.Location = new System.Drawing.Point(325, 241);
+            this.groupBox12.Font = new System.Drawing.Font("Calibri", 12F);
+            this.groupBox12.Location = new System.Drawing.Point(605, 9);
             this.groupBox12.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.groupBox12.Name = "groupBox12";
             this.groupBox12.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.groupBox12.Size = new System.Drawing.Size(277, 106);
+            this.groupBox12.Size = new System.Drawing.Size(277, 169);
             this.groupBox12.TabIndex = 12;
             this.groupBox12.TabStop = false;
             this.groupBox12.Text = "Automatic Added Item on Checkout";
@@ -287,7 +287,7 @@
             // txtAddTotalAmountThreshold
             // 
             this.txtAddTotalAmountThreshold.EditValue = "";
-            this.txtAddTotalAmountThreshold.Location = new System.Drawing.Point(187, 17);
+            this.txtAddTotalAmountThreshold.Location = new System.Drawing.Point(192, 41);
             this.txtAddTotalAmountThreshold.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtAddTotalAmountThreshold.Name = "txtAddTotalAmountThreshold";
             this.txtAddTotalAmountThreshold.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 12F);
@@ -303,7 +303,7 @@
             this.panel2.Controls.Add(this.txtAddFreeFoodItem3);
             this.panel2.Controls.Add(this.txtAddFreeFoodItem2);
             this.panel2.Controls.Add(this.txtAddFreeFoodItem1);
-            this.panel2.Location = new System.Drawing.Point(21, 68);
+            this.panel2.Location = new System.Drawing.Point(26, 104);
             this.panel2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(218, 33);
@@ -356,18 +356,18 @@
             // label20
             // 
             this.label20.AutoSize = true;
-            this.label20.Location = new System.Drawing.Point(60, 52);
+            this.label20.Location = new System.Drawing.Point(65, 81);
             this.label20.Name = "label20";
-            this.label20.Size = new System.Drawing.Size(122, 14);
+            this.label20.Size = new System.Drawing.Size(143, 19);
             this.label20.TabIndex = 1;
             this.label20.Text = "Food Item Dish Code";
             // 
             // label21
             // 
             this.label21.AutoSize = true;
-            this.label21.Location = new System.Drawing.Point(4, 26);
+            this.label21.Location = new System.Drawing.Point(9, 50);
             this.label21.Name = "label21";
-            this.label21.Size = new System.Drawing.Size(141, 14);
+            this.label21.Size = new System.Drawing.Size(163, 19);
             this.label21.TabIndex = 0;
             this.label21.Text = "Total Amount Threshold";
             // 
@@ -379,21 +379,22 @@
             this.groupBox11.Controls.Add(this.label18);
             this.groupBox11.Controls.Add(this.txtMenuDishBtnOtherFontSize);
             this.groupBox11.Controls.Add(this.label19);
-            this.groupBox11.Location = new System.Drawing.Point(612, 194);
+            this.groupBox11.Font = new System.Drawing.Font("Calibri", 12F);
+            this.groupBox11.Location = new System.Drawing.Point(322, 187);
             this.groupBox11.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.groupBox11.Name = "groupBox11";
             this.groupBox11.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.groupBox11.Size = new System.Drawing.Size(277, 172);
+            this.groupBox11.Size = new System.Drawing.Size(277, 222);
             this.groupBox11.TabIndex = 11;
             this.groupBox11.TabStop = false;
             this.groupBox11.Text = "Menu Display Other Language Font";
             // 
             // chkGsCategBtnOtherFontBold
             // 
-            this.chkGsCategBtnOtherFontBold.Location = new System.Drawing.Point(8, 130);
+            this.chkGsCategBtnOtherFontBold.Location = new System.Drawing.Point(8, 149);
             this.chkGsCategBtnOtherFontBold.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.chkGsCategBtnOtherFontBold.Name = "chkGsCategBtnOtherFontBold";
-            this.chkGsCategBtnOtherFontBold.Properties.Appearance.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.chkGsCategBtnOtherFontBold.Properties.Appearance.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.chkGsCategBtnOtherFontBold.Properties.Appearance.Options.UseFont = true;
             this.chkGsCategBtnOtherFontBold.Properties.Caption = "Category Button Font Bold";
             this.chkGsCategBtnOtherFontBold.Properties.CheckBoxOptions.Style = DevExpress.XtraEditors.Controls.CheckBoxStyle.Custom;
@@ -404,10 +405,10 @@
             // 
             // chkGsMenuDishCodeOtherFontBold
             // 
-            this.chkGsMenuDishCodeOtherFontBold.Location = new System.Drawing.Point(8, 60);
+            this.chkGsMenuDishCodeOtherFontBold.Location = new System.Drawing.Point(8, 79);
             this.chkGsMenuDishCodeOtherFontBold.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.chkGsMenuDishCodeOtherFontBold.Name = "chkGsMenuDishCodeOtherFontBold";
-            this.chkGsMenuDishCodeOtherFontBold.Properties.Appearance.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.chkGsMenuDishCodeOtherFontBold.Properties.Appearance.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.chkGsMenuDishCodeOtherFontBold.Properties.Appearance.Options.UseFont = true;
             this.chkGsMenuDishCodeOtherFontBold.Properties.Caption = "Menu Dish Code Font Bold";
             this.chkGsMenuDishCodeOtherFontBold.Properties.CheckBoxOptions.Style = DevExpress.XtraEditors.Controls.CheckBoxStyle.Custom;
@@ -419,7 +420,7 @@
             // txtCategoryBtnOtherFontSize
             // 
             this.txtCategoryBtnOtherFontSize.EditValue = "";
-            this.txtCategoryBtnOtherFontSize.Location = new System.Drawing.Point(192, 100);
+            this.txtCategoryBtnOtherFontSize.Location = new System.Drawing.Point(192, 119);
             this.txtCategoryBtnOtherFontSize.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtCategoryBtnOtherFontSize.Name = "txtCategoryBtnOtherFontSize";
             this.txtCategoryBtnOtherFontSize.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 12F);
@@ -432,16 +433,16 @@
             // label18
             // 
             this.label18.AutoSize = true;
-            this.label18.Location = new System.Drawing.Point(5, 106);
+            this.label18.Location = new System.Drawing.Point(5, 125);
             this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(148, 14);
+            this.label18.Size = new System.Drawing.Size(171, 19);
             this.label18.TabIndex = 11;
             this.label18.Text = "Category Button FontSize";
             // 
             // txtMenuDishBtnOtherFontSize
             // 
             this.txtMenuDishBtnOtherFontSize.EditValue = "";
-            this.txtMenuDishBtnOtherFontSize.Location = new System.Drawing.Point(192, 30);
+            this.txtMenuDishBtnOtherFontSize.Location = new System.Drawing.Point(192, 49);
             this.txtMenuDishBtnOtherFontSize.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtMenuDishBtnOtherFontSize.Name = "txtMenuDishBtnOtherFontSize";
             this.txtMenuDishBtnOtherFontSize.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 12F);
@@ -454,9 +455,9 @@
             // label19
             // 
             this.label19.AutoSize = true;
-            this.label19.Location = new System.Drawing.Point(5, 36);
+            this.label19.Location = new System.Drawing.Point(5, 55);
             this.label19.Name = "label19";
-            this.label19.Size = new System.Drawing.Size(155, 14);
+            this.label19.Size = new System.Drawing.Size(183, 19);
             this.label19.TabIndex = 7;
             this.label19.Text = "Menu Dish Button FontSize";
             // 
@@ -466,11 +467,12 @@
             this.groupBox6.Controls.Add(this.panel1);
             this.groupBox6.Controls.Add(this.label3);
             this.groupBox6.Controls.Add(this.label2);
-            this.groupBox6.Location = new System.Drawing.Point(7, 324);
+            this.groupBox6.Font = new System.Drawing.Font("Calibri", 12F);
+            this.groupBox6.Location = new System.Drawing.Point(605, 187);
             this.groupBox6.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.groupBox6.Name = "groupBox6";
             this.groupBox6.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.groupBox6.Size = new System.Drawing.Size(302, 106);
+            this.groupBox6.Size = new System.Drawing.Size(292, 222);
             this.groupBox6.TabIndex = 10;
             this.groupBox6.TabStop = false;
             this.groupBox6.Text = "Free Food Items";
@@ -478,7 +480,7 @@
             // txtTotalAmountThreshold
             // 
             this.txtTotalAmountThreshold.EditValue = "";
-            this.txtTotalAmountThreshold.Location = new System.Drawing.Point(222, 17);
+            this.txtTotalAmountThreshold.Location = new System.Drawing.Point(212, 60);
             this.txtTotalAmountThreshold.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtTotalAmountThreshold.Name = "txtTotalAmountThreshold";
             this.txtTotalAmountThreshold.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 12F);
@@ -494,7 +496,7 @@
             this.panel1.Controls.Add(this.txtFreeFoodItem3);
             this.panel1.Controls.Add(this.txtFreeFoodItem2);
             this.panel1.Controls.Add(this.txtFreeFoodItem1);
-            this.panel1.Location = new System.Drawing.Point(21, 68);
+            this.panel1.Location = new System.Drawing.Point(25, 124);
             this.panel1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(218, 33);
@@ -547,18 +549,18 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(60, 52);
+            this.label3.Location = new System.Drawing.Point(49, 101);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(150, 14);
+            this.label3.Size = new System.Drawing.Size(175, 19);
             this.label3.TabIndex = 1;
             this.label3.Text = "Free Food Item Dish Code";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(4, 26);
+            this.label2.Location = new System.Drawing.Point(8, 69);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(141, 14);
+            this.label2.Size = new System.Drawing.Size(163, 19);
             this.label2.TabIndex = 0;
             this.label2.Text = "Total Amount Threshold";
             // 
@@ -570,7 +572,8 @@
             this.groupBox5.Controls.Add(this.label12);
             this.groupBox5.Controls.Add(this.txtMenuDishBtnFontSize);
             this.groupBox5.Controls.Add(this.label10);
-            this.groupBox5.Location = new System.Drawing.Point(612, 4);
+            this.groupBox5.Font = new System.Drawing.Font("Calibri", 12F);
+            this.groupBox5.Location = new System.Drawing.Point(322, 9);
             this.groupBox5.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.groupBox5.Name = "groupBox5";
             this.groupBox5.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -584,7 +587,7 @@
             this.chkGsCategBtnFontBold.Location = new System.Drawing.Point(8, 133);
             this.chkGsCategBtnFontBold.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.chkGsCategBtnFontBold.Name = "chkGsCategBtnFontBold";
-            this.chkGsCategBtnFontBold.Properties.Appearance.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.chkGsCategBtnFontBold.Properties.Appearance.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.chkGsCategBtnFontBold.Properties.Appearance.Options.UseFont = true;
             this.chkGsCategBtnFontBold.Properties.Caption = "Category Button Font Bold";
             this.chkGsCategBtnFontBold.Properties.CheckBoxOptions.Style = DevExpress.XtraEditors.Controls.CheckBoxStyle.Custom;
@@ -598,7 +601,7 @@
             this.chkGsMenuDishCodeFontBold.Location = new System.Drawing.Point(8, 63);
             this.chkGsMenuDishCodeFontBold.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.chkGsMenuDishCodeFontBold.Name = "chkGsMenuDishCodeFontBold";
-            this.chkGsMenuDishCodeFontBold.Properties.Appearance.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.chkGsMenuDishCodeFontBold.Properties.Appearance.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.chkGsMenuDishCodeFontBold.Properties.Appearance.Options.UseFont = true;
             this.chkGsMenuDishCodeFontBold.Properties.Caption = "Menu Dish Code Font Bold";
             this.chkGsMenuDishCodeFontBold.Properties.CheckBoxOptions.Style = DevExpress.XtraEditors.Controls.CheckBoxStyle.Custom;
@@ -625,7 +628,7 @@
             this.label12.AutoSize = true;
             this.label12.Location = new System.Drawing.Point(5, 106);
             this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(148, 14);
+            this.label12.Size = new System.Drawing.Size(171, 19);
             this.label12.TabIndex = 11;
             this.label12.Text = "Category Button FontSize";
             // 
@@ -647,7 +650,7 @@
             this.label10.AutoSize = true;
             this.label10.Location = new System.Drawing.Point(5, 36);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(155, 14);
+            this.label10.Size = new System.Drawing.Size(183, 19);
             this.label10.TabIndex = 7;
             this.label10.Text = "Menu Dish Button FontSize";
             // 
@@ -656,11 +659,12 @@
             this.groupBox4.Controls.Add(this.label1);
             this.groupBox4.Controls.Add(this.btnExport);
             this.groupBox4.Controls.Add(this.btnImport);
-            this.groupBox4.Location = new System.Drawing.Point(7, 193);
+            this.groupBox4.Font = new System.Drawing.Font("Calibri", 12F);
+            this.groupBox4.Location = new System.Drawing.Point(14, 4);
             this.groupBox4.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.groupBox4.Name = "groupBox4";
             this.groupBox4.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.groupBox4.Size = new System.Drawing.Size(302, 127);
+            this.groupBox4.Size = new System.Drawing.Size(302, 177);
             this.groupBox4.TabIndex = 8;
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "Menu Import And Export";
@@ -668,7 +672,7 @@
             // label1
             // 
             this.label1.Font = new System.Drawing.Font("微软雅黑", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(166, 23);
+            this.label1.Location = new System.Drawing.Point(166, 44);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(129, 98);
             this.label1.TabIndex = 7;
@@ -685,7 +689,7 @@
             this.btnExport.Appearance.Options.UseTextOptions = true;
             this.btnExport.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
             this.btnExport.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
-            this.btnExport.Location = new System.Drawing.Point(8, 74);
+            this.btnExport.Location = new System.Drawing.Point(8, 95);
             this.btnExport.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnExport.Name = "btnExport";
             this.btnExport.Size = new System.Drawing.Size(136, 43);
@@ -703,7 +707,7 @@
             this.btnImport.Appearance.Options.UseTextOptions = true;
             this.btnImport.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
             this.btnImport.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
-            this.btnImport.Location = new System.Drawing.Point(8, 26);
+            this.btnImport.Location = new System.Drawing.Point(8, 47);
             this.btnImport.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnImport.Name = "btnImport";
             this.btnImport.Size = new System.Drawing.Size(136, 43);
@@ -724,11 +728,12 @@
             this.groupBox3.Controls.Add(this.label5);
             this.groupBox3.Controls.Add(this.txtDeliveryDiscount);
             this.groupBox3.Controls.Add(this.label4);
-            this.groupBox3.Location = new System.Drawing.Point(325, 4);
+            this.groupBox3.Font = new System.Drawing.Font("Calibri", 10F);
+            this.groupBox3.Location = new System.Drawing.Point(8, 187);
             this.groupBox3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.groupBox3.Name = "groupBox3";
             this.groupBox3.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.groupBox3.Size = new System.Drawing.Size(277, 222);
+            this.groupBox3.Size = new System.Drawing.Size(308, 222);
             this.groupBox3.TabIndex = 7;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Auto Discount Setting";
@@ -736,7 +741,7 @@
             // txtShopDiscountThreshold
             // 
             this.txtShopDiscountThreshold.EditValue = "";
-            this.txtShopDiscountThreshold.Location = new System.Drawing.Point(192, 177);
+            this.txtShopDiscountThreshold.Location = new System.Drawing.Point(225, 177);
             this.txtShopDiscountThreshold.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtShopDiscountThreshold.Name = "txtShopDiscountThreshold";
             this.txtShopDiscountThreshold.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 12F);
@@ -749,14 +754,14 @@
             this.label9.AutoSize = true;
             this.label9.Location = new System.Drawing.Point(8, 179);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(144, 14);
+            this.label9.Size = new System.Drawing.Size(145, 17);
             this.label9.TabIndex = 15;
             this.label9.Text = "Shop Discount Threshold";
             // 
             // txtShopDiscount
             // 
             this.txtShopDiscount.EditValue = "";
-            this.txtShopDiscount.Location = new System.Drawing.Point(192, 143);
+            this.txtShopDiscount.Location = new System.Drawing.Point(225, 143);
             this.txtShopDiscount.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtShopDiscount.Name = "txtShopDiscount";
             this.txtShopDiscount.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 12F);
@@ -769,14 +774,14 @@
             this.label8.AutoSize = true;
             this.label8.Location = new System.Drawing.Point(8, 145);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(102, 14);
+            this.label8.Size = new System.Drawing.Size(100, 17);
             this.label8.TabIndex = 13;
             this.label8.Text = "Shop Discount %";
             // 
             // txtCollectionDiscountThreshold
             // 
             this.txtCollectionDiscountThreshold.EditValue = "";
-            this.txtCollectionDiscountThreshold.Location = new System.Drawing.Point(192, 115);
+            this.txtCollectionDiscountThreshold.Location = new System.Drawing.Point(225, 115);
             this.txtCollectionDiscountThreshold.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtCollectionDiscountThreshold.Name = "txtCollectionDiscountThreshold";
             this.txtCollectionDiscountThreshold.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 12F);
@@ -789,14 +794,14 @@
             this.label7.AutoSize = true;
             this.label7.Location = new System.Drawing.Point(8, 117);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(168, 14);
+            this.label7.Size = new System.Drawing.Size(173, 17);
             this.label7.TabIndex = 11;
             this.label7.Text = "Collection Discount Threshold";
             // 
             // txtCollectionDiscount
             // 
             this.txtCollectionDiscount.EditValue = "";
-            this.txtCollectionDiscount.Location = new System.Drawing.Point(192, 84);
+            this.txtCollectionDiscount.Location = new System.Drawing.Point(225, 84);
             this.txtCollectionDiscount.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtCollectionDiscount.Name = "txtCollectionDiscount";
             this.txtCollectionDiscount.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 12F);
@@ -809,14 +814,14 @@
             this.label6.AutoSize = true;
             this.label6.Location = new System.Drawing.Point(8, 86);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(126, 14);
+            this.label6.Size = new System.Drawing.Size(128, 17);
             this.label6.TabIndex = 9;
             this.label6.Text = "Collection Discount %";
             // 
             // txtDeliveryDiscountThreshold
             // 
             this.txtDeliveryDiscountThreshold.EditValue = "";
-            this.txtDeliveryDiscountThreshold.Location = new System.Drawing.Point(192, 51);
+            this.txtDeliveryDiscountThreshold.Location = new System.Drawing.Point(225, 51);
             this.txtDeliveryDiscountThreshold.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtDeliveryDiscountThreshold.Name = "txtDeliveryDiscountThreshold";
             this.txtDeliveryDiscountThreshold.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 12F);
@@ -829,14 +834,14 @@
             this.label5.AutoSize = true;
             this.label5.Location = new System.Drawing.Point(8, 54);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(158, 14);
+            this.label5.Size = new System.Drawing.Size(164, 17);
             this.label5.TabIndex = 7;
             this.label5.Text = "Delivery Discount Threshold";
             // 
             // txtDeliveryDiscount
             // 
             this.txtDeliveryDiscount.EditValue = "";
-            this.txtDeliveryDiscount.Location = new System.Drawing.Point(192, 21);
+            this.txtDeliveryDiscount.Location = new System.Drawing.Point(225, 21);
             this.txtDeliveryDiscount.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtDeliveryDiscount.Name = "txtDeliveryDiscount";
             this.txtDeliveryDiscount.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 12F);
@@ -849,7 +854,7 @@
             this.label4.AutoSize = true;
             this.label4.Location = new System.Drawing.Point(8, 23);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(116, 14);
+            this.label4.Size = new System.Drawing.Size(119, 17);
             this.label4.TabIndex = 5;
             this.label4.Text = "Delivery Discount %";
             // 
@@ -861,11 +866,11 @@
             this.groupBox2.Controls.Add(this.txtPayType2);
             this.groupBox2.Controls.Add(this.txtPayType1);
             this.groupBox2.Controls.Add(this.labelControl1);
-            this.groupBox2.Location = new System.Drawing.Point(7, 4);
+            this.groupBox2.Location = new System.Drawing.Point(937, 93);
             this.groupBox2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.groupBox2.Size = new System.Drawing.Size(268, 184);
+            this.groupBox2.Size = new System.Drawing.Size(206, 184);
             this.groupBox2.TabIndex = 6;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "PaymentType";
@@ -955,19 +960,19 @@
             this.groupBox9.Controls.Add(this.labelControl4);
             this.groupBox9.Controls.Add(this.txtOrderThreshold);
             this.groupBox9.Controls.Add(this.labelControl3);
-            this.groupBox9.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox9.Location = new System.Drawing.Point(25, 343);
+            this.groupBox9.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox9.Location = new System.Drawing.Point(584, 11);
             this.groupBox9.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.groupBox9.Name = "groupBox9";
             this.groupBox9.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.groupBox9.Size = new System.Drawing.Size(553, 89);
+            this.groupBox9.Size = new System.Drawing.Size(306, 211);
             this.groupBox9.TabIndex = 2;
             this.groupBox9.TabStop = false;
             this.groupBox9.Text = "Delivery SurCharge";
             // 
             // txtSurchargeAmount
             // 
-            this.txtSurchargeAmount.Location = new System.Drawing.Point(447, 36);
+            this.txtSurchargeAmount.Location = new System.Drawing.Point(212, 121);
             this.txtSurchargeAmount.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtSurchargeAmount.Name = "txtSurchargeAmount";
             this.txtSurchargeAmount.Properties.Appearance.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -979,18 +984,18 @@
             // 
             // labelControl4
             // 
-            this.labelControl4.Appearance.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelControl4.Appearance.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelControl4.Appearance.Options.UseFont = true;
-            this.labelControl4.Location = new System.Drawing.Point(284, 41);
+            this.labelControl4.Location = new System.Drawing.Point(11, 128);
             this.labelControl4.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.labelControl4.Name = "labelControl4";
-            this.labelControl4.Size = new System.Drawing.Size(144, 21);
+            this.labelControl4.Size = new System.Drawing.Size(118, 19);
             this.labelControl4.TabIndex = 12;
             this.labelControl4.Text = "Surcharge Amount";
             // 
             // txtOrderThreshold
             // 
-            this.txtOrderThreshold.Location = new System.Drawing.Point(153, 36);
+            this.txtOrderThreshold.Location = new System.Drawing.Point(212, 62);
             this.txtOrderThreshold.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtOrderThreshold.Name = "txtOrderThreshold";
             this.txtOrderThreshold.Properties.Appearance.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -1002,12 +1007,12 @@
             // 
             // labelControl3
             // 
-            this.labelControl3.Appearance.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelControl3.Appearance.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelControl3.Appearance.Options.UseFont = true;
-            this.labelControl3.Location = new System.Drawing.Point(11, 41);
+            this.labelControl3.Location = new System.Drawing.Point(11, 69);
             this.labelControl3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.labelControl3.Name = "labelControl3";
-            this.labelControl3.Size = new System.Drawing.Size(124, 21);
+            this.labelControl3.Size = new System.Drawing.Size(105, 19);
             this.labelControl3.TabIndex = 10;
             this.labelControl3.Text = "Order Threshold";
             // 
@@ -1016,22 +1021,22 @@
             this.groupBox8.Controls.Add(this.chkIgnoreDeliveryIfCharge);
             this.groupBox8.Controls.Add(this.chkIgnoreDelivery);
             this.groupBox8.Controls.Add(this.chkDeliveryChge);
-            this.groupBox8.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox8.Location = new System.Drawing.Point(25, 226);
+            this.groupBox8.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox8.Location = new System.Drawing.Point(160, 238);
             this.groupBox8.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.groupBox8.Name = "groupBox8";
             this.groupBox8.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.groupBox8.Size = new System.Drawing.Size(553, 112);
+            this.groupBox8.Size = new System.Drawing.Size(553, 185);
             this.groupBox8.TabIndex = 1;
             this.groupBox8.TabStop = false;
             this.groupBox8.Text = "Charge Options";
             // 
             // chkIgnoreDeliveryIfCharge
             // 
-            this.chkIgnoreDeliveryIfCharge.Location = new System.Drawing.Point(11, 53);
+            this.chkIgnoreDeliveryIfCharge.Location = new System.Drawing.Point(17, 80);
             this.chkIgnoreDeliveryIfCharge.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.chkIgnoreDeliveryIfCharge.Name = "chkIgnoreDeliveryIfCharge";
-            this.chkIgnoreDeliveryIfCharge.Properties.Appearance.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.chkIgnoreDeliveryIfCharge.Properties.Appearance.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.chkIgnoreDeliveryIfCharge.Properties.Appearance.Options.UseFont = true;
             this.chkIgnoreDeliveryIfCharge.Properties.Caption = "Ignore Delivery Surcharge if Delivery Charge Applies";
             this.chkIgnoreDeliveryIfCharge.Properties.CheckBoxOptions.Style = DevExpress.XtraEditors.Controls.CheckBoxStyle.Custom;
@@ -1043,10 +1048,10 @@
             // 
             // chkIgnoreDelivery
             // 
-            this.chkIgnoreDelivery.Location = new System.Drawing.Point(11, 82);
+            this.chkIgnoreDelivery.Location = new System.Drawing.Point(17, 119);
             this.chkIgnoreDelivery.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.chkIgnoreDelivery.Name = "chkIgnoreDelivery";
-            this.chkIgnoreDelivery.Properties.Appearance.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.chkIgnoreDelivery.Properties.Appearance.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.chkIgnoreDelivery.Properties.Appearance.Options.UseFont = true;
             this.chkIgnoreDelivery.Properties.Caption = "Ignore Delivery Distance Charge If Surcharge Applies";
             this.chkIgnoreDelivery.Properties.CheckBoxOptions.Style = DevExpress.XtraEditors.Controls.CheckBoxStyle.Custom;
@@ -1058,10 +1063,10 @@
             // 
             // chkDeliveryChge
             // 
-            this.chkDeliveryChge.Location = new System.Drawing.Point(11, 28);
+            this.chkDeliveryChge.Location = new System.Drawing.Point(17, 43);
             this.chkDeliveryChge.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.chkDeliveryChge.Name = "chkDeliveryChge";
-            this.chkDeliveryChge.Properties.Appearance.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.chkDeliveryChge.Properties.Appearance.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.chkDeliveryChge.Properties.Appearance.Options.UseFont = true;
             this.chkDeliveryChge.Properties.Caption = "Delivery Charge Includes In Order";
             this.chkDeliveryChge.Properties.CheckBoxOptions.Style = DevExpress.XtraEditors.Controls.CheckBoxStyle.Custom;
@@ -1092,7 +1097,7 @@
             this.groupBox7.Controls.Add(this.txtDsDistanceFrom1);
             this.groupBox7.Controls.Add(this.label13);
             this.groupBox7.Controls.Add(this.label11);
-            this.groupBox7.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox7.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox7.Location = new System.Drawing.Point(25, 3);
             this.groupBox7.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.groupBox7.Name = "groupBox7";
@@ -1104,12 +1109,12 @@
             // 
             // labelControl5
             // 
-            this.labelControl5.Appearance.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelControl5.Appearance.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelControl5.Appearance.Options.UseFont = true;
             this.labelControl5.Location = new System.Drawing.Point(170, 187);
             this.labelControl5.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.labelControl5.Name = "labelControl5";
-            this.labelControl5.Size = new System.Drawing.Size(59, 21);
+            this.labelControl5.Size = new System.Drawing.Size(52, 19);
             this.labelControl5.TabIndex = 19;
             this.labelControl5.Text = "miles at";
             // 
@@ -1118,21 +1123,21 @@
             this.txtOverMile.Location = new System.Drawing.Point(76, 180);
             this.txtOverMile.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtOverMile.Name = "txtOverMile";
-            this.txtOverMile.Properties.Appearance.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtOverMile.Properties.Appearance.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtOverMile.Properties.Appearance.Options.UseFont = true;
             this.txtOverMile.Properties.Mask.EditMask = "f2";
             this.txtOverMile.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Numeric;
-            this.txtOverMile.Size = new System.Drawing.Size(88, 28);
+            this.txtOverMile.Size = new System.Drawing.Size(88, 26);
             this.txtOverMile.TabIndex = 18;
             // 
             // labelControl2
             // 
-            this.labelControl2.Appearance.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelControl2.Appearance.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelControl2.Appearance.Options.UseFont = true;
             this.labelControl2.Location = new System.Drawing.Point(34, 187);
             this.labelControl2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.labelControl2.Name = "labelControl2";
-            this.labelControl2.Size = new System.Drawing.Size(36, 21);
+            this.labelControl2.Size = new System.Drawing.Size(32, 19);
             this.labelControl2.TabIndex = 17;
             this.labelControl2.Text = "Over";
             // 
@@ -1141,21 +1146,21 @@
             this.txtPerMile.Location = new System.Drawing.Point(235, 184);
             this.txtPerMile.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtPerMile.Name = "txtPerMile";
-            this.txtPerMile.Properties.Appearance.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtPerMile.Properties.Appearance.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtPerMile.Properties.Appearance.Options.UseFont = true;
             this.txtPerMile.Properties.Mask.EditMask = "f2";
             this.txtPerMile.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Numeric;
-            this.txtPerMile.Size = new System.Drawing.Size(88, 28);
+            this.txtPerMile.Size = new System.Drawing.Size(88, 26);
             this.txtPerMile.TabIndex = 16;
             // 
             // labelControl6
             // 
-            this.labelControl6.Appearance.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelControl6.Appearance.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelControl6.Appearance.Options.UseFont = true;
             this.labelControl6.Location = new System.Drawing.Point(329, 187);
             this.labelControl6.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.labelControl6.Name = "labelControl6";
-            this.labelControl6.Size = new System.Drawing.Size(63, 21);
+            this.labelControl6.Size = new System.Drawing.Size(54, 19);
             this.labelControl6.TabIndex = 15;
             this.labelControl6.Text = "Per Mile";
             // 
@@ -1274,7 +1279,7 @@
             this.label14.AutoSize = true;
             this.label14.Location = new System.Drawing.Point(383, 30);
             this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(128, 21);
+            this.label14.Size = new System.Drawing.Size(105, 19);
             this.label14.TabIndex = 3;
             this.label14.Text = "Amount To Pay";
             // 
@@ -1294,7 +1299,7 @@
             this.label13.AutoSize = true;
             this.label13.Location = new System.Drawing.Point(223, 30);
             this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(99, 21);
+            this.label13.Size = new System.Drawing.Size(85, 19);
             this.label13.TabIndex = 1;
             this.label13.Text = "Distance To";
             // 
@@ -1303,7 +1308,7 @@
             this.label11.AutoSize = true;
             this.label11.Location = new System.Drawing.Point(30, 30);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(120, 21);
+            this.label11.Size = new System.Drawing.Size(102, 19);
             this.label11.TabIndex = 0;
             this.label11.Text = "Distance From";
             // 
@@ -1326,6 +1331,7 @@
             this.groupBox10.Controls.Add(this.label16);
             this.groupBox10.Controls.Add(this.txtEngName);
             this.groupBox10.Controls.Add(this.label15);
+            this.groupBox10.Font = new System.Drawing.Font("Calibri", 12F);
             this.groupBox10.Location = new System.Drawing.Point(3, 2);
             this.groupBox10.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.groupBox10.Name = "groupBox10";
@@ -1686,7 +1692,7 @@
             // txtIncrement
             // 
             this.txtIncrement.EditValue = "";
-            this.txtIncrement.Location = new System.Drawing.Point(122, 115);
+            this.txtIncrement.Location = new System.Drawing.Point(132, 114);
             this.txtIncrement.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtIncrement.Name = "txtIncrement";
             this.txtIncrement.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 12F);
@@ -1701,14 +1707,14 @@
             this.label17.AutoSize = true;
             this.label17.Location = new System.Drawing.Point(19, 121);
             this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(94, 14);
+            this.label17.Size = new System.Drawing.Size(110, 19);
             this.label17.TabIndex = 15;
             this.label17.Text = "Increment Price";
             // 
             // txtOtherName
             // 
             this.txtOtherName.EditValue = "";
-            this.txtOtherName.Location = new System.Drawing.Point(122, 75);
+            this.txtOtherName.Location = new System.Drawing.Point(132, 78);
             this.txtOtherName.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtOtherName.Name = "txtOtherName";
             this.txtOtherName.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 12F);
@@ -1722,14 +1728,14 @@
             this.label16.AutoSize = true;
             this.label16.Location = new System.Drawing.Point(38, 85);
             this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(74, 14);
+            this.label16.Size = new System.Drawing.Size(88, 19);
             this.label16.TabIndex = 13;
             this.label16.Text = "Ohter Name";
             // 
             // txtEngName
             // 
             this.txtEngName.EditValue = "";
-            this.txtEngName.Location = new System.Drawing.Point(122, 40);
+            this.txtEngName.Location = new System.Drawing.Point(132, 42);
             this.txtEngName.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtEngName.Name = "txtEngName";
             this.txtEngName.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 12F);
@@ -1743,14 +1749,14 @@
             this.label15.AutoSize = true;
             this.label15.Location = new System.Drawing.Point(33, 49);
             this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(79, 14);
+            this.label15.Size = new System.Drawing.Size(98, 19);
             this.label15.TabIndex = 11;
             this.label15.Text = "English Name";
             // 
             // btnExit
             // 
-            this.btnExit.Appearance.BackColor = System.Drawing.Color.Olive;
-            this.btnExit.Appearance.Font = new System.Drawing.Font("Tahoma", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnExit.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.btnExit.Appearance.Font = new System.Drawing.Font("Calibri", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnExit.Appearance.ForeColor = System.Drawing.Color.White;
             this.btnExit.Appearance.Options.UseBackColor = true;
             this.btnExit.Appearance.Options.UseFont = true;
@@ -1768,8 +1774,8 @@
             // 
             // btnSave
             // 
-            this.btnSave.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
-            this.btnSave.Appearance.Font = new System.Drawing.Font("Tahoma", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSave.Appearance.BackColor = System.Drawing.Color.Green;
+            this.btnSave.Appearance.Font = new System.Drawing.Font("Calibri", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSave.Appearance.ForeColor = System.Drawing.Color.White;
             this.btnSave.Appearance.Options.UseBackColor = true;
             this.btnSave.Appearance.Options.UseFont = true;
@@ -1789,8 +1795,9 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 14F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(942, 564);
+            this.ClientSize = new System.Drawing.Size(938, 564);
             this.Controls.Add(this.groupBox1);
+            this.Controls.Add(this.groupBox2);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "FrmTaConf";
