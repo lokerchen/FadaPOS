@@ -77,15 +77,18 @@
             this.MiSmallPrice = new DevExpress.XtraGrid.Columns.GridColumn();
             this.MiBtnColor = new DevExpress.XtraGrid.Columns.GridColumn();
             this.panelControl2 = new DevExpress.XtraEditors.PanelControl();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.txtLargePrice = new DevExpress.XtraEditors.TextEdit();
+            this.labelControl14 = new DevExpress.XtraEditors.LabelControl();
+            this.txtRegularPrice = new DevExpress.XtraEditors.TextEdit();
+            this.labelControl5 = new DevExpress.XtraEditors.LabelControl();
+            this.labelControl6 = new DevExpress.XtraEditors.LabelControl();
+            this.txtSmallPrice = new DevExpress.XtraEditors.TextEdit();
             this.labelControl27 = new DevExpress.XtraEditors.LabelControl();
             this.colorEditBtn = new DevExpress.XtraEditors.ColorEdit();
             this.chk3 = new DevExpress.XtraEditors.CheckEdit();
             this.chk2 = new DevExpress.XtraEditors.CheckEdit();
             this.chk1 = new DevExpress.XtraEditors.CheckEdit();
-            this.txtSmallPrice = new DevExpress.XtraEditors.TextEdit();
-            this.labelControl6 = new DevExpress.XtraEditors.LabelControl();
-            this.txtLargePrice = new DevExpress.XtraEditors.TextEdit();
-            this.labelControl5 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl4 = new DevExpress.XtraEditors.LabelControl();
             this.lueMenuSet = new DevExpress.XtraEditors.LookUpEdit();
             this.labelControl12 = new DevExpress.XtraEditors.LabelControl();
@@ -102,8 +105,6 @@
             this.txtSpecailRegularPrice = new DevExpress.XtraEditors.TextEdit();
             this.luePrtOrder = new DevExpress.XtraEditors.LookUpEdit();
             this.labelControl15 = new DevExpress.XtraEditors.LabelControl();
-            this.txtRegularPrice = new DevExpress.XtraEditors.TextEdit();
-            this.labelControl14 = new DevExpress.XtraEditors.LabelControl();
             this.txtOtherName = new DevExpress.XtraEditors.TextEdit();
             this.labelControl13 = new DevExpress.XtraEditors.LabelControl();
             this.txtEngName = new DevExpress.XtraEditors.TextEdit();
@@ -114,6 +115,8 @@
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
             this.xtpSc = new DevExpress.XtraTab.XtraTabPage();
             this.panelControl6 = new DevExpress.XtraEditors.PanelControl();
+            this.label1 = new System.Windows.Forms.Label();
+            this.panel1 = new System.Windows.Forms.Panel();
             this.btnScCopyChoices = new System.Windows.Forms.Button();
             this.chkScAutoAppend20 = new DevExpress.XtraEditors.CheckEdit();
             this.txtScAddPrice20 = new DevExpress.XtraEditors.TextEdit();
@@ -207,6 +210,8 @@
             this.btnScSave = new DevExpress.XtraEditors.SimpleButton();
             this.xtpTc = new DevExpress.XtraTab.XtraTabPage();
             this.panelControl7 = new DevExpress.XtraEditors.PanelControl();
+            this.label2 = new System.Windows.Forms.Label();
+            this.panel2 = new System.Windows.Forms.Panel();
             this.btnTcCopyChoices = new System.Windows.Forms.Button();
             this.chkTcAutoAppend20 = new DevExpress.XtraEditors.CheckEdit();
             this.txtTcAddPrice20 = new DevExpress.XtraEditors.TextEdit();
@@ -300,7 +305,6 @@
             this.btnTcSave = new DevExpress.XtraEditors.SimpleButton();
             this.xtpSm = new DevExpress.XtraTab.XtraTabPage();
             this.panelControl10 = new DevExpress.XtraEditors.PanelControl();
-            this.lblSubMenuName = new DevExpress.XtraEditors.LabelControl();
             this.labelControl31 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl30 = new DevExpress.XtraEditors.LabelControl();
             this.chkSmShowContentOnPrtOut = new DevExpress.XtraEditors.CheckEdit();
@@ -340,6 +344,7 @@
             this.panelControl11 = new DevExpress.XtraEditors.PanelControl();
             this.btnSmExit = new DevExpress.XtraEditors.SimpleButton();
             this.btnSmSave = new DevExpress.XtraEditors.SimpleButton();
+            this.lblSubMenuName = new DevExpress.XtraEditors.LabelControl();
             ((System.ComponentModel.ISupportInitialize)(this.xtpUsrAccess)).BeginInit();
             this.xtpUsrAccess.SuspendLayout();
             this.xtpDa.SuspendLayout();
@@ -359,12 +364,14 @@
             ((System.ComponentModel.ISupportInitialize)(this.gvMenuItem)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl2)).BeginInit();
             this.panelControl2.SuspendLayout();
+            this.groupBox2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.txtLargePrice.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtRegularPrice.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtSmallPrice.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.colorEditBtn.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.chk3.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.chk2.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.chk1.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtSmallPrice.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtLargePrice.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.lueMenuSet.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.chkComboOtherSet.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.chkComboWorkDay.Properties)).BeginInit();
@@ -373,7 +380,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.chkComboMenuCate.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtSpecailRegularPrice.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.luePrtOrder.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtRegularPrice.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtOtherName.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtEngName.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtDispPosition.Properties)).BeginInit();
@@ -381,6 +387,7 @@
             this.xtpSc.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl6)).BeginInit();
             this.panelControl6.SuspendLayout();
+            this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.chkScAutoAppend20.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtScAddPrice20.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtScOtherName20.Properties)).BeginInit();
@@ -468,6 +475,7 @@
             this.xtpTc.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl7)).BeginInit();
             this.panelControl7.SuspendLayout();
+            this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.chkTcAutoAppend20.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtTcAddPrice20.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtTcOtherName20.Properties)).BeginInit();
@@ -593,6 +601,8 @@
             // 
             // xtpUsrAccess
             // 
+            this.xtpUsrAccess.AppearancePage.Header.Font = new System.Drawing.Font("Calibri", 12F);
+            this.xtpUsrAccess.AppearancePage.Header.Options.UseFont = true;
             this.xtpUsrAccess.Location = new System.Drawing.Point(3, 3);
             this.xtpUsrAccess.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.xtpUsrAccess.Name = "xtpUsrAccess";
@@ -612,7 +622,7 @@
             this.xtpDa.Controls.Add(this.panelControl3);
             this.xtpDa.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.xtpDa.Name = "xtpDa";
-            this.xtpDa.Size = new System.Drawing.Size(885, 549);
+            this.xtpDa.Size = new System.Drawing.Size(889, 547);
             this.xtpDa.Text = "Dish Attributes";
             // 
             // panelControl3
@@ -627,10 +637,10 @@
             // groupBox1
             // 
             this.groupBox1.Controls.Add(this.panelControl1);
-            this.groupBox1.Font = new System.Drawing.Font("Tahoma", 13F);
+            this.groupBox1.Font = new System.Drawing.Font("Calibri", 13F);
             this.groupBox1.Location = new System.Drawing.Point(4, 5);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(680, 503);
+            this.groupBox1.Size = new System.Drawing.Size(654, 531);
             this.groupBox1.TabIndex = 47;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Menu Item";
@@ -644,10 +654,10 @@
             this.panelControl1.Controls.Add(this.groupBox5);
             this.panelControl1.Controls.Add(this.gridControlMenuItem);
             this.panelControl1.Controls.Add(this.panelControl2);
-            this.panelControl1.Location = new System.Drawing.Point(5, 20);
+            this.panelControl1.Location = new System.Drawing.Point(5, 26);
             this.panelControl1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panelControl1.Name = "panelControl1";
-            this.panelControl1.Size = new System.Drawing.Size(649, 437);
+            this.panelControl1.Size = new System.Drawing.Size(640, 493);
             this.panelControl1.TabIndex = 1;
             // 
             // btnUp
@@ -656,7 +666,7 @@
             this.btnUp.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnUp.Font = new System.Drawing.Font("Tahoma", 22.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnUp.ForeColor = System.Drawing.Color.White;
-            this.btnUp.Location = new System.Drawing.Point(93, 323);
+            this.btnUp.Location = new System.Drawing.Point(22, 438);
             this.btnUp.Name = "btnUp";
             this.btnUp.Size = new System.Drawing.Size(72, 44);
             this.btnUp.TabIndex = 49;
@@ -670,7 +680,7 @@
             this.btnDown.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnDown.Font = new System.Drawing.Font("Tahoma", 22.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnDown.ForeColor = System.Drawing.Color.White;
-            this.btnDown.Location = new System.Drawing.Point(206, 323);
+            this.btnDown.Location = new System.Drawing.Point(111, 438);
             this.btnDown.Name = "btnDown";
             this.btnDown.Size = new System.Drawing.Size(72, 44);
             this.btnDown.TabIndex = 48;
@@ -685,16 +695,17 @@
             this.panelControl5.Controls.Add(this.btnDel);
             this.panelControl5.Controls.Add(this.btnSave);
             this.panelControl5.Controls.Add(this.btnAdd);
-            this.panelControl5.Location = new System.Drawing.Point(4, 380);
+            this.panelControl5.Location = new System.Drawing.Point(210, 435);
             this.panelControl5.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panelControl5.Name = "panelControl5";
-            this.panelControl5.Size = new System.Drawing.Size(543, 55);
+            this.panelControl5.Size = new System.Drawing.Size(424, 55);
             this.panelControl5.TabIndex = 47;
             // 
             // btnCopy
             // 
             this.btnCopy.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
             this.btnCopy.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCopy.Font = new System.Drawing.Font("Calibri", 12F);
             this.btnCopy.ForeColor = System.Drawing.Color.White;
             this.btnCopy.Location = new System.Drawing.Point(80, 6);
             this.btnCopy.Name = "btnCopy";
@@ -706,10 +717,11 @@
             // 
             // btnExit
             // 
-            this.btnExit.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
+            this.btnExit.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.btnExit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnExit.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold);
             this.btnExit.ForeColor = System.Drawing.Color.White;
-            this.btnExit.Location = new System.Drawing.Point(312, 6);
+            this.btnExit.Location = new System.Drawing.Point(343, 6);
             this.btnExit.Name = "btnExit";
             this.btnExit.Size = new System.Drawing.Size(72, 44);
             this.btnExit.TabIndex = 7;
@@ -721,8 +733,9 @@
             // 
             this.btnDel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
             this.btnDel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnDel.Font = new System.Drawing.Font("Calibri", 12F);
             this.btnDel.ForeColor = System.Drawing.Color.White;
-            this.btnDel.Location = new System.Drawing.Point(234, 6);
+            this.btnDel.Location = new System.Drawing.Point(158, 6);
             this.btnDel.Name = "btnDel";
             this.btnDel.Size = new System.Drawing.Size(72, 44);
             this.btnDel.TabIndex = 6;
@@ -732,10 +745,11 @@
             // 
             // btnSave
             // 
-            this.btnSave.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
+            this.btnSave.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
             this.btnSave.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSave.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold);
             this.btnSave.ForeColor = System.Drawing.Color.White;
-            this.btnSave.Location = new System.Drawing.Point(158, 6);
+            this.btnSave.Location = new System.Drawing.Point(265, 7);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(72, 44);
             this.btnSave.TabIndex = 5;
@@ -747,12 +761,13 @@
             // 
             this.btnAdd.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
             this.btnAdd.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAdd.Font = new System.Drawing.Font("Calibri", 12F);
             this.btnAdd.ForeColor = System.Drawing.Color.White;
             this.btnAdd.Location = new System.Drawing.Point(4, 6);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Size = new System.Drawing.Size(72, 44);
             this.btnAdd.TabIndex = 4;
-            this.btnAdd.Text = "Add New";
+            this.btnAdd.Text = "Add";
             this.btnAdd.UseVisualStyleBackColor = false;
             this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
@@ -844,7 +859,7 @@
             this.groupBox5.Controls.Add(this.btnMenuSet1);
             this.groupBox5.Location = new System.Drawing.Point(4, 5);
             this.groupBox5.Name = "groupBox5";
-            this.groupBox5.Size = new System.Drawing.Size(315, 69);
+            this.groupBox5.Size = new System.Drawing.Size(382, 69);
             this.groupBox5.TabIndex = 46;
             this.groupBox5.TabStop = false;
             this.groupBox5.Text = "Menu Set";
@@ -904,7 +919,7 @@
             this.gridControlMenuItem.MainView = this.gvMenuItem;
             this.gridControlMenuItem.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.gridControlMenuItem.Name = "gridControlMenuItem";
-            this.gridControlMenuItem.Size = new System.Drawing.Size(382, 178);
+            this.gridControlMenuItem.Size = new System.Drawing.Size(382, 291);
             this.gridControlMenuItem.TabIndex = 13;
             this.gridControlMenuItem.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gvMenuItem});
@@ -1098,15 +1113,12 @@
             // 
             // panelControl2
             // 
+            this.panelControl2.Controls.Add(this.groupBox2);
             this.panelControl2.Controls.Add(this.labelControl27);
             this.panelControl2.Controls.Add(this.colorEditBtn);
             this.panelControl2.Controls.Add(this.chk3);
             this.panelControl2.Controls.Add(this.chk2);
             this.panelControl2.Controls.Add(this.chk1);
-            this.panelControl2.Controls.Add(this.txtSmallPrice);
-            this.panelControl2.Controls.Add(this.labelControl6);
-            this.panelControl2.Controls.Add(this.txtLargePrice);
-            this.panelControl2.Controls.Add(this.labelControl5);
             this.panelControl2.Controls.Add(this.labelControl4);
             this.panelControl2.Controls.Add(this.lueMenuSet);
             this.panelControl2.Controls.Add(this.labelControl12);
@@ -1123,8 +1135,6 @@
             this.panelControl2.Controls.Add(this.txtSpecailRegularPrice);
             this.panelControl2.Controls.Add(this.luePrtOrder);
             this.panelControl2.Controls.Add(this.labelControl15);
-            this.panelControl2.Controls.Add(this.txtRegularPrice);
-            this.panelControl2.Controls.Add(this.labelControl14);
             this.panelControl2.Controls.Add(this.txtOtherName);
             this.panelControl2.Controls.Add(this.labelControl13);
             this.panelControl2.Controls.Add(this.txtEngName);
@@ -1133,17 +1143,103 @@
             this.panelControl2.Controls.Add(this.labelControl2);
             this.panelControl2.Controls.Add(this.txtDishCode);
             this.panelControl2.Controls.Add(this.labelControl1);
-            this.panelControl2.Location = new System.Drawing.Point(392, 11);
+            this.panelControl2.Location = new System.Drawing.Point(392, 12);
             this.panelControl2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panelControl2.Name = "panelControl2";
-            this.panelControl2.Size = new System.Drawing.Size(252, 364);
+            this.panelControl2.Size = new System.Drawing.Size(242, 418);
             this.panelControl2.TabIndex = 0;
+            // 
+            // groupBox2
+            // 
+            this.groupBox2.Controls.Add(this.txtLargePrice);
+            this.groupBox2.Controls.Add(this.labelControl14);
+            this.groupBox2.Controls.Add(this.txtRegularPrice);
+            this.groupBox2.Controls.Add(this.labelControl5);
+            this.groupBox2.Controls.Add(this.labelControl6);
+            this.groupBox2.Controls.Add(this.txtSmallPrice);
+            this.groupBox2.Font = new System.Drawing.Font("Calibri", 12F);
+            this.groupBox2.Location = new System.Drawing.Point(6, 312);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(231, 100);
+            this.groupBox2.TabIndex = 52;
+            this.groupBox2.TabStop = false;
+            this.groupBox2.Text = "Price";
+            // 
+            // txtLargePrice
+            // 
+            this.txtLargePrice.Location = new System.Drawing.Point(109, 44);
+            this.txtLargePrice.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txtLargePrice.Name = "txtLargePrice";
+            this.txtLargePrice.Properties.AutoHeight = false;
+            this.txtLargePrice.Properties.Mask.EditMask = "f";
+            this.txtLargePrice.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Numeric;
+            this.txtLargePrice.Size = new System.Drawing.Size(108, 20);
+            this.txtLargePrice.TabIndex = 26;
+            // 
+            // labelControl14
+            // 
+            this.labelControl14.Appearance.Options.UseTextOptions = true;
+            this.labelControl14.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
+            this.labelControl14.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
+            this.labelControl14.Location = new System.Drawing.Point(5, 21);
+            this.labelControl14.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.labelControl14.Name = "labelControl14";
+            this.labelControl14.Size = new System.Drawing.Size(98, 14);
+            this.labelControl14.TabIndex = 8;
+            this.labelControl14.Text = "Regular Price:";
+            // 
+            // txtRegularPrice
+            // 
+            this.txtRegularPrice.Location = new System.Drawing.Point(109, 17);
+            this.txtRegularPrice.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txtRegularPrice.Name = "txtRegularPrice";
+            this.txtRegularPrice.Properties.AutoHeight = false;
+            this.txtRegularPrice.Properties.Mask.EditMask = "f";
+            this.txtRegularPrice.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Numeric;
+            this.txtRegularPrice.Size = new System.Drawing.Size(108, 20);
+            this.txtRegularPrice.TabIndex = 9;
+            // 
+            // labelControl5
+            // 
+            this.labelControl5.Appearance.Options.UseTextOptions = true;
+            this.labelControl5.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
+            this.labelControl5.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
+            this.labelControl5.Location = new System.Drawing.Point(5, 49);
+            this.labelControl5.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.labelControl5.Name = "labelControl5";
+            this.labelControl5.Size = new System.Drawing.Size(98, 14);
+            this.labelControl5.TabIndex = 25;
+            this.labelControl5.Text = "Large Price:";
+            // 
+            // labelControl6
+            // 
+            this.labelControl6.Appearance.Options.UseTextOptions = true;
+            this.labelControl6.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
+            this.labelControl6.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
+            this.labelControl6.Location = new System.Drawing.Point(5, 76);
+            this.labelControl6.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.labelControl6.Name = "labelControl6";
+            this.labelControl6.Size = new System.Drawing.Size(98, 14);
+            this.labelControl6.TabIndex = 27;
+            this.labelControl6.Text = "Small Price:";
+            // 
+            // txtSmallPrice
+            // 
+            this.txtSmallPrice.Location = new System.Drawing.Point(109, 71);
+            this.txtSmallPrice.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txtSmallPrice.Name = "txtSmallPrice";
+            this.txtSmallPrice.Properties.AutoHeight = false;
+            this.txtSmallPrice.Properties.Mask.EditMask = "f";
+            this.txtSmallPrice.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Numeric;
+            this.txtSmallPrice.Size = new System.Drawing.Size(108, 20);
+            this.txtSmallPrice.TabIndex = 28;
             // 
             // labelControl27
             // 
+            this.labelControl27.Appearance.Options.UseTextOptions = true;
             this.labelControl27.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
             this.labelControl27.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
-            this.labelControl27.Location = new System.Drawing.Point(0, 324);
+            this.labelControl27.Location = new System.Drawing.Point(0, 175);
             this.labelControl27.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.labelControl27.Name = "labelControl27";
             this.labelControl27.Size = new System.Drawing.Size(98, 14);
@@ -1153,7 +1249,7 @@
             // colorEditBtn
             // 
             this.colorEditBtn.EditValue = System.Drawing.Color.Empty;
-            this.colorEditBtn.Location = new System.Drawing.Point(104, 322);
+            this.colorEditBtn.Location = new System.Drawing.Point(104, 173);
             this.colorEditBtn.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.colorEditBtn.Name = "colorEditBtn";
             this.colorEditBtn.Properties.AutoHeight = false;
@@ -1166,77 +1262,42 @@
             // 
             // chk3
             // 
-            this.chk3.Location = new System.Drawing.Point(82, 300);
+            this.chk3.Location = new System.Drawing.Point(30, 270);
             this.chk3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.chk3.Name = "chk3";
-            this.chk3.Properties.AutoWidth = true;
             this.chk3.Properties.Caption = "Non Discountable";
-            this.chk3.Size = new System.Drawing.Size(117, 19);
+            this.chk3.Properties.CheckBoxOptions.Style = DevExpress.XtraEditors.Controls.CheckBoxStyle.Custom;
+            this.chk3.Properties.GlyphAlignment = DevExpress.Utils.HorzAlignment.Far;
+            this.chk3.Properties.ImageOptions.ImageChecked = global::SuperPOS.Properties.Resources.check_c__32X32;
+            this.chk3.Properties.ImageOptions.ImageUnchecked = global::SuperPOS.Properties.Resources.uncheck_c__32X32;
+            this.chk3.Size = new System.Drawing.Size(154, 36);
             this.chk3.TabIndex = 49;
             // 
             // chk2
             // 
-            this.chk2.Location = new System.Drawing.Point(82, 278);
+            this.chk2.Location = new System.Drawing.Point(30, 240);
             this.chk2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.chk2.Name = "chk2";
-            this.chk2.Properties.AutoWidth = true;
             this.chk2.Properties.Caption = "Set Meal";
-            this.chk2.Size = new System.Drawing.Size(69, 19);
+            this.chk2.Properties.CheckBoxOptions.Style = DevExpress.XtraEditors.Controls.CheckBoxStyle.Custom;
+            this.chk2.Properties.GlyphAlignment = DevExpress.Utils.HorzAlignment.Far;
+            this.chk2.Properties.ImageOptions.ImageChecked = global::SuperPOS.Properties.Resources.check_c__32X32;
+            this.chk2.Properties.ImageOptions.ImageUnchecked = global::SuperPOS.Properties.Resources.uncheck_c__32X32;
+            this.chk2.Size = new System.Drawing.Size(154, 36);
             this.chk2.TabIndex = 48;
             // 
             // chk1
             // 
-            this.chk1.Location = new System.Drawing.Point(82, 257);
+            this.chk1.Location = new System.Drawing.Point(30, 210);
             this.chk1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.chk1.Name = "chk1";
-            this.chk1.Properties.AutoWidth = true;
             this.chk1.Properties.Caption = "Without VAT";
-            this.chk1.Size = new System.Drawing.Size(95, 19);
+            this.chk1.Properties.CheckBoxOptions.Style = DevExpress.XtraEditors.Controls.CheckBoxStyle.Custom;
+            this.chk1.Properties.GlyphAlignment = DevExpress.Utils.HorzAlignment.Far;
+            this.chk1.Properties.ImageOptions.ImageChecked = global::SuperPOS.Properties.Resources.check_c__32X32;
+            this.chk1.Properties.ImageOptions.ImageUnchecked = global::SuperPOS.Properties.Resources.uncheck_c__32X32;
+            this.chk1.Size = new System.Drawing.Size(154, 36);
             this.chk1.TabIndex = 47;
-            // 
-            // txtSmallPrice
-            // 
-            this.txtSmallPrice.Location = new System.Drawing.Point(104, 167);
-            this.txtSmallPrice.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.txtSmallPrice.Name = "txtSmallPrice";
-            this.txtSmallPrice.Properties.AutoHeight = false;
-            this.txtSmallPrice.Properties.Mask.EditMask = "f";
-            this.txtSmallPrice.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Numeric;
-            this.txtSmallPrice.Size = new System.Drawing.Size(129, 20);
-            this.txtSmallPrice.TabIndex = 28;
-            // 
-            // labelControl6
-            // 
-            this.labelControl6.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
-            this.labelControl6.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
-            this.labelControl6.Location = new System.Drawing.Point(0, 172);
-            this.labelControl6.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.labelControl6.Name = "labelControl6";
-            this.labelControl6.Size = new System.Drawing.Size(98, 14);
-            this.labelControl6.TabIndex = 27;
-            this.labelControl6.Text = "Small Price:";
-            // 
-            // txtLargePrice
-            // 
-            this.txtLargePrice.Location = new System.Drawing.Point(104, 140);
-            this.txtLargePrice.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.txtLargePrice.Name = "txtLargePrice";
-            this.txtLargePrice.Properties.AutoHeight = false;
-            this.txtLargePrice.Properties.Mask.EditMask = "f";
-            this.txtLargePrice.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Numeric;
-            this.txtLargePrice.Size = new System.Drawing.Size(129, 20);
-            this.txtLargePrice.TabIndex = 26;
-            // 
-            // labelControl5
-            // 
-            this.labelControl5.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
-            this.labelControl5.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
-            this.labelControl5.Location = new System.Drawing.Point(0, 145);
-            this.labelControl5.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.labelControl5.Name = "labelControl5";
-            this.labelControl5.Size = new System.Drawing.Size(98, 14);
-            this.labelControl5.TabIndex = 25;
-            this.labelControl5.Text = "Large Price:";
             // 
             // labelControl4
             // 
@@ -1317,7 +1378,7 @@
             // 
             // luePrtName
             // 
-            this.luePrtName.Location = new System.Drawing.Point(104, 196);
+            this.luePrtName.Location = new System.Drawing.Point(104, 114);
             this.luePrtName.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.luePrtName.Name = "luePrtName";
             this.luePrtName.Properties.AutoHeight = false;
@@ -1331,9 +1392,10 @@
             // 
             // labelControl8
             // 
+            this.labelControl8.Appearance.Options.UseTextOptions = true;
             this.labelControl8.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
             this.labelControl8.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
-            this.labelControl8.Location = new System.Drawing.Point(0, 201);
+            this.labelControl8.Location = new System.Drawing.Point(0, 119);
             this.labelControl8.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.labelControl8.Name = "labelControl8";
             this.labelControl8.Size = new System.Drawing.Size(98, 14);
@@ -1342,9 +1404,10 @@
             // 
             // labelControl10
             // 
+            this.labelControl10.Appearance.Options.UseTextOptions = true;
             this.labelControl10.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
             this.labelControl10.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
-            this.labelControl10.Location = new System.Drawing.Point(0, 227);
+            this.labelControl10.Location = new System.Drawing.Point(0, 145);
             this.labelControl10.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.labelControl10.Name = "labelControl10";
             this.labelControl10.Size = new System.Drawing.Size(98, 14);
@@ -1366,7 +1429,7 @@
             // 
             // chkComboMenuCate
             // 
-            this.chkComboMenuCate.Location = new System.Drawing.Point(104, 225);
+            this.chkComboMenuCate.Location = new System.Drawing.Point(104, 143);
             this.chkComboMenuCate.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.chkComboMenuCate.Name = "chkComboMenuCate";
             this.chkComboMenuCate.Properties.AllowMultiSelect = true;
@@ -1420,28 +1483,6 @@
             this.labelControl15.Text = "Special Regular Price:";
             this.labelControl15.Visible = false;
             // 
-            // txtRegularPrice
-            // 
-            this.txtRegularPrice.Location = new System.Drawing.Point(104, 113);
-            this.txtRegularPrice.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.txtRegularPrice.Name = "txtRegularPrice";
-            this.txtRegularPrice.Properties.AutoHeight = false;
-            this.txtRegularPrice.Properties.Mask.EditMask = "f";
-            this.txtRegularPrice.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Numeric;
-            this.txtRegularPrice.Size = new System.Drawing.Size(129, 20);
-            this.txtRegularPrice.TabIndex = 9;
-            // 
-            // labelControl14
-            // 
-            this.labelControl14.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
-            this.labelControl14.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
-            this.labelControl14.Location = new System.Drawing.Point(0, 117);
-            this.labelControl14.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.labelControl14.Name = "labelControl14";
-            this.labelControl14.Size = new System.Drawing.Size(98, 14);
-            this.labelControl14.TabIndex = 8;
-            this.labelControl14.Text = "Regular Price:";
-            // 
             // txtOtherName
             // 
             this.txtOtherName.Location = new System.Drawing.Point(104, 86);
@@ -1453,6 +1494,7 @@
             // 
             // labelControl13
             // 
+            this.labelControl13.Appearance.Options.UseTextOptions = true;
             this.labelControl13.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
             this.labelControl13.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
             this.labelControl13.Location = new System.Drawing.Point(0, 90);
@@ -1473,6 +1515,7 @@
             // 
             // labelControl3
             // 
+            this.labelControl3.Appearance.Options.UseTextOptions = true;
             this.labelControl3.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
             this.labelControl3.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
             this.labelControl3.Location = new System.Drawing.Point(0, 64);
@@ -1495,6 +1538,7 @@
             // 
             // labelControl2
             // 
+            this.labelControl2.Appearance.Options.UseTextOptions = true;
             this.labelControl2.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
             this.labelControl2.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
             this.labelControl2.Location = new System.Drawing.Point(0, 37);
@@ -1502,7 +1546,7 @@
             this.labelControl2.Name = "labelControl2";
             this.labelControl2.Size = new System.Drawing.Size(98, 14);
             this.labelControl2.TabIndex = 2;
-            this.labelControl2.Text = "Display Position:";
+            this.labelControl2.Text = "Position:";
             // 
             // txtDishCode
             // 
@@ -1516,6 +1560,7 @@
             // 
             // labelControl1
             // 
+            this.labelControl1.Appearance.Options.UseTextOptions = true;
             this.labelControl1.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
             this.labelControl1.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
             this.labelControl1.Location = new System.Drawing.Point(0, 9);
@@ -1530,11 +1575,13 @@
             this.xtpSc.Controls.Add(this.panelControl6);
             this.xtpSc.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.xtpSc.Name = "xtpSc";
-            this.xtpSc.Size = new System.Drawing.Size(885, 549);
+            this.xtpSc.Size = new System.Drawing.Size(889, 547);
             this.xtpSc.Text = "Second Choices";
             // 
             // panelControl6
             // 
+            this.panelControl6.Controls.Add(this.label1);
+            this.panelControl6.Controls.Add(this.panel1);
             this.panelControl6.Controls.Add(this.btnScCopyChoices);
             this.panelControl6.Controls.Add(this.chkScAutoAppend20);
             this.panelControl6.Controls.Add(this.txtScAddPrice20);
@@ -1613,9 +1660,6 @@
             this.panelControl6.Controls.Add(this.txtScOtherName2);
             this.panelControl6.Controls.Add(this.txtScEngName2);
             this.panelControl6.Controls.Add(this.labelControl28);
-            this.panelControl6.Controls.Add(this.txtScNumOption);
-            this.panelControl6.Controls.Add(this.labelControl22);
-            this.panelControl6.Controls.Add(this.chkScEnableChoice);
             this.panelControl6.Controls.Add(this.chkScAutoAppend1);
             this.panelControl6.Controls.Add(this.txtScAddPrice1);
             this.panelControl6.Controls.Add(this.labelControl19);
@@ -1624,20 +1668,42 @@
             this.panelControl6.Controls.Add(this.txtScEngName1);
             this.panelControl6.Controls.Add(this.labelControl21);
             this.panelControl6.Controls.Add(this.panelControl8);
-            this.panelControl6.Location = new System.Drawing.Point(3, 2);
+            this.panelControl6.Location = new System.Drawing.Point(4, 3);
             this.panelControl6.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panelControl6.Name = "panelControl6";
             this.panelControl6.Size = new System.Drawing.Size(882, 548);
             this.panelControl6.TabIndex = 2;
             // 
+            // label1
+            // 
+            this.label1.Font = new System.Drawing.Font("Calibri", 12F);
+            this.label1.Location = new System.Drawing.Point(640, 106);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(194, 140);
+            this.label1.TabIndex = 99;
+            this.label1.Text = "For example, if you put 2 in the number of options, you have to pick two options." +
+    " If you select less than 2, there will be a warning message, asking you to input" +
+    " 2 options. ";
+            // 
+            // panel1
+            // 
+            this.panel1.Controls.Add(this.chkScEnableChoice);
+            this.panel1.Controls.Add(this.labelControl22);
+            this.panel1.Controls.Add(this.txtScNumOption);
+            this.panel1.Location = new System.Drawing.Point(495, 21);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(366, 60);
+            this.panel1.TabIndex = 98;
+            // 
             // btnScCopyChoices
             // 
             this.btnScCopyChoices.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
             this.btnScCopyChoices.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnScCopyChoices.Font = new System.Drawing.Font("Calibri", 12F);
             this.btnScCopyChoices.ForeColor = System.Drawing.Color.White;
-            this.btnScCopyChoices.Location = new System.Drawing.Point(545, 23);
+            this.btnScCopyChoices.Location = new System.Drawing.Point(495, 106);
             this.btnScCopyChoices.Name = "btnScCopyChoices";
-            this.btnScCopyChoices.Size = new System.Drawing.Size(113, 23);
+            this.btnScCopyChoices.Size = new System.Drawing.Size(113, 37);
             this.btnScCopyChoices.TabIndex = 97;
             this.btnScCopyChoices.Text = "Copy Choices";
             this.btnScCopyChoices.UseVisualStyleBackColor = false;
@@ -1645,16 +1711,16 @@
             // 
             // chkScAutoAppend20
             // 
-            this.chkScAutoAppend20.Location = new System.Drawing.Point(422, 523);
+            this.chkScAutoAppend20.Location = new System.Drawing.Point(415, 483);
             this.chkScAutoAppend20.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.chkScAutoAppend20.Name = "chkScAutoAppend20";
             this.chkScAutoAppend20.Properties.Caption = "";
-            this.chkScAutoAppend20.Size = new System.Drawing.Size(103, 19);
+            this.chkScAutoAppend20.Size = new System.Drawing.Size(103, 20);
             this.chkScAutoAppend20.TabIndex = 96;
             // 
             // txtScAddPrice20
             // 
-            this.txtScAddPrice20.Location = new System.Drawing.Point(293, 521);
+            this.txtScAddPrice20.Location = new System.Drawing.Point(286, 481);
             this.txtScAddPrice20.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtScAddPrice20.Name = "txtScAddPrice20";
             this.txtScAddPrice20.Properties.Mask.EditMask = "f2";
@@ -1664,7 +1730,7 @@
             // 
             // txtScOtherName20
             // 
-            this.txtScOtherName20.Location = new System.Drawing.Point(152, 521);
+            this.txtScOtherName20.Location = new System.Drawing.Point(145, 481);
             this.txtScOtherName20.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtScOtherName20.Name = "txtScOtherName20";
             this.txtScOtherName20.Size = new System.Drawing.Size(111, 20);
@@ -1672,7 +1738,7 @@
             // 
             // txtScEngName20
             // 
-            this.txtScEngName20.Location = new System.Drawing.Point(25, 521);
+            this.txtScEngName20.Location = new System.Drawing.Point(18, 481);
             this.txtScEngName20.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtScEngName20.Name = "txtScEngName20";
             this.txtScEngName20.Size = new System.Drawing.Size(111, 20);
@@ -1680,16 +1746,16 @@
             // 
             // chkScAutoAppend19
             // 
-            this.chkScAutoAppend19.Location = new System.Drawing.Point(422, 499);
+            this.chkScAutoAppend19.Location = new System.Drawing.Point(415, 459);
             this.chkScAutoAppend19.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.chkScAutoAppend19.Name = "chkScAutoAppend19";
             this.chkScAutoAppend19.Properties.Caption = "";
-            this.chkScAutoAppend19.Size = new System.Drawing.Size(103, 19);
+            this.chkScAutoAppend19.Size = new System.Drawing.Size(103, 20);
             this.chkScAutoAppend19.TabIndex = 92;
             // 
             // txtScAddPrice19
             // 
-            this.txtScAddPrice19.Location = new System.Drawing.Point(293, 498);
+            this.txtScAddPrice19.Location = new System.Drawing.Point(286, 458);
             this.txtScAddPrice19.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtScAddPrice19.Name = "txtScAddPrice19";
             this.txtScAddPrice19.Properties.Mask.EditMask = "f2";
@@ -1699,7 +1765,7 @@
             // 
             // txtScOtherName19
             // 
-            this.txtScOtherName19.Location = new System.Drawing.Point(152, 498);
+            this.txtScOtherName19.Location = new System.Drawing.Point(145, 458);
             this.txtScOtherName19.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtScOtherName19.Name = "txtScOtherName19";
             this.txtScOtherName19.Size = new System.Drawing.Size(111, 20);
@@ -1707,7 +1773,7 @@
             // 
             // txtScEngName19
             // 
-            this.txtScEngName19.Location = new System.Drawing.Point(25, 498);
+            this.txtScEngName19.Location = new System.Drawing.Point(18, 458);
             this.txtScEngName19.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtScEngName19.Name = "txtScEngName19";
             this.txtScEngName19.Size = new System.Drawing.Size(111, 20);
@@ -1715,16 +1781,16 @@
             // 
             // chkScAutoAppend18
             // 
-            this.chkScAutoAppend18.Location = new System.Drawing.Point(422, 476);
+            this.chkScAutoAppend18.Location = new System.Drawing.Point(415, 436);
             this.chkScAutoAppend18.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.chkScAutoAppend18.Name = "chkScAutoAppend18";
             this.chkScAutoAppend18.Properties.Caption = "";
-            this.chkScAutoAppend18.Size = new System.Drawing.Size(103, 19);
+            this.chkScAutoAppend18.Size = new System.Drawing.Size(103, 20);
             this.chkScAutoAppend18.TabIndex = 88;
             // 
             // txtScAddPrice18
             // 
-            this.txtScAddPrice18.Location = new System.Drawing.Point(293, 474);
+            this.txtScAddPrice18.Location = new System.Drawing.Point(286, 434);
             this.txtScAddPrice18.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtScAddPrice18.Name = "txtScAddPrice18";
             this.txtScAddPrice18.Properties.Mask.EditMask = "f2";
@@ -1734,7 +1800,7 @@
             // 
             // txtScOtherName18
             // 
-            this.txtScOtherName18.Location = new System.Drawing.Point(152, 474);
+            this.txtScOtherName18.Location = new System.Drawing.Point(145, 434);
             this.txtScOtherName18.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtScOtherName18.Name = "txtScOtherName18";
             this.txtScOtherName18.Size = new System.Drawing.Size(111, 20);
@@ -1742,7 +1808,7 @@
             // 
             // txtScEngName18
             // 
-            this.txtScEngName18.Location = new System.Drawing.Point(25, 474);
+            this.txtScEngName18.Location = new System.Drawing.Point(18, 434);
             this.txtScEngName18.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtScEngName18.Name = "txtScEngName18";
             this.txtScEngName18.Size = new System.Drawing.Size(111, 20);
@@ -1750,16 +1816,16 @@
             // 
             // chkScAutoAppend17
             // 
-            this.chkScAutoAppend17.Location = new System.Drawing.Point(422, 453);
+            this.chkScAutoAppend17.Location = new System.Drawing.Point(415, 413);
             this.chkScAutoAppend17.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.chkScAutoAppend17.Name = "chkScAutoAppend17";
             this.chkScAutoAppend17.Properties.Caption = "";
-            this.chkScAutoAppend17.Size = new System.Drawing.Size(103, 19);
+            this.chkScAutoAppend17.Size = new System.Drawing.Size(103, 20);
             this.chkScAutoAppend17.TabIndex = 84;
             // 
             // txtScAddPrice17
             // 
-            this.txtScAddPrice17.Location = new System.Drawing.Point(293, 451);
+            this.txtScAddPrice17.Location = new System.Drawing.Point(286, 411);
             this.txtScAddPrice17.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtScAddPrice17.Name = "txtScAddPrice17";
             this.txtScAddPrice17.Properties.Mask.EditMask = "f2";
@@ -1769,7 +1835,7 @@
             // 
             // txtScOtherName17
             // 
-            this.txtScOtherName17.Location = new System.Drawing.Point(152, 451);
+            this.txtScOtherName17.Location = new System.Drawing.Point(145, 411);
             this.txtScOtherName17.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtScOtherName17.Name = "txtScOtherName17";
             this.txtScOtherName17.Size = new System.Drawing.Size(111, 20);
@@ -1777,7 +1843,7 @@
             // 
             // txtScEngName17
             // 
-            this.txtScEngName17.Location = new System.Drawing.Point(25, 451);
+            this.txtScEngName17.Location = new System.Drawing.Point(18, 411);
             this.txtScEngName17.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtScEngName17.Name = "txtScEngName17";
             this.txtScEngName17.Size = new System.Drawing.Size(111, 20);
@@ -1785,16 +1851,16 @@
             // 
             // chkScAutoAppend16
             // 
-            this.chkScAutoAppend16.Location = new System.Drawing.Point(422, 429);
+            this.chkScAutoAppend16.Location = new System.Drawing.Point(415, 389);
             this.chkScAutoAppend16.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.chkScAutoAppend16.Name = "chkScAutoAppend16";
             this.chkScAutoAppend16.Properties.Caption = "";
-            this.chkScAutoAppend16.Size = new System.Drawing.Size(103, 19);
+            this.chkScAutoAppend16.Size = new System.Drawing.Size(103, 20);
             this.chkScAutoAppend16.TabIndex = 80;
             // 
             // txtScAddPrice16
             // 
-            this.txtScAddPrice16.Location = new System.Drawing.Point(293, 428);
+            this.txtScAddPrice16.Location = new System.Drawing.Point(286, 388);
             this.txtScAddPrice16.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtScAddPrice16.Name = "txtScAddPrice16";
             this.txtScAddPrice16.Properties.Mask.EditMask = "f2";
@@ -1804,7 +1870,7 @@
             // 
             // txtScOtherName16
             // 
-            this.txtScOtherName16.Location = new System.Drawing.Point(152, 428);
+            this.txtScOtherName16.Location = new System.Drawing.Point(145, 388);
             this.txtScOtherName16.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtScOtherName16.Name = "txtScOtherName16";
             this.txtScOtherName16.Size = new System.Drawing.Size(111, 20);
@@ -1812,7 +1878,7 @@
             // 
             // txtScEngName16
             // 
-            this.txtScEngName16.Location = new System.Drawing.Point(25, 428);
+            this.txtScEngName16.Location = new System.Drawing.Point(18, 388);
             this.txtScEngName16.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtScEngName16.Name = "txtScEngName16";
             this.txtScEngName16.Size = new System.Drawing.Size(111, 20);
@@ -1820,16 +1886,16 @@
             // 
             // chkScAutoAppend15
             // 
-            this.chkScAutoAppend15.Location = new System.Drawing.Point(422, 406);
+            this.chkScAutoAppend15.Location = new System.Drawing.Point(415, 366);
             this.chkScAutoAppend15.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.chkScAutoAppend15.Name = "chkScAutoAppend15";
             this.chkScAutoAppend15.Properties.Caption = "";
-            this.chkScAutoAppend15.Size = new System.Drawing.Size(103, 19);
+            this.chkScAutoAppend15.Size = new System.Drawing.Size(103, 20);
             this.chkScAutoAppend15.TabIndex = 76;
             // 
             // txtScAddPrice15
             // 
-            this.txtScAddPrice15.Location = new System.Drawing.Point(293, 404);
+            this.txtScAddPrice15.Location = new System.Drawing.Point(286, 364);
             this.txtScAddPrice15.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtScAddPrice15.Name = "txtScAddPrice15";
             this.txtScAddPrice15.Properties.Mask.EditMask = "f2";
@@ -1839,7 +1905,7 @@
             // 
             // txtScOtherName15
             // 
-            this.txtScOtherName15.Location = new System.Drawing.Point(152, 404);
+            this.txtScOtherName15.Location = new System.Drawing.Point(145, 364);
             this.txtScOtherName15.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtScOtherName15.Name = "txtScOtherName15";
             this.txtScOtherName15.Size = new System.Drawing.Size(111, 20);
@@ -1847,7 +1913,7 @@
             // 
             // txtScEngName15
             // 
-            this.txtScEngName15.Location = new System.Drawing.Point(25, 404);
+            this.txtScEngName15.Location = new System.Drawing.Point(18, 364);
             this.txtScEngName15.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtScEngName15.Name = "txtScEngName15";
             this.txtScEngName15.Size = new System.Drawing.Size(111, 20);
@@ -1855,16 +1921,16 @@
             // 
             // chkScAutoAppend14
             // 
-            this.chkScAutoAppend14.Location = new System.Drawing.Point(422, 383);
+            this.chkScAutoAppend14.Location = new System.Drawing.Point(415, 343);
             this.chkScAutoAppend14.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.chkScAutoAppend14.Name = "chkScAutoAppend14";
             this.chkScAutoAppend14.Properties.Caption = "";
-            this.chkScAutoAppend14.Size = new System.Drawing.Size(103, 19);
+            this.chkScAutoAppend14.Size = new System.Drawing.Size(103, 20);
             this.chkScAutoAppend14.TabIndex = 72;
             // 
             // txtScAddPrice14
             // 
-            this.txtScAddPrice14.Location = new System.Drawing.Point(293, 381);
+            this.txtScAddPrice14.Location = new System.Drawing.Point(286, 341);
             this.txtScAddPrice14.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtScAddPrice14.Name = "txtScAddPrice14";
             this.txtScAddPrice14.Properties.Mask.EditMask = "f2";
@@ -1874,7 +1940,7 @@
             // 
             // txtScOtherName14
             // 
-            this.txtScOtherName14.Location = new System.Drawing.Point(152, 381);
+            this.txtScOtherName14.Location = new System.Drawing.Point(145, 341);
             this.txtScOtherName14.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtScOtherName14.Name = "txtScOtherName14";
             this.txtScOtherName14.Size = new System.Drawing.Size(111, 20);
@@ -1882,7 +1948,7 @@
             // 
             // txtScEngName14
             // 
-            this.txtScEngName14.Location = new System.Drawing.Point(25, 381);
+            this.txtScEngName14.Location = new System.Drawing.Point(18, 341);
             this.txtScEngName14.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtScEngName14.Name = "txtScEngName14";
             this.txtScEngName14.Size = new System.Drawing.Size(111, 20);
@@ -1890,16 +1956,16 @@
             // 
             // chkScAutoAppend13
             // 
-            this.chkScAutoAppend13.Location = new System.Drawing.Point(422, 359);
+            this.chkScAutoAppend13.Location = new System.Drawing.Point(415, 319);
             this.chkScAutoAppend13.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.chkScAutoAppend13.Name = "chkScAutoAppend13";
             this.chkScAutoAppend13.Properties.Caption = "";
-            this.chkScAutoAppend13.Size = new System.Drawing.Size(103, 19);
+            this.chkScAutoAppend13.Size = new System.Drawing.Size(103, 20);
             this.chkScAutoAppend13.TabIndex = 68;
             // 
             // txtScAddPrice13
             // 
-            this.txtScAddPrice13.Location = new System.Drawing.Point(293, 358);
+            this.txtScAddPrice13.Location = new System.Drawing.Point(286, 318);
             this.txtScAddPrice13.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtScAddPrice13.Name = "txtScAddPrice13";
             this.txtScAddPrice13.Properties.Mask.EditMask = "f2";
@@ -1909,7 +1975,7 @@
             // 
             // txtScOtherName13
             // 
-            this.txtScOtherName13.Location = new System.Drawing.Point(152, 358);
+            this.txtScOtherName13.Location = new System.Drawing.Point(145, 318);
             this.txtScOtherName13.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtScOtherName13.Name = "txtScOtherName13";
             this.txtScOtherName13.Size = new System.Drawing.Size(111, 20);
@@ -1917,7 +1983,7 @@
             // 
             // txtScEngName13
             // 
-            this.txtScEngName13.Location = new System.Drawing.Point(25, 358);
+            this.txtScEngName13.Location = new System.Drawing.Point(18, 318);
             this.txtScEngName13.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtScEngName13.Name = "txtScEngName13";
             this.txtScEngName13.Size = new System.Drawing.Size(111, 20);
@@ -1925,16 +1991,16 @@
             // 
             // chkScAutoAppend12
             // 
-            this.chkScAutoAppend12.Location = new System.Drawing.Point(422, 336);
+            this.chkScAutoAppend12.Location = new System.Drawing.Point(415, 296);
             this.chkScAutoAppend12.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.chkScAutoAppend12.Name = "chkScAutoAppend12";
             this.chkScAutoAppend12.Properties.Caption = "";
-            this.chkScAutoAppend12.Size = new System.Drawing.Size(103, 19);
+            this.chkScAutoAppend12.Size = new System.Drawing.Size(103, 20);
             this.chkScAutoAppend12.TabIndex = 64;
             // 
             // txtScAddPrice12
             // 
-            this.txtScAddPrice12.Location = new System.Drawing.Point(293, 334);
+            this.txtScAddPrice12.Location = new System.Drawing.Point(286, 294);
             this.txtScAddPrice12.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtScAddPrice12.Name = "txtScAddPrice12";
             this.txtScAddPrice12.Properties.Mask.EditMask = "f2";
@@ -1944,7 +2010,7 @@
             // 
             // txtScOtherName12
             // 
-            this.txtScOtherName12.Location = new System.Drawing.Point(152, 334);
+            this.txtScOtherName12.Location = new System.Drawing.Point(145, 294);
             this.txtScOtherName12.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtScOtherName12.Name = "txtScOtherName12";
             this.txtScOtherName12.Size = new System.Drawing.Size(111, 20);
@@ -1952,7 +2018,7 @@
             // 
             // txtScEngName12
             // 
-            this.txtScEngName12.Location = new System.Drawing.Point(25, 334);
+            this.txtScEngName12.Location = new System.Drawing.Point(18, 294);
             this.txtScEngName12.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtScEngName12.Name = "txtScEngName12";
             this.txtScEngName12.Size = new System.Drawing.Size(111, 20);
@@ -1960,16 +2026,16 @@
             // 
             // chkScAutoAppend11
             // 
-            this.chkScAutoAppend11.Location = new System.Drawing.Point(422, 313);
+            this.chkScAutoAppend11.Location = new System.Drawing.Point(415, 273);
             this.chkScAutoAppend11.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.chkScAutoAppend11.Name = "chkScAutoAppend11";
             this.chkScAutoAppend11.Properties.Caption = "";
-            this.chkScAutoAppend11.Size = new System.Drawing.Size(103, 19);
+            this.chkScAutoAppend11.Size = new System.Drawing.Size(103, 20);
             this.chkScAutoAppend11.TabIndex = 60;
             // 
             // txtScAddPrice11
             // 
-            this.txtScAddPrice11.Location = new System.Drawing.Point(293, 311);
+            this.txtScAddPrice11.Location = new System.Drawing.Point(286, 271);
             this.txtScAddPrice11.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtScAddPrice11.Name = "txtScAddPrice11";
             this.txtScAddPrice11.Properties.Mask.EditMask = "f2";
@@ -1979,7 +2045,7 @@
             // 
             // txtScOtherName11
             // 
-            this.txtScOtherName11.Location = new System.Drawing.Point(152, 311);
+            this.txtScOtherName11.Location = new System.Drawing.Point(145, 271);
             this.txtScOtherName11.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtScOtherName11.Name = "txtScOtherName11";
             this.txtScOtherName11.Size = new System.Drawing.Size(111, 20);
@@ -1987,7 +2053,7 @@
             // 
             // txtScEngName11
             // 
-            this.txtScEngName11.Location = new System.Drawing.Point(25, 311);
+            this.txtScEngName11.Location = new System.Drawing.Point(18, 271);
             this.txtScEngName11.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtScEngName11.Name = "txtScEngName11";
             this.txtScEngName11.Size = new System.Drawing.Size(111, 20);
@@ -1995,16 +2061,16 @@
             // 
             // chkScAutoAppend10
             // 
-            this.chkScAutoAppend10.Location = new System.Drawing.Point(422, 289);
+            this.chkScAutoAppend10.Location = new System.Drawing.Point(415, 249);
             this.chkScAutoAppend10.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.chkScAutoAppend10.Name = "chkScAutoAppend10";
             this.chkScAutoAppend10.Properties.Caption = "";
-            this.chkScAutoAppend10.Size = new System.Drawing.Size(103, 19);
+            this.chkScAutoAppend10.Size = new System.Drawing.Size(103, 20);
             this.chkScAutoAppend10.TabIndex = 56;
             // 
             // txtScAddPrice10
             // 
-            this.txtScAddPrice10.Location = new System.Drawing.Point(293, 288);
+            this.txtScAddPrice10.Location = new System.Drawing.Point(286, 248);
             this.txtScAddPrice10.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtScAddPrice10.Name = "txtScAddPrice10";
             this.txtScAddPrice10.Properties.Mask.EditMask = "f2";
@@ -2014,7 +2080,7 @@
             // 
             // txtScOtherName10
             // 
-            this.txtScOtherName10.Location = new System.Drawing.Point(152, 288);
+            this.txtScOtherName10.Location = new System.Drawing.Point(145, 248);
             this.txtScOtherName10.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtScOtherName10.Name = "txtScOtherName10";
             this.txtScOtherName10.Size = new System.Drawing.Size(111, 20);
@@ -2022,7 +2088,7 @@
             // 
             // txtScEngName10
             // 
-            this.txtScEngName10.Location = new System.Drawing.Point(25, 288);
+            this.txtScEngName10.Location = new System.Drawing.Point(18, 248);
             this.txtScEngName10.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtScEngName10.Name = "txtScEngName10";
             this.txtScEngName10.Size = new System.Drawing.Size(111, 20);
@@ -2030,16 +2096,16 @@
             // 
             // chkScAutoAppend9
             // 
-            this.chkScAutoAppend9.Location = new System.Drawing.Point(422, 266);
+            this.chkScAutoAppend9.Location = new System.Drawing.Point(415, 226);
             this.chkScAutoAppend9.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.chkScAutoAppend9.Name = "chkScAutoAppend9";
             this.chkScAutoAppend9.Properties.Caption = "";
-            this.chkScAutoAppend9.Size = new System.Drawing.Size(103, 19);
+            this.chkScAutoAppend9.Size = new System.Drawing.Size(103, 20);
             this.chkScAutoAppend9.TabIndex = 52;
             // 
             // txtScAddPrice9
             // 
-            this.txtScAddPrice9.Location = new System.Drawing.Point(293, 264);
+            this.txtScAddPrice9.Location = new System.Drawing.Point(286, 224);
             this.txtScAddPrice9.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtScAddPrice9.Name = "txtScAddPrice9";
             this.txtScAddPrice9.Properties.Mask.EditMask = "f2";
@@ -2049,7 +2115,7 @@
             // 
             // txtScOtherName9
             // 
-            this.txtScOtherName9.Location = new System.Drawing.Point(152, 264);
+            this.txtScOtherName9.Location = new System.Drawing.Point(145, 224);
             this.txtScOtherName9.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtScOtherName9.Name = "txtScOtherName9";
             this.txtScOtherName9.Size = new System.Drawing.Size(111, 20);
@@ -2057,7 +2123,7 @@
             // 
             // txtScEngName9
             // 
-            this.txtScEngName9.Location = new System.Drawing.Point(25, 264);
+            this.txtScEngName9.Location = new System.Drawing.Point(18, 224);
             this.txtScEngName9.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtScEngName9.Name = "txtScEngName9";
             this.txtScEngName9.Size = new System.Drawing.Size(111, 20);
@@ -2065,16 +2131,16 @@
             // 
             // chkScAutoAppend8
             // 
-            this.chkScAutoAppend8.Location = new System.Drawing.Point(422, 243);
+            this.chkScAutoAppend8.Location = new System.Drawing.Point(415, 203);
             this.chkScAutoAppend8.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.chkScAutoAppend8.Name = "chkScAutoAppend8";
             this.chkScAutoAppend8.Properties.Caption = "";
-            this.chkScAutoAppend8.Size = new System.Drawing.Size(103, 19);
+            this.chkScAutoAppend8.Size = new System.Drawing.Size(103, 20);
             this.chkScAutoAppend8.TabIndex = 48;
             // 
             // txtScAddPrice8
             // 
-            this.txtScAddPrice8.Location = new System.Drawing.Point(293, 241);
+            this.txtScAddPrice8.Location = new System.Drawing.Point(286, 201);
             this.txtScAddPrice8.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtScAddPrice8.Name = "txtScAddPrice8";
             this.txtScAddPrice8.Properties.Mask.EditMask = "f2";
@@ -2084,7 +2150,7 @@
             // 
             // txtScOtherName8
             // 
-            this.txtScOtherName8.Location = new System.Drawing.Point(152, 241);
+            this.txtScOtherName8.Location = new System.Drawing.Point(145, 201);
             this.txtScOtherName8.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtScOtherName8.Name = "txtScOtherName8";
             this.txtScOtherName8.Size = new System.Drawing.Size(111, 20);
@@ -2092,7 +2158,7 @@
             // 
             // txtScEngName8
             // 
-            this.txtScEngName8.Location = new System.Drawing.Point(25, 241);
+            this.txtScEngName8.Location = new System.Drawing.Point(18, 201);
             this.txtScEngName8.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtScEngName8.Name = "txtScEngName8";
             this.txtScEngName8.Size = new System.Drawing.Size(111, 20);
@@ -2100,16 +2166,16 @@
             // 
             // chkScAutoAppend7
             // 
-            this.chkScAutoAppend7.Location = new System.Drawing.Point(422, 219);
+            this.chkScAutoAppend7.Location = new System.Drawing.Point(415, 179);
             this.chkScAutoAppend7.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.chkScAutoAppend7.Name = "chkScAutoAppend7";
             this.chkScAutoAppend7.Properties.Caption = "";
-            this.chkScAutoAppend7.Size = new System.Drawing.Size(103, 19);
+            this.chkScAutoAppend7.Size = new System.Drawing.Size(103, 20);
             this.chkScAutoAppend7.TabIndex = 44;
             // 
             // txtScAddPrice7
             // 
-            this.txtScAddPrice7.Location = new System.Drawing.Point(293, 218);
+            this.txtScAddPrice7.Location = new System.Drawing.Point(286, 178);
             this.txtScAddPrice7.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtScAddPrice7.Name = "txtScAddPrice7";
             this.txtScAddPrice7.Properties.Mask.EditMask = "f2";
@@ -2119,7 +2185,7 @@
             // 
             // txtScOtherName7
             // 
-            this.txtScOtherName7.Location = new System.Drawing.Point(152, 218);
+            this.txtScOtherName7.Location = new System.Drawing.Point(145, 178);
             this.txtScOtherName7.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtScOtherName7.Name = "txtScOtherName7";
             this.txtScOtherName7.Size = new System.Drawing.Size(111, 20);
@@ -2127,7 +2193,7 @@
             // 
             // txtScEngName7
             // 
-            this.txtScEngName7.Location = new System.Drawing.Point(25, 218);
+            this.txtScEngName7.Location = new System.Drawing.Point(18, 178);
             this.txtScEngName7.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtScEngName7.Name = "txtScEngName7";
             this.txtScEngName7.Size = new System.Drawing.Size(111, 20);
@@ -2135,16 +2201,16 @@
             // 
             // chkScAutoAppend6
             // 
-            this.chkScAutoAppend6.Location = new System.Drawing.Point(422, 196);
+            this.chkScAutoAppend6.Location = new System.Drawing.Point(415, 156);
             this.chkScAutoAppend6.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.chkScAutoAppend6.Name = "chkScAutoAppend6";
             this.chkScAutoAppend6.Properties.Caption = "";
-            this.chkScAutoAppend6.Size = new System.Drawing.Size(103, 19);
+            this.chkScAutoAppend6.Size = new System.Drawing.Size(103, 20);
             this.chkScAutoAppend6.TabIndex = 40;
             // 
             // txtScAddPrice6
             // 
-            this.txtScAddPrice6.Location = new System.Drawing.Point(293, 194);
+            this.txtScAddPrice6.Location = new System.Drawing.Point(286, 154);
             this.txtScAddPrice6.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtScAddPrice6.Name = "txtScAddPrice6";
             this.txtScAddPrice6.Properties.Mask.EditMask = "f2";
@@ -2154,7 +2220,7 @@
             // 
             // txtScOtherName6
             // 
-            this.txtScOtherName6.Location = new System.Drawing.Point(152, 194);
+            this.txtScOtherName6.Location = new System.Drawing.Point(145, 154);
             this.txtScOtherName6.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtScOtherName6.Name = "txtScOtherName6";
             this.txtScOtherName6.Size = new System.Drawing.Size(111, 20);
@@ -2162,7 +2228,7 @@
             // 
             // txtScEngName6
             // 
-            this.txtScEngName6.Location = new System.Drawing.Point(25, 194);
+            this.txtScEngName6.Location = new System.Drawing.Point(18, 154);
             this.txtScEngName6.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtScEngName6.Name = "txtScEngName6";
             this.txtScEngName6.Size = new System.Drawing.Size(111, 20);
@@ -2170,16 +2236,16 @@
             // 
             // chkScAutoAppend5
             // 
-            this.chkScAutoAppend5.Location = new System.Drawing.Point(422, 173);
+            this.chkScAutoAppend5.Location = new System.Drawing.Point(415, 133);
             this.chkScAutoAppend5.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.chkScAutoAppend5.Name = "chkScAutoAppend5";
             this.chkScAutoAppend5.Properties.Caption = "";
-            this.chkScAutoAppend5.Size = new System.Drawing.Size(103, 19);
+            this.chkScAutoAppend5.Size = new System.Drawing.Size(103, 20);
             this.chkScAutoAppend5.TabIndex = 36;
             // 
             // txtScAddPrice5
             // 
-            this.txtScAddPrice5.Location = new System.Drawing.Point(293, 171);
+            this.txtScAddPrice5.Location = new System.Drawing.Point(286, 131);
             this.txtScAddPrice5.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtScAddPrice5.Name = "txtScAddPrice5";
             this.txtScAddPrice5.Properties.Mask.EditMask = "f2";
@@ -2189,7 +2255,7 @@
             // 
             // txtScOtherName5
             // 
-            this.txtScOtherName5.Location = new System.Drawing.Point(152, 171);
+            this.txtScOtherName5.Location = new System.Drawing.Point(145, 131);
             this.txtScOtherName5.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtScOtherName5.Name = "txtScOtherName5";
             this.txtScOtherName5.Size = new System.Drawing.Size(111, 20);
@@ -2197,7 +2263,7 @@
             // 
             // txtScEngName5
             // 
-            this.txtScEngName5.Location = new System.Drawing.Point(25, 171);
+            this.txtScEngName5.Location = new System.Drawing.Point(18, 131);
             this.txtScEngName5.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtScEngName5.Name = "txtScEngName5";
             this.txtScEngName5.Size = new System.Drawing.Size(111, 20);
@@ -2205,16 +2271,16 @@
             // 
             // chkScAutoAppend4
             // 
-            this.chkScAutoAppend4.Location = new System.Drawing.Point(422, 149);
+            this.chkScAutoAppend4.Location = new System.Drawing.Point(415, 109);
             this.chkScAutoAppend4.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.chkScAutoAppend4.Name = "chkScAutoAppend4";
             this.chkScAutoAppend4.Properties.Caption = "";
-            this.chkScAutoAppend4.Size = new System.Drawing.Size(103, 19);
+            this.chkScAutoAppend4.Size = new System.Drawing.Size(103, 20);
             this.chkScAutoAppend4.TabIndex = 32;
             // 
             // txtScAddPrice4
             // 
-            this.txtScAddPrice4.Location = new System.Drawing.Point(293, 148);
+            this.txtScAddPrice4.Location = new System.Drawing.Point(286, 108);
             this.txtScAddPrice4.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtScAddPrice4.Name = "txtScAddPrice4";
             this.txtScAddPrice4.Properties.Mask.EditMask = "f2";
@@ -2224,7 +2290,7 @@
             // 
             // txtScOtherName4
             // 
-            this.txtScOtherName4.Location = new System.Drawing.Point(152, 148);
+            this.txtScOtherName4.Location = new System.Drawing.Point(145, 108);
             this.txtScOtherName4.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtScOtherName4.Name = "txtScOtherName4";
             this.txtScOtherName4.Size = new System.Drawing.Size(111, 20);
@@ -2232,7 +2298,7 @@
             // 
             // txtScEngName4
             // 
-            this.txtScEngName4.Location = new System.Drawing.Point(25, 148);
+            this.txtScEngName4.Location = new System.Drawing.Point(18, 108);
             this.txtScEngName4.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtScEngName4.Name = "txtScEngName4";
             this.txtScEngName4.Size = new System.Drawing.Size(111, 20);
@@ -2240,16 +2306,16 @@
             // 
             // chkScAutoAppend3
             // 
-            this.chkScAutoAppend3.Location = new System.Drawing.Point(422, 126);
+            this.chkScAutoAppend3.Location = new System.Drawing.Point(415, 86);
             this.chkScAutoAppend3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.chkScAutoAppend3.Name = "chkScAutoAppend3";
             this.chkScAutoAppend3.Properties.Caption = "";
-            this.chkScAutoAppend3.Size = new System.Drawing.Size(103, 19);
+            this.chkScAutoAppend3.Size = new System.Drawing.Size(103, 20);
             this.chkScAutoAppend3.TabIndex = 28;
             // 
             // txtScAddPrice3
             // 
-            this.txtScAddPrice3.Location = new System.Drawing.Point(293, 124);
+            this.txtScAddPrice3.Location = new System.Drawing.Point(286, 84);
             this.txtScAddPrice3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtScAddPrice3.Name = "txtScAddPrice3";
             this.txtScAddPrice3.Properties.Mask.EditMask = "f2";
@@ -2259,7 +2325,7 @@
             // 
             // txtScOtherName3
             // 
-            this.txtScOtherName3.Location = new System.Drawing.Point(152, 124);
+            this.txtScOtherName3.Location = new System.Drawing.Point(145, 84);
             this.txtScOtherName3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtScOtherName3.Name = "txtScOtherName3";
             this.txtScOtherName3.Size = new System.Drawing.Size(111, 20);
@@ -2267,7 +2333,7 @@
             // 
             // txtScEngName3
             // 
-            this.txtScEngName3.Location = new System.Drawing.Point(25, 124);
+            this.txtScEngName3.Location = new System.Drawing.Point(18, 84);
             this.txtScEngName3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtScEngName3.Name = "txtScEngName3";
             this.txtScEngName3.Size = new System.Drawing.Size(111, 20);
@@ -2275,16 +2341,16 @@
             // 
             // chkScAutoAppend2
             // 
-            this.chkScAutoAppend2.Location = new System.Drawing.Point(422, 103);
+            this.chkScAutoAppend2.Location = new System.Drawing.Point(415, 63);
             this.chkScAutoAppend2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.chkScAutoAppend2.Name = "chkScAutoAppend2";
             this.chkScAutoAppend2.Properties.Caption = "";
-            this.chkScAutoAppend2.Size = new System.Drawing.Size(103, 19);
+            this.chkScAutoAppend2.Size = new System.Drawing.Size(103, 20);
             this.chkScAutoAppend2.TabIndex = 24;
             // 
             // txtScAddPrice2
             // 
-            this.txtScAddPrice2.Location = new System.Drawing.Point(293, 101);
+            this.txtScAddPrice2.Location = new System.Drawing.Point(286, 61);
             this.txtScAddPrice2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtScAddPrice2.Name = "txtScAddPrice2";
             this.txtScAddPrice2.Properties.Mask.EditMask = "f2";
@@ -2294,7 +2360,7 @@
             // 
             // txtScOtherName2
             // 
-            this.txtScOtherName2.Location = new System.Drawing.Point(152, 101);
+            this.txtScOtherName2.Location = new System.Drawing.Point(145, 61);
             this.txtScOtherName2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtScOtherName2.Name = "txtScOtherName2";
             this.txtScOtherName2.Size = new System.Drawing.Size(111, 20);
@@ -2302,7 +2368,7 @@
             // 
             // txtScEngName2
             // 
-            this.txtScEngName2.Location = new System.Drawing.Point(25, 101);
+            this.txtScEngName2.Location = new System.Drawing.Point(18, 61);
             this.txtScEngName2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtScEngName2.Name = "txtScEngName2";
             this.txtScEngName2.Size = new System.Drawing.Size(111, 20);
@@ -2310,26 +2376,26 @@
             // 
             // labelControl28
             // 
-            this.labelControl28.Location = new System.Drawing.Point(422, 59);
+            this.labelControl28.Location = new System.Drawing.Point(415, 19);
             this.labelControl28.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.labelControl28.Name = "labelControl28";
-            this.labelControl28.Size = new System.Drawing.Size(74, 14);
+            this.labelControl28.Size = new System.Drawing.Size(43, 14);
             this.labelControl28.TabIndex = 20;
-            this.labelControl28.Text = "Auto Append";
+            this.labelControl28.Text = "Append";
             // 
             // txtScNumOption
             // 
-            this.txtScNumOption.Location = new System.Drawing.Point(206, 27);
+            this.txtScNumOption.Location = new System.Drawing.Point(93, 18);
             this.txtScNumOption.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtScNumOption.Name = "txtScNumOption";
             this.txtScNumOption.Properties.Mask.EditMask = "f0";
             this.txtScNumOption.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Numeric;
-            this.txtScNumOption.Size = new System.Drawing.Size(166, 20);
+            this.txtScNumOption.Size = new System.Drawing.Size(93, 20);
             this.txtScNumOption.TabIndex = 19;
             // 
             // labelControl22
             // 
-            this.labelControl22.Location = new System.Drawing.Point(109, 30);
+            this.labelControl22.Location = new System.Drawing.Point(9, 21);
             this.labelControl22.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.labelControl22.Name = "labelControl22";
             this.labelControl22.Size = new System.Drawing.Size(78, 14);
@@ -2338,25 +2404,28 @@
             // 
             // chkScEnableChoice
             // 
-            this.chkScEnableChoice.Location = new System.Drawing.Point(402, 29);
+            this.chkScEnableChoice.Location = new System.Drawing.Point(216, 10);
             this.chkScEnableChoice.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.chkScEnableChoice.Name = "chkScEnableChoice";
             this.chkScEnableChoice.Properties.Caption = "Enable Choice";
-            this.chkScEnableChoice.Size = new System.Drawing.Size(103, 19);
+            this.chkScEnableChoice.Properties.CheckBoxOptions.Style = DevExpress.XtraEditors.Controls.CheckBoxStyle.Custom;
+            this.chkScEnableChoice.Properties.ImageOptions.ImageChecked = global::SuperPOS.Properties.Resources.check_c__32X32;
+            this.chkScEnableChoice.Properties.ImageOptions.ImageUnchecked = global::SuperPOS.Properties.Resources.uncheck_c__32X32;
+            this.chkScEnableChoice.Size = new System.Drawing.Size(123, 36);
             this.chkScEnableChoice.TabIndex = 17;
             // 
             // chkScAutoAppend1
             // 
-            this.chkScAutoAppend1.Location = new System.Drawing.Point(422, 79);
+            this.chkScAutoAppend1.Location = new System.Drawing.Point(415, 39);
             this.chkScAutoAppend1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.chkScAutoAppend1.Name = "chkScAutoAppend1";
             this.chkScAutoAppend1.Properties.Caption = "";
-            this.chkScAutoAppend1.Size = new System.Drawing.Size(103, 19);
+            this.chkScAutoAppend1.Size = new System.Drawing.Size(103, 20);
             this.chkScAutoAppend1.TabIndex = 16;
             // 
             // txtScAddPrice1
             // 
-            this.txtScAddPrice1.Location = new System.Drawing.Point(293, 78);
+            this.txtScAddPrice1.Location = new System.Drawing.Point(286, 38);
             this.txtScAddPrice1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtScAddPrice1.Name = "txtScAddPrice1";
             this.txtScAddPrice1.Properties.Mask.EditMask = "f2";
@@ -2366,7 +2435,7 @@
             // 
             // labelControl19
             // 
-            this.labelControl19.Location = new System.Drawing.Point(293, 59);
+            this.labelControl19.Location = new System.Drawing.Point(286, 19);
             this.labelControl19.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.labelControl19.Name = "labelControl19";
             this.labelControl19.Size = new System.Drawing.Size(52, 14);
@@ -2375,7 +2444,7 @@
             // 
             // txtScOtherName1
             // 
-            this.txtScOtherName1.Location = new System.Drawing.Point(152, 78);
+            this.txtScOtherName1.Location = new System.Drawing.Point(145, 38);
             this.txtScOtherName1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtScOtherName1.Name = "txtScOtherName1";
             this.txtScOtherName1.Size = new System.Drawing.Size(111, 20);
@@ -2383,7 +2452,7 @@
             // 
             // labelControl20
             // 
-            this.labelControl20.Location = new System.Drawing.Point(152, 59);
+            this.labelControl20.Location = new System.Drawing.Point(145, 19);
             this.labelControl20.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.labelControl20.Name = "labelControl20";
             this.labelControl20.Size = new System.Drawing.Size(67, 14);
@@ -2392,7 +2461,7 @@
             // 
             // txtScEngName1
             // 
-            this.txtScEngName1.Location = new System.Drawing.Point(25, 78);
+            this.txtScEngName1.Location = new System.Drawing.Point(18, 38);
             this.txtScEngName1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtScEngName1.Name = "txtScEngName1";
             this.txtScEngName1.Size = new System.Drawing.Size(111, 20);
@@ -2400,7 +2469,7 @@
             // 
             // labelControl21
             // 
-            this.labelControl21.Location = new System.Drawing.Point(25, 59);
+            this.labelControl21.Location = new System.Drawing.Point(18, 19);
             this.labelControl21.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.labelControl21.Name = "labelControl21";
             this.labelControl21.Size = new System.Drawing.Size(72, 14);
@@ -2419,8 +2488,8 @@
             // 
             // btnScExit
             // 
-            this.btnScExit.Appearance.BackColor = System.Drawing.Color.Green;
-            this.btnScExit.Appearance.Font = new System.Drawing.Font("Tahoma", 12F);
+            this.btnScExit.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.btnScExit.Appearance.Font = new System.Drawing.Font("Calibri", 14F, System.Drawing.FontStyle.Bold);
             this.btnScExit.Appearance.ForeColor = System.Drawing.Color.White;
             this.btnScExit.Appearance.Options.UseBackColor = true;
             this.btnScExit.Appearance.Options.UseFont = true;
@@ -2436,8 +2505,8 @@
             // 
             // btnScSave
             // 
-            this.btnScSave.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
-            this.btnScSave.Appearance.Font = new System.Drawing.Font("Tahoma", 12F);
+            this.btnScSave.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
+            this.btnScSave.Appearance.Font = new System.Drawing.Font("Calibri", 14F, System.Drawing.FontStyle.Bold);
             this.btnScSave.Appearance.ForeColor = System.Drawing.Color.White;
             this.btnScSave.Appearance.Options.UseBackColor = true;
             this.btnScSave.Appearance.Options.UseFont = true;
@@ -2456,11 +2525,13 @@
             this.xtpTc.Controls.Add(this.panelControl7);
             this.xtpTc.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.xtpTc.Name = "xtpTc";
-            this.xtpTc.Size = new System.Drawing.Size(885, 549);
+            this.xtpTc.Size = new System.Drawing.Size(889, 547);
             this.xtpTc.Text = "Third Choices";
             // 
             // panelControl7
             // 
+            this.panelControl7.Controls.Add(this.label2);
+            this.panelControl7.Controls.Add(this.panel2);
             this.panelControl7.Controls.Add(this.btnTcCopyChoices);
             this.panelControl7.Controls.Add(this.chkTcAutoAppend20);
             this.panelControl7.Controls.Add(this.txtTcAddPrice20);
@@ -2539,9 +2610,6 @@
             this.panelControl7.Controls.Add(this.txtTcOtherName2);
             this.panelControl7.Controls.Add(this.txtTcEngName2);
             this.panelControl7.Controls.Add(this.labelControl23);
-            this.panelControl7.Controls.Add(this.txtTcNumOption);
-            this.panelControl7.Controls.Add(this.labelControl24);
-            this.panelControl7.Controls.Add(this.chkTcEnableChoice);
             this.panelControl7.Controls.Add(this.chkTcAutoAppend1);
             this.panelControl7.Controls.Add(this.txtTcAddPrice1);
             this.panelControl7.Controls.Add(this.labelControl25);
@@ -2550,20 +2618,42 @@
             this.panelControl7.Controls.Add(this.txtTcEngName1);
             this.panelControl7.Controls.Add(this.labelControl29);
             this.panelControl7.Controls.Add(this.panelControl9);
-            this.panelControl7.Location = new System.Drawing.Point(3, 2);
+            this.panelControl7.Location = new System.Drawing.Point(4, 3);
             this.panelControl7.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panelControl7.Name = "panelControl7";
             this.panelControl7.Size = new System.Drawing.Size(882, 548);
             this.panelControl7.TabIndex = 3;
             // 
+            // label2
+            // 
+            this.label2.Font = new System.Drawing.Font("Calibri", 12F);
+            this.label2.Location = new System.Drawing.Point(643, 96);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(194, 140);
+            this.label2.TabIndex = 188;
+            this.label2.Text = "For example, if you put 2 in the number of options, you have to pick two options." +
+    " If you select less than 2, there will be a warning message, asking you to input" +
+    " 2 options. ";
+            // 
+            // panel2
+            // 
+            this.panel2.Controls.Add(this.chkTcEnableChoice);
+            this.panel2.Controls.Add(this.labelControl24);
+            this.panel2.Controls.Add(this.txtTcNumOption);
+            this.panel2.Location = new System.Drawing.Point(495, 21);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(366, 60);
+            this.panel2.TabIndex = 187;
+            // 
             // btnTcCopyChoices
             // 
             this.btnTcCopyChoices.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
             this.btnTcCopyChoices.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnTcCopyChoices.Font = new System.Drawing.Font("Calibri", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnTcCopyChoices.ForeColor = System.Drawing.Color.White;
-            this.btnTcCopyChoices.Location = new System.Drawing.Point(566, 16);
+            this.btnTcCopyChoices.Location = new System.Drawing.Point(495, 98);
             this.btnTcCopyChoices.Name = "btnTcCopyChoices";
-            this.btnTcCopyChoices.Size = new System.Drawing.Size(113, 23);
+            this.btnTcCopyChoices.Size = new System.Drawing.Size(113, 37);
             this.btnTcCopyChoices.TabIndex = 186;
             this.btnTcCopyChoices.Text = "Copy Choices";
             this.btnTcCopyChoices.UseVisualStyleBackColor = false;
@@ -2571,16 +2661,16 @@
             // 
             // chkTcAutoAppend20
             // 
-            this.chkTcAutoAppend20.Location = new System.Drawing.Point(443, 515);
+            this.chkTcAutoAppend20.Location = new System.Drawing.Point(402, 468);
             this.chkTcAutoAppend20.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.chkTcAutoAppend20.Name = "chkTcAutoAppend20";
             this.chkTcAutoAppend20.Properties.Caption = "";
-            this.chkTcAutoAppend20.Size = new System.Drawing.Size(103, 19);
+            this.chkTcAutoAppend20.Size = new System.Drawing.Size(103, 20);
             this.chkTcAutoAppend20.TabIndex = 185;
             // 
             // txtTcAddPrice20
             // 
-            this.txtTcAddPrice20.Location = new System.Drawing.Point(314, 513);
+            this.txtTcAddPrice20.Location = new System.Drawing.Point(273, 466);
             this.txtTcAddPrice20.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtTcAddPrice20.Name = "txtTcAddPrice20";
             this.txtTcAddPrice20.Properties.Mask.EditMask = "f2";
@@ -2590,7 +2680,7 @@
             // 
             // txtTcOtherName20
             // 
-            this.txtTcOtherName20.Location = new System.Drawing.Point(173, 513);
+            this.txtTcOtherName20.Location = new System.Drawing.Point(132, 466);
             this.txtTcOtherName20.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtTcOtherName20.Name = "txtTcOtherName20";
             this.txtTcOtherName20.Size = new System.Drawing.Size(111, 20);
@@ -2598,7 +2688,7 @@
             // 
             // txtTcEngName20
             // 
-            this.txtTcEngName20.Location = new System.Drawing.Point(46, 513);
+            this.txtTcEngName20.Location = new System.Drawing.Point(5, 466);
             this.txtTcEngName20.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtTcEngName20.Name = "txtTcEngName20";
             this.txtTcEngName20.Size = new System.Drawing.Size(111, 20);
@@ -2606,16 +2696,16 @@
             // 
             // chkTcAutoAppend19
             // 
-            this.chkTcAutoAppend19.Location = new System.Drawing.Point(443, 492);
+            this.chkTcAutoAppend19.Location = new System.Drawing.Point(402, 445);
             this.chkTcAutoAppend19.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.chkTcAutoAppend19.Name = "chkTcAutoAppend19";
             this.chkTcAutoAppend19.Properties.Caption = "";
-            this.chkTcAutoAppend19.Size = new System.Drawing.Size(103, 19);
+            this.chkTcAutoAppend19.Size = new System.Drawing.Size(103, 20);
             this.chkTcAutoAppend19.TabIndex = 181;
             // 
             // txtTcAddPrice19
             // 
-            this.txtTcAddPrice19.Location = new System.Drawing.Point(314, 490);
+            this.txtTcAddPrice19.Location = new System.Drawing.Point(273, 443);
             this.txtTcAddPrice19.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtTcAddPrice19.Name = "txtTcAddPrice19";
             this.txtTcAddPrice19.Properties.Mask.EditMask = "f2";
@@ -2625,7 +2715,7 @@
             // 
             // txtTcOtherName19
             // 
-            this.txtTcOtherName19.Location = new System.Drawing.Point(173, 490);
+            this.txtTcOtherName19.Location = new System.Drawing.Point(132, 443);
             this.txtTcOtherName19.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtTcOtherName19.Name = "txtTcOtherName19";
             this.txtTcOtherName19.Size = new System.Drawing.Size(111, 20);
@@ -2633,7 +2723,7 @@
             // 
             // txtTcEngName19
             // 
-            this.txtTcEngName19.Location = new System.Drawing.Point(46, 490);
+            this.txtTcEngName19.Location = new System.Drawing.Point(5, 443);
             this.txtTcEngName19.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtTcEngName19.Name = "txtTcEngName19";
             this.txtTcEngName19.Size = new System.Drawing.Size(111, 20);
@@ -2641,16 +2731,16 @@
             // 
             // chkTcAutoAppend18
             // 
-            this.chkTcAutoAppend18.Location = new System.Drawing.Point(443, 468);
+            this.chkTcAutoAppend18.Location = new System.Drawing.Point(402, 421);
             this.chkTcAutoAppend18.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.chkTcAutoAppend18.Name = "chkTcAutoAppend18";
             this.chkTcAutoAppend18.Properties.Caption = "";
-            this.chkTcAutoAppend18.Size = new System.Drawing.Size(103, 19);
+            this.chkTcAutoAppend18.Size = new System.Drawing.Size(103, 20);
             this.chkTcAutoAppend18.TabIndex = 177;
             // 
             // txtTcAddPrice18
             // 
-            this.txtTcAddPrice18.Location = new System.Drawing.Point(314, 467);
+            this.txtTcAddPrice18.Location = new System.Drawing.Point(273, 420);
             this.txtTcAddPrice18.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtTcAddPrice18.Name = "txtTcAddPrice18";
             this.txtTcAddPrice18.Properties.Mask.EditMask = "f2";
@@ -2660,7 +2750,7 @@
             // 
             // txtTcOtherName18
             // 
-            this.txtTcOtherName18.Location = new System.Drawing.Point(173, 467);
+            this.txtTcOtherName18.Location = new System.Drawing.Point(132, 420);
             this.txtTcOtherName18.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtTcOtherName18.Name = "txtTcOtherName18";
             this.txtTcOtherName18.Size = new System.Drawing.Size(111, 20);
@@ -2668,7 +2758,7 @@
             // 
             // txtTcEngName18
             // 
-            this.txtTcEngName18.Location = new System.Drawing.Point(46, 467);
+            this.txtTcEngName18.Location = new System.Drawing.Point(5, 420);
             this.txtTcEngName18.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtTcEngName18.Name = "txtTcEngName18";
             this.txtTcEngName18.Size = new System.Drawing.Size(111, 20);
@@ -2676,16 +2766,16 @@
             // 
             // chkTcAutoAppend17
             // 
-            this.chkTcAutoAppend17.Location = new System.Drawing.Point(443, 445);
+            this.chkTcAutoAppend17.Location = new System.Drawing.Point(402, 398);
             this.chkTcAutoAppend17.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.chkTcAutoAppend17.Name = "chkTcAutoAppend17";
             this.chkTcAutoAppend17.Properties.Caption = "";
-            this.chkTcAutoAppend17.Size = new System.Drawing.Size(103, 19);
+            this.chkTcAutoAppend17.Size = new System.Drawing.Size(103, 20);
             this.chkTcAutoAppend17.TabIndex = 173;
             // 
             // txtTcAddPrice17
             // 
-            this.txtTcAddPrice17.Location = new System.Drawing.Point(314, 443);
+            this.txtTcAddPrice17.Location = new System.Drawing.Point(273, 396);
             this.txtTcAddPrice17.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtTcAddPrice17.Name = "txtTcAddPrice17";
             this.txtTcAddPrice17.Properties.Mask.EditMask = "f2";
@@ -2695,7 +2785,7 @@
             // 
             // txtTcOtherName17
             // 
-            this.txtTcOtherName17.Location = new System.Drawing.Point(173, 443);
+            this.txtTcOtherName17.Location = new System.Drawing.Point(132, 396);
             this.txtTcOtherName17.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtTcOtherName17.Name = "txtTcOtherName17";
             this.txtTcOtherName17.Size = new System.Drawing.Size(111, 20);
@@ -2703,7 +2793,7 @@
             // 
             // txtTcEngName17
             // 
-            this.txtTcEngName17.Location = new System.Drawing.Point(46, 443);
+            this.txtTcEngName17.Location = new System.Drawing.Point(5, 396);
             this.txtTcEngName17.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtTcEngName17.Name = "txtTcEngName17";
             this.txtTcEngName17.Size = new System.Drawing.Size(111, 20);
@@ -2711,16 +2801,16 @@
             // 
             // chkTcAutoAppend16
             // 
-            this.chkTcAutoAppend16.Location = new System.Drawing.Point(443, 422);
+            this.chkTcAutoAppend16.Location = new System.Drawing.Point(402, 375);
             this.chkTcAutoAppend16.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.chkTcAutoAppend16.Name = "chkTcAutoAppend16";
             this.chkTcAutoAppend16.Properties.Caption = "";
-            this.chkTcAutoAppend16.Size = new System.Drawing.Size(103, 19);
+            this.chkTcAutoAppend16.Size = new System.Drawing.Size(103, 20);
             this.chkTcAutoAppend16.TabIndex = 169;
             // 
             // txtTcAddPrice16
             // 
-            this.txtTcAddPrice16.Location = new System.Drawing.Point(314, 420);
+            this.txtTcAddPrice16.Location = new System.Drawing.Point(273, 373);
             this.txtTcAddPrice16.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtTcAddPrice16.Name = "txtTcAddPrice16";
             this.txtTcAddPrice16.Properties.Mask.EditMask = "f2";
@@ -2730,7 +2820,7 @@
             // 
             // txtTcOtherName16
             // 
-            this.txtTcOtherName16.Location = new System.Drawing.Point(173, 420);
+            this.txtTcOtherName16.Location = new System.Drawing.Point(132, 373);
             this.txtTcOtherName16.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtTcOtherName16.Name = "txtTcOtherName16";
             this.txtTcOtherName16.Size = new System.Drawing.Size(111, 20);
@@ -2738,7 +2828,7 @@
             // 
             // txtTcEngName16
             // 
-            this.txtTcEngName16.Location = new System.Drawing.Point(46, 420);
+            this.txtTcEngName16.Location = new System.Drawing.Point(5, 373);
             this.txtTcEngName16.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtTcEngName16.Name = "txtTcEngName16";
             this.txtTcEngName16.Size = new System.Drawing.Size(111, 20);
@@ -2746,16 +2836,16 @@
             // 
             // chkTcAutoAppend15
             // 
-            this.chkTcAutoAppend15.Location = new System.Drawing.Point(443, 398);
+            this.chkTcAutoAppend15.Location = new System.Drawing.Point(402, 351);
             this.chkTcAutoAppend15.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.chkTcAutoAppend15.Name = "chkTcAutoAppend15";
             this.chkTcAutoAppend15.Properties.Caption = "";
-            this.chkTcAutoAppend15.Size = new System.Drawing.Size(103, 19);
+            this.chkTcAutoAppend15.Size = new System.Drawing.Size(103, 20);
             this.chkTcAutoAppend15.TabIndex = 165;
             // 
             // txtTcAddPrice15
             // 
-            this.txtTcAddPrice15.Location = new System.Drawing.Point(314, 397);
+            this.txtTcAddPrice15.Location = new System.Drawing.Point(273, 350);
             this.txtTcAddPrice15.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtTcAddPrice15.Name = "txtTcAddPrice15";
             this.txtTcAddPrice15.Properties.Mask.EditMask = "f2";
@@ -2765,7 +2855,7 @@
             // 
             // txtTcOtherName15
             // 
-            this.txtTcOtherName15.Location = new System.Drawing.Point(173, 397);
+            this.txtTcOtherName15.Location = new System.Drawing.Point(132, 350);
             this.txtTcOtherName15.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtTcOtherName15.Name = "txtTcOtherName15";
             this.txtTcOtherName15.Size = new System.Drawing.Size(111, 20);
@@ -2773,7 +2863,7 @@
             // 
             // txtTcEngName15
             // 
-            this.txtTcEngName15.Location = new System.Drawing.Point(46, 397);
+            this.txtTcEngName15.Location = new System.Drawing.Point(5, 350);
             this.txtTcEngName15.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtTcEngName15.Name = "txtTcEngName15";
             this.txtTcEngName15.Size = new System.Drawing.Size(111, 20);
@@ -2781,16 +2871,16 @@
             // 
             // chkTcAutoAppend14
             // 
-            this.chkTcAutoAppend14.Location = new System.Drawing.Point(443, 375);
+            this.chkTcAutoAppend14.Location = new System.Drawing.Point(402, 328);
             this.chkTcAutoAppend14.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.chkTcAutoAppend14.Name = "chkTcAutoAppend14";
             this.chkTcAutoAppend14.Properties.Caption = "";
-            this.chkTcAutoAppend14.Size = new System.Drawing.Size(103, 19);
+            this.chkTcAutoAppend14.Size = new System.Drawing.Size(103, 20);
             this.chkTcAutoAppend14.TabIndex = 161;
             // 
             // txtTcAddPrice14
             // 
-            this.txtTcAddPrice14.Location = new System.Drawing.Point(314, 373);
+            this.txtTcAddPrice14.Location = new System.Drawing.Point(273, 326);
             this.txtTcAddPrice14.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtTcAddPrice14.Name = "txtTcAddPrice14";
             this.txtTcAddPrice14.Properties.Mask.EditMask = "f2";
@@ -2800,7 +2890,7 @@
             // 
             // txtTcOtherName14
             // 
-            this.txtTcOtherName14.Location = new System.Drawing.Point(173, 373);
+            this.txtTcOtherName14.Location = new System.Drawing.Point(132, 326);
             this.txtTcOtherName14.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtTcOtherName14.Name = "txtTcOtherName14";
             this.txtTcOtherName14.Size = new System.Drawing.Size(111, 20);
@@ -2808,7 +2898,7 @@
             // 
             // txtTcEngName14
             // 
-            this.txtTcEngName14.Location = new System.Drawing.Point(46, 373);
+            this.txtTcEngName14.Location = new System.Drawing.Point(5, 326);
             this.txtTcEngName14.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtTcEngName14.Name = "txtTcEngName14";
             this.txtTcEngName14.Size = new System.Drawing.Size(111, 20);
@@ -2816,16 +2906,16 @@
             // 
             // chkTcAutoAppend13
             // 
-            this.chkTcAutoAppend13.Location = new System.Drawing.Point(443, 352);
+            this.chkTcAutoAppend13.Location = new System.Drawing.Point(402, 305);
             this.chkTcAutoAppend13.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.chkTcAutoAppend13.Name = "chkTcAutoAppend13";
             this.chkTcAutoAppend13.Properties.Caption = "";
-            this.chkTcAutoAppend13.Size = new System.Drawing.Size(103, 19);
+            this.chkTcAutoAppend13.Size = new System.Drawing.Size(103, 20);
             this.chkTcAutoAppend13.TabIndex = 157;
             // 
             // txtTcAddPrice13
             // 
-            this.txtTcAddPrice13.Location = new System.Drawing.Point(314, 350);
+            this.txtTcAddPrice13.Location = new System.Drawing.Point(273, 303);
             this.txtTcAddPrice13.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtTcAddPrice13.Name = "txtTcAddPrice13";
             this.txtTcAddPrice13.Properties.Mask.EditMask = "f2";
@@ -2835,7 +2925,7 @@
             // 
             // txtTcOtherName13
             // 
-            this.txtTcOtherName13.Location = new System.Drawing.Point(173, 350);
+            this.txtTcOtherName13.Location = new System.Drawing.Point(132, 303);
             this.txtTcOtherName13.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtTcOtherName13.Name = "txtTcOtherName13";
             this.txtTcOtherName13.Size = new System.Drawing.Size(111, 20);
@@ -2843,7 +2933,7 @@
             // 
             // txtTcEngName13
             // 
-            this.txtTcEngName13.Location = new System.Drawing.Point(46, 350);
+            this.txtTcEngName13.Location = new System.Drawing.Point(5, 303);
             this.txtTcEngName13.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtTcEngName13.Name = "txtTcEngName13";
             this.txtTcEngName13.Size = new System.Drawing.Size(111, 20);
@@ -2851,16 +2941,16 @@
             // 
             // chkTcAutoAppend12
             // 
-            this.chkTcAutoAppend12.Location = new System.Drawing.Point(443, 328);
+            this.chkTcAutoAppend12.Location = new System.Drawing.Point(402, 281);
             this.chkTcAutoAppend12.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.chkTcAutoAppend12.Name = "chkTcAutoAppend12";
             this.chkTcAutoAppend12.Properties.Caption = "";
-            this.chkTcAutoAppend12.Size = new System.Drawing.Size(103, 19);
+            this.chkTcAutoAppend12.Size = new System.Drawing.Size(103, 20);
             this.chkTcAutoAppend12.TabIndex = 153;
             // 
             // txtTcAddPrice12
             // 
-            this.txtTcAddPrice12.Location = new System.Drawing.Point(314, 327);
+            this.txtTcAddPrice12.Location = new System.Drawing.Point(273, 280);
             this.txtTcAddPrice12.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtTcAddPrice12.Name = "txtTcAddPrice12";
             this.txtTcAddPrice12.Properties.Mask.EditMask = "f2";
@@ -2870,7 +2960,7 @@
             // 
             // txtTcOtherName12
             // 
-            this.txtTcOtherName12.Location = new System.Drawing.Point(173, 327);
+            this.txtTcOtherName12.Location = new System.Drawing.Point(132, 280);
             this.txtTcOtherName12.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtTcOtherName12.Name = "txtTcOtherName12";
             this.txtTcOtherName12.Size = new System.Drawing.Size(111, 20);
@@ -2878,7 +2968,7 @@
             // 
             // txtTcEngName12
             // 
-            this.txtTcEngName12.Location = new System.Drawing.Point(46, 327);
+            this.txtTcEngName12.Location = new System.Drawing.Point(5, 280);
             this.txtTcEngName12.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtTcEngName12.Name = "txtTcEngName12";
             this.txtTcEngName12.Size = new System.Drawing.Size(111, 20);
@@ -2886,16 +2976,16 @@
             // 
             // chkTcAutoAppend11
             // 
-            this.chkTcAutoAppend11.Location = new System.Drawing.Point(443, 305);
+            this.chkTcAutoAppend11.Location = new System.Drawing.Point(402, 258);
             this.chkTcAutoAppend11.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.chkTcAutoAppend11.Name = "chkTcAutoAppend11";
             this.chkTcAutoAppend11.Properties.Caption = "";
-            this.chkTcAutoAppend11.Size = new System.Drawing.Size(103, 19);
+            this.chkTcAutoAppend11.Size = new System.Drawing.Size(103, 20);
             this.chkTcAutoAppend11.TabIndex = 149;
             // 
             // txtTcAddPrice11
             // 
-            this.txtTcAddPrice11.Location = new System.Drawing.Point(314, 303);
+            this.txtTcAddPrice11.Location = new System.Drawing.Point(273, 256);
             this.txtTcAddPrice11.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtTcAddPrice11.Name = "txtTcAddPrice11";
             this.txtTcAddPrice11.Properties.Mask.EditMask = "f2";
@@ -2905,7 +2995,7 @@
             // 
             // txtTcOtherName11
             // 
-            this.txtTcOtherName11.Location = new System.Drawing.Point(173, 303);
+            this.txtTcOtherName11.Location = new System.Drawing.Point(132, 256);
             this.txtTcOtherName11.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtTcOtherName11.Name = "txtTcOtherName11";
             this.txtTcOtherName11.Size = new System.Drawing.Size(111, 20);
@@ -2913,7 +3003,7 @@
             // 
             // txtTcEngName11
             // 
-            this.txtTcEngName11.Location = new System.Drawing.Point(46, 303);
+            this.txtTcEngName11.Location = new System.Drawing.Point(5, 256);
             this.txtTcEngName11.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtTcEngName11.Name = "txtTcEngName11";
             this.txtTcEngName11.Size = new System.Drawing.Size(111, 20);
@@ -2921,16 +3011,16 @@
             // 
             // chkTcAutoAppend10
             // 
-            this.chkTcAutoAppend10.Location = new System.Drawing.Point(443, 282);
+            this.chkTcAutoAppend10.Location = new System.Drawing.Point(402, 235);
             this.chkTcAutoAppend10.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.chkTcAutoAppend10.Name = "chkTcAutoAppend10";
             this.chkTcAutoAppend10.Properties.Caption = "";
-            this.chkTcAutoAppend10.Size = new System.Drawing.Size(103, 19);
+            this.chkTcAutoAppend10.Size = new System.Drawing.Size(103, 20);
             this.chkTcAutoAppend10.TabIndex = 145;
             // 
             // txtTcAddPrice10
             // 
-            this.txtTcAddPrice10.Location = new System.Drawing.Point(314, 280);
+            this.txtTcAddPrice10.Location = new System.Drawing.Point(273, 233);
             this.txtTcAddPrice10.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtTcAddPrice10.Name = "txtTcAddPrice10";
             this.txtTcAddPrice10.Properties.Mask.EditMask = "f2";
@@ -2940,7 +3030,7 @@
             // 
             // txtTcOtherName10
             // 
-            this.txtTcOtherName10.Location = new System.Drawing.Point(173, 280);
+            this.txtTcOtherName10.Location = new System.Drawing.Point(132, 233);
             this.txtTcOtherName10.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtTcOtherName10.Name = "txtTcOtherName10";
             this.txtTcOtherName10.Size = new System.Drawing.Size(111, 20);
@@ -2948,7 +3038,7 @@
             // 
             // txtTcEngName10
             // 
-            this.txtTcEngName10.Location = new System.Drawing.Point(46, 280);
+            this.txtTcEngName10.Location = new System.Drawing.Point(5, 233);
             this.txtTcEngName10.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtTcEngName10.Name = "txtTcEngName10";
             this.txtTcEngName10.Size = new System.Drawing.Size(111, 20);
@@ -2956,16 +3046,16 @@
             // 
             // chkTcAutoAppend9
             // 
-            this.chkTcAutoAppend9.Location = new System.Drawing.Point(443, 258);
+            this.chkTcAutoAppend9.Location = new System.Drawing.Point(402, 211);
             this.chkTcAutoAppend9.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.chkTcAutoAppend9.Name = "chkTcAutoAppend9";
             this.chkTcAutoAppend9.Properties.Caption = "";
-            this.chkTcAutoAppend9.Size = new System.Drawing.Size(103, 19);
+            this.chkTcAutoAppend9.Size = new System.Drawing.Size(103, 20);
             this.chkTcAutoAppend9.TabIndex = 141;
             // 
             // txtTcAddPrice9
             // 
-            this.txtTcAddPrice9.Location = new System.Drawing.Point(314, 257);
+            this.txtTcAddPrice9.Location = new System.Drawing.Point(273, 210);
             this.txtTcAddPrice9.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtTcAddPrice9.Name = "txtTcAddPrice9";
             this.txtTcAddPrice9.Properties.Mask.EditMask = "f2";
@@ -2975,7 +3065,7 @@
             // 
             // txtTcOtherName9
             // 
-            this.txtTcOtherName9.Location = new System.Drawing.Point(173, 257);
+            this.txtTcOtherName9.Location = new System.Drawing.Point(132, 210);
             this.txtTcOtherName9.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtTcOtherName9.Name = "txtTcOtherName9";
             this.txtTcOtherName9.Size = new System.Drawing.Size(111, 20);
@@ -2983,7 +3073,7 @@
             // 
             // txtTcEngName9
             // 
-            this.txtTcEngName9.Location = new System.Drawing.Point(46, 257);
+            this.txtTcEngName9.Location = new System.Drawing.Point(5, 210);
             this.txtTcEngName9.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtTcEngName9.Name = "txtTcEngName9";
             this.txtTcEngName9.Size = new System.Drawing.Size(111, 20);
@@ -2991,16 +3081,16 @@
             // 
             // chkTcAutoAppend8
             // 
-            this.chkTcAutoAppend8.Location = new System.Drawing.Point(443, 235);
+            this.chkTcAutoAppend8.Location = new System.Drawing.Point(402, 188);
             this.chkTcAutoAppend8.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.chkTcAutoAppend8.Name = "chkTcAutoAppend8";
             this.chkTcAutoAppend8.Properties.Caption = "";
-            this.chkTcAutoAppend8.Size = new System.Drawing.Size(103, 19);
+            this.chkTcAutoAppend8.Size = new System.Drawing.Size(103, 20);
             this.chkTcAutoAppend8.TabIndex = 137;
             // 
             // txtTcAddPrice8
             // 
-            this.txtTcAddPrice8.Location = new System.Drawing.Point(314, 233);
+            this.txtTcAddPrice8.Location = new System.Drawing.Point(273, 186);
             this.txtTcAddPrice8.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtTcAddPrice8.Name = "txtTcAddPrice8";
             this.txtTcAddPrice8.Properties.Mask.EditMask = "f2";
@@ -3010,7 +3100,7 @@
             // 
             // txtTcOtherName8
             // 
-            this.txtTcOtherName8.Location = new System.Drawing.Point(173, 233);
+            this.txtTcOtherName8.Location = new System.Drawing.Point(132, 186);
             this.txtTcOtherName8.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtTcOtherName8.Name = "txtTcOtherName8";
             this.txtTcOtherName8.Size = new System.Drawing.Size(111, 20);
@@ -3018,7 +3108,7 @@
             // 
             // txtTcEngName8
             // 
-            this.txtTcEngName8.Location = new System.Drawing.Point(46, 233);
+            this.txtTcEngName8.Location = new System.Drawing.Point(5, 186);
             this.txtTcEngName8.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtTcEngName8.Name = "txtTcEngName8";
             this.txtTcEngName8.Size = new System.Drawing.Size(111, 20);
@@ -3026,16 +3116,16 @@
             // 
             // chkTcAutoAppend7
             // 
-            this.chkTcAutoAppend7.Location = new System.Drawing.Point(443, 212);
+            this.chkTcAutoAppend7.Location = new System.Drawing.Point(402, 165);
             this.chkTcAutoAppend7.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.chkTcAutoAppend7.Name = "chkTcAutoAppend7";
             this.chkTcAutoAppend7.Properties.Caption = "";
-            this.chkTcAutoAppend7.Size = new System.Drawing.Size(103, 19);
+            this.chkTcAutoAppend7.Size = new System.Drawing.Size(103, 20);
             this.chkTcAutoAppend7.TabIndex = 133;
             // 
             // txtTcAddPrice7
             // 
-            this.txtTcAddPrice7.Location = new System.Drawing.Point(314, 210);
+            this.txtTcAddPrice7.Location = new System.Drawing.Point(273, 163);
             this.txtTcAddPrice7.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtTcAddPrice7.Name = "txtTcAddPrice7";
             this.txtTcAddPrice7.Properties.Mask.EditMask = "f2";
@@ -3045,7 +3135,7 @@
             // 
             // txtTcOtherName7
             // 
-            this.txtTcOtherName7.Location = new System.Drawing.Point(173, 210);
+            this.txtTcOtherName7.Location = new System.Drawing.Point(132, 163);
             this.txtTcOtherName7.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtTcOtherName7.Name = "txtTcOtherName7";
             this.txtTcOtherName7.Size = new System.Drawing.Size(111, 20);
@@ -3053,7 +3143,7 @@
             // 
             // txtTcEngName7
             // 
-            this.txtTcEngName7.Location = new System.Drawing.Point(46, 210);
+            this.txtTcEngName7.Location = new System.Drawing.Point(5, 163);
             this.txtTcEngName7.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtTcEngName7.Name = "txtTcEngName7";
             this.txtTcEngName7.Size = new System.Drawing.Size(111, 20);
@@ -3061,16 +3151,16 @@
             // 
             // chkTcAutoAppend6
             // 
-            this.chkTcAutoAppend6.Location = new System.Drawing.Point(443, 188);
+            this.chkTcAutoAppend6.Location = new System.Drawing.Point(402, 141);
             this.chkTcAutoAppend6.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.chkTcAutoAppend6.Name = "chkTcAutoAppend6";
             this.chkTcAutoAppend6.Properties.Caption = "";
-            this.chkTcAutoAppend6.Size = new System.Drawing.Size(103, 19);
+            this.chkTcAutoAppend6.Size = new System.Drawing.Size(103, 20);
             this.chkTcAutoAppend6.TabIndex = 129;
             // 
             // txtTcAddPrice6
             // 
-            this.txtTcAddPrice6.Location = new System.Drawing.Point(314, 187);
+            this.txtTcAddPrice6.Location = new System.Drawing.Point(273, 140);
             this.txtTcAddPrice6.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtTcAddPrice6.Name = "txtTcAddPrice6";
             this.txtTcAddPrice6.Properties.Mask.EditMask = "f2";
@@ -3080,7 +3170,7 @@
             // 
             // txtTcOtherName6
             // 
-            this.txtTcOtherName6.Location = new System.Drawing.Point(173, 187);
+            this.txtTcOtherName6.Location = new System.Drawing.Point(132, 140);
             this.txtTcOtherName6.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtTcOtherName6.Name = "txtTcOtherName6";
             this.txtTcOtherName6.Size = new System.Drawing.Size(111, 20);
@@ -3088,7 +3178,7 @@
             // 
             // txtTcEngName6
             // 
-            this.txtTcEngName6.Location = new System.Drawing.Point(46, 187);
+            this.txtTcEngName6.Location = new System.Drawing.Point(5, 140);
             this.txtTcEngName6.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtTcEngName6.Name = "txtTcEngName6";
             this.txtTcEngName6.Size = new System.Drawing.Size(111, 20);
@@ -3096,16 +3186,16 @@
             // 
             // chkTcAutoAppend5
             // 
-            this.chkTcAutoAppend5.Location = new System.Drawing.Point(443, 165);
+            this.chkTcAutoAppend5.Location = new System.Drawing.Point(402, 118);
             this.chkTcAutoAppend5.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.chkTcAutoAppend5.Name = "chkTcAutoAppend5";
             this.chkTcAutoAppend5.Properties.Caption = "";
-            this.chkTcAutoAppend5.Size = new System.Drawing.Size(103, 19);
+            this.chkTcAutoAppend5.Size = new System.Drawing.Size(103, 20);
             this.chkTcAutoAppend5.TabIndex = 125;
             // 
             // txtTcAddPrice5
             // 
-            this.txtTcAddPrice5.Location = new System.Drawing.Point(314, 163);
+            this.txtTcAddPrice5.Location = new System.Drawing.Point(273, 116);
             this.txtTcAddPrice5.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtTcAddPrice5.Name = "txtTcAddPrice5";
             this.txtTcAddPrice5.Properties.Mask.EditMask = "f2";
@@ -3115,7 +3205,7 @@
             // 
             // txtTcOtherName5
             // 
-            this.txtTcOtherName5.Location = new System.Drawing.Point(173, 163);
+            this.txtTcOtherName5.Location = new System.Drawing.Point(132, 116);
             this.txtTcOtherName5.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtTcOtherName5.Name = "txtTcOtherName5";
             this.txtTcOtherName5.Size = new System.Drawing.Size(111, 20);
@@ -3123,7 +3213,7 @@
             // 
             // txtTcEngName5
             // 
-            this.txtTcEngName5.Location = new System.Drawing.Point(46, 163);
+            this.txtTcEngName5.Location = new System.Drawing.Point(5, 116);
             this.txtTcEngName5.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtTcEngName5.Name = "txtTcEngName5";
             this.txtTcEngName5.Size = new System.Drawing.Size(111, 20);
@@ -3131,16 +3221,16 @@
             // 
             // chkTcAutoAppend4
             // 
-            this.chkTcAutoAppend4.Location = new System.Drawing.Point(443, 142);
+            this.chkTcAutoAppend4.Location = new System.Drawing.Point(402, 95);
             this.chkTcAutoAppend4.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.chkTcAutoAppend4.Name = "chkTcAutoAppend4";
             this.chkTcAutoAppend4.Properties.Caption = "";
-            this.chkTcAutoAppend4.Size = new System.Drawing.Size(103, 19);
+            this.chkTcAutoAppend4.Size = new System.Drawing.Size(103, 20);
             this.chkTcAutoAppend4.TabIndex = 121;
             // 
             // txtTcAddPrice4
             // 
-            this.txtTcAddPrice4.Location = new System.Drawing.Point(314, 140);
+            this.txtTcAddPrice4.Location = new System.Drawing.Point(273, 93);
             this.txtTcAddPrice4.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtTcAddPrice4.Name = "txtTcAddPrice4";
             this.txtTcAddPrice4.Properties.Mask.EditMask = "f2";
@@ -3150,7 +3240,7 @@
             // 
             // txtTcOtherName4
             // 
-            this.txtTcOtherName4.Location = new System.Drawing.Point(173, 140);
+            this.txtTcOtherName4.Location = new System.Drawing.Point(132, 93);
             this.txtTcOtherName4.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtTcOtherName4.Name = "txtTcOtherName4";
             this.txtTcOtherName4.Size = new System.Drawing.Size(111, 20);
@@ -3158,7 +3248,7 @@
             // 
             // txtTcEngName4
             // 
-            this.txtTcEngName4.Location = new System.Drawing.Point(46, 140);
+            this.txtTcEngName4.Location = new System.Drawing.Point(5, 93);
             this.txtTcEngName4.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtTcEngName4.Name = "txtTcEngName4";
             this.txtTcEngName4.Size = new System.Drawing.Size(111, 20);
@@ -3166,16 +3256,16 @@
             // 
             // chkTcAutoAppend3
             // 
-            this.chkTcAutoAppend3.Location = new System.Drawing.Point(443, 118);
+            this.chkTcAutoAppend3.Location = new System.Drawing.Point(402, 71);
             this.chkTcAutoAppend3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.chkTcAutoAppend3.Name = "chkTcAutoAppend3";
             this.chkTcAutoAppend3.Properties.Caption = "";
-            this.chkTcAutoAppend3.Size = new System.Drawing.Size(103, 19);
+            this.chkTcAutoAppend3.Size = new System.Drawing.Size(103, 20);
             this.chkTcAutoAppend3.TabIndex = 117;
             // 
             // txtTcAddPrice3
             // 
-            this.txtTcAddPrice3.Location = new System.Drawing.Point(314, 117);
+            this.txtTcAddPrice3.Location = new System.Drawing.Point(273, 70);
             this.txtTcAddPrice3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtTcAddPrice3.Name = "txtTcAddPrice3";
             this.txtTcAddPrice3.Properties.Mask.EditMask = "f2";
@@ -3185,7 +3275,7 @@
             // 
             // txtTcOtherName3
             // 
-            this.txtTcOtherName3.Location = new System.Drawing.Point(173, 117);
+            this.txtTcOtherName3.Location = new System.Drawing.Point(132, 70);
             this.txtTcOtherName3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtTcOtherName3.Name = "txtTcOtherName3";
             this.txtTcOtherName3.Size = new System.Drawing.Size(111, 20);
@@ -3193,7 +3283,7 @@
             // 
             // txtTcEngName3
             // 
-            this.txtTcEngName3.Location = new System.Drawing.Point(46, 117);
+            this.txtTcEngName3.Location = new System.Drawing.Point(5, 70);
             this.txtTcEngName3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtTcEngName3.Name = "txtTcEngName3";
             this.txtTcEngName3.Size = new System.Drawing.Size(111, 20);
@@ -3201,16 +3291,16 @@
             // 
             // chkTcAutoAppend2
             // 
-            this.chkTcAutoAppend2.Location = new System.Drawing.Point(443, 95);
+            this.chkTcAutoAppend2.Location = new System.Drawing.Point(402, 48);
             this.chkTcAutoAppend2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.chkTcAutoAppend2.Name = "chkTcAutoAppend2";
             this.chkTcAutoAppend2.Properties.Caption = "";
-            this.chkTcAutoAppend2.Size = new System.Drawing.Size(103, 19);
+            this.chkTcAutoAppend2.Size = new System.Drawing.Size(103, 20);
             this.chkTcAutoAppend2.TabIndex = 113;
             // 
             // txtTcAddPrice2
             // 
-            this.txtTcAddPrice2.Location = new System.Drawing.Point(314, 93);
+            this.txtTcAddPrice2.Location = new System.Drawing.Point(273, 46);
             this.txtTcAddPrice2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtTcAddPrice2.Name = "txtTcAddPrice2";
             this.txtTcAddPrice2.Properties.Mask.EditMask = "f2";
@@ -3220,7 +3310,7 @@
             // 
             // txtTcOtherName2
             // 
-            this.txtTcOtherName2.Location = new System.Drawing.Point(173, 93);
+            this.txtTcOtherName2.Location = new System.Drawing.Point(132, 46);
             this.txtTcOtherName2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtTcOtherName2.Name = "txtTcOtherName2";
             this.txtTcOtherName2.Size = new System.Drawing.Size(111, 20);
@@ -3228,7 +3318,7 @@
             // 
             // txtTcEngName2
             // 
-            this.txtTcEngName2.Location = new System.Drawing.Point(46, 93);
+            this.txtTcEngName2.Location = new System.Drawing.Point(5, 46);
             this.txtTcEngName2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtTcEngName2.Name = "txtTcEngName2";
             this.txtTcEngName2.Size = new System.Drawing.Size(111, 20);
@@ -3236,26 +3326,26 @@
             // 
             // labelControl23
             // 
-            this.labelControl23.Location = new System.Drawing.Point(443, 51);
+            this.labelControl23.Location = new System.Drawing.Point(402, 4);
             this.labelControl23.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.labelControl23.Name = "labelControl23";
-            this.labelControl23.Size = new System.Drawing.Size(74, 14);
+            this.labelControl23.Size = new System.Drawing.Size(43, 14);
             this.labelControl23.TabIndex = 109;
-            this.labelControl23.Text = "Auto Append";
+            this.labelControl23.Text = "Append";
             // 
             // txtTcNumOption
             // 
-            this.txtTcNumOption.Location = new System.Drawing.Point(227, 19);
+            this.txtTcNumOption.Location = new System.Drawing.Point(116, 19);
             this.txtTcNumOption.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtTcNumOption.Name = "txtTcNumOption";
             this.txtTcNumOption.Properties.Mask.EditMask = "f0";
             this.txtTcNumOption.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Numeric;
-            this.txtTcNumOption.Size = new System.Drawing.Size(166, 20);
+            this.txtTcNumOption.Size = new System.Drawing.Size(93, 20);
             this.txtTcNumOption.TabIndex = 108;
             // 
             // labelControl24
             // 
-            this.labelControl24.Location = new System.Drawing.Point(130, 22);
+            this.labelControl24.Location = new System.Drawing.Point(19, 22);
             this.labelControl24.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.labelControl24.Name = "labelControl24";
             this.labelControl24.Size = new System.Drawing.Size(78, 14);
@@ -3264,25 +3354,28 @@
             // 
             // chkTcEnableChoice
             // 
-            this.chkTcEnableChoice.Location = new System.Drawing.Point(424, 21);
+            this.chkTcEnableChoice.Location = new System.Drawing.Point(227, 11);
             this.chkTcEnableChoice.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.chkTcEnableChoice.Name = "chkTcEnableChoice";
             this.chkTcEnableChoice.Properties.Caption = "Enable Choice";
-            this.chkTcEnableChoice.Size = new System.Drawing.Size(103, 19);
+            this.chkTcEnableChoice.Properties.CheckBoxOptions.Style = DevExpress.XtraEditors.Controls.CheckBoxStyle.Custom;
+            this.chkTcEnableChoice.Properties.ImageOptions.ImageChecked = global::SuperPOS.Properties.Resources.check_c__32X32;
+            this.chkTcEnableChoice.Properties.ImageOptions.ImageUnchecked = global::SuperPOS.Properties.Resources.uncheck_c__32X32;
+            this.chkTcEnableChoice.Size = new System.Drawing.Size(125, 36);
             this.chkTcEnableChoice.TabIndex = 106;
             // 
             // chkTcAutoAppend1
             // 
-            this.chkTcAutoAppend1.Location = new System.Drawing.Point(443, 72);
+            this.chkTcAutoAppend1.Location = new System.Drawing.Point(402, 25);
             this.chkTcAutoAppend1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.chkTcAutoAppend1.Name = "chkTcAutoAppend1";
             this.chkTcAutoAppend1.Properties.Caption = "";
-            this.chkTcAutoAppend1.Size = new System.Drawing.Size(103, 19);
+            this.chkTcAutoAppend1.Size = new System.Drawing.Size(103, 20);
             this.chkTcAutoAppend1.TabIndex = 105;
             // 
             // txtTcAddPrice1
             // 
-            this.txtTcAddPrice1.Location = new System.Drawing.Point(314, 70);
+            this.txtTcAddPrice1.Location = new System.Drawing.Point(273, 23);
             this.txtTcAddPrice1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtTcAddPrice1.Name = "txtTcAddPrice1";
             this.txtTcAddPrice1.Properties.Mask.EditMask = "f2";
@@ -3292,7 +3385,7 @@
             // 
             // labelControl25
             // 
-            this.labelControl25.Location = new System.Drawing.Point(314, 51);
+            this.labelControl25.Location = new System.Drawing.Point(273, 4);
             this.labelControl25.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.labelControl25.Name = "labelControl25";
             this.labelControl25.Size = new System.Drawing.Size(52, 14);
@@ -3301,7 +3394,7 @@
             // 
             // txtTcOtherName1
             // 
-            this.txtTcOtherName1.Location = new System.Drawing.Point(173, 70);
+            this.txtTcOtherName1.Location = new System.Drawing.Point(132, 23);
             this.txtTcOtherName1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtTcOtherName1.Name = "txtTcOtherName1";
             this.txtTcOtherName1.Size = new System.Drawing.Size(111, 20);
@@ -3309,7 +3402,7 @@
             // 
             // labelControl26
             // 
-            this.labelControl26.Location = new System.Drawing.Point(173, 51);
+            this.labelControl26.Location = new System.Drawing.Point(132, 4);
             this.labelControl26.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.labelControl26.Name = "labelControl26";
             this.labelControl26.Size = new System.Drawing.Size(67, 14);
@@ -3318,7 +3411,7 @@
             // 
             // txtTcEngName1
             // 
-            this.txtTcEngName1.Location = new System.Drawing.Point(46, 70);
+            this.txtTcEngName1.Location = new System.Drawing.Point(5, 23);
             this.txtTcEngName1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtTcEngName1.Name = "txtTcEngName1";
             this.txtTcEngName1.Size = new System.Drawing.Size(111, 20);
@@ -3326,7 +3419,7 @@
             // 
             // labelControl29
             // 
-            this.labelControl29.Location = new System.Drawing.Point(46, 51);
+            this.labelControl29.Location = new System.Drawing.Point(5, 4);
             this.labelControl29.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.labelControl29.Name = "labelControl29";
             this.labelControl29.Size = new System.Drawing.Size(72, 14);
@@ -3337,7 +3430,7 @@
             // 
             this.panelControl9.Controls.Add(this.btnTcExit);
             this.panelControl9.Controls.Add(this.btnTcSave);
-            this.panelControl9.Location = new System.Drawing.Point(597, 399);
+            this.panelControl9.Location = new System.Drawing.Point(576, 406);
             this.panelControl9.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panelControl9.Name = "panelControl9";
             this.panelControl9.Size = new System.Drawing.Size(240, 95);
@@ -3345,8 +3438,8 @@
             // 
             // btnTcExit
             // 
-            this.btnTcExit.Appearance.BackColor = System.Drawing.Color.Green;
-            this.btnTcExit.Appearance.Font = new System.Drawing.Font("Tahoma", 12F);
+            this.btnTcExit.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.btnTcExit.Appearance.Font = new System.Drawing.Font("Calibri", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnTcExit.Appearance.ForeColor = System.Drawing.Color.White;
             this.btnTcExit.Appearance.Options.UseBackColor = true;
             this.btnTcExit.Appearance.Options.UseFont = true;
@@ -3362,8 +3455,8 @@
             // 
             // btnTcSave
             // 
-            this.btnTcSave.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
-            this.btnTcSave.Appearance.Font = new System.Drawing.Font("Tahoma", 12F);
+            this.btnTcSave.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
+            this.btnTcSave.Appearance.Font = new System.Drawing.Font("Calibri", 14F, System.Drawing.FontStyle.Bold);
             this.btnTcSave.Appearance.ForeColor = System.Drawing.Color.White;
             this.btnTcSave.Appearance.Options.UseBackColor = true;
             this.btnTcSave.Appearance.Options.UseFont = true;
@@ -3382,12 +3475,11 @@
             this.xtpSm.Controls.Add(this.panelControl10);
             this.xtpSm.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.xtpSm.Name = "xtpSm";
-            this.xtpSm.Size = new System.Drawing.Size(885, 549);
+            this.xtpSm.Size = new System.Drawing.Size(889, 547);
             this.xtpSm.Text = "Sub Menu";
             // 
             // panelControl10
             // 
-            this.panelControl10.Controls.Add(this.lblSubMenuName);
             this.panelControl10.Controls.Add(this.labelControl31);
             this.panelControl10.Controls.Add(this.labelControl30);
             this.panelControl10.Controls.Add(this.chkSmShowContentOnPrtOut);
@@ -3425,25 +3517,15 @@
             this.panelControl10.Controls.Add(this.txtSmEngName1);
             this.panelControl10.Controls.Add(this.labelControl34);
             this.panelControl10.Controls.Add(this.panelControl11);
-            this.panelControl10.Location = new System.Drawing.Point(1, 1);
+            this.panelControl10.Location = new System.Drawing.Point(2, 2);
             this.panelControl10.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panelControl10.Name = "panelControl10";
             this.panelControl10.Size = new System.Drawing.Size(882, 548);
             this.panelControl10.TabIndex = 3;
             // 
-            // lblSubMenuName
-            // 
-            this.lblSubMenuName.Appearance.Font = new System.Drawing.Font("Tahoma", 15F);
-            this.lblSubMenuName.Location = new System.Drawing.Point(329, 16);
-            this.lblSubMenuName.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.lblSubMenuName.Name = "lblSubMenuName";
-            this.lblSubMenuName.Size = new System.Drawing.Size(138, 24);
-            this.lblSubMenuName.TabIndex = 80;
-            this.lblSubMenuName.Text = "Only show time";
-            // 
             // labelControl31
             // 
-            this.labelControl31.Location = new System.Drawing.Point(26, 352);
+            this.labelControl31.Location = new System.Drawing.Point(26, 378);
             this.labelControl31.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.labelControl31.Name = "labelControl31";
             this.labelControl31.Size = new System.Drawing.Size(112, 14);
@@ -3452,7 +3534,7 @@
             // 
             // labelControl30
             // 
-            this.labelControl30.Location = new System.Drawing.Point(26, 334);
+            this.labelControl30.Location = new System.Drawing.Point(26, 360);
             this.labelControl30.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.labelControl30.Name = "labelControl30";
             this.labelControl30.Size = new System.Drawing.Size(237, 14);
@@ -3461,20 +3543,26 @@
             // 
             // chkSmShowContentOnPrtOut
             // 
-            this.chkSmShowContentOnPrtOut.Location = new System.Drawing.Point(26, 312);
+            this.chkSmShowContentOnPrtOut.Location = new System.Drawing.Point(26, 319);
             this.chkSmShowContentOnPrtOut.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.chkSmShowContentOnPrtOut.Name = "chkSmShowContentOnPrtOut";
             this.chkSmShowContentOnPrtOut.Properties.Caption = "Show content on print out";
-            this.chkSmShowContentOnPrtOut.Size = new System.Drawing.Size(179, 19);
+            this.chkSmShowContentOnPrtOut.Properties.CheckBoxOptions.Style = DevExpress.XtraEditors.Controls.CheckBoxStyle.Custom;
+            this.chkSmShowContentOnPrtOut.Properties.ImageOptions.ImageChecked = global::SuperPOS.Properties.Resources.check_c__32X32;
+            this.chkSmShowContentOnPrtOut.Properties.ImageOptions.ImageUnchecked = global::SuperPOS.Properties.Resources.uncheck_c__32X32;
+            this.chkSmShowContentOnPrtOut.Size = new System.Drawing.Size(179, 36);
             this.chkSmShowContentOnPrtOut.TabIndex = 77;
             // 
             // chkSmAutoExpand
             // 
-            this.chkSmAutoExpand.Location = new System.Drawing.Point(26, 278);
+            this.chkSmAutoExpand.Location = new System.Drawing.Point(26, 265);
             this.chkSmAutoExpand.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.chkSmAutoExpand.Name = "chkSmAutoExpand";
             this.chkSmAutoExpand.Properties.Caption = "Auto Expand";
-            this.chkSmAutoExpand.Size = new System.Drawing.Size(150, 19);
+            this.chkSmAutoExpand.Properties.CheckBoxOptions.Style = DevExpress.XtraEditors.Controls.CheckBoxStyle.Custom;
+            this.chkSmAutoExpand.Properties.ImageOptions.ImageChecked = global::SuperPOS.Properties.Resources.check_c__32X32;
+            this.chkSmAutoExpand.Properties.ImageOptions.ImageUnchecked = global::SuperPOS.Properties.Resources.uncheck_c__32X32;
+            this.chkSmAutoExpand.Size = new System.Drawing.Size(150, 36);
             this.chkSmAutoExpand.TabIndex = 76;
             // 
             // txtSmOtherName15
@@ -3747,8 +3835,8 @@
             // 
             // btnSmExit
             // 
-            this.btnSmExit.Appearance.BackColor = System.Drawing.Color.Green;
-            this.btnSmExit.Appearance.Font = new System.Drawing.Font("Tahoma", 12F);
+            this.btnSmExit.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.btnSmExit.Appearance.Font = new System.Drawing.Font("Calibri", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSmExit.Appearance.ForeColor = System.Drawing.Color.White;
             this.btnSmExit.Appearance.Options.UseBackColor = true;
             this.btnSmExit.Appearance.Options.UseFont = true;
@@ -3764,8 +3852,8 @@
             // 
             // btnSmSave
             // 
-            this.btnSmSave.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
-            this.btnSmSave.Appearance.Font = new System.Drawing.Font("Tahoma", 12F);
+            this.btnSmSave.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
+            this.btnSmSave.Appearance.Font = new System.Drawing.Font("Calibri", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSmSave.Appearance.ForeColor = System.Drawing.Color.White;
             this.btnSmSave.Appearance.Options.UseBackColor = true;
             this.btnSmSave.Appearance.Options.UseFont = true;
@@ -3778,6 +3866,17 @@
             this.btnSmSave.TabIndex = 1;
             this.btnSmSave.Text = "Save";
             this.btnSmSave.Click += new System.EventHandler(this.btnSmSave_Click);
+            // 
+            // lblSubMenuName
+            // 
+            this.lblSubMenuName.Appearance.Font = new System.Drawing.Font("Tahoma", 15F);
+            this.lblSubMenuName.Appearance.Options.UseFont = true;
+            this.lblSubMenuName.Location = new System.Drawing.Point(329, 16);
+            this.lblSubMenuName.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.lblSubMenuName.Name = "lblSubMenuName";
+            this.lblSubMenuName.Size = new System.Drawing.Size(138, 24);
+            this.lblSubMenuName.TabIndex = 80;
+            this.lblSubMenuName.Text = "Only show time";
             // 
             // FrmTaMenuItem
             // 
@@ -3814,12 +3913,14 @@
             ((System.ComponentModel.ISupportInitialize)(this.panelControl2)).EndInit();
             this.panelControl2.ResumeLayout(false);
             this.panelControl2.PerformLayout();
+            this.groupBox2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.txtLargePrice.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtRegularPrice.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtSmallPrice.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.colorEditBtn.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.chk3.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.chk2.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.chk1.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtSmallPrice.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtLargePrice.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.lueMenuSet.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.chkComboOtherSet.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.chkComboWorkDay.Properties)).EndInit();
@@ -3828,7 +3929,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.chkComboMenuCate.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtSpecailRegularPrice.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.luePrtOrder.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtRegularPrice.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtOtherName.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtEngName.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtDispPosition.Properties)).EndInit();
@@ -3837,6 +3937,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.panelControl6)).EndInit();
             this.panelControl6.ResumeLayout(false);
             this.panelControl6.PerformLayout();
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.chkScAutoAppend20.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtScAddPrice20.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtScOtherName20.Properties)).EndInit();
@@ -3925,6 +4027,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.panelControl7)).EndInit();
             this.panelControl7.ResumeLayout(false);
             this.panelControl7.PerformLayout();
+            this.panel2.ResumeLayout(false);
+            this.panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.chkTcAutoAppend20.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtTcAddPrice20.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtTcOtherName20.Properties)).EndInit();
@@ -4365,5 +4469,10 @@
         private DevExpress.XtraEditors.SimpleButton btnSmSave;
         private DevExpress.XtraEditors.LabelControl lblSubMenuName;
         private DevExpress.XtraEditors.LookUpEdit lueDishCateSearch;
+        private System.Windows.Forms.GroupBox groupBox2;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label2;
     }
 }

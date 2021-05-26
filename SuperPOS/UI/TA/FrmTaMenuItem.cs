@@ -123,7 +123,7 @@ namespace SuperPOS.UI.TA
 
             BindData();
 
-            btnMenuSet1.BackColor = Color.CornflowerBlue;
+            btnMenuSet1.BackColor = Color.DarkOrange;
             btnMenuSet1.Select();
             btnMenuSet2.BackColor = Color.Gray;
             btnMenuSet3.BackColor = Color.Gray;
@@ -577,7 +577,7 @@ namespace SuperPOS.UI.TA
             {
                 case "btnMenuSet1":
                     iMenuSetKey = MenuSetKey[0];
-                    btn.BackColor = Color.CornflowerBlue;
+                    btn.BackColor = Color.DarkOrange;
                     btnMenuSet2.BackColor = Color.Gray;
                     btnMenuSet3.BackColor = Color.Gray;
                     btnMenuSet4.BackColor = Color.Gray;
@@ -585,7 +585,7 @@ namespace SuperPOS.UI.TA
                 case "btnMenuSet2":
                     iMenuSetKey = MenuSetKey[1];
                     btnMenuSet1.BackColor = Color.Gray;
-                    btn.BackColor = Color.CornflowerBlue;
+                    btn.BackColor = Color.DarkOrange;
                     btnMenuSet3.BackColor = Color.Gray;
                     btnMenuSet4.BackColor = Color.Gray;
                     break;
@@ -593,7 +593,7 @@ namespace SuperPOS.UI.TA
                     iMenuSetKey = MenuSetKey[2];
                     btnMenuSet1.BackColor = Color.Gray;
                     btnMenuSet2.BackColor = Color.Gray;
-                    btn.BackColor = Color.CornflowerBlue;
+                    btn.BackColor = Color.DarkOrange;
                     btnMenuSet4.BackColor = Color.Gray;
                     break;
                 case "btnMenuSet4":
@@ -601,11 +601,11 @@ namespace SuperPOS.UI.TA
                     btnMenuSet1.BackColor = Color.Gray;
                     btnMenuSet2.BackColor = Color.Gray;
                     btnMenuSet3.BackColor = Color.Gray;
-                    btn.BackColor = Color.CornflowerBlue;
+                    btn.BackColor = Color.DarkOrange;
                     break;
                 default:
                     iMenuSetKey = MenuSetKey[0];
-                    btnMenuSet1.BackColor = Color.CornflowerBlue;
+                    btnMenuSet1.BackColor = Color.DarkOrange;
                     btnMenuSet1.Select();
                     btnMenuSet2.BackColor = Color.Gray;
                     btnMenuSet3.BackColor = Color.Gray;
