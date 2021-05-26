@@ -209,6 +209,7 @@
             // 
             // labelControl9
             // 
+            this.labelControl9.Appearance.Options.UseTextOptions = true;
             this.labelControl9.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
             this.labelControl9.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
             this.labelControl9.Location = new System.Drawing.Point(16, 229);
@@ -229,6 +230,7 @@
             // 
             // labelControl6
             // 
+            this.labelControl6.Appearance.Options.UseTextOptions = true;
             this.labelControl6.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
             this.labelControl6.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
             this.labelControl6.Location = new System.Drawing.Point(16, 197);
@@ -249,6 +251,7 @@
             // 
             // labelControl5
             // 
+            this.labelControl5.Appearance.Options.UseTextOptions = true;
             this.labelControl5.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
             this.labelControl5.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
             this.labelControl5.Location = new System.Drawing.Point(16, 166);
@@ -269,6 +272,7 @@
             // 
             // labelControl4
             // 
+            this.labelControl4.Appearance.Options.UseTextOptions = true;
             this.labelControl4.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
             this.labelControl4.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
             this.labelControl4.Location = new System.Drawing.Point(16, 135);
@@ -298,6 +302,7 @@
             // 
             // labelControl3
             // 
+            this.labelControl3.Appearance.Options.UseTextOptions = true;
             this.labelControl3.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
             this.labelControl3.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
             this.labelControl3.Location = new System.Drawing.Point(16, 103);
@@ -309,6 +314,7 @@
             // 
             // labelControl2
             // 
+            this.labelControl2.Appearance.Options.UseTextOptions = true;
             this.labelControl2.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
             this.labelControl2.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
             this.labelControl2.Location = new System.Drawing.Point(16, 65);
@@ -329,6 +335,7 @@
             // 
             // labelControl1
             // 
+            this.labelControl1.Appearance.Options.UseTextOptions = true;
             this.labelControl1.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
             this.labelControl1.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
             this.labelControl1.Location = new System.Drawing.Point(16, 39);
@@ -340,8 +347,8 @@
             // 
             // btnGenExit
             // 
-            this.btnGenExit.Appearance.BackColor = System.Drawing.Color.Green;
-            this.btnGenExit.Appearance.Font = new System.Drawing.Font("Tahoma", 12F);
+            this.btnGenExit.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.btnGenExit.Appearance.Font = new System.Drawing.Font("Calibri", 14F, System.Drawing.FontStyle.Bold);
             this.btnGenExit.Appearance.ForeColor = System.Drawing.Color.White;
             this.btnGenExit.Appearance.Options.UseBackColor = true;
             this.btnGenExit.Appearance.Options.UseFont = true;
@@ -357,8 +364,8 @@
             // 
             // btnGenSave
             // 
-            this.btnGenSave.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
-            this.btnGenSave.Appearance.Font = new System.Drawing.Font("Tahoma", 12F);
+            this.btnGenSave.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
+            this.btnGenSave.Appearance.Font = new System.Drawing.Font("Calibri", 14F, System.Drawing.FontStyle.Bold);
             this.btnGenSave.Appearance.ForeColor = System.Drawing.Color.White;
             this.btnGenSave.Appearance.Options.UseBackColor = true;
             this.btnGenSave.Appearance.Options.UseFont = true;

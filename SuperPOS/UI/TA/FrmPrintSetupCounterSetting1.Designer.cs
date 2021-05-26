@@ -29,6 +29,8 @@
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.label11 = new System.Windows.Forms.Label();
+            this.chkSOPrtTime = new System.Windows.Forms.CheckBox();
             this.label3 = new System.Windows.Forms.Label();
             this.chkSOPrtOrderNo = new System.Windows.Forms.CheckBox();
             this.label10 = new System.Windows.Forms.Label();
@@ -50,6 +52,8 @@
             this.lueSOLocalPrinter = new DevExpress.XtraEditors.LookUpEdit();
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.label19 = new System.Windows.Forms.Label();
+            this.chkCOPrtTime = new System.Windows.Forms.CheckBox();
             this.label22 = new System.Windows.Forms.Label();
             this.chkCOPrtOrderNo = new System.Windows.Forms.CheckBox();
             this.label12 = new System.Windows.Forms.Label();
@@ -72,10 +76,6 @@
             this.label21 = new System.Windows.Forms.Label();
             this.btnExit = new DevExpress.XtraEditors.SimpleButton();
             this.btnSave = new DevExpress.XtraEditors.SimpleButton();
-            this.label11 = new System.Windows.Forms.Label();
-            this.chkSOPrtTime = new System.Windows.Forms.CheckBox();
-            this.label19 = new System.Windows.Forms.Label();
-            this.chkCOPrtTime = new System.Windows.Forms.CheckBox();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.lueSOOtherFontSize.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.lueSOEngFontSize.Properties)).BeginInit();
@@ -122,6 +122,25 @@
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Shop Order Printout Settings";
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Location = new System.Drawing.Point(26, 242);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(63, 14);
+            this.label11.TabIndex = 47;
+            this.label11.Text = "Print Time";
+            // 
+            // chkSOPrtTime
+            // 
+            this.chkSOPrtTime.AutoSize = true;
+            this.chkSOPrtTime.Location = new System.Drawing.Point(198, 244);
+            this.chkSOPrtTime.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.chkSOPrtTime.Name = "chkSOPrtTime";
+            this.chkSOPrtTime.Size = new System.Drawing.Size(15, 14);
+            this.chkSOPrtTime.TabIndex = 46;
+            this.chkSOPrtTime.UseVisualStyleBackColor = true;
             // 
             // label3
             // 
@@ -347,6 +366,25 @@
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Collection Order Printout Settings";
             // 
+            // label19
+            // 
+            this.label19.AutoSize = true;
+            this.label19.Location = new System.Drawing.Point(51, 237);
+            this.label19.Name = "label19";
+            this.label19.Size = new System.Drawing.Size(63, 14);
+            this.label19.TabIndex = 45;
+            this.label19.Text = "Print Time";
+            // 
+            // chkCOPrtTime
+            // 
+            this.chkCOPrtTime.AutoSize = true;
+            this.chkCOPrtTime.Location = new System.Drawing.Point(289, 238);
+            this.chkCOPrtTime.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.chkCOPrtTime.Name = "chkCOPrtTime";
+            this.chkCOPrtTime.Size = new System.Drawing.Size(15, 14);
+            this.chkCOPrtTime.TabIndex = 44;
+            this.chkCOPrtTime.UseVisualStyleBackColor = true;
+            // 
             // label22
             // 
             this.label22.AutoSize = true;
@@ -540,8 +578,8 @@
             // 
             // btnExit
             // 
-            this.btnExit.Appearance.BackColor = System.Drawing.Color.Green;
-            this.btnExit.Appearance.Font = new System.Drawing.Font("Tahoma", 12F);
+            this.btnExit.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.btnExit.Appearance.Font = new System.Drawing.Font("Calibri", 14F, System.Drawing.FontStyle.Bold);
             this.btnExit.Appearance.ForeColor = System.Drawing.Color.White;
             this.btnExit.Appearance.Options.UseBackColor = true;
             this.btnExit.Appearance.Options.UseFont = true;
@@ -557,8 +595,8 @@
             // 
             // btnSave
             // 
-            this.btnSave.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
-            this.btnSave.Appearance.Font = new System.Drawing.Font("Tahoma", 12F);
+            this.btnSave.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
+            this.btnSave.Appearance.Font = new System.Drawing.Font("Calibri", 14F, System.Drawing.FontStyle.Bold);
             this.btnSave.Appearance.ForeColor = System.Drawing.Color.White;
             this.btnSave.Appearance.Options.UseBackColor = true;
             this.btnSave.Appearance.Options.UseFont = true;
@@ -571,44 +609,6 @@
             this.btnSave.TabIndex = 6;
             this.btnSave.Text = "Save";
             this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
-            // 
-            // label11
-            // 
-            this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(26, 242);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(63, 14);
-            this.label11.TabIndex = 47;
-            this.label11.Text = "Print Time";
-            // 
-            // chkSOPrtTime
-            // 
-            this.chkSOPrtTime.AutoSize = true;
-            this.chkSOPrtTime.Location = new System.Drawing.Point(198, 244);
-            this.chkSOPrtTime.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.chkSOPrtTime.Name = "chkSOPrtTime";
-            this.chkSOPrtTime.Size = new System.Drawing.Size(15, 14);
-            this.chkSOPrtTime.TabIndex = 46;
-            this.chkSOPrtTime.UseVisualStyleBackColor = true;
-            // 
-            // label19
-            // 
-            this.label19.AutoSize = true;
-            this.label19.Location = new System.Drawing.Point(51, 237);
-            this.label19.Name = "label19";
-            this.label19.Size = new System.Drawing.Size(63, 14);
-            this.label19.TabIndex = 45;
-            this.label19.Text = "Print Time";
-            // 
-            // chkCOPrtTime
-            // 
-            this.chkCOPrtTime.AutoSize = true;
-            this.chkCOPrtTime.Location = new System.Drawing.Point(289, 238);
-            this.chkCOPrtTime.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.chkCOPrtTime.Name = "chkCOPrtTime";
-            this.chkCOPrtTime.Size = new System.Drawing.Size(15, 14);
-            this.chkCOPrtTime.TabIndex = 44;
-            this.chkCOPrtTime.UseVisualStyleBackColor = true;
             // 
             // FrmPrintSetupCounterSetting1
             // 

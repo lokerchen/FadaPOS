@@ -219,8 +219,8 @@
             // 
             // btnGenExit
             // 
-            this.btnGenExit.Appearance.BackColor = System.Drawing.Color.Green;
-            this.btnGenExit.Appearance.Font = new System.Drawing.Font("Tahoma", 12F);
+            this.btnGenExit.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.btnGenExit.Appearance.Font = new System.Drawing.Font("Calibri", 14F, System.Drawing.FontStyle.Bold);
             this.btnGenExit.Appearance.ForeColor = System.Drawing.Color.White;
             this.btnGenExit.Appearance.Options.UseBackColor = true;
             this.btnGenExit.Appearance.Options.UseFont = true;
@@ -235,8 +235,8 @@
             // 
             // btnGenSave
             // 
-            this.btnGenSave.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
-            this.btnGenSave.Appearance.Font = new System.Drawing.Font("Tahoma", 12F);
+            this.btnGenSave.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
+            this.btnGenSave.Appearance.Font = new System.Drawing.Font("Calibri", 14F, System.Drawing.FontStyle.Bold);
             this.btnGenSave.Appearance.ForeColor = System.Drawing.Color.White;
             this.btnGenSave.Appearance.Options.UseBackColor = true;
             this.btnGenSave.Appearance.Options.UseFont = true;

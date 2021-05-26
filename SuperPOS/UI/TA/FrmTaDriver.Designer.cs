@@ -84,9 +84,15 @@
             // gvTaDriver
             // 
             this.gvTaDriver.Appearance.EvenRow.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
+            this.gvTaDriver.Appearance.EvenRow.Font = new System.Drawing.Font("Calibri", 12F);
             this.gvTaDriver.Appearance.EvenRow.Options.UseBackColor = true;
+            this.gvTaDriver.Appearance.EvenRow.Options.UseFont = true;
+            this.gvTaDriver.Appearance.HeaderPanel.Font = new System.Drawing.Font("Calibri", 12F);
+            this.gvTaDriver.Appearance.HeaderPanel.Options.UseFont = true;
             this.gvTaDriver.Appearance.HeaderPanel.Options.UseTextOptions = true;
             this.gvTaDriver.Appearance.HeaderPanel.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.gvTaDriver.Appearance.OddRow.Font = new System.Drawing.Font("Calibri", 12F);
+            this.gvTaDriver.Appearance.OddRow.Options.UseFont = true;
             this.gvTaDriver.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
             this.ID,
             this.DriverName,
