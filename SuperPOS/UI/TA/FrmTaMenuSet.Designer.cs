@@ -65,8 +65,8 @@
             // 
             // btnSave
             // 
-            this.btnSave.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
-            this.btnSave.Appearance.Font = new System.Drawing.Font("Tahoma", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSave.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
+            this.btnSave.Appearance.Font = new System.Drawing.Font("Calibri", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSave.Appearance.ForeColor = System.Drawing.Color.White;
             this.btnSave.Appearance.Options.UseBackColor = true;
             this.btnSave.Appearance.Options.UseFont = true;
@@ -82,8 +82,8 @@
             // 
             // btnExit
             // 
-            this.btnExit.Appearance.BackColor = System.Drawing.Color.Olive;
-            this.btnExit.Appearance.Font = new System.Drawing.Font("Tahoma", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnExit.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.btnExit.Appearance.Font = new System.Drawing.Font("Calibri", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnExit.Appearance.ForeColor = System.Drawing.Color.White;
             this.btnExit.Appearance.Options.UseBackColor = true;
             this.btnExit.Appearance.Options.UseFont = true;
@@ -163,7 +163,7 @@
             // btnCopy
             // 
             this.btnCopy.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
-            this.btnCopy.Appearance.Font = new System.Drawing.Font("Tahoma", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCopy.Appearance.Font = new System.Drawing.Font("Calibri", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCopy.Appearance.ForeColor = System.Drawing.Color.White;
             this.btnCopy.Appearance.Options.UseBackColor = true;
             this.btnCopy.Appearance.Options.UseFont = true;
@@ -258,9 +258,11 @@
             // lblDeleteMenuContent4
             // 
             this.lblDeleteMenuContent4.AutoSize = true;
+            this.lblDeleteMenuContent4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
+            this.lblDeleteMenuContent4.Font = new System.Drawing.Font("Calibri", 12F);
             this.lblDeleteMenuContent4.Location = new System.Drawing.Point(340, 143);
             this.lblDeleteMenuContent4.Name = "lblDeleteMenuContent4";
-            this.lblDeleteMenuContent4.Size = new System.Drawing.Size(156, 19);
+            this.lblDeleteMenuContent4.Size = new System.Drawing.Size(148, 19);
             this.lblDeleteMenuContent4.TabIndex = 13;
             this.lblDeleteMenuContent4.Text = "Delete Menu Content";
             // 
@@ -283,9 +285,11 @@
             // lblDeleteMenuContent3
             // 
             this.lblDeleteMenuContent3.AutoSize = true;
+            this.lblDeleteMenuContent3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
+            this.lblDeleteMenuContent3.Font = new System.Drawing.Font("Calibri", 12F);
             this.lblDeleteMenuContent3.Location = new System.Drawing.Point(340, 113);
             this.lblDeleteMenuContent3.Name = "lblDeleteMenuContent3";
-            this.lblDeleteMenuContent3.Size = new System.Drawing.Size(156, 19);
+            this.lblDeleteMenuContent3.Size = new System.Drawing.Size(148, 19);
             this.lblDeleteMenuContent3.TabIndex = 10;
             this.lblDeleteMenuContent3.Text = "Delete Menu Content";
             // 
@@ -308,9 +312,11 @@
             // lblDeleteMenuContent2
             // 
             this.lblDeleteMenuContent2.AutoSize = true;
+            this.lblDeleteMenuContent2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
+            this.lblDeleteMenuContent2.Font = new System.Drawing.Font("Calibri", 12F);
             this.lblDeleteMenuContent2.Location = new System.Drawing.Point(340, 82);
             this.lblDeleteMenuContent2.Name = "lblDeleteMenuContent2";
-            this.lblDeleteMenuContent2.Size = new System.Drawing.Size(156, 19);
+            this.lblDeleteMenuContent2.Size = new System.Drawing.Size(148, 19);
             this.lblDeleteMenuContent2.TabIndex = 7;
             this.lblDeleteMenuContent2.Text = "Delete Menu Content";
             // 
@@ -333,9 +339,11 @@
             // lblDeleteMenuContent1
             // 
             this.lblDeleteMenuContent1.AutoSize = true;
+            this.lblDeleteMenuContent1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
+            this.lblDeleteMenuContent1.Font = new System.Drawing.Font("Calibri", 12F);
             this.lblDeleteMenuContent1.Location = new System.Drawing.Point(340, 52);
             this.lblDeleteMenuContent1.Name = "lblDeleteMenuContent1";
-            this.lblDeleteMenuContent1.Size = new System.Drawing.Size(156, 19);
+            this.lblDeleteMenuContent1.Size = new System.Drawing.Size(148, 19);
             this.lblDeleteMenuContent1.TabIndex = 4;
             this.lblDeleteMenuContent1.Text = "Delete Menu Content";
             // 
