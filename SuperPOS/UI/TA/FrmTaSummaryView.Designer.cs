@@ -39,6 +39,7 @@
             this.lblPtTips5 = new DevExpress.XtraEditors.LabelControl();
             this.txtPtTotal5 = new DevExpress.XtraEditors.TextEdit();
             this.txtPtOrder5 = new DevExpress.XtraEditors.TextEdit();
+            this.lblPtOrder5 = new DevExpress.XtraEditors.LabelControl();
             this.lblPayType4 = new DevExpress.XtraEditors.LabelControl();
             this.txtPtTips4 = new DevExpress.XtraEditors.TextEdit();
             this.txtPtTotal4 = new DevExpress.XtraEditors.TextEdit();
@@ -104,7 +105,6 @@
             this.txtTsTotalTA = new DevExpress.XtraEditors.TextEdit();
             this.lblTsTotalTA = new DevExpress.XtraEditors.LabelControl();
             this.tTimer = new System.Windows.Forms.Timer(this.components);
-            this.lblPtOrder5 = new DevExpress.XtraEditors.LabelControl();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
             this.panelControl1.SuspendLayout();
@@ -195,8 +195,8 @@
             // 
             // btnExit
             // 
-            this.btnExit.Appearance.BackColor = System.Drawing.Color.Olive;
-            this.btnExit.Appearance.Font = new System.Drawing.Font("Tahoma", 14F);
+            this.btnExit.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.btnExit.Appearance.Font = new System.Drawing.Font("Calibri", 14F, System.Drawing.FontStyle.Bold);
             this.btnExit.Appearance.ForeColor = System.Drawing.Color.White;
             this.btnExit.Appearance.Options.UseBackColor = true;
             this.btnExit.Appearance.Options.UseFont = true;
@@ -212,7 +212,7 @@
             // 
             // btnLeft
             // 
-            this.btnLeft.Appearance.BackColor = System.Drawing.Color.RoyalBlue;
+            this.btnLeft.Appearance.BackColor = System.Drawing.Color.Silver;
             this.btnLeft.Appearance.Font = new System.Drawing.Font("Tahoma", 10F);
             this.btnLeft.Appearance.ForeColor = System.Drawing.Color.White;
             this.btnLeft.Appearance.Options.UseBackColor = true;
@@ -267,6 +267,10 @@
             this.lblPayType5.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
             this.lblPayType5.Appearance.Font = new System.Drawing.Font("Tahoma", 10F);
             this.lblPayType5.Appearance.ForeColor = System.Drawing.Color.Black;
+            this.lblPayType5.Appearance.Options.UseBackColor = true;
+            this.lblPayType5.Appearance.Options.UseFont = true;
+            this.lblPayType5.Appearance.Options.UseForeColor = true;
+            this.lblPayType5.Appearance.Options.UseTextOptions = true;
             this.lblPayType5.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.lblPayType5.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
             this.lblPayType5.Location = new System.Drawing.Point(10, 185);
@@ -286,9 +290,11 @@
             // 
             // lblPtTips5
             // 
-            this.lblPtTips5.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
             this.lblPtTips5.Appearance.Font = new System.Drawing.Font("Tahoma", 10F);
             this.lblPtTips5.Appearance.ForeColor = System.Drawing.Color.Black;
+            this.lblPtTips5.Appearance.Options.UseFont = true;
+            this.lblPtTips5.Appearance.Options.UseForeColor = true;
+            this.lblPtTips5.Appearance.Options.UseTextOptions = true;
             this.lblPtTips5.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.lblPtTips5.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
             this.lblPtTips5.Location = new System.Drawing.Point(355, 35);
@@ -316,11 +322,31 @@
             this.txtPtOrder5.Size = new System.Drawing.Size(84, 20);
             this.txtPtOrder5.TabIndex = 135;
             // 
+            // lblPtOrder5
+            // 
+            this.lblPtOrder5.Appearance.Font = new System.Drawing.Font("Tahoma", 10F);
+            this.lblPtOrder5.Appearance.ForeColor = System.Drawing.Color.Black;
+            this.lblPtOrder5.Appearance.Options.UseFont = true;
+            this.lblPtOrder5.Appearance.Options.UseForeColor = true;
+            this.lblPtOrder5.Appearance.Options.UseTextOptions = true;
+            this.lblPtOrder5.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.lblPtOrder5.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
+            this.lblPtOrder5.Location = new System.Drawing.Point(125, 35);
+            this.lblPtOrder5.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.lblPtOrder5.Name = "lblPtOrder5";
+            this.lblPtOrder5.Size = new System.Drawing.Size(84, 20);
+            this.lblPtOrder5.TabIndex = 134;
+            this.lblPtOrder5.Text = "Order Qty";
+            // 
             // lblPayType4
             // 
             this.lblPayType4.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
             this.lblPayType4.Appearance.Font = new System.Drawing.Font("Tahoma", 10F);
             this.lblPayType4.Appearance.ForeColor = System.Drawing.Color.Black;
+            this.lblPayType4.Appearance.Options.UseBackColor = true;
+            this.lblPayType4.Appearance.Options.UseFont = true;
+            this.lblPayType4.Appearance.Options.UseForeColor = true;
+            this.lblPayType4.Appearance.Options.UseTextOptions = true;
             this.lblPayType4.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.lblPayType4.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
             this.lblPayType4.Location = new System.Drawing.Point(10, 155);
@@ -361,6 +387,10 @@
             this.lblPayType3.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
             this.lblPayType3.Appearance.Font = new System.Drawing.Font("Tahoma", 10F);
             this.lblPayType3.Appearance.ForeColor = System.Drawing.Color.Black;
+            this.lblPayType3.Appearance.Options.UseBackColor = true;
+            this.lblPayType3.Appearance.Options.UseFont = true;
+            this.lblPayType3.Appearance.Options.UseForeColor = true;
+            this.lblPayType3.Appearance.Options.UseTextOptions = true;
             this.lblPayType3.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.lblPayType3.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
             this.lblPayType3.Location = new System.Drawing.Point(10, 125);
@@ -401,6 +431,10 @@
             this.lblPayType2.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
             this.lblPayType2.Appearance.Font = new System.Drawing.Font("Tahoma", 10F);
             this.lblPayType2.Appearance.ForeColor = System.Drawing.Color.Black;
+            this.lblPayType2.Appearance.Options.UseBackColor = true;
+            this.lblPayType2.Appearance.Options.UseFont = true;
+            this.lblPayType2.Appearance.Options.UseForeColor = true;
+            this.lblPayType2.Appearance.Options.UseTextOptions = true;
             this.lblPayType2.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.lblPayType2.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
             this.lblPayType2.Location = new System.Drawing.Point(10, 95);
@@ -441,6 +475,10 @@
             this.lblPayType1.Appearance.BackColor = System.Drawing.Color.Green;
             this.lblPayType1.Appearance.Font = new System.Drawing.Font("Tahoma", 10F);
             this.lblPayType1.Appearance.ForeColor = System.Drawing.Color.Black;
+            this.lblPayType1.Appearance.Options.UseBackColor = true;
+            this.lblPayType1.Appearance.Options.UseFont = true;
+            this.lblPayType1.Appearance.Options.UseForeColor = true;
+            this.lblPayType1.Appearance.Options.UseTextOptions = true;
             this.lblPayType1.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.lblPayType1.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
             this.lblPayType1.Location = new System.Drawing.Point(10, 65);
@@ -470,9 +508,11 @@
             // 
             // lblPtTotal1
             // 
-            this.lblPtTotal1.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
             this.lblPtTotal1.Appearance.Font = new System.Drawing.Font("Tahoma", 10F);
             this.lblPtTotal1.Appearance.ForeColor = System.Drawing.Color.Black;
+            this.lblPtTotal1.Appearance.Options.UseFont = true;
+            this.lblPtTotal1.Appearance.Options.UseForeColor = true;
+            this.lblPtTotal1.Appearance.Options.UseTextOptions = true;
             this.lblPtTotal1.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.lblPtTotal1.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
             this.lblPtTotal1.Location = new System.Drawing.Point(240, 35);
@@ -493,7 +533,7 @@
             // 
             // btnRight
             // 
-            this.btnRight.Appearance.BackColor = System.Drawing.Color.RoyalBlue;
+            this.btnRight.Appearance.BackColor = System.Drawing.Color.Silver;
             this.btnRight.Appearance.Font = new System.Drawing.Font("Tahoma", 10F);
             this.btnRight.Appearance.ForeColor = System.Drawing.Color.White;
             this.btnRight.Appearance.Options.UseBackColor = true;
@@ -604,9 +644,11 @@
             // 
             // lblStTotalOrder
             // 
-            this.lblStTotalOrder.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
             this.lblStTotalOrder.Appearance.Font = new System.Drawing.Font("Tahoma", 10F);
             this.lblStTotalOrder.Appearance.ForeColor = System.Drawing.Color.Black;
+            this.lblStTotalOrder.Appearance.Options.UseFont = true;
+            this.lblStTotalOrder.Appearance.Options.UseForeColor = true;
+            this.lblStTotalOrder.Appearance.Options.UseTextOptions = true;
             this.lblStTotalOrder.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.lblStTotalOrder.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
             this.lblStTotalOrder.Location = new System.Drawing.Point(192, 19);
@@ -618,9 +660,11 @@
             // 
             // lblStTotalTakings
             // 
-            this.lblStTotalTakings.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
             this.lblStTotalTakings.Appearance.Font = new System.Drawing.Font("Tahoma", 10F);
             this.lblStTotalTakings.Appearance.ForeColor = System.Drawing.Color.Black;
+            this.lblStTotalTakings.Appearance.Options.UseFont = true;
+            this.lblStTotalTakings.Appearance.Options.UseForeColor = true;
+            this.lblStTotalTakings.Appearance.Options.UseTextOptions = true;
             this.lblStTotalTakings.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.lblStTotalTakings.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
             this.lblStTotalTakings.Location = new System.Drawing.Point(91, 19);
@@ -641,9 +685,11 @@
             // 
             // lblStTotalVat
             // 
-            this.lblStTotalVat.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
             this.lblStTotalVat.Appearance.Font = new System.Drawing.Font("Tahoma", 10F);
             this.lblStTotalVat.Appearance.ForeColor = System.Drawing.Color.Black;
+            this.lblStTotalVat.Appearance.Options.UseFont = true;
+            this.lblStTotalVat.Appearance.Options.UseForeColor = true;
+            this.lblStTotalVat.Appearance.Options.UseTextOptions = true;
             this.lblStTotalVat.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.lblStTotalVat.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
             this.lblStTotalVat.Location = new System.Drawing.Point(281, 19);
@@ -691,9 +737,11 @@
             // 
             // lblEsTotalEatIn
             // 
-            this.lblEsTotalEatIn.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
             this.lblEsTotalEatIn.Appearance.Font = new System.Drawing.Font("Tahoma", 10F);
             this.lblEsTotalEatIn.Appearance.ForeColor = System.Drawing.Color.Black;
+            this.lblEsTotalEatIn.Appearance.Options.UseFont = true;
+            this.lblEsTotalEatIn.Appearance.Options.UseForeColor = true;
+            this.lblEsTotalEatIn.Appearance.Options.UseTextOptions = true;
             this.lblEsTotalEatIn.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.lblEsTotalEatIn.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
             this.lblEsTotalEatIn.Location = new System.Drawing.Point(102, 26);
@@ -705,9 +753,11 @@
             // 
             // lblEsTotalOrder
             // 
-            this.lblEsTotalOrder.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
             this.lblEsTotalOrder.Appearance.Font = new System.Drawing.Font("Tahoma", 10F);
             this.lblEsTotalOrder.Appearance.ForeColor = System.Drawing.Color.Black;
+            this.lblEsTotalOrder.Appearance.Options.UseFont = true;
+            this.lblEsTotalOrder.Appearance.Options.UseForeColor = true;
+            this.lblEsTotalOrder.Appearance.Options.UseTextOptions = true;
             this.lblEsTotalOrder.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.lblEsTotalOrder.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
             this.lblEsTotalOrder.Location = new System.Drawing.Point(281, 26);
@@ -737,9 +787,11 @@
             // 
             // lblEsSc
             // 
-            this.lblEsSc.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
             this.lblEsSc.Appearance.Font = new System.Drawing.Font("Tahoma", 10F);
             this.lblEsSc.Appearance.ForeColor = System.Drawing.Color.Black;
+            this.lblEsSc.Appearance.Options.UseFont = true;
+            this.lblEsSc.Appearance.Options.UseForeColor = true;
+            this.lblEsSc.Appearance.Options.UseTextOptions = true;
             this.lblEsSc.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.lblEsSc.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
             this.lblEsSc.Location = new System.Drawing.Point(192, 26);
@@ -798,9 +850,11 @@
             // 
             // lblTsDcOther
             // 
-            this.lblTsDcOther.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
             this.lblTsDcOther.Appearance.Font = new System.Drawing.Font("Tahoma", 10F);
             this.lblTsDcOther.Appearance.ForeColor = System.Drawing.Color.Black;
+            this.lblTsDcOther.Appearance.Options.UseFont = true;
+            this.lblTsDcOther.Appearance.Options.UseForeColor = true;
+            this.lblTsDcOther.Appearance.Options.UseTextOptions = true;
             this.lblTsDcOther.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.lblTsDcOther.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
             this.lblTsDcOther.Location = new System.Drawing.Point(281, 128);
@@ -821,9 +875,11 @@
             // 
             // lblTsDcCash
             // 
-            this.lblTsDcCash.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
             this.lblTsDcCash.Appearance.Font = new System.Drawing.Font("Tahoma", 10F);
             this.lblTsDcCash.Appearance.ForeColor = System.Drawing.Color.Black;
+            this.lblTsDcCash.Appearance.Options.UseFont = true;
+            this.lblTsDcCash.Appearance.Options.UseForeColor = true;
+            this.lblTsDcCash.Appearance.Options.UseTextOptions = true;
             this.lblTsDcCash.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.lblTsDcCash.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
             this.lblTsDcCash.Location = new System.Drawing.Point(192, 128);
@@ -844,9 +900,11 @@
             // 
             // lblTsTotalDc
             // 
-            this.lblTsTotalDc.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
             this.lblTsTotalDc.Appearance.Font = new System.Drawing.Font("Tahoma", 10F);
             this.lblTsTotalDc.Appearance.ForeColor = System.Drawing.Color.Black;
+            this.lblTsTotalDc.Appearance.Options.UseFont = true;
+            this.lblTsTotalDc.Appearance.Options.UseForeColor = true;
+            this.lblTsTotalDc.Appearance.Options.UseTextOptions = true;
             this.lblTsTotalDc.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.lblTsTotalDc.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
             this.lblTsTotalDc.Location = new System.Drawing.Point(102, 128);
@@ -867,9 +925,11 @@
             // 
             // lblTsTotalFF
             // 
-            this.lblTsTotalFF.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
             this.lblTsTotalFF.Appearance.Font = new System.Drawing.Font("Tahoma", 10F);
             this.lblTsTotalFF.Appearance.ForeColor = System.Drawing.Color.Black;
+            this.lblTsTotalFF.Appearance.Options.UseFont = true;
+            this.lblTsTotalFF.Appearance.Options.UseForeColor = true;
+            this.lblTsTotalFF.Appearance.Options.UseTextOptions = true;
             this.lblTsTotalFF.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.lblTsTotalFF.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
             this.lblTsTotalFF.Location = new System.Drawing.Point(370, 68);
@@ -890,9 +950,11 @@
             // 
             // lblTsTotalShop
             // 
-            this.lblTsTotalShop.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
             this.lblTsTotalShop.Appearance.Font = new System.Drawing.Font("Tahoma", 10F);
             this.lblTsTotalShop.Appearance.ForeColor = System.Drawing.Color.Black;
+            this.lblTsTotalShop.Appearance.Options.UseFont = true;
+            this.lblTsTotalShop.Appearance.Options.UseForeColor = true;
+            this.lblTsTotalShop.Appearance.Options.UseTextOptions = true;
             this.lblTsTotalShop.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.lblTsTotalShop.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
             this.lblTsTotalShop.Location = new System.Drawing.Point(281, 68);
@@ -913,9 +975,11 @@
             // 
             // lblTsTotalDel
             // 
-            this.lblTsTotalDel.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
             this.lblTsTotalDel.Appearance.Font = new System.Drawing.Font("Tahoma", 10F);
             this.lblTsTotalDel.Appearance.ForeColor = System.Drawing.Color.Black;
+            this.lblTsTotalDel.Appearance.Options.UseFont = true;
+            this.lblTsTotalDel.Appearance.Options.UseForeColor = true;
+            this.lblTsTotalDel.Appearance.Options.UseTextOptions = true;
             this.lblTsTotalDel.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.lblTsTotalDel.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
             this.lblTsTotalDel.Location = new System.Drawing.Point(192, 68);
@@ -936,9 +1000,11 @@
             // 
             // lblTsTotalCol
             // 
-            this.lblTsTotalCol.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
             this.lblTsTotalCol.Appearance.Font = new System.Drawing.Font("Tahoma", 10F);
             this.lblTsTotalCol.Appearance.ForeColor = System.Drawing.Color.Black;
+            this.lblTsTotalCol.Appearance.Options.UseFont = true;
+            this.lblTsTotalCol.Appearance.Options.UseForeColor = true;
+            this.lblTsTotalCol.Appearance.Options.UseTextOptions = true;
             this.lblTsTotalCol.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.lblTsTotalCol.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
             this.lblTsTotalCol.Location = new System.Drawing.Point(102, 68);
@@ -959,9 +1025,11 @@
             // 
             // lblTsTotalOrder
             // 
-            this.lblTsTotalOrder.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
             this.lblTsTotalOrder.Appearance.Font = new System.Drawing.Font("Tahoma", 10F);
             this.lblTsTotalOrder.Appearance.ForeColor = System.Drawing.Color.Black;
+            this.lblTsTotalOrder.Appearance.Options.UseFont = true;
+            this.lblTsTotalOrder.Appearance.Options.UseForeColor = true;
+            this.lblTsTotalOrder.Appearance.Options.UseTextOptions = true;
             this.lblTsTotalOrder.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.lblTsTotalOrder.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
             this.lblTsTotalOrder.Location = new System.Drawing.Point(13, 68);
@@ -982,9 +1050,11 @@
             // 
             // lblTsFastFood
             // 
-            this.lblTsFastFood.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
             this.lblTsFastFood.Appearance.Font = new System.Drawing.Font("Tahoma", 10F);
             this.lblTsFastFood.Appearance.ForeColor = System.Drawing.Color.Black;
+            this.lblTsFastFood.Appearance.Options.UseFont = true;
+            this.lblTsFastFood.Appearance.Options.UseForeColor = true;
+            this.lblTsFastFood.Appearance.Options.UseTextOptions = true;
             this.lblTsFastFood.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.lblTsFastFood.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
             this.lblTsFastFood.Location = new System.Drawing.Point(370, 19);
@@ -1005,9 +1075,11 @@
             // 
             // lblTsShop
             // 
-            this.lblTsShop.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
             this.lblTsShop.Appearance.Font = new System.Drawing.Font("Tahoma", 10F);
             this.lblTsShop.Appearance.ForeColor = System.Drawing.Color.Black;
+            this.lblTsShop.Appearance.Options.UseFont = true;
+            this.lblTsShop.Appearance.Options.UseForeColor = true;
+            this.lblTsShop.Appearance.Options.UseTextOptions = true;
             this.lblTsShop.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.lblTsShop.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
             this.lblTsShop.Location = new System.Drawing.Point(281, 19);
@@ -1028,9 +1100,11 @@
             // 
             // lblTsDelivery
             // 
-            this.lblTsDelivery.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
             this.lblTsDelivery.Appearance.Font = new System.Drawing.Font("Tahoma", 10F);
             this.lblTsDelivery.Appearance.ForeColor = System.Drawing.Color.Black;
+            this.lblTsDelivery.Appearance.Options.UseFont = true;
+            this.lblTsDelivery.Appearance.Options.UseForeColor = true;
+            this.lblTsDelivery.Appearance.Options.UseTextOptions = true;
             this.lblTsDelivery.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.lblTsDelivery.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
             this.lblTsDelivery.Location = new System.Drawing.Point(192, 19);
@@ -1051,9 +1125,11 @@
             // 
             // lblTsCollection
             // 
-            this.lblTsCollection.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
             this.lblTsCollection.Appearance.Font = new System.Drawing.Font("Tahoma", 10F);
             this.lblTsCollection.Appearance.ForeColor = System.Drawing.Color.Black;
+            this.lblTsCollection.Appearance.Options.UseFont = true;
+            this.lblTsCollection.Appearance.Options.UseForeColor = true;
+            this.lblTsCollection.Appearance.Options.UseTextOptions = true;
             this.lblTsCollection.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.lblTsCollection.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
             this.lblTsCollection.Location = new System.Drawing.Point(102, 19);
@@ -1074,9 +1150,11 @@
             // 
             // lblTsTotalTA
             // 
-            this.lblTsTotalTA.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
             this.lblTsTotalTA.Appearance.Font = new System.Drawing.Font("Tahoma", 10F);
             this.lblTsTotalTA.Appearance.ForeColor = System.Drawing.Color.Black;
+            this.lblTsTotalTA.Appearance.Options.UseFont = true;
+            this.lblTsTotalTA.Appearance.Options.UseForeColor = true;
+            this.lblTsTotalTA.Appearance.Options.UseTextOptions = true;
             this.lblTsTotalTA.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.lblTsTotalTA.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
             this.lblTsTotalTA.Location = new System.Drawing.Point(13, 19);
@@ -1091,20 +1169,6 @@
             this.tTimer.Enabled = true;
             this.tTimer.Interval = 1000;
             this.tTimer.Tick += new System.EventHandler(this.tTimer_Tick);
-            // 
-            // lblPtOrder5
-            // 
-            this.lblPtOrder5.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
-            this.lblPtOrder5.Appearance.Font = new System.Drawing.Font("Tahoma", 10F);
-            this.lblPtOrder5.Appearance.ForeColor = System.Drawing.Color.Black;
-            this.lblPtOrder5.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.lblPtOrder5.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
-            this.lblPtOrder5.Location = new System.Drawing.Point(125, 35);
-            this.lblPtOrder5.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.lblPtOrder5.Name = "lblPtOrder5";
-            this.lblPtOrder5.Size = new System.Drawing.Size(84, 20);
-            this.lblPtOrder5.TabIndex = 134;
-            this.lblPtOrder5.Text = "Order Qty";
             // 
             // FrmTaSummaryView
             // 

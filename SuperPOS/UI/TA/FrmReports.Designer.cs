@@ -66,7 +66,7 @@
             this.groupBox1.Controls.Add(this.btnInventoryReport);
             this.groupBox1.Controls.Add(this.btnExit);
             this.groupBox1.Controls.Add(this.btnLanguage);
-            this.groupBox1.Font = new System.Drawing.Font("Tahoma", 12F);
+            this.groupBox1.Font = new System.Drawing.Font("Calibri", 12F);
             this.groupBox1.Location = new System.Drawing.Point(9, 8);
             this.groupBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.groupBox1.Name = "groupBox1";
@@ -78,7 +78,7 @@
             // 
             // label5
             // 
-            this.label5.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label5.Font = new System.Drawing.Font("微软雅黑", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.label5.Location = new System.Drawing.Point(324, 369);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(291, 32);
@@ -87,7 +87,7 @@
             // 
             // label6
             // 
-            this.label6.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label6.Font = new System.Drawing.Font("微软雅黑", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.label6.Location = new System.Drawing.Point(324, 314);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(306, 32);
@@ -96,7 +96,7 @@
             // 
             // label7
             // 
-            this.label7.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label7.Font = new System.Drawing.Font("微软雅黑", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.label7.Location = new System.Drawing.Point(324, 260);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(313, 32);
@@ -105,7 +105,7 @@
             // 
             // label3
             // 
-            this.label3.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label3.Font = new System.Drawing.Font("微软雅黑", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.label3.Location = new System.Drawing.Point(324, 205);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(306, 32);
@@ -114,7 +114,7 @@
             // 
             // label4
             // 
-            this.label4.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label4.Font = new System.Drawing.Font("微软雅黑", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.label4.Location = new System.Drawing.Point(324, 151);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(313, 32);
@@ -123,7 +123,7 @@
             // 
             // label2
             // 
-            this.label2.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label2.Font = new System.Drawing.Font("微软雅黑", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.label2.Location = new System.Drawing.Point(324, 100);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(188, 32);
@@ -133,7 +133,7 @@
             // btnPrintCustomerDatabase
             // 
             this.btnPrintCustomerDatabase.Appearance.BackColor = System.Drawing.Color.RoyalBlue;
-            this.btnPrintCustomerDatabase.Appearance.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.btnPrintCustomerDatabase.Appearance.Font = new System.Drawing.Font("微软雅黑", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.btnPrintCustomerDatabase.Appearance.ForeColor = System.Drawing.Color.White;
             this.btnPrintCustomerDatabase.Appearance.Options.UseBackColor = true;
             this.btnPrintCustomerDatabase.Appearance.Options.UseFont = true;
@@ -154,7 +154,7 @@
             // btnTopItemsSalesReport
             // 
             this.btnTopItemsSalesReport.Appearance.BackColor = System.Drawing.Color.RoyalBlue;
-            this.btnTopItemsSalesReport.Appearance.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.btnTopItemsSalesReport.Appearance.Font = new System.Drawing.Font("微软雅黑", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.btnTopItemsSalesReport.Appearance.ForeColor = System.Drawing.Color.White;
             this.btnTopItemsSalesReport.Appearance.Options.UseBackColor = true;
             this.btnTopItemsSalesReport.Appearance.Options.UseFont = true;
@@ -175,7 +175,7 @@
             // btnFoodCategoryPerformance
             // 
             this.btnFoodCategoryPerformance.Appearance.BackColor = System.Drawing.Color.RoyalBlue;
-            this.btnFoodCategoryPerformance.Appearance.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.btnFoodCategoryPerformance.Appearance.Font = new System.Drawing.Font("微软雅黑", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.btnFoodCategoryPerformance.Appearance.ForeColor = System.Drawing.Color.White;
             this.btnFoodCategoryPerformance.Appearance.Options.UseBackColor = true;
             this.btnFoodCategoryPerformance.Appearance.Options.UseFont = true;
@@ -196,7 +196,7 @@
             // btnMenuItemListing
             // 
             this.btnMenuItemListing.Appearance.BackColor = System.Drawing.Color.RoyalBlue;
-            this.btnMenuItemListing.Appearance.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.btnMenuItemListing.Appearance.Font = new System.Drawing.Font("微软雅黑", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.btnMenuItemListing.Appearance.ForeColor = System.Drawing.Color.White;
             this.btnMenuItemListing.Appearance.Options.UseBackColor = true;
             this.btnMenuItemListing.Appearance.Options.UseFont = true;
@@ -217,7 +217,7 @@
             // btnMenuItemDeleteReport
             // 
             this.btnMenuItemDeleteReport.Appearance.BackColor = System.Drawing.Color.RoyalBlue;
-            this.btnMenuItemDeleteReport.Appearance.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.btnMenuItemDeleteReport.Appearance.Font = new System.Drawing.Font("微软雅黑", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.btnMenuItemDeleteReport.Appearance.ForeColor = System.Drawing.Color.White;
             this.btnMenuItemDeleteReport.Appearance.Options.UseBackColor = true;
             this.btnMenuItemDeleteReport.Appearance.Options.UseFont = true;
@@ -237,7 +237,7 @@
             // btnFreeItemsReport
             // 
             this.btnFreeItemsReport.Appearance.BackColor = System.Drawing.Color.RoyalBlue;
-            this.btnFreeItemsReport.Appearance.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.btnFreeItemsReport.Appearance.Font = new System.Drawing.Font("微软雅黑", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.btnFreeItemsReport.Appearance.ForeColor = System.Drawing.Color.White;
             this.btnFreeItemsReport.Appearance.Options.UseBackColor = true;
             this.btnFreeItemsReport.Appearance.Options.UseFont = true;
@@ -262,6 +262,7 @@
             this.label1.Size = new System.Drawing.Size(291, 32);
             this.label1.TabIndex = 91;
             this.label1.Text = "Shows inventory status of Takeaway and Eat In";
+            this.label1.Visible = false;
             // 
             // btnInventoryReport
             // 
@@ -282,11 +283,12 @@
             this.btnInventoryReport.Size = new System.Drawing.Size(254, 51);
             this.btnInventoryReport.TabIndex = 90;
             this.btnInventoryReport.Text = "Inventory Report";
+            this.btnInventoryReport.Visible = false;
             // 
             // btnExit
             // 
-            this.btnExit.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
-            this.btnExit.Appearance.Font = new System.Drawing.Font("Tahoma", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnExit.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.btnExit.Appearance.Font = new System.Drawing.Font("Calibri", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnExit.Appearance.ForeColor = System.Drawing.Color.White;
             this.btnExit.Appearance.Options.UseBackColor = true;
             this.btnExit.Appearance.Options.UseFont = true;

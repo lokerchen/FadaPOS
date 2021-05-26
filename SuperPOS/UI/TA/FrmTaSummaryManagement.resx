@@ -118,7 +118,7 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="btnDateLeft.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="btnDateLeft.ImageOptions.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAABGdBTUEAALGPC/xhBQAAACF0RVh0VGl0
         bGUAUHJldjtBcnJvdztMZWZ0O0JhY2s7UmV3aW5kCyuHDwAABa5JREFUWEfFlXtMU1ccx4+byHBjymSZ
@@ -149,7 +149,7 @@
         AAAAAElFTkSuQmCC
 </value>
   </data>
-  <data name="btnDateRight.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="btnDateRight.ImageOptions.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAABGdBTUEAALGPC/xhBQAAABt0RVh0VGl0
         bGUATmV4dDtQbGF5O0Fycm93O1JpZ2h0FuQOrgAABaFJREFUWEfFlXlMVFcUxq+t+761dvnHbmnFVrE0
@@ -179,7 +179,7 @@
         5pml8BEDEUF2w/9tbJfCRwyeB04H+xOng/2J08H+A+xfjRjIFpqB8W4AAAAASUVORK5CYII=
 </value>
   </data>
-  <data name="btnUp.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="btnUp.ImageOptions.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAABGdBTUEAALGPC/xhBQAAAA90RVh0VGl0
         bGUAVXA7QXJyb3c7yF4oFAAABsxJREFUWEfFlnlQVVUcxy+YSzVqaWrTTH9Y/zRNNfWHU6YVOmmrOuVW
@@ -214,7 +214,7 @@
         UxE8XJTwUf2vkvOY+eCLJ2sQ/gJv1yXMMTZttwAAAABJRU5ErkJggg==
 </value>
   </data>
-  <data name="btnDown.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="btnDown.ImageOptions.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAABGdBTUEAALGPC/xhBQAAABF0RVh0VGl0
         bGUARG93bjtBcnJvdzu9/IJYAAAHFklEQVRYR8WWaVAUVxDHH94HUdGK8YulleSDpcYyWsYkWsZoacUj

@@ -32,14 +32,14 @@
             this.btnPrintSummary = new DevExpress.XtraEditors.SimpleButton();
             this.btnExit = new DevExpress.XtraEditors.SimpleButton();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.deDayTo = new DevExpress.XtraEditors.TimeEdit();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
+            this.deDayFrom = new DevExpress.XtraEditors.TimeEdit();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.txtCurrentDate = new DevExpress.XtraEditors.TextEdit();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.txtCurrentTime = new DevExpress.XtraEditors.TextEdit();
-            this.deDayFrom = new DevExpress.XtraEditors.TimeEdit();
-            this.deDayTo = new DevExpress.XtraEditors.TimeEdit();
             this.gridControlTaShowOrder = new DevExpress.XtraGrid.GridControl();
             this.gvTaShowOrder = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.ID = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -57,12 +57,12 @@
             this.BusDate = new DevExpress.XtraGrid.Columns.GridColumn();
             this.groupBox1.SuspendLayout();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.deDayTo.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.deDayFrom.Properties)).BeginInit();
             this.groupBox3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.txtCurrentDate.Properties)).BeginInit();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.txtCurrentTime.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.deDayFrom.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.deDayTo.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridControlTaShowOrder)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gvTaShowOrder)).BeginInit();
             this.SuspendLayout();
@@ -87,7 +87,7 @@
             // btnPrintSummary
             // 
             this.btnPrintSummary.Appearance.BackColor = System.Drawing.Color.RoyalBlue;
-            this.btnPrintSummary.Appearance.Font = new System.Drawing.Font("Tahoma", 10F);
+            this.btnPrintSummary.Appearance.Font = new System.Drawing.Font("Calibri", 18F, System.Drawing.FontStyle.Bold);
             this.btnPrintSummary.Appearance.ForeColor = System.Drawing.Color.White;
             this.btnPrintSummary.Appearance.Options.UseBackColor = true;
             this.btnPrintSummary.Appearance.Options.UseFont = true;
@@ -107,8 +107,8 @@
             // 
             // btnExit
             // 
-            this.btnExit.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
-            this.btnExit.Appearance.Font = new System.Drawing.Font("Tahoma", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnExit.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.btnExit.Appearance.Font = new System.Drawing.Font("Calibri", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnExit.Appearance.ForeColor = System.Drawing.Color.White;
             this.btnExit.Appearance.Options.UseBackColor = true;
             this.btnExit.Appearance.Options.UseFont = true;
@@ -136,6 +136,29 @@
             this.panel1.Size = new System.Drawing.Size(364, 106);
             this.panel1.TabIndex = 72;
             // 
+            // deDayTo
+            // 
+            this.deDayTo.EditValue = new System.DateTime(2021, 2, 9, 20, 50, 20, 0);
+            this.deDayTo.Location = new System.Drawing.Point(152, 73);
+            this.deDayTo.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.deDayTo.Name = "deDayTo";
+            this.deDayTo.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 12F);
+            this.deDayTo.Properties.Appearance.Options.UseFont = true;
+            this.deDayTo.Properties.AutoHeight = false;
+            this.deDayTo.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.deDayTo.Properties.DisplayFormat.FormatString = "dd/MM/yyyy HH:mm";
+            this.deDayTo.Properties.DisplayFormat.FormatType = DevExpress.Utils.FormatType.DateTime;
+            this.deDayTo.Properties.EditFormat.FormatString = "dd/MM/yyyy HH:mm";
+            this.deDayTo.Properties.EditFormat.FormatType = DevExpress.Utils.FormatType.DateTime;
+            this.deDayTo.Properties.EditValueChangedFiringMode = DevExpress.XtraEditors.Controls.EditValueChangedFiringMode.Default;
+            this.deDayTo.Properties.Mask.EditMask = "dd/MM/yyyy HH:mm";
+            this.deDayTo.Properties.Mask.UseMaskAsDisplayFormat = true;
+            this.deDayTo.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.DisableTextEditor;
+            this.deDayTo.Properties.TimeEditStyle = DevExpress.XtraEditors.Repository.TimeEditStyle.TouchUI;
+            this.deDayTo.Size = new System.Drawing.Size(164, 23);
+            this.deDayTo.TabIndex = 93;
+            // 
             // label2
             // 
             this.label2.AutoSize = true;
@@ -153,6 +176,29 @@
             this.label1.Size = new System.Drawing.Size(119, 19);
             this.label1.TabIndex = 0;
             this.label1.Text = "From DateTime";
+            // 
+            // deDayFrom
+            // 
+            this.deDayFrom.EditValue = new System.DateTime(2021, 2, 9, 20, 50, 20, 0);
+            this.deDayFrom.Location = new System.Drawing.Point(152, 27);
+            this.deDayFrom.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.deDayFrom.Name = "deDayFrom";
+            this.deDayFrom.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 12F);
+            this.deDayFrom.Properties.Appearance.Options.UseFont = true;
+            this.deDayFrom.Properties.AutoHeight = false;
+            this.deDayFrom.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.deDayFrom.Properties.DisplayFormat.FormatString = "dd/MM/yyyy HH:mm";
+            this.deDayFrom.Properties.DisplayFormat.FormatType = DevExpress.Utils.FormatType.DateTime;
+            this.deDayFrom.Properties.EditFormat.FormatString = "dd/MM/yyyy HH:mm";
+            this.deDayFrom.Properties.EditFormat.FormatType = DevExpress.Utils.FormatType.DateTime;
+            this.deDayFrom.Properties.EditValueChangedFiringMode = DevExpress.XtraEditors.Controls.EditValueChangedFiringMode.Default;
+            this.deDayFrom.Properties.Mask.EditMask = "dd/MM/yyyy HH:mm";
+            this.deDayFrom.Properties.Mask.UseMaskAsDisplayFormat = true;
+            this.deDayFrom.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.DisableTextEditor;
+            this.deDayFrom.Properties.TimeEditStyle = DevExpress.XtraEditors.Repository.TimeEditStyle.TouchUI;
+            this.deDayFrom.Size = new System.Drawing.Size(164, 23);
+            this.deDayFrom.TabIndex = 92;
             // 
             // groupBox3
             // 
@@ -203,52 +249,6 @@
             this.txtCurrentTime.Properties.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.txtCurrentTime.Size = new System.Drawing.Size(129, 30);
             this.txtCurrentTime.TabIndex = 0;
-            // 
-            // deDayFrom
-            // 
-            this.deDayFrom.EditValue = new System.DateTime(2021, 2, 9, 20, 50, 20, 0);
-            this.deDayFrom.Location = new System.Drawing.Point(152, 27);
-            this.deDayFrom.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.deDayFrom.Name = "deDayFrom";
-            this.deDayFrom.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 12F);
-            this.deDayFrom.Properties.Appearance.Options.UseFont = true;
-            this.deDayFrom.Properties.AutoHeight = false;
-            this.deDayFrom.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.deDayFrom.Properties.DisplayFormat.FormatString = "dd/MM/yyyy HH:mm";
-            this.deDayFrom.Properties.DisplayFormat.FormatType = DevExpress.Utils.FormatType.DateTime;
-            this.deDayFrom.Properties.EditFormat.FormatString = "dd/MM/yyyy HH:mm";
-            this.deDayFrom.Properties.EditFormat.FormatType = DevExpress.Utils.FormatType.DateTime;
-            this.deDayFrom.Properties.EditValueChangedFiringMode = DevExpress.XtraEditors.Controls.EditValueChangedFiringMode.Default;
-            this.deDayFrom.Properties.Mask.EditMask = "dd/MM/yyyy HH:mm";
-            this.deDayFrom.Properties.Mask.UseMaskAsDisplayFormat = true;
-            this.deDayFrom.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.DisableTextEditor;
-            this.deDayFrom.Properties.TimeEditStyle = DevExpress.XtraEditors.Repository.TimeEditStyle.TouchUI;
-            this.deDayFrom.Size = new System.Drawing.Size(164, 23);
-            this.deDayFrom.TabIndex = 92;
-            // 
-            // deDayTo
-            // 
-            this.deDayTo.EditValue = new System.DateTime(2021, 2, 9, 20, 50, 20, 0);
-            this.deDayTo.Location = new System.Drawing.Point(152, 73);
-            this.deDayTo.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.deDayTo.Name = "deDayTo";
-            this.deDayTo.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 12F);
-            this.deDayTo.Properties.Appearance.Options.UseFont = true;
-            this.deDayTo.Properties.AutoHeight = false;
-            this.deDayTo.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.deDayTo.Properties.DisplayFormat.FormatString = "dd/MM/yyyy HH:mm";
-            this.deDayTo.Properties.DisplayFormat.FormatType = DevExpress.Utils.FormatType.DateTime;
-            this.deDayTo.Properties.EditFormat.FormatString = "dd/MM/yyyy HH:mm";
-            this.deDayTo.Properties.EditFormat.FormatType = DevExpress.Utils.FormatType.DateTime;
-            this.deDayTo.Properties.EditValueChangedFiringMode = DevExpress.XtraEditors.Controls.EditValueChangedFiringMode.Default;
-            this.deDayTo.Properties.Mask.EditMask = "dd/MM/yyyy HH:mm";
-            this.deDayTo.Properties.Mask.UseMaskAsDisplayFormat = true;
-            this.deDayTo.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.DisableTextEditor;
-            this.deDayTo.Properties.TimeEditStyle = DevExpress.XtraEditors.Repository.TimeEditStyle.TouchUI;
-            this.deDayTo.Size = new System.Drawing.Size(164, 23);
-            this.deDayTo.TabIndex = 93;
             // 
             // gridControlTaShowOrder
             // 
@@ -436,12 +436,12 @@
             this.groupBox1.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.deDayTo.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.deDayFrom.Properties)).EndInit();
             this.groupBox3.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.txtCurrentDate.Properties)).EndInit();
             this.groupBox2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.txtCurrentTime.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.deDayFrom.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.deDayTo.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridControlTaShowOrder)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gvTaShowOrder)).EndInit();
             this.ResumeLayout(false);

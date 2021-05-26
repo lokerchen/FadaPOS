@@ -116,7 +116,7 @@
             // btnChangePayment
             // 
             this.btnChangePayment.Appearance.BackColor = System.Drawing.Color.RoyalBlue;
-            this.btnChangePayment.Appearance.Font = new System.Drawing.Font("Tahoma", 10F);
+            this.btnChangePayment.Appearance.Font = new System.Drawing.Font("Calibri", 11F);
             this.btnChangePayment.Appearance.ForeColor = System.Drawing.Color.White;
             this.btnChangePayment.Appearance.Options.UseBackColor = true;
             this.btnChangePayment.Appearance.Options.UseFont = true;
@@ -137,7 +137,7 @@
             // btnVoidOrder
             // 
             this.btnVoidOrder.Appearance.BackColor = System.Drawing.Color.RoyalBlue;
-            this.btnVoidOrder.Appearance.Font = new System.Drawing.Font("Tahoma", 10F);
+            this.btnVoidOrder.Appearance.Font = new System.Drawing.Font("Calibri", 11F);
             this.btnVoidOrder.Appearance.ForeColor = System.Drawing.Color.White;
             this.btnVoidOrder.Appearance.Options.UseBackColor = true;
             this.btnVoidOrder.Appearance.Options.UseFont = true;
@@ -157,7 +157,7 @@
             // btnAmendOrder
             // 
             this.btnAmendOrder.Appearance.BackColor = System.Drawing.Color.RoyalBlue;
-            this.btnAmendOrder.Appearance.Font = new System.Drawing.Font("Tahoma", 10F);
+            this.btnAmendOrder.Appearance.Font = new System.Drawing.Font("Calibri", 11F);
             this.btnAmendOrder.Appearance.ForeColor = System.Drawing.Color.White;
             this.btnAmendOrder.Appearance.Options.UseBackColor = true;
             this.btnAmendOrder.Appearance.Options.UseFont = true;
@@ -178,7 +178,7 @@
             // btnLanguage
             // 
             this.btnLanguage.Appearance.BackColor = System.Drawing.Color.LimeGreen;
-            this.btnLanguage.Appearance.Font = new System.Drawing.Font("Tahoma", 10F);
+            this.btnLanguage.Appearance.Font = new System.Drawing.Font("Calibri", 11F);
             this.btnLanguage.Appearance.ForeColor = System.Drawing.Color.White;
             this.btnLanguage.Appearance.Options.UseBackColor = true;
             this.btnLanguage.Appearance.Options.UseFont = true;
@@ -194,10 +194,8 @@
             // 
             // lblSc
             // 
-            this.lblSc.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
             this.lblSc.Appearance.Font = new System.Drawing.Font("Tahoma", 10F);
             this.lblSc.Appearance.ForeColor = System.Drawing.Color.Black;
-            this.lblSc.Appearance.Options.UseBackColor = true;
             this.lblSc.Appearance.Options.UseFont = true;
             this.lblSc.Appearance.Options.UseForeColor = true;
             this.lblSc.Appearance.Options.UseTextOptions = true;
@@ -220,10 +218,8 @@
             // 
             // lblDc
             // 
-            this.lblDc.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
             this.lblDc.Appearance.Font = new System.Drawing.Font("Tahoma", 10F);
             this.lblDc.Appearance.ForeColor = System.Drawing.Color.Black;
-            this.lblDc.Appearance.Options.UseBackColor = true;
             this.lblDc.Appearance.Options.UseFont = true;
             this.lblDc.Appearance.Options.UseForeColor = true;
             this.lblDc.Appearance.Options.UseTextOptions = true;
@@ -246,10 +242,8 @@
             // 
             // lblTotalOrder
             // 
-            this.lblTotalOrder.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
             this.lblTotalOrder.Appearance.Font = new System.Drawing.Font("Tahoma", 10F);
             this.lblTotalOrder.Appearance.ForeColor = System.Drawing.Color.Black;
-            this.lblTotalOrder.Appearance.Options.UseBackColor = true;
             this.lblTotalOrder.Appearance.Options.UseFont = true;
             this.lblTotalOrder.Appearance.Options.UseForeColor = true;
             this.lblTotalOrder.Appearance.Options.UseTextOptions = true;
@@ -272,10 +266,8 @@
             // 
             // lblTotalTaking
             // 
-            this.lblTotalTaking.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
             this.lblTotalTaking.Appearance.Font = new System.Drawing.Font("Tahoma", 10F);
             this.lblTotalTaking.Appearance.ForeColor = System.Drawing.Color.Black;
-            this.lblTotalTaking.Appearance.Options.UseBackColor = true;
             this.lblTotalTaking.Appearance.Options.UseFont = true;
             this.lblTotalTaking.Appearance.Options.UseForeColor = true;
             this.lblTotalTaking.Appearance.Options.UseTextOptions = true;
@@ -298,10 +290,8 @@
             // 
             // lblEatIn
             // 
-            this.lblEatIn.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
             this.lblEatIn.Appearance.Font = new System.Drawing.Font("Tahoma", 10F);
             this.lblEatIn.Appearance.ForeColor = System.Drawing.Color.Black;
-            this.lblEatIn.Appearance.Options.UseBackColor = true;
             this.lblEatIn.Appearance.Options.UseFont = true;
             this.lblEatIn.Appearance.Options.UseForeColor = true;
             this.lblEatIn.Appearance.Options.UseTextOptions = true;
@@ -324,10 +314,8 @@
             // 
             // lblFastFood
             // 
-            this.lblFastFood.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
             this.lblFastFood.Appearance.Font = new System.Drawing.Font("Tahoma", 10F);
             this.lblFastFood.Appearance.ForeColor = System.Drawing.Color.Black;
-            this.lblFastFood.Appearance.Options.UseBackColor = true;
             this.lblFastFood.Appearance.Options.UseFont = true;
             this.lblFastFood.Appearance.Options.UseForeColor = true;
             this.lblFastFood.Appearance.Options.UseTextOptions = true;
@@ -350,10 +338,8 @@
             // 
             // lblShop
             // 
-            this.lblShop.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
             this.lblShop.Appearance.Font = new System.Drawing.Font("Tahoma", 10F);
             this.lblShop.Appearance.ForeColor = System.Drawing.Color.Black;
-            this.lblShop.Appearance.Options.UseBackColor = true;
             this.lblShop.Appearance.Options.UseFont = true;
             this.lblShop.Appearance.Options.UseForeColor = true;
             this.lblShop.Appearance.Options.UseTextOptions = true;
@@ -376,10 +362,8 @@
             // 
             // lblDelivery
             // 
-            this.lblDelivery.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
             this.lblDelivery.Appearance.Font = new System.Drawing.Font("Tahoma", 10F);
             this.lblDelivery.Appearance.ForeColor = System.Drawing.Color.Black;
-            this.lblDelivery.Appearance.Options.UseBackColor = true;
             this.lblDelivery.Appearance.Options.UseFont = true;
             this.lblDelivery.Appearance.Options.UseForeColor = true;
             this.lblDelivery.Appearance.Options.UseTextOptions = true;
@@ -402,10 +386,8 @@
             // 
             // lblCollection
             // 
-            this.lblCollection.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
             this.lblCollection.Appearance.Font = new System.Drawing.Font("Tahoma", 10F);
             this.lblCollection.Appearance.ForeColor = System.Drawing.Color.Black;
-            this.lblCollection.Appearance.Options.UseBackColor = true;
             this.lblCollection.Appearance.Options.UseFont = true;
             this.lblCollection.Appearance.Options.UseForeColor = true;
             this.lblCollection.Appearance.Options.UseTextOptions = true;
@@ -428,10 +410,8 @@
             // 
             // lblTotalTA
             // 
-            this.lblTotalTA.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
             this.lblTotalTA.Appearance.Font = new System.Drawing.Font("Tahoma", 10F);
             this.lblTotalTA.Appearance.ForeColor = System.Drawing.Color.Black;
-            this.lblTotalTA.Appearance.Options.UseBackColor = true;
             this.lblTotalTA.Appearance.Options.UseFont = true;
             this.lblTotalTA.Appearance.Options.UseForeColor = true;
             this.lblTotalTA.Appearance.Options.UseTextOptions = true;
@@ -447,7 +427,7 @@
             // btnPrtSalesRpt
             // 
             this.btnPrtSalesRpt.Appearance.BackColor = System.Drawing.Color.DarkOrange;
-            this.btnPrtSalesRpt.Appearance.Font = new System.Drawing.Font("Tahoma", 10F);
+            this.btnPrtSalesRpt.Appearance.Font = new System.Drawing.Font("Calibri", 12F);
             this.btnPrtSalesRpt.Appearance.ForeColor = System.Drawing.Color.White;
             this.btnPrtSalesRpt.Appearance.Options.UseBackColor = true;
             this.btnPrtSalesRpt.Appearance.Options.UseFont = true;
@@ -468,7 +448,7 @@
             // btnSummaryView
             // 
             this.btnSummaryView.Appearance.BackColor = System.Drawing.Color.DarkOrange;
-            this.btnSummaryView.Appearance.Font = new System.Drawing.Font("Tahoma", 10F);
+            this.btnSummaryView.Appearance.Font = new System.Drawing.Font("Calibri", 12F);
             this.btnSummaryView.Appearance.ForeColor = System.Drawing.Color.White;
             this.btnSummaryView.Appearance.Options.UseBackColor = true;
             this.btnSummaryView.Appearance.Options.UseFont = true;
@@ -488,8 +468,8 @@
             // 
             // btnExit
             // 
-            this.btnExit.Appearance.BackColor = System.Drawing.Color.Olive;
-            this.btnExit.Appearance.Font = new System.Drawing.Font("Tahoma", 14F);
+            this.btnExit.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.btnExit.Appearance.Font = new System.Drawing.Font("Calibri", 16F, System.Drawing.FontStyle.Bold);
             this.btnExit.Appearance.ForeColor = System.Drawing.Color.White;
             this.btnExit.Appearance.Options.UseBackColor = true;
             this.btnExit.Appearance.Options.UseFont = true;
@@ -531,7 +511,7 @@
             // btnLeft
             // 
             this.btnLeft.Appearance.BackColor = System.Drawing.Color.RoyalBlue;
-            this.btnLeft.Appearance.Font = new System.Drawing.Font("Tahoma", 10F);
+            this.btnLeft.Appearance.Font = new System.Drawing.Font("Calibri", 11F);
             this.btnLeft.Appearance.ForeColor = System.Drawing.Color.White;
             this.btnLeft.Appearance.Options.UseBackColor = true;
             this.btnLeft.Appearance.Options.UseFont = true;
@@ -552,7 +532,7 @@
             // btnRight
             // 
             this.btnRight.Appearance.BackColor = System.Drawing.Color.RoyalBlue;
-            this.btnRight.Appearance.Font = new System.Drawing.Font("Tahoma", 10F);
+            this.btnRight.Appearance.Font = new System.Drawing.Font("Calibri", 11F);
             this.btnRight.Appearance.ForeColor = System.Drawing.Color.White;
             this.btnRight.Appearance.Options.UseBackColor = true;
             this.btnRight.Appearance.Options.UseFont = true;
@@ -652,7 +632,7 @@
             // btnAccount
             // 
             this.btnAccount.Appearance.BackColor = System.Drawing.Color.RoyalBlue;
-            this.btnAccount.Appearance.Font = new System.Drawing.Font("Tahoma", 10F);
+            this.btnAccount.Appearance.Font = new System.Drawing.Font("Calibri", 14F);
             this.btnAccount.Appearance.ForeColor = System.Drawing.Color.White;
             this.btnAccount.Appearance.Options.UseBackColor = true;
             this.btnAccount.Appearance.Options.UseFont = true;
@@ -673,7 +653,7 @@
             // btnPrtReceipt
             // 
             this.btnPrtReceipt.Appearance.BackColor = System.Drawing.Color.RoyalBlue;
-            this.btnPrtReceipt.Appearance.Font = new System.Drawing.Font("Tahoma", 10F);
+            this.btnPrtReceipt.Appearance.Font = new System.Drawing.Font("Calibri", 14F);
             this.btnPrtReceipt.Appearance.ForeColor = System.Drawing.Color.White;
             this.btnPrtReceipt.Appearance.Options.UseBackColor = true;
             this.btnPrtReceipt.Appearance.Options.UseFont = true;
@@ -694,7 +674,7 @@
             // btnPrtKit
             // 
             this.btnPrtKit.Appearance.BackColor = System.Drawing.Color.RoyalBlue;
-            this.btnPrtKit.Appearance.Font = new System.Drawing.Font("Tahoma", 10F);
+            this.btnPrtKit.Appearance.Font = new System.Drawing.Font("Calibri", 14F);
             this.btnPrtKit.Appearance.ForeColor = System.Drawing.Color.White;
             this.btnPrtKit.Appearance.Options.UseBackColor = true;
             this.btnPrtKit.Appearance.Options.UseFont = true;
@@ -715,7 +695,7 @@
             // btnPrtBill
             // 
             this.btnPrtBill.Appearance.BackColor = System.Drawing.Color.RoyalBlue;
-            this.btnPrtBill.Appearance.Font = new System.Drawing.Font("Tahoma", 10F);
+            this.btnPrtBill.Appearance.Font = new System.Drawing.Font("Calibri", 14F);
             this.btnPrtBill.Appearance.ForeColor = System.Drawing.Color.White;
             this.btnPrtBill.Appearance.Options.UseBackColor = true;
             this.btnPrtBill.Appearance.Options.UseFont = true;
@@ -736,6 +716,7 @@
             // gridControlTaShowOrder
             // 
             this.gridControlTaShowOrder.EmbeddedNavigator.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.gridControlTaShowOrder.Font = new System.Drawing.Font("Calibri", 12F);
             this.gridControlTaShowOrder.Location = new System.Drawing.Point(4, 48);
             this.gridControlTaShowOrder.MainView = this.gvTaShowOrder;
             this.gridControlTaShowOrder.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -748,9 +729,15 @@
             // gvTaShowOrder
             // 
             this.gvTaShowOrder.Appearance.EvenRow.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
+            this.gvTaShowOrder.Appearance.EvenRow.Font = new System.Drawing.Font("Calibri", 12F);
             this.gvTaShowOrder.Appearance.EvenRow.Options.UseBackColor = true;
+            this.gvTaShowOrder.Appearance.EvenRow.Options.UseFont = true;
+            this.gvTaShowOrder.Appearance.HeaderPanel.Font = new System.Drawing.Font("Calibri", 12F);
+            this.gvTaShowOrder.Appearance.HeaderPanel.Options.UseFont = true;
             this.gvTaShowOrder.Appearance.HeaderPanel.Options.UseTextOptions = true;
             this.gvTaShowOrder.Appearance.HeaderPanel.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.gvTaShowOrder.Appearance.OddRow.Font = new System.Drawing.Font("Calibri", 12F);
+            this.gvTaShowOrder.Appearance.OddRow.Options.UseFont = true;
             this.gvTaShowOrder.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
             this.ID,
             this.CheckCode,
