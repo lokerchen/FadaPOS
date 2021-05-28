@@ -454,23 +454,23 @@
             // 
             // lblCustInfo8
             // 
-            this.lblCustInfo8.Appearance.Font = new System.Drawing.Font("Calibri", 11F);
+            this.lblCustInfo8.Appearance.Font = new System.Drawing.Font("Calibri", 9F);
             this.lblCustInfo8.Appearance.Options.UseFont = true;
-            this.lblCustInfo8.Location = new System.Drawing.Point(10, 26);
+            this.lblCustInfo8.Location = new System.Drawing.Point(22, 29);
             this.lblCustInfo8.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.lblCustInfo8.Name = "lblCustInfo8";
-            this.lblCustInfo8.Size = new System.Drawing.Size(119, 18);
+            this.lblCustInfo8.Size = new System.Drawing.Size(102, 14);
             this.lblCustInfo8.TabIndex = 1;
             this.lblCustInfo8.Text = "19:30:00 Tom Smith";
             // 
             // lblCustPhone8
             // 
-            this.lblCustPhone8.Appearance.Font = new System.Drawing.Font("Calibri", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCustPhone8.Appearance.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblCustPhone8.Appearance.Options.UseFont = true;
-            this.lblCustPhone8.Location = new System.Drawing.Point(16, 2);
+            this.lblCustPhone8.Location = new System.Drawing.Point(27, 4);
             this.lblCustPhone8.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.lblCustPhone8.Name = "lblCustPhone8";
-            this.lblCustPhone8.Size = new System.Drawing.Size(110, 23);
+            this.lblCustPhone8.Size = new System.Drawing.Size(88, 19);
             this.lblCustPhone8.TabIndex = 0;
             this.lblCustPhone8.Text = "07866878668";
             // 
@@ -490,23 +490,23 @@
             // 
             // lblCustInfo7
             // 
-            this.lblCustInfo7.Appearance.Font = new System.Drawing.Font("Calibri", 11F);
+            this.lblCustInfo7.Appearance.Font = new System.Drawing.Font("Calibri", 9F);
             this.lblCustInfo7.Appearance.Options.UseFont = true;
-            this.lblCustInfo7.Location = new System.Drawing.Point(10, 26);
+            this.lblCustInfo7.Location = new System.Drawing.Point(22, 29);
             this.lblCustInfo7.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.lblCustInfo7.Name = "lblCustInfo7";
-            this.lblCustInfo7.Size = new System.Drawing.Size(119, 18);
+            this.lblCustInfo7.Size = new System.Drawing.Size(102, 14);
             this.lblCustInfo7.TabIndex = 1;
             this.lblCustInfo7.Text = "19:30:00 Tom Smith";
             // 
             // lblCustPhone7
             // 
-            this.lblCustPhone7.Appearance.Font = new System.Drawing.Font("Calibri", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCustPhone7.Appearance.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblCustPhone7.Appearance.Options.UseFont = true;
-            this.lblCustPhone7.Location = new System.Drawing.Point(16, 2);
+            this.lblCustPhone7.Location = new System.Drawing.Point(27, 4);
             this.lblCustPhone7.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.lblCustPhone7.Name = "lblCustPhone7";
-            this.lblCustPhone7.Size = new System.Drawing.Size(110, 23);
+            this.lblCustPhone7.Size = new System.Drawing.Size(88, 19);
             this.lblCustPhone7.TabIndex = 0;
             this.lblCustPhone7.Text = "07866878668";
             // 
@@ -526,23 +526,23 @@
             // 
             // lblCustInfo6
             // 
-            this.lblCustInfo6.Appearance.Font = new System.Drawing.Font("Calibri", 11F);
+            this.lblCustInfo6.Appearance.Font = new System.Drawing.Font("Calibri", 9F);
             this.lblCustInfo6.Appearance.Options.UseFont = true;
-            this.lblCustInfo6.Location = new System.Drawing.Point(10, 26);
+            this.lblCustInfo6.Location = new System.Drawing.Point(22, 29);
             this.lblCustInfo6.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.lblCustInfo6.Name = "lblCustInfo6";
-            this.lblCustInfo6.Size = new System.Drawing.Size(119, 18);
+            this.lblCustInfo6.Size = new System.Drawing.Size(102, 14);
             this.lblCustInfo6.TabIndex = 1;
             this.lblCustInfo6.Text = "19:30:00 Tom Smith";
             // 
             // lblCustPhone6
             // 
-            this.lblCustPhone6.Appearance.Font = new System.Drawing.Font("Calibri", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCustPhone6.Appearance.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblCustPhone6.Appearance.Options.UseFont = true;
-            this.lblCustPhone6.Location = new System.Drawing.Point(16, 2);
+            this.lblCustPhone6.Location = new System.Drawing.Point(27, 4);
             this.lblCustPhone6.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.lblCustPhone6.Name = "lblCustPhone6";
-            this.lblCustPhone6.Size = new System.Drawing.Size(110, 23);
+            this.lblCustPhone6.Size = new System.Drawing.Size(88, 19);
             this.lblCustPhone6.TabIndex = 0;
             this.lblCustPhone6.Text = "07866878668";
             // 
@@ -562,23 +562,23 @@
             // 
             // lblCustInfo5
             // 
-            this.lblCustInfo5.Appearance.Font = new System.Drawing.Font("Calibri", 11F);
+            this.lblCustInfo5.Appearance.Font = new System.Drawing.Font("Calibri", 9F);
             this.lblCustInfo5.Appearance.Options.UseFont = true;
-            this.lblCustInfo5.Location = new System.Drawing.Point(10, 26);
+            this.lblCustInfo5.Location = new System.Drawing.Point(22, 29);
             this.lblCustInfo5.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.lblCustInfo5.Name = "lblCustInfo5";
-            this.lblCustInfo5.Size = new System.Drawing.Size(119, 18);
+            this.lblCustInfo5.Size = new System.Drawing.Size(102, 14);
             this.lblCustInfo5.TabIndex = 1;
             this.lblCustInfo5.Text = "19:30:00 Tom Smith";
             // 
             // lblCustPhone5
             // 
-            this.lblCustPhone5.Appearance.Font = new System.Drawing.Font("Calibri", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCustPhone5.Appearance.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblCustPhone5.Appearance.Options.UseFont = true;
-            this.lblCustPhone5.Location = new System.Drawing.Point(16, 2);
+            this.lblCustPhone5.Location = new System.Drawing.Point(27, 4);
             this.lblCustPhone5.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.lblCustPhone5.Name = "lblCustPhone5";
-            this.lblCustPhone5.Size = new System.Drawing.Size(110, 23);
+            this.lblCustPhone5.Size = new System.Drawing.Size(88, 19);
             this.lblCustPhone5.TabIndex = 0;
             this.lblCustPhone5.Text = "07866878668";
             // 
@@ -598,23 +598,23 @@
             // 
             // lblCustInfo4
             // 
-            this.lblCustInfo4.Appearance.Font = new System.Drawing.Font("Calibri", 11F);
+            this.lblCustInfo4.Appearance.Font = new System.Drawing.Font("Calibri", 9F);
             this.lblCustInfo4.Appearance.Options.UseFont = true;
-            this.lblCustInfo4.Location = new System.Drawing.Point(10, 26);
+            this.lblCustInfo4.Location = new System.Drawing.Point(22, 29);
             this.lblCustInfo4.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.lblCustInfo4.Name = "lblCustInfo4";
-            this.lblCustInfo4.Size = new System.Drawing.Size(119, 18);
+            this.lblCustInfo4.Size = new System.Drawing.Size(102, 14);
             this.lblCustInfo4.TabIndex = 1;
             this.lblCustInfo4.Text = "19:30:00 Tom Smith";
             // 
             // lblCustPhone4
             // 
-            this.lblCustPhone4.Appearance.Font = new System.Drawing.Font("Calibri", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCustPhone4.Appearance.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblCustPhone4.Appearance.Options.UseFont = true;
-            this.lblCustPhone4.Location = new System.Drawing.Point(16, 2);
+            this.lblCustPhone4.Location = new System.Drawing.Point(27, 4);
             this.lblCustPhone4.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.lblCustPhone4.Name = "lblCustPhone4";
-            this.lblCustPhone4.Size = new System.Drawing.Size(110, 23);
+            this.lblCustPhone4.Size = new System.Drawing.Size(88, 19);
             this.lblCustPhone4.TabIndex = 0;
             this.lblCustPhone4.Text = "07866878668";
             // 
@@ -634,23 +634,23 @@
             // 
             // lblCustInfo3
             // 
-            this.lblCustInfo3.Appearance.Font = new System.Drawing.Font("Calibri", 11F);
+            this.lblCustInfo3.Appearance.Font = new System.Drawing.Font("Calibri", 9F);
             this.lblCustInfo3.Appearance.Options.UseFont = true;
-            this.lblCustInfo3.Location = new System.Drawing.Point(10, 26);
+            this.lblCustInfo3.Location = new System.Drawing.Point(22, 29);
             this.lblCustInfo3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.lblCustInfo3.Name = "lblCustInfo3";
-            this.lblCustInfo3.Size = new System.Drawing.Size(119, 18);
+            this.lblCustInfo3.Size = new System.Drawing.Size(102, 14);
             this.lblCustInfo3.TabIndex = 1;
             this.lblCustInfo3.Text = "19:30:00 Tom Smith";
             // 
             // lblCustPhone3
             // 
-            this.lblCustPhone3.Appearance.Font = new System.Drawing.Font("Calibri", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCustPhone3.Appearance.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblCustPhone3.Appearance.Options.UseFont = true;
-            this.lblCustPhone3.Location = new System.Drawing.Point(16, 2);
+            this.lblCustPhone3.Location = new System.Drawing.Point(27, 4);
             this.lblCustPhone3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.lblCustPhone3.Name = "lblCustPhone3";
-            this.lblCustPhone3.Size = new System.Drawing.Size(110, 23);
+            this.lblCustPhone3.Size = new System.Drawing.Size(88, 19);
             this.lblCustPhone3.TabIndex = 0;
             this.lblCustPhone3.Text = "07866878668";
             // 
@@ -670,23 +670,23 @@
             // 
             // lblCustInfo2
             // 
-            this.lblCustInfo2.Appearance.Font = new System.Drawing.Font("Calibri", 11F);
+            this.lblCustInfo2.Appearance.Font = new System.Drawing.Font("Calibri", 9F);
             this.lblCustInfo2.Appearance.Options.UseFont = true;
-            this.lblCustInfo2.Location = new System.Drawing.Point(10, 26);
+            this.lblCustInfo2.Location = new System.Drawing.Point(22, 29);
             this.lblCustInfo2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.lblCustInfo2.Name = "lblCustInfo2";
-            this.lblCustInfo2.Size = new System.Drawing.Size(119, 18);
+            this.lblCustInfo2.Size = new System.Drawing.Size(102, 14);
             this.lblCustInfo2.TabIndex = 1;
             this.lblCustInfo2.Text = "19:30:00 Tom Smith";
             // 
             // lblCustPhone2
             // 
-            this.lblCustPhone2.Appearance.Font = new System.Drawing.Font("Calibri", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCustPhone2.Appearance.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblCustPhone2.Appearance.Options.UseFont = true;
-            this.lblCustPhone2.Location = new System.Drawing.Point(16, 2);
+            this.lblCustPhone2.Location = new System.Drawing.Point(27, 4);
             this.lblCustPhone2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.lblCustPhone2.Name = "lblCustPhone2";
-            this.lblCustPhone2.Size = new System.Drawing.Size(110, 23);
+            this.lblCustPhone2.Size = new System.Drawing.Size(88, 19);
             this.lblCustPhone2.TabIndex = 0;
             this.lblCustPhone2.Text = "07866878668";
             // 
@@ -706,23 +706,23 @@
             // 
             // lblCustInfo1
             // 
-            this.lblCustInfo1.Appearance.Font = new System.Drawing.Font("Calibri", 11F);
+            this.lblCustInfo1.Appearance.Font = new System.Drawing.Font("Calibri", 9F);
             this.lblCustInfo1.Appearance.Options.UseFont = true;
-            this.lblCustInfo1.Location = new System.Drawing.Point(10, 26);
+            this.lblCustInfo1.Location = new System.Drawing.Point(22, 29);
             this.lblCustInfo1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.lblCustInfo1.Name = "lblCustInfo1";
-            this.lblCustInfo1.Size = new System.Drawing.Size(119, 18);
+            this.lblCustInfo1.Size = new System.Drawing.Size(102, 14);
             this.lblCustInfo1.TabIndex = 1;
             this.lblCustInfo1.Text = "19:30:00 Tom Smith";
             // 
             // lblCustPhone1
             // 
-            this.lblCustPhone1.Appearance.Font = new System.Drawing.Font("Calibri", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCustPhone1.Appearance.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblCustPhone1.Appearance.Options.UseFont = true;
-            this.lblCustPhone1.Location = new System.Drawing.Point(16, 2);
+            this.lblCustPhone1.Location = new System.Drawing.Point(27, 4);
             this.lblCustPhone1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.lblCustPhone1.Name = "lblCustPhone1";
-            this.lblCustPhone1.Size = new System.Drawing.Size(110, 23);
+            this.lblCustPhone1.Size = new System.Drawing.Size(88, 19);
             this.lblCustPhone1.TabIndex = 0;
             this.lblCustPhone1.Text = "07866878668";
             // 
@@ -1213,7 +1213,7 @@
             // btnCollection
             // 
             this.btnCollection.Appearance.BackColor = System.Drawing.Color.CornflowerBlue;
-            this.btnCollection.Appearance.Font = new System.Drawing.Font("Calibri", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCollection.Appearance.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCollection.Appearance.ForeColor = System.Drawing.Color.White;
             this.btnCollection.Appearance.Options.UseBackColor = true;
             this.btnCollection.Appearance.Options.UseFont = true;
@@ -1230,7 +1230,7 @@
             // btnDelivery
             // 
             this.btnDelivery.Appearance.BackColor = System.Drawing.Color.Green;
-            this.btnDelivery.Appearance.Font = new System.Drawing.Font("Calibri", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDelivery.Appearance.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnDelivery.Appearance.ForeColor = System.Drawing.Color.White;
             this.btnDelivery.Appearance.Options.UseBackColor = true;
             this.btnDelivery.Appearance.Options.UseFont = true;
@@ -1247,7 +1247,7 @@
             // btnTblBooking
             // 
             this.btnTblBooking.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
-            this.btnTblBooking.Appearance.Font = new System.Drawing.Font("Calibri", 12F);
+            this.btnTblBooking.Appearance.Font = new System.Drawing.Font("Calibri", 10F);
             this.btnTblBooking.Appearance.ForeColor = System.Drawing.Color.White;
             this.btnTblBooking.Appearance.Options.UseBackColor = true;
             this.btnTblBooking.Appearance.Options.UseFont = true;
