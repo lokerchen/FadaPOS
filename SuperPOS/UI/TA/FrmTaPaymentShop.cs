@@ -181,6 +181,7 @@ namespace SuperPOS.UI.TA
             sw.Stop();
             TimeSpan ts = sw.Elapsed;
             Console.WriteLine("#FrmTaPaymentShop_Load# Time {0}", ts.TotalMilliseconds);
+            LogHelper.Info("#FrmTaPaymentShop_Load# Time:" + ts.TotalMilliseconds);
         }
 
         #region 获得Pay Type
