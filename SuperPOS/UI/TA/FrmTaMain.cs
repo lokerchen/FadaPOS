@@ -1692,73 +1692,78 @@ namespace SuperPOS.UI.TA
                         string strValue = "";
                         switch (EventData.lEventType)
                         {
-                            case BriSDKLib.BriEvent_PhoneHook:
-                                {
-                                    strValue = "通道" + (EventData.uChannelID + 1).ToString() + "：电话机摘机";
-                                }
-                                break;
-                            case BriSDKLib.BriEvent_PhoneHang:
-                                {
-                                    strValue = "通道" + (EventData.uChannelID + 1).ToString() + "：电话机挂机";
-                                }
-                                break;
+                            //case BriSDKLib.BriEvent_PhoneHook:
+                            //    {
+                            //        strValue = "通道" + (EventData.uChannelID + 1).ToString() + "：电话机摘机";
+                            //    }
+                            //    break;
+                            //case BriSDKLib.BriEvent_PhoneHang:
+                            //    {
+                            //        strValue = "通道" + (EventData.uChannelID + 1).ToString() + "：电话机挂机";
+                            //    }
+                            //    break;
+                            case BriSDKLib.BriEvent_GetCallID:
+                            case BriSDKLib.BriEvent_RecvedFSK:
                             case BriSDKLib.BriEvent_CallIn:
                                 {////两声响铃结束后开始呼叫转移到CC
                                     //strValue = "通道" + (EventData.uChannelID + 1).ToString() + "：来电响铃" + FromASCIIByteArray(EventData.szData);
                                     //if (string.IsNullOrEmpty(strTranPhoneNum.Trim())) return;
-
-                                    if (strTranPhoneNum.Trim().Equals("0") || strTranPhoneNum.Trim().Equals("1")) return;
-
-                                    string strPhoneNum = FromASCIIByteArray(EventData.szData).Trim();
-                                    
-                                    if (!string.IsNullOrEmpty(strPhoneNum))
-                                    {
-                                        if (strPhoneNum.Equals("0") || strPhoneNum.Equals("1")) return;
-                                    }
-                                    
-                                    //LogHelper.Info("BriEvent_CallIn#strTranPhoneNum:" + strTranPhoneNum + "##" + FromASCIIByteArray(EventData.szData).Trim() + "#isGetPhone:" + isGetPhone.ToString());
-
-                                    if (string.IsNullOrEmpty(strTranPhoneNum))
-                                    {
-                                        strTranPhoneNum = strPhoneNum;
-                                    }
-                                    
-                                    if (!string.IsNullOrEmpty(strTranPhoneNum) && !isGetPhone)
-                                    {
-                                        ShowCallIdWindow(strTranPhoneNum);
-                                    }
-                                }
-                                break;
-                            case BriSDKLib.BriEvent_GetCallID:
-                            case BriSDKLib.BriEvent_RecvedFSK:
-                                {
-                                    //strValue = "通道" + (EventData.uChannelID + 1).ToString() + "：接收到来电号码 " + FromASCIIByteArray(EventData.szData);
-
                                     try
                                     {
-                                        //LogHelper.Info("a:#" + isGetPhone.ToString() + "#");
-                                        #region 来电显示
-                                        
-                                        string CallerPhone = FromASCIIByteArray(EventData.szData).Trim();
+                                        if (strTranPhoneNum.Replace("\0", "").Trim().Equals("0") || strTranPhoneNum.Replace("\0", "").Trim().Equals("1")) return;
 
-                                        if (!string.IsNullOrEmpty(CallerPhone))
+                                        string strPhoneNum = FromASCIIByteArray(EventData.szData).Replace("\0", "").Trim();
+                                        
+                                        if (!string.IsNullOrEmpty(strPhoneNum))
                                         {
-                                            if (CallerPhone.Equals("0") || CallerPhone.Equals("1")) return;
+                                            if (strPhoneNum.Equals("0") || strPhoneNum.Equals("1")) return;
                                         }
                                         
-                                        strTranPhoneNum = CallerPhone.Trim();
+                                        //LogHelper.Info("BriEvent_CallIn#strTranPhoneNum:" + strTranPhoneNum + "##" + FromASCIIByteArray(EventData.szData).Trim() + "#isGetPhone:" + isGetPhone.ToString());
 
-                                        if (isGetPhone) return;
+                                        if (string.IsNullOrEmpty(strTranPhoneNum))
+                                        {
+                                            strTranPhoneNum = strPhoneNum;
+                                        }
                                         
-                                        //LogHelper.Info("BriEvent_GetCallID#CallerPhone:" + CallerPhone.Trim() + "strTranPhoneNum:" + strTranPhoneNum + "#isGetPhone:" + isGetPhone.ToString());
-
-                                        ShowCallIdWindow(CallerPhone);
-
-                                        #endregion
+                                        if (!string.IsNullOrEmpty(strTranPhoneNum) && !isGetPhone)
+                                        {
+                                            ShowCallIdWindow(strTranPhoneNum);
+                                        }
                                     }
-                                    catch (Exception ex) { LogHelper.Error("DefWndProc", ex); }
+                                    catch (Exception ex) { LogHelper.Error("DefWndProc->BriEvent:strTranPhoneNum" + strTranPhoneNum, ex); }
                                 }
                                 break;
+                            //case BriSDKLib.BriEvent_GetCallID:
+                            //case BriSDKLib.BriEvent_RecvedFSK:
+                                //{
+                                //    //strValue = "通道" + (EventData.uChannelID + 1).ToString() + "：接收到来电号码 " + FromASCIIByteArray(EventData.szData);
+
+                                //    try
+                                //    {
+                                //        //LogHelper.Info("a:#" + isGetPhone.ToString() + "#");
+                                //        #region 来电显示
+                                        
+                                //        string CallerPhone = FromASCIIByteArray(EventData.szData).Trim();
+
+                                //        if (!string.IsNullOrEmpty(CallerPhone))
+                                //        {
+                                //            if (CallerPhone.Equals("0") || CallerPhone.Equals("1")) return;
+                                //        }
+                                        
+                                //        strTranPhoneNum = CallerPhone.Trim();
+
+                                //        if (isGetPhone) return;
+                                        
+                                //        //LogHelper.Info("BriEvent_GetCallID#CallerPhone:" + CallerPhone.Trim() + "strTranPhoneNum:" + strTranPhoneNum + "#isGetPhone:" + isGetPhone.ToString());
+
+                                //        ShowCallIdWindow(CallerPhone);
+
+                                //        #endregion
+                                //    }
+                                //    catch (Exception ex) { LogHelper.Error("DefWndProc", ex); }
+                                //}
+                                //break;
                             default:
                                 strValue = "通道" + (EventData.uChannelID + 1).ToString() + "：接受到未解析消息代码 " + EventData.lEventType.ToString();
                                 break;
