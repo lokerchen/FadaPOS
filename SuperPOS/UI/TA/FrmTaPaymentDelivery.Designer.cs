@@ -295,7 +295,7 @@
             // btnPrtAllReceipt
             // 
             this.btnPrtAllReceipt.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
-            this.btnPrtAllReceipt.Appearance.Font = new System.Drawing.Font("Calibri", 12F);
+            this.btnPrtAllReceipt.Appearance.Font = new System.Drawing.Font("Calibri", 10F);
             this.btnPrtAllReceipt.Appearance.ForeColor = System.Drawing.Color.White;
             this.btnPrtAllReceipt.Appearance.Options.UseBackColor = true;
             this.btnPrtAllReceipt.Appearance.Options.UseFont = true;

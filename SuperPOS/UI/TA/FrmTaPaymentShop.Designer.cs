@@ -31,6 +31,7 @@
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.btnFastFood = new DevExpress.XtraEditors.SimpleButton();
             this.btnPercent = new DevExpress.XtraEditors.SimpleButton();
+            this.webBrowser1 = new System.Windows.Forms.WebBrowser();
             this.lblCtlSurcharge = new DevExpress.XtraEditors.LabelControl();
             this.btnNotPaid = new DevExpress.XtraEditors.SimpleButton();
             this.lblCtlDiscount = new DevExpress.XtraEditors.LabelControl();
@@ -82,7 +83,6 @@
             this.labelControl10 = new DevExpress.XtraEditors.LabelControl();
             this.lblTypeName = new DevExpress.XtraEditors.LabelControl();
             this.btnExit = new DevExpress.XtraEditors.SimpleButton();
-            this.webBrowser1 = new System.Windows.Forms.WebBrowser();
             this.labelControl3 = new DevExpress.XtraEditors.LabelControl();
             this.txtReadyTime = new DevExpress.XtraEditors.TextEdit();
             this.groupBox1.SuspendLayout();
@@ -161,6 +161,15 @@
             this.btnPercent.Text = "%";
             this.btnPercent.Visible = false;
             this.btnPercent.Click += new System.EventHandler(this.btnPercent_Click);
+            // 
+            // webBrowser1
+            // 
+            this.webBrowser1.Location = new System.Drawing.Point(10, 184);
+            this.webBrowser1.MinimumSize = new System.Drawing.Size(20, 20);
+            this.webBrowser1.Name = "webBrowser1";
+            this.webBrowser1.Size = new System.Drawing.Size(83, 36);
+            this.webBrowser1.TabIndex = 46;
+            this.webBrowser1.Visible = false;
             // 
             // lblCtlSurcharge
             // 
@@ -270,7 +279,7 @@
             // btnPrtAllReceipt
             // 
             this.btnPrtAllReceipt.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
-            this.btnPrtAllReceipt.Appearance.Font = new System.Drawing.Font("Calibri", 12F);
+            this.btnPrtAllReceipt.Appearance.Font = new System.Drawing.Font("Calibri", 10F);
             this.btnPrtAllReceipt.Appearance.ForeColor = System.Drawing.Color.White;
             this.btnPrtAllReceipt.Appearance.Options.UseBackColor = true;
             this.btnPrtAllReceipt.Appearance.Options.UseFont = true;
@@ -989,15 +998,6 @@
             this.btnExit.TabIndex = 45;
             this.btnExit.Text = "Exit";
             this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
-            // 
-            // webBrowser1
-            // 
-            this.webBrowser1.Location = new System.Drawing.Point(10, 184);
-            this.webBrowser1.MinimumSize = new System.Drawing.Size(20, 20);
-            this.webBrowser1.Name = "webBrowser1";
-            this.webBrowser1.Size = new System.Drawing.Size(83, 36);
-            this.webBrowser1.TabIndex = 46;
-            this.webBrowser1.Visible = false;
             // 
             // labelControl3
             // 
