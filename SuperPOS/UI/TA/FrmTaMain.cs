@@ -15,6 +15,7 @@ using DevExpress.XtraEditors;
 using DevExpress.XtraGrid.Views.Grid.ViewInfo;
 using DevExpress.XtraTreeList;
 using DevExpress.XtraTreeList.Nodes;
+using OnlineOrderPrint;
 using SuperPOS.Common;
 using SuperPOS.Dapper;
 using SuperPOS.Domain.Entities;
@@ -3535,6 +3536,18 @@ namespace SuperPOS.UI.TA
             //DelegateRefresh hd = DelegateMy.RefreshSomeInfo;
             //IAsyncResult rt = hd.BeginInvoke("8", strBusDate, "", null, null);
             CommonDAL.RefreshSomeInfo("8", strBusDate, "");
+        }
+
+        private void btnOnlineOrder_Click(object sender, EventArgs e)
+        {
+            FrmOnlineMain frmOnlineMain = new FrmOnlineMain();
+            frmOnlineMain.Location = pcMain.Location;
+            frmOnlineMain.Size = pcMain.Size;
+
+            if (frmOnlineMain.ShowDialog() == DialogResult.OK)
+            {
+                
+            }
         }
     }
 }

@@ -411,6 +411,7 @@
             this.btnOnlineOrder.Size = new System.Drawing.Size(70, 47);
             this.btnOnlineOrder.TabIndex = 34;
             this.btnOnlineOrder.Text = "Online Order";
+            this.btnOnlineOrder.Click += new System.EventHandler(this.btnOnlineOrder_Click);
             // 
             // btnType
             // 

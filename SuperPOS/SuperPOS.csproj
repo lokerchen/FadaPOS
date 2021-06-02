@@ -92,6 +92,10 @@
       <HintPath>..\packages\log4net.2.0.8\lib\net45-full\log4net.dll</HintPath>
       <Private>True</Private>
     </Reference>
+    <Reference Include="LumiSoft.Net, Version=4.5.5510.19119, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Debug\LumiSoft.Net.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.Office.Interop.Excel, Version=15.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
       <EmbedInteropTypes>False</EmbedInteropTypes>
       <HintPath>..\packages\Microsoft.Office.Interop.Excel.15.0.4795.1000\lib\net20\Microsoft.Office.Interop.Excel.dll</HintPath>
@@ -147,6 +151,28 @@
     <Compile Include="Common\SystemData.cs" />
     <Compile Include="Dapper\SQLiteBase.cs" />
     <Compile Include="Dapper\SQLiteDbHelper.cs" />
+    <Compile Include="OnlineOrder\FrmOnlineExit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="OnlineOrder\FrmOnlineExit.Designer.cs">
+      <DependentUpon>FrmOnlineExit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="OnlineOrder\FrmOnlineMain.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="OnlineOrder\FrmOnlineMain.Designer.cs">
+      <DependentUpon>FrmOnlineMain.cs</DependentUpon>
+    </Compile>
+    <Compile Include="OnlineOrder\FrmOnlineSysConf.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="OnlineOrder\FrmOnlineSysConf.Designer.cs">
+      <DependentUpon>FrmOnlineSysConf.cs</DependentUpon>
+    </Compile>
+    <Compile Include="OnlineOrder\HtmlTextPath.cs" />
+    <Compile Include="OnlineOrder\PubCommon.cs" />
+    <Compile Include="OnlineOrder\SqlHelper.cs" />
+    <Compile Include="OnlineOrder\User.cs" />
     <Compile Include="Print\PrinterExterns.cs" />
     <Compile Include="Print\PrtCommon.cs" />
     <Compile Include="Print\PrtPrint.cs" />
@@ -648,6 +674,15 @@
     <Compile Include="UI\TA\FrmWaitForm.Designer.cs">
       <DependentUpon>FrmWaitForm.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="OnlineOrder\FrmOnlineExit.resx">
+      <DependentUpon>FrmOnlineExit.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="OnlineOrder\FrmOnlineMain.resx">
+      <DependentUpon>FrmOnlineMain.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="OnlineOrder\FrmOnlineSysConf.resx">
+      <DependentUpon>FrmOnlineSysConf.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\licenses.licx" />
     <EmbeddedResource Include="UI\FrmDesktopArea.resx">
       <DependentUpon>FrmDesktopArea.cs</DependentUpon>
