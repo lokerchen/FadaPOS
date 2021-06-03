@@ -170,7 +170,9 @@ namespace SuperPOS.UI.TA
 
         private void btnOK_Click(object sender, EventArgs e)
         {
-            sShopTime = txtHour.Text + @":" + txtMinute.Text;
+            sShopTime = string.IsNullOrEmpty(txtHour.Text) && string.IsNullOrEmpty(txtMinute.Text)
+                ? ""
+                : txtHour.Text + @":" + txtMinute.Text;
             this.DialogResult = DialogResult.OK;
             Close();
         }

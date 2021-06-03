@@ -1322,7 +1322,7 @@ namespace SuperPOS.UI.TA
         private void txtReadyTime_Click(object sender, EventArgs e)
         {
             FrmTaCustReadyTime frmTaCustReadyTime = new FrmTaCustReadyTime();
-            frmTaCustReadyTime.Location = new Point(groupBox2.Location.X, groupBox2.Location.Y);
+            frmTaCustReadyTime.Location = new Point(this.txtReadyTime.Location.X + this.Location.X, txtReadyTime.Location.Y - frmTaCustReadyTime.Height);
 
             if (frmTaCustReadyTime.ShowDialog() == DialogResult.OK)
             {

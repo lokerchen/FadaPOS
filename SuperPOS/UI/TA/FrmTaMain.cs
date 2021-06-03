@@ -1932,7 +1932,7 @@ namespace SuperPOS.UI.TA
 
             taCheckOrderInfo.BusDate = string.IsNullOrEmpty(strBusDate) ? CommonDAL.GetBusDate() : strBusDate;
 
-            taCheckOrderInfo.DeliveryFee = (CustID >= 1 && ORDER_TYPE.Equals(PubComm.ORDER_TYPE_DELIVERY)) ? lblDeliveryFee.Text : @"0.00";
+            taCheckOrderInfo.DeliveryFee = (CustID >= 1 && ORDER_TYPE.Equals(PubComm.ORDER_TYPE_DELIVERY)) ? (Convert.ToDecimal(lblDeliveryFee.Text)).ToString("0.00") : @"0.00";
 
             return taCheckOrderInfo;
         }
@@ -1990,7 +1990,7 @@ namespace SuperPOS.UI.TA
                 taCheckOrderInfo.StaffID = usrID;
                 taCheckOrderInfo.PayTime = DateTime.Now.ToString();
                 taCheckOrderInfo.IsSave = isSave ? "Y" : "N";
-                taCheckOrderInfo.DeliveryFee = (CustID >= 1 && ORDER_TYPE.Equals(PubComm.ORDER_TYPE_DELIVERY)) ? lblDeliveryFee.Text : @"0.00";
+                taCheckOrderInfo.DeliveryFee = (CustID >= 1 && ORDER_TYPE.Equals(PubComm.ORDER_TYPE_DELIVERY)) ? (Convert.ToDecimal(lblDeliveryFee.Text)).ToString("0.00") : @"0.00";
 
                 saveTaCheckOrderInfo = taCheckOrderInfo;
 
