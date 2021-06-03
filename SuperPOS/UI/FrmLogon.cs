@@ -49,6 +49,9 @@ namespace SuperPOS.UI
             //获得Session
             lblSession.Text = CommonDAL.GetSession();
 
+            pictureBox1.Image = Image.FromFile(Environment.CurrentDirectory + @"\logo.jpg");
+            pictureBox2.Image = Image.FromFile(Environment.CurrentDirectory + @"\customer.jpg");
+
             asfc.controllInitializeSize(this);
         }
 

@@ -36,6 +36,8 @@ namespace SuperPOS
             //DelegatePreview handler = DelegateMy.SaveShowOrderModelPreview;
             //IAsyncResult result = handler.BeginInvoke(null, null);
 
+            picBoxLogo.Image = Image.FromFile(Environment.CurrentDirectory + @"\logo.jpg");
+
             //加载系统数据
             CommonDAL.InitData();
 

@@ -39,19 +39,20 @@
             // picBoxLogo
             // 
             this.picBoxLogo.Cursor = System.Windows.Forms.Cursors.Default;
-            this.picBoxLogo.Location = new System.Drawing.Point(12, 14);
+            this.picBoxLogo.Location = new System.Drawing.Point(10, 11);
+            this.picBoxLogo.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.picBoxLogo.Name = "picBoxLogo";
-            this.picBoxLogo.Size = new System.Drawing.Size(500, 200);
-            this.picBoxLogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.picBoxLogo.Size = new System.Drawing.Size(438, 156);
+            this.picBoxLogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.picBoxLogo.TabIndex = 0;
             this.picBoxLogo.TabStop = false;
             // 
             // lblMsg
             // 
             this.lblMsg.AutoSize = true;
-            this.lblMsg.Location = new System.Drawing.Point(13, 225);
+            this.lblMsg.Location = new System.Drawing.Point(11, 175);
             this.lblMsg.Name = "lblMsg";
-            this.lblMsg.Size = new System.Drawing.Size(159, 18);
+            this.lblMsg.Size = new System.Drawing.Size(131, 14);
             this.lblMsg.TabIndex = 1;
             this.lblMsg.Text = "Loading system data...";
             // 
@@ -61,22 +62,23 @@
             // 
             // pgInit
             // 
-            this.pgInit.Location = new System.Drawing.Point(12, 255);
+            this.pgInit.Location = new System.Drawing.Point(10, 198);
+            this.pgInit.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pgInit.Name = "pgInit";
-            this.pgInit.Size = new System.Drawing.Size(500, 23);
+            this.pgInit.Size = new System.Drawing.Size(438, 18);
             this.pgInit.TabIndex = 3;
             // 
-            // FrmLogo
+            // FrmInit
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 18F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 14F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(528, 291);
+            this.ClientSize = new System.Drawing.Size(462, 226);
             this.Controls.Add(this.pgInit);
             this.Controls.Add(this.lblMsg);
             this.Controls.Add(this.picBoxLogo);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(4);
-            this.Name = "FrmLogo";
+            this.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.Name = "FrmInit";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FrmLogo";
             this.Load += new System.EventHandler(this.FrmLogo_Load);

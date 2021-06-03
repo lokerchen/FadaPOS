@@ -36,6 +36,7 @@ namespace SuperPOS.UI
 
         private void FrmShow_Load(object sender, EventArgs e)
         {
+            picImg.Image = Image.FromFile(Environment.CurrentDirectory + @"\logo.jpg");
             asfc.controllInitializeSize(this);
         }
 
