@@ -31,7 +31,7 @@ namespace SuperPOS.UI.TA
         //MenuItem按钮
         private SimpleButton[] btnMenuItem = new SimpleButton[16];
         //ManuCate按钮
-        private SimpleButton[] btnMenuCate = new SimpleButton[42];
+        private SimpleButton[] btnMenuCate = new SimpleButton[35];
         //来电显示号码
         private string CallerID = "";
         //账单号
@@ -1067,15 +1067,8 @@ namespace SuperPOS.UI.TA
             btnMenuCate[32] = btnMc32;
             btnMenuCate[33] = btnMc33;
             btnMenuCate[34] = btnMc34;
-            btnMenuCate[35] = btnMc35;
-            btnMenuCate[36] = btnMc36;
-            btnMenuCate[37] = btnMc37;
-            btnMenuCate[38] = btnMc38;
-            btnMenuCate[39] = btnMc39;
-            btnMenuCate[40] = btnMc40;
-            btnMenuCate[41] = btnMc41;
 
-            for (int i = 0; i < 42; i++)
+            for (int i = 0; i < 35; i++)
             {
                 btnMenuCate[i].Click += btnMenuCate_Click;
                 btnMenuCate[i].Font = SetBtnFont(taSysFontInfo, iLangStatusId, 2); ;
@@ -1209,7 +1202,7 @@ namespace SuperPOS.UI.TA
                 i++;
             }
 
-            for (int j = i; j < 42; j++)
+            for (int j = i; j < 35; j++)
             {
                 btnMenuCate[j].Text = "";
                 btnMenuCate[j].Appearance.BackColor = Color.FromName(@"RoyalBlue");

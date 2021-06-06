@@ -30,7 +30,7 @@ namespace SuperPOS.Common
         public static int PAGESIZE_MENUITEM = 16;
 
         //Menu Category每页大小
-        public static int PAGESIZE_MENUCATE = 42;
+        public static int PAGESIZE_MENUCATE = 35;
 
         //页码
         private static int PAGE_NUM = 0;

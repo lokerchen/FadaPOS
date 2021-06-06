@@ -78,7 +78,6 @@
             this.btnAppend = new DevExpress.XtraEditors.SimpleButton();
             this.panelControl4 = new DevExpress.XtraEditors.PanelControl();
             this.pcMain = new DevExpress.XtraEditors.PanelControl();
-            this.button1 = new System.Windows.Forms.Button();
             this.panelControl5 = new DevExpress.XtraEditors.PanelControl();
             this.btnMenu = new DevExpress.XtraEditors.SimpleButton();
             this.btnEatIn = new DevExpress.XtraEditors.SimpleButton();
@@ -90,13 +89,6 @@
             this.btnCid = new DevExpress.XtraEditors.SimpleButton();
             this.btnPendOrder = new DevExpress.XtraEditors.SimpleButton();
             this.panelControl3 = new DevExpress.XtraEditors.PanelControl();
-            this.btnMc41 = new DevExpress.XtraEditors.SimpleButton();
-            this.btnMc40 = new DevExpress.XtraEditors.SimpleButton();
-            this.btnMc39 = new DevExpress.XtraEditors.SimpleButton();
-            this.btnMc38 = new DevExpress.XtraEditors.SimpleButton();
-            this.btnMc37 = new DevExpress.XtraEditors.SimpleButton();
-            this.btnMc36 = new DevExpress.XtraEditors.SimpleButton();
-            this.btnMc35 = new DevExpress.XtraEditors.SimpleButton();
             this.btnMc34 = new DevExpress.XtraEditors.SimpleButton();
             this.btnMc33 = new DevExpress.XtraEditors.SimpleButton();
             this.btnMc32 = new DevExpress.XtraEditors.SimpleButton();
@@ -151,6 +143,7 @@
             this.btnMi8 = new DevExpress.XtraEditors.SimpleButton();
             this.btnMi9 = new DevExpress.XtraEditors.SimpleButton();
             this.btnMi11 = new DevExpress.XtraEditors.SimpleButton();
+            this.button1 = new System.Windows.Forms.Button();
             this.btnOrderType = new DevExpress.XtraEditors.SimpleButton();
             this.panelControl6 = new DevExpress.XtraEditors.PanelControl();
             this.lblType = new DevExpress.XtraEditors.LabelControl();
@@ -214,7 +207,7 @@
             this.IsDiscount});
             this.treeListOrder.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.treeListOrder.IndicatorWidth = 40;
-            this.treeListOrder.Location = new System.Drawing.Point(4, 142);
+            this.treeListOrder.Location = new System.Drawing.Point(4, 154);
             this.treeListOrder.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.treeListOrder.Name = "treeListOrder";
             this.treeListOrder.OptionsBehavior.Editable = false;
@@ -223,13 +216,14 @@
             this.treeListOrder.OptionsClipboard.CopyNodeHierarchy = DevExpress.Utils.DefaultBoolean.True;
             this.treeListOrder.OptionsView.FocusRectStyle = DevExpress.XtraTreeList.DrawFocusRectStyle.RowFullFocus;
             this.treeListOrder.OptionsView.ShowButtons = false;
+            this.treeListOrder.OptionsView.ShowIndentAsRowStyle = true;
             this.treeListOrder.OptionsView.ShowIndicator = false;
             this.treeListOrder.OptionsView.ShowSummaryFooter = true;
             this.treeListOrder.ParentFieldName = "ItemParent";
             this.treeListOrder.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
             this.repositoryItemMemoEdit1});
             this.treeListOrder.RowHeight = 30;
-            this.treeListOrder.Size = new System.Drawing.Size(341, 334);
+            this.treeListOrder.Size = new System.Drawing.Size(341, 369);
             this.treeListOrder.TabIndex = 0;
             this.treeListOrder.CustomDrawNodeIndicator += new DevExpress.XtraTreeList.CustomDrawNodeIndicatorEventHandler(this.treeListOrder_CustomDrawNodeIndicator);
             this.treeListOrder.DoubleClick += new System.EventHandler(this.treeListOrder_DoubleClick);
@@ -391,7 +385,7 @@
             this.panelControl1.Location = new System.Drawing.Point(4, 4);
             this.panelControl1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panelControl1.Name = "panelControl1";
-            this.panelControl1.Size = new System.Drawing.Size(350, 599);
+            this.panelControl1.Size = new System.Drawing.Size(348, 662);
             this.panelControl1.TabIndex = 1;
             // 
             // btnOnlineOrder
@@ -405,10 +399,10 @@
             this.btnOnlineOrder.Appearance.Options.UseTextOptions = true;
             this.btnOnlineOrder.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
             this.btnOnlineOrder.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
-            this.btnOnlineOrder.Location = new System.Drawing.Point(157, 548);
+            this.btnOnlineOrder.Location = new System.Drawing.Point(154, 613);
             this.btnOnlineOrder.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnOnlineOrder.Name = "btnOnlineOrder";
-            this.btnOnlineOrder.Size = new System.Drawing.Size(70, 47);
+            this.btnOnlineOrder.Size = new System.Drawing.Size(75, 45);
             this.btnOnlineOrder.TabIndex = 34;
             this.btnOnlineOrder.Text = "Online Order";
             this.btnOnlineOrder.Click += new System.EventHandler(this.btnOnlineOrder_Click);
@@ -424,7 +418,7 @@
             this.btnType.Appearance.Options.UseTextOptions = true;
             this.btnType.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
             this.btnType.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
-            this.btnType.Location = new System.Drawing.Point(4, 106);
+            this.btnType.Location = new System.Drawing.Point(4, 117);
             this.btnType.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnType.Name = "btnType";
             this.btnType.Size = new System.Drawing.Size(341, 35);
@@ -448,216 +442,216 @@
             this.panelMember.Controls.Add(this.lblCustAddress);
             this.panelMember.Controls.Add(this.lblCustPhone);
             this.panelMember.Controls.Add(this.lblCustName);
-            this.panelMember.Location = new System.Drawing.Point(4, 7);
+            this.panelMember.Location = new System.Drawing.Point(4, 4);
             this.panelMember.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panelMember.Name = "panelMember";
-            this.panelMember.Size = new System.Drawing.Size(341, 98);
+            this.panelMember.Size = new System.Drawing.Size(341, 112);
             this.panelMember.TabIndex = 32;
             this.panelMember.Click += new System.EventHandler(this.panelMember_Click);
             // 
             // lblReadyTime
             // 
-            this.lblReadyTime.Appearance.Font = new System.Drawing.Font("Calibri", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblReadyTime.Appearance.Font = new System.Drawing.Font("Calibri", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblReadyTime.Appearance.ForeColor = System.Drawing.Color.Red;
             this.lblReadyTime.Appearance.Options.UseFont = true;
             this.lblReadyTime.Appearance.Options.UseForeColor = true;
-            this.lblReadyTime.Location = new System.Drawing.Point(262, 77);
+            this.lblReadyTime.Location = new System.Drawing.Point(262, 93);
             this.lblReadyTime.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.lblReadyTime.Name = "lblReadyTime";
-            this.lblReadyTime.Size = new System.Drawing.Size(32, 18);
+            this.lblReadyTime.Size = new System.Drawing.Size(32, 15);
             this.lblReadyTime.TabIndex = 13;
             this.lblReadyTime.Text = "00:00";
             // 
             // lblCustReadyTime
             // 
-            this.lblCustReadyTime.Appearance.Font = new System.Drawing.Font("Calibri", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCustReadyTime.Appearance.Font = new System.Drawing.Font("Calibri", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblCustReadyTime.Appearance.Options.UseFont = true;
             this.lblCustReadyTime.Appearance.Options.UseTextOptions = true;
             this.lblCustReadyTime.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
-            this.lblCustReadyTime.Location = new System.Drawing.Point(179, 77);
+            this.lblCustReadyTime.Location = new System.Drawing.Point(179, 93);
             this.lblCustReadyTime.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.lblCustReadyTime.Name = "lblCustReadyTime";
-            this.lblCustReadyTime.Size = new System.Drawing.Size(76, 18);
+            this.lblCustReadyTime.Size = new System.Drawing.Size(67, 15);
             this.lblCustReadyTime.TabIndex = 12;
             this.lblCustReadyTime.Text = "Ready Time:";
             this.lblCustReadyTime.Visible = false;
             // 
             // lblDeliveryFee
             // 
-            this.lblDeliveryFee.Appearance.Font = new System.Drawing.Font("Calibri", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblDeliveryFee.Appearance.Font = new System.Drawing.Font("Calibri", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblDeliveryFee.Appearance.ForeColor = System.Drawing.Color.Red;
             this.lblDeliveryFee.Appearance.Options.UseFont = true;
             this.lblDeliveryFee.Appearance.Options.UseForeColor = true;
-            this.lblDeliveryFee.Location = new System.Drawing.Point(89, 77);
+            this.lblDeliveryFee.Location = new System.Drawing.Point(89, 93);
             this.lblDeliveryFee.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.lblDeliveryFee.Name = "lblDeliveryFee";
-            this.lblDeliveryFee.Size = new System.Drawing.Size(25, 18);
+            this.lblDeliveryFee.Size = new System.Drawing.Size(24, 15);
             this.lblDeliveryFee.TabIndex = 11;
             this.lblDeliveryFee.Text = "1.50";
             // 
             // lblDistance
             // 
-            this.lblDistance.Appearance.Font = new System.Drawing.Font("Calibri", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblDistance.Appearance.Font = new System.Drawing.Font("Calibri", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblDistance.Appearance.ForeColor = System.Drawing.Color.Red;
             this.lblDistance.Appearance.Options.UseFont = true;
             this.lblDistance.Appearance.Options.UseForeColor = true;
-            this.lblDistance.Location = new System.Drawing.Point(89, 61);
+            this.lblDistance.Location = new System.Drawing.Point(89, 74);
             this.lblDistance.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.lblDistance.Name = "lblDistance";
-            this.lblDistance.Size = new System.Drawing.Size(25, 18);
+            this.lblDistance.Size = new System.Drawing.Size(24, 15);
             this.lblDistance.TabIndex = 10;
             this.lblDistance.Text = "3.85";
             // 
             // lblPostcode
             // 
-            this.lblPostcode.Appearance.Font = new System.Drawing.Font("Calibri", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblPostcode.Appearance.Font = new System.Drawing.Font("Calibri", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblPostcode.Appearance.ForeColor = System.Drawing.Color.Red;
             this.lblPostcode.Appearance.Options.UseFont = true;
             this.lblPostcode.Appearance.Options.UseForeColor = true;
-            this.lblPostcode.Location = new System.Drawing.Point(89, 46);
+            this.lblPostcode.Location = new System.Drawing.Point(89, 55);
             this.lblPostcode.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.lblPostcode.Name = "lblPostcode";
-            this.lblPostcode.Size = new System.Drawing.Size(60, 18);
+            this.lblPostcode.Size = new System.Drawing.Size(56, 15);
             this.lblPostcode.TabIndex = 9;
             this.lblPostcode.Text = "BS 168 AA";
             // 
             // lblAddress
             // 
-            this.lblAddress.Appearance.Font = new System.Drawing.Font("Calibri", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblAddress.Appearance.Font = new System.Drawing.Font("Calibri", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblAddress.Appearance.ForeColor = System.Drawing.Color.Red;
             this.lblAddress.Appearance.Options.UseFont = true;
             this.lblAddress.Appearance.Options.UseForeColor = true;
-            this.lblAddress.Location = new System.Drawing.Point(89, 31);
+            this.lblAddress.Location = new System.Drawing.Point(89, 36);
             this.lblAddress.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.lblAddress.Name = "lblAddress";
-            this.lblAddress.Size = new System.Drawing.Size(129, 18);
+            this.lblAddress.Size = new System.Drawing.Size(115, 15);
             this.lblAddress.TabIndex = 8;
             this.lblAddress.Text = "123 GuangZhou Road";
             // 
             // lblPhone
             // 
-            this.lblPhone.Appearance.Font = new System.Drawing.Font("Calibri", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblPhone.Appearance.Font = new System.Drawing.Font("Calibri", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblPhone.Appearance.ForeColor = System.Drawing.Color.Red;
             this.lblPhone.Appearance.Options.UseFont = true;
             this.lblPhone.Appearance.Options.UseForeColor = true;
-            this.lblPhone.Location = new System.Drawing.Point(89, 17);
+            this.lblPhone.Location = new System.Drawing.Point(89, 19);
             this.lblPhone.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.lblPhone.Name = "lblPhone";
-            this.lblPhone.Size = new System.Drawing.Size(77, 18);
+            this.lblPhone.Size = new System.Drawing.Size(77, 15);
             this.lblPhone.TabIndex = 7;
             this.lblPhone.Text = "08888888888";
             // 
             // lblName
             // 
-            this.lblName.Appearance.Font = new System.Drawing.Font("Calibri", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblName.Appearance.Font = new System.Drawing.Font("Calibri", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblName.Appearance.ForeColor = System.Drawing.Color.Red;
             this.lblName.Appearance.Options.UseFont = true;
             this.lblName.Appearance.Options.UseForeColor = true;
             this.lblName.Location = new System.Drawing.Point(89, 2);
             this.lblName.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.lblName.Name = "lblName";
-            this.lblName.Size = new System.Drawing.Size(51, 18);
+            this.lblName.Size = new System.Drawing.Size(44, 15);
             this.lblName.TabIndex = 6;
             this.lblName.Text = "FadaPos";
             // 
             // lblCustDeliveryFee
             // 
-            this.lblCustDeliveryFee.Appearance.Font = new System.Drawing.Font("Calibri", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCustDeliveryFee.Appearance.Font = new System.Drawing.Font("Calibri", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblCustDeliveryFee.Appearance.Options.UseFont = true;
             this.lblCustDeliveryFee.Appearance.Options.UseTextOptions = true;
             this.lblCustDeliveryFee.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
             this.lblCustDeliveryFee.Appearance.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
             this.lblCustDeliveryFee.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.Horizontal;
-            this.lblCustDeliveryFee.Location = new System.Drawing.Point(4, 77);
+            this.lblCustDeliveryFee.Location = new System.Drawing.Point(4, 93);
             this.lblCustDeliveryFee.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.lblCustDeliveryFee.Name = "lblCustDeliveryFee";
-            this.lblCustDeliveryFee.Size = new System.Drawing.Size(82, 18);
+            this.lblCustDeliveryFee.Size = new System.Drawing.Size(72, 15);
             this.lblCustDeliveryFee.TabIndex = 5;
             this.lblCustDeliveryFee.Text = "Delivery Fee:";
             this.lblCustDeliveryFee.Visible = false;
             // 
             // lblCustDistance
             // 
-            this.lblCustDistance.Appearance.Font = new System.Drawing.Font("Calibri", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCustDistance.Appearance.Font = new System.Drawing.Font("Calibri", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblCustDistance.Appearance.Options.UseFont = true;
             this.lblCustDistance.Appearance.Options.UseTextOptions = true;
             this.lblCustDistance.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
             this.lblCustDistance.Appearance.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
             this.lblCustDistance.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.Horizontal;
-            this.lblCustDistance.Location = new System.Drawing.Point(29, 61);
+            this.lblCustDistance.Location = new System.Drawing.Point(4, 74);
             this.lblCustDistance.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.lblCustDistance.Name = "lblCustDistance";
-            this.lblCustDistance.Size = new System.Drawing.Size(57, 18);
+            this.lblCustDistance.Size = new System.Drawing.Size(50, 15);
             this.lblCustDistance.TabIndex = 4;
             this.lblCustDistance.Text = "Distance:";
             this.lblCustDistance.Visible = false;
             // 
             // lblCustPostcode
             // 
-            this.lblCustPostcode.Appearance.Font = new System.Drawing.Font("Calibri", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCustPostcode.Appearance.Font = new System.Drawing.Font("Calibri", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblCustPostcode.Appearance.Options.UseFont = true;
             this.lblCustPostcode.Appearance.Options.UseTextOptions = true;
             this.lblCustPostcode.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
             this.lblCustPostcode.Appearance.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
             this.lblCustPostcode.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.Horizontal;
-            this.lblCustPostcode.Location = new System.Drawing.Point(25, 46);
+            this.lblCustPostcode.Location = new System.Drawing.Point(4, 55);
             this.lblCustPostcode.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.lblCustPostcode.Name = "lblCustPostcode";
-            this.lblCustPostcode.Size = new System.Drawing.Size(61, 18);
+            this.lblCustPostcode.Size = new System.Drawing.Size(54, 15);
             this.lblCustPostcode.TabIndex = 3;
             this.lblCustPostcode.Text = "Postcode:";
             this.lblCustPostcode.Visible = false;
             // 
             // lblCustAddress
             // 
-            this.lblCustAddress.Appearance.Font = new System.Drawing.Font("Calibri", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCustAddress.Appearance.Font = new System.Drawing.Font("Calibri", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblCustAddress.Appearance.Options.UseFont = true;
             this.lblCustAddress.Appearance.Options.UseTextOptions = true;
             this.lblCustAddress.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
             this.lblCustAddress.Appearance.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
             this.lblCustAddress.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.Horizontal;
-            this.lblCustAddress.Location = new System.Drawing.Point(32, 31);
+            this.lblCustAddress.Location = new System.Drawing.Point(4, 36);
             this.lblCustAddress.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.lblCustAddress.Name = "lblCustAddress";
-            this.lblCustAddress.Size = new System.Drawing.Size(54, 18);
+            this.lblCustAddress.Size = new System.Drawing.Size(48, 15);
             this.lblCustAddress.TabIndex = 2;
             this.lblCustAddress.Text = "Address:";
             this.lblCustAddress.Visible = false;
             // 
             // lblCustPhone
             // 
-            this.lblCustPhone.Appearance.Font = new System.Drawing.Font("Calibri", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCustPhone.Appearance.Font = new System.Drawing.Font("Calibri", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblCustPhone.Appearance.Options.UseFont = true;
             this.lblCustPhone.Appearance.Options.UseTextOptions = true;
             this.lblCustPhone.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
             this.lblCustPhone.Appearance.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
             this.lblCustPhone.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.Horizontal;
-            this.lblCustPhone.Location = new System.Drawing.Point(42, 17);
+            this.lblCustPhone.Location = new System.Drawing.Point(4, 19);
             this.lblCustPhone.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.lblCustPhone.Name = "lblCustPhone";
-            this.lblCustPhone.Size = new System.Drawing.Size(44, 18);
+            this.lblCustPhone.Size = new System.Drawing.Size(39, 15);
             this.lblCustPhone.TabIndex = 1;
             this.lblCustPhone.Text = "Phone:";
             this.lblCustPhone.Visible = false;
             // 
             // lblCustName
             // 
-            this.lblCustName.Appearance.Font = new System.Drawing.Font("Calibri", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCustName.Appearance.Font = new System.Drawing.Font("Calibri", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblCustName.Appearance.Options.UseFont = true;
             this.lblCustName.Appearance.Options.UseTextOptions = true;
             this.lblCustName.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
             this.lblCustName.Appearance.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
-            this.lblCustName.Location = new System.Drawing.Point(45, 2);
+            this.lblCustName.Location = new System.Drawing.Point(4, 2);
             this.lblCustName.Margin = new System.Windows.Forms.Padding(2, 3, 3, 2);
             this.lblCustName.Name = "lblCustName";
-            this.lblCustName.Size = new System.Drawing.Size(41, 18);
+            this.lblCustName.Size = new System.Drawing.Size(37, 15);
             this.lblCustName.TabIndex = 0;
             this.lblCustName.Text = "Name:";
             this.lblCustName.Visible = false;
             // 
             // btnChange
             // 
-            this.btnChange.Appearance.BackColor = System.Drawing.Color.Red;
+            this.btnChange.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.btnChange.Appearance.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnChange.Appearance.ForeColor = System.Drawing.Color.White;
             this.btnChange.Appearance.Options.UseBackColor = true;
@@ -666,10 +660,10 @@
             this.btnChange.Appearance.Options.UseTextOptions = true;
             this.btnChange.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
             this.btnChange.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
-            this.btnChange.Location = new System.Drawing.Point(6, 548);
+            this.btnChange.Location = new System.Drawing.Point(4, 613);
             this.btnChange.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnChange.Name = "btnChange";
-            this.btnChange.Size = new System.Drawing.Size(70, 45);
+            this.btnChange.Size = new System.Drawing.Size(75, 45);
             this.btnChange.TabIndex = 30;
             this.btnChange.Text = "CHGE";
             this.btnChange.Click += new System.EventHandler(this.btnChange_Click);
@@ -685,18 +679,18 @@
             this.btnPay.Appearance.Options.UseTextOptions = true;
             this.btnPay.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
             this.btnPay.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
-            this.btnPay.Location = new System.Drawing.Point(232, 512);
+            this.btnPay.Location = new System.Drawing.Point(229, 568);
             this.btnPay.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnPay.Name = "btnPay";
-            this.btnPay.Size = new System.Drawing.Size(114, 82);
+            this.btnPay.Size = new System.Drawing.Size(116, 90);
             this.btnPay.TabIndex = 29;
             this.btnPay.Text = "Accept";
             this.btnPay.Click += new System.EventHandler(this.btnPay_Click);
             // 
             // btnKeypad
             // 
-            this.btnKeypad.Appearance.BackColor = System.Drawing.Color.Gold;
-            this.btnKeypad.Appearance.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnKeypad.Appearance.BackColor = System.Drawing.Color.Orange;
+            this.btnKeypad.Appearance.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnKeypad.Appearance.ForeColor = System.Drawing.Color.White;
             this.btnKeypad.Appearance.Options.UseBackColor = true;
             this.btnKeypad.Appearance.Options.UseFont = true;
@@ -704,18 +698,18 @@
             this.btnKeypad.Appearance.Options.UseTextOptions = true;
             this.btnKeypad.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
             this.btnKeypad.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
-            this.btnKeypad.Location = new System.Drawing.Point(81, 511);
+            this.btnKeypad.Location = new System.Drawing.Point(79, 568);
             this.btnKeypad.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnKeypad.Name = "btnKeypad";
-            this.btnKeypad.Size = new System.Drawing.Size(70, 35);
+            this.btnKeypad.Size = new System.Drawing.Size(75, 45);
             this.btnKeypad.TabIndex = 27;
             this.btnKeypad.Text = "Key Pad";
             this.btnKeypad.Click += new System.EventHandler(this.btnKeypad_Click);
             // 
             // btnDel
             // 
-            this.btnDel.Appearance.BackColor = System.Drawing.Color.Red;
-            this.btnDel.Appearance.Font = new System.Drawing.Font("Tahoma", 7F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDel.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.btnDel.Appearance.Font = new System.Drawing.Font("Calibri", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnDel.Appearance.ForeColor = System.Drawing.Color.White;
             this.btnDel.Appearance.Options.UseBackColor = true;
             this.btnDel.Appearance.Options.UseFont = true;
@@ -723,10 +717,10 @@
             this.btnDel.Appearance.Options.UseTextOptions = true;
             this.btnDel.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
             this.btnDel.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
-            this.btnDel.Location = new System.Drawing.Point(286, 480);
+            this.btnDel.Location = new System.Drawing.Point(276, 525);
             this.btnDel.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnDel.Name = "btnDel";
-            this.btnDel.Size = new System.Drawing.Size(60, 27);
+            this.btnDel.Size = new System.Drawing.Size(69, 40);
             this.btnDel.TabIndex = 5;
             this.btnDel.Text = "Remove Item";
             this.btnDel.Click += new System.EventHandler(this.btnDel_Click);
@@ -742,10 +736,10 @@
             this.btnReduce.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
             this.btnReduce.ImageOptions.Image = global::SuperPOS.Properties.Resources.reduce_32X32;
             this.btnReduce.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.BottomCenter;
-            this.btnReduce.Location = new System.Drawing.Point(216, 480);
+            this.btnReduce.Location = new System.Drawing.Point(208, 525);
             this.btnReduce.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnReduce.Name = "btnReduce";
-            this.btnReduce.Size = new System.Drawing.Size(60, 27);
+            this.btnReduce.Size = new System.Drawing.Size(67, 40);
             this.btnReduce.TabIndex = 4;
             this.btnReduce.Click += new System.EventHandler(this.btnReduce_Click);
             // 
@@ -760,10 +754,10 @@
             this.btnIngredMode.Appearance.Options.UseTextOptions = true;
             this.btnIngredMode.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
             this.btnIngredMode.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
-            this.btnIngredMode.Location = new System.Drawing.Point(81, 548);
+            this.btnIngredMode.Location = new System.Drawing.Point(79, 613);
             this.btnIngredMode.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnIngredMode.Name = "btnIngredMode";
-            this.btnIngredMode.Size = new System.Drawing.Size(70, 47);
+            this.btnIngredMode.Size = new System.Drawing.Size(75, 45);
             this.btnIngredMode.TabIndex = 21;
             this.btnIngredMode.Text = "Ingred Mode";
             this.btnIngredMode.Click += new System.EventHandler(this.btnIngredMode_Click);
@@ -779,10 +773,10 @@
             this.btnAdd.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
             this.btnAdd.ImageOptions.Image = global::SuperPOS.Properties.Resources.add_32X32;
             this.btnAdd.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.BottomCenter;
-            this.btnAdd.Location = new System.Drawing.Point(146, 480);
+            this.btnAdd.Location = new System.Drawing.Point(140, 525);
             this.btnAdd.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnAdd.Name = "btnAdd";
-            this.btnAdd.Size = new System.Drawing.Size(60, 27);
+            this.btnAdd.Size = new System.Drawing.Size(67, 40);
             this.btnAdd.TabIndex = 3;
             this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
@@ -797,10 +791,10 @@
             this.btnDown.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
             this.btnDown.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnDown.ImageOptions.Image")));
             this.btnDown.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.BottomCenter;
-            this.btnDown.Location = new System.Drawing.Point(76, 480);
+            this.btnDown.Location = new System.Drawing.Point(72, 525);
             this.btnDown.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnDown.Name = "btnDown";
-            this.btnDown.Size = new System.Drawing.Size(60, 27);
+            this.btnDown.Size = new System.Drawing.Size(67, 40);
             this.btnDown.TabIndex = 2;
             this.btnDown.Click += new System.EventHandler(this.btnDown_Click);
             // 
@@ -815,10 +809,10 @@
             this.btnUp.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
             this.btnUp.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnUp.ImageOptions.Image")));
             this.btnUp.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.BottomCenter;
-            this.btnUp.Location = new System.Drawing.Point(6, 480);
+            this.btnUp.Location = new System.Drawing.Point(4, 525);
             this.btnUp.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnUp.Name = "btnUp";
-            this.btnUp.Size = new System.Drawing.Size(60, 27);
+            this.btnUp.Size = new System.Drawing.Size(67, 40);
             this.btnUp.TabIndex = 1;
             this.btnUp.Click += new System.EventHandler(this.btnUp_Click);
             // 
@@ -833,17 +827,17 @@
             this.btnHome.Appearance.Options.UseTextOptions = true;
             this.btnHome.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
             this.btnHome.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
-            this.btnHome.Location = new System.Drawing.Point(6, 511);
+            this.btnHome.Location = new System.Drawing.Point(4, 568);
             this.btnHome.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnHome.Name = "btnHome";
-            this.btnHome.Size = new System.Drawing.Size(70, 35);
+            this.btnHome.Size = new System.Drawing.Size(75, 45);
             this.btnHome.TabIndex = 20;
             this.btnHome.Text = "HOME";
             this.btnHome.Click += new System.EventHandler(this.btnHome_Click);
             // 
             // btnAppend
             // 
-            this.btnAppend.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
+            this.btnAppend.Appearance.BackColor = System.Drawing.Color.DarkMagenta;
             this.btnAppend.Appearance.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAppend.Appearance.ForeColor = System.Drawing.Color.White;
             this.btnAppend.Appearance.Options.UseBackColor = true;
@@ -852,10 +846,10 @@
             this.btnAppend.Appearance.Options.UseTextOptions = true;
             this.btnAppend.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
             this.btnAppend.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
-            this.btnAppend.Location = new System.Drawing.Point(157, 511);
+            this.btnAppend.Location = new System.Drawing.Point(154, 568);
             this.btnAppend.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnAppend.Name = "btnAppend";
-            this.btnAppend.Size = new System.Drawing.Size(70, 35);
+            this.btnAppend.Size = new System.Drawing.Size(75, 45);
             this.btnAppend.TabIndex = 19;
             this.btnAppend.Text = "+/-";
             this.btnAppend.Click += new System.EventHandler(this.btnAppend_Click);
@@ -867,34 +861,19 @@
             this.panelControl4.Location = new System.Drawing.Point(0, 0);
             this.panelControl4.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panelControl4.Name = "panelControl4";
-            this.panelControl4.Size = new System.Drawing.Size(1236, 607);
+            this.panelControl4.Size = new System.Drawing.Size(1100, 670);
             this.panelControl4.TabIndex = 5;
             // 
             // pcMain
             // 
-            this.pcMain.Controls.Add(this.button1);
             this.pcMain.Controls.Add(this.panelControl5);
             this.pcMain.Controls.Add(this.panelControl3);
             this.pcMain.Controls.Add(this.panelControl2);
-            this.pcMain.Controls.Add(this.btnOrderType);
-            this.pcMain.Controls.Add(this.panelControl6);
-            this.pcMain.Controls.Add(this.btnCustInfo);
-            this.pcMain.Controls.Add(this.btnSearchMeal);
-            this.pcMain.Location = new System.Drawing.Point(360, 4);
+            this.pcMain.Location = new System.Drawing.Point(355, 4);
             this.pcMain.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pcMain.Name = "pcMain";
-            this.pcMain.Size = new System.Drawing.Size(880, 599);
+            this.pcMain.Size = new System.Drawing.Size(741, 662);
             this.pcMain.TabIndex = 38;
-            // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(677, 210);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(92, 40);
-            this.button1.TabIndex = 34;
-            this.button1.Text = "button1";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // panelControl5
             // 
@@ -907,10 +886,10 @@
             this.panelControl5.Controls.Add(this.btnMcRight);
             this.panelControl5.Controls.Add(this.btnCid);
             this.panelControl5.Controls.Add(this.btnPendOrder);
-            this.panelControl5.Location = new System.Drawing.Point(4, 257);
+            this.panelControl5.Location = new System.Drawing.Point(4, 224);
             this.panelControl5.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panelControl5.Name = "panelControl5";
-            this.panelControl5.Size = new System.Drawing.Size(152, 337);
+            this.panelControl5.Size = new System.Drawing.Size(142, 434);
             this.panelControl5.TabIndex = 33;
             // 
             // btnMenu
@@ -924,10 +903,10 @@
             this.btnMenu.Appearance.Options.UseTextOptions = true;
             this.btnMenu.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
             this.btnMenu.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
-            this.btnMenu.Location = new System.Drawing.Point(6, 6);
+            this.btnMenu.Location = new System.Drawing.Point(4, 6);
             this.btnMenu.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnMenu.Name = "btnMenu";
-            this.btnMenu.Size = new System.Drawing.Size(142, 39);
+            this.btnMenu.Size = new System.Drawing.Size(134, 55);
             this.btnMenu.TabIndex = 30;
             this.btnMenu.Text = "Menu";
             this.btnMenu.Click += new System.EventHandler(this.btnMenu_Click);
@@ -935,7 +914,7 @@
             // btnEatIn
             // 
             this.btnEatIn.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.btnEatIn.Appearance.Font = new System.Drawing.Font("Calibri", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEatIn.Appearance.Font = new System.Drawing.Font("Calibri", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnEatIn.Appearance.ForeColor = System.Drawing.Color.White;
             this.btnEatIn.Appearance.Options.UseBackColor = true;
             this.btnEatIn.Appearance.Options.UseFont = true;
@@ -943,17 +922,17 @@
             this.btnEatIn.Appearance.Options.UseTextOptions = true;
             this.btnEatIn.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
             this.btnEatIn.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
-            this.btnEatIn.Location = new System.Drawing.Point(6, 258);
+            this.btnEatIn.Location = new System.Drawing.Point(4, 343);
             this.btnEatIn.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnEatIn.Name = "btnEatIn";
-            this.btnEatIn.Size = new System.Drawing.Size(142, 39);
+            this.btnEatIn.Size = new System.Drawing.Size(134, 55);
             this.btnEatIn.TabIndex = 29;
             this.btnEatIn.Text = "Eat In";
             // 
             // btnCancel
             // 
             this.btnCancel.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
-            this.btnCancel.Appearance.Font = new System.Drawing.Font("Calibri", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCancel.Appearance.Font = new System.Drawing.Font("Calibri", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCancel.Appearance.ForeColor = System.Drawing.Color.White;
             this.btnCancel.Appearance.Options.UseBackColor = true;
             this.btnCancel.Appearance.Options.UseFont = true;
@@ -961,10 +940,10 @@
             this.btnCancel.Appearance.Options.UseTextOptions = true;
             this.btnCancel.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
             this.btnCancel.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
-            this.btnCancel.Location = new System.Drawing.Point(6, 216);
+            this.btnCancel.Location = new System.Drawing.Point(4, 287);
             this.btnCancel.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnCancel.Name = "btnCancel";
-            this.btnCancel.Size = new System.Drawing.Size(142, 39);
+            this.btnCancel.Size = new System.Drawing.Size(134, 55);
             this.btnCancel.TabIndex = 28;
             this.btnCancel.Text = "CANCEL ORDER";
             this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
@@ -972,7 +951,7 @@
             // btnLanguage
             // 
             this.btnLanguage.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
-            this.btnLanguage.Appearance.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnLanguage.Appearance.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnLanguage.Appearance.ForeColor = System.Drawing.Color.White;
             this.btnLanguage.Appearance.Options.UseBackColor = true;
             this.btnLanguage.Appearance.Options.UseFont = true;
@@ -980,10 +959,10 @@
             this.btnLanguage.Appearance.Options.UseTextOptions = true;
             this.btnLanguage.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
             this.btnLanguage.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
-            this.btnLanguage.Location = new System.Drawing.Point(6, 90);
+            this.btnLanguage.Location = new System.Drawing.Point(4, 118);
             this.btnLanguage.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnLanguage.Name = "btnLanguage";
-            this.btnLanguage.Size = new System.Drawing.Size(142, 39);
+            this.btnLanguage.Size = new System.Drawing.Size(134, 55);
             this.btnLanguage.TabIndex = 25;
             this.btnLanguage.Text = "LANGUAGE";
             this.btnLanguage.Click += new System.EventHandler(this.btnLanguage_Click);
@@ -991,7 +970,7 @@
             // btnSaveOrder
             // 
             this.btnSaveOrder.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
-            this.btnSaveOrder.Appearance.Font = new System.Drawing.Font("Calibri", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSaveOrder.Appearance.Font = new System.Drawing.Font("Calibri", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSaveOrder.Appearance.ForeColor = System.Drawing.Color.White;
             this.btnSaveOrder.Appearance.Options.UseBackColor = true;
             this.btnSaveOrder.Appearance.Options.UseFont = true;
@@ -999,19 +978,21 @@
             this.btnSaveOrder.Appearance.Options.UseTextOptions = true;
             this.btnSaveOrder.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
             this.btnSaveOrder.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
-            this.btnSaveOrder.Location = new System.Drawing.Point(6, 174);
+            this.btnSaveOrder.Location = new System.Drawing.Point(4, 231);
             this.btnSaveOrder.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnSaveOrder.Name = "btnSaveOrder";
-            this.btnSaveOrder.Size = new System.Drawing.Size(142, 39);
+            this.btnSaveOrder.Size = new System.Drawing.Size(134, 55);
             this.btnSaveOrder.TabIndex = 16;
             this.btnSaveOrder.Text = "Save Order";
             this.btnSaveOrder.Click += new System.EventHandler(this.btnSaveOrder_Click);
             // 
             // btnMcLeft
             // 
-            this.btnMcLeft.Appearance.BackColor = System.Drawing.Color.Red;
+            this.btnMcLeft.Appearance.BackColor = System.Drawing.Color.ForestGreen;
+            this.btnMcLeft.Appearance.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold);
             this.btnMcLeft.Appearance.ForeColor = System.Drawing.Color.White;
             this.btnMcLeft.Appearance.Options.UseBackColor = true;
+            this.btnMcLeft.Appearance.Options.UseFont = true;
             this.btnMcLeft.Appearance.Options.UseForeColor = true;
             this.btnMcLeft.Appearance.Options.UseTextOptions = true;
             this.btnMcLeft.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
@@ -1019,19 +1000,21 @@
             this.btnMcLeft.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
             this.btnMcLeft.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
             this.btnMcLeft.ImageOptions.Location = DevExpress.XtraEditors.ImageLocation.MiddleCenter;
-            this.btnMcLeft.Location = new System.Drawing.Point(6, 303);
+            this.btnMcLeft.Location = new System.Drawing.Point(4, 399);
             this.btnMcLeft.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnMcLeft.Name = "btnMcLeft";
-            this.btnMcLeft.Size = new System.Drawing.Size(71, 27);
+            this.btnMcLeft.Size = new System.Drawing.Size(67, 33);
             this.btnMcLeft.TabIndex = 17;
             this.btnMcLeft.Text = "<<";
             this.btnMcLeft.Click += new System.EventHandler(this.btnMcLeft_Click);
             // 
             // btnMcRight
             // 
-            this.btnMcRight.Appearance.BackColor = System.Drawing.Color.Red;
+            this.btnMcRight.Appearance.BackColor = System.Drawing.Color.ForestGreen;
+            this.btnMcRight.Appearance.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold);
             this.btnMcRight.Appearance.ForeColor = System.Drawing.Color.White;
             this.btnMcRight.Appearance.Options.UseBackColor = true;
+            this.btnMcRight.Appearance.Options.UseFont = true;
             this.btnMcRight.Appearance.Options.UseForeColor = true;
             this.btnMcRight.Appearance.Options.UseTextOptions = true;
             this.btnMcRight.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
@@ -1039,17 +1022,17 @@
             this.btnMcRight.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
             this.btnMcRight.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
             this.btnMcRight.ImageOptions.Location = DevExpress.XtraEditors.ImageLocation.MiddleCenter;
-            this.btnMcRight.Location = new System.Drawing.Point(77, 303);
+            this.btnMcRight.Location = new System.Drawing.Point(71, 399);
             this.btnMcRight.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnMcRight.Name = "btnMcRight";
-            this.btnMcRight.Size = new System.Drawing.Size(71, 27);
+            this.btnMcRight.Size = new System.Drawing.Size(67, 33);
             this.btnMcRight.TabIndex = 18;
             this.btnMcRight.Text = ">>";
             this.btnMcRight.Click += new System.EventHandler(this.btnMcRight_Click);
             // 
             // btnCid
             // 
-            this.btnCid.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.btnCid.Appearance.BackColor = System.Drawing.Color.HotPink;
             this.btnCid.Appearance.Font = new System.Drawing.Font("Calibri", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCid.Appearance.ForeColor = System.Drawing.Color.White;
             this.btnCid.Appearance.Options.UseBackColor = true;
@@ -1058,10 +1041,10 @@
             this.btnCid.Appearance.Options.UseTextOptions = true;
             this.btnCid.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
             this.btnCid.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
-            this.btnCid.Location = new System.Drawing.Point(6, 48);
+            this.btnCid.Location = new System.Drawing.Point(4, 62);
             this.btnCid.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnCid.Name = "btnCid";
-            this.btnCid.Size = new System.Drawing.Size(142, 39);
+            this.btnCid.Size = new System.Drawing.Size(134, 55);
             this.btnCid.TabIndex = 18;
             this.btnCid.Text = "CID";
             this.btnCid.Click += new System.EventHandler(this.btnCid_Click);
@@ -1069,7 +1052,7 @@
             // btnPendOrder
             // 
             this.btnPendOrder.Appearance.BackColor = System.Drawing.Color.Orange;
-            this.btnPendOrder.Appearance.Font = new System.Drawing.Font("Calibri", 12F);
+            this.btnPendOrder.Appearance.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold);
             this.btnPendOrder.Appearance.ForeColor = System.Drawing.Color.White;
             this.btnPendOrder.Appearance.Options.UseBackColor = true;
             this.btnPendOrder.Appearance.Options.UseFont = true;
@@ -1077,23 +1060,16 @@
             this.btnPendOrder.Appearance.Options.UseTextOptions = true;
             this.btnPendOrder.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
             this.btnPendOrder.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
-            this.btnPendOrder.Location = new System.Drawing.Point(6, 132);
+            this.btnPendOrder.Location = new System.Drawing.Point(4, 174);
             this.btnPendOrder.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnPendOrder.Name = "btnPendOrder";
-            this.btnPendOrder.Size = new System.Drawing.Size(142, 39);
+            this.btnPendOrder.Size = new System.Drawing.Size(134, 55);
             this.btnPendOrder.TabIndex = 22;
             this.btnPendOrder.Text = "Pending Orders";
             this.btnPendOrder.Click += new System.EventHandler(this.btnPendOrder_Click);
             // 
             // panelControl3
             // 
-            this.panelControl3.Controls.Add(this.btnMc41);
-            this.panelControl3.Controls.Add(this.btnMc40);
-            this.panelControl3.Controls.Add(this.btnMc39);
-            this.panelControl3.Controls.Add(this.btnMc38);
-            this.panelControl3.Controls.Add(this.btnMc37);
-            this.panelControl3.Controls.Add(this.btnMc36);
-            this.panelControl3.Controls.Add(this.btnMc35);
             this.panelControl3.Controls.Add(this.btnMc34);
             this.panelControl3.Controls.Add(this.btnMc33);
             this.panelControl3.Controls.Add(this.btnMc32);
@@ -1129,130 +1105,11 @@
             this.panelControl3.Controls.Add(this.btnMc2);
             this.panelControl3.Controls.Add(this.btnMc1);
             this.panelControl3.Controls.Add(this.btnMc0);
-            this.panelControl3.Location = new System.Drawing.Point(158, 257);
+            this.panelControl3.Location = new System.Drawing.Point(150, 224);
             this.panelControl3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panelControl3.Name = "panelControl3";
-            this.panelControl3.Size = new System.Drawing.Size(711, 337);
+            this.panelControl3.Size = new System.Drawing.Size(587, 434);
             this.panelControl3.TabIndex = 32;
-            // 
-            // btnMc41
-            // 
-            this.btnMc41.Appearance.BackColor = System.Drawing.Color.RoyalBlue;
-            this.btnMc41.Appearance.Font = new System.Drawing.Font("Calibri", 10F, System.Drawing.FontStyle.Bold);
-            this.btnMc41.Appearance.ForeColor = System.Drawing.Color.White;
-            this.btnMc41.Appearance.Options.UseBackColor = true;
-            this.btnMc41.Appearance.Options.UseFont = true;
-            this.btnMc41.Appearance.Options.UseForeColor = true;
-            this.btnMc41.Appearance.Options.UseTextOptions = true;
-            this.btnMc41.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
-            this.btnMc41.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
-            this.btnMc41.Location = new System.Drawing.Point(590, 289);
-            this.btnMc41.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.btnMc41.Name = "btnMc41";
-            this.btnMc41.Size = new System.Drawing.Size(116, 44);
-            this.btnMc41.TabIndex = 57;
-            // 
-            // btnMc40
-            // 
-            this.btnMc40.Appearance.BackColor = System.Drawing.Color.RoyalBlue;
-            this.btnMc40.Appearance.Font = new System.Drawing.Font("Calibri", 10F, System.Drawing.FontStyle.Bold);
-            this.btnMc40.Appearance.ForeColor = System.Drawing.Color.White;
-            this.btnMc40.Appearance.Options.UseBackColor = true;
-            this.btnMc40.Appearance.Options.UseFont = true;
-            this.btnMc40.Appearance.Options.UseForeColor = true;
-            this.btnMc40.Appearance.Options.UseTextOptions = true;
-            this.btnMc40.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
-            this.btnMc40.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
-            this.btnMc40.Location = new System.Drawing.Point(472, 289);
-            this.btnMc40.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.btnMc40.Name = "btnMc40";
-            this.btnMc40.Size = new System.Drawing.Size(116, 44);
-            this.btnMc40.TabIndex = 56;
-            // 
-            // btnMc39
-            // 
-            this.btnMc39.Appearance.BackColor = System.Drawing.Color.RoyalBlue;
-            this.btnMc39.Appearance.Font = new System.Drawing.Font("Calibri", 10F, System.Drawing.FontStyle.Bold);
-            this.btnMc39.Appearance.ForeColor = System.Drawing.Color.White;
-            this.btnMc39.Appearance.Options.UseBackColor = true;
-            this.btnMc39.Appearance.Options.UseFont = true;
-            this.btnMc39.Appearance.Options.UseForeColor = true;
-            this.btnMc39.Appearance.Options.UseTextOptions = true;
-            this.btnMc39.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
-            this.btnMc39.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
-            this.btnMc39.Location = new System.Drawing.Point(355, 289);
-            this.btnMc39.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.btnMc39.Name = "btnMc39";
-            this.btnMc39.Size = new System.Drawing.Size(116, 44);
-            this.btnMc39.TabIndex = 55;
-            // 
-            // btnMc38
-            // 
-            this.btnMc38.Appearance.BackColor = System.Drawing.Color.RoyalBlue;
-            this.btnMc38.Appearance.Font = new System.Drawing.Font("Calibri", 10F, System.Drawing.FontStyle.Bold);
-            this.btnMc38.Appearance.ForeColor = System.Drawing.Color.White;
-            this.btnMc38.Appearance.Options.UseBackColor = true;
-            this.btnMc38.Appearance.Options.UseFont = true;
-            this.btnMc38.Appearance.Options.UseForeColor = true;
-            this.btnMc38.Appearance.Options.UseTextOptions = true;
-            this.btnMc38.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
-            this.btnMc38.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
-            this.btnMc38.Location = new System.Drawing.Point(238, 289);
-            this.btnMc38.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.btnMc38.Name = "btnMc38";
-            this.btnMc38.Size = new System.Drawing.Size(116, 44);
-            this.btnMc38.TabIndex = 54;
-            // 
-            // btnMc37
-            // 
-            this.btnMc37.Appearance.BackColor = System.Drawing.Color.RoyalBlue;
-            this.btnMc37.Appearance.Font = new System.Drawing.Font("Calibri", 10F, System.Drawing.FontStyle.Bold);
-            this.btnMc37.Appearance.ForeColor = System.Drawing.Color.White;
-            this.btnMc37.Appearance.Options.UseBackColor = true;
-            this.btnMc37.Appearance.Options.UseFont = true;
-            this.btnMc37.Appearance.Options.UseForeColor = true;
-            this.btnMc37.Appearance.Options.UseTextOptions = true;
-            this.btnMc37.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
-            this.btnMc37.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
-            this.btnMc37.Location = new System.Drawing.Point(121, 289);
-            this.btnMc37.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.btnMc37.Name = "btnMc37";
-            this.btnMc37.Size = new System.Drawing.Size(116, 44);
-            this.btnMc37.TabIndex = 53;
-            // 
-            // btnMc36
-            // 
-            this.btnMc36.Appearance.BackColor = System.Drawing.Color.RoyalBlue;
-            this.btnMc36.Appearance.Font = new System.Drawing.Font("Calibri", 10F, System.Drawing.FontStyle.Bold);
-            this.btnMc36.Appearance.ForeColor = System.Drawing.Color.White;
-            this.btnMc36.Appearance.Options.UseBackColor = true;
-            this.btnMc36.Appearance.Options.UseFont = true;
-            this.btnMc36.Appearance.Options.UseForeColor = true;
-            this.btnMc36.Appearance.Options.UseTextOptions = true;
-            this.btnMc36.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
-            this.btnMc36.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
-            this.btnMc36.Location = new System.Drawing.Point(4, 289);
-            this.btnMc36.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.btnMc36.Name = "btnMc36";
-            this.btnMc36.Size = new System.Drawing.Size(116, 44);
-            this.btnMc36.TabIndex = 52;
-            // 
-            // btnMc35
-            // 
-            this.btnMc35.Appearance.BackColor = System.Drawing.Color.RoyalBlue;
-            this.btnMc35.Appearance.Font = new System.Drawing.Font("Calibri", 10F, System.Drawing.FontStyle.Bold);
-            this.btnMc35.Appearance.ForeColor = System.Drawing.Color.White;
-            this.btnMc35.Appearance.Options.UseBackColor = true;
-            this.btnMc35.Appearance.Options.UseFont = true;
-            this.btnMc35.Appearance.Options.UseForeColor = true;
-            this.btnMc35.Appearance.Options.UseTextOptions = true;
-            this.btnMc35.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
-            this.btnMc35.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
-            this.btnMc35.Location = new System.Drawing.Point(590, 242);
-            this.btnMc35.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.btnMc35.Name = "btnMc35";
-            this.btnMc35.Size = new System.Drawing.Size(116, 44);
-            this.btnMc35.TabIndex = 51;
             // 
             // btnMc34
             // 
@@ -1263,13 +1120,15 @@
             this.btnMc34.Appearance.Options.UseFont = true;
             this.btnMc34.Appearance.Options.UseForeColor = true;
             this.btnMc34.Appearance.Options.UseTextOptions = true;
+            this.btnMc34.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.btnMc34.Appearance.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
             this.btnMc34.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
             this.btnMc34.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
-            this.btnMc34.Location = new System.Drawing.Point(472, 242);
+            this.btnMc34.Location = new System.Drawing.Point(468, 371);
             this.btnMc34.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnMc34.Name = "btnMc34";
-            this.btnMc34.Size = new System.Drawing.Size(116, 44);
-            this.btnMc34.TabIndex = 50;
+            this.btnMc34.Size = new System.Drawing.Size(115, 60);
+            this.btnMc34.TabIndex = 56;
             // 
             // btnMc33
             // 
@@ -1280,13 +1139,15 @@
             this.btnMc33.Appearance.Options.UseFont = true;
             this.btnMc33.Appearance.Options.UseForeColor = true;
             this.btnMc33.Appearance.Options.UseTextOptions = true;
+            this.btnMc33.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.btnMc33.Appearance.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
             this.btnMc33.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
             this.btnMc33.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
-            this.btnMc33.Location = new System.Drawing.Point(355, 242);
+            this.btnMc33.Location = new System.Drawing.Point(352, 371);
             this.btnMc33.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnMc33.Name = "btnMc33";
-            this.btnMc33.Size = new System.Drawing.Size(116, 44);
-            this.btnMc33.TabIndex = 49;
+            this.btnMc33.Size = new System.Drawing.Size(115, 60);
+            this.btnMc33.TabIndex = 55;
             // 
             // btnMc32
             // 
@@ -1297,13 +1158,15 @@
             this.btnMc32.Appearance.Options.UseFont = true;
             this.btnMc32.Appearance.Options.UseForeColor = true;
             this.btnMc32.Appearance.Options.UseTextOptions = true;
+            this.btnMc32.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.btnMc32.Appearance.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
             this.btnMc32.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
             this.btnMc32.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
-            this.btnMc32.Location = new System.Drawing.Point(238, 242);
+            this.btnMc32.Location = new System.Drawing.Point(236, 371);
             this.btnMc32.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnMc32.Name = "btnMc32";
-            this.btnMc32.Size = new System.Drawing.Size(116, 44);
-            this.btnMc32.TabIndex = 48;
+            this.btnMc32.Size = new System.Drawing.Size(115, 60);
+            this.btnMc32.TabIndex = 54;
             // 
             // btnMc31
             // 
@@ -1314,13 +1177,15 @@
             this.btnMc31.Appearance.Options.UseFont = true;
             this.btnMc31.Appearance.Options.UseForeColor = true;
             this.btnMc31.Appearance.Options.UseTextOptions = true;
+            this.btnMc31.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.btnMc31.Appearance.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
             this.btnMc31.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
             this.btnMc31.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
-            this.btnMc31.Location = new System.Drawing.Point(121, 242);
+            this.btnMc31.Location = new System.Drawing.Point(120, 371);
             this.btnMc31.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnMc31.Name = "btnMc31";
-            this.btnMc31.Size = new System.Drawing.Size(116, 44);
-            this.btnMc31.TabIndex = 47;
+            this.btnMc31.Size = new System.Drawing.Size(115, 60);
+            this.btnMc31.TabIndex = 53;
             // 
             // btnMc30
             // 
@@ -1331,13 +1196,15 @@
             this.btnMc30.Appearance.Options.UseFont = true;
             this.btnMc30.Appearance.Options.UseForeColor = true;
             this.btnMc30.Appearance.Options.UseTextOptions = true;
+            this.btnMc30.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.btnMc30.Appearance.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
             this.btnMc30.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
             this.btnMc30.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
-            this.btnMc30.Location = new System.Drawing.Point(4, 242);
+            this.btnMc30.Location = new System.Drawing.Point(4, 371);
             this.btnMc30.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnMc30.Name = "btnMc30";
-            this.btnMc30.Size = new System.Drawing.Size(116, 44);
-            this.btnMc30.TabIndex = 46;
+            this.btnMc30.Size = new System.Drawing.Size(115, 60);
+            this.btnMc30.TabIndex = 52;
             // 
             // btnMc29
             // 
@@ -1348,13 +1215,15 @@
             this.btnMc29.Appearance.Options.UseFont = true;
             this.btnMc29.Appearance.Options.UseForeColor = true;
             this.btnMc29.Appearance.Options.UseTextOptions = true;
+            this.btnMc29.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.btnMc29.Appearance.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
             this.btnMc29.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
             this.btnMc29.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
-            this.btnMc29.Location = new System.Drawing.Point(590, 194);
+            this.btnMc29.Location = new System.Drawing.Point(468, 310);
             this.btnMc29.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnMc29.Name = "btnMc29";
-            this.btnMc29.Size = new System.Drawing.Size(116, 44);
-            this.btnMc29.TabIndex = 45;
+            this.btnMc29.Size = new System.Drawing.Size(115, 60);
+            this.btnMc29.TabIndex = 50;
             // 
             // btnMc28
             // 
@@ -1365,13 +1234,15 @@
             this.btnMc28.Appearance.Options.UseFont = true;
             this.btnMc28.Appearance.Options.UseForeColor = true;
             this.btnMc28.Appearance.Options.UseTextOptions = true;
+            this.btnMc28.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.btnMc28.Appearance.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
             this.btnMc28.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
             this.btnMc28.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
-            this.btnMc28.Location = new System.Drawing.Point(472, 194);
+            this.btnMc28.Location = new System.Drawing.Point(352, 310);
             this.btnMc28.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnMc28.Name = "btnMc28";
-            this.btnMc28.Size = new System.Drawing.Size(116, 44);
-            this.btnMc28.TabIndex = 44;
+            this.btnMc28.Size = new System.Drawing.Size(115, 60);
+            this.btnMc28.TabIndex = 49;
             // 
             // btnMc27
             // 
@@ -1382,13 +1253,15 @@
             this.btnMc27.Appearance.Options.UseFont = true;
             this.btnMc27.Appearance.Options.UseForeColor = true;
             this.btnMc27.Appearance.Options.UseTextOptions = true;
+            this.btnMc27.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.btnMc27.Appearance.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
             this.btnMc27.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
             this.btnMc27.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
-            this.btnMc27.Location = new System.Drawing.Point(355, 194);
+            this.btnMc27.Location = new System.Drawing.Point(236, 310);
             this.btnMc27.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnMc27.Name = "btnMc27";
-            this.btnMc27.Size = new System.Drawing.Size(116, 44);
-            this.btnMc27.TabIndex = 43;
+            this.btnMc27.Size = new System.Drawing.Size(115, 60);
+            this.btnMc27.TabIndex = 48;
             // 
             // btnMc26
             // 
@@ -1399,13 +1272,15 @@
             this.btnMc26.Appearance.Options.UseFont = true;
             this.btnMc26.Appearance.Options.UseForeColor = true;
             this.btnMc26.Appearance.Options.UseTextOptions = true;
+            this.btnMc26.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.btnMc26.Appearance.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
             this.btnMc26.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
             this.btnMc26.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
-            this.btnMc26.Location = new System.Drawing.Point(238, 194);
+            this.btnMc26.Location = new System.Drawing.Point(120, 310);
             this.btnMc26.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnMc26.Name = "btnMc26";
-            this.btnMc26.Size = new System.Drawing.Size(116, 44);
-            this.btnMc26.TabIndex = 42;
+            this.btnMc26.Size = new System.Drawing.Size(115, 60);
+            this.btnMc26.TabIndex = 47;
             // 
             // btnMc25
             // 
@@ -1416,13 +1291,15 @@
             this.btnMc25.Appearance.Options.UseFont = true;
             this.btnMc25.Appearance.Options.UseForeColor = true;
             this.btnMc25.Appearance.Options.UseTextOptions = true;
+            this.btnMc25.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.btnMc25.Appearance.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
             this.btnMc25.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
             this.btnMc25.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
-            this.btnMc25.Location = new System.Drawing.Point(121, 194);
+            this.btnMc25.Location = new System.Drawing.Point(4, 310);
             this.btnMc25.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnMc25.Name = "btnMc25";
-            this.btnMc25.Size = new System.Drawing.Size(116, 44);
-            this.btnMc25.TabIndex = 41;
+            this.btnMc25.Size = new System.Drawing.Size(115, 60);
+            this.btnMc25.TabIndex = 46;
             // 
             // btnMc24
             // 
@@ -1433,13 +1310,15 @@
             this.btnMc24.Appearance.Options.UseFont = true;
             this.btnMc24.Appearance.Options.UseForeColor = true;
             this.btnMc24.Appearance.Options.UseTextOptions = true;
+            this.btnMc24.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.btnMc24.Appearance.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
             this.btnMc24.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
             this.btnMc24.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
-            this.btnMc24.Location = new System.Drawing.Point(4, 194);
+            this.btnMc24.Location = new System.Drawing.Point(468, 249);
             this.btnMc24.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnMc24.Name = "btnMc24";
-            this.btnMc24.Size = new System.Drawing.Size(116, 44);
-            this.btnMc24.TabIndex = 40;
+            this.btnMc24.Size = new System.Drawing.Size(115, 60);
+            this.btnMc24.TabIndex = 44;
             // 
             // btnMc23
             // 
@@ -1450,13 +1329,15 @@
             this.btnMc23.Appearance.Options.UseFont = true;
             this.btnMc23.Appearance.Options.UseForeColor = true;
             this.btnMc23.Appearance.Options.UseTextOptions = true;
+            this.btnMc23.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.btnMc23.Appearance.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
             this.btnMc23.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
             this.btnMc23.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
-            this.btnMc23.Location = new System.Drawing.Point(590, 147);
+            this.btnMc23.Location = new System.Drawing.Point(352, 249);
             this.btnMc23.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnMc23.Name = "btnMc23";
-            this.btnMc23.Size = new System.Drawing.Size(116, 44);
-            this.btnMc23.TabIndex = 39;
+            this.btnMc23.Size = new System.Drawing.Size(115, 60);
+            this.btnMc23.TabIndex = 43;
             // 
             // btnMc22
             // 
@@ -1467,13 +1348,15 @@
             this.btnMc22.Appearance.Options.UseFont = true;
             this.btnMc22.Appearance.Options.UseForeColor = true;
             this.btnMc22.Appearance.Options.UseTextOptions = true;
+            this.btnMc22.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.btnMc22.Appearance.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
             this.btnMc22.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
             this.btnMc22.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
-            this.btnMc22.Location = new System.Drawing.Point(472, 147);
+            this.btnMc22.Location = new System.Drawing.Point(236, 249);
             this.btnMc22.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnMc22.Name = "btnMc22";
-            this.btnMc22.Size = new System.Drawing.Size(116, 44);
-            this.btnMc22.TabIndex = 38;
+            this.btnMc22.Size = new System.Drawing.Size(115, 60);
+            this.btnMc22.TabIndex = 42;
             // 
             // btnMc21
             // 
@@ -1484,13 +1367,15 @@
             this.btnMc21.Appearance.Options.UseFont = true;
             this.btnMc21.Appearance.Options.UseForeColor = true;
             this.btnMc21.Appearance.Options.UseTextOptions = true;
+            this.btnMc21.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.btnMc21.Appearance.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
             this.btnMc21.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
             this.btnMc21.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
-            this.btnMc21.Location = new System.Drawing.Point(355, 147);
+            this.btnMc21.Location = new System.Drawing.Point(120, 249);
             this.btnMc21.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnMc21.Name = "btnMc21";
-            this.btnMc21.Size = new System.Drawing.Size(116, 44);
-            this.btnMc21.TabIndex = 37;
+            this.btnMc21.Size = new System.Drawing.Size(115, 60);
+            this.btnMc21.TabIndex = 41;
             // 
             // btnMc20
             // 
@@ -1501,13 +1386,15 @@
             this.btnMc20.Appearance.Options.UseFont = true;
             this.btnMc20.Appearance.Options.UseForeColor = true;
             this.btnMc20.Appearance.Options.UseTextOptions = true;
+            this.btnMc20.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.btnMc20.Appearance.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
             this.btnMc20.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
             this.btnMc20.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
-            this.btnMc20.Location = new System.Drawing.Point(238, 147);
+            this.btnMc20.Location = new System.Drawing.Point(4, 249);
             this.btnMc20.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnMc20.Name = "btnMc20";
-            this.btnMc20.Size = new System.Drawing.Size(116, 44);
-            this.btnMc20.TabIndex = 36;
+            this.btnMc20.Size = new System.Drawing.Size(115, 60);
+            this.btnMc20.TabIndex = 40;
             // 
             // btnMc19
             // 
@@ -1518,13 +1405,15 @@
             this.btnMc19.Appearance.Options.UseFont = true;
             this.btnMc19.Appearance.Options.UseForeColor = true;
             this.btnMc19.Appearance.Options.UseTextOptions = true;
+            this.btnMc19.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.btnMc19.Appearance.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
             this.btnMc19.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
             this.btnMc19.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
-            this.btnMc19.Location = new System.Drawing.Point(121, 147);
+            this.btnMc19.Location = new System.Drawing.Point(468, 188);
             this.btnMc19.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnMc19.Name = "btnMc19";
-            this.btnMc19.Size = new System.Drawing.Size(116, 44);
-            this.btnMc19.TabIndex = 35;
+            this.btnMc19.Size = new System.Drawing.Size(115, 60);
+            this.btnMc19.TabIndex = 38;
             // 
             // btnMc18
             // 
@@ -1535,13 +1424,15 @@
             this.btnMc18.Appearance.Options.UseFont = true;
             this.btnMc18.Appearance.Options.UseForeColor = true;
             this.btnMc18.Appearance.Options.UseTextOptions = true;
+            this.btnMc18.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.btnMc18.Appearance.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
             this.btnMc18.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
             this.btnMc18.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
-            this.btnMc18.Location = new System.Drawing.Point(4, 147);
+            this.btnMc18.Location = new System.Drawing.Point(352, 188);
             this.btnMc18.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnMc18.Name = "btnMc18";
-            this.btnMc18.Size = new System.Drawing.Size(116, 44);
-            this.btnMc18.TabIndex = 34;
+            this.btnMc18.Size = new System.Drawing.Size(115, 60);
+            this.btnMc18.TabIndex = 37;
             // 
             // btnMc17
             // 
@@ -1552,13 +1443,15 @@
             this.btnMc17.Appearance.Options.UseFont = true;
             this.btnMc17.Appearance.Options.UseForeColor = true;
             this.btnMc17.Appearance.Options.UseTextOptions = true;
+            this.btnMc17.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.btnMc17.Appearance.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
             this.btnMc17.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
             this.btnMc17.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
-            this.btnMc17.Location = new System.Drawing.Point(590, 100);
+            this.btnMc17.Location = new System.Drawing.Point(236, 188);
             this.btnMc17.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnMc17.Name = "btnMc17";
-            this.btnMc17.Size = new System.Drawing.Size(116, 44);
-            this.btnMc17.TabIndex = 33;
+            this.btnMc17.Size = new System.Drawing.Size(115, 60);
+            this.btnMc17.TabIndex = 36;
             // 
             // btnMc16
             // 
@@ -1569,13 +1462,15 @@
             this.btnMc16.Appearance.Options.UseFont = true;
             this.btnMc16.Appearance.Options.UseForeColor = true;
             this.btnMc16.Appearance.Options.UseTextOptions = true;
+            this.btnMc16.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.btnMc16.Appearance.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
             this.btnMc16.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
             this.btnMc16.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
-            this.btnMc16.Location = new System.Drawing.Point(472, 100);
+            this.btnMc16.Location = new System.Drawing.Point(120, 188);
             this.btnMc16.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnMc16.Name = "btnMc16";
-            this.btnMc16.Size = new System.Drawing.Size(116, 44);
-            this.btnMc16.TabIndex = 32;
+            this.btnMc16.Size = new System.Drawing.Size(115, 60);
+            this.btnMc16.TabIndex = 35;
             // 
             // btnMc15
             // 
@@ -1586,13 +1481,15 @@
             this.btnMc15.Appearance.Options.UseFont = true;
             this.btnMc15.Appearance.Options.UseForeColor = true;
             this.btnMc15.Appearance.Options.UseTextOptions = true;
+            this.btnMc15.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.btnMc15.Appearance.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
             this.btnMc15.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
             this.btnMc15.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
-            this.btnMc15.Location = new System.Drawing.Point(355, 100);
+            this.btnMc15.Location = new System.Drawing.Point(4, 188);
             this.btnMc15.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnMc15.Name = "btnMc15";
-            this.btnMc15.Size = new System.Drawing.Size(116, 44);
-            this.btnMc15.TabIndex = 31;
+            this.btnMc15.Size = new System.Drawing.Size(115, 60);
+            this.btnMc15.TabIndex = 34;
             // 
             // btnMc14
             // 
@@ -1603,13 +1500,15 @@
             this.btnMc14.Appearance.Options.UseFont = true;
             this.btnMc14.Appearance.Options.UseForeColor = true;
             this.btnMc14.Appearance.Options.UseTextOptions = true;
+            this.btnMc14.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.btnMc14.Appearance.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
             this.btnMc14.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
             this.btnMc14.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
-            this.btnMc14.Location = new System.Drawing.Point(238, 100);
+            this.btnMc14.Location = new System.Drawing.Point(468, 127);
             this.btnMc14.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnMc14.Name = "btnMc14";
-            this.btnMc14.Size = new System.Drawing.Size(116, 44);
-            this.btnMc14.TabIndex = 30;
+            this.btnMc14.Size = new System.Drawing.Size(115, 60);
+            this.btnMc14.TabIndex = 32;
             // 
             // btnMc13
             // 
@@ -1620,13 +1519,15 @@
             this.btnMc13.Appearance.Options.UseFont = true;
             this.btnMc13.Appearance.Options.UseForeColor = true;
             this.btnMc13.Appearance.Options.UseTextOptions = true;
+            this.btnMc13.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.btnMc13.Appearance.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
             this.btnMc13.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
             this.btnMc13.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
-            this.btnMc13.Location = new System.Drawing.Point(121, 100);
+            this.btnMc13.Location = new System.Drawing.Point(352, 127);
             this.btnMc13.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnMc13.Name = "btnMc13";
-            this.btnMc13.Size = new System.Drawing.Size(116, 44);
-            this.btnMc13.TabIndex = 29;
+            this.btnMc13.Size = new System.Drawing.Size(115, 60);
+            this.btnMc13.TabIndex = 31;
             // 
             // btnMc12
             // 
@@ -1637,13 +1538,15 @@
             this.btnMc12.Appearance.Options.UseFont = true;
             this.btnMc12.Appearance.Options.UseForeColor = true;
             this.btnMc12.Appearance.Options.UseTextOptions = true;
+            this.btnMc12.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.btnMc12.Appearance.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
             this.btnMc12.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
             this.btnMc12.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
-            this.btnMc12.Location = new System.Drawing.Point(4, 100);
+            this.btnMc12.Location = new System.Drawing.Point(236, 127);
             this.btnMc12.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnMc12.Name = "btnMc12";
-            this.btnMc12.Size = new System.Drawing.Size(116, 44);
-            this.btnMc12.TabIndex = 28;
+            this.btnMc12.Size = new System.Drawing.Size(115, 60);
+            this.btnMc12.TabIndex = 30;
             // 
             // btnMc11
             // 
@@ -1654,13 +1557,15 @@
             this.btnMc11.Appearance.Options.UseFont = true;
             this.btnMc11.Appearance.Options.UseForeColor = true;
             this.btnMc11.Appearance.Options.UseTextOptions = true;
+            this.btnMc11.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.btnMc11.Appearance.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
             this.btnMc11.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
             this.btnMc11.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
-            this.btnMc11.Location = new System.Drawing.Point(590, 52);
+            this.btnMc11.Location = new System.Drawing.Point(120, 127);
             this.btnMc11.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnMc11.Name = "btnMc11";
-            this.btnMc11.Size = new System.Drawing.Size(116, 44);
-            this.btnMc11.TabIndex = 27;
+            this.btnMc11.Size = new System.Drawing.Size(115, 60);
+            this.btnMc11.TabIndex = 29;
             // 
             // btnMc10
             // 
@@ -1671,13 +1576,15 @@
             this.btnMc10.Appearance.Options.UseFont = true;
             this.btnMc10.Appearance.Options.UseForeColor = true;
             this.btnMc10.Appearance.Options.UseTextOptions = true;
+            this.btnMc10.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.btnMc10.Appearance.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
             this.btnMc10.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
             this.btnMc10.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
-            this.btnMc10.Location = new System.Drawing.Point(472, 52);
+            this.btnMc10.Location = new System.Drawing.Point(4, 127);
             this.btnMc10.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnMc10.Name = "btnMc10";
-            this.btnMc10.Size = new System.Drawing.Size(116, 44);
-            this.btnMc10.TabIndex = 26;
+            this.btnMc10.Size = new System.Drawing.Size(115, 60);
+            this.btnMc10.TabIndex = 28;
             // 
             // btnMc9
             // 
@@ -1688,13 +1595,15 @@
             this.btnMc9.Appearance.Options.UseFont = true;
             this.btnMc9.Appearance.Options.UseForeColor = true;
             this.btnMc9.Appearance.Options.UseTextOptions = true;
+            this.btnMc9.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.btnMc9.Appearance.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
             this.btnMc9.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
             this.btnMc9.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
-            this.btnMc9.Location = new System.Drawing.Point(355, 52);
+            this.btnMc9.Location = new System.Drawing.Point(468, 66);
             this.btnMc9.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnMc9.Name = "btnMc9";
-            this.btnMc9.Size = new System.Drawing.Size(116, 44);
-            this.btnMc9.TabIndex = 25;
+            this.btnMc9.Size = new System.Drawing.Size(115, 60);
+            this.btnMc9.TabIndex = 26;
             // 
             // btnMc8
             // 
@@ -1705,13 +1614,15 @@
             this.btnMc8.Appearance.Options.UseFont = true;
             this.btnMc8.Appearance.Options.UseForeColor = true;
             this.btnMc8.Appearance.Options.UseTextOptions = true;
+            this.btnMc8.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.btnMc8.Appearance.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
             this.btnMc8.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
             this.btnMc8.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
-            this.btnMc8.Location = new System.Drawing.Point(238, 52);
+            this.btnMc8.Location = new System.Drawing.Point(352, 66);
             this.btnMc8.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnMc8.Name = "btnMc8";
-            this.btnMc8.Size = new System.Drawing.Size(116, 44);
-            this.btnMc8.TabIndex = 24;
+            this.btnMc8.Size = new System.Drawing.Size(115, 60);
+            this.btnMc8.TabIndex = 25;
             // 
             // btnMc7
             // 
@@ -1722,13 +1633,15 @@
             this.btnMc7.Appearance.Options.UseFont = true;
             this.btnMc7.Appearance.Options.UseForeColor = true;
             this.btnMc7.Appearance.Options.UseTextOptions = true;
+            this.btnMc7.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.btnMc7.Appearance.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
             this.btnMc7.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
             this.btnMc7.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
-            this.btnMc7.Location = new System.Drawing.Point(121, 52);
+            this.btnMc7.Location = new System.Drawing.Point(236, 66);
             this.btnMc7.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnMc7.Name = "btnMc7";
-            this.btnMc7.Size = new System.Drawing.Size(116, 44);
-            this.btnMc7.TabIndex = 23;
+            this.btnMc7.Size = new System.Drawing.Size(115, 60);
+            this.btnMc7.TabIndex = 24;
             // 
             // btnMc6
             // 
@@ -1739,13 +1652,15 @@
             this.btnMc6.Appearance.Options.UseFont = true;
             this.btnMc6.Appearance.Options.UseForeColor = true;
             this.btnMc6.Appearance.Options.UseTextOptions = true;
+            this.btnMc6.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.btnMc6.Appearance.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
             this.btnMc6.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
             this.btnMc6.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
-            this.btnMc6.Location = new System.Drawing.Point(4, 52);
+            this.btnMc6.Location = new System.Drawing.Point(120, 66);
             this.btnMc6.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnMc6.Name = "btnMc6";
-            this.btnMc6.Size = new System.Drawing.Size(116, 44);
-            this.btnMc6.TabIndex = 22;
+            this.btnMc6.Size = new System.Drawing.Size(115, 60);
+            this.btnMc6.TabIndex = 23;
             // 
             // btnMc5
             // 
@@ -1756,13 +1671,15 @@
             this.btnMc5.Appearance.Options.UseFont = true;
             this.btnMc5.Appearance.Options.UseForeColor = true;
             this.btnMc5.Appearance.Options.UseTextOptions = true;
+            this.btnMc5.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.btnMc5.Appearance.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
             this.btnMc5.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
             this.btnMc5.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
-            this.btnMc5.Location = new System.Drawing.Point(590, 5);
+            this.btnMc5.Location = new System.Drawing.Point(4, 66);
             this.btnMc5.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnMc5.Name = "btnMc5";
-            this.btnMc5.Size = new System.Drawing.Size(116, 44);
-            this.btnMc5.TabIndex = 21;
+            this.btnMc5.Size = new System.Drawing.Size(115, 60);
+            this.btnMc5.TabIndex = 22;
             // 
             // btnMc4
             // 
@@ -1773,12 +1690,14 @@
             this.btnMc4.Appearance.Options.UseFont = true;
             this.btnMc4.Appearance.Options.UseForeColor = true;
             this.btnMc4.Appearance.Options.UseTextOptions = true;
+            this.btnMc4.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.btnMc4.Appearance.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
             this.btnMc4.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
             this.btnMc4.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
-            this.btnMc4.Location = new System.Drawing.Point(472, 5);
+            this.btnMc4.Location = new System.Drawing.Point(468, 5);
             this.btnMc4.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnMc4.Name = "btnMc4";
-            this.btnMc4.Size = new System.Drawing.Size(116, 44);
+            this.btnMc4.Size = new System.Drawing.Size(115, 60);
             this.btnMc4.TabIndex = 20;
             // 
             // btnMc3
@@ -1790,12 +1709,14 @@
             this.btnMc3.Appearance.Options.UseFont = true;
             this.btnMc3.Appearance.Options.UseForeColor = true;
             this.btnMc3.Appearance.Options.UseTextOptions = true;
+            this.btnMc3.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.btnMc3.Appearance.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
             this.btnMc3.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
             this.btnMc3.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
-            this.btnMc3.Location = new System.Drawing.Point(355, 5);
+            this.btnMc3.Location = new System.Drawing.Point(352, 5);
             this.btnMc3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnMc3.Name = "btnMc3";
-            this.btnMc3.Size = new System.Drawing.Size(116, 44);
+            this.btnMc3.Size = new System.Drawing.Size(115, 60);
             this.btnMc3.TabIndex = 19;
             // 
             // btnMc2
@@ -1807,12 +1728,14 @@
             this.btnMc2.Appearance.Options.UseFont = true;
             this.btnMc2.Appearance.Options.UseForeColor = true;
             this.btnMc2.Appearance.Options.UseTextOptions = true;
+            this.btnMc2.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.btnMc2.Appearance.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
             this.btnMc2.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
             this.btnMc2.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
-            this.btnMc2.Location = new System.Drawing.Point(238, 5);
+            this.btnMc2.Location = new System.Drawing.Point(236, 5);
             this.btnMc2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnMc2.Name = "btnMc2";
-            this.btnMc2.Size = new System.Drawing.Size(116, 44);
+            this.btnMc2.Size = new System.Drawing.Size(115, 60);
             this.btnMc2.TabIndex = 18;
             // 
             // btnMc1
@@ -1824,12 +1747,14 @@
             this.btnMc1.Appearance.Options.UseFont = true;
             this.btnMc1.Appearance.Options.UseForeColor = true;
             this.btnMc1.Appearance.Options.UseTextOptions = true;
+            this.btnMc1.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.btnMc1.Appearance.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
             this.btnMc1.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
             this.btnMc1.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
-            this.btnMc1.Location = new System.Drawing.Point(121, 5);
+            this.btnMc1.Location = new System.Drawing.Point(120, 5);
             this.btnMc1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnMc1.Name = "btnMc1";
-            this.btnMc1.Size = new System.Drawing.Size(116, 44);
+            this.btnMc1.Size = new System.Drawing.Size(115, 60);
             this.btnMc1.TabIndex = 17;
             // 
             // btnMc0
@@ -1841,12 +1766,14 @@
             this.btnMc0.Appearance.Options.UseFont = true;
             this.btnMc0.Appearance.Options.UseForeColor = true;
             this.btnMc0.Appearance.Options.UseTextOptions = true;
+            this.btnMc0.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.btnMc0.Appearance.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
             this.btnMc0.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
             this.btnMc0.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
             this.btnMc0.Location = new System.Drawing.Point(4, 5);
             this.btnMc0.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnMc0.Name = "btnMc0";
-            this.btnMc0.Size = new System.Drawing.Size(116, 44);
+            this.btnMc0.Size = new System.Drawing.Size(115, 60);
             this.btnMc0.TabIndex = 16;
             // 
             // panelControl2
@@ -1872,7 +1799,7 @@
             this.panelControl2.Location = new System.Drawing.Point(4, 4);
             this.panelControl2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panelControl2.Name = "panelControl2";
-            this.panelControl2.Size = new System.Drawing.Size(865, 192);
+            this.panelControl2.Size = new System.Drawing.Size(733, 216);
             this.panelControl2.TabIndex = 3;
             // 
             // btnMi14
@@ -1886,10 +1813,10 @@
             this.btnMi14.Appearance.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
             this.btnMi14.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
             this.btnMi14.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
-            this.btnMi14.Location = new System.Drawing.Point(400, 144);
+            this.btnMi14.Location = new System.Drawing.Point(338, 161);
             this.btnMi14.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnMi14.Name = "btnMi14";
-            this.btnMi14.Size = new System.Drawing.Size(195, 43);
+            this.btnMi14.Size = new System.Drawing.Size(166, 50);
             this.btnMi14.TabIndex = 34;
             // 
             // btnMi12
@@ -1903,10 +1830,10 @@
             this.btnMi12.Appearance.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
             this.btnMi12.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
             this.btnMi12.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
-            this.btnMi12.Location = new System.Drawing.Point(4, 144);
+            this.btnMi12.Location = new System.Drawing.Point(4, 161);
             this.btnMi12.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnMi12.Name = "btnMi12";
-            this.btnMi12.Size = new System.Drawing.Size(195, 43);
+            this.btnMi12.Size = new System.Drawing.Size(166, 50);
             this.btnMi12.TabIndex = 32;
             // 
             // btnMi13
@@ -1920,10 +1847,10 @@
             this.btnMi13.Appearance.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
             this.btnMi13.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
             this.btnMi13.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
-            this.btnMi13.Location = new System.Drawing.Point(202, 144);
+            this.btnMi13.Location = new System.Drawing.Point(171, 161);
             this.btnMi13.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnMi13.Name = "btnMi13";
-            this.btnMi13.Size = new System.Drawing.Size(195, 43);
+            this.btnMi13.Size = new System.Drawing.Size(166, 50);
             this.btnMi13.TabIndex = 33;
             // 
             // btnMi15
@@ -1937,10 +1864,10 @@
             this.btnMi15.Appearance.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
             this.btnMi15.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
             this.btnMi15.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
-            this.btnMi15.Location = new System.Drawing.Point(598, 144);
+            this.btnMi15.Location = new System.Drawing.Point(505, 161);
             this.btnMi15.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnMi15.Name = "btnMi15";
-            this.btnMi15.Size = new System.Drawing.Size(195, 43);
+            this.btnMi15.Size = new System.Drawing.Size(166, 50);
             this.btnMi15.TabIndex = 35;
             // 
             // btnMi7
@@ -1954,10 +1881,10 @@
             this.btnMi7.Appearance.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
             this.btnMi7.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
             this.btnMi7.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
-            this.btnMi7.Location = new System.Drawing.Point(598, 52);
+            this.btnMi7.Location = new System.Drawing.Point(505, 57);
             this.btnMi7.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnMi7.Name = "btnMi7";
-            this.btnMi7.Size = new System.Drawing.Size(195, 43);
+            this.btnMi7.Size = new System.Drawing.Size(166, 50);
             this.btnMi7.TabIndex = 31;
             // 
             // btnMi3
@@ -1971,10 +1898,10 @@
             this.btnMi3.Appearance.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
             this.btnMi3.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
             this.btnMi3.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
-            this.btnMi3.Location = new System.Drawing.Point(598, 6);
+            this.btnMi3.Location = new System.Drawing.Point(505, 5);
             this.btnMi3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnMi3.Name = "btnMi3";
-            this.btnMi3.Size = new System.Drawing.Size(195, 43);
+            this.btnMi3.Size = new System.Drawing.Size(166, 50);
             this.btnMi3.TabIndex = 31;
             // 
             // btnMi6
@@ -1988,15 +1915,15 @@
             this.btnMi6.Appearance.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
             this.btnMi6.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
             this.btnMi6.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
-            this.btnMi6.Location = new System.Drawing.Point(400, 52);
+            this.btnMi6.Location = new System.Drawing.Point(338, 57);
             this.btnMi6.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnMi6.Name = "btnMi6";
-            this.btnMi6.Size = new System.Drawing.Size(195, 43);
+            this.btnMi6.Size = new System.Drawing.Size(166, 50);
             this.btnMi6.TabIndex = 30;
             // 
             // btnMiRight
             // 
-            this.btnMiRight.Appearance.BackColor = System.Drawing.Color.Red;
+            this.btnMiRight.Appearance.BackColor = System.Drawing.Color.Gold;
             this.btnMiRight.Appearance.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold);
             this.btnMiRight.Appearance.ForeColor = System.Drawing.Color.White;
             this.btnMiRight.Appearance.Options.UseBackColor = true;
@@ -2006,10 +1933,10 @@
             this.btnMiRight.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
             this.btnMiRight.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
             this.btnMiRight.ImageOptions.Location = DevExpress.XtraEditors.ImageLocation.MiddleCenter;
-            this.btnMiRight.Location = new System.Drawing.Point(798, 6);
+            this.btnMiRight.Location = new System.Drawing.Point(673, 5);
             this.btnMiRight.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnMiRight.Name = "btnMiRight";
-            this.btnMiRight.Size = new System.Drawing.Size(63, 93);
+            this.btnMiRight.Size = new System.Drawing.Size(56, 103);
             this.btnMiRight.TabIndex = 14;
             this.btnMiRight.Text = ">>";
             this.btnMiRight.Click += new System.EventHandler(this.btnMiLeft_Click);
@@ -2025,10 +1952,10 @@
             this.btnMi5.Appearance.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
             this.btnMi5.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
             this.btnMi5.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
-            this.btnMi5.Location = new System.Drawing.Point(202, 52);
+            this.btnMi5.Location = new System.Drawing.Point(171, 57);
             this.btnMi5.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnMi5.Name = "btnMi5";
-            this.btnMi5.Size = new System.Drawing.Size(195, 43);
+            this.btnMi5.Size = new System.Drawing.Size(166, 50);
             this.btnMi5.TabIndex = 29;
             // 
             // btnMi4
@@ -2042,10 +1969,10 @@
             this.btnMi4.Appearance.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
             this.btnMi4.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
             this.btnMi4.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
-            this.btnMi4.Location = new System.Drawing.Point(4, 52);
+            this.btnMi4.Location = new System.Drawing.Point(4, 57);
             this.btnMi4.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnMi4.Name = "btnMi4";
-            this.btnMi4.Size = new System.Drawing.Size(195, 43);
+            this.btnMi4.Size = new System.Drawing.Size(166, 50);
             this.btnMi4.TabIndex = 28;
             // 
             // btnMi2
@@ -2059,15 +1986,15 @@
             this.btnMi2.Appearance.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
             this.btnMi2.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
             this.btnMi2.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
-            this.btnMi2.Location = new System.Drawing.Point(400, 6);
+            this.btnMi2.Location = new System.Drawing.Point(338, 5);
             this.btnMi2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnMi2.Name = "btnMi2";
-            this.btnMi2.Size = new System.Drawing.Size(195, 43);
+            this.btnMi2.Size = new System.Drawing.Size(166, 50);
             this.btnMi2.TabIndex = 30;
             // 
             // btnMiLeft
             // 
-            this.btnMiLeft.Appearance.BackColor = System.Drawing.Color.Red;
+            this.btnMiLeft.Appearance.BackColor = System.Drawing.Color.Gold;
             this.btnMiLeft.Appearance.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold);
             this.btnMiLeft.Appearance.ForeColor = System.Drawing.Color.White;
             this.btnMiLeft.Appearance.Options.UseBackColor = true;
@@ -2077,10 +2004,10 @@
             this.btnMiLeft.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
             this.btnMiLeft.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
             this.btnMiLeft.ImageOptions.Location = DevExpress.XtraEditors.ImageLocation.MiddleCenter;
-            this.btnMiLeft.Location = new System.Drawing.Point(798, 98);
+            this.btnMiLeft.Location = new System.Drawing.Point(673, 108);
             this.btnMiLeft.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnMiLeft.Name = "btnMiLeft";
-            this.btnMiLeft.Size = new System.Drawing.Size(63, 89);
+            this.btnMiLeft.Size = new System.Drawing.Size(56, 103);
             this.btnMiLeft.TabIndex = 15;
             this.btnMiLeft.Text = "<<";
             this.btnMiLeft.Click += new System.EventHandler(this.btnMiRight_Click);
@@ -2096,10 +2023,10 @@
             this.btnMi1.Appearance.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
             this.btnMi1.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
             this.btnMi1.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
-            this.btnMi1.Location = new System.Drawing.Point(202, 6);
+            this.btnMi1.Location = new System.Drawing.Point(171, 5);
             this.btnMi1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnMi1.Name = "btnMi1";
-            this.btnMi1.Size = new System.Drawing.Size(195, 43);
+            this.btnMi1.Size = new System.Drawing.Size(166, 50);
             this.btnMi1.TabIndex = 29;
             // 
             // btnMi0
@@ -2113,10 +2040,10 @@
             this.btnMi0.Appearance.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
             this.btnMi0.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
             this.btnMi0.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
-            this.btnMi0.Location = new System.Drawing.Point(4, 6);
+            this.btnMi0.Location = new System.Drawing.Point(4, 5);
             this.btnMi0.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnMi0.Name = "btnMi0";
-            this.btnMi0.Size = new System.Drawing.Size(195, 43);
+            this.btnMi0.Size = new System.Drawing.Size(166, 50);
             this.btnMi0.TabIndex = 28;
             // 
             // btnMi10
@@ -2130,10 +2057,10 @@
             this.btnMi10.Appearance.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
             this.btnMi10.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
             this.btnMi10.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
-            this.btnMi10.Location = new System.Drawing.Point(400, 98);
+            this.btnMi10.Location = new System.Drawing.Point(338, 109);
             this.btnMi10.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnMi10.Name = "btnMi10";
-            this.btnMi10.Size = new System.Drawing.Size(195, 43);
+            this.btnMi10.Size = new System.Drawing.Size(166, 50);
             this.btnMi10.TabIndex = 10;
             // 
             // btnMi8
@@ -2147,10 +2074,10 @@
             this.btnMi8.Appearance.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
             this.btnMi8.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
             this.btnMi8.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
-            this.btnMi8.Location = new System.Drawing.Point(4, 98);
+            this.btnMi8.Location = new System.Drawing.Point(4, 109);
             this.btnMi8.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnMi8.Name = "btnMi8";
-            this.btnMi8.Size = new System.Drawing.Size(195, 43);
+            this.btnMi8.Size = new System.Drawing.Size(166, 50);
             this.btnMi8.TabIndex = 3;
             // 
             // btnMi9
@@ -2164,10 +2091,10 @@
             this.btnMi9.Appearance.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
             this.btnMi9.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
             this.btnMi9.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
-            this.btnMi9.Location = new System.Drawing.Point(202, 98);
+            this.btnMi9.Location = new System.Drawing.Point(171, 109);
             this.btnMi9.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnMi9.Name = "btnMi9";
-            this.btnMi9.Size = new System.Drawing.Size(195, 43);
+            this.btnMi9.Size = new System.Drawing.Size(166, 50);
             this.btnMi9.TabIndex = 9;
             // 
             // btnMi11
@@ -2181,11 +2108,22 @@
             this.btnMi11.Appearance.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
             this.btnMi11.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
             this.btnMi11.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
-            this.btnMi11.Location = new System.Drawing.Point(598, 98);
+            this.btnMi11.Location = new System.Drawing.Point(505, 109);
             this.btnMi11.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnMi11.Name = "btnMi11";
-            this.btnMi11.Size = new System.Drawing.Size(195, 43);
+            this.btnMi11.Size = new System.Drawing.Size(166, 50);
             this.btnMi11.TabIndex = 11;
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(1246, 330);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(92, 40);
+            this.button1.TabIndex = 34;
+            this.button1.Text = "button1";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Visible = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // btnOrderType
             // 
@@ -2198,7 +2136,7 @@
             this.btnOrderType.Appearance.Options.UseTextOptions = true;
             this.btnOrderType.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
             this.btnOrderType.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
-            this.btnOrderType.Location = new System.Drawing.Point(381, 211);
+            this.btnOrderType.Location = new System.Drawing.Point(1246, 162);
             this.btnOrderType.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnOrderType.Name = "btnOrderType";
             this.btnOrderType.Size = new System.Drawing.Size(97, 33);
@@ -2210,10 +2148,10 @@
             // 
             this.panelControl6.Controls.Add(this.lblType);
             this.panelControl6.Controls.Add(this.lblCheck);
-            this.panelControl6.Location = new System.Drawing.Point(18, 207);
+            this.panelControl6.Location = new System.Drawing.Point(1242, 217);
             this.panelControl6.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panelControl6.Name = "panelControl6";
-            this.panelControl6.Size = new System.Drawing.Size(341, 31);
+            this.panelControl6.Size = new System.Drawing.Size(180, 31);
             this.panelControl6.TabIndex = 31;
             this.panelControl6.Visible = false;
             // 
@@ -2236,7 +2174,7 @@
             this.lblCheck.Appearance.Options.UseTextOptions = true;
             this.lblCheck.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
             this.lblCheck.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
-            this.lblCheck.Location = new System.Drawing.Point(239, 4);
+            this.lblCheck.Location = new System.Drawing.Point(71, 5);
             this.lblCheck.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.lblCheck.Name = "lblCheck";
             this.lblCheck.Size = new System.Drawing.Size(98, 23);
@@ -2252,7 +2190,7 @@
             this.btnCustInfo.Appearance.Options.UseForeColor = true;
             this.btnCustInfo.Appearance.Options.UseTextOptions = true;
             this.btnCustInfo.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
-            this.btnCustInfo.Location = new System.Drawing.Point(495, 203);
+            this.btnCustInfo.Location = new System.Drawing.Point(1246, 259);
             this.btnCustInfo.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnCustInfo.Name = "btnCustInfo";
             this.btnCustInfo.Size = new System.Drawing.Size(70, 47);
@@ -2267,7 +2205,7 @@
             this.btnSearchMeal.Appearance.Options.UseFont = true;
             this.btnSearchMeal.Appearance.Options.UseTextOptions = true;
             this.btnSearchMeal.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
-            this.btnSearchMeal.Location = new System.Drawing.Point(584, 203);
+            this.btnSearchMeal.Location = new System.Drawing.Point(1246, 102);
             this.btnSearchMeal.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnSearchMeal.Name = "btnSearchMeal";
             this.btnSearchMeal.Size = new System.Drawing.Size(70, 47);
@@ -2280,12 +2218,17 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 14F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1244, 611);
+            this.ClientSize = new System.Drawing.Size(1103, 673);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.panelControl4);
+            this.Controls.Add(this.panelControl6);
+            this.Controls.Add(this.btnCustInfo);
+            this.Controls.Add(this.btnOrderType);
+            this.Controls.Add(this.btnSearchMeal);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "FrmTaMain";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
             this.Text = "FrmTaMain";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.FrmTaMain_Load);
@@ -2372,13 +2315,6 @@
         private DevExpress.XtraEditors.SimpleButton btnCid;
         private DevExpress.XtraEditors.SimpleButton btnPendOrder;
         private DevExpress.XtraEditors.PanelControl panelControl3;
-        private DevExpress.XtraEditors.SimpleButton btnMc41;
-        private DevExpress.XtraEditors.SimpleButton btnMc40;
-        private DevExpress.XtraEditors.SimpleButton btnMc39;
-        private DevExpress.XtraEditors.SimpleButton btnMc38;
-        private DevExpress.XtraEditors.SimpleButton btnMc37;
-        private DevExpress.XtraEditors.SimpleButton btnMc36;
-        private DevExpress.XtraEditors.SimpleButton btnMc35;
         private DevExpress.XtraEditors.SimpleButton btnMc34;
         private DevExpress.XtraEditors.SimpleButton btnMc33;
         private DevExpress.XtraEditors.SimpleButton btnMc32;
