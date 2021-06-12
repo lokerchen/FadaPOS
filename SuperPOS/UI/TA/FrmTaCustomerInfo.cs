@@ -1,28 +1,22 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Diagnostics;
-using System.Drawing;
-using System.Text;
-using System.Linq;
-using System.Runtime.InteropServices;
-using System.Threading.Tasks;
-using System.Windows.Forms;
-using Dapper;
+﻿using Dapper;
 using DevExpress.XtraEditors;
+using DevExpress.XtraGrid;
+using DevExpress.XtraGrid.Views.Grid;
 using SuperPOS.Common;
 using SuperPOS.Dapper;
 using SuperPOS.Domain.Entities;
+using System;
+using System.Collections.Generic;
+using System.Data;
+using System.Drawing;
+using System.Linq;
+using System.Runtime.InteropServices;
+using System.Windows.Forms;
 
 namespace SuperPOS.UI.TA
 {
     public partial class FrmTaCustomerInfo : DevExpress.XtraEditors.XtraForm
     {
-        //登录用户ID
-        private int usrID = 0;
-        //登录用户名字
-        private string usrName = "";
         //新增/更新
         private bool isAdd = false;
 
@@ -58,12 +52,14 @@ namespace SuperPOS.UI.TA
 
         private string sReadyTime = "";
 
+        private TextEdit objTxt = null;
+
         public string strReadyTime
         {
             get { return sReadyTime; }
             set { strReadyTime = value; }
         }
-        
+
         public FrmTaCustomerInfo()
         {
             InitializeComponent();
@@ -90,11 +86,11 @@ namespace SuperPOS.UI.TA
 
         private void FrmTaCustomerInfo_Load(object sender, EventArgs e)
         {
-            BindLuePostCode();
-            
+            //BindLuePostCode();
+
             //if (string.IsNullOrEmpty(cusNum)) return;
 
-            BindData("");
+            BindData("", "", "");
             //gvCompCustomer.BestFitColumns();
 
             if (CommonData.TaCustomer.Count(s => s.ID == cusID) > 0) cusNum = CommonData.TaCustomer.FirstOrDefault(s => s.ID == cusID).cusPhone;
@@ -109,7 +105,8 @@ namespace SuperPOS.UI.TA
                     txtAddress.Text = "";
                     txtPcZone.Text = "";
                     txtDistance.Text = "";
-                    luePostcode.Text = "";
+                    //luePostcode.Text = "";
+                    txtPostcode.Text = "";
                     txtDelCharge.Text = "";
                     txtReadyTime.Text = "";
                     txtIntNotes.Text = "";
@@ -126,7 +123,7 @@ namespace SuperPOS.UI.TA
             else
             {
                 string sTemp = string.IsNullOrEmpty(sCallerPhoneNum) ? cusNum : sCallerPhoneNum;
-                
+
                 bool isExit = false;
                 for (int i = 0; i < gvCompCustomer.RowCount; i++)
                 {
@@ -146,43 +143,84 @@ namespace SuperPOS.UI.TA
                     txtPhone.Text = sCallerPhoneNum;
                 }
             }
+
+            SetClick();
+
+            objTxt = txtPhone;
+
             asfc.controllInitializeSize(this);
         }
 
         private void gvCompCustomer_FocusedRowChanged(object sender, DevExpress.XtraGrid.Views.Base.FocusedRowChangedEventArgs e)
         {
+            if (isAdd) return;
             if (gvCompCustomer.RowCount < 1) return;
             else gvCompCustomer.FocusedRowHandle = gvCompCustomer.GetSelectedRows()[0];
             cusNum = txtPhone.Text = gvCompCustomer.GetRowCellValue(gvCompCustomer.FocusedRowHandle, "cusPhone") == null ? "" : gvCompCustomer.GetRowCellValue(gvCompCustomer.FocusedRowHandle, "cusPhone").ToString();
             txtName.Text = gvCompCustomer.GetRowCellValue(gvCompCustomer.FocusedRowHandle, "cusName") == null ? "" : gvCompCustomer.GetRowCellValue(gvCompCustomer.FocusedRowHandle, "cusName").ToString();
             txtHouseNo.Text = gvCompCustomer.GetRowCellValue(gvCompCustomer.FocusedRowHandle, "cusHouseNo") == null ? "" : gvCompCustomer.GetRowCellValue(gvCompCustomer.FocusedRowHandle, "cusHouseNo").ToString();
             txtAddress.Text = gvCompCustomer.GetRowCellValue(gvCompCustomer.FocusedRowHandle, "cusAddr") == null ? "" : gvCompCustomer.GetRowCellValue(gvCompCustomer.FocusedRowHandle, "cusAddr").ToString();
-            luePostcode.Properties.NullText = null;
-            luePostcode.Properties.NullText = gvCompCustomer.GetRowCellValue(gvCompCustomer.FocusedRowHandle, "cusPostcode") == null ? "" : gvCompCustomer.GetRowCellValue(gvCompCustomer.FocusedRowHandle, "cusPostcode").ToString();
+            //luePostcode.Properties.NullText = null;
+            //luePostcode.Properties.NullText = gvCompCustomer.GetRowCellValue(gvCompCustomer.FocusedRowHandle, "cusPostcode") == null ? "" : gvCompCustomer.GetRowCellValue(gvCompCustomer.FocusedRowHandle, "cusPostcode").ToString();
+            txtPostcode.Text = gvCompCustomer.GetRowCellValue(gvCompCustomer.FocusedRowHandle, "cusPostcode") == null ? "" : gvCompCustomer.GetRowCellValue(gvCompCustomer.FocusedRowHandle, "cusPostcode").ToString();
             txtDistance.Text = gvCompCustomer.GetRowCellValue(gvCompCustomer.FocusedRowHandle, "cusDistance") == null ? "" : gvCompCustomer.GetRowCellValue(gvCompCustomer.FocusedRowHandle, "cusDistance").ToString();
             txtPcZone.Text = gvCompCustomer.GetRowCellValue(gvCompCustomer.FocusedRowHandle, "cusPcZone") == null ? "" : gvCompCustomer.GetRowCellValue(gvCompCustomer.FocusedRowHandle, "cusPcZone").ToString();
             string sDelCharge = gvCompCustomer.GetRowCellValue(gvCompCustomer.FocusedRowHandle, "cusDelCharge") == null ? "" : gvCompCustomer.GetRowCellValue(gvCompCustomer.FocusedRowHandle, "cusDelCharge").ToString();
             txtDelCharge.Text = string.IsNullOrEmpty(sDelCharge) ? CommonDAL.GetDeliveryFee(txtDistance.Text, "0.00").ToString("0.00") : sDelCharge;
-            //txtReadyTime.Text = gvCompCustomer.GetRowCellValue(gvCompCustomer.FocusedRowHandle, "cusReadyTime") == null ? "" : gvCompCustomer.GetRowCellValue(gvCompCustomer.FocusedRowHandle, "cusReadyTime").ToString();
-            txtReadyTime.Text = "";
+            txtReadyTime.Text = gvCompCustomer.GetRowCellValue(gvCompCustomer.FocusedRowHandle, "cusReadyTime") == null ? "" : gvCompCustomer.GetRowCellValue(gvCompCustomer.FocusedRowHandle, "cusReadyTime").ToString();
+            //txtReadyTime.Text = "";
             txtIntNotes.Text = gvCompCustomer.GetRowCellValue(gvCompCustomer.FocusedRowHandle, "cusIntNotes") == null ? "" : gvCompCustomer.GetRowCellValue(gvCompCustomer.FocusedRowHandle, "cusIntNotes").ToString();
             txtNotesOnBill.Text = gvCompCustomer.GetRowCellValue(gvCompCustomer.FocusedRowHandle, "cusNotesOnBill") == null ? "" : gvCompCustomer.GetRowCellValue(gvCompCustomer.FocusedRowHandle, "cusNotesOnBill").ToString();
-            chkBlackListed.Checked = gvCompCustomer.GetRowCellValue(gvCompCustomer.FocusedRowHandle, "cusIsBlack").ToString().Equals("Y") ? true : false;
+            chkBlackListed.Checked = gvCompCustomer.GetRowCellValue(gvCompCustomer.FocusedRowHandle, "cusIsBlack") != null && (gvCompCustomer.GetRowCellValue(gvCompCustomer.FocusedRowHandle, "cusIsBlack").ToString().Equals("Y") ? true : false);
         }
 
-        private void BindData(string sPhone)
+        private void BindData(string sPhone, string sName, string sAddress)
         {
             //new SystemData().GetTaCustomer();
             CommonData.TaCustomer = new SQLiteDbHelper().QueryMultiByWhere<TaCustomerInfo>("Ta_Customer", "", null);
 
-            gridControlCustomer.DataSource = string.IsNullOrEmpty(sPhone) ? CommonData.TaCustomer.Where(s => !string.IsNullOrEmpty(s.cusPhone)).ToList() 
-                                                                          : CommonData.TaCustomer.Where(s => s.cusPhone.Equals(sPhone) && !string.IsNullOrEmpty(s.cusPhone)).ToList();
+            IList<TaCustomerInfo> lstTmp = CommonData.TaCustomer;
+
+            if (!string.IsNullOrEmpty(sPhone))
+            {
+                lstTmp = lstTmp.Where(s => s.cusPhone.Equals(sPhone)).ToList();
+            }
+
+            if (!string.IsNullOrEmpty(sName))
+            {
+                lstTmp = lstTmp.Where(s => s.cusName.Equals(sName)).ToList();
+            }
+
+            if (!string.IsNullOrEmpty(sAddress))
+            {
+                lstTmp = lstTmp.Where(s => s.cusAddr.Equals(sAddress)).ToList();
+            }
+
+            //gridControlCustomer.DataSource = string.IsNullOrEmpty(sPhone) ? CommonData.TaCustomer.Where(s => !string.IsNullOrEmpty(s.cusPhone)).ToList() 
+            //                                                              : CommonData.TaCustomer.Where(s => s.cusPhone.Equals(sPhone) && !string.IsNullOrEmpty(s.cusPhone)).ToList();
+
+            //var lstTmpPcs = from pcs in lstTmp
+            //                select new
+            //                {
+            //                    //ID = pcs.ID,
+            //                    Phone = pcs.cusPhone,
+            //                    Name = pcs.cusName,
+            //                    Address = pcs.cusAddr,
+            //                    PostCode = pcs.cusPostcode,
+            //                    Distance = pcs.cusDistance,
+            //                    PCZone = pcs.cusPcZone,
+            //                    BalckListed = pcs.cusIsBlack
+            //                };
+            
+            gridControlCustomer.DataSource = lstTmp;
+
             if (!string.IsNullOrEmpty(cusNum)) gvCompCustomer.FocusedRowHandle = gvCompCustomer.RowCount - 1;
         }
 
         private void btnNew_Click(object sender, EventArgs e)
         {
             isAdd = true;
+            isClear = false;
 
             txtPhone.Text = "";
             txtName.Text = "";
@@ -190,7 +228,8 @@ namespace SuperPOS.UI.TA
             txtAddress.Text = "";
             txtPcZone.Text = "";
             txtDistance.Text = "";
-            luePostcode.Text = "";
+            //luePostcode.Text = "";
+            txtPostcode.Text = "";
             txtDelCharge.Text = "";
             txtReadyTime.Text = "";
             txtIntNotes.Text = "";
@@ -228,7 +267,7 @@ namespace SuperPOS.UI.TA
                 return;
             }
 
-            if (string.IsNullOrEmpty(luePostcode.Text))
+            if (string.IsNullOrEmpty(txtPostcode.Text))
             {
                 CommonTool.ShowMessage("Postcode can not empty!");
                 return;
@@ -276,11 +315,12 @@ namespace SuperPOS.UI.TA
             taCustomerInfo.cusName = txtName.Text;
             taCustomerInfo.cusHouseNo = txtHouseNo.Text;
             taCustomerInfo.cusAddr = txtAddress.Text;
-            taCustomerInfo.cusPostcode = luePostcode.Text;
+            //taCustomerInfo.cusPostcode = luePostcode.Text;
+            taCustomerInfo.cusPostcode = txtPostcode.Text;
             taCustomerInfo.cusDistance = txtDistance.Text;
             taCustomerInfo.cusPcZone = txtPcZone.Text;
             //taCustomerInfo.cusDelCharge = (CommonDAL.GetDeliveryFee(txtDistance.Text, "0.00")).ToString("0.00"); 
-            taCustomerInfo.cusDelCharge = txtDelCharge.Text; 
+            taCustomerInfo.cusDelCharge = txtDelCharge.Text;
             taCustomerInfo.cusReadyTime = txtReadyTime.Text;
             taCustomerInfo.cusIntNotes = txtIntNotes.Text;
             taCustomerInfo.cusNotesOnBill = txtNotesOnBill.Text;
@@ -297,7 +337,9 @@ namespace SuperPOS.UI.TA
             }
             catch (Exception ex) { LogHelper.Error(this.Name, ex); }
 
-            BindData("");
+            gridControlPostcode.Visible = false;
+
+            BindData("", "", "");
 
             isAdd = false;
             isClear = false;
@@ -316,7 +358,7 @@ namespace SuperPOS.UI.TA
                 if (gvCompCustomer.RowCount < 1) return;
 
                 _control.DeleteEntity(CommonData.TaCustomer.FirstOrDefault(s => s.ID == Convert.ToInt32(gvCompCustomer.GetRowCellValue(gvCompCustomer.FocusedRowHandle, "ID"))));
-                BindData("");
+                BindData("", "", "");
 
                 if (gvCompCustomer.RowCount < 1)
                 {
@@ -326,7 +368,8 @@ namespace SuperPOS.UI.TA
                     txtAddress.Text = "";
                     txtPcZone.Text = "";
                     txtDistance.Text = "";
-                    luePostcode.Text = "";
+                    //luePostcode.Text = "";
+                    txtPostcode.Text = "";
                     txtDelCharge.Text = "";
                     txtReadyTime.Text = "";
                     txtIntNotes.Text = "";
@@ -334,6 +377,8 @@ namespace SuperPOS.UI.TA
                     chkBlackListed.Checked = false;
                 }
             }
+
+            isClear = false;
         }
 
         private void btnClear_Click(object sender, EventArgs e)
@@ -346,7 +391,8 @@ namespace SuperPOS.UI.TA
             txtAddress.Text = "";
             txtPcZone.Text = "";
             txtDistance.Text = "";
-            luePostcode.Text = "";
+            //luePostcode.Text = "";
+            txtPostcode.Text = "";
             txtDelCharge.Text = "";
             txtReadyTime.Text = "";
             txtIntNotes.Text = "";
@@ -385,7 +431,8 @@ namespace SuperPOS.UI.TA
                         taCustomerInfo.cusName = gvCompCustomer.GetRowCellValue(gvCompCustomer.FocusedRowHandle, "cusName") == null ? "" : gvCompCustomer.GetRowCellValue(gvCompCustomer.FocusedRowHandle, "cusName").ToString();
                         taCustomerInfo.cusHouseNo = gvCompCustomer.GetRowCellValue(gvCompCustomer.FocusedRowHandle, "cusHouseNo") == null ? "" : gvCompCustomer.GetRowCellValue(gvCompCustomer.FocusedRowHandle, "cusHouseNo").ToString();
                         taCustomerInfo.cusAddr = gvCompCustomer.GetRowCellValue(gvCompCustomer.FocusedRowHandle, "cusAddr") == null ? "" : gvCompCustomer.GetRowCellValue(gvCompCustomer.FocusedRowHandle, "cusAddr").ToString();
-                        taCustomerInfo.cusPostcode = gvCompCustomer.GetRowCellValue(gvCompCustomer.FocusedRowHandle, "cusPostcode") == null ? "" : gvCompCustomer.GetRowCellValue(gvCompCustomer.FocusedRowHandle, "cusPostcode").ToString();
+                        //taCustomerInfo.cusPostcode = gvCompCustomer.GetRowCellValue(gvCompCustomer.FocusedRowHandle, "cusPostcode") == null ? "" : gvCompCustomer.GetRowCellValue(gvCompCustomer.FocusedRowHandle, "cusPostcode").ToString();
+                        taCustomerInfo.cusPostcode = txtPostcode.Text;
                         taCustomerInfo.cusDistance = gvCompCustomer.GetRowCellValue(gvCompCustomer.FocusedRowHandle, "cusDistance") == null ? "" : gvCompCustomer.GetRowCellValue(gvCompCustomer.FocusedRowHandle, "cusDistance").ToString();
                         taCustomerInfo.cusPcZone = gvCompCustomer.GetRowCellValue(gvCompCustomer.FocusedRowHandle, "cusPcZone") == null ? "" : gvCompCustomer.GetRowCellValue(gvCompCustomer.FocusedRowHandle, "cusPcZone").ToString();
                         //taCustomerInfo.cusDelCharge = gvCompCustomer.GetRowCellValue(gvCompCustomer.FocusedRowHandle, "cusDelCharge") == null ? "" : gvCompCustomer.GetRowCellValue(gvCompCustomer.FocusedRowHandle, "cusDelCharge").ToString();
@@ -397,7 +444,7 @@ namespace SuperPOS.UI.TA
                     }
                 }
             }
-            
+
             this.DialogResult = DialogResult.OK;
             Close();
         }
@@ -453,72 +500,50 @@ namespace SuperPOS.UI.TA
         /// <summary>
         /// 绑定Print Name
         /// </summary>
-        private void BindLuePostCode()
-        {
-            //new SystemData().GetTaPostcodeSet();
+        //private void BindLuePostCode()
+        //{
+        //    //new SystemData().GetTaPostcodeSet();
 
-            var lstPcs = from pcs in CommonData.TaPostcodeSet
-                         select new
-                         {
-                             ID = pcs.ID,
-                             PostCode = pcs.PostCode,
-                             Address = pcs.PCAddr,
-                             Zone = pcs.PCZone,
-                             Distance = pcs.PCDist
-                         };
-            luePostcode.Properties.DataSource = lstPcs.ToList();
-            luePostcode.Properties.DisplayMember = "PostCode";
-            luePostcode.Properties.ValueMember = "PostCode";
-        }
+        //    var lstPcs = from pcs in CommonData.TaPostcodeSet
+        //                 select new
+        //                 {
+        //                     ID = pcs.ID,
+        //                     PostCode = pcs.PostCode,
+        //                     Address = pcs.PCAddr,
+        //                     Zone = pcs.PCZone,
+        //                     Distance = pcs.PCDist
+        //                 };
+        //    luePostcode.Properties.DataSource = lstPcs.ToList();
+        //    luePostcode.Properties.DisplayMember = "PostCode";
+        //    luePostcode.Properties.ValueMember = "PostCode";
+        //}
         #endregion
 
         private void luePostcode_EditValueChanged(object sender, EventArgs e)
         {
-            if (!string.IsNullOrEmpty(luePostcode.Text))
-            {
-                //new SystemData().GetTaPostcodeSet();
+            //if (!string.IsNullOrEmpty(luePostcode.Text))
+            //{
+            //    //new SystemData().GetTaPostcodeSet();
 
-                //var lstPcs = CommonData.TaPostcodeSet.Where(s => s.PostCode.Equals(luePostcode.EditValue));
+            //    //var lstPcs = CommonData.TaPostcodeSet.Where(s => s.PostCode.Equals(luePostcode.EditValue));
 
-                string strSqlWhere = "";
-                DynamicParameters dynamicParams = new DynamicParameters();
+            //    string strSqlWhere = "";
+            //    DynamicParameters dynamicParams = new DynamicParameters();
 
-                strSqlWhere = " PostCode=@PostCode";
+            //    strSqlWhere = " PostCode=@PostCode";
 
-                dynamicParams.Add("PostCode", luePostcode.EditValue);
+            //    dynamicParams.Add("PostCode", luePostcode.EditValue);
 
-                var lstPcs = new SQLiteDbHelper().QueryMultiByWhere<TaPostcodeSetInfo>("Ta_Postcode_Set", strSqlWhere, dynamicParams);
-                
-                if (lstPcs.Any())
-                {
-                    TaPostcodeSetInfo taPostcodeSetInfo = lstPcs.FirstOrDefault();
-                    txtPcZone.Text = taPostcodeSetInfo.PCZone;
-                    txtDistance.Text = taPostcodeSetInfo.PCDist;
-                    txtAddress.Text = taPostcodeSetInfo.PCAddr;
-                }
-            }
-        }
+            //    var lstPcs = new SQLiteDbHelper().QueryMultiByWhere<TaPostcodeSetInfo>("Ta_Postcode_Set", strSqlWhere, dynamicParams);
 
-        private void gvCompCustomer_RowClick(object sender, DevExpress.XtraGrid.Views.Grid.RowClickEventArgs e)
-        {
-            //if (gvCompCustomer.RowCount < 1) return;
-            //else gvCompCustomer.FocusedRowHandle = gvCompCustomer.GetSelectedRows()[0];
-            //cusNum = txtPhone.Text = gvCompCustomer.GetRowCellValue(gvCompCustomer.FocusedRowHandle, "cusPhone") == null ? "" : gvCompCustomer.GetRowCellValue(gvCompCustomer.FocusedRowHandle, "cusPhone").ToString();
-            //txtName.Text = gvCompCustomer.GetRowCellValue(gvCompCustomer.FocusedRowHandle, "cusName") == null ? "" : gvCompCustomer.GetRowCellValue(gvCompCustomer.FocusedRowHandle, "cusName").ToString();
-            //txtHouseNo.Text = gvCompCustomer.GetRowCellValue(gvCompCustomer.FocusedRowHandle, "cusHouseNo") == null ? "" : gvCompCustomer.GetRowCellValue(gvCompCustomer.FocusedRowHandle, "cusHouseNo").ToString();
-            //txtAddress.Text = gvCompCustomer.GetRowCellValue(gvCompCustomer.FocusedRowHandle, "cusAddr") == null ? "" : gvCompCustomer.GetRowCellValue(gvCompCustomer.FocusedRowHandle, "cusAddr").ToString();
-            ////luePostcode.Properties.NullText = null;
-            //luePostcode.EditValue = gvCompCustomer.GetRowCellValue(gvCompCustomer.FocusedRowHandle, "cusPostcode") == null ? "" : gvCompCustomer.GetRowCellValue(gvCompCustomer.FocusedRowHandle, "cusPostcode").ToString();
-            ////luePostcode.Text = gvCompCustomer.GetRowCellValue(gvCompCustomer.FocusedRowHandle, "cusPostcode") == null ? "" : gvCompCustomer.GetRowCellValue(gvCompCustomer.FocusedRowHandle, "cusPostcode").ToString();
-            //txtDistance.Text = gvCompCustomer.GetRowCellValue(gvCompCustomer.FocusedRowHandle, "cusDistance") == null ? "" : gvCompCustomer.GetRowCellValue(gvCompCustomer.FocusedRowHandle, "cusDistance").ToString();
-            //txtPcZone.Text = gvCompCustomer.GetRowCellValue(gvCompCustomer.FocusedRowHandle, "cusPcZone") == null ? "" : gvCompCustomer.GetRowCellValue(gvCompCustomer.FocusedRowHandle, "cusPcZone").ToString();
-            //string sDelCharge = gvCompCustomer.GetRowCellValue(gvCompCustomer.FocusedRowHandle, "cusDelCharge") == null ? "" : gvCompCustomer.GetRowCellValue(gvCompCustomer.FocusedRowHandle, "cusDelCharge").ToString();
-            //txtDelCharge.Text = string.IsNullOrEmpty(sDelCharge) ? CommonDAL.GetDeliveryFee(txtDistance.Text, "0.00").ToString("0.00") : sDelCharge;
-            ////txtReadyTime.Text = gvCompCustomer.GetRowCellValue(gvCompCustomer.FocusedRowHandle, "cusReadyTime") == null ? "" : gvCompCustomer.GetRowCellValue(gvCompCustomer.FocusedRowHandle, "cusReadyTime").ToString();
-            //txtReadyTime.Text = "";
-            //txtIntNotes.Text = gvCompCustomer.GetRowCellValue(gvCompCustomer.FocusedRowHandle, "cusIntNotes") == null ? "" : gvCompCustomer.GetRowCellValue(gvCompCustomer.FocusedRowHandle, "cusIntNotes").ToString();
-            //txtNotesOnBill.Text = gvCompCustomer.GetRowCellValue(gvCompCustomer.FocusedRowHandle, "cusNotesOnBill") == null ? "" : gvCompCustomer.GetRowCellValue(gvCompCustomer.FocusedRowHandle, "cusNotesOnBill").ToString();
-            //chkBlackListed.Checked = gvCompCustomer.GetRowCellValue(gvCompCustomer.FocusedRowHandle, "cusIsBlack").ToString().Equals("Y") ? true : false;
+            //    if (lstPcs.Any())
+            //    {
+            //        TaPostcodeSetInfo taPostcodeSetInfo = lstPcs.FirstOrDefault();
+            //        txtPcZone.Text = taPostcodeSetInfo.PCZone;
+            //        txtDistance.Text = taPostcodeSetInfo.PCDist;
+            //        txtAddress.Text = taPostcodeSetInfo.PCAddr;
+            //    }
+            //}
         }
 
         private void txtReadyTime_Click(object sender, EventArgs e)
@@ -543,6 +568,278 @@ namespace SuperPOS.UI.TA
         private void txtDistance_EditValueChanged(object sender, EventArgs e)
         {
             txtDelCharge.Text = (CommonDAL.GetDeliveryFee(txtDistance.Text, "0.00")).ToString("0.00");
+        }
+
+        #region 键盘按钮Click
+        /// <summary>
+        /// 键盘按钮Click
+        /// </summary>
+        private void SetClick()
+        {
+            btn1.Click += btn_Click;
+            btn2.Click += btn_Click;
+            btn3.Click += btn_Click;
+            btn4.Click += btn_Click;
+            btn5.Click += btn_Click;
+            btn6.Click += btn_Click;
+            btn7.Click += btn_Click;
+            btn8.Click += btn_Click;
+            btn9.Click += btn_Click;
+            btn0.Click += btn_Click;
+
+            btnQ.Click += btn_Click;
+            btnW.Click += btn_Click;
+            btnE.Click += btn_Click;
+            btnR.Click += btn_Click;
+            btnT.Click += btn_Click;
+            btnY.Click += btn_Click;
+            btnU.Click += btn_Click;
+            btnI.Click += btn_Click;
+            btnO.Click += btn_Click;
+            btnP.Click += btn_Click;
+            btnA.Click += btn_Click;
+            btnS.Click += btn_Click;
+            btnD.Click += btn_Click;
+            btnF.Click += btn_Click;
+            btnG.Click += btn_Click;
+            btnH.Click += btn_Click;
+            btnJ.Click += btn_Click;
+            btnK.Click += btn_Click;
+            btnL.Click += btn_Click;
+            btnZ.Click += btn_Click;
+            btnX.Click += btn_Click;
+            btnC.Click += btn_Click;
+            btnV.Click += btn_Click;
+            btnB.Click += btn_Click;
+            btnN.Click += btn_Click;
+            btnM.Click += btn_Click;
+
+            btnBack.Click += btn_Click;
+            btnPoint.Click += btn_Click;
+            btnEnter.Click += btn_Click;
+            btnSpace.Click += btn_Click;
+            btnClr.Click += btn_Click;
+            btnLeft.Click += btn_Click;
+            btnRight.Click += btn_Click;
+        }
+
+        #endregion
+
+        #region 数字按钮输入事件
+        private void btn_Click(object sender, EventArgs e)
+        {
+            var btn = (SimpleButton)sender;
+
+            switch (btn.Name.Replace("btn", ""))
+            {
+                case "Back":
+                    objTxt.Text = objTxt.Text.Length > 0 ? objTxt.Text.Substring(0, objTxt.Text.Length - 1) : "";
+                    break;
+                case "Point":
+                    objTxt.Text += @".";
+                    break;
+                case "Enter":
+                    break;
+                case "Space":
+                    objTxt.Text += @" ";
+                    break;
+                case "Clr":
+                    objTxt.Text = "";
+                    break;
+                case "Left":
+                    //objTxt.Select(1, 0);
+                    break;
+                case "Right":
+                    break;
+                default:
+                    objTxt.Text += btn.Text;
+                    break;
+            }
+
+            GridView gv = new GridView();
+            string strColumn = "";
+
+            if (objTxt.Name.Equals("txtPostcode"))
+            {
+                gridControlPostcode.Visible = true;
+                gridControlPostcode.Size = gridControlCustomer.Size;
+                gridControlPostcode.Location = new Point(gridControlCustomer.Location.X, gridControlCustomer.Location.Y);
+                //gvPostcode.Columns["pcPostcode"].FilterInfo = new DevExpress.XtraGrid.Columns.ColumnFilterInfo("[pcPostcode] LIKE '%" + objTxt.Text + "%'");
+                gv = gvPostcode;
+                strColumn = "pcPostcode";
+            }
+            else if (objTxt.Name.Equals("txtPhone"))
+            {
+                gridControlPostcode.Visible = false;
+                gv = gvCompCustomer;
+                strColumn = "cusPhone";
+            }
+            else if (objTxt.Name.Equals("txtName"))
+            {
+                gridControlPostcode.Visible = false;
+                gv = gvCompCustomer;
+                strColumn = "cusName";
+            }
+            else if (objTxt.Name.Equals("txtAddress"))
+            {
+                gridControlPostcode.Visible = false;
+                gv = gvCompCustomer;
+                strColumn = "cusAddr";
+            }
+            
+            if (!string.IsNullOrEmpty(strColumn))
+            {
+                if (isAdd) gv.Columns[strColumn].FilterInfo = new DevExpress.XtraGrid.Columns.ColumnFilterInfo("[" + strColumn + "] LIKE '%" + objTxt.Text + "%'");
+            }
+            
+        }
+        #endregion
+
+        #region Text文本框MouseDown事件
+        private void txtPhone_MouseDown(object sender, MouseEventArgs e)
+        {
+            objTxt = txtPhone;
+
+            if (isAdd) BindData(txtPhone.Text, txtName.Text, txtAddress.Text);
+            else BindData("", "", "");
+        }
+
+        private void txtName_MouseDown(object sender, MouseEventArgs e)
+        {
+            objTxt = txtName;
+
+            gridControlPostcode.Visible = false;
+
+            if (isAdd) BindData(txtPhone.Text, txtName.Text, txtAddress.Text);
+            else BindData("", "", "");
+        }
+
+        private void txtHouseNo_MouseDown(object sender, MouseEventArgs e)
+        {
+            objTxt = txtHouseNo;
+
+            gridControlPostcode.Visible = false;
+
+            if (isAdd) BindData(txtPhone.Text, txtName.Text, txtAddress.Text);
+            else BindData("", "", "");
+        }
+
+        private void txtAddress_MouseDown(object sender, MouseEventArgs e)
+        {
+            objTxt = txtAddress;
+
+            gridControlPostcode.Visible = false;
+
+            if (isAdd) BindData(txtPhone.Text, txtName.Text, txtAddress.Text);
+            else BindData("", "", "");
+        }
+
+        private void txtIntNotes_MouseDown(object sender, MouseEventArgs e)
+        {
+            objTxt = txtIntNotes;
+
+            gridControlPostcode.Visible = false;
+
+            if (isAdd) BindData(txtPhone.Text, txtName.Text, txtAddress.Text);
+            else BindData("", "", "");
+        }
+
+        private void txtNotesOnBill_MouseDown(object sender, MouseEventArgs e)
+        {
+            objTxt = txtNotesOnBill;
+
+            gridControlPostcode.Visible = false;
+
+            if (isAdd) BindData(txtPhone.Text, txtName.Text, txtAddress.Text);
+            else BindData("", "", "");
+        }
+
+        private void txtPostcode_MouseDown(object sender, MouseEventArgs e)
+        {
+            objTxt = txtPostcode;
+
+            BindOtherData();
+            //gridControlPostcode.Visible = true;
+            //if (isAdd) BindData(txtPhone.Text, txtName.Text, txtAddress.Text);
+            //else BindData("", "", "");
+        }
+
+        private void txtDistance_MouseDown(object sender, MouseEventArgs e)
+        {
+            objTxt = txtDistance;
+
+            gridControlPostcode.Visible = false;
+
+            if (isAdd) BindData(txtPhone.Text, txtName.Text, txtAddress.Text);
+            else BindData("", "", "");
+        }
+
+        private void txtPcZone_MouseDown(object sender, MouseEventArgs e)
+        {
+            objTxt = txtPcZone;
+
+            gridControlPostcode.Visible = false;
+
+            if (isAdd) BindData(txtPhone.Text, txtName.Text, txtAddress.Text);
+            else BindData("", "", "");
+        }
+
+        private void txtDelCharge_MouseDown(object sender, MouseEventArgs e)
+        {
+            objTxt = txtDelCharge;
+
+            gridControlPostcode.Visible = false;
+
+            if (isAdd) BindData(txtPhone.Text, txtName.Text, txtAddress.Text);
+            else BindData("", "", "");
+        }
+        #endregion
+
+        private void txtPostcode_Leave(object sender, EventArgs e)
+        {
+            //(gridControlCustomer.DefaultView as GridView).Columns.Clear();
+            gridControlPostcode.Visible = false;
+
+            if (isAdd) BindData(txtPhone.Text, txtName.Text, txtAddress.Text);
+            else BindData("", "", "");
+        }
+
+        private void BindOtherData()
+        {
+            //string strSqlWhere = "";
+            //DynamicParameters dynamicParams = new DynamicParameters();
+
+            //strSqlWhere = " PostCode=@PostCode";
+
+            //dynamicParams.Add("PostCode", luePostcode.EditValue);
+
+            var lstPcs = new SQLiteDbHelper().QueryMultiByWhere<TaPostcodeSetInfo>("Ta_Postcode_Set", "", null);
+
+            var lstTmpPcs = from pcs in CommonData.TaPostcodeSet
+                            select new
+                            {
+                                pcID = pcs.ID,
+                                pcPostcode = pcs.PostCode,
+                                pcAddr = pcs.PCAddr,
+                                pcZone = pcs.PCZone,
+                                pcDist = pcs.PCDist
+                            };
+
+            gridControlPostcode.Visible = true;
+            gridControlPostcode.Size = gridControlCustomer.Size;
+            gridControlPostcode.Location = new Point(gridControlCustomer.Location.X, gridControlCustomer.Location.Y);
+
+            gridControlPostcode.DataSource = lstTmpPcs;
+            (gridControlPostcode.DefaultView as GridView)?.BestFitColumns();
+        }
+
+        private void gvPostcode_RowClick(object sender, RowClickEventArgs e)
+        {
+            txtPostcode.Text = gvPostcode.GetRowCellValue(gvPostcode.FocusedRowHandle, "pcPostcode") == null ? "" : gvPostcode.GetRowCellValue(gvPostcode.FocusedRowHandle, "pcPostcode").ToString();
+            txtDistance.Text = gvPostcode.GetRowCellValue(gvPostcode.FocusedRowHandle, "pcDist") == null ? "" : gvPostcode.GetRowCellValue(gvPostcode.FocusedRowHandle, "pcDist").ToString();
+            txtPcZone.Text = gvPostcode.GetRowCellValue(gvPostcode.FocusedRowHandle, "pcZone") == null ? "" : gvPostcode.GetRowCellValue(gvPostcode.FocusedRowHandle, "pcZone").ToString();
+            string sDelCharge = gvCompCustomer.GetRowCellValue(gvPostcode.FocusedRowHandle, "cusDelCharge") == null ? "" : gvCompCustomer.GetRowCellValue(gvPostcode.FocusedRowHandle, "cusDelCharge").ToString();
+            txtDelCharge.Text = string.IsNullOrEmpty(sDelCharge) ? CommonDAL.GetDeliveryFee(txtDistance.Text, "0.00").ToString("0.00") : sDelCharge;
         }
     }
 }
