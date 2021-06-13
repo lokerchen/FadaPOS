@@ -835,6 +835,7 @@ namespace SuperPOS.UI.TA
 
         private void gvPostcode_RowClick(object sender, RowClickEventArgs e)
         {
+            txtAddress.Text = gvPostcode.GetRowCellValue(gvPostcode.FocusedRowHandle, "pcAddr") == null ? "" : gvPostcode.GetRowCellValue(gvPostcode.FocusedRowHandle, "pcAddr").ToString();
             txtPostcode.Text = gvPostcode.GetRowCellValue(gvPostcode.FocusedRowHandle, "pcPostcode") == null ? "" : gvPostcode.GetRowCellValue(gvPostcode.FocusedRowHandle, "pcPostcode").ToString();
             txtDistance.Text = gvPostcode.GetRowCellValue(gvPostcode.FocusedRowHandle, "pcDist") == null ? "" : gvPostcode.GetRowCellValue(gvPostcode.FocusedRowHandle, "pcDist").ToString();
             txtPcZone.Text = gvPostcode.GetRowCellValue(gvPostcode.FocusedRowHandle, "pcZone") == null ? "" : gvPostcode.GetRowCellValue(gvPostcode.FocusedRowHandle, "pcZone").ToString();
