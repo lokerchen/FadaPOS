@@ -54,8 +54,6 @@
             this.pcDist = new DevExpress.XtraGrid.Columns.GridColumn();
             this.pcAddr = new DevExpress.XtraGrid.Columns.GridColumn();
             this.txtPostcode = new DevExpress.XtraEditors.TextEdit();
-            this.btnRight = new DevExpress.XtraEditors.SimpleButton();
-            this.btnLeft = new DevExpress.XtraEditors.SimpleButton();
             this.btnClr = new DevExpress.XtraEditors.SimpleButton();
             this.btnM = new DevExpress.XtraEditors.SimpleButton();
             this.btnN = new DevExpress.XtraEditors.SimpleButton();
@@ -127,6 +125,8 @@
             this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
             this.txtPhone = new DevExpress.XtraEditors.TextEdit();
             this.txtAddress = new DevExpress.XtraEditors.MemoEdit();
+            this.btnRight = new DevExpress.XtraEditors.SimpleButton();
+            this.btnLeft = new DevExpress.XtraEditors.SimpleButton();
             this.luePostcode = new DevExpress.XtraEditors.SearchLookUpEdit();
             this.searchLookUpEdit1View = new DevExpress.XtraGrid.Views.Grid.GridView();
             ((System.ComponentModel.ISupportInitialize)(this.gridControlCustomer)).BeginInit();
@@ -202,7 +202,7 @@
             this.gvCompCustomer.OptionsView.EnableAppearanceOddRow = true;
             this.gvCompCustomer.OptionsView.ShowFilterPanelMode = DevExpress.XtraGrid.Views.Base.ShowFilterPanelMode.Never;
             this.gvCompCustomer.OptionsView.ShowGroupPanel = false;
-            this.gvCompCustomer.FocusedRowChanged += new DevExpress.XtraGrid.Views.Base.FocusedRowChangedEventHandler(this.gvCompCustomer_FocusedRowChanged);
+            this.gvCompCustomer.RowClick += new DevExpress.XtraGrid.Views.Grid.RowClickEventHandler(this.gvCompCustomer_RowClick);
             // 
             // ID
             // 
@@ -509,38 +509,6 @@
             this.txtPostcode.Size = new System.Drawing.Size(109, 24);
             this.txtPostcode.TabIndex = 81;
             this.txtPostcode.MouseDown += new System.Windows.Forms.MouseEventHandler(this.txtPostcode_MouseDown);
-            // 
-            // btnRight
-            // 
-            this.btnRight.Appearance.BackColor = System.Drawing.Color.DimGray;
-            this.btnRight.Appearance.Font = new System.Drawing.Font("Tahoma", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnRight.Appearance.Options.UseBackColor = true;
-            this.btnRight.Appearance.Options.UseFont = true;
-            this.btnRight.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
-            this.btnRight.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.LeftCenter;
-            this.btnRight.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("btnRight.ImageOptions.SvgImage")));
-            this.btnRight.Location = new System.Drawing.Point(955, 234);
-            this.btnRight.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.btnRight.Name = "btnRight";
-            this.btnRight.Size = new System.Drawing.Size(85, 40);
-            this.btnRight.TabIndex = 80;
-            this.btnRight.Visible = false;
-            // 
-            // btnLeft
-            // 
-            this.btnLeft.Appearance.BackColor = System.Drawing.Color.DimGray;
-            this.btnLeft.Appearance.Font = new System.Drawing.Font("Tahoma", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnLeft.Appearance.Options.UseBackColor = true;
-            this.btnLeft.Appearance.Options.UseFont = true;
-            this.btnLeft.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
-            this.btnLeft.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.LeftCenter;
-            this.btnLeft.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("btnLeft.ImageOptions.SvgImage")));
-            this.btnLeft.Location = new System.Drawing.Point(955, 190);
-            this.btnLeft.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.btnLeft.Name = "btnLeft";
-            this.btnLeft.Size = new System.Drawing.Size(85, 40);
-            this.btnLeft.TabIndex = 79;
-            this.btnLeft.Visible = false;
             // 
             // btnClr
             // 
@@ -1636,6 +1604,38 @@
             this.txtAddress.Size = new System.Drawing.Size(109, 53);
             this.txtAddress.TabIndex = 5;
             this.txtAddress.MouseDown += new System.Windows.Forms.MouseEventHandler(this.txtAddress_MouseDown);
+            // 
+            // btnRight
+            // 
+            this.btnRight.Appearance.BackColor = System.Drawing.Color.DimGray;
+            this.btnRight.Appearance.Font = new System.Drawing.Font("Tahoma", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnRight.Appearance.Options.UseBackColor = true;
+            this.btnRight.Appearance.Options.UseFont = true;
+            this.btnRight.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
+            this.btnRight.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.LeftCenter;
+            this.btnRight.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("btnRight.ImageOptions.SvgImage")));
+            this.btnRight.Location = new System.Drawing.Point(955, 234);
+            this.btnRight.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnRight.Name = "btnRight";
+            this.btnRight.Size = new System.Drawing.Size(85, 40);
+            this.btnRight.TabIndex = 80;
+            this.btnRight.Visible = false;
+            // 
+            // btnLeft
+            // 
+            this.btnLeft.Appearance.BackColor = System.Drawing.Color.DimGray;
+            this.btnLeft.Appearance.Font = new System.Drawing.Font("Tahoma", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnLeft.Appearance.Options.UseBackColor = true;
+            this.btnLeft.Appearance.Options.UseFont = true;
+            this.btnLeft.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
+            this.btnLeft.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.LeftCenter;
+            this.btnLeft.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("btnLeft.ImageOptions.SvgImage")));
+            this.btnLeft.Location = new System.Drawing.Point(955, 190);
+            this.btnLeft.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnLeft.Name = "btnLeft";
+            this.btnLeft.Size = new System.Drawing.Size(85, 40);
+            this.btnLeft.TabIndex = 79;
+            this.btnLeft.Visible = false;
             // 
             // luePostcode
             // 

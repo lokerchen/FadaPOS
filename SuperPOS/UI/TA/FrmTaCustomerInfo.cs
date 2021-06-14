@@ -150,8 +150,7 @@ namespace SuperPOS.UI.TA
 
             asfc.controllInitializeSize(this);
         }
-
-        private void gvCompCustomer_FocusedRowChanged(object sender, DevExpress.XtraGrid.Views.Base.FocusedRowChangedEventArgs e)
+        private void gvCompCustomer_RowClick(object sender, RowClickEventArgs e)
         {
             if (isAdd) return;
             if (gvCompCustomer.RowCount < 1) return;
