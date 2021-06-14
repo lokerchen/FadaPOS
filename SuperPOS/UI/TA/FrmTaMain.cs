@@ -3264,21 +3264,21 @@ namespace SuperPOS.UI.TA
             {
                 return iMenuItemOrCate == 1
                     ? (string.IsNullOrEmpty(taConfMenuDisplayFontInfo.MenuDisplayBtnFontSize)
-                        ? new Font("Calibri", float.Parse("12.00"))
-                        : new Font("Calibri", float.Parse(taConfMenuDisplayFontInfo.MenuDisplayBtnFontSize)))
+                        ? new Font(@"Bahnschrift SemiBold SemiConden", float.Parse("12.00"))
+                        : new Font(@"Bahnschrift SemiBold SemiConden", float.Parse(taConfMenuDisplayFontInfo.MenuDisplayBtnFontSize)))
                     : (string.IsNullOrEmpty(taConfMenuDisplayFontInfo.CategBtnFontSize)
-                        ? new Font("Calibri", float.Parse("12.00"))
-                        : new Font("Calibri", float.Parse(taConfMenuDisplayFontInfo.CategBtnFontSize)));
+                        ? new Font(@"Bahnschrift SemiBold SemiConden", float.Parse("12.00"))
+                        : new Font(@"Bahnschrift SemiBold SemiConden", float.Parse(taConfMenuDisplayFontInfo.CategBtnFontSize)));
             }
             else
             {
                 return iMenuItemOrCate == 1
                     ? (string.IsNullOrEmpty(taConfMenuDisplayFontInfo.OtherMenuDisplayBtnFontSize)
-                        ? new Font("Calibri", float.Parse("12.00"))
-                        : new Font("Calibri", float.Parse(taConfMenuDisplayFontInfo.OtherMenuDisplayBtnFontSize)))
+                        ? new Font(@"Bahnschrift SemiBold SemiConden", float.Parse("12.00"))
+                        : new Font(@"Bahnschrift SemiBold SemiConden", float.Parse(taConfMenuDisplayFontInfo.OtherMenuDisplayBtnFontSize)))
                     : (string.IsNullOrEmpty(taConfMenuDisplayFontInfo.OtherCategBtnFontSize)
-                        ? new Font("Calibri", float.Parse("12.00"))
-                        : new Font("Calibri", float.Parse(taConfMenuDisplayFontInfo.OtherCategBtnFontSize)));
+                        ? new Font(@"Bahnschrift SemiBold SemiConden", float.Parse("12.00"))
+                        : new Font(@"Bahnschrift SemiBold SemiConden", float.Parse(taConfMenuDisplayFontInfo.OtherCategBtnFontSize)));
             }
         }
 

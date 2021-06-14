@@ -391,7 +391,7 @@
             // btnOnlineOrder
             // 
             this.btnOnlineOrder.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
-            this.btnOnlineOrder.Appearance.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.btnOnlineOrder.Appearance.Font = new System.Drawing.Font("Bahnschrift SemiBold SemiConden", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnOnlineOrder.Appearance.ForeColor = System.Drawing.Color.White;
             this.btnOnlineOrder.Appearance.Options.UseBackColor = true;
             this.btnOnlineOrder.Appearance.Options.UseFont = true;
@@ -410,7 +410,7 @@
             // btnType
             // 
             this.btnType.Appearance.BackColor = System.Drawing.Color.HotPink;
-            this.btnType.Appearance.Font = new System.Drawing.Font("Calibri", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnType.Appearance.Font = new System.Drawing.Font("Bahnschrift SemiBold SemiConden", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnType.Appearance.ForeColor = System.Drawing.Color.White;
             this.btnType.Appearance.Options.UseBackColor = true;
             this.btnType.Appearance.Options.UseFont = true;
@@ -451,112 +451,112 @@
             // 
             // lblReadyTime
             // 
-            this.lblReadyTime.Appearance.Font = new System.Drawing.Font("Calibri", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblReadyTime.Appearance.Font = new System.Drawing.Font("Bahnschrift SemiBold SemiConden", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblReadyTime.Appearance.ForeColor = System.Drawing.Color.Red;
             this.lblReadyTime.Appearance.Options.UseFont = true;
             this.lblReadyTime.Appearance.Options.UseForeColor = true;
             this.lblReadyTime.Location = new System.Drawing.Point(262, 93);
             this.lblReadyTime.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.lblReadyTime.Name = "lblReadyTime";
-            this.lblReadyTime.Size = new System.Drawing.Size(32, 15);
+            this.lblReadyTime.Size = new System.Drawing.Size(27, 16);
             this.lblReadyTime.TabIndex = 13;
             this.lblReadyTime.Text = "00:00";
             // 
             // lblCustReadyTime
             // 
-            this.lblCustReadyTime.Appearance.Font = new System.Drawing.Font("Calibri", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCustReadyTime.Appearance.Font = new System.Drawing.Font("Bahnschrift SemiBold SemiConden", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblCustReadyTime.Appearance.Options.UseFont = true;
             this.lblCustReadyTime.Appearance.Options.UseTextOptions = true;
             this.lblCustReadyTime.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
             this.lblCustReadyTime.Location = new System.Drawing.Point(179, 93);
             this.lblCustReadyTime.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.lblCustReadyTime.Name = "lblCustReadyTime";
-            this.lblCustReadyTime.Size = new System.Drawing.Size(67, 15);
+            this.lblCustReadyTime.Size = new System.Drawing.Size(61, 16);
             this.lblCustReadyTime.TabIndex = 12;
             this.lblCustReadyTime.Text = "Ready Time:";
             this.lblCustReadyTime.Visible = false;
             // 
             // lblDeliveryFee
             // 
-            this.lblDeliveryFee.Appearance.Font = new System.Drawing.Font("Calibri", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblDeliveryFee.Appearance.Font = new System.Drawing.Font("Bahnschrift SemiBold SemiConden", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblDeliveryFee.Appearance.ForeColor = System.Drawing.Color.Red;
             this.lblDeliveryFee.Appearance.Options.UseFont = true;
             this.lblDeliveryFee.Appearance.Options.UseForeColor = true;
             this.lblDeliveryFee.Location = new System.Drawing.Point(89, 93);
             this.lblDeliveryFee.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.lblDeliveryFee.Name = "lblDeliveryFee";
-            this.lblDeliveryFee.Size = new System.Drawing.Size(24, 15);
+            this.lblDeliveryFee.Size = new System.Drawing.Size(19, 16);
             this.lblDeliveryFee.TabIndex = 11;
             this.lblDeliveryFee.Text = "1.50";
             // 
             // lblDistance
             // 
-            this.lblDistance.Appearance.Font = new System.Drawing.Font("Calibri", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblDistance.Appearance.Font = new System.Drawing.Font("Bahnschrift SemiBold SemiConden", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblDistance.Appearance.ForeColor = System.Drawing.Color.Red;
             this.lblDistance.Appearance.Options.UseFont = true;
             this.lblDistance.Appearance.Options.UseForeColor = true;
             this.lblDistance.Location = new System.Drawing.Point(89, 74);
             this.lblDistance.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.lblDistance.Name = "lblDistance";
-            this.lblDistance.Size = new System.Drawing.Size(24, 15);
+            this.lblDistance.Size = new System.Drawing.Size(21, 16);
             this.lblDistance.TabIndex = 10;
             this.lblDistance.Text = "3.85";
             // 
             // lblPostcode
             // 
-            this.lblPostcode.Appearance.Font = new System.Drawing.Font("Calibri", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblPostcode.Appearance.Font = new System.Drawing.Font("Bahnschrift SemiBold SemiConden", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblPostcode.Appearance.ForeColor = System.Drawing.Color.Red;
             this.lblPostcode.Appearance.Options.UseFont = true;
             this.lblPostcode.Appearance.Options.UseForeColor = true;
             this.lblPostcode.Location = new System.Drawing.Point(89, 55);
             this.lblPostcode.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.lblPostcode.Name = "lblPostcode";
-            this.lblPostcode.Size = new System.Drawing.Size(56, 15);
+            this.lblPostcode.Size = new System.Drawing.Size(50, 16);
             this.lblPostcode.TabIndex = 9;
             this.lblPostcode.Text = "BS 168 AA";
             // 
             // lblAddress
             // 
-            this.lblAddress.Appearance.Font = new System.Drawing.Font("Calibri", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblAddress.Appearance.Font = new System.Drawing.Font("Bahnschrift SemiBold SemiConden", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblAddress.Appearance.ForeColor = System.Drawing.Color.Red;
             this.lblAddress.Appearance.Options.UseFont = true;
             this.lblAddress.Appearance.Options.UseForeColor = true;
             this.lblAddress.Location = new System.Drawing.Point(89, 36);
             this.lblAddress.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.lblAddress.Name = "lblAddress";
-            this.lblAddress.Size = new System.Drawing.Size(115, 15);
+            this.lblAddress.Size = new System.Drawing.Size(102, 16);
             this.lblAddress.TabIndex = 8;
             this.lblAddress.Text = "123 GuangZhou Road";
             // 
             // lblPhone
             // 
-            this.lblPhone.Appearance.Font = new System.Drawing.Font("Calibri", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblPhone.Appearance.Font = new System.Drawing.Font("Bahnschrift SemiBold SemiConden", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblPhone.Appearance.ForeColor = System.Drawing.Color.Red;
             this.lblPhone.Appearance.Options.UseFont = true;
             this.lblPhone.Appearance.Options.UseForeColor = true;
             this.lblPhone.Location = new System.Drawing.Point(89, 19);
             this.lblPhone.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.lblPhone.Name = "lblPhone";
-            this.lblPhone.Size = new System.Drawing.Size(77, 15);
+            this.lblPhone.Size = new System.Drawing.Size(66, 16);
             this.lblPhone.TabIndex = 7;
             this.lblPhone.Text = "08888888888";
             // 
             // lblName
             // 
-            this.lblName.Appearance.Font = new System.Drawing.Font("Calibri", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblName.Appearance.Font = new System.Drawing.Font("Bahnschrift SemiBold SemiConden", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblName.Appearance.ForeColor = System.Drawing.Color.Red;
             this.lblName.Appearance.Options.UseFont = true;
             this.lblName.Appearance.Options.UseForeColor = true;
             this.lblName.Location = new System.Drawing.Point(89, 2);
             this.lblName.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.lblName.Name = "lblName";
-            this.lblName.Size = new System.Drawing.Size(44, 15);
+            this.lblName.Size = new System.Drawing.Size(43, 16);
             this.lblName.TabIndex = 6;
             this.lblName.Text = "FadaPos";
             // 
             // lblCustDeliveryFee
             // 
-            this.lblCustDeliveryFee.Appearance.Font = new System.Drawing.Font("Calibri", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCustDeliveryFee.Appearance.Font = new System.Drawing.Font("Bahnschrift SemiBold SemiConden", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblCustDeliveryFee.Appearance.Options.UseFont = true;
             this.lblCustDeliveryFee.Appearance.Options.UseTextOptions = true;
             this.lblCustDeliveryFee.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
@@ -565,14 +565,14 @@
             this.lblCustDeliveryFee.Location = new System.Drawing.Point(4, 93);
             this.lblCustDeliveryFee.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.lblCustDeliveryFee.Name = "lblCustDeliveryFee";
-            this.lblCustDeliveryFee.Size = new System.Drawing.Size(72, 15);
+            this.lblCustDeliveryFee.Size = new System.Drawing.Size(66, 16);
             this.lblCustDeliveryFee.TabIndex = 5;
             this.lblCustDeliveryFee.Text = "Delivery Fee:";
             this.lblCustDeliveryFee.Visible = false;
             // 
             // lblCustDistance
             // 
-            this.lblCustDistance.Appearance.Font = new System.Drawing.Font("Calibri", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCustDistance.Appearance.Font = new System.Drawing.Font("Bahnschrift SemiBold SemiConden", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblCustDistance.Appearance.Options.UseFont = true;
             this.lblCustDistance.Appearance.Options.UseTextOptions = true;
             this.lblCustDistance.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
@@ -581,14 +581,14 @@
             this.lblCustDistance.Location = new System.Drawing.Point(4, 74);
             this.lblCustDistance.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.lblCustDistance.Name = "lblCustDistance";
-            this.lblCustDistance.Size = new System.Drawing.Size(50, 15);
+            this.lblCustDistance.Size = new System.Drawing.Size(47, 16);
             this.lblCustDistance.TabIndex = 4;
             this.lblCustDistance.Text = "Distance:";
             this.lblCustDistance.Visible = false;
             // 
             // lblCustPostcode
             // 
-            this.lblCustPostcode.Appearance.Font = new System.Drawing.Font("Calibri", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCustPostcode.Appearance.Font = new System.Drawing.Font("Bahnschrift SemiBold SemiConden", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblCustPostcode.Appearance.Options.UseFont = true;
             this.lblCustPostcode.Appearance.Options.UseTextOptions = true;
             this.lblCustPostcode.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
@@ -597,14 +597,14 @@
             this.lblCustPostcode.Location = new System.Drawing.Point(4, 55);
             this.lblCustPostcode.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.lblCustPostcode.Name = "lblCustPostcode";
-            this.lblCustPostcode.Size = new System.Drawing.Size(54, 15);
+            this.lblCustPostcode.Size = new System.Drawing.Size(50, 16);
             this.lblCustPostcode.TabIndex = 3;
             this.lblCustPostcode.Text = "Postcode:";
             this.lblCustPostcode.Visible = false;
             // 
             // lblCustAddress
             // 
-            this.lblCustAddress.Appearance.Font = new System.Drawing.Font("Calibri", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCustAddress.Appearance.Font = new System.Drawing.Font("Bahnschrift SemiBold SemiConden", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblCustAddress.Appearance.Options.UseFont = true;
             this.lblCustAddress.Appearance.Options.UseTextOptions = true;
             this.lblCustAddress.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
@@ -613,14 +613,14 @@
             this.lblCustAddress.Location = new System.Drawing.Point(4, 36);
             this.lblCustAddress.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.lblCustAddress.Name = "lblCustAddress";
-            this.lblCustAddress.Size = new System.Drawing.Size(48, 15);
+            this.lblCustAddress.Size = new System.Drawing.Size(45, 16);
             this.lblCustAddress.TabIndex = 2;
             this.lblCustAddress.Text = "Address:";
             this.lblCustAddress.Visible = false;
             // 
             // lblCustPhone
             // 
-            this.lblCustPhone.Appearance.Font = new System.Drawing.Font("Calibri", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCustPhone.Appearance.Font = new System.Drawing.Font("Bahnschrift SemiBold SemiConden", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblCustPhone.Appearance.Options.UseFont = true;
             this.lblCustPhone.Appearance.Options.UseTextOptions = true;
             this.lblCustPhone.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
@@ -629,14 +629,14 @@
             this.lblCustPhone.Location = new System.Drawing.Point(4, 19);
             this.lblCustPhone.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.lblCustPhone.Name = "lblCustPhone";
-            this.lblCustPhone.Size = new System.Drawing.Size(39, 15);
+            this.lblCustPhone.Size = new System.Drawing.Size(34, 16);
             this.lblCustPhone.TabIndex = 1;
             this.lblCustPhone.Text = "Phone:";
             this.lblCustPhone.Visible = false;
             // 
             // lblCustName
             // 
-            this.lblCustName.Appearance.Font = new System.Drawing.Font("Calibri", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCustName.Appearance.Font = new System.Drawing.Font("Bahnschrift SemiBold SemiConden", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblCustName.Appearance.Options.UseFont = true;
             this.lblCustName.Appearance.Options.UseTextOptions = true;
             this.lblCustName.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
@@ -644,7 +644,7 @@
             this.lblCustName.Location = new System.Drawing.Point(4, 2);
             this.lblCustName.Margin = new System.Windows.Forms.Padding(2, 3, 3, 2);
             this.lblCustName.Name = "lblCustName";
-            this.lblCustName.Size = new System.Drawing.Size(37, 15);
+            this.lblCustName.Size = new System.Drawing.Size(32, 16);
             this.lblCustName.TabIndex = 0;
             this.lblCustName.Text = "Name:";
             this.lblCustName.Visible = false;
@@ -652,7 +652,7 @@
             // btnChange
             // 
             this.btnChange.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.btnChange.Appearance.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnChange.Appearance.Font = new System.Drawing.Font("Bahnschrift SemiBold SemiConden", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnChange.Appearance.ForeColor = System.Drawing.Color.White;
             this.btnChange.Appearance.Options.UseBackColor = true;
             this.btnChange.Appearance.Options.UseFont = true;
@@ -671,7 +671,7 @@
             // btnPay
             // 
             this.btnPay.Appearance.BackColor = System.Drawing.Color.Blue;
-            this.btnPay.Appearance.Font = new System.Drawing.Font("Calibri", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnPay.Appearance.Font = new System.Drawing.Font("Bahnschrift SemiBold SemiConden", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnPay.Appearance.ForeColor = System.Drawing.Color.White;
             this.btnPay.Appearance.Options.UseBackColor = true;
             this.btnPay.Appearance.Options.UseFont = true;
@@ -690,7 +690,7 @@
             // btnKeypad
             // 
             this.btnKeypad.Appearance.BackColor = System.Drawing.Color.Orange;
-            this.btnKeypad.Appearance.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnKeypad.Appearance.Font = new System.Drawing.Font("Bahnschrift SemiBold SemiConden", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnKeypad.Appearance.ForeColor = System.Drawing.Color.White;
             this.btnKeypad.Appearance.Options.UseBackColor = true;
             this.btnKeypad.Appearance.Options.UseFont = true;
@@ -709,7 +709,7 @@
             // btnDel
             // 
             this.btnDel.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.btnDel.Appearance.Font = new System.Drawing.Font("Calibri", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDel.Appearance.Font = new System.Drawing.Font("Bahnschrift SemiBold SemiConden", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnDel.Appearance.ForeColor = System.Drawing.Color.White;
             this.btnDel.Appearance.Options.UseBackColor = true;
             this.btnDel.Appearance.Options.UseFont = true;
@@ -746,7 +746,7 @@
             // btnIngredMode
             // 
             this.btnIngredMode.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.btnIngredMode.Appearance.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.btnIngredMode.Appearance.Font = new System.Drawing.Font("Bahnschrift SemiBold SemiConden", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnIngredMode.Appearance.ForeColor = System.Drawing.Color.White;
             this.btnIngredMode.Appearance.Options.UseBackColor = true;
             this.btnIngredMode.Appearance.Options.UseFont = true;
@@ -819,7 +819,7 @@
             // btnHome
             // 
             this.btnHome.Appearance.BackColor = System.Drawing.Color.ForestGreen;
-            this.btnHome.Appearance.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnHome.Appearance.Font = new System.Drawing.Font("Bahnschrift SemiBold SemiConden", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnHome.Appearance.ForeColor = System.Drawing.Color.White;
             this.btnHome.Appearance.Options.UseBackColor = true;
             this.btnHome.Appearance.Options.UseFont = true;
@@ -838,7 +838,7 @@
             // btnAppend
             // 
             this.btnAppend.Appearance.BackColor = System.Drawing.Color.DarkMagenta;
-            this.btnAppend.Appearance.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAppend.Appearance.Font = new System.Drawing.Font("Bahnschrift SemiBold SemiConden", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAppend.Appearance.ForeColor = System.Drawing.Color.White;
             this.btnAppend.Appearance.Options.UseBackColor = true;
             this.btnAppend.Appearance.Options.UseFont = true;
@@ -895,7 +895,7 @@
             // btnMenu
             // 
             this.btnMenu.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
-            this.btnMenu.Appearance.Font = new System.Drawing.Font("Calibri", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnMenu.Appearance.Font = new System.Drawing.Font("Bahnschrift SemiBold SemiConden", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnMenu.Appearance.ForeColor = System.Drawing.Color.White;
             this.btnMenu.Appearance.Options.UseBackColor = true;
             this.btnMenu.Appearance.Options.UseFont = true;
@@ -914,7 +914,7 @@
             // btnEatIn
             // 
             this.btnEatIn.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.btnEatIn.Appearance.Font = new System.Drawing.Font("Calibri", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEatIn.Appearance.Font = new System.Drawing.Font("Bahnschrift SemiBold SemiConden", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnEatIn.Appearance.ForeColor = System.Drawing.Color.White;
             this.btnEatIn.Appearance.Options.UseBackColor = true;
             this.btnEatIn.Appearance.Options.UseFont = true;
@@ -932,7 +932,7 @@
             // btnCancel
             // 
             this.btnCancel.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
-            this.btnCancel.Appearance.Font = new System.Drawing.Font("Calibri", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCancel.Appearance.Font = new System.Drawing.Font("Bahnschrift SemiBold SemiConden", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCancel.Appearance.ForeColor = System.Drawing.Color.White;
             this.btnCancel.Appearance.Options.UseBackColor = true;
             this.btnCancel.Appearance.Options.UseFont = true;
@@ -951,7 +951,7 @@
             // btnLanguage
             // 
             this.btnLanguage.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
-            this.btnLanguage.Appearance.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnLanguage.Appearance.Font = new System.Drawing.Font("Bahnschrift SemiBold SemiConden", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnLanguage.Appearance.ForeColor = System.Drawing.Color.White;
             this.btnLanguage.Appearance.Options.UseBackColor = true;
             this.btnLanguage.Appearance.Options.UseFont = true;
@@ -970,7 +970,7 @@
             // btnSaveOrder
             // 
             this.btnSaveOrder.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
-            this.btnSaveOrder.Appearance.Font = new System.Drawing.Font("Calibri", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSaveOrder.Appearance.Font = new System.Drawing.Font("Bahnschrift SemiBold SemiConden", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSaveOrder.Appearance.ForeColor = System.Drawing.Color.White;
             this.btnSaveOrder.Appearance.Options.UseBackColor = true;
             this.btnSaveOrder.Appearance.Options.UseFont = true;
@@ -1033,7 +1033,7 @@
             // btnCid
             // 
             this.btnCid.Appearance.BackColor = System.Drawing.Color.HotPink;
-            this.btnCid.Appearance.Font = new System.Drawing.Font("Calibri", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCid.Appearance.Font = new System.Drawing.Font("Bahnschrift SemiBold SemiConden", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCid.Appearance.ForeColor = System.Drawing.Color.White;
             this.btnCid.Appearance.Options.UseBackColor = true;
             this.btnCid.Appearance.Options.UseFont = true;
@@ -1052,7 +1052,7 @@
             // btnPendOrder
             // 
             this.btnPendOrder.Appearance.BackColor = System.Drawing.Color.Orange;
-            this.btnPendOrder.Appearance.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold);
+            this.btnPendOrder.Appearance.Font = new System.Drawing.Font("Bahnschrift SemiBold SemiConden", 12F, System.Drawing.FontStyle.Bold);
             this.btnPendOrder.Appearance.ForeColor = System.Drawing.Color.White;
             this.btnPendOrder.Appearance.Options.UseBackColor = true;
             this.btnPendOrder.Appearance.Options.UseFont = true;
