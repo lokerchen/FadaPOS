@@ -143,6 +143,10 @@ namespace SuperPOS.UI.TA
             //订单类型
             lblTypeName.Text = PubComm.ORDER_TYPE_COLLECTION;
 
+            DelegateRefresh hd = DelegateMy.RefreshSomeInfo;
+            IAsyncResult rt = hd.BeginInvoke("1", "", "", null, null);
+            //CommonDAL.RefreshSomeInfo("1", "", "");
+
             //获得付款类型列表
             SetPayType();
 

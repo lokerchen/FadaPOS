@@ -2008,8 +2008,8 @@ namespace SuperPOS.Common
 
             sw.Stop();
             TimeSpan ts = sw.Elapsed;
-            Console.WriteLine(@"RefreshSomeInfo Time:{0}", ts.TotalMilliseconds);
-            LogHelper.Info(@"RefreshSomeInfo #iStatus=" + iStatus+ "strBusDate=" + strBusDate + "strCheckId=" + strCheckId + "#Time: " + ts.TotalMilliseconds);
+            Console.WriteLine(@"RefreshSomeInfo Time:{0}", @"#iStatus=" + iStatus+ @"#strBusDate=" + strBusDate + @"#strCheckId=" + strCheckId + @"#Time: " + ts.TotalMilliseconds);
+            LogHelper.Info(@"RefreshSomeInfo #iStatus=" + iStatus+ @"#strBusDate=" + strBusDate + @"#strCheckId=" + strCheckId + @"#Time: " + ts.TotalMilliseconds);
         }
         #endregion
 

@@ -120,7 +120,9 @@ namespace SuperPOS.UI.TA
             Stopwatch sw = new Stopwatch();
             sw.Start();
 
-            CommonDAL.RefreshSomeInfo("1", "", "");
+            DelegateRefresh hd = DelegateMy.RefreshSomeInfo;
+            IAsyncResult rt = hd.BeginInvoke("1", "", "", null, null);
+            //CommonDAL.RefreshSomeInfo("1", "", "");
 
             //订单类型
             lblTypeName.Text = PubComm.ORDER_TYPE_SHOP;
