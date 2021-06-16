@@ -282,6 +282,8 @@ namespace SuperPOS.UI.TA
                 //IAsyncResult rt = hd.BeginInvoke("1", "", "", null, null);
 
                 //handler.EndInvoke(result);
+
+                CommonDAL.RefreshSomeInfo("2", "", "");
             }
             catch (Exception ex) { LogHelper.Error(this.Name, ex); }
         }
@@ -896,6 +898,8 @@ namespace SuperPOS.UI.TA
             }
 
             isGetPhone = false;
+
+            CommonDAL.RefreshSomeInfo("2", "", "");
 
             //handler.EndInvoke(result);
         }
@@ -2020,43 +2024,51 @@ namespace SuperPOS.UI.TA
 
         private Hashtable SetPrtInfo(List<TaOrderItemInfo> lstOi)
         {
-            Hashtable htDetail = new Hashtable();
+            try
+            {
+                Hashtable htDetail = new Hashtable();
 
-            string strSqlWhere = "";
-            DynamicParameters dynamicParams = new DynamicParameters();
+                string strSqlWhere = "";
+                DynamicParameters dynamicParams = new DynamicParameters();
 
-            strSqlWhere = "ID=@ID";
+                strSqlWhere = "ID=@ID";
 
-            dynamicParams.Add("ID", usrID);
+                dynamicParams.Add("ID", usrID);
 
-            CommonData.UsrBase = new SQLiteDbHelper().QueryMultiByWhere<UsrBaseInfo>("Usr_Base", strSqlWhere, dynamicParams);
+                var lstUb = new SQLiteDbHelper().QueryMultiByWhere<UsrBaseInfo>("Usr_Base", strSqlWhere, dynamicParams);
 
-            //new SystemData().GetUsrBase();
+                //new SystemData().GetUsrBase();
 
-            UsrBaseInfo ubi = CommonData.UsrBase.FirstOrDefault(s => s.ID == usrID);
+                UsrBaseInfo ubi = lstUb.FirstOrDefault(s => s.ID == usrID);
 
-            htDetail["Staff"] = ubi != null ? ubi.UsrName : "";
+                htDetail["Staff"] = ubi != null ? ubi.UsrName : "";
 
-            //new SystemData().GetTaOrderItem();
+                //new SystemData().GetTaOrderItem();
 
-            int iItemCount = 0;
-            //foreach (TreeListNode treeListNode in treeListOrder.Nodes)
-            //{
+                int iItemCount = 0;
+                //foreach (TreeListNode treeListNode in treeListOrder.Nodes)
+                //{
 
-            //    if (treeListNode["ItemType"].ToString().Equals("1"))
-            //    {
-            //        iItemCount += Convert.ToInt32(treeListNode["ItemQty"].ToString());
-            //    }
-            //}
-            iItemCount = treeListOrder.Nodes.Count > 0 ? Convert.ToInt32(treeListOrder.GetSummaryValue(treeListOrder.Columns[1])) : 0;
-            htDetail["ItemQty"] = iItemCount.ToString();
-            //htDetail["SubTotal"] = lstOi.Sum(s => Convert.ToDecimal(string.IsNullOrEmpty(s.ItemTotalPrice) ? "0.00" : s.ItemTotalPrice)).ToString();
-            //htDetail["Total"] = lstOi.Sum(s => Convert.ToDecimal(string.IsNullOrEmpty(s.ItemTotalPrice) ? "0.00" : s.ItemTotalPrice)).ToString();
-            string strTotal = treeListOrder.GetSummaryValue(treeListOrder.Columns[7]).ToString();
-            htDetail["SubTotal"] = treeListOrder.Nodes.Count > 0 ? strTotal : "0.00";
-            htDetail["Total"] = treeListOrder.Nodes.Count > 0 ? strTotal : "0.00";
+                //    if (treeListNode["ItemType"].ToString().Equals("1"))
+                //    {
+                //        iItemCount += Convert.ToInt32(treeListNode["ItemQty"].ToString());
+                //    }
+                //}
+                iItemCount = treeListOrder.Nodes.Count > 0 ? Convert.ToInt32(treeListOrder.GetSummaryValue(treeListOrder.Columns[1])) : 0;
+                htDetail["ItemQty"] = iItemCount.ToString();
+                //htDetail["SubTotal"] = lstOi.Sum(s => Convert.ToDecimal(string.IsNullOrEmpty(s.ItemTotalPrice) ? "0.00" : s.ItemTotalPrice)).ToString();
+                //htDetail["Total"] = lstOi.Sum(s => Convert.ToDecimal(string.IsNullOrEmpty(s.ItemTotalPrice) ? "0.00" : s.ItemTotalPrice)).ToString();
+                string strTotal = treeListOrder.GetSummaryValue(treeListOrder.Columns[7]).ToString();
+                htDetail["SubTotal"] = treeListOrder.Nodes.Count > 0 ? strTotal : "0.00";
+                htDetail["Total"] = treeListOrder.Nodes.Count > 0 ? strTotal : "0.00";
 
-            return htDetail;
+                return htDetail;
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e);
+                throw;
+            }
         }
         #endregion
 
@@ -3324,7 +3336,7 @@ namespace SuperPOS.UI.TA
                         #region 保存账单
 
                         SaveCheckOrder(lstTaOI, false);
-
+                        
                         #endregion
                     }
 
@@ -3365,6 +3377,7 @@ namespace SuperPOS.UI.TA
                     }
 
                     //if (!string.IsNullOrEmpty(CallerPhone.Trim())) handler.EndInvoke(result);
+                    CommonDAL.RefreshSomeInfo("2", "", "");
                 }
             }
             catch (Exception ex) { LogHelper.Error("ShowCallIdWindow", ex); }

@@ -295,61 +295,65 @@ namespace SuperPOS.Common
         #endregion
 
         #region 后台刷新数据库内容
-        //public static void RefreshSomeInfo(string iStatus, string strBusDate, string strCheckId)
-        //{
-        //    SystemData systemData = new SystemData();
+        public static void RefreshSomeInfo(string iStatus, string strBusDate, string strCheckId)
+        {
+            CommonDAL.RefreshSomeInfo(iStatus, strBusDate, strCheckId);
 
-        //    switch (iStatus)
-        //    {
-        //        case "1":
-        //            systemData.GetTaCheckOrder();
-        //            break;
-        //        case "2":
-        //            systemData.GetTaOrderItem();
-        //            break;
-        //        case "3":
-        //            systemData.GetTaCheckOrder();
-        //            systemData.GetTaOrderItem();
-        //            break;
-        //        case "4":
-        //            systemData.GetTaMenuCate();
-        //            break;
-        //        case "5":
-        //            systemData.GetTaCustomer();
-        //            break;
-        //        case "6":
-        //            systemData.GetTaDriver();
-        //            break;
-        //        case "7":
-        //            systemData.GetTaMenuItem();
-        //            break;
-        //        case "8":
-        //            systemData.GetShowAndPendOrderData(strCheckId, strBusDate);
-        //            break;
-        //        case "9":
-        //            systemData.GetShowAndPendOrderData(strCheckId, strBusDate);
-        //            systemData.GetTaCheckOrder();
-        //            systemData.GetTaOrderItem();
-        //            break;
-        //        case "10":
-        //            systemData.GetTaCheckOrder();
-        //            systemData.GetTaOrderItem();
-        //            systemData.GetTaCustomer();
-        //            systemData.GetTaDriver();
-        //            systemData.GetShowAndPendOrderData(strCheckId, strBusDate);
-        //            break;
-        //        default:
-        //            systemData.GetTaCheckOrder();
-        //            systemData.GetTaOrderItem();
-        //            systemData.GetTaMenuItem();
-        //            systemData.GetTaMenuCate();
-        //            systemData.GetTaCustomer();
-        //            systemData.GetTaDriver();
-        //            systemData.GetTaMenuItemOtherChoice();
-        //            systemData.GetShowAndPendOrderData(strCheckId, strBusDate);
-        //            break;
-        //    }
-        //}
+            #region 原注释代码
+            //SystemData systemData = new SystemData();
+
+            //switch (iStatus)
+            //{
+            //    case "1":
+            //        systemData.GetTaCheckOrder();
+            //        break;
+            //    case "2":
+            //        systemData.GetTaOrderItem();
+            //        break;
+            //    case "3":
+            //        systemData.GetTaCheckOrder();
+            //        systemData.GetTaOrderItem();
+            //        break;
+            //    case "4":
+            //        systemData.GetTaMenuCate();
+            //        break;
+            //    case "5":
+            //        systemData.GetTaCustomer();
+            //        break;
+            //    case "6":
+            //        systemData.GetTaDriver();
+            //        break;
+            //    case "7":
+            //        systemData.GetTaMenuItem();
+            //        break;
+            //    case "8":
+            //        systemData.GetShowAndPendOrderData(strCheckId, strBusDate);
+            //        break;
+            //    case "9":
+            //        systemData.GetShowAndPendOrderData(strCheckId, strBusDate);
+            //        systemData.GetTaCheckOrder();
+            //        systemData.GetTaOrderItem();
+            //        break;
+            //    case "10":
+            //        systemData.GetTaCheckOrder();
+            //        systemData.GetTaOrderItem();
+            //        systemData.GetTaCustomer();
+            //        systemData.GetTaDriver();
+            //        systemData.GetShowAndPendOrderData(strCheckId, strBusDate);
+            //        break;
+            //    default:
+            //        systemData.GetTaCheckOrder();
+            //        systemData.GetTaOrderItem();
+            //        systemData.GetTaMenuItem();
+            //        systemData.GetTaMenuCate();
+            //        systemData.GetTaCustomer();
+            //        systemData.GetTaDriver();
+            //        systemData.GetTaMenuItemOtherChoice();
+            //        systemData.GetShowAndPendOrderData(strCheckId, strBusDate);
+            //        break;
+            //}
+            #endregion
+        }
         #endregion
 
         #region 保存CheckOrder并打印

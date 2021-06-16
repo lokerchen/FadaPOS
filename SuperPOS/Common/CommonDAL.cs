@@ -1808,8 +1808,10 @@ namespace SuperPOS.Common
                 "OrderTime, OrderStaff, IsCancel, BusDate, MenuItemID, IsDiscount) VALUES(@ItemID, @ItemCode, @ItemDishName, @ItemDishOtherName, @ItemQty, @ItemPrice, " +
                 "@ItemTotalPrice, @CheckCode, @ItemType, @ItemParent, @OrderTime, @OrderStaff, @IsCancel, @BusDate, @MenuItemID, @IsDiscount);";
             isSuccess = new SQLiteDbHelper().InsertMulti(strSqlWhere, lstOi);
-            
-            CommonData.TaOrderItem = new SQLiteDbHelper().QueryMultiByWhere<TaOrderItemInfo>("Ta_OrderItem", "", null);
+
+            //CommonData.TaOrderItem = new SQLiteDbHelper().QueryMultiByWhere<TaOrderItemInfo>("Ta_OrderItem", "", null);
+            //DelegateRefresh hd = DelegateMy.RefreshSomeInfo;
+            //IAsyncResult rt = hd.BeginInvoke("2", "", "", null, null);
 
             sw.Stop();
             TimeSpan ts = sw.Elapsed;
