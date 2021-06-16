@@ -12,6 +12,7 @@ using System.Drawing;
 using System.Linq;
 using System.Runtime.InteropServices;
 using System.Windows.Forms;
+using LinqToDB;
 
 namespace SuperPOS.UI.TA
 {
@@ -152,7 +153,7 @@ namespace SuperPOS.UI.TA
         }
         private void gvCompCustomer_RowClick(object sender, RowClickEventArgs e)
         {
-            if (isAdd) return;
+            if (IsExitCustInfo(txtPhone.Text)) return;
             if (gvCompCustomer.RowCount < 1) return;
             else gvCompCustomer.FocusedRowHandle = gvCompCustomer.GetSelectedRows()[0];
             cusNum = txtPhone.Text = gvCompCustomer.GetRowCellValue(gvCompCustomer.FocusedRowHandle, "cusPhone") == null ? "" : gvCompCustomer.GetRowCellValue(gvCompCustomer.FocusedRowHandle, "cusPhone").ToString();
@@ -182,17 +183,17 @@ namespace SuperPOS.UI.TA
 
             if (!string.IsNullOrEmpty(sPhone))
             {
-                lstTmp = lstTmp.Where(s => s.cusPhone.Equals(sPhone)).ToList();
+                lstTmp = lstTmp.Where(s => s.cusPhone.Contains(sPhone)).ToList();
             }
 
             if (!string.IsNullOrEmpty(sName))
             {
-                lstTmp = lstTmp.Where(s => s.cusName.Equals(sName)).ToList();
+                lstTmp = lstTmp.Where(s => s.cusName.Contains(sName)).ToList();
             }
 
             if (!string.IsNullOrEmpty(sAddress))
             {
-                lstTmp = lstTmp.Where(s => s.cusAddr.Equals(sAddress)).ToList();
+                lstTmp = lstTmp.Where(s => s.cusAddr.Contains(sAddress)).ToList();
             }
 
             //gridControlCustomer.DataSource = string.IsNullOrEmpty(sPhone) ? CommonData.TaCustomer.Where(s => !string.IsNullOrEmpty(s.cusPhone)).ToList() 
@@ -213,12 +214,16 @@ namespace SuperPOS.UI.TA
             
             gridControlCustomer.DataSource = lstTmp;
 
-            if (!string.IsNullOrEmpty(cusNum)) gvCompCustomer.FocusedRowHandle = gvCompCustomer.RowCount - 1;
+            //清除所有列过滤条件
+            gvCompCustomer.ClearColumnsFilter();
+            
+
+            if (gvCompCustomer.RowCount > 0) gvCompCustomer.FocusedRowHandle = gvCompCustomer.RowCount - 1;
         }
 
         private void btnNew_Click(object sender, EventArgs e)
         {
-            isAdd = true;
+            //isAdd = true;
             isClear = false;
 
             txtPhone.Text = "";
@@ -310,7 +315,7 @@ namespace SuperPOS.UI.TA
             #endregion
 
             TaCustomerInfo taCustomerInfo = new TaCustomerInfo();
-            taCustomerInfo.cusPhone = txtPhone.Text;
+            cusNum = taCustomerInfo.cusPhone = txtPhone.Text;
             taCustomerInfo.cusName = txtName.Text;
             taCustomerInfo.cusHouseNo = txtHouseNo.Text;
             taCustomerInfo.cusAddr = txtAddress.Text;
@@ -327,7 +332,7 @@ namespace SuperPOS.UI.TA
 
             try
             {
-                if (isAdd) _control.AddEntity(taCustomerInfo);
+                if (!IsExitCustInfo(taCustomerInfo.cusPhone)) _control.AddEntity(taCustomerInfo);
                 else
                 {
                     taCustomerInfo.ID = Convert.ToInt32(gvCompCustomer.GetRowCellValue(gvCompCustomer.FocusedRowHandle, "ID"));
@@ -340,7 +345,7 @@ namespace SuperPOS.UI.TA
 
             BindData("", "", "");
 
-            isAdd = false;
+            //isAdd = false;
             isClear = false;
 
             sReadyTime = txtReadyTime.Text;
@@ -374,6 +379,10 @@ namespace SuperPOS.UI.TA
                     txtIntNotes.Text = "";
                     txtNotesOnBill.Text = "";
                     chkBlackListed.Checked = false;
+                }
+                else
+                {
+                    cusNum = gvCompCustomer.GetRowCellValue(gvCompCustomer.FocusedRowHandle, "cusPhone") == null ? "" : gvCompCustomer.GetRowCellValue(gvCompCustomer.FocusedRowHandle, "cusPhone").ToString();
                 }
             }
 
@@ -547,8 +556,8 @@ namespace SuperPOS.UI.TA
 
         private void txtReadyTime_Click(object sender, EventArgs e)
         {
-            if (!string.IsNullOrEmpty(cusNum))
-            {
+            //if (!string.IsNullOrEmpty(cusNum))
+            //{
                 FrmTaCustReadyTime frmTaCustReadyTime = new FrmTaCustReadyTime();
                 //frmTaCustReadyTime.Location = gridControlCustomer.Location;
                 frmTaCustReadyTime.Location = new Point(gridControlCustomer.Location.X + 100, gridControlCustomer.Location.Y + 50);
@@ -561,7 +570,7 @@ namespace SuperPOS.UI.TA
                         txtReadyTime.Text = frmTaCustReadyTime.strShopTime;
                     }
                 }
-            }
+            //}
         }
 
         private void txtDistance_EditValueChanged(object sender, EventArgs e)
@@ -688,7 +697,8 @@ namespace SuperPOS.UI.TA
             
             if (!string.IsNullOrEmpty(strColumn))
             {
-                if (isAdd) gv.Columns[strColumn].FilterInfo = new DevExpress.XtraGrid.Columns.ColumnFilterInfo("[" + strColumn + "] LIKE '%" + objTxt.Text + "%'");
+                gv.Columns[strColumn].ClearFilter();
+                gv.Columns[strColumn].FilterInfo = new DevExpress.XtraGrid.Columns.ColumnFilterInfo("[" + strColumn + "] LIKE '%" + objTxt.Text + "%'");
             }
             
         }
@@ -699,8 +709,7 @@ namespace SuperPOS.UI.TA
         {
             objTxt = txtPhone;
 
-            if (isAdd) BindData(txtPhone.Text, txtName.Text, txtAddress.Text);
-            else BindData("", "", "");
+            BindData(txtPhone.Text, txtName.Text, txtAddress.Text);
         }
 
         private void txtName_MouseDown(object sender, MouseEventArgs e)
@@ -709,8 +718,7 @@ namespace SuperPOS.UI.TA
 
             gridControlPostcode.Visible = false;
 
-            if (isAdd) BindData(txtPhone.Text, txtName.Text, txtAddress.Text);
-            else BindData("", "", "");
+            BindData(txtPhone.Text, txtName.Text, txtAddress.Text);
         }
 
         private void txtHouseNo_MouseDown(object sender, MouseEventArgs e)
@@ -719,8 +727,7 @@ namespace SuperPOS.UI.TA
 
             gridControlPostcode.Visible = false;
 
-            if (isAdd) BindData(txtPhone.Text, txtName.Text, txtAddress.Text);
-            else BindData("", "", "");
+            BindData(txtPhone.Text, txtName.Text, txtAddress.Text);
         }
 
         private void txtAddress_MouseDown(object sender, MouseEventArgs e)
@@ -729,8 +736,7 @@ namespace SuperPOS.UI.TA
 
             gridControlPostcode.Visible = false;
 
-            if (isAdd) BindData(txtPhone.Text, txtName.Text, txtAddress.Text);
-            else BindData("", "", "");
+            BindData(txtPhone.Text, txtName.Text, txtAddress.Text);
         }
 
         private void txtIntNotes_MouseDown(object sender, MouseEventArgs e)
@@ -739,8 +745,7 @@ namespace SuperPOS.UI.TA
 
             gridControlPostcode.Visible = false;
 
-            if (isAdd) BindData(txtPhone.Text, txtName.Text, txtAddress.Text);
-            else BindData("", "", "");
+            BindData(txtPhone.Text, txtName.Text, txtAddress.Text);
         }
 
         private void txtNotesOnBill_MouseDown(object sender, MouseEventArgs e)
@@ -749,8 +754,7 @@ namespace SuperPOS.UI.TA
 
             gridControlPostcode.Visible = false;
 
-            if (isAdd) BindData(txtPhone.Text, txtName.Text, txtAddress.Text);
-            else BindData("", "", "");
+            BindData(txtPhone.Text, txtName.Text, txtAddress.Text);
         }
 
         private void txtPostcode_MouseDown(object sender, MouseEventArgs e)
@@ -769,8 +773,7 @@ namespace SuperPOS.UI.TA
 
             gridControlPostcode.Visible = false;
 
-            if (isAdd) BindData(txtPhone.Text, txtName.Text, txtAddress.Text);
-            else BindData("", "", "");
+            BindData(txtPhone.Text, txtName.Text, txtAddress.Text);
         }
 
         private void txtPcZone_MouseDown(object sender, MouseEventArgs e)
@@ -779,8 +782,7 @@ namespace SuperPOS.UI.TA
 
             gridControlPostcode.Visible = false;
 
-            if (isAdd) BindData(txtPhone.Text, txtName.Text, txtAddress.Text);
-            else BindData("", "", "");
+            BindData(txtPhone.Text, txtName.Text, txtAddress.Text);
         }
 
         private void txtDelCharge_MouseDown(object sender, MouseEventArgs e)
@@ -789,8 +791,7 @@ namespace SuperPOS.UI.TA
 
             gridControlPostcode.Visible = false;
 
-            if (isAdd) BindData(txtPhone.Text, txtName.Text, txtAddress.Text);
-            else BindData("", "", "");
+            BindData(txtPhone.Text, txtName.Text, txtAddress.Text);
         }
         #endregion
 
@@ -799,8 +800,7 @@ namespace SuperPOS.UI.TA
             //(gridControlCustomer.DefaultView as GridView).Columns.Clear();
             gridControlPostcode.Visible = false;
 
-            if (isAdd) BindData(txtPhone.Text, txtName.Text, txtAddress.Text);
-            else BindData("", "", "");
+            BindData(txtPhone.Text, txtName.Text, txtAddress.Text);
         }
 
         private void BindOtherData()
@@ -830,6 +830,8 @@ namespace SuperPOS.UI.TA
 
             gridControlPostcode.DataSource = lstTmpPcs;
             (gridControlPostcode.DefaultView as GridView)?.BestFitColumns();
+
+            gvPostcode.ClearColumnsFilter();
         }
 
         private void gvPostcode_RowClick(object sender, RowClickEventArgs e)
@@ -840,6 +842,28 @@ namespace SuperPOS.UI.TA
             txtPcZone.Text = gvPostcode.GetRowCellValue(gvPostcode.FocusedRowHandle, "pcZone") == null ? "" : gvPostcode.GetRowCellValue(gvPostcode.FocusedRowHandle, "pcZone").ToString();
             string sDelCharge = gvCompCustomer.GetRowCellValue(gvPostcode.FocusedRowHandle, "cusDelCharge") == null ? "" : gvCompCustomer.GetRowCellValue(gvPostcode.FocusedRowHandle, "cusDelCharge").ToString();
             txtDelCharge.Text = string.IsNullOrEmpty(sDelCharge) ? CommonDAL.GetDeliveryFee(txtDistance.Text, "0.00").ToString("0.00") : sDelCharge;
+        }
+
+        private bool IsExitCustInfo(string strPhone)
+        {
+            try
+            {
+                string strSqlWhere = "";
+                DynamicParameters dynamicParams = new DynamicParameters();
+
+                strSqlWhere = "cusPhone=@cusPhone";
+
+                dynamicParams.Add("cusPhone", strPhone);
+
+                var lstTaCust = new SQLiteDbHelper().QueryMultiByWhere<TaCustomerInfo>("Ta_Customer", strSqlWhere, dynamicParams);
+
+                return lstTaCust.Any();
+            }
+            catch (Exception ex)
+            {
+                LogHelper.Error(this.Name, ex);
+                return false;
+            }
         }
     }
 }
