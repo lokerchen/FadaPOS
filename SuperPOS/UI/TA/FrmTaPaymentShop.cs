@@ -123,7 +123,7 @@ namespace SuperPOS.UI.TA
             DelegateRefresh hd = DelegateMy.RefreshSomeInfo;
             IAsyncResult rt = hd.BeginInvoke("1", "", "", null, null);
             //CommonDAL.RefreshSomeInfo("1", "", "");
-
+            
             //订单类型
             lblTypeName.Text = PubComm.ORDER_TYPE_SHOP;
 
@@ -168,7 +168,7 @@ namespace SuperPOS.UI.TA
             txtToPay.Text = taCheckOrder.TotalAmount;
             menuAmout = Convert.ToDecimal(taCheckOrder.MenuAmount);
             txtChange.Text = "0.00";
-            
+
             GetAllAmount();
             #endregion
 
@@ -182,7 +182,6 @@ namespace SuperPOS.UI.TA
 
             sw.Stop();
             TimeSpan ts = sw.Elapsed;
-            Console.WriteLine("#FrmTaPaymentShop_Load# Time {0}", ts.TotalMilliseconds);
             LogHelper.Info("#FrmTaPaymentShop_Load# Time:" + ts.TotalMilliseconds);
         }
 
@@ -1316,5 +1315,39 @@ namespace SuperPOS.UI.TA
             }
         }
         #endregion
+
+        //protected override void OnResizeBegin(EventArgs e)
+        //{
+        //    SuspendLayout();
+        //    base.OnResizeBegin(e);
+        //}
+
+        //protected override void OnResizeEnd(EventArgs e)
+        //{
+        //    ResumeLayout(true);
+        //    base.OnResizeEnd(e);
+        //}
+
+        private void FrmTaPaymentShop_ResizeBegin(object sender, EventArgs e)
+        {
+            SuspendLayout();
+            base.OnResizeBegin(e);
+        }
+
+        private void FrmTaPaymentShop_ResizeEnd(object sender, EventArgs e)
+        {
+            ResumeLayout(true);
+            base.OnResizeEnd(e);
+        }
+
+        protected override CreateParams CreateParams
+        {
+            get
+            {
+                CreateParams cp = base.CreateParams;
+                cp.ExStyle |= 0x02000000;
+                return cp;
+            }
+        }
     }
 }

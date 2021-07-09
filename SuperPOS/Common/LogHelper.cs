@@ -23,7 +23,11 @@ namespace SuperPOS.Common
         /// <param name="message">记录信息</param>
         public static void Info(string message)
         {
-            if (Log.IsInfoEnabled) Log.Info(message);
+            if (Log.IsInfoEnabled)
+            {
+                Console.WriteLine(message);
+                Log.Info(message);
+            }
         }
         #endregion
 

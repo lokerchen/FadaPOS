@@ -1417,5 +1417,27 @@ namespace SuperPOS.UI.TA
             }
         }
         #endregion
+
+        private void FrmTaPaymentDelivery_ResizeBegin(object sender, EventArgs e)
+        {
+            SuspendLayout();
+            base.OnResizeBegin(e);
+        }
+
+        private void FrmTaPaymentDelivery_ResizeEnd(object sender, EventArgs e)
+        {
+            ResumeLayout(true);
+            base.OnResizeEnd(e);
+        }
+
+        protected override CreateParams CreateParams
+        {
+            get
+            {
+                CreateParams cp = base.CreateParams;
+                cp.ExStyle |= 0x02000000;
+                return cp;
+            }
+        }
     }
 }

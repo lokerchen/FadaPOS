@@ -40,7 +40,6 @@
             this.lblPayType5 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
             this.btn0 = new DevExpress.XtraEditors.SimpleButton();
-            this.webBrowser1 = new System.Windows.Forms.WebBrowser();
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
             this.btn3 = new DevExpress.XtraEditors.SimpleButton();
             this.txtPayTypePay4 = new DevExpress.XtraEditors.TextEdit();
@@ -71,7 +70,6 @@
             this.btn7 = new DevExpress.XtraEditors.SimpleButton();
             this.btnPrtAllReceipt = new DevExpress.XtraEditors.SimpleButton();
             this.lblPayType4 = new DevExpress.XtraEditors.LabelControl();
-            this.btnPercent = new DevExpress.XtraEditors.SimpleButton();
             this.lblPayType3 = new DevExpress.XtraEditors.LabelControl();
             this.btnPrtBillOnly = new DevExpress.XtraEditors.SimpleButton();
             this.lblPayType2 = new DevExpress.XtraEditors.LabelControl();
@@ -128,7 +126,6 @@
             this.groupBox1.Controls.Add(this.lblPayType5);
             this.groupBox1.Controls.Add(this.labelControl2);
             this.groupBox1.Controls.Add(this.btn0);
-            this.groupBox1.Controls.Add(this.webBrowser1);
             this.groupBox1.Controls.Add(this.labelControl1);
             this.groupBox1.Controls.Add(this.btn3);
             this.groupBox1.Controls.Add(this.txtPayTypePay4);
@@ -159,7 +156,6 @@
             this.groupBox1.Controls.Add(this.btn7);
             this.groupBox1.Controls.Add(this.btnPrtAllReceipt);
             this.groupBox1.Controls.Add(this.lblPayType4);
-            this.groupBox1.Controls.Add(this.btnPercent);
             this.groupBox1.Controls.Add(this.lblPayType3);
             this.groupBox1.Controls.Add(this.btnPrtBillOnly);
             this.groupBox1.Controls.Add(this.lblPayType2);
@@ -355,15 +351,6 @@
             this.btn0.Size = new System.Drawing.Size(52, 43);
             this.btn0.TabIndex = 98;
             this.btn0.Text = "0";
-            // 
-            // webBrowser1
-            // 
-            this.webBrowser1.Location = new System.Drawing.Point(10, 38);
-            this.webBrowser1.MinimumSize = new System.Drawing.Size(20, 20);
-            this.webBrowser1.Name = "webBrowser1";
-            this.webBrowser1.Size = new System.Drawing.Size(111, 66);
-            this.webBrowser1.TabIndex = 106;
-            this.webBrowser1.Visible = false;
             // 
             // labelControl1
             // 
@@ -852,23 +839,6 @@
             this.lblPayType4.Text = "Pay Type";
             this.lblPayType4.Click += new System.EventHandler(this.lblPayType4_Click);
             // 
-            // btnPercent
-            // 
-            this.btnPercent.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.btnPercent.Appearance.BackColor = System.Drawing.Color.OrangeRed;
-            this.btnPercent.Appearance.Font = new System.Drawing.Font("Tahoma", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnPercent.Appearance.Options.UseBackColor = true;
-            this.btnPercent.Appearance.Options.UseFont = true;
-            this.btnPercent.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
-            this.btnPercent.Location = new System.Drawing.Point(8, 154);
-            this.btnPercent.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.btnPercent.Name = "btnPercent";
-            this.btnPercent.Size = new System.Drawing.Size(52, 35);
-            this.btnPercent.TabIndex = 103;
-            this.btnPercent.Text = "%";
-            this.btnPercent.Visible = false;
-            this.btnPercent.Click += new System.EventHandler(this.btnPercent_Click);
-            // 
             // lblPayType3
             // 
             this.lblPayType3.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
@@ -1226,12 +1196,15 @@
             this.Controls.Add(this.groupBox6);
             this.Controls.Add(this.btnExit);
             this.Controls.Add(this.groupBox1);
+            this.DoubleBuffered = true;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "FrmTaPaymentDelivery";
             this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
             this.Text = "FrmTaPaymentShop";
             this.Load += new System.EventHandler(this.FrmTaPaymentDelivery_Load);
+            this.ResizeBegin += new System.EventHandler(this.FrmTaPaymentDelivery_ResizeBegin);
+            this.ResizeEnd += new System.EventHandler(this.FrmTaPaymentDelivery_ResizeEnd);
             this.SizeChanged += new System.EventHandler(this.FrmTaPaymentShop_SizeChanged);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
@@ -1299,7 +1272,6 @@
         private DevExpress.XtraEditors.TextEdit txtDiscount;
         private DevExpress.XtraEditors.TextEdit txtPercentSurcharge;
         private DevExpress.XtraEditors.TextEdit txtPercentDiscount;
-        private DevExpress.XtraEditors.SimpleButton btnPercent;
         private DevExpress.XtraEditors.TextEdit txtPayTypePay5;
         private DevExpress.XtraEditors.LabelControl lblPayType5;
         private DevExpress.XtraEditors.SimpleButton btnNotPaid;
@@ -1321,7 +1293,6 @@
         private System.Windows.Forms.Label label1;
         private DevExpress.XtraEditors.LookUpEdit lueNote;
         private DevExpress.XtraEditors.SimpleButton btnCollection;
-        private System.Windows.Forms.WebBrowser webBrowser1;
         private DevExpress.XtraEditors.TextEdit txtDeliveryFee;
         private DevExpress.XtraEditors.LabelControl labelControl3;
         private DevExpress.XtraEditors.LabelControl labelControl4;
